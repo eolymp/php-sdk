@@ -1,0 +1,21 @@
+{
+    "name": "eolymp/php-sdk",
+    "description": "PHP SDK for Eolymp API",
+    "type": "library",
+    "require": {
+        "google/protobuf": "^3.17"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Kolodyazhnyy",
+            "email": "sergey@e-olymp.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Eolymp\\": "src/",
+            "GPBMetadata\\Eolymp\\": "src/"
+        }
+    }
+}
