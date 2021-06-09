@@ -16,7 +16,7 @@ class SubmissionCompletedEvent extends \Google\Protobuf\Internal\Message
     /**
      * submission
      *
-     * Generated from protobuf field <code>.eolymp.apollo.Submission submission = 1;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission submission = 1;</code>
      */
     protected $submission = null;
     /**
@@ -32,7 +32,7 @@ class SubmissionCompletedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Apollo\Submission $submission
+     *     @type \Eolymp\Atlas\Submission $submission
      *           submission
      *     @type bool $update
      *           true, if submission has been completed before, this flag is set when submission is being retested
@@ -46,8 +46,8 @@ class SubmissionCompletedEvent extends \Google\Protobuf\Internal\Message
     /**
      * submission
      *
-     * Generated from protobuf field <code>.eolymp.apollo.Submission submission = 1;</code>
-     * @return \Eolymp\Apollo\Submission
+     * Generated from protobuf field <code>.eolymp.atlas.Submission submission = 1;</code>
+     * @return \Eolymp\Atlas\Submission
      */
     public function getSubmission()
     {
@@ -57,13 +57,13 @@ class SubmissionCompletedEvent extends \Google\Protobuf\Internal\Message
     /**
      * submission
      *
-     * Generated from protobuf field <code>.eolymp.apollo.Submission submission = 1;</code>
-     * @param \Eolymp\Apollo\Submission $var
+     * Generated from protobuf field <code>.eolymp.atlas.Submission submission = 1;</code>
+     * @param \Eolymp\Atlas\Submission $var
      * @return $this
      */
     public function setSubmission($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Apollo\Submission::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission::class);
         $this->submission = $var;
 
         return $this;

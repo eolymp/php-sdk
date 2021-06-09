@@ -468,4 +468,114 @@ class AtlasClient {
         return call_user_func($this->invoker, "eolymp.atlas.Atlas/RefuseSolution", $input, RefuseSolutionOutput::class, $context);
     }
 
+    /**
+     * @param CreateCategoryInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateCategoryOutput output message
+     */
+    public function CreateCategory(CreateCategoryInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateCategory", $input, CreateCategoryOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateCategoryInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateCategoryOutput output message
+     */
+    public function UpdateCategory(UpdateCategoryInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateCategory", $input, UpdateCategoryOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteCategoryInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteCategoryOutput output message
+     */
+    public function DeleteCategory(DeleteCategoryInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteCategory", $input, DeleteCategoryOutput::class, $context);
+    }
+
+    /**
+     * @param ListCategoriesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListCategoriesOutput output message
+     */
+    public function ListCategories(ListCategoriesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListCategories", $input, ListCategoriesOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeCategoryInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeCategoryOutput output message
+     */
+    public function DescribeCategory(DescribeCategoryInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeCategory", $input, DescribeCategoryOutput::class, $context);
+    }
+
+    /**
+     * @param AssignCategoryInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignCategoryOutput output message
+     */
+    public function AssignCategory(AssignCategoryInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/AssignCategory", $input, AssignCategoryOutput::class, $context);
+    }
+
+    /**
+     * @param UnassignCategoryInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignCategoryOutput output message
+     */
+    public function UnassignCategory(UnassignCategoryInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UnassignCategory", $input, UnassignCategoryOutput::class, $context);
+    }
+
+    /**
+     * @param CreateSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateSubmissionOutput output message
+     */
+    public function CreateSubmission(CreateSubmissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateSubmission", $input, CreateSubmissionOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeSubmissionOutput output message
+     */
+    public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeSubmission", $input, DescribeSubmissionOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeScoreInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreOutput output message
+     */
+    public function DescribeScore(DescribeScoreInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeScore", $input, DescribeScoreOutput::class, $context);
+    }
+
 }

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.ListProblemsInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.ListCategoriesInput</code>
  */
-class ListProblemsInput extends \Google\Protobuf\Internal\Message
+class ListCategoriesInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * pagination
@@ -26,7 +26,7 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.atlas.ListProblemsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ListCategoriesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
 
@@ -39,7 +39,7 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Atlas\ListProblemsInput\Filter $filters
+     *     @type \Eolymp\Atlas\ListCategoriesInput\Filter $filters
      *           data filters
      * }
      */
@@ -99,8 +99,8 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.atlas.ListProblemsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Atlas\ListProblemsInput\Filter
+     * Generated from protobuf field <code>.eolymp.atlas.ListCategoriesInput.Filter filters = 40;</code>
+     * @return \Eolymp\Atlas\ListCategoriesInput\Filter
      */
     public function getFilters()
     {
@@ -110,13 +110,13 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.atlas.ListProblemsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Atlas\ListProblemsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.atlas.ListCategoriesInput.Filter filters = 40;</code>
+     * @param \Eolymp\Atlas\ListCategoriesInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListProblemsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListCategoriesInput_Filter::class);
         $this->filters = $var;
 
         return $this;
