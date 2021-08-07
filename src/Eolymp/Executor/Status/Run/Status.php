@@ -30,13 +30,13 @@ class Status
      */
     const EXECUTING = 2;
     /**
-     * timeout reached
+     * timeout reached (wall time usage reached)
      *
      * Generated from protobuf enum <code>TIMEOUT = 3;</code>
      */
     const TIMEOUT = 3;
     /**
-     * cpu exhausted
+     * cpu exhausted (cpu time usage reached)
      *
      * Generated from protobuf enum <code>CPU_EXHAUSTED = 4;</code>
      */
@@ -78,7 +78,7 @@ class Status
      */
     const VERIFICATION_FAILURE = 10;
     /**
-     * run won't be executed due to overall timeout, or too many errors
+     * run won't be executed due to preconditions (overall timeout, block etc)
      *
      * Generated from protobuf enum <code>SKIPPED = 11;</code>
      */

@@ -13,6 +13,12 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DescribeObjectOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Object total size.
+     *
+     * Generated from protobuf field <code>int32 size = 1;</code>
+     */
+    protected $size = 0;
 
     /**
      * Constructor.
@@ -20,11 +26,39 @@ class DescribeObjectOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $size
+     *           Object total size.
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Keeper\Keeper::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Object total size.
+     *
+     * Generated from protobuf field <code>int32 size = 1;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Object total size.
+     *
+     * Generated from protobuf field <code>int32 size = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->size = $var;
+
+        return $this;
     }
 
 }

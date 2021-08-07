@@ -12,19 +12,26 @@ use UnexpectedValueException;
 class FeedbackPolicy
 {
     /**
+     * reserved, should not be used
+     *
+     * Generated from protobuf enum <code>NO_FEEDBACK = 0;</code>
+     */
+    const NO_FEEDBACK = 0;
+    /**
      * show each test individually
      *
-     * Generated from protobuf enum <code>COMPLETE = 0;</code>
+     * Generated from protobuf enum <code>COMPLETE = 1;</code>
      */
-    const COMPLETE = 0;
+    const COMPLETE = 1;
     /**
      * show results as in ICPC contest (only first not accepted test from the set)
      *
-     * Generated from protobuf enum <code>ICPC = 1;</code>
+     * Generated from protobuf enum <code>ICPC = 2;</code>
      */
-    const ICPC = 1;
+    const ICPC = 2;
 
     private static $valueToName = [
+        self::NO_FEEDBACK => 'NO_FEEDBACK',
         self::COMPLETE => 'COMPLETE',
         self::ICPC => 'ICPC',
     ];

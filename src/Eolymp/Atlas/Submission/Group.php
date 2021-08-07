@@ -80,6 +80,12 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $memory_usage = 0;
     /**
+     * provides feedback on resource usage within the group, depending on feedback mode it might be resource usage peak in group or resource usage in the first non-accepted test
+     *
+     * Generated from protobuf field <code>float resource_usage = 47;</code>
+     */
+    protected $resource_usage = 0.0;
+    /**
      * runs of the group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Run runs = 100;</code>
@@ -114,6 +120,8 @@ class Group extends \Google\Protobuf\Internal\Message
      *           provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *     @type int|string $memory_usage
      *           provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
+     *     @type float $resource_usage
+     *           provides feedback on resource usage within the group, depending on feedback mode it might be resource usage peak in group or resource usage in the first non-accepted test
      *     @type \Eolymp\Atlas\Submission\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
      *           runs of the group
      * }
@@ -405,6 +413,32 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->memory_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * provides feedback on resource usage within the group, depending on feedback mode it might be resource usage peak in group or resource usage in the first non-accepted test
+     *
+     * Generated from protobuf field <code>float resource_usage = 47;</code>
+     * @return float
+     */
+    public function getResourceUsage()
+    {
+        return $this->resource_usage;
+    }
+
+    /**
+     * provides feedback on resource usage within the group, depending on feedback mode it might be resource usage peak in group or resource usage in the first non-accepted test
+     *
+     * Generated from protobuf field <code>float resource_usage = 47;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setResourceUsage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->resource_usage = $var;
 
         return $this;
     }

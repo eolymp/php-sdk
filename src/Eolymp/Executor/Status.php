@@ -66,7 +66,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * so listener must track versions per run (eg. run #1 last update is v.15, run #2 last update is v.41, if listener
      * receives run #1 v.20 it's newer and should be processed, but run #2 v.20 should be ignored).
      *
-     * Generated from protobuf field <code>int32 version = 100;</code>
+     * Generated from protobuf field <code>uint32 version = 100;</code>
      */
     protected $version = 0;
     /**
@@ -305,7 +305,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * so listener must track versions per run (eg. run #1 last update is v.15, run #2 last update is v.41, if listener
      * receives run #1 v.20 it's newer and should be processed, but run #2 v.20 should be ignored).
      *
-     * Generated from protobuf field <code>int32 version = 100;</code>
+     * Generated from protobuf field <code>uint32 version = 100;</code>
      * @return int
      */
     public function getVersion()
@@ -321,13 +321,13 @@ class Status extends \Google\Protobuf\Internal\Message
      * so listener must track versions per run (eg. run #1 last update is v.15, run #2 last update is v.41, if listener
      * receives run #1 v.20 it's newer and should be processed, but run #2 v.20 should be ignored).
      *
-     * Generated from protobuf field <code>int32 version = 100;</code>
+     * Generated from protobuf field <code>uint32 version = 100;</code>
      * @param int $var
      * @return $this
      */
     public function setVersion($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->version = $var;
 
         return $this;

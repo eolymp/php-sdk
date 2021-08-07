@@ -62,6 +62,28 @@ class AtlasClient {
     }
 
     /**
+     * @param UpdateVisibilityInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateVisibilityOutput output message
+     */
+    public function UpdateVisibility(UpdateVisibilityInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateVisibility", $input, UpdateVisibilityOutput::class, $context);
+    }
+
+    /**
+     * @param UpdatePrivacyInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePrivacyOutput output message
+     */
+    public function UpdatePrivacy(UpdatePrivacyInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdatePrivacy", $input, UpdatePrivacyOutput::class, $context);
+    }
+
+    /**
      * @param ListExamplesInput $input message
      * @param array $context request parameters
      *
@@ -367,6 +389,50 @@ class AtlasClient {
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeCodeTemplate", $input, DescribeCodeTemplateOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeChangeInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeChangeOutput output message
+     */
+    public function DescribeChange(DescribeChangeInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeChange", $input, DescribeChangeOutput::class, $context);
+    }
+
+    /**
+     * @param ListChangesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListChangesOutput output message
+     */
+    public function ListChanges(ListChangesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListChanges", $input, ListChangesOutput::class, $context);
+    }
+
+    /**
+     * @param ListProblemTopInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListProblemTopOutput output message
+     */
+    public function ListProblemTop(ListProblemTopInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListProblemTop", $input, ListProblemTopOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeProblemGradingInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeProblemGradingOutput output message
+     */
+    public function DescribeProblemGrading(DescribeProblemGradingInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeProblemGrading", $input, DescribeProblemGradingOutput::class, $context);
     }
 
     /**

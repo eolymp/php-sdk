@@ -30,37 +30,61 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * score, number of points awarded by verifier
      *
-     * Generated from protobuf field <code>float score = 3;</code>
+     * Generated from protobuf field <code>float score = 80;</code>
      */
     protected $score = 0.0;
     /**
+     * cost, maximum number of points awarded for the test (as defined in the task)
+     *
+     * Generated from protobuf field <code>float cost = 81;</code>
+     */
+    protected $cost = 0.0;
+    /**
      * wall time usage in milliseconds
      *
-     * Generated from protobuf field <code>int32 wall_time_usage = 4;</code>
+     * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      */
     protected $wall_time_usage = 0;
     /**
+     * wall time limit in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
+     */
+    protected $wall_time_limit = 0;
+    /**
      * cpu time usage in milliseconds
      *
-     * Generated from protobuf field <code>int32 cpu_time_usage = 5;</code>
+     * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      */
     protected $cpu_time_usage = 0;
     /**
+     * cpu time limit in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
+     */
+    protected $cpu_time_limit = 0;
+    /**
      * memory usage in bytes
      *
-     * Generated from protobuf field <code>int32 memory_usage = 6;</code>
+     * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      */
     protected $memory_usage = 0;
     /**
+     * memory limit in bytes
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
+     */
+    protected $memory_limit = 0;
+    /**
      * program exit code
      *
-     * Generated from protobuf field <code>int32 exit_code = 7;</code>
+     * Generated from protobuf field <code>uint32 exit_code = 70;</code>
      */
     protected $exit_code = 0;
     /**
      * might contain signal used to kill program
      *
-     * Generated from protobuf field <code>int32 signal = 8;</code>
+     * Generated from protobuf field <code>uint32 signal = 71;</code>
      */
     protected $signal = 0;
     /**
@@ -108,12 +132,20 @@ class Run extends \Google\Protobuf\Internal\Message
      *           run status
      *     @type float $score
      *           score, number of points awarded by verifier
+     *     @type float $cost
+     *           cost, maximum number of points awarded for the test (as defined in the task)
      *     @type int $wall_time_usage
      *           wall time usage in milliseconds
+     *     @type int $wall_time_limit
+     *           wall time limit in milliseconds
      *     @type int $cpu_time_usage
      *           cpu time usage in milliseconds
-     *     @type int $memory_usage
+     *     @type int $cpu_time_limit
+     *           cpu time limit in milliseconds
+     *     @type int|string $memory_usage
      *           memory usage in bytes
+     *     @type int|string $memory_limit
+     *           memory limit in bytes
      *     @type int $exit_code
      *           program exit code
      *     @type int $signal
@@ -196,7 +228,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * score, number of points awarded by verifier
      *
-     * Generated from protobuf field <code>float score = 3;</code>
+     * Generated from protobuf field <code>float score = 80;</code>
      * @return float
      */
     public function getScore()
@@ -207,7 +239,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * score, number of points awarded by verifier
      *
-     * Generated from protobuf field <code>float score = 3;</code>
+     * Generated from protobuf field <code>float score = 80;</code>
      * @param float $var
      * @return $this
      */
@@ -220,9 +252,35 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * cost, maximum number of points awarded for the test (as defined in the task)
+     *
+     * Generated from protobuf field <code>float cost = 81;</code>
+     * @return float
+     */
+    public function getCost()
+    {
+        return $this->cost;
+    }
+
+    /**
+     * cost, maximum number of points awarded for the test (as defined in the task)
+     *
+     * Generated from protobuf field <code>float cost = 81;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCost($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->cost = $var;
+
+        return $this;
+    }
+
+    /**
      * wall time usage in milliseconds
      *
-     * Generated from protobuf field <code>int32 wall_time_usage = 4;</code>
+     * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      * @return int
      */
     public function getWallTimeUsage()
@@ -233,14 +291,40 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * wall time usage in milliseconds
      *
-     * Generated from protobuf field <code>int32 wall_time_usage = 4;</code>
+     * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      * @param int $var
      * @return $this
      */
     public function setWallTimeUsage($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->wall_time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * wall time limit in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
+     * @return int
+     */
+    public function getWallTimeLimit()
+    {
+        return $this->wall_time_limit;
+    }
+
+    /**
+     * wall time limit in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWallTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->wall_time_limit = $var;
 
         return $this;
     }
@@ -248,7 +332,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * cpu time usage in milliseconds
      *
-     * Generated from protobuf field <code>int32 cpu_time_usage = 5;</code>
+     * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      * @return int
      */
     public function getCpuTimeUsage()
@@ -259,14 +343,40 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * cpu time usage in milliseconds
      *
-     * Generated from protobuf field <code>int32 cpu_time_usage = 5;</code>
+     * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      * @param int $var
      * @return $this
      */
     public function setCpuTimeUsage($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->cpu_time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * cpu time limit in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
+     * @return int
+     */
+    public function getCpuTimeLimit()
+    {
+        return $this->cpu_time_limit;
+    }
+
+    /**
+     * cpu time limit in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCpuTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cpu_time_limit = $var;
 
         return $this;
     }
@@ -274,8 +384,8 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * memory usage in bytes
      *
-     * Generated from protobuf field <code>int32 memory_usage = 6;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
+     * @return int|string
      */
     public function getMemoryUsage()
     {
@@ -285,14 +395,40 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * memory usage in bytes
      *
-     * Generated from protobuf field <code>int32 memory_usage = 6;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setMemoryUsage($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint64($var);
         $this->memory_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * memory limit in bytes
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
+     * @return int|string
+     */
+    public function getMemoryLimit()
+    {
+        return $this->memory_limit;
+    }
+
+    /**
+     * memory limit in bytes
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMemoryLimit($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->memory_limit = $var;
 
         return $this;
     }
@@ -300,7 +436,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * program exit code
      *
-     * Generated from protobuf field <code>int32 exit_code = 7;</code>
+     * Generated from protobuf field <code>uint32 exit_code = 70;</code>
      * @return int
      */
     public function getExitCode()
@@ -311,13 +447,13 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * program exit code
      *
-     * Generated from protobuf field <code>int32 exit_code = 7;</code>
+     * Generated from protobuf field <code>uint32 exit_code = 70;</code>
      * @param int $var
      * @return $this
      */
     public function setExitCode($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->exit_code = $var;
 
         return $this;
@@ -326,7 +462,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * might contain signal used to kill program
      *
-     * Generated from protobuf field <code>int32 signal = 8;</code>
+     * Generated from protobuf field <code>uint32 signal = 71;</code>
      * @return int
      */
     public function getSignal()
@@ -337,13 +473,13 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * might contain signal used to kill program
      *
-     * Generated from protobuf field <code>int32 signal = 8;</code>
+     * Generated from protobuf field <code>uint32 signal = 71;</code>
      * @param int $var
      * @return $this
      */
     public function setSignal($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->signal = $var;
 
         return $this;

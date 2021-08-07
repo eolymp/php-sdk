@@ -14,9 +14,9 @@ class ScoringMode
     /**
      * no score is awarded for passing tests from this testset
      *
-     * Generated from protobuf enum <code>NONE = 0;</code>
+     * Generated from protobuf enum <code>NO_SCORE = 0;</code>
      */
-    const NONE = 0;
+    const NO_SCORE = 0;
     /**
      * scores are awarded for passing each individual test
      *
@@ -31,7 +31,7 @@ class ScoringMode
     const ALL = 2;
 
     private static $valueToName = [
-        self::NONE => 'NONE',
+        self::NO_SCORE => 'NO_SCORE',
         self::EACH => 'EACH',
         self::ALL => 'ALL',
     ];

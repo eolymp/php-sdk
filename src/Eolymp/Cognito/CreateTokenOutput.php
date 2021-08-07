@@ -30,6 +30,10 @@ class CreateTokenOutput extends \Google\Protobuf\Internal\Message
      */
     private $scopes;
     /**
+     * Generated from protobuf field <code>string refresh_token = 10;</code>
+     */
+    protected $refresh_token = '';
+    /**
      * Generated from protobuf field <code>string user_id = 100;</code>
      */
     protected $user_id = '';
@@ -48,6 +52,7 @@ class CreateTokenOutput extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type \Google\Protobuf\Timestamp $expires_at
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type string $refresh_token
      *     @type string $user_id
      *     @type string $username
      * }
@@ -141,6 +146,28 @@ class CreateTokenOutput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->scopes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string refresh_token = 10;</code>
+     * @return string
+     */
+    public function getRefreshToken()
+    {
+        return $this->refresh_token;
+    }
+
+    /**
+     * Generated from protobuf field <code>string refresh_token = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRefreshToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->refresh_token = $var;
 
         return $this;
     }

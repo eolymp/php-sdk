@@ -27,12 +27,17 @@ class Type
      * Generated from protobuf enum <code>CONTAINING = 3;</code>
      */
     const CONTAINING = 3;
+    /**
+     * Generated from protobuf enum <code>STARTING = 4;</code>
+     */
+    const STARTING = 4;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::EQUAL => 'EQUAL',
         self::NOT_EQUAL => 'NOT_EQUAL',
         self::CONTAINING => 'CONTAINING',
+        self::STARTING => 'STARTING',
     ];
 
     public static function name($value)

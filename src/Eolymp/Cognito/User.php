@@ -26,6 +26,30 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $username = '';
     /**
+     * Email address (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string email = 3;</code>
+     */
+    protected $email = '';
+    /**
+     * Account is active, user can login
+     *
+     * Generated from protobuf field <code>bool active = 4;</code>
+     */
+    protected $active = false;
+    /**
+     * Rank
+     *
+     * Generated from protobuf field <code>uint32 rank = 41;</code>
+     */
+    protected $rank = 0;
+    /**
+     * Rank trend (up or down)
+     *
+     * Generated from protobuf field <code>.eolymp.cognito.User.RankTrend rank_trend = 42;</code>
+     */
+    protected $rank_trend = 0;
+    /**
      * Full name
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -38,11 +62,53 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $picture = '';
     /**
+     * Company
+     *
+     * Generated from protobuf field <code>string company = 12;</code>
+     */
+    protected $company = '';
+    /**
+     * Occupation
+     *
+     * Generated from protobuf field <code>string occupation = 13;</code>
+     */
+    protected $occupation = '';
+    /**
      * Country code
      *
      * Generated from protobuf field <code>string country = 21;</code>
      */
     protected $country = '';
+    /**
+     * City
+     *
+     * Generated from protobuf field <code>string city = 22;</code>
+     */
+    protected $city = '';
+    /**
+     * Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string email_status = 32;</code>
+     */
+    protected $email_status = '';
+    /**
+     * Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string birthday = 33;</code>
+     */
+    protected $birthday = '';
+    /**
+     * Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
+     */
+    protected $registered_on = null;
+    /**
+     * Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
+     */
+    protected $last_activity = null;
 
     /**
      * Constructor.
@@ -54,12 +120,34 @@ class User extends \Google\Protobuf\Internal\Message
      *           Unique identifier
      *     @type string $username
      *           Username (handler)
+     *     @type string $email
+     *           Email address (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type bool $active
+     *           Account is active, user can login
+     *     @type int $rank
+     *           Rank
+     *     @type int $rank_trend
+     *           Rank trend (up or down)
      *     @type string $name
      *           Full name
      *     @type string $picture
      *           Profile picture
+     *     @type string $company
+     *           Company
+     *     @type string $occupation
+     *           Occupation
      *     @type string $country
      *           Country code
+     *     @type string $city
+     *           City
+     *     @type string $email_status
+     *           Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type string $birthday
+     *           Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type \Google\Protobuf\Timestamp $registered_on
+     *           Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type \Google\Protobuf\Timestamp $last_activity
+     *           Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
      * }
      */
     public function __construct($data = NULL) {
@@ -120,6 +208,110 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Email address (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string email = 3;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Email address (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string email = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Account is active, user can login
+     *
+     * Generated from protobuf field <code>bool active = 4;</code>
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Account is active, user can login
+     *
+     * Generated from protobuf field <code>bool active = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Rank
+     *
+     * Generated from protobuf field <code>uint32 rank = 41;</code>
+     * @return int
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    /**
+     * Rank
+     *
+     * Generated from protobuf field <code>uint32 rank = 41;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRank($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank = $var;
+
+        return $this;
+    }
+
+    /**
+     * Rank trend (up or down)
+     *
+     * Generated from protobuf field <code>.eolymp.cognito.User.RankTrend rank_trend = 42;</code>
+     * @return int
+     */
+    public function getRankTrend()
+    {
+        return $this->rank_trend;
+    }
+
+    /**
+     * Rank trend (up or down)
+     *
+     * Generated from protobuf field <code>.eolymp.cognito.User.RankTrend rank_trend = 42;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRankTrend($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Cognito\User_RankTrend::class);
+        $this->rank_trend = $var;
+
+        return $this;
+    }
+
+    /**
      * Full name
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -172,6 +364,58 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Company
+     *
+     * Generated from protobuf field <code>string company = 12;</code>
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Company
+     *
+     * Generated from protobuf field <code>string company = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompany($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company = $var;
+
+        return $this;
+    }
+
+    /**
+     * Occupation
+     *
+     * Generated from protobuf field <code>string occupation = 13;</code>
+     * @return string
+     */
+    public function getOccupation()
+    {
+        return $this->occupation;
+    }
+
+    /**
+     * Occupation
+     *
+     * Generated from protobuf field <code>string occupation = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOccupation($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->occupation = $var;
+
+        return $this;
+    }
+
+    /**
      * Country code
      *
      * Generated from protobuf field <code>string country = 21;</code>
@@ -193,6 +437,136 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * City
+     *
+     * Generated from protobuf field <code>string city = 22;</code>
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * City
+     *
+     * Generated from protobuf field <code>string city = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string email_status = 32;</code>
+     * @return string
+     */
+    public function getEmailStatus()
+    {
+        return $this->email_status;
+    }
+
+    /**
+     * Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string email_status = 32;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmailStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string birthday = 33;</code>
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>string birthday = 33;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBirthday($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->birthday = $var;
+
+        return $this;
+    }
+
+    /**
+     * Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getRegisteredOn()
+    {
+        return $this->registered_on;
+    }
+
+    /**
+     * Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setRegisteredOn($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->registered_on = $var;
+
+        return $this;
+    }
+
+    /**
+     * Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getLastActivity()
+    {
+        return $this->last_activity;
+    }
+
+    /**
+     * Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastActivity($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_activity = $var;
 
         return $this;
     }

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Constraint defines limitations which apply to the run.
+ *
  * Generated from protobuf message <code>eolymp.executor.Task.Constraint</code>
  */
 class Constraint extends \Google\Protobuf\Internal\Message

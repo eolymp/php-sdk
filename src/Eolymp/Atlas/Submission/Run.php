@@ -34,6 +34,10 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $memory_usage = 0;
     /**
+     * Generated from protobuf field <code>float resource_usage = 5;</code>
+     */
+    protected $resource_usage = 0.0;
+    /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      */
     protected $index = 0;
@@ -66,6 +70,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type int $cpu_time_usage
      *           cpu time (time cpu was active)
      *     @type int|string $memory_usage
+     *     @type float $resource_usage
      *     @type int $index
      *     @type string $test_id
      *     @type float $cost
@@ -170,6 +175,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->memory_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float resource_usage = 5;</code>
+     * @return float
+     */
+    public function getResourceUsage()
+    {
+        return $this->resource_usage;
+    }
+
+    /**
+     * Generated from protobuf field <code>float resource_usage = 5;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setResourceUsage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->resource_usage = $var;
 
         return $this;
     }

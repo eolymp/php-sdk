@@ -18,7 +18,7 @@ class CognitoClient {
     }
 
     /**
-     * Create oauth token
+     * Create oauth access token.
      *
      * @param CreateTokenInput $input message
      * @param array $context request parameters
@@ -31,7 +31,7 @@ class CognitoClient {
     }
 
     /**
-     * Introspect oauth token
+     * Introspect oauth token, returns access token details for a given token.
      *
      * @param IntrospectTokenInput $input message
      * @param array $context request parameters
@@ -44,7 +44,7 @@ class CognitoClient {
     }
 
     /**
-     * Create authorization code
+     * Create authorization code.
      *
      * @param CreateAuthorizationInput $input message
      * @param array $context request parameters
@@ -57,7 +57,7 @@ class CognitoClient {
     }
 
     /**
-     * Create user account
+     * Create user account.
      *
      * @param CreateUserInput $input message
      * @param array $context request parameters
@@ -70,7 +70,7 @@ class CognitoClient {
     }
 
     /**
-     * Verify user email, takes email verification token and if it's correct changes email_status to CONFIRMED
+     * Verify user email, takes email verification token and if it's correct - changes email status to CONFIRMED.
      *
      * @param VerifyEmailInput $input message
      * @param array $context request parameters
@@ -83,7 +83,7 @@ class CognitoClient {
     }
 
     /**
-     * Update user email, changes user's current email and sends verification token.
+     * Update user email, changes user's current email and starts email verification process.
      *
      * @param UpdateEmailInput $input message
      * @param array $context request parameters
@@ -97,7 +97,7 @@ class CognitoClient {
 
     /**
      * Start access recovery procedure, this method will send recovery token to the user's email.
-     * This method will return OK even if email does not exist
+     * This method will return OK even if email does not exist.
      *
      * @param StartRecoveryInput $input message
      * @param array $context request parameters
@@ -124,7 +124,7 @@ class CognitoClient {
     }
 
     /**
-     * introspect user
+     * Introspect user, returns user profile for authenticated user.
      *
      * @param IntrospectUserInput $input message
      * @param array $context request parameters
@@ -137,7 +137,7 @@ class CognitoClient {
     }
 
     /**
-     * describe user
+     * Describe user by ID.
      *
      * @param DescribeUserInput $input message
      * @param array $context request parameters
@@ -150,7 +150,7 @@ class CognitoClient {
     }
 
     /**
-     * list users
+     * List users.
      *
      * @param ListUsersInput $input message
      * @param array $context request parameters
@@ -163,7 +163,7 @@ class CognitoClient {
     }
 
     /**
-     * describe user quota
+     * Describe user's quota.
      *
      * @param IntrospectQuotaInput $input message
      * @param array $context request parameters
@@ -173,6 +173,45 @@ class CognitoClient {
     public function IntrospectQuota(IntrospectQuotaInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.cognito.Cognito/IntrospectQuota", $input, IntrospectQuotaOutput::class, $context);
+    }
+
+    /**
+     * List roles assigned to a user.
+     *
+     * @param ListRolesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListRolesOutput output message
+     */
+    public function ListRoles(ListRolesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListRoles", $input, ListRolesOutput::class, $context);
+    }
+
+    /**
+     * Update user's roles.
+     *
+     * @param UpdateRolesInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateRolesOutput output message
+     */
+    public function UpdateRoles(UpdateRolesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdateRoles", $input, UpdateRolesOutput::class, $context);
+    }
+
+    /**
+     * Lists entitlements granted to authenticated user.
+     *
+     * @param ListServiceEntitlementsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListServiceEntitlementsOutput output message
+     */
+    public function ListServiceEntitlements(ListServiceEntitlementsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListServiceEntitlements", $input, ListServiceEntitlementsOutput::class, $context);
     }
 
 }

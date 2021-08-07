@@ -14,9 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class DownloadObjectInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Object key.
+     *
      * Generated from protobuf field <code>string key = 1;</code>
      */
     protected $key = '';
+    /**
+     * Receive data starting at "offset" bytes.
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     */
+    protected $offset = 0;
+    /**
+     * Maximum amount of data to be received.
+     *
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     */
+    protected $size = 0;
 
     /**
      * Constructor.
@@ -25,6 +39,11 @@ class DownloadObjectInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $key
+     *           Object key.
+     *     @type int $offset
+     *           Receive data starting at "offset" bytes.
+     *     @type int $size
+     *           Maximum amount of data to be received.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +52,8 @@ class DownloadObjectInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Object key.
+     *
      * Generated from protobuf field <code>string key = 1;</code>
      * @return string
      */
@@ -42,6 +63,8 @@ class DownloadObjectInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Object key.
+     *
      * Generated from protobuf field <code>string key = 1;</code>
      * @param string $var
      * @return $this
@@ -50,6 +73,58 @@ class DownloadObjectInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Receive data starting at "offset" bytes.
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * Receive data starting at "offset" bytes.
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Maximum amount of data to be received.
+     *
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Maximum amount of data to be received.
+     *
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->size = $var;
 
         return $this;
     }

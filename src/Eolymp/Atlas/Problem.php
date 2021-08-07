@@ -26,11 +26,17 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * Flag which defines if problem is shown in public catalog.
+     * Problem is visible to users in public catalog.
      *
-     * Generated from protobuf field <code>bool enabled = 11;</code>
+     * Generated from protobuf field <code>bool visible = 11;</code>
      */
-    protected $enabled = false;
+    protected $visible = false;
+    /**
+     * Problem is only accessible to users who were specifically granted access to it.
+     *
+     * Generated from protobuf field <code>bool private = 12;</code>
+     */
+    protected $private = false;
 
     /**
      * Constructor.
@@ -42,8 +48,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Unique identifier.
      *     @type int $index
      *           Index in the public problem catalog.
-     *     @type bool $enabled
-     *           Flag which defines if problem is shown in public catalog.
+     *     @type bool $visible
+     *           Problem is visible to users in public catalog.
+     *     @type bool $private
+     *           Problem is only accessible to users who were specifically granted access to it.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,27 +112,53 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flag which defines if problem is shown in public catalog.
+     * Problem is visible to users in public catalog.
      *
-     * Generated from protobuf field <code>bool enabled = 11;</code>
+     * Generated from protobuf field <code>bool visible = 11;</code>
      * @return bool
      */
-    public function getEnabled()
+    public function getVisible()
     {
-        return $this->enabled;
+        return $this->visible;
     }
 
     /**
-     * Flag which defines if problem is shown in public catalog.
+     * Problem is visible to users in public catalog.
      *
-     * Generated from protobuf field <code>bool enabled = 11;</code>
+     * Generated from protobuf field <code>bool visible = 11;</code>
      * @param bool $var
      * @return $this
      */
-    public function setEnabled($var)
+    public function setVisible($var)
     {
         GPBUtil::checkBool($var);
-        $this->enabled = $var;
+        $this->visible = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem is only accessible to users who were specifically granted access to it.
+     *
+     * Generated from protobuf field <code>bool private = 12;</code>
+     * @return bool
+     */
+    public function getPrivate()
+    {
+        return $this->private;
+    }
+
+    /**
+     * Problem is only accessible to users who were specifically granted access to it.
+     *
+     * Generated from protobuf field <code>bool private = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPrivate($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->private = $var;
 
         return $this;
     }

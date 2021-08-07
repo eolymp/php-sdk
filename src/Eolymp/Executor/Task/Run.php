@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Run defines a single execution of the task.
+ *
  * Generated from protobuf message <code>eolymp.executor.Task.Run</code>
  */
 class Run extends \Google\Protobuf\Internal\Message
@@ -32,6 +34,12 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $debug = false;
     /**
+     * A number of points awarded for passing this run.
+     *
+     * Generated from protobuf field <code>float cost = 4;</code>
+     */
+    protected $cost = 0.0;
+    /**
      * Labels used to match constraints and preconditions.
      *
      * Generated from protobuf field <code>repeated string labels = 30;</code>
@@ -52,6 +60,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Index defines order in which runs are executed.
      *     @type bool $debug
      *           Use debugging (report content of stdout, stderr and exit code).
+     *     @type float $cost
+     *           A number of points awarded for passing this run.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to match constraints and preconditions.
      *     @type string $input_object_id
@@ -143,6 +153,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->debug = $var;
+
+        return $this;
+    }
+
+    /**
+     * A number of points awarded for passing this run.
+     *
+     * Generated from protobuf field <code>float cost = 4;</code>
+     * @return float
+     */
+    public function getCost()
+    {
+        return $this->cost;
+    }
+
+    /**
+     * A number of points awarded for passing this run.
+     *
+     * Generated from protobuf field <code>float cost = 4;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCost($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->cost = $var;
 
         return $this;
     }

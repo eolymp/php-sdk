@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Precondition defines criteria for a run to be executed. If this criteria does not meet, the run will be skipped.
+ *
  * Generated from protobuf message <code>eolymp.executor.Task.Precondition</code>
  */
 class Precondition extends \Google\Protobuf\Internal\Message

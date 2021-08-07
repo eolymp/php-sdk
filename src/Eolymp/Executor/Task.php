@@ -33,16 +33,24 @@ class Task extends \Google\Protobuf\Internal\Message
     protected $origin = '';
     /**
      * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
+     * Currently not supported.
      *
      * Generated from protobuf field <code>uint32 priority = 3;</code>
      */
     protected $priority = 0;
     /**
      * Programming language.
+     * Deprecated: use runtime instead.
      *
-     * Generated from protobuf field <code>string lang = 10;</code>
+     * Generated from protobuf field <code>string lang = 1000;</code>
      */
     protected $lang = '';
+    /**
+     * Runtime which should be used to execute source code.
+     *
+     * Generated from protobuf field <code>string runtime = 10;</code>
+     */
+    protected $runtime = '';
     /**
      * Source code.
      *
@@ -51,6 +59,7 @@ class Task extends \Google\Protobuf\Internal\Message
     protected $source = '';
     /**
      * Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
+     * Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
      *
      * Generated from protobuf field <code>bool use_file_io = 12;</code>
      */
@@ -62,6 +71,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
      */
     protected $redirect_stderr_to_stdout = false;
+    /**
+     * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
+     */
+    private $preconditions;
     /**
      * Execution constraints, define limits imposed on each run.
      *
@@ -86,12 +101,6 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Run runs = 30;</code>
      */
     private $runs;
-    /**
-     * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
-     */
-    private $preconditions;
 
     /**
      * Constructor.
@@ -109,15 +118,22 @@ class Task extends \Google\Protobuf\Internal\Message
      *           can easily filter status reports they are interested in.
      *     @type int $priority
      *           Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
+     *           Currently not supported.
      *     @type string $lang
      *           Programming language.
+     *           Deprecated: use runtime instead.
+     *     @type string $runtime
+     *           Runtime which should be used to execute source code.
      *     @type string $source
      *           Source code.
      *     @type bool $use_file_io
      *           Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
+     *           Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Verifier will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
+     *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
+     *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
      *           Execution constraints, define limits imposed on each run.
      *     @type \Eolymp\Executor\Verifier $verifier
@@ -126,8 +142,6 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Interactor configuration
      *     @type \Eolymp\Executor\Task\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
      *           Run configurations.
-     *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
-     *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      * }
      */
     public function __construct($data = NULL) {
@@ -197,6 +211,7 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
+     * Currently not supported.
      *
      * Generated from protobuf field <code>uint32 priority = 3;</code>
      * @return int
@@ -208,6 +223,7 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
+     * Currently not supported.
      *
      * Generated from protobuf field <code>uint32 priority = 3;</code>
      * @param int $var
@@ -223,8 +239,9 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Programming language.
+     * Deprecated: use runtime instead.
      *
-     * Generated from protobuf field <code>string lang = 10;</code>
+     * Generated from protobuf field <code>string lang = 1000;</code>
      * @return string
      */
     public function getLang()
@@ -234,8 +251,9 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Programming language.
+     * Deprecated: use runtime instead.
      *
-     * Generated from protobuf field <code>string lang = 10;</code>
+     * Generated from protobuf field <code>string lang = 1000;</code>
      * @param string $var
      * @return $this
      */
@@ -243,6 +261,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->lang = $var;
+
+        return $this;
+    }
+
+    /**
+     * Runtime which should be used to execute source code.
+     *
+     * Generated from protobuf field <code>string runtime = 10;</code>
+     * @return string
+     */
+    public function getRuntime()
+    {
+        return $this->runtime;
+    }
+
+    /**
+     * Runtime which should be used to execute source code.
+     *
+     * Generated from protobuf field <code>string runtime = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime = $var;
 
         return $this;
     }
@@ -275,6 +319,7 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
+     * Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
      *
      * Generated from protobuf field <code>bool use_file_io = 12;</code>
      * @return bool
@@ -286,6 +331,7 @@ class Task extends \Google\Protobuf\Internal\Message
 
     /**
      * Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
+     * Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
      *
      * Generated from protobuf field <code>bool use_file_io = 12;</code>
      * @param bool $var
@@ -323,6 +369,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->redirect_stderr_to_stdout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPreconditions()
+    {
+        return $this->preconditions;
+    }
+
+    /**
+     * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
+     * @param \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPreconditions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\Precondition::class);
+        $this->preconditions = $arr;
 
         return $this;
     }
@@ -427,32 +499,6 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\Run::class);
         $this->runs = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPreconditions()
-    {
-        return $this->preconditions;
-    }
-
-    /**
-     * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
-     * @param \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPreconditions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\Precondition::class);
-        $this->preconditions = $arr;
 
         return $this;
     }

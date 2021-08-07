@@ -45,6 +45,10 @@ class CreateTokenInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string scope = 8;</code>
      */
     protected $scope = '';
+    /**
+     * Generated from protobuf field <code>string refresh_token = 9;</code>
+     */
+    protected $refresh_token = '';
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class CreateTokenInput extends \Google\Protobuf\Internal\Message
      *     @type string $code
      *     @type string $code_verifier
      *     @type string $scope
+     *     @type string $refresh_token
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,28 @@ class CreateTokenInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->scope = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string refresh_token = 9;</code>
+     * @return string
+     */
+    public function getRefreshToken()
+    {
+        return $this->refresh_token;
+    }
+
+    /**
+     * Generated from protobuf field <code>string refresh_token = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRefreshToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->refresh_token = $var;
 
         return $this;
     }
