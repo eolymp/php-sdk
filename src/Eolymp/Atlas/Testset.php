@@ -58,13 +58,13 @@ class Testset extends \Google\Protobuf\Internal\Message
     /**
      * Score mode defines how score points are awarded for this testset. See ScoringMode enumeration for details.
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Testset.ScoringMode scoring_mode = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 30;</code>
      */
     protected $scoring_mode = 0;
     /**
      * Feedback policy defines how result will be shown back to the user
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Testset.FeedbackPolicy feedback_policy = 40;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy feedback_policy = 40;</code>
      */
     protected $feedback_policy = 0;
 
@@ -284,7 +284,7 @@ class Testset extends \Google\Protobuf\Internal\Message
     /**
      * Score mode defines how score points are awarded for this testset. See ScoringMode enumeration for details.
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Testset.ScoringMode scoring_mode = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 30;</code>
      * @return int
      */
     public function getScoringMode()
@@ -295,13 +295,13 @@ class Testset extends \Google\Protobuf\Internal\Message
     /**
      * Score mode defines how score points are awarded for this testset. See ScoringMode enumeration for details.
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Testset.ScoringMode scoring_mode = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 30;</code>
      * @param int $var
      * @return $this
      */
     public function setScoringMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Testset_ScoringMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\ScoringMode::class);
         $this->scoring_mode = $var;
 
         return $this;
@@ -310,7 +310,7 @@ class Testset extends \Google\Protobuf\Internal\Message
     /**
      * Feedback policy defines how result will be shown back to the user
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Testset.FeedbackPolicy feedback_policy = 40;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy feedback_policy = 40;</code>
      * @return int
      */
     public function getFeedbackPolicy()
@@ -321,13 +321,13 @@ class Testset extends \Google\Protobuf\Internal\Message
     /**
      * Feedback policy defines how result will be shown back to the user
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Testset.FeedbackPolicy feedback_policy = 40;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy feedback_policy = 40;</code>
      * @param int $var
      * @return $this
      */
     public function setFeedbackPolicy($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Testset_FeedbackPolicy::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\FeedbackPolicy::class);
         $this->feedback_policy = $var;
 
         return $this;

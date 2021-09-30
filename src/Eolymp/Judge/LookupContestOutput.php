@@ -17,6 +17,10 @@ class LookupContestOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
      */
     protected $contest = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 2;</code>
+     */
+    protected $appearance = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class LookupContestOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Judge\Contest $contest
+     *     @type \Eolymp\Judge\Contest\Appearance $appearance
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class LookupContestOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest::class);
         $this->contest = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 2;</code>
+     * @return \Eolymp\Judge\Contest\Appearance
+     */
+    public function getAppearance()
+    {
+        return $this->appearance;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 2;</code>
+     * @param \Eolymp\Judge\Contest\Appearance $var
+     * @return $this
+     */
+    public function setAppearance($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Appearance::class);
+        $this->appearance = $var;
 
         return $this;
     }

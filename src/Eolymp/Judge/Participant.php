@@ -20,41 +20,33 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * user identifier
-     *
-     * Generated from protobuf field <code>string user_id = 2;</code>
-     */
-    protected $user_id = '';
-    /**
      * contest
      *
      * Generated from protobuf field <code>string contest_id = 3;</code>
      */
     protected $contest_id = '';
     /**
-     * username
+     * name
      *
-     * Generated from protobuf field <code>string username = 4;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 5;</code>
+     */
+    private $users;
+    /**
+     * deprecated: user identifier
+     *
+     * Generated from protobuf field <code>string user_id = 9998;</code>
+     */
+    protected $user_id = '';
+    /**
+     * deprecated: username
+     *
+     * Generated from protobuf field <code>string username = 9999;</code>
      */
     protected $username = '';
-    /**
-     * total score
-     *
-     * Generated from protobuf field <code>float score = 10;</code>
-     */
-    protected $score = 0.0;
-    /**
-     * total penalty
-     *
-     * Generated from protobuf field <code>float penalty = 11;</code>
-     */
-    protected $penalty = 0.0;
-    /**
-     * breakdown of score by problem
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Score breakdown = 12;</code>
-     */
-    private $breakdown;
     /**
      * status (see explanation to enumeration values)
      *
@@ -102,18 +94,15 @@ class Participant extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique identifier of the participant (can not be set when creating participant)
-     *     @type string $user_id
-     *           user identifier
      *     @type string $contest_id
      *           contest
+     *     @type string $name
+     *           name
+     *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type string $user_id
+     *           deprecated: user identifier
      *     @type string $username
-     *           username
-     *     @type float $score
-     *           total score
-     *     @type float $penalty
-     *           total penalty
-     *     @type \Eolymp\Judge\Participant\Score[]|\Google\Protobuf\Internal\RepeatedField $breakdown
-     *           breakdown of score by problem
+     *           deprecated: username
      *     @type int $status
      *           status (see explanation to enumeration values)
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -162,32 +151,6 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * user identifier
-     *
-     * Generated from protobuf field <code>string user_id = 2;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * user identifier
-     *
-     * Generated from protobuf field <code>string user_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
      * contest
      *
      * Generated from protobuf field <code>string contest_id = 3;</code>
@@ -214,9 +177,83 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * username
+     * name
      *
-     * Generated from protobuf field <code>string username = 4;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * name
+     *
+     * Generated from protobuf field <code>string name = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 5;</code>
+     * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\User::class);
+        $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * deprecated: user identifier
+     *
+     * Generated from protobuf field <code>string user_id = 9998;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * deprecated: user identifier
+     *
+     * Generated from protobuf field <code>string user_id = 9998;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated: username
+     *
+     * Generated from protobuf field <code>string username = 9999;</code>
      * @return string
      */
     public function getUsername()
@@ -225,9 +262,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * username
+     * deprecated: username
      *
-     * Generated from protobuf field <code>string username = 4;</code>
+     * Generated from protobuf field <code>string username = 9999;</code>
      * @param string $var
      * @return $this
      */
@@ -235,84 +272,6 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->username = $var;
-
-        return $this;
-    }
-
-    /**
-     * total score
-     *
-     * Generated from protobuf field <code>float score = 10;</code>
-     * @return float
-     */
-    public function getScore()
-    {
-        return $this->score;
-    }
-
-    /**
-     * total score
-     *
-     * Generated from protobuf field <code>float score = 10;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setScore($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->score = $var;
-
-        return $this;
-    }
-
-    /**
-     * total penalty
-     *
-     * Generated from protobuf field <code>float penalty = 11;</code>
-     * @return float
-     */
-    public function getPenalty()
-    {
-        return $this->penalty;
-    }
-
-    /**
-     * total penalty
-     *
-     * Generated from protobuf field <code>float penalty = 11;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setPenalty($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->penalty = $var;
-
-        return $this;
-    }
-
-    /**
-     * breakdown of score by problem
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Score breakdown = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getBreakdown()
-    {
-        return $this->breakdown;
-    }
-
-    /**
-     * breakdown of score by problem
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Score breakdown = 12;</code>
-     * @param \Eolymp\Judge\Participant\Score[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setBreakdown($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\Score::class);
-        $this->breakdown = $arr;
 
         return $this;
     }

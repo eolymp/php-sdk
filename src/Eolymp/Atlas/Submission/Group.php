@@ -52,13 +52,13 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * how group is scored
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.ScoringMode scoring_mode = 22;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 22;</code>
      */
     protected $scoring_mode = 0;
     /**
      * how tests are shown to the user
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.FeedbackPolicy feedback_policy = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy feedback_policy = 30;</code>
      */
     protected $feedback_policy = 0;
     /**
@@ -290,7 +290,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * how group is scored
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.ScoringMode scoring_mode = 22;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 22;</code>
      * @return int
      */
     public function getScoringMode()
@@ -301,13 +301,13 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * how group is scored
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.ScoringMode scoring_mode = 22;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 22;</code>
      * @param int $var
      * @return $this
      */
     public function setScoringMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Group_ScoringMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\ScoringMode::class);
         $this->scoring_mode = $var;
 
         return $this;
@@ -316,7 +316,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * how tests are shown to the user
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.FeedbackPolicy feedback_policy = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy feedback_policy = 30;</code>
      * @return int
      */
     public function getFeedbackPolicy()
@@ -327,13 +327,13 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * how tests are shown to the user
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.FeedbackPolicy feedback_policy = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy feedback_policy = 30;</code>
      * @param int $var
      * @return $this
      */
     public function setFeedbackPolicy($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Group_FeedbackPolicy::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\FeedbackPolicy::class);
         $this->feedback_policy = $var;
 
         return $this;

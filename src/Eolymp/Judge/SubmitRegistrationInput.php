@@ -14,14 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * is optional in case participant_id is set
-     *
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     */
-    protected $contest_id = '';
-    /**
-     * if empty, contest_id must be set, in this case participant will be looked by authorized user ID and contest_id
-     *
      * Generated from protobuf field <code>string participant_id = 2;</code>
      */
     protected $participant_id = '';
@@ -36,10 +28,7 @@ class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $contest_id
-     *           is optional in case participant_id is set
      *     @type string $participant_id
-     *           if empty, contest_id must be set, in this case participant will be looked by authorized user ID and contest_id
      *     @type \Eolymp\Judge\Registration $registration
      * }
      */
@@ -49,34 +38,6 @@ class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * is optional in case participant_id is set
-     *
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * is optional in case participant_id is set
-     *
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * if empty, contest_id must be set, in this case participant will be looked by authorized user ID and contest_id
-     *
      * Generated from protobuf field <code>string participant_id = 2;</code>
      * @return string
      */
@@ -86,8 +47,6 @@ class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if empty, contest_id must be set, in this case participant will be looked by authorized user ID and contest_id
-     *
      * Generated from protobuf field <code>string participant_id = 2;</code>
      * @param string $var
      * @return $this

@@ -42,7 +42,7 @@ class Status
      */
     const INACTIVE = 4;
     /**
-     * participant needs to fill registration form
+     * participant added to the contest but needs to fill registration form
      *
      * Generated from protobuf enum <code>UNREGISTERED = 5;</code>
      */

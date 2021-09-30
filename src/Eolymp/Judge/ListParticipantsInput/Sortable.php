@@ -24,23 +24,18 @@ class Sortable
      */
     const PENALTY = 2;
     /**
-     * Generated from protobuf enum <code>USER_ID = 3;</code>
+     * Generated from protobuf enum <code>STARTED_AT = 3;</code>
      */
-    const USER_ID = 3;
+    const STARTED_AT = 3;
     /**
-     * Generated from protobuf enum <code>STARTED_AT = 4;</code>
+     * Generated from protobuf enum <code>COMPLETE_AT = 4;</code>
      */
-    const STARTED_AT = 4;
-    /**
-     * Generated from protobuf enum <code>COMPLETE_AT = 5;</code>
-     */
-    const COMPLETE_AT = 5;
+    const COMPLETE_AT = 4;
 
     private static $valueToName = [
         self::RANK => 'RANK',
         self::SCORE => 'SCORE',
         self::PENALTY => 'PENALTY',
-        self::USER_ID => 'USER_ID',
         self::STARTED_AT => 'STARTED_AT',
         self::COMPLETE_AT => 'COMPLETE_AT',
     ];

@@ -25,6 +25,12 @@ class StartRecoveryInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string captcha = 2;</code>
      */
     protected $captcha = '';
+    /**
+     * default locale for user
+     *
+     * Generated from protobuf field <code>string locale = 20;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class StartRecoveryInput extends \Google\Protobuf\Internal\Message
      *           email of the user who starts recovery procedure
      *     @type string $captcha
      *           captcha challenge
+     *     @type string $locale
+     *           default locale for user
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class StartRecoveryInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->captcha = $var;
+
+        return $this;
+    }
+
+    /**
+     * default locale for user
+     *
+     * Generated from protobuf field <code>string locale = 20;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * default locale for user
+     *
+     * Generated from protobuf field <code>string locale = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

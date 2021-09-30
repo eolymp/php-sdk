@@ -44,6 +44,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
+     * defines feedback policy for the problem
+     *
+     * Generated from protobuf field <code>.eolymp.judge.FeedbackPolicy feedback_policy = 10;</code>
+     */
+    protected $feedback_policy = 0;
+    /**
      * in milliseconds
      *
      * Generated from protobuf field <code>uint32 time_limit = 200;</code>
@@ -84,6 +90,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           ID of the problem in database achieve
      *     @type string $contest_id
      *           contest
+     *     @type int $feedback_policy
+     *           defines feedback policy for the problem
      *     @type int $time_limit
      *           in milliseconds
      *     @type int|string $memory_limit
@@ -225,6 +233,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * defines feedback policy for the problem
+     *
+     * Generated from protobuf field <code>.eolymp.judge.FeedbackPolicy feedback_policy = 10;</code>
+     * @return int
+     */
+    public function getFeedbackPolicy()
+    {
+        return $this->feedback_policy;
+    }
+
+    /**
+     * defines feedback policy for the problem
+     *
+     * Generated from protobuf field <code>.eolymp.judge.FeedbackPolicy feedback_policy = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFeedbackPolicy($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\FeedbackPolicy::class);
+        $this->feedback_policy = $var;
 
         return $this;
     }

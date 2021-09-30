@@ -41,18 +41,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 7;</code>
      */
     private $own;
-    /**
-     * deprecated use is_read_by_participant
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read = 9991;</code>
-     */
-    private $is_read;
-    /**
-     * deprecated use is_read_by_owner
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool needs_reply = 9992;</code>
-     */
-    private $needs_reply;
 
     /**
      * Constructor.
@@ -67,10 +55,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_read_by_owner
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_open
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $own
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_read
-     *           deprecated use is_read_by_participant
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $needs_reply
-     *           deprecated use is_read_by_owner
      * }
      */
     public function __construct($data = NULL) {
@@ -228,58 +212,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->own = $arr;
-
-        return $this;
-    }
-
-    /**
-     * deprecated use is_read_by_participant
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read = 9991;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getIsRead()
-    {
-        return $this->is_read;
-    }
-
-    /**
-     * deprecated use is_read_by_participant
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read = 9991;</code>
-     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setIsRead($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->is_read = $arr;
-
-        return $this;
-    }
-
-    /**
-     * deprecated use is_read_by_owner
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool needs_reply = 9992;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getNeedsReply()
-    {
-        return $this->needs_reply;
-    }
-
-    /**
-     * deprecated use is_read_by_owner
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool needs_reply = 9992;</code>
-     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setNeedsReply($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->needs_reply = $arr;
 
         return $this;
     }

@@ -18,7 +18,7 @@ class ListExamplesOutput extends \Google\Protobuf\Internal\Message
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Test items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Test items = 2;</code>
      */
     private $items;
 
@@ -29,7 +29,7 @@ class ListExamplesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Judge\Test[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Judge\Problem\Test[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class ListExamplesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Test items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Test items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -69,13 +69,13 @@ class ListExamplesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Test items = 2;</code>
-     * @param \Eolymp\Judge\Test[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Test items = 2;</code>
+     * @param \Eolymp\Judge\Problem\Test[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Test::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Problem\Test::class);
         $this->items = $arr;
 
         return $this;

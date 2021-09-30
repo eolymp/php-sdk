@@ -170,6 +170,32 @@ class JudgeClient {
     }
 
     /**
+     * ConfigureAppearance allows to configure contest website appearance.
+     *
+     * @param ConfigureAppearanceInput $input message
+     * @param array $context request parameters
+     *
+     * @return ConfigureAppearanceOutput output message
+     */
+    public function ConfigureAppearance(ConfigureAppearanceInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ConfigureAppearance", $input, ConfigureAppearanceOutput::class, $context);
+    }
+
+    /**
+     * DescribeAppearance allows fetch contest website appearance.
+     *
+     * @param DescribeAppearanceInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeAppearanceOutput output message
+     */
+    public function DescribeAppearance(DescribeAppearanceInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeAppearance", $input, DescribeAppearanceOutput::class, $context);
+    }
+
+    /**
      * SubmitRegistration allows participant to submit registration form data.
      *
      * @param SubmitRegistrationInput $input message
@@ -255,6 +281,19 @@ class JudgeClient {
     }
 
     /**
+     * Return code template for problem
+     *
+     * @param DescribeCodeTemplateInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeCodeTemplateOutput output message
+     */
+    public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeCodeTemplate", $input, DescribeCodeTemplateOutput::class, $context);
+    }
+
+    /**
      * @param ListStatementsInput $input message
      * @param array $context request parameters
      *
@@ -334,58 +373,6 @@ class JudgeClient {
     }
 
     /**
-     * Verify if passcode is required for the contest and if authenticated token has entered the passcode.
-     *
-     * @param VerifyPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return VerifyPasscodeOutput output message
-     */
-    public function VerifyPasscode(VerifyPasscodeInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/VerifyPasscode", $input, VerifyPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Enter passcode marks current session as one authenticated by passcode.
-     *
-     * @param EnterPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return EnterPasscodeOutput output message
-     */
-    public function EnterPasscode(EnterPasscodeInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/EnterPasscode", $input, EnterPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Set a new passcode to the participant, if passcode was not set it will be now required
-     *
-     * @param ResetPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return ResetPasscodeOutput output message
-     */
-    public function ResetPasscode(ResetPasscodeInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ResetPasscode", $input, ResetPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Remove passcode from participant and allow her to enter contest without passcode.
-     *
-     * @param RemovePasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return RemovePasscodeOutput output message
-     */
-    public function RemovePasscode(RemovePasscodeInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RemovePasscode", $input, RemovePasscodeOutput::class, $context);
-    }
-
-    /**
      * @param RemoveParticipantInput $input message
      * @param array $context request parameters
      *
@@ -455,6 +442,58 @@ class JudgeClient {
     public function StartContest(StartContestInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.judge.Judge/StartContest", $input, StartContestOutput::class, $context);
+    }
+
+    /**
+     * Verify if passcode is required for the contest and if authenticated token has entered the passcode.
+     *
+     * @param VerifyPasscodeInput $input message
+     * @param array $context request parameters
+     *
+     * @return VerifyPasscodeOutput output message
+     */
+    public function VerifyPasscode(VerifyPasscodeInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/VerifyPasscode", $input, VerifyPasscodeOutput::class, $context);
+    }
+
+    /**
+     * Enter passcode marks current session as one authenticated by passcode.
+     *
+     * @param EnterPasscodeInput $input message
+     * @param array $context request parameters
+     *
+     * @return EnterPasscodeOutput output message
+     */
+    public function EnterPasscode(EnterPasscodeInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/EnterPasscode", $input, EnterPasscodeOutput::class, $context);
+    }
+
+    /**
+     * Set a new passcode to the participant, if passcode was not set it will be now required
+     *
+     * @param ResetPasscodeInput $input message
+     * @param array $context request parameters
+     *
+     * @return ResetPasscodeOutput output message
+     */
+    public function ResetPasscode(ResetPasscodeInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ResetPasscode", $input, ResetPasscodeOutput::class, $context);
+    }
+
+    /**
+     * Remove passcode from participant and allow her to enter contest without passcode.
+     *
+     * @param RemovePasscodeInput $input message
+     * @param array $context request parameters
+     *
+     * @return RemovePasscodeOutput output message
+     */
+    public function RemovePasscode(RemovePasscodeInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/RemovePasscode", $input, RemovePasscodeOutput::class, $context);
     }
 
     /**
@@ -737,16 +776,160 @@ class JudgeClient {
     }
 
     /**
-     * Return code template for problem
+     * Create scoreboard for a contest
      *
-     * @param DescribeCodeTemplateInput $input message
+     * @param CreateScoreboardInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeCodeTemplateOutput output message
+     * @return CreateScoreboardOutput output message
      */
-    public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
+    public function CreateScoreboard(CreateScoreboardInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeCodeTemplate", $input, DescribeCodeTemplateOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.judge.Judge/CreateScoreboard", $input, CreateScoreboardOutput::class, $context);
+    }
+
+    /**
+     * Update existing scoreboard in a contest
+     *
+     * @param UpdateScoreboardInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateScoreboardOutput output message
+     */
+    public function UpdateScoreboard(UpdateScoreboardInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateScoreboard", $input, UpdateScoreboardOutput::class, $context);
+    }
+
+    /**
+     * Rebuild scoreboard
+     *
+     * @param RebuildScoreboardInput $input message
+     * @param array $context request parameters
+     *
+     * @return RebuildScoreboardOutput output message
+     */
+    public function RebuildScoreboard(RebuildScoreboardInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/RebuildScoreboard", $input, RebuildScoreboardOutput::class, $context);
+    }
+
+    /**
+     * Delete scoreboard
+     *
+     * @param DeleteScoreboardInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteScoreboardOutput output message
+     */
+    public function DeleteScoreboard(DeleteScoreboardInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DeleteScoreboard", $input, DeleteScoreboardOutput::class, $context);
+    }
+
+    /**
+     * Describe scoreboard
+     *
+     * @param DescribeScoreboardInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardOutput output message
+     */
+    public function DescribeScoreboard(DescribeScoreboardInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScoreboard", $input, DescribeScoreboardOutput::class, $context);
+    }
+
+    /**
+     * Describe scoreboard
+     *
+     * @param DescribeDefaultScoreboardInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeDefaultScoreboardOutput output message
+     */
+    public function DescribeDefaultScoreboard(DescribeDefaultScoreboardInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeDefaultScoreboard", $input, DescribeDefaultScoreboardOutput::class, $context);
+    }
+
+    /**
+     * @param ListScoreboardsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScoreboardsOutput output message
+     */
+    public function ListScoreboards(ListScoreboardsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListScoreboards", $input, ListScoreboardsOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeScoreboardRowInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardRowOutput output message
+     */
+    public function DescribeScoreboardRow(DescribeScoreboardRowInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScoreboardRow", $input, DescribeScoreboardRowOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeDefaultScoreboardRowInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeDefaultScoreboardRowOutput output message
+     */
+    public function DescribeDefaultScoreboardRow(DescribeDefaultScoreboardRowInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeDefaultScoreboardRow", $input, DescribeDefaultScoreboardRowOutput::class, $context);
+    }
+
+    /**
+     * @param ListScoreboardRowsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScoreboardRowsOutput output message
+     */
+    public function ListScoreboardRows(ListScoreboardRowsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListScoreboardRows", $input, ListScoreboardRowsOutput::class, $context);
+    }
+
+    /**
+     * @param ListDefaultScoreboardRowsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListDefaultScoreboardRowsOutput output message
+     */
+    public function ListDefaultScoreboardRows(ListDefaultScoreboardRowsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListDefaultScoreboardRows", $input, ListDefaultScoreboardRowsOutput::class, $context);
+    }
+
+    /**
+     * Lists entitlements granted to authenticated user.
+     *
+     * @param ListEntitlementsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListEntitlementsOutput output message
+     */
+    public function ListEntitlements(ListEntitlementsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListEntitlements", $input, ListEntitlementsOutput::class, $context);
+    }
+
+    /**
+     * @param ListActivitiesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListActivitiesOutput output message
+     */
+    public function ListActivities(ListActivitiesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListActivities", $input, ListActivitiesOutput::class, $context);
     }
 
 }

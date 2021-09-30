@@ -57,6 +57,32 @@ class CognitoClient {
     }
 
     /**
+     * Revoke token disables given token and related tokens.
+     *
+     * @param RevokeTokenInput $input message
+     * @param array $context request parameters
+     *
+     * @return RevokeTokenOutput output message
+     */
+    public function RevokeToken(RevokeTokenInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/RevokeToken", $input, RevokeTokenOutput::class, $context);
+    }
+
+    /**
+     * Signout revokes all user's tokens or all tokens of current session.
+     *
+     * @param SignoutInput $input message
+     * @param array $context request parameters
+     *
+     * @return SignoutOutput output message
+     */
+    public function Signout(SignoutInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/Signout", $input, SignoutOutput::class, $context);
+    }
+
+    /**
      * Create user account.
      *
      * @param CreateUserInput $input message
@@ -176,6 +202,19 @@ class CognitoClient {
     }
 
     /**
+     * List own roles.
+     *
+     * @param IntrospectRolesInput $input message
+     * @param array $context request parameters
+     *
+     * @return IntrospectRolesOutput output message
+     */
+    public function IntrospectRoles(IntrospectRolesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/IntrospectRoles", $input, IntrospectRolesOutput::class, $context);
+    }
+
+    /**
      * List roles assigned to a user.
      *
      * @param ListRolesInput $input message
@@ -204,14 +243,14 @@ class CognitoClient {
     /**
      * Lists entitlements granted to authenticated user.
      *
-     * @param ListServiceEntitlementsInput $input message
+     * @param ListEntitlementsInput $input message
      * @param array $context request parameters
      *
-     * @return ListServiceEntitlementsOutput output message
+     * @return ListEntitlementsOutput output message
      */
-    public function ListServiceEntitlements(ListServiceEntitlementsInput $input, array $context = [])
+    public function ListEntitlements(ListEntitlementsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListServiceEntitlements", $input, ListServiceEntitlementsOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListEntitlements", $input, ListEntitlementsOutput::class, $context);
     }
 
 }

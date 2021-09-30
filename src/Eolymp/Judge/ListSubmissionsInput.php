@@ -14,23 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * simple filters based on different use-cases
-     *
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
-    /**
-     * filter submissions by problem
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     */
-    protected $problem_id = '';
-    /**
-     * filter submissions by participant
-     *
-     * Generated from protobuf field <code>string participant_id = 3;</code>
-     */
-    protected $participant_id = '';
     /**
      * pagination
      *
@@ -55,11 +41,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *           simple filters based on different use-cases
-     *     @type string $problem_id
-     *           filter submissions by problem
-     *     @type string $participant_id
-     *           filter submissions by participant
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -73,8 +54,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * simple filters based on different use-cases
-     *
      * Generated from protobuf field <code>string contest_id = 1;</code>
      * @return string
      */
@@ -84,8 +63,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * simple filters based on different use-cases
-     *
      * Generated from protobuf field <code>string contest_id = 1;</code>
      * @param string $var
      * @return $this
@@ -94,58 +71,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * filter submissions by problem
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * filter submissions by problem
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * filter submissions by participant
-     *
-     * Generated from protobuf field <code>string participant_id = 3;</code>
-     * @return string
-     */
-    public function getParticipantId()
-    {
-        return $this->participant_id;
-    }
-
-    /**
-     * filter submissions by participant
-     *
-     * Generated from protobuf field <code>string participant_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setParticipantId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->participant_id = $var;
 
         return $this;
     }

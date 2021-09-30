@@ -26,12 +26,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Contest type.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Type type = 3;</code>
-     */
-    protected $type = 0;
-    /**
      * Contest starting time, after this time users will be able to see problems and make submissions.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
@@ -61,7 +55,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      * 23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
      * but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
      *
-     * Generated from protobuf field <code>int32 duration = 12;</code>
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
      */
     protected $duration = 0;
     /**
@@ -71,11 +65,17 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Public contest flag, public contests are listed to unauthorized users and allow any authorized user to participate.
+     * Contest visibility defines who can participate and where contest is listed.
      *
-     * Generated from protobuf field <code>bool public = 30;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Visibility visibility = 30;</code>
      */
-    protected $public = false;
+    protected $visibility = 0;
+    /**
+     * ParticipationMode defines timeframe for participation: online or virtual
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
+     */
+    protected $participation_mode = 0;
     /**
      * Domain for contest, used to lookup for contest by domain name.
      *
@@ -93,8 +93,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest unique identifier, automatically allocated when contest is created.
      *     @type string $name
      *           Contest name.
-     *     @type int $type
-     *           Contest type.
      *     @type \Google\Protobuf\Timestamp $starts_at
      *           Contest starting time, after this time users will be able to see problems and make submissions.
      *     @type \Google\Protobuf\Duration $starts_in
@@ -110,8 +108,10 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
      *     @type int $status
      *           Contest status (see statuses above)
-     *     @type bool $public
-     *           Public contest flag, public contests are listed to unauthorized users and allow any authorized user to participate.
+     *     @type int $visibility
+     *           Contest visibility defines who can participate and where contest is listed.
+     *     @type int $participation_mode
+     *           ParticipationMode defines timeframe for participation: online or virtual
      *     @type string $domain
      *           Domain for contest, used to lookup for contest by domain name.
      * }
@@ -169,32 +169,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Contest type.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Type type = 3;</code>
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Contest type.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Type type = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Type::class);
-        $this->type = $var;
 
         return $this;
     }
@@ -309,7 +283,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      * 23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
      * but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
      *
-     * Generated from protobuf field <code>int32 duration = 12;</code>
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
      * @return int
      */
     public function getDuration()
@@ -323,13 +297,13 @@ class Contest extends \Google\Protobuf\Internal\Message
      * 23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
      * but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
      *
-     * Generated from protobuf field <code>int32 duration = 12;</code>
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
      * @param int $var
      * @return $this
      */
     public function setDuration($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkUint32($var);
         $this->duration = $var;
 
         return $this;
@@ -362,27 +336,53 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Public contest flag, public contests are listed to unauthorized users and allow any authorized user to participate.
+     * Contest visibility defines who can participate and where contest is listed.
      *
-     * Generated from protobuf field <code>bool public = 30;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Visibility visibility = 30;</code>
+     * @return int
      */
-    public function getPublic()
+    public function getVisibility()
     {
-        return $this->public;
+        return $this->visibility;
     }
 
     /**
-     * Public contest flag, public contests are listed to unauthorized users and allow any authorized user to participate.
+     * Contest visibility defines who can participate and where contest is listed.
      *
-     * Generated from protobuf field <code>bool public = 30;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Visibility visibility = 30;</code>
+     * @param int $var
      * @return $this
      */
-    public function setPublic($var)
+    public function setVisibility($var)
     {
-        GPBUtil::checkBool($var);
-        $this->public = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * ParticipationMode defines timeframe for participation: online or virtual
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
+     * @return int
+     */
+    public function getParticipationMode()
+    {
+        return $this->participation_mode;
+    }
+
+    /**
+     * ParticipationMode defines timeframe for participation: online or virtual
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setParticipationMode($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_ParticipationMode::class);
+        $this->participation_mode = $var;
 
         return $this;
     }

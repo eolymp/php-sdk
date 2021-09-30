@@ -37,6 +37,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
      */
     private $public;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
+     */
+    private $visibility;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $starts_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $ends_at
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $public
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $visibility
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->public = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->visibility = $arr;
 
         return $this;
     }

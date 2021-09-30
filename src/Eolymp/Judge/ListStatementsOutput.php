@@ -18,7 +18,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Statement items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Statement items = 2;</code>
      */
     private $items;
 
@@ -29,7 +29,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Judge\Statement[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Judge\Problem\Statement[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Statement items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Statement items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -69,13 +69,13 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Statement items = 2;</code>
-     * @param \Eolymp\Judge\Statement[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Statement items = 2;</code>
+     * @param \Eolymp\Judge\Problem\Statement[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Statement::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Problem\Statement::class);
         $this->items = $arr;
 
         return $this;
