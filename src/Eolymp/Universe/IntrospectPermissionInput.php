@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.AddMemberInput</code>
+ * Generated from protobuf message <code>eolymp.universe.IntrospectPermissionInput</code>
  */
-class AddMemberInput extends \Google\Protobuf\Internal\Message
+class IntrospectPermissionInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
-     */
-    protected $member = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class AddMemberInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $space_id
-     *     @type \Eolymp\Universe\Member $member
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class AddMemberInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->space_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
-     * @return \Eolymp\Universe\Member
-     */
-    public function getMember()
-    {
-        return $this->member;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
-     * @param \Eolymp\Universe\Member $var
-     * @return $this
-     */
-    public function setMember($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Member::class);
-        $this->member = $var;
 
         return $this;
     }

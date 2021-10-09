@@ -14,21 +14,59 @@ use Google\Protobuf\Internal\GPBUtil;
 class Space extends \Google\Protobuf\Internal\Message
 {
     /**
+     * space unique identifier
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
+     * space key used to build URLs
+     *
      * Generated from protobuf field <code>string key = 2;</code>
      */
     protected $key = '';
     /**
+     * human friendly name
+     *
      * Generated from protobuf field <code>string name = 10;</code>
      */
     protected $name = '';
     /**
+     * space logo image
+     *
      * Generated from protobuf field <code>string image = 11;</code>
      */
     protected $image = '';
+    /**
+     * space use type
+     *
+     * Generated from protobuf field <code>.eolymp.universe.Space.Type type = 12;</code>
+     */
+    protected $type = 0;
+    /**
+     * plan defines billing plan for the space
+     *
+     * Generated from protobuf field <code>string plan = 13;</code>
+     */
+    protected $plan = '';
+    /**
+     * type of the space membership (members are individuals or teams)
+     *
+     * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
+     */
+    protected $membership = 0;
+    /**
+     * in case of TEAM membership, minimum size of the team (can be 1 or more)
+     *
+     * Generated from protobuf field <code>uint32 min_team_size = 21;</code>
+     */
+    protected $min_team_size = 0;
+    /**
+     * in case of TEAM membership, maximum size of the team (up to 8 users)
+     *
+     * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
+     */
+    protected $max_team_size = 0;
 
     /**
      * Constructor.
@@ -37,9 +75,23 @@ class Space extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *           space unique identifier
      *     @type string $key
+     *           space key used to build URLs
      *     @type string $name
+     *           human friendly name
      *     @type string $image
+     *           space logo image
+     *     @type int $type
+     *           space use type
+     *     @type string $plan
+     *           plan defines billing plan for the space
+     *     @type int $membership
+     *           type of the space membership (members are individuals or teams)
+     *     @type int $min_team_size
+     *           in case of TEAM membership, minimum size of the team (can be 1 or more)
+     *     @type int $max_team_size
+     *           in case of TEAM membership, maximum size of the team (up to 8 users)
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +100,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space unique identifier
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
@@ -57,6 +111,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space unique identifier
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +126,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space key used to build URLs
+     *
      * Generated from protobuf field <code>string key = 2;</code>
      * @return string
      */
@@ -79,6 +137,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space key used to build URLs
+     *
      * Generated from protobuf field <code>string key = 2;</code>
      * @param string $var
      * @return $this
@@ -92,6 +152,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * human friendly name
+     *
      * Generated from protobuf field <code>string name = 10;</code>
      * @return string
      */
@@ -101,6 +163,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * human friendly name
+     *
      * Generated from protobuf field <code>string name = 10;</code>
      * @param string $var
      * @return $this
@@ -114,6 +178,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space logo image
+     *
      * Generated from protobuf field <code>string image = 11;</code>
      * @return string
      */
@@ -123,6 +189,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space logo image
+     *
      * Generated from protobuf field <code>string image = 11;</code>
      * @param string $var
      * @return $this
@@ -131,6 +199,136 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * space use type
+     *
+     * Generated from protobuf field <code>.eolymp.universe.Space.Type type = 12;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * space use type
+     *
+     * Generated from protobuf field <code>.eolymp.universe.Space.Type type = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Type::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * plan defines billing plan for the space
+     *
+     * Generated from protobuf field <code>string plan = 13;</code>
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
+
+    /**
+     * plan defines billing plan for the space
+     *
+     * Generated from protobuf field <code>string plan = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlan($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->plan = $var;
+
+        return $this;
+    }
+
+    /**
+     * type of the space membership (members are individuals or teams)
+     *
+     * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
+     * @return int
+     */
+    public function getMembership()
+    {
+        return $this->membership;
+    }
+
+    /**
+     * type of the space membership (members are individuals or teams)
+     *
+     * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMembership($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Membership::class);
+        $this->membership = $var;
+
+        return $this;
+    }
+
+    /**
+     * in case of TEAM membership, minimum size of the team (can be 1 or more)
+     *
+     * Generated from protobuf field <code>uint32 min_team_size = 21;</code>
+     * @return int
+     */
+    public function getMinTeamSize()
+    {
+        return $this->min_team_size;
+    }
+
+    /**
+     * in case of TEAM membership, minimum size of the team (can be 1 or more)
+     *
+     * Generated from protobuf field <code>uint32 min_team_size = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinTeamSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_team_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * in case of TEAM membership, maximum size of the team (up to 8 users)
+     *
+     * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
+     * @return int
+     */
+    public function getMaxTeamSize()
+    {
+        return $this->max_team_size;
+    }
+
+    /**
+     * in case of TEAM membership, maximum size of the team (up to 8 users)
+     *
+     * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxTeamSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_team_size = $var;
 
         return $this;
     }

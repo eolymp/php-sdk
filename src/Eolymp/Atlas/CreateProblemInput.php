@@ -17,6 +17,10 @@ class CreateProblemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
      */
     protected $problem = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
+     */
+    protected $statement = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateProblemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Atlas\Problem $problem
+     *     @type \Eolymp\Atlas\Statement $statement
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CreateProblemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem::class);
         $this->problem = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
+     * @return \Eolymp\Atlas\Statement
+     */
+    public function getStatement()
+    {
+        return $this->statement;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
+     * @param \Eolymp\Atlas\Statement $var
+     * @return $this
+     */
+    public function setStatement($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Statement::class);
+        $this->statement = $var;
 
         return $this;
     }

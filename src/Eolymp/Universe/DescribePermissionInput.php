@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.AddMemberInput</code>
+ * Generated from protobuf message <code>eolymp.universe.DescribePermissionInput</code>
  */
-class AddMemberInput extends \Google\Protobuf\Internal\Message
+class DescribePermissionInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
+     * Generated from protobuf field <code>string user_id = 2;</code>
      */
-    protected $member = null;
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class AddMemberInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $space_id
-     *     @type \Eolymp\Universe\Member $member
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class AddMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
-     * @return \Eolymp\Universe\Member
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     * @return string
      */
-    public function getMember()
+    public function getUserId()
     {
-        return $this->member;
+        return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
-     * @param \Eolymp\Universe\Member $var
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setMember($var)
+    public function setUserId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Member::class);
-        $this->member = $var;
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

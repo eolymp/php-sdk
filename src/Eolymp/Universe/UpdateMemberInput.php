@@ -18,9 +18,9 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>string role = 2;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
      */
-    protected $role = '';
+    protected $member = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
-     *     @type string $role
+     *     @type \Eolymp\Universe\Member $member
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string role = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
+     * @return \Eolymp\Universe\Member
      */
-    public function getRole()
+    public function getMember()
     {
-        return $this->role;
+        return $this->member;
     }
 
     /**
-     * Generated from protobuf field <code>string role = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.universe.Member member = 2;</code>
+     * @param \Eolymp\Universe\Member $var
      * @return $this
      */
-    public function setRole($var)
+    public function setMember($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->role = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Member::class);
+        $this->member = $var;
 
         return $this;
     }

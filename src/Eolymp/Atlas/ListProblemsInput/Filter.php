@@ -29,6 +29,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_private = 4;</code>
      */
     private $is_private;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 5;</code>
+     */
+    private $number;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $category_id
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_visible
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_private
+     *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $number
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->is_private = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 5;</code>
+     * @param \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->number = $arr;
 
         return $this;
     }

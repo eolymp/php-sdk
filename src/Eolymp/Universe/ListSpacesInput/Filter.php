@@ -25,6 +25,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      */
     private $name;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 4;</code>
+     */
+    private $own;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool member = 5;</code>
+     */
+    private $member;
 
     /**
      * Constructor.
@@ -35,6 +43,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $key
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $own
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $member
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +114,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
         $this->name = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOwn()
+    {
+        return $this->own;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 4;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOwn($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->own = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool member = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMember()
+    {
+        return $this->member;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool member = 5;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMember($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->member = $arr;
 
         return $this;
     }

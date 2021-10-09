@@ -82,6 +82,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string domain = 40;</code>
      */
     protected $domain = '';
+    /**
+     * Deprecated, space where contest was created, should be avoided
+     *
+     * Generated from protobuf field <code>string space_id = 1000;</code>
+     */
+    protected $space_id = '';
 
     /**
      * Constructor.
@@ -114,6 +120,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           ParticipationMode defines timeframe for participation: online or virtual
      *     @type string $domain
      *           Domain for contest, used to lookup for contest by domain name.
+     *     @type string $space_id
+     *           Deprecated, space where contest was created, should be avoided
      * }
      */
     public function __construct($data = NULL) {
@@ -409,6 +417,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->domain = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated, space where contest was created, should be avoided
+     *
+     * Generated from protobuf field <code>string space_id = 1000;</code>
+     * @return string
+     */
+    public function getSpaceId()
+    {
+        return $this->space_id;
+    }
+
+    /**
+     * Deprecated, space where contest was created, should be avoided
+     *
+     * Generated from protobuf field <code>string space_id = 1000;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_id = $var;
 
         return $this;
     }

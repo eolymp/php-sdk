@@ -22,9 +22,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Index in the public problem catalog.
      *
-     * Generated from protobuf field <code>int32 index = 10;</code>
+     * Generated from protobuf field <code>int32 number = 10;</code>
      */
-    protected $index = 0;
+    protected $number = 0;
     /**
      * Problem is visible to users in public catalog.
      *
@@ -46,7 +46,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Unique identifier.
-     *     @type int $index
+     *     @type int $number
      *           Index in the public problem catalog.
      *     @type bool $visible
      *           Problem is visible to users in public catalog.
@@ -88,25 +88,25 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Index in the public problem catalog.
      *
-     * Generated from protobuf field <code>int32 index = 10;</code>
+     * Generated from protobuf field <code>int32 number = 10;</code>
      * @return int
      */
-    public function getIndex()
+    public function getNumber()
     {
-        return $this->index;
+        return $this->number;
     }
 
     /**
      * Index in the public problem catalog.
      *
-     * Generated from protobuf field <code>int32 index = 10;</code>
+     * Generated from protobuf field <code>int32 number = 10;</code>
      * @param int $var
      * @return $this
      */
-    public function setIndex($var)
+    public function setNumber($var)
     {
         GPBUtil::checkInt32($var);
-        $this->index = $var;
+        $this->number = $var;
 
         return $this;
     }

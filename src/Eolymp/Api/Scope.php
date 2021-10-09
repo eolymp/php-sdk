@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Scope extends \Google\Protobuf\Internal\Message
 {
     /**
+     * required OAuth scopes
+     *
      * Generated from protobuf field <code>repeated string scope = 22065;</code>
      */
     private $scope;
@@ -25,6 +27,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scope
+     *           required OAuth scopes
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class Scope extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * required OAuth scopes
+     *
      * Generated from protobuf field <code>repeated string scope = 22065;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -42,6 +47,8 @@ class Scope extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * required OAuth scopes
+     *
      * Generated from protobuf field <code>repeated string scope = 22065;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

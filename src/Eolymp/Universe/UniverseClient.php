@@ -96,6 +96,71 @@ class UniverseClient {
     }
 
     /**
+     * Add space permission
+     *
+     * @param GrantPermissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return GrantPermissionOutput output message
+     */
+    public function GrantPermission(GrantPermissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/GrantPermission", $input, GrantPermissionOutput::class, $context);
+    }
+
+    /**
+     * Delete space permission
+     *
+     * @param RevokePermissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return RevokePermissionOutput output message
+     */
+    public function RevokePermission(RevokePermissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/RevokePermission", $input, RevokePermissionOutput::class, $context);
+    }
+
+    /**
+     * Describe space permission
+     *
+     * @param DescribePermissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribePermissionOutput output message
+     */
+    public function DescribePermission(DescribePermissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/DescribePermission", $input, DescribePermissionOutput::class, $context);
+    }
+
+    /**
+     * Describe space permission
+     *
+     * @param IntrospectPermissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return IntrospectPermissionOutput output message
+     */
+    public function IntrospectPermission(IntrospectPermissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/IntrospectPermission", $input, IntrospectPermissionOutput::class, $context);
+    }
+
+    /**
+     * List permissions in a space
+     *
+     * @param ListPermissionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListPermissionsOutput output message
+     */
+    public function ListPermissions(ListPermissionsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/ListPermissions", $input, ListPermissionsOutput::class, $context);
+    }
+
+    /**
      * Add space member
      *
      * @param AddMemberInput $input message

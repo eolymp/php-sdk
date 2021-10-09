@@ -18,17 +18,17 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    protected $user_id = '';
+    protected $name = '';
     /**
-     * Generated from protobuf field <code>string role = 10;</code>
+     * Generated from protobuf field <code>bool disabled = 3;</code>
      */
-    protected $role = '';
+    protected $disabled = false;
     /**
-     * Generated from protobuf field <code>string username = 20;</code>
+     * Generated from protobuf field <code>repeated .eolymp.universe.Member.User users = 10;</code>
      */
-    protected $username = '';
+    private $users;
 
     /**
      * Constructor.
@@ -37,9 +37,9 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $user_id
-     *     @type string $role
-     *     @type string $username
+     *     @type string $name
+     *     @type bool $disabled
+     *     @type \Eolymp\Universe\Member\User[]|\Google\Protobuf\Internal\RepeatedField $users
      * }
      */
     public function __construct($data = NULL) {
@@ -70,67 +70,67 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
-    public function getUserId()
+    public function getName()
     {
-        return $this->user_id;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string role = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>bool disabled = 3;</code>
+     * @return bool
      */
-    public function getRole()
+    public function getDisabled()
     {
-        return $this->role;
+        return $this->disabled;
     }
 
     /**
-     * Generated from protobuf field <code>string role = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool disabled = 3;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setRole($var)
+    public function setDisabled($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->role = $var;
+        GPBUtil::checkBool($var);
+        $this->disabled = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string username = 20;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .eolymp.universe.Member.User users = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getUsername()
+    public function getUsers()
     {
-        return $this->username;
+        return $this->users;
     }
 
     /**
-     * Generated from protobuf field <code>string username = 20;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .eolymp.universe.Member.User users = 10;</code>
+     * @param \Eolymp\Universe\Member\User[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setUsername($var)
+    public function setUsers($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->username = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Universe\Member\User::class);
+        $this->users = $arr;
 
         return $this;
     }
