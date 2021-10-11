@@ -373,6 +373,17 @@ class JudgeClient {
     }
 
     /**
+     * @param UpdateParticipantInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateParticipantOutput output message
+     */
+    public function UpdateParticipant(UpdateParticipantInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateParticipant", $input, UpdateParticipantOutput::class, $context);
+    }
+
+    /**
      * @param RemoveParticipantInput $input message
      * @param array $context request parameters
      *
