@@ -44,6 +44,12 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $content = '';
     /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 7;</code>
+     */
+    protected $download_link = '';
+    /**
      * Statement content format. Preferred format is LaTeX, avoid using HTML format as it is deprecated.
      *
      * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
@@ -78,6 +84,8 @@ class Statement extends \Google\Protobuf\Internal\Message
      *           Statement title.
      *     @type string $content
      *           Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
+     *     @type string $download_link
+     *           Statement download link, allows to download statement in original format.
      *     @type int $format
      *           Statement content format. Preferred format is LaTeX, avoid using HTML format as it is deprecated.
      *     @type string $author
@@ -217,6 +225,32 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 7;</code>
+     * @return string
+     */
+    public function getDownloadLink()
+    {
+        return $this->download_link;
+    }
+
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_link = $var;
 
         return $this;
     }

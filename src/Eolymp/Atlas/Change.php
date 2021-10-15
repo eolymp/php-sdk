@@ -63,6 +63,9 @@ class Change extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Atlas\Change\CreateTemplate $create_template
      *     @type \Eolymp\Atlas\Change\UpdateTemplate $update_template
      *     @type \Eolymp\Atlas\Change\DeleteTemplate $delete_template
+     *     @type \Eolymp\Atlas\Change\CreateAttachment $create_attachment
+     *     @type \Eolymp\Atlas\Change\UpdateAttachment $update_attachment
+     *     @type \Eolymp\Atlas\Change\DeleteAttachment $delete_attachment
      *     @type \Eolymp\Atlas\Change\GrantPermission $grant_permission
      *     @type \Eolymp\Atlas\Change\RevokePermission $revoke_permission
      * }
@@ -552,6 +555,72 @@ class Change extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Change_DeleteTemplate::class);
         $this->writeOneof(142, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Change.CreateAttachment create_attachment = 160;</code>
+     * @return \Eolymp\Atlas\Change\CreateAttachment
+     */
+    public function getCreateAttachment()
+    {
+        return $this->readOneof(160);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Change.CreateAttachment create_attachment = 160;</code>
+     * @param \Eolymp\Atlas\Change\CreateAttachment $var
+     * @return $this
+     */
+    public function setCreateAttachment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Change_CreateAttachment::class);
+        $this->writeOneof(160, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Change.UpdateAttachment update_attachment = 161;</code>
+     * @return \Eolymp\Atlas\Change\UpdateAttachment
+     */
+    public function getUpdateAttachment()
+    {
+        return $this->readOneof(161);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Change.UpdateAttachment update_attachment = 161;</code>
+     * @param \Eolymp\Atlas\Change\UpdateAttachment $var
+     * @return $this
+     */
+    public function setUpdateAttachment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Change_UpdateAttachment::class);
+        $this->writeOneof(161, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Change.DeleteAttachment delete_attachment = 162;</code>
+     * @return \Eolymp\Atlas\Change\DeleteAttachment
+     */
+    public function getDeleteAttachment()
+    {
+        return $this->readOneof(162);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Change.DeleteAttachment delete_attachment = 162;</code>
+     * @param \Eolymp\Atlas\Change\DeleteAttachment $var
+     * @return $this
+     */
+    public function setDeleteAttachment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Change_DeleteAttachment::class);
+        $this->writeOneof(162, $var);
 
         return $this;
     }

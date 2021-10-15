@@ -392,6 +392,61 @@ class AtlasClient {
     }
 
     /**
+     * @param CreateAttachmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateAttachmentOutput output message
+     */
+    public function CreateAttachment(CreateAttachmentInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateAttachment", $input, CreateAttachmentOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateAttachmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateAttachmentOutput output message
+     */
+    public function UpdateAttachment(UpdateAttachmentInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateAttachment", $input, UpdateAttachmentOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteAttachmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteAttachmentOutput output message
+     */
+    public function DeleteAttachment(DeleteAttachmentInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteAttachment", $input, DeleteAttachmentOutput::class, $context);
+    }
+
+    /**
+     * @param ListAttachmentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAttachmentsOutput output message
+     */
+    public function ListAttachments(ListAttachmentsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListAttachments", $input, ListAttachmentsOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeAttachmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeAttachmentOutput output message
+     */
+    public function DescribeAttachment(DescribeAttachmentInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeAttachment", $input, DescribeAttachmentOutput::class, $context);
+    }
+
+    /**
      * @param DescribeChangeInput $input message
      * @param array $context request parameters
      *

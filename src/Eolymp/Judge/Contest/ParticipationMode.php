@@ -14,9 +14,9 @@ class ParticipationMode
     /**
      * reserved, should not be used
      *
-     * Generated from protobuf enum <code>NO_MODE = 0;</code>
+     * Generated from protobuf enum <code>NO_PARTICIPATION = 0;</code>
      */
-    const NO_MODE = 0;
+    const NO_PARTICIPATION = 0;
     /**
      * everyone start and finish together
      *
@@ -31,7 +31,7 @@ class ParticipationMode
     const VIRTUAL = 2;
 
     private static $valueToName = [
-        self::NO_MODE => 'NO_MODE',
+        self::NO_PARTICIPATION => 'NO_PARTICIPATION',
         self::ONLINE => 'ONLINE',
         self::VIRTUAL => 'VIRTUAL',
     ];

@@ -17,10 +17,6 @@ class CreateContestInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
      */
     protected $contest = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 2;</code>
-     */
-    protected $type = 0;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class CreateContestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Judge\Contest $contest
-     *     @type int $type
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class CreateContestInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest::class);
         $this->contest = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 2;</code>
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard_Type::class);
-        $this->type = $var;
 
         return $this;
     }

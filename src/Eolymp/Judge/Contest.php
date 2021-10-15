@@ -32,11 +32,11 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $starts_at = null;
     /**
-     * Time until beginning of the contest
+     * Time in seconds until beginning of the contest
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration starts_in = 11;</code>
+     * Generated from protobuf field <code>uint32 starts_in = 11;</code>
      */
-    protected $starts_in = null;
+    protected $starts_in = 0;
     /**
      * Contest ending time, after this time users submissions won't be counted to the score anymore.
      *
@@ -44,16 +44,17 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $ends_at = null;
     /**
-     * Time until end of the contest
+     * Time in seconds until end of the contest
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration ends_in = 16;</code>
+     * Generated from protobuf field <code>uint32 ends_in = 16;</code>
      */
-    protected $ends_in = null;
+    protected $ends_in = 0;
     /**
-     * Contest duration in seconds. Users can start participating at any moment between startsAt and endsAt, but once started they
-     * would have to finish in Duration amount of time. For example contest maybe will start at midnight and finish at
-     * 23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
-     * but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
+     * Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
+     * and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
+     * start at midnight and finish at 23:59:59 the same day, but if duration is set to 4h it would mean users can
+     * participate at any point of the day but will have only 4 hours to solve problems (4h or before 23:59:59 whichever
+     * happens first).
      *
      * Generated from protobuf field <code>uint32 duration = 12;</code>
      */
@@ -71,11 +72,17 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * ParticipationMode defines timeframe for participation: online or virtual
+     * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
      */
     protected $participation_mode = 0;
+    /**
+     * Format defines competition style IOI or ICPC.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
+     */
+    protected $format = 0;
     /**
      * Domain for contest, used to lookup for contest by domain name.
      *
@@ -83,7 +90,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $domain = '';
     /**
-     * Deprecated, space where contest was created, should be avoided
+     * Deprecated, space where contest was created, should be avoided.
      *
      * Generated from protobuf field <code>string space_id = 1000;</code>
      */
@@ -101,27 +108,30 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest name.
      *     @type \Google\Protobuf\Timestamp $starts_at
      *           Contest starting time, after this time users will be able to see problems and make submissions.
-     *     @type \Google\Protobuf\Duration $starts_in
-     *           Time until beginning of the contest
+     *     @type int $starts_in
+     *           Time in seconds until beginning of the contest
      *     @type \Google\Protobuf\Timestamp $ends_at
      *           Contest ending time, after this time users submissions won't be counted to the score anymore.
-     *     @type \Google\Protobuf\Duration $ends_in
-     *           Time until end of the contest
+     *     @type int $ends_in
+     *           Time in seconds until end of the contest
      *     @type int $duration
-     *           Contest duration in seconds. Users can start participating at any moment between startsAt and endsAt, but once started they
-     *           would have to finish in Duration amount of time. For example contest maybe will start at midnight and finish at
-     *           23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
-     *           but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
+     *           Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
+     *           and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
+     *           start at midnight and finish at 23:59:59 the same day, but if duration is set to 4h it would mean users can
+     *           participate at any point of the day but will have only 4 hours to solve problems (4h or before 23:59:59 whichever
+     *           happens first).
      *     @type int $status
      *           Contest status (see statuses above)
      *     @type int $visibility
      *           Contest visibility defines who can participate and where contest is listed.
      *     @type int $participation_mode
-     *           ParticipationMode defines timeframe for participation: online or virtual
+     *           Participation mode defines timeframe for participation: online or virtual.
+     *     @type int $format
+     *           Format defines competition style IOI or ICPC.
      *     @type string $domain
      *           Domain for contest, used to lookup for contest by domain name.
      *     @type string $space_id
-     *           Deprecated, space where contest was created, should be avoided
+     *           Deprecated, space where contest was created, should be avoided.
      * }
      */
     public function __construct($data = NULL) {
@@ -208,10 +218,10 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time until beginning of the contest
+     * Time in seconds until beginning of the contest
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration starts_in = 11;</code>
-     * @return \Google\Protobuf\Duration
+     * Generated from protobuf field <code>uint32 starts_in = 11;</code>
+     * @return int
      */
     public function getStartsIn()
     {
@@ -219,15 +229,15 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time until beginning of the contest
+     * Time in seconds until beginning of the contest
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration starts_in = 11;</code>
-     * @param \Google\Protobuf\Duration $var
+     * Generated from protobuf field <code>uint32 starts_in = 11;</code>
+     * @param int $var
      * @return $this
      */
     public function setStartsIn($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        GPBUtil::checkUint32($var);
         $this->starts_in = $var;
 
         return $this;
@@ -260,10 +270,10 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time until end of the contest
+     * Time in seconds until end of the contest
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration ends_in = 16;</code>
-     * @return \Google\Protobuf\Duration
+     * Generated from protobuf field <code>uint32 ends_in = 16;</code>
+     * @return int
      */
     public function getEndsIn()
     {
@@ -271,25 +281,26 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time until end of the contest
+     * Time in seconds until end of the contest
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration ends_in = 16;</code>
-     * @param \Google\Protobuf\Duration $var
+     * Generated from protobuf field <code>uint32 ends_in = 16;</code>
+     * @param int $var
      * @return $this
      */
     public function setEndsIn($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        GPBUtil::checkUint32($var);
         $this->ends_in = $var;
 
         return $this;
     }
 
     /**
-     * Contest duration in seconds. Users can start participating at any moment between startsAt and endsAt, but once started they
-     * would have to finish in Duration amount of time. For example contest maybe will start at midnight and finish at
-     * 23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
-     * but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
+     * Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
+     * and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
+     * start at midnight and finish at 23:59:59 the same day, but if duration is set to 4h it would mean users can
+     * participate at any point of the day but will have only 4 hours to solve problems (4h or before 23:59:59 whichever
+     * happens first).
      *
      * Generated from protobuf field <code>uint32 duration = 12;</code>
      * @return int
@@ -300,10 +311,11 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Contest duration in seconds. Users can start participating at any moment between startsAt and endsAt, but once started they
-     * would have to finish in Duration amount of time. For example contest maybe will start at midnight and finish at
-     * 23:59:59 the same day, but if duration is set to 4h it would mean users can participate at any point of the day
-     * but will have only 4 hours to solve problems (4h or before 23:59:59 whichever happens first).
+     * Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
+     * and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
+     * start at midnight and finish at 23:59:59 the same day, but if duration is set to 4h it would mean users can
+     * participate at any point of the day but will have only 4 hours to solve problems (4h or before 23:59:59 whichever
+     * happens first).
      *
      * Generated from protobuf field <code>uint32 duration = 12;</code>
      * @param int $var
@@ -370,7 +382,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ParticipationMode defines timeframe for participation: online or virtual
+     * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
      * @return int
@@ -381,7 +393,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ParticipationMode defines timeframe for participation: online or virtual
+     * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
      * @param int $var
@@ -391,6 +403,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_ParticipationMode::class);
         $this->participation_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Format defines competition style IOI or ICPC.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
+     * @return int
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    /**
+     * Format defines competition style IOI or ICPC.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFormat($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Format::class);
+        $this->format = $var;
 
         return $this;
     }
@@ -422,7 +460,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated, space where contest was created, should be avoided
+     * Deprecated, space where contest was created, should be avoided.
      *
      * Generated from protobuf field <code>string space_id = 1000;</code>
      * @return string
@@ -433,7 +471,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated, space where contest was created, should be avoided
+     * Deprecated, space where contest was created, should be avoided.
      *
      * Generated from protobuf field <code>string space_id = 1000;</code>
      * @param string $var

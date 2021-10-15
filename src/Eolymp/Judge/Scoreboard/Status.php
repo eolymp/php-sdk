@@ -35,12 +35,19 @@ class Status
      * Generated from protobuf enum <code>REBUILDING = 3;</code>
      */
     const REBUILDING = 3;
+    /**
+     * Scoreboard rebuild process has failed (needs to be restarted).
+     *
+     * Generated from protobuf enum <code>FAILED = 4;</code>
+     */
+    const FAILED = 4;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
         self::ACTIVE => 'ACTIVE',
         self::FROZEN => 'FROZEN',
         self::REBUILDING => 'REBUILDING',
+        self::FAILED => 'FAILED',
     ];
 
     public static function name($value)

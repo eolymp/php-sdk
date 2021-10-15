@@ -36,10 +36,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $attempt_penalty = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 10;</code>
-     */
-    protected $type = 0;
-    /**
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Status status = 11;</code>
      */
     protected $status = 0;
@@ -48,9 +44,9 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $freeze_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration freeze_in = 22;</code>
+     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
      */
-    protected $freeze_in = null;
+    protected $freeze_in = 0;
 
     /**
      * Constructor.
@@ -64,10 +60,9 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type bool $visible
      *     @type int $attempt_penalty
      *           Amount of penalty awarded for each submission
-     *     @type int $type
      *     @type int $status
      *     @type \Google\Protobuf\Timestamp $freeze_time
-     *     @type \Google\Protobuf\Duration $freeze_in
+     *     @type int $freeze_in
      * }
      */
     public function __construct($data = NULL) {
@@ -190,28 +185,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 10;</code>
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 10;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard_Type::class);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Status status = 11;</code>
      * @return int
      */
@@ -256,8 +229,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration freeze_in = 22;</code>
-     * @return \Google\Protobuf\Duration
+     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
+     * @return int
      */
     public function getFreezeIn()
     {
@@ -265,13 +238,13 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration freeze_in = 22;</code>
-     * @param \Google\Protobuf\Duration $var
+     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
+     * @param int $var
      * @return $this
      */
     public function setFreezeIn($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        GPBUtil::checkUint32($var);
         $this->freeze_in = $var;
 
         return $this;
