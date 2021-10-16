@@ -31,6 +31,10 @@ class Statement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Problem.Statement.Format format = 5;</code>
      */
     protected $format = 0;
+    /**
+     * Generated from protobuf field <code>string download_link = 6;</code>
+     */
+    protected $download_link = '';
 
     /**
      * Constructor.
@@ -42,6 +46,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *     @type string $title
      *     @type string $content
      *     @type int $format
+     *     @type string $download_link
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +138,28 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Problem_Statement_Format::class);
         $this->format = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string download_link = 6;</code>
+     * @return string
+     */
+    public function getDownloadLink()
+    {
+        return $this->download_link;
+    }
+
+    /**
+     * Generated from protobuf field <code>string download_link = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_link = $var;
 
         return $this;
     }

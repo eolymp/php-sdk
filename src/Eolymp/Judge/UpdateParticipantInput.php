@@ -14,17 +14,35 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Participant identifier to update
+     *
      * Generated from protobuf field <code>string participant_id = 1;</code>
      */
     protected $participant_id = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Patch request to update participant partially (all fields are updated if not specified)
+     *
+     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 2;</code>
+     */
+    protected $patch = 0;
+    /**
+     * Updated participant name
+     *
+     * Generated from protobuf field <code>string name = 10;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 3;</code>
+     * Updated list of participant's users
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 11;</code>
      */
     private $users;
+    /**
+     * Updated bonus time
+     *
+     * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
+     */
+    protected $bonus_time = 0;
 
     /**
      * Constructor.
@@ -33,8 +51,15 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $participant_id
+     *           Participant identifier to update
+     *     @type int $patch
+     *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $name
+     *           Updated participant name
      *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *           Updated list of participant's users
+     *     @type int $bonus_time
+     *           Updated bonus time
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +68,8 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Participant identifier to update
+     *
      * Generated from protobuf field <code>string participant_id = 1;</code>
      * @return string
      */
@@ -52,6 +79,8 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Participant identifier to update
+     *
      * Generated from protobuf field <code>string participant_id = 1;</code>
      * @param string $var
      * @return $this
@@ -65,7 +94,35 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Patch request to update participant partially (all fields are updated if not specified)
+     *
+     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 2;</code>
+     * @return int
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Patch request to update participant partially (all fields are updated if not specified)
+     *
+     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\UpdateParticipantInput_Patch::class);
+        $this->patch = $var;
+
+        return $this;
+    }
+
+    /**
+     * Updated participant name
+     *
+     * Generated from protobuf field <code>string name = 10;</code>
      * @return string
      */
     public function getName()
@@ -74,7 +131,9 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Updated participant name
+     *
+     * Generated from protobuf field <code>string name = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +146,9 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 3;</code>
+     * Updated list of participant's users
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsers()
@@ -96,7 +157,9 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 3;</code>
+     * Updated list of participant's users
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 11;</code>
      * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -104,6 +167,32 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\User::class);
         $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Updated bonus time
+     *
+     * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
+     * @return int
+     */
+    public function getBonusTime()
+    {
+        return $this->bonus_time;
+    }
+
+    /**
+     * Updated bonus time
+     *
+     * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBonusTime($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->bonus_time = $var;
 
         return $this;
     }

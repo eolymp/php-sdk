@@ -305,6 +305,17 @@ class JudgeClient {
     }
 
     /**
+     * @param ListAttachmentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAttachmentsOutput output message
+     */
+    public function ListAttachments(ListAttachmentsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListAttachments", $input, ListAttachmentsOutput::class, $context);
+    }
+
+    /**
      * @param ListExamplesInput $input message
      * @param array $context request parameters
      *
