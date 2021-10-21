@@ -38,12 +38,6 @@ class Score extends \Google\Protobuf\Internal\Message
      */
     protected $percentage = 0.0;
     /**
-     * number of submits made so far
-     *
-     * Generated from protobuf field <code>uint32 submits = 6;</code>
-     */
-    protected $submits = 0;
-    /**
      * number of submits made until problem was solved
      *
      * Generated from protobuf field <code>uint32 attempts = 7;</code>
@@ -75,8 +69,6 @@ class Score extends \Google\Protobuf\Internal\Message
      *     @type bool $solved
      *     @type float $percentage
      *           percentage scored from 0 to 1
-     *     @type int $submits
-     *           number of submits made so far
      *     @type int $attempts
      *           number of submits made until problem was solved
      *     @type \Google\Protobuf\Timestamp $solved_at
@@ -204,32 +196,6 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->percentage = $var;
-
-        return $this;
-    }
-
-    /**
-     * number of submits made so far
-     *
-     * Generated from protobuf field <code>uint32 submits = 6;</code>
-     * @return int
-     */
-    public function getSubmits()
-    {
-        return $this->submits;
-    }
-
-    /**
-     * number of submits made so far
-     *
-     * Generated from protobuf field <code>uint32 submits = 6;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSubmits($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->submits = $var;
 
         return $this;
     }

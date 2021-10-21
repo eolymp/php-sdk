@@ -103,6 +103,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string passcode = 30;</code>
      */
     protected $passcode = '';
+    /**
+     * Submit counter is used to count how many times user submitted the problem.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
+     */
+    private $submits;
 
     /**
      * Constructor.
@@ -141,6 +147,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           passcode is a code participant has to enter before she can begin contest
      *           this field is only populated when request is made by contest owner
      *           passcode is read-only and should be set using ResetPasscode method.
+     *     @type \Eolymp\Judge\Participant\Submit[]|\Google\Protobuf\Internal\RepeatedField $submits
+     *           Submit counter is used to count how many times user submitted the problem.
      * }
      */
     public function __construct($data = NULL) {
@@ -534,6 +542,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->passcode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Submit counter is used to count how many times user submitted the problem.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSubmits()
+    {
+        return $this->submits;
+    }
+
+    /**
+     * Submit counter is used to count how many times user submitted the problem.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
+     * @param \Eolymp\Judge\Participant\Submit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSubmits($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\Submit::class);
+        $this->submits = $arr;
 
         return $this;
     }

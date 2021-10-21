@@ -887,6 +887,17 @@ class JudgeClient {
     }
 
     /**
+     * @param DescribeScoreboardFooterInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardFooterOutput output message
+     */
+    public function DescribeScoreboardFooter(DescribeScoreboardFooterInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScoreboardFooter", $input, DescribeScoreboardFooterOutput::class, $context);
+    }
+
+    /**
      * @param DescribeScoreboardRowInput $input message
      * @param array $context request parameters
      *

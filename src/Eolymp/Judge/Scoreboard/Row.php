@@ -34,9 +34,21 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $penalty = 0.0;
     /**
+     * rank
+     *
+     * Generated from protobuf field <code>uint32 rank = 12;</code>
+     */
+    protected $rank = 0;
+    /**
+     * lower rank
+     *
+     * Generated from protobuf field <code>uint32 rank_lower = 13;</code>
+     */
+    protected $rank_lower = 0;
+    /**
      * breakdown of score by problem
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 12;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 20;</code>
      */
     private $breakdown;
 
@@ -52,6 +64,10 @@ class Row extends \Google\Protobuf\Internal\Message
      *           total score
      *     @type float $penalty
      *           total penalty
+     *     @type int $rank
+     *           rank
+     *     @type int $rank_lower
+     *           lower rank
      *     @type \Eolymp\Judge\Scoreboard\Score[]|\Google\Protobuf\Internal\RepeatedField $breakdown
      *           breakdown of score by problem
      * }
@@ -158,9 +174,61 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * rank
+     *
+     * Generated from protobuf field <code>uint32 rank = 12;</code>
+     * @return int
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    /**
+     * rank
+     *
+     * Generated from protobuf field <code>uint32 rank = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRank($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank = $var;
+
+        return $this;
+    }
+
+    /**
+     * lower rank
+     *
+     * Generated from protobuf field <code>uint32 rank_lower = 13;</code>
+     * @return int
+     */
+    public function getRankLower()
+    {
+        return $this->rank_lower;
+    }
+
+    /**
+     * lower rank
+     *
+     * Generated from protobuf field <code>uint32 rank_lower = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRankLower($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank_lower = $var;
+
+        return $this;
+    }
+
+    /**
      * breakdown of score by problem
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 12;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getBreakdown()
@@ -171,7 +239,7 @@ class Row extends \Google\Protobuf\Internal\Message
     /**
      * breakdown of score by problem
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 12;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 20;</code>
      * @param \Eolymp\Judge\Scoreboard\Score[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

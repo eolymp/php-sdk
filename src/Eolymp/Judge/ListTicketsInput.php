@@ -29,6 +29,14 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sortable sort = 50;</code>
+     */
+    protected $sort = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     */
+    protected $order = 0;
 
     /**
      * Constructor.
@@ -41,6 +49,8 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type \Eolymp\Judge\ListTicketsInput\Filter $filters
      *           data filters
+     *     @type int $sort
+     *     @type int $order
      * }
      */
     public function __construct($data = NULL) {
@@ -118,6 +128,50 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\ListTicketsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sortable sort = 50;</code>
+     * @return int
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sortable sort = 50;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSort($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\ListTicketsInput_Sortable::class);
+        $this->sort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrder($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
+        $this->order = $var;
 
         return $this;
     }
