@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.UnassignContestInput</code>
+ * Generated from protobuf message <code>eolymp.ranker.ListScoreboardColumnsInput</code>
  */
-class UnassignContestInput extends \Google\Protobuf\Internal\Message
+class ListScoreboardColumnsInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string scoreboard_id = 1;</code>
      */
     protected $scoreboard_id = '';
-    /**
-     * Generated from protobuf field <code>string contest_id = 2;</code>
-     */
-    protected $contest_id = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class UnassignContestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $scoreboard_id
-     *     @type string $contest_id
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class UnassignContestInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->scoreboard_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 2;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
 
         return $this;
     }

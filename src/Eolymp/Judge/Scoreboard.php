@@ -18,15 +18,19 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string contest_id = 2;</code>
+     */
+    protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>bool default = 2;</code>
+     * Generated from protobuf field <code>bool default = 4;</code>
      */
     protected $default = false;
     /**
-     * Generated from protobuf field <code>bool visible = 3;</code>
+     * Generated from protobuf field <code>bool visible = 5;</code>
      */
     protected $visible = false;
     /**
@@ -55,6 +59,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $contest_id
      *     @type string $name
      *     @type bool $default
      *     @type bool $visible
@@ -93,7 +98,29 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
     public function getName()
@@ -102,7 +129,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -115,7 +142,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool default = 2;</code>
+     * Generated from protobuf field <code>bool default = 4;</code>
      * @return bool
      */
     public function getDefault()
@@ -124,7 +151,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool default = 2;</code>
+     * Generated from protobuf field <code>bool default = 4;</code>
      * @param bool $var
      * @return $this
      */
@@ -137,7 +164,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool visible = 3;</code>
+     * Generated from protobuf field <code>bool visible = 5;</code>
      * @return bool
      */
     public function getVisible()
@@ -146,7 +173,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool visible = 3;</code>
+     * Generated from protobuf field <code>bool visible = 5;</code>
      * @param bool $var
      * @return $this
      */

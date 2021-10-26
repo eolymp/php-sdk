@@ -111,6 +111,19 @@ class RankerClient {
     /**
      * List scoreboards of a contest
      *
+     * @param DescribeScoreboardRowInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardRowOutput output message
+     */
+    public function DescribeScoreboardRow(DescribeScoreboardRowInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DescribeScoreboardRow", $input, DescribeScoreboardRowOutput::class, $context);
+    }
+
+    /**
+     * List scoreboards of a contest
+     *
      * @param ListScoreboardRowsInput $input message
      * @param array $context request parameters
      *
@@ -122,29 +135,49 @@ class RankerClient {
     }
 
     /**
-     * Assign contest to a scoreboard
-     *
-     * @param AssignContestInput $input message
+     * @param AddScoreboardColumnInput $input message
      * @param array $context request parameters
      *
-     * @return AssignContestOutput output message
+     * @return AddScoreboardColumnOutput output message
      */
-    public function AssignContest(AssignContestInput $input, array $context = [])
+    public function AddScoreboardColumn(AddScoreboardColumnInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/AssignContest", $input, AssignContestOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.ranker.Ranker/AddScoreboardColumn", $input, AddScoreboardColumnOutput::class, $context);
     }
 
     /**
-     * Unassign contest to a scoreboard
-     *
-     * @param UnassignContestInput $input message
+     * @param DeleteScoreboardColumnInput $input message
      * @param array $context request parameters
      *
-     * @return UnassignContestOutput output message
+     * @return DeleteScoreboardColumnOutput output message
      */
-    public function UnassignContest(UnassignContestInput $input, array $context = [])
+    public function DeleteScoreboardColumn(DeleteScoreboardColumnInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/UnassignContest", $input, UnassignContestOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DeleteScoreboardColumn", $input, DeleteScoreboardColumnOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeScoreboardColumnInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardColumnOutput output message
+     */
+    public function DescribeScoreboardColumn(DescribeScoreboardColumnInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DescribeScoreboardColumn", $input, DescribeScoreboardColumnOutput::class, $context);
+    }
+
+    /**
+     * List scoreboards of a contest
+     *
+     * @param ListScoreboardColumnsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScoreboardColumnsOutput output message
+     */
+    public function ListScoreboardColumns(ListScoreboardColumnsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListScoreboardColumns", $input, ListScoreboardColumnsOutput::class, $context);
     }
 
 }

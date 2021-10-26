@@ -12,7 +12,7 @@ use UnexpectedValueException;
 class Status
 {
     /**
-     * Scoreboard is up-to-date and being updated.
+     * Reserved.
      *
      * Generated from protobuf enum <code>UNKNOWN = 0;</code>
      */

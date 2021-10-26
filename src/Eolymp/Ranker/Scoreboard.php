@@ -32,17 +32,9 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Scoring mode defines how score is calculated.
-     *
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.ScoringMode scoring_mode = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.ScoringMode scoring_mode = 10;</code>
      */
     protected $scoring_mode = 0;
-    /**
-     * List of contest identifiers assigned to the scoreboard. This field is readonly, use Assign and Unassign methods to add and remove contests.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 100;</code>
-     */
-    private $contests;
 
     /**
      * Constructor.
@@ -57,9 +49,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           A user friendly name for the scoreboard.
      *     @type int $scoring_mode
-     *           Scoring mode defines how score is calculated.
-     *     @type \Eolymp\Ranker\Scoreboard\Contest[]|\Google\Protobuf\Internal\RepeatedField $contests
-     *           List of contest identifiers assigned to the scoreboard. This field is readonly, use Assign and Unassign methods to add and remove contests.
      * }
      */
     public function __construct($data = NULL) {
@@ -146,9 +135,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Scoring mode defines how score is calculated.
-     *
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.ScoringMode scoring_mode = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.ScoringMode scoring_mode = 10;</code>
      * @return int
      */
     public function getScoringMode()
@@ -157,42 +144,14 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Scoring mode defines how score is calculated.
-     *
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.ScoringMode scoring_mode = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.ScoringMode scoring_mode = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setScoringMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard_ScoringMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\ScoringMode::class);
         $this->scoring_mode = $var;
-
-        return $this;
-    }
-
-    /**
-     * List of contest identifiers assigned to the scoreboard. This field is readonly, use Assign and Unassign methods to add and remove contests.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getContests()
-    {
-        return $this->contests;
-    }
-
-    /**
-     * List of contest identifiers assigned to the scoreboard. This field is readonly, use Assign and Unassign methods to add and remove contests.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 100;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Contest[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setContests($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Contest::class);
-        $this->contests = $arr;
 
         return $this;
     }

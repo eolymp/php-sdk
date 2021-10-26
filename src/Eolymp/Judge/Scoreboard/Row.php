@@ -22,6 +22,10 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $scoreboard_id = '';
     /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     */
+    protected $name = '';
+    /**
      * total score
      *
      * Generated from protobuf field <code>float score = 10;</code>
@@ -60,6 +64,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *
      *     @type string $participant_id
      *     @type string $scoreboard_id
+     *     @type string $name
      *     @type float $score
      *           total score
      *     @type float $penalty
@@ -117,6 +122,28 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->scoreboard_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }

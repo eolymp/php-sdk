@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.AssignContestOutput</code>
+ * Generated from protobuf message <code>eolymp.ranker.DeleteScoreboardColumnOutput</code>
  */
-class AssignContestOutput extends \Google\Protobuf\Internal\Message
+class DeleteScoreboardColumnOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

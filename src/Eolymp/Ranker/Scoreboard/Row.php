@@ -14,15 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class Row extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Row unique identifier
+     *
+     * Generated from protobuf field <code>string id = 1;</code>
+     */
+    protected $id = '';
+    /**
      * Participant name (identifier).
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
     /**
      * User ID.
      *
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 3;</code>
      */
     protected $user_id = '';
     /**
@@ -40,9 +46,9 @@ class Row extends \Google\Protobuf\Internal\Message
     /**
      * Score breakdown by contest and problem.
      *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Score scores = 20;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
      */
-    private $scores;
+    private $values;
 
     /**
      * Constructor.
@@ -50,6 +56,8 @@ class Row extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
+     *           Row unique identifier
      *     @type string $name
      *           Participant name (identifier).
      *     @type string $user_id
@@ -58,7 +66,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Total score.
      *     @type float $penalty
      *           Total penalty.
-     *     @type \Eolymp\Ranker\Scoreboard\Row\Score[]|\Google\Protobuf\Internal\RepeatedField $scores
+     *     @type \Eolymp\Ranker\Scoreboard\Row\Value[]|\Google\Protobuf\Internal\RepeatedField $values
      *           Score breakdown by contest and problem.
      * }
      */
@@ -68,9 +76,35 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Row unique identifier
+     *
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Row unique identifier
+     *
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
      * Participant name (identifier).
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
     public function getName()
@@ -81,7 +115,7 @@ class Row extends \Google\Protobuf\Internal\Message
     /**
      * Participant name (identifier).
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -96,7 +130,7 @@ class Row extends \Google\Protobuf\Internal\Message
     /**
      * User ID.
      *
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 3;</code>
      * @return string
      */
     public function getUserId()
@@ -107,7 +141,7 @@ class Row extends \Google\Protobuf\Internal\Message
     /**
      * User ID.
      *
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -174,25 +208,25 @@ class Row extends \Google\Protobuf\Internal\Message
     /**
      * Score breakdown by contest and problem.
      *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Score scores = 20;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getScores()
+    public function getValues()
     {
-        return $this->scores;
+        return $this->values;
     }
 
     /**
      * Score breakdown by contest and problem.
      *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Score scores = 20;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Row\Score[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
+     * @param \Eolymp\Ranker\Scoreboard\Row\Value[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setScores($var)
+    public function setValues($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Row\Score::class);
-        $this->scores = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Row\Value::class);
+        $this->values = $arr;
 
         return $this;
     }
