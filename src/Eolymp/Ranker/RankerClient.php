@@ -70,19 +70,6 @@ class RankerClient {
     }
 
     /**
-     * Lookup scoreboard by domain key
-     *
-     * @param LookupScoreboardInput $input message
-     * @param array $context request parameters
-     *
-     * @return LookupScoreboardOutput output message
-     */
-    public function LookupScoreboard(LookupScoreboardInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/LookupScoreboard", $input, LookupScoreboardOutput::class, $context);
-    }
-
-    /**
      * Describe scoreboard
      *
      * @param DescribeScoreboardInput $input message
@@ -178,6 +165,17 @@ class RankerClient {
     public function ListScoreboardColumns(ListScoreboardColumnsInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListScoreboardColumns", $input, ListScoreboardColumnsOutput::class, $context);
+    }
+
+    /**
+     * @param ListActivitiesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListActivitiesOutput output message
+     */
+    public function ListActivities(ListActivitiesInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListActivities", $input, ListActivitiesOutput::class, $context);
     }
 
 }

@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string row_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
      */
-    protected $row_id = '';
+    protected $scoreboard_id = '';
+    /**
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     */
+    protected $user_id = '';
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $row_id
+     *     @type string $scoreboard_id
+     *     @type string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +38,45 @@ class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string row_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
      * @return string
      */
-    public function getRowId()
+    public function getScoreboardId()
     {
-        return $this->row_id;
+        return $this->scoreboard_id;
     }
 
     /**
-     * Generated from protobuf field <code>string row_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setRowId($var)
+    public function setScoreboardId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->row_id = $var;
+        $this->scoreboard_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }

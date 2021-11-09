@@ -32,9 +32,9 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.ScoringMode scoring_mode = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      */
-    protected $scoring_mode = 0;
+    protected $format = 0;
 
     /**
      * Constructor.
@@ -48,7 +48,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           A user friendly identifier for the scoreboard, used as part of the domain name for the scoreboard.
      *     @type string $name
      *           A user friendly name for the scoreboard.
-     *     @type int $scoring_mode
+     *     @type int $format
      * }
      */
     public function __construct($data = NULL) {
@@ -135,23 +135,23 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.ScoringMode scoring_mode = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      * @return int
      */
-    public function getScoringMode()
+    public function getFormat()
     {
-        return $this->scoring_mode;
+        return $this->format;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.ScoringMode scoring_mode = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      * @param int $var
      * @return $this
      */
-    public function setScoringMode($var)
+    public function setFormat($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\ScoringMode::class);
-        $this->scoring_mode = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Format::class);
+        $this->format = $var;
 
         return $this;
     }

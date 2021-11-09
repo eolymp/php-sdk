@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class RebuildScoreboardOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string activity_id = 1;</code>
+     */
+    protected $activity_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class RebuildScoreboardOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $activity_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Ranker\Ranker::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string activity_id = 1;</code>
+     * @return string
+     */
+    public function getActivityId()
+    {
+        return $this->activity_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string activity_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setActivityId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->activity_id = $var;
+
+        return $this;
     }
 
 }

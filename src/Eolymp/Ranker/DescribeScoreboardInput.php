@@ -17,6 +17,10 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string scoreboard_id = 1;</code>
      */
     protected $scoreboard_id = '';
+    /**
+     * Generated from protobuf field <code>string scoreboard_key = 2;</code>
+     */
+    protected $scoreboard_key = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $scoreboard_id
+     *     @type string $scoreboard_key
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->scoreboard_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scoreboard_key = 2;</code>
+     * @return string
+     */
+    public function getScoreboardKey()
+    {
+        return $this->scoreboard_key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scoreboard_key = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScoreboardKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scoreboard_key = $var;
 
         return $this;
     }

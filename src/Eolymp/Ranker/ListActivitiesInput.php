@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.ListScoreboardRowsInput</code>
+ * Generated from protobuf message <code>eolymp.ranker.ListActivitiesInput</code>
  */
-class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
+class ListActivitiesInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string scoreboard_id = 1;</code>
@@ -25,10 +25,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
     protected $size = 0;
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.ListScoreboardRowsInput.Filter filters = 40;</code>
-     */
-    protected $filters = null;
 
     /**
      * Constructor.
@@ -39,7 +35,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *     @type string $scoreboard_id
      *     @type int $offset
      *     @type int $size
-     *     @type \Eolymp\Ranker\ListScoreboardRowsInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
@@ -109,28 +104,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.ListScoreboardRowsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Ranker\ListScoreboardRowsInput\Filter
-     */
-    public function getFilters()
-    {
-        return $this->filters;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.ListScoreboardRowsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Ranker\ListScoreboardRowsInput\Filter $var
-     * @return $this
-     */
-    public function setFilters($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\ListScoreboardRowsInput_Filter::class);
-        $this->filters = $var;
 
         return $this;
     }

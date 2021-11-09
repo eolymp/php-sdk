@@ -25,6 +25,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string input = 3;</code>
      */
     protected $input = '';
+    protected $input_data;
+    protected $preset;
 
     /**
      * Constructor.
@@ -35,6 +37,10 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *     @type string $lang
      *     @type string $source
      *     @type string $input
+     *     @type string $input_content
+     *     @type string $input_object_id
+     *     @type string $atlas_problem_id
+     *     @type string $judge_problem_id
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +112,110 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
         $this->input = $var;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes input_content = 4;</code>
+     * @return string
+     */
+    public function getInputContent()
+    {
+        return $this->readOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes input_content = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputContent($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_object_id = 5;</code>
+     * @return string
+     */
+    public function getInputObjectId()
+    {
+        return $this->readOneof(5);
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_object_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputObjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string atlas_problem_id = 6;</code>
+     * @return string
+     */
+    public function getAtlasProblemId()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>string atlas_problem_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAtlasProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string judge_problem_id = 7;</code>
+     * @return string
+     */
+    public function getJudgeProblemId()
+    {
+        return $this->readOneof(7);
+    }
+
+    /**
+     * Generated from protobuf field <code>string judge_problem_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJudgeProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInputData()
+    {
+        return $this->whichOneof("input_data");
+    }
+
+    /**
+     * @return string
+     */
+    public function getPreset()
+    {
+        return $this->whichOneof("preset");
     }
 
 }
