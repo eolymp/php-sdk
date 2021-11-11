@@ -12,15 +12,20 @@ use UnexpectedValueException;
 class Membership
 {
     /**
-     * Generated from protobuf enum <code>INDIVIDUAL = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_MEMBERSHIP = 0;</code>
      */
-    const INDIVIDUAL = 0;
+    const UNKNOWN_MEMBERSHIP = 0;
     /**
-     * Generated from protobuf enum <code>TEAM = 1;</code>
+     * Generated from protobuf enum <code>INDIVIDUAL = 1;</code>
      */
-    const TEAM = 1;
+    const INDIVIDUAL = 1;
+    /**
+     * Generated from protobuf enum <code>TEAM = 2;</code>
+     */
+    const TEAM = 2;
 
     private static $valueToName = [
+        self::UNKNOWN_MEMBERSHIP => 'UNKNOWN_MEMBERSHIP',
         self::INDIVIDUAL => 'INDIVIDUAL',
         self::TEAM => 'TEAM',
     ];

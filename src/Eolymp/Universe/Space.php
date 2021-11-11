@@ -50,6 +50,10 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $plan = '';
     /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
+     */
+    protected $visibility = 0;
+    /**
      * type of the space membership (members are individuals or teams)
      *
      * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
@@ -86,6 +90,7 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space use type
      *     @type string $plan
      *           plan defines billing plan for the space
+     *     @type int $visibility
      *     @type int $membership
      *           type of the space membership (members are individuals or teams)
      *     @type int $min_team_size
@@ -251,6 +256,28 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->plan = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

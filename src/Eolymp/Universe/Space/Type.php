@@ -12,23 +12,28 @@ use UnexpectedValueException;
 class Type
 {
     /**
-     * Generated from protobuf enum <code>OTHER = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_TYPE = 0;</code>
      */
-    const OTHER = 0;
+    const UNKNOWN_TYPE = 0;
     /**
-     * Generated from protobuf enum <code>CLASSROOM = 1;</code>
+     * Generated from protobuf enum <code>OTHER = 1;</code>
      */
-    const CLASSROOM = 1;
+    const OTHER = 1;
     /**
-     * Generated from protobuf enum <code>TEAMROOM = 2;</code>
+     * Generated from protobuf enum <code>CLASSROOM = 2;</code>
      */
-    const TEAMROOM = 2;
+    const CLASSROOM = 2;
     /**
-     * Generated from protobuf enum <code>COMPETITION = 3;</code>
+     * Generated from protobuf enum <code>TEAMROOM = 3;</code>
      */
-    const COMPETITION = 3;
+    const TEAMROOM = 3;
+    /**
+     * Generated from protobuf enum <code>COMPETITION = 4;</code>
+     */
+    const COMPETITION = 4;
 
     private static $valueToName = [
+        self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::OTHER => 'OTHER',
         self::CLASSROOM => 'CLASSROOM',
         self::TEAMROOM => 'TEAMROOM',

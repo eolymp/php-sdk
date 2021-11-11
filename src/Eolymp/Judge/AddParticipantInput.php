@@ -18,11 +18,17 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     */
+    protected $member_id = '';
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 3;</code>
+     * deprecated, use member_id instead
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 998;</code>
      */
     private $users;
     /**
@@ -39,8 +45,10 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
+     *     @type string $member_id
      *     @type string $name
      *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *           deprecated, use member_id instead
      *     @type string $user_id
      *           deprecated, use users instead
      * }
@@ -73,7 +81,29 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
     public function getName()
@@ -82,7 +112,7 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -95,7 +125,9 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 3;</code>
+     * deprecated, use member_id instead
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 998;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsers()
@@ -104,7 +136,9 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 3;</code>
+     * deprecated, use member_id instead
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 998;</code>
      * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

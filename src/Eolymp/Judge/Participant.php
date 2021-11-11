@@ -26,13 +26,21 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
+     * community member
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * name
      *
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string name = 5;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 5;</code>
+     * deprecated: use member_id instead
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 9995;</code>
      */
     private $users;
     /**
@@ -120,9 +128,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           unique identifier of the participant (can not be set when creating participant)
      *     @type string $contest_id
      *           contest
+     *     @type string $member_id
+     *           community member
      *     @type string $name
      *           name
      *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *           deprecated: use member_id instead
      *     @type string $user_id
      *           deprecated: user identifier
      *     @type string $username
@@ -209,9 +220,35 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * community member
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * community member
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
      * name
      *
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string name = 5;</code>
      * @return string
      */
     public function getName()
@@ -222,7 +259,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * name
      *
-     * Generated from protobuf field <code>string name = 4;</code>
+     * Generated from protobuf field <code>string name = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -235,7 +272,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 5;</code>
+     * deprecated: use member_id instead
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 9995;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUsers()
@@ -244,7 +283,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 5;</code>
+     * deprecated: use member_id instead
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 9995;</code>
      * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

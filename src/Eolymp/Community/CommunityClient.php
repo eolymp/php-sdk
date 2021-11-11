@@ -18,6 +18,28 @@ class CommunityClient {
     }
 
     /**
+     * @param JoinSpaceInput $input message
+     * @param array $context request parameters
+     *
+     * @return JoinSpaceOutput output message
+     */
+    public function JoinSpace(JoinSpaceInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.community.Community/JoinSpace", $input, JoinSpaceOutput::class, $context);
+    }
+
+    /**
+     * @param LeaveSpaceInput $input message
+     * @param array $context request parameters
+     *
+     * @return LeaveSpaceOutput output message
+     */
+    public function LeaveSpace(LeaveSpaceInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.community.Community/LeaveSpace", $input, LeaveSpaceOutput::class, $context);
+    }
+
+    /**
      * @param AddMemberInput $input message
      * @param array $context request parameters
      *
