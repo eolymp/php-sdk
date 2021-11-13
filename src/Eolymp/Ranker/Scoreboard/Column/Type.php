@@ -24,15 +24,20 @@ class Type
      */
     const PROBLEM = 2;
     /**
-     * Generated from protobuf enum <code>SCORE = 3;</code>
+     * Generated from protobuf enum <code>ATTRIBUTE = 3;</code>
      */
-    const SCORE = 3;
+    const ATTRIBUTE = 3;
+    /**
+     * Generated from protobuf enum <code>NAME = 4;</code>
+     */
+    const NAME = 4;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::CONTEST => 'CONTEST',
         self::PROBLEM => 'PROBLEM',
-        self::SCORE => 'SCORE',
+        self::ATTRIBUTE => 'ATTRIBUTE',
+        self::NAME => 'NAME',
     ];
 
     public static function name($value)

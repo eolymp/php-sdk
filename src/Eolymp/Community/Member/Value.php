@@ -22,9 +22,9 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $value_string = '';
     /**
-     * Generated from protobuf field <code>float value_number = 3;</code>
+     * Generated from protobuf field <code>int32 value_number = 3;</code>
      */
-    protected $value_number = 0.0;
+    protected $value_number = 0;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class Value extends \Google\Protobuf\Internal\Message
      *
      *     @type string $attribute_key
      *     @type string $value_string
-     *     @type float $value_number
+     *     @type int $value_number
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float value_number = 3;</code>
-     * @return float
+     * Generated from protobuf field <code>int32 value_number = 3;</code>
+     * @return int
      */
     public function getValueNumber()
     {
@@ -96,13 +96,13 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float value_number = 3;</code>
-     * @param float $var
+     * Generated from protobuf field <code>int32 value_number = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setValueNumber($var)
     {
-        GPBUtil::checkFloat($var);
+        GPBUtil::checkInt32($var);
         $this->value_number = $var;
 
         return $this;

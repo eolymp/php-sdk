@@ -32,12 +32,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Updated list of participant's users
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 11;</code>
-     */
-    private $users;
-    /**
      * Updated bonus time
      *
      * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
@@ -56,8 +50,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $name
      *           Updated participant name
-     *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
-     *           Updated list of participant's users
      *     @type int $bonus_time
      *           Updated bonus time
      * }
@@ -141,32 +133,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Updated list of participant's users
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * Updated list of participant's users
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 11;</code>
-     * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setUsers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\User::class);
-        $this->users = $arr;
 
         return $this;
     }

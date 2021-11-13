@@ -38,24 +38,6 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * deprecated: use member_id instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 9995;</code>
-     */
-    private $users;
-    /**
-     * deprecated: user identifier
-     *
-     * Generated from protobuf field <code>string user_id = 9998;</code>
-     */
-    protected $user_id = '';
-    /**
-     * deprecated: username
-     *
-     * Generated from protobuf field <code>string username = 9999;</code>
-     */
-    protected $username = '';
-    /**
      * status (see explanation to enumeration values)
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Status status = 20;</code>
@@ -132,12 +114,6 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           community member
      *     @type string $name
      *           name
-     *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
-     *           deprecated: use member_id instead
-     *     @type string $user_id
-     *           deprecated: user identifier
-     *     @type string $username
-     *           deprecated: username
      *     @type int $status
      *           status (see explanation to enumeration values)
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -267,84 +243,6 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use member_id instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 9995;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * deprecated: use member_id instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 9995;</code>
-     * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setUsers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\User::class);
-        $this->users = $arr;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: user identifier
-     *
-     * Generated from protobuf field <code>string user_id = 9998;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * deprecated: user identifier
-     *
-     * Generated from protobuf field <code>string user_id = 9998;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: username
-     *
-     * Generated from protobuf field <code>string username = 9999;</code>
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * deprecated: username
-     *
-     * Generated from protobuf field <code>string username = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUsername($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->username = $var;
 
         return $this;
     }

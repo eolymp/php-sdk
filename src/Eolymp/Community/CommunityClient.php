@@ -18,6 +18,8 @@ class CommunityClient {
     }
 
     /**
+     * Add yourself to the space
+     *
      * @param JoinSpaceInput $input message
      * @param array $context request parameters
      *
@@ -29,6 +31,8 @@ class CommunityClient {
     }
 
     /**
+     * Remove yourself from the space
+     *
      * @param LeaveSpaceInput $input message
      * @param array $context request parameters
      *
@@ -37,6 +41,32 @@ class CommunityClient {
     public function LeaveSpace(LeaveSpaceInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.community.Community/LeaveSpace", $input, LeaveSpaceOutput::class, $context);
+    }
+
+    /**
+     * Update registration data (attribute values) about yourself
+     *
+     * @param RegisterMemberInput $input message
+     * @param array $context request parameters
+     *
+     * @return RegisterMemberOutput output message
+     */
+    public function RegisterMember(RegisterMemberInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.community.Community/RegisterMember", $input, RegisterMemberOutput::class, $context);
+    }
+
+    /**
+     * Introspect member data
+     *
+     * @param IntrospectMemberInput $input message
+     * @param array $context request parameters
+     *
+     * @return IntrospectMemberOutput output message
+     */
+    public function IntrospectMember(IntrospectMemberInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.community.Community/IntrospectMember", $input, IntrospectMemberOutput::class, $context);
     }
 
     /**
@@ -81,17 +111,6 @@ class CommunityClient {
     public function DescribeMember(DescribeMemberInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.community.Community/DescribeMember", $input, DescribeMemberOutput::class, $context);
-    }
-
-    /**
-     * @param IntrospectMemberInput $input message
-     * @param array $context request parameters
-     *
-     * @return IntrospectMemberOutput output message
-     */
-    public function IntrospectMember(IntrospectMemberInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.community.Community/IntrospectMember", $input, IntrospectMemberOutput::class, $context);
     }
 
     /**

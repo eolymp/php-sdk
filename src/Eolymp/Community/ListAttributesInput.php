@@ -13,6 +13,18 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class ListAttributesInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     */
+    protected $offset = 0;
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     */
+    protected $size = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.community.ListAttributesInput.Filter filters = 40;</code>
+     */
+    protected $filters = null;
 
     /**
      * Constructor.
@@ -20,11 +32,80 @@ class ListAttributesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $offset
+     *     @type int $size
+     *     @type \Eolymp\Community\ListAttributesInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Community::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.ListAttributesInput.Filter filters = 40;</code>
+     * @return \Eolymp\Community\ListAttributesInput\Filter
+     */
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.ListAttributesInput.Filter filters = 40;</code>
+     * @param \Eolymp\Community\ListAttributesInput\Filter $var
+     * @return $this
+     */
+    public function setFilters($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\ListAttributesInput_Filter::class);
+        $this->filters = $var;
+
+        return $this;
     }
 
 }

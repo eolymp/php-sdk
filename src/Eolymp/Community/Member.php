@@ -26,7 +26,15 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $disabled = false;
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 4;</code>
+     * Generated from protobuf field <code>bool registered = 4;</code>
+     */
+    protected $registered = false;
+    /**
+     * Generated from protobuf field <code>bool staffed = 5;</code>
+     */
+    protected $staffed = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
      */
     protected $status = 0;
     /**
@@ -47,6 +55,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type bool $disabled
+     *     @type bool $registered
+     *     @type bool $staffed
      *     @type int $status
      *     @type \Eolymp\Community\Member\User[]|\Google\Protobuf\Internal\RepeatedField $users
      *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
@@ -124,7 +134,51 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 4;</code>
+     * Generated from protobuf field <code>bool registered = 4;</code>
+     * @return bool
+     */
+    public function getRegistered()
+    {
+        return $this->registered;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool registered = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRegistered($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->registered = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool staffed = 5;</code>
+     * @return bool
+     */
+    public function getStaffed()
+    {
+        return $this->staffed;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool staffed = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStaffed($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->staffed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
      * @return int
      */
     public function getStatus()
@@ -133,7 +187,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 4;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
      * @param int $var
      * @return $this
      */

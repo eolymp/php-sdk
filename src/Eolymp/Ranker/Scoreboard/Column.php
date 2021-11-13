@@ -54,6 +54,10 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $contest_problem_id = '';
     /**
+     * Generated from protobuf field <code>string community_attribute_key = 22;</code>
+     */
+    protected $community_attribute_key = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 100;</code>
      */
     private $columns;
@@ -74,6 +78,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type bool $visible
      *     @type string $contest_scoreboard_id
      *     @type string $contest_problem_id
+     *     @type string $community_attribute_key
      *     @type \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $columns
      * }
      */
@@ -298,6 +303,28 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string community_attribute_key = 22;</code>
+     * @return string
+     */
+    public function getCommunityAttributeKey()
+    {
+        return $this->community_attribute_key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string community_attribute_key = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCommunityAttributeKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->community_attribute_key = $var;
 
         return $this;
     }

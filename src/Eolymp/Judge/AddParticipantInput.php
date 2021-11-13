@@ -25,18 +25,6 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
-    /**
-     * deprecated, use member_id instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 998;</code>
-     */
-    private $users;
-    /**
-     * deprecated, use users instead
-     *
-     * Generated from protobuf field <code>string user_id = 999;</code>
-     */
-    protected $user_id = '';
 
     /**
      * Constructor.
@@ -47,10 +35,6 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $member_id
      *     @type string $name
-     *     @type \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $users
-     *           deprecated, use member_id instead
-     *     @type string $user_id
-     *           deprecated, use users instead
      * }
      */
     public function __construct($data = NULL) {
@@ -120,58 +104,6 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use member_id instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 998;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * deprecated, use member_id instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.User users = 998;</code>
-     * @param \Eolymp\Judge\Participant\User[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setUsers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\User::class);
-        $this->users = $arr;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use users instead
-     *
-     * Generated from protobuf field <code>string user_id = 999;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * deprecated, use users instead
-     *
-     * Generated from protobuf field <code>string user_id = 999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
 
         return $this;
     }

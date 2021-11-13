@@ -47,6 +47,14 @@ class Value extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 solved_in = 14;</code>
      */
     protected $solved_in = 0;
+    /**
+     * Generated from protobuf field <code>string value_string = 20;</code>
+     */
+    protected $value_string = '';
+    /**
+     * Generated from protobuf field <code>int32 value_number = 21;</code>
+     */
+    protected $value_number = 0;
 
     /**
      * Constructor.
@@ -64,6 +72,8 @@ class Value extends \Google\Protobuf\Internal\Message
      *           Number of attempts before problem was solved.
      *     @type int $solved_in
      *           How much time it took to solve problem since beginning of the contest, in seconds.
+     *     @type string $value_string
+     *     @type int $value_number
      * }
      */
     public function __construct($data = NULL) {
@@ -233,6 +243,50 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->solved_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value_string = 20;</code>
+     * @return string
+     */
+    public function getValueString()
+    {
+        return $this->value_string;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value_string = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setValueString($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->value_string = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 value_number = 21;</code>
+     * @return int
+     */
+    public function getValueNumber()
+    {
+        return $this->value_number;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 value_number = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setValueNumber($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->value_number = $var;
 
         return $this;
     }

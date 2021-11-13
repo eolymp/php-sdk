@@ -16,9 +16,9 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>INCOMPLETE = 1;</code>
+     * Generated from protobuf enum <code>UNSTAFFED = 1;</code>
      */
-    const INCOMPLETE = 1;
+    const UNSTAFFED = 1;
     /**
      * Generated from protobuf enum <code>UNREGISTERED = 2;</code>
      */
@@ -28,16 +28,16 @@ class Status
      */
     const ACTIVE = 3;
     /**
-     * Generated from protobuf enum <code>DISABLED = 4;</code>
+     * Generated from protobuf enum <code>INACTIVE = 4;</code>
      */
-    const DISABLED = 4;
+    const INACTIVE = 4;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::INCOMPLETE => 'INCOMPLETE',
+        self::UNSTAFFED => 'UNSTAFFED',
         self::UNREGISTERED => 'UNREGISTERED',
         self::ACTIVE => 'ACTIVE',
-        self::DISABLED => 'DISABLED',
+        self::INACTIVE => 'INACTIVE',
     ];
 
     public static function name($value)

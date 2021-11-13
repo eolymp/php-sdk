@@ -26,11 +26,11 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * User ID.
+     * Member ID.
      *
-     * Generated from protobuf field <code>string user_id = 3;</code>
+     * Generated from protobuf field <code>string member_id = 3;</code>
      */
-    protected $user_id = '';
+    protected $member_id = '';
     /**
      * Total score.
      *
@@ -60,8 +60,8 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Row unique identifier
      *     @type string $name
      *           Participant name (identifier).
-     *     @type string $user_id
-     *           User ID.
+     *     @type string $member_id
+     *           Member ID.
      *     @type float $score
      *           Total score.
      *     @type float $penalty
@@ -128,27 +128,27 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User ID.
+     * Member ID.
      *
-     * Generated from protobuf field <code>string user_id = 3;</code>
+     * Generated from protobuf field <code>string member_id = 3;</code>
      * @return string
      */
-    public function getUserId()
+    public function getMemberId()
     {
-        return $this->user_id;
+        return $this->member_id;
     }
 
     /**
-     * User ID.
+     * Member ID.
      *
-     * Generated from protobuf field <code>string user_id = 3;</code>
+     * Generated from protobuf field <code>string member_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->member_id = $var;
 
         return $this;
     }
