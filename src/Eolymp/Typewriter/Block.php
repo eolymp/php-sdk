@@ -29,7 +29,8 @@ class Block extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Typewriter\Block\Heading $heading
      *     @type \Eolymp\Typewriter\Block\PBList $list
      *     @type \Eolymp\Typewriter\Block\Embed $embed
-     *     @type \Eolymp\Typewriter\Block\Comment $comment
+     *     @type \Eolymp\Typewriter\Block\Table $table
+     *     @type \Eolymp\Typewriter\Block\Widget $widget
      * }
      */
     public function __construct($data = NULL) {
@@ -214,23 +215,45 @@ class Block extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Comment comment = 1000;</code>
-     * @return \Eolymp\Typewriter\Block\Comment
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Table table = 9;</code>
+     * @return \Eolymp\Typewriter\Block\Table
      */
-    public function getComment()
+    public function getTable()
     {
-        return $this->readOneof(1000);
+        return $this->readOneof(9);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Comment comment = 1000;</code>
-     * @param \Eolymp\Typewriter\Block\Comment $var
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Table table = 9;</code>
+     * @param \Eolymp\Typewriter\Block\Table $var
      * @return $this
      */
-    public function setComment($var)
+    public function setTable($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Block_Comment::class);
-        $this->writeOneof(1000, $var);
+        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Block_Table::class);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Widget widget = 10;</code>
+     * @return \Eolymp\Typewriter\Block\Widget
+     */
+    public function getWidget()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Widget widget = 10;</code>
+     * @param \Eolymp\Typewriter\Block\Widget $var
+     * @return $this
+     */
+    public function setWidget($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Block_Widget::class);
+        $this->writeOneof(10, $var);
 
         return $this;
     }

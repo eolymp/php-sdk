@@ -28,6 +28,10 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $content = '';
     /**
+     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 4;</code>
+     */
+    protected $content_rich = null;
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Problem.Statement.Format format = 5;</code>
      */
     protected $format = 0;
@@ -45,6 +49,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $title
      *     @type string $content
+     *     @type \Eolymp\Typewriter\Container $content_rich
      *     @type int $format
      *     @type string $download_link
      * }
@@ -116,6 +121,28 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 4;</code>
+     * @return \Eolymp\Typewriter\Container
+     */
+    public function getContentRich()
+    {
+        return $this->content_rich;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 4;</code>
+     * @param \Eolymp\Typewriter\Container $var
+     * @return $this
+     */
+    public function setContentRich($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Container::class);
+        $this->content_rich = $var;
 
         return $this;
     }

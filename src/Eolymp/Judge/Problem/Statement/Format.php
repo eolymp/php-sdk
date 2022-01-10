@@ -27,12 +27,17 @@ class Format
      * Generated from protobuf enum <code>HTML = 3;</code>
      */
     const HTML = 3;
+    /**
+     * Generated from protobuf enum <code>RICH = 4;</code>
+     */
+    const RICH = 4;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::TEX => 'TEX',
         self::MARKDOWN => 'MARKDOWN',
         self::HTML => 'HTML',
+        self::RICH => 'RICH',
     ];
 
     public static function name($value)

@@ -83,6 +83,19 @@ class UniverseClient {
     }
 
     /**
+     * Describe quota
+     *
+     * @param DescribeQuotaInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeQuotaOutput output message
+     */
+    public function DescribeQuota(DescribeQuotaInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/DescribeQuota", $input, DescribeQuotaOutput::class, $context);
+    }
+
+    /**
      * List spaces of a contest
      *
      * @param ListSpacesInput $input message

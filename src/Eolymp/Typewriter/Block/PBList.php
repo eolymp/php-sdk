@@ -18,7 +18,7 @@ class PBList extends \Google\Protobuf\Internal\Message
      */
     protected $style = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.typewriter.Container children = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.List.Item children = 10;</code>
      */
     private $children;
 
@@ -29,7 +29,7 @@ class PBList extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $style
-     *     @type \Eolymp\Typewriter\Container[]|\Google\Protobuf\Internal\RepeatedField $children
+     *     @type \Eolymp\Typewriter\Block\PBList\Item[]|\Google\Protobuf\Internal\RepeatedField $children
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class PBList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.typewriter.Container children = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.List.Item children = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getChildren()
@@ -69,13 +69,13 @@ class PBList extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.typewriter.Container children = 10;</code>
-     * @param \Eolymp\Typewriter\Container[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.List.Item children = 10;</code>
+     * @param \Eolymp\Typewriter\Block\PBList\Item[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChildren($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Typewriter\Container::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Typewriter\Block\PBList\Item::class);
         $this->children = $arr;
 
         return $this;

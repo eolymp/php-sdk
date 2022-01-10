@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Code extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string lang = 2;</code>
+     * Generated from protobuf field <code>string lang = 1;</code>
      */
     protected $lang = '';
     /**
-     * Generated from protobuf field <code>string content = 3;</code>
+     * Generated from protobuf field <code>string content = 2;</code>
      */
     protected $content = '';
 
@@ -38,7 +38,7 @@ class Code extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string lang = 2;</code>
+     * Generated from protobuf field <code>string lang = 1;</code>
      * @return string
      */
     public function getLang()
@@ -47,7 +47,7 @@ class Code extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string lang = 2;</code>
+     * Generated from protobuf field <code>string lang = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +60,7 @@ class Code extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 3;</code>
+     * Generated from protobuf field <code>string content = 2;</code>
      * @return string
      */
     public function getContent()
@@ -69,7 +69,7 @@ class Code extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 3;</code>
+     * Generated from protobuf field <code>string content = 2;</code>
      * @param string $var
      * @return $this
      */

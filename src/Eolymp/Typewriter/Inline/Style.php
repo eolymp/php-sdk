@@ -29,18 +29,6 @@ class Style extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool strikethrough = 4;</code>
      */
     protected $strikethrough = false;
-    /**
-     * deprecated, use code inline instead
-     *
-     * Generated from protobuf field <code>bool fixed = 5;</code>
-     */
-    protected $fixed = false;
-    /**
-     * deprecated, use math inline instead
-     *
-     * Generated from protobuf field <code>bool math = 6;</code>
-     */
-    protected $math = false;
 
     /**
      * Constructor.
@@ -52,10 +40,6 @@ class Style extends \Google\Protobuf\Internal\Message
      *     @type bool $italic
      *     @type bool $underline
      *     @type bool $strikethrough
-     *     @type bool $fixed
-     *           deprecated, use code inline instead
-     *     @type bool $math
-     *           deprecated, use math inline instead
      * }
      */
     public function __construct($data = NULL) {
@@ -147,58 +131,6 @@ class Style extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->strikethrough = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use code inline instead
-     *
-     * Generated from protobuf field <code>bool fixed = 5;</code>
-     * @return bool
-     */
-    public function getFixed()
-    {
-        return $this->fixed;
-    }
-
-    /**
-     * deprecated, use code inline instead
-     *
-     * Generated from protobuf field <code>bool fixed = 5;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setFixed($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->fixed = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use math inline instead
-     *
-     * Generated from protobuf field <code>bool math = 6;</code>
-     * @return bool
-     */
-    public function getMath()
-    {
-        return $this->math;
-    }
-
-    /**
-     * deprecated, use math inline instead
-     *
-     * Generated from protobuf field <code>bool math = 6;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setMath($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->math = $var;
 
         return $this;
     }

@@ -44,6 +44,12 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $content = '';
     /**
+     * Statement content (in rich format).
+     *
+     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 8;</code>
+     */
+    protected $content_rich = null;
+    /**
      * Statement download link, allows to download statement in original format.
      *
      * Generated from protobuf field <code>string download_link = 7;</code>
@@ -84,6 +90,8 @@ class Statement extends \Google\Protobuf\Internal\Message
      *           Statement title.
      *     @type string $content
      *           Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
+     *     @type \Eolymp\Typewriter\Container $content_rich
+     *           Statement content (in rich format).
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
      *     @type int $format
@@ -225,6 +233,32 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Statement content (in rich format).
+     *
+     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 8;</code>
+     * @return \Eolymp\Typewriter\Container
+     */
+    public function getContentRich()
+    {
+        return $this->content_rich;
+    }
+
+    /**
+     * Statement content (in rich format).
+     *
+     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 8;</code>
+     * @param \Eolymp\Typewriter\Container $var
+     * @return $this
+     */
+    public function setContentRich($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Container::class);
+        $this->content_rich = $var;
 
         return $this;
     }
