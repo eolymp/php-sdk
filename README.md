@@ -1,6 +1,6 @@
 # Eolymp PHP SDK
 
-E-Olymp PHP SDK provides development kit for interacting with E-Olymp API.
+Eolymp PHP SDK provides development kit for interacting with Eolymp API.
 
 ## Usage
 
