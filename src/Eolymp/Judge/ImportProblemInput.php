@@ -29,6 +29,10 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 submit_limit = 11;</code>
      */
     protected $submit_limit = 0;
+    /**
+     * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
+     */
+    protected $score_by_best_testset = false;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
      *     @type string $import_id
      *     @type int $index
      *     @type int $submit_limit
+     *     @type bool $score_by_best_testset
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->submit_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
+     * @return bool
+     */
+    public function getScoreByBestTestset()
+    {
+        return $this->score_by_best_testset;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setScoreByBestTestset($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->score_by_best_testset = $var;
 
         return $this;
     }

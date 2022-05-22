@@ -62,6 +62,12 @@ class Type
      * Generated from protobuf enum <code>LEGACY_PROGRAM = 4;</code>
      */
     const LEGACY_PROGRAM = 4;
+    /**
+     * Query results verifies JSON encoded results of a query.
+     *
+     * Generated from protobuf enum <code>QUERY_RESULTS = 5;</code>
+     */
+    const QUERY_RESULTS = 5;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -69,6 +75,7 @@ class Type
         self::LINES => 'LINES',
         self::PROGRAM => 'PROGRAM',
         self::LEGACY_PROGRAM => 'LEGACY_PROGRAM',
+        self::QUERY_RESULTS => 'QUERY_RESULTS',
     ];
 
     public static function name($value)

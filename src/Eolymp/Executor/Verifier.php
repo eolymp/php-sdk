@@ -45,6 +45,13 @@ class Verifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool case_sensitive = 5;</code>
      */
     protected $case_sensitive = false;
+    /**
+     * Order sensitivity option for QUERY_RESULTS verifier.
+     * If set to false the rows of output and answer will be sorted before comparison.
+     *
+     * Generated from protobuf field <code>bool order_sensitive = 6;</code>
+     */
+    protected $order_sensitive = false;
 
     /**
      * Constructor.
@@ -62,6 +69,9 @@ class Verifier extends \Google\Protobuf\Internal\Message
      *           Precision for TOKEN verifier
      *     @type bool $case_sensitive
      *           Case sensitivity option for TOKEN verifier
+     *     @type bool $order_sensitive
+     *           Order sensitivity option for QUERY_RESULTS verifier.
+     *           If set to false the rows of output and answer will be sorted before comparison.
      * }
      */
     public function __construct($data = NULL) {
@@ -195,6 +205,34 @@ class Verifier extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->case_sensitive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Order sensitivity option for QUERY_RESULTS verifier.
+     * If set to false the rows of output and answer will be sorted before comparison.
+     *
+     * Generated from protobuf field <code>bool order_sensitive = 6;</code>
+     * @return bool
+     */
+    public function getOrderSensitive()
+    {
+        return $this->order_sensitive;
+    }
+
+    /**
+     * Order sensitivity option for QUERY_RESULTS verifier.
+     * If set to false the rows of output and answer will be sorted before comparison.
+     *
+     * Generated from protobuf field <code>bool order_sensitive = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOrderSensitive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->order_sensitive = $var;
 
         return $this;
     }

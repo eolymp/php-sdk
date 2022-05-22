@@ -50,7 +50,7 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $rank_lower = 0;
     /**
-     * breakdown of score by problem
+     * breakdown of total score by problem
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 20;</code>
      */
@@ -74,7 +74,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type int $rank_lower
      *           lower rank
      *     @type \Eolymp\Judge\Scoreboard\Score[]|\Google\Protobuf\Internal\RepeatedField $breakdown
-     *           breakdown of score by problem
+     *           breakdown of total score by problem
      * }
      */
     public function __construct($data = NULL) {
@@ -253,7 +253,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * breakdown of score by problem
+     * breakdown of total score by problem
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -264,7 +264,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * breakdown of score by problem
+     * breakdown of total score by problem
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Score breakdown = 20;</code>
      * @param \Eolymp\Judge\Scoreboard\Score[]|\Google\Protobuf\Internal\RepeatedField $var

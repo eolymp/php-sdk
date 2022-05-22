@@ -55,6 +55,12 @@ class Score extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 solved_in = 9;</code>
      */
     protected $solved_in = 0;
+    /**
+     * breakdown of problem score by testset
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Testset breakdown = 20;</code>
+     */
+    private $breakdown;
 
     /**
      * Constructor.
@@ -75,6 +81,8 @@ class Score extends \Google\Protobuf\Internal\Message
      *           time when first accepted submission is made
      *     @type int $solved_in
      *           amount of time it took user to get accepted
+     *     @type \Eolymp\Judge\Scoreboard\Testset[]|\Google\Protobuf\Internal\RepeatedField $breakdown
+     *           breakdown of problem score by testset
      * }
      */
     public function __construct($data = NULL) {
@@ -274,6 +282,32 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->solved_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * breakdown of problem score by testset
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Testset breakdown = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getBreakdown()
+    {
+        return $this->breakdown;
+    }
+
+    /**
+     * breakdown of problem score by testset
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Testset breakdown = 20;</code>
+     * @param \Eolymp\Judge\Scoreboard\Testset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setBreakdown($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Scoreboard\Testset::class);
+        $this->breakdown = $arr;
 
         return $this;
     }

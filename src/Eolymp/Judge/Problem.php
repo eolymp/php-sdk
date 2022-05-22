@@ -73,6 +73,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 submit_limit = 203;</code>
      */
     protected $submit_limit = 0;
+    /**
+     * problem score is calculated as sum of best score in each testset (best among all submissions)
+     *
+     * Generated from protobuf field <code>bool score_by_best_testset = 210;</code>
+     */
+    protected $score_by_best_testset = false;
 
     /**
      * Constructor.
@@ -100,6 +106,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           in bytes
      *     @type int $submit_limit
      *           in number of submits
+     *     @type bool $score_by_best_testset
+     *           problem score is calculated as sum of best score in each testset (best among all submissions)
      * }
      */
     public function __construct($data = NULL) {
@@ -363,6 +371,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->submit_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * problem score is calculated as sum of best score in each testset (best among all submissions)
+     *
+     * Generated from protobuf field <code>bool score_by_best_testset = 210;</code>
+     * @return bool
+     */
+    public function getScoreByBestTestset()
+    {
+        return $this->score_by_best_testset;
+    }
+
+    /**
+     * problem score is calculated as sum of best score in each testset (best among all submissions)
+     *
+     * Generated from protobuf field <code>bool score_by_best_testset = 210;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setScoreByBestTestset($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->score_by_best_testset = $var;
 
         return $this;
     }
