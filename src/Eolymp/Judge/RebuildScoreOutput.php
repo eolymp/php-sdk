@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.RebuildScoreboardInput</code>
+ * Generated from protobuf message <code>eolymp.judge.RebuildScoreOutput</code>
  */
-class RebuildScoreboardInput extends \Google\Protobuf\Internal\Message
+class RebuildScoreOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>string activity_id = 1;</code>
      */
-    protected $scoreboard_id = '';
+    protected $activity_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class RebuildScoreboardInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $scoreboard_id
+     *     @type string $activity_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class RebuildScoreboardInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>string activity_id = 1;</code>
      * @return string
      */
-    public function getScoreboardId()
+    public function getActivityId()
     {
-        return $this->scoreboard_id;
+        return $this->activity_id;
     }
 
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>string activity_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setScoreboardId($var)
+    public function setActivityId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->scoreboard_id = $var;
+        $this->activity_id = $var;
 
         return $this;
     }

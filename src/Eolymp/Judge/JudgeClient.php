@@ -117,32 +117,6 @@ class JudgeClient {
     }
 
     /**
-     * ConfigureRegistrationForm allows to configure registration form for the contest.
-     *
-     * @param ConfigureRegistrationFormInput $input message
-     * @param array $context request parameters
-     *
-     * @return ConfigureRegistrationFormOutput output message
-     */
-    public function ConfigureRegistrationForm(ConfigureRegistrationFormInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ConfigureRegistrationForm", $input, ConfigureRegistrationFormOutput::class, $context);
-    }
-
-    /**
-     * DescribeRegistrationForm allows fetch registration form for the contest.
-     *
-     * @param DescribeRegistrationFormInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeRegistrationFormOutput output message
-     */
-    public function DescribeRegistrationForm(DescribeRegistrationFormInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeRegistrationForm", $input, DescribeRegistrationFormOutput::class, $context);
-    }
-
-    /**
      * ConfigureRuntime allows to configure which runtimes will be available during contest.
      * All available runtimes can be retrieved using `executor.ListRuntime` method.
      *
@@ -157,7 +131,7 @@ class JudgeClient {
     }
 
     /**
-     * DescribeRegistrationForm allows fetch registration form for the contest.
+     * DescribeRuntime allows fetch runtimes available during contests.
      *
      * @param DescribeRuntimeInput $input message
      * @param array $context request parameters
@@ -196,29 +170,29 @@ class JudgeClient {
     }
 
     /**
-     * SubmitRegistration allows participant to submit registration form data.
+     * ConfigureScoring allows to configure contest scoring.
      *
-     * @param SubmitRegistrationInput $input message
+     * @param ConfigureScoringInput $input message
      * @param array $context request parameters
      *
-     * @return SubmitRegistrationOutput output message
+     * @return ConfigureScoringOutput output message
      */
-    public function SubmitRegistration(SubmitRegistrationInput $input, array $context = [])
+    public function ConfigureScoring(ConfigureScoringInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/SubmitRegistration", $input, SubmitRegistrationOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ConfigureScoring", $input, ConfigureScoringOutput::class, $context);
     }
 
     /**
-     * DescribeRegistration allows participant to submit registration form data.
+     * DescribeScoring allows fetch contest scoring.
      *
-     * @param DescribeRegistrationInput $input message
+     * @param DescribeScoringInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeRegistrationOutput output message
+     * @return DescribeScoringOutput output message
      */
-    public function DescribeRegistration(DescribeRegistrationInput $input, array $context = [])
+    public function DescribeScoring(DescribeScoringInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeRegistration", $input, DescribeRegistrationOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScoring", $input, DescribeScoringOutput::class, $context);
     }
 
     /**
@@ -798,6 +772,54 @@ class JudgeClient {
     }
 
     /**
+     * @param IntrospectScoreInput $input message
+     * @param array $context request parameters
+     *
+     * @return IntrospectScoreOutput output message
+     */
+    public function IntrospectScore(IntrospectScoreInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/IntrospectScore", $input, IntrospectScoreOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeScoreInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreOutput output message
+     */
+    public function DescribeScore(DescribeScoreInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScore", $input, DescribeScoreOutput::class, $context);
+    }
+
+    /**
+     * ImportScore for ghost participants
+     *
+     * @param ImportScoreInput $input message
+     * @param array $context request parameters
+     *
+     * @return ImportScoreOutput output message
+     */
+    public function ImportScore(ImportScoreInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ImportScore", $input, ImportScoreOutput::class, $context);
+    }
+
+    /**
+     * ListResult retrieves scoreboard
+     *
+     * @param ListResultInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListResultOutput output message
+     */
+    public function ListResult(ListResultInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/ListResult", $input, ListResultOutput::class, $context);
+    }
+
+    /**
      * Create scoreboard for a contest
      *
      * @param CreateScoreboardInput $input message
@@ -826,14 +848,14 @@ class JudgeClient {
     /**
      * Rebuild scoreboard
      *
-     * @param RebuildScoreboardInput $input message
+     * @param RebuildScoreInput $input message
      * @param array $context request parameters
      *
-     * @return RebuildScoreboardOutput output message
+     * @return RebuildScoreOutput output message
      */
-    public function RebuildScoreboard(RebuildScoreboardInput $input, array $context = [])
+    public function RebuildScore(RebuildScoreInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RebuildScoreboard", $input, RebuildScoreboardOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.judge.Judge/RebuildScore", $input, RebuildScoreOutput::class, $context);
     }
 
     /**

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.SubmitRegistrationOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.ConfigureScoringOutput</code>
  */
-class SubmitRegistrationOutput extends \Google\Protobuf\Internal\Message
+class ConfigureScoringOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

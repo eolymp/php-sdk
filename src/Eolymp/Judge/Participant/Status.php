@@ -47,6 +47,12 @@ class Status
      * Generated from protobuf enum <code>UNREGISTERED = 5;</code>
      */
     const UNREGISTERED = 5;
+    /**
+     * participant assigned to a ghost member
+     *
+     * Generated from protobuf enum <code>GHOST = 6;</code>
+     */
+    const GHOST = 6;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -55,6 +61,7 @@ class Status
         self::COMPLETE => 'COMPLETE',
         self::INACTIVE => 'INACTIVE',
         self::UNREGISTERED => 'UNREGISTERED',
+        self::GHOST => 'GHOST',
     ];
 
     public static function name($value)

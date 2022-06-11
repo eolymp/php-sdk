@@ -34,6 +34,10 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $staffed = false;
     /**
+     * Generated from protobuf field <code>bool ghost = 7;</code>
+     */
+    protected $ghost = false;
+    /**
      * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
      */
     protected $status = 0;
@@ -57,6 +61,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type bool $disabled
      *     @type bool $registered
      *     @type bool $staffed
+     *     @type bool $ghost
      *     @type int $status
      *     @type \Eolymp\Community\Member\User[]|\Google\Protobuf\Internal\RepeatedField $users
      *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
@@ -173,6 +178,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->staffed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool ghost = 7;</code>
+     * @return bool
+     */
+    public function getGhost()
+    {
+        return $this->ghost;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool ghost = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGhost($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ghost = $var;
 
         return $this;
     }

@@ -31,6 +31,10 @@ class Status
      * Generated from protobuf enum <code>INACTIVE = 4;</code>
      */
     const INACTIVE = 4;
+    /**
+     * Generated from protobuf enum <code>GHOST = 5;</code>
+     */
+    const GHOST = 5;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
@@ -38,6 +42,7 @@ class Status
         self::UNREGISTERED => 'UNREGISTERED',
         self::ACTIVE => 'ACTIVE',
         self::INACTIVE => 'INACTIVE',
+        self::GHOST => 'GHOST',
     ];
 
     public static function name($value)

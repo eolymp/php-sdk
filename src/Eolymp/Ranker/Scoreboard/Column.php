@@ -46,13 +46,13 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $visible = false;
     /**
-     * Generated from protobuf field <code>string contest_scoreboard_id = 20;</code>
+     * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      */
-    protected $contest_scoreboard_id = '';
+    protected $judge_contest_id = '';
     /**
-     * Generated from protobuf field <code>string contest_problem_id = 21;</code>
+     * Generated from protobuf field <code>string judge_problem_id = 21;</code>
      */
-    protected $contest_problem_id = '';
+    protected $judge_problem_id = '';
     /**
      * Generated from protobuf field <code>string community_attribute_key = 22;</code>
      */
@@ -76,8 +76,8 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *     @type int $index
      *     @type bool $visible
-     *     @type string $contest_scoreboard_id
-     *     @type string $contest_problem_id
+     *     @type string $judge_contest_id
+     *     @type string $judge_problem_id
      *     @type string $community_attribute_key
      *     @type \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $columns
      * }
@@ -264,45 +264,45 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string contest_scoreboard_id = 20;</code>
+     * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      * @return string
      */
-    public function getContestScoreboardId()
+    public function getJudgeContestId()
     {
-        return $this->contest_scoreboard_id;
+        return $this->judge_contest_id;
     }
 
     /**
-     * Generated from protobuf field <code>string contest_scoreboard_id = 20;</code>
+     * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      * @param string $var
      * @return $this
      */
-    public function setContestScoreboardId($var)
+    public function setJudgeContestId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->contest_scoreboard_id = $var;
+        $this->judge_contest_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string contest_problem_id = 21;</code>
+     * Generated from protobuf field <code>string judge_problem_id = 21;</code>
      * @return string
      */
-    public function getContestProblemId()
+    public function getJudgeProblemId()
     {
-        return $this->contest_problem_id;
+        return $this->judge_problem_id;
     }
 
     /**
-     * Generated from protobuf field <code>string contest_problem_id = 21;</code>
+     * Generated from protobuf field <code>string judge_problem_id = 21;</code>
      * @param string $var
      * @return $this
      */
-    public function setContestProblemId($var)
+    public function setJudgeProblemId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->contest_problem_id = $var;
+        $this->judge_problem_id = $var;
 
         return $this;
     }

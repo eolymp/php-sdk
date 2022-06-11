@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.DescribeRegistrationInput</code>
+ * Generated from protobuf message <code>eolymp.judge.DescribeScoringInput</code>
  */
-class DescribeRegistrationInput extends \Google\Protobuf\Internal\Message
+class DescribeScoringInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
      */
-    protected $participant_id = '';
+    protected $contest_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribeRegistrationInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $participant_id
+     *     @type string $contest_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DescribeRegistrationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
      * @return string
      */
-    public function getParticipantId()
+    public function getContestId()
     {
-        return $this->participant_id;
+        return $this->contest_id;
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setParticipantId($var)
+    public function setContestId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->participant_id = $var;
+        $this->contest_id = $var;
 
         return $this;
     }

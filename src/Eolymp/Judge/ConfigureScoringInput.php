@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.ConfigureRegistrationFormInput</code>
+ * Generated from protobuf message <code>eolymp.judge.ConfigureScoringInput</code>
  */
-class ConfigureRegistrationFormInput extends \Google\Protobuf\Internal\Message
+class ConfigureScoringInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Form form = 10;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 2;</code>
      */
-    protected $form = null;
+    protected $scoring = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class ConfigureRegistrationFormInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type \Eolymp\Judge\Form $form
+     *     @type \Eolymp\Judge\Contest\Scoring $scoring
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class ConfigureRegistrationFormInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Form form = 10;</code>
-     * @return \Eolymp\Judge\Form
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 2;</code>
+     * @return \Eolymp\Judge\Contest\Scoring
      */
-    public function getForm()
+    public function getScoring()
     {
-        return $this->form;
+        return $this->scoring;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Form form = 10;</code>
-     * @param \Eolymp\Judge\Form $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 2;</code>
+     * @param \Eolymp\Judge\Contest\Scoring $var
      * @return $this
      */
-    public function setForm($var)
+    public function setScoring($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Form::class);
-        $this->form = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Scoring::class);
+        $this->scoring = $var;
 
         return $this;
     }
