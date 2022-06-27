@@ -44,6 +44,18 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $penalty = 0.0;
     /**
+     * Rank in the scoreboard
+     *
+     * Generated from protobuf field <code>uint32 rank = 30;</code>
+     */
+    protected $rank = 0;
+    /**
+     * Lower bound of the rank (when shared)
+     *
+     * Generated from protobuf field <code>uint32 rank_lower = 31;</code>
+     */
+    protected $rank_lower = 0;
+    /**
      * Score breakdown by contest and problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
@@ -66,6 +78,10 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Total score.
      *     @type float $penalty
      *           Total penalty.
+     *     @type int $rank
+     *           Rank in the scoreboard
+     *     @type int $rank_lower
+     *           Lower bound of the rank (when shared)
      *     @type \Eolymp\Ranker\Scoreboard\Row\Value[]|\Google\Protobuf\Internal\RepeatedField $values
      *           Score breakdown by contest and problem.
      * }
@@ -201,6 +217,58 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Rank in the scoreboard
+     *
+     * Generated from protobuf field <code>uint32 rank = 30;</code>
+     * @return int
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    /**
+     * Rank in the scoreboard
+     *
+     * Generated from protobuf field <code>uint32 rank = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRank($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank = $var;
+
+        return $this;
+    }
+
+    /**
+     * Lower bound of the rank (when shared)
+     *
+     * Generated from protobuf field <code>uint32 rank_lower = 31;</code>
+     * @return int
+     */
+    public function getRankLower()
+    {
+        return $this->rank_lower;
+    }
+
+    /**
+     * Lower bound of the rank (when shared)
+     *
+     * Generated from protobuf field <code>uint32 rank_lower = 31;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRankLower($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank_lower = $var;
 
         return $this;
     }

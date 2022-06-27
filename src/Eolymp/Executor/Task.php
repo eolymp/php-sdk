@@ -72,6 +72,12 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $redirect_stderr_to_stdout = false;
     /**
+     * Create workspace archive for every run and upload it to the storage
+     *
+     * Generated from protobuf field <code>bool use_workspace_archive = 15;</code>
+     */
+    protected $use_workspace_archive = false;
+    /**
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
@@ -132,6 +138,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Verifier will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
+     *     @type bool $use_workspace_archive
+     *           Create workspace archive for every run and upload it to the storage
      *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
@@ -369,6 +377,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->redirect_stderr_to_stdout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Create workspace archive for every run and upload it to the storage
+     *
+     * Generated from protobuf field <code>bool use_workspace_archive = 15;</code>
+     * @return bool
+     */
+    public function getUseWorkspaceArchive()
+    {
+        return $this->use_workspace_archive;
+    }
+
+    /**
+     * Create workspace archive for every run and upload it to the storage
+     *
+     * Generated from protobuf field <code>bool use_workspace_archive = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUseWorkspaceArchive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->use_workspace_archive = $var;
 
         return $this;
     }

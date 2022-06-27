@@ -39,11 +39,19 @@ class FetchingMode
      * Generated from protobuf enum <code>LATEST = 2;</code>
      */
     const LATEST = 2;
+    /**
+     * Frozen score returns the latest score recorded before freezing time. This mode is intended for admins to see
+     * frozen scoreboard.
+     *
+     * Generated from protobuf enum <code>FROZEN = 3;</code>
+     */
+    const FROZEN = 3;
 
     private static $valueToName = [
         self::ACTUAL => 'ACTUAL',
         self::PUNCTUAL => 'PUNCTUAL',
         self::LATEST => 'LATEST',
+        self::FROZEN => 'FROZEN',
     ];
 
     public static function name($value)
