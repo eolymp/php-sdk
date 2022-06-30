@@ -83,6 +83,43 @@ class CognitoClient {
     }
 
     /**
+     * Create API key.
+     *
+     * @param CreateAccessKeyInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateAccessKeyOutput output message
+     */
+    public function CreateAccessKey(CreateAccessKeyInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/CreateAccessKey", $input, CreateAccessKeyOutput::class, $context);
+    }
+
+    /**
+     * Delete API key.
+     *
+     * @param DeleteAccessKeyInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteAccessKeyOutput output message
+     */
+    public function DeleteAccessKey(DeleteAccessKeyInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/DeleteAccessKey", $input, DeleteAccessKeyOutput::class, $context);
+    }
+
+    /**
+     * @param ListAccessKeysInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAccessKeysOutput output message
+     */
+    public function ListAccessKeys(ListAccessKeysInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListAccessKeys", $input, ListAccessKeysOutput::class, $context);
+    }
+
+    /**
      * Create user account.
      *
      * @param CreateUserInput $input message
