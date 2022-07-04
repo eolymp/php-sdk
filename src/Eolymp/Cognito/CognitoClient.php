@@ -159,6 +159,19 @@ class CognitoClient {
     }
 
     /**
+     * Update user email, changes user's current email and starts email verification process.
+     *
+     * @param UpdateProfileInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateProfileOutput output message
+     */
+    public function UpdateProfile(UpdateProfileInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdateProfile", $input, UpdateProfileOutput::class, $context);
+    }
+
+    /**
      * Start access recovery procedure, this method will send recovery token to the user's email.
      * This method will return OK even if email does not exist.
      *
