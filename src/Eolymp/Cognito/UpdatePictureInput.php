@@ -21,6 +21,18 @@ class UpdatePictureInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes data = 2;</code>
      */
     protected $data = '';
+    /**
+     * Generated from protobuf field <code>uint32 offsetX = 10;</code>
+     */
+    protected $offsetX = 0;
+    /**
+     * Generated from protobuf field <code>uint32 offsetY = 11;</code>
+     */
+    protected $offsetY = 0;
+    /**
+     * Generated from protobuf field <code>uint32 size = 12;</code>
+     */
+    protected $size = 0;
 
     /**
      * Constructor.
@@ -30,6 +42,9 @@ class UpdatePictureInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $filename
      *     @type string $data
+     *     @type int $offsetX
+     *     @type int $offsetY
+     *     @type int $size
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +92,72 @@ class UpdatePictureInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 offsetX = 10;</code>
+     * @return int
+     */
+    public function getOffsetX()
+    {
+        return $this->offsetX;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 offsetX = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffsetX($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->offsetX = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 offsetY = 11;</code>
+     * @return int
+     */
+    public function getOffsetY()
+    {
+        return $this->offsetY;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 offsetY = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffsetY($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->offsetY = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 size = 12;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 size = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->size = $var;
 
         return $this;
     }

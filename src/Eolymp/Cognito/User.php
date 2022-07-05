@@ -109,6 +109,18 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
      */
     protected $last_activity = null;
+    /**
+     * Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
+     */
+    protected $username_changed_on = null;
+    /**
+     * Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
+     */
+    protected $password_changed_on = null;
 
     /**
      * Constructor.
@@ -148,6 +160,10 @@ class User extends \Google\Protobuf\Internal\Message
      *           Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
      *     @type \Google\Protobuf\Timestamp $last_activity
      *           Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type \Google\Protobuf\Timestamp $username_changed_on
+     *           Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type \Google\Protobuf\Timestamp $password_changed_on
+     *           Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
      * }
      */
     public function __construct($data = NULL) {
@@ -567,6 +583,58 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_activity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUsernameChangedOn()
+    {
+        return $this->username_changed_on;
+    }
+
+    /**
+     * Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUsernameChangedOn($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->username_changed_on = $var;
+
+        return $this;
+    }
+
+    /**
+     * Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getPasswordChangedOn()
+    {
+        return $this->password_changed_on;
+    }
+
+    /**
+     * Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setPasswordChangedOn($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->password_changed_on = $var;
 
         return $this;
     }
