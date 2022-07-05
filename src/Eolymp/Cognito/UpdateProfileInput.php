@@ -32,10 +32,6 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string picture = 11;</code>
-     */
-    protected $picture = '';
-    /**
      * Generated from protobuf field <code>string company = 12;</code>
      */
     protected $company = '';
@@ -67,7 +63,6 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      *     @type string $username
      *     @type string $email
      *     @type string $name
-     *     @type string $picture
      *     @type string $company
      *     @type string $occupation
      *     @type string $country
@@ -168,28 +163,6 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string picture = 11;</code>
-     * @return string
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
-     * Generated from protobuf field <code>string picture = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPicture($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->picture = $var;
 
         return $this;
     }

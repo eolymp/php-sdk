@@ -159,8 +159,6 @@ class CognitoClient {
     }
 
     /**
-     * Update user email, changes user's current email and starts email verification process.
-     *
      * @param UpdateProfileInput $input message
      * @param array $context request parameters
      *
@@ -169,6 +167,28 @@ class CognitoClient {
     public function UpdateProfile(UpdateProfileInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdateProfile", $input, UpdateProfileOutput::class, $context);
+    }
+
+    /**
+     * @param UpdatePictureInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePictureOutput output message
+     */
+    public function UpdatePicture(UpdatePictureInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdatePicture", $input, UpdatePictureOutput::class, $context);
+    }
+
+    /**
+     * @param UpdatePasswordInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePasswordOutput output message
+     */
+    public function UpdatePassword(UpdatePasswordInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdatePassword", $input, UpdatePasswordOutput::class, $context);
     }
 
     /**

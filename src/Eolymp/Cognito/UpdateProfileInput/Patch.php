@@ -24,35 +24,30 @@ class Patch
      */
     const NAME = 2;
     /**
-     * Generated from protobuf enum <code>PICTURE = 3;</code>
+     * Generated from protobuf enum <code>COMPANY = 3;</code>
      */
-    const PICTURE = 3;
+    const COMPANY = 3;
     /**
-     * Generated from protobuf enum <code>COMPANY = 4;</code>
+     * Generated from protobuf enum <code>OCCUPATION = 4;</code>
      */
-    const COMPANY = 4;
+    const OCCUPATION = 4;
     /**
-     * Generated from protobuf enum <code>OCCUPATION = 5;</code>
+     * Generated from protobuf enum <code>COUNTRY = 5;</code>
      */
-    const OCCUPATION = 5;
+    const COUNTRY = 5;
     /**
-     * Generated from protobuf enum <code>COUNTRY = 6;</code>
+     * Generated from protobuf enum <code>CITY = 6;</code>
      */
-    const COUNTRY = 6;
+    const CITY = 6;
     /**
-     * Generated from protobuf enum <code>CITY = 7;</code>
+     * Generated from protobuf enum <code>BIRTHDAY = 7;</code>
      */
-    const CITY = 7;
-    /**
-     * Generated from protobuf enum <code>BIRTHDAY = 8;</code>
-     */
-    const BIRTHDAY = 8;
+    const BIRTHDAY = 7;
 
     private static $valueToName = [
         self::USERNAME => 'USERNAME',
         self::EMAIL => 'EMAIL',
         self::NAME => 'NAME',
-        self::PICTURE => 'PICTURE',
         self::COMPANY => 'COMPANY',
         self::OCCUPATION => 'OCCUPATION',
         self::COUNTRY => 'COUNTRY',
