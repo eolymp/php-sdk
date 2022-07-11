@@ -30,6 +30,10 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * Generated from protobuf field <code>string author_id = 5;</code>
+     */
+    protected $author_id = '';
+    /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
     private $labels;
@@ -45,6 +49,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $runtime
      *     @type int $visibility
+     *     @type string $author_id
      *     @type string $atlas_problem_id
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
@@ -138,6 +143,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Workspace\Project_Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string author_id = 5;</code>
+     * @return string
+     */
+    public function getAuthorId()
+    {
+        return $this->author_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string author_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author_id = $var;
 
         return $this;
     }
