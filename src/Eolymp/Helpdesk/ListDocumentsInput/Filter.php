@@ -14,15 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
+     * Generated from protobuf field <code>string query = 1;</code>
+     */
+    protected $query = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString path = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString path = 3;</code>
      */
     private $path;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 4;</code>
      */
     private $locale;
 
@@ -32,6 +36,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $query
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $path
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $locale
@@ -43,7 +48,29 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
+     * Generated from protobuf field <code>string query = 1;</code>
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Generated from protobuf field <code>string query = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getId()
@@ -52,7 +79,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
      * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -65,7 +92,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString path = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString path = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPath()
@@ -74,7 +101,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString path = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString path = 3;</code>
      * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLocale()
@@ -96,7 +123,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 4;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

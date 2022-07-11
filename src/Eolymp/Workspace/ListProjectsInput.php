@@ -14,10 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProjectsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string search_query = 1;</code>
-     */
-    protected $search_query = '';
-    /**
+     * pagination
+     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -25,6 +23,12 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
     protected $size = 0;
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>.eolymp.workspace.ListProjectsInput.Filter filters = 40;</code>
+     */
+    protected $filters = null;
 
     /**
      * Constructor.
@@ -32,9 +36,11 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $search_query
      *     @type int $offset
+     *           pagination
      *     @type int $size
+     *     @type \Eolymp\Workspace\ListProjectsInput\Filter $filters
+     *           data filters
      * }
      */
     public function __construct($data = NULL) {
@@ -43,28 +49,8 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string search_query = 1;</code>
-     * @return string
-     */
-    public function getSearchQuery()
-    {
-        return $this->search_query;
-    }
-
-    /**
-     * Generated from protobuf field <code>string search_query = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSearchQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->search_query = $var;
-
-        return $this;
-    }
-
-    /**
+     * pagination
+     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @return int
      */
@@ -74,6 +60,8 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * pagination
+     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @param int $var
      * @return $this
@@ -104,6 +92,32 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>.eolymp.workspace.ListProjectsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Workspace\ListProjectsInput\Filter
+     */
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>.eolymp.workspace.ListProjectsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Workspace\ListProjectsInput\Filter $var
+     * @return $this
+     */
+    public function setFilters($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Workspace\ListProjectsInput_Filter::class);
+        $this->filters = $var;
 
         return $this;
     }
