@@ -12,19 +12,26 @@ use UnexpectedValueException;
 class Visibility
 {
     /**
-     * Reserved, private
+     * Reserved, don't use
      *
-     * Generated from protobuf enum <code>PRIVATE = 0;</code>
+     * Generated from protobuf enum <code>NONE = 0;</code>
      */
-    const PBPRIVATE = 0;
+    const NONE = 0;
     /**
-     * Program pending execution.
+     * Private, not visible by others
      *
-     * Generated from protobuf enum <code>PUBLIC = 1;</code>
+     * Generated from protobuf enum <code>PRIVATE = 1;</code>
      */
-    const PBPUBLIC = 1;
+    const PBPRIVATE = 1;
+    /**
+     * Public, visible to others
+     *
+     * Generated from protobuf enum <code>PUBLIC = 2;</code>
+     */
+    const PBPUBLIC = 2;
 
     private static $valueToName = [
+        self::NONE => 'NONE',
         self::PBPRIVATE => 'PBPRIVATE',
         self::PBPUBLIC => 'PBPUBLIC',
     ];

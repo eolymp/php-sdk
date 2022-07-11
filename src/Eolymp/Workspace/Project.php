@@ -34,10 +34,21 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $author_id = '';
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_on = 6;</code>
+     */
+    protected $created_on = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_on = 7;</code>
+     */
+    protected $updated_on = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.workspace.Project.Target target = 10;</code>
+     */
+    protected $target = null;
+    /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
     private $labels;
-    protected $target;
 
     /**
      * Constructor.
@@ -50,7 +61,9 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type int $visibility
      *     @type string $author_id
-     *     @type string $atlas_problem_id
+     *     @type \Google\Protobuf\Timestamp $created_on
+     *     @type \Google\Protobuf\Timestamp $updated_on
+     *     @type \Eolymp\Workspace\Project\Target $target
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
@@ -170,23 +183,67 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string atlas_problem_id = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_on = 6;</code>
+     * @return \Google\Protobuf\Timestamp
      */
-    public function getAtlasProblemId()
+    public function getCreatedOn()
     {
-        return $this->readOneof(10);
+        return $this->created_on;
     }
 
     /**
-     * Generated from protobuf field <code>string atlas_problem_id = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_on = 6;</code>
+     * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setAtlasProblemId($var)
+    public function setCreatedOn($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(10, $var);
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_on = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_on = 7;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUpdatedOn()
+    {
+        return $this->updated_on;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_on = 7;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedOn($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_on = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.workspace.Project.Target target = 10;</code>
+     * @return \Eolymp\Workspace\Project\Target
+     */
+    public function getTarget()
+    {
+        return $this->target;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.workspace.Project.Target target = 10;</code>
+     * @param \Eolymp\Workspace\Project\Target $var
+     * @return $this
+     */
+    public function setTarget($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Workspace\Project_Target::class);
+        $this->target = $var;
 
         return $this;
     }
@@ -211,14 +268,6 @@ class Project extends \Google\Protobuf\Internal\Message
         $this->labels = $arr;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTarget()
-    {
-        return $this->whichOneof("target");
     }
 
 }
