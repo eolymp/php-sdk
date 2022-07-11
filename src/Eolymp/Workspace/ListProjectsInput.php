@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProjectsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string search_query = 1;</code>
+     */
+    protected $search_query = '';
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -28,6 +32,7 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $search_query
      *     @type int $offset
      *     @type int $size
      * }
@@ -35,6 +40,28 @@ class ListProjectsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Workspace\Workspace::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string search_query = 1;</code>
+     * @return string
+     */
+    public function getSearchQuery()
+    {
+        return $this->search_query;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search_query = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearchQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search_query = $var;
+
+        return $this;
     }
 
     /**
