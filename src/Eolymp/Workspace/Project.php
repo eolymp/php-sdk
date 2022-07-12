@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Project extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     */
+    protected $uri = '';
+    /**
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
@@ -56,6 +60,7 @@ class Project extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $uri
      *     @type string $id
      *     @type string $name
      *     @type string $runtime
@@ -70,6 +75,28 @@ class Project extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Workspace\Project::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uri = $var;
+
+        return $this;
     }
 
     /**

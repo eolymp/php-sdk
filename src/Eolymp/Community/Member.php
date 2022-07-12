@@ -18,6 +18,10 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     */
+    protected $uri = '';
+    /**
      * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
@@ -57,6 +61,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $uri
      *     @type string $name
      *     @type bool $disabled
      *     @type bool $registered
@@ -90,6 +95,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uri = $var;
 
         return $this;
     }

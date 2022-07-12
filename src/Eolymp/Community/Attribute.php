@@ -20,6 +20,10 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     */
+    protected $uri = '';
+    /**
      * field localized data, such as label and help message
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
@@ -80,6 +84,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key
      *           unique field identifier (should be unique within the form, not globally unique)
+     *     @type string $uri
      *     @type \Eolymp\Community\Attribute\Description[]|\Google\Protobuf\Internal\RepeatedField $description
      *           field localized data, such as label and help message
      *     @type int $type
@@ -126,6 +131,28 @@ class Attribute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uri = $var;
 
         return $this;
     }

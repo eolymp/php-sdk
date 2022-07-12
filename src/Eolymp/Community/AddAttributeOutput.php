@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class AddAttributeOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     */
+    protected $uri = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class AddAttributeOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $uri
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Community::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uri = $var;
+
+        return $this;
     }
 
 }

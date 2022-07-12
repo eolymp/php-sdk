@@ -17,6 +17,10 @@ class CreateProjectOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string project_id = 1;</code>
      */
     protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     */
+    protected $uri = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateProjectOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $project_id
+     *     @type string $uri
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CreateProjectOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string uri = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->uri = $var;
 
         return $this;
     }
