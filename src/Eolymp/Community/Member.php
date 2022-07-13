@@ -18,9 +18,9 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string uri = 9999;</code>
+     * Generated from protobuf field <code>string ern = 9999;</code>
      */
-    protected $uri = '';
+    protected $ern = '';
     /**
      * Generated from protobuf field <code>string name = 2;</code>
      */
@@ -61,7 +61,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $uri
+     *     @type string $ern
      *     @type string $name
      *     @type bool $disabled
      *     @type bool $registered
@@ -100,23 +100,23 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string uri = 9999;</code>
+     * Generated from protobuf field <code>string ern = 9999;</code>
      * @return string
      */
-    public function getUri()
+    public function getErn()
     {
-        return $this->uri;
+        return $this->ern;
     }
 
     /**
-     * Generated from protobuf field <code>string uri = 9999;</code>
+     * Generated from protobuf field <code>string ern = 9999;</code>
      * @param string $var
      * @return $this
      */
-    public function setUri($var)
+    public function setErn($var)
     {
         GPBUtil::checkString($var, True);
-        $this->uri = $var;
+        $this->ern = $var;
 
         return $this;
     }

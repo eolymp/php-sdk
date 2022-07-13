@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Project extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string uri = 9999;</code>
+     * Generated from protobuf field <code>string ern = 9999;</code>
      */
-    protected $uri = '';
+    protected $ern = '';
     /**
      * Generated from protobuf field <code>string id = 1;</code>
      */
@@ -60,7 +60,7 @@ class Project extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $uri
+     *     @type string $ern
      *     @type string $id
      *     @type string $name
      *     @type string $runtime
@@ -78,23 +78,23 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string uri = 9999;</code>
+     * Generated from protobuf field <code>string ern = 9999;</code>
      * @return string
      */
-    public function getUri()
+    public function getErn()
     {
-        return $this->uri;
+        return $this->ern;
     }
 
     /**
-     * Generated from protobuf field <code>string uri = 9999;</code>
+     * Generated from protobuf field <code>string ern = 9999;</code>
      * @param string $var
      * @return $this
      */
-    public function setUri($var)
+    public function setErn($var)
     {
         GPBUtil::checkString($var, True);
-        $this->uri = $var;
+        $this->ern = $var;
 
         return $this;
     }
