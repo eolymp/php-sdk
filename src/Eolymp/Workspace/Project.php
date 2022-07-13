@@ -50,6 +50,10 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $target = null;
     /**
+     * Generated from protobuf field <code>string target_ern = 11;</code>
+     */
+    protected $target_ern = '';
+    /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
     private $labels;
@@ -69,6 +73,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_on
      *     @type \Google\Protobuf\Timestamp $updated_on
      *     @type \Eolymp\Workspace\Project\Target $target
+     *     @type string $target_ern
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
@@ -271,6 +276,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Workspace\Project_Target::class);
         $this->target = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string target_ern = 11;</code>
+     * @return string
+     */
+    public function getTargetErn()
+    {
+        return $this->target_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string target_ern = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTargetErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->target_ern = $var;
 
         return $this;
     }
