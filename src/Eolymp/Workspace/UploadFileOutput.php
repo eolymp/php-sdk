@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UploadFileOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string file_ern = 1;</code>
+     */
+    protected $file_ern = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class UploadFileOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $file_ern
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Workspace\Workspace::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string file_ern = 1;</code>
+     * @return string
+     */
+    public function getFileErn()
+    {
+        return $this->file_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string file_ern = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->file_ern = $var;
+
+        return $this;
     }
 
 }

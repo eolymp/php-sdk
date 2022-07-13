@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeFileInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string project_id = 1;</code>
+     * Generated from protobuf field <code>string file_ern = 1;</code>
+     */
+    protected $file_ern = '';
+    /**
+     * Generated from protobuf field <code>string project_id = 2;</code>
      */
     protected $project_id = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
 
@@ -28,6 +32,7 @@ class DescribeFileInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $file_ern
      *     @type string $project_id
      *     @type string $name
      * }
@@ -38,7 +43,29 @@ class DescribeFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1;</code>
+     * Generated from protobuf field <code>string file_ern = 1;</code>
+     * @return string
+     */
+    public function getFileErn()
+    {
+        return $this->file_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string file_ern = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFileErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->file_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2;</code>
      * @return string
      */
     public function getProjectId()
@@ -47,7 +74,7 @@ class DescribeFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1;</code>
+     * Generated from protobuf field <code>string project_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class DescribeFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
     public function getName()
@@ -69,7 +96,7 @@ class DescribeFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */

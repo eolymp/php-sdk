@@ -18,11 +18,15 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
      */
     protected $project_id = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string project_ern = 2;</code>
+     */
+    protected $project_ern = '';
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>bytes content = 3;</code>
+     * Generated from protobuf field <code>bytes content = 4;</code>
      */
     protected $content = '';
 
@@ -33,6 +37,7 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $project_id
+     *     @type string $project_ern
      *     @type string $name
      *     @type string $content
      * }
@@ -65,7 +70,29 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string project_ern = 2;</code>
+     * @return string
+     */
+    public function getProjectErn()
+    {
+        return $this->project_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_ern = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
     public function getName()
@@ -74,7 +101,7 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes content = 3;</code>
+     * Generated from protobuf field <code>bytes content = 4;</code>
      * @return string
      */
     public function getContent()
@@ -96,7 +123,7 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes content = 3;</code>
+     * Generated from protobuf field <code>bytes content = 4;</code>
      * @param string $var
      * @return $this
      */

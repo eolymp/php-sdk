@@ -17,6 +17,10 @@ class DeleteProjectInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string project_id = 1;</code>
      */
     protected $project_id = '';
+    /**
+     * Generated from protobuf field <code>string project_ern = 2;</code>
+     */
+    protected $project_ern = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DeleteProjectInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $project_id
+     *     @type string $project_ern
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DeleteProjectInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->project_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_ern = 2;</code>
+     * @return string
+     */
+    public function getProjectErn()
+    {
+        return $this->project_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_ern = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_ern = $var;
 
         return $this;
     }
