@@ -7,33 +7,49 @@ namespace Eolymp\Atlas;
 use UnexpectedValueException;
 
 /**
+ * Scoring mode defines how testset score is calculated
+ *
  * Protobuf type <code>eolymp.atlas.ScoringMode</code>
  */
 class ScoringMode
 {
     /**
-     * no score is awarded for passing tests from this testset
+     * no score is awarded
      *
      * Generated from protobuf enum <code>NO_SCORE = 0;</code>
      */
     const NO_SCORE = 0;
     /**
-     * scores are awarded for passing each individual test
+     * as sum of scores of all tests
      *
      * Generated from protobuf enum <code>EACH = 1;</code>
      */
     const EACH = 1;
     /**
-     * scores are only awarded if all tests are passing
+     * as sum of scores of all tests, but only if all tests are passing
      *
      * Generated from protobuf enum <code>ALL = 2;</code>
      */
     const ALL = 2;
+    /**
+     * as the lowest score awarded per test
+     *
+     * Generated from protobuf enum <code>WORST = 3;</code>
+     */
+    const WORST = 3;
+    /**
+     * as the highest score awarded per test
+     *
+     * Generated from protobuf enum <code>BEST = 4;</code>
+     */
+    const BEST = 4;
 
     private static $valueToName = [
         self::NO_SCORE => 'NO_SCORE',
         self::EACH => 'EACH',
         self::ALL => 'ALL',
+        self::WORST => 'WORST',
+        self::BEST => 'BEST',
     ];
 
     public static function name($value)
