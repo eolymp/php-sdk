@@ -22,13 +22,13 @@ class UpdatePictureInput extends \Google\Protobuf\Internal\Message
      */
     protected $data = '';
     /**
-     * Generated from protobuf field <code>uint32 offsetX = 10;</code>
+     * Generated from protobuf field <code>uint32 offset_x = 10;</code>
      */
-    protected $offsetX = 0;
+    protected $offset_x = 0;
     /**
-     * Generated from protobuf field <code>uint32 offsetY = 11;</code>
+     * Generated from protobuf field <code>uint32 offset_y = 11;</code>
      */
-    protected $offsetY = 0;
+    protected $offset_y = 0;
     /**
      * Generated from protobuf field <code>uint32 size = 12;</code>
      */
@@ -42,8 +42,8 @@ class UpdatePictureInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $filename
      *     @type string $data
-     *     @type int $offsetX
-     *     @type int $offsetY
+     *     @type int $offset_x
+     *     @type int $offset_y
      *     @type int $size
      * }
      */
@@ -97,45 +97,45 @@ class UpdatePictureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 offsetX = 10;</code>
+     * Generated from protobuf field <code>uint32 offset_x = 10;</code>
      * @return int
      */
     public function getOffsetX()
     {
-        return $this->offsetX;
+        return $this->offset_x;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 offsetX = 10;</code>
+     * Generated from protobuf field <code>uint32 offset_x = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setOffsetX($var)
     {
         GPBUtil::checkUint32($var);
-        $this->offsetX = $var;
+        $this->offset_x = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 offsetY = 11;</code>
+     * Generated from protobuf field <code>uint32 offset_y = 11;</code>
      * @return int
      */
     public function getOffsetY()
     {
-        return $this->offsetY;
+        return $this->offset_y;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 offsetY = 11;</code>
+     * Generated from protobuf field <code>uint32 offset_y = 11;</code>
      * @param int $var
      * @return $this
      */
     public function setOffsetY($var)
     {
         GPBUtil::checkUint32($var);
-        $this->offsetY = $var;
+        $this->offset_y = $var;
 
         return $this;
     }
