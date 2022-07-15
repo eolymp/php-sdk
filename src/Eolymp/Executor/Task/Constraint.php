@@ -23,6 +23,12 @@ class Constraint extends \Google\Protobuf\Internal\Message
      */
     private $selector;
     /**
+     * Defines actor to whom the constraint is applied (used by Task V2)
+     *
+     * Generated from protobuf field <code>string actor = 2;</code>
+     */
+    protected $actor = '';
+    /**
      * Real-world time limit in milliseconds.
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
@@ -56,6 +62,8 @@ class Constraint extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $selector
      *           Constraint will apply to all runs matching this label selector.
      *           Run must have all labels defined by selector. Empty selector will match all runs.
+     *     @type string $actor
+     *           Defines actor to whom the constraint is applied (used by Task V2)
      *     @type int $wall_time_limit
      *           Real-world time limit in milliseconds.
      *     @type int $cpu_time_limit
@@ -95,6 +103,32 @@ class Constraint extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->selector = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Defines actor to whom the constraint is applied (used by Task V2)
+     *
+     * Generated from protobuf field <code>string actor = 2;</code>
+     * @return string
+     */
+    public function getActor()
+    {
+        return $this->actor;
+    }
+
+    /**
+     * Defines actor to whom the constraint is applied (used by Task V2)
+     *
+     * Generated from protobuf field <code>string actor = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setActor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->actor = $var;
 
         return $this;
     }
