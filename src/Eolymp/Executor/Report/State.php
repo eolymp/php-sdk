@@ -12,9 +12,9 @@ use UnexpectedValueException;
 class State
 {
     /**
-     * Generated from protobuf enum <code>UNSPECIFIED = 0;</code>
+     * Generated from protobuf enum <code>STATE_UNSPECIFIED = 0;</code>
      */
-    const UNSPECIFIED = 0;
+    const STATE_UNSPECIFIED = 0;
     /**
      * Generated from protobuf enum <code>PENDING = 1;</code>
      */
@@ -31,13 +31,23 @@ class State
      * Generated from protobuf enum <code>FAILED = 4;</code>
      */
     const FAILED = 4;
+    /**
+     * Generated from protobuf enum <code>BLOCKED = 5;</code>
+     */
+    const BLOCKED = 5;
+    /**
+     * Generated from protobuf enum <code>SKIPPED = 6;</code>
+     */
+    const SKIPPED = 6;
 
     private static $valueToName = [
-        self::UNSPECIFIED => 'UNSPECIFIED',
+        self::STATE_UNSPECIFIED => 'STATE_UNSPECIFIED',
         self::PENDING => 'PENDING',
         self::EXECUTING => 'EXECUTING',
         self::COMPLETE => 'COMPLETE',
         self::FAILED => 'FAILED',
+        self::BLOCKED => 'BLOCKED',
+        self::SKIPPED => 'SKIPPED',
     ];
 
     public static function name($value)

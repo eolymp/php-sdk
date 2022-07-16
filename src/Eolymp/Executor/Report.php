@@ -30,9 +30,9 @@ class Report extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier of the agent which executed task.
      *
-     * Generated from protobuf field <code>string agent = 110;</code>
+     * Generated from protobuf field <code>string agent_name = 110;</code>
      */
-    protected $agent = '';
+    protected $agent_name = '';
     /**
      * Always increasing report version.
      * Each time agent emits a report it would increase version, so listener can put reports in the right order: process
@@ -79,7 +79,7 @@ class Report extends \Google\Protobuf\Internal\Message
      *           Task reference as set when task was created.
      *     @type string $origin
      *           Originator of the task (service which created task)
-     *     @type string $agent
+     *     @type string $agent_name
      *           Unique identifier of the agent which executed task.
      *     @type int $version
      *           Always increasing report version.
@@ -158,25 +158,25 @@ class Report extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier of the agent which executed task.
      *
-     * Generated from protobuf field <code>string agent = 110;</code>
+     * Generated from protobuf field <code>string agent_name = 110;</code>
      * @return string
      */
-    public function getAgent()
+    public function getAgentName()
     {
-        return $this->agent;
+        return $this->agent_name;
     }
 
     /**
      * Unique identifier of the agent which executed task.
      *
-     * Generated from protobuf field <code>string agent = 110;</code>
+     * Generated from protobuf field <code>string agent_name = 110;</code>
      * @param string $var
      * @return $this
      */
-    public function setAgent($var)
+    public function setAgentName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->agent = $var;
+        $this->agent_name = $var;
 
         return $this;
     }

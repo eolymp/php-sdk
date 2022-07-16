@@ -28,6 +28,12 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $state = 0;
     /**
+     * Error message in case of failure.
+     *
+     * Generated from protobuf field <code>string error_message = 3;</code>
+     */
+    protected $error_message = '';
+    /**
      * Statuses for steps.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Report.Step steps = 10;</code>
@@ -44,6 +50,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Run reference as set by originator.
      *     @type int $state
      *           Overall run status.
+     *     @type string $error_message
+     *           Error message in case of failure.
      *     @type \Eolymp\Executor\Report\Step[]|\Google\Protobuf\Internal\RepeatedField $steps
      *           Statuses for steps.
      * }
@@ -101,6 +109,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Executor\Report_State::class);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Error message in case of failure.
+     *
+     * Generated from protobuf field <code>string error_message = 3;</code>
+     * @return string
+     */
+    public function getErrorMessage()
+    {
+        return $this->error_message;
+    }
+
+    /**
+     * Error message in case of failure.
+     *
+     * Generated from protobuf field <code>string error_message = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_message = $var;
 
         return $this;
     }

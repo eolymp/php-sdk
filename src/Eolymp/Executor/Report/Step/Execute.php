@@ -18,9 +18,9 @@ class Execute extends \Google\Protobuf\Internal\Message
      */
     protected $actor = '';
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit_status = 2;</code>
      */
-    protected $exit = 0;
+    protected $exit_status = 0;
     /**
      * Generated from protobuf field <code>map<string, string> outputs = 3;</code>
      */
@@ -62,17 +62,23 @@ class Execute extends \Google\Protobuf\Internal\Message
      */
     protected $memory_limit = 0;
     /**
-     * program exit code
+     * Program exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 70;</code>
      */
     protected $exit_code = 0;
     /**
-     * might contain signal used to kill program
+     * Might contain signal used to kill program
      *
      * Generated from protobuf field <code>uint32 signal = 71;</code>
      */
     protected $signal = 0;
+    /**
+     * resource usage as reported by getrusage
+     *
+     * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 80;</code>
+     */
+    protected $resource_usage = null;
 
     /**
      * Constructor.
@@ -81,7 +87,7 @@ class Execute extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $actor
-     *     @type int $exit
+     *     @type int $exit_status
      *     @type array|\Google\Protobuf\Internal\MapField $outputs
      *     @type int $wall_time_usage
      *           Wall time usage in milliseconds
@@ -96,9 +102,11 @@ class Execute extends \Google\Protobuf\Internal\Message
      *     @type int|string $memory_limit
      *           Memory limit in bytes
      *     @type int $exit_code
-     *           program exit code
+     *           Program exit code
      *     @type int $signal
-     *           might contain signal used to kill program
+     *           Might contain signal used to kill program
+     *     @type \Eolymp\Executor\ResourceUsage $resource_usage
+     *           resource usage as reported by getrusage
      * }
      */
     public function __construct($data = NULL) {
@@ -129,23 +137,23 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit_status = 2;</code>
      * @return int
      */
-    public function getExit()
+    public function getExitStatus()
     {
-        return $this->exit;
+        return $this->exit_status;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit_status = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setExit($var)
+    public function setExitStatus($var)
     {
         GPBUtil::checkEnum($var, \Eolymp\Executor\Report_Step_Execute_Exit::class);
-        $this->exit = $var;
+        $this->exit_status = $var;
 
         return $this;
     }
@@ -329,7 +337,7 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * program exit code
+     * Program exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 70;</code>
      * @return int
@@ -340,7 +348,7 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * program exit code
+     * Program exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 70;</code>
      * @param int $var
@@ -355,7 +363,7 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * might contain signal used to kill program
+     * Might contain signal used to kill program
      *
      * Generated from protobuf field <code>uint32 signal = 71;</code>
      * @return int
@@ -366,7 +374,7 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * might contain signal used to kill program
+     * Might contain signal used to kill program
      *
      * Generated from protobuf field <code>uint32 signal = 71;</code>
      * @param int $var
@@ -376,6 +384,32 @@ class Execute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->signal = $var;
+
+        return $this;
+    }
+
+    /**
+     * resource usage as reported by getrusage
+     *
+     * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 80;</code>
+     * @return \Eolymp\Executor\ResourceUsage
+     */
+    public function getResourceUsage()
+    {
+        return $this->resource_usage;
+    }
+
+    /**
+     * resource usage as reported by getrusage
+     *
+     * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 80;</code>
+     * @param \Eolymp\Executor\ResourceUsage $var
+     * @return $this
+     */
+    public function setResourceUsage($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\ResourceUsage::class);
+        $this->resource_usage = $var;
 
         return $this;
     }

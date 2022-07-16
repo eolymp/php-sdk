@@ -20,9 +20,9 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Report.State state = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Outcome outcome = 2;</code>
      */
-    protected $state = 0;
+    protected $outcome = 0;
     protected $output;
 
     /**
@@ -32,9 +32,10 @@ class Step extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *     @type int $state
+     *     @type int $outcome
      *     @type \Eolymp\Executor\Report\Step\Execute $execute
      *     @type \Eolymp\Executor\Report\Step\Upload $upload
+     *     @type \Eolymp\Executor\Report\Step\Group $group
      * }
      */
     public function __construct($data = NULL) {
@@ -65,23 +66,23 @@ class Step extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Report.State state = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Outcome outcome = 2;</code>
      * @return int
      */
-    public function getState()
+    public function getOutcome()
     {
-        return $this->state;
+        return $this->outcome;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Report.State state = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Outcome outcome = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setState($var)
+    public function setOutcome($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_State::class);
-        $this->state = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_Step_Outcome::class);
+        $this->outcome = $var;
 
         return $this;
     }
@@ -126,6 +127,28 @@ class Step extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Report_Step_Upload::class);
         $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Group group = 14;</code>
+     * @return \Eolymp\Executor\Report\Step\Group
+     */
+    public function getGroup()
+    {
+        return $this->readOneof(14);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Report.Step.Group group = 14;</code>
+     * @param \Eolymp\Executor\Report\Step\Group $var
+     * @return $this
+     */
+    public function setGroup($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Report_Step_Group::class);
+        $this->writeOneof(14, $var);
 
         return $this;
     }

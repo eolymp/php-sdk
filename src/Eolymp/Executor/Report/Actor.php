@@ -31,9 +31,9 @@ class Actor extends \Google\Protobuf\Internal\Message
     /**
      * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      *
-     * Generated from protobuf field <code>string error = 4;</code>
+     * Generated from protobuf field <code>string error_message = 4;</code>
      */
-    protected $error = '';
+    protected $error_message = '';
 
     /**
      * Constructor.
@@ -46,7 +46,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      *     @type string $signature
      *           Source code signature is a unique fingerprint of the code, calculated by agent for a specific language.
      *           It should be used to find identical or similar source codes.
-     *     @type string $error
+     *     @type string $error_message
      *           Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      * }
      */
@@ -112,25 +112,25 @@ class Actor extends \Google\Protobuf\Internal\Message
     /**
      * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      *
-     * Generated from protobuf field <code>string error = 4;</code>
+     * Generated from protobuf field <code>string error_message = 4;</code>
      * @return string
      */
-    public function getError()
+    public function getErrorMessage()
     {
-        return $this->error;
+        return $this->error_message;
     }
 
     /**
      * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      *
-     * Generated from protobuf field <code>string error = 4;</code>
+     * Generated from protobuf field <code>string error_message = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setError($var)
+    public function setErrorMessage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->error = $var;
+        $this->error_message = $var;
 
         return $this;
     }

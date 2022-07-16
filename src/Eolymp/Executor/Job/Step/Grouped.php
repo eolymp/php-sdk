@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Grouped extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute group = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute processes = 1;</code>
      */
-    private $group;
+    private $processes;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class Grouped extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Executor\Job\Step\Execute[]|\Google\Protobuf\Internal\RepeatedField $group
+     *     @type \Eolymp\Executor\Job\Step\Execute[]|\Google\Protobuf\Internal\RepeatedField $processes
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class Grouped extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute group = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute processes = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getGroup()
+    public function getProcesses()
     {
-        return $this->group;
+        return $this->processes;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute group = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute processes = 1;</code>
      * @param \Eolymp\Executor\Job\Step\Execute[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setGroup($var)
+    public function setProcesses($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Job\Step\Execute::class);
-        $this->group = $arr;
+        $this->processes = $arr;
 
         return $this;
     }
