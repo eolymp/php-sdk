@@ -76,9 +76,15 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     protected $stderr = '';
     /**
+     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *
+     * Generated from protobuf field <code>bool stdin_last = 33;</code>
+     */
+    protected $stdin_last = false;
+    /**
      * Allows to mount workdir from another actor locally
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Mount mount = 33;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Mount mount = 50;</code>
      */
     private $mount;
 
@@ -108,6 +114,8 @@ class Actor extends \Google\Protobuf\Internal\Message
      *           Local path to the stdout destination (relative to workdir)
      *     @type string $stderr
      *           Local path to the stderr destination (relative to workdir), can be same as stdout
+     *     @type bool $stdin_last
+     *           If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
      *     @type \Eolymp\Executor\TaskV2\Mount[]|\Google\Protobuf\Internal\RepeatedField $mount
      *           Allows to mount workdir from another actor locally
      * }
@@ -378,9 +386,35 @@ class Actor extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *
+     * Generated from protobuf field <code>bool stdin_last = 33;</code>
+     * @return bool
+     */
+    public function getStdinLast()
+    {
+        return $this->stdin_last;
+    }
+
+    /**
+     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *
+     * Generated from protobuf field <code>bool stdin_last = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStdinLast($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->stdin_last = $var;
+
+        return $this;
+    }
+
+    /**
      * Allows to mount workdir from another actor locally
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Mount mount = 33;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Mount mount = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMount()
@@ -391,7 +425,7 @@ class Actor extends \Google\Protobuf\Internal\Message
     /**
      * Allows to mount workdir from another actor locally
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Mount mount = 33;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Mount mount = 50;</code>
      * @param \Eolymp\Executor\TaskV2\Mount[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
