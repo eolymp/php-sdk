@@ -32,7 +32,7 @@ class Step extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Executor\Job\Step\Copy $copy
      *     @type \Eolymp\Executor\Job\Step\Execute $execute
      *     @type \Eolymp\Executor\Job\Step\Upload $upload
-     *     @type \Eolymp\Executor\Job\Step\Grouped $grouped
+     *     @type \Eolymp\Executor\Job\Step\Group $group
      * }
      */
     public function __construct($data = NULL) {
@@ -151,22 +151,22 @@ class Step extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Grouped grouped = 14;</code>
-     * @return \Eolymp\Executor\Job\Step\Grouped
+     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Group group = 14;</code>
+     * @return \Eolymp\Executor\Job\Step\Group
      */
-    public function getGrouped()
+    public function getGroup()
     {
         return $this->readOneof(14);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Grouped grouped = 14;</code>
-     * @param \Eolymp\Executor\Job\Step\Grouped $var
+     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Group group = 14;</code>
+     * @param \Eolymp\Executor\Job\Step\Group $var
      * @return $this
      */
-    public function setGrouped($var)
+    public function setGroup($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Grouped::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Group::class);
         $this->writeOneof(14, $var);
 
         return $this;

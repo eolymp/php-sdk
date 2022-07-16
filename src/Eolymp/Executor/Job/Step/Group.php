@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.executor.Job.Step.Grouped</code>
+ * Generated from protobuf message <code>eolymp.executor.Job.Step.Group</code>
  */
-class Grouped extends \Google\Protobuf\Internal\Message
+class Group extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step.Execute processes = 1;</code>
@@ -57,5 +57,5 @@ class Grouped extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Grouped::class, \Eolymp\Executor\Job_Step_Grouped::class);
+class_alias(Group::class, \Eolymp\Executor\Job_Step_Group::class);
 
