@@ -24,15 +24,39 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
     /**
      * If set will override arguments set in Actor.
      *
-     * Generated from protobuf field <code>repeated string args = 3;</code>
+     * Generated from protobuf field <code>repeated string args = 2;</code>
      */
     private $args;
     /**
      * If set will append environment variables set in Actor.
      *
-     * Generated from protobuf field <code>map<string, string> env = 2;</code>
+     * Generated from protobuf field <code>map<string, string> env = 3;</code>
      */
     private $env;
+    /**
+     * Wall time limit in ms
+     *
+     * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
+     */
+    protected $wall_time_limit = 0;
+    /**
+     * CPU usage limit in ms
+     *
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 11;</code>
+     */
+    protected $cpu_time_limit = 0;
+    /**
+     * Memory usage limit in bytes
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 12;</code>
+     */
+    protected $memory_limit = 0;
+    /**
+     * File size limit in bytes
+     *
+     * Generated from protobuf field <code>uint32 file_size_limit = 13;</code>
+     */
+    protected $file_size_limit = 0;
 
     /**
      * Constructor.
@@ -46,6 +70,14 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
      *           If set will override arguments set in Actor.
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           If set will append environment variables set in Actor.
+     *     @type int $wall_time_limit
+     *           Wall time limit in ms
+     *     @type int $cpu_time_limit
+     *           CPU usage limit in ms
+     *     @type int|string $memory_limit
+     *           Memory usage limit in bytes
+     *     @type int $file_size_limit
+     *           File size limit in bytes
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +114,7 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
     /**
      * If set will override arguments set in Actor.
      *
-     * Generated from protobuf field <code>repeated string args = 3;</code>
+     * Generated from protobuf field <code>repeated string args = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getArgs()
@@ -93,7 +125,7 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
     /**
      * If set will override arguments set in Actor.
      *
-     * Generated from protobuf field <code>repeated string args = 3;</code>
+     * Generated from protobuf field <code>repeated string args = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -108,7 +140,7 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
     /**
      * If set will append environment variables set in Actor.
      *
-     * Generated from protobuf field <code>map<string, string> env = 2;</code>
+     * Generated from protobuf field <code>map<string, string> env = 3;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getEnv()
@@ -119,7 +151,7 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
     /**
      * If set will append environment variables set in Actor.
      *
-     * Generated from protobuf field <code>map<string, string> env = 2;</code>
+     * Generated from protobuf field <code>map<string, string> env = 3;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -127,6 +159,110 @@ class ExecuteOp extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->env = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Wall time limit in ms
+     *
+     * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
+     * @return int
+     */
+    public function getWallTimeLimit()
+    {
+        return $this->wall_time_limit;
+    }
+
+    /**
+     * Wall time limit in ms
+     *
+     * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWallTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->wall_time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * CPU usage limit in ms
+     *
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 11;</code>
+     * @return int
+     */
+    public function getCpuTimeLimit()
+    {
+        return $this->cpu_time_limit;
+    }
+
+    /**
+     * CPU usage limit in ms
+     *
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCpuTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cpu_time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Memory usage limit in bytes
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 12;</code>
+     * @return int|string
+     */
+    public function getMemoryLimit()
+    {
+        return $this->memory_limit;
+    }
+
+    /**
+     * Memory usage limit in bytes
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 12;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMemoryLimit($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->memory_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * File size limit in bytes
+     *
+     * Generated from protobuf field <code>uint32 file_size_limit = 13;</code>
+     * @return int
+     */
+    public function getFileSizeLimit()
+    {
+        return $this->file_size_limit;
+    }
+
+    /**
+     * File size limit in bytes
+     *
+     * Generated from protobuf field <code>uint32 file_size_limit = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFileSizeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->file_size_limit = $var;
 
         return $this;
     }

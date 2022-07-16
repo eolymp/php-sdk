@@ -38,21 +38,15 @@ class TaskV2 extends \Google\Protobuf\Internal\Message
      */
     private $preconditions;
     /**
-     * Execution constraints, define limits imposed on each run.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Constraint constraints = 20;</code>
-     */
-    private $constraints;
-    /**
      * Actors of the task.
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Actor actors = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Actor actors = 20;</code>
      */
     private $actors;
     /**
      * Runs of the task.
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Run runs = 40;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Run runs = 30;</code>
      */
     private $runs;
 
@@ -72,8 +66,6 @@ class TaskV2 extends \Google\Protobuf\Internal\Message
      *           can easily filter status reports they are interested in.
      *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *     @type \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
-     *           Execution constraints, define limits imposed on each run.
      *     @type \Eolymp\Executor\TaskV2\Actor[]|\Google\Protobuf\Internal\RepeatedField $actors
      *           Actors of the task.
      *     @type \Eolymp\Executor\TaskV2\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
@@ -172,35 +164,9 @@ class TaskV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Execution constraints, define limits imposed on each run.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Constraint constraints = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getConstraints()
-    {
-        return $this->constraints;
-    }
-
-    /**
-     * Execution constraints, define limits imposed on each run.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.Constraint constraints = 20;</code>
-     * @param \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setConstraints($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\Constraint::class);
-        $this->constraints = $arr;
-
-        return $this;
-    }
-
-    /**
      * Actors of the task.
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Actor actors = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Actor actors = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getActors()
@@ -211,7 +177,7 @@ class TaskV2 extends \Google\Protobuf\Internal\Message
     /**
      * Actors of the task.
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Actor actors = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Actor actors = 20;</code>
      * @param \Eolymp\Executor\TaskV2\Actor[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -226,7 +192,7 @@ class TaskV2 extends \Google\Protobuf\Internal\Message
     /**
      * Runs of the task.
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Run runs = 40;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Run runs = 30;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRuns()
@@ -237,7 +203,7 @@ class TaskV2 extends \Google\Protobuf\Internal\Message
     /**
      * Runs of the task.
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Run runs = 40;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.TaskV2.Run runs = 30;</code>
      * @param \Eolymp\Executor\TaskV2\Run[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
