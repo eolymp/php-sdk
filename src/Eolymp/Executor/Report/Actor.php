@@ -35,7 +35,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     protected $error_code = 0;
     /**
-     * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
+     * Actor related error message, for example compilation error message
      *
      * Generated from protobuf field <code>string error_message = 11;</code>
      */
@@ -55,7 +55,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      *     @type int $error_code
      *           Error code defines type of error, if any
      *     @type string $error_message
-     *           Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
+     *           Actor related error message, for example compilation error message
      * }
      */
     public function __construct($data = NULL) {
@@ -144,7 +144,7 @@ class Actor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
+     * Actor related error message, for example compilation error message
      *
      * Generated from protobuf field <code>string error_message = 11;</code>
      * @return string
@@ -155,7 +155,7 @@ class Actor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
+     * Actor related error message, for example compilation error message
      *
      * Generated from protobuf field <code>string error_message = 11;</code>
      * @param string $var
