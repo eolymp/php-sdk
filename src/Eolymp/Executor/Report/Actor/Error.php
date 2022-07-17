@@ -26,14 +26,14 @@ class Error
     /**
      * internal error, see error_message for details
      *
-     * Generated from protobuf enum <code>INTERNAL_ERROR = 3;</code>
+     * Generated from protobuf enum <code>INTERNAL = 2;</code>
      */
-    const INTERNAL_ERROR = 3;
+    const INTERNAL = 2;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::INIT_ERROR => 'INIT_ERROR',
-        self::INTERNAL_ERROR => 'INTERNAL_ERROR',
+        self::INTERNAL => 'INTERNAL',
     ];
 
     public static function name($value)
