@@ -44,6 +44,12 @@ class Job extends \Google\Protobuf\Internal\Message
      */
     private $actors;
     /**
+     * Scenario defines template for runs, steps in run are merged with scenario
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step scenario = 40;</code>
+     */
+    private $scenario;
+    /**
      * Runs of the task.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Run runs = 30;</code>
@@ -68,6 +74,8 @@ class Job extends \Google\Protobuf\Internal\Message
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type \Eolymp\Executor\Job\Actor[]|\Google\Protobuf\Internal\RepeatedField $actors
      *           Actors of the task.
+     *     @type \Eolymp\Executor\Job\Step[]|\Google\Protobuf\Internal\RepeatedField $scenario
+     *           Scenario defines template for runs, steps in run are merged with scenario
      *     @type \Eolymp\Executor\Job\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
      *           Runs of the task.
      * }
@@ -185,6 +193,32 @@ class Job extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Job\Actor::class);
         $this->actors = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Scenario defines template for runs, steps in run are merged with scenario
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step scenario = 40;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScenario()
+    {
+        return $this->scenario;
+    }
+
+    /**
+     * Scenario defines template for runs, steps in run are merged with scenario
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step scenario = 40;</code>
+     * @param \Eolymp\Executor\Job\Step[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScenario($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Job\Step::class);
+        $this->scenario = $arr;
 
         return $this;
     }

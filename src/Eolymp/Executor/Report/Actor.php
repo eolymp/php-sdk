@@ -25,13 +25,19 @@ class Actor extends \Google\Protobuf\Internal\Message
      * Source code signature is a unique fingerprint of the code, calculated by agent for a specific language.
      * It should be used to find identical or similar source codes.
      *
-     * Generated from protobuf field <code>string signature = 3;</code>
+     * Generated from protobuf field <code>string signature = 2;</code>
      */
     protected $signature = '';
     /**
+     * Error code defines type of error, if any
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Report.Actor.Error error_code = 10;</code>
+     */
+    protected $error_code = 0;
+    /**
      * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      *
-     * Generated from protobuf field <code>string error_message = 4;</code>
+     * Generated from protobuf field <code>string error_message = 11;</code>
      */
     protected $error_message = '';
 
@@ -46,6 +52,8 @@ class Actor extends \Google\Protobuf\Internal\Message
      *     @type string $signature
      *           Source code signature is a unique fingerprint of the code, calculated by agent for a specific language.
      *           It should be used to find identical or similar source codes.
+     *     @type int $error_code
+     *           Error code defines type of error, if any
      *     @type string $error_message
      *           Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      * }
@@ -85,7 +93,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      * Source code signature is a unique fingerprint of the code, calculated by agent for a specific language.
      * It should be used to find identical or similar source codes.
      *
-     * Generated from protobuf field <code>string signature = 3;</code>
+     * Generated from protobuf field <code>string signature = 2;</code>
      * @return string
      */
     public function getSignature()
@@ -97,7 +105,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      * Source code signature is a unique fingerprint of the code, calculated by agent for a specific language.
      * It should be used to find identical or similar source codes.
      *
-     * Generated from protobuf field <code>string signature = 3;</code>
+     * Generated from protobuf field <code>string signature = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -110,9 +118,35 @@ class Actor extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Error code defines type of error, if any
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Report.Actor.Error error_code = 10;</code>
+     * @return int
+     */
+    public function getErrorCode()
+    {
+        return $this->error_code;
+    }
+
+    /**
+     * Error code defines type of error, if any
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Report.Actor.Error error_code = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setErrorCode($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_Actor_Error::class);
+        $this->error_code = $var;
+
+        return $this;
+    }
+
+    /**
      * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      *
-     * Generated from protobuf field <code>string error_message = 4;</code>
+     * Generated from protobuf field <code>string error_message = 11;</code>
      * @return string
      */
     public function getErrorMessage()
@@ -123,7 +157,7 @@ class Actor extends \Google\Protobuf\Internal\Message
     /**
      * Actor related error message, for example compilation error. If empty actor considered to be initialized correctly.
      *
-     * Generated from protobuf field <code>string error_message = 4;</code>
+     * Generated from protobuf field <code>string error_message = 11;</code>
      * @param string $var
      * @return $this
      */
