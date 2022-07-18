@@ -82,6 +82,12 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     protected $stdin_last = false;
     /**
+     * Defines how to treat program exit status and output parameters
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Job.Actor.OutputFormat output_format = 35;</code>
+     */
+    protected $output_format = 0;
+    /**
      * Allows to mount workdir from another actor locally
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Mount mount = 50;</code>
@@ -116,6 +122,8 @@ class Actor extends \Google\Protobuf\Internal\Message
      *           Local path to the stderr destination (relative to workdir), can be same as stdout
      *     @type bool $stdin_last
      *           If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *     @type int $output_format
+     *           Defines how to treat program exit status and output parameters
      *     @type \Eolymp\Executor\Job\Mount[]|\Google\Protobuf\Internal\RepeatedField $mount
      *           Allows to mount workdir from another actor locally
      * }
@@ -407,6 +415,32 @@ class Actor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->stdin_last = $var;
+
+        return $this;
+    }
+
+    /**
+     * Defines how to treat program exit status and output parameters
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Job.Actor.OutputFormat output_format = 35;</code>
+     * @return int
+     */
+    public function getOutputFormat()
+    {
+        return $this->output_format;
+    }
+
+    /**
+     * Defines how to treat program exit status and output parameters
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Job.Actor.OutputFormat output_format = 35;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOutputFormat($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Job_Actor_OutputFormat::class);
+        $this->output_format = $var;
 
         return $this;
     }

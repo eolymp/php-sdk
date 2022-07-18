@@ -34,12 +34,6 @@ class Execute extends \Google\Protobuf\Internal\Message
      */
     private $env;
     /**
-     * How to read output parameters
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Execute.OutputFormat output_format = 4;</code>
-     */
-    protected $output_format = 0;
-    /**
      * Wall time limit in ms
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
@@ -76,8 +70,6 @@ class Execute extends \Google\Protobuf\Internal\Message
      *           If set will override arguments set in Actor.
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           If set will append environment variables set in Actor.
-     *     @type int $output_format
-     *           How to read output parameters
      *     @type int $wall_time_limit
      *           Wall time limit in ms
      *     @type int $cpu_time_limit
@@ -167,32 +159,6 @@ class Execute extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->env = $arr;
-
-        return $this;
-    }
-
-    /**
-     * How to read output parameters
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Execute.OutputFormat output_format = 4;</code>
-     * @return int
-     */
-    public function getOutputFormat()
-    {
-        return $this->output_format;
-    }
-
-    /**
-     * How to read output parameters
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Job.Step.Execute.OutputFormat output_format = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOutputFormat($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Job_Step_Execute_OutputFormat::class);
-        $this->output_format = $var;
 
         return $this;
     }

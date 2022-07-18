@@ -14,17 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class Execute extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Actor name
+     *
      * Generated from protobuf field <code>string actor = 1;</code>
      */
     protected $actor = '';
     /**
+     * Exit status
+     *
      * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit_status = 2;</code>
      */
     protected $exit_status = 0;
     /**
-     * Generated from protobuf field <code>map<string, string> outputs = 3;</code>
+     * Additional output values (depends on output format)
+     *
+     * Generated from protobuf field <code>map<string, string> values = 3;</code>
      */
-    private $outputs;
+    private $values;
     /**
      * Wall time usage in milliseconds
      *
@@ -87,8 +93,11 @@ class Execute extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $actor
+     *           Actor name
      *     @type int $exit_status
-     *     @type array|\Google\Protobuf\Internal\MapField $outputs
+     *           Exit status
+     *     @type array|\Google\Protobuf\Internal\MapField $values
+     *           Additional output values (depends on output format)
      *     @type int $wall_time_usage
      *           Wall time usage in milliseconds
      *     @type int $wall_time_limit
@@ -115,6 +124,8 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Actor name
+     *
      * Generated from protobuf field <code>string actor = 1;</code>
      * @return string
      */
@@ -124,6 +135,8 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Actor name
+     *
      * Generated from protobuf field <code>string actor = 1;</code>
      * @param string $var
      * @return $this
@@ -137,6 +150,8 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Exit status
+     *
      * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit_status = 2;</code>
      * @return int
      */
@@ -146,6 +161,8 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Exit status
+     *
      * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute.Exit exit_status = 2;</code>
      * @param int $var
      * @return $this
@@ -159,23 +176,27 @@ class Execute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> outputs = 3;</code>
+     * Additional output values (depends on output format)
+     *
+     * Generated from protobuf field <code>map<string, string> values = 3;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
-    public function getOutputs()
+    public function getValues()
     {
-        return $this->outputs;
+        return $this->values;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> outputs = 3;</code>
+     * Additional output values (depends on output format)
+     *
+     * Generated from protobuf field <code>map<string, string> values = 3;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setOutputs($var)
+    public function setValues($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->outputs = $arr;
+        $this->values = $arr;
 
         return $this;
     }
