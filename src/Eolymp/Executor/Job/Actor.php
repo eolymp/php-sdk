@@ -36,51 +36,15 @@ class Actor extends \Google\Protobuf\Internal\Message
     /**
      * Additional environment variable during init
      *
-     * Generated from protobuf field <code>map<string, string> init_env = 40;</code>
-     */
-    private $init_env;
-    /**
-     * Additional files mounted before init
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Job.File init_files = 41;</code>
-     */
-    private $init_files;
-    /**
-     * Arguments passed to the program during execution
-     *
-     * Generated from protobuf field <code>repeated string args = 20;</code>
-     */
-    private $args;
-    /**
-     * Environment variables
-     *
-     * Generated from protobuf field <code>map<string, string> env = 21;</code>
+     * Generated from protobuf field <code>map<string, string> env = 40;</code>
      */
     private $env;
     /**
-     * Local path to the stdin source (relative to workdir)
+     * Additional files mounted before init
      *
-     * Generated from protobuf field <code>string stdin = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.File files = 41;</code>
      */
-    protected $stdin = '';
-    /**
-     * Local path to the stdout destination (relative to workdir)
-     *
-     * Generated from protobuf field <code>string stdout = 31;</code>
-     */
-    protected $stdout = '';
-    /**
-     * Local path to the stderr destination (relative to workdir), can be same as stdout
-     *
-     * Generated from protobuf field <code>string stderr = 32;</code>
-     */
-    protected $stderr = '';
-    /**
-     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
-     *
-     * Generated from protobuf field <code>bool stdin_last = 33;</code>
-     */
-    protected $stdin_last = false;
+    private $files;
     /**
      * Defines how to treat program exit status and output parameters
      *
@@ -106,22 +70,10 @@ class Actor extends \Google\Protobuf\Internal\Message
      *           Runtime
      *     @type string $source_ern
      *           Source code ERN
-     *     @type array|\Google\Protobuf\Internal\MapField $init_env
-     *           Additional environment variable during init
-     *     @type \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $init_files
-     *           Additional files mounted before init
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $args
-     *           Arguments passed to the program during execution
      *     @type array|\Google\Protobuf\Internal\MapField $env
-     *           Environment variables
-     *     @type string $stdin
-     *           Local path to the stdin source (relative to workdir)
-     *     @type string $stdout
-     *           Local path to the stdout destination (relative to workdir)
-     *     @type string $stderr
-     *           Local path to the stderr destination (relative to workdir), can be same as stdout
-     *     @type bool $stdin_last
-     *           If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *           Additional environment variable during init
+     *     @type \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *           Additional files mounted before init
      *     @type int $output_format
      *           Defines how to treat program exit status and output parameters
      *     @type \Eolymp\Executor\Job\Mount[]|\Google\Protobuf\Internal\RepeatedField $mount
@@ -214,85 +166,7 @@ class Actor extends \Google\Protobuf\Internal\Message
     /**
      * Additional environment variable during init
      *
-     * Generated from protobuf field <code>map<string, string> init_env = 40;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getInitEnv()
-    {
-        return $this->init_env;
-    }
-
-    /**
-     * Additional environment variable during init
-     *
-     * Generated from protobuf field <code>map<string, string> init_env = 40;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setInitEnv($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->init_env = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Additional files mounted before init
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Job.File init_files = 41;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getInitFiles()
-    {
-        return $this->init_files;
-    }
-
-    /**
-     * Additional files mounted before init
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Job.File init_files = 41;</code>
-     * @param \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setInitFiles($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Job\File::class);
-        $this->init_files = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Arguments passed to the program during execution
-     *
-     * Generated from protobuf field <code>repeated string args = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getArgs()
-    {
-        return $this->args;
-    }
-
-    /**
-     * Arguments passed to the program during execution
-     *
-     * Generated from protobuf field <code>repeated string args = 20;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setArgs($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->args = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Environment variables
-     *
-     * Generated from protobuf field <code>map<string, string> env = 21;</code>
+     * Generated from protobuf field <code>map<string, string> env = 40;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getEnv()
@@ -301,9 +175,9 @@ class Actor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Environment variables
+     * Additional environment variable during init
      *
-     * Generated from protobuf field <code>map<string, string> env = 21;</code>
+     * Generated from protobuf field <code>map<string, string> env = 40;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -316,105 +190,27 @@ class Actor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Local path to the stdin source (relative to workdir)
+     * Additional files mounted before init
      *
-     * Generated from protobuf field <code>string stdin = 30;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.File files = 41;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getStdin()
+    public function getFiles()
     {
-        return $this->stdin;
+        return $this->files;
     }
 
     /**
-     * Local path to the stdin source (relative to workdir)
+     * Additional files mounted before init
      *
-     * Generated from protobuf field <code>string stdin = 30;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .eolymp.executor.Job.File files = 41;</code>
+     * @param \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setStdin($var)
+    public function setFiles($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->stdin = $var;
-
-        return $this;
-    }
-
-    /**
-     * Local path to the stdout destination (relative to workdir)
-     *
-     * Generated from protobuf field <code>string stdout = 31;</code>
-     * @return string
-     */
-    public function getStdout()
-    {
-        return $this->stdout;
-    }
-
-    /**
-     * Local path to the stdout destination (relative to workdir)
-     *
-     * Generated from protobuf field <code>string stdout = 31;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStdout($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->stdout = $var;
-
-        return $this;
-    }
-
-    /**
-     * Local path to the stderr destination (relative to workdir), can be same as stdout
-     *
-     * Generated from protobuf field <code>string stderr = 32;</code>
-     * @return string
-     */
-    public function getStderr()
-    {
-        return $this->stderr;
-    }
-
-    /**
-     * Local path to the stderr destination (relative to workdir), can be same as stdout
-     *
-     * Generated from protobuf field <code>string stderr = 32;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStderr($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->stderr = $var;
-
-        return $this;
-    }
-
-    /**
-     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
-     *
-     * Generated from protobuf field <code>bool stdin_last = 33;</code>
-     * @return bool
-     */
-    public function getStdinLast()
-    {
-        return $this->stdin_last;
-    }
-
-    /**
-     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
-     *
-     * Generated from protobuf field <code>bool stdin_last = 33;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStdinLast($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->stdin_last = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Job\File::class);
+        $this->files = $arr;
 
         return $this;
     }

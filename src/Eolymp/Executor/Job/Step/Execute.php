@@ -34,6 +34,30 @@ class Execute extends \Google\Protobuf\Internal\Message
      */
     private $env;
     /**
+     * Local path to the stdin source (relative to workdir)
+     *
+     * Generated from protobuf field <code>string stdin = 30;</code>
+     */
+    protected $stdin = '';
+    /**
+     * Local path to the stdout destination (relative to workdir)
+     *
+     * Generated from protobuf field <code>string stdout = 31;</code>
+     */
+    protected $stdout = '';
+    /**
+     * Local path to the stderr destination (relative to workdir), can be same as stdout
+     *
+     * Generated from protobuf field <code>string stderr = 32;</code>
+     */
+    protected $stderr = '';
+    /**
+     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *
+     * Generated from protobuf field <code>bool stdin_last = 33;</code>
+     */
+    protected $stdin_last = false;
+    /**
      * Wall time limit in ms
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
@@ -70,6 +94,14 @@ class Execute extends \Google\Protobuf\Internal\Message
      *           If set will override arguments set in Actor.
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           If set will append environment variables set in Actor.
+     *     @type string $stdin
+     *           Local path to the stdin source (relative to workdir)
+     *     @type string $stdout
+     *           Local path to the stdout destination (relative to workdir)
+     *     @type string $stderr
+     *           Local path to the stderr destination (relative to workdir), can be same as stdout
+     *     @type bool $stdin_last
+     *           If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
      *     @type int $wall_time_limit
      *           Wall time limit in ms
      *     @type int $cpu_time_limit
@@ -159,6 +191,110 @@ class Execute extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->env = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Local path to the stdin source (relative to workdir)
+     *
+     * Generated from protobuf field <code>string stdin = 30;</code>
+     * @return string
+     */
+    public function getStdin()
+    {
+        return $this->stdin;
+    }
+
+    /**
+     * Local path to the stdin source (relative to workdir)
+     *
+     * Generated from protobuf field <code>string stdin = 30;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStdin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stdin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Local path to the stdout destination (relative to workdir)
+     *
+     * Generated from protobuf field <code>string stdout = 31;</code>
+     * @return string
+     */
+    public function getStdout()
+    {
+        return $this->stdout;
+    }
+
+    /**
+     * Local path to the stdout destination (relative to workdir)
+     *
+     * Generated from protobuf field <code>string stdout = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStdout($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stdout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Local path to the stderr destination (relative to workdir), can be same as stdout
+     *
+     * Generated from protobuf field <code>string stderr = 32;</code>
+     * @return string
+     */
+    public function getStderr()
+    {
+        return $this->stderr;
+    }
+
+    /**
+     * Local path to the stderr destination (relative to workdir), can be same as stdout
+     *
+     * Generated from protobuf field <code>string stderr = 32;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStderr($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stderr = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *
+     * Generated from protobuf field <code>bool stdin_last = 33;</code>
+     * @return bool
+     */
+    public function getStdinLast()
+    {
+        return $this->stdin_last;
+    }
+
+    /**
+     * If true, open stdin file after stdout and stderr, this is used when two actors communicate using named pipes and should not interlock each other.
+     *
+     * Generated from protobuf field <code>bool stdin_last = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStdinLast($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->stdin_last = $var;
 
         return $this;
     }
