@@ -27,6 +27,12 @@ class Write extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string target_path = 3;</code>
      */
     protected $target_path = '';
+    /**
+     * automatically turn CRLF into LF
+     *
+     * Generated from protobuf field <code>bool fix_crlf = 4;</code>
+     */
+    protected $fix_crlf = false;
 
     /**
      * Constructor.
@@ -37,6 +43,8 @@ class Write extends \Google\Protobuf\Internal\Message
      *     @type string $source_ern
      *     @type string $target_actor
      *     @type string $target_path
+     *     @type bool $fix_crlf
+     *           automatically turn CRLF into LF
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +114,32 @@ class Write extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->target_path = $var;
+
+        return $this;
+    }
+
+    /**
+     * automatically turn CRLF into LF
+     *
+     * Generated from protobuf field <code>bool fix_crlf = 4;</code>
+     * @return bool
+     */
+    public function getFixCrlf()
+    {
+        return $this->fix_crlf;
+    }
+
+    /**
+     * automatically turn CRLF into LF
+     *
+     * Generated from protobuf field <code>bool fix_crlf = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFixCrlf($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->fix_crlf = $var;
 
         return $this;
     }
