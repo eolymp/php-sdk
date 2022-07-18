@@ -54,7 +54,7 @@ class Execute extends \Google\Protobuf\Internal\Message
     /**
      * File size limit in bytes
      *
-     * Generated from protobuf field <code>uint32 file_size_limit = 13;</code>
+     * Generated from protobuf field <code>uint64 file_size_limit = 13;</code>
      */
     protected $file_size_limit = 0;
 
@@ -76,7 +76,7 @@ class Execute extends \Google\Protobuf\Internal\Message
      *           CPU usage limit in ms
      *     @type int|string $memory_limit
      *           Memory usage limit in bytes
-     *     @type int $file_size_limit
+     *     @type int|string $file_size_limit
      *           File size limit in bytes
      * }
      */
@@ -244,8 +244,8 @@ class Execute extends \Google\Protobuf\Internal\Message
     /**
      * File size limit in bytes
      *
-     * Generated from protobuf field <code>uint32 file_size_limit = 13;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 file_size_limit = 13;</code>
+     * @return int|string
      */
     public function getFileSizeLimit()
     {
@@ -255,13 +255,13 @@ class Execute extends \Google\Protobuf\Internal\Message
     /**
      * File size limit in bytes
      *
-     * Generated from protobuf field <code>uint32 file_size_limit = 13;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 file_size_limit = 13;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setFileSizeLimit($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->file_size_limit = $var;
 
         return $this;
