@@ -31,7 +31,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
-     * Source code ERN (data up to 1KB or blob)
+     * Source code ERN (data up to 5KB or blob)
      *
      * Generated from protobuf field <code>string source_ern = 30;</code>
      */
@@ -55,7 +55,6 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $input = '';
     protected $input_data;
-    protected $preset;
 
     /**
      * Constructor.
@@ -70,7 +69,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *           Source code
      *           deprecated, use source_ern instead
      *     @type string $source_ern
-     *           Source code ERN (data up to 1KB or blob)
+     *           Source code ERN (data up to 5KB or blob)
      *     @type string $input_ern
      *           Input ERN (data up to 5KB or blob)
      *     @type string $problem_ern
@@ -79,8 +78,6 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *           deprecated, use input ern instead
      *     @type string $input_content
      *     @type string $input_object_id
-     *     @type string $atlas_problem_id
-     *     @type string $judge_problem_id
      * }
      */
     public function __construct($data = NULL) {
@@ -165,7 +162,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code ERN (data up to 1KB or blob)
+     * Source code ERN (data up to 5KB or blob)
      *
      * Generated from protobuf field <code>string source_ern = 30;</code>
      * @return string
@@ -176,7 +173,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code ERN (data up to 1KB or blob)
+     * Source code ERN (data up to 5KB or blob)
      *
      * Generated from protobuf field <code>string source_ern = 30;</code>
      * @param string $var
@@ -313,63 +310,11 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string atlas_problem_id = 6;</code>
-     * @return string
-     */
-    public function getAtlasProblemId()
-    {
-        return $this->readOneof(6);
-    }
-
-    /**
-     * Generated from protobuf field <code>string atlas_problem_id = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAtlasProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(6, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string judge_problem_id = 7;</code>
-     * @return string
-     */
-    public function getJudgeProblemId()
-    {
-        return $this->readOneof(7);
-    }
-
-    /**
-     * Generated from protobuf field <code>string judge_problem_id = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setJudgeProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(7, $var);
-
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getInputData()
     {
         return $this->whichOneof("input_data");
-    }
-
-    /**
-     * @return string
-     */
-    public function getPreset()
-    {
-        return $this->whichOneof("preset");
     }
 
 }
