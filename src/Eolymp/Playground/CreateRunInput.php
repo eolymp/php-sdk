@@ -14,23 +14,42 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRunInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * deprecated, use runtime instead
+     *
      * Generated from protobuf field <code>string lang = 1;</code>
      */
     protected $lang = '';
     /**
-     * Generated from protobuf field <code>string source = 2;</code>
+     * Generated from protobuf field <code>string runtime = 2;</code>
+     */
+    protected $runtime = '';
+    /**
+     * Source code
+     * deprecated, use source_ern instead
+     *
+     * Generated from protobuf field <code>string source = 31;</code>
      */
     protected $source = '';
     /**
+     * Source code ERN (data up to 1KB or blob)
+     *
+     * Generated from protobuf field <code>string source_ern = 30;</code>
+     */
+    protected $source_ern = '';
+    /**
+     * Input ERN (data up to 5KB or blob)
+     *
      * Generated from protobuf field <code>string input_ern = 10;</code>
      */
     protected $input_ern = '';
     /**
+     * Problem ERN allows to reuse template and constraints from Atlas or Judge problem.
+     *
      * Generated from protobuf field <code>string problem_ern = 20;</code>
      */
     protected $problem_ern = '';
     /**
-     * deprecated use data ern instead
+     * deprecated, use input ern instead
      *
      * Generated from protobuf field <code>string input = 3;</code>
      */
@@ -45,11 +64,19 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $lang
+     *           deprecated, use runtime instead
+     *     @type string $runtime
      *     @type string $source
+     *           Source code
+     *           deprecated, use source_ern instead
+     *     @type string $source_ern
+     *           Source code ERN (data up to 1KB or blob)
      *     @type string $input_ern
+     *           Input ERN (data up to 5KB or blob)
      *     @type string $problem_ern
+     *           Problem ERN allows to reuse template and constraints from Atlas or Judge problem.
      *     @type string $input
-     *           deprecated use data ern instead
+     *           deprecated, use input ern instead
      *     @type string $input_content
      *     @type string $input_object_id
      *     @type string $atlas_problem_id
@@ -62,6 +89,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use runtime instead
+     *
      * Generated from protobuf field <code>string lang = 1;</code>
      * @return string
      */
@@ -71,6 +100,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use runtime instead
+     *
      * Generated from protobuf field <code>string lang = 1;</code>
      * @param string $var
      * @return $this
@@ -84,7 +115,32 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string source = 2;</code>
+     * Generated from protobuf field <code>string runtime = 2;</code>
+     * @return string
+     */
+    public function getRuntime()
+    {
+        return $this->runtime;
+    }
+
+    /**
+     * Generated from protobuf field <code>string runtime = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Source code
+     * deprecated, use source_ern instead
+     *
+     * Generated from protobuf field <code>string source = 31;</code>
      * @return string
      */
     public function getSource()
@@ -93,7 +149,10 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string source = 2;</code>
+     * Source code
+     * deprecated, use source_ern instead
+     *
+     * Generated from protobuf field <code>string source = 31;</code>
      * @param string $var
      * @return $this
      */
@@ -106,6 +165,34 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Source code ERN (data up to 1KB or blob)
+     *
+     * Generated from protobuf field <code>string source_ern = 30;</code>
+     * @return string
+     */
+    public function getSourceErn()
+    {
+        return $this->source_ern;
+    }
+
+    /**
+     * Source code ERN (data up to 1KB or blob)
+     *
+     * Generated from protobuf field <code>string source_ern = 30;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Input ERN (data up to 5KB or blob)
+     *
      * Generated from protobuf field <code>string input_ern = 10;</code>
      * @return string
      */
@@ -115,6 +202,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Input ERN (data up to 5KB or blob)
+     *
      * Generated from protobuf field <code>string input_ern = 10;</code>
      * @param string $var
      * @return $this
@@ -128,6 +217,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Problem ERN allows to reuse template and constraints from Atlas or Judge problem.
+     *
      * Generated from protobuf field <code>string problem_ern = 20;</code>
      * @return string
      */
@@ -137,6 +228,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Problem ERN allows to reuse template and constraints from Atlas or Judge problem.
+     *
      * Generated from protobuf field <code>string problem_ern = 20;</code>
      * @param string $var
      * @return $this
@@ -150,7 +243,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated use data ern instead
+     * deprecated, use input ern instead
      *
      * Generated from protobuf field <code>string input = 3;</code>
      * @return string
@@ -161,7 +254,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated use data ern instead
+     * deprecated, use input ern instead
      *
      * Generated from protobuf field <code>string input = 3;</code>
      * @param string $var
