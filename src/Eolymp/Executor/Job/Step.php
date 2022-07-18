@@ -19,6 +19,18 @@ class Step extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
+    /**
+     * run this step even if one of the previous steps have failed
+     *
+     * Generated from protobuf field <code>bool even_on_failure = 100;</code>
+     */
+    protected $even_on_failure = false;
+    /**
+     * run this step only if one of the previous steps have failed
+     *
+     * Generated from protobuf field <code>bool only_on_failure = 101;</code>
+     */
+    protected $only_on_failure = false;
     protected $action;
 
     /**
@@ -28,6 +40,10 @@ class Step extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
+     *     @type bool $even_on_failure
+     *           run this step even if one of the previous steps have failed
+     *     @type bool $only_on_failure
+     *           run this step only if one of the previous steps have failed
      *     @type \Eolymp\Executor\Job\Step\Write $write
      *     @type \Eolymp\Executor\Job\Step\Copy $copy
      *     @type \Eolymp\Executor\Job\Step\Execute $execute
@@ -58,6 +74,58 @@ class Step extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * run this step even if one of the previous steps have failed
+     *
+     * Generated from protobuf field <code>bool even_on_failure = 100;</code>
+     * @return bool
+     */
+    public function getEvenOnFailure()
+    {
+        return $this->even_on_failure;
+    }
+
+    /**
+     * run this step even if one of the previous steps have failed
+     *
+     * Generated from protobuf field <code>bool even_on_failure = 100;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEvenOnFailure($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->even_on_failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * run this step only if one of the previous steps have failed
+     *
+     * Generated from protobuf field <code>bool only_on_failure = 101;</code>
+     * @return bool
+     */
+    public function getOnlyOnFailure()
+    {
+        return $this->only_on_failure;
+    }
+
+    /**
+     * run this step only if one of the previous steps have failed
+     *
+     * Generated from protobuf field <code>bool only_on_failure = 101;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOnlyOnFailure($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->only_on_failure = $var;
 
         return $this;
     }
