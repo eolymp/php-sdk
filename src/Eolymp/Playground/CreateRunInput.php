@@ -22,6 +22,16 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
+     * Generated from protobuf field <code>string input_ern = 10;</code>
+     */
+    protected $input_ern = '';
+    /**
+     * Generated from protobuf field <code>string problem_ern = 20;</code>
+     */
+    protected $problem_ern = '';
+    /**
+     * deprecated use data ern instead
+     *
      * Generated from protobuf field <code>string input = 3;</code>
      */
     protected $input = '';
@@ -36,7 +46,10 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $lang
      *     @type string $source
+     *     @type string $input_ern
+     *     @type string $problem_ern
      *     @type string $input
+     *           deprecated use data ern instead
      *     @type string $input_content
      *     @type string $input_object_id
      *     @type string $atlas_problem_id
@@ -93,6 +106,52 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string input_ern = 10;</code>
+     * @return string
+     */
+    public function getInputErn()
+    {
+        return $this->input_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_ern = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->input_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_ern = 20;</code>
+     * @return string
+     */
+    public function getProblemErn()
+    {
+        return $this->problem_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_ern = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated use data ern instead
+     *
      * Generated from protobuf field <code>string input = 3;</code>
      * @return string
      */
@@ -102,6 +161,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated use data ern instead
+     *
      * Generated from protobuf field <code>string input = 3;</code>
      * @param string $var
      * @return $this
