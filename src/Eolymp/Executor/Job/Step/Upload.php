@@ -52,7 +52,7 @@ class Upload extends \Google\Protobuf\Internal\Message
      */
     protected $max_size = 0;
     /**
-     * Max size (in bytes) for data ERN, data ERN can not exceed 1K (default value is 1KB), use force_upload to avoid data ERNs completely.
+     * Max size (in bytes) for data encoded as Data ERN, this value can not exceed 3831 bytes (produces ERN under 5KB). Default value is 759 bytes (produces ERNs under 1KB). Use force_upload to avoid data ERNs completely.
      *
      * Generated from protobuf field <code>uint32 max_data_size = 7;</code>
      */
@@ -83,7 +83,7 @@ class Upload extends \Google\Protobuf\Internal\Message
      *     @type int $max_size
      *           Defines maximum file size (in bytes), if file exceeds this limit it will be trimmed.
      *     @type int $max_data_size
-     *           Max size (in bytes) for data ERN, data ERN can not exceed 1K (default value is 1KB), use force_upload to avoid data ERNs completely.
+     *           Max size (in bytes) for data encoded as Data ERN, this value can not exceed 3831 bytes (produces ERN under 5KB). Default value is 759 bytes (produces ERNs under 1KB). Use force_upload to avoid data ERNs completely.
      *     @type bool $force_upload
      *           Force upload to blob storage, by default upload action will encode small files into data ERN instead of uploading files to blob storage.
      * }
@@ -250,7 +250,7 @@ class Upload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Max size (in bytes) for data ERN, data ERN can not exceed 1K (default value is 1KB), use force_upload to avoid data ERNs completely.
+     * Max size (in bytes) for data encoded as Data ERN, this value can not exceed 3831 bytes (produces ERN under 5KB). Default value is 759 bytes (produces ERNs under 1KB). Use force_upload to avoid data ERNs completely.
      *
      * Generated from protobuf field <code>uint32 max_data_size = 7;</code>
      * @return int
@@ -261,7 +261,7 @@ class Upload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Max size (in bytes) for data ERN, data ERN can not exceed 1K (default value is 1KB), use force_upload to avoid data ERNs completely.
+     * Max size (in bytes) for data encoded as Data ERN, this value can not exceed 3831 bytes (produces ERN under 5KB). Default value is 759 bytes (produces ERNs under 1KB). Use force_upload to avoid data ERNs completely.
      *
      * Generated from protobuf field <code>uint32 max_data_size = 7;</code>
      * @param int $var
