@@ -20,6 +20,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     */
+    protected $ern = '';
+    /**
      * Index in the public problem catalog.
      *
      * Generated from protobuf field <code>int32 number = 10;</code>
@@ -46,6 +50,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Unique identifier.
+     *     @type string $ern
      *     @type int $number
      *           Index in the public problem catalog.
      *     @type bool $visible
@@ -81,6 +86,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
 
         return $this;
     }

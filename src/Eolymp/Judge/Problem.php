@@ -20,6 +20,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     */
+    protected $ern = '';
+    /**
      * problem index within contest
      *
      * Generated from protobuf field <code>uint32 index = 2;</code>
@@ -88,6 +92,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           globally problem ID
+     *     @type string $ern
      *     @type int $index
      *           problem index within contest
      *     @type float $score
@@ -137,6 +142,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
 
         return $this;
     }

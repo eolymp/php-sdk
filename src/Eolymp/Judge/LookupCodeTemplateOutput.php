@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.DescribeCodeTemplateOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.LookupCodeTemplateOutput</code>
  */
-class DescribeCodeTemplateOutput extends \Google\Protobuf\Internal\Message
+class LookupCodeTemplateOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.eolymp.judge.Template x_template = 1;</code>

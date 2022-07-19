@@ -268,6 +268,19 @@ class JudgeClient {
     }
 
     /**
+     * Lookup template for a given runtime/language
+     *
+     * @param LookupCodeTemplateInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupCodeTemplateOutput output message
+     */
+    public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/LookupCodeTemplate", $input, LookupCodeTemplateOutput::class, $context);
+    }
+
+    /**
      * @param ListStatementsInput $input message
      * @param array $context request parameters
      *

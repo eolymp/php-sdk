@@ -14,13 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * deprecated, use LookupCodeTemplate method instead
+     *
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
     /**
+     * deprecated, use LookupCodeTemplate method instead
+     *
      * Generated from protobuf field <code>string runtime_id = 2;</code>
      */
     protected $runtime_id = '';
+    /**
+     * Generated from protobuf field <code>string template_ern = 3;</code>
+     */
+    protected $template_ern = '';
 
     /**
      * Constructor.
@@ -29,7 +37,10 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
+     *           deprecated, use LookupCodeTemplate method instead
      *     @type string $runtime_id
+     *           deprecated, use LookupCodeTemplate method instead
+     *     @type string $template_ern
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +49,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use LookupCodeTemplate method instead
+     *
      * Generated from protobuf field <code>string problem_id = 1;</code>
      * @return string
      */
@@ -47,6 +60,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use LookupCodeTemplate method instead
+     *
      * Generated from protobuf field <code>string problem_id = 1;</code>
      * @param string $var
      * @return $this
@@ -60,6 +75,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use LookupCodeTemplate method instead
+     *
      * Generated from protobuf field <code>string runtime_id = 2;</code>
      * @return string
      */
@@ -69,6 +86,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use LookupCodeTemplate method instead
+     *
      * Generated from protobuf field <code>string runtime_id = 2;</code>
      * @param string $var
      * @return $this
@@ -77,6 +96,28 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runtime_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string template_ern = 3;</code>
+     * @return string
+     */
+    public function getTemplateErn()
+    {
+        return $this->template_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string template_ern = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTemplateErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->template_ern = $var;
 
         return $this;
     }
