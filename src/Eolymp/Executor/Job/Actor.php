@@ -34,6 +34,18 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     protected $source_ern = '';
     /**
+     * Header code ERN, automatically added before source code
+     *
+     * Generated from protobuf field <code>string header_ern = 12;</code>
+     */
+    protected $header_ern = '';
+    /**
+     * Footer code ERN, automatically added after source code
+     *
+     * Generated from protobuf field <code>string footer_ern = 13;</code>
+     */
+    protected $footer_ern = '';
+    /**
      * Additional environment variable during init
      *
      * Generated from protobuf field <code>map<string, string> env = 40;</code>
@@ -70,6 +82,10 @@ class Actor extends \Google\Protobuf\Internal\Message
      *           Runtime
      *     @type string $source_ern
      *           Source code ERN
+     *     @type string $header_ern
+     *           Header code ERN, automatically added before source code
+     *     @type string $footer_ern
+     *           Footer code ERN, automatically added after source code
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           Additional environment variable during init
      *     @type \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $files
@@ -159,6 +175,58 @@ class Actor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Header code ERN, automatically added before source code
+     *
+     * Generated from protobuf field <code>string header_ern = 12;</code>
+     * @return string
+     */
+    public function getHeaderErn()
+    {
+        return $this->header_ern;
+    }
+
+    /**
+     * Header code ERN, automatically added before source code
+     *
+     * Generated from protobuf field <code>string header_ern = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHeaderErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->header_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Footer code ERN, automatically added after source code
+     *
+     * Generated from protobuf field <code>string footer_ern = 13;</code>
+     * @return string
+     */
+    public function getFooterErn()
+    {
+        return $this->footer_ern;
+    }
+
+    /**
+     * Footer code ERN, automatically added after source code
+     *
+     * Generated from protobuf field <code>string footer_ern = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFooterErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->footer_ern = $var;
 
         return $this;
     }
