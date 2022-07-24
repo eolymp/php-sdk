@@ -43,11 +43,11 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $input_ern = '';
     /**
-     * Template ERN allows to reuse template from Atlas or Judge problem.
+     * Problem ERN allows to reuse template from Atlas or Judge problem.
      *
-     * Generated from protobuf field <code>string template_ern = 20;</code>
+     * Generated from protobuf field <code>string problem_ern = 20;</code>
      */
-    protected $template_ern = '';
+    protected $problem_ern = '';
     /**
      * deprecated, use input ern instead
      *
@@ -72,8 +72,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *           Source code ERN (data up to 5KB or blob)
      *     @type string $input_ern
      *           Input ERN (data up to 5KB or blob)
-     *     @type string $template_ern
-     *           Template ERN allows to reuse template from Atlas or Judge problem.
+     *     @type string $problem_ern
+     *           Problem ERN allows to reuse template from Atlas or Judge problem.
      *     @type string $input
      *           deprecated, use input ern instead
      *     @type string $input_content
@@ -214,27 +214,27 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Template ERN allows to reuse template from Atlas or Judge problem.
+     * Problem ERN allows to reuse template from Atlas or Judge problem.
      *
-     * Generated from protobuf field <code>string template_ern = 20;</code>
+     * Generated from protobuf field <code>string problem_ern = 20;</code>
      * @return string
      */
-    public function getTemplateErn()
+    public function getProblemErn()
     {
-        return $this->template_ern;
+        return $this->problem_ern;
     }
 
     /**
-     * Template ERN allows to reuse template from Atlas or Judge problem.
+     * Problem ERN allows to reuse template from Atlas or Judge problem.
      *
-     * Generated from protobuf field <code>string template_ern = 20;</code>
+     * Generated from protobuf field <code>string problem_ern = 20;</code>
      * @param string $var
      * @return $this
      */
-    public function setTemplateErn($var)
+    public function setProblemErn($var)
     {
         GPBUtil::checkString($var, True);
-        $this->template_ern = $var;
+        $this->problem_ern = $var;
 
         return $this;
     }

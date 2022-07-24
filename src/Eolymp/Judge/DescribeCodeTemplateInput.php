@@ -14,18 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * deprecated, use LookupCodeTemplate method instead
-     *
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     */
-    protected $problem_id = '';
-    /**
-     * deprecated, use LookupCodeTemplate method instead
-     *
-     * Generated from protobuf field <code>string runtime_id = 2;</code>
-     */
-    protected $runtime_id = '';
-    /**
      * Generated from protobuf field <code>string template_ern = 3;</code>
      */
     protected $template_ern = '';
@@ -36,68 +24,12 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $problem_id
-     *           deprecated, use LookupCodeTemplate method instead
-     *     @type string $runtime_id
-     *           deprecated, use LookupCodeTemplate method instead
      *     @type string $template_ern
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Judge::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * deprecated, use LookupCodeTemplate method instead
-     *
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * deprecated, use LookupCodeTemplate method instead
-     *
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use LookupCodeTemplate method instead
-     *
-     * Generated from protobuf field <code>string runtime_id = 2;</code>
-     * @return string
-     */
-    public function getRuntimeId()
-    {
-        return $this->runtime_id;
-    }
-
-    /**
-     * deprecated, use LookupCodeTemplate method instead
-     *
-     * Generated from protobuf field <code>string runtime_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRuntimeId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->runtime_id = $var;
-
-        return $this;
     }
 
     /**

@@ -14,15 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeCodeTemplateOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Template x_template = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Template template = 1;</code>
      */
-    protected $x_template = null;
-    /**
-     * deprecated, use source_ern instead
-     *
-     * Generated from protobuf field <code>string template = 100;</code>
-     */
-    protected $template = '';
+    protected $template = null;
 
     /**
      * Constructor.
@@ -30,9 +24,7 @@ class DescribeCodeTemplateOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Judge\Template $x_template
-     *     @type string $template
-     *           deprecated, use source_ern instead
+     *     @type \Eolymp\Judge\Template $template
      * }
      */
     public function __construct($data = NULL) {
@@ -41,32 +33,8 @@ class DescribeCodeTemplateOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Template x_template = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Template template = 1;</code>
      * @return \Eolymp\Judge\Template
-     */
-    public function getXTemplate()
-    {
-        return $this->x_template;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Template x_template = 1;</code>
-     * @param \Eolymp\Judge\Template $var
-     * @return $this
-     */
-    public function setXTemplate($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Template::class);
-        $this->x_template = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use source_ern instead
-     *
-     * Generated from protobuf field <code>string template = 100;</code>
-     * @return string
      */
     public function getTemplate()
     {
@@ -74,15 +42,13 @@ class DescribeCodeTemplateOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use source_ern instead
-     *
-     * Generated from protobuf field <code>string template = 100;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.judge.Template template = 1;</code>
+     * @param \Eolymp\Judge\Template $var
      * @return $this
      */
     public function setTemplate($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Template::class);
         $this->template = $var;
 
         return $this;
