@@ -18,6 +18,10 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     */
+    protected $ern = '';
+    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
@@ -26,29 +30,39 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string source = 10;</code>
      */
     protected $source = '';
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>string header = 11;</code>
+     */
+    protected $header = '';
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>string footer = 12;</code>
+     */
+    protected $footer = '';
     /**
      * Generated from protobuf field <code>string source_ern = 20;</code>
      */
     protected $source_ern = '';
     /**
-     * Generated from protobuf field <code>string header = 11;</code>
-     */
-    protected $header = '';
-    /**
      * Generated from protobuf field <code>string header_ern = 21;</code>
      */
     protected $header_ern = '';
     /**
-     * Generated from protobuf field <code>string footer = 12;</code>
-     */
-    protected $footer = '';
-    /**
      * Generated from protobuf field <code>string footer_ern = 22;</code>
      */
     protected $footer_ern = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
+     */
+    private $files;
 
     /**
      * Constructor.
@@ -57,14 +71,19 @@ class Template extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $ern
      *     @type string $problem_id
      *     @type string $runtime
      *     @type string $source
-     *     @type string $source_ern
+     *           deprecated
      *     @type string $header
-     *     @type string $header_ern
+     *           deprecated
      *     @type string $footer
+     *           deprecated
+     *     @type string $source_ern
+     *     @type string $header_ern
      *     @type string $footer_ern
+     *     @type \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $files
      * }
      */
     public function __construct($data = NULL) {
@@ -90,6 +109,28 @@ class Template extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
 
         return $this;
     }
@@ -139,6 +180,8 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string source = 10;</code>
      * @return string
      */
@@ -148,6 +191,8 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string source = 10;</code>
      * @param string $var
      * @return $this
@@ -156,6 +201,58 @@ class Template extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>string header = 11;</code>
+     * @return string
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>string header = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->header = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>string footer = 12;</code>
+     * @return string
+     */
+    public function getFooter()
+    {
+        return $this->footer;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>string footer = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFooter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->footer = $var;
 
         return $this;
     }
@@ -183,28 +280,6 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string header = 11;</code>
-     * @return string
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    /**
-     * Generated from protobuf field <code>string header = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHeader($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->header = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string header_ern = 21;</code>
      * @return string
      */
@@ -227,28 +302,6 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string footer = 12;</code>
-     * @return string
-     */
-    public function getFooter()
-    {
-        return $this->footer;
-    }
-
-    /**
-     * Generated from protobuf field <code>string footer = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFooter($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->footer = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string footer_ern = 22;</code>
      * @return string
      */
@@ -266,6 +319,28 @@ class Template extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->footer_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
+     * @param \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\File::class);
+        $this->files = $arr;
 
         return $this;
     }

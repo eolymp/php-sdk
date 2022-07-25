@@ -41,6 +41,10 @@ class Template extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string footer_ern = 12;</code>
      */
     protected $footer_ern = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
+     */
+    private $files;
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Template extends \Google\Protobuf\Internal\Message
      *     @type string $source_ern
      *     @type string $header_ern
      *     @type string $footer_ern
+     *     @type \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $files
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +217,28 @@ class Template extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->footer_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
+     * @param \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\File::class);
+        $this->files = $arr;
 
         return $this;
     }
