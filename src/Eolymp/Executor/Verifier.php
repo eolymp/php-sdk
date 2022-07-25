@@ -52,6 +52,12 @@ class Verifier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool order_sensitive = 6;</code>
      */
     protected $order_sensitive = false;
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Verifier.File files = 10;</code>
+     */
+    private $files;
 
     /**
      * Constructor.
@@ -72,6 +78,8 @@ class Verifier extends \Google\Protobuf\Internal\Message
      *     @type bool $order_sensitive
      *           Order sensitivity option for QUERY_RESULTS verifier.
      *           If set to false the rows of output and answer will be sorted before comparison.
+     *     @type \Eolymp\Executor\Verifier\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *           Additional files placed into workdir during compilation and execution
      * }
      */
     public function __construct($data = NULL) {
@@ -233,6 +241,32 @@ class Verifier extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->order_sensitive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Verifier.File files = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Verifier.File files = 10;</code>
+     * @param \Eolymp\Executor\Verifier\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Verifier\File::class);
+        $this->files = $arr;
 
         return $this;
     }

@@ -33,6 +33,12 @@ class Interactor extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 3;</code>
      */
     protected $source = '';
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Interactor.File files = 10;</code>
+     */
+    private $files;
 
     /**
      * Constructor.
@@ -46,6 +52,8 @@ class Interactor extends \Google\Protobuf\Internal\Message
      *           Programming language in which interactor is written
      *     @type string $source
      *           Source code for interactor
+     *     @type \Eolymp\Executor\Interactor\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *           Additional files placed into workdir during compilation and execution
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +135,32 @@ class Interactor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Interactor.File files = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Interactor.File files = 10;</code>
+     * @param \Eolymp\Executor\Interactor\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Interactor\File::class);
+        $this->files = $arr;
 
         return $this;
     }
