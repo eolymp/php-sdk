@@ -17,6 +17,22 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string key = 1;</code>
      */
     protected $key = '';
+    /**
+     * Generated from protobuf field <code>string ern = 2;</code>
+     */
+    protected $ern = '';
+    /**
+     * SHA1 hash of data
+     *
+     * Generated from protobuf field <code>string hash = 3;</code>
+     */
+    protected $hash = '';
+    /**
+     * Size of the data
+     *
+     * Generated from protobuf field <code>uint32 size = 4;</code>
+     */
+    protected $size = 0;
 
     /**
      * Constructor.
@@ -25,6 +41,11 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $key
+     *     @type string $ern
+     *     @type string $hash
+     *           SHA1 hash of data
+     *     @type int $size
+     *           Size of the data
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +71,80 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 2;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * SHA1 hash of data
+     *
+     * Generated from protobuf field <code>string hash = 3;</code>
+     * @return string
+     */
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+    /**
+     * SHA1 hash of data
+     *
+     * Generated from protobuf field <code>string hash = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHash($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->hash = $var;
+
+        return $this;
+    }
+
+    /**
+     * Size of the data
+     *
+     * Generated from protobuf field <code>uint32 size = 4;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Size of the data
+     *
+     * Generated from protobuf field <code>uint32 size = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->size = $var;
 
         return $this;
     }
