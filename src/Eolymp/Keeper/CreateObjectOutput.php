@@ -18,21 +18,15 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
-     * Generated from protobuf field <code>string ern = 2;</code>
+     * Generated from protobuf field <code>string blob_ern = 2;</code>
      */
-    protected $ern = '';
+    protected $blob_ern = '';
     /**
      * SHA1 hash of data
      *
-     * Generated from protobuf field <code>string hash = 3;</code>
+     * Generated from protobuf field <code>string blob_hash = 3;</code>
      */
-    protected $hash = '';
-    /**
-     * Size of the data
-     *
-     * Generated from protobuf field <code>uint32 size = 4;</code>
-     */
-    protected $size = 0;
+    protected $blob_hash = '';
 
     /**
      * Constructor.
@@ -41,11 +35,9 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $key
-     *     @type string $ern
-     *     @type string $hash
+     *     @type string $blob_ern
+     *     @type string $blob_hash
      *           SHA1 hash of data
-     *     @type int $size
-     *           Size of the data
      * }
      */
     public function __construct($data = NULL) {
@@ -76,23 +68,23 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ern = 2;</code>
+     * Generated from protobuf field <code>string blob_ern = 2;</code>
      * @return string
      */
-    public function getErn()
+    public function getBlobErn()
     {
-        return $this->ern;
+        return $this->blob_ern;
     }
 
     /**
-     * Generated from protobuf field <code>string ern = 2;</code>
+     * Generated from protobuf field <code>string blob_ern = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setErn($var)
+    public function setBlobErn($var)
     {
         GPBUtil::checkString($var, True);
-        $this->ern = $var;
+        $this->blob_ern = $var;
 
         return $this;
     }
@@ -100,51 +92,25 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
     /**
      * SHA1 hash of data
      *
-     * Generated from protobuf field <code>string hash = 3;</code>
+     * Generated from protobuf field <code>string blob_hash = 3;</code>
      * @return string
      */
-    public function getHash()
+    public function getBlobHash()
     {
-        return $this->hash;
+        return $this->blob_hash;
     }
 
     /**
      * SHA1 hash of data
      *
-     * Generated from protobuf field <code>string hash = 3;</code>
+     * Generated from protobuf field <code>string blob_hash = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setHash($var)
+    public function setBlobHash($var)
     {
         GPBUtil::checkString($var, True);
-        $this->hash = $var;
-
-        return $this;
-    }
-
-    /**
-     * Size of the data
-     *
-     * Generated from protobuf field <code>uint32 size = 4;</code>
-     * @return int
-     */
-    public function getSize()
-    {
-        return $this->size;
-    }
-
-    /**
-     * Size of the data
-     *
-     * Generated from protobuf field <code>uint32 size = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSize($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->size = $var;
+        $this->blob_hash = $var;
 
         return $this;
     }
