@@ -107,6 +107,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Run runs = 30;</code>
      */
     private $runs;
+    /**
+     * Additional files to be placed in the work directory during compilation and runs*
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
+     */
+    private $files;
 
     /**
      * Constructor.
@@ -150,6 +156,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Interactor configuration
      *     @type \Eolymp\Executor\Task\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
      *           Run configurations.
+     *     @type \Eolymp\Executor\Task\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *           Additional files to be placed in the work directory during compilation and runs*
      * }
      */
     public function __construct($data = NULL) {
@@ -533,6 +541,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\Run::class);
         $this->runs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Additional files to be placed in the work directory during compilation and runs*
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Additional files to be placed in the work directory during compilation and runs*
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
+     * @param \Eolymp\Executor\Task\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\File::class);
+        $this->files = $arr;
 
         return $this;
     }
