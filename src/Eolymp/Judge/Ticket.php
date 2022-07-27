@@ -20,6 +20,10 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     */
+    protected $ern = '';
+    /**
      * Contest where ticket was opened.
      *
      * Generated from protobuf field <code>string contest_id = 2;</code>
@@ -88,6 +92,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Ticket unique identifier.
+     *     @type string $ern
      *     @type string $contest_id
      *           Contest where ticket was opened.
      *     @type string $participant_id
@@ -137,6 +142,28 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
 
         return $this;
     }

@@ -20,6 +20,10 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     */
+    protected $ern = '';
+    /**
      * contest
      *
      * Generated from protobuf field <code>string contest_id = 2;</code>
@@ -104,6 +108,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique identifier
+     *     @type string $ern
      *     @type string $contest_id
      *           contest
      *     @type string $problem_id
@@ -158,6 +163,28 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
 
         return $this;
     }
