@@ -20,6 +20,10 @@ class Activity extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     */
+    protected $ern = '';
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Activity.Type type = 2;</code>
      */
     protected $type = 0;
@@ -88,6 +92,7 @@ class Activity extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Activity unique identifier.
+     *     @type string $ern
      *     @type int $type
      *     @type int $status
      *     @type string $contest_id
@@ -135,6 +140,28 @@ class Activity extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @return string
+     */
+    public function getErn()
+    {
+        return $this->ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ern = 9999;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ern = $var;
 
         return $this;
     }
