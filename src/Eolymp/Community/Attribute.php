@@ -75,6 +75,12 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string choices = 103;</code>
      */
     private $choices;
+    /**
+     * restrict region selector to a specific country
+     *
+     * Generated from protobuf field <code>string country = 104;</code>
+     */
+    protected $country = '';
 
     /**
      * Constructor.
@@ -102,6 +108,8 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           max value validation (see field types for details)
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $choices
      *           possible choices validation (see field types for details)
+     *     @type string $country
+     *           restrict region selector to a specific country
      * }
      */
     public function __construct($data = NULL) {
@@ -383,6 +391,32 @@ class Attribute extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->choices = $arr;
+
+        return $this;
+    }
+
+    /**
+     * restrict region selector to a specific country
+     *
+     * Generated from protobuf field <code>string country = 104;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * restrict region selector to a specific country
+     *
+     * Generated from protobuf field <code>string country = 104;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
 
         return $this;
     }
