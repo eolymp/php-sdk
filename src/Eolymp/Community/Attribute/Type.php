@@ -82,6 +82,30 @@ class Type
      * Generated from protobuf enum <code>CHECKBOX = 7;</code>
      */
     const CHECKBOX = 7;
+    /**
+     * Country value.
+     * Validation:
+     *  - required - field must be non-empty
+     *
+     * Generated from protobuf enum <code>COUNTRY = 8;</code>
+     */
+    const COUNTRY = 8;
+    /**
+     * Region value for a pre-selected country.
+     * Validation:
+     *  - required - field must be non-empty
+     *
+     * Generated from protobuf enum <code>REGION = 9;</code>
+     */
+    const REGION = 9;
+    /**
+     * Country and Region (within same country) value.
+     * Validation:
+     *  - required - field must be non-empty
+     *
+     * Generated from protobuf enum <code>COUNTRY_REGION = 10;</code>
+     */
+    const COUNTRY_REGION = 10;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -92,6 +116,9 @@ class Type
         self::DATE => 'DATE',
         self::EMAIL => 'EMAIL',
         self::CHECKBOX => 'CHECKBOX',
+        self::COUNTRY => 'COUNTRY',
+        self::REGION => 'REGION',
+        self::COUNTRY_REGION => 'COUNTRY_REGION',
     ];
 
     public static function name($value)
