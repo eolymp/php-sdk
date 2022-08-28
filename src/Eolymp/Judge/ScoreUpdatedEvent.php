@@ -22,6 +22,10 @@ class ScoreUpdatedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
+     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     */
+    protected $out_of_competition = false;
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
      */
     protected $score = null;
@@ -34,6 +38,7 @@ class ScoreUpdatedEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $participant_id
+     *     @type bool $out_of_competition
      *     @type \Eolymp\Judge\Score $score
      * }
      */
@@ -82,6 +87,28 @@ class ScoreUpdatedEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->participant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * @return bool
+     */
+    public function getOutOfCompetition()
+    {
+        return $this->out_of_competition;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutOfCompetition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->out_of_competition = $var;
 
         return $this;
     }
