@@ -42,6 +42,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * if true, participant won't be assigned rank in scoreboard
+     *
+     * Generated from protobuf field <code>bool out_of_competition = 6;</code>
+     */
+    protected $out_of_competition = false;
+    /**
      * status (see explanation to enumeration values)
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Status status = 20;</code>
@@ -119,6 +125,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           community member
      *     @type string $name
      *           name
+     *     @type bool $out_of_competition
+     *           if true, participant won't be assigned rank in scoreboard
      *     @type int $status
      *           status (see explanation to enumeration values)
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -270,6 +278,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * if true, participant won't be assigned rank in scoreboard
+     *
+     * Generated from protobuf field <code>bool out_of_competition = 6;</code>
+     * @return bool
+     */
+    public function getOutOfCompetition()
+    {
+        return $this->out_of_competition;
+    }
+
+    /**
+     * if true, participant won't be assigned rank in scoreboard
+     *
+     * Generated from protobuf field <code>bool out_of_competition = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutOfCompetition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->out_of_competition = $var;
 
         return $this;
     }

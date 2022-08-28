@@ -25,6 +25,10 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     */
+    protected $out_of_competition = false;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $member_id
      *     @type string $name
+     *     @type bool $out_of_competition
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * @return bool
+     */
+    public function getOutOfCompetition()
+    {
+        return $this->out_of_competition;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutOfCompetition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->out_of_competition = $var;
 
         return $this;
     }

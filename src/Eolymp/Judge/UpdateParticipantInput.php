@@ -37,6 +37,12 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
      */
     protected $bonus_time = 0;
+    /**
+     * Updated out of competition flag
+     *
+     * Generated from protobuf field <code>bool out_of_competition = 11;</code>
+     */
+    protected $out_of_competition = false;
 
     /**
      * Constructor.
@@ -52,6 +58,8 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      *           Updated participant name
      *     @type int $bonus_time
      *           Updated bonus time
+     *     @type bool $out_of_competition
+     *           Updated out of competition flag
      * }
      */
     public function __construct($data = NULL) {
@@ -159,6 +167,32 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->bonus_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Updated out of competition flag
+     *
+     * Generated from protobuf field <code>bool out_of_competition = 11;</code>
+     * @return bool
+     */
+    public function getOutOfCompetition()
+    {
+        return $this->out_of_competition;
+    }
+
+    /**
+     * Updated out of competition flag
+     *
+     * Generated from protobuf field <code>bool out_of_competition = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutOfCompetition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->out_of_competition = $var;
 
         return $this;
     }
