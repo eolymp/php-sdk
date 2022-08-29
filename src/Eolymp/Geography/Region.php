@@ -18,9 +18,9 @@ class Region extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string country = 2;</code>
+     * Generated from protobuf field <code>string country_id = 2;</code>
      */
-    protected $country = '';
+    protected $country_id = '';
     /**
      * Generated from protobuf field <code>string name = 3;</code>
      */
@@ -37,7 +37,7 @@ class Region extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $country
+     *     @type string $country_id
      *     @type string $name
      *     @type string $flag
      * }
@@ -70,23 +70,23 @@ class Region extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string country = 2;</code>
+     * Generated from protobuf field <code>string country_id = 2;</code>
      * @return string
      */
-    public function getCountry()
+    public function getCountryId()
     {
-        return $this->country;
+        return $this->country_id;
     }
 
     /**
-     * Generated from protobuf field <code>string country = 2;</code>
+     * Generated from protobuf field <code>string country_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setCountry($var)
+    public function setCountryId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->country = $var;
+        $this->country_id = $var;
 
         return $this;
     }
