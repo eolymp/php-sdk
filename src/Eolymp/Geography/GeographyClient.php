@@ -39,4 +39,26 @@ class GeographyClient {
         return call_user_func($this->invoker, "eolymp.geography.Geography/ListCountries", $input, ListCountriesOutput::class, $context);
     }
 
+    /**
+     * @param DescribeRegionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeRegionOutput output message
+     */
+    public function DescribeRegion(DescribeRegionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.geography.Geography/DescribeRegion", $input, DescribeRegionOutput::class, $context);
+    }
+
+    /**
+     * @param ListRegionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListRegionsOutput output message
+     */
+    public function ListRegions(ListRegionsInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.geography.Geography/ListRegions", $input, ListRegionsOutput::class, $context);
+    }
+
 }
