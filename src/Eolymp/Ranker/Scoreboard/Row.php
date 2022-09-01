@@ -44,9 +44,9 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $penalty = 0.0;
     /**
-     * Generated from protobuf field <code>bool guest = 40;</code>
+     * Generated from protobuf field <code>bool ghost = 40;</code>
      */
-    protected $guest = false;
+    protected $ghost = false;
     /**
      * Generated from protobuf field <code>bool out_of_competition = 41;</code>
      */
@@ -86,7 +86,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Total score.
      *     @type float $penalty
      *           Total penalty.
-     *     @type bool $guest
+     *     @type bool $ghost
      *     @type bool $out_of_competition
      *     @type int $rank
      *           Rank in the scoreboard
@@ -232,23 +232,23 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool guest = 40;</code>
+     * Generated from protobuf field <code>bool ghost = 40;</code>
      * @return bool
      */
-    public function getGuest()
+    public function getGhost()
     {
-        return $this->guest;
+        return $this->ghost;
     }
 
     /**
-     * Generated from protobuf field <code>bool guest = 40;</code>
+     * Generated from protobuf field <code>bool ghost = 40;</code>
      * @param bool $var
      * @return $this
      */
-    public function setGuest($var)
+    public function setGhost($var)
     {
         GPBUtil::checkBool($var);
-        $this->guest = $var;
+        $this->ghost = $var;
 
         return $this;
     }
