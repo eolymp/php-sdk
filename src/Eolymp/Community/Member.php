@@ -42,6 +42,10 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $ghost = false;
     /**
+     * Generated from protobuf field <code>bool out_of_competition = 8;</code>
+     */
+    protected $out_of_competition = false;
+    /**
      * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
      */
     protected $status = 0;
@@ -67,6 +71,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type bool $registered
      *     @type bool $staffed
      *     @type bool $ghost
+     *     @type bool $out_of_competition
      *     @type int $status
      *     @type \Eolymp\Community\Member\User[]|\Google\Protobuf\Internal\RepeatedField $users
      *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
@@ -227,6 +232,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->ghost = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 8;</code>
+     * @return bool
+     */
+    public function getOutOfCompetition()
+    {
+        return $this->out_of_competition;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutOfCompetition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->out_of_competition = $var;
 
         return $this;
     }
