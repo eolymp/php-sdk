@@ -44,6 +44,14 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $penalty = 0.0;
     /**
+     * Generated from protobuf field <code>bool guest = 40;</code>
+     */
+    protected $guest = false;
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 41;</code>
+     */
+    protected $out_of_competition = false;
+    /**
      * Rank in the scoreboard
      *
      * Generated from protobuf field <code>uint32 rank = 30;</code>
@@ -78,6 +86,8 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Total score.
      *     @type float $penalty
      *           Total penalty.
+     *     @type bool $guest
+     *     @type bool $out_of_competition
      *     @type int $rank
      *           Rank in the scoreboard
      *     @type int $rank_lower
@@ -217,6 +227,50 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool guest = 40;</code>
+     * @return bool
+     */
+    public function getGuest()
+    {
+        return $this->guest;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool guest = 40;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGuest($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->guest = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 41;</code>
+     * @return bool
+     */
+    public function getOutOfCompetition()
+    {
+        return $this->out_of_competition;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool out_of_competition = 41;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutOfCompetition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->out_of_competition = $var;
 
         return $this;
     }
