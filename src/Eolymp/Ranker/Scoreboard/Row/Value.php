@@ -22,6 +22,8 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $column_id = '';
     /**
+     * score and related fields for CONTEST and PROBLEM columns.
+     *
      * Generated from protobuf field <code>float score = 10;</code>
      */
     protected $score = 0.0;
@@ -48,6 +50,12 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $solved_in = 0;
     /**
+     * attribute and value for ATTRIBUTE columns.
+     *
+     * Generated from protobuf field <code>string attribute_type = 22;</code>
+     */
+    protected $attribute_type = '';
+    /**
      * Generated from protobuf field <code>string value_string = 20;</code>
      */
     protected $value_string = '';
@@ -65,6 +73,7 @@ class Value extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $column_id
      *     @type float $score
+     *           score and related fields for CONTEST and PROBLEM columns.
      *     @type float $penalty
      *     @type float $percentage
      *           Percentage of points scored, from 0 to 1.
@@ -72,6 +81,8 @@ class Value extends \Google\Protobuf\Internal\Message
      *           Number of attempts before problem was solved.
      *     @type int $solved_in
      *           How much time it took to solve problem since beginning of the contest, in seconds.
+     *     @type string $attribute_type
+     *           attribute and value for ATTRIBUTE columns.
      *     @type string $value_string
      *     @type int $value_number
      * }
@@ -126,6 +137,8 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * score and related fields for CONTEST and PROBLEM columns.
+     *
      * Generated from protobuf field <code>float score = 10;</code>
      * @return float
      */
@@ -135,6 +148,8 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * score and related fields for CONTEST and PROBLEM columns.
+     *
      * Generated from protobuf field <code>float score = 10;</code>
      * @param float $var
      * @return $this
@@ -243,6 +258,32 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->solved_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * attribute and value for ATTRIBUTE columns.
+     *
+     * Generated from protobuf field <code>string attribute_type = 22;</code>
+     * @return string
+     */
+    public function getAttributeType()
+    {
+        return $this->attribute_type;
+    }
+
+    /**
+     * attribute and value for ATTRIBUTE columns.
+     *
+     * Generated from protobuf field <code>string attribute_type = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAttributeType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->attribute_type = $var;
 
         return $this;
     }

@@ -18,11 +18,15 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $attribute_key = '';
     /**
-     * Generated from protobuf field <code>string value_string = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Type attribute_type = 2;</code>
+     */
+    protected $attribute_type = 0;
+    /**
+     * Generated from protobuf field <code>string value_string = 10;</code>
      */
     protected $value_string = '';
     /**
-     * Generated from protobuf field <code>int32 value_number = 3;</code>
+     * Generated from protobuf field <code>int32 value_number = 11;</code>
      */
     protected $value_number = 0;
 
@@ -33,6 +37,7 @@ class Value extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $attribute_key
+     *     @type int $attribute_type
      *     @type string $value_string
      *     @type int $value_number
      * }
@@ -65,7 +70,29 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value_string = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Type attribute_type = 2;</code>
+     * @return int
+     */
+    public function getAttributeType()
+    {
+        return $this->attribute_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Type attribute_type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAttributeType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute_Type::class);
+        $this->attribute_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value_string = 10;</code>
      * @return string
      */
     public function getValueString()
@@ -74,7 +101,7 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value_string = 2;</code>
+     * Generated from protobuf field <code>string value_string = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 value_number = 3;</code>
+     * Generated from protobuf field <code>int32 value_number = 11;</code>
      * @return int
      */
     public function getValueNumber()
@@ -96,7 +123,7 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 value_number = 3;</code>
+     * Generated from protobuf field <code>int32 value_number = 11;</code>
      * @param int $var
      * @return $this
      */
