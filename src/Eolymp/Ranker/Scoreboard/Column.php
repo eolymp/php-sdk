@@ -58,6 +58,10 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $community_attribute_key = '';
     /**
+     * Generated from protobuf field <code>string community_attribute_type = 23;</code>
+     */
+    protected $community_attribute_type = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 100;</code>
      */
     private $columns;
@@ -79,6 +83,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
      *     @type string $community_attribute_key
+     *     @type string $community_attribute_type
      *     @type \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $columns
      * }
      */
@@ -325,6 +330,28 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->community_attribute_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string community_attribute_type = 23;</code>
+     * @return string
+     */
+    public function getCommunityAttributeType()
+    {
+        return $this->community_attribute_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string community_attribute_type = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCommunityAttributeType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->community_attribute_type = $var;
 
         return $this;
     }
