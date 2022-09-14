@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UpdateProfileOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string email_confirmation_hint = 1;</code>
+     */
+    protected $email_confirmation_hint = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class UpdateProfileOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $email_confirmation_hint
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Cognito\Cognito::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string email_confirmation_hint = 1;</code>
+     * @return string
+     */
+    public function getEmailConfirmationHint()
+    {
+        return $this->email_confirmation_hint;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email_confirmation_hint = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmailConfirmationHint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email_confirmation_hint = $var;
+
+        return $this;
     }
 
 }
