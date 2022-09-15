@@ -323,4 +323,17 @@ class CognitoClient {
         return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListEntitlements", $input, ListEntitlementsOutput::class, $context);
     }
 
+    /**
+     * Lists entitlements granted to authenticated user.
+     *
+     * @param SelfDestructInput $input message
+     * @param array $context request parameters
+     *
+     * @return SelfDestructOutput output message
+     */
+    public function SelfDestruct(SelfDestructInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.cognito.Cognito/SelfDestruct", $input, SelfDestructOutput::class, $context);
+    }
+
 }
