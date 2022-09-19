@@ -689,6 +689,17 @@ class AtlasClient {
     }
 
     /**
+     * @param RetestSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return RetestSubmissionOutput output message
+     */
+    public function RetestSubmission(RetestSubmissionInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/RetestSubmission", $input, RetestSubmissionOutput::class, $context);
+    }
+
+    /**
      * @param DescribeScoreInput $input message
      * @param array $context request parameters
      *
