@@ -26,9 +26,9 @@ class Scoring extends \Google\Protobuf\Internal\Message
      */
     protected $freezing_time = 0;
     /**
-     * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
+     * Generated from protobuf field <code>bool upsolving = 4;</code>
      */
-    protected $allow_upsolving = false;
+    protected $upsolving = false;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class Scoring extends \Google\Protobuf\Internal\Message
      *     @type bool $show_scoreboard
      *     @type int $attempt_penalty
      *     @type int $freezing_time
-     *     @type bool $allow_upsolving
+     *     @type bool $upsolving
      * }
      */
     public function __construct($data = NULL) {
@@ -114,23 +114,23 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
+     * Generated from protobuf field <code>bool upsolving = 4;</code>
      * @return bool
      */
-    public function getAllowUpsolving()
+    public function getUpsolving()
     {
-        return $this->allow_upsolving;
+        return $this->upsolving;
     }
 
     /**
-     * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
+     * Generated from protobuf field <code>bool upsolving = 4;</code>
      * @param bool $var
      * @return $this
      */
-    public function setAllowUpsolving($var)
+    public function setUpsolving($var)
     {
         GPBUtil::checkBool($var);
-        $this->allow_upsolving = $var;
+        $this->upsolving = $var;
 
         return $this;
     }
