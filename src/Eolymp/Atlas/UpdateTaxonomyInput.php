@@ -38,6 +38,10 @@ class UpdateTaxonomyInput extends \Google\Protobuf\Internal\Message
      */
     protected $round = 0;
     /**
+     * Generated from protobuf field <code>uint32 number = 14;</code>
+     */
+    protected $number = 0;
+    /**
      * Generated from protobuf field <code>string country = 20;</code>
      */
     protected $country = '';
@@ -45,6 +49,10 @@ class UpdateTaxonomyInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string region = 21;</code>
      */
     protected $region = '';
+    /**
+     * Generated from protobuf field <code>uint32 difficulty = 30;</code>
+     */
+    protected $difficulty = 0;
 
     /**
      * Constructor.
@@ -58,8 +66,10 @@ class UpdateTaxonomyInput extends \Google\Protobuf\Internal\Message
      *     @type int $year
      *     @type int $stage
      *     @type int $round
+     *     @type int $number
      *     @type string $country
      *     @type string $region
+     *     @type int $difficulty
      * }
      */
     public function __construct($data = NULL) {
@@ -200,6 +210,28 @@ class UpdateTaxonomyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>uint32 number = 14;</code>
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 number = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->number = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string country = 20;</code>
      * @return string
      */
@@ -239,6 +271,28 @@ class UpdateTaxonomyInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->region = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 difficulty = 30;</code>
+     * @return int
+     */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 difficulty = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDifficulty($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->difficulty = $var;
 
         return $this;
     }
