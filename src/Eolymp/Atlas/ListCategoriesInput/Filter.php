@@ -22,6 +22,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $parent_id;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID problem_id = 4;</code>
+     */
+    private $problem_id;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_visible = 3;</code>
      */
     private $is_visible;
@@ -34,6 +38,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $parent_id
+     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $problem_id
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_visible
      * }
      */
@@ -82,6 +87,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->parent_id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID problem_id = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID problem_id = 4;</code>
+     * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->problem_id = $arr;
 
         return $this;
     }

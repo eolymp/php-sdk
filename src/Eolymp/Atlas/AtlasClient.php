@@ -95,28 +95,6 @@ class AtlasClient {
     }
 
     /**
-     * @param UpdateTaxonomyInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateTaxonomyOutput output message
-     */
-    public function UpdateTaxonomy(UpdateTaxonomyInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateTaxonomy", $input, UpdateTaxonomyOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeTaxonomyInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeTaxonomyOutput output message
-     */
-    public function DescribeTaxonomy(DescribeTaxonomyInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeTaxonomy", $input, DescribeTaxonomyOutput::class, $context);
-    }
-
-    /**
      * @param UpdateVerifierInput $input message
      * @param array $context request parameters
      *
@@ -730,61 +708,6 @@ class AtlasClient {
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeScore", $input, DescribeScoreOutput::class, $context);
-    }
-
-    /**
-     * @param CreateTagInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateTagOutput output message
-     */
-    public function CreateTag(CreateTagInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateTag", $input, CreateTagOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateTagInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateTagOutput output message
-     */
-    public function UpdateTag(UpdateTagInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateTag", $input, UpdateTagOutput::class, $context);
-    }
-
-    /**
-     * @param DeleteTagInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteTagOutput output message
-     */
-    public function DeleteTag(DeleteTagInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteTag", $input, DeleteTagOutput::class, $context);
-    }
-
-    /**
-     * @param ListTagsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListTagsOutput output message
-     */
-    public function ListTags(ListTagsInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListTags", $input, ListTagsOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeTagInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeTagOutput output message
-     */
-    public function DescribeTag(DescribeTagInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeTag", $input, DescribeTagOutput::class, $context);
     }
 
 }
