@@ -95,25 +95,25 @@ class AtlasClient {
     }
 
     /**
-     * @param UpdateClassificationInput $input message
+     * @param UpdateTaxonomyInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateClassificationOutput output message
+     * @return UpdateTaxonomyOutput output message
      */
-    public function UpdateClassification(UpdateClassificationInput $input, array $context = [])
+    public function UpdateTaxonomy(UpdateTaxonomyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateClassification", $input, UpdateClassificationOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateTaxonomy", $input, UpdateTaxonomyOutput::class, $context);
     }
 
     /**
-     * @param DescribeClassificationInput $input message
+     * @param DescribeTaxonomyInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeClassificationOutput output message
+     * @return DescribeTaxonomyOutput output message
      */
-    public function DescribeClassification(DescribeClassificationInput $input, array $context = [])
+    public function DescribeTaxonomy(DescribeTaxonomyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeClassification", $input, DescribeClassificationOutput::class, $context);
+        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeTaxonomy", $input, DescribeTaxonomyOutput::class, $context);
     }
 
     /**

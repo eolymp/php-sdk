@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DescribeClassificationInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.DescribeTaxonomyInput</code>
  */
-class DescribeClassificationInput extends \Google\Protobuf\Internal\Message
+class DescribeTaxonomyInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
