@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeScoreInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     */
+    protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      */
     protected $participant_id = '';
     /**
      * Mode for fetching score value (see enum description).
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 3;</code>
      */
     protected $mode = 0;
     /**
@@ -28,7 +32,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
      * This value is ignored if mode is not PUNCTUAL.
      *
-     * Generated from protobuf field <code>int32 time_offset = 3;</code>
+     * Generated from protobuf field <code>int32 time_offset = 4;</code>
      */
     protected $time_offset = 0;
 
@@ -38,6 +42,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type string $participant_id
      *     @type int $mode
      *           Mode for fetching score value (see enum description).
@@ -53,7 +58,29 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      * @return string
      */
     public function getParticipantId()
@@ -62,7 +89,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -77,7 +104,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     /**
      * Mode for fetching score value (see enum description).
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 3;</code>
      * @return int
      */
     public function getMode()
@@ -88,7 +115,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     /**
      * Mode for fetching score value (see enum description).
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 3;</code>
      * @param int $var
      * @return $this
      */
@@ -105,7 +132,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
      * This value is ignored if mode is not PUNCTUAL.
      *
-     * Generated from protobuf field <code>int32 time_offset = 3;</code>
+     * Generated from protobuf field <code>int32 time_offset = 4;</code>
      * @return int
      */
     public function getTimeOffset()
@@ -118,7 +145,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
      * This value is ignored if mode is not PUNCTUAL.
      *
-     * Generated from protobuf field <code>int32 time_offset = 3;</code>
+     * Generated from protobuf field <code>int32 time_offset = 4;</code>
      * @param int $var
      * @return $this
      */

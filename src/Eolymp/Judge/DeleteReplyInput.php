@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteReplyInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string reply_id = 1;</code>
+     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     */
+    protected $ticket_id = '';
+    /**
+     * Generated from protobuf field <code>string reply_id = 2;</code>
      */
     protected $reply_id = '';
 
@@ -24,6 +28,7 @@ class DeleteReplyInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $ticket_id
      *     @type string $reply_id
      * }
      */
@@ -33,7 +38,29 @@ class DeleteReplyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string reply_id = 1;</code>
+     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * @return string
+     */
+    public function getTicketId()
+    {
+        return $this->ticket_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTicketId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ticket_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reply_id = 2;</code>
      * @return string
      */
     public function getReplyId()
@@ -42,7 +69,7 @@ class DeleteReplyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string reply_id = 1;</code>
+     * Generated from protobuf field <code>string reply_id = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class ResetPasscodeInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     */
+    protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      */
     protected $participant_id = '';
 
@@ -24,6 +28,7 @@ class ResetPasscodeInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type string $participant_id
      * }
      */
@@ -33,7 +38,29 @@ class ResetPasscodeInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      * @return string
      */
     public function getParticipantId()
@@ -42,7 +69,7 @@ class ResetPasscodeInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      * @param string $var
      * @return $this
      */

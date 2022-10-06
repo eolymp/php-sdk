@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeProblemInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     */
+    protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
     /**
@@ -28,6 +32,7 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type string $problem_id
      *     @type string $problem_ern
      * }
@@ -38,7 +43,29 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
      * @return string
      */
     public function getProblemId()
@@ -47,7 +74,7 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 2;</code>
      * @param string $var
      * @return $this
      */

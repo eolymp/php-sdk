@@ -16,13 +16,17 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Participant identifier to update
      *
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     */
+    protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      */
     protected $participant_id = '';
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
      */
     protected $patch = 0;
     /**
@@ -50,8 +54,9 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $participant_id
+     *     @type string $contest_id
      *           Participant identifier to update
+     *     @type string $participant_id
      *     @type int $patch
      *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $name
@@ -70,7 +75,31 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Participant identifier to update
      *
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Participant identifier to update
+     *
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      * @return string
      */
     public function getParticipantId()
@@ -79,9 +108,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Participant identifier to update
-     *
-     * Generated from protobuf field <code>string participant_id = 1;</code>
+     * Generated from protobuf field <code>string participant_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -96,7 +123,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
      * @return int
      */
     public function getPatch()
@@ -107,7 +134,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
      * @param int $var
      * @return $this
      */
