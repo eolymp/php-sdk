@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAnnouncementInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string announcement_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     */
+    protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string announcement_id = 2;</code>
      */
     protected $announcement_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 3;</code>
      */
     protected $announcement = null;
 
@@ -28,6 +32,7 @@ class UpdateAnnouncementInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type string $announcement_id
      *     @type \Eolymp\Judge\Announcement $announcement
      * }
@@ -38,7 +43,29 @@ class UpdateAnnouncementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string announcement_id = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string announcement_id = 2;</code>
      * @return string
      */
     public function getAnnouncementId()
@@ -47,7 +74,7 @@ class UpdateAnnouncementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string announcement_id = 1;</code>
+     * Generated from protobuf field <code>string announcement_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdateAnnouncementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 3;</code>
      * @return \Eolymp\Judge\Announcement
      */
     public function getAnnouncement()
@@ -69,7 +96,7 @@ class UpdateAnnouncementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 3;</code>
      * @param \Eolymp\Judge\Announcement $var
      * @return $this
      */
