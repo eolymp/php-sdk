@@ -14,7 +14,6 @@ class File
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Annotations\Resource::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
             "0a88010a17656f6c796d702f61746c61732f66696c652e70726f746f120c656f6c796d702e61746c617322280a0446696c65120c0a047061746818012001280912120a0a736f757263655f65726e180220012809422d5a2b6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f61746c61733b61746c6173620670726f746f33"
         ), true);
