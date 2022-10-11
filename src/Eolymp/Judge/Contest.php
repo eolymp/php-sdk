@@ -20,13 +20,17 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string url = 2;</code>
+     */
+    protected $url = '';
+    /**
      * Generated from protobuf field <code>string ern = 9999;</code>
      */
     protected $ern = '';
     /**
      * Contest name.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
     /**
@@ -108,6 +112,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Contest unique identifier, automatically allocated when contest is created.
+     *     @type string $url
      *     @type string $ern
      *     @type string $name
      *           Contest name.
@@ -171,6 +176,28 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string url = 2;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string ern = 9999;</code>
      * @return string
      */
@@ -195,7 +222,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest name.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
     public function getName()
@@ -206,7 +233,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest name.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */

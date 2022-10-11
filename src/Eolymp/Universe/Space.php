@@ -26,6 +26,12 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
+     * space key used to build URLs
+     *
+     * Generated from protobuf field <code>string url = 3;</code>
+     */
+    protected $url = '';
+    /**
      * human friendly name
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -81,6 +87,8 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           space unique identifier
      *     @type string $key
+     *           space key used to build URLs
+     *     @type string $url
      *           space key used to build URLs
      *     @type string $name
      *           human friendly name
@@ -152,6 +160,32 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * space key used to build URLs
+     *
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * space key used to build URLs
+     *
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }
