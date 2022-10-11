@@ -18,6 +18,19 @@ class UniverseClient {
     }
 
     /**
+     * Lookup space by domain key
+     *
+     * @param LookupSpaceInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupSpaceOutput output message
+     */
+    public function LookupSpace(LookupSpaceInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.universe.Universe/LookupSpace", $input, LookupSpaceOutput::class, $context);
+    }
+
+    /**
      * Create a space
      *
      * @param CreateSpaceInput $input message
@@ -54,19 +67,6 @@ class UniverseClient {
     public function DeleteSpace(DeleteSpaceInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.universe.Universe/DeleteSpace", $input, DeleteSpaceOutput::class, $context);
-    }
-
-    /**
-     * Lookup space by domain key
-     *
-     * @param LookupSpaceInput $input message
-     * @param array $context request parameters
-     *
-     * @return LookupSpaceOutput output message
-     */
-    public function LookupSpace(LookupSpaceInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/LookupSpace", $input, LookupSpaceOutput::class, $context);
     }
 
     /**
