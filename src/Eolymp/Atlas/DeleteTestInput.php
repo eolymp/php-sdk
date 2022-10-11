@@ -14,7 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteTestInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string test_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>string testset_id = 2;</code>
+     */
+    protected $testset_id = '';
+    /**
+     * Generated from protobuf field <code>string test_id = 3;</code>
      */
     protected $test_id = '';
 
@@ -24,6 +32,8 @@ class DeleteTestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
+     *     @type string $testset_id
      *     @type string $test_id
      * }
      */
@@ -33,7 +43,51 @@ class DeleteTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string test_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string testset_id = 2;</code>
+     * @return string
+     */
+    public function getTestsetId()
+    {
+        return $this->testset_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string testset_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTestsetId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->testset_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string test_id = 3;</code>
      * @return string
      */
     public function getTestId()
@@ -42,7 +96,7 @@ class DeleteTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string test_id = 1;</code>
+     * Generated from protobuf field <code>string test_id = 3;</code>
      * @param string $var
      * @return $this
      */

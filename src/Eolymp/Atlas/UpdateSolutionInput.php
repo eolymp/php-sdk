@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string solution_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>string solution_id = 2;</code>
      */
     protected $solution_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 3;</code>
      */
     protected $solution = null;
 
@@ -28,6 +32,7 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
      *     @type string $solution_id
      *     @type \Eolymp\Atlas\Solution $solution
      * }
@@ -38,7 +43,29 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string solution_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string solution_id = 2;</code>
      * @return string
      */
     public function getSolutionId()
@@ -47,7 +74,7 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string solution_id = 1;</code>
+     * Generated from protobuf field <code>string solution_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 3;</code>
      * @return \Eolymp\Atlas\Solution
      */
     public function getSolution()
@@ -69,7 +96,7 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 3;</code>
      * @param \Eolymp\Atlas\Solution $var
      * @return $this
      */

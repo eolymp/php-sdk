@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateCodeTemplateInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string template_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>string template_id = 2;</code>
      */
     protected $template_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Template template = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Template template = 3;</code>
      */
     protected $template = null;
 
@@ -28,6 +32,7 @@ class UpdateCodeTemplateInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
      *     @type string $template_id
      *     @type \Eolymp\Atlas\Template $template
      * }
@@ -38,7 +43,29 @@ class UpdateCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string template_id = 1;</code>
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string template_id = 2;</code>
      * @return string
      */
     public function getTemplateId()
@@ -47,7 +74,7 @@ class UpdateCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string template_id = 1;</code>
+     * Generated from protobuf field <code>string template_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdateCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Template template = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Template template = 3;</code>
      * @return \Eolymp\Atlas\Template
      */
     public function getTemplate()
@@ -69,7 +96,7 @@ class UpdateCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Template template = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Template template = 3;</code>
      * @param \Eolymp\Atlas\Template $var
      * @return $this
      */

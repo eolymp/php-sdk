@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateStatementOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string statement_id = 1;</code>
      */
-    protected $id = '';
+    protected $statement_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class CreateStatementOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
+     *     @type string $statement_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class CreateStatementOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string statement_id = 1;</code>
      * @return string
      */
-    public function getId()
+    public function getStatementId()
     {
-        return $this->id;
+        return $this->statement_id;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string statement_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setStatementId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->statement_id = $var;
 
         return $this;
     }
