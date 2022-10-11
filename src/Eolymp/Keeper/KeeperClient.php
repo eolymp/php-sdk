@@ -6,48 +6,20 @@ namespace Eolymp\Keeper;
 
 class KeeperClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
-    }
-
-    /**
-     * @param CreateObjectInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateObjectOutput output message
-     */
-    public function CreateObject(CreateObjectInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.keeper.Keeper/CreateObject", $input, CreateObjectOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeObjectInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeObjectOutput output message
-     */
-    public function DescribeObject(DescribeObjectInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.keeper.Keeper/DescribeObject", $input, DescribeObjectOutput::class, $context);
-    }
-
-    /**
-     * @param DownloadObjectInput $input message
-     * @param array $context request parameters
-     *
-     * @return DownloadObjectOutput output message
-     */
-    public function DownloadObject(DownloadObjectInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.keeper.Keeper/DownloadObject", $input, DownloadObjectOutput::class, $context);
     }
 
 }

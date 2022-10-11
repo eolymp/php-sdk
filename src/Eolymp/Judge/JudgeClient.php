@@ -6,14 +6,19 @@ namespace Eolymp\Judge;
 
 class JudgeClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -31,7 +36,12 @@ class JudgeClient {
      */
     public function LookupContest(LookupContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/LookupContest", $input, LookupContestOutput::class, $context);
+        $path = "/contests/__lookup";
+
+        $context['name'] = "eolymp.judge.Judge/LookupContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupContestOutput::class, $context);
     }
 
     /**
@@ -42,7 +52,12 @@ class JudgeClient {
      */
     public function CreateContest(CreateContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/CreateContest", $input, CreateContestOutput::class, $context);
+        $path = "/contests";
+
+        $context['name'] = "eolymp.judge.Judge/CreateContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateContestOutput::class, $context);
     }
 
     /**
@@ -53,7 +68,15 @@ class JudgeClient {
      */
     public function DeleteContest(DeleteContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DeleteContest", $input, DeleteContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/DeleteContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteContestOutput::class, $context);
     }
 
     /**
@@ -64,7 +87,15 @@ class JudgeClient {
      */
     public function UpdateContest(UpdateContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateContest", $input, UpdateContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/UpdateContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateContestOutput::class, $context);
     }
 
     /**
@@ -75,7 +106,15 @@ class JudgeClient {
      */
     public function DescribeContest(DescribeContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeContest", $input, DescribeContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeContestOutput::class, $context);
     }
 
     /**
@@ -86,7 +125,12 @@ class JudgeClient {
      */
     public function ListContests(ListContestsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListContests", $input, ListContestsOutput::class, $context);
+        $path = "/contests";
+
+        $context['name'] = "eolymp.judge.Judge/ListContests";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListContestsOutput::class, $context);
     }
 
     /**
@@ -100,7 +144,15 @@ class JudgeClient {
      */
     public function OpenContest(OpenContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/OpenContest", $input, OpenContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/open";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/OpenContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, OpenContestOutput::class, $context);
     }
 
     /**
@@ -113,7 +165,15 @@ class JudgeClient {
      */
     public function CloseContest(CloseContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/CloseContest", $input, CloseContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/close";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/CloseContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CloseContestOutput::class, $context);
     }
 
     /**
@@ -127,7 +187,15 @@ class JudgeClient {
      */
     public function ConfigureRuntime(ConfigureRuntimeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ConfigureRuntime", $input, ConfigureRuntimeOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/runtime";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ConfigureRuntime";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ConfigureRuntimeOutput::class, $context);
     }
 
     /**
@@ -140,7 +208,15 @@ class JudgeClient {
      */
     public function DescribeRuntime(DescribeRuntimeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeRuntime", $input, DescribeRuntimeOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/runtime";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeRuntime";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRuntimeOutput::class, $context);
     }
 
     /**
@@ -153,7 +229,15 @@ class JudgeClient {
      */
     public function ConfigureAppearance(ConfigureAppearanceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ConfigureAppearance", $input, ConfigureAppearanceOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/appearance";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ConfigureAppearance";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ConfigureAppearanceOutput::class, $context);
     }
 
     /**
@@ -166,7 +250,15 @@ class JudgeClient {
      */
     public function DescribeAppearance(DescribeAppearanceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeAppearance", $input, DescribeAppearanceOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/appearance";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeAppearance";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAppearanceOutput::class, $context);
     }
 
     /**
@@ -179,7 +271,15 @@ class JudgeClient {
      */
     public function ConfigureScoring(ConfigureScoringInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ConfigureScoring", $input, ConfigureScoringOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoring";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ConfigureScoring";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ConfigureScoringOutput::class, $context);
     }
 
     /**
@@ -192,7 +292,15 @@ class JudgeClient {
      */
     public function DescribeScoring(DescribeScoringInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScoring", $input, DescribeScoringOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoring";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeScoring";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoringOutput::class, $context);
     }
 
     /**
@@ -205,7 +313,15 @@ class JudgeClient {
      */
     public function ImportProblem(ImportProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ImportProblem", $input, ImportProblemOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ImportProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ImportProblemOutput::class, $context);
     }
 
     /**
@@ -218,7 +334,16 @@ class JudgeClient {
      */
     public function SyncProblem(SyncProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/SyncProblem", $input, SyncProblemOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/sync";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/SyncProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SyncProblemOutput::class, $context);
     }
 
     /**
@@ -229,7 +354,16 @@ class JudgeClient {
      */
     public function UpdateProblem(UpdateProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateProblem", $input, UpdateProblemOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/UpdateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateProblemOutput::class, $context);
     }
 
     /**
@@ -240,7 +374,15 @@ class JudgeClient {
      */
     public function ListProblems(ListProblemsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListProblems", $input, ListProblemsOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListProblems";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemsOutput::class, $context);
     }
 
     /**
@@ -251,7 +393,16 @@ class JudgeClient {
      */
     public function DescribeProblem(DescribeProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeProblem", $input, DescribeProblemOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProblemOutput::class, $context);
     }
 
     /**
@@ -264,7 +415,17 @@ class JudgeClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeCodeTemplate", $input, DescribeCodeTemplateOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+        $input->setTemplateId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCodeTemplateOutput::class, $context);
     }
 
     /**
@@ -277,7 +438,16 @@ class JudgeClient {
      */
     public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/LookupCodeTemplate", $input, LookupCodeTemplateOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/lookup-template";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/LookupCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupCodeTemplateOutput::class, $context);
     }
 
     /**
@@ -288,7 +458,16 @@ class JudgeClient {
      */
     public function ListStatements(ListStatementsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListStatements", $input, ListStatementsOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/statements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListStatements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStatementsOutput::class, $context);
     }
 
     /**
@@ -299,7 +478,16 @@ class JudgeClient {
      */
     public function ListAttachments(ListAttachmentsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListAttachments", $input, ListAttachmentsOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/attachments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListAttachments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAttachmentsOutput::class, $context);
     }
 
     /**
@@ -310,7 +498,16 @@ class JudgeClient {
      */
     public function ListExamples(ListExamplesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListExamples", $input, ListExamplesOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/examples";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListExamples";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListExamplesOutput::class, $context);
     }
 
     /**
@@ -321,7 +518,16 @@ class JudgeClient {
      */
     public function DeleteProblem(DeleteProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DeleteProblem", $input, DeleteProblemOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/DeleteProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteProblemOutput::class, $context);
     }
 
     /**
@@ -334,7 +540,16 @@ class JudgeClient {
      */
     public function RetestProblem(RetestProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RetestProblem", $input, RetestProblemOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/retest";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/RetestProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RetestProblemOutput::class, $context);
     }
 
     /**
@@ -345,7 +560,15 @@ class JudgeClient {
      */
     public function AddParticipant(AddParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/AddParticipant", $input, AddParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/AddParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddParticipantOutput::class, $context);
     }
 
     /**
@@ -356,7 +579,16 @@ class JudgeClient {
      */
     public function EnableParticipant(EnableParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/EnableParticipant", $input, EnableParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/enable";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/EnableParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, EnableParticipantOutput::class, $context);
     }
 
     /**
@@ -367,7 +599,16 @@ class JudgeClient {
      */
     public function DisableParticipant(DisableParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DisableParticipant", $input, DisableParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/disable";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/DisableParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DisableParticipantOutput::class, $context);
     }
 
     /**
@@ -378,7 +619,16 @@ class JudgeClient {
      */
     public function UpdateParticipant(UpdateParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateParticipant", $input, UpdateParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/UpdateParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateParticipantOutput::class, $context);
     }
 
     /**
@@ -389,7 +639,16 @@ class JudgeClient {
      */
     public function RemoveParticipant(RemoveParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RemoveParticipant", $input, RemoveParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/RemoveParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveParticipantOutput::class, $context);
     }
 
     /**
@@ -400,7 +659,15 @@ class JudgeClient {
      */
     public function ListParticipants(ListParticipantsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListParticipants", $input, ListParticipantsOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListParticipants";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListParticipantsOutput::class, $context);
     }
 
     /**
@@ -411,7 +678,16 @@ class JudgeClient {
      */
     public function DescribeParticipant(DescribeParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeParticipant", $input, DescribeParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeParticipantOutput::class, $context);
     }
 
     /**
@@ -424,7 +700,15 @@ class JudgeClient {
      */
     public function IntrospectParticipant(IntrospectParticipantInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/IntrospectParticipant", $input, IntrospectParticipantOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/introspect";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/IntrospectParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectParticipantOutput::class, $context);
     }
 
     /**
@@ -437,7 +721,15 @@ class JudgeClient {
      */
     public function JoinContest(JoinContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/JoinContest", $input, JoinContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/join";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/JoinContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, JoinContestOutput::class, $context);
     }
 
     /**
@@ -450,7 +742,15 @@ class JudgeClient {
      */
     public function StartContest(StartContestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/StartContest", $input, StartContestOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/start";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/StartContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartContestOutput::class, $context);
     }
 
     /**
@@ -463,7 +763,15 @@ class JudgeClient {
      */
     public function VerifyPasscode(VerifyPasscodeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/VerifyPasscode", $input, VerifyPasscodeOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/verify-passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/VerifyPasscode";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, VerifyPasscodeOutput::class, $context);
     }
 
     /**
@@ -476,7 +784,15 @@ class JudgeClient {
      */
     public function EnterPasscode(EnterPasscodeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/EnterPasscode", $input, EnterPasscodeOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/enter-passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/EnterPasscode";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, EnterPasscodeOutput::class, $context);
     }
 
     /**
@@ -489,7 +805,16 @@ class JudgeClient {
      */
     public function ResetPasscode(ResetPasscodeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ResetPasscode", $input, ResetPasscodeOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/ResetPasscode";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResetPasscodeOutput::class, $context);
     }
 
     /**
@@ -502,7 +827,16 @@ class JudgeClient {
      */
     public function RemovePasscode(RemovePasscodeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RemovePasscode", $input, RemovePasscodeOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/RemovePasscode";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemovePasscodeOutput::class, $context);
     }
 
     /**
@@ -515,7 +849,16 @@ class JudgeClient {
      */
     public function CreateSubmission(CreateSubmissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/CreateSubmission", $input, CreateSubmissionOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.Judge/CreateSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSubmissionOutput::class, $context);
     }
 
     /**
@@ -526,7 +869,15 @@ class JudgeClient {
      */
     public function ListSubmissions(ListSubmissionsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListSubmissions", $input, ListSubmissionsOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListSubmissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSubmissionsOutput::class, $context);
     }
 
     /**
@@ -537,7 +888,16 @@ class JudgeClient {
      */
     public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeSubmission", $input, DescribeSubmissionOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubmissionOutput::class, $context);
     }
 
     /**
@@ -550,7 +910,16 @@ class JudgeClient {
      */
     public function RetestSubmission(RetestSubmissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RetestSubmission", $input, RetestSubmissionOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId())."/retest";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.Judge/RetestSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RetestSubmissionOutput::class, $context);
     }
 
     /**
@@ -563,7 +932,15 @@ class JudgeClient {
      */
     public function CreateTicket(CreateTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/CreateTicket", $input, CreateTicketOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/tickets";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/CreateTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateTicketOutput::class, $context);
     }
 
     /**
@@ -576,7 +953,15 @@ class JudgeClient {
      */
     public function CloseTicket(CloseTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/CloseTicket", $input, CloseTicketOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/close";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/CloseTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CloseTicketOutput::class, $context);
     }
 
     /**
@@ -589,7 +974,15 @@ class JudgeClient {
      */
     public function OpenTicket(OpenTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/OpenTicket", $input, OpenTicketOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/open";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/OpenTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, OpenTicketOutput::class, $context);
     }
 
     /**
@@ -602,7 +995,15 @@ class JudgeClient {
      */
     public function ReadTicket(ReadTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ReadTicket", $input, ReadTicketOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/read";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/ReadTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ReadTicketOutput::class, $context);
     }
 
     /**
@@ -613,7 +1014,15 @@ class JudgeClient {
      */
     public function DeleteTicket(DeleteTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DeleteTicket", $input, DeleteTicketOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/DeleteTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteTicketOutput::class, $context);
     }
 
     /**
@@ -624,7 +1033,15 @@ class JudgeClient {
      */
     public function DescribeTicket(DescribeTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeTicket", $input, DescribeTicketOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTicketOutput::class, $context);
     }
 
     /**
@@ -637,7 +1054,12 @@ class JudgeClient {
      */
     public function ListTickets(ListTicketsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListTickets", $input, ListTicketsOutput::class, $context);
+        $path = "/tickets";
+
+        $context['name'] = "eolymp.judge.Judge/ListTickets";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTicketsOutput::class, $context);
     }
 
     /**
@@ -651,7 +1073,15 @@ class JudgeClient {
      */
     public function ReplyTicket(ReplyTicketInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ReplyTicket", $input, ReplyTicketOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/replies";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/ReplyTicket";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ReplyTicketOutput::class, $context);
     }
 
     /**
@@ -664,7 +1094,15 @@ class JudgeClient {
      */
     public function ListReplies(ListRepliesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListReplies", $input, ListRepliesOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/replies";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListReplies";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRepliesOutput::class, $context);
     }
 
     /**
@@ -677,7 +1115,16 @@ class JudgeClient {
      */
     public function DeleteReply(DeleteReplyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DeleteReply", $input, DeleteReplyOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/replies/".rawurlencode($input->getReplyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+        $input->setReplyId("");
+
+        $context['name'] = "eolymp.judge.Judge/DeleteReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteReplyOutput::class, $context);
     }
 
     /**
@@ -690,7 +1137,16 @@ class JudgeClient {
      */
     public function UpdateReply(UpdateReplyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateReply", $input, UpdateReplyOutput::class, $context);
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/replies/".rawurlencode($input->getReplyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+        $input->setReplyId("");
+
+        $context['name'] = "eolymp.judge.Judge/UpdateReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateReplyOutput::class, $context);
     }
 
     /**
@@ -703,7 +1159,15 @@ class JudgeClient {
      */
     public function CreateAnnouncement(CreateAnnouncementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/CreateAnnouncement", $input, CreateAnnouncementOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/CreateAnnouncement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAnnouncementOutput::class, $context);
     }
 
     /**
@@ -716,7 +1180,16 @@ class JudgeClient {
      */
     public function UpdateAnnouncement(UpdateAnnouncementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateAnnouncement", $input, UpdateAnnouncementOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAnnouncementId("");
+
+        $context['name'] = "eolymp.judge.Judge/UpdateAnnouncement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateAnnouncementOutput::class, $context);
     }
 
     /**
@@ -729,7 +1202,16 @@ class JudgeClient {
      */
     public function DeleteAnnouncement(DeleteAnnouncementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DeleteAnnouncement", $input, DeleteAnnouncementOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAnnouncementId("");
+
+        $context['name'] = "eolymp.judge.Judge/DeleteAnnouncement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAnnouncementOutput::class, $context);
     }
 
     /**
@@ -742,7 +1224,16 @@ class JudgeClient {
      */
     public function ReadAnnouncement(ReadAnnouncementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ReadAnnouncement", $input, ReadAnnouncementOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId())."/read";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAnnouncementId("");
+
+        $context['name'] = "eolymp.judge.Judge/ReadAnnouncement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ReadAnnouncementOutput::class, $context);
     }
 
     /**
@@ -755,7 +1246,16 @@ class JudgeClient {
      */
     public function DescribeAnnouncement(DescribeAnnouncementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeAnnouncement", $input, DescribeAnnouncementOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAnnouncementId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeAnnouncement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAnnouncementOutput::class, $context);
     }
 
     /**
@@ -768,7 +1268,16 @@ class JudgeClient {
      */
     public function DescribeAnnouncementStatus(DescribeAnnouncementStatusInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeAnnouncementStatus", $input, DescribeAnnouncementStatusOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId())."/status";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAnnouncementId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeAnnouncementStatus";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAnnouncementStatusOutput::class, $context);
     }
 
     /**
@@ -781,7 +1290,15 @@ class JudgeClient {
      */
     public function ListAnnouncements(ListAnnouncementsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListAnnouncements", $input, ListAnnouncementsOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListAnnouncements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAnnouncementsOutput::class, $context);
     }
 
     /**
@@ -792,7 +1309,15 @@ class JudgeClient {
      */
     public function IntrospectScore(IntrospectScoreInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/IntrospectScore", $input, IntrospectScoreOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/introspect/score";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/IntrospectScore";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectScoreOutput::class, $context);
     }
 
     /**
@@ -803,7 +1328,16 @@ class JudgeClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/DescribeScore", $input, DescribeScoreOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/score";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/DescribeScore";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreOutput::class, $context);
     }
 
     /**
@@ -816,7 +1350,16 @@ class JudgeClient {
      */
     public function ImportScore(ImportScoreInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ImportScore", $input, ImportScoreOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/scores";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/ImportScore";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ImportScoreOutput::class, $context);
     }
 
     /**
@@ -829,7 +1372,15 @@ class JudgeClient {
      */
     public function ListResult(ListResultInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListResult", $input, ListResultOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/results";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListResult";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListResultOutput::class, $context);
     }
 
     /**
@@ -842,7 +1393,15 @@ class JudgeClient {
      */
     public function RebuildScore(RebuildScoreInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/RebuildScore", $input, RebuildScoreOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/rebuild";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/RebuildScore";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RebuildScoreOutput::class, $context);
     }
 
     /**
@@ -855,7 +1414,12 @@ class JudgeClient {
      */
     public function ListEntitlements(ListEntitlementsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListEntitlements", $input, ListEntitlementsOutput::class, $context);
+        $path = "/__judge/entitlements";
+
+        $context['name'] = "eolymp.judge.Judge/ListEntitlements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListEntitlementsOutput::class, $context);
     }
 
     /**
@@ -866,7 +1430,15 @@ class JudgeClient {
      */
     public function ListActivities(ListActivitiesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/ListActivities", $input, ListActivitiesOutput::class, $context);
+        $path = "/contests/".rawurlencode($input->getContestId())."/activities";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ListActivities";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListActivitiesOutput::class, $context);
     }
 
 }

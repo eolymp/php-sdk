@@ -6,80 +6,20 @@ namespace Eolymp\Cognito;
 
 class CognitoClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
-    }
-
-    /**
-     * Create oauth access token.
-     *
-     * @param CreateTokenInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateTokenOutput output message
-     */
-    public function CreateToken(CreateTokenInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/CreateToken", $input, CreateTokenOutput::class, $context);
-    }
-
-    /**
-     * Introspect oauth token, returns access token details for a given token.
-     *
-     * @param IntrospectTokenInput $input message
-     * @param array $context request parameters
-     *
-     * @return IntrospectTokenOutput output message
-     */
-    public function IntrospectToken(IntrospectTokenInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/IntrospectToken", $input, IntrospectTokenOutput::class, $context);
-    }
-
-    /**
-     * Create authorization code.
-     *
-     * @param CreateAuthorizationInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateAuthorizationOutput output message
-     */
-    public function CreateAuthorization(CreateAuthorizationInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/CreateAuthorization", $input, CreateAuthorizationOutput::class, $context);
-    }
-
-    /**
-     * Revoke token disables given token and related tokens.
-     *
-     * @param RevokeTokenInput $input message
-     * @param array $context request parameters
-     *
-     * @return RevokeTokenOutput output message
-     */
-    public function RevokeToken(RevokeTokenInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/RevokeToken", $input, RevokeTokenOutput::class, $context);
-    }
-
-    /**
-     * Signout revokes all user's tokens or all tokens of current session.
-     *
-     * @param SignoutInput $input message
-     * @param array $context request parameters
-     *
-     * @return SignoutOutput output message
-     */
-    public function Signout(SignoutInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/Signout", $input, SignoutOutput::class, $context);
     }
 
     /**
@@ -92,7 +32,12 @@ class CognitoClient {
      */
     public function CreateAccessKey(CreateAccessKeyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/CreateAccessKey", $input, CreateAccessKeyOutput::class, $context);
+        $path = "/access-keys";
+
+        $context['name'] = "eolymp.cognito.Cognito/CreateAccessKey";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAccessKeyOutput::class, $context);
     }
 
     /**
@@ -105,7 +50,15 @@ class CognitoClient {
      */
     public function DeleteAccessKey(DeleteAccessKeyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/DeleteAccessKey", $input, DeleteAccessKeyOutput::class, $context);
+        $path = "/access-keys/".rawurlencode($input->getKeyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setKeyId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/DeleteAccessKey";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAccessKeyOutput::class, $context);
     }
 
     /**
@@ -116,7 +69,12 @@ class CognitoClient {
      */
     public function ListAccessKeys(ListAccessKeysInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListAccessKeys", $input, ListAccessKeysOutput::class, $context);
+        $path = "/access-keys";
+
+        $context['name'] = "eolymp.cognito.Cognito/ListAccessKeys";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAccessKeysOutput::class, $context);
     }
 
     /**
@@ -129,7 +87,12 @@ class CognitoClient {
      */
     public function CreateUser(CreateUserInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/CreateUser", $input, CreateUserOutput::class, $context);
+        $path = "/users";
+
+        $context['name'] = "eolymp.cognito.Cognito/CreateUser";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateUserOutput::class, $context);
     }
 
     /**
@@ -142,7 +105,15 @@ class CognitoClient {
      */
     public function VerifyEmail(VerifyEmailInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/VerifyEmail", $input, VerifyEmailOutput::class, $context);
+        $path = "/users/".rawurlencode($input->getUserId())."/verify";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/VerifyEmail";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, VerifyEmailOutput::class, $context);
     }
 
     /**
@@ -155,7 +126,12 @@ class CognitoClient {
      */
     public function UpdateEmail(UpdateEmailInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdateEmail", $input, UpdateEmailOutput::class, $context);
+        $path = "/self/email";
+
+        $context['name'] = "eolymp.cognito.Cognito/UpdateEmail";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateEmailOutput::class, $context);
     }
 
     /**
@@ -166,7 +142,12 @@ class CognitoClient {
      */
     public function UpdateProfile(UpdateProfileInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdateProfile", $input, UpdateProfileOutput::class, $context);
+        $path = "/self";
+
+        $context['name'] = "eolymp.cognito.Cognito/UpdateProfile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateProfileOutput::class, $context);
     }
 
     /**
@@ -177,7 +158,12 @@ class CognitoClient {
      */
     public function UpdatePicture(UpdatePictureInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdatePicture", $input, UpdatePictureOutput::class, $context);
+        $path = "/self/picture";
+
+        $context['name'] = "eolymp.cognito.Cognito/UpdatePicture";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePictureOutput::class, $context);
     }
 
     /**
@@ -188,7 +174,12 @@ class CognitoClient {
      */
     public function UpdatePassword(UpdatePasswordInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdatePassword", $input, UpdatePasswordOutput::class, $context);
+        $path = "/self/password";
+
+        $context['name'] = "eolymp.cognito.Cognito/UpdatePassword";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePasswordOutput::class, $context);
     }
 
     /**
@@ -202,7 +193,12 @@ class CognitoClient {
      */
     public function StartRecovery(StartRecoveryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/StartRecovery", $input, StartRecoveryOutput::class, $context);
+        $path = "/self/recovery";
+
+        $context['name'] = "eolymp.cognito.Cognito/StartRecovery";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartRecoveryOutput::class, $context);
     }
 
     /**
@@ -216,7 +212,15 @@ class CognitoClient {
      */
     public function CompleteRecovery(CompleteRecoverInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/CompleteRecovery", $input, CompleteRecoverOutput::class, $context);
+        $path = "/users/".rawurlencode($input->getUserId())."/recover";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/CompleteRecovery";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteRecoverOutput::class, $context);
     }
 
     /**
@@ -229,7 +233,12 @@ class CognitoClient {
      */
     public function IntrospectUser(IntrospectUserInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/IntrospectUser", $input, IntrospectUserOutput::class, $context);
+        $path = "/self";
+
+        $context['name'] = "eolymp.cognito.Cognito/IntrospectUser";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectUserOutput::class, $context);
     }
 
     /**
@@ -242,7 +251,15 @@ class CognitoClient {
      */
     public function DescribeUser(DescribeUserInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/DescribeUser", $input, DescribeUserOutput::class, $context);
+        $path = "/users/".rawurlencode($input->getUserId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/DescribeUser";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeUserOutput::class, $context);
     }
 
     /**
@@ -255,7 +272,12 @@ class CognitoClient {
      */
     public function ListUsers(ListUsersInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListUsers", $input, ListUsersOutput::class, $context);
+        $path = "/users";
+
+        $context['name'] = "eolymp.cognito.Cognito/ListUsers";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListUsersOutput::class, $context);
     }
 
     /**
@@ -268,7 +290,12 @@ class CognitoClient {
      */
     public function IntrospectQuota(IntrospectQuotaInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/IntrospectQuota", $input, IntrospectQuotaOutput::class, $context);
+        $path = "/self/quota";
+
+        $context['name'] = "eolymp.cognito.Cognito/IntrospectQuota";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectQuotaOutput::class, $context);
     }
 
     /**
@@ -281,7 +308,12 @@ class CognitoClient {
      */
     public function IntrospectRoles(IntrospectRolesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/IntrospectRoles", $input, IntrospectRolesOutput::class, $context);
+        $path = "/self/roles";
+
+        $context['name'] = "eolymp.cognito.Cognito/IntrospectRoles";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectRolesOutput::class, $context);
     }
 
     /**
@@ -294,7 +326,15 @@ class CognitoClient {
      */
     public function ListRoles(ListRolesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListRoles", $input, ListRolesOutput::class, $context);
+        $path = "/users/".rawurlencode($input->getUserId())."/roles";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/ListRoles";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRolesOutput::class, $context);
     }
 
     /**
@@ -307,7 +347,15 @@ class CognitoClient {
      */
     public function UpdateRoles(UpdateRolesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/UpdateRoles", $input, UpdateRolesOutput::class, $context);
+        $path = "/users/".rawurlencode($input->getUserId())."/roles";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/UpdateRoles";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateRolesOutput::class, $context);
     }
 
     /**
@@ -320,7 +368,12 @@ class CognitoClient {
      */
     public function ListEntitlements(ListEntitlementsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/ListEntitlements", $input, ListEntitlementsOutput::class, $context);
+        $path = "/__cognito/entitlements";
+
+        $context['name'] = "eolymp.cognito.Cognito/ListEntitlements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListEntitlementsOutput::class, $context);
     }
 
     /**
@@ -333,7 +386,12 @@ class CognitoClient {
      */
     public function SelfDestruct(SelfDestructInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.cognito.Cognito/SelfDestruct", $input, SelfDestructOutput::class, $context);
+        $path = "/self";
+
+        $context['name'] = "eolymp.cognito.Cognito/SelfDestruct";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, SelfDestructOutput::class, $context);
     }
 
 }

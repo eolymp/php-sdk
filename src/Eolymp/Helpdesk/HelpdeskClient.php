@@ -6,14 +6,19 @@ namespace Eolymp\Helpdesk;
 
 class HelpdeskClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -25,7 +30,15 @@ class HelpdeskClient {
      */
     public function DescribeDocument(DescribeDocumentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/DescribeDocument", $input, DescribeDocumentOutput::class, $context);
+        $path = "/helpdesk/document/".rawurlencode($input->getDocumentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setDocumentId("");
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/DescribeDocument";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeDocumentOutput::class, $context);
     }
 
     /**
@@ -36,7 +49,12 @@ class HelpdeskClient {
      */
     public function ListDocuments(ListDocumentsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/ListDocuments", $input, ListDocumentsOutput::class, $context);
+        $path = "/helpdesk/documents";
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/ListDocuments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListDocumentsOutput::class, $context);
     }
 
     /**
@@ -47,7 +65,12 @@ class HelpdeskClient {
      */
     public function CreateDocument(CreateDocumentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/CreateDocument", $input, CreateDocumentOutput::class, $context);
+        $path = "/helpdesk/document";
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/CreateDocument";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateDocumentOutput::class, $context);
     }
 
     /**
@@ -58,7 +81,15 @@ class HelpdeskClient {
      */
     public function UpdateDocument(UpdateDocumentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/UpdateDocument", $input, UpdateDocumentOutput::class, $context);
+        $path = "/helpdesk/document/".rawurlencode($input->getDocumentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setDocumentId("");
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/UpdateDocument";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateDocumentOutput::class, $context);
     }
 
     /**
@@ -69,7 +100,15 @@ class HelpdeskClient {
      */
     public function DeleteDocument(DeleteDocumentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/DeleteDocument", $input, DeleteDocumentOutput::class, $context);
+        $path = "/helpdesk/document/".rawurlencode($input->getDocumentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setDocumentId("");
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/DeleteDocument";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteDocumentOutput::class, $context);
     }
 
     /**
@@ -80,7 +119,15 @@ class HelpdeskClient {
      */
     public function DescribePath(DescribePathInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/DescribePath", $input, DescribePathOutput::class, $context);
+        $path = "/helpdesk/paths/".rawurlencode($input->getPath());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPath("");
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/DescribePath";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePathOutput::class, $context);
     }
 
     /**
@@ -91,7 +138,12 @@ class HelpdeskClient {
      */
     public function ListPaths(ListPathsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/ListPaths", $input, ListPathsOutput::class, $context);
+        $path = "/helpdesk/paths";
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/ListPaths";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPathsOutput::class, $context);
     }
 
     /**
@@ -102,7 +154,15 @@ class HelpdeskClient {
      */
     public function ListParents(ListParentsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.helpdesk.Helpdesk/ListParents", $input, ListParentsOutput::class, $context);
+        $path = "/helpdesk/paths/".rawurlencode($input->getPath())."/parents";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPath("");
+
+        $context['name'] = "eolymp.helpdesk.Helpdesk/ListParents";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListParentsOutput::class, $context);
     }
 
 }

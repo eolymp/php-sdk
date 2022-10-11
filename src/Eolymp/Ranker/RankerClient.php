@@ -6,14 +6,19 @@ namespace Eolymp\Ranker;
 
 class RankerClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -27,7 +32,12 @@ class RankerClient {
      */
     public function CreateScoreboard(CreateScoreboardInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/CreateScoreboard", $input, CreateScoreboardOutput::class, $context);
+        $path = "/ranker/scoreboards";
+
+        $context['name'] = "eolymp.ranker.Ranker/CreateScoreboard";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateScoreboardOutput::class, $context);
     }
 
     /**
@@ -40,7 +50,15 @@ class RankerClient {
      */
     public function UpdateScoreboard(UpdateScoreboardInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/UpdateScoreboard", $input, UpdateScoreboardOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/UpdateScoreboard";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateScoreboardOutput::class, $context);
     }
 
     /**
@@ -53,7 +71,15 @@ class RankerClient {
      */
     public function RebuildScoreboard(RebuildScoreboardInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/RebuildScoreboard", $input, RebuildScoreboardOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/rebuild";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/RebuildScoreboard";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RebuildScoreboardOutput::class, $context);
     }
 
     /**
@@ -66,7 +92,15 @@ class RankerClient {
      */
     public function DeleteScoreboard(DeleteScoreboardInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DeleteScoreboard", $input, DeleteScoreboardOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/DeleteScoreboard";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteScoreboardOutput::class, $context);
     }
 
     /**
@@ -79,7 +113,15 @@ class RankerClient {
      */
     public function DescribeScoreboard(DescribeScoreboardInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DescribeScoreboard", $input, DescribeScoreboardOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/DescribeScoreboard";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreboardOutput::class, $context);
     }
 
     /**
@@ -92,7 +134,12 @@ class RankerClient {
      */
     public function ListScoreboards(ListScoreboardsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListScoreboards", $input, ListScoreboardsOutput::class, $context);
+        $path = "/ranker/scoreboards";
+
+        $context['name'] = "eolymp.ranker.Ranker/ListScoreboards";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreboardsOutput::class, $context);
     }
 
     /**
@@ -105,7 +152,16 @@ class RankerClient {
      */
     public function DescribeScoreboardRow(DescribeScoreboardRowInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DescribeScoreboardRow", $input, DescribeScoreboardRowOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/rows/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/DescribeScoreboardRow";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreboardRowOutput::class, $context);
     }
 
     /**
@@ -118,7 +174,15 @@ class RankerClient {
      */
     public function ListScoreboardRows(ListScoreboardRowsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListScoreboardRows", $input, ListScoreboardRowsOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/rows";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/ListScoreboardRows";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreboardRowsOutput::class, $context);
     }
 
     /**
@@ -129,7 +193,15 @@ class RankerClient {
      */
     public function AddScoreboardColumn(AddScoreboardColumnInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/AddScoreboardColumn", $input, AddScoreboardColumnOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/columns";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/AddScoreboardColumn";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddScoreboardColumnOutput::class, $context);
     }
 
     /**
@@ -140,7 +212,15 @@ class RankerClient {
      */
     public function DeleteScoreboardColumn(DeleteScoreboardColumnInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DeleteScoreboardColumn", $input, DeleteScoreboardColumnOutput::class, $context);
+        $path = "/ranker/columns/".rawurlencode($input->getColumnId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setColumnId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/DeleteScoreboardColumn";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteScoreboardColumnOutput::class, $context);
     }
 
     /**
@@ -151,7 +231,15 @@ class RankerClient {
      */
     public function DescribeScoreboardColumn(DescribeScoreboardColumnInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/DescribeScoreboardColumn", $input, DescribeScoreboardColumnOutput::class, $context);
+        $path = "/ranker/columns/".rawurlencode($input->getColumnId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setColumnId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/DescribeScoreboardColumn";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreboardColumnOutput::class, $context);
     }
 
     /**
@@ -164,7 +252,15 @@ class RankerClient {
      */
     public function ListScoreboardColumns(ListScoreboardColumnsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListScoreboardColumns", $input, ListScoreboardColumnsOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/columns";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/ListScoreboardColumns";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreboardColumnsOutput::class, $context);
     }
 
     /**
@@ -175,7 +271,15 @@ class RankerClient {
      */
     public function ListActivities(ListActivitiesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.ranker.Ranker/ListActivities", $input, ListActivitiesOutput::class, $context);
+        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/activities";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/ListActivities";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListActivitiesOutput::class, $context);
     }
 
 }

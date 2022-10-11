@@ -6,14 +6,19 @@ namespace Eolymp\Atlas;
 
 class AtlasClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -25,7 +30,12 @@ class AtlasClient {
      */
     public function CreateProblem(CreateProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateProblem", $input, CreateProblemOutput::class, $context);
+        $path = "/problems";
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateProblemOutput::class, $context);
     }
 
     /**
@@ -36,7 +46,15 @@ class AtlasClient {
      */
     public function DeleteProblem(DeleteProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteProblem", $input, DeleteProblemOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteProblemOutput::class, $context);
     }
 
     /**
@@ -47,7 +65,12 @@ class AtlasClient {
      */
     public function ListProblems(ListProblemsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListProblems", $input, ListProblemsOutput::class, $context);
+        $path = "/problems";
+
+        $context['name'] = "eolymp.atlas.Atlas/ListProblems";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemsOutput::class, $context);
     }
 
     /**
@@ -58,7 +81,15 @@ class AtlasClient {
      */
     public function DescribeProblem(DescribeProblemInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeProblem", $input, DescribeProblemOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProblemOutput::class, $context);
     }
 
     /**
@@ -69,7 +100,15 @@ class AtlasClient {
      */
     public function UpdateVisibility(UpdateVisibilityInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateVisibility", $input, UpdateVisibilityOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/visibility";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateVisibility";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateVisibilityOutput::class, $context);
     }
 
     /**
@@ -80,7 +119,15 @@ class AtlasClient {
      */
     public function UpdatePrivacy(UpdatePrivacyInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdatePrivacy", $input, UpdatePrivacyOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/privacy";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdatePrivacy";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePrivacyOutput::class, $context);
     }
 
     /**
@@ -91,7 +138,15 @@ class AtlasClient {
      */
     public function ListExamples(ListExamplesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListExamples", $input, ListExamplesOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/examples";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListExamples";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListExamplesOutput::class, $context);
     }
 
     /**
@@ -102,7 +157,15 @@ class AtlasClient {
      */
     public function UpdateVerifier(UpdateVerifierInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateVerifier", $input, UpdateVerifierOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/verifier";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateVerifier";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateVerifierOutput::class, $context);
     }
 
     /**
@@ -113,7 +176,15 @@ class AtlasClient {
      */
     public function DescribeVerifier(DescribeVerifierInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeVerifier", $input, DescribeVerifierOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/verifier";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeVerifier";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeVerifierOutput::class, $context);
     }
 
     /**
@@ -124,7 +195,15 @@ class AtlasClient {
      */
     public function UpdateInteractor(UpdateInteractorInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateInteractor", $input, UpdateInteractorOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/interactor";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateInteractor";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateInteractorOutput::class, $context);
     }
 
     /**
@@ -135,7 +214,15 @@ class AtlasClient {
      */
     public function DescribeInteractor(DescribeInteractorInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeInteractor", $input, DescribeInteractorOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/interactor";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeInteractor";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeInteractorOutput::class, $context);
     }
 
     /**
@@ -146,7 +233,15 @@ class AtlasClient {
      */
     public function CreateStatement(CreateStatementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateStatement", $input, CreateStatementOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CreateStatementOutput::class, $context);
     }
 
     /**
@@ -157,7 +252,16 @@ class AtlasClient {
      */
     public function UpdateStatement(UpdateStatementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateStatement", $input, UpdateStatementOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setStatementId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateStatementOutput::class, $context);
     }
 
     /**
@@ -168,7 +272,16 @@ class AtlasClient {
      */
     public function DeleteStatement(DeleteStatementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteStatement", $input, DeleteStatementOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setStatementId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteStatementOutput::class, $context);
     }
 
     /**
@@ -179,7 +292,15 @@ class AtlasClient {
      */
     public function ListStatements(ListStatementsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListStatements", $input, ListStatementsOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListStatements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStatementsOutput::class, $context);
     }
 
     /**
@@ -190,7 +311,16 @@ class AtlasClient {
      */
     public function DescribeStatement(DescribeStatementInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeStatement", $input, DescribeStatementOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setStatementId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeStatementOutput::class, $context);
     }
 
     /**
@@ -201,7 +331,15 @@ class AtlasClient {
      */
     public function CreateTestset(CreateTestsetInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateTestset", $input, CreateTestsetOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateTestset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateTestsetOutput::class, $context);
     }
 
     /**
@@ -212,7 +350,16 @@ class AtlasClient {
      */
     public function UpdateTestset(UpdateTestsetInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateTestset", $input, UpdateTestsetOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateTestset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateTestsetOutput::class, $context);
     }
 
     /**
@@ -223,7 +370,16 @@ class AtlasClient {
      */
     public function DeleteTestset(DeleteTestsetInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteTestset", $input, DeleteTestsetOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteTestset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteTestsetOutput::class, $context);
     }
 
     /**
@@ -234,7 +390,15 @@ class AtlasClient {
      */
     public function ListTestsets(ListTestsetsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListTestsets", $input, ListTestsetsOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListTestsets";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTestsetsOutput::class, $context);
     }
 
     /**
@@ -245,7 +409,16 @@ class AtlasClient {
      */
     public function DescribeTestset(DescribeTestsetInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeTestset", $input, DescribeTestsetOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeTestset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestsetOutput::class, $context);
     }
 
     /**
@@ -256,7 +429,16 @@ class AtlasClient {
      */
     public function CreateTest(CreateTestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateTest", $input, CreateTestOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateTest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateTestOutput::class, $context);
     }
 
     /**
@@ -267,7 +449,17 @@ class AtlasClient {
      */
     public function UpdateTest(UpdateTestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateTest", $input, UpdateTestOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests/".rawurlencode($input->getTestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+        $input->setTestId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateTest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateTestOutput::class, $context);
     }
 
     /**
@@ -278,7 +470,17 @@ class AtlasClient {
      */
     public function DeleteTest(DeleteTestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteTest", $input, DeleteTestOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests/".rawurlencode($input->getTestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+        $input->setTestId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteTest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteTestOutput::class, $context);
     }
 
     /**
@@ -289,7 +491,16 @@ class AtlasClient {
      */
     public function ListTests(ListTestsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListTests", $input, ListTestsOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListTests";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTestsOutput::class, $context);
     }
 
     /**
@@ -300,7 +511,17 @@ class AtlasClient {
      */
     public function DescribeTest(DescribeTestInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeTest", $input, DescribeTestOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests/".rawurlencode($input->getTestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTestsetId("");
+        $input->setTestId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeTest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestOutput::class, $context);
     }
 
     /**
@@ -311,7 +532,15 @@ class AtlasClient {
      */
     public function GrantPermission(GrantPermissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/GrantPermission", $input, GrantPermissionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/permissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/GrantPermission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, GrantPermissionOutput::class, $context);
     }
 
     /**
@@ -322,7 +551,16 @@ class AtlasClient {
      */
     public function RevokePermission(RevokePermissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/RevokePermission", $input, RevokePermissionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/permissions/".rawurlencode($input->getUserId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/RevokePermission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RevokePermissionOutput::class, $context);
     }
 
     /**
@@ -333,7 +571,15 @@ class AtlasClient {
      */
     public function ListPermissions(ListPermissionsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListPermissions", $input, ListPermissionsOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/permissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListPermissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPermissionsOutput::class, $context);
     }
 
     /**
@@ -344,7 +590,15 @@ class AtlasClient {
      */
     public function CreateCodeTemplate(CreateCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateCodeTemplate", $input, CreateCodeTemplateOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateCodeTemplateOutput::class, $context);
     }
 
     /**
@@ -355,7 +609,16 @@ class AtlasClient {
      */
     public function UpdateCodeTemplate(UpdateCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateCodeTemplate", $input, UpdateCodeTemplateOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTemplateId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateCodeTemplateOutput::class, $context);
     }
 
     /**
@@ -366,7 +629,16 @@ class AtlasClient {
      */
     public function DeleteCodeTemplate(DeleteCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteCodeTemplate", $input, DeleteCodeTemplateOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTemplateId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCodeTemplateOutput::class, $context);
     }
 
     /**
@@ -377,7 +649,15 @@ class AtlasClient {
      */
     public function ListCodeTemplates(ListCodeTemplatesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListCodeTemplates", $input, ListCodeTemplatesOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListCodeTemplates";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCodeTemplatesOutput::class, $context);
     }
 
     /**
@@ -388,7 +668,16 @@ class AtlasClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeCodeTemplate", $input, DescribeCodeTemplateOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setTemplateId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCodeTemplateOutput::class, $context);
     }
 
     /**
@@ -399,7 +688,15 @@ class AtlasClient {
      */
     public function CreateAttachment(CreateAttachmentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateAttachment", $input, CreateAttachmentOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateAttachment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAttachmentOutput::class, $context);
     }
 
     /**
@@ -410,7 +707,16 @@ class AtlasClient {
      */
     public function UpdateAttachment(UpdateAttachmentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateAttachment", $input, UpdateAttachmentOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments/".rawurlencode($input->getAttachmentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setAttachmentId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateAttachment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateAttachmentOutput::class, $context);
     }
 
     /**
@@ -421,7 +727,16 @@ class AtlasClient {
      */
     public function DeleteAttachment(DeleteAttachmentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteAttachment", $input, DeleteAttachmentOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments/".rawurlencode($input->getAttachmentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setAttachmentId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteAttachment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAttachmentOutput::class, $context);
     }
 
     /**
@@ -432,7 +747,15 @@ class AtlasClient {
      */
     public function ListAttachments(ListAttachmentsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListAttachments", $input, ListAttachmentsOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListAttachments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAttachmentsOutput::class, $context);
     }
 
     /**
@@ -443,7 +766,16 @@ class AtlasClient {
      */
     public function DescribeAttachment(DescribeAttachmentInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeAttachment", $input, DescribeAttachmentOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments/".rawurlencode($input->getAttachmentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setAttachmentId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeAttachment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAttachmentOutput::class, $context);
     }
 
     /**
@@ -454,7 +786,16 @@ class AtlasClient {
      */
     public function DescribeChange(DescribeChangeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeChange", $input, DescribeChangeOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/changes/".rawurlencode($input->getChangeId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setChangeId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeChange";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeChangeOutput::class, $context);
     }
 
     /**
@@ -465,7 +806,15 @@ class AtlasClient {
      */
     public function ListChanges(ListChangesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListChanges", $input, ListChangesOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/changes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListChanges";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListChangesOutput::class, $context);
     }
 
     /**
@@ -476,7 +825,15 @@ class AtlasClient {
      */
     public function ListProblemTop(ListProblemTopInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListProblemTop", $input, ListProblemTopOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/top";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListProblemTop";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemTopOutput::class, $context);
     }
 
     /**
@@ -487,7 +844,15 @@ class AtlasClient {
      */
     public function DescribeProblemGrading(DescribeProblemGradingInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeProblemGrading", $input, DescribeProblemGradingOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/grading";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeProblemGrading";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProblemGradingOutput::class, $context);
     }
 
     /**
@@ -498,7 +863,15 @@ class AtlasClient {
      */
     public function CreateSolution(CreateSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateSolution", $input, CreateSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSolutionOutput::class, $context);
     }
 
     /**
@@ -509,7 +882,16 @@ class AtlasClient {
      */
     public function UpdateSolution(UpdateSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateSolution", $input, UpdateSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateSolutionOutput::class, $context);
     }
 
     /**
@@ -520,7 +902,16 @@ class AtlasClient {
      */
     public function DeleteSolution(DeleteSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteSolution", $input, DeleteSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteSolutionOutput::class, $context);
     }
 
     /**
@@ -531,7 +922,15 @@ class AtlasClient {
      */
     public function ListSolutions(ListSolutionsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListSolutions", $input, ListSolutionsOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ListSolutions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSolutionsOutput::class, $context);
     }
 
     /**
@@ -542,7 +941,16 @@ class AtlasClient {
      */
     public function DescribeSolution(DescribeSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeSolution", $input, DescribeSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSolutionOutput::class, $context);
     }
 
     /**
@@ -553,7 +961,16 @@ class AtlasClient {
      */
     public function PublishSolution(PublishSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/PublishSolution", $input, PublishSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/publish";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/PublishSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PublishSolutionOutput::class, $context);
     }
 
     /**
@@ -564,7 +981,16 @@ class AtlasClient {
      */
     public function UnpublishSolution(UnpublishSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UnpublishSolution", $input, UnpublishSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/unpublish";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UnpublishSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UnpublishSolutionOutput::class, $context);
     }
 
     /**
@@ -575,7 +1001,16 @@ class AtlasClient {
      */
     public function ApproveSolution(ApproveSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ApproveSolution", $input, ApproveSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/approve";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/ApproveSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ApproveSolutionOutput::class, $context);
     }
 
     /**
@@ -586,7 +1021,16 @@ class AtlasClient {
      */
     public function RefuseSolution(RefuseSolutionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/RefuseSolution", $input, RefuseSolutionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/refuse";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSolutionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/RefuseSolution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RefuseSolutionOutput::class, $context);
     }
 
     /**
@@ -597,7 +1041,12 @@ class AtlasClient {
      */
     public function CreateCategory(CreateCategoryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateCategory", $input, CreateCategoryOutput::class, $context);
+        $path = "/categories";
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateCategory";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateCategoryOutput::class, $context);
     }
 
     /**
@@ -608,7 +1057,15 @@ class AtlasClient {
      */
     public function UpdateCategory(UpdateCategoryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UpdateCategory", $input, UpdateCategoryOutput::class, $context);
+        $path = "/categories/".rawurlencode($input->getCategoryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCategoryId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateCategory";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateCategoryOutput::class, $context);
     }
 
     /**
@@ -619,7 +1076,15 @@ class AtlasClient {
      */
     public function DeleteCategory(DeleteCategoryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DeleteCategory", $input, DeleteCategoryOutput::class, $context);
+        $path = "/categories/".rawurlencode($input->getCategoryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCategoryId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DeleteCategory";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCategoryOutput::class, $context);
     }
 
     /**
@@ -630,7 +1095,12 @@ class AtlasClient {
      */
     public function ListCategories(ListCategoriesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/ListCategories", $input, ListCategoriesOutput::class, $context);
+        $path = "/categories";
+
+        $context['name'] = "eolymp.atlas.Atlas/ListCategories";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCategoriesOutput::class, $context);
     }
 
     /**
@@ -641,7 +1111,15 @@ class AtlasClient {
      */
     public function DescribeCategory(DescribeCategoryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeCategory", $input, DescribeCategoryOutput::class, $context);
+        $path = "/categories/".rawurlencode($input->getCategoryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCategoryId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeCategory";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCategoryOutput::class, $context);
     }
 
     /**
@@ -652,7 +1130,16 @@ class AtlasClient {
      */
     public function AssignCategory(AssignCategoryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/AssignCategory", $input, AssignCategoryOutput::class, $context);
+        $path = "/categories/".rawurlencode($input->getCategoryId())."/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCategoryId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/AssignCategory";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignCategoryOutput::class, $context);
     }
 
     /**
@@ -663,7 +1150,16 @@ class AtlasClient {
      */
     public function UnassignCategory(UnassignCategoryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/UnassignCategory", $input, UnassignCategoryOutput::class, $context);
+        $path = "/categories/".rawurlencode($input->getCategoryId())."/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCategoryId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UnassignCategory";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignCategoryOutput::class, $context);
     }
 
     /**
@@ -674,7 +1170,15 @@ class AtlasClient {
      */
     public function CreateSubmission(CreateSubmissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/CreateSubmission", $input, CreateSubmissionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/CreateSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSubmissionOutput::class, $context);
     }
 
     /**
@@ -685,7 +1189,16 @@ class AtlasClient {
      */
     public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeSubmission", $input, DescribeSubmissionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/submissions/".rawurlencode($input->getSubmissionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubmissionOutput::class, $context);
     }
 
     /**
@@ -696,7 +1209,16 @@ class AtlasClient {
      */
     public function RetestSubmission(RetestSubmissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/RetestSubmission", $input, RetestSubmissionOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/submissions/".rawurlencode($input->getSubmissionId())."/retest";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/RetestSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RetestSubmissionOutput::class, $context);
     }
 
     /**
@@ -707,7 +1229,16 @@ class AtlasClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.atlas.Atlas/DescribeScore", $input, DescribeScoreOutput::class, $context);
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scores/".rawurlencode($input->getUserId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/DescribeScore";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreOutput::class, $context);
     }
 
 }

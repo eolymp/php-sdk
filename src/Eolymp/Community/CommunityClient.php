@@ -6,14 +6,19 @@ namespace Eolymp\Community;
 
 class CommunityClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -27,7 +32,12 @@ class CommunityClient {
      */
     public function JoinSpace(JoinSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/JoinSpace", $input, JoinSpaceOutput::class, $context);
+        $path = "/members/_self";
+
+        $context['name'] = "eolymp.community.Community/JoinSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, JoinSpaceOutput::class, $context);
     }
 
     /**
@@ -40,7 +50,12 @@ class CommunityClient {
      */
     public function LeaveSpace(LeaveSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/LeaveSpace", $input, LeaveSpaceOutput::class, $context);
+        $path = "/members/_self";
+
+        $context['name'] = "eolymp.community.Community/LeaveSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, LeaveSpaceOutput::class, $context);
     }
 
     /**
@@ -53,7 +68,12 @@ class CommunityClient {
      */
     public function RegisterMember(RegisterMemberInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/RegisterMember", $input, RegisterMemberOutput::class, $context);
+        $path = "/members/_self/attributes";
+
+        $context['name'] = "eolymp.community.Community/RegisterMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RegisterMemberOutput::class, $context);
     }
 
     /**
@@ -66,7 +86,12 @@ class CommunityClient {
      */
     public function IntrospectMember(IntrospectMemberInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/IntrospectMember", $input, IntrospectMemberOutput::class, $context);
+        $path = "/members/_self";
+
+        $context['name'] = "eolymp.community.Community/IntrospectMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectMemberOutput::class, $context);
     }
 
     /**
@@ -77,7 +102,12 @@ class CommunityClient {
      */
     public function AddMember(AddMemberInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/AddMember", $input, AddMemberOutput::class, $context);
+        $path = "/members";
+
+        $context['name'] = "eolymp.community.Community/AddMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddMemberOutput::class, $context);
     }
 
     /**
@@ -88,7 +118,15 @@ class CommunityClient {
      */
     public function UpdateMember(UpdateMemberInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/UpdateMember", $input, UpdateMemberOutput::class, $context);
+        $path = "/members/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.community.Community/UpdateMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateMemberOutput::class, $context);
     }
 
     /**
@@ -99,7 +137,15 @@ class CommunityClient {
      */
     public function RemoveMember(RemoveMemberInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/RemoveMember", $input, RemoveMemberOutput::class, $context);
+        $path = "/members/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.community.Community/RemoveMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveMemberOutput::class, $context);
     }
 
     /**
@@ -110,7 +156,15 @@ class CommunityClient {
      */
     public function DescribeMember(DescribeMemberInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/DescribeMember", $input, DescribeMemberOutput::class, $context);
+        $path = "/members/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.community.Community/DescribeMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberOutput::class, $context);
     }
 
     /**
@@ -121,7 +175,12 @@ class CommunityClient {
      */
     public function ListMembers(ListMembersInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/ListMembers", $input, ListMembersOutput::class, $context);
+        $path = "/members";
+
+        $context['name'] = "eolymp.community.Community/ListMembers";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListMembersOutput::class, $context);
     }
 
     /**
@@ -132,7 +191,12 @@ class CommunityClient {
      */
     public function AddAttribute(AddAttributeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/AddAttribute", $input, AddAttributeOutput::class, $context);
+        $path = "/attributes";
+
+        $context['name'] = "eolymp.community.Community/AddAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddAttributeOutput::class, $context);
     }
 
     /**
@@ -143,7 +207,15 @@ class CommunityClient {
      */
     public function UpdateAttribute(UpdateAttributeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/UpdateAttribute", $input, UpdateAttributeOutput::class, $context);
+        $path = "/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.community.Community/UpdateAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateAttributeOutput::class, $context);
     }
 
     /**
@@ -154,7 +226,15 @@ class CommunityClient {
      */
     public function RemoveAttribute(RemoveAttributeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/RemoveAttribute", $input, RemoveAttributeOutput::class, $context);
+        $path = "/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.community.Community/RemoveAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveAttributeOutput::class, $context);
     }
 
     /**
@@ -165,7 +245,15 @@ class CommunityClient {
      */
     public function DescribeAttribute(DescribeAttributeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/DescribeAttribute", $input, DescribeAttributeOutput::class, $context);
+        $path = "/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.community.Community/DescribeAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAttributeOutput::class, $context);
     }
 
     /**
@@ -176,7 +264,12 @@ class CommunityClient {
      */
     public function ListAttributes(ListAttributesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.community.Community/ListAttributes", $input, ListAttributesOutput::class, $context);
+        $path = "/attributes";
+
+        $context['name'] = "eolymp.community.Community/ListAttributes";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ListAttributesOutput::class, $context);
     }
 
 }

@@ -25,12 +25,6 @@ class Service extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool internal = 2;</code>
      */
     protected $internal = false;
-    /**
-     * service is internal and not available over HTTP
-     *
-     * Generated from protobuf field <code>string prefix = 3;</code>
-     */
-    protected $prefix = '';
 
     /**
      * Constructor.
@@ -41,8 +35,6 @@ class Service extends \Google\Protobuf\Internal\Message
      *     @type bool $space
      *           service endpoints require a space (tenant)
      *     @type bool $internal
-     *           service is internal and not available over HTTP
-     *     @type string $prefix
      *           service is internal and not available over HTTP
      * }
      */
@@ -99,32 +91,6 @@ class Service extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->internal = $var;
-
-        return $this;
-    }
-
-    /**
-     * service is internal and not available over HTTP
-     *
-     * Generated from protobuf field <code>string prefix = 3;</code>
-     * @return string
-     */
-    public function getPrefix()
-    {
-        return $this->prefix;
-    }
-
-    /**
-     * service is internal and not available over HTTP
-     *
-     * Generated from protobuf field <code>string prefix = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPrefix($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->prefix = $var;
 
         return $this;
     }

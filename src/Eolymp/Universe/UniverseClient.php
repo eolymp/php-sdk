@@ -6,14 +6,19 @@ namespace Eolymp\Universe;
 
 class UniverseClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -27,7 +32,15 @@ class UniverseClient {
      */
     public function LookupSpace(LookupSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/LookupSpace", $input, LookupSpaceOutput::class, $context);
+        $path = "/spaces/__lookup/".rawurlencode($input->getKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setKey("");
+
+        $context['name'] = "eolymp.universe.Universe/LookupSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupSpaceOutput::class, $context);
     }
 
     /**
@@ -40,7 +53,12 @@ class UniverseClient {
      */
     public function CreateSpace(CreateSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/CreateSpace", $input, CreateSpaceOutput::class, $context);
+        $path = "/spaces";
+
+        $context['name'] = "eolymp.universe.Universe/CreateSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSpaceOutput::class, $context);
     }
 
     /**
@@ -53,7 +71,15 @@ class UniverseClient {
      */
     public function UpdateSpace(UpdateSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/UpdateSpace", $input, UpdateSpaceOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/UpdateSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateSpaceOutput::class, $context);
     }
 
     /**
@@ -66,7 +92,15 @@ class UniverseClient {
      */
     public function DeleteSpace(DeleteSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/DeleteSpace", $input, DeleteSpaceOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/DeleteSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteSpaceOutput::class, $context);
     }
 
     /**
@@ -79,7 +113,15 @@ class UniverseClient {
      */
     public function DescribeSpace(DescribeSpaceInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/DescribeSpace", $input, DescribeSpaceOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/DescribeSpace";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSpaceOutput::class, $context);
     }
 
     /**
@@ -92,7 +134,15 @@ class UniverseClient {
      */
     public function DescribeQuota(DescribeQuotaInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/DescribeQuota", $input, DescribeQuotaOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/quota";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/DescribeQuota";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeQuotaOutput::class, $context);
     }
 
     /**
@@ -105,7 +155,12 @@ class UniverseClient {
      */
     public function ListSpaces(ListSpacesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/ListSpaces", $input, ListSpacesOutput::class, $context);
+        $path = "/spaces";
+
+        $context['name'] = "eolymp.universe.Universe/ListSpaces";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSpacesOutput::class, $context);
     }
 
     /**
@@ -118,7 +173,16 @@ class UniverseClient {
      */
     public function GrantPermission(GrantPermissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/GrantPermission", $input, GrantPermissionOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/permissions/".rawurlencode($input->getUserId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.universe.Universe/GrantPermission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, GrantPermissionOutput::class, $context);
     }
 
     /**
@@ -131,7 +195,16 @@ class UniverseClient {
      */
     public function RevokePermission(RevokePermissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/RevokePermission", $input, RevokePermissionOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/permissions/".rawurlencode($input->getUserId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.universe.Universe/RevokePermission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RevokePermissionOutput::class, $context);
     }
 
     /**
@@ -144,7 +217,16 @@ class UniverseClient {
      */
     public function DescribePermission(DescribePermissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/DescribePermission", $input, DescribePermissionOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/permissions/".rawurlencode($input->getUserId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.universe.Universe/DescribePermission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePermissionOutput::class, $context);
     }
 
     /**
@@ -157,7 +239,15 @@ class UniverseClient {
      */
     public function IntrospectPermission(IntrospectPermissionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/IntrospectPermission", $input, IntrospectPermissionOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/introspect-permission";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/IntrospectPermission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectPermissionOutput::class, $context);
     }
 
     /**
@@ -170,7 +260,15 @@ class UniverseClient {
      */
     public function ListPermissions(ListPermissionsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.universe.Universe/ListPermissions", $input, ListPermissionsOutput::class, $context);
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/permissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/ListPermissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPermissionsOutput::class, $context);
     }
 
 }

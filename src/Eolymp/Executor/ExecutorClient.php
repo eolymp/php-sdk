@@ -6,14 +6,19 @@ namespace Eolymp\Executor;
 
 class ExecutorClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -25,7 +30,15 @@ class ExecutorClient {
      */
     public function DescribeLanguage(DescribeLanguageInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.executor.Executor/DescribeLanguage", $input, DescribeLanguageOutput::class, $context);
+        $path = "/executor/languages/".rawurlencode($input->getLanguageId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLanguageId("");
+
+        $context['name'] = "eolymp.executor.Executor/DescribeLanguage";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeLanguageOutput::class, $context);
     }
 
     /**
@@ -36,7 +49,12 @@ class ExecutorClient {
      */
     public function ListLanguages(ListLanguagesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.executor.Executor/ListLanguages", $input, ListLanguagesOutput::class, $context);
+        $path = "/executor/languages";
+
+        $context['name'] = "eolymp.executor.Executor/ListLanguages";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListLanguagesOutput::class, $context);
     }
 
     /**
@@ -47,7 +65,15 @@ class ExecutorClient {
      */
     public function DescribeRuntime(DescribeRuntimeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.executor.Executor/DescribeRuntime", $input, DescribeRuntimeOutput::class, $context);
+        $path = "/executor/runtime/".rawurlencode($input->getRuntimeId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRuntimeId("");
+
+        $context['name'] = "eolymp.executor.Executor/DescribeRuntime";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRuntimeOutput::class, $context);
     }
 
     /**
@@ -58,7 +84,12 @@ class ExecutorClient {
      */
     public function ListRuntime(ListRuntimeInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.executor.Executor/ListRuntime", $input, ListRuntimeOutput::class, $context);
+        $path = "/executor/runtime";
+
+        $context['name'] = "eolymp.executor.Executor/ListRuntime";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimeOutput::class, $context);
     }
 
     /**
@@ -69,7 +100,15 @@ class ExecutorClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.executor.Executor/DescribeCodeTemplate", $input, DescribeCodeTemplateOutput::class, $context);
+        $path = "/executor/runtime/".rawurlencode($input->getRuntimeId())."/template";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRuntimeId("");
+
+        $context['name'] = "eolymp.executor.Executor/DescribeCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCodeTemplateOutput::class, $context);
     }
 
 }

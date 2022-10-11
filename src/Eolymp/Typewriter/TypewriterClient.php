@@ -6,26 +6,20 @@ namespace Eolymp\Typewriter;
 
 class TypewriterClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
-    }
-
-    /**
-     * @param UploadAssetInput $input message
-     * @param array $context request parameters
-     *
-     * @return UploadAssetOutput output message
-     */
-    public function UploadAsset(UploadAssetInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.typewriter.Typewriter/UploadAsset", $input, UploadAssetOutput::class, $context);
     }
 
 }

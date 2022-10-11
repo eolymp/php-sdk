@@ -6,14 +6,19 @@ namespace Eolymp\Playground;
 
 class PlaygroundClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -25,7 +30,12 @@ class PlaygroundClient {
      */
     public function CreateRun(CreateRunInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.playground.Playground/CreateRun", $input, CreateRunOutput::class, $context);
+        $path = "/playground/runs";
+
+        $context['name'] = "eolymp.playground.Playground/CreateRun";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateRunOutput::class, $context);
     }
 
     /**
@@ -36,7 +46,15 @@ class PlaygroundClient {
      */
     public function DescribeRun(DescribeRunInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.playground.Playground/DescribeRun", $input, DescribeRunOutput::class, $context);
+        $path = "/playground/runs/".rawurlencode($input->getRunId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRunId("");
+
+        $context['name'] = "eolymp.playground.Playground/DescribeRun";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRunOutput::class, $context);
     }
 
 }

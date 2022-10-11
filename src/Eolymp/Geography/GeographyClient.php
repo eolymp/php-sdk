@@ -6,14 +6,19 @@ namespace Eolymp\Geography;
 
 class GeographyClient {
 
+    /** @var string base URL */
+    private $url;
+
     /** @var callable RPC client */
     private $invoker;
 
     /**
-     * @param callable $invoker for RPC calls
+     * @param string   $url     defines base URL for service
+     * @param callable $invoker provides transport implementation for calls
      */
-    public function __construct($invoker)
+    public function __construct($url, $invoker)
     {
+        $this->url = $url;
         $this->invoker = $invoker;
     }
 
@@ -25,7 +30,15 @@ class GeographyClient {
      */
     public function DescribeCountry(DescribeCountryInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.geography.Geography/DescribeCountry", $input, DescribeCountryOutput::class, $context);
+        $path = "/geography/countries/".rawurlencode($input->getCountryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCountryId("");
+
+        $context['name'] = "eolymp.geography.Geography/DescribeCountry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCountryOutput::class, $context);
     }
 
     /**
@@ -36,7 +49,12 @@ class GeographyClient {
      */
     public function ListCountries(ListCountriesInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.geography.Geography/ListCountries", $input, ListCountriesOutput::class, $context);
+        $path = "/geography/countries";
+
+        $context['name'] = "eolymp.geography.Geography/ListCountries";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCountriesOutput::class, $context);
     }
 
     /**
@@ -47,7 +65,15 @@ class GeographyClient {
      */
     public function DescribeRegion(DescribeRegionInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.geography.Geography/DescribeRegion", $input, DescribeRegionOutput::class, $context);
+        $path = "/geography/regions/".rawurlencode($input->getRegionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRegionId("");
+
+        $context['name'] = "eolymp.geography.Geography/DescribeRegion";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRegionOutput::class, $context);
     }
 
     /**
@@ -58,7 +84,15 @@ class GeographyClient {
      */
     public function ListRegions(ListRegionsInput $input, array $context = [])
     {
-        return call_user_func($this->invoker, "eolymp.geography.Geography/ListRegions", $input, ListRegionsOutput::class, $context);
+        $path = "/geography/countries/".rawurlencode($input->getCountryId())."/regions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCountryId("");
+
+        $context['name'] = "eolymp.geography.Geography/ListRegions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRegionsOutput::class, $context);
     }
 
 }
