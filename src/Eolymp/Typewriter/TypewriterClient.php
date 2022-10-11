@@ -22,4 +22,20 @@ class TypewriterClient {
         $this->invoker = $invoker;
     }
 
+    /**
+     * @param UploadAssetInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadAssetOutput output message
+     */
+    public function UploadAsset(UploadAssetInput $input, array $context = [])
+    {
+        $path = "/assets";
+
+        $context['name'] = "eolymp.typewriter.Typewriter/UploadAsset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadAssetOutput::class, $context);
+    }
+
 }

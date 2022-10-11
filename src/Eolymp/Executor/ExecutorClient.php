@@ -30,7 +30,7 @@ class ExecutorClient {
      */
     public function DescribeLanguage(DescribeLanguageInput $input, array $context = [])
     {
-        $path = "/executor/languages/".rawurlencode($input->getLanguageId());
+        $path = "/languages/".rawurlencode($input->getLanguageId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setLanguageId("");
@@ -49,7 +49,7 @@ class ExecutorClient {
      */
     public function ListLanguages(ListLanguagesInput $input, array $context = [])
     {
-        $path = "/executor/languages";
+        $path = "/languages";
 
         $context['name'] = "eolymp.executor.Executor/ListLanguages";
         $context['path'] = $path;
@@ -65,7 +65,7 @@ class ExecutorClient {
      */
     public function DescribeRuntime(DescribeRuntimeInput $input, array $context = [])
     {
-        $path = "/executor/runtime/".rawurlencode($input->getRuntimeId());
+        $path = "/runtime/".rawurlencode($input->getRuntimeId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRuntimeId("");
@@ -84,7 +84,7 @@ class ExecutorClient {
      */
     public function ListRuntime(ListRuntimeInput $input, array $context = [])
     {
-        $path = "/executor/runtime";
+        $path = "/runtime";
 
         $context['name'] = "eolymp.executor.Executor/ListRuntime";
         $context['path'] = $path;
@@ -100,7 +100,7 @@ class ExecutorClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        $path = "/executor/runtime/".rawurlencode($input->getRuntimeId())."/template";
+        $path = "/runtime/".rawurlencode($input->getRuntimeId())."/template";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRuntimeId("");

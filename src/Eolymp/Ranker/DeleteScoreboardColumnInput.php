@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string column_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     */
+    protected $scoreboard_id = '';
+    /**
+     * Generated from protobuf field <code>string column_id = 2;</code>
      */
     protected $column_id = '';
 
@@ -24,6 +28,7 @@ class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $scoreboard_id
      *     @type string $column_id
      * }
      */
@@ -33,7 +38,29 @@ class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string column_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * @return string
+     */
+    public function getScoreboardId()
+    {
+        return $this->scoreboard_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScoreboardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scoreboard_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string column_id = 2;</code>
      * @return string
      */
     public function getColumnId()
@@ -42,7 +69,7 @@ class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string column_id = 1;</code>
+     * Generated from protobuf field <code>string column_id = 2;</code>
      * @param string $var
      * @return $this
      */

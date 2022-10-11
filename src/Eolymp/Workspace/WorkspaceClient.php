@@ -22,4 +22,171 @@ class WorkspaceClient {
         $this->invoker = $invoker;
     }
 
+    /**
+     * @param DescribeProjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeProjectOutput output message
+     */
+    public function DescribeProject(DescribeProjectInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.workspace.Workspace/DescribeProject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProjectOutput::class, $context);
+    }
+
+    /**
+     * @param ListProjectsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListProjectsOutput output message
+     */
+    public function ListProjects(ListProjectsInput $input, array $context = [])
+    {
+        $path = "/workspace/projects";
+
+        $context['name'] = "eolymp.workspace.Workspace/ListProjects";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProjectsOutput::class, $context);
+    }
+
+    /**
+     * @param CreateProjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateProjectOutput output message
+     */
+    public function CreateProject(CreateProjectInput $input, array $context = [])
+    {
+        $path = "/workspace/projects";
+
+        $context['name'] = "eolymp.workspace.Workspace/CreateProject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateProjectOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateProjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateProjectOutput output message
+     */
+    public function UpdateProject(UpdateProjectInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.workspace.Workspace/UpdateProject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateProjectOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteProjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteProjectOutput output message
+     */
+    public function DeleteProject(DeleteProjectInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.workspace.Workspace/DeleteProject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteProjectOutput::class, $context);
+    }
+
+    /**
+     * @param ListFilesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListFilesOutput output message
+     */
+    public function ListFiles(ListFilesInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId())."/files";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.workspace.Workspace/ListFiles";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListFilesOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeFileInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeFileOutput output message
+     */
+    public function DescribeFile(DescribeFileInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId())."/files/".rawurlencode($input->getName());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+        $input->setName("");
+
+        $context['name'] = "eolymp.workspace.Workspace/DescribeFile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeFileOutput::class, $context);
+    }
+
+    /**
+     * @param UploadFileInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadFileOutput output message
+     */
+    public function UploadFile(UploadFileInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId())."/files";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.workspace.Workspace/UploadFile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadFileOutput::class, $context);
+    }
+
+    /**
+     * @param RemoveFileInput $input message
+     * @param array $context request parameters
+     *
+     * @return RemoveFileOutput output message
+     */
+    public function RemoveFile(RemoveFileInput $input, array $context = [])
+    {
+        $path = "/workspace/projects/".rawurlencode($input->getProjectId())."/files/".rawurlencode($input->getName());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+        $input->setName("");
+
+        $context['name'] = "eolymp.workspace.Workspace/RemoveFile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveFileOutput::class, $context);
+    }
+
 }

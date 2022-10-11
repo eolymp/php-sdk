@@ -30,7 +30,7 @@ class HelpdeskClient {
      */
     public function DescribeDocument(DescribeDocumentInput $input, array $context = [])
     {
-        $path = "/helpdesk/document/".rawurlencode($input->getDocumentId());
+        $path = "/helpdesk/documents/".rawurlencode($input->getDocumentId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setDocumentId("");
@@ -65,7 +65,7 @@ class HelpdeskClient {
      */
     public function CreateDocument(CreateDocumentInput $input, array $context = [])
     {
-        $path = "/helpdesk/document";
+        $path = "/helpdesk/documents";
 
         $context['name'] = "eolymp.helpdesk.Helpdesk/CreateDocument";
         $context['path'] = $path;
@@ -81,7 +81,7 @@ class HelpdeskClient {
      */
     public function UpdateDocument(UpdateDocumentInput $input, array $context = [])
     {
-        $path = "/helpdesk/document/".rawurlencode($input->getDocumentId());
+        $path = "/helpdesk/documents/".rawurlencode($input->getDocumentId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setDocumentId("");
@@ -100,7 +100,7 @@ class HelpdeskClient {
      */
     public function DeleteDocument(DeleteDocumentInput $input, array $context = [])
     {
-        $path = "/helpdesk/document/".rawurlencode($input->getDocumentId());
+        $path = "/helpdesk/documents/".rawurlencode($input->getDocumentId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setDocumentId("");

@@ -32,7 +32,7 @@ class RankerClient {
      */
     public function CreateScoreboard(CreateScoreboardInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards";
+        $path = "/scoreboards";
 
         $context['name'] = "eolymp.ranker.Ranker/CreateScoreboard";
         $context['path'] = $path;
@@ -50,7 +50,7 @@ class RankerClient {
      */
     public function UpdateScoreboard(UpdateScoreboardInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId());
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -71,7 +71,7 @@ class RankerClient {
      */
     public function RebuildScoreboard(RebuildScoreboardInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/rebuild";
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/rebuild";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -92,7 +92,7 @@ class RankerClient {
      */
     public function DeleteScoreboard(DeleteScoreboardInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId());
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -113,7 +113,7 @@ class RankerClient {
      */
     public function DescribeScoreboard(DescribeScoreboardInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId());
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -134,7 +134,7 @@ class RankerClient {
      */
     public function ListScoreboards(ListScoreboardsInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards";
+        $path = "/scoreboards";
 
         $context['name'] = "eolymp.ranker.Ranker/ListScoreboards";
         $context['path'] = $path;
@@ -152,7 +152,7 @@ class RankerClient {
      */
     public function DescribeScoreboardRow(DescribeScoreboardRowInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/rows/".rawurlencode($input->getMemberId());
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/rows/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -174,7 +174,7 @@ class RankerClient {
      */
     public function ListScoreboardRows(ListScoreboardRowsInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/rows";
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/rows";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -193,7 +193,7 @@ class RankerClient {
      */
     public function AddScoreboardColumn(AddScoreboardColumnInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/columns";
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/columns";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -212,9 +212,10 @@ class RankerClient {
      */
     public function DeleteScoreboardColumn(DeleteScoreboardColumnInput $input, array $context = [])
     {
-        $path = "/ranker/columns/".rawurlencode($input->getColumnId());
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/columns/".rawurlencode($input->getColumnId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
         $input->setColumnId("");
 
         $context['name'] = "eolymp.ranker.Ranker/DeleteScoreboardColumn";
@@ -231,9 +232,10 @@ class RankerClient {
      */
     public function DescribeScoreboardColumn(DescribeScoreboardColumnInput $input, array $context = [])
     {
-        $path = "/ranker/columns/".rawurlencode($input->getColumnId());
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/columns/".rawurlencode($input->getColumnId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
         $input->setColumnId("");
 
         $context['name'] = "eolymp.ranker.Ranker/DescribeScoreboardColumn";
@@ -252,7 +254,7 @@ class RankerClient {
      */
     public function ListScoreboardColumns(ListScoreboardColumnsInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/columns";
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/columns";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");
@@ -271,7 +273,7 @@ class RankerClient {
      */
     public function ListActivities(ListActivitiesInput $input, array $context = [])
     {
-        $path = "/ranker/scoreboards/".rawurlencode($input->getScoreboardId())."/activities";
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/activities";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setScoreboardId("");

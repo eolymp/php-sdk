@@ -22,4 +22,58 @@ class KeeperClient {
         $this->invoker = $invoker;
     }
 
+    /**
+     * @param CreateObjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateObjectOutput output message
+     */
+    public function CreateObject(CreateObjectInput $input, array $context = [])
+    {
+        $path = "/objects";
+
+        $context['name'] = "eolymp.keeper.Keeper/CreateObject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateObjectOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeObjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeObjectOutput output message
+     */
+    public function DescribeObject(DescribeObjectInput $input, array $context = [])
+    {
+        $path = "/objects/".rawurlencode($input->getKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setKey("");
+
+        $context['name'] = "eolymp.keeper.Keeper/DescribeObject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeObjectOutput::class, $context);
+    }
+
+    /**
+     * @param DownloadObjectInput $input message
+     * @param array $context request parameters
+     *
+     * @return DownloadObjectOutput output message
+     */
+    public function DownloadObject(DownloadObjectInput $input, array $context = [])
+    {
+        $path = "/objects/".rawurlencode($input->getKey())."/data";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setKey("");
+
+        $context['name'] = "eolymp.keeper.Keeper/DownloadObject";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DownloadObjectOutput::class, $context);
+    }
+
 }
