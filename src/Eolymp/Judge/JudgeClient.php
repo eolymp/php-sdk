@@ -18,6 +18,23 @@ class JudgeClient {
     }
 
     /**
+     * LookupContest fetches basic (possibly incomplete) contest information. Right now this method is very similar to
+     * DescribeContest, but looks up contest by domain name (key). Its purpose is different than DescribeContest, as
+     * it attempts to "probe" contest rather than fetch complete information.
+     *
+     * This is first API call made by contest-ui just to check if domain name can be resolved into Contest ID.
+     *
+     * @param LookupContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupContestOutput output message
+     */
+    public function LookupContest(LookupContestInput $input, array $context = [])
+    {
+        return call_user_func($this->invoker, "eolymp.judge.Judge/LookupContest", $input, LookupContestOutput::class, $context);
+    }
+
+    /**
      * @param CreateContestInput $input message
      * @param array $context request parameters
      *
@@ -48,23 +65,6 @@ class JudgeClient {
     public function UpdateContest(UpdateContestInput $input, array $context = [])
     {
         return call_user_func($this->invoker, "eolymp.judge.Judge/UpdateContest", $input, UpdateContestOutput::class, $context);
-    }
-
-    /**
-     * LookupContest fetches basic (possibly incomplete) contest information. Right now this method is very similar to
-     * DescribeContest, but looks up contest by domain name (key). Its purpose is different than DescribeContest, as
-     * it attempts to "probe" contest rather than fetch complete information.
-     *
-     * This is first API call made by contest-ui just to check if domain name can be resolved into Contest ID.
-     *
-     * @param LookupContestInput $input message
-     * @param array $context request parameters
-     *
-     * @return LookupContestOutput output message
-     */
-    public function LookupContest(LookupContestInput $input, array $context = [])
-    {
-        return call_user_func($this->invoker, "eolymp.judge.Judge/LookupContest", $input, LookupContestOutput::class, $context);
     }
 
     /**
