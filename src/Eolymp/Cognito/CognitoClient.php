@@ -23,6 +23,24 @@ class CognitoClient {
     }
 
     /**
+     * Signout revokes all user's tokens or all tokens of current session.
+     *
+     * @param SignoutInput $input message
+     * @param array $context request parameters
+     *
+     * @return SignoutOutput output message
+     */
+    public function Signout(SignoutInput $input, array $context = [])
+    {
+        $path = "/self/signout";
+
+        $context['name'] = "eolymp.cognito.Cognito/Signout";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SignoutOutput::class, $context);
+    }
+
+    /**
      * Create API key.
      *
      * @param CreateAccessKeyInput $input message
