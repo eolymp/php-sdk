@@ -18,23 +18,43 @@ class Status
      */
     const NO_STATUS = 0;
     /**
+     * contest hasn't started yet
+     *
      * Generated from protobuf enum <code>SCHEDULED = 1;</code>
      */
     const SCHEDULED = 1;
     /**
+     * contest has started, participants can participate
+     *
      * Generated from protobuf enum <code>OPEN = 2;</code>
      */
     const OPEN = 2;
     /**
+     * contest is finished
+     *
      * Generated from protobuf enum <code>COMPLETE = 3;</code>
      */
     const COMPLETE = 3;
+    /**
+     * contest has been suspended, interface is not available
+     *
+     * Generated from protobuf enum <code>SUSPENDED = 4;</code>
+     */
+    const SUSPENDED = 4;
+    /**
+     * contest has been frozen, interface is available but submission is restricted
+     *
+     * Generated from protobuf enum <code>FROZEN = 5;</code>
+     */
+    const FROZEN = 5;
 
     private static $valueToName = [
         self::NO_STATUS => 'NO_STATUS',
         self::SCHEDULED => 'SCHEDULED',
         self::OPEN => 'OPEN',
         self::COMPLETE => 'COMPLETE',
+        self::SUSPENDED => 'SUSPENDED',
+        self::FROZEN => 'FROZEN',
     ];
 
     public static function name($value)

@@ -177,6 +177,71 @@ class JudgeClient {
     }
 
     /**
+     * Temporarily stop contest and block participant's interface
+     * Use ResumeContest to switch contest back to a normal mode.
+     *
+     * @param SuspendContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return SuspendContestOutput output message
+     */
+    public function SuspendContest(SuspendContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/suspend";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/SuspendContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SuspendContestOutput::class, $context);
+    }
+
+    /**
+     * Temporarily restrict submission function
+     * Use ResumeContest to switch contest back to a normal mode.
+     *
+     * @param FreezeContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return FreezeContestOutput output message
+     */
+    public function FreezeContest(FreezeContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/freeze";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/FreezeContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, FreezeContestOutput::class, $context);
+    }
+
+    /**
+     * Re-start suspended or frozen contest
+     *
+     * @param ResumeContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return ResumeContestOutput output message
+     */
+    public function ResumeContest(ResumeContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/resume";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.Judge/ResumeContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResumeContestOutput::class, $context);
+    }
+
+    /**
      * ConfigureRuntime allows to configure which runtimes will be available during contest.
      * All available runtimes can be retrieved using `executor.ListRuntime` method.
      *
