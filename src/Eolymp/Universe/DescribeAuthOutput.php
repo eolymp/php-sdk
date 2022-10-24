@@ -21,7 +21,7 @@ class DescribeAuthOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Universe\Space\AuthenticationOAuth2 $oauth2
+     *     @type \Eolymp\Universe\Authentication\OAuth2 $oauth2
      * }
      */
     public function __construct($data = NULL) {
@@ -30,8 +30,8 @@ class DescribeAuthOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space.AuthenticationOAuth2 oauth2 = 1;</code>
-     * @return \Eolymp\Universe\Space\AuthenticationOAuth2
+     * Generated from protobuf field <code>.eolymp.universe.Authentication.OAuth2 oauth2 = 1;</code>
+     * @return \Eolymp\Universe\Authentication\OAuth2
      */
     public function getOauth2()
     {
@@ -39,13 +39,13 @@ class DescribeAuthOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space.AuthenticationOAuth2 oauth2 = 1;</code>
-     * @param \Eolymp\Universe\Space\AuthenticationOAuth2 $var
+     * Generated from protobuf field <code>.eolymp.universe.Authentication.OAuth2 oauth2 = 1;</code>
+     * @param \Eolymp\Universe\Authentication\OAuth2 $var
      * @return $this
      */
     public function setOauth2($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Space_AuthenticationOAuth2::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Authentication_OAuth2::class);
         $this->writeOneof(1, $var);
 
         return $this;

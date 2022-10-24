@@ -14,13 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class ResolveNameOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.resolver.Record.Auth auth = 1;</code>
-     */
-    protected $auth = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 2;</code>
+     * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 1;</code>
      */
     protected $target = null;
+    protected $targetx;
+    protected $auth;
 
     /**
      * Constructor.
@@ -28,8 +26,11 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Resolver\Record\Auth $auth
      *     @type \Eolymp\Resolver\Record\Target $target
+     *     @type \Eolymp\Universe\Space $space
+     *     @type \Eolymp\Judge\Contest $contest
+     *     @type \Eolymp\Ranker\Scoreboard $scoreboard
+     *     @type \Eolymp\Universe\Authentication\OAuth2 $oauth2
      * }
      */
     public function __construct($data = NULL) {
@@ -38,29 +39,7 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.resolver.Record.Auth auth = 1;</code>
-     * @return \Eolymp\Resolver\Record\Auth
-     */
-    public function getAuth()
-    {
-        return $this->auth;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.resolver.Record.Auth auth = 1;</code>
-     * @param \Eolymp\Resolver\Record\Auth $var
-     * @return $this
-     */
-    public function setAuth($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Resolver\Record_Auth::class);
-        $this->auth = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 2;</code>
+     * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 1;</code>
      * @return \Eolymp\Resolver\Record\Target
      */
     public function getTarget()
@@ -69,7 +48,7 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 2;</code>
+     * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 1;</code>
      * @param \Eolymp\Resolver\Record\Target $var
      * @return $this
      */
@@ -79,6 +58,110 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
         $this->target = $var;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space space = 10;</code>
+     * @return \Eolymp\Universe\Space
+     */
+    public function getSpace()
+    {
+        return $this->readOneof(10);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space space = 10;</code>
+     * @param \Eolymp\Universe\Space $var
+     * @return $this
+     */
+    public function setSpace($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Space::class);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 11;</code>
+     * @return \Eolymp\Judge\Contest
+     */
+    public function getContest()
+    {
+        return $this->readOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 11;</code>
+     * @param \Eolymp\Judge\Contest $var
+     * @return $this
+     */
+    public function setContest($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest::class);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 12;</code>
+     * @return \Eolymp\Ranker\Scoreboard
+     */
+    public function getScoreboard()
+    {
+        return $this->readOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 12;</code>
+     * @param \Eolymp\Ranker\Scoreboard $var
+     * @return $this
+     */
+    public function setScoreboard($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard::class);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Authentication.OAuth2 oauth2 = 20;</code>
+     * @return \Eolymp\Universe\Authentication\OAuth2
+     */
+    public function getOauth2()
+    {
+        return $this->readOneof(20);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Authentication.OAuth2 oauth2 = 20;</code>
+     * @param \Eolymp\Universe\Authentication\OAuth2 $var
+     * @return $this
+     */
+    public function setOauth2($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Authentication_OAuth2::class);
+        $this->writeOneof(20, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTargetx()
+    {
+        return $this->whichOneof("targetx");
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuth()
+    {
+        return $this->whichOneof("auth");
     }
 
 }
