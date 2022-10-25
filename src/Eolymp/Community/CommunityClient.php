@@ -269,7 +269,7 @@ class CommunityClient {
         $context['name'] = "eolymp.community.Community/ListAttributes";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ListAttributesOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAttributesOutput::class, $context);
     }
 
 }
