@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.oauth2.CreateTokenOutput</code>
+ * Generated from protobuf message <code>eolymp.oauth2.TokenOutput</code>
  */
-class CreateTokenOutput extends \Google\Protobuf\Internal\Message
+class TokenOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string access_token = 1;</code>

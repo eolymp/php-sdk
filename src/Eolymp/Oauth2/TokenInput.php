@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.oauth2.CreateTokenInput</code>
+ * Generated from protobuf message <code>eolymp.oauth2.TokenInput</code>
  */
-class CreateTokenInput extends \Google\Protobuf\Internal\Message
+class TokenInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.oauth2.CreateTokenInput.GrantType grant_type = 1;</code>
+     * Generated from protobuf field <code>.eolymp.oauth2.TokenInput.GrantType grant_type = 1;</code>
      */
     protected $grant_type = 0;
     /**
@@ -93,7 +93,7 @@ class CreateTokenInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.oauth2.CreateTokenInput.GrantType grant_type = 1;</code>
+     * Generated from protobuf field <code>.eolymp.oauth2.TokenInput.GrantType grant_type = 1;</code>
      * @return int
      */
     public function getGrantType()
@@ -102,13 +102,13 @@ class CreateTokenInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.oauth2.CreateTokenInput.GrantType grant_type = 1;</code>
+     * Generated from protobuf field <code>.eolymp.oauth2.TokenInput.GrantType grant_type = 1;</code>
      * @param int $var
      * @return $this
      */
     public function setGrantType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Oauth2\CreateTokenInput_GrantType::class);
+        GPBUtil::checkEnum($var, \Eolymp\Oauth2\TokenInput_GrantType::class);
         $this->grant_type = $var;
 
         return $this;
