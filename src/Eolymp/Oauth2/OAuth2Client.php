@@ -28,11 +28,11 @@ class OAuth2Client {
      *
      * @return TokenOutput output message
      */
-    public function CreateToken(TokenInput $input, array $context = [])
+    public function Token(TokenInput $input, array $context = [])
     {
         $path = "/oauth2/token";
 
-        $context['name'] = "eolymp.oauth2.OAuth2/CreateToken";
+        $context['name'] = "eolymp.oauth2.OAuth2/Token";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, TokenOutput::class, $context);
@@ -52,6 +52,22 @@ class OAuth2Client {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeOutput::class, $context);
+    }
+
+    /**
+     * @param CallbackInput $input message
+     * @param array $context request parameters
+     *
+     * @return CallbackOutput output message
+     */
+    public function Callback(CallbackInput $input, array $context = [])
+    {
+        $path = "/oauth2/callback";
+
+        $context['name'] = "eolymp.oauth2.OAuth2/Callback";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CallbackOutput::class, $context);
     }
 
 }
