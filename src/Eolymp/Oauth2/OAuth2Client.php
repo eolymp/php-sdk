@@ -35,7 +35,7 @@ class OAuth2Client {
         $context['name'] = "eolymp.oauth2.OAuth2/Token";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, TokenOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TokenOutput::class, $context);
     }
 
     /**
