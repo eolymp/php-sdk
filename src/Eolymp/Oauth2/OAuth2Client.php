@@ -35,7 +35,7 @@ class OAuth2Client {
         $context['name'] = "eolymp.oauth2.OAuth2/Token";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TokenOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, TokenOutput::class, $context);
     }
 
     /**
@@ -51,7 +51,7 @@ class OAuth2Client {
         $context['name'] = "eolymp.oauth2.OAuth2/Authorize";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, AuthorizeOutput::class, $context);
     }
 
     /**
@@ -67,7 +67,7 @@ class OAuth2Client {
         $context['name'] = "eolymp.oauth2.OAuth2/Callback";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CallbackOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, CallbackOutput::class, $context);
     }
 
 }
