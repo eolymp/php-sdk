@@ -9,15 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.ConfigureAuthInput</code>
+ * Generated from protobuf message <code>eolymp.universe.ConfigureIdentityProviderInput</code>
  */
-class ConfigureAuthInput extends \Google\Protobuf\Internal\Message
+class ConfigureIdentityProviderInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
-    protected $auth;
+    protected $provider;
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class ConfigureAuthInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $space_id
-     *     @type \Eolymp\Universe\IdentityProvider\OAuth2 $oauth2
+     *     @type \Eolymp\Universe\IdentityProvider\OIDC $oidc
      * }
      */
     public function __construct($data = NULL) {
@@ -57,22 +57,22 @@ class ConfigureAuthInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.IdentityProvider.OAuth2 oauth2 = 10;</code>
-     * @return \Eolymp\Universe\IdentityProvider\OAuth2
+     * Generated from protobuf field <code>.eolymp.universe.IdentityProvider.OIDC oidc = 10;</code>
+     * @return \Eolymp\Universe\IdentityProvider\OIDC
      */
-    public function getOauth2()
+    public function getOidc()
     {
         return $this->readOneof(10);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.IdentityProvider.OAuth2 oauth2 = 10;</code>
-     * @param \Eolymp\Universe\IdentityProvider\OAuth2 $var
+     * Generated from protobuf field <code>.eolymp.universe.IdentityProvider.OIDC oidc = 10;</code>
+     * @param \Eolymp\Universe\IdentityProvider\OIDC $var
      * @return $this
      */
-    public function setOauth2($var)
+    public function setOidc($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\IdentityProvider_OAuth2::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\IdentityProvider_OIDC::class);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -81,9 +81,9 @@ class ConfigureAuthInput extends \Google\Protobuf\Internal\Message
     /**
      * @return string
      */
-    public function getAuth()
+    public function getProvider()
     {
-        return $this->whichOneof("auth");
+        return $this->whichOneof("provider");
     }
 
 }

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.DescribeAuthInput</code>
+ * Generated from protobuf message <code>eolymp.universe.DescribeIdentityProviderInput</code>
  */
-class DescribeAuthInput extends \Google\Protobuf\Internal\Message
+class DescribeIdentityProviderInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string space_id = 1;</code>

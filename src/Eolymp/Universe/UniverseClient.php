@@ -164,45 +164,45 @@ class UniverseClient {
     }
 
     /**
-     * Describe auth configuration
+     * Describe identity provider configuration
      *
-     * @param DescribeAuthInput $input message
+     * @param DescribeIdentityProviderInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeAuthOutput output message
+     * @return DescribeIdentityProviderOutput output message
      */
-    public function DescribeAuth(DescribeAuthInput $input, array $context = [])
+    public function DescribeIdentityProvider(DescribeIdentityProviderInput $input, array $context = [])
     {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/auth";
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/idp";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.universe.Universe/DescribeAuth";
+        $context['name'] = "eolymp.universe.Universe/DescribeIdentityProvider";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAuthOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeIdentityProviderOutput::class, $context);
     }
 
     /**
-     * Update auth configuration
+     * Update identity provider configuration
      *
-     * @param ConfigureAuthInput $input message
+     * @param ConfigureIdentityProviderInput $input message
      * @param array $context request parameters
      *
-     * @return ConfigureAuthOutput output message
+     * @return ConfigureIdentityProviderOutput output message
      */
-    public function ConfigureAuth(ConfigureAuthInput $input, array $context = [])
+    public function ConfigureIdentityProvider(ConfigureIdentityProviderInput $input, array $context = [])
     {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/auth";
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/idp";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.universe.Universe/ConfigureAuth";
+        $context['name'] = "eolymp.universe.Universe/ConfigureIdentityProvider";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureAuthOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureIdentityProviderOutput::class, $context);
     }
 
     /**

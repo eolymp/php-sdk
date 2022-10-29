@@ -30,7 +30,7 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Universe\Space $space
      *     @type \Eolymp\Judge\Contest $contest
      *     @type \Eolymp\Ranker\Scoreboard $scoreboard
-     *     @type \Eolymp\Universe\IdentityProvider\OAuth2 $oauth2
+     *     @type \Eolymp\Resolver\Authorization\OAuth2 $oauth2
      * }
      */
     public function __construct($data = NULL) {
@@ -127,8 +127,8 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.IdentityProvider.OAuth2 oauth2 = 20;</code>
-     * @return \Eolymp\Universe\IdentityProvider\OAuth2
+     * Generated from protobuf field <code>.eolymp.resolver.Authorization.OAuth2 oauth2 = 20;</code>
+     * @return \Eolymp\Resolver\Authorization\OAuth2
      */
     public function getOauth2()
     {
@@ -136,13 +136,13 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.IdentityProvider.OAuth2 oauth2 = 20;</code>
-     * @param \Eolymp\Universe\IdentityProvider\OAuth2 $var
+     * Generated from protobuf field <code>.eolymp.resolver.Authorization.OAuth2 oauth2 = 20;</code>
+     * @param \Eolymp\Resolver\Authorization\OAuth2 $var
      * @return $this
      */
     public function setOauth2($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\IdentityProvider_OAuth2::class);
+        GPBUtil::checkMessage($var, \Eolymp\Resolver\Authorization_OAuth2::class);
         $this->writeOneof(20, $var);
 
         return $this;
