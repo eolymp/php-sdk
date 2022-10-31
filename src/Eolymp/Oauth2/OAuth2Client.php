@@ -70,4 +70,20 @@ class OAuth2Client {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, CallbackOutput::class, $context);
     }
 
+    /**
+     * @param UserInfoInput $input message
+     * @param array $context request parameters
+     *
+     * @return UserInfoOutput output message
+     */
+    public function UserInfo(UserInfoInput $input, array $context = [])
+    {
+        $path = "/oauth2/userinfo";
+
+        $context['name'] = "eolymp.oauth2.OAuth2/UserInfo";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, UserInfoOutput::class, $context);
+    }
+
 }
