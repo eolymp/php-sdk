@@ -46,9 +46,9 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>string email_verified = 9;</code>
+     * Generated from protobuf field <code>bool email_verified = 9;</code>
      */
-    protected $email_verified = '';
+    protected $email_verified = false;
     /**
      * Generated from protobuf field <code>string locale = 10;</code>
      */
@@ -68,7 +68,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
      *     @type string $nickname
      *     @type string $picture
      *     @type string $email
-     *     @type string $email_verified
+     *     @type bool $email_verified
      *     @type string $locale
      * }
      */
@@ -254,8 +254,8 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email_verified = 9;</code>
-     * @return string
+     * Generated from protobuf field <code>bool email_verified = 9;</code>
+     * @return bool
      */
     public function getEmailVerified()
     {
@@ -263,13 +263,13 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email_verified = 9;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool email_verified = 9;</code>
+     * @param bool $var
      * @return $this
      */
     public function setEmailVerified($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkBool($var);
         $this->email_verified = $var;
 
         return $this;
