@@ -53,6 +53,10 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 10;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>string profile = 11;</code>
+     */
+    protected $profile = '';
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type bool $email_verified
      *     @type string $locale
+     *     @type string $profile
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +298,28 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile = 11;</code>
+     * @return string
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProfile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->profile = $var;
 
         return $this;
     }
