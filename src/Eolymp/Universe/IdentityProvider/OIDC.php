@@ -33,6 +33,10 @@ class OIDC extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string keys_endpoint = 22;</code>
      */
     protected $keys_endpoint = '';
+    /**
+     * Generated from protobuf field <code>string userinfo_endpoint = 23;</code>
+     */
+    protected $userinfo_endpoint = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class OIDC extends \Google\Protobuf\Internal\Message
      *     @type string $authorize_endpoint
      *     @type string $token_endpoint
      *     @type string $keys_endpoint
+     *     @type string $userinfo_endpoint
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class OIDC extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->keys_endpoint = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_endpoint = 23;</code>
+     * @return string
+     */
+    public function getUserinfoEndpoint()
+    {
+        return $this->userinfo_endpoint;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_endpoint = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserinfoEndpoint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->userinfo_endpoint = $var;
 
         return $this;
     }

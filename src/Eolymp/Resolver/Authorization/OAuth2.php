@@ -26,7 +26,11 @@ class OAuth2 extends \Google\Protobuf\Internal\Message
      */
     protected $authorize_endpoint = '';
     /**
-     * Generated from protobuf field <code>string signout_endpoint = 4;</code>
+     * Generated from protobuf field <code>string userinfo_endpoint = 4;</code>
+     */
+    protected $userinfo_endpoint = '';
+    /**
+     * Generated from protobuf field <code>string signout_endpoint = 5;</code>
      */
     protected $signout_endpoint = '';
 
@@ -39,6 +43,7 @@ class OAuth2 extends \Google\Protobuf\Internal\Message
      *     @type string $client_id
      *     @type string $token_endpoint
      *     @type string $authorize_endpoint
+     *     @type string $userinfo_endpoint
      *     @type string $signout_endpoint
      * }
      */
@@ -114,7 +119,29 @@ class OAuth2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string signout_endpoint = 4;</code>
+     * Generated from protobuf field <code>string userinfo_endpoint = 4;</code>
+     * @return string
+     */
+    public function getUserinfoEndpoint()
+    {
+        return $this->userinfo_endpoint;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_endpoint = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserinfoEndpoint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->userinfo_endpoint = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string signout_endpoint = 5;</code>
      * @return string
      */
     public function getSignoutEndpoint()
@@ -123,7 +150,7 @@ class OAuth2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string signout_endpoint = 4;</code>
+     * Generated from protobuf field <code>string signout_endpoint = 5;</code>
      * @param string $var
      * @return $this
      */
