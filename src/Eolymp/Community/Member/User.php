@@ -14,9 +14,59 @@ use Google\Protobuf\Internal\GPBUtil;
 class User extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * deprecated
+     *
+     * Generated from protobuf field <code>string user_id = 9999;</code>
      */
     protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>string issuer = 1;</code>
+     */
+    protected $issuer = '';
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
+     */
+    protected $subject = '';
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string given_name = 4;</code>
+     */
+    protected $given_name = '';
+    /**
+     * Generated from protobuf field <code>string family_name = 5;</code>
+     */
+    protected $family_name = '';
+    /**
+     * Generated from protobuf field <code>string middle_name = 6;</code>
+     */
+    protected $middle_name = '';
+    /**
+     * Generated from protobuf field <code>string nickname = 7;</code>
+     */
+    protected $nickname = '';
+    /**
+     * Generated from protobuf field <code>string picture = 8;</code>
+     */
+    protected $picture = '';
+    /**
+     * Generated from protobuf field <code>string email = 9;</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool email_verified = 10;</code>
+     */
+    protected $email_verified = false;
+    /**
+     * Generated from protobuf field <code>string profile = 11;</code>
+     */
+    protected $profile = '';
+    /**
+     * Generated from protobuf field <code>string locale = 12;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -25,6 +75,19 @@ class User extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
+     *           deprecated
+     *     @type string $issuer
+     *     @type string $subject
+     *     @type string $name
+     *     @type string $given_name
+     *     @type string $family_name
+     *     @type string $middle_name
+     *     @type string $nickname
+     *     @type string $picture
+     *     @type string $email
+     *     @type bool $email_verified
+     *     @type string $profile
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +96,9 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * deprecated
+     *
+     * Generated from protobuf field <code>string user_id = 9999;</code>
      * @return string
      */
     public function getUserId()
@@ -42,7 +107,9 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * deprecated
+     *
+     * Generated from protobuf field <code>string user_id = 9999;</code>
      * @param string $var
      * @return $this
      */
@@ -50,6 +117,270 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 1;</code>
+     * @return string
+     */
+    public function getIssuer()
+    {
+        return $this->issuer;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIssuer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->issuer = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubject($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->subject = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string given_name = 4;</code>
+     * @return string
+     */
+    public function getGivenName()
+    {
+        return $this->given_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string given_name = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGivenName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->given_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string family_name = 5;</code>
+     * @return string
+     */
+    public function getFamilyName()
+    {
+        return $this->family_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string family_name = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFamilyName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->family_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string middle_name = 6;</code>
+     * @return string
+     */
+    public function getMiddleName()
+    {
+        return $this->middle_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string middle_name = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMiddleName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->middle_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 7;</code>
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNickname($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 8;</code>
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPicture($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->picture = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 9;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 10;</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile = 11;</code>
+     * @return string
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    /**
+     * Generated from protobuf field <code>string profile = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProfile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->profile = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 12;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
