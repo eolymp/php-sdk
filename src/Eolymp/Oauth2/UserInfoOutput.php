@@ -14,47 +14,51 @@ use Google\Protobuf\Internal\GPBUtil;
 class UserInfoOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string subject = 1;</code>
+     * Generated from protobuf field <code>string issuer = 1;</code>
+     */
+    protected $issuer = '';
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string given_name = 3;</code>
+     * Generated from protobuf field <code>string given_name = 4;</code>
      */
     protected $given_name = '';
     /**
-     * Generated from protobuf field <code>string family_name = 4;</code>
+     * Generated from protobuf field <code>string family_name = 5;</code>
      */
     protected $family_name = '';
     /**
-     * Generated from protobuf field <code>string middle_name = 5;</code>
+     * Generated from protobuf field <code>string middle_name = 6;</code>
      */
     protected $middle_name = '';
     /**
-     * Generated from protobuf field <code>string nickname = 6;</code>
+     * Generated from protobuf field <code>string nickname = 7;</code>
      */
     protected $nickname = '';
     /**
-     * Generated from protobuf field <code>string picture = 7;</code>
+     * Generated from protobuf field <code>string picture = 8;</code>
      */
     protected $picture = '';
     /**
-     * Generated from protobuf field <code>string email = 8;</code>
+     * Generated from protobuf field <code>string email = 9;</code>
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>bool email_verified = 9;</code>
+     * Generated from protobuf field <code>bool email_verified = 10;</code>
      */
     protected $email_verified = false;
     /**
-     * Generated from protobuf field <code>string locale = 10;</code>
+     * Generated from protobuf field <code>string locale = 11;</code>
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>string profile = 11;</code>
+     * Generated from protobuf field <code>string profile = 12;</code>
      */
     protected $profile = '';
 
@@ -64,6 +68,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $issuer
      *     @type string $subject
      *     @type string $name
      *     @type string $given_name
@@ -83,7 +88,29 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 1;</code>
+     * Generated from protobuf field <code>string issuer = 1;</code>
+     * @return string
+     */
+    public function getIssuer()
+    {
+        return $this->issuer;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIssuer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->issuer = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
      * @return string
      */
     public function getSubject()
@@ -92,7 +119,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 1;</code>
+     * Generated from protobuf field <code>string subject = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -105,7 +132,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
     public function getName()
@@ -114,7 +141,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -127,7 +154,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string given_name = 3;</code>
+     * Generated from protobuf field <code>string given_name = 4;</code>
      * @return string
      */
     public function getGivenName()
@@ -136,7 +163,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string given_name = 3;</code>
+     * Generated from protobuf field <code>string given_name = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -149,7 +176,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string family_name = 4;</code>
+     * Generated from protobuf field <code>string family_name = 5;</code>
      * @return string
      */
     public function getFamilyName()
@@ -158,7 +185,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string family_name = 4;</code>
+     * Generated from protobuf field <code>string family_name = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -171,7 +198,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string middle_name = 5;</code>
+     * Generated from protobuf field <code>string middle_name = 6;</code>
      * @return string
      */
     public function getMiddleName()
@@ -180,7 +207,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string middle_name = 5;</code>
+     * Generated from protobuf field <code>string middle_name = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -193,7 +220,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 6;</code>
+     * Generated from protobuf field <code>string nickname = 7;</code>
      * @return string
      */
     public function getNickname()
@@ -202,7 +229,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 6;</code>
+     * Generated from protobuf field <code>string nickname = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -215,7 +242,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 7;</code>
+     * Generated from protobuf field <code>string picture = 8;</code>
      * @return string
      */
     public function getPicture()
@@ -224,7 +251,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 7;</code>
+     * Generated from protobuf field <code>string picture = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -237,7 +264,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 8;</code>
+     * Generated from protobuf field <code>string email = 9;</code>
      * @return string
      */
     public function getEmail()
@@ -246,7 +273,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 8;</code>
+     * Generated from protobuf field <code>string email = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -259,7 +286,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 9;</code>
+     * Generated from protobuf field <code>bool email_verified = 10;</code>
      * @return bool
      */
     public function getEmailVerified()
@@ -268,7 +295,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 9;</code>
+     * Generated from protobuf field <code>bool email_verified = 10;</code>
      * @param bool $var
      * @return $this
      */
@@ -281,7 +308,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 10;</code>
+     * Generated from protobuf field <code>string locale = 11;</code>
      * @return string
      */
     public function getLocale()
@@ -290,7 +317,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 10;</code>
+     * Generated from protobuf field <code>string locale = 11;</code>
      * @param string $var
      * @return $this
      */
@@ -303,7 +330,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string profile = 11;</code>
+     * Generated from protobuf field <code>string profile = 12;</code>
      * @return string
      */
     public function getProfile()
@@ -312,7 +339,7 @@ class UserInfoOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string profile = 11;</code>
+     * Generated from protobuf field <code>string profile = 12;</code>
      * @param string $var
      * @return $this
      */

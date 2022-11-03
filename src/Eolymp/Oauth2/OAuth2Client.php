@@ -86,4 +86,20 @@ class OAuth2Client {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, UserInfoOutput::class, $context);
     }
 
+    /**
+     * @param RevokeInput $input message
+     * @param array $context request parameters
+     *
+     * @return RevokeOutput output message
+     */
+    public function Revoke(RevokeInput $input, array $context = [])
+    {
+        $path = "/oauth2/revoke";
+
+        $context['name'] = "eolymp.oauth2.OAuth2/Revoke";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RevokeOutput::class, $context);
+    }
+
 }
