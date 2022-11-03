@@ -87,6 +87,24 @@ class OAuth2Client {
     }
 
     /**
+     * Introspect oauth token, returns access token details for a given token.
+     *
+     * @param IntrospectInput $input message
+     * @param array $context request parameters
+     *
+     * @return IntrospectOutput output message
+     */
+    public function Introspect(IntrospectInput $input, array $context = [])
+    {
+        $path = "/oauth2/introspect";
+
+        $context['name'] = "eolymp.oauth2.OAuth2/Introspect";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectOutput::class, $context);
+    }
+
+    /**
      * @param RevokeInput $input message
      * @param array $context request parameters
      *
