@@ -23,6 +23,24 @@ class CognitoClient {
     }
 
     /**
+     * Create authorization code.
+     *
+     * @param CreateAuthorizationInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateAuthorizationOutput output message
+     */
+    public function CreateAuthorization(CreateAuthorizationInput $input, array $context = [])
+    {
+        $path = "/self/authorize";
+
+        $context['name'] = "eolymp.cognito.Cognito/CreateAuthorization";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAuthorizationOutput::class, $context);
+    }
+
+    /**
      * Signout revokes all user's tokens or all tokens of current session.
      *
      * @param SignoutInput $input message
