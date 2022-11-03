@@ -30,12 +30,6 @@ class Reply extends \Google\Protobuf\Internal\Message
      */
     protected $ticket_id = '';
     /**
-     * User who added this reply.
-     *
-     * Generated from protobuf field <code>string user_id = 3;</code>
-     */
-    protected $user_id = '';
-    /**
      * Message of the reply.
      *
      * Generated from protobuf field <code>string message = 10;</code>
@@ -47,6 +41,7 @@ class Reply extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
      */
     protected $created_at = null;
+    protected $author;
 
     /**
      * Constructor.
@@ -60,7 +55,7 @@ class Reply extends \Google\Protobuf\Internal\Message
      *     @type string $ticket_id
      *           Ticket this reply belongs to.
      *     @type string $user_id
-     *           User who added this reply.
+     *     @type string $member_id
      *     @type string $message
      *           Message of the reply.
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -147,19 +142,15 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * User who added this reply.
-     *
      * Generated from protobuf field <code>string user_id = 3;</code>
      * @return string
      */
     public function getUserId()
     {
-        return $this->user_id;
+        return $this->readOneof(3);
     }
 
     /**
-     * User who added this reply.
-     *
      * Generated from protobuf field <code>string user_id = 3;</code>
      * @param string $var
      * @return $this
@@ -167,7 +158,29 @@ class Reply extends \Google\Protobuf\Internal\Message
     public function setUserId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->readOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(4, $var);
 
         return $this;
     }
@@ -222,6 +235,14 @@ class Reply extends \Google\Protobuf\Internal\Message
         $this->created_at = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->whichOneof("author");
     }
 
 }

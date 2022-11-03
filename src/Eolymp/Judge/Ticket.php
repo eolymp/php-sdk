@@ -36,6 +36,12 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
+     * Member who opened the ticket.
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * Ticket subject. Max 255 symbols.
      *
      * Generated from protobuf field <code>string subject = 10;</code>
@@ -97,6 +103,8 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *           Contest where ticket was opened.
      *     @type string $participant_id
      *           Participant who opened the ticket.
+     *     @type string $member_id
+     *           Member who opened the ticket.
      *     @type string $subject
      *           Ticket subject. Max 255 symbols.
      *     @type string $message
@@ -216,6 +224,32 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->participant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Member who opened the ticket.
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Member who opened the ticket.
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
