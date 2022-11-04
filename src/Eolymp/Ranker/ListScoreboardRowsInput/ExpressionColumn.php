@@ -25,6 +25,10 @@ class ExpressionColumn extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt number = 11;</code>
      */
     protected $number = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionEnum enum = 12;</code>
+     */
+    protected $enum = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class ExpressionColumn extends \Google\Protobuf\Internal\Message
      *     @type string $key
      *     @type \Eolymp\Wellknown\ExpressionString $string
      *     @type \Eolymp\Wellknown\ExpressionInt $number
+     *     @type \Eolymp\Wellknown\ExpressionEnum $enum
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class ExpressionColumn extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Wellknown\ExpressionInt::class);
         $this->number = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionEnum enum = 12;</code>
+     * @return \Eolymp\Wellknown\ExpressionEnum
+     */
+    public function getEnum()
+    {
+        return $this->enum;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionEnum enum = 12;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum $var
+     * @return $this
+     */
+    public function setEnum($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->enum = $var;
 
         return $this;
     }
