@@ -46,6 +46,10 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $visible = false;
     /**
+     * Generated from protobuf field <code>bool filterable = 9;</code>
+     */
+    protected $filterable = false;
+    /**
      * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      */
     protected $judge_contest_id = '';
@@ -80,6 +84,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *     @type int $index
      *     @type bool $visible
+     *     @type bool $filterable
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
      *     @type string $community_attribute_key
@@ -264,6 +269,28 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->visible = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool filterable = 9;</code>
+     * @return bool
+     */
+    public function getFilterable()
+    {
+        return $this->filterable;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool filterable = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFilterable($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->filterable = $var;
 
         return $this;
     }
