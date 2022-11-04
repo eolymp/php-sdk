@@ -205,6 +205,26 @@ class RankerClient {
     }
 
     /**
+     * @param UpdateScoreboardColumnInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateScoreboardColumnOutput output message
+     */
+    public function UpdateScoreboardColumn(UpdateScoreboardColumnInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/columns/".rawurlencode($input->getColumnId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+        $input->setColumnId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/UpdateScoreboardColumn";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateScoreboardColumnOutput::class, $context);
+    }
+
+    /**
      * @param DeleteScoreboardColumnInput $input message
      * @param array $context request parameters
      *
