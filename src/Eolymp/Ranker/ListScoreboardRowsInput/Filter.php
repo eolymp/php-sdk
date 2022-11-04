@@ -18,7 +18,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $member_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ColumnFilter column = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ExpressionColumn column = 2;</code>
      */
     private $column;
 
@@ -29,7 +29,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $member_id
-     *     @type \Eolymp\Ranker\ListScoreboardRowsInput\ColumnFilter[]|\Google\Protobuf\Internal\RepeatedField $column
+     *     @type \Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn[]|\Google\Protobuf\Internal\RepeatedField $column
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ColumnFilter column = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ExpressionColumn column = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getColumn()
@@ -69,13 +69,13 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ColumnFilter column = 2;</code>
-     * @param \Eolymp\Ranker\ListScoreboardRowsInput\ColumnFilter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ExpressionColumn column = 2;</code>
+     * @param \Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setColumn($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\ListScoreboardRowsInput\ColumnFilter::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn::class);
         $this->column = $arr;
 
         return $this;

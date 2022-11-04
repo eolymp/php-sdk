@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.ListScoreboardRowsInput.ColumnFilter</code>
+ * Generated from protobuf message <code>eolymp.ranker.ListScoreboardRowsInput.ExpressionColumn</code>
  */
-class ColumnFilter extends \Google\Protobuf\Internal\Message
+class ExpressionColumn extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string key = 1;</code>
@@ -111,5 +111,5 @@ class ColumnFilter extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ColumnFilter::class, \Eolymp\Ranker\ListScoreboardRowsInput_ColumnFilter::class);
+class_alias(ExpressionColumn::class, \Eolymp\Ranker\ListScoreboardRowsInput_ExpressionColumn::class);
 
