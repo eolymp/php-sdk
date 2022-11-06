@@ -13,10 +13,6 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class ConfigureIdentityProviderInput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string space_id = 1;</code>
-     */
-    protected $space_id = '';
     protected $provider;
 
     /**
@@ -25,35 +21,12 @@ class ConfigureIdentityProviderInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $space_id
      *     @type \Eolymp\Community\IdentityProvider\OIDC $oidc
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Community::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string space_id = 1;</code>
-     * @return string
-     */
-    public function getSpaceId()
-    {
-        return $this->space_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string space_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSpaceId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->space_id = $var;
-
-        return $this;
     }
 
     /**
