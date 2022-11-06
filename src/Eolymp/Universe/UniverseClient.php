@@ -164,48 +164,6 @@ class UniverseClient {
     }
 
     /**
-     * Describe identity provider configuration
-     *
-     * @param DescribeIdentityProviderInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeIdentityProviderOutput output message
-     */
-    public function DescribeIdentityProvider(DescribeIdentityProviderInput $input, array $context = [])
-    {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/idp";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSpaceId("");
-
-        $context['name'] = "eolymp.universe.Universe/DescribeIdentityProvider";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeIdentityProviderOutput::class, $context);
-    }
-
-    /**
-     * Update identity provider configuration
-     *
-     * @param ConfigureIdentityProviderInput $input message
-     * @param array $context request parameters
-     *
-     * @return ConfigureIdentityProviderOutput output message
-     */
-    public function ConfigureIdentityProvider(ConfigureIdentityProviderInput $input, array $context = [])
-    {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/idp";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSpaceId("");
-
-        $context['name'] = "eolymp.universe.Universe/ConfigureIdentityProvider";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureIdentityProviderOutput::class, $context);
-    }
-
-    /**
      * Add space permission
      *
      * @param GrantPermissionInput $input message
