@@ -21,12 +21,35 @@ class DescribeIdentityProviderOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type bool $local
      *     @type \Eolymp\Community\IdentityProvider\OIDC $oidc
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Community::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool local = 1;</code>
+     * @return bool
+     */
+    public function getLocal()
+    {
+        return $this->readOneof(1);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool local = 1;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLocal($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(1, $var);
+
+        return $this;
     }
 
     /**

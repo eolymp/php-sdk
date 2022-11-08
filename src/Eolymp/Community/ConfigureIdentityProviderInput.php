@@ -21,6 +21,7 @@ class ConfigureIdentityProviderInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type bool $local
      *     @type \Eolymp\Community\IdentityProvider\OIDC $oidc
      * }
      */
@@ -30,23 +31,45 @@ class ConfigureIdentityProviderInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.IdentityProvider.OIDC oidc = 12;</code>
+     * Generated from protobuf field <code>bool local = 1;</code>
+     * @return bool
+     */
+    public function getLocal()
+    {
+        return $this->readOneof(1);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool local = 1;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setLocal($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.IdentityProvider.OIDC oidc = 3;</code>
      * @return \Eolymp\Community\IdentityProvider\OIDC
      */
     public function getOidc()
     {
-        return $this->readOneof(12);
+        return $this->readOneof(3);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.IdentityProvider.OIDC oidc = 12;</code>
+     * Generated from protobuf field <code>.eolymp.community.IdentityProvider.OIDC oidc = 3;</code>
      * @param \Eolymp\Community\IdentityProvider\OIDC $var
      * @return $this
      */
     public function setOidc($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider_OIDC::class);
-        $this->writeOneof(12, $var);
+        $this->writeOneof(3, $var);
 
         return $this;
     }

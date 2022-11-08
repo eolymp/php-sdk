@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class User extends \Google\Protobuf\Internal\Message
 {
     /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string user_id = 9999;</code>
-     */
-    protected $user_id = '';
-    /**
      * Generated from protobuf field <code>string issuer = 1;</code>
      */
     protected $issuer = '';
@@ -67,6 +61,10 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 12;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>string password = 100;</code>
+     */
+    protected $password = '';
 
     /**
      * Constructor.
@@ -74,8 +72,6 @@ class User extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $user_id
-     *           deprecated
      *     @type string $issuer
      *     @type string $subject
      *     @type string $name
@@ -88,37 +84,12 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type bool $email_verified
      *     @type string $profile
      *     @type string $locale
+     *     @type string $password
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Member::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string user_id = 9999;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string user_id = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
-
-        return $this;
     }
 
     /**
@@ -381,6 +352,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string password = 100;</code>
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Generated from protobuf field <code>string password = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPassword($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->password = $var;
 
         return $this;
     }
