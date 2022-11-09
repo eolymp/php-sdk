@@ -9,40 +9,44 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.Member.User</code>
+ * Generated from protobuf message <code>eolymp.community.Member.Identity</code>
  */
-class User extends \Google\Protobuf\Internal\Message
+class Identity extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string issuer = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>string issuer = 2;</code>
      */
     protected $issuer = '';
     /**
-     * Generated from protobuf field <code>string subject = 2;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>string name = 3;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string nickname = 7;</code>
+     * Generated from protobuf field <code>string nickname = 5;</code>
      */
     protected $nickname = '';
     /**
-     * Generated from protobuf field <code>string picture = 8;</code>
+     * Generated from protobuf field <code>string picture = 6;</code>
      */
     protected $picture = '';
     /**
-     * Generated from protobuf field <code>string email = 9;</code>
+     * Generated from protobuf field <code>string email = 7;</code>
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>bool email_verified = 10;</code>
+     * Generated from protobuf field <code>bool email_verified = 8;</code>
      */
     protected $email_verified = false;
     /**
-     * Generated from protobuf field <code>string profile = 11;</code>
+     * Generated from protobuf field <code>string profile = 9;</code>
      */
     protected $profile = '';
     /**
@@ -56,6 +60,7 @@ class User extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $issuer
      *     @type string $subject
      *     @type string $name
@@ -73,7 +78,29 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string issuer = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 2;</code>
      * @return string
      */
     public function getIssuer()
@@ -82,7 +109,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string issuer = 1;</code>
+     * Generated from protobuf field <code>string issuer = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -95,7 +122,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 2;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      * @return string
      */
     public function getSubject()
@@ -104,7 +131,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 2;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -117,7 +144,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 3;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
      * @return string
      */
     public function getName()
@@ -126,7 +153,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 3;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -139,7 +166,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 7;</code>
+     * Generated from protobuf field <code>string nickname = 5;</code>
      * @return string
      */
     public function getNickname()
@@ -148,7 +175,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 7;</code>
+     * Generated from protobuf field <code>string nickname = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -161,7 +188,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 8;</code>
+     * Generated from protobuf field <code>string picture = 6;</code>
      * @return string
      */
     public function getPicture()
@@ -170,7 +197,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 8;</code>
+     * Generated from protobuf field <code>string picture = 6;</code>
      * @param string $var
      * @return $this
      */
@@ -183,7 +210,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 9;</code>
+     * Generated from protobuf field <code>string email = 7;</code>
      * @return string
      */
     public function getEmail()
@@ -192,7 +219,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 9;</code>
+     * Generated from protobuf field <code>string email = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -205,7 +232,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 10;</code>
+     * Generated from protobuf field <code>bool email_verified = 8;</code>
      * @return bool
      */
     public function getEmailVerified()
@@ -214,7 +241,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 10;</code>
+     * Generated from protobuf field <code>bool email_verified = 8;</code>
      * @param bool $var
      * @return $this
      */
@@ -227,7 +254,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string profile = 11;</code>
+     * Generated from protobuf field <code>string profile = 9;</code>
      * @return string
      */
     public function getProfile()
@@ -236,7 +263,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string profile = 11;</code>
+     * Generated from protobuf field <code>string profile = 9;</code>
      * @param string $var
      * @return $this
      */
@@ -273,5 +300,5 @@ class User extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(User::class, \Eolymp\Community\Member_User::class);
+class_alias(Identity::class, \Eolymp\Community\Member_Identity::class);
 

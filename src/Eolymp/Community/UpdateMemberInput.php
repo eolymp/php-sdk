@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateMemberInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateMemberInput.Patch patch = 1;</code>
+     */
+    private $patch;
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
      */
     protected $member = null;
 
@@ -28,6 +32,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $member_id
      *     @type \Eolymp\Community\Member $member
      * }
@@ -38,7 +43,29 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateMemberInput.Patch patch = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateMemberInput.Patch patch = 1;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdateMemberInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
     public function getMemberId()
@@ -47,7 +74,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
      * @return \Eolymp\Community\Member
      */
     public function getMember()
@@ -69,7 +96,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
      * @param \Eolymp\Community\Member $var
      * @return $this
      */

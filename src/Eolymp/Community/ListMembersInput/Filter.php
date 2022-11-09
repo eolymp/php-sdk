@@ -29,6 +29,18 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 4;</code>
      */
     private $name;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_name = 10;</code>
+     */
+    private $identity_name;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_nickname = 11;</code>
+     */
+    private $identity_nickname;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_email = 12;</code>
+     */
+    private $identity_email;
 
     /**
      * Constructor.
@@ -40,6 +52,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $user_id
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $disabled
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $identity_name
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $identity_nickname
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $identity_email
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +146,72 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
         $this->name = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_name = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getIdentityName()
+    {
+        return $this->identity_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_name = 10;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setIdentityName($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->identity_name = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_nickname = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getIdentityNickname()
+    {
+        return $this->identity_nickname;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_nickname = 11;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setIdentityNickname($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->identity_nickname = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_email = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getIdentityEmail()
+    {
+        return $this->identity_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString identity_email = 12;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setIdentityEmail($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->identity_email = $arr;
 
         return $this;
     }

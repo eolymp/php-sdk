@@ -184,6 +184,65 @@ class CommunityClient {
     }
 
     /**
+     * @param AddMemberIdentityInput $input message
+     * @param array $context request parameters
+     *
+     * @return AddMemberIdentityOutput output message
+     */
+    public function AddMemberIdentity(AddMemberIdentityInput $input, array $context = [])
+    {
+        $path = "/members/".rawurlencode($input->getMemberId())."/identities";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.community.Community/AddMemberIdentity";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddMemberIdentityOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateMemberIdentityInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateMemberIdentityOutput output message
+     */
+    public function UpdateMemberIdentity(UpdateMemberIdentityInput $input, array $context = [])
+    {
+        $path = "/members/".rawurlencode($input->getMemberId())."/identities/".rawurlencode($input->getIdentityId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setIdentityId("");
+
+        $context['name'] = "eolymp.community.Community/UpdateMemberIdentity";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateMemberIdentityOutput::class, $context);
+    }
+
+    /**
+     * @param RemoveMemberIdentityInput $input message
+     * @param array $context request parameters
+     *
+     * @return RemoveMemberIdentityOutput output message
+     */
+    public function RemoveMemberIdentity(RemoveMemberIdentityInput $input, array $context = [])
+    {
+        $path = "/members/".rawurlencode($input->getMemberId())."/identities/".rawurlencode($input->getIdentityId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setIdentityId("");
+
+        $context['name'] = "eolymp.community.Community/RemoveMemberIdentity";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveMemberIdentityOutput::class, $context);
+    }
+
+    /**
      * @param AddAttributeInput $input message
      * @param array $context request parameters
      *

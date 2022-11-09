@@ -50,9 +50,9 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.User users = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Identity identities = 10;</code>
      */
-    private $users;
+    private $identities;
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 20;</code>
      */
@@ -73,7 +73,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type bool $ghost
      *     @type bool $out_of_competition
      *     @type int $status
-     *     @type \Eolymp\Community\Member\User[]|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type \Eolymp\Community\Member\Identity[]|\Google\Protobuf\Internal\RepeatedField $identities
      *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
@@ -281,23 +281,23 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.User users = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Identity identities = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getUsers()
+    public function getIdentities()
     {
-        return $this->users;
+        return $this->identities;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.User users = 10;</code>
-     * @param \Eolymp\Community\Member\User[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Identity identities = 10;</code>
+     * @param \Eolymp\Community\Member\Identity[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setUsers($var)
+    public function setIdentities($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\User::class);
-        $this->users = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Identity::class);
+        $this->identities = $arr;
 
         return $this;
     }
