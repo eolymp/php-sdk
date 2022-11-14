@@ -18,17 +18,25 @@ class Consent extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.harmony.Consent.Status status = 2;</code>
+     * Generated from protobuf field <code>string agreement_id = 2;</code>
      */
-    protected $status = 0;
+    protected $agreement_id = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp set_on = 3;</code>
+     * Generated from protobuf field <code>string user_id = 3;</code>
      */
-    protected $set_on = null;
+    protected $user_id = '';
     /**
      * Generated from protobuf field <code>bool revocable = 4;</code>
      */
     protected $revocable = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.harmony.Consent.Status status = 10;</code>
+     */
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp set_on = 11;</code>
+     */
+    protected $set_on = null;
 
     /**
      * Constructor.
@@ -37,9 +45,11 @@ class Consent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $agreement_id
+     *     @type string $user_id
+     *     @type bool $revocable
      *     @type int $status
      *     @type \Google\Protobuf\Timestamp $set_on
-     *     @type bool $revocable
      * }
      */
     public function __construct($data = NULL) {
@@ -70,45 +80,45 @@ class Consent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.harmony.Consent.Status status = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>string agreement_id = 2;</code>
+     * @return string
      */
-    public function getStatus()
+    public function getAgreementId()
     {
-        return $this->status;
+        return $this->agreement_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.harmony.Consent.Status status = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string agreement_id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setAgreementId($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Harmony\Consent_Status::class);
-        $this->status = $var;
+        GPBUtil::checkString($var, True);
+        $this->agreement_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp set_on = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * Generated from protobuf field <code>string user_id = 3;</code>
+     * @return string
      */
-    public function getSetOn()
+    public function getUserId()
     {
-        return $this->set_on;
+        return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp set_on = 3;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>string user_id = 3;</code>
+     * @param string $var
      * @return $this
      */
-    public function setSetOn($var)
+    public function setUserId($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->set_on = $var;
+        GPBUtil::checkString($var, True);
+        $this->user_id = $var;
 
         return $this;
     }
@@ -131,6 +141,50 @@ class Consent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->revocable = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.harmony.Consent.Status status = 10;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.harmony.Consent.Status status = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Harmony\Consent_Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp set_on = 11;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getSetOn()
+    {
+        return $this->set_on;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp set_on = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setSetOn($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->set_on = $var;
 
         return $this;
     }
