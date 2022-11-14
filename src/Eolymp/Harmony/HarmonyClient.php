@@ -76,4 +76,23 @@ class HarmonyClient {
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SetConsentOutput::class, $context);
     }
 
+    /**
+     * @param FollowShortcutInput $input message
+     * @param array $context request parameters
+     *
+     * @return FollowShortcutOutput output message
+     */
+    public function FollowShortcut(FollowShortcutInput $input, array $context = [])
+    {
+        $path = "/harmony/shortcuts/".rawurlencode($input->getShortcutId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setShortcutId("");
+
+        $context['name'] = "eolymp.harmony.Harmony/FollowShortcut";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, FollowShortcutOutput::class, $context);
+    }
+
 }
