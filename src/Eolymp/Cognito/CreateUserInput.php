@@ -38,6 +38,18 @@ class CreateUserInput extends \Google\Protobuf\Internal\Message
      */
     protected $password = '';
     /**
+     * country
+     *
+     * Generated from protobuf field <code>string country = 5;</code>
+     */
+    protected $country = '';
+    /**
+     * birthday in format YYYY-MM-DD
+     *
+     * Generated from protobuf field <code>string birthday = 6;</code>
+     */
+    protected $birthday = '';
+    /**
      * captcha challenge
      *
      * Generated from protobuf field <code>string captcha = 10;</code>
@@ -64,6 +76,10 @@ class CreateUserInput extends \Google\Protobuf\Internal\Message
      *           email
      *     @type string $password
      *           password
+     *     @type string $country
+     *           country
+     *     @type string $birthday
+     *           birthday in format YYYY-MM-DD
      *     @type string $captcha
      *           captcha challenge
      *     @type string $locale
@@ -175,6 +191,58 @@ class CreateUserInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->password = $var;
+
+        return $this;
+    }
+
+    /**
+     * country
+     *
+     * Generated from protobuf field <code>string country = 5;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * country
+     *
+     * Generated from protobuf field <code>string country = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * birthday in format YYYY-MM-DD
+     *
+     * Generated from protobuf field <code>string birthday = 6;</code>
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * birthday in format YYYY-MM-DD
+     *
+     * Generated from protobuf field <code>string birthday = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBirthday($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->birthday = $var;
 
         return $this;
     }
