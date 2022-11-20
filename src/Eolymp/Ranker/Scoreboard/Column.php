@@ -50,6 +50,22 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $filterable = false;
     /**
+     * Generated from protobuf field <code>bool timeline_enabled = 30;</code>
+     */
+    protected $timeline_enabled = false;
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset = 31;</code>
+     */
+    protected $timeline_offset = 0;
+    /**
+     * Generated from protobuf field <code>uint32 timeline_duration = 32;</code>
+     */
+    protected $timeline_duration = 0;
+    /**
+     * Generated from protobuf field <code>uint32 timeline_freeze_time = 33;</code>
+     */
+    protected $timeline_freeze_time = 0;
+    /**
      * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      */
     protected $judge_contest_id = '';
@@ -85,6 +101,10 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type bool $visible
      *     @type bool $filterable
+     *     @type bool $timeline_enabled
+     *     @type int $timeline_offset
+     *     @type int $timeline_duration
+     *     @type int $timeline_freeze_time
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
      *     @type string $community_attribute_key
@@ -291,6 +311,94 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->filterable = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool timeline_enabled = 30;</code>
+     * @return bool
+     */
+    public function getTimelineEnabled()
+    {
+        return $this->timeline_enabled;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool timeline_enabled = 30;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTimelineEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->timeline_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset = 31;</code>
+     * @return int
+     */
+    public function getTimelineOffset()
+    {
+        return $this->timeline_offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset = 31;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineOffset($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_duration = 32;</code>
+     * @return int
+     */
+    public function getTimelineDuration()
+    {
+        return $this->timeline_duration;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_duration = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineDuration($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_freeze_time = 33;</code>
+     * @return int
+     */
+    public function getTimelineFreezeTime()
+    {
+        return $this->timeline_freeze_time;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_freeze_time = 33;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineFreezeTime($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_freeze_time = $var;
 
         return $this;
     }

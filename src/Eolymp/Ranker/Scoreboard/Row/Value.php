@@ -22,6 +22,18 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $column_id = '';
     /**
+     * Generated from protobuf field <code>bool timeline_set = 3;</code>
+     */
+    protected $timeline_set = false;
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_start = 4;</code>
+     */
+    protected $timeline_offset_start = 0;
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_end = 5;</code>
+     */
+    protected $timeline_offset_end = 0;
+    /**
      * score and related fields for CONTEST and PROBLEM columns.
      *
      * Generated from protobuf field <code>float score = 10;</code>
@@ -68,6 +80,9 @@ class Value extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $column_id
+     *     @type bool $timeline_set
+     *     @type int $timeline_offset_start
+     *     @type int $timeline_offset_end
      *     @type float $score
      *           score and related fields for CONTEST and PROBLEM columns.
      *     @type float $penalty
@@ -127,6 +142,72 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->column_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool timeline_set = 3;</code>
+     * @return bool
+     */
+    public function getTimelineSet()
+    {
+        return $this->timeline_set;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool timeline_set = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTimelineSet($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->timeline_set = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_start = 4;</code>
+     * @return int
+     */
+    public function getTimelineOffsetStart()
+    {
+        return $this->timeline_offset_start;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_start = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineOffsetStart($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_offset_start = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_end = 5;</code>
+     * @return int
+     */
+    public function getTimelineOffsetEnd()
+    {
+        return $this->timeline_offset_end;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_end = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineOffsetEnd($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_offset_end = $var;
 
         return $this;
     }

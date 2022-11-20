@@ -14,6 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Mode for fetching score value (see enum description).
+     *
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.FetchingMode mode = 10;</code>
+     */
+    protected $mode = 0;
+    /**
+     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
+     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
+     * This value is ignored if mode is not PUNCTUAL.
+     *
+     * Generated from protobuf field <code>int32 timeline_offset = 11;</code>
+     */
+    protected $timeline_offset = 0;
+    /**
      * Generated from protobuf field <code>string scoreboard_id = 1;</code>
      */
     protected $scoreboard_id = '';
@@ -28,6 +42,12 @@ class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $mode
+     *           Mode for fetching score value (see enum description).
+     *     @type int $timeline_offset
+     *           Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
+     *           seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
+     *           This value is ignored if mode is not PUNCTUAL.
      *     @type string $scoreboard_id
      *     @type string $member_id
      * }
@@ -35,6 +55,62 @@ class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Ranker\Ranker::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Mode for fetching score value (see enum description).
+     *
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.FetchingMode mode = 10;</code>
+     * @return int
+     */
+    public function getMode()
+    {
+        return $this->mode;
+    }
+
+    /**
+     * Mode for fetching score value (see enum description).
+     *
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.FetchingMode mode = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMode($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard_FetchingMode::class);
+        $this->mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
+     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
+     * This value is ignored if mode is not PUNCTUAL.
+     *
+     * Generated from protobuf field <code>int32 timeline_offset = 11;</code>
+     * @return int
+     */
+    public function getTimelineOffset()
+    {
+        return $this->timeline_offset;
+    }
+
+    /**
+     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
+     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
+     * This value is ignored if mode is not PUNCTUAL.
+     *
+     * Generated from protobuf field <code>int32 timeline_offset = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->timeline_offset = $var;
+
+        return $this;
     }
 
     /**
