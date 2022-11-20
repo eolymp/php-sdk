@@ -32,6 +32,18 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Flag identifying scoreboard as frozen
+     *
+     * Generated from protobuf field <code>bool frozen = 4;</code>
+     */
+    protected $frozen = false;
+    /**
+     * Timeline provides information about stages and freeze times
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Timeline timeline = 5;</code>
+     */
+    private $timeline;
+    /**
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      */
     protected $format = 0;
@@ -48,6 +60,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           A user friendly identifier for the scoreboard, used as part of the domain name for the scoreboard.
      *     @type string $name
      *           A user friendly name for the scoreboard.
+     *     @type bool $frozen
+     *           Flag identifying scoreboard as frozen
+     *     @type \Eolymp\Ranker\Scoreboard\Timeline[]|\Google\Protobuf\Internal\RepeatedField $timeline
+     *           Timeline provides information about stages and freeze times
      *     @type int $format
      * }
      */
@@ -130,6 +146,58 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Flag identifying scoreboard as frozen
+     *
+     * Generated from protobuf field <code>bool frozen = 4;</code>
+     * @return bool
+     */
+    public function getFrozen()
+    {
+        return $this->frozen;
+    }
+
+    /**
+     * Flag identifying scoreboard as frozen
+     *
+     * Generated from protobuf field <code>bool frozen = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFrozen($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->frozen = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timeline provides information about stages and freeze times
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Timeline timeline = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTimeline()
+    {
+        return $this->timeline;
+    }
+
+    /**
+     * Timeline provides information about stages and freeze times
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Timeline timeline = 5;</code>
+     * @param \Eolymp\Ranker\Scoreboard\Timeline[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTimeline($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Timeline::class);
+        $this->timeline = $arr;
 
         return $this;
     }

@@ -13,21 +13,15 @@ class FetchingMode
 {
     /**
      * Actual score returns score at the moment of participation. This mode is intended to show scoreboard to
-     * participants. This mode returns score following these rules:
-     * - During scoreboard freezing time, frozen scores are reported.
-     * - In virtual contests (everyone can start at different time), score values are returned relatively to the
-     *   starting time. For instance, authenticated user who has been participating for 1 hour, will receive scores at 1
-     *   hour mark, as user progresses further, more score updates will be revealed.
-     * - If authenticated user is not participating in the contest, an error will be returned (even if requested by a
-     *   user with admin permissions)
+     * participants and guests. This mode returns frozen score during freeze time and latest score otherwise.
      *
      * Generated from protobuf enum <code>ACTUAL = 0;</code>
      */
     const ACTUAL = 0;
     /**
      * Punctual score returns score at particular moment, use time_offset parameter to specify time. This mode is
-     * intended to show historical score at a given moment. Value for time_offset will be capped by the freezing time
-     * for participants.
+     * intended to show historical score at a given moment. Value will be capped by freeze time if user does not
+     * have admin permissions.
      *
      * Generated from protobuf enum <code>PUNCTUAL = 1;</code>
      */

@@ -22,15 +22,23 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $column_id = '';
     /**
+     * value uses historical storage, if false timeline_ fields are not populated
+     *
      * Generated from protobuf field <code>bool timeline_set = 3;</code>
      */
     protected $timeline_set = false;
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_start = 4;</code>
+     * value is the latest value recorded in the historical store
+     *
+     * Generated from protobuf field <code>bool timeline_latest = 4;</code>
+     */
+    protected $timeline_latest = false;
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_start = 5;</code>
      */
     protected $timeline_offset_start = 0;
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_end = 5;</code>
+     * Generated from protobuf field <code>uint32 timeline_offset_end = 6;</code>
      */
     protected $timeline_offset_end = 0;
     /**
@@ -81,6 +89,9 @@ class Value extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $column_id
      *     @type bool $timeline_set
+     *           value uses historical storage, if false timeline_ fields are not populated
+     *     @type bool $timeline_latest
+     *           value is the latest value recorded in the historical store
      *     @type int $timeline_offset_start
      *     @type int $timeline_offset_end
      *     @type float $score
@@ -147,6 +158,8 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * value uses historical storage, if false timeline_ fields are not populated
+     *
      * Generated from protobuf field <code>bool timeline_set = 3;</code>
      * @return bool
      */
@@ -156,6 +169,8 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * value uses historical storage, if false timeline_ fields are not populated
+     *
      * Generated from protobuf field <code>bool timeline_set = 3;</code>
      * @param bool $var
      * @return $this
@@ -169,7 +184,33 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_start = 4;</code>
+     * value is the latest value recorded in the historical store
+     *
+     * Generated from protobuf field <code>bool timeline_latest = 4;</code>
+     * @return bool
+     */
+    public function getTimelineLatest()
+    {
+        return $this->timeline_latest;
+    }
+
+    /**
+     * value is the latest value recorded in the historical store
+     *
+     * Generated from protobuf field <code>bool timeline_latest = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTimelineLatest($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->timeline_latest = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 timeline_offset_start = 5;</code>
      * @return int
      */
     public function getTimelineOffsetStart()
@@ -178,7 +219,7 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_start = 4;</code>
+     * Generated from protobuf field <code>uint32 timeline_offset_start = 5;</code>
      * @param int $var
      * @return $this
      */
@@ -191,7 +232,7 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_end = 5;</code>
+     * Generated from protobuf field <code>uint32 timeline_offset_end = 6;</code>
      * @return int
      */
     public function getTimelineOffsetEnd()
@@ -200,7 +241,7 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_end = 5;</code>
+     * Generated from protobuf field <code>uint32 timeline_offset_end = 6;</code>
      * @param int $var
      * @return $this
      */
