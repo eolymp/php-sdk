@@ -44,9 +44,15 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $timeline_position = 0;
     /**
+     * Total timeline duration.
+     *
+     * Generated from protobuf field <code>uint32 timeline_duration = 6;</code>
+     */
+    protected $timeline_duration = 0;
+    /**
      * Timeline provides information about stages and freeze times.
      *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 7;</code>
      */
     private $timeline_segments;
     /**
@@ -70,6 +76,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           Flag identifying scoreboard as frozen.
      *     @type int $timeline_position
      *           Current timeline offset.
+     *     @type int $timeline_duration
+     *           Total timeline duration.
      *     @type \Eolymp\Ranker\Scoreboard\TimelineSegment[]|\Google\Protobuf\Internal\RepeatedField $timeline_segments
      *           Timeline provides information about stages and freeze times.
      *     @type int $format
@@ -211,9 +219,35 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Total timeline duration.
+     *
+     * Generated from protobuf field <code>uint32 timeline_duration = 6;</code>
+     * @return int
+     */
+    public function getTimelineDuration()
+    {
+        return $this->timeline_duration;
+    }
+
+    /**
+     * Total timeline duration.
+     *
+     * Generated from protobuf field <code>uint32 timeline_duration = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineDuration($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_duration = $var;
+
+        return $this;
+    }
+
+    /**
      * Timeline provides information about stages and freeze times.
      *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTimelineSegments()
@@ -224,7 +258,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     /**
      * Timeline provides information about stages and freeze times.
      *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 7;</code>
      * @param \Eolymp\Ranker\Scoreboard\TimelineSegment[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
