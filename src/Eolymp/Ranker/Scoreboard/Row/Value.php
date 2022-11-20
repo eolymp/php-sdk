@@ -22,25 +22,25 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $column_id = '';
     /**
-     * value uses historical storage, if false timeline_ fields are not populated
+     * value uses historical storage, if false start & end times are not populated
      *
-     * Generated from protobuf field <code>bool timeline_set = 3;</code>
+     * Generated from protobuf field <code>bool historical = 3;</code>
      */
-    protected $timeline_set = false;
+    protected $historical = false;
     /**
      * value is the latest value recorded in the historical store
      *
-     * Generated from protobuf field <code>bool timeline_latest = 4;</code>
+     * Generated from protobuf field <code>bool latest = 4;</code>
      */
-    protected $timeline_latest = false;
+    protected $latest = false;
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_start = 5;</code>
+     * Generated from protobuf field <code>uint32 start_offset = 5;</code>
      */
-    protected $timeline_offset_start = 0;
+    protected $start_offset = 0;
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_end = 6;</code>
+     * Generated from protobuf field <code>uint32 end_offset = 6;</code>
      */
-    protected $timeline_offset_end = 0;
+    protected $end_offset = 0;
     /**
      * score and related fields for CONTEST and PROBLEM columns.
      *
@@ -88,12 +88,12 @@ class Value extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $column_id
-     *     @type bool $timeline_set
-     *           value uses historical storage, if false timeline_ fields are not populated
-     *     @type bool $timeline_latest
+     *     @type bool $historical
+     *           value uses historical storage, if false start & end times are not populated
+     *     @type bool $latest
      *           value is the latest value recorded in the historical store
-     *     @type int $timeline_offset_start
-     *     @type int $timeline_offset_end
+     *     @type int $start_offset
+     *     @type int $end_offset
      *     @type float $score
      *           score and related fields for CONTEST and PROBLEM columns.
      *     @type float $penalty
@@ -158,27 +158,27 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * value uses historical storage, if false timeline_ fields are not populated
+     * value uses historical storage, if false start & end times are not populated
      *
-     * Generated from protobuf field <code>bool timeline_set = 3;</code>
+     * Generated from protobuf field <code>bool historical = 3;</code>
      * @return bool
      */
-    public function getTimelineSet()
+    public function getHistorical()
     {
-        return $this->timeline_set;
+        return $this->historical;
     }
 
     /**
-     * value uses historical storage, if false timeline_ fields are not populated
+     * value uses historical storage, if false start & end times are not populated
      *
-     * Generated from protobuf field <code>bool timeline_set = 3;</code>
+     * Generated from protobuf field <code>bool historical = 3;</code>
      * @param bool $var
      * @return $this
      */
-    public function setTimelineSet($var)
+    public function setHistorical($var)
     {
         GPBUtil::checkBool($var);
-        $this->timeline_set = $var;
+        $this->historical = $var;
 
         return $this;
     }
@@ -186,69 +186,69 @@ class Value extends \Google\Protobuf\Internal\Message
     /**
      * value is the latest value recorded in the historical store
      *
-     * Generated from protobuf field <code>bool timeline_latest = 4;</code>
+     * Generated from protobuf field <code>bool latest = 4;</code>
      * @return bool
      */
-    public function getTimelineLatest()
+    public function getLatest()
     {
-        return $this->timeline_latest;
+        return $this->latest;
     }
 
     /**
      * value is the latest value recorded in the historical store
      *
-     * Generated from protobuf field <code>bool timeline_latest = 4;</code>
+     * Generated from protobuf field <code>bool latest = 4;</code>
      * @param bool $var
      * @return $this
      */
-    public function setTimelineLatest($var)
+    public function setLatest($var)
     {
         GPBUtil::checkBool($var);
-        $this->timeline_latest = $var;
+        $this->latest = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_start = 5;</code>
+     * Generated from protobuf field <code>uint32 start_offset = 5;</code>
      * @return int
      */
-    public function getTimelineOffsetStart()
+    public function getStartOffset()
     {
-        return $this->timeline_offset_start;
+        return $this->start_offset;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_start = 5;</code>
+     * Generated from protobuf field <code>uint32 start_offset = 5;</code>
      * @param int $var
      * @return $this
      */
-    public function setTimelineOffsetStart($var)
+    public function setStartOffset($var)
     {
         GPBUtil::checkUint32($var);
-        $this->timeline_offset_start = $var;
+        $this->start_offset = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_end = 6;</code>
+     * Generated from protobuf field <code>uint32 end_offset = 6;</code>
      * @return int
      */
-    public function getTimelineOffsetEnd()
+    public function getEndOffset()
     {
-        return $this->timeline_offset_end;
+        return $this->end_offset;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 timeline_offset_end = 6;</code>
+     * Generated from protobuf field <code>uint32 end_offset = 6;</code>
      * @param int $var
      * @return $this
      */
-    public function setTimelineOffsetEnd($var)
+    public function setEndOffset($var)
     {
         GPBUtil::checkUint32($var);
-        $this->timeline_offset_end = $var;
+        $this->end_offset = $var;
 
         return $this;
     }

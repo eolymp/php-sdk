@@ -9,20 +9,24 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.Scoreboard.Timeline</code>
+ * Generated from protobuf message <code>eolymp.ranker.Scoreboard.TimelineSegment</code>
  */
-class Timeline extends \Google\Protobuf\Internal\Message
+class TimelineSegment extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 1;</code>
      */
     protected $starts_at = null;
     /**
-     * Generated from protobuf field <code>int32 duration = 2;</code>
+     * Generated from protobuf field <code>int32 start_offset = 2;</code>
      */
-    protected $duration = 0;
+    protected $start_offset = 0;
     /**
-     * Generated from protobuf field <code>int32 freeze_time = 3;</code>
+     * Generated from protobuf field <code>int32 end_offset = 3;</code>
+     */
+    protected $end_offset = 0;
+    /**
+     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
      */
     protected $freeze_time = 0;
 
@@ -33,7 +37,8 @@ class Timeline extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Timestamp $starts_at
-     *     @type int $duration
+     *     @type int $start_offset
+     *     @type int $end_offset
      *     @type int $freeze_time
      * }
      */
@@ -65,29 +70,51 @@ class Timeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 duration = 2;</code>
+     * Generated from protobuf field <code>int32 start_offset = 2;</code>
      * @return int
      */
-    public function getDuration()
+    public function getStartOffset()
     {
-        return $this->duration;
+        return $this->start_offset;
     }
 
     /**
-     * Generated from protobuf field <code>int32 duration = 2;</code>
+     * Generated from protobuf field <code>int32 start_offset = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setDuration($var)
+    public function setStartOffset($var)
     {
         GPBUtil::checkInt32($var);
-        $this->duration = $var;
+        $this->start_offset = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 freeze_time = 3;</code>
+     * Generated from protobuf field <code>int32 end_offset = 3;</code>
+     * @return int
+     */
+    public function getEndOffset()
+    {
+        return $this->end_offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 end_offset = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEndOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->end_offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
      * @return int
      */
     public function getFreezeTime()
@@ -96,7 +123,7 @@ class Timeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 freeze_time = 3;</code>
+     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
      * @param int $var
      * @return $this
      */
@@ -111,5 +138,5 @@ class Timeline extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Timeline::class, \Eolymp\Ranker\Scoreboard_Timeline::class);
+class_alias(TimelineSegment::class, \Eolymp\Ranker\Scoreboard_TimelineSegment::class);
 
