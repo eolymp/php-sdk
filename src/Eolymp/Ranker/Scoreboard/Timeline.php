@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.Scoreboard.TimelineSegment</code>
+ * Generated from protobuf message <code>eolymp.ranker.Scoreboard.Timeline</code>
  */
-class TimelineSegment extends \Google\Protobuf\Internal\Message
+class Timeline extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 1;</code>
@@ -138,5 +138,5 @@ class TimelineSegment extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TimelineSegment::class, \Eolymp\Ranker\Scoreboard_TimelineSegment::class);
+class_alias(Timeline::class, \Eolymp\Ranker\Scoreboard_Timeline::class);
 

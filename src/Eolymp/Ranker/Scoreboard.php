@@ -50,12 +50,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $timeline_duration = 0;
     /**
-     * Timeline provides information about stages and freeze times.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 7;</code>
-     */
-    private $timeline_segments;
-    /**
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      */
     protected $format = 0;
@@ -78,8 +72,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           Current timeline offset.
      *     @type int $timeline_duration
      *           Total timeline duration.
-     *     @type \Eolymp\Ranker\Scoreboard\TimelineSegment[]|\Google\Protobuf\Internal\RepeatedField $timeline_segments
-     *           Timeline provides information about stages and freeze times.
      *     @type int $format
      * }
      */
@@ -240,32 +232,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->timeline_duration = $var;
-
-        return $this;
-    }
-
-    /**
-     * Timeline provides information about stages and freeze times.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getTimelineSegments()
-    {
-        return $this->timeline_segments;
-    }
-
-    /**
-     * Timeline provides information about stages and freeze times.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.TimelineSegment timeline_segments = 7;</code>
-     * @param \Eolymp\Ranker\Scoreboard\TimelineSegment[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setTimelineSegments($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\TimelineSegment::class);
-        $this->timeline_segments = $arr;
 
         return $this;
     }

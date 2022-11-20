@@ -50,13 +50,9 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $filterable = false;
     /**
-     * Generated from protobuf field <code>bool timeline_enabled = 30;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 10;</code>
      */
-    protected $timeline_enabled = false;
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.TimelineSegment timeline_segment = 31;</code>
-     */
-    protected $timeline_segment = null;
+    protected $timeline = null;
     /**
      * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      */
@@ -93,8 +89,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type bool $visible
      *     @type bool $filterable
-     *     @type bool $timeline_enabled
-     *     @type \Eolymp\Ranker\Scoreboard\TimelineSegment $timeline_segment
+     *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
      *     @type string $community_attribute_key
@@ -306,45 +301,23 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool timeline_enabled = 30;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 10;</code>
+     * @return \Eolymp\Ranker\Scoreboard\Timeline
      */
-    public function getTimelineEnabled()
+    public function getTimeline()
     {
-        return $this->timeline_enabled;
+        return $this->timeline;
     }
 
     /**
-     * Generated from protobuf field <code>bool timeline_enabled = 30;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 10;</code>
+     * @param \Eolymp\Ranker\Scoreboard\Timeline $var
      * @return $this
      */
-    public function setTimelineEnabled($var)
+    public function setTimeline($var)
     {
-        GPBUtil::checkBool($var);
-        $this->timeline_enabled = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.TimelineSegment timeline_segment = 31;</code>
-     * @return \Eolymp\Ranker\Scoreboard\TimelineSegment
-     */
-    public function getTimelineSegment()
-    {
-        return $this->timeline_segment;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.TimelineSegment timeline_segment = 31;</code>
-     * @param \Eolymp\Ranker\Scoreboard\TimelineSegment $var
-     * @return $this
-     */
-    public function setTimelineSegment($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_TimelineSegment::class);
-        $this->timeline_segment = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Timeline::class);
+        $this->timeline = $var;
 
         return $this;
     }
