@@ -1428,6 +1428,28 @@ class JudgeClient {
     }
 
     /**
+     * ExportScore for ghost participants
+     *
+     * @param ExportScoreInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportScoreOutput output message
+     */
+    public function ExportScore(ExportScoreInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/scores";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/ExportScore";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ExportScoreOutput::class, $context);
+    }
+
+    /**
      * ListResult retrieves scoreboard
      *
      * @param ListResultInput $input message
