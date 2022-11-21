@@ -31,6 +31,10 @@ class Type
      * Generated from protobuf enum <code>NAME = 4;</code>
      */
     const NAME = 4;
+    /**
+     * Generated from protobuf enum <code>TOTAL = 5;</code>
+     */
+    const TOTAL = 5;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -38,6 +42,7 @@ class Type
         self::PROBLEM => 'PROBLEM',
         self::ATTRIBUTE => 'ATTRIBUTE',
         self::NAME => 'NAME',
+        self::TOTAL => 'TOTAL',
     ];
 
     public static function name($value)
