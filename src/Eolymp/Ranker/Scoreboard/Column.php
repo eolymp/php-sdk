@@ -50,7 +50,19 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $filterable = false;
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 10;</code>
+     * Generated from protobuf field <code>bool sortable = 10;</code>
+     */
+    protected $sortable = false;
+    /**
+     * Generated from protobuf field <code>bool default_sorting = 11;</code>
+     */
+    protected $default_sorting = false;
+    /**
+     * Generated from protobuf field <code>bool default_order_asc = 12;</code>
+     */
+    protected $default_order_asc = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
      */
     protected $timeline = null;
     /**
@@ -89,6 +101,9 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type bool $visible
      *     @type bool $filterable
+     *     @type bool $sortable
+     *     @type bool $default_sorting
+     *     @type bool $default_order_asc
      *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
@@ -301,7 +316,73 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 10;</code>
+     * Generated from protobuf field <code>bool sortable = 10;</code>
+     * @return bool
+     */
+    public function getSortable()
+    {
+        return $this->sortable;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool sortable = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSortable($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sortable = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool default_sorting = 11;</code>
+     * @return bool
+     */
+    public function getDefaultSorting()
+    {
+        return $this->default_sorting;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool default_sorting = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDefaultSorting($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->default_sorting = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool default_order_asc = 12;</code>
+     * @return bool
+     */
+    public function getDefaultOrderAsc()
+    {
+        return $this->default_order_asc;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool default_order_asc = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDefaultOrderAsc($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->default_order_asc = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
      * @return \Eolymp\Ranker\Scoreboard\Timeline
      */
     public function getTimeline()
@@ -310,7 +391,7 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
      * @param \Eolymp\Ranker\Scoreboard\Timeline $var
      * @return $this
      */
