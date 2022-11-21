@@ -54,13 +54,13 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $sortable = false;
     /**
-     * Generated from protobuf field <code>bool default_sorting = 11;</code>
+     * Generated from protobuf field <code>bool default_sorting = 40;</code>
      */
     protected $default_sorting = false;
     /**
-     * Generated from protobuf field <code>bool default_order_asc = 12;</code>
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction default_order = 41;</code>
      */
-    protected $default_order_asc = false;
+    protected $default_order = 0;
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
      */
@@ -103,7 +103,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type bool $filterable
      *     @type bool $sortable
      *     @type bool $default_sorting
-     *     @type bool $default_order_asc
+     *     @type int $default_order
      *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
@@ -338,7 +338,7 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool default_sorting = 11;</code>
+     * Generated from protobuf field <code>bool default_sorting = 40;</code>
      * @return bool
      */
     public function getDefaultSorting()
@@ -347,7 +347,7 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool default_sorting = 11;</code>
+     * Generated from protobuf field <code>bool default_sorting = 40;</code>
      * @param bool $var
      * @return $this
      */
@@ -360,23 +360,23 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool default_order_asc = 12;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction default_order = 41;</code>
+     * @return int
      */
-    public function getDefaultOrderAsc()
+    public function getDefaultOrder()
     {
-        return $this->default_order_asc;
+        return $this->default_order;
     }
 
     /**
-     * Generated from protobuf field <code>bool default_order_asc = 12;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction default_order = 41;</code>
+     * @param int $var
      * @return $this
      */
-    public function setDefaultOrderAsc($var)
+    public function setDefaultOrder($var)
     {
-        GPBUtil::checkBool($var);
-        $this->default_order_asc = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
+        $this->default_order = $var;
 
         return $this;
     }

@@ -43,6 +43,14 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ranker.ListScoreboardRowsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * Generated from protobuf field <code>string sort = 50;</code>
+     */
+    protected $sort = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     */
+    protected $order = 0;
 
     /**
      * Constructor.
@@ -60,6 +68,8 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Ranker\ListScoreboardRowsInput\Filter $filters
+     *     @type string $sort
+     *     @type int $order
      * }
      */
     public function __construct($data = NULL) {
@@ -207,6 +217,50 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ranker\ListScoreboardRowsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string sort = 50;</code>
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Generated from protobuf field <code>string sort = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSort($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrder($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
+        $this->order = $var;
 
         return $this;
     }
