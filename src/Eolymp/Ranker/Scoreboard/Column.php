@@ -54,14 +54,6 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $sortable = false;
     /**
-     * Generated from protobuf field <code>bool default_sorting = 40;</code>
-     */
-    protected $default_sorting = false;
-    /**
-     * Generated from protobuf field <code>.eolymp.wellknown.Direction default_order = 41;</code>
-     */
-    protected $default_order = 0;
-    /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
      */
     protected $timeline = null;
@@ -102,8 +94,6 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type bool $visible
      *     @type bool $filterable
      *     @type bool $sortable
-     *     @type bool $default_sorting
-     *     @type int $default_order
      *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
@@ -333,50 +323,6 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->sortable = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool default_sorting = 40;</code>
-     * @return bool
-     */
-    public function getDefaultSorting()
-    {
-        return $this->default_sorting;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool default_sorting = 40;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setDefaultSorting($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->default_sorting = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.wellknown.Direction default_order = 41;</code>
-     * @return int
-     */
-    public function getDefaultOrder()
-    {
-        return $this->default_order;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.wellknown.Direction default_order = 41;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDefaultOrder($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
-        $this->default_order = $var;
 
         return $this;
     }
