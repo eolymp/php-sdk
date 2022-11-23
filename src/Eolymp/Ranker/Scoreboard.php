@@ -61,6 +61,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      */
     protected $format = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 50;</code>
+     */
+    private $columns;
 
     /**
      * Constructor.
@@ -83,6 +87,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type string $default_sort_column
      *     @type int $default_sort_order
      *     @type int $format
+     *     @type \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $columns
      * }
      */
     public function __construct($data = NULL) {
@@ -308,6 +313,28 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Ranker\Format::class);
         $this->format = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 50;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getColumns()
+    {
+        return $this->columns;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 50;</code>
+     * @param \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setColumns($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Column::class);
+        $this->columns = $arr;
 
         return $this;
     }
