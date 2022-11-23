@@ -21,10 +21,6 @@ class AddScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 2;</code>
      */
     protected $column = null;
-    /**
-     * Generated from protobuf field <code>bool auto_correct_columns = 3;</code>
-     */
-    protected $auto_correct_columns = false;
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class AddScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $scoreboard_id
      *     @type \Eolymp\Ranker\Scoreboard\Column $column
-     *     @type bool $auto_correct_columns
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class AddScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Column::class);
         $this->column = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool auto_correct_columns = 3;</code>
-     * @return bool
-     */
-    public function getAutoCorrectColumns()
-    {
-        return $this->auto_correct_columns;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool auto_correct_columns = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAutoCorrectColumns($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->auto_correct_columns = $var;
 
         return $this;
     }

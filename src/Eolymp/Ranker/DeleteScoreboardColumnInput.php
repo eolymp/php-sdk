@@ -21,10 +21,6 @@ class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string column_id = 2;</code>
      */
     protected $column_id = '';
-    /**
-     * Generated from protobuf field <code>bool auto_correct_columns = 3;</code>
-     */
-    protected $auto_correct_columns = false;
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $scoreboard_id
      *     @type string $column_id
-     *     @type bool $auto_correct_columns
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class DeleteScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->column_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool auto_correct_columns = 3;</code>
-     * @return bool
-     */
-    public function getAutoCorrectColumns()
-    {
-        return $this->auto_correct_columns;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool auto_correct_columns = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAutoCorrectColumns($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->auto_correct_columns = $var;
 
         return $this;
     }
