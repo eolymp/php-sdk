@@ -17,6 +17,10 @@ class CreateScoreboardInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 1;</code>
      */
     protected $scoreboard = null;
+    /**
+     * Generated from protobuf field <code>bool add_default_columns = 2;</code>
+     */
+    protected $add_default_columns = false;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateScoreboardInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Ranker\Scoreboard $scoreboard
+     *     @type bool $add_default_columns
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CreateScoreboardInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard::class);
         $this->scoreboard = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool add_default_columns = 2;</code>
+     * @return bool
+     */
+    public function getAddDefaultColumns()
+    {
+        return $this->add_default_columns;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool add_default_columns = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAddDefaultColumns($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->add_default_columns = $var;
 
         return $this;
     }
