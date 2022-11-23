@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardInput.Patch patch = 1;</code>
+     */
+    private $patch;
+    /**
+     * Generated from protobuf field <code>string scoreboard_id = 2;</code>
      */
     protected $scoreboard_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 2;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 3;</code>
      */
     protected $scoreboard = null;
 
@@ -28,6 +32,7 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $scoreboard_id
      *     @type \Eolymp\Ranker\Scoreboard $scoreboard
      * }
@@ -38,7 +43,29 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardInput.Patch patch = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardInput.Patch patch = 1;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Ranker\UpdateScoreboardInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scoreboard_id = 2;</code>
      * @return string
      */
     public function getScoreboardId()
@@ -47,7 +74,7 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 2;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 3;</code>
      * @return \Eolymp\Ranker\Scoreboard
      */
     public function getScoreboard()
@@ -69,7 +96,7 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 2;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 3;</code>
      * @param \Eolymp\Ranker\Scoreboard $var
      * @return $this
      */

@@ -14,15 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardColumnInput.Patch patch = 1;</code>
+     */
+    private $patch;
+    /**
+     * Generated from protobuf field <code>string scoreboard_id = 2;</code>
      */
     protected $scoreboard_id = '';
     /**
-     * Generated from protobuf field <code>string column_id = 2;</code>
+     * Generated from protobuf field <code>string column_id = 3;</code>
      */
     protected $column_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 4;</code>
      */
     protected $column = null;
 
@@ -32,6 +36,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $scoreboard_id
      *     @type string $column_id
      *     @type \Eolymp\Ranker\Scoreboard\Column $column
@@ -43,7 +48,29 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardColumnInput.Patch patch = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardColumnInput.Patch patch = 1;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Ranker\UpdateScoreboardColumnInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scoreboard_id = 2;</code>
      * @return string
      */
     public function getScoreboardId()
@@ -52,7 +79,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
+     * Generated from protobuf field <code>string scoreboard_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -65,7 +92,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string column_id = 2;</code>
+     * Generated from protobuf field <code>string column_id = 3;</code>
      * @return string
      */
     public function getColumnId()
@@ -74,7 +101,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string column_id = 2;</code>
+     * Generated from protobuf field <code>string column_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 4;</code>
      * @return \Eolymp\Ranker\Scoreboard\Column
      */
     public function getColumn()
@@ -96,7 +123,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 4;</code>
      * @param \Eolymp\Ranker\Scoreboard\Column $var
      * @return $this
      */
