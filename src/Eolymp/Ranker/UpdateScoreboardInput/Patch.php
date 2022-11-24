@@ -27,12 +27,17 @@ class Patch
      * Generated from protobuf enum <code>DEFAULT_SORT = 3;</code>
      */
     const DEFAULT_SORT = 3;
+    /**
+     * Generated from protobuf enum <code>HISTORICAL = 4;</code>
+     */
+    const HISTORICAL = 4;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::KEY => 'KEY',
         self::NAME => 'NAME',
         self::DEFAULT_SORT => 'DEFAULT_SORT',
+        self::HISTORICAL => 'HISTORICAL',
     ];
 
     public static function name($value)
