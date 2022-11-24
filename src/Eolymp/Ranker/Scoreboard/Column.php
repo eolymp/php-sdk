@@ -54,10 +54,6 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $sortable = false;
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
-     */
-    protected $timeline = null;
-    /**
      * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      */
     protected $judge_contest_id = '';
@@ -73,10 +69,6 @@ class Column extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string community_attribute_type = 23;</code>
      */
     protected $community_attribute_type = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 100;</code>
-     */
-    private $columns;
 
     /**
      * Constructor.
@@ -94,12 +86,10 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type bool $visible
      *     @type bool $filterable
      *     @type bool $sortable
-     *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
      *     @type string $judge_contest_id
      *     @type string $judge_problem_id
      *     @type string $community_attribute_key
      *     @type string $community_attribute_type
-     *     @type \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $columns
      * }
      */
     public function __construct($data = NULL) {
@@ -328,28 +318,6 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
-     * @return \Eolymp\Ranker\Scoreboard\Timeline
-     */
-    public function getTimeline()
-    {
-        return $this->timeline;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 30;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Timeline $var
-     * @return $this
-     */
-    public function setTimeline($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Timeline::class);
-        $this->timeline = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string judge_contest_id = 20;</code>
      * @return string
      */
@@ -433,28 +401,6 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->community_attribute_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getColumns()
-    {
-        return $this->columns;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Column columns = 100;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Column[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setColumns($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Column::class);
-        $this->columns = $arr;
 
         return $this;
     }

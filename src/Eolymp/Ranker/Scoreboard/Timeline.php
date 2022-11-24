@@ -14,21 +14,41 @@ use Google\Protobuf\Internal\GPBUtil;
 class Timeline extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 1;</code>
+     * Current timeline offset.
+     *
+     * Generated from protobuf field <code>uint32 position = 1;</code>
      */
-    protected $starts_at = null;
+    protected $position = 0;
     /**
-     * Generated from protobuf field <code>int32 start_offset = 2;</code>
+     * Timeline overall duration.
+     *
+     * Generated from protobuf field <code>uint32 duration = 2;</code>
      */
-    protected $start_offset = 0;
+    protected $duration = 0;
     /**
-     * Generated from protobuf field <code>int32 end_offset = 3;</code>
+     * Flag identifying scoreboard as frozen.
+     *
+     * Generated from protobuf field <code>bool frozen = 3;</code>
      */
-    protected $end_offset = 0;
+    protected $frozen = false;
     /**
-     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
+     * Time in seconds until next freeze (0 if frozen or won't freeze)
+     *
+     * Generated from protobuf field <code>uint32 freeze_in = 4;</code>
      */
-    protected $freeze_time = 0;
+    protected $freeze_in = 0;
+    /**
+     * Time in seconds until unfreeze (0 if not frozen)
+     *
+     * Generated from protobuf field <code>uint32 unfreeze_in = 5;</code>
+     */
+    protected $unfreeze_in = 0;
+    /**
+     * Timeline segments
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Segment segments = 10;</code>
+     */
+    private $segments;
 
     /**
      * Constructor.
@@ -36,10 +56,18 @@ class Timeline extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\Timestamp $starts_at
-     *     @type int $start_offset
-     *     @type int $end_offset
-     *     @type int $freeze_time
+     *     @type int $position
+     *           Current timeline offset.
+     *     @type int $duration
+     *           Timeline overall duration.
+     *     @type bool $frozen
+     *           Flag identifying scoreboard as frozen.
+     *     @type int $freeze_in
+     *           Time in seconds until next freeze (0 if frozen or won't freeze)
+     *     @type int $unfreeze_in
+     *           Time in seconds until unfreeze (0 if not frozen)
+     *     @type \Eolymp\Ranker\Scoreboard\Segment[]|\Google\Protobuf\Internal\RepeatedField $segments
+     *           Timeline segments
      * }
      */
     public function __construct($data = NULL) {
@@ -48,89 +76,157 @@ class Timeline extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * Current timeline offset.
+     *
+     * Generated from protobuf field <code>uint32 position = 1;</code>
+     * @return int
      */
-    public function getStartsAt()
+    public function getPosition()
     {
-        return $this->starts_at;
+        return $this->position;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 1;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Current timeline offset.
+     *
+     * Generated from protobuf field <code>uint32 position = 1;</code>
+     * @param int $var
      * @return $this
      */
-    public function setStartsAt($var)
+    public function setPosition($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->starts_at = $var;
+        GPBUtil::checkUint32($var);
+        $this->position = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 start_offset = 2;</code>
+     * Timeline overall duration.
+     *
+     * Generated from protobuf field <code>uint32 duration = 2;</code>
      * @return int
      */
-    public function getStartOffset()
+    public function getDuration()
     {
-        return $this->start_offset;
+        return $this->duration;
     }
 
     /**
-     * Generated from protobuf field <code>int32 start_offset = 2;</code>
+     * Timeline overall duration.
+     *
+     * Generated from protobuf field <code>uint32 duration = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setStartOffset($var)
+    public function setDuration($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->start_offset = $var;
+        GPBUtil::checkUint32($var);
+        $this->duration = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 end_offset = 3;</code>
-     * @return int
+     * Flag identifying scoreboard as frozen.
+     *
+     * Generated from protobuf field <code>bool frozen = 3;</code>
+     * @return bool
      */
-    public function getEndOffset()
+    public function getFrozen()
     {
-        return $this->end_offset;
+        return $this->frozen;
     }
 
     /**
-     * Generated from protobuf field <code>int32 end_offset = 3;</code>
-     * @param int $var
+     * Flag identifying scoreboard as frozen.
+     *
+     * Generated from protobuf field <code>bool frozen = 3;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setEndOffset($var)
+    public function setFrozen($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->end_offset = $var;
+        GPBUtil::checkBool($var);
+        $this->frozen = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
+     * Time in seconds until next freeze (0 if frozen or won't freeze)
+     *
+     * Generated from protobuf field <code>uint32 freeze_in = 4;</code>
      * @return int
      */
-    public function getFreezeTime()
+    public function getFreezeIn()
     {
-        return $this->freeze_time;
+        return $this->freeze_in;
     }
 
     /**
-     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
+     * Time in seconds until next freeze (0 if frozen or won't freeze)
+     *
+     * Generated from protobuf field <code>uint32 freeze_in = 4;</code>
      * @param int $var
      * @return $this
      */
-    public function setFreezeTime($var)
+    public function setFreezeIn($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->freeze_time = $var;
+        GPBUtil::checkUint32($var);
+        $this->freeze_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time in seconds until unfreeze (0 if not frozen)
+     *
+     * Generated from protobuf field <code>uint32 unfreeze_in = 5;</code>
+     * @return int
+     */
+    public function getUnfreezeIn()
+    {
+        return $this->unfreeze_in;
+    }
+
+    /**
+     * Time in seconds until unfreeze (0 if not frozen)
+     *
+     * Generated from protobuf field <code>uint32 unfreeze_in = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUnfreezeIn($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->unfreeze_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timeline segments
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Segment segments = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSegments()
+    {
+        return $this->segments;
+    }
+
+    /**
+     * Timeline segments
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Segment segments = 10;</code>
+     * @param \Eolymp\Ranker\Scoreboard\Segment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSegments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Segment::class);
+        $this->segments = $arr;
 
         return $this;
     }

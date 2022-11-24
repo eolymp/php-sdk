@@ -32,38 +32,33 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Flag identifying scoreboard as frozen.
-     *
-     * Generated from protobuf field <code>bool frozen = 4;</code>
-     */
-    protected $frozen = false;
-    /**
-     * Flag marking scoreboards which keep score historical data (ie. use timeline).
+     * Scoreboard will keep historical score data (ie. user can request score at specific point in time).
+     * This flag must be set to true for scoreboard freezing to work.
      *
      * Generated from protobuf field <code>bool historical = 7;</code>
      */
     protected $historical = false;
     /**
-     * Current timeline offset.
+     * Timeline information. Read only.
      *
-     * Generated from protobuf field <code>uint32 timeline_position = 5;</code>
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 8;</code>
      */
-    protected $timeline_position = 0;
+    protected $timeline = null;
     /**
-     * Total timeline duration.
+     * Column ID used to sort records by default and to calculate row ranking.
      *
-     * Generated from protobuf field <code>uint32 timeline_duration = 6;</code>
-     */
-    protected $timeline_duration = 0;
-    /**
      * Generated from protobuf field <code>string default_sort_column = 40;</code>
      */
     protected $default_sort_column = '';
     /**
+     * Sorting direction by default.
+     *
      * Generated from protobuf field <code>.eolymp.wellknown.Direction default_sort_order = 41;</code>
      */
     protected $default_sort_order = 0;
     /**
+     * Scoreboard format (IOI, ICPC). Can not be modified.
+     *
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      */
     protected $format = 0;
@@ -80,17 +75,17 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           A user friendly identifier for the scoreboard, used as part of the domain name for the scoreboard.
      *     @type string $name
      *           A user friendly name for the scoreboard.
-     *     @type bool $frozen
-     *           Flag identifying scoreboard as frozen.
      *     @type bool $historical
-     *           Flag marking scoreboards which keep score historical data (ie. use timeline).
-     *     @type int $timeline_position
-     *           Current timeline offset.
-     *     @type int $timeline_duration
-     *           Total timeline duration.
+     *           Scoreboard will keep historical score data (ie. user can request score at specific point in time).
+     *           This flag must be set to true for scoreboard freezing to work.
+     *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
+     *           Timeline information. Read only.
      *     @type string $default_sort_column
+     *           Column ID used to sort records by default and to calculate row ranking.
      *     @type int $default_sort_order
+     *           Sorting direction by default.
      *     @type int $format
+     *           Scoreboard format (IOI, ICPC). Can not be modified.
      * }
      */
     public function __construct($data = NULL) {
@@ -177,33 +172,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flag identifying scoreboard as frozen.
-     *
-     * Generated from protobuf field <code>bool frozen = 4;</code>
-     * @return bool
-     */
-    public function getFrozen()
-    {
-        return $this->frozen;
-    }
-
-    /**
-     * Flag identifying scoreboard as frozen.
-     *
-     * Generated from protobuf field <code>bool frozen = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setFrozen($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->frozen = $var;
-
-        return $this;
-    }
-
-    /**
-     * Flag marking scoreboards which keep score historical data (ie. use timeline).
+     * Scoreboard will keep historical score data (ie. user can request score at specific point in time).
+     * This flag must be set to true for scoreboard freezing to work.
      *
      * Generated from protobuf field <code>bool historical = 7;</code>
      * @return bool
@@ -214,7 +184,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flag marking scoreboards which keep score historical data (ie. use timeline).
+     * Scoreboard will keep historical score data (ie. user can request score at specific point in time).
+     * This flag must be set to true for scoreboard freezing to work.
      *
      * Generated from protobuf field <code>bool historical = 7;</code>
      * @param bool $var
@@ -229,58 +200,34 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Current timeline offset.
+     * Timeline information. Read only.
      *
-     * Generated from protobuf field <code>uint32 timeline_position = 5;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 8;</code>
+     * @return \Eolymp\Ranker\Scoreboard\Timeline
      */
-    public function getTimelinePosition()
+    public function getTimeline()
     {
-        return $this->timeline_position;
+        return $this->timeline;
     }
 
     /**
-     * Current timeline offset.
+     * Timeline information. Read only.
      *
-     * Generated from protobuf field <code>uint32 timeline_position = 5;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 8;</code>
+     * @param \Eolymp\Ranker\Scoreboard\Timeline $var
      * @return $this
      */
-    public function setTimelinePosition($var)
+    public function setTimeline($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->timeline_position = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Timeline::class);
+        $this->timeline = $var;
 
         return $this;
     }
 
     /**
-     * Total timeline duration.
+     * Column ID used to sort records by default and to calculate row ranking.
      *
-     * Generated from protobuf field <code>uint32 timeline_duration = 6;</code>
-     * @return int
-     */
-    public function getTimelineDuration()
-    {
-        return $this->timeline_duration;
-    }
-
-    /**
-     * Total timeline duration.
-     *
-     * Generated from protobuf field <code>uint32 timeline_duration = 6;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTimelineDuration($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->timeline_duration = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string default_sort_column = 40;</code>
      * @return string
      */
@@ -290,6 +237,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Column ID used to sort records by default and to calculate row ranking.
+     *
      * Generated from protobuf field <code>string default_sort_column = 40;</code>
      * @param string $var
      * @return $this
@@ -303,6 +252,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sorting direction by default.
+     *
      * Generated from protobuf field <code>.eolymp.wellknown.Direction default_sort_order = 41;</code>
      * @return int
      */
@@ -312,6 +263,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Sorting direction by default.
+     *
      * Generated from protobuf field <code>.eolymp.wellknown.Direction default_sort_order = 41;</code>
      * @param int $var
      * @return $this
@@ -325,6 +278,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Scoreboard format (IOI, ICPC). Can not be modified.
+     *
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      * @return int
      */
@@ -334,6 +289,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Scoreboard format (IOI, ICPC). Can not be modified.
+     *
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      * @param int $var
      * @return $this
