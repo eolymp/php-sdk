@@ -38,6 +38,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $frozen = false;
     /**
+     * Flag marking scoreboards which keep score historical data (ie. use timeline).
+     *
+     * Generated from protobuf field <code>bool historical = 7;</code>
+     */
+    protected $historical = false;
+    /**
      * Current timeline offset.
      *
      * Generated from protobuf field <code>uint32 timeline_position = 5;</code>
@@ -76,6 +82,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           A user friendly name for the scoreboard.
      *     @type bool $frozen
      *           Flag identifying scoreboard as frozen.
+     *     @type bool $historical
+     *           Flag marking scoreboards which keep score historical data (ie. use timeline).
      *     @type int $timeline_position
      *           Current timeline offset.
      *     @type int $timeline_duration
@@ -190,6 +198,32 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->frozen = $var;
+
+        return $this;
+    }
+
+    /**
+     * Flag marking scoreboards which keep score historical data (ie. use timeline).
+     *
+     * Generated from protobuf field <code>bool historical = 7;</code>
+     * @return bool
+     */
+    public function getHistorical()
+    {
+        return $this->historical;
+    }
+
+    /**
+     * Flag marking scoreboards which keep score historical data (ie. use timeline).
+     *
+     * Generated from protobuf field <code>bool historical = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHistorical($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->historical = $var;
 
         return $this;
     }
