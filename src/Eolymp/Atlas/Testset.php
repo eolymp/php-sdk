@@ -38,6 +38,12 @@ class Testset extends \Google\Protobuf\Internal\Message
      */
     protected $time_limit = 0;
     /**
+     * Time limit in milliseconds for CPU usage within this testset.
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 13;</code>
+     */
+    protected $cpu_limit = 0;
+    /**
      * Memory limit in bytes for runs within this testset.
      *
      * Generated from protobuf field <code>uint64 memory_limit = 11;</code>
@@ -82,6 +88,8 @@ class Testset extends \Google\Protobuf\Internal\Message
      *           Index, a sequential number, of the testset within a problem.
      *     @type int $time_limit
      *           Time limit in milliseconds for runs within this testset.
+     *     @type int $cpu_limit
+     *           Time limit in milliseconds for CPU usage within this testset.
      *     @type int|string $memory_limit
      *           Memory limit in bytes for runs within this testset.
      *     @type int|string $file_size_limit
@@ -199,6 +207,32 @@ class Testset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time limit in milliseconds for CPU usage within this testset.
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 13;</code>
+     * @return int
+     */
+    public function getCpuLimit()
+    {
+        return $this->cpu_limit;
+    }
+
+    /**
+     * Time limit in milliseconds for CPU usage within this testset.
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCpuLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cpu_limit = $var;
 
         return $this;
     }

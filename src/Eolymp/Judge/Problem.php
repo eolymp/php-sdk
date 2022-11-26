@@ -60,6 +60,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $time_limit = 0;
     /**
+     * in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 204;</code>
+     */
+    protected $cpu_limit = 0;
+    /**
      * in bytes
      *
      * Generated from protobuf field <code>uint64 memory_limit = 201;</code>
@@ -104,6 +110,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int $feedback_policy
      *           defines feedback policy for the problem
      *     @type int $time_limit
+     *           in milliseconds
+     *     @type int $cpu_limit
      *           in milliseconds
      *     @type int|string $memory_limit
      *           in bytes
@@ -320,6 +328,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 204;</code>
+     * @return int
+     */
+    public function getCpuLimit()
+    {
+        return $this->cpu_limit;
+    }
+
+    /**
+     * in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 204;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCpuLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cpu_limit = $var;
 
         return $this;
     }
