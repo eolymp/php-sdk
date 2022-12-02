@@ -46,10 +46,10 @@ class GuardianClient {
      */
     public function DescribePolicy(DescribePolicyInput $input, array $context = [])
     {
-        $path = "/policies/".rawurlencode($input->getName());
+        $path = "/policies/".rawurlencode($input->getId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setName("");
+        $input->setId("");
 
         $context['name'] = "eolymp.guardian.Guardian/DescribePolicy";
         $context['path'] = $path;
@@ -65,10 +65,10 @@ class GuardianClient {
      */
     public function DefinePolicy(DefinePolicyInput $input, array $context = [])
     {
-        $path = "/policies/".rawurlencode($input->getName());
+        $path = "/policies/".rawurlencode($input->getId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setName("");
+        $input->setId("");
 
         $context['name'] = "eolymp.guardian.Guardian/DefinePolicy";
         $context['path'] = $path;
@@ -84,10 +84,10 @@ class GuardianClient {
      */
     public function RemovePolicy(RemovePolicyInput $input, array $context = [])
     {
-        $path = "/policies/".rawurlencode($input->getName());
+        $path = "/policies/".rawurlencode($input->getId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setName("");
+        $input->setId("");
 
         $context['name'] = "eolymp.guardian.Guardian/RemovePolicy";
         $context['path'] = $path;
