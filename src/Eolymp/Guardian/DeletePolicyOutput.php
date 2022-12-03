@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.guardian.RemovePolicyOutput</code>
+ * Generated from protobuf message <code>eolymp.guardian.DeletePolicyOutput</code>
  */
-class RemovePolicyOutput extends \Google\Protobuf\Internal\Message
+class DeletePolicyOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

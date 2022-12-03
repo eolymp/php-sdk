@@ -77,22 +77,22 @@ class GuardianClient {
     }
 
     /**
-     * @param RemovePolicyInput $input message
+     * @param DeletePolicyInput $input message
      * @param array $context request parameters
      *
-     * @return RemovePolicyOutput output message
+     * @return DeletePolicyOutput output message
      */
-    public function RemovePolicy(RemovePolicyInput $input, array $context = [])
+    public function DeletePolicy(DeletePolicyInput $input, array $context = [])
     {
         $path = "/policies/".rawurlencode($input->getId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setId("");
 
-        $context['name'] = "eolymp.guardian.Guardian/RemovePolicy";
+        $context['name'] = "eolymp.guardian.Guardian/DeletePolicy";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemovePolicyOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeletePolicyOutput::class, $context);
     }
 
     /**
