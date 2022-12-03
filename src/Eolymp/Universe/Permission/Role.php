@@ -12,22 +12,32 @@ use UnexpectedValueException;
 class Role
 {
     /**
-     * Generated from protobuf enum <code>VIEWER = 0;</code>
+     * Generated from protobuf enum <code>NONE = 0;</code>
      */
-    const VIEWER = 0;
+    const NONE = 0;
     /**
-     * Generated from protobuf enum <code>ADMIN = 1;</code>
+     * Generated from protobuf enum <code>OWNER = 1;</code>
      */
-    const ADMIN = 1;
+    const OWNER = 1;
     /**
-     * Generated from protobuf enum <code>OWNER = 2;</code>
+     * Generated from protobuf enum <code>ADMIN = 2;</code>
      */
-    const OWNER = 2;
+    const ADMIN = 2;
+    /**
+     * Generated from protobuf enum <code>VIEWER = 3;</code>
+     */
+    const VIEWER = 3;
+    /**
+     * Generated from protobuf enum <code>CUSTOM = 4;</code>
+     */
+    const CUSTOM = 4;
 
     private static $valueToName = [
-        self::VIEWER => 'VIEWER',
-        self::ADMIN => 'ADMIN',
+        self::NONE => 'NONE',
         self::OWNER => 'OWNER',
+        self::ADMIN => 'ADMIN',
+        self::VIEWER => 'VIEWER',
+        self::CUSTOM => 'CUSTOM',
     ];
 
     public static function name($value)
