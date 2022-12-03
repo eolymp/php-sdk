@@ -17,10 +17,6 @@ class EvaluateInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string resource = 1;</code>
      */
     protected $resource = '';
-    /**
-     * Generated from protobuf field <code>repeated string args = 2;</code>
-     */
-    private $args;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class EvaluateInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $resource
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $args
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class EvaluateInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string args = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getArgs()
-    {
-        return $this->args;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string args = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setArgs($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->args = $arr;
 
         return $this;
     }
