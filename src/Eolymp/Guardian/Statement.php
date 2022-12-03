@@ -29,6 +29,10 @@ class Statement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string actions = 20;</code>
      */
     private $actions;
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 30;</code>
+     */
+    private $attributes;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *     @type int $effect
      *     @type string $resource
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $actions
+     *     @type array|\Google\Protobuf\Internal\MapField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->actions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 30;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 30;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->attributes = $arr;
 
         return $this;
     }

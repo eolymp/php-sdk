@@ -26,6 +26,10 @@ class Policy extends \Google\Protobuf\Internal\Message
      */
     protected $principal = '';
     /**
+     * Generated from protobuf field <code>string scope = 4;</code>
+     */
+    protected $scope = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 10;</code>
      */
     private $statements;
@@ -39,6 +43,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type string $principal
+     *     @type string $scope
      *     @type \Eolymp\Guardian\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
      * }
      */
@@ -109,6 +114,28 @@ class Policy extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->principal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 4;</code>
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScope($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scope = $var;
 
         return $this;
     }
