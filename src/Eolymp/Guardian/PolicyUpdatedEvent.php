@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.guardian.PolicyDefinedEvent</code>
+ * Generated from protobuf message <code>eolymp.guardian.PolicyUpdatedEvent</code>
  */
-class PolicyDefinedEvent extends \Google\Protobuf\Internal\Message
+class PolicyUpdatedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.eolymp.guardian.Policy policy = 1;</code>

@@ -58,22 +58,38 @@ class GuardianClient {
     }
 
     /**
-     * @param DefinePolicyInput $input message
+     * @param CreatePolicyInput $input message
      * @param array $context request parameters
      *
-     * @return DefinePolicyOutput output message
+     * @return CreatePolicyOutput output message
      */
-    public function DefinePolicy(DefinePolicyInput $input, array $context = [])
+    public function CreatePolicy(CreatePolicyInput $input, array $context = [])
+    {
+        $path = "/policies";
+
+        $context['name'] = "eolymp.guardian.Guardian/CreatePolicy";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreatePolicyOutput::class, $context);
+    }
+
+    /**
+     * @param UpdatePolicyInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePolicyOutput output message
+     */
+    public function UpdatePolicy(UpdatePolicyInput $input, array $context = [])
     {
         $path = "/policies/".rawurlencode($input->getId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setId("");
 
-        $context['name'] = "eolymp.guardian.Guardian/DefinePolicy";
+        $context['name'] = "eolymp.guardian.Guardian/UpdatePolicy";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, DefinePolicyOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdatePolicyOutput::class, $context);
     }
 
     /**
