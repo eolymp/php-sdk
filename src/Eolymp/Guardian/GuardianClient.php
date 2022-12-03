@@ -95,4 +95,20 @@ class GuardianClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemovePolicyOutput::class, $context);
     }
 
+    /**
+     * @param EvaluateInput $input message
+     * @param array $context request parameters
+     *
+     * @return EvaluateOutput output message
+     */
+    public function Evaluate(EvaluateInput $input, array $context = [])
+    {
+        $path = "/evaluate";
+
+        $context['name'] = "eolymp.guardian.Guardian/Evaluate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, EvaluateOutput::class, $context);
+    }
+
 }

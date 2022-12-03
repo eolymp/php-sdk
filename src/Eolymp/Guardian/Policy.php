@@ -18,7 +18,11 @@ class Policy extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 2;</code>
+     * Generated from protobuf field <code>string principal = 2;</code>
+     */
+    protected $principal = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 3;</code>
      */
     private $statements;
 
@@ -29,6 +33,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
+     *     @type string $principal
      *     @type \Eolymp\Guardian\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
      * }
      */
@@ -60,7 +65,29 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 2;</code>
+     * Generated from protobuf field <code>string principal = 2;</code>
+     * @return string
+     */
+    public function getPrincipal()
+    {
+        return $this->principal;
+    }
+
+    /**
+     * Generated from protobuf field <code>string principal = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrincipal($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->principal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatements()
@@ -69,7 +96,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 3;</code>
      * @param \Eolymp\Guardian\Statement[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

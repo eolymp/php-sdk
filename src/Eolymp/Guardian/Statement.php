@@ -22,17 +22,13 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $effect = 0;
     /**
-     * Generated from protobuf field <code>string principal = 3;</code>
-     */
-    protected $principal = '';
-    /**
      * Generated from protobuf field <code>string resource = 10;</code>
      */
     protected $resource = '';
     /**
-     * Generated from protobuf field <code>string action = 20;</code>
+     * Generated from protobuf field <code>repeated string actions = 20;</code>
      */
-    protected $action = '';
+    private $actions;
 
     /**
      * Constructor.
@@ -42,9 +38,8 @@ class Statement extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $effect
-     *     @type string $principal
      *     @type string $resource
-     *     @type string $action
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $actions
      * }
      */
     public function __construct($data = NULL) {
@@ -97,28 +92,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string principal = 3;</code>
-     * @return string
-     */
-    public function getPrincipal()
-    {
-        return $this->principal;
-    }
-
-    /**
-     * Generated from protobuf field <code>string principal = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPrincipal($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->principal = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string resource = 10;</code>
      * @return string
      */
@@ -141,23 +114,23 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string action = 20;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated string actions = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAction()
+    public function getActions()
     {
-        return $this->action;
+        return $this->actions;
     }
 
     /**
-     * Generated from protobuf field <code>string action = 20;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated string actions = 20;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAction($var)
+    public function setActions($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->action = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->actions = $arr;
 
         return $this;
     }
