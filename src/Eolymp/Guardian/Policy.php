@@ -14,15 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class Policy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string principal = 2;</code>
+     * Generated from protobuf field <code>string principal = 3;</code>
      */
     protected $principal = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 10;</code>
      */
     private $statements;
 
@@ -32,6 +36,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $name
      *     @type string $principal
      *     @type \Eolymp\Guardian\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
@@ -43,7 +48,29 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
     public function getName()
@@ -52,7 +79,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -65,7 +92,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string principal = 2;</code>
+     * Generated from protobuf field <code>string principal = 3;</code>
      * @return string
      */
     public function getPrincipal()
@@ -74,7 +101,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string principal = 2;</code>
+     * Generated from protobuf field <code>string principal = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatements()
@@ -96,7 +123,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.guardian.Statement statements = 10;</code>
      * @param \Eolymp\Guardian\Statement[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
