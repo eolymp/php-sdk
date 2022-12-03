@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class EvaluateOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>map<string, .eolymp.guardian.Statement.Effect> actions = 1;</code>
+     */
+    private $actions;
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class EvaluateOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type array|\Google\Protobuf\Internal\MapField $actions
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Guardian\Guardian::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, .eolymp.guardian.Statement.Effect> actions = 1;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getActions()
+    {
+        return $this->actions;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, .eolymp.guardian.Statement.Effect> actions = 1;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setActions($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Guardian\Statement\Effect::class);
+        $this->actions = $arr;
+
+        return $this;
     }
 
 }
