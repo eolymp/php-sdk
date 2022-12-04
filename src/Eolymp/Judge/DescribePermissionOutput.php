@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string role = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Permission permission = 1;</code>
      */
-    protected $role = '';
+    protected $permission = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $role
+     *     @type \Eolymp\Judge\Permission $permission
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string role = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.judge.Permission permission = 1;</code>
+     * @return \Eolymp\Judge\Permission
      */
-    public function getRole()
+    public function getPermission()
     {
-        return $this->role;
+        return $this->permission;
     }
 
     /**
-     * Generated from protobuf field <code>string role = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.judge.Permission permission = 1;</code>
+     * @param \Eolymp\Judge\Permission $var
      * @return $this
      */
-    public function setRole($var)
+    public function setPermission($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->role = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Permission::class);
+        $this->permission = $var;
 
         return $this;
     }

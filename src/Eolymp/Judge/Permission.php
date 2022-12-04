@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Permission extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
+     */
+    protected $id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Permission.Role role = 2;</code>
+     */
+    protected $role = 0;
+    /**
+     * Generated from protobuf field <code>string user_id = 3;</code>
      */
     protected $user_id = '';
-    /**
-     * Generated from protobuf field <code>string role = 2;</code>
-     */
-    protected $role = '';
 
     /**
      * Constructor.
@@ -28,8 +32,9 @@ class Permission extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
+     *     @type int $role
      *     @type string $user_id
-     *     @type string $role
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +43,51 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Permission.Role role = 2;</code>
+     * @return int
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Permission.Role role = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Permission_Role::class);
+        $this->role = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3;</code>
      * @return string
      */
     public function getUserId()
@@ -47,7 +96,7 @@ class Permission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 1;</code>
+     * Generated from protobuf field <code>string user_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -55,28 +104,6 @@ class Permission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string role = 2;</code>
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * Generated from protobuf field <code>string role = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRole($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->role = $var;
 
         return $this;
     }
