@@ -12,35 +12,40 @@ use UnexpectedValueException;
 class Patch
 {
     /**
-     * Generated from protobuf enum <code>NAME = 0;</code>
+     * Generated from protobuf enum <code>ALL = 0;</code>
      */
-    const NAME = 0;
+    const ALL = 0;
     /**
-     * Generated from protobuf enum <code>DISABLED = 1;</code>
+     * Generated from protobuf enum <code>NAME = 1;</code>
      */
-    const DISABLED = 1;
+    const NAME = 1;
     /**
-     * Generated from protobuf enum <code>REGISTERED = 2;</code>
+     * Generated from protobuf enum <code>DISABLED = 2;</code>
      */
-    const REGISTERED = 2;
+    const DISABLED = 2;
     /**
-     * Generated from protobuf enum <code>GHOST = 3;</code>
+     * Generated from protobuf enum <code>REGISTERED = 3;</code>
      */
-    const GHOST = 3;
+    const REGISTERED = 3;
     /**
-     * Generated from protobuf enum <code>OUT_OF_COMPETITION = 4;</code>
+     * Generated from protobuf enum <code>GHOST = 4;</code>
      */
-    const OUT_OF_COMPETITION = 4;
+    const GHOST = 4;
     /**
-     * Generated from protobuf enum <code>IDENTITIES = 5;</code>
+     * Generated from protobuf enum <code>OUT_OF_COMPETITION = 5;</code>
      */
-    const IDENTITIES = 5;
+    const OUT_OF_COMPETITION = 5;
     /**
-     * Generated from protobuf enum <code>VALUES = 6;</code>
+     * Generated from protobuf enum <code>IDENTITIES = 6;</code>
      */
-    const VALUES = 6;
+    const IDENTITIES = 6;
+    /**
+     * Generated from protobuf enum <code>VALUES = 7;</code>
+     */
+    const VALUES = 7;
 
     private static $valueToName = [
+        self::ALL => 'ALL',
         self::NAME => 'NAME',
         self::DISABLED => 'DISABLED',
         self::REGISTERED => 'REGISTERED',
