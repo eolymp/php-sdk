@@ -54,9 +54,9 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>string email_verified = 104;</code>
+     * Generated from protobuf field <code>bool email_verified = 104;</code>
      */
-    protected $email_verified = '';
+    protected $email_verified = false;
     /**
      * Generated from protobuf field <code>string locale = 105;</code>
      */
@@ -78,7 +78,7 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
      *     @type string $nickname
      *     @type string $picture
      *     @type string $email
-     *     @type string $email_verified
+     *     @type bool $email_verified
      *     @type string $locale
      * }
      */
@@ -308,8 +308,8 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email_verified = 104;</code>
-     * @return string
+     * Generated from protobuf field <code>bool email_verified = 104;</code>
+     * @return bool
      */
     public function getEmailVerified()
     {
@@ -317,13 +317,13 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email_verified = 104;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool email_verified = 104;</code>
+     * @param bool $var
      * @return $this
      */
     public function setEmailVerified($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkBool($var);
         $this->email_verified = $var;
 
         return $this;
