@@ -22,9 +22,9 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
      */
     protected $scope = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp exp = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expire = 3;</code>
      */
-    protected $exp = null;
+    protected $expire = null;
     /**
      * Generated from protobuf field <code>string subject = 4;</code>
      */
@@ -70,7 +70,7 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $active
      *     @type string $scope
-     *     @type \Google\Protobuf\Timestamp $exp
+     *     @type \Google\Protobuf\Timestamp $expire
      *     @type string $subject
      *     @type string $audience
      *     @type string $issuer
@@ -132,23 +132,23 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp exp = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expire = 3;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getExp()
+    public function getExpire()
     {
-        return $this->exp;
+        return $this->expire;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp exp = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expire = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExp($var)
+    public function setExpire($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->exp = $var;
+        $this->expire = $var;
 
         return $this;
     }
