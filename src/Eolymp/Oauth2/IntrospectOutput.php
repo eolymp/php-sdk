@@ -18,29 +18,49 @@ class IntrospectOutput extends \Google\Protobuf\Internal\Message
      */
     protected $active = false;
     /**
-     * Generated from protobuf field <code>string token = 2;</code>
+     * Generated from protobuf field <code>string scope = 2;</code>
      */
-    protected $token = '';
+    protected $scope = '';
     /**
-     * Generated from protobuf field <code>string type = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp exp = 3;</code>
      */
-    protected $type = '';
+    protected $exp = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 4;</code>
+     * Generated from protobuf field <code>string subject = 4;</code>
      */
-    protected $expires_at = null;
+    protected $subject = '';
     /**
-     * Generated from protobuf field <code>repeated string scopes = 5;</code>
+     * Generated from protobuf field <code>string audience = 5;</code>
      */
-    private $scopes;
+    protected $audience = '';
     /**
-     * Generated from protobuf field <code>string user_id = 100;</code>
+     * Generated from protobuf field <code>string issuer = 6;</code>
      */
-    protected $user_id = '';
+    protected $issuer = '';
     /**
-     * Generated from protobuf field <code>string username = 101;</code>
+     * Generated from protobuf field <code>string name = 100;</code>
      */
-    protected $username = '';
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string nickname = 101;</code>
+     */
+    protected $nickname = '';
+    /**
+     * Generated from protobuf field <code>string picture = 102;</code>
+     */
+    protected $picture = '';
+    /**
+     * Generated from protobuf field <code>string email = 103;</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool email_verified = 104;</code>
+     */
+    protected $email_verified = false;
+    /**
+     * Generated from protobuf field <code>string locale = 105;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -49,12 +69,17 @@ class IntrospectOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $active
-     *     @type string $token
-     *     @type string $type
-     *     @type \Google\Protobuf\Timestamp $expires_at
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
-     *     @type string $user_id
-     *     @type string $username
+     *     @type string $scope
+     *     @type \Google\Protobuf\Timestamp $exp
+     *     @type string $subject
+     *     @type string $audience
+     *     @type string $issuer
+     *     @type string $name
+     *     @type string $nickname
+     *     @type string $picture
+     *     @type string $email
+     *     @type bool $email_verified
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -85,133 +110,243 @@ class IntrospectOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string token = 2;</code>
+     * Generated from protobuf field <code>string scope = 2;</code>
      * @return string
      */
-    public function getToken()
+    public function getScope()
     {
-        return $this->token;
+        return $this->scope;
     }
 
     /**
-     * Generated from protobuf field <code>string token = 2;</code>
+     * Generated from protobuf field <code>string scope = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setToken($var)
+    public function setScope($var)
     {
         GPBUtil::checkString($var, True);
-        $this->token = $var;
+        $this->scope = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string type = 3;</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string type = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp exp = 3;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getExpiresAt()
+    public function getExp()
     {
-        return $this->expires_at;
+        return $this->exp;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp exp = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpiresAt($var)
+    public function setExp($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->expires_at = $var;
+        $this->exp = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string scopes = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getScopes()
-    {
-        return $this->scopes;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string scopes = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setScopes($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->scopes = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string user_id = 100;</code>
+     * Generated from protobuf field <code>string subject = 4;</code>
      * @return string
      */
-    public function getUserId()
+    public function getSubject()
     {
-        return $this->user_id;
+        return $this->subject;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 100;</code>
+     * Generated from protobuf field <code>string subject = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setSubject($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->subject = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string username = 101;</code>
+     * Generated from protobuf field <code>string audience = 5;</code>
      * @return string
      */
-    public function getUsername()
+    public function getAudience()
     {
-        return $this->username;
+        return $this->audience;
     }
 
     /**
-     * Generated from protobuf field <code>string username = 101;</code>
+     * Generated from protobuf field <code>string audience = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setUsername($var)
+    public function setAudience($var)
     {
         GPBUtil::checkString($var, True);
-        $this->username = $var;
+        $this->audience = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 6;</code>
+     * @return string
+     */
+    public function getIssuer()
+    {
+        return $this->issuer;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIssuer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->issuer = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 100;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 101;</code>
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 101;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNickname($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 102;</code>
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPicture($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->picture = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 103;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 104;</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 104;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 105;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 105;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

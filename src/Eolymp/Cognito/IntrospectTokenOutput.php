@@ -26,17 +26,17 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
      */
     protected $exp = null;
     /**
-     * Generated from protobuf field <code>string sub = 4;</code>
+     * Generated from protobuf field <code>string subject = 4;</code>
      */
-    protected $sub = '';
+    protected $subject = '';
     /**
-     * Generated from protobuf field <code>string aud = 5;</code>
+     * Generated from protobuf field <code>string audience = 5;</code>
      */
-    protected $aud = '';
+    protected $audience = '';
     /**
-     * Generated from protobuf field <code>string iss = 6;</code>
+     * Generated from protobuf field <code>string issuer = 6;</code>
      */
-    protected $iss = '';
+    protected $issuer = '';
     /**
      * Generated from protobuf field <code>string name = 100;</code>
      */
@@ -71,9 +71,9 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
      *     @type bool $active
      *     @type string $scope
      *     @type \Google\Protobuf\Timestamp $exp
-     *     @type string $sub
-     *     @type string $aud
-     *     @type string $iss
+     *     @type string $subject
+     *     @type string $audience
+     *     @type string $issuer
      *     @type string $name
      *     @type string $nickname
      *     @type string $picture
@@ -154,67 +154,67 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string sub = 4;</code>
+     * Generated from protobuf field <code>string subject = 4;</code>
      * @return string
      */
-    public function getSub()
+    public function getSubject()
     {
-        return $this->sub;
+        return $this->subject;
     }
 
     /**
-     * Generated from protobuf field <code>string sub = 4;</code>
+     * Generated from protobuf field <code>string subject = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setSub($var)
+    public function setSubject($var)
     {
         GPBUtil::checkString($var, True);
-        $this->sub = $var;
+        $this->subject = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string aud = 5;</code>
+     * Generated from protobuf field <code>string audience = 5;</code>
      * @return string
      */
-    public function getAud()
+    public function getAudience()
     {
-        return $this->aud;
+        return $this->audience;
     }
 
     /**
-     * Generated from protobuf field <code>string aud = 5;</code>
+     * Generated from protobuf field <code>string audience = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setAud($var)
+    public function setAudience($var)
     {
         GPBUtil::checkString($var, True);
-        $this->aud = $var;
+        $this->audience = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string iss = 6;</code>
+     * Generated from protobuf field <code>string issuer = 6;</code>
      * @return string
      */
-    public function getIss()
+    public function getIssuer()
     {
-        return $this->iss;
+        return $this->issuer;
     }
 
     /**
-     * Generated from protobuf field <code>string iss = 6;</code>
+     * Generated from protobuf field <code>string issuer = 6;</code>
      * @param string $var
      * @return $this
      */
-    public function setIss($var)
+    public function setIssuer($var)
     {
         GPBUtil::checkString($var, True);
-        $this->iss = $var;
+        $this->issuer = $var;
 
         return $this;
     }
