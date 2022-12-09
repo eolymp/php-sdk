@@ -31,12 +31,6 @@ class Segment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 end_offset = 3;</code>
      */
     protected $end_offset = 0;
-    /**
-     * Time in seconds in the end of the segment during which board will be frozen.
-     *
-     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
-     */
-    protected $freeze_time = 0;
 
     /**
      * Constructor.
@@ -50,8 +44,6 @@ class Segment extends \Google\Protobuf\Internal\Message
      *           Beginning of the segment on the timeline.
      *     @type int $end_offset
      *           Ending of the segment on the timeline.
-     *     @type int $freeze_time
-     *           Time in seconds in the end of the segment during which board will be frozen.
      * }
      */
     public function __construct($data = NULL) {
@@ -133,32 +125,6 @@ class Segment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->end_offset = $var;
-
-        return $this;
-    }
-
-    /**
-     * Time in seconds in the end of the segment during which board will be frozen.
-     *
-     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
-     * @return int
-     */
-    public function getFreezeTime()
-    {
-        return $this->freeze_time;
-    }
-
-    /**
-     * Time in seconds in the end of the segment during which board will be frozen.
-     *
-     * Generated from protobuf field <code>int32 freeze_time = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setFreezeTime($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->freeze_time = $var;
 
         return $this;
     }

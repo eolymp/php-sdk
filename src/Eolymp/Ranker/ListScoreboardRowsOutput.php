@@ -21,6 +21,18 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row items = 2;</code>
      */
     private $items;
+    /**
+     * true, if offset was trimmed by freezing time
+     *
+     * Generated from protobuf field <code>bool frozen = 10;</code>
+     */
+    protected $frozen = false;
+    /**
+     * offset used to fetch values
+     *
+     * Generated from protobuf field <code>uint32 timeline_offset = 11;</code>
+     */
+    protected $timeline_offset = 0;
 
     /**
      * Constructor.
@@ -30,6 +42,10 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total
      *     @type \Eolymp\Ranker\Scoreboard\Row[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type bool $frozen
+     *           true, if offset was trimmed by freezing time
+     *     @type int $timeline_offset
+     *           offset used to fetch values
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +93,58 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Row::class);
         $this->items = $arr;
+
+        return $this;
+    }
+
+    /**
+     * true, if offset was trimmed by freezing time
+     *
+     * Generated from protobuf field <code>bool frozen = 10;</code>
+     * @return bool
+     */
+    public function getFrozen()
+    {
+        return $this->frozen;
+    }
+
+    /**
+     * true, if offset was trimmed by freezing time
+     *
+     * Generated from protobuf field <code>bool frozen = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFrozen($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->frozen = $var;
+
+        return $this;
+    }
+
+    /**
+     * offset used to fetch values
+     *
+     * Generated from protobuf field <code>uint32 timeline_offset = 11;</code>
+     * @return int
+     */
+    public function getTimelineOffset()
+    {
+        return $this->timeline_offset;
+    }
+
+    /**
+     * offset used to fetch values
+     *
+     * Generated from protobuf field <code>uint32 timeline_offset = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimelineOffset($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->timeline_offset = $var;
 
         return $this;
     }

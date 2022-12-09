@@ -14,35 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Timeline extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Current timeline offset.
-     *
-     * Generated from protobuf field <code>uint32 position = 1;</code>
-     */
-    protected $position = 0;
-    /**
      * Timeline overall duration.
      *
      * Generated from protobuf field <code>uint32 duration = 2;</code>
      */
     protected $duration = 0;
-    /**
-     * Flag identifying scoreboard as frozen.
-     *
-     * Generated from protobuf field <code>bool frozen = 3;</code>
-     */
-    protected $frozen = false;
-    /**
-     * Time in seconds until next freeze (0 if frozen or won't freeze)
-     *
-     * Generated from protobuf field <code>uint32 freeze_in = 4;</code>
-     */
-    protected $freeze_in = 0;
-    /**
-     * Time in seconds until unfreeze (0 if not frozen)
-     *
-     * Generated from protobuf field <code>uint32 unfreeze_in = 5;</code>
-     */
-    protected $unfreeze_in = 0;
     /**
      * Timeline segments
      *
@@ -56,16 +32,8 @@ class Timeline extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $position
-     *           Current timeline offset.
      *     @type int $duration
      *           Timeline overall duration.
-     *     @type bool $frozen
-     *           Flag identifying scoreboard as frozen.
-     *     @type int $freeze_in
-     *           Time in seconds until next freeze (0 if frozen or won't freeze)
-     *     @type int $unfreeze_in
-     *           Time in seconds until unfreeze (0 if not frozen)
      *     @type \Eolymp\Ranker\Scoreboard\Segment[]|\Google\Protobuf\Internal\RepeatedField $segments
      *           Timeline segments
      * }
@@ -73,32 +41,6 @@ class Timeline extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Ranker\Scoreboard::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Current timeline offset.
-     *
-     * Generated from protobuf field <code>uint32 position = 1;</code>
-     * @return int
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
-     * Current timeline offset.
-     *
-     * Generated from protobuf field <code>uint32 position = 1;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPosition($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->position = $var;
-
-        return $this;
     }
 
     /**
@@ -123,84 +65,6 @@ class Timeline extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->duration = $var;
-
-        return $this;
-    }
-
-    /**
-     * Flag identifying scoreboard as frozen.
-     *
-     * Generated from protobuf field <code>bool frozen = 3;</code>
-     * @return bool
-     */
-    public function getFrozen()
-    {
-        return $this->frozen;
-    }
-
-    /**
-     * Flag identifying scoreboard as frozen.
-     *
-     * Generated from protobuf field <code>bool frozen = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setFrozen($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->frozen = $var;
-
-        return $this;
-    }
-
-    /**
-     * Time in seconds until next freeze (0 if frozen or won't freeze)
-     *
-     * Generated from protobuf field <code>uint32 freeze_in = 4;</code>
-     * @return int
-     */
-    public function getFreezeIn()
-    {
-        return $this->freeze_in;
-    }
-
-    /**
-     * Time in seconds until next freeze (0 if frozen or won't freeze)
-     *
-     * Generated from protobuf field <code>uint32 freeze_in = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setFreezeIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->freeze_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * Time in seconds until unfreeze (0 if not frozen)
-     *
-     * Generated from protobuf field <code>uint32 unfreeze_in = 5;</code>
-     * @return int
-     */
-    public function getUnfreezeIn()
-    {
-        return $this->unfreeze_in;
-    }
-
-    /**
-     * Time in seconds until unfreeze (0 if not frozen)
-     *
-     * Generated from protobuf field <code>uint32 unfreeze_in = 5;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUnfreezeIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->unfreeze_in = $var;
 
         return $this;
     }
