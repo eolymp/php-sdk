@@ -14,9 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class Score extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 offset = 1;</code>
+     * time when score was set, number of seconds since start of contest (participation)
+     *
+     * Generated from protobuf field <code>uint32 valid_after = 1;</code>
      */
-    protected $offset = 0;
+    protected $valid_after = 0;
+    /**
+     * time when score was overriden by newer value, number of seconds since start of contest (participation)
+     *
+     * Generated from protobuf field <code>uint32 valid_until = 2;</code>
+     */
+    protected $valid_until = 0;
+    /**
+     * absolute time when score was set
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
+     */
+    protected $timestamp = null;
     /**
      * Generated from protobuf field <code>float score = 10;</code>
      */
@@ -38,7 +52,12 @@ class Score extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $offset
+     *     @type int $valid_after
+     *           time when score was set, number of seconds since start of contest (participation)
+     *     @type int $valid_until
+     *           time when score was overriden by newer value, number of seconds since start of contest (participation)
+     *     @type \Google\Protobuf\Timestamp $timestamp
+     *           absolute time when score was set
      *     @type float $score
      *     @type float $penalty
      *     @type \Eolymp\Judge\Score\Problem[]|\Google\Protobuf\Internal\RepeatedField $breakdown
@@ -51,23 +70,79 @@ class Score extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 offset = 1;</code>
+     * time when score was set, number of seconds since start of contest (participation)
+     *
+     * Generated from protobuf field <code>uint32 valid_after = 1;</code>
      * @return int
      */
-    public function getOffset()
+    public function getValidAfter()
     {
-        return $this->offset;
+        return $this->valid_after;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 offset = 1;</code>
+     * time when score was set, number of seconds since start of contest (participation)
+     *
+     * Generated from protobuf field <code>uint32 valid_after = 1;</code>
      * @param int $var
      * @return $this
      */
-    public function setOffset($var)
+    public function setValidAfter($var)
     {
         GPBUtil::checkUint32($var);
-        $this->offset = $var;
+        $this->valid_after = $var;
+
+        return $this;
+    }
+
+    /**
+     * time when score was overriden by newer value, number of seconds since start of contest (participation)
+     *
+     * Generated from protobuf field <code>uint32 valid_until = 2;</code>
+     * @return int
+     */
+    public function getValidUntil()
+    {
+        return $this->valid_until;
+    }
+
+    /**
+     * time when score was overriden by newer value, number of seconds since start of contest (participation)
+     *
+     * Generated from protobuf field <code>uint32 valid_until = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setValidUntil($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->valid_until = $var;
+
+        return $this;
+    }
+
+    /**
+     * absolute time when score was set
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
+    }
+
+    /**
+     * absolute time when score was set
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setTimestamp($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->timestamp = $var;
 
         return $this;
     }
