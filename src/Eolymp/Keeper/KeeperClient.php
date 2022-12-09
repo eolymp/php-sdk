@@ -76,4 +76,58 @@ class KeeperClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DownloadObjectOutput::class, $context);
     }
 
+    /**
+     * @param StartMultipartUploadInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartMultipartUploadOutput output message
+     */
+    public function StartMultipartUpload(StartMultipartUploadInput $input, array $context = [])
+    {
+        $path = "/uploads";
+
+        $context['name'] = "eolymp.keeper.Keeper/StartMultipartUpload";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartMultipartUploadOutput::class, $context);
+    }
+
+    /**
+     * @param UploadPartInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadPartOutput output message
+     */
+    public function UploadPart(UploadPartInput $input, array $context = [])
+    {
+        $path = "/objects/".rawurlencode($input->getObjectId())."/parts";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setObjectId("");
+
+        $context['name'] = "eolymp.keeper.Keeper/UploadPart";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadPartOutput::class, $context);
+    }
+
+    /**
+     * @param CompleteMultipartUploadInput $input message
+     * @param array $context request parameters
+     *
+     * @return CompleteMultipartUploadOutput output message
+     */
+    public function CompleteMultipartUpload(CompleteMultipartUploadInput $input, array $context = [])
+    {
+        $path = "/objects/".rawurlencode($input->getObjectId())."/complete";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setObjectId("");
+
+        $context['name'] = "eolymp.keeper.Keeper/CompleteMultipartUpload";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteMultipartUploadOutput::class, $context);
+    }
+
 }
