@@ -304,4 +304,62 @@ class RankerClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListActivitiesOutput::class, $context);
     }
 
+    /**
+     * @param ScheduleActionInput $input message
+     * @param array $context request parameters
+     *
+     * @return ScheduleActionOutput output message
+     */
+    public function ScheduleAction(ScheduleActionInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/schedule";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/ScheduleAction";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ScheduleActionOutput::class, $context);
+    }
+
+    /**
+     * @param UnscheduleActionInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnscheduleActionOutput output message
+     */
+    public function UnscheduleAction(UnscheduleActionInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/schedule/".rawurlencode($input->getActionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+        $input->setActionId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/UnscheduleAction";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnscheduleActionOutput::class, $context);
+    }
+
+    /**
+     * @param ListScheduledActionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScheduledActionsOutput output message
+     */
+    public function ListScheduledActions(ListScheduledActionsInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/schedule";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.ranker.Ranker/ListScheduledActions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScheduledActionsOutput::class, $context);
+    }
+
 }
