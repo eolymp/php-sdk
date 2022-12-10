@@ -39,11 +39,27 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $historical = false;
     /**
-     * Timeline information. Read only.
+     * This flag means the scoreboard is currently frozen.
      *
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 8;</code>
+     * Generated from protobuf field <code>bool frozen = 20;</code>
      */
-    protected $timeline = null;
+    protected $frozen = false;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp freeze_at = 21;</code>
+     */
+    protected $freeze_at = null;
+    /**
+     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
+     */
+    protected $freeze_in = 0;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp unfreeze_at = 23;</code>
+     */
+    protected $unfreeze_at = null;
+    /**
+     * Generated from protobuf field <code>uint32 unfreeze_in = 24;</code>
+     */
+    protected $unfreeze_in = 0;
     /**
      * Column ID used to sort records by default and to calculate row ranking.
      *
@@ -78,8 +94,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type bool $historical
      *           Scoreboard will keep historical score data (ie. user can request score at specific point in time).
      *           This flag must be set to true for scoreboard freezing to work.
-     *     @type \Eolymp\Ranker\Scoreboard\Timeline $timeline
-     *           Timeline information. Read only.
+     *     @type bool $frozen
+     *           This flag means the scoreboard is currently frozen.
+     *     @type \Google\Protobuf\Timestamp $freeze_at
+     *     @type int $freeze_in
+     *     @type \Google\Protobuf\Timestamp $unfreeze_at
+     *     @type int $unfreeze_in
      *     @type string $default_sort_column
      *           Column ID used to sort records by default and to calculate row ranking.
      *     @type int $default_sort_order
@@ -200,27 +220,115 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Timeline information. Read only.
+     * This flag means the scoreboard is currently frozen.
      *
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 8;</code>
-     * @return \Eolymp\Ranker\Scoreboard\Timeline
+     * Generated from protobuf field <code>bool frozen = 20;</code>
+     * @return bool
      */
-    public function getTimeline()
+    public function getFrozen()
     {
-        return $this->timeline;
+        return $this->frozen;
     }
 
     /**
-     * Timeline information. Read only.
+     * This flag means the scoreboard is currently frozen.
      *
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Timeline timeline = 8;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Timeline $var
+     * Generated from protobuf field <code>bool frozen = 20;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setTimeline($var)
+    public function setFrozen($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Timeline::class);
-        $this->timeline = $var;
+        GPBUtil::checkBool($var);
+        $this->frozen = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp freeze_at = 21;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getFreezeAt()
+    {
+        return $this->freeze_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp freeze_at = 21;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setFreezeAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->freeze_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
+     * @return int
+     */
+    public function getFreezeIn()
+    {
+        return $this->freeze_in;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFreezeIn($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->freeze_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp unfreeze_at = 23;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUnfreezeAt()
+    {
+        return $this->unfreeze_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp unfreeze_at = 23;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUnfreezeAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->unfreeze_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 unfreeze_in = 24;</code>
+     * @return int
+     */
+    public function getUnfreezeIn()
+    {
+        return $this->unfreeze_in;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 unfreeze_in = 24;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUnfreezeIn($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->unfreeze_in = $var;
 
         return $this;
     }

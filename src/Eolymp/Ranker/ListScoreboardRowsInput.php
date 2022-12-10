@@ -24,13 +24,11 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      */
     protected $mode = 0;
     /**
-     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     * This value is ignored if mode is not PUNCTUAL.
+     * For PUNCTUAL fetch mode this parameter sets time of interest.
      *
-     * Generated from protobuf field <code>int32 timeline_offset = 3;</code>
+     * Generated from protobuf field <code>uint32 punctual_time = 3;</code>
      */
-    protected $timeline_offset = 0;
+    protected $punctual_time = 0;
     /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
@@ -61,10 +59,8 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *     @type string $scoreboard_id
      *     @type int $mode
      *           Mode for fetching score value (see enum description).
-     *     @type int $timeline_offset
-     *           Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     *           seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     *           This value is ignored if mode is not PUNCTUAL.
+     *     @type int $punctual_time
+     *           For PUNCTUAL fetch mode this parameter sets time of interest.
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Ranker\ListScoreboardRowsInput\Filter $filters
@@ -126,31 +122,27 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     * This value is ignored if mode is not PUNCTUAL.
+     * For PUNCTUAL fetch mode this parameter sets time of interest.
      *
-     * Generated from protobuf field <code>int32 timeline_offset = 3;</code>
+     * Generated from protobuf field <code>uint32 punctual_time = 3;</code>
      * @return int
      */
-    public function getTimelineOffset()
+    public function getPunctualTime()
     {
-        return $this->timeline_offset;
+        return $this->punctual_time;
     }
 
     /**
-     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     * This value is ignored if mode is not PUNCTUAL.
+     * For PUNCTUAL fetch mode this parameter sets time of interest.
      *
-     * Generated from protobuf field <code>int32 timeline_offset = 3;</code>
+     * Generated from protobuf field <code>uint32 punctual_time = 3;</code>
      * @param int $var
      * @return $this
      */
-    public function setTimelineOffset($var)
+    public function setPunctualTime($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->timeline_offset = $var;
+        GPBUtil::checkUint32($var);
+        $this->punctual_time = $var;
 
         return $this;
     }

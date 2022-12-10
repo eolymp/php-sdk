@@ -18,17 +18,9 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
      */
     protected $row = null;
     /**
-     * true, if offset was trimmed by freezing time
-     *
      * Generated from protobuf field <code>bool frozen = 10;</code>
      */
     protected $frozen = false;
-    /**
-     * offset used to fetch values
-     *
-     * Generated from protobuf field <code>uint32 timeline_offset = 11;</code>
-     */
-    protected $timeline_offset = 0;
 
     /**
      * Constructor.
@@ -38,9 +30,6 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Ranker\Scoreboard\Row $row
      *     @type bool $frozen
-     *           true, if offset was trimmed by freezing time
-     *     @type int $timeline_offset
-     *           offset used to fetch values
      * }
      */
     public function __construct($data = NULL) {
@@ -71,8 +60,6 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * true, if offset was trimmed by freezing time
-     *
      * Generated from protobuf field <code>bool frozen = 10;</code>
      * @return bool
      */
@@ -82,8 +69,6 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * true, if offset was trimmed by freezing time
-     *
      * Generated from protobuf field <code>bool frozen = 10;</code>
      * @param bool $var
      * @return $this
@@ -92,32 +77,6 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->frozen = $var;
-
-        return $this;
-    }
-
-    /**
-     * offset used to fetch values
-     *
-     * Generated from protobuf field <code>uint32 timeline_offset = 11;</code>
-     * @return int
-     */
-    public function getTimelineOffset()
-    {
-        return $this->timeline_offset;
-    }
-
-    /**
-     * offset used to fetch values
-     *
-     * Generated from protobuf field <code>uint32 timeline_offset = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTimelineOffset($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->timeline_offset = $var;
 
         return $this;
     }

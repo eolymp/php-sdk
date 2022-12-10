@@ -22,18 +22,18 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $column_id = '';
     /**
-     * Offset timeline when this value was set (only populated, if scoreboard keeps historical data)
+     * UNIX timestamp when this value was set (only populated, if scoreboard keeps historical data)
      *
-     * Generated from protobuf field <code>uint32 timeline_start_offset = 31;</code>
+     * Generated from protobuf field <code>uint32 valid_after = 31;</code>
      */
-    protected $timeline_start_offset = 0;
+    protected $valid_after = 0;
     /**
-     * Offset timeline when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
+     * UNIX timestamp when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
      * if set to 0, means latest value
      *
-     * Generated from protobuf field <code>uint32 timeline_end_offset = 32;</code>
+     * Generated from protobuf field <code>uint32 valid_until = 32;</code>
      */
-    protected $timeline_end_offset = 0;
+    protected $valid_until = 0;
     /**
      * score and related fields for CONTEST and PROBLEM columns.
      *
@@ -81,10 +81,10 @@ class Value extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $column_id
-     *     @type int $timeline_start_offset
-     *           Offset timeline when this value was set (only populated, if scoreboard keeps historical data)
-     *     @type int $timeline_end_offset
-     *           Offset timeline when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
+     *     @type int $valid_after
+     *           UNIX timestamp when this value was set (only populated, if scoreboard keeps historical data)
+     *     @type int $valid_until
+     *           UNIX timestamp when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
      *           if set to 0, means latest value
      *     @type float $score
      *           score and related fields for CONTEST and PROBLEM columns.
@@ -150,55 +150,55 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Offset timeline when this value was set (only populated, if scoreboard keeps historical data)
+     * UNIX timestamp when this value was set (only populated, if scoreboard keeps historical data)
      *
-     * Generated from protobuf field <code>uint32 timeline_start_offset = 31;</code>
+     * Generated from protobuf field <code>uint32 valid_after = 31;</code>
      * @return int
      */
-    public function getTimelineStartOffset()
+    public function getValidAfter()
     {
-        return $this->timeline_start_offset;
+        return $this->valid_after;
     }
 
     /**
-     * Offset timeline when this value was set (only populated, if scoreboard keeps historical data)
+     * UNIX timestamp when this value was set (only populated, if scoreboard keeps historical data)
      *
-     * Generated from protobuf field <code>uint32 timeline_start_offset = 31;</code>
+     * Generated from protobuf field <code>uint32 valid_after = 31;</code>
      * @param int $var
      * @return $this
      */
-    public function setTimelineStartOffset($var)
+    public function setValidAfter($var)
     {
         GPBUtil::checkUint32($var);
-        $this->timeline_start_offset = $var;
+        $this->valid_after = $var;
 
         return $this;
     }
 
     /**
-     * Offset timeline when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
+     * UNIX timestamp when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
      * if set to 0, means latest value
      *
-     * Generated from protobuf field <code>uint32 timeline_end_offset = 32;</code>
+     * Generated from protobuf field <code>uint32 valid_until = 32;</code>
      * @return int
      */
-    public function getTimelineEndOffset()
+    public function getValidUntil()
     {
-        return $this->timeline_end_offset;
+        return $this->valid_until;
     }
 
     /**
-     * Offset timeline when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
+     * UNIX timestamp when this value was overriden by newer value (only populated, if scoreboard keeps historical data)
      * if set to 0, means latest value
      *
-     * Generated from protobuf field <code>uint32 timeline_end_offset = 32;</code>
+     * Generated from protobuf field <code>uint32 valid_until = 32;</code>
      * @param int $var
      * @return $this
      */
-    public function setTimelineEndOffset($var)
+    public function setValidUntil($var)
     {
         GPBUtil::checkUint32($var);
-        $this->timeline_end_offset = $var;
+        $this->valid_until = $var;
 
         return $this;
     }
