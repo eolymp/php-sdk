@@ -18,9 +18,13 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * Generated from protobuf field <code>string author_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 2;</code>
      */
-    protected $author_id = '';
+    protected $user_id = '';
+    /**
+     * Generated from protobuf field <code>string user_email = 5;</code>
+     */
+    protected $user_email = '';
     /**
      * Generated from protobuf field <code>map<string, string> metadata = 3;</code>
      */
@@ -45,7 +49,8 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $type
-     *     @type string $author_id
+     *     @type string $user_id
+     *     @type string $user_email
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type int $status
      *     @type string $subject
@@ -80,23 +85,45 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string author_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 2;</code>
      * @return string
      */
-    public function getAuthorId()
+    public function getUserId()
     {
-        return $this->author_id;
+        return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>string author_id = 2;</code>
+     * Generated from protobuf field <code>string user_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setAuthorId($var)
+    public function setUserId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->author_id = $var;
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 5;</code>
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->user_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_email = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->user_email = $var;
 
         return $this;
     }
