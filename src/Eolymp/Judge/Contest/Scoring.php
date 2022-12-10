@@ -22,9 +22,17 @@ class Scoring extends \Google\Protobuf\Internal\Message
      */
     protected $attempt_penalty = 0;
     /**
+     * time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *
      * Generated from protobuf field <code>uint32 freezing_time = 3;</code>
      */
     protected $freezing_time = 0;
+    /**
+     * a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *
+     * Generated from protobuf field <code>int32 unfreeze_delay = 5;</code>
+     */
+    protected $unfreeze_delay = 0;
     /**
      * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
      */
@@ -39,6 +47,9 @@ class Scoring extends \Google\Protobuf\Internal\Message
      *     @type bool $show_scoreboard
      *     @type int $attempt_penalty
      *     @type int $freezing_time
+     *           time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *     @type int $unfreeze_delay
+     *           a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
      *     @type bool $allow_upsolving
      * }
      */
@@ -92,6 +103,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *
      * Generated from protobuf field <code>uint32 freezing_time = 3;</code>
      * @return int
      */
@@ -101,6 +114,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *
      * Generated from protobuf field <code>uint32 freezing_time = 3;</code>
      * @param int $var
      * @return $this
@@ -109,6 +124,32 @@ class Scoring extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->freezing_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *
+     * Generated from protobuf field <code>int32 unfreeze_delay = 5;</code>
+     * @return int
+     */
+    public function getUnfreezeDelay()
+    {
+        return $this->unfreeze_delay;
+    }
+
+    /**
+     * a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *
+     * Generated from protobuf field <code>int32 unfreeze_delay = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUnfreezeDelay($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->unfreeze_delay = $var;
 
         return $this;
     }
