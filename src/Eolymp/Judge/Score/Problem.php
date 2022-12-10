@@ -56,6 +56,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $solved_in = 0;
     /**
+     * if true, means there is a newer value for this score
+     *
+     * Generated from protobuf field <code>bool changed = 10;</code>
+     */
+    protected $changed = false;
+    /**
      * breakdown of problem score by testset
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score.Testset breakdown = 20;</code>
@@ -81,6 +87,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           time when first accepted submission is made
      *     @type int $solved_in
      *           amount of time it took user to get accepted
+     *     @type bool $changed
+     *           if true, means there is a newer value for this score
      *     @type \Eolymp\Judge\Score\Testset[]|\Google\Protobuf\Internal\RepeatedField $breakdown
      *           breakdown of problem score by testset
      * }
@@ -282,6 +290,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->solved_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * if true, means there is a newer value for this score
+     *
+     * Generated from protobuf field <code>bool changed = 10;</code>
+     * @return bool
+     */
+    public function getChanged()
+    {
+        return $this->changed;
+    }
+
+    /**
+     * if true, means there is a newer value for this score
+     *
+     * Generated from protobuf field <code>bool changed = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setChanged($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->changed = $var;
 
         return $this;
     }
