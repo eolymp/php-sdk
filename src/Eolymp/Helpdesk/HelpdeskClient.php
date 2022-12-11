@@ -119,10 +119,7 @@ class HelpdeskClient {
      */
     public function DescribePath(DescribePathInput $input, array $context = [])
     {
-        $path = "/helpdesk/paths/".rawurlencode($input->getPath());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPath("");
+        $path = "/helpdesk/lookup/path";
 
         $context['name'] = "eolymp.helpdesk.Helpdesk/DescribePath";
         $context['path'] = $path;
@@ -138,7 +135,7 @@ class HelpdeskClient {
      */
     public function ListPaths(ListPathsInput $input, array $context = [])
     {
-        $path = "/helpdesk/paths";
+        $path = "/helpdesk/lookup/paths";
 
         $context['name'] = "eolymp.helpdesk.Helpdesk/ListPaths";
         $context['path'] = $path;
@@ -154,10 +151,7 @@ class HelpdeskClient {
      */
     public function ListParents(ListParentsInput $input, array $context = [])
     {
-        $path = "/helpdesk/paths/".rawurlencode($input->getPath())."/parents";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPath("");
+        $path = "/helpdesk/lookup/parents";
 
         $context['name'] = "eolymp.helpdesk.Helpdesk/ListParents";
         $context['path'] = $path;
