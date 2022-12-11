@@ -17,6 +17,10 @@ class CreateTicketInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.helpdesk.Ticket ticket = 1;</code>
      */
     protected $ticket = null;
+    /**
+     * Generated from protobuf field <code>string captcha = 2;</code>
+     */
+    protected $captcha = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateTicketInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Helpdesk\Ticket $ticket
+     *     @type string $captcha
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CreateTicketInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket::class);
         $this->ticket = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string captcha = 2;</code>
+     * @return string
+     */
+    public function getCaptcha()
+    {
+        return $this->captcha;
+    }
+
+    /**
+     * Generated from protobuf field <code>string captcha = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCaptcha($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->captcha = $var;
 
         return $this;
     }
