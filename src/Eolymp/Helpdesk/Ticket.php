@@ -38,6 +38,10 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>string locale = 9;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
      */
     protected $created_at = null;
@@ -66,6 +70,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *     @type string $user_email
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type int $status
+     *     @type string $locale
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string $subject
@@ -205,6 +210,28 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Helpdesk\Ticket_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 9;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

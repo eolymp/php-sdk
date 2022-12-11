@@ -45,6 +45,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp updated_at = 8;</code>
      */
     private $updated_at;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 9;</code>
+     */
+    private $locale;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $type
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $updated_at
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
         $this->updated_at = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 9;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->locale = $arr;
 
         return $this;
     }
