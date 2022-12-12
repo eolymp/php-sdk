@@ -146,6 +146,25 @@ class UniverseClient {
     }
 
     /**
+     * @param UpdateQuotaInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateQuotaOutput output message
+     */
+    public function UpdateQuota(UpdateQuotaInput $input, array $context = [])
+    {
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/quota";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.Universe/UpdateQuota";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateQuotaOutput::class, $context);
+    }
+
+    /**
      * List spaces of a contest
      *
      * @param ListSpacesInput $input message
