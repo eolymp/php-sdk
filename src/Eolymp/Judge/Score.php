@@ -40,6 +40,10 @@ class Score extends \Google\Protobuf\Internal\Message
      */
     protected $penalty = 0.0;
     /**
+     * Generated from protobuf field <code>bool upsolve = 12;</code>
+     */
+    protected $upsolve = false;
+    /**
      * breakdown of total score by problem
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score.Problem breakdown = 20;</code>
@@ -60,6 +64,7 @@ class Score extends \Google\Protobuf\Internal\Message
      *           absolute time when score was set
      *     @type float $score
      *     @type float $penalty
+     *     @type bool $upsolve
      *     @type \Eolymp\Judge\Score\Problem[]|\Google\Protobuf\Internal\RepeatedField $breakdown
      *           breakdown of total score by problem
      * }
@@ -187,6 +192,28 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool upsolve = 12;</code>
+     * @return bool
+     */
+    public function getUpsolve()
+    {
+        return $this->upsolve;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool upsolve = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUpsolve($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->upsolve = $var;
 
         return $this;
     }

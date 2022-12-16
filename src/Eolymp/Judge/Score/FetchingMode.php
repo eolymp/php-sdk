@@ -46,12 +46,19 @@ class FetchingMode
      * Generated from protobuf enum <code>FROZEN = 3;</code>
      */
     const FROZEN = 3;
+    /**
+     * Upsolve score returns score counting upsolve time.
+     *
+     * Generated from protobuf enum <code>UPSOLVE = 4;</code>
+     */
+    const UPSOLVE = 4;
 
     private static $valueToName = [
         self::ACTUAL => 'ACTUAL',
         self::PUNCTUAL => 'PUNCTUAL',
         self::LATEST => 'LATEST',
         self::FROZEN => 'FROZEN',
+        self::UPSOLVE => 'UPSOLVE',
     ];
 
     public static function name($value)
