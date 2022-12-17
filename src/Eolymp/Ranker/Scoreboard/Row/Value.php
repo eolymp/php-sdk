@@ -63,6 +63,10 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     protected $solved_in = 0;
     /**
+     * Generated from protobuf field <code>bool upsolve = 40;</code>
+     */
+    protected $upsolve = false;
+    /**
      * value for NAME and ATTRIBUTE columns.
      *
      * Generated from protobuf field <code>string value_string = 20;</code>
@@ -95,6 +99,7 @@ class Value extends \Google\Protobuf\Internal\Message
      *           Number of attempts before problem was solved.
      *     @type int $solved_in
      *           How much time it took to solve problem since beginning of the contest, in seconds.
+     *     @type bool $upsolve
      *     @type string $value_string
      *           value for NAME and ATTRIBUTE columns.
      *     @type int $value_number
@@ -325,6 +330,28 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->solved_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool upsolve = 40;</code>
+     * @return bool
+     */
+    public function getUpsolve()
+    {
+        return $this->upsolve;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool upsolve = 40;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUpsolve($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->upsolve = $var;
 
         return $this;
     }

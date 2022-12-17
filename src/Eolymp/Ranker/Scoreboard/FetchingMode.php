@@ -12,12 +12,12 @@ use UnexpectedValueException;
 class FetchingMode
 {
     /**
-     * Actual score returns score at the moment of participation. This mode is intended to show scoreboard to
-     * participants and guests. This mode returns frozen score during freeze time and latest score otherwise.
+     * Latest score returns the latest score recorded. This mode is intended for admins to see current scoreboard.
+     * Users without admin permissions will get PermissionDenied error when requesting score in latest mode.
      *
-     * Generated from protobuf enum <code>ACTUAL = 0;</code>
+     * Generated from protobuf enum <code>LATEST = 0;</code>
      */
-    const ACTUAL = 0;
+    const LATEST = 0;
     /**
      * Punctual score returns score at particular moment, use time_offset parameter to specify time. This mode is
      * intended to show historical score at a given moment. Value will be capped by freeze time if user does not
@@ -27,25 +27,24 @@ class FetchingMode
      */
     const PUNCTUAL = 1;
     /**
-     * Latest score returns the latest score recorded. This mode is intended for admins to see current scoreboard.
-     * Users without admin permissions will get PermissionDenied error when requesting score in latest mode.
-     *
-     * Generated from protobuf enum <code>LATEST = 2;</code>
-     */
-    const LATEST = 2;
-    /**
      * Frozen score returns the latest score recorded before freezing time. This mode is intended for admins to see
      * frozen scoreboard.
      *
-     * Generated from protobuf enum <code>FROZEN = 3;</code>
+     * Generated from protobuf enum <code>FROZEN = 2;</code>
      */
-    const FROZEN = 3;
+    const FROZEN = 2;
+    /**
+     * Upsolve score
+     *
+     * Generated from protobuf enum <code>UPSOLVE = 3;</code>
+     */
+    const UPSOLVE = 3;
 
     private static $valueToName = [
-        self::ACTUAL => 'ACTUAL',
-        self::PUNCTUAL => 'PUNCTUAL',
         self::LATEST => 'LATEST',
+        self::PUNCTUAL => 'PUNCTUAL',
         self::FROZEN => 'FROZEN',
+        self::UPSOLVE => 'UPSOLVE',
     ];
 
     public static function name($value)
