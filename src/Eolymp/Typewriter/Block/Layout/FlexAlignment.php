@@ -7,9 +7,9 @@ namespace Eolymp\Typewriter\Block\Layout;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>eolymp.typewriter.Block.Layout.Alignment</code>
+ * Protobuf type <code>eolymp.typewriter.Block.Layout.FlexAlignment</code>
  */
-class Alignment
+class FlexAlignment
 {
     /**
      * Generated from protobuf enum <code>START = 0;</code>
@@ -52,5 +52,5 @@ class Alignment
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Alignment::class, \Eolymp\Typewriter\Block_Layout_Alignment::class);
+class_alias(FlexAlignment::class, \Eolymp\Typewriter\Block_Layout_FlexAlignment::class);
 

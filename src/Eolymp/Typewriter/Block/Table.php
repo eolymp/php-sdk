@@ -18,6 +18,14 @@ class Table extends \Google\Protobuf\Internal\Message
      */
     protected $header = 0;
     /**
+     * Generated from protobuf field <code>bool border = 2;</code>
+     */
+    protected $border = false;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.Table.Column columns = 11;</code>
+     */
+    private $columns;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.Table.Row children = 10;</code>
      */
     private $children;
@@ -29,6 +37,8 @@ class Table extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $header
+     *     @type bool $border
+     *     @type \Eolymp\Typewriter\Block\Table\Column[]|\Google\Protobuf\Internal\RepeatedField $columns
      *     @type \Eolymp\Typewriter\Block\Table\Row[]|\Google\Protobuf\Internal\RepeatedField $children
      * }
      */
@@ -55,6 +65,50 @@ class Table extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Table_Header::class);
         $this->header = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool border = 2;</code>
+     * @return bool
+     */
+    public function getBorder()
+    {
+        return $this->border;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool border = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBorder($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->border = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.Table.Column columns = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getColumns()
+    {
+        return $this->columns;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block.Table.Column columns = 11;</code>
+     * @param \Eolymp\Typewriter\Block\Table\Column[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setColumns($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Typewriter\Block\Table\Column::class);
+        $this->columns = $arr;
 
         return $this;
     }

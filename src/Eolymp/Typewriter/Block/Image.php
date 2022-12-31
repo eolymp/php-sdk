@@ -22,9 +22,9 @@ class Image extends \Google\Protobuf\Internal\Message
      */
     protected $alt = '';
     /**
-     * Generated from protobuf field <code>string title = 3;</code>
+     * Generated from protobuf field <code>string caption = 3;</code>
      */
-    protected $title = '';
+    protected $caption = '';
     /**
      * Generated from protobuf field <code>uint32 width = 4;</code>
      */
@@ -46,7 +46,7 @@ class Image extends \Google\Protobuf\Internal\Message
      *
      *     @type string $src
      *     @type string $alt
-     *     @type string $title
+     *     @type string $caption
      *     @type int $width
      *     @type int $height
      *     @type bool $zoomable
@@ -102,23 +102,23 @@ class Image extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string title = 3;</code>
+     * Generated from protobuf field <code>string caption = 3;</code>
      * @return string
      */
-    public function getTitle()
+    public function getCaption()
     {
-        return $this->title;
+        return $this->caption;
     }
 
     /**
-     * Generated from protobuf field <code>string title = 3;</code>
+     * Generated from protobuf field <code>string caption = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setTitle($var)
+    public function setCaption($var)
     {
         GPBUtil::checkString($var, True);
-        $this->title = $var;
+        $this->caption = $var;
 
         return $this;
     }

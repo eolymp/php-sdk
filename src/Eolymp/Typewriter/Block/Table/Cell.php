@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Cell extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block children = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block children = 3;</code>
      */
     private $children;
 
@@ -33,7 +33,7 @@ class Cell extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block children = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block children = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getChildren()
@@ -42,7 +42,7 @@ class Cell extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block children = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.typewriter.Block children = 3;</code>
      * @param \Eolymp\Typewriter\Block[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

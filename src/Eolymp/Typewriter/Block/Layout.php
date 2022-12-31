@@ -18,25 +18,29 @@ class Layout extends \Google\Protobuf\Internal\Message
      */
     protected $direction = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment align_items = 10;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment align_items = 10;</code>
      */
     protected $align_items = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment align_content = 11;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment align_content = 11;</code>
      */
     protected $align_content = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment justify_items = 12;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment justify_items = 12;</code>
      */
     protected $justify_items = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment justify_content = 13;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment justify_content = 13;</code>
      */
     protected $justify_content = 0;
     /**
      * Generated from protobuf field <code>uint32 gap = 20;</code>
      */
     protected $gap = 0;
+    /**
+     * Generated from protobuf field <code>uint32 width = 22;</code>
+     */
+    protected $width = 0;
     /**
      * Generated from protobuf field <code>repeated uint32 padding = 21;</code>
      */
@@ -58,6 +62,7 @@ class Layout extends \Google\Protobuf\Internal\Message
      *     @type int $justify_items
      *     @type int $justify_content
      *     @type int $gap
+     *     @type int $width
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $padding
      *     @type \Eolymp\Typewriter\Container[]|\Google\Protobuf\Internal\RepeatedField $children
      * }
@@ -90,7 +95,7 @@ class Layout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment align_items = 10;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment align_items = 10;</code>
      * @return int
      */
     public function getAlignItems()
@@ -99,20 +104,20 @@ class Layout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment align_items = 10;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment align_items = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setAlignItems($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_Alignment::class);
+        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_FlexAlignment::class);
         $this->align_items = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment align_content = 11;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment align_content = 11;</code>
      * @return int
      */
     public function getAlignContent()
@@ -121,20 +126,20 @@ class Layout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment align_content = 11;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment align_content = 11;</code>
      * @param int $var
      * @return $this
      */
     public function setAlignContent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_Alignment::class);
+        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_FlexAlignment::class);
         $this->align_content = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment justify_items = 12;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment justify_items = 12;</code>
      * @return int
      */
     public function getJustifyItems()
@@ -143,20 +148,20 @@ class Layout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment justify_items = 12;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment justify_items = 12;</code>
      * @param int $var
      * @return $this
      */
     public function setJustifyItems($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_Alignment::class);
+        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_FlexAlignment::class);
         $this->justify_items = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment justify_content = 13;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment justify_content = 13;</code>
      * @return int
      */
     public function getJustifyContent()
@@ -165,13 +170,13 @@ class Layout extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.Alignment justify_content = 13;</code>
+     * Generated from protobuf field <code>.eolymp.typewriter.Block.Layout.FlexAlignment justify_content = 13;</code>
      * @param int $var
      * @return $this
      */
     public function setJustifyContent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_Alignment::class);
+        GPBUtil::checkEnum($var, \Eolymp\Typewriter\Block_Layout_FlexAlignment::class);
         $this->justify_content = $var;
 
         return $this;
@@ -195,6 +200,28 @@ class Layout extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->gap = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 width = 22;</code>
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 width = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWidth($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->width = $var;
 
         return $this;
     }

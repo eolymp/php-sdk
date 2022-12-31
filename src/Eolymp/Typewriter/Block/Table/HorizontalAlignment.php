@@ -7,27 +7,32 @@ namespace Eolymp\Typewriter\Block\Table;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>eolymp.typewriter.Block.Table.Header</code>
+ * Protobuf type <code>eolymp.typewriter.Block.Table.HorizontalAlignment</code>
  */
-class Header
+class HorizontalAlignment
 {
     /**
-     * Generated from protobuf enum <code>NONE = 0;</code>
+     * Generated from protobuf enum <code>LEFT = 0;</code>
      */
-    const NONE = 0;
+    const LEFT = 0;
     /**
-     * Generated from protobuf enum <code>HORIZONTAL = 1;</code>
+     * Generated from protobuf enum <code>CENTER = 1;</code>
      */
-    const HORIZONTAL = 1;
+    const CENTER = 1;
     /**
-     * Generated from protobuf enum <code>VERTICAL = 2;</code>
+     * Generated from protobuf enum <code>RIGHT = 2;</code>
      */
-    const VERTICAL = 2;
+    const RIGHT = 2;
+    /**
+     * Generated from protobuf enum <code>JUSTIFY = 3;</code>
+     */
+    const JUSTIFY = 3;
 
     private static $valueToName = [
-        self::NONE => 'NONE',
-        self::HORIZONTAL => 'HORIZONTAL',
-        self::VERTICAL => 'VERTICAL',
+        self::LEFT => 'LEFT',
+        self::CENTER => 'CENTER',
+        self::RIGHT => 'RIGHT',
+        self::JUSTIFY => 'JUSTIFY',
     ];
 
     public static function name($value)
@@ -52,5 +57,5 @@ class Header
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Header::class, \Eolymp\Typewriter\Block_Table_Header::class);
+class_alias(HorizontalAlignment::class, \Eolymp\Typewriter\Block_Table_HorizontalAlignment::class);
 

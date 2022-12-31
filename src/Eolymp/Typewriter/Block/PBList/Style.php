@@ -12,17 +12,17 @@ use UnexpectedValueException;
 class Style
 {
     /**
-     * Generated from protobuf enum <code>UNORDERED = 0;</code>
+     * Generated from protobuf enum <code>BULLETED = 0;</code>
      */
-    const UNORDERED = 0;
+    const BULLETED = 0;
     /**
-     * Generated from protobuf enum <code>ORDERED = 1;</code>
+     * Generated from protobuf enum <code>NUMBERED = 1;</code>
      */
-    const ORDERED = 1;
+    const NUMBERED = 1;
 
     private static $valueToName = [
-        self::UNORDERED => 'UNORDERED',
-        self::ORDERED => 'ORDERED',
+        self::BULLETED => 'BULLETED',
+        self::NUMBERED => 'NUMBERED',
     ];
 
     public static function name($value)
