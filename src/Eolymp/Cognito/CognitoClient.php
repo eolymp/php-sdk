@@ -227,7 +227,7 @@ class CognitoClient {
      */
     public function ResendEmailVerification(ResendEmailVerificationInput $input, array $context = [])
     {
-        $path = "/self/password";
+        $path = "/self/email/resend-verification";
 
         $context['name'] = "eolymp.cognito.Cognito/ResendEmailVerification";
         $context['path'] = $path;
