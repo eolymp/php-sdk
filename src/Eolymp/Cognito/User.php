@@ -121,6 +121,12 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
      */
     protected $password_changed_on = null;
+    /**
+     * Locale
+     *
+     * Generated from protobuf field <code>string locale = 40;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -164,6 +170,8 @@ class User extends \Google\Protobuf\Internal\Message
      *           Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
      *     @type \Google\Protobuf\Timestamp $password_changed_on
      *           Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     *     @type string $locale
+     *           Locale
      * }
      */
     public function __construct($data = NULL) {
@@ -635,6 +643,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->password_changed_on = $var;
+
+        return $this;
+    }
+
+    /**
+     * Locale
+     *
+     * Generated from protobuf field <code>string locale = 40;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Locale
+     *
+     * Generated from protobuf field <code>string locale = 40;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

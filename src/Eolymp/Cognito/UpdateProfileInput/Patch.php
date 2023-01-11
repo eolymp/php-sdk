@@ -43,6 +43,10 @@ class Patch
      * Generated from protobuf enum <code>BIRTHDAY = 7;</code>
      */
     const BIRTHDAY = 7;
+    /**
+     * Generated from protobuf enum <code>LOCALE = 8;</code>
+     */
+    const LOCALE = 8;
 
     private static $valueToName = [
         self::USERNAME => 'USERNAME',
@@ -53,6 +57,7 @@ class Patch
         self::COUNTRY => 'COUNTRY',
         self::CITY => 'CITY',
         self::BIRTHDAY => 'BIRTHDAY',
+        self::LOCALE => 'LOCALE',
     ];
 
     public static function name($value)

@@ -51,6 +51,10 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string birthday = 33;</code>
      */
     protected $birthday = '';
+    /**
+     * Generated from protobuf field <code>string locale = 34;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -68,6 +72,7 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      *     @type string $country
      *     @type string $city
      *     @type string $birthday
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -273,6 +278,28 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->birthday = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 34;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 34;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
