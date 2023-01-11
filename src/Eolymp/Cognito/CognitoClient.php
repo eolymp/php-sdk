@@ -154,6 +154,7 @@ class CognitoClient {
 
     /**
      * Update user email, changes user's current email and starts email verification process.
+     * DEPRECATED: use UpdateProfile instead
      *
      * @param UpdateEmailInput $input message
      * @param array $context request parameters
@@ -216,6 +217,22 @@ class CognitoClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePasswordOutput::class, $context);
+    }
+
+    /**
+     * @param ResendEmailVerificationInput $input message
+     * @param array $context request parameters
+     *
+     * @return ResendEmailVerificationOutput output message
+     */
+    public function ResendEmailVerification(ResendEmailVerificationInput $input, array $context = [])
+    {
+        $path = "/self/password";
+
+        $context['name'] = "eolymp.cognito.Cognito/ResendEmailVerification";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResendEmailVerificationOutput::class, $context);
     }
 
     /**
