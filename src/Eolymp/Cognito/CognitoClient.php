@@ -136,6 +136,22 @@ class CognitoClient {
     }
 
     /**
+     * @param ResendEmailVerificationInput $input message
+     * @param array $context request parameters
+     *
+     * @return ResendEmailVerificationOutput output message
+     */
+    public function ResendEmailVerification(ResendEmailVerificationInput $input, array $context = [])
+    {
+        $path = "/self/email/resend-verification";
+
+        $context['name'] = "eolymp.cognito.Cognito/ResendEmailVerification";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResendEmailVerificationOutput::class, $context);
+    }
+
+    /**
      * Update user email, changes user's current email and starts email verification process.
      * DEPRECATED: use UpdateProfile instead
      *
@@ -200,63 +216,6 @@ class CognitoClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePasswordOutput::class, $context);
-    }
-
-    /**
-     * @param ResendEmailVerificationInput $input message
-     * @param array $context request parameters
-     *
-     * @return ResendEmailVerificationOutput output message
-     */
-    public function ResendEmailVerification(ResendEmailVerificationInput $input, array $context = [])
-    {
-        $path = "/self/email/resend-verification";
-
-        $context['name'] = "eolymp.cognito.Cognito/ResendEmailVerification";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResendEmailVerificationOutput::class, $context);
-    }
-
-    /**
-     * Start access recovery procedure, this method will send recovery token to the user's email.
-     * This method will return OK even if email does not exist.
-     *
-     * @param StartRecoveryInput $input message
-     * @param array $context request parameters
-     *
-     * @return StartRecoveryOutput output message
-     */
-    public function StartRecovery(StartRecoveryInput $input, array $context = [])
-    {
-        $path = "/self/recovery";
-
-        $context['name'] = "eolymp.cognito.Cognito/StartRecovery";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartRecoveryOutput::class, $context);
-    }
-
-    /**
-     * Finish recovery procedure by setting new password, this method requires token sent by email using `StartRecovery`
-     * method
-     *
-     * @param CompleteRecoverInput $input message
-     * @param array $context request parameters
-     *
-     * @return CompleteRecoverOutput output message
-     */
-    public function CompleteRecovery(CompleteRecoverInput $input, array $context = [])
-    {
-        $path = "/users/".rawurlencode($input->getUserId())."/recover";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setUserId("");
-
-        $context['name'] = "eolymp.cognito.Cognito/CompleteRecovery";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteRecoverOutput::class, $context);
     }
 
     /**
@@ -392,6 +351,47 @@ class CognitoClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateRolesOutput::class, $context);
+    }
+
+    /**
+     * Start access recovery procedure, this method will send recovery token to the user's email.
+     * This method will return OK even if email does not exist.
+     *
+     * @param StartRecoveryInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartRecoveryOutput output message
+     */
+    public function StartRecovery(StartRecoveryInput $input, array $context = [])
+    {
+        $path = "/self/recovery";
+
+        $context['name'] = "eolymp.cognito.Cognito/StartRecovery";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartRecoveryOutput::class, $context);
+    }
+
+    /**
+     * Finish recovery procedure by setting new password, this method requires token sent by email using `StartRecovery`
+     * method
+     *
+     * @param CompleteRecoverInput $input message
+     * @param array $context request parameters
+     *
+     * @return CompleteRecoverOutput output message
+     */
+    public function CompleteRecovery(CompleteRecoverInput $input, array $context = [])
+    {
+        $path = "/users/".rawurlencode($input->getUserId())."/recover";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUserId("");
+
+        $context['name'] = "eolymp.cognito.Cognito/CompleteRecovery";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteRecoverOutput::class, $context);
     }
 
     /**

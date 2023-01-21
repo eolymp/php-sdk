@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.cognito.SinginInput</code>
+ * Generated from protobuf message <code>eolymp.cognito.SigninInput</code>
  */
-class SinginInput extends \Google\Protobuf\Internal\Message
+class SigninInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string username = 1;</code>
