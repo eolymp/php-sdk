@@ -168,4 +168,102 @@ class SupportClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CloseTicketOutput::class, $context);
     }
 
+    /**
+     * @param AddCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return AddCommentOutput output message
+     */
+    public function AddComment(AddCommentInput $input, array $context = [])
+    {
+        $path = "/helpdesk/tickets/".rawurlencode($input->getTicketId())."/comments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/AddComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddCommentOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateCommentOutput output message
+     */
+    public function UpdateComment(UpdateCommentInput $input, array $context = [])
+    {
+        $path = "/helpdesk/tickets/".rawurlencode($input->getTicketId())."/comments/".rawurlencode($input->getCommentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+        $input->setCommentId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/UpdateComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateCommentOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteCommentOutput output message
+     */
+    public function DeleteComment(DeleteCommentInput $input, array $context = [])
+    {
+        $path = "/helpdesk/tickets/".rawurlencode($input->getTicketId())."/comments/".rawurlencode($input->getCommentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+        $input->setCommentId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/DeleteComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCommentOutput::class, $context);
+    }
+
+    /**
+     * @param ListCommentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListCommentsOutput output message
+     */
+    public function ListComments(ListCommentsInput $input, array $context = [])
+    {
+        $path = "/helpdesk/tickets/".rawurlencode($input->getTicketId())."/comments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/ListComments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCommentsOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeCommentOutput output message
+     */
+    public function DescribeComment(DescribeCommentInput $input, array $context = [])
+    {
+        $path = "/helpdesk/tickets/".rawurlencode($input->getTicketId())."/comments/".rawurlencode($input->getCommentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+        $input->setCommentId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/DescribeComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCommentOutput::class, $context);
+    }
+
 }
