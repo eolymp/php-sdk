@@ -266,4 +266,93 @@ class SupportClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCommentOutput::class, $context);
     }
 
+    /**
+     * @param CreateAutoReplyInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateAutoReplyOutput output message
+     */
+    public function CreateAutoReply(CreateAutoReplyInput $input, array $context = [])
+    {
+        $path = "/helpdesk/autoreplies";
+
+        $context['name'] = "eolymp.helpdesk.Support/CreateAutoReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAutoReplyOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateAutoReplyInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateAutoReplyOutput output message
+     */
+    public function UpdateAutoReply(UpdateAutoReplyInput $input, array $context = [])
+    {
+        $path = "/helpdesk/autoreplies/".rawurlencode($input->getReplyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setReplyId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/UpdateAutoReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateAutoReplyOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteAutoReplyInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteAutoReplyOutput output message
+     */
+    public function DeleteAutoReply(DeleteAutoReplyInput $input, array $context = [])
+    {
+        $path = "/helpdesk/autoreplies/".rawurlencode($input->getReplyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setReplyId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/DeleteAutoReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAutoReplyOutput::class, $context);
+    }
+
+    /**
+     * @param ListAutoRepliesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAutoRepliesOutput output message
+     */
+    public function ListAutoReplys(ListAutoRepliesInput $input, array $context = [])
+    {
+        $path = "/helpdesk/autoreplies";
+
+        $context['name'] = "eolymp.helpdesk.Support/ListAutoReplys";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAutoRepliesOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeAutoReplyInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeAutoReplyOutput output message
+     */
+    public function DescribeAutoReply(DescribeAutoReplyInput $input, array $context = [])
+    {
+        $path = "/helpdesk/autoreplies/".rawurlencode($input->getReplyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setReplyId("");
+
+        $context['name'] = "eolymp.helpdesk.Support/DescribeAutoReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAutoReplyOutput::class, $context);
+    }
+
 }
