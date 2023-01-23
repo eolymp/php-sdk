@@ -326,11 +326,11 @@ class SupportClient {
      *
      * @return ListAutoRepliesOutput output message
      */
-    public function ListAutoReplys(ListAutoRepliesInput $input, array $context = [])
+    public function ListAutoReplies(ListAutoRepliesInput $input, array $context = [])
     {
         $path = "/helpdesk/autoreplies";
 
-        $context['name'] = "eolymp.helpdesk.Support/ListAutoReplys";
+        $context['name'] = "eolymp.helpdesk.Support/ListAutoReplies";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAutoRepliesOutput::class, $context);
