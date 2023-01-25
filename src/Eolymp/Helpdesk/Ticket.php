@@ -50,6 +50,10 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = null;
     /**
+     * Generated from protobuf field <code>string secret = 12;</code>
+     */
+    protected $secret = '';
+    /**
      * Generated from protobuf field <code>string subject = 20;</code>
      */
     protected $subject = '';
@@ -73,6 +77,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
+     *     @type string $secret
      *     @type string $subject
      *     @type string $message
      * }
@@ -276,6 +281,28 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string secret = 12;</code>
+     * @return string
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Generated from protobuf field <code>string secret = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->secret = $var;
 
         return $this;
     }
