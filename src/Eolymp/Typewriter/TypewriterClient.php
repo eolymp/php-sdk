@@ -23,6 +23,143 @@ class TypewriterClient {
     }
 
     /**
+     * @param DescribeFragmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeFragmentOutput output message
+     */
+    public function DescribeFragment(DescribeFragmentInput $input, array $context = [])
+    {
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setFragmentId("");
+
+        $context['name'] = "eolymp.typewriter.Typewriter/DescribeFragment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeFragmentOutput::class, $context);
+    }
+
+    /**
+     * @param ListFragmentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListFragmentsOutput output message
+     */
+    public function ListFragments(ListFragmentsInput $input, array $context = [])
+    {
+        $path = "/content/fragments";
+
+        $context['name'] = "eolymp.typewriter.Typewriter/ListFragments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListFragmentsOutput::class, $context);
+    }
+
+    /**
+     * @param CreateFragmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateFragmentOutput output message
+     */
+    public function CreateFragment(CreateFragmentInput $input, array $context = [])
+    {
+        $path = "/content/fragments";
+
+        $context['name'] = "eolymp.typewriter.Typewriter/CreateFragment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateFragmentOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateFragmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateFragmentOutput output message
+     */
+    public function UpdateFragment(UpdateFragmentInput $input, array $context = [])
+    {
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setFragmentId("");
+
+        $context['name'] = "eolymp.typewriter.Typewriter/UpdateFragment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateFragmentOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteFragmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteFragmentOutput output message
+     */
+    public function DeleteFragment(DeleteFragmentInput $input, array $context = [])
+    {
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setFragmentId("");
+
+        $context['name'] = "eolymp.typewriter.Typewriter/DeleteFragment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteFragmentOutput::class, $context);
+    }
+
+    /**
+     * @param DescribePathInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribePathOutput output message
+     */
+    public function DescribePath(DescribePathInput $input, array $context = [])
+    {
+        $path = "/content/path";
+
+        $context['name'] = "eolymp.typewriter.Typewriter/DescribePath";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePathOutput::class, $context);
+    }
+
+    /**
+     * @param ListPathsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListPathsOutput output message
+     */
+    public function ListPaths(ListPathsInput $input, array $context = [])
+    {
+        $path = "/content/paths";
+
+        $context['name'] = "eolymp.typewriter.Typewriter/ListPaths";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPathsOutput::class, $context);
+    }
+
+    /**
+     * @param ListParentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListParentsOutput output message
+     */
+    public function ListParents(ListParentsInput $input, array $context = [])
+    {
+        $path = "/content/parents";
+
+        $context['name'] = "eolymp.typewriter.Typewriter/ListParents";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListParentsOutput::class, $context);
+    }
+
+    /**
      * @param UploadAssetInput $input message
      * @param array $context request parameters
      *
