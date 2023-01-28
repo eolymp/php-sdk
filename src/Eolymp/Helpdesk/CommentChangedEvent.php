@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class CommentChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 1;</code>
+     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     */
+    protected $ticket_id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 2;</code>
      */
     protected $before = null;
     /**
-     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 3;</code>
      */
     protected $after = null;
 
@@ -28,6 +32,7 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $ticket_id
      *     @type \Eolymp\Helpdesk\Ticket\Comment $before
      *     @type \Eolymp\Helpdesk\Ticket\Comment $after
      * }
@@ -38,7 +43,29 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 1;</code>
+     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * @return string
+     */
+    public function getTicketId()
+    {
+        return $this->ticket_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTicketId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ticket_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 2;</code>
      * @return \Eolymp\Helpdesk\Ticket\Comment
      */
     public function getBefore()
@@ -47,7 +74,7 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 2;</code>
      * @param \Eolymp\Helpdesk\Ticket\Comment $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 3;</code>
      * @return \Eolymp\Helpdesk\Ticket\Comment
      */
     public function getAfter()
@@ -69,7 +96,7 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 3;</code>
      * @param \Eolymp\Helpdesk\Ticket\Comment $var
      * @return $this
      */
