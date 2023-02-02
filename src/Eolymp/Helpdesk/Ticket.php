@@ -58,9 +58,9 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>string message = 21;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
      */
-    protected $message = '';
+    protected $message = null;
 
     /**
      * Constructor.
@@ -79,7 +79,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string $secret
      *     @type string $subject
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Node $message
      * }
      */
     public function __construct($data = NULL) {
@@ -330,8 +330,8 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 21;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
+     * @return \Eolymp\Ecm\Node
      */
     public function getMessage()
     {
@@ -339,13 +339,13 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 21;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
+     * @param \Eolymp\Ecm\Node $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->message = $var;
 
         return $this;

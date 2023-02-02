@@ -38,9 +38,9 @@ class Comment extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = null;
     /**
-     * Generated from protobuf field <code>string message = 21;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
      */
-    protected $message = '';
+    protected $message = null;
 
     /**
      * Constructor.
@@ -54,7 +54,7 @@ class Comment extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Node $message
      * }
      */
     public function __construct($data = NULL) {
@@ -195,8 +195,8 @@ class Comment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 21;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
+     * @return \Eolymp\Ecm\Node
      */
     public function getMessage()
     {
@@ -204,13 +204,13 @@ class Comment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 21;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
+     * @param \Eolymp\Ecm\Node $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->message = $var;
 
         return $this;
