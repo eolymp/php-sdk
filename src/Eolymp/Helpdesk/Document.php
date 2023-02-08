@@ -30,7 +30,7 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Container content = 50;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 51;</code>
      */
     protected $content = null;
     /**
@@ -48,7 +48,7 @@ class Document extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *     @type string $locale
      *     @type string $title
-     *     @type \Eolymp\Typewriter\Container $content
+     *     @type \Eolymp\Ecm\Node $content
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
@@ -146,8 +146,8 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Container content = 50;</code>
-     * @return \Eolymp\Typewriter\Container
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 51;</code>
+     * @return \Eolymp\Ecm\Node
      */
     public function getContent()
     {
@@ -155,13 +155,13 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.typewriter.Container content = 50;</code>
-     * @param \Eolymp\Typewriter\Container $var
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 51;</code>
+     * @param \Eolymp\Ecm\Node $var
      * @return $this
      */
     public function setContent($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Container::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->content = $var;
 
         return $this;
