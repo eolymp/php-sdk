@@ -46,7 +46,7 @@ class Statement extends \Google\Protobuf\Internal\Message
     /**
      * Statement content (in rich format).
      *
-     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 8;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 8;</code>
      */
     protected $content_rich = null;
     /**
@@ -90,7 +90,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *           Statement title.
      *     @type string $content
      *           Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
-     *     @type \Eolymp\Typewriter\Container $content_rich
+     *     @type \Eolymp\Ecm\Node $content_rich
      *           Statement content (in rich format).
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
@@ -240,8 +240,8 @@ class Statement extends \Google\Protobuf\Internal\Message
     /**
      * Statement content (in rich format).
      *
-     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 8;</code>
-     * @return \Eolymp\Typewriter\Container
+     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 8;</code>
+     * @return \Eolymp\Ecm\Node
      */
     public function getContentRich()
     {
@@ -251,13 +251,13 @@ class Statement extends \Google\Protobuf\Internal\Message
     /**
      * Statement content (in rich format).
      *
-     * Generated from protobuf field <code>.eolymp.typewriter.Container content_rich = 8;</code>
-     * @param \Eolymp\Typewriter\Container $var
+     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 8;</code>
+     * @param \Eolymp\Ecm\Node $var
      * @return $this
      */
     public function setContentRich($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Typewriter\Container::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->content_rich = $var;
 
         return $this;
