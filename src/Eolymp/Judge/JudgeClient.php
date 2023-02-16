@@ -883,6 +883,28 @@ class JudgeClient {
     }
 
     /**
+     * Set a new passcode to the participant, if passcode was not set it will be now required
+     *
+     * @param SetPasscodeInput $input message
+     * @param array $context request parameters
+     *
+     * @return SetPasscodeOutput output message
+     */
+    public function SetPasscode(SetPasscodeInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.Judge/SetPasscode";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SetPasscodeOutput::class, $context);
+    }
+
+    /**
      * Remove passcode from participant and allow her to enter contest without passcode.
      *
      * @param RemovePasscodeInput $input message
