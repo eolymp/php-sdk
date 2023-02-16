@@ -779,42 +779,22 @@ class AtlasClient {
     }
 
     /**
-     * @param DescribeChangeInput $input message
+     * @param ListVersionsInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeChangeOutput output message
+     * @return ListVersionsOutput output message
      */
-    public function DescribeChange(DescribeChangeInput $input, array $context = [])
+    public function ListVersions(ListVersionsInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/changes/".rawurlencode($input->getChangeId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setChangeId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/DescribeChange";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeChangeOutput::class, $context);
-    }
-
-    /**
-     * @param ListChangesInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListChangesOutput output message
-     */
-    public function ListChanges(ListChangesInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/changes";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/versions";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
 
-        $context['name'] = "eolymp.atlas.Atlas/ListChanges";
+        $context['name'] = "eolymp.atlas.Atlas/ListVersions";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListChangesOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListVersionsOutput::class, $context);
     }
 
     /**

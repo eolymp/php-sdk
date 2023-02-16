@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.ListChangesInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.ListVersionsInput</code>
  */
-class ListChangesInput extends \Google\Protobuf\Internal\Message
+class ListVersionsInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
@@ -30,7 +30,7 @@ class ListChangesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.atlas.ListChangesInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.ListVersionsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
 
@@ -44,7 +44,7 @@ class ListChangesInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Atlas\ListChangesInput\Filter $filters
+     *     @type \Eolymp\Atlas\ListVersionsInput\Filter $filters
      *           data filters
      * }
      */
@@ -126,8 +126,8 @@ class ListChangesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.atlas.ListChangesInput.Filter filters = 40;</code>
-     * @return \Eolymp\Atlas\ListChangesInput\Filter
+     * Generated from protobuf field <code>.eolymp.atlas.ListVersionsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Atlas\ListVersionsInput\Filter
      */
     public function getFilters()
     {
@@ -137,13 +137,13 @@ class ListChangesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.atlas.ListChangesInput.Filter filters = 40;</code>
-     * @param \Eolymp\Atlas\ListChangesInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.atlas.ListVersionsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Atlas\ListVersionsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListChangesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListVersionsInput_Filter::class);
         $this->filters = $var;
 
         return $this;

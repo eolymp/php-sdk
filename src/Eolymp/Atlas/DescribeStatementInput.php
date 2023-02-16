@@ -21,6 +21,12 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string statement_id = 2;</code>
      */
     protected $statement_id = '';
+    /**
+     * request data for specific problem version
+     *
+     * Generated from protobuf field <code>uint32 version = 100;</code>
+     */
+    protected $version = 0;
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $problem_id
      *     @type string $statement_id
+     *     @type int $version
+     *           request data for specific problem version
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +85,32 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->statement_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * request data for specific problem version
+     *
+     * Generated from protobuf field <code>uint32 version = 100;</code>
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * request data for specific problem version
+     *
+     * Generated from protobuf field <code>uint32 version = 100;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->version = $var;
 
         return $this;
     }

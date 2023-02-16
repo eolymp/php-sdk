@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.ListChangesOutput</code>
+ * Generated from protobuf message <code>eolymp.atlas.ListVersionsOutput</code>
  */
-class ListChangesOutput extends \Google\Protobuf\Internal\Message
+class ListVersionsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 total = 1;</code>
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Change items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Version items = 2;</code>
      */
     private $items;
 
@@ -29,7 +29,7 @@ class ListChangesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Atlas\Change[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Atlas\Version[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class ListChangesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Change items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Version items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -69,13 +69,13 @@ class ListChangesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Change items = 2;</code>
-     * @param \Eolymp\Atlas\Change[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Version items = 2;</code>
+     * @param \Eolymp\Atlas\Version[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Change::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Version::class);
         $this->items = $arr;
 
         return $this;
