@@ -1006,7 +1006,47 @@ class JudgeClient {
         $context['name'] = "eolymp.judge.Judge/RetestSubmission";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RetestSubmissionOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RetestSubmissionOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteSubmissionOutput output message
+     */
+    public function DeleteSubmission(DeleteSubmissionInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.Judge/DeleteSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteSubmissionOutput::class, $context);
+    }
+
+    /**
+     * @param RestoreSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return RestoreSubmissionOutput output message
+     */
+    public function RestoreSubmission(RestoreSubmissionInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId())."/restore";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.Judge/RestoreSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RestoreSubmissionOutput::class, $context);
     }
 
     /**
