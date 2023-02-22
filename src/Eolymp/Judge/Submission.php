@@ -48,6 +48,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $submitted_at = null;
     /**
+     * mark deleted (excluded from scoring) submissions
+     *
+     * Generated from protobuf field <code>bool deleted = 6;</code>
+     */
+    protected $deleted = false;
+    /**
      * programming language
      *
      * Generated from protobuf field <code>string lang = 10;</code>
@@ -117,6 +123,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           submitter
      *     @type \Google\Protobuf\Timestamp $submitted_at
      *           time when submission was created
+     *     @type bool $deleted
+     *           mark deleted (excluded from scoring) submissions
      *     @type string $lang
      *           programming language
      *     @type string $source
@@ -289,6 +297,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->submitted_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * mark deleted (excluded from scoring) submissions
+     *
+     * Generated from protobuf field <code>bool deleted = 6;</code>
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * mark deleted (excluded from scoring) submissions
+     *
+     * Generated from protobuf field <code>bool deleted = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeleted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->deleted = $var;
 
         return $this;
     }
