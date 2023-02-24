@@ -304,6 +304,11 @@ class AtlasClient {
     }
 
     /**
+     * DescribeStatement returns statement as it's stored in the database.
+     *
+     * This method should be used to fetch statement for editing, it returns statement in original format (HTML, Markdown,
+     * LaTeX or ECM) without resolving any embedded or computed values.
+     *
      * @param DescribeStatementInput $input message
      * @param array $context request parameters
      *
@@ -321,6 +326,54 @@ class AtlasClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeStatementOutput::class, $context);
+    }
+
+    /**
+     * RenderStatement returns fully resolved statement in ECM format.
+     *
+     * This method should be used to fetch statement for viewing, it always returns statement as ECM tree (rather than
+     * HTML or LaTeX) and ensures any embedded or computed values are resolved.
+     *
+     * @param RenderStatementInput $input message
+     * @param array $context request parameters
+     *
+     * @return RenderStatementOutput output message
+     */
+    public function RenderStatement(RenderStatementInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId())."/render";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setStatementId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/RenderStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RenderStatementOutput::class, $context);
+    }
+
+    /**
+     * PreviewStatement renders unsaved statement.
+     *
+     * This method can be used to render statement before it has been saved.
+     *
+     * @param PreviewStatementInput $input message
+     * @param array $context request parameters
+     *
+     * @return PreviewStatementOutput output message
+     */
+    public function PreviewStatement(PreviewStatementInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/renders";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/PreviewStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PreviewStatementOutput::class, $context);
     }
 
     /**

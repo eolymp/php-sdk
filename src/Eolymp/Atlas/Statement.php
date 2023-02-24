@@ -39,10 +39,11 @@ class Statement extends \Google\Protobuf\Internal\Message
     protected $title = '';
     /**
      * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
+     * deprecated: use one of content fields instead
      *
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content_raw = 5;</code>
      */
-    protected $content = '';
+    protected $content_raw = '';
     /**
      * Statement content (in rich format).
      *
@@ -56,7 +57,8 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $download_link = '';
     /**
-     * Statement content format. Preferred format is LaTeX, avoid using HTML format as it is deprecated.
+     * Statement content format
+     * deprecated: use one of content fields instead
      *
      * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
      */
@@ -73,6 +75,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 102;</code>
      */
     protected $source = '';
+    protected $content;
 
     /**
      * Constructor.
@@ -88,14 +91,20 @@ class Statement extends \Google\Protobuf\Internal\Message
      *           Statement locale code, should consist of two lowercase latin letters.
      *     @type string $title
      *           Statement title.
-     *     @type string $content
+     *     @type string $content_html
+     *     @type string $content_latex
+     *     @type string $content_markdown
+     *     @type \Eolymp\Ecm\Node $content_ecm
+     *     @type string $content_raw
      *           Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
+     *           deprecated: use one of content fields instead
      *     @type \Eolymp\Ecm\Node $content_rich
      *           Statement content (in rich format).
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
      *     @type int $format
-     *           Statement content format. Preferred format is LaTeX, avoid using HTML format as it is deprecated.
+     *           Statement content format
+     *           deprecated: use one of content fields instead
      *     @type string $author
      *           Problem author name.
      *     @type string $source
@@ -212,27 +221,117 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
-     *
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content_html = 50;</code>
      * @return string
      */
-    public function getContent()
+    public function getContentHtml()
     {
-        return $this->content;
+        return $this->readOneof(50);
+    }
+
+    /**
+     * Generated from protobuf field <code>string content_html = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContentHtml($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(50, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string content_latex = 51;</code>
+     * @return string
+     */
+    public function getContentLatex()
+    {
+        return $this->readOneof(51);
+    }
+
+    /**
+     * Generated from protobuf field <code>string content_latex = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContentLatex($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(51, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string content_markdown = 52;</code>
+     * @return string
+     */
+    public function getContentMarkdown()
+    {
+        return $this->readOneof(52);
+    }
+
+    /**
+     * Generated from protobuf field <code>string content_markdown = 52;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContentMarkdown($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(52, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node content_ecm = 53;</code>
+     * @return \Eolymp\Ecm\Node
+     */
+    public function getContentEcm()
+    {
+        return $this->readOneof(53);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node content_ecm = 53;</code>
+     * @param \Eolymp\Ecm\Node $var
+     * @return $this
+     */
+    public function setContentEcm($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        $this->writeOneof(53, $var);
+
+        return $this;
     }
 
     /**
      * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
+     * deprecated: use one of content fields instead
      *
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content_raw = 5;</code>
+     * @return string
+     */
+    public function getContentRaw()
+    {
+        return $this->content_raw;
+    }
+
+    /**
+     * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
+     * deprecated: use one of content fields instead
+     *
+     * Generated from protobuf field <code>string content_raw = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setContent($var)
+    public function setContentRaw($var)
     {
         GPBUtil::checkString($var, True);
-        $this->content = $var;
+        $this->content_raw = $var;
 
         return $this;
     }
@@ -290,7 +389,8 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content format. Preferred format is LaTeX, avoid using HTML format as it is deprecated.
+     * Statement content format
+     * deprecated: use one of content fields instead
      *
      * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
      * @return int
@@ -301,7 +401,8 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content format. Preferred format is LaTeX, avoid using HTML format as it is deprecated.
+     * Statement content format
+     * deprecated: use one of content fields instead
      *
      * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
      * @param int $var
@@ -365,6 +466,14 @@ class Statement extends \Google\Protobuf\Internal\Message
         $this->source = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->whichOneof("content");
     }
 
 }
