@@ -16,13 +16,13 @@ class Status
      */
     const UNKNOWN = 0;
     /**
-     * Generated from protobuf enum <code>PENDING = 1;</code>
+     * Generated from protobuf enum <code>CREATED = 1;</code>
      */
-    const PENDING = 1;
+    const CREATED = 1;
     /**
-     * Generated from protobuf enum <code>EXECUTING = 2;</code>
+     * Generated from protobuf enum <code>STARTED = 2;</code>
      */
-    const EXECUTING = 2;
+    const STARTED = 2;
     /**
      * Generated from protobuf enum <code>COMPLETE = 3;</code>
      */
@@ -34,8 +34,8 @@ class Status
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
-        self::PENDING => 'PENDING',
-        self::EXECUTING => 'EXECUTING',
+        self::CREATED => 'CREATED',
+        self::STARTED => 'STARTED',
         self::COMPLETE => 'COMPLETE',
         self::ERROR => 'ERROR',
     ];
