@@ -12,9 +12,9 @@ use UnexpectedValueException;
 class Status
 {
     /**
-     * Generated from protobuf enum <code>UNKNOWN_STATUS = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN = 0;</code>
      */
-    const UNKNOWN_STATUS = 0;
+    const UNKNOWN = 0;
     /**
      * Generated from protobuf enum <code>PENDING = 1;</code>
      */
@@ -33,7 +33,7 @@ class Status
     const ERROR = 4;
 
     private static $valueToName = [
-        self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
+        self::UNKNOWN => 'UNKNOWN',
         self::PENDING => 'PENDING',
         self::EXECUTING => 'EXECUTING',
         self::COMPLETE => 'COMPLETE',

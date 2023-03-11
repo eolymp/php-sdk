@@ -26,15 +26,41 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     private $inputs;
     /**
-     * Generated from protobuf field <code>.eolymp.polyglot.Task.Status status = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     */
+    protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
+     */
+    protected $started_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp progress_at = 12;</code>
+     */
+    protected $progress_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 13;</code>
+     */
+    protected $complete_at = null;
+    /**
+     * progress is a number from 0 to `total`, showing amount of work complete
+     *
+     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     */
+    protected $progress = 0;
+    /**
+     * Generated from protobuf field <code>uint32 total = 21;</code>
+     */
+    protected $total = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.polyglot.Task.Status status = 30;</code>
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>map<string, string> outputs = 11;</code>
+     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
      */
     private $outputs;
     /**
-     * Generated from protobuf field <code>string logs = 20;</code>
+     * Generated from protobuf field <code>string logs = 100;</code>
      */
     protected $logs = '';
 
@@ -47,6 +73,13 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $type
      *     @type array|\Google\Protobuf\Internal\MapField $inputs
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $started_at
+     *     @type \Google\Protobuf\Timestamp $progress_at
+     *     @type \Google\Protobuf\Timestamp $complete_at
+     *     @type int $progress
+     *           progress is a number from 0 to `total`, showing amount of work complete
+     *     @type int $total
      *     @type int $status
      *     @type array|\Google\Protobuf\Internal\MapField $outputs
      *     @type string $logs
@@ -124,7 +157,143 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.polyglot.Task.Status status = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getStartedAt()
+    {
+        return $this->started_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->started_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp progress_at = 12;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getProgressAt()
+    {
+        return $this->progress_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp progress_at = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setProgressAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->progress_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 13;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCompleteAt()
+    {
+        return $this->complete_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCompleteAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->complete_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * progress is a number from 0 to `total`, showing amount of work complete
+     *
+     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     * @return int
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    /**
+     * progress is a number from 0 to `total`, showing amount of work complete
+     *
+     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 total = 21;</code>
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 total = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.polyglot.Task.Status status = 30;</code>
      * @return int
      */
     public function getStatus()
@@ -133,7 +302,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.polyglot.Task.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.polyglot.Task.Status status = 30;</code>
      * @param int $var
      * @return $this
      */
@@ -146,7 +315,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> outputs = 11;</code>
+     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getOutputs()
@@ -155,7 +324,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> outputs = 11;</code>
+     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -168,7 +337,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string logs = 20;</code>
+     * Generated from protobuf field <code>string logs = 100;</code>
      * @return string
      */
     public function getLogs()
@@ -177,7 +346,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string logs = 20;</code>
+     * Generated from protobuf field <code>string logs = 100;</code>
      * @param string $var
      * @return $this
      */
