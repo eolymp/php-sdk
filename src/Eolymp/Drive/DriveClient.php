@@ -30,7 +30,7 @@ class DriveClient {
      */
     public function DescribeFile(DescribeFileInput $input, array $context = [])
     {
-        $path = "/drive/files/".rawurlencode($input->getFileId());
+        $path = "/files/".rawurlencode($input->getFileId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFileId("");
@@ -49,7 +49,7 @@ class DriveClient {
      */
     public function ListFiles(ListFilesInput $input, array $context = [])
     {
-        $path = "/drive/files";
+        $path = "/files";
 
         $context['name'] = "eolymp.drive.Drive/ListFiles";
         $context['path'] = $path;
@@ -65,7 +65,7 @@ class DriveClient {
      */
     public function CreateFile(CreateFileInput $input, array $context = [])
     {
-        $path = "/drive/files";
+        $path = "/files";
 
         $context['name'] = "eolymp.drive.Drive/CreateFile";
         $context['path'] = $path;
@@ -81,7 +81,7 @@ class DriveClient {
      */
     public function UpdateFile(UpdateFileInput $input, array $context = [])
     {
-        $path = "/drive/files/".rawurlencode($input->getFileId());
+        $path = "/files/".rawurlencode($input->getFileId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFileId("");
@@ -100,7 +100,7 @@ class DriveClient {
      */
     public function DeleteFile(DeleteFileInput $input, array $context = [])
     {
-        $path = "/drive/files/".rawurlencode($input->getFileId());
+        $path = "/files/".rawurlencode($input->getFileId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFileId("");
@@ -119,7 +119,7 @@ class DriveClient {
      */
     public function StartMultipartUpload(StartMultipartUploadInput $input, array $context = [])
     {
-        $path = "/drive/uploads";
+        $path = "/uploads";
 
         $context['name'] = "eolymp.drive.Drive/StartMultipartUpload";
         $context['path'] = $path;
@@ -135,7 +135,7 @@ class DriveClient {
      */
     public function UploadPart(UploadPartInput $input, array $context = [])
     {
-        $path = "/drive/uploads/".rawurlencode($input->getUploadId())."/parts";
+        $path = "/uploads/".rawurlencode($input->getUploadId())."/parts";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUploadId("");
@@ -154,7 +154,7 @@ class DriveClient {
      */
     public function CompleteMultipartUpload(CompleteMultipartUploadInput $input, array $context = [])
     {
-        $path = "/drive/uploads/".rawurlencode($input->getUploadId())."/complete";
+        $path = "/uploads/".rawurlencode($input->getUploadId())."/complete";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUploadId("");
