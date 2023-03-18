@@ -42,6 +42,16 @@ class File extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
+     * File access control level
+     *
+     * Generated from protobuf field <code>.eolymp.drive.File.Acl acl = 6;</code>
+     */
+    protected $acl = 0;
+    /**
+     * Generated from protobuf field <code>string created_by = 12;</code>
+     */
+    protected $created_by = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
      */
     protected $created_at = null;
@@ -73,6 +83,9 @@ class File extends \Google\Protobuf\Internal\Message
      *           Size of the data
      *     @type string $type
      *           File mime type
+     *     @type int $acl
+     *           File access control level
+     *     @type string $created_by
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
@@ -206,6 +219,54 @@ class File extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * File access control level
+     *
+     * Generated from protobuf field <code>.eolymp.drive.File.Acl acl = 6;</code>
+     * @return int
+     */
+    public function getAcl()
+    {
+        return $this->acl;
+    }
+
+    /**
+     * File access control level
+     *
+     * Generated from protobuf field <code>.eolymp.drive.File.Acl acl = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAcl($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Drive\File_Acl::class);
+        $this->acl = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_by = 12;</code>
+     * @return string
+     */
+    public function getCreatedBy()
+    {
+        return $this->created_by;
+    }
+
+    /**
+     * Generated from protobuf field <code>string created_by = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedBy($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_by = $var;
 
         return $this;
     }

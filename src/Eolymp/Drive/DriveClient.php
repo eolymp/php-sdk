@@ -23,6 +23,22 @@ class DriveClient {
     }
 
     /**
+     * @param UploadFileInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadFileOutput output message
+     */
+    public function UploadFile(UploadFileInput $input, array $context = [])
+    {
+        $path = "/files";
+
+        $context['name'] = "eolymp.drive.Drive/UploadFile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadFileOutput::class, $context);
+    }
+
+    /**
      * @param DescribeFileInput $input message
      * @param array $context request parameters
      *
@@ -55,22 +71,6 @@ class DriveClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListFilesOutput::class, $context);
-    }
-
-    /**
-     * @param CreateFileInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateFileOutput output message
-     */
-    public function CreateFile(CreateFileInput $input, array $context = [])
-    {
-        $path = "/files";
-
-        $context['name'] = "eolymp.drive.Drive/CreateFile";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateFileOutput::class, $context);
     }
 
     /**
@@ -135,7 +135,7 @@ class DriveClient {
      */
     public function UploadPart(UploadPartInput $input, array $context = [])
     {
-        $path = "/uploads/".rawurlencode($input->getUploadId())."/parts";
+        $path = "/uploads/".rawurlencode($input->getUploadId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUploadId("");
@@ -154,7 +154,7 @@ class DriveClient {
      */
     public function CompleteMultipartUpload(CompleteMultipartUploadInput $input, array $context = [])
     {
-        $path = "/uploads/".rawurlencode($input->getUploadId())."/complete";
+        $path = "/uploads/".rawurlencode($input->getUploadId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUploadId("");
@@ -162,7 +162,7 @@ class DriveClient {
         $context['name'] = "eolymp.drive.Drive/CompleteMultipartUpload";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteMultipartUploadOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CompleteMultipartUploadOutput::class, $context);
     }
 
 }

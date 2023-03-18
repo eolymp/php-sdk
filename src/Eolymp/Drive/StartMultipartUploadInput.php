@@ -22,6 +22,10 @@ class StartMultipartUploadInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
+     * Generated from protobuf field <code>.eolymp.drive.File.Acl acl = 3;</code>
+     */
+    protected $acl = 0;
+    /**
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      */
     private $attributes;
@@ -34,6 +38,7 @@ class StartMultipartUploadInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $path
      *     @type string $type
+     *     @type int $acl
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
      * }
      */
@@ -82,6 +87,28 @@ class StartMultipartUploadInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.drive.File.Acl acl = 3;</code>
+     * @return int
+     */
+    public function getAcl()
+    {
+        return $this->acl;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.drive.File.Acl acl = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAcl($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Drive\File_Acl::class);
+        $this->acl = $var;
 
         return $this;
     }

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.drive.CompleteMultipartUploadOutput</code>
+ * Generated from protobuf message <code>eolymp.drive.UploadFileOutput</code>
  */
-class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
+class UploadFileOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string file_id = 1;</code>
