@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.acl.IntrospectInput</code>
+ * Generated from protobuf message <code>eolymp.acl.IntrospectPermissionInput</code>
  */
-class IntrospectInput extends \Google\Protobuf\Internal\Message
+class IntrospectPermissionInput extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.acl.DescribeOutput</code>
+ * Generated from protobuf message <code>eolymp.acl.DescribePermissionOutput</code>
  */
-class DescribeOutput extends \Google\Protobuf\Internal\Message
+class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Grant grant = 1;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Permission grant = 1;</code>
      */
     protected $grant = null;
 
@@ -24,7 +24,7 @@ class DescribeOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Acl\Grant $grant
+     *     @type \Eolymp\Acl\Permission $grant
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DescribeOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Grant grant = 1;</code>
-     * @return \Eolymp\Acl\Grant
+     * Generated from protobuf field <code>.eolymp.acl.Permission grant = 1;</code>
+     * @return \Eolymp\Acl\Permission
      */
     public function getGrant()
     {
@@ -42,13 +42,13 @@ class DescribeOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Grant grant = 1;</code>
-     * @param \Eolymp\Acl\Grant $var
+     * Generated from protobuf field <code>.eolymp.acl.Permission grant = 1;</code>
+     * @param \Eolymp\Acl\Permission $var
      * @return $this
      */
     public function setGrant($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Acl\Grant::class);
+        GPBUtil::checkMessage($var, \Eolymp\Acl\Permission::class);
         $this->grant = $var;
 
         return $this;

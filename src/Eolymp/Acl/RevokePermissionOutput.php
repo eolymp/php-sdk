@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.acl.GrantOutput</code>
+ * Generated from protobuf message <code>eolymp.acl.RevokePermissionOutput</code>
  */
-class GrantOutput extends \Google\Protobuf\Internal\Message
+class RevokePermissionOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

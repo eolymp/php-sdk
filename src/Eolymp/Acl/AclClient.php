@@ -23,92 +23,92 @@ class AclClient {
     }
 
     /**
-     * @param GrantInput $input message
+     * @param GrantPermissionInput $input message
      * @param array $context request parameters
      *
-     * @return GrantOutput output message
+     * @return GrantPermissionOutput output message
      */
-    public function Grant(GrantInput $input, array $context = [])
+    public function GrantPermission(GrantPermissionInput $input, array $context = [])
     {
         $path = "/acl/".rawurlencode($input->getUserId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUserId("");
 
-        $context['name'] = "eolymp.acl.Acl/Grant";
+        $context['name'] = "eolymp.acl.Acl/GrantPermission";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, GrantOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, GrantPermissionOutput::class, $context);
     }
 
     /**
-     * @param RevokeInput $input message
+     * @param RevokePermissionInput $input message
      * @param array $context request parameters
      *
-     * @return RevokeOutput output message
+     * @return RevokePermissionOutput output message
      */
-    public function Revoke(RevokeInput $input, array $context = [])
+    public function RevokePermission(RevokePermissionInput $input, array $context = [])
     {
         $path = "/acl/".rawurlencode($input->getUserId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUserId("");
 
-        $context['name'] = "eolymp.acl.Acl/Revoke";
+        $context['name'] = "eolymp.acl.Acl/RevokePermission";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RevokeOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RevokePermissionOutput::class, $context);
     }
 
     /**
-     * @param DescribeInput $input message
+     * @param DescribePermissionInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeOutput output message
+     * @return DescribePermissionOutput output message
      */
-    public function Describe(DescribeInput $input, array $context = [])
+    public function DescribePermission(DescribePermissionInput $input, array $context = [])
     {
         $path = "/acl/".rawurlencode($input->getUserId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setUserId("");
 
-        $context['name'] = "eolymp.acl.Acl/Describe";
+        $context['name'] = "eolymp.acl.Acl/DescribePermission";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePermissionOutput::class, $context);
     }
 
     /**
-     * @param ListInput $input message
+     * @param ListPermissionInput $input message
      * @param array $context request parameters
      *
-     * @return ListOutput output message
+     * @return ListPermissionOutput output message
      */
-    public function List(ListInput $input, array $context = [])
+    public function ListPermission(ListPermissionInput $input, array $context = [])
     {
         $path = "/acl";
 
-        $context['name'] = "eolymp.acl.Acl/List";
+        $context['name'] = "eolymp.acl.Acl/ListPermission";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPermissionOutput::class, $context);
     }
 
     /**
-     * @param IntrospectInput $input message
+     * @param IntrospectPermissionInput $input message
      * @param array $context request parameters
      *
-     * @return IntrospectOutput output message
+     * @return IntrospectPermissionOutput output message
      */
-    public function Introspect(IntrospectInput $input, array $context = [])
+    public function IntrospectPermission(IntrospectPermissionInput $input, array $context = [])
     {
         $path = "/whoami";
 
-        $context['name'] = "eolymp.acl.Acl/Introspect";
+        $context['name'] = "eolymp.acl.Acl/IntrospectPermission";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectPermissionOutput::class, $context);
     }
 
 }
