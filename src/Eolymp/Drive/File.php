@@ -24,11 +24,11 @@ class File extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
-     * SHA1 hash of data
+     * Entity tag
      *
-     * Generated from protobuf field <code>string hash = 3;</code>
+     * Generated from protobuf field <code>string etag = 3;</code>
      */
-    protected $hash = '';
+    protected $etag = '';
     /**
      * Size of the data
      *
@@ -77,8 +77,8 @@ class File extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $path
      *           File path
-     *     @type string $hash
-     *           SHA1 hash of data
+     *     @type string $etag
+     *           Entity tag
      *     @type int $size
      *           Size of the data
      *     @type string $type
@@ -146,27 +146,27 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * SHA1 hash of data
+     * Entity tag
      *
-     * Generated from protobuf field <code>string hash = 3;</code>
+     * Generated from protobuf field <code>string etag = 3;</code>
      * @return string
      */
-    public function getHash()
+    public function getEtag()
     {
-        return $this->hash;
+        return $this->etag;
     }
 
     /**
-     * SHA1 hash of data
+     * Entity tag
      *
-     * Generated from protobuf field <code>string hash = 3;</code>
+     * Generated from protobuf field <code>string etag = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setHash($var)
+    public function setEtag($var)
     {
         GPBUtil::checkString($var, True);
-        $this->hash = $var;
+        $this->etag = $var;
 
         return $this;
     }

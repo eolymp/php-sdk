@@ -22,9 +22,9 @@ class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
      */
     protected $file_url = '';
     /**
-     * Generated from protobuf field <code>string file_hash = 3;</code>
+     * Generated from protobuf field <code>string file_etag = 3;</code>
      */
-    protected $file_hash = '';
+    protected $file_etag = '';
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $file_id
      *     @type string $file_url
-     *     @type string $file_hash
+     *     @type string $file_etag
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +87,23 @@ class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string file_hash = 3;</code>
+     * Generated from protobuf field <code>string file_etag = 3;</code>
      * @return string
      */
-    public function getFileHash()
+    public function getFileEtag()
     {
-        return $this->file_hash;
+        return $this->file_etag;
     }
 
     /**
-     * Generated from protobuf field <code>string file_hash = 3;</code>
+     * Generated from protobuf field <code>string file_etag = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setFileHash($var)
+    public function setFileEtag($var)
     {
         GPBUtil::checkString($var, True);
-        $this->file_hash = $var;
+        $this->file_etag = $var;
 
         return $this;
     }

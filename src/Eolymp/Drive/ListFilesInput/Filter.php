@@ -22,9 +22,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $path;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum hash = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum etag = 4;</code>
      */
-    private $hash;
+    private $etag;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt size = 5;</code>
      */
@@ -50,7 +50,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $path
-     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $hash
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $etag
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $size
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $type
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
@@ -107,23 +107,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum hash = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum etag = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getHash()
+    public function getEtag()
     {
-        return $this->hash;
+        return $this->etag;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum hash = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum etag = 4;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setHash($var)
+    public function setEtag($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->hash = $arr;
+        $this->etag = $arr;
 
         return $this;
     }
