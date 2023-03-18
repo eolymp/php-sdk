@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Permission grant = 1;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Permission permission = 1;</code>
      */
-    protected $grant = null;
+    protected $permission = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Acl\Permission $grant
+     *     @type \Eolymp\Acl\Permission $permission
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Permission grant = 1;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Permission permission = 1;</code>
      * @return \Eolymp\Acl\Permission
      */
-    public function getGrant()
+    public function getPermission()
     {
-        return $this->grant;
+        return $this->permission;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Permission grant = 1;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Permission permission = 1;</code>
      * @param \Eolymp\Acl\Permission $var
      * @return $this
      */
-    public function setGrant($var)
+    public function setPermission($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Acl\Permission::class);
-        $this->grant = $var;
+        $this->permission = $var;
 
         return $this;
     }
