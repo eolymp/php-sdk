@@ -80,19 +80,19 @@ class AclClient {
     }
 
     /**
-     * @param ListPermissionInput $input message
+     * @param ListPermissionsInput $input message
      * @param array $context request parameters
      *
-     * @return ListPermissionOutput output message
+     * @return ListPermissionsOutput output message
      */
-    public function ListPermission(ListPermissionInput $input, array $context = [])
+    public function ListPermissions(ListPermissionsInput $input, array $context = [])
     {
         $path = "/acl";
 
-        $context['name'] = "eolymp.acl.Acl/ListPermission";
+        $context['name'] = "eolymp.acl.Acl/ListPermissions";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPermissionOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPermissionsOutput::class, $context);
     }
 
     /**

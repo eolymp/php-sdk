@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.acl.ListPermissionInput</code>
+ * Generated from protobuf message <code>eolymp.acl.ListPermissionsInput</code>
  */
-class ListPermissionInput extends \Google\Protobuf\Internal\Message
+class ListPermissionsInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -22,7 +22,7 @@ class ListPermissionInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.acl.ListPermissionInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.acl.ListPermissionsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
 
@@ -34,7 +34,7 @@ class ListPermissionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $offset
      *     @type int $size
-     *     @type \Eolymp\Acl\ListPermissionInput\Filter $filters
+     *     @type \Eolymp\Acl\ListPermissionsInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class ListPermissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.ListPermissionInput.Filter filters = 40;</code>
-     * @return \Eolymp\Acl\ListPermissionInput\Filter
+     * Generated from protobuf field <code>.eolymp.acl.ListPermissionsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Acl\ListPermissionsInput\Filter
      */
     public function getFilters()
     {
@@ -96,13 +96,13 @@ class ListPermissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.ListPermissionInput.Filter filters = 40;</code>
-     * @param \Eolymp\Acl\ListPermissionInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.acl.ListPermissionsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Acl\ListPermissionsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Acl\ListPermissionInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Acl\ListPermissionsInput_Filter::class);
         $this->filters = $var;
 
         return $this;
