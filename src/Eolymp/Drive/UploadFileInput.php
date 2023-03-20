@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class UploadFileInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * file virtual path in the drive
+     *
      * Generated from protobuf field <code>string path = 1;</code>
      */
     protected $path = '';
     /**
+     * mime type for file
+     *
      * Generated from protobuf field <code>string type = 2;</code>
      */
     protected $type = '';
@@ -26,10 +30,20 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
      */
     protected $acl = 0;
     /**
+     * optionally, checksum to verify file after upload
+     *
+     * Generated from protobuf field <code>string checksum_sha256 = 4;</code>
+     */
+    protected $checksum_sha256 = '';
+    /**
+     * additional key-value attributes for the file
+     *
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      */
     private $attributes;
     /**
+     * file content
+     *
      * Generated from protobuf field <code>bytes data = 100;</code>
      */
     protected $data = '';
@@ -41,10 +55,16 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
+     *           file virtual path in the drive
      *     @type string $type
+     *           mime type for file
      *     @type int $acl
+     *     @type string $checksum_sha256
+     *           optionally, checksum to verify file after upload
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
+     *           additional key-value attributes for the file
      *     @type string $data
+     *           file content
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +73,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * file virtual path in the drive
+     *
      * Generated from protobuf field <code>string path = 1;</code>
      * @return string
      */
@@ -62,6 +84,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * file virtual path in the drive
+     *
      * Generated from protobuf field <code>string path = 1;</code>
      * @param string $var
      * @return $this
@@ -75,6 +99,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * mime type for file
+     *
      * Generated from protobuf field <code>string type = 2;</code>
      * @return string
      */
@@ -84,6 +110,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * mime type for file
+     *
      * Generated from protobuf field <code>string type = 2;</code>
      * @param string $var
      * @return $this
@@ -119,6 +147,34 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * optionally, checksum to verify file after upload
+     *
+     * Generated from protobuf field <code>string checksum_sha256 = 4;</code>
+     * @return string
+     */
+    public function getChecksumSha256()
+    {
+        return $this->checksum_sha256;
+    }
+
+    /**
+     * optionally, checksum to verify file after upload
+     *
+     * Generated from protobuf field <code>string checksum_sha256 = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setChecksumSha256($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->checksum_sha256 = $var;
+
+        return $this;
+    }
+
+    /**
+     * additional key-value attributes for the file
+     *
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -128,6 +184,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * additional key-value attributes for the file
+     *
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
@@ -141,6 +199,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * file content
+     *
      * Generated from protobuf field <code>bytes data = 100;</code>
      * @return string
      */
@@ -150,6 +210,8 @@ class UploadFileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * file content
+     *
      * Generated from protobuf field <code>bytes data = 100;</code>
      * @param string $var
      * @return $this
