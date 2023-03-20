@@ -27,6 +27,12 @@ class File extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source_ern = 2;</code>
      */
     protected $source_ern = '';
+    /**
+     * URL of the file content
+     *
+     * Generated from protobuf field <code>string source_url = 3;</code>
+     */
+    protected $source_url = '';
 
     /**
      * Constructor.
@@ -38,6 +44,8 @@ class File extends \Google\Protobuf\Internal\Message
      *           Path where file should be placed (always relative to the workdir)
      *     @type string $source_ern
      *           ERN defines how to fetch file content
+     *     @type string $source_url
+     *           URL of the file content
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +101,32 @@ class File extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL of the file content
+     *
+     * Generated from protobuf field <code>string source_url = 3;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * URL of the file content
+     *
+     * Generated from protobuf field <code>string source_url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
 
         return $this;
     }

@@ -68,10 +68,14 @@ class Run extends \Google\Protobuf\Internal\Message
      *           download input from object storage
      *     @type string $input_content
      *           use input from this field (up to 1KB)
+     *     @type string $input_url
+     *           download input via URL
      *     @type string $answer_object_id
      *           download answer from object storage
      *     @type string $answer_content
      *           use answer from this field (up to 1KB)
+     *     @type string $answer_url
+     *           download answer via URL
      * }
      */
     public function __construct($data = NULL) {
@@ -262,6 +266,32 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * download input via URL
+     *
+     * Generated from protobuf field <code>string input_url = 12;</code>
+     * @return string
+     */
+    public function getInputUrl()
+    {
+        return $this->readOneof(12);
+    }
+
+    /**
+     * download input via URL
+     *
+     * Generated from protobuf field <code>string input_url = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
      * download answer from object storage
      *
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
@@ -309,6 +339,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * download answer via URL
+     *
+     * Generated from protobuf field <code>string answer_url = 22;</code>
+     * @return string
+     */
+    public function getAnswerUrl()
+    {
+        return $this->readOneof(22);
+    }
+
+    /**
+     * download answer via URL
+     *
+     * Generated from protobuf field <code>string answer_url = 22;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(22, $var);
 
         return $this;
     }

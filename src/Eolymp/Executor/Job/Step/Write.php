@@ -20,6 +20,10 @@ class Write extends \Google\Protobuf\Internal\Message
      */
     protected $source_ern = '';
     /**
+     * Generated from protobuf field <code>string source_url = 5;</code>
+     */
+    protected $source_url = '';
+    /**
      * Generated from protobuf field <code>string target_actor = 2;</code>
      */
     protected $target_actor = '';
@@ -41,6 +45,7 @@ class Write extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $source_ern
+     *     @type string $source_url
      *     @type string $target_actor
      *     @type string $target_path
      *     @type bool $fix_crlf
@@ -70,6 +75,28 @@ class Write extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string source_url = 5;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string source_url = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
 
         return $this;
     }

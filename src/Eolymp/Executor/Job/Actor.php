@@ -46,6 +46,24 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     protected $footer_ern = '';
     /**
+     * Source code URL
+     *
+     * Generated from protobuf field <code>string source_url = 14;</code>
+     */
+    protected $source_url = '';
+    /**
+     * Header code URL, automatically added before source code
+     *
+     * Generated from protobuf field <code>string header_url = 15;</code>
+     */
+    protected $header_url = '';
+    /**
+     * Footer code URL, automatically added after source code
+     *
+     * Generated from protobuf field <code>string footer_url = 16;</code>
+     */
+    protected $footer_url = '';
+    /**
      * Additional environment variable during init
      *
      * Generated from protobuf field <code>map<string, string> env = 40;</code>
@@ -86,6 +104,12 @@ class Actor extends \Google\Protobuf\Internal\Message
      *           Header code ERN, automatically added before source code
      *     @type string $footer_ern
      *           Footer code ERN, automatically added after source code
+     *     @type string $source_url
+     *           Source code URL
+     *     @type string $header_url
+     *           Header code URL, automatically added before source code
+     *     @type string $footer_url
+     *           Footer code URL, automatically added after source code
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           Additional environment variable during init
      *     @type \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $files
@@ -227,6 +251,84 @@ class Actor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->footer_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Source code URL
+     *
+     * Generated from protobuf field <code>string source_url = 14;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * Source code URL
+     *
+     * Generated from protobuf field <code>string source_url = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Header code URL, automatically added before source code
+     *
+     * Generated from protobuf field <code>string header_url = 15;</code>
+     * @return string
+     */
+    public function getHeaderUrl()
+    {
+        return $this->header_url;
+    }
+
+    /**
+     * Header code URL, automatically added before source code
+     *
+     * Generated from protobuf field <code>string header_url = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHeaderUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->header_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Footer code URL, automatically added after source code
+     *
+     * Generated from protobuf field <code>string footer_url = 16;</code>
+     * @return string
+     */
+    public function getFooterUrl()
+    {
+        return $this->footer_url;
+    }
+
+    /**
+     * Footer code URL, automatically added after source code
+     *
+     * Generated from protobuf field <code>string footer_url = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFooterUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->footer_url = $var;
 
         return $this;
     }
