@@ -22,9 +22,9 @@ class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
      */
     protected $file_url = '';
     /**
-     * Generated from protobuf field <code>string file_checksum = 3;</code>
+     * Generated from protobuf field <code>string file_checksum_sha256 = 3;</code>
      */
-    protected $file_checksum = '';
+    protected $file_checksum_sha256 = '';
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $file_id
      *     @type string $file_url
-     *     @type string $file_checksum
+     *     @type string $file_checksum_sha256
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +87,23 @@ class CompleteMultipartUploadOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string file_checksum = 3;</code>
+     * Generated from protobuf field <code>string file_checksum_sha256 = 3;</code>
      * @return string
      */
-    public function getFileChecksum()
+    public function getFileChecksumSha256()
     {
-        return $this->file_checksum;
+        return $this->file_checksum_sha256;
     }
 
     /**
-     * Generated from protobuf field <code>string file_checksum = 3;</code>
+     * Generated from protobuf field <code>string file_checksum_sha256 = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setFileChecksum($var)
+    public function setFileChecksumSha256($var)
     {
         GPBUtil::checkString($var, True);
-        $this->file_checksum = $var;
+        $this->file_checksum_sha256 = $var;
 
         return $this;
     }

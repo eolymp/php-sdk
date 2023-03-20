@@ -22,9 +22,9 @@ class Part extends \Google\Protobuf\Internal\Message
      */
     protected $etag = '';
     /**
-     * Generated from protobuf field <code>string checksum_sha1 = 10;</code>
+     * Generated from protobuf field <code>string checksum_sha256 = 10;</code>
      */
-    protected $checksum_sha1 = '';
+    protected $checksum_sha256 = '';
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class Part extends \Google\Protobuf\Internal\Message
      *
      *     @type int $number
      *     @type string $etag
-     *     @type string $checksum_sha1
+     *     @type string $checksum_sha256
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +87,23 @@ class Part extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string checksum_sha1 = 10;</code>
+     * Generated from protobuf field <code>string checksum_sha256 = 10;</code>
      * @return string
      */
-    public function getChecksumSha1()
+    public function getChecksumSha256()
     {
-        return $this->checksum_sha1;
+        return $this->checksum_sha256;
     }
 
     /**
-     * Generated from protobuf field <code>string checksum_sha1 = 10;</code>
+     * Generated from protobuf field <code>string checksum_sha256 = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setChecksumSha1($var)
+    public function setChecksumSha256($var)
     {
         GPBUtil::checkString($var, True);
-        $this->checksum_sha1 = $var;
+        $this->checksum_sha256 = $var;
 
         return $this;
     }

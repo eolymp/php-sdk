@@ -26,6 +26,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $etag;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum checksum_sha256 = 9;</code>
+     */
+    private $checksum_sha256;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt size = 5;</code>
      */
     private $size;
@@ -51,6 +55,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $path
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $etag
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $checksum_sha256
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $size
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $type
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
@@ -124,6 +129,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->etag = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum checksum_sha256 = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChecksumSha256()
+    {
+        return $this->checksum_sha256;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum checksum_sha256 = 9;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setChecksumSha256($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->checksum_sha256 = $arr;
 
         return $this;
     }

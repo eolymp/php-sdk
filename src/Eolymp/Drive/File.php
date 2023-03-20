@@ -30,11 +30,11 @@ class File extends \Google\Protobuf\Internal\Message
      */
     protected $etag = '';
     /**
-     * SHA-1 checksum of the file
+     * SHA-256 checksum of the file
      *
-     * Generated from protobuf field <code>string checksum = 7;</code>
+     * Generated from protobuf field <code>string checksum_sha256 = 7;</code>
      */
-    protected $checksum = '';
+    protected $checksum_sha256 = '';
     /**
      * Size of the data
      *
@@ -91,8 +91,8 @@ class File extends \Google\Protobuf\Internal\Message
      *           File path
      *     @type string $etag
      *           Entity tag
-     *     @type string $checksum
-     *           SHA-1 checksum of the file
+     *     @type string $checksum_sha256
+     *           SHA-256 checksum of the file
      *     @type int $size
      *           Size of the data
      *     @type string $type
@@ -188,27 +188,27 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * SHA-1 checksum of the file
+     * SHA-256 checksum of the file
      *
-     * Generated from protobuf field <code>string checksum = 7;</code>
+     * Generated from protobuf field <code>string checksum_sha256 = 7;</code>
      * @return string
      */
-    public function getChecksum()
+    public function getChecksumSha256()
     {
-        return $this->checksum;
+        return $this->checksum_sha256;
     }
 
     /**
-     * SHA-1 checksum of the file
+     * SHA-256 checksum of the file
      *
-     * Generated from protobuf field <code>string checksum = 7;</code>
+     * Generated from protobuf field <code>string checksum_sha256 = 7;</code>
      * @param string $var
      * @return $this
      */
-    public function setChecksum($var)
+    public function setChecksumSha256($var)
     {
         GPBUtil::checkString($var, True);
-        $this->checksum = $var;
+        $this->checksum_sha256 = $var;
 
         return $this;
     }
