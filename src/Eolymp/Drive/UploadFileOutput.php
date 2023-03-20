@@ -22,9 +22,9 @@ class UploadFileOutput extends \Google\Protobuf\Internal\Message
      */
     protected $file_url = '';
     /**
-     * Generated from protobuf field <code>string file_etag = 3;</code>
+     * Generated from protobuf field <code>string file_checksum = 3;</code>
      */
-    protected $file_etag = '';
+    protected $file_checksum = '';
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class UploadFileOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $file_id
      *     @type string $file_url
-     *     @type string $file_etag
+     *     @type string $file_checksum
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +87,23 @@ class UploadFileOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string file_etag = 3;</code>
+     * Generated from protobuf field <code>string file_checksum = 3;</code>
      * @return string
      */
-    public function getFileEtag()
+    public function getFileChecksum()
     {
-        return $this->file_etag;
+        return $this->file_checksum;
     }
 
     /**
-     * Generated from protobuf field <code>string file_etag = 3;</code>
+     * Generated from protobuf field <code>string file_checksum = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setFileEtag($var)
+    public function setFileChecksum($var)
     {
         GPBUtil::checkString($var, True);
-        $this->file_etag = $var;
+        $this->file_checksum = $var;
 
         return $this;
     }
