@@ -30,6 +30,12 @@ class File extends \Google\Protobuf\Internal\Message
      */
     protected $etag = '';
     /**
+     * SHA-1 checksum of the file
+     *
+     * Generated from protobuf field <code>string checksum = 7;</code>
+     */
+    protected $checksum = '';
+    /**
      * Size of the data
      *
      * Generated from protobuf field <code>uint32 size = 4;</code>
@@ -41,6 +47,12 @@ class File extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string type = 5;</code>
      */
     protected $type = '';
+    /**
+     * If true means file is being uploaded using multipart upload API, reset to false once CompleteMultipartUpload is complete
+     *
+     * Generated from protobuf field <code>bool incomplete = 8;</code>
+     */
+    protected $incomplete = false;
     /**
      * File access control level
      *
@@ -79,10 +91,14 @@ class File extends \Google\Protobuf\Internal\Message
      *           File path
      *     @type string $etag
      *           Entity tag
+     *     @type string $checksum
+     *           SHA-1 checksum of the file
      *     @type int $size
      *           Size of the data
      *     @type string $type
      *           File mime type
+     *     @type bool $incomplete
+     *           If true means file is being uploaded using multipart upload API, reset to false once CompleteMultipartUpload is complete
      *     @type int $acl
      *           File access control level
      *     @type string $created_by
@@ -172,6 +188,32 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * SHA-1 checksum of the file
+     *
+     * Generated from protobuf field <code>string checksum = 7;</code>
+     * @return string
+     */
+    public function getChecksum()
+    {
+        return $this->checksum;
+    }
+
+    /**
+     * SHA-1 checksum of the file
+     *
+     * Generated from protobuf field <code>string checksum = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setChecksum($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->checksum = $var;
+
+        return $this;
+    }
+
+    /**
      * Size of the data
      *
      * Generated from protobuf field <code>uint32 size = 4;</code>
@@ -219,6 +261,32 @@ class File extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true means file is being uploaded using multipart upload API, reset to false once CompleteMultipartUpload is complete
+     *
+     * Generated from protobuf field <code>bool incomplete = 8;</code>
+     * @return bool
+     */
+    public function getIncomplete()
+    {
+        return $this->incomplete;
+    }
+
+    /**
+     * If true means file is being uploaded using multipart upload API, reset to false once CompleteMultipartUpload is complete
+     *
+     * Generated from protobuf field <code>bool incomplete = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIncomplete($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->incomplete = $var;
 
         return $this;
     }
