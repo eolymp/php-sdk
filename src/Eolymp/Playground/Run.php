@@ -26,11 +26,11 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * Source code.
+     * Source code
      *
-     * Generated from protobuf field <code>string source = 11;</code>
+     * Generated from protobuf field <code>string source_url = 11;</code>
      */
-    protected $source = '';
+    protected $source_url = '';
     /**
      * Input data
      *
@@ -102,8 +102,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Task unique identifier
      *     @type string $runtime
      *           Programming language
-     *     @type string $source
-     *           Source code.
+     *     @type string $source_url
+     *           Source code
      *     @type string $input_url
      *           Input data
      *     @type int $status
@@ -184,27 +184,27 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code.
+     * Source code
      *
-     * Generated from protobuf field <code>string source = 11;</code>
+     * Generated from protobuf field <code>string source_url = 11;</code>
      * @return string
      */
-    public function getSource()
+    public function getSourceUrl()
     {
-        return $this->source;
+        return $this->source_url;
     }
 
     /**
-     * Source code.
+     * Source code
      *
-     * Generated from protobuf field <code>string source = 11;</code>
+     * Generated from protobuf field <code>string source_url = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setSource($var)
+    public function setSourceUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source = $var;
+        $this->source_url = $var;
 
         return $this;
     }

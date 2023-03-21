@@ -18,9 +18,9 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * Generated from protobuf field <code>string source = 100;</code>
+     * Generated from protobuf field <code>string source_url = 100;</code>
      */
-    protected $source = '';
+    protected $source_url = '';
     /**
      * Generated from protobuf field <code>string input_url = 101;</code>
      */
@@ -37,7 +37,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $runtime
-     *     @type string $source
+     *     @type string $source_url
      *     @type string $input_url
      *     @type string $problem_url
      * }
@@ -70,23 +70,23 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string source = 100;</code>
+     * Generated from protobuf field <code>string source_url = 100;</code>
      * @return string
      */
-    public function getSource()
+    public function getSourceUrl()
     {
-        return $this->source;
+        return $this->source_url;
     }
 
     /**
-     * Generated from protobuf field <code>string source = 100;</code>
+     * Generated from protobuf field <code>string source_url = 100;</code>
      * @param string $var
      * @return $this
      */
-    public function setSource($var)
+    public function setSourceUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source = $var;
+        $this->source_url = $var;
 
         return $this;
     }
