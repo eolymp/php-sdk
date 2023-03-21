@@ -14,47 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRunInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * deprecated, use runtime instead
-     *
-     * Generated from protobuf field <code>string lang = 1;</code>
-     */
-    protected $lang = '';
-    /**
      * Generated from protobuf field <code>string runtime = 2;</code>
      */
     protected $runtime = '';
     /**
-     * Source code
-     * deprecated, use source_ern instead
-     *
-     * Generated from protobuf field <code>string source = 31;</code>
+     * Generated from protobuf field <code>string source = 100;</code>
      */
     protected $source = '';
     /**
-     * Source code ERN (data up to 5KB or blob)
-     *
-     * Generated from protobuf field <code>string source_ern = 30;</code>
+     * Generated from protobuf field <code>string input_url = 101;</code>
      */
-    protected $source_ern = '';
+    protected $input_url = '';
     /**
-     * Input ERN (data up to 5KB or blob)
-     *
-     * Generated from protobuf field <code>string input_ern = 10;</code>
+     * Generated from protobuf field <code>string problem_url = 102;</code>
      */
-    protected $input_ern = '';
-    /**
-     * Problem ERN allows to reuse template from Atlas or Judge problem.
-     *
-     * Generated from protobuf field <code>string problem_ern = 20;</code>
-     */
-    protected $problem_ern = '';
-    /**
-     * deprecated, use input ern instead
-     *
-     * Generated from protobuf field <code>string input = 3;</code>
-     */
-    protected $input = '';
-    protected $input_data;
+    protected $problem_url = '';
 
     /**
      * Constructor.
@@ -62,53 +36,15 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $lang
-     *           deprecated, use runtime instead
      *     @type string $runtime
      *     @type string $source
-     *           Source code
-     *           deprecated, use source_ern instead
-     *     @type string $source_ern
-     *           Source code ERN (data up to 5KB or blob)
-     *     @type string $input_ern
-     *           Input ERN (data up to 5KB or blob)
-     *     @type string $problem_ern
-     *           Problem ERN allows to reuse template from Atlas or Judge problem.
-     *     @type string $input
-     *           deprecated, use input ern instead
-     *     @type string $input_content
-     *     @type string $input_object_id
+     *     @type string $input_url
+     *     @type string $problem_url
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Playground\Playground::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * deprecated, use runtime instead
-     *
-     * Generated from protobuf field <code>string lang = 1;</code>
-     * @return string
-     */
-    public function getLang()
-    {
-        return $this->lang;
-    }
-
-    /**
-     * deprecated, use runtime instead
-     *
-     * Generated from protobuf field <code>string lang = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLang($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->lang = $var;
-
-        return $this;
     }
 
     /**
@@ -134,10 +70,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code
-     * deprecated, use source_ern instead
-     *
-     * Generated from protobuf field <code>string source = 31;</code>
+     * Generated from protobuf field <code>string source = 100;</code>
      * @return string
      */
     public function getSource()
@@ -146,10 +79,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code
-     * deprecated, use source_ern instead
-     *
-     * Generated from protobuf field <code>string source = 31;</code>
+     * Generated from protobuf field <code>string source = 100;</code>
      * @param string $var
      * @return $this
      */
@@ -162,159 +92,47 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code ERN (data up to 5KB or blob)
-     *
-     * Generated from protobuf field <code>string source_ern = 30;</code>
+     * Generated from protobuf field <code>string input_url = 101;</code>
      * @return string
      */
-    public function getSourceErn()
+    public function getInputUrl()
     {
-        return $this->source_ern;
+        return $this->input_url;
     }
 
     /**
-     * Source code ERN (data up to 5KB or blob)
-     *
-     * Generated from protobuf field <code>string source_ern = 30;</code>
+     * Generated from protobuf field <code>string input_url = 101;</code>
      * @param string $var
      * @return $this
      */
-    public function setSourceErn($var)
+    public function setInputUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source_ern = $var;
+        $this->input_url = $var;
 
         return $this;
     }
 
     /**
-     * Input ERN (data up to 5KB or blob)
-     *
-     * Generated from protobuf field <code>string input_ern = 10;</code>
+     * Generated from protobuf field <code>string problem_url = 102;</code>
      * @return string
      */
-    public function getInputErn()
+    public function getProblemUrl()
     {
-        return $this->input_ern;
+        return $this->problem_url;
     }
 
     /**
-     * Input ERN (data up to 5KB or blob)
-     *
-     * Generated from protobuf field <code>string input_ern = 10;</code>
+     * Generated from protobuf field <code>string problem_url = 102;</code>
      * @param string $var
      * @return $this
      */
-    public function setInputErn($var)
+    public function setProblemUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->input_ern = $var;
+        $this->problem_url = $var;
 
         return $this;
-    }
-
-    /**
-     * Problem ERN allows to reuse template from Atlas or Judge problem.
-     *
-     * Generated from protobuf field <code>string problem_ern = 20;</code>
-     * @return string
-     */
-    public function getProblemErn()
-    {
-        return $this->problem_ern;
-    }
-
-    /**
-     * Problem ERN allows to reuse template from Atlas or Judge problem.
-     *
-     * Generated from protobuf field <code>string problem_ern = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_ern = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use input ern instead
-     *
-     * Generated from protobuf field <code>string input = 3;</code>
-     * @return string
-     */
-    public function getInput()
-    {
-        return $this->input;
-    }
-
-    /**
-     * deprecated, use input ern instead
-     *
-     * Generated from protobuf field <code>string input = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInput($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->input = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes input_content = 4;</code>
-     * @return string
-     */
-    public function getInputContent()
-    {
-        return $this->readOneof(4);
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes input_content = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInputContent($var)
-    {
-        GPBUtil::checkString($var, False);
-        $this->writeOneof(4, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string input_object_id = 5;</code>
-     * @return string
-     */
-    public function getInputObjectId()
-    {
-        return $this->readOneof(5);
-    }
-
-    /**
-     * Generated from protobuf field <code>string input_object_id = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInputObjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(5, $var);
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInputData()
-    {
-        return $this->whichOneof("input_data");
     }
 
 }
