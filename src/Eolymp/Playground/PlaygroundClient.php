@@ -30,7 +30,7 @@ class PlaygroundClient {
      */
     public function CreateRun(CreateRunInput $input, array $context = [])
     {
-        $path = "/playground/runs";
+        $path = "/runs";
 
         $context['name'] = "eolymp.playground.Playground/CreateRun";
         $context['path'] = $path;
@@ -46,7 +46,7 @@ class PlaygroundClient {
      */
     public function DescribeRun(DescribeRunInput $input, array $context = [])
     {
-        $path = "/playground/runs/".rawurlencode($input->getRunId());
+        $path = "/runs/".rawurlencode($input->getRunId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRunId("");

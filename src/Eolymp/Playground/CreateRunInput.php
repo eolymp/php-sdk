@@ -18,17 +18,10 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * Generated from protobuf field <code>string source_url = 100;</code>
+     * Generated from protobuf field <code>string source = 100;</code>
      */
-    protected $source_url = '';
-    /**
-     * Generated from protobuf field <code>string input_url = 101;</code>
-     */
-    protected $input_url = '';
-    /**
-     * Generated from protobuf field <code>string problem_url = 102;</code>
-     */
-    protected $problem_url = '';
+    protected $source = '';
+    protected $input;
 
     /**
      * Constructor.
@@ -37,9 +30,9 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $runtime
-     *     @type string $source_url
-     *     @type string $input_url
-     *     @type string $problem_url
+     *     @type string $source
+     *     @type string $input_data
+     *     @type string $input_ref
      * }
      */
     public function __construct($data = NULL) {
@@ -70,69 +63,77 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string source_url = 100;</code>
+     * Generated from protobuf field <code>string source = 100;</code>
      * @return string
      */
-    public function getSourceUrl()
+    public function getSource()
     {
-        return $this->source_url;
+        return $this->source;
     }
 
     /**
-     * Generated from protobuf field <code>string source_url = 100;</code>
+     * Generated from protobuf field <code>string source = 100;</code>
      * @param string $var
      * @return $this
      */
-    public function setSourceUrl($var)
+    public function setSource($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source_url = $var;
+        $this->source = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string input_url = 101;</code>
+     * Generated from protobuf field <code>string input_data = 101;</code>
      * @return string
      */
-    public function getInputUrl()
+    public function getInputData()
     {
-        return $this->input_url;
+        return $this->readOneof(101);
     }
 
     /**
-     * Generated from protobuf field <code>string input_url = 101;</code>
+     * Generated from protobuf field <code>string input_data = 101;</code>
      * @param string $var
      * @return $this
      */
-    public function setInputUrl($var)
+    public function setInputData($var)
     {
         GPBUtil::checkString($var, True);
-        $this->input_url = $var;
+        $this->writeOneof(101, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string problem_url = 102;</code>
+     * Generated from protobuf field <code>string input_ref = 102;</code>
      * @return string
      */
-    public function getProblemUrl()
+    public function getInputRef()
     {
-        return $this->problem_url;
+        return $this->readOneof(102);
     }
 
     /**
-     * Generated from protobuf field <code>string problem_url = 102;</code>
+     * Generated from protobuf field <code>string input_ref = 102;</code>
      * @param string $var
      * @return $this
      */
-    public function setProblemUrl($var)
+    public function setInputRef($var)
     {
         GPBUtil::checkString($var, True);
-        $this->problem_url = $var;
+        $this->writeOneof(102, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInput()
+    {
+        return $this->whichOneof("input");
     }
 
 }
