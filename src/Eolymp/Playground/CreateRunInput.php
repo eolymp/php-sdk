@@ -85,7 +85,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string input_data = 101;</code>
+     * Generated from protobuf field <code>bytes input_data = 101;</code>
      * @return string
      */
     public function getInputData()
@@ -94,13 +94,13 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string input_data = 101;</code>
+     * Generated from protobuf field <code>bytes input_data = 101;</code>
      * @param string $var
      * @return $this
      */
     public function setInputData($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, False);
         $this->writeOneof(101, $var);
 
         return $this;
