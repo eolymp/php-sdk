@@ -18,9 +18,9 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string mime = 2;</code>
+     * Generated from protobuf field <code>string type = 2;</code>
      */
-    protected $mime = '';
+    protected $type = '';
     /**
      * Generated from protobuf field <code>.eolymp.asset.UploadImageInput.Crop crop = 10;</code>
      */
@@ -41,7 +41,7 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *     @type string $mime
+     *     @type string $type
      *     @type \Eolymp\Asset\UploadImageInput\Crop $crop
      *     @type \Eolymp\Asset\UploadImageInput\Size[]|\Google\Protobuf\Internal\RepeatedField $sizes
      *     @type string $data
@@ -75,23 +75,23 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string mime = 2;</code>
+     * Generated from protobuf field <code>string type = 2;</code>
      * @return string
      */
-    public function getMime()
+    public function getType()
     {
-        return $this->mime;
+        return $this->type;
     }
 
     /**
-     * Generated from protobuf field <code>string mime = 2;</code>
+     * Generated from protobuf field <code>string type = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setMime($var)
+    public function setType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->mime = $var;
+        $this->type = $var;
 
         return $this;
     }
