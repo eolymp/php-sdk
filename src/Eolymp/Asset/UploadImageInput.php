@@ -26,9 +26,13 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
      */
     protected $crop = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size sizes = 20;</code>
+     * Generated from protobuf field <code>.eolymp.asset.UploadImageInput.Size size = 11;</code>
      */
-    private $sizes;
+    protected $size = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size variants = 20;</code>
+     */
+    private $variants;
     /**
      * Generated from protobuf field <code>bytes data = 100;</code>
      */
@@ -43,7 +47,8 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $type
      *     @type \Eolymp\Asset\UploadImageInput\Crop $crop
-     *     @type \Eolymp\Asset\UploadImageInput\Size[]|\Google\Protobuf\Internal\RepeatedField $sizes
+     *     @type \Eolymp\Asset\UploadImageInput\Size $size
+     *     @type \Eolymp\Asset\UploadImageInput\Size[]|\Google\Protobuf\Internal\RepeatedField $variants
      *     @type string $data
      * }
      */
@@ -119,23 +124,45 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size sizes = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.asset.UploadImageInput.Size size = 11;</code>
+     * @return \Eolymp\Asset\UploadImageInput\Size
      */
-    public function getSizes()
+    public function getSize()
     {
-        return $this->sizes;
+        return $this->size;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size sizes = 20;</code>
+     * Generated from protobuf field <code>.eolymp.asset.UploadImageInput.Size size = 11;</code>
+     * @param \Eolymp\Asset\UploadImageInput\Size $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Asset\UploadImageInput_Size::class);
+        $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size variants = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getVariants()
+    {
+        return $this->variants;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size variants = 20;</code>
      * @param \Eolymp\Asset\UploadImageInput\Size[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setSizes($var)
+    public function setVariants($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Asset\UploadImageInput\Size::class);
-        $this->sizes = $arr;
+        $this->variants = $arr;
 
         return $this;
     }

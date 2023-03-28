@@ -18,17 +18,17 @@ class Crop extends \Google\Protobuf\Internal\Message
      */
     protected $top = 0;
     /**
-     * Generated from protobuf field <code>uint32 left = 2;</code>
+     * Generated from protobuf field <code>uint32 right = 2;</code>
+     */
+    protected $right = 0;
+    /**
+     * Generated from protobuf field <code>uint32 bottom = 3;</code>
+     */
+    protected $bottom = 0;
+    /**
+     * Generated from protobuf field <code>uint32 left = 4;</code>
      */
     protected $left = 0;
-    /**
-     * Generated from protobuf field <code>uint32 width = 3;</code>
-     */
-    protected $width = 0;
-    /**
-     * Generated from protobuf field <code>uint32 height = 4;</code>
-     */
-    protected $height = 0;
 
     /**
      * Constructor.
@@ -37,9 +37,9 @@ class Crop extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $top
+     *     @type int $right
+     *     @type int $bottom
      *     @type int $left
-     *     @type int $width
-     *     @type int $height
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,51 @@ class Crop extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 left = 2;</code>
+     * Generated from protobuf field <code>uint32 right = 2;</code>
+     * @return int
+     */
+    public function getRight()
+    {
+        return $this->right;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 right = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRight($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->right = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 bottom = 3;</code>
+     * @return int
+     */
+    public function getBottom()
+    {
+        return $this->bottom;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 bottom = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBottom($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->bottom = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 left = 4;</code>
      * @return int
      */
     public function getLeft()
@@ -79,7 +123,7 @@ class Crop extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 left = 2;</code>
+     * Generated from protobuf field <code>uint32 left = 4;</code>
      * @param int $var
      * @return $this
      */
@@ -87,50 +131,6 @@ class Crop extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->left = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 width = 3;</code>
-     * @return int
-     */
-    public function getWidth()
-    {
-        return $this->width;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 width = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setWidth($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->width = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 height = 4;</code>
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 height = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setHeight($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->height = $var;
 
         return $this;
     }
