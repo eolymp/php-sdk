@@ -334,6 +334,8 @@ class AtlasClient {
      * This method should be used to fetch statement for viewing, it always returns statement as ECM tree (rather than
      * HTML or LaTeX) and ensures any embedded or computed values are resolved.
      *
+     * Deprecated: use DescribeStatement with rendered=true
+     *
      * @param RenderStatementInput $input message
      * @param array $context request parameters
      *
@@ -351,6 +353,27 @@ class AtlasClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, RenderStatementOutput::class, $context);
+    }
+
+    /**
+     * LookupStatement finds a statement in one of the requested languages.
+     *
+     * @param LookupStatementInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupStatementOutput output message
+     */
+    public function LookupStatement(LookupStatementInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/LookupStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupStatementOutput::class, $context);
     }
 
     /**

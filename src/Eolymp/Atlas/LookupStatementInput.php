@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DescribeStatementInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.LookupStatementInput</code>
  */
-class DescribeStatementInput extends \Google\Protobuf\Internal\Message
+class LookupStatementInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>string statement_id = 2;</code>
+     * Generated from protobuf field <code>repeated string preferred_locale = 2;</code>
      */
-    protected $statement_id = '';
+    private $preferred_locale;
     /**
      * render statement content as ECM document
      *
@@ -41,7 +41,7 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type string $statement_id
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $preferred_locale
      *     @type bool $rendered
      *           render statement content as ECM document
      *     @type int $version
@@ -76,23 +76,23 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string statement_id = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated string preferred_locale = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getStatementId()
+    public function getPreferredLocale()
     {
-        return $this->statement_id;
+        return $this->preferred_locale;
     }
 
     /**
-     * Generated from protobuf field <code>string statement_id = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated string preferred_locale = 2;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setStatementId($var)
+    public function setPreferredLocale($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->statement_id = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->preferred_locale = $arr;
 
         return $this;
     }

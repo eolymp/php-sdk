@@ -24,14 +24,18 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>string content = 3;</code>
+     * deprecated: use content instead
+     *
+     * Generated from protobuf field <code>string content_raw = 3;</code>
      */
-    protected $content = '';
+    protected $content_raw = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 4;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 4;</code>
      */
-    protected $content_rich = null;
+    protected $content = null;
     /**
+     * deprecated: content always uses ECM format
+     *
      * Generated from protobuf field <code>.eolymp.judge.Problem.Statement.Format format = 5;</code>
      */
     protected $format = 0;
@@ -48,9 +52,11 @@ class Statement extends \Google\Protobuf\Internal\Message
      *
      *     @type string $locale
      *     @type string $title
-     *     @type string $content
-     *     @type \Eolymp\Ecm\Node $content_rich
+     *     @type string $content_raw
+     *           deprecated: use content instead
+     *     @type \Eolymp\Ecm\Node $content
      *     @type int $format
+     *           deprecated: content always uses ECM format
      *     @type string $download_link
      * }
      */
@@ -104,8 +110,34 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 3;</code>
+     * deprecated: use content instead
+     *
+     * Generated from protobuf field <code>string content_raw = 3;</code>
      * @return string
+     */
+    public function getContentRaw()
+    {
+        return $this->content_raw;
+    }
+
+    /**
+     * deprecated: use content instead
+     *
+     * Generated from protobuf field <code>string content_raw = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContentRaw($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->content_raw = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 4;</code>
+     * @return \Eolymp\Ecm\Node
      */
     public function getContent()
     {
@@ -113,41 +145,21 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 4;</code>
+     * @param \Eolymp\Ecm\Node $var
      * @return $this
      */
     public function setContent($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->content = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 4;</code>
-     * @return \Eolymp\Ecm\Node
-     */
-    public function getContentRich()
-    {
-        return $this->content_rich;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 4;</code>
-     * @param \Eolymp\Ecm\Node $var
-     * @return $this
-     */
-    public function setContentRich($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
-        $this->content_rich = $var;
-
-        return $this;
-    }
-
-    /**
+     * deprecated: content always uses ECM format
+     *
      * Generated from protobuf field <code>.eolymp.judge.Problem.Statement.Format format = 5;</code>
      * @return int
      */
@@ -157,6 +169,8 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: content always uses ECM format
+     *
      * Generated from protobuf field <code>.eolymp.judge.Problem.Statement.Format format = 5;</code>
      * @param int $var
      * @return $this
