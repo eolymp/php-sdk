@@ -24,9 +24,9 @@ class LookupStatementInput extends \Google\Protobuf\Internal\Message
     /**
      * render statement content as ECM document
      *
-     * Generated from protobuf field <code>bool rendered = 3;</code>
+     * Generated from protobuf field <code>bool render = 3;</code>
      */
-    protected $rendered = false;
+    protected $render = false;
     /**
      * request data for specific problem version
      *
@@ -42,7 +42,7 @@ class LookupStatementInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $problem_id
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $preferred_locale
-     *     @type bool $rendered
+     *     @type bool $render
      *           render statement content as ECM document
      *     @type int $version
      *           request data for specific problem version
@@ -100,25 +100,25 @@ class LookupStatementInput extends \Google\Protobuf\Internal\Message
     /**
      * render statement content as ECM document
      *
-     * Generated from protobuf field <code>bool rendered = 3;</code>
+     * Generated from protobuf field <code>bool render = 3;</code>
      * @return bool
      */
-    public function getRendered()
+    public function getRender()
     {
-        return $this->rendered;
+        return $this->render;
     }
 
     /**
      * render statement content as ECM document
      *
-     * Generated from protobuf field <code>bool rendered = 3;</code>
+     * Generated from protobuf field <code>bool render = 3;</code>
      * @param bool $var
      * @return $this
      */
-    public function setRendered($var)
+    public function setRender($var)
     {
         GPBUtil::checkBool($var);
-        $this->rendered = $var;
+        $this->render = $var;
 
         return $this;
     }
