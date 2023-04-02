@@ -347,6 +347,31 @@ class AtlasClient {
     }
 
     /**
+     * RenderStatement returns fully resolved statement in ECM format.
+     *
+     * This method should be used to fetch statement for viewing, it always returns statement as ECM tree (rather than
+     * HTML or LaTeX) and ensures any embedded or computed values are resolved.
+     *
+     * @param RenderStatementInput $input message
+     * @param array $context request parameters
+     *
+     * @return RenderStatementOutput output message
+     */
+    public function RenderStatement(RenderStatementInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId())."/render";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+        $input->setStatementId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/RenderStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RenderStatementOutput::class, $context);
+    }
+
+    /**
      * PreviewStatement renders unsaved statement.
      *
      * This method can be used to render statement before it has been saved.

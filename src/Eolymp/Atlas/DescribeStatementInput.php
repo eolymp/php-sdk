@@ -22,12 +22,6 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      */
     protected $statement_id = '';
     /**
-     * render statement content as ECM document
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     */
-    protected $render = false;
-    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
@@ -42,8 +36,6 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $problem_id
      *     @type string $statement_id
-     *     @type bool $render
-     *           render statement content as ECM document
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -93,32 +85,6 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->statement_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * render statement content as ECM document
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * render statement content as ECM document
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
 
         return $this;
     }
