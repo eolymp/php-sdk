@@ -39,25 +39,6 @@ class SubmissionServiceClient {
     }
 
     /**
-     * @param DescribeSubmissionInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeSubmissionOutput output message
-     */
-    public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
-    {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSubmissionId("");
-
-        $context['name'] = "eolymp.atlas.SubmissionService/DescribeSubmission";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubmissionOutput::class, $context);
-    }
-
-    /**
      * @param RetestSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -74,6 +55,25 @@ class SubmissionServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RetestSubmissionOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeSubmissionOutput output message
+     */
+    public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
+    {
+        $path = "/submissions/".rawurlencode($input->getSubmissionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.atlas.SubmissionService/DescribeSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubmissionOutput::class, $context);
     }
 
 }

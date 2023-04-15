@@ -77,22 +77,6 @@ class StatementServiceClient {
     }
 
     /**
-     * @param ListStatementsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListStatementsOutput output message
-     */
-    public function ListStatements(ListStatementsInput $input, array $context = [])
-    {
-        $path = "/statements";
-
-        $context['name'] = "eolymp.atlas.StatementService/ListStatements";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStatementsOutput::class, $context);
-    }
-
-    /**
      * DescribeStatement returns statement.
      *
      * @param DescribeStatementInput $input message
@@ -173,6 +157,22 @@ class StatementServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, PreviewStatementOutput::class, $context);
+    }
+
+    /**
+     * @param ListStatementsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListStatementsOutput output message
+     */
+    public function ListStatements(ListStatementsInput $input, array $context = [])
+    {
+        $path = "/statements";
+
+        $context['name'] = "eolymp.atlas.StatementService/ListStatements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStatementsOutput::class, $context);
     }
 
 }

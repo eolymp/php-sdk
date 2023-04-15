@@ -42,22 +42,6 @@ class ScoringServiceClient {
     }
 
     /**
-     * @param ListProblemTopInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListProblemTopOutput output message
-     */
-    public function ListProblemTop(ListProblemTopInput $input, array $context = [])
-    {
-        $path = "/top";
-
-        $context['name'] = "eolymp.atlas.ScoringService/ListProblemTop";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemTopOutput::class, $context);
-    }
-
-    /**
      * @param DescribeProblemGradingInput $input message
      * @param array $context request parameters
      *
@@ -71,6 +55,22 @@ class ScoringServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProblemGradingOutput::class, $context);
+    }
+
+    /**
+     * @param ListProblemTopInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListProblemTopOutput output message
+     */
+    public function ListProblemTop(ListProblemTopInput $input, array $context = [])
+    {
+        $path = "/top";
+
+        $context['name'] = "eolymp.atlas.ScoringService/ListProblemTop";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemTopOutput::class, $context);
     }
 
 }

@@ -58,22 +58,6 @@ class ProblemServiceClient {
     }
 
     /**
-     * @param ListProblemsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListProblemsOutput output message
-     */
-    public function ListProblems(ListProblemsInput $input, array $context = [])
-    {
-        $path = "/problems";
-
-        $context['name'] = "eolymp.atlas.ProblemService/ListProblems";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemsOutput::class, $context);
-    }
-
-    /**
      * @param DescribeProblemInput $input message
      * @param array $context request parameters
      *
@@ -128,6 +112,22 @@ class ProblemServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePrivacyOutput::class, $context);
+    }
+
+    /**
+     * @param ListProblemsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListProblemsOutput output message
+     */
+    public function ListProblems(ListProblemsInput $input, array $context = [])
+    {
+        $path = "/problems";
+
+        $context['name'] = "eolymp.atlas.ProblemService/ListProblems";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemsOutput::class, $context);
     }
 
     /**

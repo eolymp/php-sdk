@@ -141,22 +141,6 @@ class TestingServiceClient {
     }
 
     /**
-     * @param ListTestsetsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListTestsetsOutput output message
-     */
-    public function ListTestsets(ListTestsetsInput $input, array $context = [])
-    {
-        $path = "/testsets";
-
-        $context['name'] = "eolymp.atlas.TestingService/ListTestsets";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTestsetsOutput::class, $context);
-    }
-
-    /**
      * @param DescribeTestsetInput $input message
      * @param array $context request parameters
      *
@@ -173,6 +157,22 @@ class TestingServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestsetOutput::class, $context);
+    }
+
+    /**
+     * @param ListTestsetsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListTestsetsOutput output message
+     */
+    public function ListTestsets(ListTestsetsInput $input, array $context = [])
+    {
+        $path = "/testsets";
+
+        $context['name'] = "eolymp.atlas.TestingService/ListTestsets";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTestsetsOutput::class, $context);
     }
 
     /**
@@ -235,6 +235,26 @@ class TestingServiceClient {
     }
 
     /**
+     * @param DescribeTestInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeTestOutput output message
+     */
+    public function DescribeTest(DescribeTestInput $input, array $context = [])
+    {
+        $path = "/testsets/".rawurlencode($input->getTestsetId())."/tests/".rawurlencode($input->getTestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTestsetId("");
+        $input->setTestId("");
+
+        $context['name'] = "eolymp.atlas.TestingService/DescribeTest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestOutput::class, $context);
+    }
+
+    /**
      * @param ListTestsInput $input message
      * @param array $context request parameters
      *
@@ -267,26 +287,6 @@ class TestingServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListExamplesOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeTestInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeTestOutput output message
-     */
-    public function DescribeTest(DescribeTestInput $input, array $context = [])
-    {
-        $path = "/testsets/".rawurlencode($input->getTestsetId())."/tests/".rawurlencode($input->getTestId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setTestsetId("");
-        $input->setTestId("");
-
-        $context['name'] = "eolymp.atlas.TestingService/DescribeTest";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestOutput::class, $context);
     }
 
 }
