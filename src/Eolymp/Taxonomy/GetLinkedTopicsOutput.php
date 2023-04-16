@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.GetTopicLinksOutput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.GetLinkedTopicsOutput</code>
  */
-class GetTopicLinksOutput extends \Google\Protobuf\Internal\Message
+class GetLinkedTopicsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>repeated string topics = 1;</code>

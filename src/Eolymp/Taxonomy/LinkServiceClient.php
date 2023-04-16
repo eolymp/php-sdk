@@ -28,37 +28,37 @@ class LinkServiceClient {
     /**
      * this method will override all existing links
      *
-     * @param SetTopicLinksInput $input message
+     * @param SetLinkedTopicsInput $input message
      * @param array $context request parameters
      *
-     * @return SetTopicLinksOutput output message
+     * @return SetLinkedTopicsOutput output message
      */
-    public function SetTopicLinks(SetTopicLinksInput $input, array $context = [])
+    public function SetLinkedTopics(SetLinkedTopicsInput $input, array $context = [])
     {
         $path = "/topics";
 
-        $context['name'] = "eolymp.taxonomy.LinkService/SetTopicLinks";
+        $context['name'] = "eolymp.taxonomy.LinkService/SetLinkedTopics";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SetTopicLinksOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SetLinkedTopicsOutput::class, $context);
     }
 
     /**
      * list topics linked to an entity
      *
-     * @param GetTopicLinksInput $input message
+     * @param GetLinkedTopicsInput $input message
      * @param array $context request parameters
      *
-     * @return GetTopicLinksOutput output message
+     * @return GetLinkedTopicsOutput output message
      */
-    public function GetTopicLinks(GetTopicLinksInput $input, array $context = [])
+    public function GetLinkedTopics(GetLinkedTopicsInput $input, array $context = [])
     {
         $path = "/topics";
 
-        $context['name'] = "eolymp.taxonomy.LinkService/GetTopicLinks";
+        $context['name'] = "eolymp.taxonomy.LinkService/GetLinkedTopics";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, GetTopicLinksOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, GetLinkedTopicsOutput::class, $context);
     }
 
 }
