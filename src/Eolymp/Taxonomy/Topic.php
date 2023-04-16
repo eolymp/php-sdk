@@ -18,9 +18,23 @@ class Topic extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Topic.Descriptor descriptors = 2;</code>
+     * topic name
+     *
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    private $descriptors;
+    protected $name = '';
+    /**
+     * topic summary (short description)
+     *
+     * Generated from protobuf field <code>string summary = 3;</code>
+     */
+    protected $summary = '';
+    /**
+     * alternative names and keywords related to the topic (used for search)
+     *
+     * Generated from protobuf field <code>repeated string keywords = 4;</code>
+     */
+    private $keywords;
 
     /**
      * Constructor.
@@ -29,7 +43,12 @@ class Topic extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type \Eolymp\Taxonomy\Topic\Descriptor[]|\Google\Protobuf\Internal\RepeatedField $descriptors
+     *     @type string $name
+     *           topic name
+     *     @type string $summary
+     *           topic summary (short description)
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $keywords
+     *           alternative names and keywords related to the topic (used for search)
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +79,79 @@ class Topic extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Topic.Descriptor descriptors = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * topic name
+     *
+     * Generated from protobuf field <code>string name = 2;</code>
+     * @return string
      */
-    public function getDescriptors()
+    public function getName()
     {
-        return $this->descriptors;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Topic.Descriptor descriptors = 2;</code>
-     * @param \Eolymp\Taxonomy\Topic\Descriptor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * topic name
+     *
+     * Generated from protobuf field <code>string name = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setDescriptors($var)
+    public function setName($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Taxonomy\Topic\Descriptor::class);
-        $this->descriptors = $arr;
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * topic summary (short description)
+     *
+     * Generated from protobuf field <code>string summary = 3;</code>
+     * @return string
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    /**
+     * topic summary (short description)
+     *
+     * Generated from protobuf field <code>string summary = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSummary($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * alternative names and keywords related to the topic (used for search)
+     *
+     * Generated from protobuf field <code>repeated string keywords = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getKeywords()
+    {
+        return $this->keywords;
+    }
+
+    /**
+     * alternative names and keywords related to the topic (used for search)
+     *
+     * Generated from protobuf field <code>repeated string keywords = 4;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setKeywords($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->keywords = $arr;
 
         return $this;
     }

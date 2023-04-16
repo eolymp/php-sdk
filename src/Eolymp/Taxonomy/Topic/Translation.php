@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.Topic.Descriptor</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.Topic.Translation</code>
  */
-class Descriptor extends \Google\Protobuf\Internal\Message
+class Translation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string locale = 1;</code>
@@ -159,5 +159,5 @@ class Descriptor extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Descriptor::class, \Eolymp\Taxonomy\Topic_Descriptor::class);
+class_alias(Translation::class, \Eolymp\Taxonomy\Topic_Translation::class);
 

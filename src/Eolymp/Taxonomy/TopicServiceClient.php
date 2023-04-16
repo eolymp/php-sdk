@@ -114,4 +114,63 @@ class TopicServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTopicsOutput::class, $context);
     }
 
+    /**
+     * @param TranslateTopicInput $input message
+     * @param array $context request parameters
+     *
+     * @return TranslateTopicOutput output message
+     */
+    public function TranslateTopic(TranslateTopicInput $input, array $context = [])
+    {
+        $path = "/topics/".rawurlencode($input->getTopicId())."/translations/".rawurlencode($input->getLocale());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTopicId("");
+        $input->setLocale("");
+
+        $context['name'] = "eolymp.taxonomy.TopicService/TranslateTopic";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, TranslateTopicOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteTranslationOutput output message
+     */
+    public function DeleteTranslation(DeleteTranslationInput $input, array $context = [])
+    {
+        $path = "/topics/".rawurlencode($input->getTopicId())."/translations/".rawurlencode($input->getLocale());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTopicId("");
+        $input->setLocale("");
+
+        $context['name'] = "eolymp.taxonomy.TopicService/DeleteTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param ListTranslationsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListTranslationsOutput output message
+     */
+    public function ListTranslations(ListTranslationsInput $input, array $context = [])
+    {
+        $path = "/topics/".rawurlencode($input->getTopicId())."/translations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTopicId("");
+
+        $context['name'] = "eolymp.taxonomy.TopicService/ListTranslations";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, ListTranslationsOutput::class, $context);
+    }
+
 }
