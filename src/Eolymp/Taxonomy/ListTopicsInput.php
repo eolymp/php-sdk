@@ -29,6 +29,12 @@ class ListTopicsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.taxonomy.ListTopicsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * if set, system will use translations to translate topic name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -41,6 +47,8 @@ class ListTopicsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type \Eolymp\Taxonomy\ListTopicsInput\Filter $filters
      *           data filters
+     *     @type string $locale
+     *           if set, system will use translations to translate topic name, summary and keywords
      * }
      */
     public function __construct($data = NULL) {
@@ -118,6 +126,32 @@ class ListTopicsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListTopicsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * if set, system will use translations to translate topic name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * if set, system will use translations to translate topic name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

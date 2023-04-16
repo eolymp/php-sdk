@@ -17,6 +17,12 @@ class DescribeTopicInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string topic_id = 1;</code>
      */
     protected $topic_id = '';
+    /**
+     * if set, system will use translations to translate topic name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class DescribeTopicInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $topic_id
+     *     @type string $locale
+     *           if set, system will use translations to translate topic name, summary and keywords
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class DescribeTopicInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->topic_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * if set, system will use translations to translate topic name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * if set, system will use translations to translate topic name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
