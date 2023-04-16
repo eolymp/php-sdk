@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTopicInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * patch defines how update should be performed
+     * patch defines which fields should be set, if empty ALL fields are set
      *
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateTopicInput.Patch patch = 1;</code>
      */
@@ -39,7 +39,7 @@ class UpdateTopicInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
-     *           patch defines how update should be performed
+     *           patch defines which fields should be set, if empty ALL fields are set
      *     @type string $topic_id
      *           topic to update
      *     @type \Eolymp\Taxonomy\Topic $topic
@@ -52,7 +52,7 @@ class UpdateTopicInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * patch defines how update should be performed
+     * patch defines which fields should be set, if empty ALL fields are set
      *
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateTopicInput.Patch patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -63,7 +63,7 @@ class UpdateTopicInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * patch defines how update should be performed
+     * patch defines which fields should be set, if empty ALL fields are set
      *
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateTopicInput.Patch patch = 1;</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var

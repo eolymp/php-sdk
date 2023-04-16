@@ -12,28 +12,27 @@ use UnexpectedValueException;
 class Patch
 {
     /**
-     * replace descriptors with value in the request
-     *
      * Generated from protobuf enum <code>ALL = 0;</code>
      */
     const ALL = 0;
     /**
-     * append descriptors with value in the request (but remove duplicated locales)
-     *
-     * Generated from protobuf enum <code>APPEND_DESCRIPTORS = 1;</code>
+     * Generated from protobuf enum <code>NAME = 1;</code>
      */
-    const APPEND_DESCRIPTORS = 1;
+    const NAME = 1;
     /**
-     * remove descriptors with locale matching these in the request
-     *
-     * Generated from protobuf enum <code>EXCLUDE_DESCRIPTORS = 2;</code>
+     * Generated from protobuf enum <code>SUMMARY = 2;</code>
      */
-    const EXCLUDE_DESCRIPTORS = 2;
+    const SUMMARY = 2;
+    /**
+     * Generated from protobuf enum <code>KEYWORDS = 3;</code>
+     */
+    const KEYWORDS = 3;
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::APPEND_DESCRIPTORS => 'APPEND_DESCRIPTORS',
-        self::EXCLUDE_DESCRIPTORS => 'EXCLUDE_DESCRIPTORS',
+        self::NAME => 'NAME',
+        self::SUMMARY => 'SUMMARY',
+        self::KEYWORDS => 'KEYWORDS',
     ];
 
     public static function name($value)
