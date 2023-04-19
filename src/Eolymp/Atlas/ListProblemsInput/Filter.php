@@ -33,6 +33,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 5;</code>
      */
     private $number;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 6;</code>
+     */
+    private $difficulty;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_visible
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_private
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $number
+     *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $difficulty
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
         $this->number = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 6;</code>
+     * @param \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDifficulty($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->difficulty = $arr;
 
         return $this;
     }
