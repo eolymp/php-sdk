@@ -23,22 +23,6 @@ class ProblemServiceClient {
     }
 
     /**
-     * @param CreateProblemInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateProblemOutput output message
-     */
-    public function CreateProblem(CreateProblemInput $input, array $context = [])
-    {
-        $path = "/problems";
-
-        $context['name'] = "eolymp.atlas.ProblemService/CreateProblem";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateProblemOutput::class, $context);
-    }
-
-    /**
      * @param DeleteProblemInput $input message
      * @param array $context request parameters
      *
@@ -46,10 +30,7 @@ class ProblemServiceClient {
      */
     public function DeleteProblem(DeleteProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
+        $path = "/";
 
         $context['name'] = "eolymp.atlas.ProblemService/DeleteProblem";
         $context['path'] = $path;
@@ -65,10 +46,7 @@ class ProblemServiceClient {
      */
     public function DescribeProblem(DescribeProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
+        $path = "/";
 
         $context['name'] = "eolymp.atlas.ProblemService/DescribeProblem";
         $context['path'] = $path;
@@ -84,10 +62,7 @@ class ProblemServiceClient {
      */
     public function UpdateVisibility(UpdateVisibilityInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/visibility";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
+        $path = "/visibility";
 
         $context['name'] = "eolymp.atlas.ProblemService/UpdateVisibility";
         $context['path'] = $path;
@@ -103,31 +78,12 @@ class ProblemServiceClient {
      */
     public function UpdatePrivacy(UpdatePrivacyInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/privacy";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
+        $path = "/privacy";
 
         $context['name'] = "eolymp.atlas.ProblemService/UpdatePrivacy";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePrivacyOutput::class, $context);
-    }
-
-    /**
-     * @param ListProblemsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListProblemsOutput output message
-     */
-    public function ListProblems(ListProblemsInput $input, array $context = [])
-    {
-        $path = "/problems";
-
-        $context['name'] = "eolymp.atlas.ProblemService/ListProblems";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemsOutput::class, $context);
     }
 
     /**
@@ -138,10 +94,7 @@ class ProblemServiceClient {
      */
     public function ListVersions(ListVersionsInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/versions";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
+        $path = "/versions";
 
         $context['name'] = "eolymp.atlas.ProblemService/ListVersions";
         $context['path'] = $path;

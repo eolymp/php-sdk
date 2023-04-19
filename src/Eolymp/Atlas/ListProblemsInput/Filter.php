@@ -18,9 +18,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID category_id = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
      */
-    private $category_id;
+    private $topic_id;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_visible = 3;</code>
      */
@@ -41,7 +41,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $category_id
+     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $topic_id
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_visible
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_private
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $number
@@ -75,23 +75,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID category_id = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getCategoryId()
+    public function getTopicId()
     {
-        return $this->category_id;
+        return $this->topic_id;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID category_id = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
      * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setCategoryId($var)
+    public function setTopicId($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
-        $this->category_id = $arr;
+        $this->topic_id = $arr;
 
         return $this;
     }
