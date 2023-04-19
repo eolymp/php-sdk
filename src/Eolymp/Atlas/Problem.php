@@ -24,10 +24,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     */
-    protected $ern = '';
-    /**
      * Index in the public problem catalog.
      *
      * Generated from protobuf field <code>int32 number = 10;</code>
@@ -45,6 +41,18 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool private = 12;</code>
      */
     protected $private = false;
+    /**
+     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *
+     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     */
+    private $topics;
+    /**
+     * Difficulty from 0 (very easy) to 5 (very hard)
+     *
+     * Generated from protobuf field <code>uint32 difficulty = 21;</code>
+     */
+    protected $difficulty = 0;
 
     /**
      * Constructor.
@@ -55,13 +63,16 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Unique identifier.
      *     @type string $url
-     *     @type string $ern
      *     @type int $number
      *           Index in the public problem catalog.
      *     @type bool $visible
      *           Problem is visible to users in public catalog.
      *     @type bool $private
      *           Problem is only accessible to users who were specifically granted access to it.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *     @type int $difficulty
+     *           Difficulty from 0 (very easy) to 5 (very hard)
      * }
      */
     public function __construct($data = NULL) {
@@ -113,28 +124,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @return string
-     */
-    public function getErn()
-    {
-        return $this->ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ern = $var;
 
         return $this;
     }
@@ -213,6 +202,58 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->private = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *
+     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTopics()
+    {
+        return $this->topics;
+    }
+
+    /**
+     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *
+     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTopics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->topics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Difficulty from 0 (very easy) to 5 (very hard)
+     *
+     * Generated from protobuf field <code>uint32 difficulty = 21;</code>
+     * @return int
+     */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    /**
+     * Difficulty from 0 (very easy) to 5 (very hard)
+     *
+     * Generated from protobuf field <code>uint32 difficulty = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDifficulty($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->difficulty = $var;
 
         return $this;
     }

@@ -93,6 +93,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: use UpdateProblem instead
+     *
      * @param UpdateVisibilityInput $input message
      * @param array $context request parameters
      *
@@ -112,6 +114,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: use UpdateProblem instead
+     *
      * @param UpdatePrivacyInput $input message
      * @param array $context request parameters
      *
@@ -128,6 +132,25 @@ class AtlasClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePrivacyOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateProblemOutput output message
+     */
+    public function UpdateProblem(UpdateProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/UpdateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateProblemOutput::class, $context);
     }
 
     /**
@@ -596,6 +619,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: use eolymp.acl.AclService instead
+     *
      * @param GrantPermissionInput $input message
      * @param array $context request parameters
      *
@@ -615,6 +640,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: use eolymp.acl.AclService instead
+     *
      * @param RevokePermissionInput $input message
      * @param array $context request parameters
      *
@@ -635,6 +662,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: use eolymp.acl.AclService instead
+     *
      * @param ListPermissionsInput $input message
      * @param array $context request parameters
      *
@@ -654,6 +683,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: use eolymp.acl.AclService instead
+     *
      * @param IntrospectPermissionInput $input message
      * @param array $context request parameters
      *
@@ -926,6 +957,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param CreateSolutionInput $input message
      * @param array $context request parameters
      *
@@ -945,6 +978,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param UpdateSolutionInput $input message
      * @param array $context request parameters
      *
@@ -965,6 +1000,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param DeleteSolutionInput $input message
      * @param array $context request parameters
      *
@@ -985,6 +1022,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param ListSolutionsInput $input message
      * @param array $context request parameters
      *
@@ -1004,6 +1043,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param DescribeSolutionInput $input message
      * @param array $context request parameters
      *
@@ -1024,6 +1065,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param PublishSolutionInput $input message
      * @param array $context request parameters
      *
@@ -1044,6 +1087,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param UnpublishSolutionInput $input message
      * @param array $context request parameters
      *
@@ -1064,6 +1109,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param ApproveSolutionInput $input message
      * @param array $context request parameters
      *
@@ -1084,6 +1131,8 @@ class AtlasClient {
     }
 
     /**
+     * deprecated: solutions are not supported anymore
+     *
      * @param RefuseSolutionInput $input message
      * @param array $context request parameters
      *

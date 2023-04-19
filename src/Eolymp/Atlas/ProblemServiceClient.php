@@ -39,6 +39,22 @@ class ProblemServiceClient {
     }
 
     /**
+     * @param UpdateProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateProblemOutput output message
+     */
+    public function UpdateProblem(UpdateProblemInput $input, array $context = [])
+    {
+        $path = "/";
+
+        $context['name'] = "eolymp.atlas.ProblemService/UpdateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateProblemOutput::class, $context);
+    }
+
+    /**
      * @param DescribeProblemInput $input message
      * @param array $context request parameters
      *
@@ -55,6 +71,8 @@ class ProblemServiceClient {
     }
 
     /**
+     * deprecated: use UpdateProblem instead
+     *
      * @param UpdateVisibilityInput $input message
      * @param array $context request parameters
      *
@@ -71,6 +89,8 @@ class ProblemServiceClient {
     }
 
     /**
+     * deprecated: use UpdateProblem instead
+     *
      * @param UpdatePrivacyInput $input message
      * @param array $context request parameters
      *
