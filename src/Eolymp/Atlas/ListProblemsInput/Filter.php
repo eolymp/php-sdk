@@ -46,9 +46,13 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_favorite = 8;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 9;</code>
      */
-    private $is_favorite;
+    private $score;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_bookmarked = 8;</code>
+     */
+    private $is_bookmarked;
 
     /**
      * Constructor.
@@ -64,7 +68,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $number
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $difficulty
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_favorite
+     *     @type \Eolymp\Wellknown\ExpressionFloat[]|\Google\Protobuf\Internal\RepeatedField $score
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_bookmarked
      * }
      */
     public function __construct($data = NULL) {
@@ -249,23 +254,45 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_favorite = 8;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIsFavorite()
+    public function getScore()
     {
-        return $this->is_favorite;
+        return $this->score;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_favorite = 8;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 9;</code>
+     * @param \Eolymp\Wellknown\ExpressionFloat[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionFloat::class);
+        $this->score = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_bookmarked = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getIsBookmarked()
+    {
+        return $this->is_bookmarked;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_bookmarked = 8;</code>
      * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setIsFavorite($var)
+    public function setIsBookmarked($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->is_favorite = $arr;
+        $this->is_bookmarked = $arr;
 
         return $this;
     }
