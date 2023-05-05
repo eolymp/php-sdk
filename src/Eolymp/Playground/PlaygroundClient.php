@@ -57,4 +57,23 @@ class PlaygroundClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRunOutput::class, $context);
     }
 
+    /**
+     * @param WatchRunInput $input message
+     * @param array $context request parameters
+     *
+     * @return WatchRunOutput output message
+     */
+    public function WatchRun(WatchRunInput $input, array $context = [])
+    {
+        $path = "/runs/".rawurlencode($input->getRunId())."/watch";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRunId("");
+
+        $context['name'] = "eolymp.playground.Playground/WatchRun";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, WatchRunOutput::class, $context);
+    }
+
 }
