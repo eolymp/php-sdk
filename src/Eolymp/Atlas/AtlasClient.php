@@ -93,48 +93,6 @@ class AtlasClient {
     }
 
     /**
-     * deprecated: use UpdateProblem instead
-     *
-     * @param UpdateVisibilityInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateVisibilityOutput output message
-     */
-    public function UpdateVisibility(UpdateVisibilityInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/visibility";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/UpdateVisibility";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateVisibilityOutput::class, $context);
-    }
-
-    /**
-     * deprecated: use UpdateProblem instead
-     *
-     * @param UpdatePrivacyInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdatePrivacyOutput output message
-     */
-    public function UpdatePrivacy(UpdatePrivacyInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/privacy";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/UpdatePrivacy";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePrivacyOutput::class, $context);
-    }
-
-    /**
      * @param UpdateProblemInput $input message
      * @param array $context request parameters
      *
@@ -151,6 +109,25 @@ class AtlasClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateProblemOutput::class, $context);
+    }
+
+    /**
+     * @param SetBookmarkInput $input message
+     * @param array $context request parameters
+     *
+     * @return SetBookmarkOutput output message
+     */
+    public function SetBookmark(SetBookmarkInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/bookmark";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/SetBookmark";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SetBookmarkOutput::class, $context);
     }
 
     /**
@@ -619,91 +596,6 @@ class AtlasClient {
     }
 
     /**
-     * deprecated: use eolymp.acl.AclService instead
-     *
-     * @param GrantPermissionInput $input message
-     * @param array $context request parameters
-     *
-     * @return GrantPermissionOutput output message
-     */
-    public function GrantPermission(GrantPermissionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/permissions";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/GrantPermission";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, GrantPermissionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: use eolymp.acl.AclService instead
-     *
-     * @param RevokePermissionInput $input message
-     * @param array $context request parameters
-     *
-     * @return RevokePermissionOutput output message
-     */
-    public function RevokePermission(RevokePermissionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/permissions/".rawurlencode($input->getUserId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setUserId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/RevokePermission";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RevokePermissionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: use eolymp.acl.AclService instead
-     *
-     * @param ListPermissionsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListPermissionsOutput output message
-     */
-    public function ListPermissions(ListPermissionsInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/permissions";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/ListPermissions";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPermissionsOutput::class, $context);
-    }
-
-    /**
-     * deprecated: use eolymp.acl.AclService instead
-     *
-     * @param IntrospectPermissionInput $input message
-     * @param array $context request parameters
-     *
-     * @return IntrospectPermissionOutput output message
-     */
-    public function IntrospectPermission(IntrospectPermissionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/introspect-permission";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/IntrospectPermission";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectPermissionOutput::class, $context);
-    }
-
-    /**
      * @param CreateCodeTemplateInput $input message
      * @param array $context request parameters
      *
@@ -954,202 +846,6 @@ class AtlasClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProblemGradingOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param CreateSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateSolutionOutput output message
-     */
-    public function CreateSolution(CreateSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/CreateSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param UpdateSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateSolutionOutput output message
-     */
-    public function UpdateSolution(UpdateSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/UpdateSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param DeleteSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteSolutionOutput output message
-     */
-    public function DeleteSolution(DeleteSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/DeleteSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param ListSolutionsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListSolutionsOutput output message
-     */
-    public function ListSolutions(ListSolutionsInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/ListSolutions";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSolutionsOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param DescribeSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeSolutionOutput output message
-     */
-    public function DescribeSolution(DescribeSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/DescribeSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param PublishSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return PublishSolutionOutput output message
-     */
-    public function PublishSolution(PublishSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/publish";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/PublishSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PublishSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param UnpublishSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return UnpublishSolutionOutput output message
-     */
-    public function UnpublishSolution(UnpublishSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/unpublish";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/UnpublishSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UnpublishSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param ApproveSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return ApproveSolutionOutput output message
-     */
-    public function ApproveSolution(ApproveSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/approve";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/ApproveSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ApproveSolutionOutput::class, $context);
-    }
-
-    /**
-     * deprecated: solutions are not supported anymore
-     *
-     * @param RefuseSolutionInput $input message
-     * @param array $context request parameters
-     *
-     * @return RefuseSolutionOutput output message
-     */
-    public function RefuseSolution(RefuseSolutionInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId())."/refuse";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-        $input->setSolutionId("");
-
-        $context['name'] = "eolymp.atlas.Atlas/RefuseSolution";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RefuseSolutionOutput::class, $context);
     }
 
     /**
