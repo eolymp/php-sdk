@@ -908,6 +908,22 @@ class AtlasClient {
     }
 
     /**
+     * @param ListSubmissionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListSubmissionsOutput output message
+     */
+    public function ListSubmissions(ListSubmissionsInput $input, array $context = [])
+    {
+        $path = "/submissions";
+
+        $context['name'] = "eolymp.atlas.Atlas/ListSubmissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSubmissionsOutput::class, $context);
+    }
+
+    /**
      * @param DescribeScoreInput $input message
      * @param array $context request parameters
      *
