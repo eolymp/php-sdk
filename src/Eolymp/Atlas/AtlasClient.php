@@ -131,6 +131,25 @@ class AtlasClient {
     }
 
     /**
+     * @param GetBookmarkInput $input message
+     * @param array $context request parameters
+     *
+     * @return GetBookmarkOutput output message
+     */
+    public function GetBookmark(GetBookmarkInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/bookmark";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/GetBookmark";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, GetBookmarkOutput::class, $context);
+    }
+
+    /**
      * @param ListExamplesInput $input message
      * @param array $context request parameters
      *

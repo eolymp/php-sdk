@@ -23,6 +23,22 @@ class BookmarkServiceClient {
     }
 
     /**
+     * @param GetBookmarkInput $input message
+     * @param array $context request parameters
+     *
+     * @return GetBookmarkOutput output message
+     */
+    public function GetBookmark(GetBookmarkInput $input, array $context = [])
+    {
+        $path = "/bookmark";
+
+        $context['name'] = "eolymp.atlas.BookmarkService/GetBookmark";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, GetBookmarkOutput::class, $context);
+    }
+
+    /**
      * @param SetBookmarkInput $input message
      * @param array $context request parameters
      *
