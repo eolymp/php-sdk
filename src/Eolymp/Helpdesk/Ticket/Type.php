@@ -23,11 +23,16 @@ class Type
      * Generated from protobuf enum <code>QUOTA_INCREASE = 2;</code>
      */
     const QUOTA_INCREASE = 2;
+    /**
+     * Generated from protobuf enum <code>FEEDBACK = 3;</code>
+     */
+    const FEEDBACK = 3;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::QUESTION => 'QUESTION',
         self::QUOTA_INCREASE => 'QUOTA_INCREASE',
+        self::FEEDBACK => 'FEEDBACK',
     ];
 
     public static function name($value)
