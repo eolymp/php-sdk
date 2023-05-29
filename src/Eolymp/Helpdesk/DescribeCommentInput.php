@@ -21,6 +21,10 @@ class DescribeCommentInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string comment_id = 2;</code>
      */
     protected $comment_id = '';
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     */
+    protected $render = false;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DescribeCommentInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $ticket_id
      *     @type string $comment_id
+     *     @type bool $render
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class DescribeCommentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->comment_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }
