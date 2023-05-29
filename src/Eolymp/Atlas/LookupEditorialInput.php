@@ -18,6 +18,10 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     */
+    protected $render = false;
+    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
@@ -31,6 +35,7 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $locale
+     *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -58,6 +63,28 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }

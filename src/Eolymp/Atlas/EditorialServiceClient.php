@@ -116,30 +116,6 @@ class EditorialServiceClient {
     }
 
     /**
-     * RenderEditorial returns fully resolved editorial in ECM format.
-     *
-     * This method should be used to fetch editorial for viewing, it always returns editorial as ECM tree (rather than
-     * HTML or LaTeX) and ensures any embedded or computed values are resolved.
-     *
-     * @param RenderEditorialInput $input message
-     * @param array $context request parameters
-     *
-     * @return RenderEditorialOutput output message
-     */
-    public function RenderEditorial(RenderEditorialInput $input, array $context = [])
-    {
-        $path = "/editorials/".rawurlencode($input->getEditorialId())."/render";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEditorialId("");
-
-        $context['name'] = "eolymp.atlas.EditorialService/RenderEditorial";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RenderEditorialOutput::class, $context);
-    }
-
-    /**
      * PreviewEditorial renders unsaved editorial.
      *
      * This method can be used to render editorial before it has been saved.

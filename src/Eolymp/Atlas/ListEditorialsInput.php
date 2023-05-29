@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListEditorialsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>bool render = 1;</code>
+     */
+    protected $render = false;
+    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
@@ -26,6 +30,7 @@ class ListEditorialsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -33,6 +38,28 @@ class ListEditorialsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\EditorialService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 1;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 1;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
+
+        return $this;
     }
 
     /**

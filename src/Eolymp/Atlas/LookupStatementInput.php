@@ -18,9 +18,13 @@ class LookupStatementInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>repeated string preferred_locale = 2;</code>
+     * Generated from protobuf field <code>string locale = 2;</code>
      */
-    private $preferred_locale;
+    protected $locale = '';
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     */
+    protected $render = false;
     /**
      * request data for specific problem version
      *
@@ -35,7 +39,8 @@ class LookupStatementInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $preferred_locale
+     *     @type string $locale
+     *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -68,23 +73,45 @@ class LookupStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string preferred_locale = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @return string
      */
-    public function getPreferredLocale()
+    public function getLocale()
     {
-        return $this->preferred_locale;
+        return $this->locale;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string preferred_locale = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setPreferredLocale($var)
+    public function setLocale($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->preferred_locale = $arr;
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }

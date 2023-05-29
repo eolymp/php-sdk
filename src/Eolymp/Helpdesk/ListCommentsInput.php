@@ -18,6 +18,10 @@ class ListCommentsInput extends \Google\Protobuf\Internal\Message
      */
     protected $ticket_id = '';
     /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     */
+    protected $render = false;
+    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -35,6 +39,7 @@ class ListCommentsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $ticket_id
+     *     @type bool $render
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -63,6 +68,28 @@ class ListCommentsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ticket_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }
