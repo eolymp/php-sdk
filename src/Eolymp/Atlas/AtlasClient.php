@@ -713,6 +713,25 @@ class AtlasClient {
     }
 
     /**
+     * @param LookupCodeTemplateInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupCodeTemplateOutput output message
+     */
+    public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/template";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/LookupCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupCodeTemplateOutput::class, $context);
+    }
+
+    /**
      * @param CreateAttachmentInput $input message
      * @param array $context request parameters
      *

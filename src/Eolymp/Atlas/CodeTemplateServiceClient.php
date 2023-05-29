@@ -111,4 +111,20 @@ class CodeTemplateServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCodeTemplateOutput::class, $context);
     }
 
+    /**
+     * @param LookupCodeTemplateInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupCodeTemplateOutput output message
+     */
+    public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
+    {
+        $path = "/template";
+
+        $context['name'] = "eolymp.atlas.CodeTemplateService/LookupCodeTemplate";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupCodeTemplateOutput::class, $context);
+    }
+
 }
