@@ -26,9 +26,9 @@ class Term extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>string status = 4;</code>
+     * Generated from protobuf field <code>.eolymp.localization.Term.Status status = 4;</code>
      */
-    protected $status = '';
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class Term extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $message
      *     @type string $description
-     *     @type string $status
+     *     @type int $status
      * }
      */
     public function __construct($data = NULL) {
@@ -114,8 +114,8 @@ class Term extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.localization.Term.Status status = 4;</code>
+     * @return int
      */
     public function getStatus()
     {
@@ -123,13 +123,13 @@ class Term extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string status = 4;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.localization.Term.Status status = 4;</code>
+     * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkEnum($var, \Eolymp\Localization\Term_Status::class);
         $this->status = $var;
 
         return $this;
