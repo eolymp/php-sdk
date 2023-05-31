@@ -220,22 +220,22 @@ class LocalizationServiceClient {
     }
 
     /**
-     * @param TranslateTermInput $input message
+     * @param AddTranslationInput $input message
      * @param array $context request parameters
      *
-     * @return TranslateTermOutput output message
+     * @return AddTranslationOutput output message
      */
-    public function TranslateTerm(TranslateTermInput $input, array $context = [])
+    public function AddTranslation(AddTranslationInput $input, array $context = [])
     {
         $path = "/terms/".rawurlencode($input->getTermId())."/translations";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTermId("");
 
-        $context['name'] = "eolymp.l10n.LocalizationService/TranslateTerm";
+        $context['name'] = "eolymp.l10n.LocalizationService/AddTranslation";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateTermOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddTranslationOutput::class, $context);
     }
 
     /**

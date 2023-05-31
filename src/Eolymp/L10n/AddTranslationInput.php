@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.l10n.TranslateTermInput</code>
+ * Generated from protobuf message <code>eolymp.l10n.AddTranslationInput</code>
  */
-class TranslateTermInput extends \Google\Protobuf\Internal\Message
+class AddTranslationInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string term_id = 1;</code>
