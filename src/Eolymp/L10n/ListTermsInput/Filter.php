@@ -26,9 +26,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_suggestions = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool requires_review = 4;</code>
      */
-    private $has_suggestions;
+    private $requires_review;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $message
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $has_suggestions
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $requires_review
      * }
      */
     public function __construct($data = NULL) {
@@ -114,23 +114,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_suggestions = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool requires_review = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getHasSuggestions()
+    public function getRequiresReview()
     {
-        return $this->has_suggestions;
+        return $this->requires_review;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_suggestions = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool requires_review = 4;</code>
      * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setHasSuggestions($var)
+    public function setRequiresReview($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->has_suggestions = $arr;
+        $this->requires_review = $arr;
 
         return $this;
     }

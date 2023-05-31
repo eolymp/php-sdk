@@ -17,10 +17,6 @@ class ImportTranslationsOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 created_count = 1;</code>
      */
     protected $created_count = 0;
-    /**
-     * Generated from protobuf field <code>int32 updated_count = 2;</code>
-     */
-    protected $updated_count = 0;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class ImportTranslationsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $created_count
-     *     @type int $updated_count
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class ImportTranslationsOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->created_count = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 updated_count = 2;</code>
-     * @return int
-     */
-    public function getUpdatedCount()
-    {
-        return $this->updated_count;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 updated_count = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUpdatedCount($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->updated_count = $var;
 
         return $this;
     }
