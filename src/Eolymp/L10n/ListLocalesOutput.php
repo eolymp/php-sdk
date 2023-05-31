@@ -18,7 +18,7 @@ class ListLocalesOutput extends \Google\Protobuf\Internal\Message
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.Locale items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListLocalesOutput.Locale items = 2;</code>
      */
     private $items;
 
@@ -29,7 +29,7 @@ class ListLocalesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\L10n\Locale[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\L10n\ListLocalesOutput\Locale[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class ListLocalesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.Locale items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListLocalesOutput.Locale items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -69,13 +69,13 @@ class ListLocalesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.Locale items = 2;</code>
-     * @param \Eolymp\L10n\Locale[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListLocalesOutput.Locale items = 2;</code>
+     * @param \Eolymp\L10n\ListLocalesOutput\Locale[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\L10n\Locale::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\L10n\ListLocalesOutput\Locale::class);
         $this->items = $arr;
 
         return $this;
