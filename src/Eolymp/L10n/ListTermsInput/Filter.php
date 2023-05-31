@@ -14,19 +14,27 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string query = 100;</code>
+     */
+    protected $query = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString message = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString key = 2;</code>
+     */
+    private $key;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString message = 3;</code>
      */
     private $message;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 5;</code>
      */
     private $translation;
 
@@ -36,7 +44,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $query
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $key
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $message
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
      *     @type \Eolymp\L10n\ListTermsInput\ExpressionTranslation[]|\Google\Protobuf\Internal\RepeatedField $translation
@@ -45,6 +55,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\L10N\LocalizationService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string query = 100;</code>
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Generated from protobuf field <code>string query = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
     }
 
     /**
@@ -70,7 +102,29 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString message = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString key = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString key = 2;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->key = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString message = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getMessage()
@@ -79,7 +133,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString message = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString message = 3;</code>
      * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -92,7 +146,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatus()
@@ -101,7 +155,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -114,7 +168,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTranslation()
@@ -123,7 +177,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 5;</code>
      * @param \Eolymp\L10n\ListTermsInput\ExpressionTranslation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
