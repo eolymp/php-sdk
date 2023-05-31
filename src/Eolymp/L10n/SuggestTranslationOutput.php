@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class SuggestTranslationOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string message = 1;</code>
+     * Generated from protobuf field <code>repeated string messages = 1;</code>
      */
-    protected $message = '';
+    private $messages;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class SuggestTranslationOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $message
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $messages
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class SuggestTranslationOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated string messages = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getMessage()
+    public function getMessages()
     {
-        return $this->message;
+        return $this->messages;
     }
 
     /**
-     * Generated from protobuf field <code>string message = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated string messages = 1;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setMessage($var)
+    public function setMessages($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->message = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->messages = $arr;
 
         return $this;
     }
