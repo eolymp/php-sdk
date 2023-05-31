@@ -26,9 +26,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool requires_review = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 4;</code>
      */
-    private $requires_review;
+    private $translation;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $message
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $requires_review
+     *     @type \Eolymp\L10n\ListTermsInput\ExpressionTranslation[]|\Google\Protobuf\Internal\RepeatedField $translation
      * }
      */
     public function __construct($data = NULL) {
@@ -114,23 +114,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool requires_review = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getRequiresReview()
+    public function getTranslation()
     {
-        return $this->requires_review;
+        return $this->translation;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool requires_review = 4;</code>
-     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.l10n.ListTermsInput.ExpressionTranslation translation = 4;</code>
+     * @param \Eolymp\L10n\ListTermsInput\ExpressionTranslation[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setRequiresReview($var)
+    public function setTranslation($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->requires_review = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\L10n\ListTermsInput\ExpressionTranslation::class);
+        $this->translation = $arr;
 
         return $this;
     }

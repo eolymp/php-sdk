@@ -18,6 +18,10 @@ class Term extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string key = 5;</code>
+     */
+    protected $key = '';
+    /**
      * Generated from protobuf field <code>string message = 2;</code>
      */
     protected $message = '';
@@ -37,6 +41,7 @@ class Term extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $key
      *     @type string $message
      *     @type string $description
      *     @type int $status
@@ -65,6 +70,28 @@ class Term extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string key = 5;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string key = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
 
         return $this;
     }

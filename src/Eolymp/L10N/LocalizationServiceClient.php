@@ -291,7 +291,10 @@ class LocalizationServiceClient {
      */
     public function ImportTranslations(ImportTranslationsInput $input, array $context = [])
     {
-        $path = "/translations";
+        $path = "/translations/".rawurlencode($input->getLocale());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLocale("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ImportTranslations";
         $context['path'] = $path;
@@ -307,7 +310,10 @@ class LocalizationServiceClient {
      */
     public function ExportTranslations(ExportTranslationsInput $input, array $context = [])
     {
-        $path = "/translations";
+        $path = "/translations/".rawurlencode($input->getLocale());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLocale("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ExportTranslations";
         $context['path'] = $path;
