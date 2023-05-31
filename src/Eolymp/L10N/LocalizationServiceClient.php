@@ -166,6 +166,60 @@ class LocalizationServiceClient {
     }
 
     /**
+     * @param AddLocaleInput $input message
+     * @param array $context request parameters
+     *
+     * @return AddLocaleOutput output message
+     */
+    public function AddLocale(AddLocaleInput $input, array $context = [])
+    {
+        $path = "/locales/".rawurlencode($input->getLocaleCode());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLocaleCode("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/AddLocale";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, AddLocaleOutput::class, $context);
+    }
+
+    /**
+     * @param RemoveLocaleInput $input message
+     * @param array $context request parameters
+     *
+     * @return RemoveLocaleOutput output message
+     */
+    public function RemoveLocale(RemoveLocaleInput $input, array $context = [])
+    {
+        $path = "/locales/".rawurlencode($input->getLocaleCode());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLocaleCode("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/RemoveLocale";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveLocaleOutput::class, $context);
+    }
+
+    /**
+     * @param ListLocalesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListLocalesOutput output message
+     */
+    public function ListLocales(ListLocalesInput $input, array $context = [])
+    {
+        $path = "/locales";
+
+        $context['name'] = "eolymp.l10n.LocalizationService/ListLocales";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListLocalesOutput::class, $context);
+    }
+
+    /**
      * @param TranslateTermInput $input message
      * @param array $context request parameters
      *
@@ -221,6 +275,26 @@ class LocalizationServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param SuggestTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return SuggestTranslationOutput output message
+     */
+    public function SuggestTranslation(SuggestTranslationInput $input, array $context = [])
+    {
+        $path = "/terms/".rawurlencode($input->getTermId())."/suggestions/".rawurlencode($input->getLocale());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTermId("");
+        $input->setLocale("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/SuggestTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SuggestTranslationOutput::class, $context);
     }
 
     /**
