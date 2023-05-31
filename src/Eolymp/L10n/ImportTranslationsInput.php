@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportTranslationsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string locale = 1;</code>
+     * Generated from protobuf field <code>string term_id = 1;</code>
+     */
+    protected $term_id = '';
+    /**
+     * Generated from protobuf field <code>string locale = 2;</code>
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>map<string, string> translations = 2;</code>
+     * Generated from protobuf field <code>map<string, string> translations = 3;</code>
      */
     private $translations;
 
@@ -28,6 +32,7 @@ class ImportTranslationsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $term_id
      *     @type string $locale
      *     @type array|\Google\Protobuf\Internal\MapField $translations
      * }
@@ -38,7 +43,29 @@ class ImportTranslationsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 1;</code>
+     * Generated from protobuf field <code>string term_id = 1;</code>
+     * @return string
+     */
+    public function getTermId()
+    {
+        return $this->term_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string term_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTermId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->term_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 2;</code>
      * @return string
      */
     public function getLocale()
@@ -47,7 +74,7 @@ class ImportTranslationsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 1;</code>
+     * Generated from protobuf field <code>string locale = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class ImportTranslationsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> translations = 2;</code>
+     * Generated from protobuf field <code>map<string, string> translations = 3;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getTranslations()
@@ -69,7 +96,7 @@ class ImportTranslationsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> translations = 2;</code>
+     * Generated from protobuf field <code>map<string, string> translations = 3;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */

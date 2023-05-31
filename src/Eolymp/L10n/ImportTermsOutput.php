@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportTermsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 imported_count = 1;</code>
+     * Generated from protobuf field <code>int32 created_count = 1;</code>
      */
-    protected $imported_count = 0;
+    protected $created_count = 0;
     /**
-     * Generated from protobuf field <code>int32 deprecated_count = 2;</code>
+     * Generated from protobuf field <code>int32 updated_count = 2;</code>
+     */
+    protected $updated_count = 0;
+    /**
+     * Generated from protobuf field <code>int32 deprecated_count = 3;</code>
      */
     protected $deprecated_count = 0;
 
@@ -28,7 +32,8 @@ class ImportTermsOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $imported_count
+     *     @type int $created_count
+     *     @type int $updated_count
      *     @type int $deprecated_count
      * }
      */
@@ -38,29 +43,51 @@ class ImportTermsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 imported_count = 1;</code>
+     * Generated from protobuf field <code>int32 created_count = 1;</code>
      * @return int
      */
-    public function getImportedCount()
+    public function getCreatedCount()
     {
-        return $this->imported_count;
+        return $this->created_count;
     }
 
     /**
-     * Generated from protobuf field <code>int32 imported_count = 1;</code>
+     * Generated from protobuf field <code>int32 created_count = 1;</code>
      * @param int $var
      * @return $this
      */
-    public function setImportedCount($var)
+    public function setCreatedCount($var)
     {
         GPBUtil::checkInt32($var);
-        $this->imported_count = $var;
+        $this->created_count = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 deprecated_count = 2;</code>
+     * Generated from protobuf field <code>int32 updated_count = 2;</code>
+     * @return int
+     */
+    public function getUpdatedCount()
+    {
+        return $this->updated_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 updated_count = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUpdatedCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->updated_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 deprecated_count = 3;</code>
      * @return int
      */
     public function getDeprecatedCount()
@@ -69,7 +96,7 @@ class ImportTermsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 deprecated_count = 2;</code>
+     * Generated from protobuf field <code>int32 deprecated_count = 3;</code>
      * @param int $var
      * @return $this
      */
