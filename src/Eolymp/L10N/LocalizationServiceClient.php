@@ -294,7 +294,7 @@ class LocalizationServiceClient {
         $context['name'] = "eolymp.l10n.LocalizationService/SuggestTranslation";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SuggestTranslationOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, SuggestTranslationOutput::class, $context);
     }
 
     /**
