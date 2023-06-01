@@ -57,7 +57,10 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string subject = 20;</code>
      */
     protected $subject = '';
-    protected $message;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 50;</code>
+     */
+    protected $message = null;
 
     /**
      * Constructor.
@@ -76,10 +79,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string $secret
      *     @type string $subject
-     *     @type string $message_html
-     *     @type string $message_latex
-     *     @type string $message_markdown
-     *     @type \Eolymp\Ecm\Node $message_ecm
+     *     @type \Eolymp\Ecm\Content $message
      * }
      */
     public function __construct($data = NULL) {
@@ -330,99 +330,25 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message_html = 50;</code>
-     * @return string
-     */
-    public function getMessageHtml()
-    {
-        return $this->readOneof(50);
-    }
-
-    /**
-     * Generated from protobuf field <code>string message_html = 50;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMessageHtml($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(50, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string message_latex = 51;</code>
-     * @return string
-     */
-    public function getMessageLatex()
-    {
-        return $this->readOneof(51);
-    }
-
-    /**
-     * Generated from protobuf field <code>string message_latex = 51;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMessageLatex($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(51, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string message_markdown = 52;</code>
-     * @return string
-     */
-    public function getMessageMarkdown()
-    {
-        return $this->readOneof(52);
-    }
-
-    /**
-     * Generated from protobuf field <code>string message_markdown = 52;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMessageMarkdown($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(52, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message_ecm = 53;</code>
-     * @return \Eolymp\Ecm\Node
-     */
-    public function getMessageEcm()
-    {
-        return $this->readOneof(53);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message_ecm = 53;</code>
-     * @param \Eolymp\Ecm\Node $var
-     * @return $this
-     */
-    public function setMessageEcm($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
-        $this->writeOneof(53, $var);
-
-        return $this;
-    }
-
-    /**
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 50;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
-        return $this->whichOneof("message");
+        return $this->message;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 50;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->message = $var;
+
+        return $this;
     }
 
 }
