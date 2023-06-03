@@ -20,11 +20,15 @@ class File extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
-     * ERN defines how to fetch file content
+     * deprecated, use source_url instead
      *
      * Generated from protobuf field <code>string source_ern = 2;</code>
      */
     protected $source_ern = '';
+    /**
+     * Generated from protobuf field <code>string source_url = 3;</code>
+     */
+    protected $source_url = '';
 
     /**
      * Constructor.
@@ -35,7 +39,8 @@ class File extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *           Path where file should be placed (always relative to the workdir)
      *     @type string $source_ern
-     *           ERN defines how to fetch file content
+     *           deprecated, use source_url instead
+     *     @type string $source_url
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +75,7 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ERN defines how to fetch file content
+     * deprecated, use source_url instead
      *
      * Generated from protobuf field <code>string source_ern = 2;</code>
      * @return string
@@ -81,7 +86,7 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ERN defines how to fetch file content
+     * deprecated, use source_url instead
      *
      * Generated from protobuf field <code>string source_ern = 2;</code>
      * @param string $var
@@ -91,6 +96,28 @@ class File extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_ern = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string source_url = 3;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string source_url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
 
         return $this;
     }

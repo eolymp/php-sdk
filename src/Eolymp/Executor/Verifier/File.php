@@ -22,7 +22,7 @@ class File extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
-     * ERN defines how to fetch file content
+     * deprecated
      *
      * Generated from protobuf field <code>string source_ern = 2;</code>
      */
@@ -43,7 +43,7 @@ class File extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *           Path where file should be placed (always relative to the workdir)
      *     @type string $source_ern
-     *           ERN defines how to fetch file content
+     *           deprecated
      *     @type string $source_url
      *           URL to download source file
      * }
@@ -80,7 +80,7 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ERN defines how to fetch file content
+     * deprecated
      *
      * Generated from protobuf field <code>string source_ern = 2;</code>
      * @return string
@@ -91,7 +91,7 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * ERN defines how to fetch file content
+     * deprecated
      *
      * Generated from protobuf field <code>string source_ern = 2;</code>
      * @param string $var

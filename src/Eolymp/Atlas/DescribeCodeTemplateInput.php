@@ -22,6 +22,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      */
     protected $template_id = '';
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string template_ern = 9999;</code>
      */
     protected $template_ern = '';
@@ -41,6 +43,7 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $template_id
      *     @type string $template_ern
+     *           deprecated
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -95,6 +98,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string template_ern = 9999;</code>
      * @return string
      */
@@ -104,6 +109,8 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string template_ern = 9999;</code>
      * @param string $var
      * @return $this

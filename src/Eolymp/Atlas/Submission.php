@@ -50,7 +50,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
-     * source code
+     * source code signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
      */
@@ -133,7 +133,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *           source code
      *     @type string $signature
-     *           source code
+     *           source code signature
      *     @type int $status
      *           status (see explanation for enumeration values)
      *     @type string $error
@@ -317,7 +317,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code
+     * source code signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
      * @return string
@@ -328,7 +328,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code
+     * source code signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
      * @param string $var

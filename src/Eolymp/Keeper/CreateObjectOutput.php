@@ -18,6 +18,8 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string blob_ern = 2;</code>
      */
     protected $blob_ern = '';
@@ -27,6 +29,10 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string blob_hash = 3;</code>
      */
     protected $blob_hash = '';
+    /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     */
+    protected $url = '';
 
     /**
      * Constructor.
@@ -36,8 +42,10 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key
      *     @type string $blob_ern
+     *           deprecated
      *     @type string $blob_hash
      *           SHA1 hash of data
+     *     @type string $url
      * }
      */
     public function __construct($data = NULL) {
@@ -68,6 +76,8 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string blob_ern = 2;</code>
      * @return string
      */
@@ -77,6 +87,8 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>string blob_ern = 2;</code>
      * @param string $var
      * @return $this
@@ -111,6 +123,28 @@ class CreateObjectOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->blob_hash = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }

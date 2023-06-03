@@ -17,10 +17,6 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
-    /**
-     * Generated from protobuf field <code>string problem_ern = 2;</code>
-     */
-    protected $problem_ern = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type string $problem_ern
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_ern = 2;</code>
-     * @return string
-     */
-    public function getProblemErn()
-    {
-        return $this->problem_ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_ern = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_ern = $var;
 
         return $this;
     }
