@@ -13,7 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Content extends \Google\Protobuf\Internal\Message
 {
-    protected $content;
+    protected $value;
 
     /**
      * Constructor.
@@ -123,9 +123,9 @@ class Content extends \Google\Protobuf\Internal\Message
     /**
      * @return string
      */
-    public function getContent()
+    public function getValue()
     {
-        return $this->whichOneof("content");
+        return $this->whichOneof("value");
     }
 
 }
