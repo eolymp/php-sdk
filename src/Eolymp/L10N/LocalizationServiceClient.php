@@ -74,22 +74,22 @@ class LocalizationServiceClient {
     }
 
     /**
-     * @param ApproveTermInput $input message
+     * @param RestoreTermInput $input message
      * @param array $context request parameters
      *
-     * @return ApproveTermOutput output message
+     * @return RestoreTermOutput output message
      */
-    public function ApproveTerm(ApproveTermInput $input, array $context = [])
+    public function RestoreTerm(RestoreTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/approve";
+        $path = "/terms/".rawurlencode($input->getTermId())."/restore";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTermId("");
 
-        $context['name'] = "eolymp.l10n.LocalizationService/ApproveTerm";
+        $context['name'] = "eolymp.l10n.LocalizationService/RestoreTerm";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ApproveTermOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RestoreTermOutput::class, $context);
     }
 
     /**
@@ -220,22 +220,22 @@ class LocalizationServiceClient {
     }
 
     /**
-     * @param AddTranslationInput $input message
+     * @param TranslateTermInput $input message
      * @param array $context request parameters
      *
-     * @return AddTranslationOutput output message
+     * @return TranslateTermOutput output message
      */
-    public function AddTranslation(AddTranslationInput $input, array $context = [])
+    public function TranslateTerm(TranslateTermInput $input, array $context = [])
     {
         $path = "/terms/".rawurlencode($input->getTermId())."/translations";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTermId("");
 
-        $context['name'] = "eolymp.l10n.LocalizationService/AddTranslation";
+        $context['name'] = "eolymp.l10n.LocalizationService/TranslateTerm";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddTranslationOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateTermOutput::class, $context);
     }
 
     /**

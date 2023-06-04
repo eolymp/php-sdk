@@ -24,23 +24,23 @@ class Status
      */
     const PENDING = 1;
     /**
-     * approved suggestion (current version)
+     * active translation
      *
-     * Generated from protobuf enum <code>APPROVED = 2;</code>
+     * Generated from protobuf enum <code>ACTIVE = 2;</code>
      */
-    const APPROVED = 2;
+    const ACTIVE = 2;
     /**
-     * rejected suggestion
+     * unused translation
      *
-     * Generated from protobuf enum <code>REJECTED = 4;</code>
+     * Generated from protobuf enum <code>UNUSED = 4;</code>
      */
-    const REJECTED = 4;
+    const UNUSED = 4;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::PENDING => 'PENDING',
-        self::APPROVED => 'APPROVED',
-        self::REJECTED => 'REJECTED',
+        self::ACTIVE => 'ACTIVE',
+        self::UNUSED => 'UNUSED',
     ];
 
     public static function name($value)

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.l10n.ApproveTermOutput</code>
+ * Generated from protobuf message <code>eolymp.l10n.RestoreTermOutput</code>
  */
-class ApproveTermOutput extends \Google\Protobuf\Internal\Message
+class RestoreTermOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

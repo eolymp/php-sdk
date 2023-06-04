@@ -21,6 +21,10 @@ class Project extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
+    /**
+     * Generated from protobuf field <code>string logo_url = 3;</code>
+     */
+    protected $logo_url = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
+     *     @type string $logo_url
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logo_url = 3;</code>
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->logo_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logo_url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogoUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->logo_url = $var;
 
         return $this;
     }

@@ -30,6 +30,10 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>bool outdated = 5;</code>
+     */
+    protected $outdated = false;
+    /**
      * Generated from protobuf field <code>string created_by = 10;</code>
      */
     protected $created_by = '';
@@ -52,6 +56,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $message
      *     @type int $status
+     *     @type bool $outdated
      *     @type string $created_by
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $approved_at
@@ -146,6 +151,28 @@ class Translation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\L10n\Translation_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool outdated = 5;</code>
+     * @return bool
+     */
+    public function getOutdated()
+    {
+        return $this->outdated;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool outdated = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOutdated($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->outdated = $var;
 
         return $this;
     }

@@ -29,18 +29,11 @@ class Status
      * Generated from protobuf enum <code>DEPRECATED = 2;</code>
      */
     const DEPRECATED = 2;
-    /**
-     * active term, but base message has changed (requires review)
-     *
-     * Generated from protobuf enum <code>OUTDATED = 3;</code>
-     */
-    const OUTDATED = 3;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::ACTIVE => 'ACTIVE',
         self::DEPRECATED => 'DEPRECATED',
-        self::OUTDATED => 'OUTDATED',
     ];
 
     public static function name($value)
