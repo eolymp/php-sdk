@@ -32,12 +32,17 @@ class Editorial extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * Statement content.
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     */
+    protected $content = null;
+    /**
      * Statement download link, allows to download statement in original format.
      *
      * Generated from protobuf field <code>string download_link = 7;</code>
      */
     protected $download_link = '';
-    protected $content;
 
     /**
      * Constructor.
@@ -51,10 +56,8 @@ class Editorial extends \Google\Protobuf\Internal\Message
      *           Problem where this statement belongs. Keep empty when creating new statement.
      *     @type string $locale
      *           Statement locale code, should consist of two lowercase latin letters.
-     *     @type string $content_html
-     *     @type string $content_latex
-     *     @type string $content_markdown
-     *     @type \Eolymp\Ecm\Node $content_ecm
+     *     @type \Eolymp\Ecm\Content $content
+     *           Statement content.
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
      * }
@@ -143,89 +146,27 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content_html = 50;</code>
-     * @return string
+     * Statement content.
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @return \Eolymp\Ecm\Content
      */
-    public function getContentHtml()
+    public function getContent()
     {
-        return $this->readOneof(50);
+        return $this->content;
     }
 
     /**
-     * Generated from protobuf field <code>string content_html = 50;</code>
-     * @param string $var
+     * Statement content.
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
-    public function setContentHtml($var)
+    public function setContent($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(50, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_latex = 51;</code>
-     * @return string
-     */
-    public function getContentLatex()
-    {
-        return $this->readOneof(51);
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_latex = 51;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContentLatex($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(51, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_markdown = 52;</code>
-     * @return string
-     */
-    public function getContentMarkdown()
-    {
-        return $this->readOneof(52);
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_markdown = 52;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContentMarkdown($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(52, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_ecm = 53;</code>
-     * @return \Eolymp\Ecm\Node
-     */
-    public function getContentEcm()
-    {
-        return $this->readOneof(53);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_ecm = 53;</code>
-     * @param \Eolymp\Ecm\Node $var
-     * @return $this
-     */
-    public function setContentEcm($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
-        $this->writeOneof(53, $var);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
 
         return $this;
     }
@@ -254,14 +195,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
         $this->download_link = $var;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->whichOneof("content");
     }
 
 }

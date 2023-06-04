@@ -38,31 +38,17 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
-     * deprecated: use one of content fields instead
+     * Statement content.
      *
-     * Generated from protobuf field <code>string content_raw = 5;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      */
-    protected $content_raw = '';
-    /**
-     * Statement content (in rich format).
-     *
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 8;</code>
-     */
-    protected $content_rich = null;
+    protected $content = null;
     /**
      * Statement download link, allows to download statement in original format.
      *
      * Generated from protobuf field <code>string download_link = 7;</code>
      */
     protected $download_link = '';
-    /**
-     * Statement content format
-     * deprecated: use one of content fields instead
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
-     */
-    protected $format = 0;
     /**
      * Problem author name.
      *
@@ -75,7 +61,6 @@ class Statement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 102;</code>
      */
     protected $source = '';
-    protected $content;
 
     /**
      * Constructor.
@@ -91,20 +76,10 @@ class Statement extends \Google\Protobuf\Internal\Message
      *           Statement locale code, should consist of two lowercase latin letters.
      *     @type string $title
      *           Statement title.
-     *     @type string $content_html
-     *     @type string $content_latex
-     *     @type string $content_markdown
-     *     @type \Eolymp\Ecm\Node $content_ecm
-     *     @type string $content_raw
-     *           Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
-     *           deprecated: use one of content fields instead
-     *     @type \Eolymp\Ecm\Node $content_rich
-     *           Statement content (in rich format).
+     *     @type \Eolymp\Ecm\Content $content
+     *           Statement content.
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
-     *     @type int $format
-     *           Statement content format
-     *           deprecated: use one of content fields instead
      *     @type string $author
      *           Problem author name.
      *     @type string $source
@@ -221,143 +196,27 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content_html = 50;</code>
-     * @return string
-     */
-    public function getContentHtml()
-    {
-        return $this->readOneof(50);
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_html = 50;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContentHtml($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(50, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_latex = 51;</code>
-     * @return string
-     */
-    public function getContentLatex()
-    {
-        return $this->readOneof(51);
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_latex = 51;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContentLatex($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(51, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_markdown = 52;</code>
-     * @return string
-     */
-    public function getContentMarkdown()
-    {
-        return $this->readOneof(52);
-    }
-
-    /**
-     * Generated from protobuf field <code>string content_markdown = 52;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContentMarkdown($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(52, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_ecm = 53;</code>
-     * @return \Eolymp\Ecm\Node
-     */
-    public function getContentEcm()
-    {
-        return $this->readOneof(53);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_ecm = 53;</code>
-     * @param \Eolymp\Ecm\Node $var
-     * @return $this
-     */
-    public function setContentEcm($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
-        $this->writeOneof(53, $var);
-
-        return $this;
-    }
-
-    /**
-     * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
-     * deprecated: use one of content fields instead
+     * Statement content.
      *
-     * Generated from protobuf field <code>string content_raw = 5;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @return \Eolymp\Ecm\Content
      */
-    public function getContentRaw()
+    public function getContent()
     {
-        return $this->content_raw;
+        return $this->content;
     }
 
     /**
-     * Statement content. Might be defined using LaTeX, Markdown or HTML formats, see format field.
-     * deprecated: use one of content fields instead
+     * Statement content.
      *
-     * Generated from protobuf field <code>string content_raw = 5;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
-    public function setContentRaw($var)
+    public function setContent($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->content_raw = $var;
-
-        return $this;
-    }
-
-    /**
-     * Statement content (in rich format).
-     *
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 8;</code>
-     * @return \Eolymp\Ecm\Node
-     */
-    public function getContentRich()
-    {
-        return $this->content_rich;
-    }
-
-    /**
-     * Statement content (in rich format).
-     *
-     * Generated from protobuf field <code>.eolymp.ecm.Node content_rich = 8;</code>
-     * @param \Eolymp\Ecm\Node $var
-     * @return $this
-     */
-    public function setContentRich($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
-        $this->content_rich = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
 
         return $this;
     }
@@ -384,34 +243,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->download_link = $var;
-
-        return $this;
-    }
-
-    /**
-     * Statement content format
-     * deprecated: use one of content fields instead
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
-     * @return int
-     */
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-    /**
-     * Statement content format
-     * deprecated: use one of content fields instead
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Statement.Format format = 6;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setFormat($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Statement_Format::class);
-        $this->format = $var;
 
         return $this;
     }
@@ -466,14 +297,6 @@ class Statement extends \Google\Protobuf\Internal\Message
         $this->source = $var;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->whichOneof("content");
     }
 
 }
