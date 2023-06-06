@@ -22,9 +22,17 @@ class Project extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     */
+    protected $url = '';
+    /**
      * Generated from protobuf field <code>string logo_url = 3;</code>
      */
     protected $logo_url = '';
+    /**
+     * Generated from protobuf field <code>string home_url = 5;</code>
+     */
+    protected $home_url = '';
 
     /**
      * Constructor.
@@ -34,7 +42,9 @@ class Project extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
+     *     @type string $url
      *     @type string $logo_url
+     *     @type string $home_url
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +97,28 @@ class Project extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string logo_url = 3;</code>
      * @return string
      */
@@ -104,6 +136,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->logo_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string home_url = 5;</code>
+     * @return string
+     */
+    public function getHomeUrl()
+    {
+        return $this->home_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string home_url = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHomeUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->home_url = $var;
 
         return $this;
     }
