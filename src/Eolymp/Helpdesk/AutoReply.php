@@ -26,7 +26,7 @@ class AutoReply extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 21;</code>
      */
     protected $message = null;
     /**
@@ -43,7 +43,7 @@ class AutoReply extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $locale
      *     @type string $name
-     *     @type \Eolymp\Ecm\Node $message
+     *     @type \Eolymp\Ecm\Content $message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
@@ -119,8 +119,8 @@ class AutoReply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
-     * @return \Eolymp\Ecm\Node
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 21;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -128,13 +128,13 @@ class AutoReply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message = 21;</code>
-     * @param \Eolymp\Ecm\Node $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 21;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
 
         return $this;

@@ -30,7 +30,7 @@ class Document extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content = 51;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
     protected $content = null;
     /**
@@ -48,7 +48,7 @@ class Document extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *     @type string $locale
      *     @type string $title
-     *     @type \Eolymp\Ecm\Node $content
+     *     @type \Eolymp\Ecm\Content $content
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
@@ -146,8 +146,8 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content = 51;</code>
-     * @return \Eolymp\Ecm\Node
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getContent()
     {
@@ -155,13 +155,13 @@ class Document extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node content = 51;</code>
-     * @param \Eolymp\Ecm\Node $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setContent($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
 
         return $this;

@@ -18,9 +18,9 @@ class ListParentsInput extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
-     * Generated from protobuf field <code>repeated string preferred_locales = 2;</code>
+     * Generated from protobuf field <code>repeated string locale = 2;</code>
      */
-    private $preferred_locales;
+    private $locale;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class ListParentsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $preferred_locales
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class ListParentsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string preferred_locales = 2;</code>
+     * Generated from protobuf field <code>repeated string locale = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPreferredLocales()
+    public function getLocale()
     {
-        return $this->preferred_locales;
+        return $this->locale;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string preferred_locales = 2;</code>
+     * Generated from protobuf field <code>repeated string locale = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPreferredLocales($var)
+    public function setLocale($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->preferred_locales = $arr;
+        $this->locale = $arr;
 
         return $this;
     }

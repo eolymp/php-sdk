@@ -17,6 +17,10 @@ class DescribeAutoReplyInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string reply_id = 1;</code>
      */
     protected $reply_id = '';
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     */
+    protected $render = false;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DescribeAutoReplyInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $reply_id
+     *     @type bool $render
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DescribeAutoReplyInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reply_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }

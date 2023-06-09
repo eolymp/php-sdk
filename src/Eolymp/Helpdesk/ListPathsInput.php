@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPathsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated string preferred_locales = 1;</code>
+     * Generated from protobuf field <code>string locale = 1;</code>
      */
-    private $preferred_locales;
+    protected $locale = '';
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     */
+    protected $render = false;
     /**
      * pagination
      *
@@ -40,7 +44,8 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $preferred_locales
+     *     @type string $locale
+     *     @type bool $render
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -54,23 +59,45 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string preferred_locales = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string locale = 1;</code>
+     * @return string
      */
-    public function getPreferredLocales()
+    public function getLocale()
     {
-        return $this->preferred_locales;
+        return $this->locale;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string preferred_locales = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string locale = 1;</code>
+     * @param string $var
      * @return $this
      */
-    public function setPreferredLocales($var)
+    public function setLocale($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->preferred_locales = $arr;
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }
