@@ -20,9 +20,13 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 682;</code>
      */
     protected $url = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> links = 683;</code>
+     */
+    private $links;
     /**
      * Index in the public problem catalog.
      *
@@ -63,6 +67,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Unique identifier.
      *     @type string $url
+     *     @type array|\Google\Protobuf\Internal\MapField $links
      *     @type int $number
      *           Index in the public problem catalog.
      *     @type bool $visible
@@ -107,7 +112,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 682;</code>
      * @return string
      */
     public function getUrl()
@@ -116,7 +121,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 682;</code>
      * @param string $var
      * @return $this
      */
@@ -124,6 +129,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> links = 683;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> links = 683;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setLinks($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->links = $arr;
 
         return $this;
     }
