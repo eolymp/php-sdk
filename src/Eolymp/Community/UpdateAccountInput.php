@@ -14,15 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAccountInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * patch specifies fields which should be updated, patch should be array of these values:
-     * - nickname - update user nickname (current_password is required)
-     * - email - update email (current_password is required)
-     * - password - update password (current_password is required)
-     * - locale - update locale preference
-     * - values - update all profile values
-     * - values:<attribute-key> - update attribute with "key"
-     * if patch is an empty array all fields will be updated
-     *
      * Generated from protobuf field <code>repeated string patch = 1;</code>
      */
     private $patch;
@@ -43,13 +34,13 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
      */
     protected $password = '';
     /**
-     * Generated from protobuf field <code>string locale = 13;</code>
+     * Generated from protobuf field <code>string locale = 20;</code>
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
      */
-    private $values;
+    private $attributes;
 
     /**
      * Constructor.
@@ -58,20 +49,12 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $patch
-     *           patch specifies fields which should be updated, patch should be array of these values:
-     *           - nickname - update user nickname (current_password is required)
-     *           - email - update email (current_password is required)
-     *           - password - update password (current_password is required)
-     *           - locale - update locale preference
-     *           - values - update all profile values
-     *           - values:<attribute-key> - update attribute with "key"
-     *           if patch is an empty array all fields will be updated
      *     @type string $current_password
      *     @type string $nickname
      *     @type string $email
      *     @type string $password
      *     @type string $locale
-     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -80,15 +63,6 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * patch specifies fields which should be updated, patch should be array of these values:
-     * - nickname - update user nickname (current_password is required)
-     * - email - update email (current_password is required)
-     * - password - update password (current_password is required)
-     * - locale - update locale preference
-     * - values - update all profile values
-     * - values:<attribute-key> - update attribute with "key"
-     * if patch is an empty array all fields will be updated
-     *
      * Generated from protobuf field <code>repeated string patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -98,15 +72,6 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * patch specifies fields which should be updated, patch should be array of these values:
-     * - nickname - update user nickname (current_password is required)
-     * - email - update email (current_password is required)
-     * - password - update password (current_password is required)
-     * - locale - update locale preference
-     * - values - update all profile values
-     * - values:<attribute-key> - update attribute with "key"
-     * if patch is an empty array all fields will be updated
-     *
      * Generated from protobuf field <code>repeated string patch = 1;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -208,7 +173,7 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 13;</code>
+     * Generated from protobuf field <code>string locale = 20;</code>
      * @return string
      */
     public function getLocale()
@@ -217,7 +182,7 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 13;</code>
+     * Generated from protobuf field <code>string locale = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -230,23 +195,23 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getValues()
+    public function getAttributes()
     {
-        return $this->values;
+        return $this->attributes;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
      * @param \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setValues($var)
+    public function setAttributes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Value::class);
-        $this->values = $arr;
+        $this->attributes = $arr;
 
         return $this;
     }

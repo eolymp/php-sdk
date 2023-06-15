@@ -26,13 +26,13 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
      */
     protected $password = '';
     /**
-     * Generated from protobuf field <code>string locale = 4;</code>
+     * Generated from protobuf field <code>string locale = 10;</code>
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
      */
-    private $values;
+    private $attributes;
     /**
      * captcha challenge
      *
@@ -50,7 +50,7 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *     @type string $password
      *     @type string $locale
-     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type string $captcha
      *           captcha challenge
      * }
@@ -127,7 +127,7 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 4;</code>
+     * Generated from protobuf field <code>string locale = 10;</code>
      * @return string
      */
     public function getLocale()
@@ -136,7 +136,7 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 4;</code>
+     * Generated from protobuf field <code>string locale = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -149,23 +149,23 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getValues()
+    public function getAttributes()
     {
-        return $this->values;
+        return $this->attributes;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
      * @param \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setValues($var)
+    public function setAttributes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Value::class);
-        $this->values = $arr;
+        $this->attributes = $arr;
 
         return $this;
     }

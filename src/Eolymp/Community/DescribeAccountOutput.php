@@ -38,13 +38,9 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      */
     protected $password_age = 0;
     /**
-     * Generated from protobuf field <code>string locale = 40;</code>
+     * Generated from protobuf field <code>string locale = 50;</code>
      */
     protected $locale = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 100;</code>
-     */
-    private $values;
 
     /**
      * Constructor.
@@ -60,7 +56,6 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      *     @type int $password_age
      *           amount of time in seconds since password was set
      *     @type string $locale
-     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
     public function __construct($data = NULL) {
@@ -187,7 +182,7 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 40;</code>
+     * Generated from protobuf field <code>string locale = 50;</code>
      * @return string
      */
     public function getLocale()
@@ -196,7 +191,7 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 40;</code>
+     * Generated from protobuf field <code>string locale = 50;</code>
      * @param string $var
      * @return $this
      */
@@ -204,28 +199,6 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getValues()
-    {
-        return $this->values;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 100;</code>
-     * @param \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setValues($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Value::class);
-        $this->values = $arr;
 
         return $this;
     }

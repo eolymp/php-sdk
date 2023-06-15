@@ -18,14 +18,6 @@ class CreateAccountOutput extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>string identity_issuer = 10;</code>
-     */
-    protected $identity_issuer = '';
-    /**
-     * Generated from protobuf field <code>string identity_subject = 11;</code>
-     */
-    protected $identity_subject = '';
-    /**
      * Generated from protobuf field <code>string hint = 100;</code>
      */
     protected $hint = '';
@@ -37,8 +29,6 @@ class CreateAccountOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
-     *     @type string $identity_issuer
-     *     @type string $identity_subject
      *     @type string $hint
      * }
      */
@@ -65,50 +55,6 @@ class CreateAccountOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string identity_issuer = 10;</code>
-     * @return string
-     */
-    public function getIdentityIssuer()
-    {
-        return $this->identity_issuer;
-    }
-
-    /**
-     * Generated from protobuf field <code>string identity_issuer = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setIdentityIssuer($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->identity_issuer = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string identity_subject = 11;</code>
-     * @return string
-     */
-    public function getIdentitySubject()
-    {
-        return $this->identity_subject;
-    }
-
-    /**
-     * Generated from protobuf field <code>string identity_subject = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setIdentitySubject($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->identity_subject = $var;
 
         return $this;
     }
