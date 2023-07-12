@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAccountInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated string patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
      */
     private $patch;
     /**
@@ -22,25 +22,9 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
      */
     protected $current_password = '';
     /**
-     * Generated from protobuf field <code>string nickname = 10;</code>
+     * Generated from protobuf field <code>.eolymp.community.Account account = 10;</code>
      */
-    protected $nickname = '';
-    /**
-     * Generated from protobuf field <code>string email = 11;</code>
-     */
-    protected $email = '';
-    /**
-     * Generated from protobuf field <code>string password = 12;</code>
-     */
-    protected $password = '';
-    /**
-     * Generated from protobuf field <code>string locale = 20;</code>
-     */
-    protected $locale = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
-     */
-    private $attributes;
+    protected $account = null;
 
     /**
      * Constructor.
@@ -48,13 +32,9 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $current_password
-     *     @type string $nickname
-     *     @type string $email
-     *     @type string $password
-     *     @type string $locale
-     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Eolymp\Community\Account $account
      * }
      */
     public function __construct($data = NULL) {
@@ -63,7 +43,7 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -72,13 +52,13 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string patch = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdateAccountInput\Patch::class);
         $this->patch = $arr;
 
         return $this;
@@ -107,111 +87,23 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.community.Account account = 10;</code>
+     * @return \Eolymp\Community\Account
      */
-    public function getNickname()
+    public function getAccount()
     {
-        return $this->nickname;
+        return $this->account;
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.community.Account account = 10;</code>
+     * @param \Eolymp\Community\Account $var
      * @return $this
      */
-    public function setNickname($var)
+    public function setAccount($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->nickname = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 11;</code>
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string password = 12;</code>
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Generated from protobuf field <code>string password = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPassword($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->password = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 20;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAttributes()
-    {
-        return $this->attributes;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value attributes = 50;</code>
-     * @param \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAttributes($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Value::class);
-        $this->attributes = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Community\Account::class);
+        $this->account = $var;
 
         return $this;
     }

@@ -14,33 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string nickname = 10;</code>
+     * Generated from protobuf field <code>.eolymp.community.Account account = 1;</code>
      */
-    protected $nickname = '';
-    /**
-     * amount of time in seconds until nickname can be changed by user, if 0 user can change nickname
-     *
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
-     */
-    protected $nickname_change_timeout = 0;
-    /**
-     * Generated from protobuf field <code>string email = 20;</code>
-     */
-    protected $email = '';
-    /**
-     * Generated from protobuf field <code>bool email_verified = 21;</code>
-     */
-    protected $email_verified = false;
-    /**
-     * amount of time in seconds since password was set
-     *
-     * Generated from protobuf field <code>uint32 password_age = 30;</code>
-     */
-    protected $password_age = 0;
-    /**
-     * Generated from protobuf field <code>string locale = 50;</code>
-     */
-    protected $locale = '';
+    protected $account = null;
 
     /**
      * Constructor.
@@ -48,14 +24,7 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $nickname
-     *     @type int $nickname_change_timeout
-     *           amount of time in seconds until nickname can be changed by user, if 0 user can change nickname
-     *     @type string $email
-     *     @type bool $email_verified
-     *     @type int $password_age
-     *           amount of time in seconds since password was set
-     *     @type string $locale
+     *     @type \Eolymp\Community\Account $account
      * }
      */
     public function __construct($data = NULL) {
@@ -64,141 +33,23 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.community.Account account = 1;</code>
+     * @return \Eolymp\Community\Account
      */
-    public function getNickname()
+    public function getAccount()
     {
-        return $this->nickname;
+        return $this->account;
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.community.Account account = 1;</code>
+     * @param \Eolymp\Community\Account $var
      * @return $this
      */
-    public function setNickname($var)
+    public function setAccount($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->nickname = $var;
-
-        return $this;
-    }
-
-    /**
-     * amount of time in seconds until nickname can be changed by user, if 0 user can change nickname
-     *
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
-     * @return int
-     */
-    public function getNicknameChangeTimeout()
-    {
-        return $this->nickname_change_timeout;
-    }
-
-    /**
-     * amount of time in seconds until nickname can be changed by user, if 0 user can change nickname
-     *
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setNicknameChangeTimeout($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->nickname_change_timeout = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 20;</code>
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool email_verified = 21;</code>
-     * @return bool
-     */
-    public function getEmailVerified()
-    {
-        return $this->email_verified;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool email_verified = 21;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setEmailVerified($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->email_verified = $var;
-
-        return $this;
-    }
-
-    /**
-     * amount of time in seconds since password was set
-     *
-     * Generated from protobuf field <code>uint32 password_age = 30;</code>
-     * @return int
-     */
-    public function getPasswordAge()
-    {
-        return $this->password_age;
-    }
-
-    /**
-     * amount of time in seconds since password was set
-     *
-     * Generated from protobuf field <code>uint32 password_age = 30;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPasswordAge($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->password_age = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 50;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 50;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Community\Account::class);
+        $this->account = $var;
 
         return $this;
     }

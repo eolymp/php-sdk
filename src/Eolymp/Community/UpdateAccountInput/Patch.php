@@ -16,33 +16,48 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>NICKNAME = 1;</code>
+     * Generated from protobuf enum <code>EMAIL = 1;</code>
      */
-    const NICKNAME = 1;
+    const EMAIL = 1;
     /**
-     * Generated from protobuf enum <code>EMAIL = 2;</code>
+     * Generated from protobuf enum <code>NICKNAME = 2;</code>
      */
-    const EMAIL = 2;
+    const NICKNAME = 2;
     /**
      * Generated from protobuf enum <code>PASSWORD = 3;</code>
      */
     const PASSWORD = 3;
     /**
-     * Generated from protobuf enum <code>LOCALE = 4;</code>
+     * Generated from protobuf enum <code>NAME = 4;</code>
      */
-    const LOCALE = 4;
+    const NAME = 4;
     /**
-     * Generated from protobuf enum <code>ATTRIBUTES = 5;</code>
+     * Generated from protobuf enum <code>PICTURE = 5;</code>
      */
-    const ATTRIBUTES = 5;
+    const PICTURE = 5;
+    /**
+     * Generated from protobuf enum <code>LOCALE = 6;</code>
+     */
+    const LOCALE = 6;
+    /**
+     * Generated from protobuf enum <code>BIRTHDAY = 7;</code>
+     */
+    const BIRTHDAY = 7;
+    /**
+     * Generated from protobuf enum <code>COUNTRY = 8;</code>
+     */
+    const COUNTRY = 8;
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::NICKNAME => 'NICKNAME',
         self::EMAIL => 'EMAIL',
+        self::NICKNAME => 'NICKNAME',
         self::PASSWORD => 'PASSWORD',
+        self::NAME => 'NAME',
+        self::PICTURE => 'PICTURE',
         self::LOCALE => 'LOCALE',
-        self::ATTRIBUTES => 'ATTRIBUTES',
+        self::BIRTHDAY => 'BIRTHDAY',
+        self::COUNTRY => 'COUNTRY',
     ];
 
     public static function name($value)
