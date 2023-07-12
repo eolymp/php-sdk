@@ -50,9 +50,9 @@ class Account extends \Google\Protobuf\Internal\Message
      */
     protected $nickname = '';
     /**
-     * Generated from protobuf field <code>bool nickname_change_timeout = 32;</code>
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 32;</code>
      */
-    protected $nickname_change_timeout = false;
+    protected $nickname_change_timeout = 0;
     /**
      * Generated from protobuf field <code>string picture = 40;</code>
      */
@@ -85,7 +85,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *     @type int $password_age
      *     @type string $name
      *     @type string $nickname
-     *     @type bool $nickname_change_timeout
+     *     @type int $nickname_change_timeout
      *     @type string $picture
      *     @type string $locale
      *     @type \Google\Protobuf\Timestamp $birthday
@@ -296,8 +296,8 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool nickname_change_timeout = 32;</code>
-     * @return bool
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 32;</code>
+     * @return int
      */
     public function getNicknameChangeTimeout()
     {
@@ -305,13 +305,13 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool nickname_change_timeout = 32;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 32;</code>
+     * @param int $var
      * @return $this
      */
     public function setNicknameChangeTimeout($var)
     {
-        GPBUtil::checkBool($var);
+        GPBUtil::checkUint32($var);
         $this->nickname_change_timeout = $var;
 
         return $this;
