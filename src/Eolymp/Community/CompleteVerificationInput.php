@@ -19,6 +19,10 @@ class CompleteVerificationInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string code = 1;</code>
      */
     protected $code = '';
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
+     */
+    protected $subject = '';
 
     /**
      * Constructor.
@@ -28,6 +32,7 @@ class CompleteVerificationInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $code
      *           confirmation code
+     *     @type string $subject
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +62,28 @@ class CompleteVerificationInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubject($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->subject = $var;
 
         return $this;
     }
