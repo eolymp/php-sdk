@@ -51,7 +51,7 @@ class ExternalServiceClient {
         $context['name'] = "eolymp.auth.ExternalService/AuthorizeCallback";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, AuthorizeCallbackOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeCallbackOutput::class, $context);
     }
 
 }
