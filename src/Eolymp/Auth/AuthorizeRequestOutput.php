@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.auth.InitiateLoginOutput</code>
+ * Generated from protobuf message <code>eolymp.auth.AuthorizeRequestOutput</code>
  */
-class InitiateLoginOutput extends \Google\Protobuf\Internal\Message
+class AuthorizeRequestOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string login_url = 1;</code>
+     * Generated from protobuf field <code>string redirect_uri = 1;</code>
      */
-    protected $login_url = '';
+    protected $redirect_uri = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class InitiateLoginOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $login_url
+     *     @type string $redirect_uri
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class InitiateLoginOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string login_url = 1;</code>
+     * Generated from protobuf field <code>string redirect_uri = 1;</code>
      * @return string
      */
-    public function getLoginUrl()
+    public function getRedirectUri()
     {
-        return $this->login_url;
+        return $this->redirect_uri;
     }
 
     /**
-     * Generated from protobuf field <code>string login_url = 1;</code>
+     * Generated from protobuf field <code>string redirect_uri = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setLoginUrl($var)
+    public function setRedirectUri($var)
     {
         GPBUtil::checkString($var, True);
-        $this->login_url = $var;
+        $this->redirect_uri = $var;
 
         return $this;
     }

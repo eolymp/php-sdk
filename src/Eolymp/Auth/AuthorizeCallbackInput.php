@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.auth.CompleteLoginInput</code>
+ * Generated from protobuf message <code>eolymp.auth.AuthorizeCallbackInput</code>
  */
-class CompleteLoginInput extends \Google\Protobuf\Internal\Message
+class AuthorizeCallbackInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string code = 1;</code>

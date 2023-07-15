@@ -22,36 +22,4 @@ class OIDCServiceClient {
         $this->invoker = $invoker;
     }
 
-    /**
-     * @param InitiateLoginInput $input message
-     * @param array $context request parameters
-     *
-     * @return InitiateLoginOutput output message
-     */
-    public function InitiateLogin(InitiateLoginInput $input, array $context = [])
-    {
-        $path = "/oidc/initiate";
-
-        $context['name'] = "eolymp.auth.OIDCService/InitiateLogin";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, InitiateLoginOutput::class, $context);
-    }
-
-    /**
-     * @param CompleteLoginInput $input message
-     * @param array $context request parameters
-     *
-     * @return CompleteLoginOutput output message
-     */
-    public function CompleteLogin(CompleteLoginInput $input, array $context = [])
-    {
-        $path = "/oidc/callback";
-
-        $context['name'] = "eolymp.auth.OIDCService/CompleteLogin";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteLoginOutput::class, $context);
-    }
-
 }
