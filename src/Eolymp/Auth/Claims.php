@@ -46,13 +46,25 @@ class Claims extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>bool minor = 60;</code>
+     * Generated from protobuf field <code>bool minor = 61;</code>
      */
     protected $minor = false;
     /**
      * Generated from protobuf field <code>string country = 70;</code>
      */
     protected $country = '';
+    /**
+     * Generated from protobuf field <code>string city = 73;</code>
+     */
+    protected $city = '';
+    /**
+     * Generated from protobuf field <code>string company = 80;</code>
+     */
+    protected $company = '';
+    /**
+     * Generated from protobuf field <code>string business_title = 81;</code>
+     */
+    protected $business_title = '';
 
     /**
      * Constructor.
@@ -70,6 +82,9 @@ class Claims extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type bool $minor
      *     @type string $country
+     *     @type string $city
+     *     @type string $company
+     *     @type string $business_title
      * }
      */
     public function __construct($data = NULL) {
@@ -254,7 +269,7 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool minor = 60;</code>
+     * Generated from protobuf field <code>bool minor = 61;</code>
      * @return bool
      */
     public function getMinor()
@@ -263,7 +278,7 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool minor = 60;</code>
+     * Generated from protobuf field <code>bool minor = 61;</code>
      * @param bool $var
      * @return $this
      */
@@ -293,6 +308,72 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string city = 73;</code>
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Generated from protobuf field <code>string city = 73;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company = 80;</code>
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company = 80;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompany($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string business_title = 81;</code>
+     * @return string
+     */
+    public function getBusinessTitle()
+    {
+        return $this->business_title;
+    }
+
+    /**
+     * Generated from protobuf field <code>string business_title = 81;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBusinessTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->business_title = $var;
 
         return $this;
     }

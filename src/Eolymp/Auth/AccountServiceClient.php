@@ -71,6 +71,22 @@ class AccountServiceClient {
     }
 
     /**
+     * @param UploadPictureInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadPictureOutput output message
+     */
+    public function UploadPicture(UploadPictureInput $input, array $context = [])
+    {
+        $path = "/account/picture";
+
+        $context['name'] = "eolymp.auth.AccountService/UploadPicture";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadPictureOutput::class, $context);
+    }
+
+    /**
      * @param DeleteAccountInput $input message
      * @param array $context request parameters
      *

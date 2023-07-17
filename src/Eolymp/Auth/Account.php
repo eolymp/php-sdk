@@ -18,9 +18,9 @@ class Account extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_on = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 2;</code>
      */
-    protected $created_on = null;
+    protected $created_at = null;
     /**
      * Generated from protobuf field <code>bool active = 3;</code>
      */
@@ -62,13 +62,25 @@ class Account extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>string birthday = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
      */
-    protected $birthday = '';
+    protected $birthday = null;
     /**
      * Generated from protobuf field <code>string country = 70;</code>
      */
     protected $country = '';
+    /**
+     * Generated from protobuf field <code>string city = 73;</code>
+     */
+    protected $city = '';
+    /**
+     * Generated from protobuf field <code>string company = 80;</code>
+     */
+    protected $company = '';
+    /**
+     * Generated from protobuf field <code>string business_title = 81;</code>
+     */
+    protected $business_title = '';
 
     /**
      * Constructor.
@@ -77,7 +89,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type \Google\Protobuf\Timestamp $created_on
+     *     @type \Google\Protobuf\Timestamp $created_at
      *     @type bool $active
      *     @type string $email
      *     @type bool $email_verified
@@ -88,8 +100,11 @@ class Account extends \Google\Protobuf\Internal\Message
      *     @type int $nickname_change_timeout
      *     @type string $picture
      *     @type string $locale
-     *     @type string $birthday
+     *     @type \Google\Protobuf\Timestamp $birthday
      *     @type string $country
+     *     @type string $city
+     *     @type string $company
+     *     @type string $business_title
      * }
      */
     public function __construct($data = NULL) {
@@ -120,23 +135,23 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_on = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 2;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getCreatedOn()
+    public function getCreatedAt()
     {
-        return $this->created_on;
+        return $this->created_at;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_on = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreatedOn($var)
+    public function setCreatedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_on = $var;
+        $this->created_at = $var;
 
         return $this;
     }
@@ -362,8 +377,8 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string birthday = 60;</code>
-     * @return string
+     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
+     * @return \Google\Protobuf\Timestamp
      */
     public function getBirthday()
     {
@@ -371,13 +386,13 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string birthday = 60;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
+     * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
     public function setBirthday($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->birthday = $var;
 
         return $this;
@@ -401,6 +416,72 @@ class Account extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string city = 73;</code>
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Generated from protobuf field <code>string city = 73;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company = 80;</code>
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->company;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company = 80;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompany($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string business_title = 81;</code>
+     * @return string
+     */
+    public function getBusinessTitle()
+    {
+        return $this->business_title;
+    }
+
+    /**
+     * Generated from protobuf field <code>string business_title = 81;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBusinessTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->business_title = $var;
 
         return $this;
     }
