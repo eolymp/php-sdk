@@ -62,9 +62,9 @@ class Account extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
+     * Generated from protobuf field <code>string birthday = 60;</code>
      */
-    protected $birthday = null;
+    protected $birthday = '';
     /**
      * Generated from protobuf field <code>string country = 70;</code>
      */
@@ -88,7 +88,7 @@ class Account extends \Google\Protobuf\Internal\Message
      *     @type int $nickname_change_timeout
      *     @type string $picture
      *     @type string $locale
-     *     @type \Google\Protobuf\Timestamp $birthday
+     *     @type string $birthday
      *     @type string $country
      * }
      */
@@ -362,8 +362,8 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
-     * @return \Google\Protobuf\Timestamp
+     * Generated from protobuf field <code>string birthday = 60;</code>
+     * @return string
      */
     public function getBirthday()
     {
@@ -371,13 +371,13 @@ class Account extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>string birthday = 60;</code>
+     * @param string $var
      * @return $this
      */
     public function setBirthday($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        GPBUtil::checkString($var, True);
         $this->birthday = $var;
 
         return $this;
