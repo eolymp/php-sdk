@@ -4,7 +4,7 @@
 
 namespace Eolymp\Auth;
 
-class OIDCServiceClient {
+class SSOServiceClient {
 
     /** @var string base URL */
     private $url;
