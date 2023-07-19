@@ -23,6 +23,38 @@ class TestingServiceClient {
     }
 
     /**
+     * @param UpdateTestingConfigInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateTestingConfigOutput output message
+     */
+    public function UpdateTestingConfig(UpdateTestingConfigInput $input, array $context = [])
+    {
+        $path = "/testing";
+
+        $context['name'] = "eolymp.atlas.TestingService/UpdateTestingConfig";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateTestingConfigOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeTestingConfigInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeTestingConfigOutput output message
+     */
+    public function DescribeTestingConfig(DescribeTestingConfigInput $input, array $context = [])
+    {
+        $path = "/testing";
+
+        $context['name'] = "eolymp.atlas.TestingService/DescribeTestingConfig";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestingConfigOutput::class, $context);
+    }
+
+    /**
      * @param UpdateVerifierInput $input message
      * @param array $context request parameters
      *
