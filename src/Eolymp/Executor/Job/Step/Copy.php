@@ -37,6 +37,12 @@ class Copy extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool optionally = 5;</code>
      */
     protected $optionally = false;
+    /**
+     * If true, source file will be removed (ie. file will be moved rather than copied)
+     *
+     * Generated from protobuf field <code>bool remove_source = 6;</code>
+     */
+    protected $remove_source = false;
 
     /**
      * Constructor.
@@ -50,6 +56,8 @@ class Copy extends \Google\Protobuf\Internal\Message
      *     @type string $target_path
      *     @type bool $optionally
      *           If true, step won't fail if source file does not exist
+     *     @type bool $remove_source
+     *           If true, source file will be removed (ie. file will be moved rather than copied)
      * }
      */
     public function __construct($data = NULL) {
@@ -167,6 +175,32 @@ class Copy extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->optionally = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, source file will be removed (ie. file will be moved rather than copied)
+     *
+     * Generated from protobuf field <code>bool remove_source = 6;</code>
+     * @return bool
+     */
+    public function getRemoveSource()
+    {
+        return $this->remove_source;
+    }
+
+    /**
+     * If true, source file will be removed (ie. file will be moved rather than copied)
+     *
+     * Generated from protobuf field <code>bool remove_source = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRemoveSource($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->remove_source = $var;
 
         return $this;
     }

@@ -78,6 +78,12 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $use_workspace_archive = false;
     /**
+     * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
+     *
+     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     */
+    protected $run_count = 0;
+    /**
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
@@ -146,6 +152,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           both stderr and stdout in output field while stderr will be empty.
      *     @type bool $use_workspace_archive
      *           Create workspace archive for every run and upload it to the storage
+     *     @type int $run_count
+     *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
@@ -411,6 +419,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->use_workspace_archive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
+     *
+     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * @return int
+     */
+    public function getRunCount()
+    {
+        return $this->run_count;
+    }
+
+    /**
+     * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
+     *
+     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRunCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->run_count = $var;
 
         return $this;
     }
