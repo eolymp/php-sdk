@@ -46,6 +46,10 @@ class Claims extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * Generated from protobuf field <code>string timezone = 51;</code>
+     */
+    protected $timezone = '';
+    /**
      * Generated from protobuf field <code>bool minor = 61;</code>
      */
     protected $minor = false;
@@ -65,6 +69,10 @@ class Claims extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string business_title = 81;</code>
      */
     protected $business_title = '';
+    /**
+     * Generated from protobuf field <code>string preferred_runtime = 90;</code>
+     */
+    protected $preferred_runtime = '';
 
     /**
      * Constructor.
@@ -80,11 +88,13 @@ class Claims extends \Google\Protobuf\Internal\Message
      *     @type string $nickname
      *     @type string $picture
      *     @type string $locale
+     *     @type string $timezone
      *     @type bool $minor
      *     @type string $country
      *     @type string $city
      *     @type string $company
      *     @type string $business_title
+     *     @type string $preferred_runtime
      * }
      */
     public function __construct($data = NULL) {
@@ -269,6 +279,28 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string timezone = 51;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->timezone = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>bool minor = 61;</code>
      * @return bool
      */
@@ -374,6 +406,28 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->business_title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string preferred_runtime = 90;</code>
+     * @return string
+     */
+    public function getPreferredRuntime()
+    {
+        return $this->preferred_runtime;
+    }
+
+    /**
+     * Generated from protobuf field <code>string preferred_runtime = 90;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPreferredRuntime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->preferred_runtime = $var;
 
         return $this;
     }

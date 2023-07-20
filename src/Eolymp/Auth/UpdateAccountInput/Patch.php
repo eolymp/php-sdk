@@ -40,6 +40,10 @@ class Patch
      */
     const LOCALE = 6;
     /**
+     * Generated from protobuf enum <code>TIMEZONE = 12;</code>
+     */
+    const TIMEZONE = 12;
+    /**
      * Generated from protobuf enum <code>BIRTHDAY = 7;</code>
      */
     const BIRTHDAY = 7;
@@ -59,6 +63,10 @@ class Patch
      * Generated from protobuf enum <code>BUSINESS_TITLE = 11;</code>
      */
     const BUSINESS_TITLE = 11;
+    /**
+     * Generated from protobuf enum <code>PREFERRED_RUNTIME = 13;</code>
+     */
+    const PREFERRED_RUNTIME = 13;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -68,11 +76,13 @@ class Patch
         self::NAME => 'NAME',
         self::PICTURE => 'PICTURE',
         self::LOCALE => 'LOCALE',
+        self::TIMEZONE => 'TIMEZONE',
         self::BIRTHDAY => 'BIRTHDAY',
         self::COUNTRY => 'COUNTRY',
         self::CITY => 'CITY',
         self::COMPANY => 'COMPANY',
         self::BUSINESS_TITLE => 'BUSINESS_TITLE',
+        self::PREFERRED_RUNTIME => 'PREFERRED_RUNTIME',
     ];
 
     public static function name($value)
