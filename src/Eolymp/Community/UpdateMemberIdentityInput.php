@@ -22,7 +22,7 @@ class UpdateMemberIdentityInput extends \Google\Protobuf\Internal\Message
      */
     protected $identity_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Identity identity = 3;</code>
+     * Generated from protobuf field <code>.eolymp.community.Identity identity = 3;</code>
      */
     protected $identity = null;
 
@@ -34,7 +34,7 @@ class UpdateMemberIdentityInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $member_id
      *     @type string $identity_id
-     *     @type \Eolymp\Community\Member\Identity $identity
+     *     @type \Eolymp\Community\Identity $identity
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class UpdateMemberIdentityInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Identity identity = 3;</code>
-     * @return \Eolymp\Community\Member\Identity
+     * Generated from protobuf field <code>.eolymp.community.Identity identity = 3;</code>
+     * @return \Eolymp\Community\Identity
      */
     public function getIdentity()
     {
@@ -96,13 +96,13 @@ class UpdateMemberIdentityInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Identity identity = 3;</code>
-     * @param \Eolymp\Community\Member\Identity $var
+     * Generated from protobuf field <code>.eolymp.community.Identity identity = 3;</code>
+     * @param \Eolymp\Community\Identity $var
      * @return $this
      */
     public function setIdentity($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Member_Identity::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Identity::class);
         $this->identity = $var;
 
         return $this;

@@ -50,7 +50,7 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Identity identities = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
      */
     private $identities;
     /**
@@ -73,7 +73,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type bool $ghost
      *     @type bool $out_of_competition
      *     @type int $status
-     *     @type \Eolymp\Community\Member\Identity[]|\Google\Protobuf\Internal\RepeatedField $identities
+     *     @type \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $identities
      *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
@@ -281,7 +281,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Identity identities = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getIdentities()
@@ -290,13 +290,13 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Identity identities = 10;</code>
-     * @param \Eolymp\Community\Member\Identity[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
+     * @param \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIdentities($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Identity::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Identity::class);
         $this->identities = $arr;
 
         return $this;
