@@ -18,10 +18,6 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      */
     protected $render = false;
     /**
-     * Generated from protobuf field <code>string thread_id = 2;</code>
-     */
-    protected $thread_id = '';
-    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -31,6 +27,14 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
     protected $size = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Sortable sort = 50;</code>
+     */
+    protected $sort = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     */
+    protected $order = 0;
     /**
      * data filters
      *
@@ -45,10 +49,11 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $render
-     *     @type string $thread_id
      *     @type int $offset
      *           pagination
      *     @type int $size
+     *     @type int $sort
+     *     @type int $order
      *     @type \Eolymp\Discussion\ListMessagesInput\Filter $filters
      *           data filters
      * }
@@ -76,28 +81,6 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->render = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string thread_id = 2;</code>
-     * @return string
-     */
-    public function getThreadId()
-    {
-        return $this->thread_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string thread_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setThreadId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->thread_id = $var;
 
         return $this;
     }
@@ -146,6 +129,50 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Sortable sort = 50;</code>
+     * @return int
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Sortable sort = 50;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSort($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\ListMessagesInput_Sortable::class);
+        $this->sort = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOrder($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
+        $this->order = $var;
 
         return $this;
     }
