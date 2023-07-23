@@ -30,10 +30,20 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     protected $reply_to = '';
     /**
+     * vote of authenticated user (+1 or -1)
+     *
+     * Generated from protobuf field <code>int32 vote = 12;</code>
+     */
+    protected $vote = 0;
+    /**
+     * total vote count
+     *
      * Generated from protobuf field <code>int32 vote_count = 10;</code>
      */
     protected $vote_count = 0;
     /**
+     * total number of replies
+     *
      * Generated from protobuf field <code>int32 reply_count = 11;</code>
      */
     protected $reply_count = 0;
@@ -60,8 +70,12 @@ class Message extends \Google\Protobuf\Internal\Message
      *     @type string $thread_id
      *     @type string $member_id
      *     @type string $reply_to
+     *     @type int $vote
+     *           vote of authenticated user (+1 or -1)
      *     @type int $vote_count
+     *           total vote count
      *     @type int $reply_count
+     *           total number of replies
      *     @type \Google\Protobuf\Timestamp $posted_at
      *     @type \Google\Protobuf\Timestamp $edited_at
      *     @type \Eolymp\Ecm\Content $message
@@ -161,6 +175,34 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * vote of authenticated user (+1 or -1)
+     *
+     * Generated from protobuf field <code>int32 vote = 12;</code>
+     * @return int
+     */
+    public function getVote()
+    {
+        return $this->vote;
+    }
+
+    /**
+     * vote of authenticated user (+1 or -1)
+     *
+     * Generated from protobuf field <code>int32 vote = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVote($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->vote = $var;
+
+        return $this;
+    }
+
+    /**
+     * total vote count
+     *
      * Generated from protobuf field <code>int32 vote_count = 10;</code>
      * @return int
      */
@@ -170,6 +212,8 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * total vote count
+     *
      * Generated from protobuf field <code>int32 vote_count = 10;</code>
      * @param int $var
      * @return $this
@@ -183,6 +227,8 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * total number of replies
+     *
      * Generated from protobuf field <code>int32 reply_count = 11;</code>
      * @return int
      */
@@ -192,6 +238,8 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * total number of replies
+     *
      * Generated from protobuf field <code>int32 reply_count = 11;</code>
      * @param int $var
      * @return $this
