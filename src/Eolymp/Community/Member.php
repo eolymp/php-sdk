@@ -18,14 +18,6 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>string picture = 30;</code>
-     */
-    protected $picture = '';
-    /**
      * Generated from protobuf field <code>bool disabled = 3;</code>
      */
     protected $disabled = false;
@@ -50,13 +42,33 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    private $identities;
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string picture = 30;</code>
+     */
+    protected $picture = '';
+    /**
+     * Generated from protobuf field <code>string email = 31;</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool email_verified = 32;</code>
+     */
+    protected $email_verified = false;
+    /**
+     * Generated from protobuf field <code>string locale = 33;</code>
+     */
+    protected $locale = '';
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 20;</code>
      */
     private $values;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
+     */
+    private $identities;
 
     /**
      * Constructor.
@@ -65,16 +77,19 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $name
-     *     @type string $picture
      *     @type bool $disabled
      *     @type bool $registered
      *     @type bool $staffed
      *     @type bool $ghost
      *     @type bool $out_of_competition
      *     @type int $status
-     *     @type \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $identities
+     *     @type string $name
+     *     @type string $picture
+     *     @type string $email
+     *     @type bool $email_verified
+     *     @type string $locale
      *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $identities
      * }
      */
     public function __construct($data = NULL) {
@@ -100,50 +115,6 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string picture = 30;</code>
-     * @return string
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
-     * Generated from protobuf field <code>string picture = 30;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPicture($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->picture = $var;
 
         return $this;
     }
@@ -281,23 +252,111 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string name = 2;</code>
+     * @return string
      */
-    public function getIdentities()
+    public function getName()
     {
-        return $this->identities;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
-     * @param \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string name = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setIdentities($var)
+    public function setName($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Identity::class);
-        $this->identities = $arr;
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 30;</code>
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 30;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPicture($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->picture = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 31;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 32;</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 32;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 33;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 33;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
@@ -320,6 +379,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Value::class);
         $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getIdentities()
+    {
+        return $this->identities;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
+     * @param \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setIdentities($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Identity::class);
+        $this->identities = $arr;
 
         return $this;
     }
