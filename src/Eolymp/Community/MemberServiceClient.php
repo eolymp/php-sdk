@@ -61,22 +61,22 @@ class MemberServiceClient {
     }
 
     /**
-     * @param RemoveMemberInput $input message
+     * @param DeleteMemberInput $input message
      * @param array $context request parameters
      *
-     * @return RemoveMemberOutput output message
+     * @return DeleteMemberOutput output message
      */
-    public function RemoveMember(RemoveMemberInput $input, array $context = [])
+    public function DeleteMember(DeleteMemberInput $input, array $context = [])
     {
         $path = "/members/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setMemberId("");
 
-        $context['name'] = "eolymp.community.MemberService/RemoveMember";
+        $context['name'] = "eolymp.community.MemberService/DeleteMember";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveMemberOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteMemberOutput::class, $context);
     }
 
     /**

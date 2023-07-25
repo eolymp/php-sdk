@@ -36,17 +36,61 @@ class Patch
      */
     const UNOFFICIAL = 3;
     /**
-     * change account details (specific fields can be specified in patch_account_props)
+     * change all account details
      *
-     * Generated from protobuf enum <code>ACCOUNT = 4;</code>
+     * Generated from protobuf enum <code>ACCOUNT = 100;</code>
      */
-    const ACCOUNT = 4;
+    const ACCOUNT = 100;
     /**
-     * change attributes (specific attributes can be specified in patch_attribute_keys)
-     *
-     * Generated from protobuf enum <code>ATTRIBUTES = 5;</code>
+     * Generated from protobuf enum <code>USER_EMAIL = 101;</code>
      */
-    const ATTRIBUTES = 5;
+    const USER_EMAIL = 101;
+    /**
+     * Generated from protobuf enum <code>USER_PASSWORD = 102;</code>
+     */
+    const USER_PASSWORD = 102;
+    /**
+     * Generated from protobuf enum <code>USER_NAME = 103;</code>
+     */
+    const USER_NAME = 103;
+    /**
+     * Generated from protobuf enum <code>USER_PICTURE = 104;</code>
+     */
+    const USER_PICTURE = 104;
+    /**
+     * Generated from protobuf enum <code>USER_BIRTHDAY = 105;</code>
+     */
+    const USER_BIRTHDAY = 105;
+    /**
+     * Generated from protobuf enum <code>USER_COUNTRY = 106;</code>
+     */
+    const USER_COUNTRY = 106;
+    /**
+     * Generated from protobuf enum <code>USER_CITY = 107;</code>
+     */
+    const USER_CITY = 107;
+    /**
+     * Generated from protobuf enum <code>USER_PREFERENCES = 108;</code>
+     */
+    const USER_PREFERENCES = 108;
+    /**
+     * Generated from protobuf enum <code>USER_PREFERENCES_LOCALE = 190;</code>
+     */
+    const USER_PREFERENCES_LOCALE = 190;
+    /**
+     * Generated from protobuf enum <code>USER_PREFERENCES_TIMEZONE = 191;</code>
+     */
+    const USER_PREFERENCES_TIMEZONE = 191;
+    /**
+     * Generated from protobuf enum <code>USER_PREFERENCES_RUNTIME = 192;</code>
+     */
+    const USER_PREFERENCES_RUNTIME = 192;
+    /**
+     * change attributes
+     *
+     * Generated from protobuf enum <code>ATTRIBUTES = 900;</code>
+     */
+    const ATTRIBUTES = 900;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -54,6 +98,17 @@ class Patch
         self::ACTIVE => 'ACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
         self::ACCOUNT => 'ACCOUNT',
+        self::USER_EMAIL => 'USER_EMAIL',
+        self::USER_PASSWORD => 'USER_PASSWORD',
+        self::USER_NAME => 'USER_NAME',
+        self::USER_PICTURE => 'USER_PICTURE',
+        self::USER_BIRTHDAY => 'USER_BIRTHDAY',
+        self::USER_COUNTRY => 'USER_COUNTRY',
+        self::USER_CITY => 'USER_CITY',
+        self::USER_PREFERENCES => 'USER_PREFERENCES',
+        self::USER_PREFERENCES_LOCALE => 'USER_PREFERENCES_LOCALE',
+        self::USER_PREFERENCES_TIMEZONE => 'USER_PREFERENCES_TIMEZONE',
+        self::USER_PREFERENCES_RUNTIME => 'USER_PREFERENCES_RUNTIME',
         self::ATTRIBUTES => 'ATTRIBUTES',
     ];
 

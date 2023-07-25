@@ -22,14 +22,6 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
-     */
-    protected $created_at = null;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 6;</code>
-     */
-    protected $deleted_at = null;
-    /**
      * Generated from protobuf field <code>string email = 10;</code>
      */
     protected $email = '';
@@ -65,6 +57,10 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string city = 73;</code>
      */
     protected $city = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User.Preferences preferences = 800;</code>
+     */
+    protected $preferences = null;
 
     /**
      * Constructor.
@@ -74,8 +70,6 @@ class User extends \Google\Protobuf\Internal\Message
      *
      *     @type string $issuer
      *     @type string $subject
-     *     @type \Google\Protobuf\Timestamp $created_at
-     *     @type \Google\Protobuf\Timestamp $deleted_at
      *     @type string $email
      *     @type bool $email_verified
      *     @type string $password
@@ -85,6 +79,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $birthday
      *     @type string $country
      *     @type string $city
+     *     @type \Eolymp\Community\User\Preferences $preferences
      * }
      */
     public function __construct($data = NULL) {
@@ -132,50 +127,6 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->subject = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
-     * @return \Google\Protobuf\Timestamp
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCreatedAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 6;</code>
-     * @return \Google\Protobuf\Timestamp
-     */
-    public function getDeletedAt()
-    {
-        return $this->deleted_at;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 6;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setDeletedAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->deleted_at = $var;
 
         return $this;
     }
@@ -374,6 +325,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User.Preferences preferences = 800;</code>
+     * @return \Eolymp\Community\User\Preferences
+     */
+    public function getPreferences()
+    {
+        return $this->preferences;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User.Preferences preferences = 800;</code>
+     * @param \Eolymp\Community\User\Preferences $var
+     * @return $this
+     */
+    public function setPreferences($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\User_Preferences::class);
+        $this->preferences = $var;
 
         return $this;
     }

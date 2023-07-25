@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.RemoveMemberInput</code>
+ * Generated from protobuf message <code>eolymp.community.DeleteMemberInput</code>
  */
-class RemoveMemberInput extends \Google\Protobuf\Internal\Message
+class DeleteMemberInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string member_id = 1;</code>

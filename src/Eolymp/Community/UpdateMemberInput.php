@@ -20,18 +20,6 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
-     * list of account props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated string patch_account_props = 4;</code>
-     */
-    private $patch_account_props;
-    /**
-     * list of attribute keys to be updated, empty means update everything and remove attributes not set in member.attributes
-     *
-     * Generated from protobuf field <code>repeated string patch_attribute_keys = 5;</code>
-     */
-    private $patch_attribute_keys;
-    /**
      * Generated from protobuf field <code>string member_id = 2;</code>
      */
     protected $member_id = '';
@@ -48,10 +36,6 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *           defines member props to be updated, empty means update everything
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $patch_account_props
-     *           list of account props to be updated, empty means update everything
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $patch_attribute_keys
-     *           list of attribute keys to be updated, empty means update everything and remove attributes not set in member.attributes
      *     @type string $member_id
      *     @type \Eolymp\Community\Member $member
      * }
@@ -83,58 +67,6 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdateMemberInput\Patch::class);
         $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * list of account props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated string patch_account_props = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatchAccountProps()
-    {
-        return $this->patch_account_props;
-    }
-
-    /**
-     * list of account props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated string patch_account_props = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatchAccountProps($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->patch_account_props = $arr;
-
-        return $this;
-    }
-
-    /**
-     * list of attribute keys to be updated, empty means update everything and remove attributes not set in member.attributes
-     *
-     * Generated from protobuf field <code>repeated string patch_attribute_keys = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatchAttributeKeys()
-    {
-        return $this->patch_attribute_keys;
-    }
-
-    /**
-     * list of attribute keys to be updated, empty means update everything and remove attributes not set in member.attributes
-     *
-     * Generated from protobuf field <code>repeated string patch_attribute_keys = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatchAttributeKeys($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->patch_attribute_keys = $arr;
 
         return $this;
     }
