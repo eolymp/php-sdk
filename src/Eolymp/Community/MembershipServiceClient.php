@@ -26,24 +26,6 @@ class MembershipServiceClient {
     }
 
     /**
-     * Add yourself to the space, for already authenticated user (for example using 3rd party IdP)
-     *
-     * @param JoinSpaceInput $input message
-     * @param array $context request parameters
-     *
-     * @return JoinSpaceOutput output message
-     */
-    public function JoinSpace(JoinSpaceInput $input, array $context = [])
-    {
-        $path = "/members/_self";
-
-        $context['name'] = "eolymp.community.MembershipService/JoinSpace";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, JoinSpaceOutput::class, $context);
-    }
-
-    /**
      * Describe member profile for authenticated user
      *
      * @param DescribeMembershipInput $input message
