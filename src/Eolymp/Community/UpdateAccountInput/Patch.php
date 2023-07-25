@@ -36,37 +36,33 @@ class Patch
      */
     const PICTURE = 5;
     /**
-     * Generated from protobuf enum <code>LOCALE = 6;</code>
+     * Generated from protobuf enum <code>BIRTHDAY = 6;</code>
      */
-    const LOCALE = 6;
+    const BIRTHDAY = 6;
     /**
-     * Generated from protobuf enum <code>TIMEZONE = 12;</code>
+     * Generated from protobuf enum <code>COUNTRY = 7;</code>
      */
-    const TIMEZONE = 12;
+    const COUNTRY = 7;
     /**
-     * Generated from protobuf enum <code>BIRTHDAY = 7;</code>
+     * Generated from protobuf enum <code>CITY = 8;</code>
      */
-    const BIRTHDAY = 7;
+    const CITY = 8;
     /**
-     * Generated from protobuf enum <code>COUNTRY = 8;</code>
+     * Generated from protobuf enum <code>PREFERRED_LOCALE = 101;</code>
      */
-    const COUNTRY = 8;
+    const PREFERRED_LOCALE = 101;
     /**
-     * Generated from protobuf enum <code>CITY = 9;</code>
+     * Generated from protobuf enum <code>PREFERRED_TIMEZONE = 102;</code>
      */
-    const CITY = 9;
+    const PREFERRED_TIMEZONE = 102;
     /**
-     * Generated from protobuf enum <code>COMPANY = 10;</code>
+     * Generated from protobuf enum <code>PREFERRED_RUNTIME = 103;</code>
      */
-    const COMPANY = 10;
+    const PREFERRED_RUNTIME = 103;
     /**
-     * Generated from protobuf enum <code>BUSINESS_TITLE = 11;</code>
+     * Generated from protobuf enum <code>ATTRIBUTES = 900;</code>
      */
-    const BUSINESS_TITLE = 11;
-    /**
-     * Generated from protobuf enum <code>PREFERRED_RUNTIME = 13;</code>
-     */
-    const PREFERRED_RUNTIME = 13;
+    const ATTRIBUTES = 900;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -75,14 +71,13 @@ class Patch
         self::PASSWORD => 'PASSWORD',
         self::NAME => 'NAME',
         self::PICTURE => 'PICTURE',
-        self::LOCALE => 'LOCALE',
-        self::TIMEZONE => 'TIMEZONE',
         self::BIRTHDAY => 'BIRTHDAY',
         self::COUNTRY => 'COUNTRY',
         self::CITY => 'CITY',
-        self::COMPANY => 'COMPANY',
-        self::BUSINESS_TITLE => 'BUSINESS_TITLE',
+        self::PREFERRED_LOCALE => 'PREFERRED_LOCALE',
+        self::PREFERRED_TIMEZONE => 'PREFERRED_TIMEZONE',
         self::PREFERRED_RUNTIME => 'PREFERRED_RUNTIME',
+        self::ATTRIBUTES => 'ATTRIBUTES',
     ];
 
     public static function name($value)

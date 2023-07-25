@@ -9,16 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.JoinSpaceInput</code>
+ * Generated from protobuf message <code>eolymp.community.UpdateMembershipInput</code>
  */
-class JoinSpaceInput extends \Google\Protobuf\Internal\Message
+class UpdateMembershipInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string nickname = 1;</code>
-     */
-    protected $nickname = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 1;</code>
      */
     private $attributes;
 
@@ -28,7 +24,6 @@ class JoinSpaceInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $nickname
      *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
@@ -38,29 +33,7 @@ class JoinSpaceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 1;</code>
-     * @return string
-     */
-    public function getNickname()
-    {
-        return $this->nickname;
-    }
-
-    /**
-     * Generated from protobuf field <code>string nickname = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNickname($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->nickname = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAttributes()
@@ -69,7 +42,7 @@ class JoinSpaceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 1;</code>
      * @param \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

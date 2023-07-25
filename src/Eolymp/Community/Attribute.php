@@ -20,10 +20,6 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     */
-    protected $ern = '';
-    /**
      * field localized data, such as label and help message
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
@@ -90,7 +86,6 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key
      *           unique field identifier (should be unique within the form, not globally unique)
-     *     @type string $ern
      *     @type \Eolymp\Community\Attribute\Description[]|\Google\Protobuf\Internal\RepeatedField $description
      *           field localized data, such as label and help message
      *     @type int $type
@@ -139,28 +134,6 @@ class Attribute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @return string
-     */
-    public function getErn()
-    {
-        return $this->ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ern = $var;
 
         return $this;
     }

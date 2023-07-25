@@ -4,6 +4,9 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * AccountService provides API to create an account and manage your own account.
+     */
 class AccountServiceClient {
 
     /** @var string base URL */

@@ -9,12 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.DescribeMemberInput</code>
+ * Generated from protobuf message <code>eolymp.community.UnassignMemberInput</code>
  */
-class DescribeMemberInput extends \Google\Protobuf\Internal\Message
+class UnassignMemberInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
+     * Generated from protobuf field <code>string team_id = 1;</code>
+     */
+    protected $team_id = '';
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
     protected $member_id = '';
 
@@ -24,6 +28,7 @@ class DescribeMemberInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $team_id
      *     @type string $member_id
      * }
      */
@@ -33,7 +38,29 @@ class DescribeMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
+     * Generated from protobuf field <code>string team_id = 1;</code>
+     * @return string
+     */
+    public function getTeamId()
+    {
+        return $this->team_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string team_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTeamId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->team_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
     public function getMemberId()
@@ -42,7 +69,7 @@ class DescribeMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */

@@ -18,57 +18,44 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>bool disabled = 3;</code>
+     * member nickname
+     *
+     * Generated from protobuf field <code>string nickname = 10;</code>
      */
-    protected $disabled = false;
+    protected $nickname = '';
     /**
-     * Generated from protobuf field <code>bool registered = 4;</code>
+     * readonly, time in seconds until member can change their nickname again
+     *
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
      */
-    protected $registered = false;
+    protected $nickname_change_timeout = 0;
     /**
-     * Generated from protobuf field <code>bool staffed = 5;</code>
+     * Generated from protobuf field <code>bool active = 20;</code>
      */
-    protected $staffed = false;
+    protected $active = false;
     /**
-     * Generated from protobuf field <code>bool ghost = 7;</code>
+     * member profile (attributes) is missing some information
+     *
+     * Generated from protobuf field <code>bool incomplete = 30;</code>
      */
-    protected $ghost = false;
+    protected $incomplete = false;
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 8;</code>
+     * member participates in all competitions unofficially
+     *
+     * Generated from protobuf field <code>bool unofficial = 40;</code>
      */
-    protected $out_of_competition = false;
+    protected $unofficial = false;
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
+     * member is secret and does not appear on anywhere (for example, an admin who performs testing)
+     *
+     * Generated from protobuf field <code>bool secret = 50;</code>
      */
-    protected $status = 0;
+    protected $secret = false;
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>string picture = 30;</code>
-     */
-    protected $picture = '';
-    /**
-     * Generated from protobuf field <code>string email = 31;</code>
-     */
-    protected $email = '';
-    /**
-     * Generated from protobuf field <code>bool email_verified = 32;</code>
-     */
-    protected $email_verified = false;
-    /**
-     * Generated from protobuf field <code>string locale = 33;</code>
-     */
-    protected $locale = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 20;</code>
-     */
-    private $values;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
-     */
-    private $identities;
+    private $attributes;
+    protected $account;
 
     /**
      * Constructor.
@@ -77,19 +64,21 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type bool $disabled
-     *     @type bool $registered
-     *     @type bool $staffed
-     *     @type bool $ghost
-     *     @type bool $out_of_competition
-     *     @type int $status
-     *     @type string $name
-     *     @type string $picture
-     *     @type string $email
-     *     @type bool $email_verified
-     *     @type string $locale
-     *     @type \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $values
-     *     @type \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $identities
+     *     @type string $nickname
+     *           member nickname
+     *     @type int $nickname_change_timeout
+     *           readonly, time in seconds until member can change their nickname again
+     *     @type bool $active
+     *     @type bool $incomplete
+     *           member profile (attributes) is missing some information
+     *     @type bool $unofficial
+     *           member participates in all competitions unofficially
+     *     @type bool $secret
+     *           member is secret and does not appear on anywhere (for example, an admin who performs testing)
+     *     @type \Eolymp\Community\User $user
+     *     @type \Eolymp\Community\Team $team
+     *     @type \Eolymp\Community\Ghost $ghost
+     *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -120,289 +109,251 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool disabled = 3;</code>
-     * @return bool
+     * member nickname
+     *
+     * Generated from protobuf field <code>string nickname = 10;</code>
+     * @return string
      */
-    public function getDisabled()
+    public function getNickname()
     {
-        return $this->disabled;
+        return $this->nickname;
     }
 
     /**
-     * Generated from protobuf field <code>bool disabled = 3;</code>
-     * @param bool $var
+     * member nickname
+     *
+     * Generated from protobuf field <code>string nickname = 10;</code>
+     * @param string $var
      * @return $this
      */
-    public function setDisabled($var)
+    public function setNickname($var)
     {
-        GPBUtil::checkBool($var);
-        $this->disabled = $var;
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool registered = 4;</code>
-     * @return bool
+     * readonly, time in seconds until member can change their nickname again
+     *
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * @return int
      */
-    public function getRegistered()
+    public function getNicknameChangeTimeout()
     {
-        return $this->registered;
+        return $this->nickname_change_timeout;
     }
 
     /**
-     * Generated from protobuf field <code>bool registered = 4;</code>
-     * @param bool $var
+     * readonly, time in seconds until member can change their nickname again
+     *
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * @param int $var
      * @return $this
      */
-    public function setRegistered($var)
+    public function setNicknameChangeTimeout($var)
     {
-        GPBUtil::checkBool($var);
-        $this->registered = $var;
+        GPBUtil::checkUint32($var);
+        $this->nickname_change_timeout = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool staffed = 5;</code>
+     * Generated from protobuf field <code>bool active = 20;</code>
      * @return bool
      */
-    public function getStaffed()
+    public function getActive()
     {
-        return $this->staffed;
+        return $this->active;
     }
 
     /**
-     * Generated from protobuf field <code>bool staffed = 5;</code>
+     * Generated from protobuf field <code>bool active = 20;</code>
      * @param bool $var
      * @return $this
      */
-    public function setStaffed($var)
+    public function setActive($var)
     {
         GPBUtil::checkBool($var);
-        $this->staffed = $var;
+        $this->active = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool ghost = 7;</code>
+     * member profile (attributes) is missing some information
+     *
+     * Generated from protobuf field <code>bool incomplete = 30;</code>
      * @return bool
+     */
+    public function getIncomplete()
+    {
+        return $this->incomplete;
+    }
+
+    /**
+     * member profile (attributes) is missing some information
+     *
+     * Generated from protobuf field <code>bool incomplete = 30;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIncomplete($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->incomplete = $var;
+
+        return $this;
+    }
+
+    /**
+     * member participates in all competitions unofficially
+     *
+     * Generated from protobuf field <code>bool unofficial = 40;</code>
+     * @return bool
+     */
+    public function getUnofficial()
+    {
+        return $this->unofficial;
+    }
+
+    /**
+     * member participates in all competitions unofficially
+     *
+     * Generated from protobuf field <code>bool unofficial = 40;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnofficial($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * member is secret and does not appear on anywhere (for example, an admin who performs testing)
+     *
+     * Generated from protobuf field <code>bool secret = 50;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * member is secret and does not appear on anywhere (for example, an admin who performs testing)
+     *
+     * Generated from protobuf field <code>bool secret = 50;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User user = 100;</code>
+     * @return \Eolymp\Community\User
+     */
+    public function getUser()
+    {
+        return $this->readOneof(100);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User user = 100;</code>
+     * @param \Eolymp\Community\User $var
+     * @return $this
+     */
+    public function setUser($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\User::class);
+        $this->writeOneof(100, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Team team = 101;</code>
+     * @return \Eolymp\Community\Team
+     */
+    public function getTeam()
+    {
+        return $this->readOneof(101);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Team team = 101;</code>
+     * @param \Eolymp\Community\Team $var
+     * @return $this
+     */
+    public function setTeam($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\Team::class);
+        $this->writeOneof(101, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Ghost ghost = 102;</code>
+     * @return \Eolymp\Community\Ghost
      */
     public function getGhost()
     {
-        return $this->ghost;
+        return $this->readOneof(102);
     }
 
     /**
-     * Generated from protobuf field <code>bool ghost = 7;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.community.Ghost ghost = 102;</code>
+     * @param \Eolymp\Community\Ghost $var
      * @return $this
      */
     public function setGhost($var)
     {
-        GPBUtil::checkBool($var);
-        $this->ghost = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Community\Ghost::class);
+        $this->writeOneof(102, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 8;</code>
-     * @return bool
-     */
-    public function getOutOfCompetition()
-    {
-        return $this->out_of_competition;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool out_of_competition = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setOutOfCompetition($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->out_of_competition = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
-     * @return int
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Member.Status status = 6;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Community\Member_Status::class);
-        $this->status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string picture = 30;</code>
-     * @return string
-     */
-    public function getPicture()
-    {
-        return $this->picture;
-    }
-
-    /**
-     * Generated from protobuf field <code>string picture = 30;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPicture($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->picture = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 31;</code>
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 31;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool email_verified = 32;</code>
-     * @return bool
-     */
-    public function getEmailVerified()
-    {
-        return $this->email_verified;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool email_verified = 32;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setEmailVerified($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->email_verified = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 33;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 33;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 20;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getValues()
+    public function getAttributes()
     {
-        return $this->values;
+        return $this->attributes;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Value values = 20;</code>
-     * @param \Eolymp\Community\Member\Value[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
+     * @param \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setValues($var)
+    public function setAttributes($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Member\Value::class);
-        $this->values = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Attribute\Value::class);
+        $this->attributes = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return string
      */
-    public function getIdentities()
+    public function getAccount()
     {
-        return $this->identities;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Identity identities = 10;</code>
-     * @param \Eolymp\Community\Identity[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setIdentities($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Identity::class);
-        $this->identities = $arr;
-
-        return $this;
+        return $this->whichOneof("account");
     }
 
 }
