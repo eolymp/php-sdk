@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateAccountInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string nickname = 1;</code>
+     * Generated from protobuf field <code>.eolymp.community.User account = 1;</code>
      */
-    protected $nickname = '';
+    protected $account = null;
     /**
-     * Generated from protobuf field <code>.eolymp.community.User user = 2;</code>
-     */
-    protected $user = null;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
      */
     private $attributes;
     /**
@@ -38,8 +34,7 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $nickname
-     *     @type \Eolymp\Community\User $user
+     *     @type \Eolymp\Community\User $account
      *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type string $captcha
      *           captcha challenge
@@ -51,51 +46,29 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string nickname = 1;</code>
-     * @return string
-     */
-    public function getNickname()
-    {
-        return $this->nickname;
-    }
-
-    /**
-     * Generated from protobuf field <code>string nickname = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNickname($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->nickname = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.community.User user = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.User account = 1;</code>
      * @return \Eolymp\Community\User
      */
-    public function getUser()
+    public function getAccount()
     {
-        return $this->user;
+        return $this->account;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.User user = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.User account = 1;</code>
      * @param \Eolymp\Community\User $var
      * @return $this
      */
-    public function setUser($var)
+    public function setAccount($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\User::class);
-        $this->user = $var;
+        $this->account = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAttributes()
@@ -104,7 +77,7 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
      * @param \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

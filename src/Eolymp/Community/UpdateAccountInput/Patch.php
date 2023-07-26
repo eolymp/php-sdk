@@ -16,41 +16,41 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>NICKNAME = 1;</code>
+     * Generated from protobuf enum <code>USER_NICKNAME = 101;</code>
      */
-    const NICKNAME = 1;
+    const USER_NICKNAME = 101;
     /**
-     * Generated from protobuf enum <code>USER_EMAIL = 101;</code>
+     * Generated from protobuf enum <code>USER_EMAIL = 102;</code>
      */
-    const USER_EMAIL = 101;
+    const USER_EMAIL = 102;
     /**
-     * Generated from protobuf enum <code>USER_PASSWORD = 102;</code>
+     * Generated from protobuf enum <code>USER_PASSWORD = 103;</code>
      */
-    const USER_PASSWORD = 102;
+    const USER_PASSWORD = 103;
     /**
-     * Generated from protobuf enum <code>USER_NAME = 103;</code>
+     * Generated from protobuf enum <code>USER_NAME = 104;</code>
      */
-    const USER_NAME = 103;
+    const USER_NAME = 104;
     /**
-     * Generated from protobuf enum <code>USER_PICTURE = 104;</code>
+     * Generated from protobuf enum <code>USER_PICTURE = 105;</code>
      */
-    const USER_PICTURE = 104;
+    const USER_PICTURE = 105;
     /**
-     * Generated from protobuf enum <code>USER_BIRTHDAY = 105;</code>
+     * Generated from protobuf enum <code>USER_BIRTHDAY = 106;</code>
      */
-    const USER_BIRTHDAY = 105;
+    const USER_BIRTHDAY = 106;
     /**
-     * Generated from protobuf enum <code>USER_COUNTRY = 106;</code>
+     * Generated from protobuf enum <code>USER_COUNTRY = 107;</code>
      */
-    const USER_COUNTRY = 106;
+    const USER_COUNTRY = 107;
     /**
-     * Generated from protobuf enum <code>USER_CITY = 107;</code>
+     * Generated from protobuf enum <code>USER_CITY = 108;</code>
      */
-    const USER_CITY = 107;
+    const USER_CITY = 108;
     /**
-     * Generated from protobuf enum <code>USER_PREFERENCES = 108;</code>
+     * Generated from protobuf enum <code>USER_PREFERENCES = 109;</code>
      */
-    const USER_PREFERENCES = 108;
+    const USER_PREFERENCES = 109;
     /**
      * Generated from protobuf enum <code>USER_PREFERENCES_LOCALE = 190;</code>
      */
@@ -70,7 +70,7 @@ class Patch
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::NICKNAME => 'NICKNAME',
+        self::USER_NICKNAME => 'USER_NICKNAME',
         self::USER_EMAIL => 'USER_EMAIL',
         self::USER_PASSWORD => 'USER_PASSWORD',
         self::USER_NAME => 'USER_NAME',

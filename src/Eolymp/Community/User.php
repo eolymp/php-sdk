@@ -14,35 +14,43 @@ use Google\Protobuf\Internal\GPBUtil;
 class User extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string issuer = 2;</code>
+     * Generated from protobuf field <code>string issuer = 1;</code>
      */
     protected $issuer = '';
     /**
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string subject = 2;</code>
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>string email = 10;</code>
+     * Generated from protobuf field <code>string nickname = 10;</code>
+     */
+    protected $nickname = '';
+    /**
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     */
+    protected $nickname_change_timeout = 0;
+    /**
+     * Generated from protobuf field <code>string email = 20;</code>
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>bool email_verified = 11;</code>
+     * Generated from protobuf field <code>bool email_verified = 21;</code>
      */
     protected $email_verified = false;
     /**
-     * Generated from protobuf field <code>string password = 20;</code>
+     * Generated from protobuf field <code>string password = 30;</code>
      */
     protected $password = '';
     /**
-     * Generated from protobuf field <code>uint32 password_age = 21;</code>
+     * Generated from protobuf field <code>uint32 password_age = 31;</code>
      */
     protected $password_age = 0;
     /**
-     * Generated from protobuf field <code>string name = 30;</code>
+     * Generated from protobuf field <code>string name = 40;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string picture = 40;</code>
+     * Generated from protobuf field <code>string picture = 50;</code>
      */
     protected $picture = '';
     /**
@@ -70,6 +78,8 @@ class User extends \Google\Protobuf\Internal\Message
      *
      *     @type string $issuer
      *     @type string $subject
+     *     @type string $nickname
+     *     @type int $nickname_change_timeout
      *     @type string $email
      *     @type bool $email_verified
      *     @type string $password
@@ -88,7 +98,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string issuer = 2;</code>
+     * Generated from protobuf field <code>string issuer = 1;</code>
      * @return string
      */
     public function getIssuer()
@@ -97,7 +107,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string issuer = 2;</code>
+     * Generated from protobuf field <code>string issuer = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -110,7 +120,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string subject = 2;</code>
      * @return string
      */
     public function getSubject()
@@ -119,7 +129,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string subject = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -132,7 +142,51 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 10;</code>
+     * Generated from protobuf field <code>string nickname = 10;</code>
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNickname($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * @return int
+     */
+    public function getNicknameChangeTimeout()
+    {
+        return $this->nickname_change_timeout;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNicknameChangeTimeout($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->nickname_change_timeout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 20;</code>
      * @return string
      */
     public function getEmail()
@@ -141,7 +195,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 10;</code>
+     * Generated from protobuf field <code>string email = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -154,7 +208,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 11;</code>
+     * Generated from protobuf field <code>bool email_verified = 21;</code>
      * @return bool
      */
     public function getEmailVerified()
@@ -163,7 +217,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 11;</code>
+     * Generated from protobuf field <code>bool email_verified = 21;</code>
      * @param bool $var
      * @return $this
      */
@@ -176,7 +230,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string password = 20;</code>
+     * Generated from protobuf field <code>string password = 30;</code>
      * @return string
      */
     public function getPassword()
@@ -185,7 +239,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string password = 20;</code>
+     * Generated from protobuf field <code>string password = 30;</code>
      * @param string $var
      * @return $this
      */
@@ -198,7 +252,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 password_age = 21;</code>
+     * Generated from protobuf field <code>uint32 password_age = 31;</code>
      * @return int
      */
     public function getPasswordAge()
@@ -207,7 +261,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 password_age = 21;</code>
+     * Generated from protobuf field <code>uint32 password_age = 31;</code>
      * @param int $var
      * @return $this
      */
@@ -220,7 +274,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 30;</code>
+     * Generated from protobuf field <code>string name = 40;</code>
      * @return string
      */
     public function getName()
@@ -229,7 +283,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 30;</code>
+     * Generated from protobuf field <code>string name = 40;</code>
      * @param string $var
      * @return $this
      */
@@ -242,7 +296,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 40;</code>
+     * Generated from protobuf field <code>string picture = 50;</code>
      * @return string
      */
     public function getPicture()
@@ -251,7 +305,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 40;</code>
+     * Generated from protobuf field <code>string picture = 50;</code>
      * @param string $var
      * @return $this
      */

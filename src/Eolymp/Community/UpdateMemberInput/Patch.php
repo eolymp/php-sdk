@@ -18,23 +18,17 @@ class Patch
      */
     const ALL = 0;
     /**
-     * change nickname
-     *
-     * Generated from protobuf enum <code>NICKNAME = 1;</code>
-     */
-    const NICKNAME = 1;
-    /**
      * change active/inactive flag
      *
-     * Generated from protobuf enum <code>ACTIVE = 2;</code>
+     * Generated from protobuf enum <code>ACTIVE = 1;</code>
      */
-    const ACTIVE = 2;
+    const ACTIVE = 1;
     /**
      * change official/unofficial flag
      *
-     * Generated from protobuf enum <code>UNOFFICIAL = 3;</code>
+     * Generated from protobuf enum <code>UNOFFICIAL = 2;</code>
      */
-    const UNOFFICIAL = 3;
+    const UNOFFICIAL = 2;
     /**
      * change all account details
      *
@@ -42,37 +36,41 @@ class Patch
      */
     const ACCOUNT = 100;
     /**
-     * Generated from protobuf enum <code>USER_EMAIL = 101;</code>
+     * Generated from protobuf enum <code>USER_NICKNAME = 101;</code>
      */
-    const USER_EMAIL = 101;
+    const USER_NICKNAME = 101;
     /**
-     * Generated from protobuf enum <code>USER_PASSWORD = 102;</code>
+     * Generated from protobuf enum <code>USER_EMAIL = 102;</code>
      */
-    const USER_PASSWORD = 102;
+    const USER_EMAIL = 102;
     /**
-     * Generated from protobuf enum <code>USER_NAME = 103;</code>
+     * Generated from protobuf enum <code>USER_PASSWORD = 103;</code>
      */
-    const USER_NAME = 103;
+    const USER_PASSWORD = 103;
     /**
-     * Generated from protobuf enum <code>USER_PICTURE = 104;</code>
+     * Generated from protobuf enum <code>USER_NAME = 104;</code>
      */
-    const USER_PICTURE = 104;
+    const USER_NAME = 104;
     /**
-     * Generated from protobuf enum <code>USER_BIRTHDAY = 105;</code>
+     * Generated from protobuf enum <code>USER_PICTURE = 105;</code>
      */
-    const USER_BIRTHDAY = 105;
+    const USER_PICTURE = 105;
     /**
-     * Generated from protobuf enum <code>USER_COUNTRY = 106;</code>
+     * Generated from protobuf enum <code>USER_BIRTHDAY = 106;</code>
      */
-    const USER_COUNTRY = 106;
+    const USER_BIRTHDAY = 106;
     /**
-     * Generated from protobuf enum <code>USER_CITY = 107;</code>
+     * Generated from protobuf enum <code>USER_COUNTRY = 107;</code>
      */
-    const USER_CITY = 107;
+    const USER_COUNTRY = 107;
     /**
-     * Generated from protobuf enum <code>USER_PREFERENCES = 108;</code>
+     * Generated from protobuf enum <code>USER_CITY = 108;</code>
      */
-    const USER_PREFERENCES = 108;
+    const USER_CITY = 108;
+    /**
+     * Generated from protobuf enum <code>USER_PREFERENCES = 109;</code>
+     */
+    const USER_PREFERENCES = 109;
     /**
      * Generated from protobuf enum <code>USER_PREFERENCES_LOCALE = 190;</code>
      */
@@ -86,6 +84,14 @@ class Patch
      */
     const USER_PREFERENCES_RUNTIME = 192;
     /**
+     * Generated from protobuf enum <code>TEAM_NAME = 200;</code>
+     */
+    const TEAM_NAME = 200;
+    /**
+     * Generated from protobuf enum <code>GHOST_NAME = 300;</code>
+     */
+    const GHOST_NAME = 300;
+    /**
      * change attributes
      *
      * Generated from protobuf enum <code>ATTRIBUTES = 900;</code>
@@ -94,10 +100,10 @@ class Patch
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::NICKNAME => 'NICKNAME',
         self::ACTIVE => 'ACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
         self::ACCOUNT => 'ACCOUNT',
+        self::USER_NICKNAME => 'USER_NICKNAME',
         self::USER_EMAIL => 'USER_EMAIL',
         self::USER_PASSWORD => 'USER_PASSWORD',
         self::USER_NAME => 'USER_NAME',
@@ -109,6 +115,8 @@ class Patch
         self::USER_PREFERENCES_LOCALE => 'USER_PREFERENCES_LOCALE',
         self::USER_PREFERENCES_TIMEZONE => 'USER_PREFERENCES_TIMEZONE',
         self::USER_PREFERENCES_RUNTIME => 'USER_PREFERENCES_RUNTIME',
+        self::TEAM_NAME => 'TEAM_NAME',
+        self::GHOST_NAME => 'GHOST_NAME',
         self::ATTRIBUTES => 'ATTRIBUTES',
     ];
 

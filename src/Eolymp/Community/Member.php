@@ -18,37 +18,31 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * member nickname
+     * readonly, users nickname, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string nickname = 10;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    protected $nickname = '';
+    protected $name = '';
     /**
-     * readonly, time in seconds until member can change their nickname again
-     *
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
-     */
-    protected $nickname_change_timeout = 0;
-    /**
-     * Generated from protobuf field <code>bool active = 20;</code>
+     * Generated from protobuf field <code>bool active = 10;</code>
      */
     protected $active = false;
     /**
      * member profile (attributes) is missing some information
      *
-     * Generated from protobuf field <code>bool incomplete = 30;</code>
+     * Generated from protobuf field <code>bool incomplete = 20;</code>
      */
     protected $incomplete = false;
     /**
      * member participates in all competitions unofficially
      *
-     * Generated from protobuf field <code>bool unofficial = 40;</code>
+     * Generated from protobuf field <code>bool unofficial = 30;</code>
      */
     protected $unofficial = false;
     /**
      * member is secret and does not appear on anywhere (for example, an admin who performs testing)
      *
-     * Generated from protobuf field <code>bool secret = 50;</code>
+     * Generated from protobuf field <code>bool secret = 40;</code>
      */
     protected $secret = false;
     /**
@@ -64,10 +58,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $nickname
-     *           member nickname
-     *     @type int $nickname_change_timeout
-     *           readonly, time in seconds until member can change their nickname again
+     *     @type string $name
+     *           readonly, users nickname, ghosts name or teams name
      *     @type bool $active
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
@@ -109,59 +101,33 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member nickname
+     * readonly, users nickname, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string nickname = 10;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
-    public function getNickname()
+    public function getName()
     {
-        return $this->nickname;
+        return $this->name;
     }
 
     /**
-     * member nickname
+     * readonly, users nickname, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string nickname = 10;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setNickname($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->nickname = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * readonly, time in seconds until member can change their nickname again
-     *
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
-     * @return int
-     */
-    public function getNicknameChangeTimeout()
-    {
-        return $this->nickname_change_timeout;
-    }
-
-    /**
-     * readonly, time in seconds until member can change their nickname again
-     *
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setNicknameChangeTimeout($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->nickname_change_timeout = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool active = 20;</code>
+     * Generated from protobuf field <code>bool active = 10;</code>
      * @return bool
      */
     public function getActive()
@@ -170,7 +136,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 20;</code>
+     * Generated from protobuf field <code>bool active = 10;</code>
      * @param bool $var
      * @return $this
      */
@@ -185,7 +151,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * member profile (attributes) is missing some information
      *
-     * Generated from protobuf field <code>bool incomplete = 30;</code>
+     * Generated from protobuf field <code>bool incomplete = 20;</code>
      * @return bool
      */
     public function getIncomplete()
@@ -196,7 +162,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * member profile (attributes) is missing some information
      *
-     * Generated from protobuf field <code>bool incomplete = 30;</code>
+     * Generated from protobuf field <code>bool incomplete = 20;</code>
      * @param bool $var
      * @return $this
      */
@@ -211,7 +177,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * member participates in all competitions unofficially
      *
-     * Generated from protobuf field <code>bool unofficial = 40;</code>
+     * Generated from protobuf field <code>bool unofficial = 30;</code>
      * @return bool
      */
     public function getUnofficial()
@@ -222,7 +188,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * member participates in all competitions unofficially
      *
-     * Generated from protobuf field <code>bool unofficial = 40;</code>
+     * Generated from protobuf field <code>bool unofficial = 30;</code>
      * @param bool $var
      * @return $this
      */
@@ -237,7 +203,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * member is secret and does not appear on anywhere (for example, an admin who performs testing)
      *
-     * Generated from protobuf field <code>bool secret = 50;</code>
+     * Generated from protobuf field <code>bool secret = 40;</code>
      * @return bool
      */
     public function getSecret()
@@ -248,7 +214,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * member is secret and does not appear on anywhere (for example, an admin who performs testing)
      *
-     * Generated from protobuf field <code>bool secret = 50;</code>
+     * Generated from protobuf field <code>bool secret = 40;</code>
      * @param bool $var
      * @return $this
      */

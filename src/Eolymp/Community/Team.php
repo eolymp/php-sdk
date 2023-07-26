@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class Team extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string name = 1;</code>
+     */
+    protected $name = '';
+    /**
      * Generated from protobuf field <code>bool staffed = 2;</code>
      */
     protected $staffed = false;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User users = 100;</code>
-     */
-    private $users;
 
     /**
      * Constructor.
@@ -28,13 +28,35 @@ class Team extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
      *     @type bool $staffed
-     *     @type \Eolymp\Community\User[]|\Google\Protobuf\Internal\RepeatedField $users
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\MemberTeam::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 1;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
     }
 
     /**
@@ -55,28 +77,6 @@ class Team extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->staffed = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User users = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User users = 100;</code>
-     * @param \Eolymp\Community\User[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setUsers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\User::class);
-        $this->users = $arr;
 
         return $this;
     }
