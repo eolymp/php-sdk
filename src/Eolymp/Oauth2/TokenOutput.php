@@ -37,6 +37,36 @@ class TokenOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id_token = 100;</code>
      */
     protected $id_token = '';
+    /**
+     * temporary, these should be encoded in id_token instead
+     *
+     * Generated from protobuf field <code>string subject = 900;</code>
+     */
+    protected $subject = '';
+    /**
+     * Generated from protobuf field <code>string issuer = 901;</code>
+     */
+    protected $issuer = '';
+    /**
+     * Generated from protobuf field <code>string name = 902;</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string nickname = 903;</code>
+     */
+    protected $nickname = '';
+    /**
+     * Generated from protobuf field <code>string picture = 904;</code>
+     */
+    protected $picture = '';
+    /**
+     * Generated from protobuf field <code>string email = 905;</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>bool email_verified = 906;</code>
+     */
+    protected $email_verified = false;
 
     /**
      * Constructor.
@@ -50,6 +80,14 @@ class TokenOutput extends \Google\Protobuf\Internal\Message
      *     @type string $refresh_token
      *     @type string $scope
      *     @type string $id_token
+     *     @type string $subject
+     *           temporary, these should be encoded in id_token instead
+     *     @type string $issuer
+     *     @type string $name
+     *     @type string $nickname
+     *     @type string $picture
+     *     @type string $email
+     *     @type bool $email_verified
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +223,164 @@ class TokenOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * temporary, these should be encoded in id_token instead
+     *
+     * Generated from protobuf field <code>string subject = 900;</code>
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * temporary, these should be encoded in id_token instead
+     *
+     * Generated from protobuf field <code>string subject = 900;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubject($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->subject = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 901;</code>
+     * @return string
+     */
+    public function getIssuer()
+    {
+        return $this->issuer;
+    }
+
+    /**
+     * Generated from protobuf field <code>string issuer = 901;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIssuer($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->issuer = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 902;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 902;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 903;</code>
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 903;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNickname($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 904;</code>
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture = 904;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPicture($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->picture = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 905;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 905;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 906;</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool email_verified = 906;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
 
         return $this;
     }
