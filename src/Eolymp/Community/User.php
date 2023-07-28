@@ -66,6 +66,10 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $city = '';
     /**
+     * Generated from protobuf field <code>string team_id = 100;</code>
+     */
+    protected $team_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.community.User.Preferences preferences = 800;</code>
      */
     protected $preferences = null;
@@ -89,6 +93,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $birthday
      *     @type string $country
      *     @type string $city
+     *     @type string $team_id
      *     @type \Eolymp\Community\User\Preferences $preferences
      * }
      */
@@ -379,6 +384,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string team_id = 100;</code>
+     * @return string
+     */
+    public function getTeamId()
+    {
+        return $this->team_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string team_id = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTeamId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->team_id = $var;
 
         return $this;
     }
