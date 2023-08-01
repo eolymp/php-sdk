@@ -77,6 +77,10 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
      */
     protected $max_team_size = 0;
+    /**
+     * Generated from protobuf field <code>repeated string permissions = 10099;</code>
+     */
+    private $permissions;
 
     /**
      * Constructor.
@@ -105,6 +109,7 @@ class Space extends \Google\Protobuf\Internal\Message
      *           in case of TEAM membership, minimum size of the team (can be 1 or more)
      *     @type int $max_team_size
      *           in case of TEAM membership, maximum size of the team (up to 8 users)
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $permissions
      * }
      */
     public function __construct($data = NULL) {
@@ -390,6 +395,28 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->max_team_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string permissions = 10099;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string permissions = 10099;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPermissions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->permissions = $arr;
 
         return $this;
     }
