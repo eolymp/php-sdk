@@ -32,9 +32,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $active;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool registered = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool incomplete = 5;</code>
      */
-    private $registered;
+    private $incomplete;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool unofficial = 6;</code>
      */
@@ -73,7 +73,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           user, team or ghost
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $active
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $registered
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $incomplete
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $unofficial
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $team_id
      *           find members of particular team
@@ -181,23 +181,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool registered = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool incomplete = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getRegistered()
+    public function getIncomplete()
     {
-        return $this->registered;
+        return $this->incomplete;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool registered = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool incomplete = 5;</code>
      * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setRegistered($var)
+    public function setIncomplete($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->registered = $arr;
+        $this->incomplete = $arr;
 
         return $this;
     }
