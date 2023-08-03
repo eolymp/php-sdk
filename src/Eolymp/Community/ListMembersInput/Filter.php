@@ -24,9 +24,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $type;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString nickname = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      */
-    private $nickname;
+    private $name;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool active = 4;</code>
      */
@@ -71,7 +71,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $type
      *           user, team or ghost
-     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $nickname
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $active
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $registered
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $unofficial
@@ -137,23 +137,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString nickname = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getNickname()
+    public function getName()
     {
-        return $this->nickname;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString nickname = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setNickname($var)
+    public function setName($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
-        $this->nickname = $arr;
+        $this->name = $arr;
 
         return $this;
     }

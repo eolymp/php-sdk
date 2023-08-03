@@ -16,9 +16,9 @@ class Sortable
      */
     const PBDEFAULT = 0;
     /**
-     * Generated from protobuf enum <code>NICKNAME = 1;</code>
+     * Generated from protobuf enum <code>NAME = 1;</code>
      */
-    const NICKNAME = 1;
+    const NAME = 1;
     /**
      * Generated from protobuf enum <code>CREATED_AT = 2;</code>
      */
@@ -30,7 +30,7 @@ class Sortable
 
     private static $valueToName = [
         self::PBDEFAULT => 'PBDEFAULT',
-        self::NICKNAME => 'NICKNAME',
+        self::NAME => 'NAME',
         self::CREATED_AT => 'CREATED_AT',
         self::TYPE => 'TYPE',
     ];
