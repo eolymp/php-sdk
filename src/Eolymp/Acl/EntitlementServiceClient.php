@@ -4,7 +4,7 @@
 
 namespace Eolymp\Acl;
 
-class IntrospectServiceClient {
+class EntitlementServiceClient {
 
     /** @var string base URL */
     private $url;
@@ -32,7 +32,7 @@ class IntrospectServiceClient {
     {
         $path = "/__entitlements";
 
-        $context['name'] = "eolymp.acl.IntrospectService/IntrospectEntitlements";
+        $context['name'] = "eolymp.acl.EntitlementService/IntrospectEntitlements";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectEntitlementsOutput::class, $context);
