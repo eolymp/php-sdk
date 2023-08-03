@@ -26,7 +26,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $username = '';
     /**
-     * Email address (requires VIEW_PRIVATE_DATA entitlement)
+     * Email address
      *
      * Generated from protobuf field <code>string email = 3;</code>
      */
@@ -86,37 +86,37 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $city = '';
     /**
-     * Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     * Email confirmation status
      *
      * Generated from protobuf field <code>string email_status = 32;</code>
      */
     protected $email_status = '';
     /**
-     * Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     * Birthday
      *
      * Generated from protobuf field <code>string birthday = 33;</code>
      */
     protected $birthday = '';
     /**
-     * Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user registered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
      */
     protected $registered_on = null;
     /**
-     * Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user was last active
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
      */
     protected $last_activity = null;
     /**
-     * Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user has changed username last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
      */
     protected $username_changed_on = null;
     /**
-     * Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user has changed password last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
      */
@@ -139,7 +139,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $username
      *           Username (handler)
      *     @type string $email
-     *           Email address (requires VIEW_PRIVATE_DATA entitlement)
+     *           Email address
      *     @type bool $active
      *           Account is active, user can login
      *     @type int $rank
@@ -159,17 +159,17 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $city
      *           City
      *     @type string $email_status
-     *           Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     *           Email confirmation status
      *     @type string $birthday
-     *           Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     *           Birthday
      *     @type \Google\Protobuf\Timestamp $registered_on
-     *           Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     *           Exact time when user registered
      *     @type \Google\Protobuf\Timestamp $last_activity
-     *           Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     *           Exact time when user was last active
      *     @type \Google\Protobuf\Timestamp $username_changed_on
-     *           Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     *           Exact time when user has changed username last time
      *     @type \Google\Protobuf\Timestamp $password_changed_on
-     *           Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     *           Exact time when user has changed password last time
      *     @type string $locale
      *           Locale
      * }
@@ -232,7 +232,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email address (requires VIEW_PRIVATE_DATA entitlement)
+     * Email address
      *
      * Generated from protobuf field <code>string email = 3;</code>
      * @return string
@@ -243,7 +243,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email address (requires VIEW_PRIVATE_DATA entitlement)
+     * Email address
      *
      * Generated from protobuf field <code>string email = 3;</code>
      * @param string $var
@@ -492,7 +492,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     * Email confirmation status
      *
      * Generated from protobuf field <code>string email_status = 32;</code>
      * @return string
@@ -503,7 +503,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email confirmation status (requires VIEW_PRIVATE_DATA entitlement)
+     * Email confirmation status
      *
      * Generated from protobuf field <code>string email_status = 32;</code>
      * @param string $var
@@ -518,7 +518,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     * Birthday
      *
      * Generated from protobuf field <code>string birthday = 33;</code>
      * @return string
@@ -529,7 +529,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Birthday (requires VIEW_PRIVATE_DATA entitlement)
+     * Birthday
      *
      * Generated from protobuf field <code>string birthday = 33;</code>
      * @param string $var
@@ -544,7 +544,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user registered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
      * @return \Google\Protobuf\Timestamp
@@ -555,7 +555,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user registered (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user registered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -570,7 +570,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user was last active
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
      * @return \Google\Protobuf\Timestamp
@@ -581,7 +581,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user was last active (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user was last active
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -596,7 +596,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user has changed username last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
      * @return \Google\Protobuf\Timestamp
@@ -607,7 +607,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user has changed username last time (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user has changed username last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -622,7 +622,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user has changed password last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
      * @return \Google\Protobuf\Timestamp
@@ -633,7 +633,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exact time when user has changed password last time (requires VIEW_PRIVATE_DATA entitlement)
+     * Exact time when user has changed password last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
      * @param \Google\Protobuf\Timestamp $var

@@ -1554,24 +1554,6 @@ class JudgeClient {
     }
 
     /**
-     * Lists entitlements granted to authenticated user.
-     *
-     * @param ListEntitlementsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListEntitlementsOutput output message
-     */
-    public function ListEntitlements(ListEntitlementsInput $input, array $context = [])
-    {
-        $path = "/__judge/entitlements";
-
-        $context['name'] = "eolymp.judge.Judge/ListEntitlements";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListEntitlementsOutput::class, $context);
-    }
-
-    /**
      * @param ListActivitiesInput $input message
      * @param array $context request parameters
      *
