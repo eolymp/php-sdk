@@ -39,6 +39,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool member = 5;</code>
      */
     private $member;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool system = 6;</code>
+     */
+    private $system;
 
     /**
      * Constructor.
@@ -53,6 +57,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $own
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $member
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $system
      * }
      */
     public function __construct($data = NULL) {
@@ -192,6 +197,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->member = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool system = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSystem()
+    {
+        return $this->system;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool system = 6;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSystem($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->system = $arr;
 
         return $this;
     }
