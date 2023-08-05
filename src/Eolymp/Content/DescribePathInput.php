@@ -21,6 +21,10 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 2;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     */
+    protected $render = false;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $path
      *     @type string $locale
+     *     @type bool $render
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
 
         return $this;
     }
