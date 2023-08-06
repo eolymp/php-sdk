@@ -31,6 +31,10 @@ class Patch
      * Generated from protobuf enum <code>DIFFICULTY = 4;</code>
      */
     const DIFFICULTY = 4;
+    /**
+     * Generated from protobuf enum <code>ORIGIN = 5;</code>
+     */
+    const ORIGIN = 5;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -38,6 +42,7 @@ class Patch
         self::PBPRIVATE => 'PBPRIVATE',
         self::TOPICS => 'TOPICS',
         self::DIFFICULTY => 'DIFFICULTY',
+        self::ORIGIN => 'ORIGIN',
     ];
 
     public static function name($value)
