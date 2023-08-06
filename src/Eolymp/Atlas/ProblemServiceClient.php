@@ -55,6 +55,22 @@ class ProblemServiceClient {
     }
 
     /**
+     * @param SyncProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return SyncProblemOutput output message
+     */
+    public function SyncProblem(SyncProblemInput $input, array $context = [])
+    {
+        $path = "/sync";
+
+        $context['name'] = "eolymp.atlas.ProblemService/SyncProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SyncProblemOutput::class, $context);
+    }
+
+    /**
      * @param DescribeProblemInput $input message
      * @param array $context request parameters
      *

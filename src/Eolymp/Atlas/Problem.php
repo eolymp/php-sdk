@@ -46,6 +46,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $private = false;
     /**
+     * For imported problems, provides the source from where the problem is imported and synchronized.
+     *
+     * Generated from protobuf field <code>string origin = 13;</code>
+     */
+    protected $origin = '';
+    /**
      * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
@@ -74,6 +80,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem is visible to users in public catalog.
      *     @type bool $private
      *           Problem is only accessible to users who were specifically granted access to it.
+     *     @type string $origin
+     *           For imported problems, provides the source from where the problem is imported and synchronized.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type int $difficulty
@@ -229,6 +237,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->private = $var;
+
+        return $this;
+    }
+
+    /**
+     * For imported problems, provides the source from where the problem is imported and synchronized.
+     *
+     * Generated from protobuf field <code>string origin = 13;</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * For imported problems, provides the source from where the problem is imported and synchronized.
+     *
+     * Generated from protobuf field <code>string origin = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
 
         return $this;
     }

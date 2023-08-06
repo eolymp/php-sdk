@@ -112,6 +112,25 @@ class AtlasClient {
     }
 
     /**
+     * @param SyncProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return SyncProblemOutput output message
+     */
+    public function SyncProblem(SyncProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/sync";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/SyncProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SyncProblemOutput::class, $context);
+    }
+
+    /**
      * @param SetBookmarkInput $input message
      * @param array $context request parameters
      *
