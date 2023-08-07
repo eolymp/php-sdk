@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Snapshot extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem problem = 1;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
      */
-    private $problem;
+    protected $problem = null;
     /**
      * Generated from protobuf field <code>.eolymp.executor.Verifier checker = 2;</code>
      */
@@ -52,7 +52,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Atlas\Problem[]|\Google\Protobuf\Internal\RepeatedField $problem
+     *     @type \Eolymp\Atlas\Problem $problem
      *     @type \Eolymp\Executor\Verifier $checker
      *     @type \Eolymp\Executor\Interactor $interactor
      *     @type \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
@@ -68,8 +68,8 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem problem = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
+     * @return \Eolymp\Atlas\Problem
      */
     public function getProblem()
     {
@@ -77,14 +77,14 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem problem = 1;</code>
-     * @param \Eolymp\Atlas\Problem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
+     * @param \Eolymp\Atlas\Problem $var
      * @return $this
      */
     public function setProblem($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Problem::class);
-        $this->problem = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem::class);
+        $this->problem = $var;
 
         return $this;
     }
