@@ -18,6 +18,10 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      */
     protected $problem = null;
     /**
+     * Generated from protobuf field <code>.eolymp.atlas.TestingConfig testing = 10;</code>
+     */
+    protected $testing = null;
+    /**
      * Generated from protobuf field <code>.eolymp.executor.Verifier checker = 2;</code>
      */
     protected $checker = null;
@@ -45,6 +49,14 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test tests = 8;</code>
      */
     private $tests;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial editorials = 9;</code>
+     */
+    private $editorials;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution solutions = 11;</code>
+     */
+    private $solutions;
 
     /**
      * Constructor.
@@ -53,6 +65,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Atlas\Problem $problem
+     *     @type \Eolymp\Atlas\TestingConfig $testing
      *     @type \Eolymp\Executor\Verifier $checker
      *     @type \Eolymp\Executor\Interactor $interactor
      *     @type \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
@@ -60,6 +73,8 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Atlas\Attachment[]|\Google\Protobuf\Internal\RepeatedField $attachments
      *     @type \Eolymp\Atlas\Testset[]|\Google\Protobuf\Internal\RepeatedField $testsets
      *     @type \Eolymp\Atlas\Test[]|\Google\Protobuf\Internal\RepeatedField $tests
+     *     @type \Eolymp\Atlas\Editorial[]|\Google\Protobuf\Internal\RepeatedField $editorials
+     *     @type \Eolymp\Atlas\Solution[]|\Google\Protobuf\Internal\RepeatedField $solutions
      * }
      */
     public function __construct($data = NULL) {
@@ -85,6 +100,28 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem::class);
         $this->problem = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.TestingConfig testing = 10;</code>
+     * @return \Eolymp\Atlas\TestingConfig
+     */
+    public function getTesting()
+    {
+        return $this->testing;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.TestingConfig testing = 10;</code>
+     * @param \Eolymp\Atlas\TestingConfig $var
+     * @return $this
+     */
+    public function setTesting($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\TestingConfig::class);
+        $this->testing = $var;
 
         return $this;
     }
@@ -239,6 +276,50 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Test::class);
         $this->tests = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial editorials = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getEditorials()
+    {
+        return $this->editorials;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial editorials = 9;</code>
+     * @param \Eolymp\Atlas\Editorial[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setEditorials($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Editorial::class);
+        $this->editorials = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution solutions = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSolutions()
+    {
+        return $this->solutions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution solutions = 11;</code>
+     * @param \Eolymp\Atlas\Solution[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSolutions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Solution::class);
+        $this->solutions = $arr;
 
         return $this;
     }

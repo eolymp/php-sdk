@@ -14,57 +14,33 @@ use Google\Protobuf\Internal\GPBUtil;
 class Solution extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unique identifier. Keep empty when creating new solution.
+     * unique identifier
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * Problem where this solution belongs. Keep empty when creating new solution.
+     * solution name
      *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      */
-    protected $problem_id = '';
+    protected $name = '';
     /**
-     * Author for the solution. Populated automatically.
+     * programming language
      *
-     * Generated from protobuf field <code>string author_id = 3;</code>
+     * Generated from protobuf field <code>string runtime = 10;</code>
      */
-    protected $author_id = '';
+    protected $runtime = '';
     /**
-     * Solution is published by author.
+     * source code
      *
-     * Generated from protobuf field <code>bool published = 5;</code>
+     * Generated from protobuf field <code>string source = 11;</code>
      */
-    protected $published = false;
+    protected $source = '';
     /**
-     * Solution is approved by site moderators.
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Solution.Moderation moderation_status = 6;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      */
-    protected $moderation_status = 0;
-    /**
-     * Generated from protobuf field <code>string moderation_comment = 7;</code>
-     */
-    protected $moderation_comment = '';
-    /**
-     * Locale for the solution.
-     *
-     * Generated from protobuf field <code>string locale = 10;</code>
-     */
-    protected $locale = '';
-    /**
-     * Content format.
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Solution.Format format = 11;</code>
-     */
-    protected $format = 0;
-    /**
-     * Content of the solution: explanation, code samples etc.
-     *
-     * Generated from protobuf field <code>string content = 12;</code>
-     */
-    protected $content = '';
+    protected $type = 0;
 
     /**
      * Constructor.
@@ -73,22 +49,14 @@ class Solution extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           Unique identifier. Keep empty when creating new solution.
-     *     @type string $problem_id
-     *           Problem where this solution belongs. Keep empty when creating new solution.
-     *     @type string $author_id
-     *           Author for the solution. Populated automatically.
-     *     @type bool $published
-     *           Solution is published by author.
-     *     @type int $moderation_status
-     *           Solution is approved by site moderators.
-     *     @type string $moderation_comment
-     *     @type string $locale
-     *           Locale for the solution.
-     *     @type int $format
-     *           Content format.
-     *     @type string $content
-     *           Content of the solution: explanation, code samples etc.
+     *           unique identifier
+     *     @type string $name
+     *           solution name
+     *     @type string $runtime
+     *           programming language
+     *     @type string $source
+     *           source code
+     *     @type int $type
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +65,7 @@ class Solution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier. Keep empty when creating new solution.
+     * unique identifier
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -108,7 +76,7 @@ class Solution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier. Keep empty when creating new solution.
+     * unique identifier
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -123,205 +91,101 @@ class Solution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem where this solution belongs. Keep empty when creating new solution.
+     * solution name
      *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @return string
      */
-    public function getProblemId()
+    public function getName()
     {
-        return $this->problem_id;
+        return $this->name;
     }
 
     /**
-     * Problem where this solution belongs. Keep empty when creating new solution.
+     * solution name
      *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * Generated from protobuf field <code>string name = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setProblemId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Author for the solution. Populated automatically.
+     * programming language
      *
-     * Generated from protobuf field <code>string author_id = 3;</code>
+     * Generated from protobuf field <code>string runtime = 10;</code>
      * @return string
      */
-    public function getAuthorId()
+    public function getRuntime()
     {
-        return $this->author_id;
+        return $this->runtime;
     }
 
     /**
-     * Author for the solution. Populated automatically.
+     * programming language
      *
-     * Generated from protobuf field <code>string author_id = 3;</code>
+     * Generated from protobuf field <code>string runtime = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setAuthorId($var)
+    public function setRuntime($var)
     {
         GPBUtil::checkString($var, True);
-        $this->author_id = $var;
+        $this->runtime = $var;
 
         return $this;
     }
 
     /**
-     * Solution is published by author.
+     * source code
      *
-     * Generated from protobuf field <code>bool published = 5;</code>
-     * @return bool
+     * Generated from protobuf field <code>string source = 11;</code>
+     * @return string
      */
-    public function getPublished()
+    public function getSource()
     {
-        return $this->published;
+        return $this->source;
     }
 
     /**
-     * Solution is published by author.
+     * source code
      *
-     * Generated from protobuf field <code>bool published = 5;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>string source = 11;</code>
+     * @param string $var
      * @return $this
      */
-    public function setPublished($var)
+    public function setSource($var)
     {
-        GPBUtil::checkBool($var);
-        $this->published = $var;
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
 
         return $this;
     }
 
     /**
-     * Solution is approved by site moderators.
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Solution.Moderation moderation_status = 6;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      * @return int
      */
-    public function getModerationStatus()
+    public function getType()
     {
-        return $this->moderation_status;
+        return $this->type;
     }
 
     /**
-     * Solution is approved by site moderators.
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Solution.Moderation moderation_status = 6;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      * @param int $var
      * @return $this
      */
-    public function setModerationStatus($var)
+    public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution_Moderation::class);
-        $this->moderation_status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string moderation_comment = 7;</code>
-     * @return string
-     */
-    public function getModerationComment()
-    {
-        return $this->moderation_comment;
-    }
-
-    /**
-     * Generated from protobuf field <code>string moderation_comment = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setModerationComment($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->moderation_comment = $var;
-
-        return $this;
-    }
-
-    /**
-     * Locale for the solution.
-     *
-     * Generated from protobuf field <code>string locale = 10;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Locale for the solution.
-     *
-     * Generated from protobuf field <code>string locale = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * Content format.
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Solution.Format format = 11;</code>
-     * @return int
-     */
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-    /**
-     * Content format.
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Solution.Format format = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setFormat($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution_Format::class);
-        $this->format = $var;
-
-        return $this;
-    }
-
-    /**
-     * Content of the solution: explanation, code samples etc.
-     *
-     * Generated from protobuf field <code>string content = 12;</code>
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * Content of the solution: explanation, code samples etc.
-     *
-     * Generated from protobuf field <code>string content = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContent($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->content = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution_Type::class);
+        $this->type = $var;
 
         return $this;
     }
