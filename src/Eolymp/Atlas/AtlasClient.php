@@ -1001,11 +1001,11 @@ class AtlasClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/scores/".rawurlencode($input->getUserId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scores/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
-        $input->setUserId("");
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.atlas.Atlas/DescribeScore";
         $context['path'] = $path;
