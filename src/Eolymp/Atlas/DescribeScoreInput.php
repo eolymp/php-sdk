@@ -18,9 +18,9 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
-    protected $user_id = '';
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type string $user_id
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
-    public function getUserId()
+    public function getMemberId()
     {
-        return $this->user_id;
+        return $this->member_id;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->member_id = $var;
 
         return $this;
     }

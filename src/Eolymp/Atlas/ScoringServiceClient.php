@@ -30,10 +30,10 @@ class ScoringServiceClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        $path = "/scores/".rawurlencode($input->getUserId());
+        $path = "/scores/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setUserId("");
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.atlas.ScoringService/DescribeScore";
         $context['path'] = $path;

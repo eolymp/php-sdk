@@ -32,6 +32,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
+     * submitter
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp submitted_at = 5;</code>
@@ -125,6 +131,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *           problem
      *     @type string $user_id
+     *           submitter
+     *     @type string $member_id
      *           submitter
      *     @type \Google\Protobuf\Timestamp $submitted_at
      *           time when submission was created
@@ -234,6 +242,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * submitter
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * submitter
+     *
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
