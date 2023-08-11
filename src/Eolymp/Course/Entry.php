@@ -26,6 +26,10 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $parent_id = '';
     /**
+     * Generated from protobuf field <code>uint32 index = 11;</code>
+     */
+    protected $index = 0;
+    /**
      * Generated from protobuf field <code>uint32 depth = 20;</code>
      */
     protected $depth = 0;
@@ -44,6 +48,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $title
      *     @type string $parent_id
+     *     @type int $index
      *     @type int $depth
      *     @type int $duration_estimate
      *     @type \Eolymp\Course\Section $section
@@ -118,6 +123,28 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->parent_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 11;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
 
         return $this;
     }

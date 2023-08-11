@@ -112,6 +112,25 @@ class EntryServiceClient {
     }
 
     /**
+     * @param MoveEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return MoveEntryOutput output message
+     */
+    public function MoveEntry(MoveEntryInput $input, array $context = [])
+    {
+        $path = "/entries/".rawurlencode($input->getEntryId())."/position";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.course.EntryService/MoveEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, MoveEntryOutput::class, $context);
+    }
+
+    /**
      * @param DeleteEntryInput $input message
      * @param array $context request parameters
      *
