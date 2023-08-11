@@ -28,16 +28,21 @@ class Patch
      */
     const DESCRIPTION = 3;
     /**
-     * Generated from protobuf enum <code>PICTURE = 4;</code>
+     * Generated from protobuf enum <code>IMAGE = 4;</code>
      */
-    const PICTURE = 4;
+    const IMAGE = 4;
+    /**
+     * Generated from protobuf enum <code>VISIBILITY = 5;</code>
+     */
+    const VISIBILITY = 5;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::LOCALE => 'LOCALE',
         self::NAME => 'NAME',
         self::DESCRIPTION => 'DESCRIPTION',
-        self::PICTURE => 'PICTURE',
+        self::IMAGE => 'IMAGE',
+        self::VISIBILITY => 'VISIBILITY',
     ];
 
     public static function name($value)
