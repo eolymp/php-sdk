@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Video extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string preview_url = 1;</code>
+     * Generated from protobuf field <code>string image_url = 1;</code>
      */
-    protected $preview_url = '';
+    protected $image_url = '';
     /**
      * Generated from protobuf field <code>string video_url = 2;</code>
      */
@@ -32,7 +32,7 @@ class Video extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $preview_url
+     *     @type string $image_url
      *     @type string $video_url
      *     @type int $duration
      * }
@@ -43,23 +43,23 @@ class Video extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string preview_url = 1;</code>
+     * Generated from protobuf field <code>string image_url = 1;</code>
      * @return string
      */
-    public function getPreviewUrl()
+    public function getImageUrl()
     {
-        return $this->preview_url;
+        return $this->image_url;
     }
 
     /**
-     * Generated from protobuf field <code>string preview_url = 1;</code>
+     * Generated from protobuf field <code>string image_url = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setPreviewUrl($var)
+    public function setImageUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->preview_url = $var;
+        $this->image_url = $var;
 
         return $this;
     }

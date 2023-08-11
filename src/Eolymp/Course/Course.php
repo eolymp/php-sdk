@@ -30,9 +30,13 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
-     * Generated from protobuf field <code>string picture = 13;</code>
+     * Generated from protobuf field <code>string image = 13;</code>
      */
-    protected $picture = '';
+    protected $image = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Course.Visibility visibility = 14;</code>
+     */
+    protected $visibility = 0;
     /**
      * Generated from protobuf field <code>uint32 duration_estimate = 20;</code>
      */
@@ -48,7 +52,8 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
-     *     @type string $picture
+     *     @type string $image
+     *     @type int $visibility
      *     @type int $duration_estimate
      * }
      */
@@ -146,23 +151,45 @@ class Course extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 13;</code>
+     * Generated from protobuf field <code>string image = 13;</code>
      * @return string
      */
-    public function getPicture()
+    public function getImage()
     {
-        return $this->picture;
+        return $this->image;
     }
 
     /**
-     * Generated from protobuf field <code>string picture = 13;</code>
+     * Generated from protobuf field <code>string image = 13;</code>
      * @param string $var
      * @return $this
      */
-    public function setPicture($var)
+    public function setImage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->picture = $var;
+        $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Course.Visibility visibility = 14;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Course.Visibility visibility = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Course\Course_Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }
