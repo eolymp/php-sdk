@@ -18,10 +18,6 @@ class UpdateDocumentInput extends \Google\Protobuf\Internal\Message
      */
     protected $entry_id = '';
     /**
-     * Generated from protobuf field <code>string parent_id = 2;</code>
-     */
-    protected $parent_id = '';
-    /**
      * Generated from protobuf field <code>string title = 10;</code>
      */
     protected $title = '';
@@ -37,7 +33,6 @@ class UpdateDocumentInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $entry_id
-     *     @type string $parent_id
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $document
      * }
@@ -65,28 +60,6 @@ class UpdateDocumentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->entry_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string parent_id = 2;</code>
-     * @return string
-     */
-    public function getParentId()
-    {
-        return $this->parent_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string parent_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setParentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->parent_id = $var;
 
         return $this;
     }

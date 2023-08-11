@@ -18,6 +18,10 @@ class CreateDocumentInput extends \Google\Protobuf\Internal\Message
      */
     protected $parent_id = '';
     /**
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     */
+    protected $index = 0;
+    /**
      * Generated from protobuf field <code>string title = 10;</code>
      */
     protected $title = '';
@@ -33,6 +37,7 @@ class CreateDocumentInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent_id
+     *     @type int $index
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $document
      * }
@@ -60,6 +65,28 @@ class CreateDocumentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->parent_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
 
         return $this;
     }

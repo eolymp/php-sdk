@@ -18,13 +18,13 @@ class UpdateSectionInput extends \Google\Protobuf\Internal\Message
      */
     protected $entry_id = '';
     /**
-     * Generated from protobuf field <code>string parent_id = 2;</code>
-     */
-    protected $parent_id = '';
-    /**
      * Generated from protobuf field <code>string title = 10;</code>
      */
     protected $title = '';
+    /**
+     * Generated from protobuf field <code>string image = 12;</code>
+     */
+    protected $image = '';
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 11;</code>
      */
@@ -37,8 +37,8 @@ class UpdateSectionInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $entry_id
-     *     @type string $parent_id
      *     @type string $title
+     *     @type string $image
      *     @type \Eolymp\Ecm\Content $description
      * }
      */
@@ -70,28 +70,6 @@ class UpdateSectionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string parent_id = 2;</code>
-     * @return string
-     */
-    public function getParentId()
-    {
-        return $this->parent_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string parent_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setParentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->parent_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string title = 10;</code>
      * @return string
      */
@@ -109,6 +87,28 @@ class UpdateSectionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 12;</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
 
         return $this;
     }

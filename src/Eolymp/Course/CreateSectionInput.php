@@ -18,9 +18,17 @@ class CreateSectionInput extends \Google\Protobuf\Internal\Message
      */
     protected $parent_id = '';
     /**
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     */
+    protected $index = 0;
+    /**
      * Generated from protobuf field <code>string title = 10;</code>
      */
     protected $title = '';
+    /**
+     * Generated from protobuf field <code>string image = 12;</code>
+     */
+    protected $image = '';
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 11;</code>
      */
@@ -33,7 +41,9 @@ class CreateSectionInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent_id
+     *     @type int $index
      *     @type string $title
+     *     @type string $image
      *     @type \Eolymp\Ecm\Content $description
      * }
      */
@@ -65,6 +75,28 @@ class CreateSectionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string title = 10;</code>
      * @return string
      */
@@ -82,6 +114,28 @@ class CreateSectionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 12;</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Generated from protobuf field <code>string image = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
 
         return $this;
     }
