@@ -42,6 +42,10 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $attributes_per_space = 0;
     /**
+     * Generated from protobuf field <code>uint32 courses_per_space = 12;</code>
+     */
+    protected $courses_per_space = 0;
+    /**
      * Generated from protobuf field <code>uint32 problems_per_contest = 10;</code>
      */
     protected $problems_per_contest = 0;
@@ -63,6 +67,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *     @type int $scoreboards_per_space
      *     @type int $permissions_per_space
      *     @type int $attributes_per_space
+     *     @type int $courses_per_space
      *     @type int $problems_per_contest
      *     @type int $participants_per_contest
      * }
@@ -222,6 +227,28 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->attributes_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 courses_per_space = 12;</code>
+     * @return int
+     */
+    public function getCoursesPerSpace()
+    {
+        return $this->courses_per_space;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 courses_per_space = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCoursesPerSpace($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->courses_per_space = $var;
 
         return $this;
     }
