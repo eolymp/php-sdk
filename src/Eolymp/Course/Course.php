@@ -18,6 +18,10 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string url = 2;</code>
+     */
+    protected $url = '';
+    /**
      * Generated from protobuf field <code>string locale = 10;</code>
      */
     protected $locale = '';
@@ -53,6 +57,7 @@ class Course extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $url
      *     @type string $locale
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
@@ -85,6 +90,28 @@ class Course extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 2;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }
