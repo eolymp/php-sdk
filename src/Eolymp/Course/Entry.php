@@ -30,13 +30,9 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * Generated from protobuf field <code>uint32 depth = 20;</code>
+     * Generated from protobuf field <code>uint32 estimate = 21;</code>
      */
-    protected $depth = 0;
-    /**
-     * Generated from protobuf field <code>uint32 duration_estimate = 21;</code>
-     */
-    protected $duration_estimate = 0;
+    protected $estimate = 0;
     protected $content;
 
     /**
@@ -49,8 +45,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type string $title
      *     @type string $parent_id
      *     @type int $index
-     *     @type int $depth
-     *     @type int $duration_estimate
+     *     @type int $estimate
      *     @type \Eolymp\Course\Section $section
      *     @type \Eolymp\Ecm\Content $document
      *     @type \Eolymp\Course\Video $video
@@ -150,45 +145,23 @@ class Entry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 depth = 20;</code>
+     * Generated from protobuf field <code>uint32 estimate = 21;</code>
      * @return int
      */
-    public function getDepth()
+    public function getEstimate()
     {
-        return $this->depth;
+        return $this->estimate;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 depth = 20;</code>
+     * Generated from protobuf field <code>uint32 estimate = 21;</code>
      * @param int $var
      * @return $this
      */
-    public function setDepth($var)
+    public function setEstimate($var)
     {
         GPBUtil::checkUint32($var);
-        $this->depth = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 duration_estimate = 21;</code>
-     * @return int
-     */
-    public function getDurationEstimate()
-    {
-        return $this->duration_estimate;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 duration_estimate = 21;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDurationEstimate($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->duration_estimate = $var;
+        $this->estimate = $var;
 
         return $this;
     }

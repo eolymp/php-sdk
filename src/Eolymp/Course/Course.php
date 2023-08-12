@@ -38,9 +38,13 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * Generated from protobuf field <code>uint32 duration_estimate = 20;</code>
+     * Generated from protobuf field <code>uint32 duration = 15;</code>
      */
-    protected $duration_estimate = 0;
+    protected $duration = 0;
+    /**
+     * Generated from protobuf field <code>uint32 estimate = 20;</code>
+     */
+    protected $estimate = 0;
 
     /**
      * Constructor.
@@ -54,7 +58,8 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $description
      *     @type string $image
      *     @type int $visibility
-     *     @type int $duration_estimate
+     *     @type int $duration
+     *     @type int $estimate
      * }
      */
     public function __construct($data = NULL) {
@@ -195,23 +200,45 @@ class Course extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 duration_estimate = 20;</code>
+     * Generated from protobuf field <code>uint32 duration = 15;</code>
      * @return int
      */
-    public function getDurationEstimate()
+    public function getDuration()
     {
-        return $this->duration_estimate;
+        return $this->duration;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 duration_estimate = 20;</code>
+     * Generated from protobuf field <code>uint32 duration = 15;</code>
      * @param int $var
      * @return $this
      */
-    public function setDurationEstimate($var)
+    public function setDuration($var)
     {
         GPBUtil::checkUint32($var);
-        $this->duration_estimate = $var;
+        $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 estimate = 20;</code>
+     * @return int
+     */
+    public function getEstimate()
+    {
+        return $this->estimate;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 estimate = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEstimate($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->estimate = $var;
 
         return $this;
     }

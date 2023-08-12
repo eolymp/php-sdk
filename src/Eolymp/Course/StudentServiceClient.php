@@ -127,4 +127,20 @@ class StudentServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartCourseOutput::class, $context);
     }
 
+    /**
+     * @param DescribeViewerInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeViewerOutput output message
+     */
+    public function DescribeViewer(DescribeViewerInput $input, array $context = [])
+    {
+        $path = "/viewer";
+
+        $context['name'] = "eolymp.course.StudentService/DescribeViewer";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DescribeViewerOutput::class, $context);
+    }
+
 }
