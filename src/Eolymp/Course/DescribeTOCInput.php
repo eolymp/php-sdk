@@ -21,6 +21,10 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 depth = 2;</code>
      */
     protected $depth = 0;
+    /**
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     */
+    protected $draft = false;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $root_id
      *     @type int $depth
+     *     @type bool $draft
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->depth = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
 
         return $this;
     }
