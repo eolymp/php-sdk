@@ -13,6 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DescribeTOCInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string root_id = 1;</code>
+     */
+    protected $root_id = '';
+    /**
+     * Generated from protobuf field <code>uint32 depth = 2;</code>
+     */
+    protected $depth = 0;
 
     /**
      * Constructor.
@@ -20,11 +28,57 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $root_id
+     *     @type int $depth
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\EntryService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string root_id = 1;</code>
+     * @return string
+     */
+    public function getRootId()
+    {
+        return $this->root_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string root_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRootId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->root_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 depth = 2;</code>
+     * @return int
+     */
+    public function getDepth()
+    {
+        return $this->depth;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 depth = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDepth($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->depth = $var;
+
+        return $this;
     }
 
 }
