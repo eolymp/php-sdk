@@ -165,4 +165,23 @@ class EntryServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTOCOutput::class, $context);
     }
 
+    /**
+     * @param ListParentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListParentsOutput output message
+     */
+    public function ListParents(ListParentsInput $input, array $context = [])
+    {
+        $path = "/entries/".rawurlencode($input->getEntryId())."/parents";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.course.EntryService/ListParents";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListParentsOutput::class, $context);
+    }
+
 }
