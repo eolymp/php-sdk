@@ -23,73 +23,38 @@ class EntryServiceClient {
     }
 
     /**
-     * @param CreateSectionInput $input message
+     * @param CreateEntryInput $input message
      * @param array $context request parameters
      *
-     * @return CreateSectionOutput output message
+     * @return CreateEntryOutput output message
      */
-    public function CreateSection(CreateSectionInput $input, array $context = [])
+    public function CreateEntry(CreateEntryInput $input, array $context = [])
     {
-        $path = "/sections";
+        $path = "/entries";
 
-        $context['name'] = "eolymp.course.EntryService/CreateSection";
+        $context['name'] = "eolymp.course.EntryService/CreateEntry";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSectionOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateEntryOutput::class, $context);
     }
 
     /**
-     * @param UpdateSectionInput $input message
+     * @param UpdateEntryInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateSectionOutput output message
+     * @return UpdateEntryOutput output message
      */
-    public function UpdateSection(UpdateSectionInput $input, array $context = [])
+    public function UpdateEntry(UpdateEntryInput $input, array $context = [])
     {
-        $path = "/sections/".rawurlencode($input->getEntryId());
+        $path = "/entries/".rawurlencode($input->getEntryId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setEntryId("");
 
-        $context['name'] = "eolymp.course.EntryService/UpdateSection";
+        $context['name'] = "eolymp.course.EntryService/UpdateEntry";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateSectionOutput::class, $context);
-    }
-
-    /**
-     * @param CreateDocumentInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateDocumentOutput output message
-     */
-    public function CreateDocument(CreateDocumentInput $input, array $context = [])
-    {
-        $path = "/documents";
-
-        $context['name'] = "eolymp.course.EntryService/CreateDocument";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateDocumentOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateDocumentInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateDocumentOutput output message
-     */
-    public function UpdateDocument(UpdateDocumentInput $input, array $context = [])
-    {
-        $path = "/documents/".rawurlencode($input->getEntryId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/UpdateDocument";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateDocumentOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateEntryOutput::class, $context);
     }
 
     /**
@@ -182,6 +147,22 @@ class EntryServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListEntriesOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeTOCInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeTOCOutput output message
+     */
+    public function DescribeTOC(DescribeTOCInput $input, array $context = [])
+    {
+        $path = "/toc";
+
+        $context['name'] = "eolymp.course.EntryService/DescribeTOC";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTOCOutput::class, $context);
     }
 
 }

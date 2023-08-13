@@ -22,6 +22,12 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
+     * Draft means entry is only available to the admin and won't be shown to students.
+     *
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     */
+    protected $draft = false;
+    /**
      * Generated from protobuf field <code>string parent_id = 10;</code>
      */
     protected $parent_id = '';
@@ -30,9 +36,18 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
+     * For section entries this represents sum of its nested entries.
+     *
      * Generated from protobuf field <code>uint32 estimate = 21;</code>
      */
     protected $estimate = 0;
+    /**
+     * List of nested entries, read only, only populated when calling DescribeTOC API
+     *
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 900;</code>
+     */
+    private $items;
     protected $content;
 
     /**
@@ -43,12 +58,18 @@ class Entry extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $title
+     *     @type bool $draft
+     *           Draft means entry is only available to the admin and won't be shown to students.
      *     @type string $parent_id
      *     @type int $index
      *     @type int $estimate
+     *           Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
+     *           For section entries this represents sum of its nested entries.
      *     @type \Eolymp\Course\Section $section
      *     @type \Eolymp\Ecm\Content $document
      *     @type \Eolymp\Course\Video $video
+     *     @type \Eolymp\Course\Entry[]|\Google\Protobuf\Internal\RepeatedField $items
+     *           List of nested entries, read only, only populated when calling DescribeTOC API
      * }
      */
     public function __construct($data = NULL) {
@@ -101,6 +122,32 @@ class Entry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Draft means entry is only available to the admin and won't be shown to students.
+     *
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Draft means entry is only available to the admin and won't be shown to students.
+     *
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string parent_id = 10;</code>
      * @return string
      */
@@ -145,6 +192,9 @@ class Entry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
+     * For section entries this represents sum of its nested entries.
+     *
      * Generated from protobuf field <code>uint32 estimate = 21;</code>
      * @return int
      */
@@ -154,6 +204,9 @@ class Entry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
+     * For section entries this represents sum of its nested entries.
+     *
      * Generated from protobuf field <code>uint32 estimate = 21;</code>
      * @param int $var
      * @return $this
@@ -228,6 +281,32 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\Video::class);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * List of nested entries, read only, only populated when calling DescribeTOC API
+     *
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 900;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * List of nested entries, read only, only populated when calling DescribeTOC API
+     *
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 900;</code>
+     * @param \Eolymp\Course\Entry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setItems($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Entry::class);
+        $this->items = $arr;
 
         return $this;
     }

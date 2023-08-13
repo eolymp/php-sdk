@@ -25,6 +25,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID parent_id = 11;</code>
      */
     private $parent_id;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 12;</code>
+     */
+    private $draft;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString title = 13;</code>
+     */
+    private $title;
 
     /**
      * Constructor.
@@ -35,6 +43,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type string $query
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $parent_id
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $draft
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $title
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +114,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->parent_id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 12;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->draft = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString title = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString title = 13;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->title = $arr;
 
         return $this;
     }

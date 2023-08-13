@@ -12,6 +12,8 @@ use UnexpectedValueException;
 class Sortable
 {
     /**
+     * be default entries are order by their index
+     *
      * Generated from protobuf enum <code>DEFAULT = 0;</code>
      */
     const PBDEFAULT = 0;
