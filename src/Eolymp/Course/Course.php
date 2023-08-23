@@ -46,6 +46,12 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     protected $duration = 0;
     /**
+     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *
+     * Generated from protobuf field <code>repeated string topics = 16;</code>
+     */
+    private $topics;
+    /**
      * Generated from protobuf field <code>uint32 estimate = 20;</code>
      */
     protected $estimate = 0;
@@ -64,6 +70,8 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type int $visibility
      *     @type int $duration
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type int $estimate
      * }
      */
@@ -244,6 +252,32 @@ class Course extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *
+     * Generated from protobuf field <code>repeated string topics = 16;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTopics()
+    {
+        return $this->topics;
+    }
+
+    /**
+     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *
+     * Generated from protobuf field <code>repeated string topics = 16;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTopics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->topics = $arr;
 
         return $this;
     }
