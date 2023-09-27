@@ -18,6 +18,10 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     */
+    protected $url = '';
+    /**
      * Generated from protobuf field <code>string title = 2;</code>
      */
     protected $title = '';
@@ -57,6 +61,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $url
      *     @type string $title
      *     @type bool $draft
      *           Draft means entry is only available to the admin and won't be shown to students.
@@ -68,6 +73,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Course\Section $section
      *     @type \Eolymp\Ecm\Content $document
      *     @type \Eolymp\Course\Video $video
+     *     @type \Eolymp\Course\Problem $problem
      *     @type \Eolymp\Course\Entry[]|\Google\Protobuf\Internal\RepeatedField $items
      *           List of nested entries, read only, only populated when calling DescribeTOC API
      * }
@@ -95,6 +101,28 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }
@@ -281,6 +309,28 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\Video::class);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Problem problem = 103;</code>
+     * @return \Eolymp\Course\Problem
+     */
+    public function getProblem()
+    {
+        return $this->readOneof(103);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Problem problem = 103;</code>
+     * @param \Eolymp\Course\Problem $var
+     * @return $this
+     */
+    public function setProblem($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\Problem::class);
+        $this->writeOneof(103, $var);
 
         return $this;
     }

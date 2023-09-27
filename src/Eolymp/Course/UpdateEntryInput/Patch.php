@@ -43,6 +43,10 @@ class Patch
      * Generated from protobuf enum <code>VIDEO_VIDEO_URL = 21;</code>
      */
     const VIDEO_VIDEO_URL = 21;
+    /**
+     * Generated from protobuf enum <code>PROBLEM_URL = 30;</code>
+     */
+    const PROBLEM_URL = 30;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -53,6 +57,7 @@ class Patch
         self::SECTION_DESCRIPTION => 'SECTION_DESCRIPTION',
         self::VIDEO_IMAGE_URL => 'VIDEO_IMAGE_URL',
         self::VIDEO_VIDEO_URL => 'VIDEO_VIDEO_URL',
+        self::PROBLEM_URL => 'PROBLEM_URL',
     ];
 
     public static function name($value)
