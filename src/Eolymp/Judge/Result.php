@@ -18,6 +18,10 @@ class Result extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
+     * Generated from protobuf field <code>string member_id = 7;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>string contest_id = 2;</code>
      */
     protected $contest_id = '';
@@ -49,6 +53,7 @@ class Result extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $participant_id
+     *     @type string $member_id
      *     @type string $contest_id
      *     @type string $name
      *     @type bool $out_of_competition
@@ -80,6 +85,28 @@ class Result extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->participant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 7;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
