@@ -20,10 +20,6 @@ class Announcement extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     */
-    protected $ern = '';
-    /**
      * Contest where announcement was published.
      *
      * Generated from protobuf field <code>string contest_id = 2;</code>
@@ -56,7 +52,6 @@ class Announcement extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Announcement unique identifier.
-     *     @type string $ern
      *     @type string $contest_id
      *           Contest where announcement was published.
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -94,28 +89,6 @@ class Announcement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @return string
-     */
-    public function getErn()
-    {
-        return $this->ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ern = $var;
 
         return $this;
     }

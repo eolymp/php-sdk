@@ -37,6 +37,10 @@ class Scoring extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
      */
     protected $allow_upsolving = false;
+    /**
+     * Generated from protobuf field <code>bool use_name_in_scoreboard = 6;</code>
+     */
+    protected $use_name_in_scoreboard = false;
 
     /**
      * Constructor.
@@ -51,6 +55,7 @@ class Scoring extends \Google\Protobuf\Internal\Message
      *     @type int $unfreeze_delay
      *           a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
      *     @type bool $allow_upsolving
+     *     @type bool $use_name_in_scoreboard
      * }
      */
     public function __construct($data = NULL) {
@@ -172,6 +177,28 @@ class Scoring extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->allow_upsolving = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool use_name_in_scoreboard = 6;</code>
+     * @return bool
+     */
+    public function getUseNameInScoreboard()
+    {
+        return $this->use_name_in_scoreboard;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool use_name_in_scoreboard = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUseNameInScoreboard($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->use_name_in_scoreboard = $var;
 
         return $this;
     }
