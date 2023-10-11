@@ -82,6 +82,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $participation_mode = 0;
     /**
+     * Participants can continue participating unofficially after contest is over.
+     *
+     * Generated from protobuf field <code>bool endless = 33;</code>
+     */
+    protected $endless = false;
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -131,6 +137,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest visibility defines who can participate and where contest is listed.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
+     *     @type bool $endless
+     *           Participants can continue participating unofficially after contest is over.
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $domain
@@ -430,6 +438,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_ParticipationMode::class);
         $this->participation_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Participants can continue participating unofficially after contest is over.
+     *
+     * Generated from protobuf field <code>bool endless = 33;</code>
+     * @return bool
+     */
+    public function getEndless()
+    {
+        return $this->endless;
+    }
+
+    /**
+     * Participants can continue participating unofficially after contest is over.
+     *
+     * Generated from protobuf field <code>bool endless = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEndless($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->endless = $var;
 
         return $this;
     }

@@ -24,15 +24,15 @@ class Patch
      */
     const BONUS_TIME = 3;
     /**
-     * Generated from protobuf enum <code>OUT_OF_COMPETITION = 4;</code>
+     * Generated from protobuf enum <code>UNOFFICIAL = 4;</code>
      */
-    const OUT_OF_COMPETITION = 4;
+    const UNOFFICIAL = 4;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::NAME => 'NAME',
         self::BONUS_TIME => 'BONUS_TIME',
-        self::OUT_OF_COMPETITION => 'OUT_OF_COMPETITION',
+        self::UNOFFICIAL => 'UNOFFICIAL',
     ];
 
     public static function name($value)

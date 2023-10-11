@@ -42,12 +42,6 @@ class Status
      */
     const INACTIVE = 4;
     /**
-     * participant added to the contest but needs to fill registration form
-     *
-     * Generated from protobuf enum <code>UNREGISTERED = 5;</code>
-     */
-    const UNREGISTERED = 5;
-    /**
      * participant assigned to a ghost member
      *
      * Generated from protobuf enum <code>GHOST = 6;</code>
@@ -60,7 +54,6 @@ class Status
         self::ACTIVE => 'ACTIVE',
         self::COMPLETE => 'COMPLETE',
         self::INACTIVE => 'INACTIVE',
-        self::UNREGISTERED => 'UNREGISTERED',
         self::GHOST => 'GHOST',
     ];
 

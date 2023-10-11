@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateContestInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateContestInput.Patch patch = 3;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
@@ -28,6 +34,8 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *           specify list of fields to update, if empty all fields are updated
      *     @type string $contest_id
      *     @type \Eolymp\Judge\Contest $contest
      * }
@@ -35,6 +43,32 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Judge::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateContestInput.Patch patch = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateContestInput.Patch patch = 3;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateContestInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
