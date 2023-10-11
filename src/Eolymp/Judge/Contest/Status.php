@@ -14,9 +14,9 @@ class Status
     /**
      * reserved, should not be used
      *
-     * Generated from protobuf enum <code>NO_STATUS = 0;</code>
+     * Generated from protobuf enum <code>STATUS_UNKNOWN = 0;</code>
      */
-    const NO_STATUS = 0;
+    const STATUS_UNKNOWN = 0;
     /**
      * contest hasn't started yet
      *
@@ -49,7 +49,7 @@ class Status
     const FROZEN = 5;
 
     private static $valueToName = [
-        self::NO_STATUS => 'NO_STATUS',
+        self::STATUS_UNKNOWN => 'STATUS_UNKNOWN',
         self::SCHEDULED => 'SCHEDULED',
         self::OPEN => 'OPEN',
         self::COMPLETE => 'COMPLETE',

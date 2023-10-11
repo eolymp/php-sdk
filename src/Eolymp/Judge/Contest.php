@@ -76,17 +76,23 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * When participants join contests by themselves they participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 35;</code>
+     */
+    protected $join_unofficially = false;
+    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
      */
     protected $participation_mode = 0;
     /**
-     * Participants can continue participating unofficially after contest is over.
+     * Upsolve mode defines if users can solve problems after contest.
      *
-     * Generated from protobuf field <code>bool endless = 33;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.UpsolveMode upsolve_mode = 34;</code>
      */
-    protected $endless = false;
+    protected $upsolve_mode = 0;
     /**
      * Format defines competition style IOI or ICPC.
      *
@@ -135,10 +141,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest status (see statuses above)
      *     @type int $visibility
      *           Contest visibility defines who can participate and where contest is listed.
+     *     @type bool $join_unofficially
+     *           When participants join contests by themselves they participate unofficially.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
-     *     @type bool $endless
-     *           Participants can continue participating unofficially after contest is over.
+     *     @type int $upsolve_mode
+     *           Upsolve mode defines if users can solve problems after contest.
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $domain
@@ -417,6 +425,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When participants join contests by themselves they participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 35;</code>
+     * @return bool
+     */
+    public function getJoinUnofficially()
+    {
+        return $this->join_unofficially;
+    }
+
+    /**
+     * When participants join contests by themselves they participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 35;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setJoinUnofficially($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->join_unofficially = $var;
+
+        return $this;
+    }
+
+    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -443,27 +477,27 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Participants can continue participating unofficially after contest is over.
+     * Upsolve mode defines if users can solve problems after contest.
      *
-     * Generated from protobuf field <code>bool endless = 33;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.judge.Contest.UpsolveMode upsolve_mode = 34;</code>
+     * @return int
      */
-    public function getEndless()
+    public function getUpsolveMode()
     {
-        return $this->endless;
+        return $this->upsolve_mode;
     }
 
     /**
-     * Participants can continue participating unofficially after contest is over.
+     * Upsolve mode defines if users can solve problems after contest.
      *
-     * Generated from protobuf field <code>bool endless = 33;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.UpsolveMode upsolve_mode = 34;</code>
+     * @param int $var
      * @return $this
      */
-    public function setEndless($var)
+    public function setUpsolveMode($var)
     {
-        GPBUtil::checkBool($var);
-        $this->endless = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_UpsolveMode::class);
+        $this->upsolve_mode = $var;
 
         return $this;
     }

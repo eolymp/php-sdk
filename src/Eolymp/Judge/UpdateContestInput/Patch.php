@@ -36,21 +36,25 @@ class Patch
      */
     const VISIBILITY = 6;
     /**
-     * Generated from protobuf enum <code>PARTICIPATION_MODE = 7;</code>
+     * Generated from protobuf enum <code>JOIN_UNOFFICIALLY = 7;</code>
      */
-    const PARTICIPATION_MODE = 7;
+    const JOIN_UNOFFICIALLY = 7;
     /**
-     * Generated from protobuf enum <code>ENDLESS = 8;</code>
+     * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
      */
-    const ENDLESS = 8;
+    const PARTICIPATION_MODE = 8;
     /**
-     * Generated from protobuf enum <code>FORMAT = 9;</code>
+     * Generated from protobuf enum <code>UPSOLVE_MODE = 9;</code>
      */
-    const FORMAT = 9;
+    const UPSOLVE_MODE = 9;
     /**
-     * Generated from protobuf enum <code>DOMAIN = 10;</code>
+     * Generated from protobuf enum <code>FORMAT = 10;</code>
      */
-    const DOMAIN = 10;
+    const FORMAT = 10;
+    /**
+     * Generated from protobuf enum <code>DOMAIN = 11;</code>
+     */
+    const DOMAIN = 11;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -59,8 +63,9 @@ class Patch
         self::ENDS_AT => 'ENDS_AT',
         self::DURATION => 'DURATION',
         self::VISIBILITY => 'VISIBILITY',
+        self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
-        self::ENDLESS => 'ENDLESS',
+        self::UPSOLVE_MODE => 'UPSOLVE_MODE',
         self::FORMAT => 'FORMAT',
         self::DOMAIN => 'DOMAIN',
     ];

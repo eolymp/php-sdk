@@ -14,9 +14,9 @@ class Format
     /**
      * reserved, should not be used
      *
-     * Generated from protobuf enum <code>NO_FORMAT = 0;</code>
+     * Generated from protobuf enum <code>FORMAT_UNKNOWN = 0;</code>
      */
-    const NO_FORMAT = 0;
+    const FORMAT_UNKNOWN = 0;
     /**
      * Generated from protobuf enum <code>IOI = 1;</code>
      */
@@ -27,7 +27,7 @@ class Format
     const ICPC = 2;
 
     private static $valueToName = [
-        self::NO_FORMAT => 'NO_FORMAT',
+        self::FORMAT_UNKNOWN => 'FORMAT_UNKNOWN',
         self::IOI => 'IOI',
         self::ICPC => 'ICPC',
     ];

@@ -14,9 +14,9 @@ class Visibility
     /**
      * reserved, should not be used
      *
-     * Generated from protobuf enum <code>NO_VISIBILITY = 0;</code>
+     * Generated from protobuf enum <code>VISIBILITY_UNKNOWN = 0;</code>
      */
-    const NO_VISIBILITY = 0;
+    const VISIBILITY_UNKNOWN = 0;
     /**
      * visible to everyone and shown on the website
      *
@@ -37,7 +37,7 @@ class Visibility
     const PBPRIVATE = 3;
 
     private static $valueToName = [
-        self::NO_VISIBILITY => 'NO_VISIBILITY',
+        self::VISIBILITY_UNKNOWN => 'VISIBILITY_UNKNOWN',
         self::PBPUBLIC => 'PBPUBLIC',
         self::UNLISTED => 'UNLISTED',
         self::PBPRIVATE => 'PBPRIVATE',
