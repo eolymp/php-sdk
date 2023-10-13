@@ -36,6 +36,10 @@ class Patch
      */
     const VISIBILITY = 6;
     /**
+     * Generated from protobuf enum <code>JOIN_UNOFFICIALLY = 7;</code>
+     */
+    const JOIN_UNOFFICIALLY = 7;
+    /**
      * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
      */
     const PARTICIPATION_MODE = 8;
@@ -75,6 +79,7 @@ class Patch
         self::ENDS_AT => 'ENDS_AT',
         self::DURATION => 'DURATION',
         self::VISIBILITY => 'VISIBILITY',
+        self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
         self::FORMAT => 'FORMAT',
         self::DOMAIN => 'DOMAIN',
