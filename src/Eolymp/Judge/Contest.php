@@ -76,6 +76,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * When participants join contests by themselves they will participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
+     */
+    protected $join_unofficially = false;
+    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -106,13 +112,13 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $appearance = null;
     /**
-     * Participation configuration
+     * Upsolve configuration
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Participation participation = 102;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Upsolve upsolve = 102;</code>
      */
-    protected $participation = null;
+    protected $upsolve = null;
     /**
-     * Participation configuration
+     * Scoring configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
      */
@@ -159,6 +165,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest status (see statuses above)
      *     @type int $visibility
      *           Contest visibility defines who can participate and where contest is listed.
+     *     @type bool $join_unofficially
+     *           When participants join contests by themselves they will participate unofficially.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
      *     @type int $format
@@ -169,10 +177,10 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Deprecated, space where contest was created, should be avoided.
      *     @type \Eolymp\Judge\Contest\Appearance $appearance
      *           Appearance configuration
-     *     @type \Eolymp\Judge\Contest\Participation $participation
-     *           Participation configuration
+     *     @type \Eolymp\Judge\Contest\Upsolve $upsolve
+     *           Upsolve configuration
      *     @type \Eolymp\Judge\Contest\Scoring $scoring
-     *           Participation configuration
+     *           Scoring configuration
      *     @type \Eolymp\Judge\Contest\Taxonomy $taxonomy
      *           Taxonomy information
      *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
@@ -449,6 +457,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When participants join contests by themselves they will participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
+     * @return bool
+     */
+    public function getJoinUnofficially()
+    {
+        return $this->join_unofficially;
+    }
+
+    /**
+     * When participants join contests by themselves they will participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setJoinUnofficially($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->join_unofficially = $var;
+
+        return $this;
+    }
+
+    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -579,33 +613,33 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Participation configuration
+     * Upsolve configuration
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Participation participation = 102;</code>
-     * @return \Eolymp\Judge\Contest\Participation
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Upsolve upsolve = 102;</code>
+     * @return \Eolymp\Judge\Contest\Upsolve
      */
-    public function getParticipation()
+    public function getUpsolve()
     {
-        return $this->participation;
+        return $this->upsolve;
     }
 
     /**
-     * Participation configuration
+     * Upsolve configuration
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Participation participation = 102;</code>
-     * @param \Eolymp\Judge\Contest\Participation $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Upsolve upsolve = 102;</code>
+     * @param \Eolymp\Judge\Contest\Upsolve $var
      * @return $this
      */
-    public function setParticipation($var)
+    public function setUpsolve($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Participation::class);
-        $this->participation = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Upsolve::class);
+        $this->upsolve = $var;
 
         return $this;
     }
 
     /**
-     * Participation configuration
+     * Scoring configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
      * @return \Eolymp\Judge\Contest\Scoring
@@ -616,7 +650,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Participation configuration
+     * Scoring configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
      * @param \Eolymp\Judge\Contest\Scoring $var

@@ -9,16 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.Contest.Participation</code>
+ * Generated from protobuf message <code>eolymp.judge.Contest.Upsolve</code>
  */
-class Participation extends \Google\Protobuf\Internal\Message
+class Upsolve extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * When participants join contests by themselves they participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 2;</code>
-     */
-    protected $join_unofficially = false;
     /**
      * Allow participants to solve problem after completing contest
      *
@@ -38,8 +32,6 @@ class Participation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $join_unofficially
-     *           When participants join contests by themselves they participate unofficially.
      *     @type bool $free_upsolve
      *           Allow participants to solve problem after completing contest
      *     @type bool $virtual_upsolve
@@ -49,32 +41,6 @@ class Participation extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Contest::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * When participants join contests by themselves they participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 2;</code>
-     * @return bool
-     */
-    public function getJoinUnofficially()
-    {
-        return $this->join_unofficially;
-    }
-
-    /**
-     * When participants join contests by themselves they participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setJoinUnofficially($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->join_unofficially = $var;
-
-        return $this;
     }
 
     /**
@@ -132,5 +98,5 @@ class Participation extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Participation::class, \Eolymp\Judge\Contest_Participation::class);
+class_alias(Upsolve::class, \Eolymp\Judge\Contest_Upsolve::class);
 

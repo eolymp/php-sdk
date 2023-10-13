@@ -52,9 +52,9 @@ class Patch
      */
     const APPEARANCE = 110;
     /**
-     * Generated from protobuf enum <code>PARTICIPATION = 120;</code>
+     * Generated from protobuf enum <code>UPSOLVE = 120;</code>
      */
-    const PARTICIPATION = 120;
+    const UPSOLVE = 120;
     /**
      * Generated from protobuf enum <code>SCORING = 130;</code>
      */
@@ -79,7 +79,7 @@ class Patch
         self::FORMAT => 'FORMAT',
         self::DOMAIN => 'DOMAIN',
         self::APPEARANCE => 'APPEARANCE',
-        self::PARTICIPATION => 'PARTICIPATION',
+        self::UPSOLVE => 'UPSOLVE',
         self::SCORING => 'SCORING',
         self::TAXONOMY => 'TAXONOMY',
         self::SCOREBOARD => 'SCOREBOARD',
