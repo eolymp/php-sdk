@@ -22,6 +22,10 @@ class Appearance extends \Google\Protobuf\Internal\Message
      */
     protected $tagline = '';
     /**
+     * Generated from protobuf field <code>string description = 6;</code>
+     */
+    protected $description = '';
+    /**
      * Generated from protobuf field <code>string logo_image = 3;</code>
      */
     protected $logo_image = '';
@@ -42,6 +46,7 @@ class Appearance extends \Google\Protobuf\Internal\Message
      *
      *     @type string $title
      *     @type string $tagline
+     *     @type string $description
      *     @type string $logo_image
      *     @type string $primary_color
      *     @type string $secondary_color
@@ -92,6 +97,28 @@ class Appearance extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tagline = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }

@@ -76,23 +76,11 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * When participants join contests by themselves they participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 35;</code>
-     */
-    protected $join_unofficially = false;
-    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
      */
     protected $participation_mode = 0;
-    /**
-     * Upsolve mode defines if users can solve problems after contest.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.UpsolveMode upsolve_mode = 34;</code>
-     */
-    protected $upsolve_mode = 0;
     /**
      * Format defines competition style IOI or ICPC.
      *
@@ -111,6 +99,36 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string space_id = 1000;</code>
      */
     protected $space_id = '';
+    /**
+     * Appearance configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 101;</code>
+     */
+    protected $appearance = null;
+    /**
+     * Participation configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Participation participation = 102;</code>
+     */
+    protected $participation = null;
+    /**
+     * Participation configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
+     */
+    protected $scoring = null;
+    /**
+     * Taxonomy information
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
+     */
+    protected $taxonomy = null;
+    /**
+     * Scoreboard configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
+     */
+    protected $scoreboard = null;
 
     /**
      * Constructor.
@@ -141,18 +159,24 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest status (see statuses above)
      *     @type int $visibility
      *           Contest visibility defines who can participate and where contest is listed.
-     *     @type bool $join_unofficially
-     *           When participants join contests by themselves they participate unofficially.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
-     *     @type int $upsolve_mode
-     *           Upsolve mode defines if users can solve problems after contest.
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $domain
      *           Domain for contest, used to lookup for contest by domain name.
      *     @type string $space_id
      *           Deprecated, space where contest was created, should be avoided.
+     *     @type \Eolymp\Judge\Contest\Appearance $appearance
+     *           Appearance configuration
+     *     @type \Eolymp\Judge\Contest\Participation $participation
+     *           Participation configuration
+     *     @type \Eolymp\Judge\Contest\Scoring $scoring
+     *           Participation configuration
+     *     @type \Eolymp\Judge\Contest\Taxonomy $taxonomy
+     *           Taxonomy information
+     *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
+     *           Scoreboard configuration
      * }
      */
     public function __construct($data = NULL) {
@@ -425,32 +449,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When participants join contests by themselves they participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 35;</code>
-     * @return bool
-     */
-    public function getJoinUnofficially()
-    {
-        return $this->join_unofficially;
-    }
-
-    /**
-     * When participants join contests by themselves they participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 35;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setJoinUnofficially($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->join_unofficially = $var;
-
-        return $this;
-    }
-
-    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -472,32 +470,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_ParticipationMode::class);
         $this->participation_mode = $var;
-
-        return $this;
-    }
-
-    /**
-     * Upsolve mode defines if users can solve problems after contest.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.UpsolveMode upsolve_mode = 34;</code>
-     * @return int
-     */
-    public function getUpsolveMode()
-    {
-        return $this->upsolve_mode;
-    }
-
-    /**
-     * Upsolve mode defines if users can solve problems after contest.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.UpsolveMode upsolve_mode = 34;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUpsolveMode($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_UpsolveMode::class);
-        $this->upsolve_mode = $var;
 
         return $this;
     }
@@ -576,6 +548,136 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->space_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Appearance configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 101;</code>
+     * @return \Eolymp\Judge\Contest\Appearance
+     */
+    public function getAppearance()
+    {
+        return $this->appearance;
+    }
+
+    /**
+     * Appearance configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 101;</code>
+     * @param \Eolymp\Judge\Contest\Appearance $var
+     * @return $this
+     */
+    public function setAppearance($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Appearance::class);
+        $this->appearance = $var;
+
+        return $this;
+    }
+
+    /**
+     * Participation configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Participation participation = 102;</code>
+     * @return \Eolymp\Judge\Contest\Participation
+     */
+    public function getParticipation()
+    {
+        return $this->participation;
+    }
+
+    /**
+     * Participation configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Participation participation = 102;</code>
+     * @param \Eolymp\Judge\Contest\Participation $var
+     * @return $this
+     */
+    public function setParticipation($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Participation::class);
+        $this->participation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Participation configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
+     * @return \Eolymp\Judge\Contest\Scoring
+     */
+    public function getScoring()
+    {
+        return $this->scoring;
+    }
+
+    /**
+     * Participation configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
+     * @param \Eolymp\Judge\Contest\Scoring $var
+     * @return $this
+     */
+    public function setScoring($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Scoring::class);
+        $this->scoring = $var;
+
+        return $this;
+    }
+
+    /**
+     * Taxonomy information
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
+     * @return \Eolymp\Judge\Contest\Taxonomy
+     */
+    public function getTaxonomy()
+    {
+        return $this->taxonomy;
+    }
+
+    /**
+     * Taxonomy information
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
+     * @param \Eolymp\Judge\Contest\Taxonomy $var
+     * @return $this
+     */
+    public function setTaxonomy($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Taxonomy::class);
+        $this->taxonomy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Scoreboard configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
+     * @return \Eolymp\Judge\Contest\Scoreboard
+     */
+    public function getScoreboard()
+    {
+        return $this->scoreboard;
+    }
+
+    /**
+     * Scoreboard configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
+     * @param \Eolymp\Judge\Contest\Scoreboard $var
+     * @return $this
+     */
+    public function setScoreboard($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Scoreboard::class);
+        $this->scoreboard = $var;
 
         return $this;
     }

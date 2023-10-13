@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Scoring extends \Google\Protobuf\Internal\Message
 {
     /**
+     * deprecated: use scoreboard.visibility
+     *
      * Generated from protobuf field <code>bool show_scoreboard = 1;</code>
      */
     protected $show_scoreboard = false;
@@ -34,6 +36,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
      */
     protected $unfreeze_delay = 0;
     /**
+     * deprecated: use participation: free_upsolve
+     *
      * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
      */
     protected $allow_upsolving = false;
@@ -49,12 +53,14 @@ class Scoring extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $show_scoreboard
+     *           deprecated: use scoreboard.visibility
      *     @type int $attempt_penalty
      *     @type int $freezing_time
      *           time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
      *     @type int $unfreeze_delay
      *           a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
      *     @type bool $allow_upsolving
+     *           deprecated: use participation: free_upsolve
      *     @type bool $use_name_in_scoreboard
      * }
      */
@@ -64,6 +70,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use scoreboard.visibility
+     *
      * Generated from protobuf field <code>bool show_scoreboard = 1;</code>
      * @return bool
      */
@@ -73,6 +81,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use scoreboard.visibility
+     *
      * Generated from protobuf field <code>bool show_scoreboard = 1;</code>
      * @param bool $var
      * @return $this
@@ -160,6 +170,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use participation: free_upsolve
+     *
      * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
      * @return bool
      */
@@ -169,6 +181,8 @@ class Scoring extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use participation: free_upsolve
+     *
      * Generated from protobuf field <code>bool allow_upsolving = 4;</code>
      * @param bool $var
      * @return $this

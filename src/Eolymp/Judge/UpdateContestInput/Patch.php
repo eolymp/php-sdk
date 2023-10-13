@@ -36,17 +36,9 @@ class Patch
      */
     const VISIBILITY = 6;
     /**
-     * Generated from protobuf enum <code>JOIN_UNOFFICIALLY = 7;</code>
-     */
-    const JOIN_UNOFFICIALLY = 7;
-    /**
      * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
      */
     const PARTICIPATION_MODE = 8;
-    /**
-     * Generated from protobuf enum <code>UPSOLVE_MODE = 9;</code>
-     */
-    const UPSOLVE_MODE = 9;
     /**
      * Generated from protobuf enum <code>FORMAT = 10;</code>
      */
@@ -55,6 +47,26 @@ class Patch
      * Generated from protobuf enum <code>DOMAIN = 11;</code>
      */
     const DOMAIN = 11;
+    /**
+     * Generated from protobuf enum <code>APPEARANCE = 110;</code>
+     */
+    const APPEARANCE = 110;
+    /**
+     * Generated from protobuf enum <code>PARTICIPATION = 120;</code>
+     */
+    const PARTICIPATION = 120;
+    /**
+     * Generated from protobuf enum <code>SCORING = 130;</code>
+     */
+    const SCORING = 130;
+    /**
+     * Generated from protobuf enum <code>TAXONOMY = 140;</code>
+     */
+    const TAXONOMY = 140;
+    /**
+     * Generated from protobuf enum <code>SCOREBOARD = 150;</code>
+     */
+    const SCOREBOARD = 150;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -63,11 +75,14 @@ class Patch
         self::ENDS_AT => 'ENDS_AT',
         self::DURATION => 'DURATION',
         self::VISIBILITY => 'VISIBILITY',
-        self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
-        self::UPSOLVE_MODE => 'UPSOLVE_MODE',
         self::FORMAT => 'FORMAT',
         self::DOMAIN => 'DOMAIN',
+        self::APPEARANCE => 'APPEARANCE',
+        self::PARTICIPATION => 'PARTICIPATION',
+        self::SCORING => 'SCORING',
+        self::TAXONOMY => 'TAXONOMY',
+        self::SCOREBOARD => 'SCOREBOARD',
     ];
 
     public static function name($value)
