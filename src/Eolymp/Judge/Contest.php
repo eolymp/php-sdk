@@ -106,29 +106,29 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $space_id = '';
     /**
+     * Taxonomy information
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
+     */
+    protected $taxonomy = null;
+    /**
      * Appearance configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 101;</code>
      */
     protected $appearance = null;
     /**
+     * Environment configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Environment environment = 103;</code>
+     */
+    protected $environment = null;
+    /**
      * Upsolve configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Upsolve upsolve = 102;</code>
      */
     protected $upsolve = null;
-    /**
-     * Scoring configuration
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
-     */
-    protected $scoring = null;
-    /**
-     * Taxonomy information
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
-     */
-    protected $taxonomy = null;
     /**
      * Scoreboard configuration
      *
@@ -175,14 +175,14 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Domain for contest, used to lookup for contest by domain name.
      *     @type string $space_id
      *           Deprecated, space where contest was created, should be avoided.
-     *     @type \Eolymp\Judge\Contest\Appearance $appearance
-     *           Appearance configuration
-     *     @type \Eolymp\Judge\Contest\Upsolve $upsolve
-     *           Upsolve configuration
-     *     @type \Eolymp\Judge\Contest\Scoring $scoring
-     *           Scoring configuration
      *     @type \Eolymp\Judge\Contest\Taxonomy $taxonomy
      *           Taxonomy information
+     *     @type \Eolymp\Judge\Contest\Appearance $appearance
+     *           Appearance configuration
+     *     @type \Eolymp\Judge\Contest\Environment $environment
+     *           Environment configuration
+     *     @type \Eolymp\Judge\Contest\Upsolve $upsolve
+     *           Upsolve configuration
      *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
      *           Scoreboard configuration
      * }
@@ -587,6 +587,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Taxonomy information
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
+     * @return \Eolymp\Judge\Contest\Taxonomy
+     */
+    public function getTaxonomy()
+    {
+        return $this->taxonomy;
+    }
+
+    /**
+     * Taxonomy information
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
+     * @param \Eolymp\Judge\Contest\Taxonomy $var
+     * @return $this
+     */
+    public function setTaxonomy($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Taxonomy::class);
+        $this->taxonomy = $var;
+
+        return $this;
+    }
+
+    /**
      * Appearance configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 101;</code>
@@ -613,6 +639,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Environment configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Environment environment = 103;</code>
+     * @return \Eolymp\Judge\Contest\Environment
+     */
+    public function getEnvironment()
+    {
+        return $this->environment;
+    }
+
+    /**
+     * Environment configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Environment environment = 103;</code>
+     * @param \Eolymp\Judge\Contest\Environment $var
+     * @return $this
+     */
+    public function setEnvironment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Environment::class);
+        $this->environment = $var;
+
+        return $this;
+    }
+
+    /**
      * Upsolve configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Upsolve upsolve = 102;</code>
@@ -634,58 +686,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Upsolve::class);
         $this->upsolve = $var;
-
-        return $this;
-    }
-
-    /**
-     * Scoring configuration
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
-     * @return \Eolymp\Judge\Contest\Scoring
-     */
-    public function getScoring()
-    {
-        return $this->scoring;
-    }
-
-    /**
-     * Scoring configuration
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoring scoring = 103;</code>
-     * @param \Eolymp\Judge\Contest\Scoring $var
-     * @return $this
-     */
-    public function setScoring($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Scoring::class);
-        $this->scoring = $var;
-
-        return $this;
-    }
-
-    /**
-     * Taxonomy information
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
-     * @return \Eolymp\Judge\Contest\Taxonomy
-     */
-    public function getTaxonomy()
-    {
-        return $this->taxonomy;
-    }
-
-    /**
-     * Taxonomy information
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
-     * @param \Eolymp\Judge\Contest\Taxonomy $var
-     * @return $this
-     */
-    public function setTaxonomy($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Taxonomy::class);
-        $this->taxonomy = $var;
 
         return $this;
     }

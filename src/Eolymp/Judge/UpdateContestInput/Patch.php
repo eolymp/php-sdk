@@ -52,21 +52,21 @@ class Patch
      */
     const DOMAIN = 11;
     /**
+     * Generated from protobuf enum <code>TAXONOMY = 140;</code>
+     */
+    const TAXONOMY = 140;
+    /**
      * Generated from protobuf enum <code>APPEARANCE = 110;</code>
      */
     const APPEARANCE = 110;
     /**
+     * Generated from protobuf enum <code>ENVIRONMENT = 130;</code>
+     */
+    const ENVIRONMENT = 130;
+    /**
      * Generated from protobuf enum <code>UPSOLVE = 120;</code>
      */
     const UPSOLVE = 120;
-    /**
-     * Generated from protobuf enum <code>SCORING = 130;</code>
-     */
-    const SCORING = 130;
-    /**
-     * Generated from protobuf enum <code>TAXONOMY = 140;</code>
-     */
-    const TAXONOMY = 140;
     /**
      * Generated from protobuf enum <code>SCOREBOARD = 150;</code>
      */
@@ -83,10 +83,10 @@ class Patch
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
         self::FORMAT => 'FORMAT',
         self::DOMAIN => 'DOMAIN',
-        self::APPEARANCE => 'APPEARANCE',
-        self::UPSOLVE => 'UPSOLVE',
-        self::SCORING => 'SCORING',
         self::TAXONOMY => 'TAXONOMY',
+        self::APPEARANCE => 'APPEARANCE',
+        self::ENVIRONMENT => 'ENVIRONMENT',
+        self::UPSOLVE => 'UPSOLVE',
         self::SCOREBOARD => 'SCOREBOARD',
     ];
 

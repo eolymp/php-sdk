@@ -17,6 +17,26 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard.Visibility visibility = 1;</code>
      */
     protected $visibility = 0;
+    /**
+     * time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *
+     * Generated from protobuf field <code>uint32 freezing_time = 2;</code>
+     */
+    protected $freezing_time = 0;
+    /**
+     * a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *
+     * Generated from protobuf field <code>int32 unfreeze_delay = 3;</code>
+     */
+    protected $unfreeze_delay = 0;
+    /**
+     * Generated from protobuf field <code>uint32 attempt_penalty = 4;</code>
+     */
+    protected $attempt_penalty = 0;
+    /**
+     * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
+     */
+    protected $use_name_in_scoreboard = false;
 
     /**
      * Constructor.
@@ -25,6 +45,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $visibility
+     *     @type int $freezing_time
+     *           time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *     @type int $unfreeze_delay
+     *           a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *     @type int $attempt_penalty
+     *     @type bool $use_name_in_scoreboard
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +76,102 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Scoreboard_Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *
+     * Generated from protobuf field <code>uint32 freezing_time = 2;</code>
+     * @return int
+     */
+    public function getFreezingTime()
+    {
+        return $this->freezing_time;
+    }
+
+    /**
+     * time in seconds before end of the contest when results will be frozen (eg. 3600 means one hour before the end)
+     *
+     * Generated from protobuf field <code>uint32 freezing_time = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFreezingTime($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->freezing_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *
+     * Generated from protobuf field <code>int32 unfreeze_delay = 3;</code>
+     * @return int
+     */
+    public function getUnfreezeDelay()
+    {
+        return $this->unfreeze_delay;
+    }
+
+    /**
+     * a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
+     *
+     * Generated from protobuf field <code>int32 unfreeze_delay = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUnfreezeDelay($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->unfreeze_delay = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 attempt_penalty = 4;</code>
+     * @return int
+     */
+    public function getAttemptPenalty()
+    {
+        return $this->attempt_penalty;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 attempt_penalty = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAttemptPenalty($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->attempt_penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
+     * @return bool
+     */
+    public function getUseNameInScoreboard()
+    {
+        return $this->use_name_in_scoreboard;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUseNameInScoreboard($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->use_name_in_scoreboard = $var;
 
         return $this;
     }
