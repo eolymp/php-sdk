@@ -18,13 +18,19 @@ class Status
      */
     const NONE = 0;
     /**
-     * participant added to the contest and can start
+     * participant can not start yet
+     *
+     * Generated from protobuf enum <code>WAITING = 5;</code>
+     */
+    const WAITING = 5;
+    /**
+     * participant is ready to start (via StartContest method)
      *
      * Generated from protobuf enum <code>READY = 1;</code>
      */
     const READY = 1;
     /**
-     * participant has started participating in the contest
+     * participant is participating in the contest
      *
      * Generated from protobuf enum <code>ACTIVE = 2;</code>
      */
@@ -36,25 +42,26 @@ class Status
      */
     const COMPLETE = 3;
     /**
-     * participant has been "disabled", profile does not show up in results and user can not participate
+     * participant has completed contest but can continue solve problems in upsolve mode
      *
-     * Generated from protobuf enum <code>INACTIVE = 4;</code>
+     * Generated from protobuf enum <code>UPSOLVE = 7;</code>
      */
-    const INACTIVE = 4;
+    const UPSOLVE = 7;
     /**
-     * participant assigned to a ghost member
+     * participant can not participate (participant is blocked or contest is suspended)
      *
-     * Generated from protobuf enum <code>GHOST = 6;</code>
+     * Generated from protobuf enum <code>BLOCKED = 8;</code>
      */
-    const GHOST = 6;
+    const BLOCKED = 8;
 
     private static $valueToName = [
         self::NONE => 'NONE',
+        self::WAITING => 'WAITING',
         self::READY => 'READY',
         self::ACTIVE => 'ACTIVE',
         self::COMPLETE => 'COMPLETE',
-        self::INACTIVE => 'INACTIVE',
-        self::GHOST => 'GHOST',
+        self::UPSOLVE => 'UPSOLVE',
+        self::BLOCKED => 'BLOCKED',
     ];
 
     public static function name($value)

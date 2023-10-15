@@ -32,7 +32,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
-     * name
+     * display name
      *
      * Generated from protobuf field <code>string name = 5;</code>
      */
@@ -43,6 +43,18 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool unofficial = 6;</code>
      */
     protected $unofficial = false;
+    /**
+     * participant has been disabled
+     *
+     * Generated from protobuf field <code>bool inactive = 7;</code>
+     */
+    protected $inactive = false;
+    /**
+     * participant is a ghost
+     *
+     * Generated from protobuf field <code>bool ghost = 8;</code>
+     */
+    protected $ghost = false;
     /**
      * status (see explanation to enumeration values)
      *
@@ -62,31 +74,19 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $started_in = 0;
     /**
-     * time when user has finished (will finish) participating (excl. bonus time)
+     * time when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
      */
     protected $end_at = null;
     /**
-     * time in seconds when user has finished (will finish) participating (excl. bonus time)
+     * time in seconds when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>uint32 end_in = 24;</code>
+     * Generated from protobuf field <code>uint32 end_in = 26;</code>
      */
     protected $end_in = 0;
     /**
-     * time when user has finished (will finish) participating (incl. bonus time)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 25;</code>
-     */
-    protected $complete_at = null;
-    /**
-     * time in seconds when user has finished (will finish) participating  (incl. bonus time)
-     *
-     * Generated from protobuf field <code>uint32 complete_in = 26;</code>
-     */
-    protected $complete_in = 0;
-    /**
-     * additional time in seconds for participation (included in complete_at and complete_in)
+     * additional time in seconds for participation
      *
      * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
      */
@@ -119,9 +119,13 @@ class Participant extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *           community member
      *     @type string $name
-     *           name
+     *           display name
      *     @type bool $unofficial
      *           if true, participant won't be assigned rank in scoreboard
+     *     @type bool $inactive
+     *           participant has been disabled
+     *     @type bool $ghost
+     *           participant is a ghost
      *     @type int $status
      *           status (see explanation to enumeration values)
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -129,15 +133,11 @@ class Participant extends \Google\Protobuf\Internal\Message
      *     @type int $started_in
      *           time in seconds when user has started participating
      *     @type \Google\Protobuf\Timestamp $end_at
-     *           time when user has finished (will finish) participating (excl. bonus time)
-     *     @type int $end_in
-     *           time in seconds when user has finished (will finish) participating (excl. bonus time)
-     *     @type \Google\Protobuf\Timestamp $complete_at
      *           time when user has finished (will finish) participating (incl. bonus time)
-     *     @type int $complete_in
-     *           time in seconds when user has finished (will finish) participating  (incl. bonus time)
+     *     @type int $end_in
+     *           time in seconds when user has finished (will finish) participating (incl. bonus time)
      *     @type int $bonus_time
-     *           additional time in seconds for participation (included in complete_at and complete_in)
+     *           additional time in seconds for participation
      *     @type string $passcode
      *           passcode is a code participant has to enter before she can begin contest
      *           this field is only populated when request is made by contest owner
@@ -230,7 +230,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * name
+     * display name
      *
      * Generated from protobuf field <code>string name = 5;</code>
      * @return string
@@ -241,7 +241,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * name
+     * display name
      *
      * Generated from protobuf field <code>string name = 5;</code>
      * @param string $var
@@ -277,6 +277,58 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * participant has been disabled
+     *
+     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * participant has been disabled
+     *
+     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * participant is a ghost
+     *
+     * Generated from protobuf field <code>bool ghost = 8;</code>
+     * @return bool
+     */
+    public function getGhost()
+    {
+        return $this->ghost;
+    }
+
+    /**
+     * participant is a ghost
+     *
+     * Generated from protobuf field <code>bool ghost = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setGhost($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ghost = $var;
 
         return $this;
     }
@@ -360,9 +412,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has finished (will finish) participating (excl. bonus time)
+     * time when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getEndAt()
@@ -371,9 +423,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has finished (will finish) participating (excl. bonus time)
+     * time when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -386,9 +438,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time in seconds when user has finished (will finish) participating (excl. bonus time)
+     * time in seconds when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>uint32 end_in = 24;</code>
+     * Generated from protobuf field <code>uint32 end_in = 26;</code>
      * @return int
      */
     public function getEndIn()
@@ -397,9 +449,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time in seconds when user has finished (will finish) participating (excl. bonus time)
+     * time in seconds when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>uint32 end_in = 24;</code>
+     * Generated from protobuf field <code>uint32 end_in = 26;</code>
      * @param int $var
      * @return $this
      */
@@ -412,59 +464,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has finished (will finish) participating (incl. bonus time)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 25;</code>
-     * @return \Google\Protobuf\Timestamp
-     */
-    public function getCompleteAt()
-    {
-        return $this->complete_at;
-    }
-
-    /**
-     * time when user has finished (will finish) participating (incl. bonus time)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 25;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCompleteAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->complete_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * time in seconds when user has finished (will finish) participating  (incl. bonus time)
-     *
-     * Generated from protobuf field <code>uint32 complete_in = 26;</code>
-     * @return int
-     */
-    public function getCompleteIn()
-    {
-        return $this->complete_in;
-    }
-
-    /**
-     * time in seconds when user has finished (will finish) participating  (incl. bonus time)
-     *
-     * Generated from protobuf field <code>uint32 complete_in = 26;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCompleteIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->complete_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * additional time in seconds for participation (included in complete_at and complete_in)
+     * additional time in seconds for participation
      *
      * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
      * @return int
@@ -475,7 +475,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * additional time in seconds for participation (included in complete_at and complete_in)
+     * additional time in seconds for participation
      *
      * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
      * @param int $var
