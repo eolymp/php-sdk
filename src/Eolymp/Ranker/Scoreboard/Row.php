@@ -48,9 +48,9 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $ghost = false;
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 41;</code>
+     * Generated from protobuf field <code>bool unofficial = 41;</code>
      */
-    protected $out_of_competition = false;
+    protected $unofficial = false;
     /**
      * Rank in the scoreboard
      *
@@ -87,7 +87,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type float $penalty
      *           Total penalty.
      *     @type bool $ghost
-     *     @type bool $out_of_competition
+     *     @type bool $unofficial
      *     @type int $rank
      *           Rank in the scoreboard
      *     @type int $rank_lower
@@ -254,23 +254,23 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 41;</code>
+     * Generated from protobuf field <code>bool unofficial = 41;</code>
      * @return bool
      */
-    public function getOutOfCompetition()
+    public function getUnofficial()
     {
-        return $this->out_of_competition;
+        return $this->unofficial;
     }
 
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 41;</code>
+     * Generated from protobuf field <code>bool unofficial = 41;</code>
      * @param bool $var
      * @return $this
      */
-    public function setOutOfCompetition($var)
+    public function setUnofficial($var)
     {
         GPBUtil::checkBool($var);
-        $this->out_of_competition = $var;
+        $this->unofficial = $var;
 
         return $this;
     }

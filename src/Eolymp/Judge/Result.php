@@ -30,9 +30,9 @@ class Result extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * Generated from protobuf field <code>bool unofficial = 4;</code>
      */
-    protected $out_of_competition = false;
+    protected $unofficial = false;
     /**
      * Generated from protobuf field <code>uint32 rank = 5;</code>
      */
@@ -56,7 +56,7 @@ class Result extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type string $contest_id
      *     @type string $name
-     *     @type bool $out_of_competition
+     *     @type bool $unofficial
      *     @type int $rank
      *     @type int $rank_lower
      *     @type \Eolymp\Judge\Score $score
@@ -156,23 +156,23 @@ class Result extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * Generated from protobuf field <code>bool unofficial = 4;</code>
      * @return bool
      */
-    public function getOutOfCompetition()
+    public function getUnofficial()
     {
-        return $this->out_of_competition;
+        return $this->unofficial;
     }
 
     /**
-     * Generated from protobuf field <code>bool out_of_competition = 4;</code>
+     * Generated from protobuf field <code>bool unofficial = 4;</code>
      * @param bool $var
      * @return $this
      */
-    public function setOutOfCompetition($var)
+    public function setUnofficial($var)
     {
         GPBUtil::checkBool($var);
-        $this->out_of_competition = $var;
+        $this->unofficial = $var;
 
         return $this;
     }
