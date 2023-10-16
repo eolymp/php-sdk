@@ -44,11 +44,11 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $unofficial = false;
     /**
-     * participant has been disabled
+     * participant is active
      *
-     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * Generated from protobuf field <code>bool active = 7;</code>
      */
-    protected $inactive = false;
+    protected $active = false;
     /**
      * participant is a ghost
      *
@@ -122,8 +122,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           display name
      *     @type bool $unofficial
      *           if true, participant won't be assigned rank in scoreboard
-     *     @type bool $inactive
-     *           participant has been disabled
+     *     @type bool $active
+     *           participant is active
      *     @type bool $ghost
      *           participant is a ghost
      *     @type int $status
@@ -282,27 +282,27 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * participant has been disabled
+     * participant is active
      *
-     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * Generated from protobuf field <code>bool active = 7;</code>
      * @return bool
      */
-    public function getInactive()
+    public function getActive()
     {
-        return $this->inactive;
+        return $this->active;
     }
 
     /**
-     * participant has been disabled
+     * participant is active
      *
-     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * Generated from protobuf field <code>bool active = 7;</code>
      * @param bool $var
      * @return $this
      */
-    public function setInactive($var)
+    public function setActive($var)
     {
         GPBUtil::checkBool($var);
-        $this->inactive = $var;
+        $this->active = $var;
 
         return $this;
     }
