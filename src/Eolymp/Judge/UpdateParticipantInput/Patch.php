@@ -27,12 +27,27 @@ class Patch
      * Generated from protobuf enum <code>UNOFFICIAL = 4;</code>
      */
     const UNOFFICIAL = 4;
+    /**
+     * Generated from protobuf enum <code>MEDAL = 5;</code>
+     */
+    const MEDAL = 5;
+    /**
+     * Generated from protobuf enum <code>ACTIVE = 6;</code>
+     */
+    const ACTIVE = 6;
+    /**
+     * Generated from protobuf enum <code>PASSCODE = 7;</code>
+     */
+    const PASSCODE = 7;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::NAME => 'NAME',
         self::BONUS_TIME => 'BONUS_TIME',
         self::UNOFFICIAL => 'UNOFFICIAL',
+        self::MEDAL => 'MEDAL',
+        self::ACTIVE => 'ACTIVE',
+        self::PASSCODE => 'PASSCODE',
     ];
 
     public static function name($value)

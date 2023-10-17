@@ -34,6 +34,10 @@ class Result extends \Google\Protobuf\Internal\Message
      */
     protected $unofficial = false;
     /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 8;</code>
+     */
+    protected $medal = 0;
+    /**
      * Generated from protobuf field <code>uint32 rank = 5;</code>
      */
     protected $rank = 0;
@@ -57,6 +61,7 @@ class Result extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $name
      *     @type bool $unofficial
+     *     @type int $medal
      *     @type int $rank
      *     @type int $rank_lower
      *     @type \Eolymp\Judge\Score $score
@@ -173,6 +178,28 @@ class Result extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 8;</code>
+     * @return int
+     */
+    public function getMedal()
+    {
+        return $this->medal;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMedal($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Medal::class);
+        $this->medal = $var;
 
         return $this;
     }

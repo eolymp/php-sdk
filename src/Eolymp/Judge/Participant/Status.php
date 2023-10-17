@@ -14,9 +14,9 @@ class Status
     /**
      * reserved, should not be used
      *
-     * Generated from protobuf enum <code>NONE = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_STATUS = 0;</code>
      */
-    const NONE = 0;
+    const UNKNOWN_STATUS = 0;
     /**
      * participant can not start yet
      *
@@ -55,7 +55,7 @@ class Status
     const BLOCKED = 8;
 
     private static $valueToName = [
-        self::NONE => 'NONE',
+        self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
         self::WAITING => 'WAITING',
         self::READY => 'READY',
         self::ACTIVE => 'ACTIVE',

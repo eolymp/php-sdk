@@ -56,6 +56,10 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $ghost = false;
     /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 9;</code>
+     */
+    protected $medal = 0;
+    /**
      * status (see explanation to enumeration values)
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Status status = 20;</code>
@@ -126,6 +130,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           participant is active
      *     @type bool $ghost
      *           participant is a ghost
+     *     @type int $medal
      *     @type int $status
      *           status (see explanation to enumeration values)
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -329,6 +334,28 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->ghost = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 9;</code>
+     * @return int
+     */
+    public function getMedal()
+    {
+        return $this->medal;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 9;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMedal($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Medal::class);
+        $this->medal = $var;
 
         return $this;
     }

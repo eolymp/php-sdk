@@ -16,9 +16,9 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
      */
-    protected $patch = 0;
+    private $patch;
     /**
      * Participant identifier to update
      *
@@ -33,24 +33,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Participant participant = 4;</code>
      */
     protected $participant = null;
-    /**
-     * Deprecated, use participant.name instead
-     *
-     * Generated from protobuf field <code>string name = 10;</code>
-     */
-    protected $name = '';
-    /**
-     * Deprecated, use participant.bonus_time instead
-     *
-     * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
-     */
-    protected $bonus_time = 0;
-    /**
-     * Deprecated, use participant.unofficial instead
-     *
-     * Generated from protobuf field <code>bool out_of_competition = 11;</code>
-     */
-    protected $out_of_competition = false;
 
     /**
      * Constructor.
@@ -58,18 +40,12 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $patch
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $contest_id
      *           Participant identifier to update
      *     @type string $participant_id
      *     @type \Eolymp\Judge\Participant $participant
-     *     @type string $name
-     *           Deprecated, use participant.name instead
-     *     @type int $bonus_time
-     *           Deprecated, use participant.bonus_time instead
-     *     @type bool $out_of_competition
-     *           Deprecated, use participant.unofficial instead
      * }
      */
     public function __construct($data = NULL) {
@@ -80,8 +56,8 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
-     * @return int
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
     {
@@ -91,14 +67,14 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>.eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
-     * @param int $var
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\UpdateParticipantInput_Patch::class);
-        $this->patch = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateParticipantInput\Patch::class);
+        $this->patch = $arr;
 
         return $this;
     }
@@ -169,84 +145,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Participant::class);
         $this->participant = $var;
-
-        return $this;
-    }
-
-    /**
-     * Deprecated, use participant.name instead
-     *
-     * Generated from protobuf field <code>string name = 10;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Deprecated, use participant.name instead
-     *
-     * Generated from protobuf field <code>string name = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Deprecated, use participant.bonus_time instead
-     *
-     * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
-     * @return int
-     */
-    public function getBonusTime()
-    {
-        return $this->bonus_time;
-    }
-
-    /**
-     * Deprecated, use participant.bonus_time instead
-     *
-     * Generated from protobuf field <code>uint32 bonus_time = 12;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setBonusTime($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->bonus_time = $var;
-
-        return $this;
-    }
-
-    /**
-     * Deprecated, use participant.unofficial instead
-     *
-     * Generated from protobuf field <code>bool out_of_competition = 11;</code>
-     * @return bool
-     */
-    public function getOutOfCompetition()
-    {
-        return $this->out_of_competition;
-    }
-
-    /**
-     * Deprecated, use participant.unofficial instead
-     *
-     * Generated from protobuf field <code>bool out_of_competition = 11;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setOutOfCompetition($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->out_of_competition = $var;
 
         return $this;
     }
