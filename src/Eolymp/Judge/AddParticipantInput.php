@@ -18,17 +18,9 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>string member_id = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
      */
-    protected $member_id = '';
-    /**
-     * Generated from protobuf field <code>string name = 3;</code>
-     */
-    protected $name = '';
-    /**
-     * Generated from protobuf field <code>bool unofficial = 4;</code>
-     */
-    protected $unofficial = false;
+    protected $participant = null;
 
     /**
      * Constructor.
@@ -37,9 +29,7 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type string $member_id
-     *     @type string $name
-     *     @type bool $unofficial
+     *     @type \Eolymp\Judge\Participant $participant
      * }
      */
     public function __construct($data = NULL) {
@@ -70,67 +60,23 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
+     * @return \Eolymp\Judge\Participant
      */
-    public function getMemberId()
+    public function getParticipant()
     {
-        return $this->member_id;
+        return $this->participant;
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
+     * @param \Eolymp\Judge\Participant $var
      * @return $this
      */
-    public function setMemberId($var)
+    public function setParticipant($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->member_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 3;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool unofficial = 4;</code>
-     * @return bool
-     */
-    public function getUnofficial()
-    {
-        return $this->unofficial;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool unofficial = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setUnofficial($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->unofficial = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant::class);
+        $this->participant = $var;
 
         return $this;
     }
