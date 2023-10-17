@@ -12,32 +12,32 @@ use UnexpectedValueException;
 class Medal
 {
     /**
-     * Generated from protobuf enum <code>UNKNOWN_MEDAL = 0;</code>
+     * Generated from protobuf enum <code>NO_MEDAL = 0;</code>
      */
-    const UNKNOWN_MEDAL = 0;
+    const NO_MEDAL = 0;
     /**
-     * Generated from protobuf enum <code>GOLD = 1;</code>
+     * Generated from protobuf enum <code>GOLD_MEDAL = 1;</code>
      */
-    const GOLD = 1;
+    const GOLD_MEDAL = 1;
     /**
-     * Generated from protobuf enum <code>SILVER = 2;</code>
+     * Generated from protobuf enum <code>SILVER_MEDAL = 2;</code>
      */
-    const SILVER = 2;
+    const SILVER_MEDAL = 2;
     /**
-     * Generated from protobuf enum <code>BRONZE = 3;</code>
+     * Generated from protobuf enum <code>BRONZE_MEDAL = 3;</code>
      */
-    const BRONZE = 3;
+    const BRONZE_MEDAL = 3;
     /**
-     * Generated from protobuf enum <code>MENTION = 4;</code>
+     * Generated from protobuf enum <code>HONORABLE_MENTION = 4;</code>
      */
-    const MENTION = 4;
+    const HONORABLE_MENTION = 4;
 
     private static $valueToName = [
-        self::UNKNOWN_MEDAL => 'UNKNOWN_MEDAL',
-        self::GOLD => 'GOLD',
-        self::SILVER => 'SILVER',
-        self::BRONZE => 'BRONZE',
-        self::MENTION => 'MENTION',
+        self::NO_MEDAL => 'NO_MEDAL',
+        self::GOLD_MEDAL => 'GOLD_MEDAL',
+        self::SILVER_MEDAL => 'SILVER_MEDAL',
+        self::BRONZE_MEDAL => 'BRONZE_MEDAL',
+        self::HONORABLE_MENTION => 'HONORABLE_MENTION',
     ];
 
     public static function name($value)
