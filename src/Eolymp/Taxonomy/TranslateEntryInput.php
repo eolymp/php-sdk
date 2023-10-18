@@ -14,15 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class TranslateEntryInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string entry_id = 1;</code>
+     * Generated from protobuf field <code>string dataset_id = 1;</code>
+     */
+    protected $dataset_id = '';
+    /**
+     * Generated from protobuf field <code>string entry_id = 2;</code>
      */
     protected $entry_id = '';
     /**
-     * Generated from protobuf field <code>string locale = 2;</code>
+     * Generated from protobuf field <code>string locale = 3;</code>
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>.eolymp.taxonomy.Entry.Translation translation = 3;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.Entry.Translation translation = 4;</code>
      */
     protected $translation = null;
 
@@ -32,6 +36,7 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $dataset_id
      *     @type string $entry_id
      *     @type string $locale
      *     @type \Eolymp\Taxonomy\Entry\Translation $translation
@@ -43,7 +48,29 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 1;</code>
+     * Generated from protobuf field <code>string dataset_id = 1;</code>
+     * @return string
+     */
+    public function getDatasetId()
+    {
+        return $this->dataset_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string dataset_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDatasetId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->dataset_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string entry_id = 2;</code>
      * @return string
      */
     public function getEntryId()
@@ -52,7 +79,7 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 1;</code>
+     * Generated from protobuf field <code>string entry_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -65,7 +92,7 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 2;</code>
+     * Generated from protobuf field <code>string locale = 3;</code>
      * @return string
      */
     public function getLocale()
@@ -74,7 +101,7 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 2;</code>
+     * Generated from protobuf field <code>string locale = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +114,7 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.taxonomy.Entry.Translation translation = 3;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.Entry.Translation translation = 4;</code>
      * @return \Eolymp\Taxonomy\Entry\Translation
      */
     public function getTranslation()
@@ -96,7 +123,7 @@ class TranslateEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.taxonomy.Entry.Translation translation = 3;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.Entry.Translation translation = 4;</code>
      * @param \Eolymp\Taxonomy\Entry\Translation $var
      * @return $this
      */
