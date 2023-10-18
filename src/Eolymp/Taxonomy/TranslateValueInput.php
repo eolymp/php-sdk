@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.DeleteTranslationInput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.TranslateValueInput</code>
  */
-class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
+class TranslateValueInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string enum_id = 1;</code>
@@ -25,6 +25,10 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 3;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.taxonomy.Value.Translation translation = 4;</code>
+     */
+    protected $translation = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      *     @type string $enum_id
      *     @type string $value_id
      *     @type string $locale
+     *     @type \Eolymp\Taxonomy\Value\Translation $translation
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.taxonomy.Value.Translation translation = 4;</code>
+     * @return \Eolymp\Taxonomy\Value\Translation
+     */
+    public function getTranslation()
+    {
+        return $this->translation;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.taxonomy.Value.Translation translation = 4;</code>
+     * @param \Eolymp\Taxonomy\Value\Translation $var
+     * @return $this
+     */
+    public function setTranslation($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\Value_Translation::class);
+        $this->translation = $var;
 
         return $this;
     }

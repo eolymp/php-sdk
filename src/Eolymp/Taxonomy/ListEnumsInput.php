@@ -9,18 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.ListTranslationsInput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.ListEnumsInput</code>
  */
-class ListTranslationsInput extends \Google\Protobuf\Internal\Message
+class ListEnumsInput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string enum_id = 1;</code>
-     */
-    protected $enum_id = '';
-    /**
-     * Generated from protobuf field <code>string value_id = 2;</code>
-     */
-    protected $value_id = '';
     /**
      * pagination
      *
@@ -34,7 +26,7 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.ListTranslationsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.ListEnumsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
 
@@ -44,62 +36,16 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $enum_id
-     *     @type string $value_id
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Taxonomy\ListTranslationsInput\Filter $filters
+     *     @type \Eolymp\Taxonomy\ListEnumsInput\Filter $filters
      *           data filters
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Taxonomy\EnumService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string enum_id = 1;</code>
-     * @return string
-     */
-    public function getEnumId()
-    {
-        return $this->enum_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string enum_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEnumId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->enum_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string value_id = 2;</code>
-     * @return string
-     */
-    public function getValueId()
-    {
-        return $this->value_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string value_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setValueId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->value_id = $var;
-
-        return $this;
     }
 
     /**
@@ -153,8 +99,8 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.ListTranslationsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Taxonomy\ListTranslationsInput\Filter
+     * Generated from protobuf field <code>.eolymp.taxonomy.ListEnumsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Taxonomy\ListEnumsInput\Filter
      */
     public function getFilters()
     {
@@ -164,13 +110,13 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.ListTranslationsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Taxonomy\ListTranslationsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.taxonomy.ListEnumsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Taxonomy\ListEnumsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListTranslationsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListEnumsInput_Filter::class);
         $this->filters = $var;
 
         return $this;

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.DeleteTranslationInput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.DescribeValueInput</code>
  */
-class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
+class DescribeValueInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string enum_id = 1;</code>
@@ -22,7 +22,9 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      */
     protected $value_id = '';
     /**
-     * Generated from protobuf field <code>string locale = 3;</code>
+     * if set, system will use translations to translate value name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
      */
     protected $locale = '';
 
@@ -35,6 +37,7 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      *     @type string $enum_id
      *     @type string $value_id
      *     @type string $locale
+     *           if set, system will use translations to translate value name, summary and keywords
      * }
      */
     public function __construct($data = NULL) {
@@ -87,7 +90,9 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 3;</code>
+     * if set, system will use translations to translate value name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
      * @return string
      */
     public function getLocale()
@@ -96,7 +101,9 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 3;</code>
+     * if set, system will use translations to translate value name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
      * @param string $var
      * @return $this
      */

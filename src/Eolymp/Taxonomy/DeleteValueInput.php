@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.DeleteTranslationInput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.DeleteValueInput</code>
  */
-class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
+class DeleteValueInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string enum_id = 1;</code>
@@ -21,10 +21,6 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string value_id = 2;</code>
      */
     protected $value_id = '';
-    /**
-     * Generated from protobuf field <code>string locale = 3;</code>
-     */
-    protected $locale = '';
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $enum_id
      *     @type string $value_id
-     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->value_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 3;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
 
         return $this;
     }

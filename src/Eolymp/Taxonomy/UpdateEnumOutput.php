@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.DeleteTranslationOutput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.UpdateEnumOutput</code>
  */
-class DeleteTranslationOutput extends \Google\Protobuf\Internal\Message
+class UpdateEnumOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

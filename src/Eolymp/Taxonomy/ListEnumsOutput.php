@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.ListTranslationsOutput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.ListEnumsOutput</code>
  */
-class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
+class ListEnumsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 total = 1;</code>
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Value.Translation items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Enum items = 2;</code>
      */
     private $items;
 
@@ -29,7 +29,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Taxonomy\Value\Translation[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Taxonomy\Enum[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Value.Translation items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Enum items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -69,13 +69,13 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Value.Translation items = 2;</code>
-     * @param \Eolymp\Taxonomy\Value\Translation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.taxonomy.Enum items = 2;</code>
+     * @param \Eolymp\Taxonomy\Enum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Taxonomy\Value\Translation::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Taxonomy\Enum::class);
         $this->items = $arr;
 
         return $this;

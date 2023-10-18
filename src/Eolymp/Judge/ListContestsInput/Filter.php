@@ -49,6 +49,34 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
      */
     private $format;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt year = 100;</code>
+     */
+    private $year;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum scale = 101;</code>
+     */
+    private $scale;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
+     */
+    private $series;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
+     */
+    private $difficulty;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum country = 104;</code>
+     */
+    private $country;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum region = 105;</code>
+     */
+    private $region;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString city = 106;</code>
+     */
+    private $city;
 
     /**
      * Constructor.
@@ -65,6 +93,13 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $public
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $visibility
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $format
+     *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $year
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $scale
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $series
+     *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $difficulty
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $country
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $region
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $city
      * }
      */
     public function __construct($data = NULL) {
@@ -266,6 +301,160 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->format = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt year = 100;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt year = 100;</code>
+     * @param \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setYear($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->year = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum scale = 101;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScale()
+    {
+        return $this->scale;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum scale = 101;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScale($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->scale = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSeries()
+    {
+        return $this->series;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSeries($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->series = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
+     * @param \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDifficulty($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->difficulty = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum country = 104;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum country = 104;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->country = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum region = 105;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum region = 105;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRegion($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->region = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString city = 106;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString city = 106;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCity($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->city = $arr;
 
         return $this;
     }
