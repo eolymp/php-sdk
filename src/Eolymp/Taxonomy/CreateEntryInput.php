@@ -9,22 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.DeleteTranslationInput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.CreateEntryInput</code>
  */
-class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
+class CreateEntryInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string dataset_id = 1;</code>
      */
     protected $dataset_id = '';
     /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.Entry entry = 2;</code>
      */
-    protected $entry_id = '';
-    /**
-     * Generated from protobuf field <code>string locale = 3;</code>
-     */
-    protected $locale = '';
+    protected $entry = null;
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $dataset_id
-     *     @type string $entry_id
-     *     @type string $locale
+     *     @type \Eolymp\Taxonomy\Entry $entry
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +60,23 @@ class DeleteTranslationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.taxonomy.Entry entry = 2;</code>
+     * @return \Eolymp\Taxonomy\Entry
      */
-    public function getEntryId()
+    public function getEntry()
     {
-        return $this->entry_id;
+        return $this->entry;
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.taxonomy.Entry entry = 2;</code>
+     * @param \Eolymp\Taxonomy\Entry $var
      * @return $this
      */
-    public function setEntryId($var)
+    public function setEntry($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->entry_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 3;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\Entry::class);
+        $this->entry = $var;
 
         return $this;
     }

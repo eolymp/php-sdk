@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.taxonomy.ListTranslationsInput</code>
+ * Generated from protobuf message <code>eolymp.taxonomy.ListEntriesInput</code>
  */
-class ListTranslationsInput extends \Google\Protobuf\Internal\Message
+class ListEntriesInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string dataset_id = 1;</code>
      */
     protected $dataset_id = '';
-    /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
-     */
-    protected $entry_id = '';
     /**
      * pagination
      *
@@ -34,9 +30,15 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.ListTranslationsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.ListEntriesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * if set, system will use translations to translate entry name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -45,12 +47,13 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $dataset_id
-     *     @type string $entry_id
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Taxonomy\ListTranslationsInput\Filter $filters
+     *     @type \Eolymp\Taxonomy\ListEntriesInput\Filter $filters
      *           data filters
+     *     @type string $locale
+     *           if set, system will use translations to translate entry name, summary and keywords
      * }
      */
     public function __construct($data = NULL) {
@@ -76,28 +79,6 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->dataset_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
-     * @return string
-     */
-    public function getEntryId()
-    {
-        return $this->entry_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEntryId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->entry_id = $var;
 
         return $this;
     }
@@ -153,8 +134,8 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.ListTranslationsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Taxonomy\ListTranslationsInput\Filter
+     * Generated from protobuf field <code>.eolymp.taxonomy.ListEntriesInput.Filter filters = 40;</code>
+     * @return \Eolymp\Taxonomy\ListEntriesInput\Filter
      */
     public function getFilters()
     {
@@ -164,14 +145,40 @@ class ListTranslationsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.ListTranslationsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Taxonomy\ListTranslationsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.taxonomy.ListEntriesInput.Filter filters = 40;</code>
+     * @param \Eolymp\Taxonomy\ListEntriesInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListTranslationsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListEntriesInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * if set, system will use translations to translate entry name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * if set, system will use translations to translate entry name, summary and keywords
+     *
+     * Generated from protobuf field <code>string locale = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
