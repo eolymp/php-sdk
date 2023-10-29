@@ -104,6 +104,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $stderr = '';
     /**
+     * deprecated, use untruncated verifier_log_url
      * output (incl. stderr) produced by verifier during execution
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -112,6 +113,31 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $verifier_log = '';
     /**
+     * URL for verifier's full log
+     *
+     * Generated from protobuf field <code>string verifier_log_url = 31;</code>
+     */
+    protected $verifier_log_url = '';
+    /**
+     * verifier's wall time usage in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 verifier_wall_time_usage = 32;</code>
+     */
+    protected $verifier_wall_time_usage = 0;
+    /**
+     * verifier's wall time usage in bytes
+     *
+     * Generated from protobuf field <code>uint32 verifier_memory_usage = 33;</code>
+     */
+    protected $verifier_memory_usage = 0;
+    /**
+     * verifier's exit code
+     *
+     * Generated from protobuf field <code>uint32 verifier_exit_code = 34;</code>
+     */
+    protected $verifier_exit_code = 0;
+    /**
+     * deprecated, use untruncated interactor_log_url
      * output (incl. stderr) produced by interactor during execution
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -119,6 +145,30 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string interactor_log = 40;</code>
      */
     protected $interactor_log = '';
+    /**
+     * URL for interactor's full log
+     *
+     * Generated from protobuf field <code>string interactor_log_url = 41;</code>
+     */
+    protected $interactor_log_url = '';
+    /**
+     * interactor's wall time usage in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 interactor_wall_time_usage = 42;</code>
+     */
+    protected $interactor_wall_time_usage = 0;
+    /**
+     * interactor's wall time usage in bytes
+     *
+     * Generated from protobuf field <code>uint32 interactor_memory_usage = 43;</code>
+     */
+    protected $interactor_memory_usage = 0;
+    /**
+     * interactor's exit code
+     *
+     * Generated from protobuf field <code>uint32 interactor_exit_code = 44;</code>
+     */
+    protected $interactor_exit_code = 0;
 
     /**
      * Constructor.
@@ -159,13 +209,31 @@ class Run extends \Google\Protobuf\Internal\Message
      *           only populated if debug was set to true
      *           up to 5KB, the rest is truncated
      *     @type string $verifier_log
+     *           deprecated, use untruncated verifier_log_url
      *           output (incl. stderr) produced by verifier during execution
      *           only populated if debug was set to true
      *           up to 5KB, the rest is truncated
+     *     @type string $verifier_log_url
+     *           URL for verifier's full log
+     *     @type int $verifier_wall_time_usage
+     *           verifier's wall time usage in milliseconds
+     *     @type int $verifier_memory_usage
+     *           verifier's wall time usage in bytes
+     *     @type int $verifier_exit_code
+     *           verifier's exit code
      *     @type string $interactor_log
+     *           deprecated, use untruncated interactor_log_url
      *           output (incl. stderr) produced by interactor during execution
      *           only populated if debug was set to true
      *           up to 5KB, the rest is truncated
+     *     @type string $interactor_log_url
+     *           URL for interactor's full log
+     *     @type int $interactor_wall_time_usage
+     *           interactor's wall time usage in milliseconds
+     *     @type int $interactor_memory_usage
+     *           interactor's wall time usage in bytes
+     *     @type int $interactor_exit_code
+     *           interactor's exit code
      * }
      */
     public function __construct($data = NULL) {
@@ -546,6 +614,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use untruncated verifier_log_url
      * output (incl. stderr) produced by verifier during execution
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -559,6 +628,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use untruncated verifier_log_url
      * output (incl. stderr) produced by verifier during execution
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -576,6 +646,111 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL for verifier's full log
+     *
+     * Generated from protobuf field <code>string verifier_log_url = 31;</code>
+     * @return string
+     */
+    public function getVerifierLogUrl()
+    {
+        return $this->verifier_log_url;
+    }
+
+    /**
+     * URL for verifier's full log
+     *
+     * Generated from protobuf field <code>string verifier_log_url = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVerifierLogUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->verifier_log_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * verifier's wall time usage in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 verifier_wall_time_usage = 32;</code>
+     * @return int
+     */
+    public function getVerifierWallTimeUsage()
+    {
+        return $this->verifier_wall_time_usage;
+    }
+
+    /**
+     * verifier's wall time usage in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 verifier_wall_time_usage = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerifierWallTimeUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->verifier_wall_time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * verifier's wall time usage in bytes
+     *
+     * Generated from protobuf field <code>uint32 verifier_memory_usage = 33;</code>
+     * @return int
+     */
+    public function getVerifierMemoryUsage()
+    {
+        return $this->verifier_memory_usage;
+    }
+
+    /**
+     * verifier's wall time usage in bytes
+     *
+     * Generated from protobuf field <code>uint32 verifier_memory_usage = 33;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerifierMemoryUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->verifier_memory_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * verifier's exit code
+     *
+     * Generated from protobuf field <code>uint32 verifier_exit_code = 34;</code>
+     * @return int
+     */
+    public function getVerifierExitCode()
+    {
+        return $this->verifier_exit_code;
+    }
+
+    /**
+     * verifier's exit code
+     *
+     * Generated from protobuf field <code>uint32 verifier_exit_code = 34;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerifierExitCode($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->verifier_exit_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, use untruncated interactor_log_url
      * output (incl. stderr) produced by interactor during execution
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -589,6 +764,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use untruncated interactor_log_url
      * output (incl. stderr) produced by interactor during execution
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -601,6 +777,110 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->interactor_log = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL for interactor's full log
+     *
+     * Generated from protobuf field <code>string interactor_log_url = 41;</code>
+     * @return string
+     */
+    public function getInteractorLogUrl()
+    {
+        return $this->interactor_log_url;
+    }
+
+    /**
+     * URL for interactor's full log
+     *
+     * Generated from protobuf field <code>string interactor_log_url = 41;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInteractorLogUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->interactor_log_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * interactor's wall time usage in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 interactor_wall_time_usage = 42;</code>
+     * @return int
+     */
+    public function getInteractorWallTimeUsage()
+    {
+        return $this->interactor_wall_time_usage;
+    }
+
+    /**
+     * interactor's wall time usage in milliseconds
+     *
+     * Generated from protobuf field <code>uint32 interactor_wall_time_usage = 42;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInteractorWallTimeUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->interactor_wall_time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * interactor's wall time usage in bytes
+     *
+     * Generated from protobuf field <code>uint32 interactor_memory_usage = 43;</code>
+     * @return int
+     */
+    public function getInteractorMemoryUsage()
+    {
+        return $this->interactor_memory_usage;
+    }
+
+    /**
+     * interactor's wall time usage in bytes
+     *
+     * Generated from protobuf field <code>uint32 interactor_memory_usage = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInteractorMemoryUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->interactor_memory_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * interactor's exit code
+     *
+     * Generated from protobuf field <code>uint32 interactor_exit_code = 44;</code>
+     * @return int
+     */
+    public function getInteractorExitCode()
+    {
+        return $this->interactor_exit_code;
+    }
+
+    /**
+     * interactor's exit code
+     *
+     * Generated from protobuf field <code>uint32 interactor_exit_code = 44;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInteractorExitCode($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->interactor_exit_code = $var;
 
         return $this;
     }

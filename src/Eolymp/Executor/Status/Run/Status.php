@@ -83,6 +83,12 @@ class Status
      * Generated from protobuf enum <code>SKIPPED = 11;</code>
      */
     const SKIPPED = 11;
+    /**
+     * interactor failed (TL-ed, ML-ed, got a runtime error or claimed that the jury had a wrong answer), check interactor_log
+     *
+     * Generated from protobuf enum <code>INTERACTION_FAILURE = 12;</code>
+     */
+    const INTERACTION_FAILURE = 12;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -97,6 +103,7 @@ class Status
         self::WRONG_ANSWER => 'WRONG_ANSWER',
         self::VERIFICATION_FAILURE => 'VERIFICATION_FAILURE',
         self::SKIPPED => 'SKIPPED',
+        self::INTERACTION_FAILURE => 'INTERACTION_FAILURE',
     ];
 
     public static function name($value)
