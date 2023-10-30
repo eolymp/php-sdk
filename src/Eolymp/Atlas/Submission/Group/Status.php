@@ -83,6 +83,12 @@ class Status
      * Generated from protobuf enum <code>SKIPPED = 11;</code>
      */
     const SKIPPED = 11;
+    /**
+     * first not accepted run has status Interaction Error
+     *
+     * Generated from protobuf enum <code>INTERACTION_ERROR = 12;</code>
+     */
+    const INTERACTION_ERROR = 12;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -97,6 +103,7 @@ class Status
         self::RUNTIME_ERROR => 'RUNTIME_ERROR',
         self::VERIFICATION_ERROR => 'VERIFICATION_ERROR',
         self::SKIPPED => 'SKIPPED',
+        self::INTERACTION_ERROR => 'INTERACTION_ERROR',
     ];
 
     public static function name($value)

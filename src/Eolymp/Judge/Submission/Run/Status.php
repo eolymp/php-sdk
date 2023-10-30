@@ -83,6 +83,12 @@ class Status
      * Generated from protobuf enum <code>BLOCKED = 11;</code>
      */
     const BLOCKED = 11;
+    /**
+     * interactor couldn't run
+     *
+     * Generated from protobuf enum <code>INTERACTION_ERROR = 12;</code>
+     */
+    const INTERACTION_ERROR = 12;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -97,6 +103,7 @@ class Status
         self::VERIFICATION_ERROR => 'VERIFICATION_ERROR',
         self::SKIPPED => 'SKIPPED',
         self::BLOCKED => 'BLOCKED',
+        self::INTERACTION_ERROR => 'INTERACTION_ERROR',
     ];
 
     public static function name($value)

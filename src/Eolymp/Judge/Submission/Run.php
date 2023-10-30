@@ -53,6 +53,14 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Submission.Run.Status status = 20;</code>
      */
     protected $status = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Submission.Run.VerifierExecutionData verifier_execution_data = 30;</code>
+     */
+    protected $verifier_execution_data = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Submission.Run.InteractorExecutionData interactor_execution_data = 40;</code>
+     */
+    protected $interactor_execution_data = null;
 
     /**
      * Constructor.
@@ -71,6 +79,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type float $cost
      *     @type float $score
      *     @type int $status
+     *     @type \Eolymp\Judge\Submission\Run\VerifierExecutionData $verifier_execution_data
+     *     @type \Eolymp\Judge\Submission\Run\InteractorExecutionData $interactor_execution_data
      * }
      */
     public function __construct($data = NULL) {
@@ -280,6 +290,50 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Submission_Run_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Submission.Run.VerifierExecutionData verifier_execution_data = 30;</code>
+     * @return \Eolymp\Judge\Submission\Run\VerifierExecutionData
+     */
+    public function getVerifierExecutionData()
+    {
+        return $this->verifier_execution_data;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Submission.Run.VerifierExecutionData verifier_execution_data = 30;</code>
+     * @param \Eolymp\Judge\Submission\Run\VerifierExecutionData $var
+     * @return $this
+     */
+    public function setVerifierExecutionData($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission_Run_VerifierExecutionData::class);
+        $this->verifier_execution_data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Submission.Run.InteractorExecutionData interactor_execution_data = 40;</code>
+     * @return \Eolymp\Judge\Submission\Run\InteractorExecutionData
+     */
+    public function getInteractorExecutionData()
+    {
+        return $this->interactor_execution_data;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Submission.Run.InteractorExecutionData interactor_execution_data = 40;</code>
+     * @param \Eolymp\Judge\Submission\Run\InteractorExecutionData $var
+     * @return $this
+     */
+    public function setInteractorExecutionData($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission_Run_InteractorExecutionData::class);
+        $this->interactor_execution_data = $var;
 
         return $this;
     }
