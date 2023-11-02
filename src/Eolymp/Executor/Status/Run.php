@@ -88,6 +88,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $signal = 0;
     /**
+     * deprecated, use untruncated output_url
      * output data
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -96,6 +97,11 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $output = '';
     /**
+     * Generated from protobuf field <code>string output_url = 11;</code>
+     */
+    protected $output_url = '';
+    /**
+     * deprecated, use untruncated stderr_url
      * stderr data
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -103,6 +109,10 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string stderr = 20;</code>
      */
     protected $stderr = '';
+    /**
+     * Generated from protobuf field <code>string stderr_url = 21;</code>
+     */
+    protected $stderr_url = '';
     /**
      * deprecated, use untruncated verifier_log_url
      * output (incl. stderr) produced by verifier during execution
@@ -127,7 +137,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * verifier's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 verifier_memory_usage = 33;</code>
+     * Generated from protobuf field <code>uint64 verifier_memory_usage = 33;</code>
      */
     protected $verifier_memory_usage = 0;
     /**
@@ -160,7 +170,7 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * interactor's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 interactor_memory_usage = 43;</code>
+     * Generated from protobuf field <code>uint64 interactor_memory_usage = 43;</code>
      */
     protected $interactor_memory_usage = 0;
     /**
@@ -201,13 +211,17 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type int $signal
      *           might contain signal used to kill program
      *     @type string $output
+     *           deprecated, use untruncated output_url
      *           output data
      *           only populated if debug was set to true
      *           up to 5KB, the rest is truncated
+     *     @type string $output_url
      *     @type string $stderr
+     *           deprecated, use untruncated stderr_url
      *           stderr data
      *           only populated if debug was set to true
      *           up to 5KB, the rest is truncated
+     *     @type string $stderr_url
      *     @type string $verifier_log
      *           deprecated, use untruncated verifier_log_url
      *           output (incl. stderr) produced by verifier during execution
@@ -217,7 +231,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *           URL for verifier's full log
      *     @type int $verifier_wall_time_usage
      *           verifier's wall time usage in milliseconds
-     *     @type int $verifier_memory_usage
+     *     @type int|string $verifier_memory_usage
      *           verifier's wall time usage in bytes
      *     @type int $verifier_exit_code
      *           verifier's exit code
@@ -230,7 +244,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *           URL for interactor's full log
      *     @type int $interactor_wall_time_usage
      *           interactor's wall time usage in milliseconds
-     *     @type int $interactor_memory_usage
+     *     @type int|string $interactor_memory_usage
      *           interactor's wall time usage in bytes
      *     @type int $interactor_exit_code
      *           interactor's exit code
@@ -554,6 +568,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use untruncated output_url
      * output data
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -567,6 +582,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use untruncated output_url
      * output data
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -584,6 +600,29 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string output_url = 11;</code>
+     * @return string
+     */
+    public function getOutputUrl()
+    {
+        return $this->output_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string output_url = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->output_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, use untruncated stderr_url
      * stderr data
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -597,6 +636,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use untruncated stderr_url
      * stderr data
      * only populated if debug was set to true
      * up to 5KB, the rest is truncated
@@ -609,6 +649,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stderr = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stderr_url = 21;</code>
+     * @return string
+     */
+    public function getStderrUrl()
+    {
+        return $this->stderr_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stderr_url = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStderrUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stderr_url = $var;
 
         return $this;
     }
@@ -700,8 +762,8 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * verifier's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 verifier_memory_usage = 33;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 verifier_memory_usage = 33;</code>
+     * @return int|string
      */
     public function getVerifierMemoryUsage()
     {
@@ -711,13 +773,13 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * verifier's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 verifier_memory_usage = 33;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 verifier_memory_usage = 33;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setVerifierMemoryUsage($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->verifier_memory_usage = $var;
 
         return $this;
@@ -836,8 +898,8 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * interactor's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 interactor_memory_usage = 43;</code>
-     * @return int
+     * Generated from protobuf field <code>uint64 interactor_memory_usage = 43;</code>
+     * @return int|string
      */
     public function getInteractorMemoryUsage()
     {
@@ -847,13 +909,13 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * interactor's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 interactor_memory_usage = 43;</code>
-     * @param int $var
+     * Generated from protobuf field <code>uint64 interactor_memory_usage = 43;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setInteractorMemoryUsage($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkUint64($var);
         $this->interactor_memory_usage = $var;
 
         return $this;

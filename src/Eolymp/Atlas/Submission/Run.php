@@ -38,6 +38,18 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $resource_usage = 0.0;
     /**
+     * URL for program's full output
+     *
+     * Generated from protobuf field <code>string output_url = 6;</code>
+     */
+    protected $output_url = '';
+    /**
+     * URL for program's output to stderr
+     *
+     * Generated from protobuf field <code>string stderr_url = 7;</code>
+     */
+    protected $stderr_url = '';
+    /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      */
     protected $index = 0;
@@ -58,11 +70,11 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.VerifierExecutionData verifier_execution_data = 30;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
      */
     protected $verifier_execution_data = null;
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.InteractorExecutionData interactor_execution_data = 40;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
      */
     protected $interactor_execution_data = null;
 
@@ -79,13 +91,17 @@ class Run extends \Google\Protobuf\Internal\Message
      *           cpu time (time cpu was active)
      *     @type int|string $memory_usage
      *     @type float $resource_usage
+     *     @type string $output_url
+     *           URL for program's full output
+     *     @type string $stderr_url
+     *           URL for program's output to stderr
      *     @type int $index
      *     @type string $test_id
      *     @type float $cost
      *     @type float $score
      *     @type int $status
-     *     @type \Eolymp\Atlas\Submission\Run\VerifierExecutionData $verifier_execution_data
-     *     @type \Eolymp\Atlas\Submission\Run\InteractorExecutionData $interactor_execution_data
+     *     @type \Eolymp\Atlas\Submission\VerifierExecutionData $verifier_execution_data
+     *     @type \Eolymp\Atlas\Submission\InteractorExecutionData $interactor_execution_data
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +228,58 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * URL for program's full output
+     *
+     * Generated from protobuf field <code>string output_url = 6;</code>
+     * @return string
+     */
+    public function getOutputUrl()
+    {
+        return $this->output_url;
+    }
+
+    /**
+     * URL for program's full output
+     *
+     * Generated from protobuf field <code>string output_url = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->output_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL for program's output to stderr
+     *
+     * Generated from protobuf field <code>string stderr_url = 7;</code>
+     * @return string
+     */
+    public function getStderrUrl()
+    {
+        return $this->stderr_url;
+    }
+
+    /**
+     * URL for program's output to stderr
+     *
+     * Generated from protobuf field <code>string stderr_url = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStderrUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stderr_url = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      * @return int
      */
@@ -322,8 +390,8 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.VerifierExecutionData verifier_execution_data = 30;</code>
-     * @return \Eolymp\Atlas\Submission\Run\VerifierExecutionData
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
+     * @return \Eolymp\Atlas\Submission\VerifierExecutionData
      */
     public function getVerifierExecutionData()
     {
@@ -331,21 +399,21 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.VerifierExecutionData verifier_execution_data = 30;</code>
-     * @param \Eolymp\Atlas\Submission\Run\VerifierExecutionData $var
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
+     * @param \Eolymp\Atlas\Submission\VerifierExecutionData $var
      * @return $this
      */
     public function setVerifierExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_Run_VerifierExecutionData::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_VerifierExecutionData::class);
         $this->verifier_execution_data = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.InteractorExecutionData interactor_execution_data = 40;</code>
-     * @return \Eolymp\Atlas\Submission\Run\InteractorExecutionData
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
+     * @return \Eolymp\Atlas\Submission\InteractorExecutionData
      */
     public function getInteractorExecutionData()
     {
@@ -353,13 +421,13 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.InteractorExecutionData interactor_execution_data = 40;</code>
-     * @param \Eolymp\Atlas\Submission\Run\InteractorExecutionData $var
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
+     * @param \Eolymp\Atlas\Submission\InteractorExecutionData $var
      * @return $this
      */
     public function setInteractorExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_Run_InteractorExecutionData::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_InteractorExecutionData::class);
         $this->interactor_execution_data = $var;
 
         return $this;
