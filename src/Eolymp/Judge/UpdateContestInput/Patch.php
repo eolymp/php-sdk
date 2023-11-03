@@ -44,6 +44,10 @@ class Patch
      */
     const PARTICIPATION_MODE = 8;
     /**
+     * Generated from protobuf enum <code>FEATURED_UNTIL = 9;</code>
+     */
+    const FEATURED_UNTIL = 9;
+    /**
      * Generated from protobuf enum <code>FORMAT = 10;</code>
      */
     const FORMAT = 10;
@@ -81,6 +85,7 @@ class Patch
         self::VISIBILITY => 'VISIBILITY',
         self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
+        self::FEATURED_UNTIL => 'FEATURED_UNTIL',
         self::FORMAT => 'FORMAT',
         self::DOMAIN => 'DOMAIN',
         self::TAXONOMY => 'TAXONOMY',

@@ -54,6 +54,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $ends_in = 0;
     /**
+     * Date and time until contest is displayed in Featured contests
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
+     */
+    protected $featured_until = null;
+    /**
      * Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
      * and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
      * start at midnight and finish at 23:59:59 the same day, but if duration is set to 4h it would mean users can
@@ -155,6 +161,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest ending time, after this time users submissions won't be counted to the score anymore.
      *     @type int $ends_in
      *           Time in seconds until end of the contest
+     *     @type \Google\Protobuf\Timestamp $featured_until
+     *           Date and time until contest is displayed in Featured contests
      *     @type int $duration
      *           Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
      *           and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
@@ -366,6 +374,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->ends_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Date and time until contest is displayed in Featured contests
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getFeaturedUntil()
+    {
+        return $this->featured_until;
+    }
+
+    /**
+     * Date and time until contest is displayed in Featured contests
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setFeaturedUntil($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->featured_until = $var;
 
         return $this;
     }

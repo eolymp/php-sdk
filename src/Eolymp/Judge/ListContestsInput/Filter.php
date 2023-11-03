@@ -38,17 +38,33 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $ends_at;
     /**
+     * deprecated, same as visibility=PUBLIC
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
      */
     private $public;
     /**
+     * PUBLIC, UNLISTED, PRIVATE
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
      */
     private $visibility;
     /**
+     * IOI, ICPC
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
      */
     private $format;
+    /**
+     * SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10;</code>
+     */
+    private $status;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool featured = 11;</code>
+     */
+    private $featured;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt year = 100;</code>
      */
@@ -58,10 +74,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $scale;
     /**
+     * see taxonomy enumeration "contest_series"
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
      */
     private $series;
     /**
+     * 1 to 5
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
      */
     private $difficulty;
@@ -91,12 +111,20 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $starts_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $ends_at
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $public
+     *           deprecated, same as visibility=PUBLIC
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $visibility
+     *           PUBLIC, UNLISTED, PRIVATE
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $format
+     *           IOI, ICPC
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
+     *           SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $featured
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $year
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $scale
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $series
+     *           see taxonomy enumeration "contest_series"
      *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $difficulty
+     *           1 to 5
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $country
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $region
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $city
@@ -240,6 +268,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, same as visibility=PUBLIC
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -249,6 +279,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, same as visibility=PUBLIC
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
      * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -262,6 +294,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * PUBLIC, UNLISTED, PRIVATE
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -271,6 +305,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * PUBLIC, UNLISTED, PRIVATE
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -284,6 +320,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * IOI, ICPC
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -293,6 +331,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * IOI, ICPC
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -301,6 +341,54 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->format = $arr;
+
+        return $this;
+    }
+
+    /**
+     * SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->status = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool featured = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFeatured()
+    {
+        return $this->featured;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool featured = 11;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFeatured($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->featured = $arr;
 
         return $this;
     }
@@ -350,6 +438,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * see taxonomy enumeration "contest_series"
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -359,6 +449,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * see taxonomy enumeration "contest_series"
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -372,6 +464,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1 to 5
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -381,6 +475,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * 1 to 5
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
      * @param \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
