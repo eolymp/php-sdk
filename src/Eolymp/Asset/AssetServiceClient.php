@@ -38,4 +38,20 @@ class AssetServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadImageOutput::class, $context);
     }
 
+    /**
+     * @param UploadFileInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadFileOutput output message
+     */
+    public function UploadFile(UploadFileInput $input, array $context = [])
+    {
+        $path = "/assets/files";
+
+        $context['name'] = "eolymp.asset.AssetService/UploadFile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadFileOutput::class, $context);
+    }
+
 }

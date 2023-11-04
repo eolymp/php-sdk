@@ -22,10 +22,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 2;</code>
-     */
-    private $own;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      */
     private $name;
@@ -106,7 +102,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type string $query
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $own
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $starts_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $ends_at
@@ -175,28 +170,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->id = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getOwn()
-    {
-        return $this->own;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool own = 2;</code>
-     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setOwn($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->own = $arr;
 
         return $this;
     }

@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.asset.UploadImageOutput</code>
+ * Generated from protobuf message <code>eolymp.asset.UploadFileOutput</code>
  */
-class UploadImageOutput extends \Google\Protobuf\Internal\Message
+class UploadFileOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string image_url = 1;</code>
+     * Generated from protobuf field <code>string file_url = 1;</code>
      */
-    protected $image_url = '';
+    protected $file_url = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class UploadImageOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $image_url
+     *     @type string $file_url
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class UploadImageOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string image_url = 1;</code>
+     * Generated from protobuf field <code>string file_url = 1;</code>
      * @return string
      */
-    public function getImageUrl()
+    public function getFileUrl()
     {
-        return $this->image_url;
+        return $this->file_url;
     }
 
     /**
-     * Generated from protobuf field <code>string image_url = 1;</code>
+     * Generated from protobuf field <code>string file_url = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setImageUrl($var)
+    public function setFileUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->image_url = $var;
+        $this->file_url = $var;
 
         return $this;
     }
