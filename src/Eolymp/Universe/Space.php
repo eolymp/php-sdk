@@ -60,27 +60,25 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * type of the space membership (members are individuals or teams)
+     * space home page URL
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
+     * Generated from protobuf field <code>string home_url = 50;</code>
      */
-    protected $membership = 0;
+    protected $home_url = '';
     /**
-     * in case of TEAM membership, minimum size of the team (can be 1 or more)
+     * space issuer URL (used for issuing tokens)
      *
-     * Generated from protobuf field <code>uint32 min_team_size = 21;</code>
+     * Generated from protobuf field <code>string issuer_url = 51;</code>
      */
-    protected $min_team_size = 0;
+    protected $issuer_url = '';
     /**
-     * in case of TEAM membership, maximum size of the team (up to 8 users)
-     *
-     * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
+     * Generated from protobuf field <code>.eolymp.universe.UserConfig user_config = 100;</code>
      */
-    protected $max_team_size = 0;
+    protected $user_config = null;
     /**
-     * Generated from protobuf field <code>repeated string permissions = 10099;</code>
+     * Generated from protobuf field <code>.eolymp.universe.AppearanceConfig appearance_config = 101;</code>
      */
-    private $permissions;
+    protected $appearance_config = null;
 
     /**
      * Constructor.
@@ -103,13 +101,12 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type string $plan
      *           plan defines billing plan for the space
      *     @type int $visibility
-     *     @type int $membership
-     *           type of the space membership (members are individuals or teams)
-     *     @type int $min_team_size
-     *           in case of TEAM membership, minimum size of the team (can be 1 or more)
-     *     @type int $max_team_size
-     *           in case of TEAM membership, maximum size of the team (up to 8 users)
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type string $home_url
+     *           space home page URL
+     *     @type string $issuer_url
+     *           space issuer URL (used for issuing tokens)
+     *     @type \Eolymp\Universe\UserConfig $user_config
+     *     @type \Eolymp\Universe\AppearanceConfig $appearance_config
      * }
      */
     public function __construct($data = NULL) {
@@ -322,101 +319,97 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * type of the space membership (members are individuals or teams)
+     * space home page URL
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
-     * @return int
+     * Generated from protobuf field <code>string home_url = 50;</code>
+     * @return string
      */
-    public function getMembership()
+    public function getHomeUrl()
     {
-        return $this->membership;
+        return $this->home_url;
     }
 
     /**
-     * type of the space membership (members are individuals or teams)
+     * space home page URL
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Membership membership = 20;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string home_url = 50;</code>
+     * @param string $var
      * @return $this
      */
-    public function setMembership($var)
+    public function setHomeUrl($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Membership::class);
-        $this->membership = $var;
+        GPBUtil::checkString($var, True);
+        $this->home_url = $var;
 
         return $this;
     }
 
     /**
-     * in case of TEAM membership, minimum size of the team (can be 1 or more)
+     * space issuer URL (used for issuing tokens)
      *
-     * Generated from protobuf field <code>uint32 min_team_size = 21;</code>
-     * @return int
+     * Generated from protobuf field <code>string issuer_url = 51;</code>
+     * @return string
      */
-    public function getMinTeamSize()
+    public function getIssuerUrl()
     {
-        return $this->min_team_size;
+        return $this->issuer_url;
     }
 
     /**
-     * in case of TEAM membership, minimum size of the team (can be 1 or more)
+     * space issuer URL (used for issuing tokens)
      *
-     * Generated from protobuf field <code>uint32 min_team_size = 21;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string issuer_url = 51;</code>
+     * @param string $var
      * @return $this
      */
-    public function setMinTeamSize($var)
+    public function setIssuerUrl($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->min_team_size = $var;
+        GPBUtil::checkString($var, True);
+        $this->issuer_url = $var;
 
         return $this;
     }
 
     /**
-     * in case of TEAM membership, maximum size of the team (up to 8 users)
-     *
-     * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.universe.UserConfig user_config = 100;</code>
+     * @return \Eolymp\Universe\UserConfig
      */
-    public function getMaxTeamSize()
+    public function getUserConfig()
     {
-        return $this->max_team_size;
+        return $this->user_config;
     }
 
     /**
-     * in case of TEAM membership, maximum size of the team (up to 8 users)
-     *
-     * Generated from protobuf field <code>uint32 max_team_size = 22;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.universe.UserConfig user_config = 100;</code>
+     * @param \Eolymp\Universe\UserConfig $var
      * @return $this
      */
-    public function setMaxTeamSize($var)
+    public function setUserConfig($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->max_team_size = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Universe\UserConfig::class);
+        $this->user_config = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string permissions = 10099;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.universe.AppearanceConfig appearance_config = 101;</code>
+     * @return \Eolymp\Universe\AppearanceConfig
      */
-    public function getPermissions()
+    public function getAppearanceConfig()
     {
-        return $this->permissions;
+        return $this->appearance_config;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string permissions = 10099;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.universe.AppearanceConfig appearance_config = 101;</code>
+     * @param \Eolymp\Universe\AppearanceConfig $var
      * @return $this
      */
-    public function setPermissions($var)
+    public function setAppearanceConfig($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->permissions = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Universe\AppearanceConfig::class);
+        $this->appearance_config = $var;
 
         return $this;
     }
