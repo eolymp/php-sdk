@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UploadPictureOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string picture_url = 1;</code>
+     */
+    protected $picture_url = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class UploadPictureOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $picture_url
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\AccountService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture_url = 1;</code>
+     * @return string
+     */
+    public function getPictureUrl()
+    {
+        return $this->picture_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string picture_url = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPictureUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->picture_url = $var;
+
+        return $this;
     }
 
 }
