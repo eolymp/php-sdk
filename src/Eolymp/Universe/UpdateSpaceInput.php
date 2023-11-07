@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.UpdateSpaceInput.Patch patch = 3;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
@@ -28,6 +32,7 @@ class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $space_id
      *     @type \Eolymp\Universe\Space $space
      * }
@@ -35,6 +40,28 @@ class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Universe\Universe::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.UpdateSpaceInput.Patch patch = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.UpdateSpaceInput.Patch patch = 3;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\UpdateSpaceInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
