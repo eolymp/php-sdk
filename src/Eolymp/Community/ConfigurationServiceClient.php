@@ -58,4 +58,40 @@ class ConfigurationServiceClient {
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureIdentityProviderOutput::class, $context);
     }
 
+    /**
+     * Describe identity provider configuration
+     *
+     * @param DescribeIdentityConfigInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeIdentityConfigOutput output message
+     */
+    public function DescribeIdentityConfig(DescribeIdentityConfigInput $input, array $context = [])
+    {
+        $path = "/configs/identity";
+
+        $context['name'] = "eolymp.community.ConfigurationService/DescribeIdentityConfig";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeIdentityConfigOutput::class, $context);
+    }
+
+    /**
+     * Update identity provider configuration
+     *
+     * @param ConfigureIdentityConfigInput $input message
+     * @param array $context request parameters
+     *
+     * @return ConfigureIdentityConfigOutput output message
+     */
+    public function ConfigureIdentityConfig(ConfigureIdentityConfigInput $input, array $context = [])
+    {
+        $path = "/configs/identity";
+
+        $context['name'] = "eolymp.community.ConfigurationService/ConfigureIdentityConfig";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureIdentityConfigOutput::class, $context);
+    }
+
 }

@@ -71,14 +71,6 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string issuer_url = 51;</code>
      */
     protected $issuer_url = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.UserConfig user_config = 100;</code>
-     */
-    protected $user_config = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.AppearanceConfig appearance_config = 101;</code>
-     */
-    protected $appearance_config = null;
 
     /**
      * Constructor.
@@ -105,8 +97,6 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space home page URL
      *     @type string $issuer_url
      *           space issuer URL (used for issuing tokens)
-     *     @type \Eolymp\Universe\UserConfig $user_config
-     *     @type \Eolymp\Universe\AppearanceConfig $appearance_config
      * }
      */
     public function __construct($data = NULL) {
@@ -366,50 +356,6 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->issuer_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.UserConfig user_config = 100;</code>
-     * @return \Eolymp\Universe\UserConfig
-     */
-    public function getUserConfig()
-    {
-        return $this->user_config;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.UserConfig user_config = 100;</code>
-     * @param \Eolymp\Universe\UserConfig $var
-     * @return $this
-     */
-    public function setUserConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\UserConfig::class);
-        $this->user_config = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.AppearanceConfig appearance_config = 101;</code>
-     * @return \Eolymp\Universe\AppearanceConfig
-     */
-    public function getAppearanceConfig()
-    {
-        return $this->appearance_config;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.universe.AppearanceConfig appearance_config = 101;</code>
-     * @param \Eolymp\Universe\AppearanceConfig $var
-     * @return $this
-     */
-    public function setAppearanceConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\AppearanceConfig::class);
-        $this->appearance_config = $var;
 
         return $this;
     }
