@@ -35,14 +35,6 @@ class Patch
      * Generated from protobuf enum <code>VISIBILITY = 5;</code>
      */
     const VISIBILITY = 5;
-    /**
-     * Generated from protobuf enum <code>USER_CONFIG = 100;</code>
-     */
-    const USER_CONFIG = 100;
-    /**
-     * Generated from protobuf enum <code>APPEARANCE_CONFIG = 200;</code>
-     */
-    const APPEARANCE_CONFIG = 200;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -51,8 +43,6 @@ class Patch
         self::IMAGE => 'IMAGE',
         self::TYPE => 'TYPE',
         self::VISIBILITY => 'VISIBILITY',
-        self::USER_CONFIG => 'USER_CONFIG',
-        self::APPEARANCE_CONFIG => 'APPEARANCE_CONFIG',
     ];
 
     public static function name($value)
