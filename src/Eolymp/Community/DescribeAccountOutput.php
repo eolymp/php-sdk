@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.community.User account = 1;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 1;</code>
      */
-    protected $account = null;
+    protected $member = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member team = 2;</code>
      */
-    private $attributes;
+    protected $team = null;
 
     /**
      * Constructor.
@@ -28,8 +28,8 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Community\User $account
-     *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Eolymp\Community\Member $member
+     *     @type \Eolymp\Community\Member $team
      * }
      */
     public function __construct($data = NULL) {
@@ -38,45 +38,45 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.User account = 1;</code>
-     * @return \Eolymp\Community\User
+     * Generated from protobuf field <code>.eolymp.community.Member member = 1;</code>
+     * @return \Eolymp\Community\Member
      */
-    public function getAccount()
+    public function getMember()
     {
-        return $this->account;
+        return $this->member;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.User account = 1;</code>
-     * @param \Eolymp\Community\User $var
+     * Generated from protobuf field <code>.eolymp.community.Member member = 1;</code>
+     * @param \Eolymp\Community\Member $var
      * @return $this
      */
-    public function setAccount($var)
+    public function setMember($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\User::class);
-        $this->account = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
+        $this->member = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.community.Member team = 2;</code>
+     * @return \Eolymp\Community\Member
      */
-    public function getAttributes()
+    public function getTeam()
     {
-        return $this->attributes;
+        return $this->team;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 2;</code>
-     * @param \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.community.Member team = 2;</code>
+     * @param \Eolymp\Community\Member $var
      * @return $this
      */
-    public function setAttributes($var)
+    public function setTeam($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Attribute\Value::class);
-        $this->attributes = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
+        $this->team = $var;
 
         return $this;
     }
