@@ -26,9 +26,9 @@ class CompleteRecoverInput extends \Google\Protobuf\Internal\Message
      */
     protected $password = '';
     /**
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string member_id = 3;</code>
      */
-    protected $subject = '';
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -40,7 +40,7 @@ class CompleteRecoverInput extends \Google\Protobuf\Internal\Message
      *           secret from the email sent during StartRecovery
      *     @type string $password
      *           new password for the user
-     *     @type string $subject
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -101,23 +101,23 @@ class CompleteRecoverInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string member_id = 3;</code>
      * @return string
      */
-    public function getSubject()
+    public function getMemberId()
     {
-        return $this->subject;
+        return $this->member_id;
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string member_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setSubject($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->subject = $var;
+        $this->member_id = $var;
 
         return $this;
     }
