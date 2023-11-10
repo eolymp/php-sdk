@@ -30,7 +30,7 @@ class SuggestionServiceClient {
      */
     public function CreateSuggestion(CreateSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions/";
+        $path = "/suggestions";
 
         $context['name'] = "eolymp.atlas.SuggestionService/CreateSuggestion";
         $context['path'] = $path;
