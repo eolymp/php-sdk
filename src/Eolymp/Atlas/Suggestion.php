@@ -22,10 +22,6 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>string problem_id = 3;</code>
-     */
-    protected $problem_id = '';
-    /**
      * Generated from protobuf field <code>string locale = 4;</code>
      */
     protected $locale = '';
@@ -33,6 +29,14 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string member_id = 5;</code>
      */
     protected $member_id = '';
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     */
+    protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
+     */
+    protected $updated_at = null;
     /**
      * Generated from protobuf field <code>repeated string topics = 100;</code>
      */
@@ -58,9 +62,10 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $status
-     *     @type string $problem_id
      *     @type string $locale
      *     @type string $member_id
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
      *     @type int $difficulty
      *     @type \Eolymp\Ecm\Content $statement
@@ -117,28 +122,6 @@ class Suggestion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 3;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string locale = 4;</code>
      * @return string
      */
@@ -178,6 +161,50 @@ class Suggestion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_at = $var;
 
         return $this;
     }
