@@ -21,12 +21,6 @@ class DescribeSuggestionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string suggestion_id = 2;</code>
      */
     protected $suggestion_id = '';
-    /**
-     * request data for specific problem version
-     *
-     * Generated from protobuf field <code>uint32 version = 100;</code>
-     */
-    protected $version = 0;
 
     /**
      * Constructor.
@@ -36,8 +30,6 @@ class DescribeSuggestionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $problem_id
      *     @type string $suggestion_id
-     *     @type int $version
-     *           request data for specific problem version
      * }
      */
     public function __construct($data = NULL) {
@@ -85,32 +77,6 @@ class DescribeSuggestionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->suggestion_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * request data for specific problem version
-     *
-     * Generated from protobuf field <code>uint32 version = 100;</code>
-     * @return int
-     */
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    /**
-     * request data for specific problem version
-     *
-     * Generated from protobuf field <code>uint32 version = 100;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setVersion($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->version = $var;
 
         return $this;
     }
