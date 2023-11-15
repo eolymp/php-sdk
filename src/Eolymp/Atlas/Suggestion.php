@@ -26,6 +26,10 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * Generated from protobuf field <code>string title = 6;</code>
+     */
+    protected $title = '';
+    /**
      * Generated from protobuf field <code>string member_id = 5;</code>
      */
     protected $member_id = '';
@@ -63,6 +67,7 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $status
      *     @type string $locale
+     *     @type string $title
      *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
@@ -139,6 +144,28 @@ class Suggestion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string title = 6;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Generated from protobuf field <code>string title = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
 
         return $this;
     }
