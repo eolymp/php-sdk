@@ -5,7 +5,7 @@
 namespace Eolymp\Community;
 
     /**
-     * AccountService provides API to create an account and manage your own account.
+     * AccountService provides API to create and manage your own account.
      */
 class AccountServiceClient {
 
@@ -167,6 +167,22 @@ class AccountServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteRecoverOutput::class, $context);
+    }
+
+    /**
+     * @param UpgradeSubscriptionInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpgradeSubscriptionOutput output message
+     */
+    public function UpgradeSubscription(UpgradeSubscriptionInput $input, array $context = [])
+    {
+        $path = "/account/subscription";
+
+        $context['name'] = "eolymp.community.AccountService/UpgradeSubscription";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpgradeSubscriptionOutput::class, $context);
     }
 
 }

@@ -46,6 +46,14 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $secret = false;
     /**
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     */
+    private $groups;
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Subscription subscription = 300;</code>
+     */
+    protected $subscription = null;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      */
     private $attributes;
@@ -70,6 +78,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $groups
+     *     @type \Eolymp\Community\Member\Subscription $subscription
      *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
@@ -288,6 +298,50 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\Ghost::class);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Subscription subscription = 300;</code>
+     * @return \Eolymp\Community\Member\Subscription
+     */
+    public function getSubscription()
+    {
+        return $this->subscription;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Subscription subscription = 300;</code>
+     * @param \Eolymp\Community\Member\Subscription $var
+     * @return $this
+     */
+    public function setSubscription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member_Subscription::class);
+        $this->subscription = $var;
 
         return $this;
     }

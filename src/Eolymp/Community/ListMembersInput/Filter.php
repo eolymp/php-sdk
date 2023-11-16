@@ -46,6 +46,12 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $team_id;
     /**
+     * find members of particular group
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID group_id = 8;</code>
+     */
+    private $group_id;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_issuer = 101;</code>
      */
     private $user_issuer;
@@ -77,6 +83,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $unofficial
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $team_id
      *           find members of particular team
+     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $group_id
+     *           find members of particular group
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $user_issuer
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $user_subject
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $user_email
@@ -246,6 +254,32 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->team_id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * find members of particular group
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID group_id = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGroupId()
+    {
+        return $this->group_id;
+    }
+
+    /**
+     * find members of particular group
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID group_id = 8;</code>
+     * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGroupId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->group_id = $arr;
 
         return $this;
     }

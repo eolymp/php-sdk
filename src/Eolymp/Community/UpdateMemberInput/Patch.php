@@ -30,6 +30,12 @@ class Patch
      */
     const UNOFFICIAL = 2;
     /**
+     * change groups
+     *
+     * Generated from protobuf enum <code>GROUPS = 3;</code>
+     */
+    const GROUPS = 3;
+    /**
      * change all account details
      *
      * Generated from protobuf enum <code>ACCOUNT = 100;</code>
@@ -102,6 +108,7 @@ class Patch
         self::ALL => 'ALL',
         self::ACTIVE => 'ACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
+        self::GROUPS => 'GROUPS',
         self::ACCOUNT => 'ACCOUNT',
         self::USER_NICKNAME => 'USER_NICKNAME',
         self::USER_EMAIL => 'USER_EMAIL',
