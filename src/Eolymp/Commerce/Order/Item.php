@@ -34,21 +34,21 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $item_price = 0.0;
     /**
+     * Generated from protobuf field <code>float tax_percentage = 102;</code>
+     */
+    protected $tax_percentage = 0.0;
+    /**
+     * Generated from protobuf field <code>float discount_percentage = 104;</code>
+     */
+    protected $discount_percentage = 0.0;
+    /**
      * Generated from protobuf field <code>float total_tax_amount = 101;</code>
      */
     protected $total_tax_amount = 0.0;
     /**
-     * Generated from protobuf field <code>float total_tax_percentage = 102;</code>
-     */
-    protected $total_tax_percentage = 0.0;
-    /**
      * Generated from protobuf field <code>float total_discount_amount = 103;</code>
      */
     protected $total_discount_amount = 0.0;
-    /**
-     * Generated from protobuf field <code>float total_discount_percentage = 104;</code>
-     */
-    protected $total_discount_percentage = 0.0;
     /**
      * Generated from protobuf field <code>float total_price = 109;</code>
      */
@@ -65,10 +65,10 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type float $quantity
      *     @type float $item_price
+     *     @type float $tax_percentage
+     *     @type float $discount_percentage
      *     @type float $total_tax_amount
-     *     @type float $total_tax_percentage
      *     @type float $total_discount_amount
-     *     @type float $total_discount_percentage
      *     @type float $total_price
      * }
      */
@@ -188,6 +188,50 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>float tax_percentage = 102;</code>
+     * @return float
+     */
+    public function getTaxPercentage()
+    {
+        return $this->tax_percentage;
+    }
+
+    /**
+     * Generated from protobuf field <code>float tax_percentage = 102;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setTaxPercentage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->tax_percentage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float discount_percentage = 104;</code>
+     * @return float
+     */
+    public function getDiscountPercentage()
+    {
+        return $this->discount_percentage;
+    }
+
+    /**
+     * Generated from protobuf field <code>float discount_percentage = 104;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setDiscountPercentage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->discount_percentage = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>float total_tax_amount = 101;</code>
      * @return float
      */
@@ -210,28 +254,6 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float total_tax_percentage = 102;</code>
-     * @return float
-     */
-    public function getTotalTaxPercentage()
-    {
-        return $this->total_tax_percentage;
-    }
-
-    /**
-     * Generated from protobuf field <code>float total_tax_percentage = 102;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setTotalTaxPercentage($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->total_tax_percentage = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>float total_discount_amount = 103;</code>
      * @return float
      */
@@ -249,28 +271,6 @@ class Item extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->total_discount_amount = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>float total_discount_percentage = 104;</code>
-     * @return float
-     */
-    public function getTotalDiscountPercentage()
-    {
-        return $this->total_discount_percentage;
-    }
-
-    /**
-     * Generated from protobuf field <code>float total_discount_percentage = 104;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setTotalDiscountPercentage($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->total_discount_percentage = $var;
 
         return $this;
     }

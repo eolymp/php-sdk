@@ -22,6 +22,10 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     protected $last_name = '';
     /**
+     * Generated from protobuf field <code>string company_name = 24;</code>
+     */
+    protected $company_name = '';
+    /**
      * Generated from protobuf field <code>string email = 22;</code>
      */
     protected $email = '';
@@ -49,6 +53,10 @@ class Address extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string street_name = 14;</code>
      */
     protected $street_name = '';
+    /**
+     * Generated from protobuf field <code>string tax_number = 30;</code>
+     */
+    protected $tax_number = '';
 
     /**
      * Constructor.
@@ -58,6 +66,7 @@ class Address extends \Google\Protobuf\Internal\Message
      *
      *     @type string $first_name
      *     @type string $last_name
+     *     @type string $company_name
      *     @type string $email
      *     @type string $phone
      *     @type string $country
@@ -65,6 +74,7 @@ class Address extends \Google\Protobuf\Internal\Message
      *     @type string $city
      *     @type string $postcode
      *     @type string $street_name
+     *     @type string $tax_number
      * }
      */
     public function __construct($data = NULL) {
@@ -112,6 +122,28 @@ class Address extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->last_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company_name = 24;</code>
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->company_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company_name = 24;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompanyName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company_name = $var;
 
         return $this;
     }
@@ -266,6 +298,28 @@ class Address extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->street_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_number = 30;</code>
+     * @return string
+     */
+    public function getTaxNumber()
+    {
+        return $this->tax_number;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_number = 30;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaxNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tax_number = $var;
 
         return $this;
     }
