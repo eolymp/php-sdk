@@ -23,6 +23,22 @@ class OrderServiceClient {
     }
 
     /**
+     * @param CreateOrderInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateOrderOutput output message
+     */
+    public function CreateOrder(CreateOrderInput $input, array $context = [])
+    {
+        $path = "/orders";
+
+        $context['name'] = "eolymp.commerce.OrderService/CreateOrder";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateOrderOutput::class, $context);
+    }
+
+    /**
      * @param DescribeOrderInput $input message
      * @param array $context request parameters
      *
