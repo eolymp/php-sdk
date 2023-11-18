@@ -22,4 +22,39 @@ class SubscriptionServiceClient {
         $this->invoker = $invoker;
     }
 
+    /**
+     * @param DescribeSubscriptionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeSubscriptionOutput output message
+     */
+    public function DescribeSubscription(DescribeSubscriptionInput $input, array $context = [])
+    {
+        $path = "/subscriptions/".rawurlencode($input->getSubscriptionId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubscriptionId("");
+
+        $context['name'] = "eolymp.community.SubscriptionService/DescribeSubscription";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubscriptionOutput::class, $context);
+    }
+
+    /**
+     * @param ListSubscriptionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListSubscriptionsOutput output message
+     */
+    public function ListSubscriptions(ListSubscriptionsInput $input, array $context = [])
+    {
+        $path = "/subscriptions";
+
+        $context['name'] = "eolymp.community.SubscriptionService/ListSubscriptions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSubscriptionsOutput::class, $context);
+    }
+
 }

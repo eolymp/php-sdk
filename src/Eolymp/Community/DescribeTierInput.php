@@ -18,11 +18,23 @@ class DescribeTierInput extends \Google\Protobuf\Internal\Message
      */
     protected $tier_id = '';
     /**
-     * optionally, request prices for a particular country
+     * render description to ecm
      *
-     * Generated from protobuf field <code>string pricing_country = 100;</code>
+     * Generated from protobuf field <code>bool render = 100;</code>
      */
-    protected $pricing_country = '';
+    protected $render = false;
+    /**
+     * optionally, request name and description in particular language
+     *
+     * Generated from protobuf field <code>string locale = 101;</code>
+     */
+    protected $locale = '';
+    /**
+     * optionally, request prices in particular currency
+     *
+     * Generated from protobuf field <code>string currency = 102;</code>
+     */
+    protected $currency = '';
 
     /**
      * Constructor.
@@ -31,8 +43,12 @@ class DescribeTierInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $tier_id
-     *     @type string $pricing_country
-     *           optionally, request prices for a particular country
+     *     @type bool $render
+     *           render description to ecm
+     *     @type string $locale
+     *           optionally, request name and description in particular language
+     *     @type string $currency
+     *           optionally, request prices in particular currency
      * }
      */
     public function __construct($data = NULL) {
@@ -63,27 +79,79 @@ class DescribeTierInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, request prices for a particular country
+     * render description to ecm
      *
-     * Generated from protobuf field <code>string pricing_country = 100;</code>
-     * @return string
+     * Generated from protobuf field <code>bool render = 100;</code>
+     * @return bool
      */
-    public function getPricingCountry()
+    public function getRender()
     {
-        return $this->pricing_country;
+        return $this->render;
     }
 
     /**
-     * optionally, request prices for a particular country
+     * render description to ecm
      *
-     * Generated from protobuf field <code>string pricing_country = 100;</code>
+     * Generated from protobuf field <code>bool render = 100;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, request name and description in particular language
+     *
+     * Generated from protobuf field <code>string locale = 101;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * optionally, request name and description in particular language
+     *
+     * Generated from protobuf field <code>string locale = 101;</code>
      * @param string $var
      * @return $this
      */
-    public function setPricingCountry($var)
+    public function setLocale($var)
     {
         GPBUtil::checkString($var, True);
-        $this->pricing_country = $var;
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, request prices in particular currency
+     *
+     * Generated from protobuf field <code>string currency = 102;</code>
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * optionally, request prices in particular currency
+     *
+     * Generated from protobuf field <code>string currency = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCurrency($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->currency = $var;
 
         return $this;
     }

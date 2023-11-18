@@ -23,22 +23,6 @@ class TierServiceClient {
     }
 
     /**
-     * @param ListTiersInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListTiersOutput output message
-     */
-    public function ListTiers(ListTiersInput $input, array $context = [])
-    {
-        $path = "/tiers";
-
-        $context['name'] = "eolymp.community.TierService/ListTiers";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTiersOutput::class, $context);
-    }
-
-    /**
      * @param DescribeTierInput $input message
      * @param array $context request parameters
      *
@@ -55,6 +39,38 @@ class TierServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTierOutput::class, $context);
+    }
+
+    /**
+     * @param ListTiersInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListTiersOutput output message
+     */
+    public function ListTiers(ListTiersInput $input, array $context = [])
+    {
+        $path = "/tiers";
+
+        $context['name'] = "eolymp.community.TierService/ListTiers";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTiersOutput::class, $context);
+    }
+
+    /**
+     * @param ListCurrenciesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListCurrenciesOutput output message
+     */
+    public function ListCurrencies(ListCurrenciesInput $input, array $context = [])
+    {
+        $path = "/tier-currencies";
+
+        $context['name'] = "eolymp.community.TierService/ListCurrencies";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCurrenciesOutput::class, $context);
     }
 
 }
