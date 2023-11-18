@@ -22,20 +22,4 @@ class CheckoutServiceClient {
         $this->invoker = $invoker;
     }
 
-    /**
-     * @param CreateCheckoutInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateCheckoutOutput output message
-     */
-    public function CreateCheckout(CreateCheckoutInput $input, array $context = [])
-    {
-        $path = "/checkout";
-
-        $context['name'] = "eolymp.commerce.CheckoutService/CreateCheckout";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateCheckoutOutput::class, $context);
-    }
-
 }
