@@ -4,7 +4,7 @@
 
 namespace Eolymp\Commerce;
 
-class CheckoutServiceClient {
+class SubscriptionServiceClient {
 
     /** @var string base URL */
     private $url;
