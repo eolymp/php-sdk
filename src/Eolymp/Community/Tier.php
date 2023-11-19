@@ -22,6 +22,10 @@ class Tier extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Generated from protobuf field <code>string summary = 6;</code>
+     */
+    protected $summary = '';
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
      */
     protected $description = null;
@@ -42,6 +46,7 @@ class Tier extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
+     *     @type string $summary
      *     @type \Eolymp\Ecm\Content $description
      *     @type string $image
      *     @type \Eolymp\Community\Tier\Price $price
@@ -92,6 +97,28 @@ class Tier extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string summary = 6;</code>
+     * @return string
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    /**
+     * Generated from protobuf field <code>string summary = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSummary($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->summary = $var;
 
         return $this;
     }
