@@ -22,6 +22,10 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>string space_id = 3;</code>
+     */
+    protected $space_id = '';
+    /**
      * time when subscription was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
@@ -91,6 +95,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.commerce.Subscription.Item items = 999;</code>
      */
     private $items;
+    protected $payer;
 
     /**
      * Constructor.
@@ -100,6 +105,9 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $status
+     *     @type string $space_id
+     *     @type string $user_id
+     *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $created_at
      *           time when subscription was created
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -167,6 +175,72 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Commerce\Subscription_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string space_id = 3;</code>
+     * @return string
+     */
+    public function getSpaceId()
+    {
+        return $this->space_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string space_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 5;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->readOneof(5);
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 6;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->readOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(6, $var);
 
         return $this;
     }
@@ -519,6 +593,14 @@ class Subscription extends \Google\Protobuf\Internal\Message
         $this->items = $arr;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPayer()
+    {
+        return $this->whichOneof("payer");
     }
 
 }
