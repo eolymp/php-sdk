@@ -26,6 +26,10 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $space_id = '';
     /**
+     * Generated from protobuf field <code>string payer_email = 7;</code>
+     */
+    protected $payer_email = '';
+    /**
      * time when subscription was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
@@ -108,6 +112,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type string $space_id
      *     @type string $user_id
      *     @type string $member_id
+     *     @type string $payer_email
      *     @type \Google\Protobuf\Timestamp $created_at
      *           time when subscription was created
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -241,6 +246,28 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string payer_email = 7;</code>
+     * @return string
+     */
+    public function getPayerEmail()
+    {
+        return $this->payer_email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string payer_email = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPayerEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->payer_email = $var;
 
         return $this;
     }
