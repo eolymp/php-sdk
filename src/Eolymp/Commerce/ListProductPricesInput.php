@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProductPricesInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string currency = 1;</code>
+     * Generated from protobuf field <code>string product_id = 1;</code>
      */
-    protected $currency = '';
+    protected $product_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ListProductPricesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $currency
+     *     @type string $product_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ListProductPricesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 1;</code>
+     * Generated from protobuf field <code>string product_id = 1;</code>
      * @return string
      */
-    public function getCurrency()
+    public function getProductId()
     {
-        return $this->currency;
+        return $this->product_id;
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 1;</code>
+     * Generated from protobuf field <code>string product_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setCurrency($var)
+    public function setProductId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->currency = $var;
+        $this->product_id = $var;
 
         return $this;
     }
