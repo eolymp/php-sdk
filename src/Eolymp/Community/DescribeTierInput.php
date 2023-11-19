@@ -29,12 +29,6 @@ class DescribeTierInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 101;</code>
      */
     protected $locale = '';
-    /**
-     * optionally, request prices in particular currency
-     *
-     * Generated from protobuf field <code>string currency = 102;</code>
-     */
-    protected $currency = '';
 
     /**
      * Constructor.
@@ -47,8 +41,6 @@ class DescribeTierInput extends \Google\Protobuf\Internal\Message
      *           render description to ecm
      *     @type string $locale
      *           optionally, request name and description in particular language
-     *     @type string $currency
-     *           optionally, request prices in particular currency
      * }
      */
     public function __construct($data = NULL) {
@@ -126,32 +118,6 @@ class DescribeTierInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * optionally, request prices in particular currency
-     *
-     * Generated from protobuf field <code>string currency = 102;</code>
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->currency;
-    }
-
-    /**
-     * optionally, request prices in particular currency
-     *
-     * Generated from protobuf field <code>string currency = 102;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCurrency($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->currency = $var;
 
         return $this;
     }

@@ -58,19 +58,22 @@ class TierServiceClient {
     }
 
     /**
-     * @param ListCurrenciesInput $input message
+     * @param ListTierPricesInput $input message
      * @param array $context request parameters
      *
-     * @return ListCurrenciesOutput output message
+     * @return ListTierPricesOutput output message
      */
-    public function ListCurrencies(ListCurrenciesInput $input, array $context = [])
+    public function ListTierPrices(ListTierPricesInput $input, array $context = [])
     {
-        $path = "/tier-currencies";
+        $path = "/tiers/".rawurlencode($input->getTierId())."/prices";
 
-        $context['name'] = "eolymp.community.TierService/ListCurrencies";
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTierId("");
+
+        $context['name'] = "eolymp.community.TierService/ListTierPrices";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCurrenciesOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTierPricesOutput::class, $context);
     }
 
 }

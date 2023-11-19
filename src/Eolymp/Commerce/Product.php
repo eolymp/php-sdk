@@ -42,7 +42,7 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     protected $unit_label = '';
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product.Price default_price = 10;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Price default_price = 10;</code>
      */
     protected $default_price = null;
 
@@ -59,7 +59,7 @@ class Product extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type string $page_url
      *     @type string $unit_label
-     *     @type \Eolymp\Commerce\Product\Price $default_price
+     *     @type \Eolymp\Commerce\Price $default_price
      * }
      */
     public function __construct($data = NULL) {
@@ -222,8 +222,8 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product.Price default_price = 10;</code>
-     * @return \Eolymp\Commerce\Product\Price
+     * Generated from protobuf field <code>.eolymp.commerce.Price default_price = 10;</code>
+     * @return \Eolymp\Commerce\Price
      */
     public function getDefaultPrice()
     {
@@ -231,13 +231,13 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product.Price default_price = 10;</code>
-     * @param \Eolymp\Commerce\Product\Price $var
+     * Generated from protobuf field <code>.eolymp.commerce.Price default_price = 10;</code>
+     * @param \Eolymp\Commerce\Price $var
      * @return $this
      */
     public function setDefaultPrice($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Commerce\Product_Price::class);
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Price::class);
         $this->default_price = $var;
 
         return $this;

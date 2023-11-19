@@ -18,7 +18,7 @@ class CreateProductPriceInput extends \Google\Protobuf\Internal\Message
      */
     protected $product_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product.Price price = 2;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 2;</code>
      */
     protected $price = null;
 
@@ -29,7 +29,7 @@ class CreateProductPriceInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $product_id
-     *     @type \Eolymp\Commerce\Product\Price $price
+     *     @type \Eolymp\Commerce\Price $price
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +60,8 @@ class CreateProductPriceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product.Price price = 2;</code>
-     * @return \Eolymp\Commerce\Product\Price
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 2;</code>
+     * @return \Eolymp\Commerce\Price
      */
     public function getPrice()
     {
@@ -69,13 +69,13 @@ class CreateProductPriceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product.Price price = 2;</code>
-     * @param \Eolymp\Commerce\Product\Price $var
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 2;</code>
+     * @param \Eolymp\Commerce\Price $var
      * @return $this
      */
     public function setPrice($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Commerce\Product_Price::class);
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Price::class);
         $this->price = $var;
 
         return $this;

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.commerce.RemoveProductPriceOutput</code>
+ * Generated from protobuf message <code>eolymp.commerce.DeleteProductPriceOutput</code>
  */
-class RemoveProductPriceOutput extends \Google\Protobuf\Internal\Message
+class DeleteProductPriceOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.ListCurrenciesOutput</code>
+ * Generated from protobuf message <code>eolymp.community.ListTierPricesOutput</code>
  */
-class ListCurrenciesOutput extends \Google\Protobuf\Internal\Message
+class ListTierPricesOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated string items = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Price items = 1;</code>
      */
     private $items;
 
@@ -24,7 +24,7 @@ class ListCurrenciesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Commerce\Price[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class ListCurrenciesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string items = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Price items = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -42,13 +42,13 @@ class ListCurrenciesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string items = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Price items = 1;</code>
+     * @param \Eolymp\Commerce\Price[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Price::class);
         $this->items = $arr;
 
         return $this;

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListProductPricesOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Price items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Price items = 2;</code>
      */
     private $items;
 
@@ -24,7 +24,7 @@ class ListProductPricesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Commerce\Product\Price[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Commerce\Price[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +33,7 @@ class ListProductPricesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Price items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Price items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -42,13 +42,13 @@ class ListProductPricesOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Price items = 2;</code>
-     * @param \Eolymp\Commerce\Product\Price[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Price items = 2;</code>
+     * @param \Eolymp\Commerce\Price[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Product\Price::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Price::class);
         $this->items = $arr;
 
         return $this;

@@ -33,10 +33,6 @@ class Tier extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string image = 4;</code>
      */
     protected $image = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Tier.Price price = 5;</code>
-     */
-    protected $price = null;
 
     /**
      * Constructor.
@@ -49,7 +45,6 @@ class Tier extends \Google\Protobuf\Internal\Message
      *     @type string $summary
      *     @type \Eolymp\Ecm\Content $description
      *     @type string $image
-     *     @type \Eolymp\Community\Tier\Price $price
      * }
      */
     public function __construct($data = NULL) {
@@ -163,28 +158,6 @@ class Tier extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Tier.Price price = 5;</code>
-     * @return \Eolymp\Community\Tier\Price
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Tier.Price price = 5;</code>
-     * @param \Eolymp\Community\Tier\Price $var
-     * @return $this
-     */
-    public function setPrice($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Tier_Price::class);
-        $this->price = $var;
 
         return $this;
     }
