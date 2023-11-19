@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.commerce.AddProductPriceInput</code>
+ * Generated from protobuf message <code>eolymp.commerce.CreateProductPriceInput</code>
  */
-class AddProductPriceInput extends \Google\Protobuf\Internal\Message
+class CreateProductPriceInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string product_id = 1;</code>
@@ -21,10 +21,6 @@ class AddProductPriceInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.commerce.Product.Price price = 2;</code>
      */
     protected $price = null;
-    /**
-     * Generated from protobuf field <code>bool set_default = 3;</code>
-     */
-    protected $set_default = false;
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class AddProductPriceInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $product_id
      *     @type \Eolymp\Commerce\Product\Price $price
-     *     @type bool $set_default
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class AddProductPriceInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Commerce\Product_Price::class);
         $this->price = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool set_default = 3;</code>
-     * @return bool
-     */
-    public function getSetDefault()
-    {
-        return $this->set_default;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool set_default = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setSetDefault($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->set_default = $var;
 
         return $this;
     }
