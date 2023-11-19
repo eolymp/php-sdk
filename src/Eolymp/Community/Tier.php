@@ -30,21 +30,9 @@ class Tier extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
-     * Generated from protobuf field <code>string currency = 10;</code>
+     * Generated from protobuf field <code>.eolymp.community.Tier.Price price = 5;</code>
      */
-    protected $currency = '';
-    /**
-     * Generated from protobuf field <code>uint32 onetime_price = 11;</code>
-     */
-    protected $onetime_price = 0;
-    /**
-     * Generated from protobuf field <code>uint32 monthly_price = 12;</code>
-     */
-    protected $monthly_price = 0;
-    /**
-     * Generated from protobuf field <code>uint32 yearly_price = 13;</code>
-     */
-    protected $yearly_price = 0;
+    protected $price = null;
 
     /**
      * Constructor.
@@ -56,10 +44,7 @@ class Tier extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
      *     @type string $image
-     *     @type string $currency
-     *     @type int $onetime_price
-     *     @type int $monthly_price
-     *     @type int $yearly_price
+     *     @type \Eolymp\Community\Tier\Price $price
      * }
      */
     public function __construct($data = NULL) {
@@ -156,89 +141,23 @@ class Tier extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.community.Tier.Price price = 5;</code>
+     * @return \Eolymp\Community\Tier\Price
      */
-    public function getCurrency()
+    public function getPrice()
     {
-        return $this->currency;
+        return $this->price;
     }
 
     /**
-     * Generated from protobuf field <code>string currency = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.community.Tier.Price price = 5;</code>
+     * @param \Eolymp\Community\Tier\Price $var
      * @return $this
      */
-    public function setCurrency($var)
+    public function setPrice($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->currency = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 onetime_price = 11;</code>
-     * @return int
-     */
-    public function getOnetimePrice()
-    {
-        return $this->onetime_price;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 onetime_price = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOnetimePrice($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->onetime_price = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 monthly_price = 12;</code>
-     * @return int
-     */
-    public function getMonthlyPrice()
-    {
-        return $this->monthly_price;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 monthly_price = 12;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMonthlyPrice($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->monthly_price = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 yearly_price = 13;</code>
-     * @return int
-     */
-    public function getYearlyPrice()
-    {
-        return $this->yearly_price;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 yearly_price = 13;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setYearlyPrice($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->yearly_price = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Community\Tier_Price::class);
+        $this->price = $var;
 
         return $this;
     }
