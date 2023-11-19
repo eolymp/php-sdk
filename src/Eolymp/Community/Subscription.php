@@ -66,9 +66,9 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $amount = 0;
     /**
-     * Generated from protobuf field <code>uint32 tax_name = 41;</code>
+     * Generated from protobuf field <code>string tax_name = 41;</code>
      */
-    protected $tax_name = 0;
+    protected $tax_name = '';
     /**
      * Generated from protobuf field <code>uint32 tax_amount = 42;</code>
      */
@@ -97,7 +97,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type int $recurrence
      *     @type string $currency
      *     @type int $amount
-     *     @type int $tax_name
+     *     @type string $tax_name
      *     @type int $tax_amount
      *     @type int $tax_percentage
      * }
@@ -394,8 +394,8 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 tax_name = 41;</code>
-     * @return int
+     * Generated from protobuf field <code>string tax_name = 41;</code>
+     * @return string
      */
     public function getTaxName()
     {
@@ -403,13 +403,13 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 tax_name = 41;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string tax_name = 41;</code>
+     * @param string $var
      * @return $this
      */
     public function setTaxName($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->tax_name = $var;
 
         return $this;
