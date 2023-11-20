@@ -26,29 +26,9 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $product_id = '';
     /**
-     * Generated from protobuf field <code>string product_name = 21;</code>
+     * Generated from protobuf field <code>string price_id = 21;</code>
      */
-    protected $product_name = '';
-    /**
-     * Generated from protobuf field <code>string product_image = 22;</code>
-     */
-    protected $product_image = '';
-    /**
-     * Generated from protobuf field <code>string product_description = 23;</code>
-     */
-    protected $product_description = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.commerce.Subscription.Recurrence recurrence = 10;</code>
-     */
-    protected $recurrence = 0;
-    /**
-     * Generated from protobuf field <code>uint32 unit_amount = 11;</code>
-     */
-    protected $unit_amount = 0;
-    /**
-     * Generated from protobuf field <code>uint32 quantity = 12;</code>
-     */
-    protected $quantity = 0;
+    protected $price_id = '';
 
     /**
      * Constructor.
@@ -59,12 +39,7 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type bool $active
      *     @type string $product_id
-     *     @type string $product_name
-     *     @type string $product_image
-     *     @type string $product_description
-     *     @type int $recurrence
-     *     @type int $unit_amount
-     *     @type int $quantity
+     *     @type string $price_id
      * }
      */
     public function __construct($data = NULL) {
@@ -139,133 +114,23 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string product_name = 21;</code>
+     * Generated from protobuf field <code>string price_id = 21;</code>
      * @return string
      */
-    public function getProductName()
+    public function getPriceId()
     {
-        return $this->product_name;
+        return $this->price_id;
     }
 
     /**
-     * Generated from protobuf field <code>string product_name = 21;</code>
+     * Generated from protobuf field <code>string price_id = 21;</code>
      * @param string $var
      * @return $this
      */
-    public function setProductName($var)
+    public function setPriceId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->product_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string product_image = 22;</code>
-     * @return string
-     */
-    public function getProductImage()
-    {
-        return $this->product_image;
-    }
-
-    /**
-     * Generated from protobuf field <code>string product_image = 22;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProductImage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->product_image = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string product_description = 23;</code>
-     * @return string
-     */
-    public function getProductDescription()
-    {
-        return $this->product_description;
-    }
-
-    /**
-     * Generated from protobuf field <code>string product_description = 23;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProductDescription($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->product_description = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.commerce.Subscription.Recurrence recurrence = 10;</code>
-     * @return int
-     */
-    public function getRecurrence()
-    {
-        return $this->recurrence;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.commerce.Subscription.Recurrence recurrence = 10;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setRecurrence($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Commerce\Subscription_Recurrence::class);
-        $this->recurrence = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 unit_amount = 11;</code>
-     * @return int
-     */
-    public function getUnitAmount()
-    {
-        return $this->unit_amount;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 unit_amount = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUnitAmount($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->unit_amount = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 quantity = 12;</code>
-     * @return int
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 quantity = 12;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setQuantity($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->quantity = $var;
+        $this->price_id = $var;
 
         return $this;
     }
