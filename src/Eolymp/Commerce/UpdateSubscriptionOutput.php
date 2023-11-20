@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UpdateSubscriptionOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string checkout_url = 1;</code>
+     */
+    protected $checkout_url = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class UpdateSubscriptionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $checkout_url
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\SubscriptionService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string checkout_url = 1;</code>
+     * @return string
+     */
+    public function getCheckoutUrl()
+    {
+        return $this->checkout_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string checkout_url = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCheckoutUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->checkout_url = $var;
+
+        return $this;
     }
 
 }
