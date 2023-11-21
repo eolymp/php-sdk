@@ -36,6 +36,18 @@ class Patch
      */
     const GROUPS = 3;
     /**
+     * add new groups specified in member.groups to the existing ones
+     *
+     * Generated from protobuf enum <code>GROUPS_ADD = 4;</code>
+     */
+    const GROUPS_ADD = 4;
+    /**
+     * remove groups specified in member.groups from the existing ones
+     *
+     * Generated from protobuf enum <code>GROUPS_REMOVE = 5;</code>
+     */
+    const GROUPS_REMOVE = 5;
+    /**
      * change all account details
      *
      * Generated from protobuf enum <code>ACCOUNT = 100;</code>
@@ -109,6 +121,8 @@ class Patch
         self::ACTIVE => 'ACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
         self::GROUPS => 'GROUPS',
+        self::GROUPS_ADD => 'GROUPS_ADD',
+        self::GROUPS_REMOVE => 'GROUPS_REMOVE',
         self::ACCOUNT => 'ACCOUNT',
         self::USER_NICKNAME => 'USER_NICKNAME',
         self::USER_EMAIL => 'USER_EMAIL',
