@@ -50,6 +50,10 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $tier_id = '';
     /**
+     * Generated from protobuf field <code>string fallback_tier_id = 51;</code>
+     */
+    protected $fallback_tier_id = '';
+    /**
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      */
     private $groups;
@@ -76,6 +80,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type bool $secret
      *           member is secret and does not appear on anywhere (for example, an admin who performs testing)
      *     @type string $tier_id
+     *     @type string $fallback_tier_id
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
@@ -254,6 +259,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tier_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fallback_tier_id = 51;</code>
+     * @return string
+     */
+    public function getFallbackTierId()
+    {
+        return $this->fallback_tier_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fallback_tier_id = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFallbackTierId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->fallback_tier_id = $var;
 
         return $this;
     }
