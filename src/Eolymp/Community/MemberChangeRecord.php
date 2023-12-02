@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class MemberChangeRecord extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.community.MemberChangeRecord.Operation op = 1;</code>
+     * Generated from protobuf field <code>string space_id = 1;</code>
+     */
+    protected $space_id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.community.MemberChangeRecord.Operation op = 2;</code>
      */
     protected $op = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
      */
     protected $member = null;
 
@@ -28,6 +32,7 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $space_id
      *     @type int $op
      *     @type \Eolymp\Community\Member $member
      * }
@@ -38,7 +43,29 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.MemberChangeRecord.Operation op = 1;</code>
+     * Generated from protobuf field <code>string space_id = 1;</code>
+     * @return string
+     */
+    public function getSpaceId()
+    {
+        return $this->space_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string space_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.MemberChangeRecord.Operation op = 2;</code>
      * @return int
      */
     public function getOp()
@@ -47,7 +74,7 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.MemberChangeRecord.Operation op = 1;</code>
+     * Generated from protobuf field <code>.eolymp.community.MemberChangeRecord.Operation op = 2;</code>
      * @param int $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
      * @return \Eolymp\Community\Member
      */
     public function getMember()
@@ -69,7 +96,7 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
      * @param \Eolymp\Community\Member $var
      * @return $this
      */
