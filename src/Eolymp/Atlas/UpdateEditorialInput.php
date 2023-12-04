@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateEditorialInput.Patch patch = 10;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string editorial_id = 2;</code>
      */
     protected $editorial_id = '';
@@ -28,6 +34,8 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *           specify list of fields to update, if empty all fields are updated
      *     @type string $editorial_id
      *     @type \Eolymp\Atlas\Editorial $editorial
      * }
@@ -35,6 +43,32 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\EditorialService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateEditorialInput.Patch patch = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateEditorialInput.Patch patch = 10;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateEditorialInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**

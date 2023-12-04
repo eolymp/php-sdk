@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateStatementInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateStatementInput.Patch patch = 10;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
@@ -32,6 +38,8 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *           specify list of fields to update, if empty all fields are updated
      *     @type string $problem_id
      *     @type string $statement_id
      *     @type \Eolymp\Atlas\Statement $statement
@@ -40,6 +48,32 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\StatementService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateStatementInput.Patch patch = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateStatementInput.Patch patch = 10;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateStatementInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
