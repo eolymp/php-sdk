@@ -24,6 +24,12 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
+     * data filters
+     *
+     * Generated from protobuf field <code>.eolymp.geography.ListRegionsInput.Filter filters = 40;</code>
+     */
+    protected $filters = null;
+    /**
      * deprecated, use country_id filter instead
      *
      * Generated from protobuf field <code>string country_id = 1;</code>
@@ -39,6 +45,8 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
+     *     @type \Eolymp\Geography\ListRegionsInput\Filter $filters
+     *           data filters
      *     @type string $country_id
      *           deprecated, use country_id filter instead
      * }
@@ -92,6 +100,32 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>.eolymp.geography.ListRegionsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Geography\ListRegionsInput\Filter
+     */
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>.eolymp.geography.ListRegionsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Geography\ListRegionsInput\Filter $var
+     * @return $this
+     */
+    public function setFilters($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Geography\ListRegionsInput_Filter::class);
+        $this->filters = $var;
 
         return $this;
     }
