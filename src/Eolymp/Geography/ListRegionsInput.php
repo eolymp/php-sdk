@@ -14,6 +14,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListRegionsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * pagination
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     */
+    protected $offset = 0;
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     */
+    protected $size = 0;
+    /**
+     * deprecated, use country_id filter instead
+     *
      * Generated from protobuf field <code>string country_id = 1;</code>
      */
     protected $country_id = '';
@@ -24,7 +36,11 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $offset
+     *           pagination
+     *     @type int $size
      *     @type string $country_id
+     *           deprecated, use country_id filter instead
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +49,56 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * pagination
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * pagination
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, use country_id filter instead
+     *
      * Generated from protobuf field <code>string country_id = 1;</code>
      * @return string
      */
@@ -42,6 +108,8 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use country_id filter instead
+     *
      * Generated from protobuf field <code>string country_id = 1;</code>
      * @param string $var
      * @return $this

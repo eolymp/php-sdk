@@ -84,10 +84,7 @@ class GeographyClient {
      */
     public function ListRegions(ListRegionsInput $input, array $context = [])
     {
-        $path = "/geography/countries/".rawurlencode($input->getCountryId())."/regions";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setCountryId("");
+        $path = "/geography/regions";
 
         $context['name'] = "eolymp.geography.Geography/ListRegions";
         $context['path'] = $path;
