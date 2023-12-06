@@ -92,4 +92,23 @@ class GeographyClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRegionsOutput::class, $context);
     }
 
+    /**
+     * @param ListRegionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListRegionsOutput output message
+     */
+    public function DeprecatedListRegions(ListRegionsInput $input, array $context = [])
+    {
+        $path = "/geography/countries/".rawurlencode($input->getCountryId())."/regions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCountryId("");
+
+        $context['name'] = "eolymp.geography.Geography/DeprecatedListRegions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRegionsOutput::class, $context);
+    }
+
 }
