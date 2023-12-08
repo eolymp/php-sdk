@@ -18,9 +18,9 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      */
     protected $ticket_id = '';
     /**
-     * Generated from protobuf field <code>string message = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
      */
-    protected $message = '';
+    protected $message = null;
     /**
      * Generated from protobuf field <code>bool close = 21;</code>
      */
@@ -33,7 +33,7 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $ticket_id
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Content $message
      *     @type bool $close
      * }
      */
@@ -65,8 +65,8 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -74,13 +74,13 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
 
         return $this;

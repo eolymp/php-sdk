@@ -22,9 +22,9 @@ class UpdateReplyInput extends \Google\Protobuf\Internal\Message
      */
     protected $reply_id = '';
     /**
-     * Generated from protobuf field <code>string message = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
      */
-    protected $message = '';
+    protected $message = null;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class UpdateReplyInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $ticket_id
      *     @type string $reply_id
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Content $message
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class UpdateReplyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -96,13 +96,13 @@ class UpdateReplyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string message = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
 
         return $this;
