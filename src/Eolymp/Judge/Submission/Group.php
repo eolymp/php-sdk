@@ -32,6 +32,12 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * overall verdict based on verdicts in groups/runs
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 12;</code>
+     */
+    protected $verdict = 0;
+    /**
      * other group indices which need to pass for this group to run
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 11;</code>
@@ -98,6 +104,8 @@ class Group extends \Google\Protobuf\Internal\Message
      *           testset associated with the group
      *     @type int $status
      *           status of the group
+     *     @type int $verdict
+     *           overall verdict based on verdicts in groups/runs
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $dependencies
      *           other group indices which need to pass for this group to run
      *     @type float $cost
@@ -197,6 +205,32 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Submission_Group_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * overall verdict based on verdicts in groups/runs
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 12;</code>
+     * @return int
+     */
+    public function getVerdict()
+    {
+        return $this->verdict;
+    }
+
+    /**
+     * overall verdict based on verdicts in groups/runs
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerdict($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Verdict::class);
+        $this->verdict = $var;
 
         return $this;
     }

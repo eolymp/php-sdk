@@ -66,6 +66,12 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * overall verdict based on verdicts in groups/runs
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 21;</code>
+     */
+    protected $verdict = 0;
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
      */
     protected $verifier_execution_data = null;
@@ -95,6 +101,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type float $cost
      *     @type float $score
      *     @type int $status
+     *     @type int $verdict
+     *           overall verdict based on verdicts in groups/runs
      *     @type \Eolymp\Judge\Submission\VerifierExecutionData $verifier_execution_data
      *     @type \Eolymp\Judge\Submission\InteractorExecutionData $interactor_execution_data
      * }
@@ -358,6 +366,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Submission_Run_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * overall verdict based on verdicts in groups/runs
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 21;</code>
+     * @return int
+     */
+    public function getVerdict()
+    {
+        return $this->verdict;
+    }
+
+    /**
+     * overall verdict based on verdicts in groups/runs
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVerdict($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Verdict::class);
+        $this->verdict = $var;
 
         return $this;
     }

@@ -14,25 +14,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class VerifierExecutionData extends \Google\Protobuf\Internal\Message
 {
     /**
-     * URL for verifier's full log
+     * URL for verifiers full log
      *
      * Generated from protobuf field <code>string log_url = 1;</code>
      */
     protected $log_url = '';
     /**
-     * verifier's wall time usage in milliseconds
+     * verifiers wall time usage in milliseconds
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
      */
     protected $wall_time_usage = 0;
     /**
-     * verifier's wall time usage in bytes
+     * verifiers wall time usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_usage = 3;</code>
      */
     protected $memory_usage = 0;
     /**
-     * verifier's exit code
+     * verifiers exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 4;</code>
      */
@@ -45,13 +45,13 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $log_url
-     *           URL for verifier's full log
+     *           URL for verifiers full log
      *     @type int $wall_time_usage
-     *           verifier's wall time usage in milliseconds
+     *           verifiers wall time usage in milliseconds
      *     @type int|string $memory_usage
-     *           verifier's wall time usage in bytes
+     *           verifiers wall time usage in bytes
      *     @type int $exit_code
-     *           verifier's exit code
+     *           verifiers exit code
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * URL for verifier's full log
+     * URL for verifiers full log
      *
      * Generated from protobuf field <code>string log_url = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * URL for verifier's full log
+     * URL for verifiers full log
      *
      * Generated from protobuf field <code>string log_url = 1;</code>
      * @param string $var
@@ -86,7 +86,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifier's wall time usage in milliseconds
+     * verifiers wall time usage in milliseconds
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
      * @return int
@@ -97,7 +97,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifier's wall time usage in milliseconds
+     * verifiers wall time usage in milliseconds
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
      * @param int $var
@@ -112,7 +112,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifier's wall time usage in bytes
+     * verifiers wall time usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_usage = 3;</code>
      * @return int|string
@@ -123,7 +123,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifier's wall time usage in bytes
+     * verifiers wall time usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_usage = 3;</code>
      * @param int|string $var
@@ -138,7 +138,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifier's exit code
+     * verifiers exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 4;</code>
      * @return int
@@ -149,7 +149,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifier's exit code
+     * verifiers exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 4;</code>
      * @param int $var

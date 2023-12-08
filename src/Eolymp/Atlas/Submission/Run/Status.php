@@ -14,9 +14,9 @@ class Status
     /**
      * reserved, should not be used
      *
-     * Generated from protobuf enum <code>NONE = 0;</code>
+     * Generated from protobuf enum <code>NO_STATUS = 0;</code>
      */
-    const NONE = 0;
+    const NO_STATUS = 0;
     /**
      * awaiting execution
      *
@@ -30,47 +30,11 @@ class Status
      */
     const EXECUTING = 2;
     /**
-     * wall time limit exceeded
+     * executed successfully, see verdict and score for results
      *
-     * Generated from protobuf enum <code>TIMEOUT = 3;</code>
+     * Generated from protobuf enum <code>COMPLETE = 13;</code>
      */
-    const TIMEOUT = 3;
-    /**
-     * CPU time limit exceeded
-     *
-     * Generated from protobuf enum <code>CPU_EXHAUSTED = 4;</code>
-     */
-    const CPU_EXHAUSTED = 4;
-    /**
-     * memory limit exceeded
-     *
-     * Generated from protobuf enum <code>MEMORY_OVERFLOW = 5;</code>
-     */
-    const MEMORY_OVERFLOW = 5;
-    /**
-     * wrong answer
-     *
-     * Generated from protobuf enum <code>WRONG_ANSWER = 6;</code>
-     */
-    const WRONG_ANSWER = 6;
-    /**
-     * answer accepted
-     *
-     * Generated from protobuf enum <code>ACCEPTED = 7;</code>
-     */
-    const ACCEPTED = 7;
-    /**
-     * program returned non 0 exit code
-     *
-     * Generated from protobuf enum <code>RUNTIME_ERROR = 8;</code>
-     */
-    const RUNTIME_ERROR = 8;
-    /**
-     * verifier couldn't run
-     *
-     * Generated from protobuf enum <code>VERIFICATION_ERROR = 9;</code>
-     */
-    const VERIFICATION_ERROR = 9;
+    const COMPLETE = 13;
     /**
      * run won't be executed
      *
@@ -84,26 +48,69 @@ class Status
      */
     const BLOCKED = 11;
     /**
+     * verifier couldn't run
+     *
+     * Generated from protobuf enum <code>VERIFICATION_ERROR = 9;</code>
+     */
+    const VERIFICATION_ERROR = 9;
+    /**
      * interactor couldn't run
      *
      * Generated from protobuf enum <code>INTERACTION_ERROR = 12;</code>
      */
     const INTERACTION_ERROR = 12;
+    /**
+     * These are deprecated, instead of checking for these statuses check verdict
+     *
+     * Generated from protobuf enum <code>TIMEOUT = 3;</code>
+     */
+    const TIMEOUT = 3;
+    /**
+     * CPU time limit exceeded, deprecated use verdict instead
+     *
+     * Generated from protobuf enum <code>CPU_EXHAUSTED = 4;</code>
+     */
+    const CPU_EXHAUSTED = 4;
+    /**
+     * memory limit exceeded, deprecated use verdict instead
+     *
+     * Generated from protobuf enum <code>MEMORY_OVERFLOW = 5;</code>
+     */
+    const MEMORY_OVERFLOW = 5;
+    /**
+     * wrong answer, deprecated use verdict instead
+     *
+     * Generated from protobuf enum <code>WRONG_ANSWER = 6;</code>
+     */
+    const WRONG_ANSWER = 6;
+    /**
+     * answer accepted, deprecated use verdict instead
+     *
+     * Generated from protobuf enum <code>ACCEPTED = 7;</code>
+     */
+    const ACCEPTED = 7;
+    /**
+     * program returned non 0 exit code, deprecated use verdict instead
+     *
+     * Generated from protobuf enum <code>RUNTIME_ERROR = 8;</code>
+     */
+    const RUNTIME_ERROR = 8;
 
     private static $valueToName = [
-        self::NONE => 'NONE',
+        self::NO_STATUS => 'NO_STATUS',
         self::CREATED => 'CREATED',
         self::EXECUTING => 'EXECUTING',
+        self::COMPLETE => 'COMPLETE',
+        self::SKIPPED => 'SKIPPED',
+        self::BLOCKED => 'BLOCKED',
+        self::VERIFICATION_ERROR => 'VERIFICATION_ERROR',
+        self::INTERACTION_ERROR => 'INTERACTION_ERROR',
         self::TIMEOUT => 'TIMEOUT',
         self::CPU_EXHAUSTED => 'CPU_EXHAUSTED',
         self::MEMORY_OVERFLOW => 'MEMORY_OVERFLOW',
         self::WRONG_ANSWER => 'WRONG_ANSWER',
         self::ACCEPTED => 'ACCEPTED',
         self::RUNTIME_ERROR => 'RUNTIME_ERROR',
-        self::VERIFICATION_ERROR => 'VERIFICATION_ERROR',
-        self::SKIPPED => 'SKIPPED',
-        self::BLOCKED => 'BLOCKED',
-        self::INTERACTION_ERROR => 'INTERACTION_ERROR',
     ];
 
     public static function name($value)

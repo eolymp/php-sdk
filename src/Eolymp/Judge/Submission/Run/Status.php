@@ -30,6 +30,12 @@ class Status
      */
     const EXECUTING = 2;
     /**
+     * complete
+     *
+     * Generated from protobuf enum <code>COMPLETE = 13;</code>
+     */
+    const COMPLETE = 13;
+    /**
      * wall time limit exceeded
      *
      * Generated from protobuf enum <code>TIMEOUT = 3;</code>
@@ -94,6 +100,7 @@ class Status
         self::NONE => 'NONE',
         self::CREATED => 'CREATED',
         self::EXECUTING => 'EXECUTING',
+        self::COMPLETE => 'COMPLETE',
         self::TIMEOUT => 'TIMEOUT',
         self::CPU_EXHAUSTED => 'CPU_EXHAUSTED',
         self::MEMORY_OVERFLOW => 'MEMORY_OVERFLOW',
