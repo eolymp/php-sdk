@@ -50,9 +50,13 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket message.
      *
-     * Generated from protobuf field <code>string message = 11;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 12;</code>
      */
-    protected $message = '';
+    protected $message = null;
+    /**
+     * Generated from protobuf field <code>string raw_message = 11;</code>
+     */
+    protected $raw_message = '';
     /**
      * True if ticket is open and being handled or False if ticket has been resolved.
      *
@@ -107,8 +111,9 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *           Member who opened the ticket.
      *     @type string $subject
      *           Ticket subject. Max 255 symbols.
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Content $message
      *           Ticket message.
+     *     @type string $raw_message
      *     @type bool $is_open
      *           True if ticket is open and being handled or False if ticket has been resolved.
      *     @type bool $is_read_by_participant
@@ -283,8 +288,8 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket message.
      *
-     * Generated from protobuf field <code>string message = 11;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 12;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -294,14 +299,36 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket message.
      *
-     * Generated from protobuf field <code>string message = 11;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 12;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string raw_message = 11;</code>
+     * @return string
+     */
+    public function getRawMessage()
+    {
+        return $this->raw_message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string raw_message = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRawMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->raw_message = $var;
 
         return $this;
     }

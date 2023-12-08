@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Content extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
+     */
+    protected $render = null;
     protected $value;
 
     /**
@@ -25,6 +29,7 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type string $latex
      *     @type string $markdown
      *     @type \Eolymp\Ecm\Node $ecm
+     *     @type \Eolymp\Ecm\Node $render
      * }
      */
     public function __construct($data = NULL) {
@@ -116,6 +121,28 @@ class Content extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
+     * @return \Eolymp\Ecm\Node
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
+     * @param \Eolymp\Ecm\Node $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        $this->render = $var;
 
         return $this;
     }
