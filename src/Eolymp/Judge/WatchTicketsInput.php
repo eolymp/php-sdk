@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class WatchTicketsInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Ticket.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class WatchTicketsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Judge::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Ticket.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Ticket.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Ticket\Extra::class);
+        $this->extra = $arr;
+
+        return $this;
     }
 
 }

@@ -23,6 +23,10 @@ class WatchRepliesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cursor = 2;</code>
      */
     protected $cursor = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -33,6 +37,7 @@ class WatchRepliesInput extends \Google\Protobuf\Internal\Message
      *     @type string $ticket_id
      *     @type string $cursor
      *           optionally, id of the last reply already received by client
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -84,6 +89,28 @@ class WatchRepliesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->cursor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Reply\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }
