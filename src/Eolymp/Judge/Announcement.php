@@ -40,9 +40,9 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Announcement content.
      *
-     * Generated from protobuf field <code>string message = 11;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 11;</code>
      */
-    protected $message = '';
+    protected $message = null;
 
     /**
      * Constructor.
@@ -58,7 +58,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
      *           Timestamp when announcement was initially created.
      *     @type string $subject
      *           Announcement subject. Max 255 symbols.
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Content $message
      *           Announcement content.
      * }
      */
@@ -174,8 +174,8 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Announcement content.
      *
-     * Generated from protobuf field <code>string message = 11;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 11;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -185,13 +185,13 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Announcement content.
      *
-     * Generated from protobuf field <code>string message = 11;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 11;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
 
         return $this;

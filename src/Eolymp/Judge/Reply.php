@@ -32,9 +32,9 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Message of the reply.
      *
-     * Generated from protobuf field <code>string message = 10;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
      */
-    protected $message = '';
+    protected $message = null;
     /**
      * Timestamp when reply was created.
      *
@@ -56,7 +56,7 @@ class Reply extends \Google\Protobuf\Internal\Message
      *           Ticket this reply belongs to.
      *     @type string $user_id
      *     @type string $member_id
-     *     @type string $message
+     *     @type \Eolymp\Ecm\Content $message
      *           Message of the reply.
      *     @type \Google\Protobuf\Timestamp $created_at
      *           Timestamp when reply was created.
@@ -188,8 +188,8 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Message of the reply.
      *
-     * Generated from protobuf field <code>string message = 10;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -199,13 +199,13 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Message of the reply.
      *
-     * Generated from protobuf field <code>string message = 10;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
 
         return $this;
