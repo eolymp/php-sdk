@@ -71,6 +71,12 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string issuer_url = 51;</code>
      */
     protected $issuer_url = '';
+    /**
+     * space graphql endpoint
+     *
+     * Generated from protobuf field <code>string graphql_url = 52;</code>
+     */
+    protected $graphql_url = '';
 
     /**
      * Constructor.
@@ -97,6 +103,8 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space home page URL
      *     @type string $issuer_url
      *           space issuer URL (used for issuing tokens)
+     *     @type string $graphql_url
+     *           space graphql endpoint
      * }
      */
     public function __construct($data = NULL) {
@@ -356,6 +364,32 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->issuer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * space graphql endpoint
+     *
+     * Generated from protobuf field <code>string graphql_url = 52;</code>
+     * @return string
+     */
+    public function getGraphqlUrl()
+    {
+        return $this->graphql_url;
+    }
+
+    /**
+     * space graphql endpoint
+     *
+     * Generated from protobuf field <code>string graphql_url = 52;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGraphqlUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->graphql_url = $var;
 
         return $this;
     }
