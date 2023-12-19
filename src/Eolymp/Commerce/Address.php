@@ -32,9 +32,13 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     protected $city = '';
     /**
-     * Generated from protobuf field <code>repeated string lines = 204;</code>
+     * Generated from protobuf field <code>string line1 = 210;</code>
      */
-    private $lines;
+    protected $line1 = '';
+    /**
+     * Generated from protobuf field <code>string line2 = 211;</code>
+     */
+    protected $line2 = '';
 
     /**
      * Constructor.
@@ -47,7 +51,8 @@ class Address extends \Google\Protobuf\Internal\Message
      *     @type string $post_code
      *     @type string $region
      *     @type string $city
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $lines
+     *     @type string $line1
+     *     @type string $line2
      * }
      */
     public function __construct($data = NULL) {
@@ -148,23 +153,45 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string lines = 204;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string line1 = 210;</code>
+     * @return string
      */
-    public function getLines()
+    public function getLine1()
     {
-        return $this->lines;
+        return $this->line1;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string lines = 204;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string line1 = 210;</code>
+     * @param string $var
      * @return $this
      */
-    public function setLines($var)
+    public function setLine1($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->lines = $arr;
+        GPBUtil::checkString($var, True);
+        $this->line1 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string line2 = 211;</code>
+     * @return string
+     */
+    public function getLine2()
+    {
+        return $this->line2;
+    }
+
+    /**
+     * Generated from protobuf field <code>string line2 = 211;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLine2($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->line2 = $var;
 
         return $this;
     }
