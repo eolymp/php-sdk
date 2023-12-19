@@ -20,13 +20,13 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     protected $country = '';
     /**
-     * Generated from protobuf field <code>string post_code = 201;</code>
+     * Generated from protobuf field <code>string state = 201;</code>
      */
-    protected $post_code = '';
+    protected $state = '';
     /**
-     * Generated from protobuf field <code>string region = 202;</code>
+     * Generated from protobuf field <code>string postal_code = 202;</code>
      */
-    protected $region = '';
+    protected $postal_code = '';
     /**
      * Generated from protobuf field <code>string city = 203;</code>
      */
@@ -48,8 +48,8 @@ class Address extends \Google\Protobuf\Internal\Message
      *
      *     @type string $country
      *           two letter code, lowercase
-     *     @type string $post_code
-     *     @type string $region
+     *     @type string $state
+     *     @type string $postal_code
      *     @type string $city
      *     @type string $line1
      *     @type string $line2
@@ -87,45 +87,45 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string post_code = 201;</code>
+     * Generated from protobuf field <code>string state = 201;</code>
      * @return string
      */
-    public function getPostCode()
+    public function getState()
     {
-        return $this->post_code;
+        return $this->state;
     }
 
     /**
-     * Generated from protobuf field <code>string post_code = 201;</code>
+     * Generated from protobuf field <code>string state = 201;</code>
      * @param string $var
      * @return $this
      */
-    public function setPostCode($var)
+    public function setState($var)
     {
         GPBUtil::checkString($var, True);
-        $this->post_code = $var;
+        $this->state = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string region = 202;</code>
+     * Generated from protobuf field <code>string postal_code = 202;</code>
      * @return string
      */
-    public function getRegion()
+    public function getPostalCode()
     {
-        return $this->region;
+        return $this->postal_code;
     }
 
     /**
-     * Generated from protobuf field <code>string region = 202;</code>
+     * Generated from protobuf field <code>string postal_code = 202;</code>
      * @param string $var
      * @return $this
      */
-    public function setRegion($var)
+    public function setPostalCode($var)
     {
         GPBUtil::checkString($var, True);
-        $this->region = $var;
+        $this->postal_code = $var;
 
         return $this;
     }
