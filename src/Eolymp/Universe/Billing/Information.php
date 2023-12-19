@@ -14,61 +14,35 @@ use Google\Protobuf\Internal\GPBUtil;
 class Information extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 100;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>string email = 101;</code>
+     * Generated from protobuf field <code>string email = 2;</code>
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>string phone = 102;</code>
+     * Generated from protobuf field <code>string phone = 3;</code>
      */
     protected $phone = '';
     /**
-     * two letter code, lowercase
-     *
-     * Generated from protobuf field <code>string address_country = 200;</code>
+     * Generated from protobuf field <code>string tax_id_type = 10;</code>
      */
-    protected $address_country = '';
+    protected $tax_id_type = '';
     /**
-     * Generated from protobuf field <code>string address_post_code = 201;</code>
+     * Generated from protobuf field <code>string tax_id_value = 11;</code>
      */
-    protected $address_post_code = '';
+    protected $tax_id_value = '';
     /**
-     * Generated from protobuf field <code>string address_region = 202;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
      */
-    protected $address_region = '';
+    protected $address = null;
     /**
-     * Generated from protobuf field <code>string address_city = 203;</code>
-     */
-    protected $address_city = '';
-    /**
-     * Generated from protobuf field <code>string address_address_line1 = 210;</code>
-     */
-    protected $address_address_line1 = '';
-    /**
-     * Generated from protobuf field <code>string address_address_line2 = 211;</code>
-     */
-    protected $address_address_line2 = '';
-    /**
-     * Generated from protobuf field <code>string address_address_line3 = 212;</code>
-     */
-    protected $address_address_line3 = '';
-    /**
-     * Generated from protobuf field <code>string tax_id = 400;</code>
-     */
-    protected $tax_id = '';
-    /**
-     * three letter code, lowercase
-     *
-     * Generated from protobuf field <code>string currency = 300;</code>
+     * Generated from protobuf field <code>string currency = 90;</code>
      */
     protected $currency = '';
     /**
-     * two letter code, lowercase
-     *
-     * Generated from protobuf field <code>string language = 301;</code>
+     * Generated from protobuf field <code>string language = 91;</code>
      */
     protected $language = '';
 
@@ -81,19 +55,11 @@ class Information extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $email
      *     @type string $phone
-     *     @type string $address_country
-     *           two letter code, lowercase
-     *     @type string $address_post_code
-     *     @type string $address_region
-     *     @type string $address_city
-     *     @type string $address_address_line1
-     *     @type string $address_address_line2
-     *     @type string $address_address_line3
-     *     @type string $tax_id
+     *     @type string $tax_id_type
+     *     @type string $tax_id_value
+     *     @type \Eolymp\Commerce\Address $address
      *     @type string $currency
-     *           three letter code, lowercase
      *     @type string $language
-     *           two letter code, lowercase
      * }
      */
     public function __construct($data = NULL) {
@@ -102,7 +68,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 100;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @return string
      */
     public function getName()
@@ -111,7 +77,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 100;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +90,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 101;</code>
+     * Generated from protobuf field <code>string email = 2;</code>
      * @return string
      */
     public function getEmail()
@@ -133,7 +99,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string email = 101;</code>
+     * Generated from protobuf field <code>string email = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -146,7 +112,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string phone = 102;</code>
+     * Generated from protobuf field <code>string phone = 3;</code>
      * @return string
      */
     public function getPhone()
@@ -155,7 +121,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string phone = 102;</code>
+     * Generated from protobuf field <code>string phone = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -168,189 +134,73 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * two letter code, lowercase
-     *
-     * Generated from protobuf field <code>string address_country = 200;</code>
+     * Generated from protobuf field <code>string tax_id_type = 10;</code>
      * @return string
      */
-    public function getAddressCountry()
+    public function getTaxIdType()
     {
-        return $this->address_country;
+        return $this->tax_id_type;
     }
 
     /**
-     * two letter code, lowercase
-     *
-     * Generated from protobuf field <code>string address_country = 200;</code>
+     * Generated from protobuf field <code>string tax_id_type = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setAddressCountry($var)
+    public function setTaxIdType($var)
     {
         GPBUtil::checkString($var, True);
-        $this->address_country = $var;
+        $this->tax_id_type = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string address_post_code = 201;</code>
+     * Generated from protobuf field <code>string tax_id_value = 11;</code>
      * @return string
      */
-    public function getAddressPostCode()
+    public function getTaxIdValue()
     {
-        return $this->address_post_code;
+        return $this->tax_id_value;
     }
 
     /**
-     * Generated from protobuf field <code>string address_post_code = 201;</code>
+     * Generated from protobuf field <code>string tax_id_value = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setAddressPostCode($var)
+    public function setTaxIdValue($var)
     {
         GPBUtil::checkString($var, True);
-        $this->address_post_code = $var;
+        $this->tax_id_value = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string address_region = 202;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
+     * @return \Eolymp\Commerce\Address
      */
-    public function getAddressRegion()
+    public function getAddress()
     {
-        return $this->address_region;
+        return $this->address;
     }
 
     /**
-     * Generated from protobuf field <code>string address_region = 202;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
+     * @param \Eolymp\Commerce\Address $var
      * @return $this
      */
-    public function setAddressRegion($var)
+    public function setAddress($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->address_region = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Address::class);
+        $this->address = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string address_city = 203;</code>
-     * @return string
-     */
-    public function getAddressCity()
-    {
-        return $this->address_city;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_city = 203;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAddressCity($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->address_city = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_address_line1 = 210;</code>
-     * @return string
-     */
-    public function getAddressAddressLine1()
-    {
-        return $this->address_address_line1;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_address_line1 = 210;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAddressAddressLine1($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->address_address_line1 = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_address_line2 = 211;</code>
-     * @return string
-     */
-    public function getAddressAddressLine2()
-    {
-        return $this->address_address_line2;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_address_line2 = 211;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAddressAddressLine2($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->address_address_line2 = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_address_line3 = 212;</code>
-     * @return string
-     */
-    public function getAddressAddressLine3()
-    {
-        return $this->address_address_line3;
-    }
-
-    /**
-     * Generated from protobuf field <code>string address_address_line3 = 212;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAddressAddressLine3($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->address_address_line3 = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tax_id = 400;</code>
-     * @return string
-     */
-    public function getTaxId()
-    {
-        return $this->tax_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tax_id = 400;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTaxId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->tax_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * three letter code, lowercase
-     *
-     * Generated from protobuf field <code>string currency = 300;</code>
+     * Generated from protobuf field <code>string currency = 90;</code>
      * @return string
      */
     public function getCurrency()
@@ -359,9 +209,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * three letter code, lowercase
-     *
-     * Generated from protobuf field <code>string currency = 300;</code>
+     * Generated from protobuf field <code>string currency = 90;</code>
      * @param string $var
      * @return $this
      */
@@ -374,9 +222,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * two letter code, lowercase
-     *
-     * Generated from protobuf field <code>string language = 301;</code>
+     * Generated from protobuf field <code>string language = 91;</code>
      * @return string
      */
     public function getLanguage()
@@ -385,9 +231,7 @@ class Information extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * two letter code, lowercase
-     *
-     * Generated from protobuf field <code>string language = 301;</code>
+     * Generated from protobuf field <code>string language = 91;</code>
      * @param string $var
      * @return $this
      */

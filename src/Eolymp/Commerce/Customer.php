@@ -26,10 +26,6 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>string tax_id = 4;</code>
-     */
-    protected $tax_id = '';
-    /**
      * Generated from protobuf field <code>string email = 10;</code>
      */
     protected $email = '';
@@ -38,7 +34,15 @@ class Customer extends \Google\Protobuf\Internal\Message
      */
     protected $phone = '';
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
+     * Generated from protobuf field <code>string tax_id_type = 20;</code>
+     */
+    protected $tax_id_type = '';
+    /**
+     * Generated from protobuf field <code>string tax_id_value = 21;</code>
+     */
+    protected $tax_id_value = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Address address = 30;</code>
      */
     protected $address = null;
     /**
@@ -63,9 +67,10 @@ class Customer extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type string $description
-     *     @type string $tax_id
      *     @type string $email
      *     @type string $phone
+     *     @type string $tax_id_type
+     *     @type string $tax_id_value
      *     @type \Eolymp\Commerce\Address $address
      *     @type string $currency
      *     @type string $language
@@ -144,28 +149,6 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tax_id = 4;</code>
-     * @return string
-     */
-    public function getTaxId()
-    {
-        return $this->tax_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tax_id = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTaxId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->tax_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string email = 10;</code>
      * @return string
      */
@@ -210,7 +193,51 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
+     * Generated from protobuf field <code>string tax_id_type = 20;</code>
+     * @return string
+     */
+    public function getTaxIdType()
+    {
+        return $this->tax_id_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_id_type = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaxIdType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tax_id_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_id_value = 21;</code>
+     * @return string
+     */
+    public function getTaxIdValue()
+    {
+        return $this->tax_id_value;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_id_value = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaxIdValue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tax_id_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Address address = 30;</code>
      * @return \Eolymp\Commerce\Address
      */
     public function getAddress()
@@ -219,7 +246,7 @@ class Customer extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Address address = 30;</code>
      * @param \Eolymp\Commerce\Address $var
      * @return $this
      */
