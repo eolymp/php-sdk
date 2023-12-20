@@ -30,13 +30,13 @@ class ListSubscriptionsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
-     * Generated from protobuf field <code>int32 after = 11;</code>
+     * Generated from protobuf field <code>string after = 11;</code>
      */
-    protected $after = 0;
+    protected $after = '';
     /**
-     * Generated from protobuf field <code>int32 before = 12;</code>
+     * Generated from protobuf field <code>string before = 12;</code>
      */
-    protected $before = 0;
+    protected $before = '';
 
     /**
      * Constructor.
@@ -48,8 +48,8 @@ class ListSubscriptionsInput extends \Google\Protobuf\Internal\Message
      *     @type string $price_id
      *     @type string $status
      *     @type int $size
-     *     @type int $after
-     *     @type int $before
+     *     @type string $after
+     *     @type string $before
      * }
      */
     public function __construct($data = NULL) {
@@ -146,8 +146,8 @@ class ListSubscriptionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 after = 11;</code>
-     * @return int
+     * Generated from protobuf field <code>string after = 11;</code>
+     * @return string
      */
     public function getAfter()
     {
@@ -155,21 +155,21 @@ class ListSubscriptionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 after = 11;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string after = 11;</code>
+     * @param string $var
      * @return $this
      */
     public function setAfter($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->after = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 before = 12;</code>
-     * @return int
+     * Generated from protobuf field <code>string before = 12;</code>
+     * @return string
      */
     public function getBefore()
     {
@@ -177,13 +177,13 @@ class ListSubscriptionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 before = 12;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string before = 12;</code>
+     * @param string $var
      * @return $this
      */
     public function setBefore($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkString($var, True);
         $this->before = $var;
 
         return $this;
