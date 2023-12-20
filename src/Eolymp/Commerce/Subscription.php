@@ -100,22 +100,6 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>uint32 total_amount = 32;</code>
-     */
-    protected $total_amount = 0;
-    /**
-     * Generated from protobuf field <code>string success_url = 60;</code>
-     */
-    protected $success_url = '';
-    /**
-     * Generated from protobuf field <code>string cancel_url = 61;</code>
-     */
-    protected $cancel_url = '';
-    /**
-     * Generated from protobuf field <code>string checkout_url = 62;</code>
-     */
-    protected $checkout_url = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Subscription.Item items = 999;</code>
      */
     private $items;
@@ -152,10 +136,6 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type string $cancellation_feedback
      *     @type string $cancellation_reason
      *     @type string $currency
-     *     @type int $total_amount
-     *     @type string $success_url
-     *     @type string $cancel_url
-     *     @type string $checkout_url
      *     @type \Eolymp\Commerce\Subscription\Item[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
@@ -570,94 +550,6 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->currency = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 total_amount = 32;</code>
-     * @return int
-     */
-    public function getTotalAmount()
-    {
-        return $this->total_amount;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 total_amount = 32;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTotalAmount($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->total_amount = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string success_url = 60;</code>
-     * @return string
-     */
-    public function getSuccessUrl()
-    {
-        return $this->success_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string success_url = 60;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSuccessUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->success_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cancel_url = 61;</code>
-     * @return string
-     */
-    public function getCancelUrl()
-    {
-        return $this->cancel_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cancel_url = 61;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCancelUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->cancel_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checkout_url = 62;</code>
-     * @return string
-     */
-    public function getCheckoutUrl()
-    {
-        return $this->checkout_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checkout_url = 62;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCheckoutUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->checkout_url = $var;
 
         return $this;
     }
