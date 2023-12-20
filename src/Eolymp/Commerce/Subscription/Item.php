@@ -18,17 +18,17 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>bool active = 2;</code>
+     * Generated from protobuf field <code>uint32 quantity = 2;</code>
      */
-    protected $active = false;
+    protected $quantity = 0;
     /**
-     * Generated from protobuf field <code>string product_id = 20;</code>
+     * Generated from protobuf field <code>string product_id = 3;</code>
      */
     protected $product_id = '';
     /**
-     * Generated from protobuf field <code>string price_id = 21;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 4;</code>
      */
-    protected $price_id = '';
+    protected $price = null;
 
     /**
      * Constructor.
@@ -37,9 +37,9 @@ class Item extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type bool $active
+     *     @type int $quantity
      *     @type string $product_id
-     *     @type string $price_id
+     *     @type \Eolymp\Commerce\Price $price
      * }
      */
     public function __construct($data = NULL) {
@@ -70,29 +70,29 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 2;</code>
-     * @return bool
+     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * @return int
      */
-    public function getActive()
+    public function getQuantity()
     {
-        return $this->active;
+        return $this->quantity;
     }
 
     /**
-     * Generated from protobuf field <code>bool active = 2;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * @param int $var
      * @return $this
      */
-    public function setActive($var)
+    public function setQuantity($var)
     {
-        GPBUtil::checkBool($var);
-        $this->active = $var;
+        GPBUtil::checkUint32($var);
+        $this->quantity = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string product_id = 20;</code>
+     * Generated from protobuf field <code>string product_id = 3;</code>
      * @return string
      */
     public function getProductId()
@@ -101,7 +101,7 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string product_id = 20;</code>
+     * Generated from protobuf field <code>string product_id = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -114,23 +114,23 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_id = 21;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 4;</code>
+     * @return \Eolymp\Commerce\Price
      */
-    public function getPriceId()
+    public function getPrice()
     {
-        return $this->price_id;
+        return $this->price;
     }
 
     /**
-     * Generated from protobuf field <code>string price_id = 21;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 4;</code>
+     * @param \Eolymp\Commerce\Price $var
      * @return $this
      */
-    public function setPriceId($var)
+    public function setPrice($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->price_id = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Price::class);
+        $this->price = $var;
 
         return $this;
     }

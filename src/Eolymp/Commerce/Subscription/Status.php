@@ -16,28 +16,43 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>PENDING = 1;</code>
+     * Generated from protobuf enum <code>INCOMPLETE = 1;</code>
      */
-    const PENDING = 1;
+    const INCOMPLETE = 1;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 2;</code>
+     * Generated from protobuf enum <code>INCOMPLETE_EXPIRED = 2;</code>
      */
-    const ACTIVE = 2;
+    const INCOMPLETE_EXPIRED = 2;
     /**
-     * Generated from protobuf enum <code>PAUSED = 3;</code>
+     * Generated from protobuf enum <code>TRIALING = 3;</code>
      */
-    const PAUSED = 3;
+    const TRIALING = 3;
     /**
-     * Generated from protobuf enum <code>CANCELLED = 4;</code>
+     * Generated from protobuf enum <code>ACTIVE = 4;</code>
      */
-    const CANCELLED = 4;
+    const ACTIVE = 4;
+    /**
+     * Generated from protobuf enum <code>PAST_DUE = 5;</code>
+     */
+    const PAST_DUE = 5;
+    /**
+     * Generated from protobuf enum <code>CANCELLED = 6;</code>
+     */
+    const CANCELLED = 6;
+    /**
+     * Generated from protobuf enum <code>UNPAID = 7;</code>
+     */
+    const UNPAID = 7;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::PENDING => 'PENDING',
+        self::INCOMPLETE => 'INCOMPLETE',
+        self::INCOMPLETE_EXPIRED => 'INCOMPLETE_EXPIRED',
+        self::TRIALING => 'TRIALING',
         self::ACTIVE => 'ACTIVE',
-        self::PAUSED => 'PAUSED',
+        self::PAST_DUE => 'PAST_DUE',
         self::CANCELLED => 'CANCELLED',
+        self::UNPAID => 'UNPAID',
     ];
 
     public static function name($value)

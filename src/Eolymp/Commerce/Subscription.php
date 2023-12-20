@@ -22,13 +22,13 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>string space_id = 3;</code>
+     * Generated from protobuf field <code>string customer_id = 3;</code>
      */
-    protected $space_id = '';
+    protected $customer_id = '';
     /**
-     * Generated from protobuf field <code>string payer_email = 7;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
      */
-    protected $payer_email = '';
+    protected $description = '';
     /**
      * time when subscription was created
      *
@@ -44,9 +44,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
     /**
      * time when subscription was/will be cancelled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancel_at = 13;</code>
+     */
+    protected $cancel_at = null;
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 14;</code>
      */
     protected $cancelled_at = null;
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 15;</code>
+     */
+    protected $ended_at = null;
     /**
      * current billing period start (same as last renew date)
      *
@@ -60,9 +72,17 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $period_end = null;
     /**
-     * Generated from protobuf field <code>string payment_method = 20;</code>
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 70;</code>
      */
-    protected $payment_method = '';
+    protected $trial_start = null;
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 71;</code>
+     */
+    protected $trial_end = null;
     /**
      * Generated from protobuf field <code>string cancellation_comment = 50;</code>
      */
@@ -99,7 +119,6 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.commerce.Subscription.Item items = 999;</code>
      */
     private $items;
-    protected $payer;
 
     /**
      * Constructor.
@@ -109,21 +128,26 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $status
-     *     @type string $space_id
-     *     @type string $user_id
-     *     @type string $member_id
-     *     @type string $payer_email
+     *     @type string $customer_id
+     *     @type string $description
      *     @type \Google\Protobuf\Timestamp $created_at
      *           time when subscription was created
      *     @type \Google\Protobuf\Timestamp $started_at
      *           time when subscription was started (activated first time)
+     *     @type \Google\Protobuf\Timestamp $cancel_at
+     *           time when subscription was/will be cancelled
      *     @type \Google\Protobuf\Timestamp $cancelled_at
+     *           time when subscription was/will be cancelled
+     *     @type \Google\Protobuf\Timestamp $ended_at
      *           time when subscription was/will be cancelled
      *     @type \Google\Protobuf\Timestamp $period_start
      *           current billing period start (same as last renew date)
      *     @type \Google\Protobuf\Timestamp $period_end
      *           current billing period end (same as renew date for next period)
-     *     @type string $payment_method
+     *     @type \Google\Protobuf\Timestamp $trial_start
+     *           time when subscription was/will be cancelled
+     *     @type \Google\Protobuf\Timestamp $trial_end
+     *           time when subscription was/will be cancelled
      *     @type string $cancellation_comment
      *     @type string $cancellation_feedback
      *     @type string $cancellation_reason
@@ -185,89 +209,45 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string space_id = 3;</code>
+     * Generated from protobuf field <code>string customer_id = 3;</code>
      * @return string
      */
-    public function getSpaceId()
+    public function getCustomerId()
     {
-        return $this->space_id;
+        return $this->customer_id;
     }
 
     /**
-     * Generated from protobuf field <code>string space_id = 3;</code>
+     * Generated from protobuf field <code>string customer_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setSpaceId($var)
+    public function setCustomerId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->space_id = $var;
+        $this->customer_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 5;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
      * @return string
      */
-    public function getUserId()
+    public function getDescription()
     {
-        return $this->readOneof(5);
+        return $this->description;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 5;</code>
+     * Generated from protobuf field <code>string description = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setDescription($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(5, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string member_id = 6;</code>
-     * @return string
-     */
-    public function getMemberId()
-    {
-        return $this->readOneof(6);
-    }
-
-    /**
-     * Generated from protobuf field <code>string member_id = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMemberId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(6, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string payer_email = 7;</code>
-     * @return string
-     */
-    public function getPayerEmail()
-    {
-        return $this->payer_email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string payer_email = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPayerEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->payer_email = $var;
+        $this->description = $var;
 
         return $this;
     }
@@ -327,7 +307,33 @@ class Subscription extends \Google\Protobuf\Internal\Message
     /**
      * time when subscription was/will be cancelled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancel_at = 13;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCancelAt()
+    {
+        return $this->cancel_at;
+    }
+
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancel_at = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCancelAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->cancel_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 14;</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getCancelledAt()
@@ -338,7 +344,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     /**
      * time when subscription was/will be cancelled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 14;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -346,6 +352,32 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->cancelled_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 15;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getEndedAt()
+    {
+        return $this->ended_at;
+    }
+
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 15;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setEndedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->ended_at = $var;
 
         return $this;
     }
@@ -403,23 +435,53 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string payment_method = 20;</code>
-     * @return string
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 70;</code>
+     * @return \Google\Protobuf\Timestamp
      */
-    public function getPaymentMethod()
+    public function getTrialStart()
     {
-        return $this->payment_method;
+        return $this->trial_start;
     }
 
     /**
-     * Generated from protobuf field <code>string payment_method = 20;</code>
-     * @param string $var
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 70;</code>
+     * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setPaymentMethod($var)
+    public function setTrialStart($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->payment_method = $var;
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->trial_start = $var;
+
+        return $this;
+    }
+
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 71;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getTrialEnd()
+    {
+        return $this->trial_end;
+    }
+
+    /**
+     * time when subscription was/will be cancelled
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 71;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setTrialEnd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->trial_end = $var;
 
         return $this;
     }
@@ -620,14 +682,6 @@ class Subscription extends \Google\Protobuf\Internal\Message
         $this->items = $arr;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPayer()
-    {
-        return $this->whichOneof("payer");
     }
 
 }

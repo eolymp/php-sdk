@@ -18,7 +18,11 @@ class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
      */
     protected $plan_id = '';
     /**
-     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * Generated from protobuf field <code>string price_id = 2;</code>
+     */
+    protected $price_id = '';
+    /**
+     * Generated from protobuf field <code>uint32 quantity = 3;</code>
      */
     protected $quantity = 0;
 
@@ -29,6 +33,7 @@ class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $plan_id
+     *     @type string $price_id
      *     @type int $quantity
      * }
      */
@@ -60,7 +65,29 @@ class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * Generated from protobuf field <code>string price_id = 2;</code>
+     * @return string
+     */
+    public function getPriceId()
+    {
+        return $this->price_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string price_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPriceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->price_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity = 3;</code>
      * @return int
      */
     public function getQuantity()
@@ -69,7 +96,7 @@ class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * Generated from protobuf field <code>uint32 quantity = 3;</code>
      * @param int $var
      * @return $this
      */

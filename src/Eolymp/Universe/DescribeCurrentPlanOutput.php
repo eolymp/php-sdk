@@ -28,35 +28,21 @@ class DescribeCurrentPlanOutput extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * payment recurrence: monthly / yearly
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Billing.Recurrence payment_recurrence = 100;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 10;</code>
      */
-    protected $payment_recurrence = 0;
-    /**
-     * three letter code for currency
-     *
-     * Generated from protobuf field <code>string payment_currency = 101;</code>
-     */
-    protected $payment_currency = '';
+    protected $price = null;
     /**
      * quantity as configured in the upcoming payment
      *
-     * Generated from protobuf field <code>uint32 payment_quantity = 102;</code>
+     * Generated from protobuf field <code>uint32 invoice_quantity = 102;</code>
      */
-    protected $payment_quantity = 0;
-    /**
-     * amount payed by unit (seat)
-     *
-     * Generated from protobuf field <code>uint32 payment_unit_amount = 103;</code>
-     */
-    protected $payment_unit_amount = 0;
+    protected $invoice_quantity = 0;
     /**
      * total amount (might not be unit_amount * quantity if discount is applied)
      *
-     * Generated from protobuf field <code>uint32 payment_total_amount = 104;</code>
+     * Generated from protobuf field <code>uint32 invoice_subtotal = 104;</code>
      */
-    protected $payment_total_amount = 0;
+    protected $invoice_subtotal = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 200;</code>
      */
@@ -96,15 +82,10 @@ class DescribeCurrentPlanOutput extends \Google\Protobuf\Internal\Message
      *     @type int $quantity
      *           current quantity, might be different from payment quantity if customer requested changes which apply in the next billing cycle
      *     @type int $status
-     *     @type int $payment_recurrence
-     *           payment recurrence: monthly / yearly
-     *     @type string $payment_currency
-     *           three letter code for currency
-     *     @type int $payment_quantity
+     *     @type \Eolymp\Commerce\Price $price
+     *     @type int $invoice_quantity
      *           quantity as configured in the upcoming payment
-     *     @type int $payment_unit_amount
-     *           amount payed by unit (seat)
-     *     @type int $payment_total_amount
+     *     @type int $invoice_subtotal
      *           total amount (might not be unit_amount * quantity if discount is applied)
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -191,53 +172,23 @@ class DescribeCurrentPlanOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * payment recurrence: monthly / yearly
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Billing.Recurrence payment_recurrence = 100;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 10;</code>
+     * @return \Eolymp\Commerce\Price
      */
-    public function getPaymentRecurrence()
+    public function getPrice()
     {
-        return $this->payment_recurrence;
+        return $this->price;
     }
 
     /**
-     * payment recurrence: monthly / yearly
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Billing.Recurrence payment_recurrence = 100;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.commerce.Price price = 10;</code>
+     * @param \Eolymp\Commerce\Price $var
      * @return $this
      */
-    public function setPaymentRecurrence($var)
+    public function setPrice($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Billing_Recurrence::class);
-        $this->payment_recurrence = $var;
-
-        return $this;
-    }
-
-    /**
-     * three letter code for currency
-     *
-     * Generated from protobuf field <code>string payment_currency = 101;</code>
-     * @return string
-     */
-    public function getPaymentCurrency()
-    {
-        return $this->payment_currency;
-    }
-
-    /**
-     * three letter code for currency
-     *
-     * Generated from protobuf field <code>string payment_currency = 101;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPaymentCurrency($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->payment_currency = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Price::class);
+        $this->price = $var;
 
         return $this;
     }
@@ -245,51 +196,25 @@ class DescribeCurrentPlanOutput extends \Google\Protobuf\Internal\Message
     /**
      * quantity as configured in the upcoming payment
      *
-     * Generated from protobuf field <code>uint32 payment_quantity = 102;</code>
+     * Generated from protobuf field <code>uint32 invoice_quantity = 102;</code>
      * @return int
      */
-    public function getPaymentQuantity()
+    public function getInvoiceQuantity()
     {
-        return $this->payment_quantity;
+        return $this->invoice_quantity;
     }
 
     /**
      * quantity as configured in the upcoming payment
      *
-     * Generated from protobuf field <code>uint32 payment_quantity = 102;</code>
+     * Generated from protobuf field <code>uint32 invoice_quantity = 102;</code>
      * @param int $var
      * @return $this
      */
-    public function setPaymentQuantity($var)
+    public function setInvoiceQuantity($var)
     {
         GPBUtil::checkUint32($var);
-        $this->payment_quantity = $var;
-
-        return $this;
-    }
-
-    /**
-     * amount payed by unit (seat)
-     *
-     * Generated from protobuf field <code>uint32 payment_unit_amount = 103;</code>
-     * @return int
-     */
-    public function getPaymentUnitAmount()
-    {
-        return $this->payment_unit_amount;
-    }
-
-    /**
-     * amount payed by unit (seat)
-     *
-     * Generated from protobuf field <code>uint32 payment_unit_amount = 103;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPaymentUnitAmount($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->payment_unit_amount = $var;
+        $this->invoice_quantity = $var;
 
         return $this;
     }
@@ -297,25 +222,25 @@ class DescribeCurrentPlanOutput extends \Google\Protobuf\Internal\Message
     /**
      * total amount (might not be unit_amount * quantity if discount is applied)
      *
-     * Generated from protobuf field <code>uint32 payment_total_amount = 104;</code>
+     * Generated from protobuf field <code>uint32 invoice_subtotal = 104;</code>
      * @return int
      */
-    public function getPaymentTotalAmount()
+    public function getInvoiceSubtotal()
     {
-        return $this->payment_total_amount;
+        return $this->invoice_subtotal;
     }
 
     /**
      * total amount (might not be unit_amount * quantity if discount is applied)
      *
-     * Generated from protobuf field <code>uint32 payment_total_amount = 104;</code>
+     * Generated from protobuf field <code>uint32 invoice_subtotal = 104;</code>
      * @param int $var
      * @return $this
      */
-    public function setPaymentTotalAmount($var)
+    public function setInvoiceSubtotal($var)
     {
         GPBUtil::checkUint32($var);
-        $this->payment_total_amount = $var;
+        $this->invoice_subtotal = $var;
 
         return $this;
     }
