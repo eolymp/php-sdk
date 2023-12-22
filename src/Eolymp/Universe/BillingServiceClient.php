@@ -55,51 +55,123 @@ class BillingServiceClient {
     }
 
     /**
-     * @param DescribeCurrentPlanInput $input message
+     * @param DescribeSubscriptionInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeCurrentPlanOutput output message
+     * @return DescribeSubscriptionOutput output message
      */
-    public function DescribeCurrentPlan(DescribeCurrentPlanInput $input, array $context = [])
+    public function DescribeSubscription(DescribeSubscriptionInput $input, array $context = [])
     {
-        $path = "/billing/plan";
+        $path = "/billing/subscription";
 
-        $context['name'] = "eolymp.universe.BillingService/DescribeCurrentPlan";
+        $context['name'] = "eolymp.universe.BillingService/DescribeSubscription";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCurrentPlanOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubscriptionOutput::class, $context);
     }
 
     /**
-     * @param UpdateCurrentPlanInput $input message
+     * @param UpdateSubscriptionInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateCurrentPlanOutput output message
+     * @return UpdateSubscriptionOutput output message
      */
-    public function UpdateCurrentPlan(UpdateCurrentPlanInput $input, array $context = [])
+    public function UpdateSubscription(UpdateSubscriptionInput $input, array $context = [])
     {
-        $path = "/billing/plan";
+        $path = "/billing/subscription";
 
-        $context['name'] = "eolymp.universe.BillingService/UpdateCurrentPlan";
+        $context['name'] = "eolymp.universe.BillingService/UpdateSubscription";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateCurrentPlanOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateSubscriptionOutput::class, $context);
     }
 
     /**
-     * @param CancelCurrentPlanInput $input message
+     * @param CancelSubscriptionInput $input message
      * @param array $context request parameters
      *
-     * @return CancelCurrentPlanOutput output message
+     * @return CancelSubscriptionOutput output message
      */
-    public function CancelCurrentPlan(CancelCurrentPlanInput $input, array $context = [])
+    public function CancelSubscription(CancelSubscriptionInput $input, array $context = [])
     {
-        $path = "/billing/plan";
+        $path = "/billing/subscription";
 
-        $context['name'] = "eolymp.universe.BillingService/CancelCurrentPlan";
+        $context['name'] = "eolymp.universe.BillingService/CancelSubscription";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, CancelCurrentPlanOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, CancelSubscriptionOutput::class, $context);
+    }
+
+    /**
+     * UpcomingInvoice before applying changes to the subscription
+     *
+     * @param UpcomingInvoiceInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpcomingInvoiceOutput output message
+     */
+    public function UpcomingInvoice(UpcomingInvoiceInput $input, array $context = [])
+    {
+        $path = "/billing/upcoming";
+
+        $context['name'] = "eolymp.universe.BillingService/UpcomingInvoice";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpcomingInvoiceOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeInvoiceInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeInvoiceOutput output message
+     */
+    public function DescribeInvoice(DescribeInvoiceInput $input, array $context = [])
+    {
+        $path = "/billing/invoice/".rawurlencode($input->getInvoiceId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setInvoiceId("");
+
+        $context['name'] = "eolymp.universe.BillingService/DescribeInvoice";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DescribeInvoiceOutput::class, $context);
+    }
+
+    /**
+     * @param PayInvoiceInput $input message
+     * @param array $context request parameters
+     *
+     * @return PayInvoiceOutput output message
+     */
+    public function PayInvoice(PayInvoiceInput $input, array $context = [])
+    {
+        $path = "/billing/invoice/".rawurlencode($input->getInvoiceId())."/pay";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setInvoiceId("");
+
+        $context['name'] = "eolymp.universe.BillingService/PayInvoice";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PayInvoiceOutput::class, $context);
+    }
+
+    /**
+     * @param ListInvoicesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListInvoicesOutput output message
+     */
+    public function ListInvoices(ListInvoicesInput $input, array $context = [])
+    {
+        $path = "/billing/invoices";
+
+        $context['name'] = "eolymp.universe.BillingService/ListInvoices";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ListInvoicesOutput::class, $context);
     }
 
 }

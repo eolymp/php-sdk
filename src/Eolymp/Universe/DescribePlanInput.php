@@ -18,13 +18,13 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
      */
     protected $plan_id = '';
     /**
-     * optionally, request name and description in particular language
+     * optionally, request name and description in particular locale
      *
      * Generated from protobuf field <code>string locale = 101;</code>
      */
     protected $locale = '';
     /**
-     * optionally, request prices in particular currency
+     * optionally, request variants in particular currency
      *
      * Generated from protobuf field <code>string currency = 102;</code>
      */
@@ -42,9 +42,9 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $plan_id
      *     @type string $locale
-     *           optionally, request name and description in particular language
+     *           optionally, request name and description in particular locale
      *     @type string $currency
-     *           optionally, request prices in particular currency
+     *           optionally, request variants in particular currency
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -76,7 +76,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, request name and description in particular language
+     * optionally, request name and description in particular locale
      *
      * Generated from protobuf field <code>string locale = 101;</code>
      * @return string
@@ -87,7 +87,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, request name and description in particular language
+     * optionally, request name and description in particular locale
      *
      * Generated from protobuf field <code>string locale = 101;</code>
      * @param string $var
@@ -102,7 +102,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, request prices in particular currency
+     * optionally, request variants in particular currency
      *
      * Generated from protobuf field <code>string currency = 102;</code>
      * @return string
@@ -113,7 +113,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, request prices in particular currency
+     * optionally, request variants in particular currency
      *
      * Generated from protobuf field <code>string currency = 102;</code>
      * @param string $var

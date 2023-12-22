@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.CancelCurrentPlanOutput</code>
+ * Generated from protobuf message <code>eolymp.universe.DescribeSubscriptionInput</code>
  */
-class CancelCurrentPlanOutput extends \Google\Protobuf\Internal\Message
+class DescribeSubscriptionInput extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -9,22 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.UpdateCurrentPlanInput</code>
+ * Generated from protobuf message <code>eolymp.universe.UpdateSubscriptionInput</code>
  */
-class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
+class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string plan_id = 1;</code>
      */
     protected $plan_id = '';
     /**
-     * Generated from protobuf field <code>string price_id = 2;</code>
+     * Generated from protobuf field <code>string variant_id = 2;</code>
      */
-    protected $price_id = '';
+    protected $variant_id = '';
     /**
-     * Generated from protobuf field <code>uint32 quantity = 3;</code>
+     * Generated from protobuf field <code>uint32 seats = 3;</code>
      */
-    protected $quantity = 0;
+    protected $seats = 0;
 
     /**
      * Constructor.
@@ -33,8 +33,8 @@ class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $plan_id
-     *     @type string $price_id
-     *     @type int $quantity
+     *     @type string $variant_id
+     *     @type int $seats
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +65,45 @@ class UpdateCurrentPlanInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string price_id = 2;</code>
+     * Generated from protobuf field <code>string variant_id = 2;</code>
      * @return string
      */
-    public function getPriceId()
+    public function getVariantId()
     {
-        return $this->price_id;
+        return $this->variant_id;
     }
 
     /**
-     * Generated from protobuf field <code>string price_id = 2;</code>
+     * Generated from protobuf field <code>string variant_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setPriceId($var)
+    public function setVariantId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->price_id = $var;
+        $this->variant_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 quantity = 3;</code>
+     * Generated from protobuf field <code>uint32 seats = 3;</code>
      * @return int
      */
-    public function getQuantity()
+    public function getSeats()
     {
-        return $this->quantity;
+        return $this->seats;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 quantity = 3;</code>
+     * Generated from protobuf field <code>uint32 seats = 3;</code>
      * @param int $var
      * @return $this
      */
-    public function setQuantity($var)
+    public function setSeats($var)
     {
         GPBUtil::checkUint32($var);
-        $this->quantity = $var;
+        $this->seats = $var;
 
         return $this;
     }

@@ -22,9 +22,9 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Price prices = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
      */
-    private $prices;
+    private $variants;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class Plan extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *     @type \Eolymp\Commerce\Price[]|\Google\Protobuf\Internal\RepeatedField $prices
+     *     @type \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +87,23 @@ class Plan extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Price prices = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPrices()
+    public function getVariants()
     {
-        return $this->prices;
+        return $this->variants;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Price prices = 100;</code>
-     * @param \Eolymp\Commerce\Price[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
+     * @param \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPrices($var)
+    public function setVariants($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Price::class);
-        $this->prices = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Universe\Plan\Variant::class);
+        $this->variants = $arr;
 
         return $this;
     }

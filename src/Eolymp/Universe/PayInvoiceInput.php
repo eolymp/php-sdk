@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.UpdateCurrentPlanOutput</code>
+ * Generated from protobuf message <code>eolymp.universe.PayInvoiceInput</code>
  */
-class UpdateCurrentPlanOutput extends \Google\Protobuf\Internal\Message
+class PayInvoiceInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string checkout_url = 1;</code>
+     * Generated from protobuf field <code>string invoice_id = 1;</code>
      */
-    protected $checkout_url = '';
+    protected $invoice_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class UpdateCurrentPlanOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $checkout_url
+     *     @type string $invoice_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class UpdateCurrentPlanOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string checkout_url = 1;</code>
+     * Generated from protobuf field <code>string invoice_id = 1;</code>
      * @return string
      */
-    public function getCheckoutUrl()
+    public function getInvoiceId()
     {
-        return $this->checkout_url;
+        return $this->invoice_id;
     }
 
     /**
-     * Generated from protobuf field <code>string checkout_url = 1;</code>
+     * Generated from protobuf field <code>string invoice_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setCheckoutUrl($var)
+    public function setInvoiceId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->checkout_url = $var;
+        $this->invoice_id = $var;
 
         return $this;
     }

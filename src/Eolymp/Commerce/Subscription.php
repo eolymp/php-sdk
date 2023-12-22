@@ -72,13 +72,13 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $period_end = null;
     /**
-     * time when subscription was/will be cancelled
+     * time when trial has started
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 70;</code>
      */
     protected $trial_start = null;
     /**
-     * time when subscription was/will be cancelled
+     * time when trial will be over
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 71;</code>
      */
@@ -129,9 +129,9 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $period_end
      *           current billing period end (same as renew date for next period)
      *     @type \Google\Protobuf\Timestamp $trial_start
-     *           time when subscription was/will be cancelled
+     *           time when trial has started
      *     @type \Google\Protobuf\Timestamp $trial_end
-     *           time when subscription was/will be cancelled
+     *           time when trial will be over
      *     @type string $cancellation_comment
      *     @type string $cancellation_feedback
      *     @type string $cancellation_reason
@@ -415,7 +415,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when subscription was/will be cancelled
+     * time when trial has started
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 70;</code>
      * @return \Google\Protobuf\Timestamp
@@ -426,7 +426,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when subscription was/will be cancelled
+     * time when trial has started
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 70;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -441,7 +441,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when subscription was/will be cancelled
+     * time when trial will be over
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 71;</code>
      * @return \Google\Protobuf\Timestamp
@@ -452,7 +452,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when subscription was/will be cancelled
+     * time when trial will be over
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 71;</code>
      * @param \Google\Protobuf\Timestamp $var
