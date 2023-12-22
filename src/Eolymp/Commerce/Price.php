@@ -26,7 +26,7 @@ class Price extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>uint32 unit_amount = 31;</code>
+     * Generated from protobuf field <code>int32 unit_amount = 31;</code>
      */
     protected $unit_amount = 0;
 
@@ -114,7 +114,7 @@ class Price extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 unit_amount = 31;</code>
+     * Generated from protobuf field <code>int32 unit_amount = 31;</code>
      * @return int
      */
     public function getUnitAmount()
@@ -123,13 +123,13 @@ class Price extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 unit_amount = 31;</code>
+     * Generated from protobuf field <code>int32 unit_amount = 31;</code>
      * @param int $var
      * @return $this
      */
     public function setUnitAmount($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->unit_amount = $var;
 
         return $this;

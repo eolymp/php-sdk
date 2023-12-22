@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaxAmount extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 amount = 1;</code>
+     * Generated from protobuf field <code>int32 amount = 1;</code>
      */
     protected $amount = 0;
     /**
@@ -30,7 +30,7 @@ class TaxAmount extends \Google\Protobuf\Internal\Message
      */
     protected $taxability_reason = '';
     /**
-     * Generated from protobuf field <code>uint32 taxable_amount = 10;</code>
+     * Generated from protobuf field <code>int32 taxable_amount = 10;</code>
      */
     protected $taxable_amount = 0;
 
@@ -53,7 +53,7 @@ class TaxAmount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 1;</code>
+     * Generated from protobuf field <code>int32 amount = 1;</code>
      * @return int
      */
     public function getAmount()
@@ -62,13 +62,13 @@ class TaxAmount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 1;</code>
+     * Generated from protobuf field <code>int32 amount = 1;</code>
      * @param int $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->amount = $var;
 
         return $this;
@@ -141,7 +141,7 @@ class TaxAmount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 taxable_amount = 10;</code>
+     * Generated from protobuf field <code>int32 taxable_amount = 10;</code>
      * @return int
      */
     public function getTaxableAmount()
@@ -150,13 +150,13 @@ class TaxAmount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 taxable_amount = 10;</code>
+     * Generated from protobuf field <code>int32 taxable_amount = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setTaxableAmount($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->taxable_amount = $var;
 
         return $this;

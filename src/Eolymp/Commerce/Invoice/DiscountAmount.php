@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DiscountAmount extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 amount = 1;</code>
+     * Generated from protobuf field <code>int32 amount = 1;</code>
      */
     protected $amount = 0;
     /**
@@ -38,7 +38,7 @@ class DiscountAmount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 1;</code>
+     * Generated from protobuf field <code>int32 amount = 1;</code>
      * @return int
      */
     public function getAmount()
@@ -47,13 +47,13 @@ class DiscountAmount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 1;</code>
+     * Generated from protobuf field <code>int32 amount = 1;</code>
      * @param int $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->amount = $var;
 
         return $this;

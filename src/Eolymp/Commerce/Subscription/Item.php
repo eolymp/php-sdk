@@ -18,7 +18,7 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * Generated from protobuf field <code>int32 quantity = 2;</code>
      */
     protected $quantity = 0;
     /**
@@ -70,7 +70,7 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * Generated from protobuf field <code>int32 quantity = 2;</code>
      * @return int
      */
     public function getQuantity()
@@ -79,13 +79,13 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 quantity = 2;</code>
+     * Generated from protobuf field <code>int32 quantity = 2;</code>
      * @param int $var
      * @return $this
      */
     public function setQuantity($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->quantity = $var;
 
         return $this;

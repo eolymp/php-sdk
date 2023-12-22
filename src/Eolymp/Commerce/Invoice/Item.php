@@ -34,15 +34,15 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>uint32 amount = 101;</code>
+     * Generated from protobuf field <code>int32 amount = 101;</code>
      */
     protected $amount = 0;
     /**
-     * Generated from protobuf field <code>uint32 amount_excluding_tax = 102;</code>
+     * Generated from protobuf field <code>int32 amount_excluding_tax = 102;</code>
      */
     protected $amount_excluding_tax = 0;
     /**
-     * Generated from protobuf field <code>uint32 unit_amount_excluding_tax = 103;</code>
+     * Generated from protobuf field <code>int32 unit_amount_excluding_tax = 103;</code>
      */
     protected $unit_amount_excluding_tax = 0;
     /**
@@ -188,7 +188,7 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 101;</code>
+     * Generated from protobuf field <code>int32 amount = 101;</code>
      * @return int
      */
     public function getAmount()
@@ -197,20 +197,20 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 101;</code>
+     * Generated from protobuf field <code>int32 amount = 101;</code>
      * @param int $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->amount = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount_excluding_tax = 102;</code>
+     * Generated from protobuf field <code>int32 amount_excluding_tax = 102;</code>
      * @return int
      */
     public function getAmountExcludingTax()
@@ -219,20 +219,20 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount_excluding_tax = 102;</code>
+     * Generated from protobuf field <code>int32 amount_excluding_tax = 102;</code>
      * @param int $var
      * @return $this
      */
     public function setAmountExcludingTax($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->amount_excluding_tax = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 unit_amount_excluding_tax = 103;</code>
+     * Generated from protobuf field <code>int32 unit_amount_excluding_tax = 103;</code>
      * @return int
      */
     public function getUnitAmountExcludingTax()
@@ -241,13 +241,13 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 unit_amount_excluding_tax = 103;</code>
+     * Generated from protobuf field <code>int32 unit_amount_excluding_tax = 103;</code>
      * @param int $var
      * @return $this
      */
     public function setUnitAmountExcludingTax($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->unit_amount_excluding_tax = $var;
 
         return $this;
