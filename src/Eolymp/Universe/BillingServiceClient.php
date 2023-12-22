@@ -103,8 +103,22 @@ class BillingServiceClient {
     }
 
     /**
-     * UpcomingInvoice before applying changes to the subscription
+     * @param SimulateSubscriptionInput $input message
+     * @param array $context request parameters
      *
+     * @return SimulateSubscriptionOutput output message
+     */
+    public function SimulateSubscription(SimulateSubscriptionInput $input, array $context = [])
+    {
+        $path = "/billing/subscription/simulate";
+
+        $context['name'] = "eolymp.universe.BillingService/SimulateSubscription";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SimulateSubscriptionOutput::class, $context);
+    }
+
+    /**
      * @param UpcomingInvoiceInput $input message
      * @param array $context request parameters
      *

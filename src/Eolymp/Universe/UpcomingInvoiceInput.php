@@ -9,29 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * if any of the parameters are set, the invoice object will render preview of the changes for current subscription
- * otherwise upcoming invoice will show next invoice for current subscription.
- *
  * Generated from protobuf message <code>eolymp.universe.UpcomingInvoiceInput</code>
  */
 class UpcomingInvoiceInput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string plan_id = 1;</code>
-     */
-    protected $plan_id = '';
-    /**
-     * Generated from protobuf field <code>string variant_id = 2;</code>
-     */
-    protected $variant_id = '';
-    /**
-     * Generated from protobuf field <code>uint32 seats = 3;</code>
-     */
-    protected $seats = 0;
-    /**
-     * Generated from protobuf field <code>string coupon = 10;</code>
-     */
-    protected $coupon = '';
 
     /**
      * Constructor.
@@ -39,103 +20,11 @@ class UpcomingInvoiceInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $plan_id
-     *     @type string $variant_id
-     *     @type int $seats
-     *     @type string $coupon
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Universe\BillingService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string plan_id = 1;</code>
-     * @return string
-     */
-    public function getPlanId()
-    {
-        return $this->plan_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string plan_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPlanId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->plan_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string variant_id = 2;</code>
-     * @return string
-     */
-    public function getVariantId()
-    {
-        return $this->variant_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string variant_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setVariantId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->variant_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 seats = 3;</code>
-     * @return int
-     */
-    public function getSeats()
-    {
-        return $this->seats;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 seats = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSeats($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->seats = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string coupon = 10;</code>
-     * @return string
-     */
-    public function getCoupon()
-    {
-        return $this->coupon;
-    }
-
-    /**
-     * Generated from protobuf field <code>string coupon = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCoupon($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->coupon = $var;
-
-        return $this;
     }
 
 }
