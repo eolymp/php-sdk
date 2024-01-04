@@ -71,6 +71,22 @@ class BillingServiceClient {
     }
 
     /**
+     * @param CreateSubscriptionInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateSubscriptionOutput output message
+     */
+    public function CreateSubscription(CreateSubscriptionInput $input, array $context = [])
+    {
+        $path = "/billing/subscription";
+
+        $context['name'] = "eolymp.universe.BillingService/CreateSubscription";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSubscriptionOutput::class, $context);
+    }
+
+    /**
      * @param UpdateSubscriptionInput $input message
      * @param array $context request parameters
      *
@@ -116,6 +132,22 @@ class BillingServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, SimulateSubscriptionOutput::class, $context);
+    }
+
+    /**
+     * @param CreatePortalLinkInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreatePortalLinkOutput output message
+     */
+    public function CreatePortalLink(CreatePortalLinkInput $input, array $context = [])
+    {
+        $path = "/billing/portal-link";
+
+        $context['name'] = "eolymp.universe.BillingService/CreatePortalLink";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreatePortalLinkOutput::class, $context);
     }
 
     /**
