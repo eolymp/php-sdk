@@ -52,9 +52,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * space uses priority testing queue
      *
-     * Generated from protobuf field <code>bool priority_testing_queue = 25;</code>
+     * Generated from protobuf field <code>bool priority_evaluation_queue = 25;</code>
      */
-    protected $priority_testing_queue = false;
+    protected $priority_evaluation_queue = false;
     /**
      * analyse submission code to see similarities and generate a report
      *
@@ -140,15 +140,15 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * allow contest upsolve mode
      *
-     * Generated from protobuf field <code>bool contest_upsolve = 16;</code>
+     * Generated from protobuf field <code>bool contest_upsolve_mode = 16;</code>
      */
-    protected $contest_upsolve = false;
+    protected $contest_upsolve_mode = false;
     /**
      * max contest duration in seconds
      *
-     * Generated from protobuf field <code>uint32 contest_duration = 17;</code>
+     * Generated from protobuf field <code>uint32 max_contest_duration = 17;</code>
      */
-    protected $contest_duration = 0;
+    protected $max_contest_duration = 0;
     /**
      * analyse submission code to see similarities and generate a report
      *
@@ -186,7 +186,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           customer support reply time in hours
      *     @type int $monthly_evaluations_by_seat
      *           submission evaluation quota and features
-     *     @type bool $priority_testing_queue
+     *     @type bool $priority_evaluation_queue
      *           space uses priority testing queue
      *     @type bool $plagiarism_analysis
      *           analyse submission code to see similarities and generate a report
@@ -213,9 +213,9 @@ class Quota extends \Google\Protobuf\Internal\Message
      *     @type int $problems_per_contest
      *     @type int $participants_per_contest
      *           deprecated: limited by number of members in space
-     *     @type bool $contest_upsolve
+     *     @type bool $contest_upsolve_mode
      *           allow contest upsolve mode
-     *     @type int $contest_duration
+     *     @type int $max_contest_duration
      *           max contest duration in seconds
      *     @type bool $team_contests
      *           analyse submission code to see similarities and generate a report
@@ -389,25 +389,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * space uses priority testing queue
      *
-     * Generated from protobuf field <code>bool priority_testing_queue = 25;</code>
+     * Generated from protobuf field <code>bool priority_evaluation_queue = 25;</code>
      * @return bool
      */
-    public function getPriorityTestingQueue()
+    public function getPriorityEvaluationQueue()
     {
-        return $this->priority_testing_queue;
+        return $this->priority_evaluation_queue;
     }
 
     /**
      * space uses priority testing queue
      *
-     * Generated from protobuf field <code>bool priority_testing_queue = 25;</code>
+     * Generated from protobuf field <code>bool priority_evaluation_queue = 25;</code>
      * @param bool $var
      * @return $this
      */
-    public function setPriorityTestingQueue($var)
+    public function setPriorityEvaluationQueue($var)
     {
         GPBUtil::checkBool($var);
-        $this->priority_testing_queue = $var;
+        $this->priority_evaluation_queue = $var;
 
         return $this;
     }
@@ -803,25 +803,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * allow contest upsolve mode
      *
-     * Generated from protobuf field <code>bool contest_upsolve = 16;</code>
+     * Generated from protobuf field <code>bool contest_upsolve_mode = 16;</code>
      * @return bool
      */
-    public function getContestUpsolve()
+    public function getContestUpsolveMode()
     {
-        return $this->contest_upsolve;
+        return $this->contest_upsolve_mode;
     }
 
     /**
      * allow contest upsolve mode
      *
-     * Generated from protobuf field <code>bool contest_upsolve = 16;</code>
+     * Generated from protobuf field <code>bool contest_upsolve_mode = 16;</code>
      * @param bool $var
      * @return $this
      */
-    public function setContestUpsolve($var)
+    public function setContestUpsolveMode($var)
     {
         GPBUtil::checkBool($var);
-        $this->contest_upsolve = $var;
+        $this->contest_upsolve_mode = $var;
 
         return $this;
     }
@@ -829,25 +829,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * max contest duration in seconds
      *
-     * Generated from protobuf field <code>uint32 contest_duration = 17;</code>
+     * Generated from protobuf field <code>uint32 max_contest_duration = 17;</code>
      * @return int
      */
-    public function getContestDuration()
+    public function getMaxContestDuration()
     {
-        return $this->contest_duration;
+        return $this->max_contest_duration;
     }
 
     /**
      * max contest duration in seconds
      *
-     * Generated from protobuf field <code>uint32 contest_duration = 17;</code>
+     * Generated from protobuf field <code>uint32 max_contest_duration = 17;</code>
      * @param int $var
      * @return $this
      */
-    public function setContestDuration($var)
+    public function setMaxContestDuration($var)
     {
         GPBUtil::checkUint32($var);
-        $this->contest_duration = $var;
+        $this->max_contest_duration = $var;
 
         return $this;
     }
