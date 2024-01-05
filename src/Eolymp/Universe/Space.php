@@ -50,12 +50,6 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * plan defines billing plan for the space
-     *
-     * Generated from protobuf field <code>string plan = 13;</code>
-     */
-    protected $plan = '';
-    /**
      * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
      */
     protected $visibility = 0;
@@ -63,6 +57,18 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
      */
     protected $quota = null;
+    /**
+     * plan defines billing plan for the space
+     *
+     * Generated from protobuf field <code>string plan = 13;</code>
+     */
+    protected $plan = '';
+    /**
+     * number of prepaid seats
+     *
+     * Generated from protobuf field <code>uint32 seats = 31;</code>
+     */
+    protected $seats = 0;
     /**
      * space home page URL
      *
@@ -100,10 +106,12 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space logo image
      *     @type int $type
      *           space use type
-     *     @type string $plan
-     *           plan defines billing plan for the space
      *     @type int $visibility
      *     @type \Eolymp\Universe\Quota $quota
+     *     @type string $plan
+     *           plan defines billing plan for the space
+     *     @type int $seats
+     *           number of prepaid seats
      *     @type string $home_url
      *           space home page URL
      *     @type string $issuer_url
@@ -274,32 +282,6 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * plan defines billing plan for the space
-     *
-     * Generated from protobuf field <code>string plan = 13;</code>
-     * @return string
-     */
-    public function getPlan()
-    {
-        return $this->plan;
-    }
-
-    /**
-     * plan defines billing plan for the space
-     *
-     * Generated from protobuf field <code>string plan = 13;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPlan($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->plan = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
      * @return int
      */
@@ -339,6 +321,58 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Universe\Quota::class);
         $this->quota = $var;
+
+        return $this;
+    }
+
+    /**
+     * plan defines billing plan for the space
+     *
+     * Generated from protobuf field <code>string plan = 13;</code>
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->plan;
+    }
+
+    /**
+     * plan defines billing plan for the space
+     *
+     * Generated from protobuf field <code>string plan = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlan($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->plan = $var;
+
+        return $this;
+    }
+
+    /**
+     * number of prepaid seats
+     *
+     * Generated from protobuf field <code>uint32 seats = 31;</code>
+     * @return int
+     */
+    public function getSeats()
+    {
+        return $this->seats;
+    }
+
+    /**
+     * number of prepaid seats
+     *
+     * Generated from protobuf field <code>uint32 seats = 31;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSeats($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->seats = $var;
 
         return $this;
     }
