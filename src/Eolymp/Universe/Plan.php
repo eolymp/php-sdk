@@ -26,6 +26,10 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 4;</code>
+     */
+    protected $quota = null;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
      */
     private $variants;
@@ -39,6 +43,7 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
+     *     @type \Eolymp\Universe\Quota $quota
      *     @type \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
@@ -109,6 +114,28 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 4;</code>
+     * @return \Eolymp\Universe\Quota
+     */
+    public function getQuota()
+    {
+        return $this->quota;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 4;</code>
+     * @param \Eolymp\Universe\Quota $var
+     * @return $this
+     */
+    public function setQuota($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Quota::class);
+        $this->quota = $var;
 
         return $this;
     }

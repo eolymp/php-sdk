@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeQuotaOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space.Quota quota = 1;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 1;</code>
      */
     protected $quota = null;
 
@@ -24,7 +24,7 @@ class DescribeQuotaOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Universe\Space\Quota $quota
+     *     @type \Eolymp\Universe\Quota $quota
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DescribeQuotaOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space.Quota quota = 1;</code>
-     * @return \Eolymp\Universe\Space\Quota
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 1;</code>
+     * @return \Eolymp\Universe\Quota
      */
     public function getQuota()
     {
@@ -42,13 +42,13 @@ class DescribeQuotaOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space.Quota quota = 1;</code>
-     * @param \Eolymp\Universe\Space\Quota $var
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 1;</code>
+     * @param \Eolymp\Universe\Quota $var
      * @return $this
      */
     public function setQuota($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Space_Quota::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Quota::class);
         $this->quota = $var;
 
         return $this;

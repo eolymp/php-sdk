@@ -60,6 +60,10 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
+     */
+    protected $quota = null;
+    /**
      * space home page URL
      *
      * Generated from protobuf field <code>string home_url = 50;</code>
@@ -99,6 +103,7 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type string $plan
      *           plan defines billing plan for the space
      *     @type int $visibility
+     *     @type \Eolymp\Universe\Quota $quota
      *     @type string $home_url
      *           space home page URL
      *     @type string $issuer_url
@@ -312,6 +317,28 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
+     * @return \Eolymp\Universe\Quota
+     */
+    public function getQuota()
+    {
+        return $this->quota;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
+     * @param \Eolymp\Universe\Quota $var
+     * @return $this
+     */
+    public function setQuota($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Quota::class);
+        $this->quota = $var;
 
         return $this;
     }
