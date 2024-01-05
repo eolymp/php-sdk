@@ -22,6 +22,10 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     */
+    protected $description = null;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
      */
     private $variants;
@@ -34,6 +38,7 @@ class Plan extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
+     *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
@@ -82,6 +87,28 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * @return \Eolymp\Ecm\Content
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->description = $var;
 
         return $this;
     }
