@@ -14,6 +14,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class Quota extends \Google\Protobuf\Internal\Message
 {
     /**
+     * period when quota starts and ends
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp period_start = 900;</code>
+     */
+    protected $period_start = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 901;</code>
+     */
+    protected $period_end = null;
+    /**
      * general quota and features
      *
      * Generated from protobuf field <code>uint32 permissions_per_space = 6;</code>
@@ -174,6 +184,9 @@ class Quota extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Google\Protobuf\Timestamp $period_start
+     *           period when quota starts and ends
+     *     @type \Google\Protobuf\Timestamp $period_end
      *     @type int $permissions_per_space
      *           general quota and features
      *     @type bool $single_sing_on
@@ -228,6 +241,54 @@ class Quota extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Universe\Quota::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * period when quota starts and ends
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp period_start = 900;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getPeriodStart()
+    {
+        return $this->period_start;
+    }
+
+    /**
+     * period when quota starts and ends
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp period_start = 900;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setPeriodStart($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->period_start = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 901;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getPeriodEnd()
+    {
+        return $this->period_end;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 901;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setPeriodEnd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->period_end = $var;
+
+        return $this;
     }
 
     /**
