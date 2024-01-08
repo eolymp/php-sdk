@@ -174,19 +174,19 @@ class MemberServiceClient {
     }
 
     /**
-     * @param DescribeUsageInput $input message
+     * @param DescribeMemberUsageInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeUsageOutput output message
+     * @return DescribeMemberUsageOutput output message
      */
-    public function DescribeUsage(DescribeUsageInput $input, array $context = [])
+    public function DescribeMemberUsage(DescribeMemberUsageInput $input, array $context = [])
     {
         $path = "/usage/members";
 
-        $context['name'] = "eolymp.community.MemberService/DescribeUsage";
+        $context['name'] = "eolymp.community.MemberService/DescribeMemberUsage";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeUsageOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberUsageOutput::class, $context);
     }
 
 }
