@@ -173,4 +173,20 @@ class MemberServiceClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignMemberOutput::class, $context);
     }
 
+    /**
+     * @param DescribeUsageInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeUsageOutput output message
+     */
+    public function DescribeUsage(DescribeUsageInput $input, array $context = [])
+    {
+        $path = "/usage/members";
+
+        $context['name'] = "eolymp.community.MemberService/DescribeUsage";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeUsageOutput::class, $context);
+    }
+
 }
