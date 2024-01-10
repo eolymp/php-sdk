@@ -18,6 +18,10 @@ class Locale extends \Google\Protobuf\Internal\Message
      */
     protected $code = '';
     /**
+     * Generated from protobuf field <code>bool ready = 2;</code>
+     */
+    protected $ready = false;
+    /**
      * Generated from protobuf field <code>int32 translated_terms = 10;</code>
      */
     protected $translated_terms = 0;
@@ -37,6 +41,7 @@ class Locale extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $code
+     *     @type bool $ready
      *     @type int $translated_terms
      *     @type int $missing_terms
      *     @type int $total_terms
@@ -65,6 +70,28 @@ class Locale extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool ready = 2;</code>
+     * @return bool
+     */
+    public function getReady()
+    {
+        return $this->ready;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool ready = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReady($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ready = $var;
 
         return $this;
     }
