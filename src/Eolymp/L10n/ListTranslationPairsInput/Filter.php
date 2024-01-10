@@ -20,7 +20,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by term key
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID term_key = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString term_key = 10;</code>
      */
     private $term_key;
     /**
@@ -55,7 +55,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
-     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $term_key
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $term_key
      *           filter by term key
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $term_status
      *           filter by term status
@@ -97,7 +97,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by term key
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID term_key = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString term_key = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTermKey()
@@ -108,13 +108,13 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by term key
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID term_key = 10;</code>
-     * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString term_key = 10;</code>
+     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTermKey($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
         $this->term_key = $arr;
 
         return $this;
