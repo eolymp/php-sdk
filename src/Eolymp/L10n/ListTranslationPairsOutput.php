@@ -22,7 +22,7 @@ class ListTranslationPairsOutput extends \Google\Protobuf\Internal\Message
      */
     protected $has_more = false;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.Term items = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.TranslationPair items = 3;</code>
      */
     private $items;
 
@@ -34,7 +34,7 @@ class ListTranslationPairsOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total
      *     @type bool $has_more
-     *     @type \Eolymp\L10n\Term[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\L10n\TranslationPair[]|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -87,7 +87,7 @@ class ListTranslationPairsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.Term items = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.l10n.TranslationPair items = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -96,13 +96,13 @@ class ListTranslationPairsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.l10n.Term items = 3;</code>
-     * @param \Eolymp\L10n\Term[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.l10n.TranslationPair items = 3;</code>
+     * @param \Eolymp\L10n\TranslationPair[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\L10n\Term::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\L10n\TranslationPair::class);
         $this->items = $arr;
 
         return $this;
