@@ -33,6 +33,10 @@ class Project extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string home_url = 5;</code>
      */
     protected $home_url = '';
+    /**
+     * Generated from protobuf field <code>string description = 6;</code>
+     */
+    protected $description = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Project extends \Google\Protobuf\Internal\Message
      *     @type string $url
      *     @type string $logo_url
      *     @type string $home_url
+     *     @type string $description
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class Project extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->home_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
 
         return $this;
     }
