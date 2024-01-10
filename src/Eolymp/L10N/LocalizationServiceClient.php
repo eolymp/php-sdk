@@ -403,7 +403,7 @@ class LocalizationServiceClient {
      */
     public function ListTranslationPairs(ListTranslationPairsInput $input, array $context = [])
     {
-        $path = "/translations/".rawurlencode($input->getLocale());
+        $path = "/translate/".rawurlencode($input->getLocale());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setLocale("");
