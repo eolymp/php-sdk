@@ -395,4 +395,23 @@ class LocalizationServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ExportTranslationsOutput::class, $context);
     }
 
+    /**
+     * @param ListTranslationPairsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListTranslationPairsOutput output message
+     */
+    public function ListTranslationPairs(ListTranslationPairsInput $input, array $context = [])
+    {
+        $path = "/translations/".rawurlencode($input->getLocale());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLocale("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/ListTranslationPairs";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTranslationPairsOutput::class, $context);
+    }
+
 }

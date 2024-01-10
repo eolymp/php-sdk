@@ -35,12 +35,19 @@ class Status
      * Generated from protobuf enum <code>UNUSED = 4;</code>
      */
     const UNUSED = 4;
+    /**
+     * translation which requires review
+     *
+     * Generated from protobuf enum <code>NEEDS_REVIEW = 5;</code>
+     */
+    const NEEDS_REVIEW = 5;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::PENDING => 'PENDING',
         self::ACTIVE => 'ACTIVE',
         self::UNUSED => 'UNUSED',
+        self::NEEDS_REVIEW => 'NEEDS_REVIEW',
     ];
 
     public static function name($value)

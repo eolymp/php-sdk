@@ -34,6 +34,10 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     protected $outdated = false;
     /**
+     * Generated from protobuf field <code>bool needs_improvement = 6;</code>
+     */
+    protected $needs_improvement = false;
+    /**
      * Generated from protobuf field <code>string created_by = 10;</code>
      */
     protected $created_by = '';
@@ -57,6 +61,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $message
      *     @type int $status
      *     @type bool $outdated
+     *     @type bool $needs_improvement
      *     @type string $created_by
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $approved_at
@@ -173,6 +178,28 @@ class Translation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->outdated = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool needs_improvement = 6;</code>
+     * @return bool
+     */
+    public function getNeedsImprovement()
+    {
+        return $this->needs_improvement;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool needs_improvement = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNeedsImprovement($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->needs_improvement = $var;
 
         return $this;
     }

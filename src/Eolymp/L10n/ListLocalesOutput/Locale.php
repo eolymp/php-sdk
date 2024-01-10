@@ -25,6 +25,10 @@ class Locale extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 missing_terms = 11;</code>
      */
     protected $missing_terms = 0;
+    /**
+     * Generated from protobuf field <code>int32 total_terms = 12;</code>
+     */
+    protected $total_terms = 0;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Locale extends \Google\Protobuf\Internal\Message
      *     @type string $code
      *     @type int $translated_terms
      *     @type int $missing_terms
+     *     @type int $total_terms
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class Locale extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->missing_terms = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 total_terms = 12;</code>
+     * @return int
+     */
+    public function getTotalTerms()
+    {
+        return $this->total_terms;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 total_terms = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotalTerms($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->total_terms = $var;
 
         return $this;
     }
