@@ -30,13 +30,9 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>bool outdated = 5;</code>
+     * Generated from protobuf field <code>bool needs_review = 5;</code>
      */
-    protected $outdated = false;
-    /**
-     * Generated from protobuf field <code>bool needs_improvement = 6;</code>
-     */
-    protected $needs_improvement = false;
+    protected $needs_review = false;
     /**
      * Generated from protobuf field <code>string created_by = 10;</code>
      */
@@ -60,8 +56,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $message
      *     @type int $status
-     *     @type bool $outdated
-     *     @type bool $needs_improvement
+     *     @type bool $needs_review
      *     @type string $created_by
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $approved_at
@@ -161,45 +156,23 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool outdated = 5;</code>
+     * Generated from protobuf field <code>bool needs_review = 5;</code>
      * @return bool
      */
-    public function getOutdated()
+    public function getNeedsReview()
     {
-        return $this->outdated;
+        return $this->needs_review;
     }
 
     /**
-     * Generated from protobuf field <code>bool outdated = 5;</code>
+     * Generated from protobuf field <code>bool needs_review = 5;</code>
      * @param bool $var
      * @return $this
      */
-    public function setOutdated($var)
+    public function setNeedsReview($var)
     {
         GPBUtil::checkBool($var);
-        $this->outdated = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool needs_improvement = 6;</code>
-     * @return bool
-     */
-    public function getNeedsImprovement()
-    {
-        return $this->needs_improvement;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool needs_improvement = 6;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setNeedsImprovement($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->needs_improvement = $var;
+        $this->needs_review = $var;
 
         return $this;
     }

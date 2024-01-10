@@ -25,6 +25,10 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.l10n.Translation translation = 3;</code>
      */
     protected $translation = null;
+    /**
+     * Generated from protobuf field <code>bool has_suggestions = 4;</code>
+     */
+    protected $has_suggestions = false;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\L10n\Term $term
      *     @type \Eolymp\L10n\Translation $source
      *     @type \Eolymp\L10n\Translation $translation
+     *     @type bool $has_suggestions
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\L10n\Translation::class);
         $this->translation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool has_suggestions = 4;</code>
+     * @return bool
+     */
+    public function getHasSuggestions()
+    {
+        return $this->has_suggestions;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool has_suggestions = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasSuggestions($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->has_suggestions = $var;
 
         return $this;
     }
