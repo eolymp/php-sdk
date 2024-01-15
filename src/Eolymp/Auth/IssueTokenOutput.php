@@ -34,6 +34,12 @@ class IssueTokenOutput extends \Google\Protobuf\Internal\Message
      */
     protected $scope = '';
     /**
+     * temporarily expose claims directly without wrapping them into id_token
+     *
+     * Generated from protobuf field <code>.eolymp.auth.Claims claims = 10;</code>
+     */
+    protected $claims = null;
+    /**
      * Generated from protobuf field <code>string id_token = 100;</code>
      */
     protected $id_token = '';
@@ -49,6 +55,8 @@ class IssueTokenOutput extends \Google\Protobuf\Internal\Message
      *     @type int $expires_in
      *     @type string $refresh_token
      *     @type string $scope
+     *     @type \Eolymp\Auth\Claims $claims
+     *           temporarily expose claims directly without wrapping them into id_token
      *     @type string $id_token
      * }
      */
@@ -163,6 +171,32 @@ class IssueTokenOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->scope = $var;
+
+        return $this;
+    }
+
+    /**
+     * temporarily expose claims directly without wrapping them into id_token
+     *
+     * Generated from protobuf field <code>.eolymp.auth.Claims claims = 10;</code>
+     * @return \Eolymp\Auth\Claims
+     */
+    public function getClaims()
+    {
+        return $this->claims;
+    }
+
+    /**
+     * temporarily expose claims directly without wrapping them into id_token
+     *
+     * Generated from protobuf field <code>.eolymp.auth.Claims claims = 10;</code>
+     * @param \Eolymp\Auth\Claims $var
+     * @return $this
+     */
+    public function setClaims($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Auth\Claims::class);
+        $this->claims = $var;
 
         return $this;
     }
