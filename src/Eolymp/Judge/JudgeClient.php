@@ -1445,4 +1445,20 @@ class JudgeClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListActivitiesOutput::class, $context);
     }
 
+    /**
+     * @param DescribeContestUsageInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeContestUsageOutput output message
+     */
+    public function DescribeContestUsage(DescribeContestUsageInput $input, array $context = [])
+    {
+        $path = "/usage/contests";
+
+        $context['name'] = "eolymp.judge.Judge/DescribeContestUsage";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeContestUsageOutput::class, $context);
+    }
+
 }
