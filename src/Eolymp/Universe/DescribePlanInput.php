@@ -30,12 +30,6 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * optionally, request prices for a particular space
-     *
-     * Generated from protobuf field <code>string space_id = 103;</code>
-     */
-    protected $space_id = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Extra extra = 1123;</code>
      */
     private $extra;
@@ -51,8 +45,6 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
      *           optionally, request name and description in particular locale
      *     @type string $currency
      *           optionally, request variants in particular currency
-     *     @type string $space_id
-     *           optionally, request prices for a particular space
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -131,32 +123,6 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->currency = $var;
-
-        return $this;
-    }
-
-    /**
-     * optionally, request prices for a particular space
-     *
-     * Generated from protobuf field <code>string space_id = 103;</code>
-     * @return string
-     */
-    public function getSpaceId()
-    {
-        return $this->space_id;
-    }
-
-    /**
-     * optionally, request prices for a particular space
-     *
-     * Generated from protobuf field <code>string space_id = 103;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSpaceId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->space_id = $var;
 
         return $this;
     }
