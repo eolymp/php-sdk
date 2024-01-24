@@ -4,7 +4,7 @@
 
 namespace Eolymp\Universe;
 
-class UniverseClient {
+class SpaceServiceClient {
 
     /** @var string base URL */
     private $url;
@@ -37,7 +37,7 @@ class UniverseClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setKey("");
 
-        $context['name'] = "eolymp.universe.Universe/LookupSpace";
+        $context['name'] = "eolymp.universe.SpaceService/LookupSpace";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupSpaceOutput::class, $context);
@@ -55,7 +55,7 @@ class UniverseClient {
     {
         $path = "/spaces";
 
-        $context['name'] = "eolymp.universe.Universe/CreateSpace";
+        $context['name'] = "eolymp.universe.SpaceService/CreateSpace";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateSpaceOutput::class, $context);
@@ -76,7 +76,7 @@ class UniverseClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.universe.Universe/UpdateSpace";
+        $context['name'] = "eolymp.universe.SpaceService/UpdateSpace";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateSpaceOutput::class, $context);
@@ -97,7 +97,7 @@ class UniverseClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.universe.Universe/DeleteSpace";
+        $context['name'] = "eolymp.universe.SpaceService/DeleteSpace";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteSpaceOutput::class, $context);
@@ -118,50 +118,10 @@ class UniverseClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.universe.Universe/DescribeSpace";
+        $context['name'] = "eolymp.universe.SpaceService/DescribeSpace";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSpaceOutput::class, $context);
-    }
-
-    /**
-     * Describe quota
-     *
-     * @param DescribeQuotaInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeQuotaOutput output message
-     */
-    public function DescribeQuota(DescribeQuotaInput $input, array $context = [])
-    {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/quota";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSpaceId("");
-
-        $context['name'] = "eolymp.universe.Universe/DescribeQuota";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeQuotaOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateQuotaInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateQuotaOutput output message
-     */
-    public function UpdateQuota(UpdateQuotaInput $input, array $context = [])
-    {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/quota";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSpaceId("");
-
-        $context['name'] = "eolymp.universe.Universe/UpdateQuota";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateQuotaOutput::class, $context);
     }
 
     /**
@@ -176,7 +136,7 @@ class UniverseClient {
     {
         $path = "/spaces";
 
-        $context['name'] = "eolymp.universe.Universe/ListSpaces";
+        $context['name'] = "eolymp.universe.SpaceService/ListSpaces";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSpacesOutput::class, $context);
