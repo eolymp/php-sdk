@@ -14,62 +14,98 @@ use Google\Protobuf\Internal\GPBUtil;
 class Claims extends \Google\Protobuf\Internal\Message
 {
     /**
+     * jti: token unique identifier
+     *
+     * Generated from protobuf field <code>string id = 1000;</code>
+     */
+    protected $id = '';
+    /**
+     * iss
+     *
      * Generated from protobuf field <code>string issuer = 1;</code>
      */
     protected $issuer = '';
     /**
+     * sub
+     *
      * Generated from protobuf field <code>string subject = 2;</code>
      */
     protected $subject = '';
     /**
+     * email
+     *
      * Generated from protobuf field <code>string email = 10;</code>
      */
     protected $email = '';
     /**
+     * true if user has confirmed their email
+     *
      * Generated from protobuf field <code>bool email_verified = 11;</code>
      */
     protected $email_verified = false;
     /**
+     * user's name
+     *
      * Generated from protobuf field <code>string name = 30;</code>
      */
     protected $name = '';
     /**
+     * user's unique nickname (username, handler)
+     *
      * Generated from protobuf field <code>string nickname = 31;</code>
      */
     protected $nickname = '';
     /**
+     * fully qualified URL to fetch user's picture (photo, avatar)
+     *
      * Generated from protobuf field <code>string picture = 40;</code>
      */
     protected $picture = '';
     /**
+     * user's preferred locale
+     *
      * Generated from protobuf field <code>string locale = 50;</code>
      */
     protected $locale = '';
     /**
+     * user's preferred timezone
+     *
      * Generated from protobuf field <code>string timezone = 51;</code>
      */
     protected $timezone = '';
     /**
+     * true if user is a minor
+     *
      * Generated from protobuf field <code>bool minor = 61;</code>
      */
     protected $minor = false;
     /**
+     * country where the user is from
+     *
      * Generated from protobuf field <code>string country = 70;</code>
      */
     protected $country = '';
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string city = 73;</code>
      */
     protected $city = '';
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string company = 80;</code>
      */
     protected $company = '';
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string business_title = 81;</code>
      */
     protected $business_title = '';
     /**
+     * user's preferred runtime (programming language, compiler) at Eolymp
+     *
      * Generated from protobuf field <code>string preferred_runtime = 90;</code>
      */
     protected $preferred_runtime = '';
@@ -80,21 +116,38 @@ class Claims extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
+     *           jti: token unique identifier
      *     @type string $issuer
+     *           iss
      *     @type string $subject
+     *           sub
      *     @type string $email
+     *           email
      *     @type bool $email_verified
+     *           true if user has confirmed their email
      *     @type string $name
+     *           user's name
      *     @type string $nickname
+     *           user's unique nickname (username, handler)
      *     @type string $picture
+     *           fully qualified URL to fetch user's picture (photo, avatar)
      *     @type string $locale
+     *           user's preferred locale
      *     @type string $timezone
+     *           user's preferred timezone
      *     @type bool $minor
+     *           true if user is a minor
      *     @type string $country
+     *           country where the user is from
      *     @type string $city
+     *           deprecated: not used
      *     @type string $company
+     *           deprecated: not used
      *     @type string $business_title
+     *           deprecated: not used
      *     @type string $preferred_runtime
+     *           user's preferred runtime (programming language, compiler) at Eolymp
      * }
      */
     public function __construct($data = NULL) {
@@ -103,6 +156,34 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * jti: token unique identifier
+     *
+     * Generated from protobuf field <code>string id = 1000;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * jti: token unique identifier
+     *
+     * Generated from protobuf field <code>string id = 1000;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * iss
+     *
      * Generated from protobuf field <code>string issuer = 1;</code>
      * @return string
      */
@@ -112,6 +193,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * iss
+     *
      * Generated from protobuf field <code>string issuer = 1;</code>
      * @param string $var
      * @return $this
@@ -125,6 +208,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * sub
+     *
      * Generated from protobuf field <code>string subject = 2;</code>
      * @return string
      */
@@ -134,6 +219,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * sub
+     *
      * Generated from protobuf field <code>string subject = 2;</code>
      * @param string $var
      * @return $this
@@ -147,6 +234,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * email
+     *
      * Generated from protobuf field <code>string email = 10;</code>
      * @return string
      */
@@ -156,6 +245,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * email
+     *
      * Generated from protobuf field <code>string email = 10;</code>
      * @param string $var
      * @return $this
@@ -169,6 +260,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * true if user has confirmed their email
+     *
      * Generated from protobuf field <code>bool email_verified = 11;</code>
      * @return bool
      */
@@ -178,6 +271,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * true if user has confirmed their email
+     *
      * Generated from protobuf field <code>bool email_verified = 11;</code>
      * @param bool $var
      * @return $this
@@ -191,6 +286,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's name
+     *
      * Generated from protobuf field <code>string name = 30;</code>
      * @return string
      */
@@ -200,6 +297,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's name
+     *
      * Generated from protobuf field <code>string name = 30;</code>
      * @param string $var
      * @return $this
@@ -213,6 +312,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's unique nickname (username, handler)
+     *
      * Generated from protobuf field <code>string nickname = 31;</code>
      * @return string
      */
@@ -222,6 +323,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's unique nickname (username, handler)
+     *
      * Generated from protobuf field <code>string nickname = 31;</code>
      * @param string $var
      * @return $this
@@ -235,6 +338,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * fully qualified URL to fetch user's picture (photo, avatar)
+     *
      * Generated from protobuf field <code>string picture = 40;</code>
      * @return string
      */
@@ -244,6 +349,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * fully qualified URL to fetch user's picture (photo, avatar)
+     *
      * Generated from protobuf field <code>string picture = 40;</code>
      * @param string $var
      * @return $this
@@ -257,6 +364,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's preferred locale
+     *
      * Generated from protobuf field <code>string locale = 50;</code>
      * @return string
      */
@@ -266,6 +375,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's preferred locale
+     *
      * Generated from protobuf field <code>string locale = 50;</code>
      * @param string $var
      * @return $this
@@ -279,6 +390,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's preferred timezone
+     *
      * Generated from protobuf field <code>string timezone = 51;</code>
      * @return string
      */
@@ -288,6 +401,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's preferred timezone
+     *
      * Generated from protobuf field <code>string timezone = 51;</code>
      * @param string $var
      * @return $this
@@ -301,6 +416,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * true if user is a minor
+     *
      * Generated from protobuf field <code>bool minor = 61;</code>
      * @return bool
      */
@@ -310,6 +427,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * true if user is a minor
+     *
      * Generated from protobuf field <code>bool minor = 61;</code>
      * @param bool $var
      * @return $this
@@ -323,6 +442,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * country where the user is from
+     *
      * Generated from protobuf field <code>string country = 70;</code>
      * @return string
      */
@@ -332,6 +453,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * country where the user is from
+     *
      * Generated from protobuf field <code>string country = 70;</code>
      * @param string $var
      * @return $this
@@ -345,6 +468,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string city = 73;</code>
      * @return string
      */
@@ -354,6 +479,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string city = 73;</code>
      * @param string $var
      * @return $this
@@ -367,6 +494,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string company = 80;</code>
      * @return string
      */
@@ -376,6 +505,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string company = 80;</code>
      * @param string $var
      * @return $this
@@ -389,6 +520,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string business_title = 81;</code>
      * @return string
      */
@@ -398,6 +531,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: not used
+     *
      * Generated from protobuf field <code>string business_title = 81;</code>
      * @param string $var
      * @return $this
@@ -411,6 +546,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's preferred runtime (programming language, compiler) at Eolymp
+     *
      * Generated from protobuf field <code>string preferred_runtime = 90;</code>
      * @return string
      */
@@ -420,6 +557,8 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's preferred runtime (programming language, compiler) at Eolymp
+     *
      * Generated from protobuf field <code>string preferred_runtime = 90;</code>
      * @param string $var
      * @return $this
