@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListFragmentsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * deprecated: use extra instead
+     *
      * Generated from protobuf field <code>bool render = 1;</code>
      */
     protected $render = false;
@@ -33,6 +35,10 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.content.ListFragmentsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -41,11 +47,13 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $render
+     *           deprecated: use extra instead
      *     @type int $offset
      *           pagination
      *     @type int $size
      *     @type \Eolymp\Content\ListFragmentsInput\Filter $filters
      *           data filters
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -54,6 +62,8 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use extra instead
+     *
      * Generated from protobuf field <code>bool render = 1;</code>
      * @return bool
      */
@@ -63,6 +73,8 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use extra instead
+     *
      * Generated from protobuf field <code>bool render = 1;</code>
      * @param bool $var
      * @return $this
@@ -145,6 +157,28 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Content\ListFragmentsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Fragment\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

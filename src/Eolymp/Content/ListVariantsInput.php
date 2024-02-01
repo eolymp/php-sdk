@@ -9,20 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.ListPathsInput</code>
+ * Generated from protobuf message <code>eolymp.content.ListVariantsInput</code>
  */
-class ListPathsInput extends \Google\Protobuf\Internal\Message
+class ListVariantsInput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string locale = 1;</code>
-     */
-    protected $locale = '';
     /**
      * deprecated: use extra instead
      *
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * Generated from protobuf field <code>bool render = 1;</code>
      */
     protected $render = false;
+    /**
+     * Generated from protobuf field <code>string fragment_id = 2;</code>
+     */
+    protected $fragment_id = '';
     /**
      * pagination
      *
@@ -36,7 +36,7 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.content.ListPathsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
     /**
@@ -50,13 +50,13 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $locale
      *     @type bool $render
      *           deprecated: use extra instead
+     *     @type string $fragment_id
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Content\ListPathsInput\Filter $filters
+     *     @type \Eolymp\Content\ListVariantsInput\Filter $filters
      *           data filters
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
@@ -67,31 +67,9 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 1;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * Generated from protobuf field <code>string locale = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
      * deprecated: use extra instead
      *
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * Generated from protobuf field <code>bool render = 1;</code>
      * @return bool
      */
     public function getRender()
@@ -102,7 +80,7 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     /**
      * deprecated: use extra instead
      *
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * Generated from protobuf field <code>bool render = 1;</code>
      * @param bool $var
      * @return $this
      */
@@ -110,6 +88,28 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->render = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fragment_id = 2;</code>
+     * @return string
+     */
+    public function getFragmentId()
+    {
+        return $this->fragment_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fragment_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFragmentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->fragment_id = $var;
 
         return $this;
     }
@@ -165,8 +165,8 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.content.ListPathsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Content\ListPathsInput\Filter
+     * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Content\ListVariantsInput\Filter
      */
     public function getFilters()
     {
@@ -176,13 +176,13 @@ class ListPathsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.content.ListPathsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Content\ListPathsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Content\ListVariantsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\ListPathsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Content\ListVariantsInput_Filter::class);
         $this->filters = $var;
 
         return $this;

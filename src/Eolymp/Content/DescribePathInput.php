@@ -22,9 +22,15 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * deprecated: use extra instead
+     *
      * Generated from protobuf field <code>bool render = 3;</code>
      */
     protected $render = false;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -35,6 +41,8 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *     @type string $locale
      *     @type bool $render
+     *           deprecated: use extra instead
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +95,8 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use extra instead
+     *
      * Generated from protobuf field <code>bool render = 3;</code>
      * @return bool
      */
@@ -96,6 +106,8 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use extra instead
+     *
      * Generated from protobuf field <code>bool render = 3;</code>
      * @param bool $var
      * @return $this
@@ -104,6 +116,28 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->render = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Fragment\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

@@ -9,18 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.DescribeFragmentInput</code>
+ * Generated from protobuf message <code>eolymp.content.DescribeVariantInput</code>
  */
-class DescribeFragmentInput extends \Google\Protobuf\Internal\Message
+class DescribeVariantInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string fragment_id = 1;</code>
      */
     protected $fragment_id = '';
     /**
+     * Generated from protobuf field <code>string variant_id = 2;</code>
+     */
+    protected $variant_id = '';
+    /**
      * deprecated: use extra instead
      *
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * Generated from protobuf field <code>bool render = 3;</code>
      */
     protected $render = false;
     /**
@@ -35,6 +39,7 @@ class DescribeFragmentInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $fragment_id
+     *     @type string $variant_id
      *     @type bool $render
      *           deprecated: use extra instead
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
@@ -68,9 +73,31 @@ class DescribeFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string variant_id = 2;</code>
+     * @return string
+     */
+    public function getVariantId()
+    {
+        return $this->variant_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string variant_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVariantId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->variant_id = $var;
+
+        return $this;
+    }
+
+    /**
      * deprecated: use extra instead
      *
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * Generated from protobuf field <code>bool render = 3;</code>
      * @return bool
      */
     public function getRender()
@@ -81,7 +108,7 @@ class DescribeFragmentInput extends \Google\Protobuf\Internal\Message
     /**
      * deprecated: use extra instead
      *
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * Generated from protobuf field <code>bool render = 3;</code>
      * @param bool $var
      * @return $this
      */
