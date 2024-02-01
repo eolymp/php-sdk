@@ -28,7 +28,7 @@ class DescribeVariantInput extends \Google\Protobuf\Internal\Message
      */
     protected $render = false;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
      */
     private $extra;
 
@@ -121,7 +121,7 @@ class DescribeVariantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -130,13 +130,13 @@ class DescribeVariantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Fragment\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Variant\Extra::class);
         $this->extra = $arr;
 
         return $this;
