@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateVariantInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.content.Variant variant = 1;</code>
+     * Generated from protobuf field <code>string fragment_id = 1;</code>
+     */
+    protected $fragment_id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Variant variant = 2;</code>
      */
     protected $variant = null;
 
@@ -24,6 +28,7 @@ class CreateVariantInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $fragment_id
      *     @type \Eolymp\Content\Variant $variant
      * }
      */
@@ -33,7 +38,29 @@ class CreateVariantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Variant variant = 1;</code>
+     * Generated from protobuf field <code>string fragment_id = 1;</code>
+     * @return string
+     */
+    public function getFragmentId()
+    {
+        return $this->fragment_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fragment_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFragmentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->fragment_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Variant variant = 2;</code>
      * @return \Eolymp\Content\Variant
      */
     public function getVariant()
@@ -42,7 +69,7 @@ class CreateVariantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Variant variant = 1;</code>
+     * Generated from protobuf field <code>.eolymp.content.Variant variant = 2;</code>
      * @param \Eolymp\Content\Variant $var
      * @return $this
      */
