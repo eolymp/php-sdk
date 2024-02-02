@@ -34,6 +34,12 @@ class Score extends \Google\Protobuf\Internal\Message
      */
     protected $user_id = '';
     /**
+     * member
+     *
+     * Generated from protobuf field <code>string member_id = 7;</code>
+     */
+    protected $member_id = '';
+    /**
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp accepted_at = 4;</code>
@@ -58,6 +64,8 @@ class Score extends \Google\Protobuf\Internal\Message
      *           problem
      *     @type string $user_id
      *           user
+     *     @type string $member_id
+     *           member
      *     @type \Google\Protobuf\Timestamp $accepted_at
      *           time when submission was created
      *     @type float $score
@@ -143,6 +151,32 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * member
+     *
+     * Generated from protobuf field <code>string member_id = 7;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * member
+     *
+     * Generated from protobuf field <code>string member_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
