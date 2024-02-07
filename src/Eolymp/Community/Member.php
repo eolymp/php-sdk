@@ -54,6 +54,14 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $fallback_tier_id = '';
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     */
+    protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
+     */
+    protected $stats = null;
+    /**
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      */
     private $groups;
@@ -81,9 +89,11 @@ class Member extends \Google\Protobuf\Internal\Message
      *           member is secret and does not appear on anywhere (for example, an admin who performs testing)
      *     @type string $tier_id
      *     @type string $fallback_tier_id
+     *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
+     *     @type \Eolymp\Community\Member\Stats $stats
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $groups
      *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
@@ -286,6 +296,28 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.community.User user = 100;</code>
      * @return \Eolymp\Community\User
      */
@@ -347,6 +379,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\Ghost::class);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
+     * @return \Eolymp\Community\Member\Stats
+     */
+    public function getStats()
+    {
+        return $this->stats;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
+     * @param \Eolymp\Community\Member\Stats $var
+     * @return $this
+     */
+    public function setStats($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member_Stats::class);
+        $this->stats = $var;
 
         return $this;
     }

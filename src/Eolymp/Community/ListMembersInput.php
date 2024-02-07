@@ -33,6 +33,10 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
      */
     protected $order = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\ListMembersInput\Filter $filters
      *     @type int $sort
      *     @type int $order
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
         $this->order = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Member\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

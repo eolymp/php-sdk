@@ -21,6 +21,10 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.community.Member team = 2;</code>
      */
     protected $team = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Community\Member $member
      *     @type \Eolymp\Community\Member $team
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
         $this->team = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Member\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }
