@@ -24,6 +24,10 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     */
+    protected $url = '';
+    /**
      * Generated from protobuf field <code>bool active = 10;</code>
      */
     protected $active = false;
@@ -80,6 +84,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *           display name, readonly, users nickname, ghosts name or teams name
+     *     @type string $url
      *     @type bool $active
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
@@ -147,6 +152,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }
