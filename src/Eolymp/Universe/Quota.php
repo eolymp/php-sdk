@@ -20,6 +20,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $period_start = null;
     /**
+     * deprecated: use subscription in space
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 901;</code>
      */
     protected $period_end = null;
@@ -187,6 +189,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $period_start
      *           period when quota starts and ends
      *     @type \Google\Protobuf\Timestamp $period_end
+     *           deprecated: use subscription in space
      *     @type int $permissions_per_space
      *           general quota and features
      *     @type bool $single_sing_on
@@ -270,6 +273,8 @@ class Quota extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use subscription in space
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 901;</code>
      * @return \Google\Protobuf\Timestamp
      */
@@ -279,6 +284,8 @@ class Quota extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use subscription in space
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 901;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this

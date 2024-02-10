@@ -32,6 +32,24 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
+     * space home page URL
+     *
+     * Generated from protobuf field <code>string home_url = 50;</code>
+     */
+    protected $home_url = '';
+    /**
+     * space issuer URL (used for issuing tokens)
+     *
+     * Generated from protobuf field <code>string issuer_url = 51;</code>
+     */
+    protected $issuer_url = '';
+    /**
+     * space graphql endpoint
+     *
+     * Generated from protobuf field <code>string graphql_url = 52;</code>
+     */
+    protected $graphql_url = '';
+    /**
      * human friendly name
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -54,39 +72,31 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
+     */
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
+     */
+    protected $subscription = null;
+    /**
+     * deprecated: use subscription.quota
+     *
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
      */
     protected $quota = null;
     /**
-     * plan defines billing plan for the space
+     * deprecated: use subscription.plan
      *
      * Generated from protobuf field <code>string plan = 13;</code>
      */
     protected $plan = '';
     /**
-     * number of prepaid seats
+     * deprecated: use subscription.seats
      *
      * Generated from protobuf field <code>uint32 seats = 31;</code>
      */
     protected $seats = 0;
-    /**
-     * space home page URL
-     *
-     * Generated from protobuf field <code>string home_url = 50;</code>
-     */
-    protected $home_url = '';
-    /**
-     * space issuer URL (used for issuing tokens)
-     *
-     * Generated from protobuf field <code>string issuer_url = 51;</code>
-     */
-    protected $issuer_url = '';
-    /**
-     * space graphql endpoint
-     *
-     * Generated from protobuf field <code>string graphql_url = 52;</code>
-     */
-    protected $graphql_url = '';
 
     /**
      * Constructor.
@@ -100,6 +110,12 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space key used to build URLs
      *     @type string $url
      *           space key used to build URLs
+     *     @type string $home_url
+     *           space home page URL
+     *     @type string $issuer_url
+     *           space issuer URL (used for issuing tokens)
+     *     @type string $graphql_url
+     *           space graphql endpoint
      *     @type string $name
      *           human friendly name
      *     @type string $image
@@ -107,17 +123,14 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *           space use type
      *     @type int $visibility
+     *     @type int $status
+     *     @type \Eolymp\Universe\Space\Subscription $subscription
      *     @type \Eolymp\Universe\Quota $quota
+     *           deprecated: use subscription.quota
      *     @type string $plan
-     *           plan defines billing plan for the space
+     *           deprecated: use subscription.plan
      *     @type int $seats
-     *           number of prepaid seats
-     *     @type string $home_url
-     *           space home page URL
-     *     @type string $issuer_url
-     *           space issuer URL (used for issuing tokens)
-     *     @type string $graphql_url
-     *           space graphql endpoint
+     *           deprecated: use subscription.seats
      * }
      */
     public function __construct($data = NULL) {
@@ -199,6 +212,84 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * space home page URL
+     *
+     * Generated from protobuf field <code>string home_url = 50;</code>
+     * @return string
+     */
+    public function getHomeUrl()
+    {
+        return $this->home_url;
+    }
+
+    /**
+     * space home page URL
+     *
+     * Generated from protobuf field <code>string home_url = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHomeUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->home_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * space issuer URL (used for issuing tokens)
+     *
+     * Generated from protobuf field <code>string issuer_url = 51;</code>
+     * @return string
+     */
+    public function getIssuerUrl()
+    {
+        return $this->issuer_url;
+    }
+
+    /**
+     * space issuer URL (used for issuing tokens)
+     *
+     * Generated from protobuf field <code>string issuer_url = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIssuerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->issuer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * space graphql endpoint
+     *
+     * Generated from protobuf field <code>string graphql_url = 52;</code>
+     * @return string
+     */
+    public function getGraphqlUrl()
+    {
+        return $this->graphql_url;
+    }
+
+    /**
+     * space graphql endpoint
+     *
+     * Generated from protobuf field <code>string graphql_url = 52;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGraphqlUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->graphql_url = $var;
 
         return $this;
     }
@@ -304,6 +395,52 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
+     * @return \Eolymp\Universe\Space\Subscription
+     */
+    public function getSubscription()
+    {
+        return $this->subscription;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
+     * @param \Eolymp\Universe\Space\Subscription $var
+     * @return $this
+     */
+    public function setSubscription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Space_Subscription::class);
+        $this->subscription = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated: use subscription.quota
+     *
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
      * @return \Eolymp\Universe\Quota
      */
@@ -313,6 +450,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use subscription.quota
+     *
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
      * @param \Eolymp\Universe\Quota $var
      * @return $this
@@ -326,7 +465,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * plan defines billing plan for the space
+     * deprecated: use subscription.plan
      *
      * Generated from protobuf field <code>string plan = 13;</code>
      * @return string
@@ -337,7 +476,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * plan defines billing plan for the space
+     * deprecated: use subscription.plan
      *
      * Generated from protobuf field <code>string plan = 13;</code>
      * @param string $var
@@ -352,7 +491,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * number of prepaid seats
+     * deprecated: use subscription.seats
      *
      * Generated from protobuf field <code>uint32 seats = 31;</code>
      * @return int
@@ -363,7 +502,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * number of prepaid seats
+     * deprecated: use subscription.seats
      *
      * Generated from protobuf field <code>uint32 seats = 31;</code>
      * @param int $var
@@ -373,84 +512,6 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->seats = $var;
-
-        return $this;
-    }
-
-    /**
-     * space home page URL
-     *
-     * Generated from protobuf field <code>string home_url = 50;</code>
-     * @return string
-     */
-    public function getHomeUrl()
-    {
-        return $this->home_url;
-    }
-
-    /**
-     * space home page URL
-     *
-     * Generated from protobuf field <code>string home_url = 50;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHomeUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->home_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * space issuer URL (used for issuing tokens)
-     *
-     * Generated from protobuf field <code>string issuer_url = 51;</code>
-     * @return string
-     */
-    public function getIssuerUrl()
-    {
-        return $this->issuer_url;
-    }
-
-    /**
-     * space issuer URL (used for issuing tokens)
-     *
-     * Generated from protobuf field <code>string issuer_url = 51;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setIssuerUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->issuer_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * space graphql endpoint
-     *
-     * Generated from protobuf field <code>string graphql_url = 52;</code>
-     * @return string
-     */
-    public function getGraphqlUrl()
-    {
-        return $this->graphql_url;
-    }
-
-    /**
-     * space graphql endpoint
-     *
-     * Generated from protobuf field <code>string graphql_url = 52;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setGraphqlUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->graphql_url = $var;
 
         return $this;
     }
