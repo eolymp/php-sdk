@@ -29,6 +29,14 @@ class Entry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      */
     private $attributes;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.feed.Entry.Attachment attachments = 20;</code>
+     */
+    private $attachments;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 100;</code>
+     */
+    protected $content = null;
 
     /**
      * Constructor.
@@ -40,6 +48,8 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
+     *     @type \Eolymp\Feed\Entry\Attachment[]|\Google\Protobuf\Internal\RepeatedField $attachments
+     *     @type \Eolymp\Ecm\Node $content
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +141,50 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.feed.Entry.Attachment attachments = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttachments()
+    {
+        return $this->attachments;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.feed.Entry.Attachment attachments = 20;</code>
+     * @param \Eolymp\Feed\Entry\Attachment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttachments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Feed\Entry\Attachment::class);
+        $this->attachments = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 100;</code>
+     * @return \Eolymp\Ecm\Node
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node content = 100;</code>
+     * @param \Eolymp\Ecm\Node $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        $this->content = $var;
 
         return $this;
     }
