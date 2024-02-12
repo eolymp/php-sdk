@@ -4,7 +4,7 @@
 
 namespace Eolymp\Feed;
 
-class EntryServiceClient {
+class FeedServiceClient {
 
     /** @var string base URL */
     private $url;
@@ -32,29 +32,10 @@ class EntryServiceClient {
     {
         $path = "/feed";
 
-        $context['name'] = "eolymp.feed.EntryService/ListEntries";
+        $context['name'] = "eolymp.feed.FeedService/ListEntries";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListEntriesOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeEntryInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeEntryOutput output message
-     */
-    public function DescribeEntry(DescribeEntryInput $input, array $context = [])
-    {
-        $path = "/feed/".rawurlencode($input->getEntryId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.feed.EntryService/DescribeEntry";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeEntryOutput::class, $context);
     }
 
 }
