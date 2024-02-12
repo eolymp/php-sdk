@@ -22,13 +22,13 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
+     */
+    protected $timestamp = null;
+    /**
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      */
     private $attributes;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
-     */
-    protected $created_at = null;
 
     /**
      * Constructor.
@@ -38,8 +38,8 @@ class Entry extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $type
+     *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
-     *     @type \Google\Protobuf\Timestamp $created_at
      * }
      */
     public function __construct($data = NULL) {
@@ -92,6 +92,28 @@ class Entry extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setTimestamp($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->timestamp = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -109,28 +131,6 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->attributes = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
-     * @return \Google\Protobuf\Timestamp
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCreatedAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_at = $var;
 
         return $this;
     }
