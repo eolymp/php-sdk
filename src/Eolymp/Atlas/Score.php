@@ -42,9 +42,9 @@ class Score extends \Google\Protobuf\Internal\Message
     /**
      * time when submission was created
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp accepted_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp solved_at = 4;</code>
      */
-    protected $accepted_at = null;
+    protected $solved_at = null;
     /**
      * score from 0 (none of the tests are passing) to 1 (all tests are passing)
      *
@@ -55,10 +55,6 @@ class Score extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 attempts = 8;</code>
      */
     protected $attempts = 0;
-    /**
-     * Generated from protobuf field <code>uint32 grade = 9;</code>
-     */
-    protected $grade = 0;
 
     /**
      * Constructor.
@@ -74,12 +70,11 @@ class Score extends \Google\Protobuf\Internal\Message
      *           user
      *     @type string $member_id
      *           member
-     *     @type \Google\Protobuf\Timestamp $accepted_at
+     *     @type \Google\Protobuf\Timestamp $solved_at
      *           time when submission was created
      *     @type float $score
      *           score from 0 (none of the tests are passing) to 1 (all tests are passing)
      *     @type int $attempts
-     *     @type int $grade
      * }
      */
     public function __construct($data = NULL) {
@@ -194,25 +189,25 @@ class Score extends \Google\Protobuf\Internal\Message
     /**
      * time when submission was created
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp accepted_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp solved_at = 4;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getAcceptedAt()
+    public function getSolvedAt()
     {
-        return $this->accepted_at;
+        return $this->solved_at;
     }
 
     /**
      * time when submission was created
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp accepted_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp solved_at = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setAcceptedAt($var)
+    public function setSolvedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->accepted_at = $var;
+        $this->solved_at = $var;
 
         return $this;
     }
@@ -261,28 +256,6 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->attempts = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 grade = 9;</code>
-     * @return int
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 grade = 9;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGrade($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->grade = $var;
 
         return $this;
     }
