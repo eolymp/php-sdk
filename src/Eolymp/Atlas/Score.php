@@ -51,6 +51,10 @@ class Score extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float score = 5;</code>
      */
     protected $score = 0.0;
+    /**
+     * Generated from protobuf field <code>int32 attempts = 8;</code>
+     */
+    protected $attempts = 0;
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class Score extends \Google\Protobuf\Internal\Message
      *           time when submission was created
      *     @type float $score
      *           score from 0 (none of the tests are passing) to 1 (all tests are passing)
+     *     @type int $attempts
      * }
      */
     public function __construct($data = NULL) {
@@ -229,6 +234,28 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 attempts = 8;</code>
+     * @return int
+     */
+    public function getAttempts()
+    {
+        return $this->attempts;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 attempts = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAttempts($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->attempts = $var;
 
         return $this;
     }
