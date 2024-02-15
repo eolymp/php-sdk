@@ -18,9 +18,9 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * Generated from protobuf field <code>string thread_url = 2;</code>
      */
-    protected $thread_id = '';
+    protected $thread_url = '';
     /**
      * Generated from protobuf field <code>string member_id = 3;</code>
      */
@@ -67,7 +67,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $thread_id
+     *     @type string $thread_url
      *     @type string $member_id
      *     @type string $reply_to
      *     @type int $vote
@@ -109,23 +109,23 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * Generated from protobuf field <code>string thread_url = 2;</code>
      * @return string
      */
-    public function getThreadId()
+    public function getThreadUrl()
     {
-        return $this->thread_id;
+        return $this->thread_url;
     }
 
     /**
-     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * Generated from protobuf field <code>string thread_url = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setThreadId($var)
+    public function setThreadUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->thread_id = $var;
+        $this->thread_url = $var;
 
         return $this;
     }
