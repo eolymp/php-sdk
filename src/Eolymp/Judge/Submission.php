@@ -20,9 +20,9 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
+     * Generated from protobuf field <code>string url = 7;</code>
      */
-    protected $ern = '';
+    protected $url = '';
     /**
      * contest
      *
@@ -120,7 +120,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique identifier
-     *     @type string $ern
+     *     @type string $url
      *     @type string $contest_id
      *           contest
      *     @type string $problem_id
@@ -184,23 +184,23 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
+     * Generated from protobuf field <code>string url = 7;</code>
      * @return string
      */
-    public function getErn()
+    public function getUrl()
     {
-        return $this->ern;
+        return $this->url;
     }
 
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
+     * Generated from protobuf field <code>string url = 7;</code>
      * @param string $var
      * @return $this
      */
-    public function setErn($var)
+    public function setUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->ern = $var;
+        $this->url = $var;
 
         return $this;
     }

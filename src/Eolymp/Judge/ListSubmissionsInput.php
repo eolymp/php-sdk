@@ -33,6 +33,10 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.ListSubmissionsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -46,6 +50,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type \Eolymp\Judge\ListSubmissionsInput\Filter $filters
      *           data filters
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -145,6 +150,28 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\ListSubmissionsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Submission\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

@@ -21,6 +21,10 @@ class WatchSubmissionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string submission_id = 2;</code>
      */
     protected $submission_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class WatchSubmissionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $submission_id
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class WatchSubmissionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->submission_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Submission\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }
