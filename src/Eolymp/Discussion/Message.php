@@ -63,6 +63,10 @@ class Message extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 100;</code>
      */
     protected $message = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
+     */
+    private $links;
 
     /**
      * Constructor.
@@ -84,6 +88,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $posted_at
      *     @type \Google\Protobuf\Timestamp $edited_at
      *     @type \Eolymp\Ecm\Content $message
+     *     @type \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $links
      * }
      */
     public function __construct($data = NULL) {
@@ -341,6 +346,28 @@ class Message extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
+     * @param \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLinks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\Link::class);
+        $this->links = $arr;
 
         return $this;
     }
