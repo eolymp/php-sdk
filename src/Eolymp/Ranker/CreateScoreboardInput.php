@@ -21,6 +21,10 @@ class CreateScoreboardInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool add_default_columns = 2;</code>
      */
     protected $add_default_columns = false;
+    /**
+     * Generated from protobuf field <code>string duplicate_scoreboard_id = 3;</code>
+     */
+    protected $duplicate_scoreboard_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateScoreboardInput extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Ranker\Scoreboard $scoreboard
      *     @type bool $add_default_columns
+     *     @type string $duplicate_scoreboard_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateScoreboardInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->add_default_columns = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string duplicate_scoreboard_id = 3;</code>
+     * @return string
+     */
+    public function getDuplicateScoreboardId()
+    {
+        return $this->duplicate_scoreboard_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string duplicate_scoreboard_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDuplicateScoreboardId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->duplicate_scoreboard_id = $var;
 
         return $this;
     }
