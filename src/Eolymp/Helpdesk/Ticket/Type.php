@@ -31,6 +31,10 @@ class Type
      * Generated from protobuf enum <code>ACADEMIC_PLAN_REQUEST = 4;</code>
      */
     const ACADEMIC_PLAN_REQUEST = 4;
+    /**
+     * Generated from protobuf enum <code>SALES_REQUEST = 5;</code>
+     */
+    const SALES_REQUEST = 5;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -38,6 +42,7 @@ class Type
         self::QUOTA_INCREASE => 'QUOTA_INCREASE',
         self::FEEDBACK => 'FEEDBACK',
         self::ACADEMIC_PLAN_REQUEST => 'ACADEMIC_PLAN_REQUEST',
+        self::SALES_REQUEST => 'SALES_REQUEST',
     ];
 
     public static function name($value)
