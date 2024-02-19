@@ -30,6 +30,10 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     protected $quota = null;
     /**
+     * Generated from protobuf field <code>repeated string labels = 5;</code>
+     */
+    private $labels;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
      */
     private $variants;
@@ -44,6 +48,7 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Quota $quota
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      *     @type \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
@@ -136,6 +141,28 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Universe\Quota::class);
         $this->quota = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 5;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->labels = $arr;
 
         return $this;
     }
