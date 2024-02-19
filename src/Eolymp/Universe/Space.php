@@ -97,6 +97,12 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 seats = 31;</code>
      */
     protected $seats = 0;
+    /**
+     * space affiliation label
+     *
+     * Generated from protobuf field <code>string affiliation = 15;</code>
+     */
+    protected $affiliation = '';
 
     /**
      * Constructor.
@@ -131,6 +137,8 @@ class Space extends \Google\Protobuf\Internal\Message
      *           deprecated: use subscription.plan
      *     @type int $seats
      *           deprecated: use subscription.seats
+     *     @type string $affiliation
+     *           space affiliation label
      * }
      */
     public function __construct($data = NULL) {
@@ -512,6 +520,32 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->seats = $var;
+
+        return $this;
+    }
+
+    /**
+     * space affiliation label
+     *
+     * Generated from protobuf field <code>string affiliation = 15;</code>
+     * @return string
+     */
+    public function getAffiliation()
+    {
+        return $this->affiliation;
+    }
+
+    /**
+     * space affiliation label
+     *
+     * Generated from protobuf field <code>string affiliation = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAffiliation($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->affiliation = $var;
 
         return $this;
     }
