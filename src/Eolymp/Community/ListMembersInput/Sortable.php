@@ -27,12 +27,17 @@ class Sortable
      * Generated from protobuf enum <code>TYPE = 3;</code>
      */
     const TYPE = 3;
+    /**
+     * Generated from protobuf enum <code>SCORE = 4;</code>
+     */
+    const SCORE = 4;
 
     private static $valueToName = [
         self::PBDEFAULT => 'PBDEFAULT',
         self::NAME => 'NAME',
         self::CREATED_AT => 'CREATED_AT',
         self::TYPE => 'TYPE',
+        self::SCORE => 'SCORE',
     ];
 
     public static function name($value)

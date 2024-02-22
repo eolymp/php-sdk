@@ -28,6 +28,14 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
+     * Generated from protobuf field <code>int32 rank = 70;</code>
+     */
+    protected $rank = 0;
+    /**
+     * Generated from protobuf field <code>int32 score = 71;</code>
+     */
+    protected $score = 0;
+    /**
      * Generated from protobuf field <code>bool active = 10;</code>
      */
     protected $active = false;
@@ -85,6 +93,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           display name, readonly, users nickname, ghosts name or teams name
      *     @type string $url
+     *     @type int $rank
+     *     @type int $score
      *     @type bool $active
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
@@ -174,6 +184,50 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 rank = 70;</code>
+     * @return int
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 rank = 70;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRank($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->rank = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 score = 71;</code>
+     * @return int
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 score = 71;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->score = $var;
 
         return $this;
     }
