@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Stats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 rank = 1;</code>
-     */
-    protected $rank = 0;
-    /**
      * Generated from protobuf field <code>int32 streak = 10;</code>
      */
     protected $streak = 0;
@@ -40,7 +36,6 @@ class Stats extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $rank
      *     @type int $streak
      *     @type int $problems_solved
      *     @type int $submissions_accepted
@@ -50,28 +45,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Member::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 rank = 1;</code>
-     * @return int
-     */
-    public function getRank()
-    {
-        return $this->rank;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 rank = 1;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setRank($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->rank = $var;
-
-        return $this;
     }
 
     /**

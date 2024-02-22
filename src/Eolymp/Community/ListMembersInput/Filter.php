@@ -71,6 +71,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_nickname = 105;</code>
      */
     private $user_nickname;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
+     */
+    private $score;
 
     /**
      * Constructor.
@@ -94,6 +98,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $user_email
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $user_name
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $user_nickname
+     *     @type \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $score
      * }
      */
     public function __construct($data = NULL) {
@@ -395,6 +400,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
         $this->user_nickname = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
+     * @param \Eolymp\Wellknown\ExpressionInt[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->score = $arr;
 
         return $this;
     }
