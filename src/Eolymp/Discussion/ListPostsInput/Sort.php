@@ -15,9 +15,19 @@ class Sort
      * Generated from protobuf enum <code>UNKNOWN_SORT = 0;</code>
      */
     const UNKNOWN_SORT = 0;
+    /**
+     * Generated from protobuf enum <code>PUBLISHED_AT = 1;</code>
+     */
+    const PUBLISHED_AT = 1;
+    /**
+     * Generated from protobuf enum <code>CREATED_AT = 2;</code>
+     */
+    const CREATED_AT = 2;
 
     private static $valueToName = [
         self::UNKNOWN_SORT => 'UNKNOWN_SORT',
+        self::PUBLISHED_AT => 'PUBLISHED_AT',
+        self::CREATED_AT => 'CREATED_AT',
     ];
 
     public static function name($value)

@@ -30,9 +30,17 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $member_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp posted_at = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp created_at = 5;</code>
      */
-    private $posted_at;
+    private $created_at;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp published_at = 6;</code>
+     */
+    private $published_at;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     */
+    private $status;
 
     /**
      * Constructor.
@@ -44,7 +52,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $user_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $member_id
-     *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $posted_at
+     *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
+     *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $published_at
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
      * }
      */
     public function __construct($data = NULL) {
@@ -141,23 +151,67 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp posted_at = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp created_at = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getPostedAt()
+    public function getCreatedAt()
     {
-        return $this->posted_at;
+        return $this->created_at;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp posted_at = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp created_at = 5;</code>
      * @param \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setPostedAt($var)
+    public function setCreatedAt($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
-        $this->posted_at = $arr;
+        $this->created_at = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp published_at = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPublishedAt()
+    {
+        return $this->published_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp published_at = 6;</code>
+     * @param \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPublishedAt($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
+        $this->published_at = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->status = $arr;
 
         return $this;
     }

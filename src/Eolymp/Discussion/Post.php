@@ -22,13 +22,17 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Status status = 3;</code>
+     */
+    protected $status = 0;
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp posted_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
      */
-    protected $posted_at = null;
+    protected $published_at = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22;</code>
      */
@@ -59,10 +63,11 @@ class Post extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $url
+     *     @type int $status
      *     @type string $user_id
      *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $created_at
-     *     @type \Google\Protobuf\Timestamp $posted_at
+     *     @type \Google\Protobuf\Timestamp $published_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $message
@@ -115,6 +120,28 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Status status = 3;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Status status = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Status::class);
+        $this->status = $var;
 
         return $this;
     }
@@ -186,23 +213,23 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp posted_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getPostedAt()
+    public function getPublishedAt()
     {
-        return $this->posted_at;
+        return $this->published_at;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp posted_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setPostedAt($var)
+    public function setPublishedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->posted_at = $var;
+        $this->published_at = $var;
 
         return $this;
     }
