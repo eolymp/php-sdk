@@ -18,9 +18,9 @@ class Extra
     /**
      * include message source (original Markdown, LaTeX etc)
      *
-     * Generated from protobuf enum <code>MESSAGE_CONTENT = 1;</code>
+     * Generated from protobuf enum <code>MESSAGE_VALUE = 1;</code>
      */
-    const MESSAGE_CONTENT = 1;
+    const MESSAGE_VALUE = 1;
     /**
      * include rendered message in ECM
      *
@@ -36,7 +36,7 @@ class Extra
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::MESSAGE_CONTENT => 'MESSAGE_CONTENT',
+        self::MESSAGE_VALUE => 'MESSAGE_VALUE',
         self::MESSAGE_RENDER => 'MESSAGE_RENDER',
         self::MESSAGE_PREVIEW => 'MESSAGE_PREVIEW',
     ];
