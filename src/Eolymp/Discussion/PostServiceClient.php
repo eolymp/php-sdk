@@ -119,10 +119,10 @@ class PostServiceClient {
      */
     public function VotePost(VotePostInput $input, array $context = [])
     {
-        $path = "/messages/".rawurlencode($input->getMessageId())."/vote";
+        $path = "/posts/".rawurlencode($input->getPostId())."/vote";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMessageId("");
+        $input->setPostId("");
 
         $context['name'] = "eolymp.discussion.PostService/VotePost";
         $context['path'] = $path;
