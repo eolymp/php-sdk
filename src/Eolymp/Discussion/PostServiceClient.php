@@ -111,4 +111,23 @@ class PostServiceClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeletePostOutput::class, $context);
     }
 
+    /**
+     * @param VotePostInput $input message
+     * @param array $context request parameters
+     *
+     * @return VotePostOutput output message
+     */
+    public function VotePost(VotePostInput $input, array $context = [])
+    {
+        $path = "/messages/".rawurlencode($input->getMessageId())."/vote";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMessageId("");
+
+        $context['name'] = "eolymp.discussion.PostService/VotePost";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, VotePostOutput::class, $context);
+    }
+
 }

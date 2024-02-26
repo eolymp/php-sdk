@@ -33,12 +33,19 @@ class Extra
      * Generated from protobuf enum <code>MESSAGE_PREVIEW = 3;</code>
      */
     const MESSAGE_PREVIEW = 3;
+    /**
+     * include vote field
+     *
+     * Generated from protobuf enum <code>VOTE = 4;</code>
+     */
+    const VOTE = 4;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::MESSAGE_VALUE => 'MESSAGE_VALUE',
         self::MESSAGE_RENDER => 'MESSAGE_RENDER',
         self::MESSAGE_PREVIEW => 'MESSAGE_PREVIEW',
+        self::VOTE => 'VOTE',
     ];
 
     public static function name($value)
