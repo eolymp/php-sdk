@@ -21,6 +21,10 @@ class DescribeMessageInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool render = 2;</code>
      */
     protected $render = false;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DescribeMessageInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $message_id
      *     @type bool $render
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class DescribeMessageInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->render = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Discussion\Message\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

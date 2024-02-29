@@ -20,9 +20,9 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
-     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * Generated from protobuf field <code>string after = 10;</code>
      */
-    protected $offset = 0;
+    protected $after = '';
     /**
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
@@ -41,6 +41,10 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -49,13 +53,14 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $render
-     *     @type int $offset
+     *     @type string $after
      *           pagination
      *     @type int $size
      *     @type int $sort
      *     @type int $order
      *     @type \Eolymp\Discussion\ListMessagesInput\Filter $filters
      *           data filters
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -88,25 +93,25 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     * @return int
+     * Generated from protobuf field <code>string after = 10;</code>
+     * @return string
      */
-    public function getOffset()
+    public function getAfter()
     {
-        return $this->offset;
+        return $this->after;
     }
 
     /**
      * pagination
      *
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string after = 10;</code>
+     * @param string $var
      * @return $this
      */
-    public function setOffset($var)
+    public function setAfter($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->offset = $var;
+        GPBUtil::checkString($var, True);
+        $this->after = $var;
 
         return $this;
     }
@@ -199,6 +204,28 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Discussion\ListMessagesInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Discussion\Message\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

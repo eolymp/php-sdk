@@ -23,11 +23,21 @@ class Sort
      * Generated from protobuf enum <code>CREATED_AT = 2;</code>
      */
     const CREATED_AT = 2;
+    /**
+     * Generated from protobuf enum <code>VOTE_COUNT = 3;</code>
+     */
+    const VOTE_COUNT = 3;
+    /**
+     * Generated from protobuf enum <code>REPLY_COUNT = 4;</code>
+     */
+    const REPLY_COUNT = 4;
 
     private static $valueToName = [
         self::UNKNOWN_SORT => 'UNKNOWN_SORT',
         self::PUBLISHED_AT => 'PUBLISHED_AT',
         self::CREATED_AT => 'CREATED_AT',
+        self::VOTE_COUNT => 'VOTE_COUNT',
+        self::REPLY_COUNT => 'REPLY_COUNT',
     ];
 
     public static function name($value)
