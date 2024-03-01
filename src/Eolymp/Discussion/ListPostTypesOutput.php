@@ -21,12 +21,6 @@ class ListPostTypesOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.discussion.PostType items = 2;</code>
      */
     private $items;
-    /**
-     * if set, load type names in a given locale
-     *
-     * Generated from protobuf field <code>string locale = 10;</code>
-     */
-    protected $locale = '';
 
     /**
      * Constructor.
@@ -36,8 +30,6 @@ class ListPostTypesOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total
      *     @type \Eolymp\Discussion\PostType[]|\Google\Protobuf\Internal\RepeatedField $items
-     *     @type string $locale
-     *           if set, load type names in a given locale
      * }
      */
     public function __construct($data = NULL) {
@@ -85,32 +77,6 @@ class ListPostTypesOutput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Discussion\PostType::class);
         $this->items = $arr;
-
-        return $this;
-    }
-
-    /**
-     * if set, load type names in a given locale
-     *
-     * Generated from protobuf field <code>string locale = 10;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * if set, load type names in a given locale
-     *
-     * Generated from protobuf field <code>string locale = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
 
         return $this;
     }

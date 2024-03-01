@@ -23,6 +23,10 @@ class DescribePostTypeInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 10;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -33,6 +37,7 @@ class DescribePostTypeInput extends \Google\Protobuf\Internal\Message
      *     @type string $type_id
      *     @type string $locale
      *           if set, load type name in a given locale
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -84,6 +89,28 @@ class DescribePostTypeInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Discussion\PostType\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

@@ -29,6 +29,10 @@ class PostType extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 order = 10;</code>
      */
     protected $order = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Variant variants = 100;</code>
+     */
+    private $variants;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class PostType extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type bool $hidden
      *     @type int $order
+     *     @type \Eolymp\Discussion\PostType\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class PostType extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->order = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Variant variants = 100;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getVariants()
+    {
+        return $this->variants;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Variant variants = 100;</code>
+     * @param \Eolymp\Discussion\PostType\Variant[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setVariants($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Discussion\PostType\Variant::class);
+        $this->variants = $arr;
 
         return $this;
     }
