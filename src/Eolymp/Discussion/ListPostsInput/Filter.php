@@ -30,6 +30,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $member_id;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID type_id = 8;</code>
+     */
+    private $type_id;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp created_at = 5;</code>
      */
     private $created_at;
@@ -52,6 +56,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $user_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $member_id
+     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $type_id
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $published_at
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
@@ -146,6 +151,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->member_id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID type_id = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTypeId()
+    {
+        return $this->type_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID type_id = 8;</code>
+     * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTypeId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->type_id = $arr;
 
         return $this;
     }

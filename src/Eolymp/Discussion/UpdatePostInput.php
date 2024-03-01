@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePostInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string post_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.discussion.UpdatePostInput.Patch patch = 1;</code>
+     */
+    private $patch;
+    /**
+     * Generated from protobuf field <code>string post_id = 2;</code>
      */
     protected $post_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post post = 2;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post post = 3;</code>
      */
     protected $post = null;
 
@@ -28,6 +32,7 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $post_id
      *     @type \Eolymp\Discussion\Post $post
      * }
@@ -38,7 +43,29 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string post_id = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.discussion.UpdatePostInput.Patch patch = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.UpdatePostInput.Patch patch = 1;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Discussion\UpdatePostInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string post_id = 2;</code>
      * @return string
      */
     public function getPostId()
@@ -47,7 +74,7 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string post_id = 1;</code>
+     * Generated from protobuf field <code>string post_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post post = 2;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post post = 3;</code>
      * @return \Eolymp\Discussion\Post
      */
     public function getPost()
@@ -69,7 +96,7 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post post = 2;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post post = 3;</code>
      * @param \Eolymp\Discussion\Post $var
      * @return $this
      */

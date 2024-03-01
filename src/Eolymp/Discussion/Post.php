@@ -26,6 +26,12 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * optionally, post type from PostTypeService
+     *
+     * Generated from protobuf field <code>string type_id = 4;</code>
+     */
+    protected $type_id = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
      */
     protected $created_at = null;
@@ -38,6 +44,8 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = null;
     /**
+     * title is populated automatically from first header in message
+     *
      * Generated from protobuf field <code>string title = 100;</code>
      */
     protected $title = '';
@@ -82,12 +90,15 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type int $status
+     *     @type string $type_id
+     *           optionally, post type from PostTypeService
      *     @type string $user_id
      *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $published_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string $title
+     *           title is populated automatically from first header in message
      *     @type \Eolymp\Ecm\Content $message
      *     @type int $vote
      *           vote of authenticated user (+1 or -1)
@@ -166,6 +177,32 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, post type from PostTypeService
+     *
+     * Generated from protobuf field <code>string type_id = 4;</code>
+     * @return string
+     */
+    public function getTypeId()
+    {
+        return $this->type_id;
+    }
+
+    /**
+     * optionally, post type from PostTypeService
+     *
+     * Generated from protobuf field <code>string type_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTypeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->type_id = $var;
 
         return $this;
     }
@@ -281,6 +318,8 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * title is populated automatically from first header in message
+     *
      * Generated from protobuf field <code>string title = 100;</code>
      * @return string
      */
@@ -290,6 +329,8 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * title is populated automatically from first header in message
+     *
      * Generated from protobuf field <code>string title = 100;</code>
      * @param string $var
      * @return $this
