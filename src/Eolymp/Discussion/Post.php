@@ -44,6 +44,10 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = null;
     /**
+     * Generated from protobuf field <code>string locale = 102;</code>
+     */
+    protected $locale = '';
+    /**
      * title is populated automatically from first header in message
      *
      * Generated from protobuf field <code>string title = 100;</code>
@@ -97,6 +101,7 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $published_at
      *     @type \Google\Protobuf\Timestamp $updated_at
+     *     @type string $locale
      *     @type string $title
      *           title is populated automatically from first header in message
      *     @type \Eolymp\Ecm\Content $message
@@ -313,6 +318,28 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 102;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

@@ -27,12 +27,17 @@ class Patch
      * Generated from protobuf enum <code>TYPE_ID = 3;</code>
      */
     const TYPE_ID = 3;
+    /**
+     * Generated from protobuf enum <code>LOCALE = 4;</code>
+     */
+    const LOCALE = 4;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::MESSAGE => 'MESSAGE',
         self::LABELS => 'LABELS',
         self::TYPE_ID => 'TYPE_ID',
+        self::LOCALE => 'LOCALE',
     ];
 
     public static function name($value)
