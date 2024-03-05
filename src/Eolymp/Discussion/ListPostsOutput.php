@@ -14,13 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPostsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 1;</code>
+     * estimated
+     *
+     * Generated from protobuf field <code>int32 total = 1;</code>
+     */
+    protected $total = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 2;</code>
      */
     private $items;
     /**
-     * Generated from protobuf field <code>bool has_more = 2;</code>
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
      */
-    protected $has_more = false;
+    protected $next_page_cursor = '';
 
     /**
      * Constructor.
@@ -28,8 +34,10 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $total
+     *           estimated
      *     @type \Eolymp\Discussion\Post[]|\Google\Protobuf\Internal\RepeatedField $items
-     *     @type bool $has_more
+     *     @type string $next_page_cursor
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +46,33 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 1;</code>
+     * estimated
+     *
+     * Generated from protobuf field <code>int32 total = 1;</code>
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * estimated
+     *
+     * Generated from protobuf field <code>int32 total = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -47,7 +81,7 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 2;</code>
      * @param \Eolymp\Discussion\Post[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -60,23 +94,23 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool has_more = 2;</code>
-     * @return bool
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     * @return string
      */
-    public function getHasMore()
+    public function getNextPageCursor()
     {
-        return $this->has_more;
+        return $this->next_page_cursor;
     }
 
     /**
-     * Generated from protobuf field <code>bool has_more = 2;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     * @param string $var
      * @return $this
      */
-    public function setHasMore($var)
+    public function setNextPageCursor($var)
     {
-        GPBUtil::checkBool($var);
-        $this->has_more = $var;
+        GPBUtil::checkString($var, True);
+        $this->next_page_cursor = $var;
 
         return $this;
     }
