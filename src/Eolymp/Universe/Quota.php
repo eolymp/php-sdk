@@ -56,6 +56,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $customer_support_reply_time = 0;
     /**
+     * enable discussion post and comment features
+     *
+     * Generated from protobuf field <code>bool allow_discussions = 31;</code>
+     */
+    protected $allow_discussions = false;
+    /**
      * submission evaluation quota and features
      *
      * Generated from protobuf field <code>uint32 monthly_evaluations_by_seat = 13;</code>
@@ -200,6 +206,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           max number of custom profile fields for members
      *     @type int $customer_support_reply_time
      *           customer support reply time in hours
+     *     @type bool $allow_discussions
+     *           enable discussion post and comment features
      *     @type int $monthly_evaluations_by_seat
      *           submission evaluation quota and features
      *     @type bool $priority_evaluation_queue
@@ -424,6 +432,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->customer_support_reply_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * enable discussion post and comment features
+     *
+     * Generated from protobuf field <code>bool allow_discussions = 31;</code>
+     * @return bool
+     */
+    public function getAllowDiscussions()
+    {
+        return $this->allow_discussions;
+    }
+
+    /**
+     * enable discussion post and comment features
+     *
+     * Generated from protobuf field <code>bool allow_discussions = 31;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowDiscussions($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_discussions = $var;
 
         return $this;
     }
