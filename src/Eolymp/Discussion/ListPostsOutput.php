@@ -14,8 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPostsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * estimated
-     *
      * Generated from protobuf field <code>int32 total = 1;</code>
      */
     protected $total = 0;
@@ -35,7 +33,6 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *           estimated
      *     @type \Eolymp\Discussion\Post[]|\Google\Protobuf\Internal\RepeatedField $items
      *     @type string $next_page_cursor
      * }
@@ -46,8 +43,6 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * estimated
-     *
      * Generated from protobuf field <code>int32 total = 1;</code>
      * @return int
      */
@@ -57,8 +52,6 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * estimated
-     *
      * Generated from protobuf field <code>int32 total = 1;</code>
      * @param int $var
      * @return $this
