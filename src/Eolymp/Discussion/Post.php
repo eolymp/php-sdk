@@ -56,9 +56,9 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * image is populated automatically from first image in the message
      *
-     * Generated from protobuf field <code>string image = 103;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 103;</code>
      */
-    protected $image = '';
+    protected $image = null;
     /**
      * preview is populated automatically from first paragraph in the image
      *
@@ -116,7 +116,7 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $title
      *           title is populated automatically from first header in the message
-     *     @type string $image
+     *     @type \Eolymp\Discussion\Post\Image $image
      *           image is populated automatically from first image in the message
      *     @type \Eolymp\Ecm\Node $preview
      *           preview is populated automatically from first paragraph in the image
@@ -389,8 +389,8 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * image is populated automatically from first image in the message
      *
-     * Generated from protobuf field <code>string image = 103;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 103;</code>
+     * @return \Eolymp\Discussion\Post\Image
      */
     public function getImage()
     {
@@ -400,13 +400,13 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * image is populated automatically from first image in the message
      *
-     * Generated from protobuf field <code>string image = 103;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 103;</code>
+     * @param \Eolymp\Discussion\Post\Image $var
      * @return $this
      */
     public function setImage($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Image::class);
         $this->image = $var;
 
         return $this;
