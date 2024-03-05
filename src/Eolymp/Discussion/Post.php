@@ -60,6 +60,12 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
+     * preview is populated automatically from first paragraph in the image
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Node preview = 104;</code>
+     */
+    protected $preview = null;
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 101;</code>
      */
     protected $message = null;
@@ -112,6 +118,8 @@ class Post extends \Google\Protobuf\Internal\Message
      *           title is populated automatically from first header in the message
      *     @type string $image
      *           image is populated automatically from first image in the message
+     *     @type \Eolymp\Ecm\Node $preview
+     *           preview is populated automatically from first paragraph in the image
      *     @type \Eolymp\Ecm\Content $message
      *     @type int $vote
      *           vote of authenticated user (+1 or -1)
@@ -400,6 +408,32 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * preview is populated automatically from first paragraph in the image
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Node preview = 104;</code>
+     * @return \Eolymp\Ecm\Node
+     */
+    public function getPreview()
+    {
+        return $this->preview;
+    }
+
+    /**
+     * preview is populated automatically from first paragraph in the image
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Node preview = 104;</code>
+     * @param \Eolymp\Ecm\Node $var
+     * @return $this
+     */
+    public function setPreview($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        $this->preview = $var;
 
         return $this;
     }

@@ -28,11 +28,11 @@ class Extra
      */
     const MESSAGE_RENDER = 2;
     /**
-     * include rendered but trimmed message in ECM, overrides MESSAGE_RENDER
+     * include rendered but trimmed message in ECM
      *
-     * Generated from protobuf enum <code>MESSAGE_PREVIEW = 3;</code>
+     * Generated from protobuf enum <code>PREVIEW = 3;</code>
      */
-    const MESSAGE_PREVIEW = 3;
+    const PREVIEW = 3;
     /**
      * include vote field
      *
@@ -44,7 +44,7 @@ class Extra
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::MESSAGE_VALUE => 'MESSAGE_VALUE',
         self::MESSAGE_RENDER => 'MESSAGE_RENDER',
-        self::MESSAGE_PREVIEW => 'MESSAGE_PREVIEW',
+        self::PREVIEW => 'PREVIEW',
         self::VOTE => 'VOTE',
     ];
 
