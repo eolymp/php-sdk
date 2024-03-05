@@ -24,6 +24,12 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
+     * pagination using offset, only if after is empty
+     *
+     * Generated from protobuf field <code>int32 offset = 12;</code>
+     */
+    protected $offset = 0;
+    /**
      * Generated from protobuf field <code>.eolymp.discussion.ListPostsInput.Sort sort = 50;</code>
      */
     protected $sort = 0;
@@ -51,6 +57,8 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
      *     @type string $after
      *           pagination
      *     @type int $size
+     *     @type int $offset
+     *           pagination using offset, only if after is empty
      *     @type int $sort
      *     @type int $order
      *     @type \Eolymp\Discussion\ListPostsInput\Filter $filters
@@ -107,6 +115,32 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * pagination using offset, only if after is empty
+     *
+     * Generated from protobuf field <code>int32 offset = 12;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * pagination using offset, only if after is empty
+     *
+     * Generated from protobuf field <code>int32 offset = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
 
         return $this;
     }
