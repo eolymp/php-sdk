@@ -48,11 +48,17 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * title is populated automatically from first header in message
+     * title is populated automatically from first header in the message
      *
      * Generated from protobuf field <code>string title = 100;</code>
      */
     protected $title = '';
+    /**
+     * image is populated automatically from first image in the message
+     *
+     * Generated from protobuf field <code>string image = 103;</code>
+     */
+    protected $image = '';
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 101;</code>
      */
@@ -103,7 +109,9 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string $locale
      *     @type string $title
-     *           title is populated automatically from first header in message
+     *           title is populated automatically from first header in the message
+     *     @type string $image
+     *           image is populated automatically from first image in the message
      *     @type \Eolymp\Ecm\Content $message
      *     @type int $vote
      *           vote of authenticated user (+1 or -1)
@@ -345,7 +353,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * title is populated automatically from first header in message
+     * title is populated automatically from first header in the message
      *
      * Generated from protobuf field <code>string title = 100;</code>
      * @return string
@@ -356,7 +364,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * title is populated automatically from first header in message
+     * title is populated automatically from first header in the message
      *
      * Generated from protobuf field <code>string title = 100;</code>
      * @param string $var
@@ -366,6 +374,32 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * image is populated automatically from first image in the message
+     *
+     * Generated from protobuf field <code>string image = 103;</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * image is populated automatically from first image in the message
+     *
+     * Generated from protobuf field <code>string image = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
 
         return $this;
     }
