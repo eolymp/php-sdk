@@ -26,6 +26,10 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
+     */
+    protected $moderation = 0;
+    /**
      * optionally, post type from PostTypeService
      *
      * Generated from protobuf field <code>string type_id = 4;</code>
@@ -106,6 +110,7 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type int $status
+     *     @type int $moderation
      *     @type string $type_id
      *           optionally, post type from PostTypeService
      *     @type string $user_id
@@ -198,6 +203,28 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
+     * @return int
+     */
+    public function getModeration()
+    {
+        return $this->moderation;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setModeration($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Moderation::class);
+        $this->moderation = $var;
 
         return $this;
     }

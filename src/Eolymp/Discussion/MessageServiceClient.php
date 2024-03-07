@@ -130,4 +130,23 @@ class MessageServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, VoteMessageOutput::class, $context);
     }
 
+    /**
+     * @param ListMessageChangesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListMessageChangesOutput output message
+     */
+    public function ListMessageChanges(ListMessageChangesInput $input, array $context = [])
+    {
+        $path = "/messages/".rawurlencode($input->getMessageId())."/changes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMessageId("");
+
+        $context['name'] = "eolymp.discussion.MessageService/ListMessageChanges";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListMessageChangesOutput::class, $context);
+    }
+
 }

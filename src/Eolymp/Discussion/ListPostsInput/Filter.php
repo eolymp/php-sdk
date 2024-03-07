@@ -46,6 +46,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
+     */
+    private $moderation;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum locale = 9;</code>
      */
     private $locale;
@@ -68,6 +72,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $published_at
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $moderation
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $locale
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $label
      * }
@@ -249,6 +254,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->status = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModeration()
+    {
+        return $this->moderation;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
+     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModeration($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->moderation = $arr;
 
         return $this;
     }

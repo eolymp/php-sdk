@@ -60,6 +60,14 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     protected $edited_at = null;
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 22;</code>
+     */
+    protected $deleted_at = null;
+    /**
+     * Generated from protobuf field <code>int32 revision = 13;</code>
+     */
+    protected $revision = 0;
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 100;</code>
      */
     protected $message = null;
@@ -87,6 +95,8 @@ class Message extends \Google\Protobuf\Internal\Message
      *           total number of replies
      *     @type \Google\Protobuf\Timestamp $posted_at
      *     @type \Google\Protobuf\Timestamp $edited_at
+     *     @type \Google\Protobuf\Timestamp $deleted_at
+     *     @type int $revision
      *     @type \Eolymp\Ecm\Content $message
      *     @type \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $links
      * }
@@ -324,6 +334,50 @@ class Message extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->edited_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 22;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getDeletedAt()
+    {
+        return $this->deleted_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 22;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setDeletedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->deleted_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 revision = 13;</code>
+     * @return int
+     */
+    public function getRevision()
+    {
+        return $this->revision;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 revision = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRevision($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->revision = $var;
 
         return $this;
     }

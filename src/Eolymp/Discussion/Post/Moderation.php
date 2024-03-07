@@ -7,33 +7,47 @@ namespace Eolymp\Discussion\Post;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>eolymp.discussion.Post.Status</code>
+ * Protobuf type <code>eolymp.discussion.Post.Moderation</code>
  */
-class Status
+class Moderation
 {
     /**
      * not used
      *
-     * Generated from protobuf enum <code>UNKNOWN_STATUS = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_MODERATION = 0;</code>
      */
-    const UNKNOWN_STATUS = 0;
+    const UNKNOWN_MODERATION = 0;
     /**
-     * marked as draft by author
+     * not reviewed by moderator
      *
-     * Generated from protobuf enum <code>DRAFT = 1;</code>
+     * Generated from protobuf enum <code>PENDING = 1;</code>
      */
-    const DRAFT = 1;
+    const PENDING = 1;
     /**
-     * published and available to everyone
+     * not reviewed by moderator
      *
-     * Generated from protobuf enum <code>PUBLISHED = 2;</code>
+     * Generated from protobuf enum <code>IN_REVIEW = 2;</code>
      */
-    const PUBLISHED = 2;
+    const IN_REVIEW = 2;
+    /**
+     * approved by moderator
+     *
+     * Generated from protobuf enum <code>APPROVED = 3;</code>
+     */
+    const APPROVED = 3;
+    /**
+     * rejected by moderator
+     *
+     * Generated from protobuf enum <code>REJECTED = 4;</code>
+     */
+    const REJECTED = 4;
 
     private static $valueToName = [
-        self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::DRAFT => 'DRAFT',
-        self::PUBLISHED => 'PUBLISHED',
+        self::UNKNOWN_MODERATION => 'UNKNOWN_MODERATION',
+        self::PENDING => 'PENDING',
+        self::IN_REVIEW => 'IN_REVIEW',
+        self::APPROVED => 'APPROVED',
+        self::REJECTED => 'REJECTED',
     ];
 
     public static function name($value)
@@ -58,5 +72,5 @@ class Status
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Status::class, \Eolymp\Discussion\Post_Status::class);
+class_alias(Moderation::class, \Eolymp\Discussion\Post_Moderation::class);
 
