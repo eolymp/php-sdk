@@ -22,9 +22,9 @@ class Record extends \Google\Protobuf\Internal\Message
      */
     protected $timestamp = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.ecm.Content message = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
      */
-    private $message;
+    protected $message = null;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class Record extends \Google\Protobuf\Internal\Message
      *
      *     @type int $revision
      *     @type \Google\Protobuf\Timestamp $timestamp
-     *     @type \Eolymp\Ecm\Content[]|\Google\Protobuf\Internal\RepeatedField $message
+     *     @type \Eolymp\Ecm\Content $message
      * }
      */
     public function __construct($data = NULL) {
@@ -87,8 +87,8 @@ class Record extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.ecm.Content message = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
+     * @return \Eolymp\Ecm\Content
      */
     public function getMessage()
     {
@@ -96,14 +96,14 @@ class Record extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.ecm.Content message = 3;</code>
-     * @param \Eolymp\Ecm\Content[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setMessage($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ecm\Content::class);
-        $this->message = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->message = $var;
 
         return $this;
     }
