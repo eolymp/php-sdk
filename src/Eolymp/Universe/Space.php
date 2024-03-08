@@ -26,7 +26,7 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
-     * space key used to build URLs
+     * space url
      *
      * Generated from protobuf field <code>string url = 3;</code>
      */
@@ -62,41 +62,27 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $image = '';
     /**
-     * space use type
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Type type = 12;</code>
-     */
-    protected $type = 0;
-    /**
      * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
      */
     protected $visibility = 0;
     /**
+     * status (public)
+     *
      * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
      */
     protected $status = 0;
     /**
+     * feature list (public)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
+     */
+    private $features;
+    /**
+     * subscription details (private)
+     *
      * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
      */
     protected $subscription = null;
-    /**
-     * deprecated: use subscription.quota
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
-     */
-    protected $quota = null;
-    /**
-     * deprecated: use subscription.plan
-     *
-     * Generated from protobuf field <code>string plan = 13;</code>
-     */
-    protected $plan = '';
-    /**
-     * deprecated: use subscription.seats
-     *
-     * Generated from protobuf field <code>uint32 seats = 31;</code>
-     */
-    protected $seats = 0;
     /**
      * space affiliation label
      *
@@ -115,7 +101,7 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type string $key
      *           space key used to build URLs
      *     @type string $url
-     *           space key used to build URLs
+     *           space url
      *     @type string $home_url
      *           space home page URL
      *     @type string $issuer_url
@@ -126,17 +112,13 @@ class Space extends \Google\Protobuf\Internal\Message
      *           human friendly name
      *     @type string $image
      *           space logo image
-     *     @type int $type
-     *           space use type
      *     @type int $visibility
      *     @type int $status
+     *           status (public)
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $features
+     *           feature list (public)
      *     @type \Eolymp\Universe\Space\Subscription $subscription
-     *     @type \Eolymp\Universe\Quota $quota
-     *           deprecated: use subscription.quota
-     *     @type string $plan
-     *           deprecated: use subscription.plan
-     *     @type int $seats
-     *           deprecated: use subscription.seats
+     *           subscription details (private)
      *     @type string $affiliation
      *           space affiliation label
      * }
@@ -199,7 +181,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space key used to build URLs
+     * space url
      *
      * Generated from protobuf field <code>string url = 3;</code>
      * @return string
@@ -210,7 +192,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space key used to build URLs
+     * space url
      *
      * Generated from protobuf field <code>string url = 3;</code>
      * @param string $var
@@ -355,32 +337,6 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space use type
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Type type = 12;</code>
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * space use type
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Type type = 12;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Type::class);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.universe.Space.Visibility visibility = 14;</code>
      * @return int
      */
@@ -403,6 +359,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * status (public)
+     *
      * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
      * @return int
      */
@@ -412,6 +370,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * status (public)
+     *
      * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
      * @param int $var
      * @return $this
@@ -425,6 +385,34 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * feature list (public)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFeatures()
+    {
+        return $this->features;
+    }
+
+    /**
+     * feature list (public)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFeatures($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Feature::class);
+        $this->features = $arr;
+
+        return $this;
+    }
+
+    /**
+     * subscription details (private)
+     *
      * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
      * @return \Eolymp\Universe\Space\Subscription
      */
@@ -434,6 +422,8 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * subscription details (private)
+     *
      * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
      * @param \Eolymp\Universe\Space\Subscription $var
      * @return $this
@@ -442,84 +432,6 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Universe\Space_Subscription::class);
         $this->subscription = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use subscription.quota
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
-     * @return \Eolymp\Universe\Quota
-     */
-    public function getQuota()
-    {
-        return $this->quota;
-    }
-
-    /**
-     * deprecated: use subscription.quota
-     *
-     * Generated from protobuf field <code>.eolymp.universe.Quota quota = 30;</code>
-     * @param \Eolymp\Universe\Quota $var
-     * @return $this
-     */
-    public function setQuota($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Quota::class);
-        $this->quota = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use subscription.plan
-     *
-     * Generated from protobuf field <code>string plan = 13;</code>
-     * @return string
-     */
-    public function getPlan()
-    {
-        return $this->plan;
-    }
-
-    /**
-     * deprecated: use subscription.plan
-     *
-     * Generated from protobuf field <code>string plan = 13;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPlan($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->plan = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use subscription.seats
-     *
-     * Generated from protobuf field <code>uint32 seats = 31;</code>
-     * @return int
-     */
-    public function getSeats()
-    {
-        return $this->seats;
-    }
-
-    /**
-     * deprecated: use subscription.seats
-     *
-     * Generated from protobuf field <code>uint32 seats = 31;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSeats($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->seats = $var;
 
         return $this;
     }
