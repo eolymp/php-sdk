@@ -21,6 +21,12 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string display_name_attribute = 101;</code>
      */
     protected $display_name_attribute = '';
+    /**
+     * users can join on their own
+     *
+     * Generated from protobuf field <code>bool allow_sign_up = 102;</code>
+     */
+    protected $allow_sign_up = false;
     protected $provider;
 
     /**
@@ -34,6 +40,8 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\IdentityProvider\OIDC $oidc
      *     @type int $display_name_type
      *     @type string $display_name_attribute
+     *     @type bool $allow_sign_up
+     *           users can join on their own
      * }
      */
     public function __construct($data = NULL) {
@@ -147,6 +155,32 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name_attribute = $var;
+
+        return $this;
+    }
+
+    /**
+     * users can join on their own
+     *
+     * Generated from protobuf field <code>bool allow_sign_up = 102;</code>
+     * @return bool
+     */
+    public function getAllowSignUp()
+    {
+        return $this->allow_sign_up;
+    }
+
+    /**
+     * users can join on their own
+     *
+     * Generated from protobuf field <code>bool allow_sign_up = 102;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowSignUp($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_sign_up = $var;
 
         return $this;
     }

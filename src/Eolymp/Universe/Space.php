@@ -66,17 +66,11 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * status (public)
+     * space status
      *
      * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
      */
     protected $status = 0;
-    /**
-     * feature list (public)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
-     */
-    private $features;
     /**
      * subscription details (private)
      *
@@ -114,9 +108,7 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space logo image
      *     @type int $visibility
      *     @type int $status
-     *           status (public)
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $features
-     *           feature list (public)
+     *           space status
      *     @type \Eolymp\Universe\Space\Subscription $subscription
      *           subscription details (private)
      *     @type string $affiliation
@@ -359,7 +351,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * status (public)
+     * space status
      *
      * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
      * @return int
@@ -370,7 +362,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * status (public)
+     * space status
      *
      * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
      * @param int $var
@@ -380,32 +372,6 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Status::class);
         $this->status = $var;
-
-        return $this;
-    }
-
-    /**
-     * feature list (public)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFeatures()
-    {
-        return $this->features;
-    }
-
-    /**
-     * feature list (public)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFeatures($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Feature::class);
-        $this->features = $arr;
 
         return $this;
     }

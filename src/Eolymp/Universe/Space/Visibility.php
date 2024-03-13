@@ -16,10 +16,14 @@ class Visibility
      */
     const UNKNOWN_VISIBILITY = 0;
     /**
+     * anonymous users can see some space content
+     *
      * Generated from protobuf enum <code>PUBLIC = 1;</code>
      */
     const PBPUBLIC = 1;
     /**
+     * everyone must sign in to access space
+     *
      * Generated from protobuf enum <code>PRIVATE = 2;</code>
      */
     const PBPRIVATE = 2;
