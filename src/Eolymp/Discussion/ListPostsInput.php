@@ -44,6 +44,13 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
+     * if set, implies source_id == "", unless post has translation to the given language, in which case original post is
+     * replaced with the translation
+     *
+     * Generated from protobuf field <code>string display_locale = 60;</code>
+     */
+    protected $display_locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Post.Extra extra = 1123;</code>
      */
     private $extra;
@@ -63,6 +70,9 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
      *     @type int $order
      *     @type \Eolymp\Discussion\ListPostsInput\Filter $filters
      *           data filters
+     *     @type string $display_locale
+     *           if set, implies source_id == "", unless post has translation to the given language, in which case original post is
+     *           replaced with the translation
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -211,6 +221,34 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Discussion\ListPostsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * if set, implies source_id == "", unless post has translation to the given language, in which case original post is
+     * replaced with the translation
+     *
+     * Generated from protobuf field <code>string display_locale = 60;</code>
+     * @return string
+     */
+    public function getDisplayLocale()
+    {
+        return $this->display_locale;
+    }
+
+    /**
+     * if set, implies source_id == "", unless post has translation to the given language, in which case original post is
+     * replaced with the translation
+     *
+     * Generated from protobuf field <code>string display_locale = 60;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_locale = $var;
 
         return $this;
     }

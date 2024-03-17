@@ -22,6 +22,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID source_id = 13;</code>
+     */
+    private $source_id;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID user_id = 3;</code>
      */
     private $user_id;
@@ -42,9 +46,13 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $published_at;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 14;</code>
      */
-    private $status;
+    private $draft;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 12;</code>
+     */
+    private $public;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
      */
@@ -57,10 +65,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum label = 10;</code>
      */
     private $label;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 12;</code>
-     */
-    private $public;
 
     /**
      * Constructor.
@@ -70,16 +74,17 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type string $query
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
+     *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $source_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $user_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $member_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $type_id
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $created_at
      *     @type \Eolymp\Wellknown\ExpressionTimestamp[]|\Google\Protobuf\Internal\RepeatedField $published_at
-     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $draft
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $public
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $moderation
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $locale
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $label
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $public
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +132,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID source_id = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSourceId()
+    {
+        return $this->source_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID source_id = 13;</code>
+     * @param \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSourceId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->source_id = $arr;
 
         return $this;
     }
@@ -242,23 +269,45 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getStatus()
+    public function getDraft()
     {
-        return $this->status;
+        return $this->draft;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
-     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 14;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setDraft($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->status = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->draft = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 12;</code>
+     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPublic($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->public = $arr;
 
         return $this;
     }
@@ -325,28 +374,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->label = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPublic()
-    {
-        return $this->public;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 12;</code>
-     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPublic($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->public = $arr;
 
         return $this;
     }

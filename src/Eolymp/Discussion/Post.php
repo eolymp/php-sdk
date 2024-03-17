@@ -22,11 +22,17 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
-     * if this post translates another post, this property contains id of the post being translated
+     * if set, marks this post as translation for a post specified in this field
      *
      * Generated from protobuf field <code>string source_id = 7;</code>
      */
     protected $source_id = '';
+    /**
+     * populated if source_id is set
+     *
+     * Generated from protobuf field <code>string source_url = 8;</code>
+     */
+    protected $source_url = '';
     /**
      * marked as draft and only shown to author
      *
@@ -114,7 +120,9 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type string $source_id
-     *           if this post translates another post, this property contains id of the post being translated
+     *           if set, marks this post as translation for a post specified in this field
+     *     @type string $source_url
+     *           populated if source_id is set
      *     @type bool $draft
      *           marked as draft and only shown to author
      *     @type bool $public
@@ -192,7 +200,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if this post translates another post, this property contains id of the post being translated
+     * if set, marks this post as translation for a post specified in this field
      *
      * Generated from protobuf field <code>string source_id = 7;</code>
      * @return string
@@ -203,7 +211,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if this post translates another post, this property contains id of the post being translated
+     * if set, marks this post as translation for a post specified in this field
      *
      * Generated from protobuf field <code>string source_id = 7;</code>
      * @param string $var
@@ -213,6 +221,32 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * populated if source_id is set
+     *
+     * Generated from protobuf field <code>string source_url = 8;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * populated if source_id is set
+     *
+     * Generated from protobuf field <code>string source_url = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
 
         return $this;
     }
