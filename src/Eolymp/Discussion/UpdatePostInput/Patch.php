@@ -16,9 +16,9 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>MESSAGE = 1;</code>
+     * Generated from protobuf enum <code>CONTENT = 1;</code>
      */
-    const MESSAGE = 1;
+    const CONTENT = 1;
     /**
      * Generated from protobuf enum <code>LABELS = 2;</code>
      */
@@ -32,9 +32,9 @@ class Patch
      */
     const LOCALE = 4;
     /**
-     * Generated from protobuf enum <code>STATUS = 5;</code>
+     * Generated from protobuf enum <code>DRAFT = 5;</code>
      */
-    const STATUS = 5;
+    const DRAFT = 5;
     /**
      * Generated from protobuf enum <code>MODERATION = 6;</code>
      */
@@ -42,11 +42,11 @@ class Patch
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::MESSAGE => 'MESSAGE',
+        self::CONTENT => 'CONTENT',
         self::LABELS => 'LABELS',
         self::TYPE_ID => 'TYPE_ID',
         self::LOCALE => 'LOCALE',
-        self::STATUS => 'STATUS',
+        self::DRAFT => 'DRAFT',
         self::MODERATION => 'MODERATION',
     ];
 

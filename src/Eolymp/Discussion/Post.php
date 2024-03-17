@@ -22,19 +22,29 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Status status = 3;</code>
+     * if this post translates another post, this property contains id of the post being translated
+     *
+     * Generated from protobuf field <code>string source_id = 7;</code>
      */
-    protected $status = 0;
+    protected $source_id = '';
     /**
+     * marked as draft and only shown to author
+     *
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     */
+    protected $draft = false;
+    /**
+     * visible and available to everyone (ie. published and passed moderation)
+     *
+     * Generated from protobuf field <code>bool public = 4;</code>
+     */
+    protected $public = false;
+    /**
+     * moderation status
+     *
      * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
      */
     protected $moderation = 0;
-    /**
-     * optionally, post type from PostTypeService
-     *
-     * Generated from protobuf field <code>string type_id = 4;</code>
-     */
-    protected $type_id = '';
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
      */
@@ -48,31 +58,25 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $updated_at = null;
     /**
+     * optionally, post type from PostTypeService
+     *
+     * Generated from protobuf field <code>string type_id = 6;</code>
+     */
+    protected $type_id = '';
+    /**
      * Generated from protobuf field <code>string locale = 102;</code>
      */
     protected $locale = '';
     /**
-     * title is populated automatically from first header in the message
-     *
-     * Generated from protobuf field <code>string title = 100;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 101;</code>
      */
-    protected $title = '';
+    protected $content = null;
     /**
-     * image is populated automatically from first image in the message
+     * preview is generated automatically from the content
      *
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 103;</code>
-     */
-    protected $image = null;
-    /**
-     * preview is populated automatically from first paragraph in the image
-     *
-     * Generated from protobuf field <code>.eolymp.ecm.Node preview = 104;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Preview preview = 110;</code>
      */
     protected $preview = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content message = 101;</code>
-     */
-    protected $message = null;
     /**
      * vote of authenticated user (+1 or -1)
      *
@@ -109,23 +113,25 @@ class Post extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $url
-     *     @type int $status
+     *     @type string $source_id
+     *           if this post translates another post, this property contains id of the post being translated
+     *     @type bool $draft
+     *           marked as draft and only shown to author
+     *     @type bool $public
+     *           visible and available to everyone (ie. published and passed moderation)
      *     @type int $moderation
-     *     @type string $type_id
-     *           optionally, post type from PostTypeService
+     *           moderation status
      *     @type string $user_id
      *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $published_at
      *     @type \Google\Protobuf\Timestamp $updated_at
+     *     @type string $type_id
+     *           optionally, post type from PostTypeService
      *     @type string $locale
-     *     @type string $title
-     *           title is populated automatically from first header in the message
-     *     @type \Eolymp\Discussion\Post\Image $image
-     *           image is populated automatically from first image in the message
-     *     @type \Eolymp\Ecm\Node $preview
-     *           preview is populated automatically from first paragraph in the image
-     *     @type \Eolymp\Ecm\Content $message
+     *     @type \Eolymp\Ecm\Content $content
+     *     @type \Eolymp\Discussion\Post\Preview $preview
+     *           preview is generated automatically from the content
      *     @type int $vote
      *           vote of authenticated user (+1 or -1)
      *     @type int $vote_count
@@ -186,28 +192,86 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Status status = 3;</code>
-     * @return int
+     * if this post translates another post, this property contains id of the post being translated
+     *
+     * Generated from protobuf field <code>string source_id = 7;</code>
+     * @return string
      */
-    public function getStatus()
+    public function getSourceId()
     {
-        return $this->status;
+        return $this->source_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Status status = 3;</code>
-     * @param int $var
+     * if this post translates another post, this property contains id of the post being translated
+     *
+     * Generated from protobuf field <code>string source_id = 7;</code>
+     * @param string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setSourceId($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Status::class);
-        $this->status = $var;
+        GPBUtil::checkString($var, True);
+        $this->source_id = $var;
 
         return $this;
     }
 
     /**
+     * marked as draft and only shown to author
+     *
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * marked as draft and only shown to author
+     *
+     * Generated from protobuf field <code>bool draft = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * visible and available to everyone (ie. published and passed moderation)
+     *
+     * Generated from protobuf field <code>bool public = 4;</code>
+     * @return bool
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * visible and available to everyone (ie. published and passed moderation)
+     *
+     * Generated from protobuf field <code>bool public = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPublic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->public = $var;
+
+        return $this;
+    }
+
+    /**
+     * moderation status
+     *
      * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
      * @return int
      */
@@ -217,6 +281,8 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * moderation status
+     *
      * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
      * @param int $var
      * @return $this
@@ -225,32 +291,6 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Moderation::class);
         $this->moderation = $var;
-
-        return $this;
-    }
-
-    /**
-     * optionally, post type from PostTypeService
-     *
-     * Generated from protobuf field <code>string type_id = 4;</code>
-     * @return string
-     */
-    public function getTypeId()
-    {
-        return $this->type_id;
-    }
-
-    /**
-     * optionally, post type from PostTypeService
-     *
-     * Generated from protobuf field <code>string type_id = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTypeId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type_id = $var;
 
         return $this;
     }
@@ -366,6 +406,32 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * optionally, post type from PostTypeService
+     *
+     * Generated from protobuf field <code>string type_id = 6;</code>
+     * @return string
+     */
+    public function getTypeId()
+    {
+        return $this->type_id;
+    }
+
+    /**
+     * optionally, post type from PostTypeService
+     *
+     * Generated from protobuf field <code>string type_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTypeId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->type_id = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string locale = 102;</code>
      * @return string
      */
@@ -388,62 +454,32 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * title is populated automatically from first header in the message
-     *
-     * Generated from protobuf field <code>string title = 100;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 101;</code>
+     * @return \Eolymp\Ecm\Content
      */
-    public function getTitle()
+    public function getContent()
     {
-        return $this->title;
+        return $this->content;
     }
 
     /**
-     * title is populated automatically from first header in the message
-     *
-     * Generated from protobuf field <code>string title = 100;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 101;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
-    public function setTitle($var)
+    public function setContent($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->title = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
 
         return $this;
     }
 
     /**
-     * image is populated automatically from first image in the message
+     * preview is generated automatically from the content
      *
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 103;</code>
-     * @return \Eolymp\Discussion\Post\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * image is populated automatically from first image in the message
-     *
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 103;</code>
-     * @param \Eolymp\Discussion\Post\Image $var
-     * @return $this
-     */
-    public function setImage($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Image::class);
-        $this->image = $var;
-
-        return $this;
-    }
-
-    /**
-     * preview is populated automatically from first paragraph in the image
-     *
-     * Generated from protobuf field <code>.eolymp.ecm.Node preview = 104;</code>
-     * @return \Eolymp\Ecm\Node
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Preview preview = 110;</code>
+     * @return \Eolymp\Discussion\Post\Preview
      */
     public function getPreview()
     {
@@ -451,38 +487,16 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * preview is populated automatically from first paragraph in the image
+     * preview is generated automatically from the content
      *
-     * Generated from protobuf field <code>.eolymp.ecm.Node preview = 104;</code>
-     * @param \Eolymp\Ecm\Node $var
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Preview preview = 110;</code>
+     * @param \Eolymp\Discussion\Post\Preview $var
      * @return $this
      */
     public function setPreview($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Preview::class);
         $this->preview = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content message = 101;</code>
-     * @return \Eolymp\Ecm\Content
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content message = 101;</code>
-     * @param \Eolymp\Ecm\Content $var
-     * @return $this
-     */
-    public function setMessage($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->message = $var;
 
         return $this;
     }

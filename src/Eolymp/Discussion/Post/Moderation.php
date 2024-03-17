@@ -24,7 +24,7 @@ class Moderation
      */
     const PENDING = 1;
     /**
-     * not reviewed by moderator
+     * in review by moderator
      *
      * Generated from protobuf enum <code>IN_REVIEW = 2;</code>
      */

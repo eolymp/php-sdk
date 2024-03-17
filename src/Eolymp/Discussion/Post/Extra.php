@@ -16,17 +16,17 @@ class Extra
      */
     const UNKNOWN_EXTRA = 0;
     /**
-     * include message source (original Markdown, LaTeX etc)
+     * include content source (original Markdown, LaTeX etc)
      *
-     * Generated from protobuf enum <code>MESSAGE_VALUE = 1;</code>
+     * Generated from protobuf enum <code>CONTENT_VALUE = 1;</code>
      */
-    const MESSAGE_VALUE = 1;
+    const CONTENT_VALUE = 1;
     /**
-     * include rendered message in ECM
+     * include rendered content in ECM
      *
-     * Generated from protobuf enum <code>MESSAGE_RENDER = 2;</code>
+     * Generated from protobuf enum <code>CONTENT_RENDER = 2;</code>
      */
-    const MESSAGE_RENDER = 2;
+    const CONTENT_RENDER = 2;
     /**
      * include rendered but trimmed message in ECM
      *
@@ -42,8 +42,8 @@ class Extra
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::MESSAGE_VALUE => 'MESSAGE_VALUE',
-        self::MESSAGE_RENDER => 'MESSAGE_RENDER',
+        self::CONTENT_VALUE => 'CONTENT_VALUE',
+        self::CONTENT_RENDER => 'CONTENT_RENDER',
         self::PREVIEW => 'PREVIEW',
         self::VOTE => 'VOTE',
     ];
