@@ -18,9 +18,9 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>string lang = 2;</code>
+     * Generated from protobuf field <code>string runtime = 2;</code>
      */
-    protected $lang = '';
+    protected $runtime = '';
     /**
      * Generated from protobuf field <code>string source = 3;</code>
      */
@@ -33,7 +33,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type string $lang
+     *     @type string $runtime
      *     @type string $source
      * }
      */
@@ -65,23 +65,23 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string lang = 2;</code>
+     * Generated from protobuf field <code>string runtime = 2;</code>
      * @return string
      */
-    public function getLang()
+    public function getRuntime()
     {
-        return $this->lang;
+        return $this->runtime;
     }
 
     /**
-     * Generated from protobuf field <code>string lang = 2;</code>
+     * Generated from protobuf field <code>string runtime = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setLang($var)
+    public function setRuntime($var)
     {
         GPBUtil::checkString($var, True);
-        $this->lang = $var;
+        $this->runtime = $var;
 
         return $this;
     }

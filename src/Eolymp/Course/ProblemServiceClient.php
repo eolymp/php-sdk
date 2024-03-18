@@ -137,4 +137,58 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupCodeTemplateOutput::class, $context);
     }
 
+    /**
+     * @param CreateRunInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateRunOutput output message
+     */
+    public function CreateRun(CreateRunInput $input, array $context = [])
+    {
+        $path = "/runs";
+
+        $context['name'] = "eolymp.course.ProblemService/CreateRun";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateRunOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeRunInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeRunOutput output message
+     */
+    public function DescribeRun(DescribeRunInput $input, array $context = [])
+    {
+        $path = "/runs/".rawurlencode($input->getRunId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRunId("");
+
+        $context['name'] = "eolymp.course.ProblemService/DescribeRun";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRunOutput::class, $context);
+    }
+
+    /**
+     * @param WatchRunInput $input message
+     * @param array $context request parameters
+     *
+     * @return WatchRunOutput output message
+     */
+    public function WatchRun(WatchRunInput $input, array $context = [])
+    {
+        $path = "/runs/".rawurlencode($input->getRunId())."/watch";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRunId("");
+
+        $context['name'] = "eolymp.course.ProblemService/WatchRun";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, WatchRunOutput::class, $context);
+    }
+
 }
