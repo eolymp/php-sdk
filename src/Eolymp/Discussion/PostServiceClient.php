@@ -130,4 +130,102 @@ class PostServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, VotePostOutput::class, $context);
     }
 
+    /**
+     * @param DescribePostTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribePostTranslationOutput output message
+     */
+    public function DescribePostTranslation(DescribePostTranslationInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/translations/".rawurlencode($input->getTranslationId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+        $input->setTranslationId("");
+
+        $context['name'] = "eolymp.discussion.PostService/DescribePostTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePostTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param ListPostTranslationsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListPostTranslationsOutput output message
+     */
+    public function ListPostTranslations(ListPostTranslationsInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/translations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+
+        $context['name'] = "eolymp.discussion.PostService/ListPostTranslations";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPostTranslationsOutput::class, $context);
+    }
+
+    /**
+     * @param CreatePostTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreatePostTranslationOutput output message
+     */
+    public function CreatePostTranslation(CreatePostTranslationInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/translations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+
+        $context['name'] = "eolymp.discussion.PostService/CreatePostTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreatePostTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param UpdatePostTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePostTranslationOutput output message
+     */
+    public function UpdatePostTranslation(UpdatePostTranslationInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/translations/".rawurlencode($input->getTranslationId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+        $input->setTranslationId("");
+
+        $context['name'] = "eolymp.discussion.PostService/UpdatePostTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdatePostTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param DeletePostTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeletePostTranslationOutput output message
+     */
+    public function DeletePostTranslation(DeletePostTranslationInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/translations/".rawurlencode($input->getTranslationId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+        $input->setTranslationId("");
+
+        $context['name'] = "eolymp.discussion.PostService/DeletePostTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeletePostTranslationOutput::class, $context);
+    }
+
 }
