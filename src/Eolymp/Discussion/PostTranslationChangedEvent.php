@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
+     */
+    protected $post = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 2;</code>
      */
     protected $before = null;
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 3;</code>
      */
     protected $after = null;
 
@@ -28,6 +32,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Eolymp\Discussion\Post $post
      *     @type \Eolymp\Discussion\Post\Translation $before
      *     @type \Eolymp\Discussion\Post\Translation $after
      * }
@@ -38,7 +43,29 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
+     * @return \Eolymp\Discussion\Post
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
+     * @param \Eolymp\Discussion\Post $var
+     * @return $this
+     */
+    public function setPost($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post::class);
+        $this->post = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 2;</code>
      * @return \Eolymp\Discussion\Post\Translation
      */
     public function getBefore()
@@ -47,7 +74,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 2;</code>
      * @param \Eolymp\Discussion\Post\Translation $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 3;</code>
      * @return \Eolymp\Discussion\Post\Translation
      */
     public function getAfter()
@@ -69,7 +96,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 3;</code>
      * @param \Eolymp\Discussion\Post\Translation $var
      * @return $this
      */
