@@ -18,6 +18,10 @@ class DescribePostInput extends \Google\Protobuf\Internal\Message
      */
     protected $post_id = '';
     /**
+     * Generated from protobuf field <code>string locale = 60;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Post.Extra extra = 1123;</code>
      */
     private $extra;
@@ -29,6 +33,7 @@ class DescribePostInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $post_id
+     *     @type string $locale
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -55,6 +60,28 @@ class DescribePostInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->post_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 60;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 60;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

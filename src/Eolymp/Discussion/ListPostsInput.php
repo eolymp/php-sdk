@@ -44,12 +44,9 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
-     * if set, implies source_id == "", unless post has translation to the given language, in which case original post is
-     * replaced with the translation
-     *
-     * Generated from protobuf field <code>string display_locale = 60;</code>
+     * Generated from protobuf field <code>string locale = 60;</code>
      */
-    protected $display_locale = '';
+    protected $locale = '';
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Post.Extra extra = 1123;</code>
      */
@@ -70,9 +67,7 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
      *     @type int $order
      *     @type \Eolymp\Discussion\ListPostsInput\Filter $filters
      *           data filters
-     *     @type string $display_locale
-     *           if set, implies source_id == "", unless post has translation to the given language, in which case original post is
-     *           replaced with the translation
+     *     @type string $locale
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -226,29 +221,23 @@ class ListPostsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if set, implies source_id == "", unless post has translation to the given language, in which case original post is
-     * replaced with the translation
-     *
-     * Generated from protobuf field <code>string display_locale = 60;</code>
+     * Generated from protobuf field <code>string locale = 60;</code>
      * @return string
      */
-    public function getDisplayLocale()
+    public function getLocale()
     {
-        return $this->display_locale;
+        return $this->locale;
     }
 
     /**
-     * if set, implies source_id == "", unless post has translation to the given language, in which case original post is
-     * replaced with the translation
-     *
-     * Generated from protobuf field <code>string display_locale = 60;</code>
+     * Generated from protobuf field <code>string locale = 60;</code>
      * @param string $var
      * @return $this
      */
-    public function setDisplayLocale($var)
+    public function setLocale($var)
     {
         GPBUtil::checkString($var, True);
-        $this->display_locale = $var;
+        $this->locale = $var;
 
         return $this;
     }
