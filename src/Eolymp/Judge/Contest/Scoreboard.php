@@ -34,6 +34,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $attempt_penalty = 0;
     /**
+     * tie breaker parameter
+     *
+     * Generated from protobuf field <code>string tie_breaker = 5;</code>
+     */
+    protected $tie_breaker = '';
+    /**
      * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
      */
     protected $use_name_in_scoreboard = false;
@@ -50,6 +56,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type int $unfreeze_delay
      *           a delay in seconds after end of contest that board will remain frozen (eg. 600 means board will remain frozen for 10 minutes after end of contest)
      *     @type int $attempt_penalty
+     *     @type string $tie_breaker
+     *           tie breaker parameter
      *     @type bool $use_name_in_scoreboard
      * }
      */
@@ -150,6 +158,32 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->attempt_penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * tie breaker parameter
+     *
+     * Generated from protobuf field <code>string tie_breaker = 5;</code>
+     * @return string
+     */
+    public function getTieBreaker()
+    {
+        return $this->tie_breaker;
+    }
+
+    /**
+     * tie breaker parameter
+     *
+     * Generated from protobuf field <code>string tie_breaker = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTieBreaker($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tie_breaker = $var;
 
         return $this;
     }
