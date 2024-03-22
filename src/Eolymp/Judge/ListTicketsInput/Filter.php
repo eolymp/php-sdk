@@ -30,13 +30,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $member_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read_by_participant = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read = 5;</code>
      */
-    private $is_read_by_participant;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read_by_owner = 5;</code>
-     */
-    private $is_read_by_owner;
+    private $is_read;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_open = 6;</code>
      */
@@ -56,8 +52,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $contest_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $participant_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $member_id
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_read_by_participant
-     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_read_by_owner
+     *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_read
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $is_open
      *     @type \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $own
      * }
@@ -156,45 +151,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read_by_participant = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIsReadByParticipant()
+    public function getIsRead()
     {
-        return $this->is_read_by_participant;
+        return $this->is_read;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read_by_participant = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read = 5;</code>
      * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setIsReadByParticipant($var)
+    public function setIsRead($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->is_read_by_participant = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read_by_owner = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getIsReadByOwner()
-    {
-        return $this->is_read_by_owner;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_read_by_owner = 5;</code>
-     * @param \Eolymp\Wellknown\ExpressionBool[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setIsReadByOwner($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->is_read_by_owner = $arr;
+        $this->is_read = $arr;
 
         return $this;
     }

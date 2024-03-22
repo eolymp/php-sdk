@@ -64,35 +64,17 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $is_open = false;
     /**
-     * True if participant haven't seen new replies. This flag helps to find tickets which need participant's attention.
+     * True if ticket has not been read by current user
      *
-     * Generated from protobuf field <code>bool is_read_by_participant = 21;</code>
+     * Generated from protobuf field <code>bool is_read = 21;</code>
      */
-    protected $is_read_by_participant = false;
-    /**
-     * True if contest organiser haven't reply to the ticket. This flag helps to find tickets which need organiser's attention.
-     *
-     * Generated from protobuf field <code>bool is_read_by_owner = 22;</code>
-     */
-    protected $is_read_by_owner = false;
+    protected $is_read = false;
     /**
      * Timestamp when ticket was initially created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
      */
     protected $created_at = null;
-    /**
-     * deprecated use is_read_by_participant instead
-     *
-     * Generated from protobuf field <code>bool is_read = 9991;</code>
-     */
-    protected $is_read = false;
-    /**
-     * deprecated use is_read_by_owner instead
-     *
-     * Generated from protobuf field <code>bool needs_reply = 9992;</code>
-     */
-    protected $needs_reply = false;
 
     /**
      * Constructor.
@@ -116,16 +98,10 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *     @type string $raw_message
      *     @type bool $is_open
      *           True if ticket is open and being handled or False if ticket has been resolved.
-     *     @type bool $is_read_by_participant
-     *           True if participant haven't seen new replies. This flag helps to find tickets which need participant's attention.
-     *     @type bool $is_read_by_owner
-     *           True if contest organiser haven't reply to the ticket. This flag helps to find tickets which need organiser's attention.
+     *     @type bool $is_read
+     *           True if ticket has not been read by current user
      *     @type \Google\Protobuf\Timestamp $created_at
      *           Timestamp when ticket was initially created.
-     *     @type bool $is_read
-     *           deprecated use is_read_by_participant instead
-     *     @type bool $needs_reply
-     *           deprecated use is_read_by_owner instead
      * }
      */
     public function __construct($data = NULL) {
@@ -360,53 +336,27 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if participant haven't seen new replies. This flag helps to find tickets which need participant's attention.
+     * True if ticket has not been read by current user
      *
-     * Generated from protobuf field <code>bool is_read_by_participant = 21;</code>
+     * Generated from protobuf field <code>bool is_read = 21;</code>
      * @return bool
      */
-    public function getIsReadByParticipant()
+    public function getIsRead()
     {
-        return $this->is_read_by_participant;
+        return $this->is_read;
     }
 
     /**
-     * True if participant haven't seen new replies. This flag helps to find tickets which need participant's attention.
+     * True if ticket has not been read by current user
      *
-     * Generated from protobuf field <code>bool is_read_by_participant = 21;</code>
+     * Generated from protobuf field <code>bool is_read = 21;</code>
      * @param bool $var
      * @return $this
      */
-    public function setIsReadByParticipant($var)
+    public function setIsRead($var)
     {
         GPBUtil::checkBool($var);
-        $this->is_read_by_participant = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if contest organiser haven't reply to the ticket. This flag helps to find tickets which need organiser's attention.
-     *
-     * Generated from protobuf field <code>bool is_read_by_owner = 22;</code>
-     * @return bool
-     */
-    public function getIsReadByOwner()
-    {
-        return $this->is_read_by_owner;
-    }
-
-    /**
-     * True if contest organiser haven't reply to the ticket. This flag helps to find tickets which need organiser's attention.
-     *
-     * Generated from protobuf field <code>bool is_read_by_owner = 22;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsReadByOwner($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->is_read_by_owner = $var;
+        $this->is_read = $var;
 
         return $this;
     }
@@ -433,58 +383,6 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated use is_read_by_participant instead
-     *
-     * Generated from protobuf field <code>bool is_read = 9991;</code>
-     * @return bool
-     */
-    public function getIsRead()
-    {
-        return $this->is_read;
-    }
-
-    /**
-     * deprecated use is_read_by_participant instead
-     *
-     * Generated from protobuf field <code>bool is_read = 9991;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsRead($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->is_read = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated use is_read_by_owner instead
-     *
-     * Generated from protobuf field <code>bool needs_reply = 9992;</code>
-     * @return bool
-     */
-    public function getNeedsReply()
-    {
-        return $this->needs_reply;
-    }
-
-    /**
-     * deprecated use is_read_by_owner instead
-     *
-     * Generated from protobuf field <code>bool needs_reply = 9992;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setNeedsReply($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->needs_reply = $var;
 
         return $this;
     }
