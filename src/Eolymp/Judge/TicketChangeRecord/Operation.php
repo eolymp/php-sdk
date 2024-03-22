@@ -12,9 +12,9 @@ use UnexpectedValueException;
 class Operation
 {
     /**
-     * Generated from protobuf enum <code>NO_OPERATION = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_OPERATION = 0;</code>
      */
-    const NO_OPERATION = 0;
+    const UNKNOWN_OPERATION = 0;
     /**
      * Generated from protobuf enum <code>CREATE = 1;</code>
      */
@@ -33,7 +33,7 @@ class Operation
     const REPLY = 5;
 
     private static $valueToName = [
-        self::NO_OPERATION => 'NO_OPERATION',
+        self::UNKNOWN_OPERATION => 'UNKNOWN_OPERATION',
         self::CREATE => 'CREATE',
         self::UPDATE => 'UPDATE',
         self::DELETE => 'DELETE',

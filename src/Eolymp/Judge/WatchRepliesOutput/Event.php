@@ -12,9 +12,9 @@ use UnexpectedValueException;
 class Event
 {
     /**
-     * Generated from protobuf enum <code>NO_TYPE = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_EVENT = 0;</code>
      */
-    const NO_TYPE = 0;
+    const UNKNOWN_EVENT = 0;
     /**
      * Generated from protobuf enum <code>CREATED = 1;</code>
      */
@@ -29,7 +29,7 @@ class Event
     const DELETED = 3;
 
     private static $valueToName = [
-        self::NO_TYPE => 'NO_TYPE',
+        self::UNKNOWN_EVENT => 'UNKNOWN_EVENT',
         self::CREATED => 'CREATED',
         self::UPDATED => 'UPDATED',
         self::DELETED => 'DELETED',
