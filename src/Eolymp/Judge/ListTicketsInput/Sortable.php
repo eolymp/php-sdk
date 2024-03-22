@@ -16,18 +16,13 @@ class Sortable
      */
     const CREATED_AT = 0;
     /**
-     * Generated from protobuf enum <code>READ_BY_OWNER = 1;</code>
+     * Generated from protobuf enum <code>UPDATED_AT = 1;</code>
      */
-    const READ_BY_OWNER = 1;
-    /**
-     * Generated from protobuf enum <code>READ_BY_PARTICIPANT = 2;</code>
-     */
-    const READ_BY_PARTICIPANT = 2;
+    const UPDATED_AT = 1;
 
     private static $valueToName = [
         self::CREATED_AT => 'CREATED_AT',
-        self::READ_BY_OWNER => 'READ_BY_OWNER',
-        self::READ_BY_PARTICIPANT => 'READ_BY_PARTICIPANT',
+        self::UPDATED_AT => 'UPDATED_AT',
     ];
 
     public static function name($value)

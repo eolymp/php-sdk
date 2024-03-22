@@ -16,6 +16,10 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
+     * Generated from protobuf field <code>string after = 12;</code>
+     */
+    protected $after = '';
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -48,8 +52,9 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $offset
+     *     @type string $after
      *           pagination
+     *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Judge\ListTicketsInput\Filter $filters
      *           data filters
@@ -66,6 +71,30 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
+     * Generated from protobuf field <code>string after = 12;</code>
+     * @return string
+     */
+    public function getAfter()
+    {
+        return $this->after;
+    }
+
+    /**
+     * pagination
+     *
+     * Generated from protobuf field <code>string after = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAfter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->after = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @return int
      */
@@ -75,8 +104,6 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * pagination
-     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @param int $var
      * @return $this
