@@ -20,10 +20,6 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     */
-    protected $ern = '';
-    /**
      * Contest where ticket was opened.
      *
      * Generated from protobuf field <code>string contest_id = 2;</code>
@@ -42,6 +38,12 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * Ticket status as
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5;</code>
+     */
+    protected $status = 0;
+    /**
      * Ticket subject. Max 255 symbols.
      *
      * Generated from protobuf field <code>string subject = 10;</code>
@@ -58,23 +60,29 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $raw_message = '';
     /**
-     * True if ticket is open and being handled or False if ticket has been resolved.
-     *
-     * Generated from protobuf field <code>bool is_open = 20;</code>
-     */
-    protected $is_open = false;
-    /**
      * True if ticket has not been read by current user
      *
      * Generated from protobuf field <code>bool is_read = 21;</code>
      */
     protected $is_read = false;
     /**
+     * Number of replies in the ticket.
+     *
+     * Generated from protobuf field <code>uint32 reply_count = 30;</code>
+     */
+    protected $reply_count = 0;
+    /**
      * Timestamp when ticket was initially created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
      */
     protected $created_at = null;
+    /**
+     * Timestamp when ticket was modified/replied.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
+     */
+    protected $updated_at = null;
 
     /**
      * Constructor.
@@ -84,24 +92,27 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Ticket unique identifier.
-     *     @type string $ern
      *     @type string $contest_id
      *           Contest where ticket was opened.
      *     @type string $participant_id
      *           Participant who opened the ticket.
      *     @type string $member_id
      *           Member who opened the ticket.
+     *     @type int $status
+     *           Ticket status as
      *     @type string $subject
      *           Ticket subject. Max 255 symbols.
      *     @type \Eolymp\Ecm\Content $message
      *           Ticket message.
      *     @type string $raw_message
-     *     @type bool $is_open
-     *           True if ticket is open and being handled or False if ticket has been resolved.
      *     @type bool $is_read
      *           True if ticket has not been read by current user
+     *     @type int $reply_count
+     *           Number of replies in the ticket.
      *     @type \Google\Protobuf\Timestamp $created_at
      *           Timestamp when ticket was initially created.
+     *     @type \Google\Protobuf\Timestamp $updated_at
+     *           Timestamp when ticket was modified/replied.
      * }
      */
     public function __construct($data = NULL) {
@@ -131,28 +142,6 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @return string
-     */
-    public function getErn()
-    {
-        return $this->ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ern = $var;
 
         return $this;
     }
@@ -236,6 +225,32 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Ticket status as
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Ticket status as
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Ticket_Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
      * Ticket subject. Max 255 symbols.
      *
      * Generated from protobuf field <code>string subject = 10;</code>
@@ -310,32 +325,6 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * True if ticket is open and being handled or False if ticket has been resolved.
-     *
-     * Generated from protobuf field <code>bool is_open = 20;</code>
-     * @return bool
-     */
-    public function getIsOpen()
-    {
-        return $this->is_open;
-    }
-
-    /**
-     * True if ticket is open and being handled or False if ticket has been resolved.
-     *
-     * Generated from protobuf field <code>bool is_open = 20;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIsOpen($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->is_open = $var;
-
-        return $this;
-    }
-
-    /**
      * True if ticket has not been read by current user
      *
      * Generated from protobuf field <code>bool is_read = 21;</code>
@@ -362,6 +351,32 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Number of replies in the ticket.
+     *
+     * Generated from protobuf field <code>uint32 reply_count = 30;</code>
+     * @return int
+     */
+    public function getReplyCount()
+    {
+        return $this->reply_count;
+    }
+
+    /**
+     * Number of replies in the ticket.
+     *
+     * Generated from protobuf field <code>uint32 reply_count = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setReplyCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->reply_count = $var;
+
+        return $this;
+    }
+
+    /**
      * Timestamp when ticket was initially created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
@@ -383,6 +398,32 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timestamp when ticket was modified/replied.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Timestamp when ticket was modified/replied.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_at = $var;
 
         return $this;
     }
