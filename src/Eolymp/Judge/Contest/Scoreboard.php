@@ -39,10 +39,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string tie_breaker = 5;</code>
      */
     protected $tie_breaker = '';
-    /**
-     * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
-     */
-    protected $use_name_in_scoreboard = false;
 
     /**
      * Constructor.
@@ -58,7 +54,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type int $attempt_penalty
      *     @type string $tie_breaker
      *           tie breaker parameter
-     *     @type bool $use_name_in_scoreboard
      * }
      */
     public function __construct($data = NULL) {
@@ -184,28 +179,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tie_breaker = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
-     * @return bool
-     */
-    public function getUseNameInScoreboard()
-    {
-        return $this->use_name_in_scoreboard;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool use_name_in_scoreboard = 100;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setUseNameInScoreboard($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->use_name_in_scoreboard = $var;
 
         return $this;
     }
