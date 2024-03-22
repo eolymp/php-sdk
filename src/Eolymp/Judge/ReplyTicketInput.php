@@ -22,9 +22,9 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>bool close = 21;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status change_status_to = 20;</code>
      */
-    protected $close = false;
+    protected $change_status_to = 0;
 
     /**
      * Constructor.
@@ -34,7 +34,7 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $ticket_id
      *     @type \Eolymp\Ecm\Content $message
-     *     @type bool $close
+     *     @type int $change_status_to
      * }
      */
     public function __construct($data = NULL) {
@@ -87,23 +87,23 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool close = 21;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status change_status_to = 20;</code>
+     * @return int
      */
-    public function getClose()
+    public function getChangeStatusTo()
     {
-        return $this->close;
+        return $this->change_status_to;
     }
 
     /**
-     * Generated from protobuf field <code>bool close = 21;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status change_status_to = 20;</code>
+     * @param int $var
      * @return $this
      */
-    public function setClose($var)
+    public function setChangeStatusTo($var)
     {
-        GPBUtil::checkBool($var);
-        $this->close = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Ticket_Status::class);
+        $this->change_status_to = $var;
 
         return $this;
     }
