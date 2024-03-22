@@ -34,7 +34,7 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
-     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sortable sort = 50;</code>
+     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sort sort = 50;</code>
      */
     protected $sort = 0;
     /**
@@ -165,7 +165,7 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sortable sort = 50;</code>
+     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sort sort = 50;</code>
      * @return int
      */
     public function getSort()
@@ -174,13 +174,13 @@ class ListTicketsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sortable sort = 50;</code>
+     * Generated from protobuf field <code>.eolymp.judge.ListTicketsInput.Sort sort = 50;</code>
      * @param int $var
      * @return $this
      */
     public function setSort($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\ListTicketsInput_Sortable::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\ListTicketsInput_Sort::class);
         $this->sort = $var;
 
         return $this;

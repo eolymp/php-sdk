@@ -7,9 +7,9 @@ namespace Eolymp\Judge\ListTicketsInput;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>eolymp.judge.ListTicketsInput.Sortable</code>
+ * Protobuf type <code>eolymp.judge.ListTicketsInput.Sort</code>
  */
-class Sortable
+class Sort
 {
     /**
      * Generated from protobuf enum <code>CREATED_AT = 0;</code>
@@ -47,5 +47,5 @@ class Sortable
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Sortable::class, \Eolymp\Judge\ListTicketsInput_Sortable::class);
+class_alias(Sort::class, \Eolymp\Judge\ListTicketsInput_Sort::class);
 
