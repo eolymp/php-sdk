@@ -25,6 +25,10 @@ class WatchTicketsOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 unread_count = 3;</code>
      */
     protected $unread_count = 0;
+    /**
+     * Generated from protobuf field <code>uint32 unresolved_count = 4;</code>
+     */
+    protected $unresolved_count = 0;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class WatchTicketsOutput extends \Google\Protobuf\Internal\Message
      *     @type int $event
      *     @type \Eolymp\Judge\Ticket $ticket
      *     @type int $unread_count
+     *     @type int $unresolved_count
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class WatchTicketsOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->unread_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 unresolved_count = 4;</code>
+     * @return int
+     */
+    public function getUnresolvedCount()
+    {
+        return $this->unresolved_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 unresolved_count = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUnresolvedCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->unresolved_count = $var;
 
         return $this;
     }
