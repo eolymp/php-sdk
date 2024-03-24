@@ -9,22 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.ReadTicketInput</code>
+ * Generated from protobuf message <code>eolymp.judge.WatchTicketSummaryInput</code>
  */
-class ReadTicketInput extends \Google\Protobuf\Internal\Message
+class WatchTicketSummaryInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>string ticket_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
-    protected $ticket_id = '';
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
-     */
-    protected $timestamp = null;
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class ReadTicketInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type string $ticket_id
-     *     @type \Google\Protobuf\Timestamp $timestamp
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +60,23 @@ class ReadTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ticket_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
-    public function getTicketId()
+    public function getMemberId()
     {
-        return $this->ticket_id;
+        return $this->member_id;
     }
 
     /**
-     * Generated from protobuf field <code>string ticket_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setTicketId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->ticket_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
-     * @return \Google\Protobuf\Timestamp
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setTimestamp($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->timestamp = $var;
+        $this->member_id = $var;
 
         return $this;
     }

@@ -27,17 +27,12 @@ class Event
      * Generated from protobuf enum <code>DELETED = 3;</code>
      */
     const DELETED = 3;
-    /**
-     * Generated from protobuf enum <code>REPLIED = 4;</code>
-     */
-    const REPLIED = 4;
 
     private static $valueToName = [
         self::UNKNOWN_EVENT => 'UNKNOWN_EVENT',
         self::CREATED => 'CREATED',
         self::UPDATED => 'UPDATED',
         self::DELETED => 'DELETED',
-        self::REPLIED => 'REPLIED',
     ];
 
     public static function name($value)
