@@ -46,7 +46,7 @@ class TicketServiceClient {
      */
     public function UpdateTicket(UpdateTicketInput $input, array $context = [])
     {
-        $path = "/tickets/".rawurlencode($input->getTicketId())."/close";
+        $path = "/tickets/".rawurlencode($input->getTicketId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");

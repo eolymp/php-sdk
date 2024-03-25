@@ -95,6 +95,12 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
      */
     protected $last_reply_at = null;
+    /**
+     * Cursor when ticket is queries in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     */
+    protected $cursor = '';
 
     /**
      * Constructor.
@@ -129,6 +135,8 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *           Timestamp when ticket was read by current user
      *     @type \Google\Protobuf\Timestamp $last_reply_at
      *           Timestamp when last reply was added
+     *     @type string $cursor
+     *           Cursor when ticket is queries in the list
      * }
      */
     public function __construct($data = NULL) {
@@ -492,6 +500,32 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_reply_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Cursor when ticket is queries in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @return string
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
+    }
+
+    /**
+     * Cursor when ticket is queries in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cursor = $var;
 
         return $this;
     }
