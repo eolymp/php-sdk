@@ -89,6 +89,12 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25;</code>
      */
     protected $read_at = null;
+    /**
+     * Timestamp when last reply was added
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
+     */
+    protected $last_reply_at = null;
 
     /**
      * Constructor.
@@ -121,6 +127,8 @@ class Ticket extends \Google\Protobuf\Internal\Message
      *           Timestamp when ticket was modified/replied.
      *     @type \Google\Protobuf\Timestamp $read_at
      *           Timestamp when ticket was read by current user
+     *     @type \Google\Protobuf\Timestamp $last_reply_at
+     *           Timestamp when last reply was added
      * }
      */
     public function __construct($data = NULL) {
@@ -458,6 +466,32 @@ class Ticket extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->read_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timestamp when last reply was added
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getLastReplyAt()
+    {
+        return $this->last_reply_at;
+    }
+
+    /**
+     * Timestamp when last reply was added
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastReplyAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_reply_at = $var;
 
         return $this;
     }
