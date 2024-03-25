@@ -39,41 +39,22 @@ class TicketServiceClient {
     }
 
     /**
-     * @param CloseTicketInput $input message
+     * @param UpdateTicketInput $input message
      * @param array $context request parameters
      *
-     * @return CloseTicketOutput output message
+     * @return UpdateTicketOutput output message
      */
-    public function CloseTicket(CloseTicketInput $input, array $context = [])
+    public function UpdateTicket(UpdateTicketInput $input, array $context = [])
     {
         $path = "/tickets/".rawurlencode($input->getTicketId())."/close";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.judge.TicketService/CloseTicket";
+        $context['name'] = "eolymp.judge.TicketService/UpdateTicket";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CloseTicketOutput::class, $context);
-    }
-
-    /**
-     * @param OpenTicketInput $input message
-     * @param array $context request parameters
-     *
-     * @return OpenTicketOutput output message
-     */
-    public function OpenTicket(OpenTicketInput $input, array $context = [])
-    {
-        $path = "/tickets/".rawurlencode($input->getTicketId())."/open";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setTicketId("");
-
-        $context['name'] = "eolymp.judge.TicketService/OpenTicket";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, OpenTicketOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateTicketOutput::class, $context);
     }
 
     /**

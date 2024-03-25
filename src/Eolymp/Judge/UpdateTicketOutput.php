@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.CloseTicketOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.UpdateTicketOutput</code>
  */
-class CloseTicketOutput extends \Google\Protobuf\Internal\Message
+class UpdateTicketOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**
