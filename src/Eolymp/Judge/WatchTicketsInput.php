@@ -22,6 +22,10 @@ class WatchTicketsInput extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * Generated from protobuf field <code>string status = 3;</code>
+     */
+    protected $status = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Ticket.Extra extra = 1123;</code>
      */
     private $extra;
@@ -34,6 +38,7 @@ class WatchTicketsInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $member_id
+     *     @type string $status
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -82,6 +87,28 @@ class WatchTicketsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 3;</code>
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status = $var;
 
         return $this;
     }
