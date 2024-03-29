@@ -226,22 +226,6 @@ class ContentServiceClient {
     }
 
     /**
-     * @param ListPathsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListPathsOutput output message
-     */
-    public function ListPaths(ListPathsInput $input, array $context = [])
-    {
-        $path = "/content/paths";
-
-        $context['name'] = "eolymp.content.ContentService/ListPaths";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPathsOutput::class, $context);
-    }
-
-    /**
      * @param ListParentsInput $input message
      * @param array $context request parameters
      *
