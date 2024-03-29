@@ -22,12 +22,6 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * deprecated: use extra instead
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     */
-    protected $render = false;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
      */
     private $extra;
@@ -40,8 +34,6 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $path
      *     @type string $locale
-     *     @type bool $render
-     *           deprecated: use extra instead
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -90,32 +82,6 @@ class DescribePathInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use extra instead
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * deprecated: use extra instead
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
 
         return $this;
     }

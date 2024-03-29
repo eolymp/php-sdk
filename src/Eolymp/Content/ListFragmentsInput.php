@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListFragmentsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * deprecated: use extra instead
-     *
-     * Generated from protobuf field <code>bool render = 1;</code>
-     */
-    protected $render = false;
-    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -46,8 +40,6 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $render
-     *           deprecated: use extra instead
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -59,32 +51,6 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Content\ContentService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * deprecated: use extra instead
-     *
-     * Generated from protobuf field <code>bool render = 1;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * deprecated: use extra instead
-     *
-     * Generated from protobuf field <code>bool render = 1;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
-
-        return $this;
     }
 
     /**
