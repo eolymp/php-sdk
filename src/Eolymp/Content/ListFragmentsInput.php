@@ -30,6 +30,10 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
      */
     private $extra;
@@ -45,6 +49,7 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type \Eolymp\Content\ListFragmentsInput\Filter $filters
      *           data filters
+     *     @type string $locale
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -123,6 +128,28 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Content\ListFragmentsInput_Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
