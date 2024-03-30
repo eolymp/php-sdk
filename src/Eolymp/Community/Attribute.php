@@ -48,6 +48,12 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     protected $hidden = false;
     /**
+     * attribute can only be changed by administrator
+     *
+     * Generated from protobuf field <code>bool readonly = 33;</code>
+     */
+    protected $readonly = false;
+    /**
      * validation
      *
      * Generated from protobuf field <code>string regexp = 100;</code>
@@ -95,6 +101,8 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           field is required (see field types for details)
      *     @type bool $hidden
      *           field is hidden (only visible to admin)
+     *     @type bool $readonly
+     *           attribute can only be changed by administrator
      *     @type string $regexp
      *           validation
      *     @type int $min
@@ -260,6 +268,32 @@ class Attribute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->hidden = $var;
+
+        return $this;
+    }
+
+    /**
+     * attribute can only be changed by administrator
+     *
+     * Generated from protobuf field <code>bool readonly = 33;</code>
+     * @return bool
+     */
+    public function getReadonly()
+    {
+        return $this->readonly;
+    }
+
+    /**
+     * attribute can only be changed by administrator
+     *
+     * Generated from protobuf field <code>bool readonly = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReadonly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->readonly = $var;
 
         return $this;
     }
