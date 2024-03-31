@@ -17,6 +17,22 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string problem_url = 1;</code>
      */
     protected $problem_url = '';
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>uint32 cost = 10;</code>
+     */
+    protected $cost = 0;
+    /**
+     * Generated from protobuf field <code>uint32 submit_limit = 20;</code>
+     */
+    protected $submit_limit = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy override_feedback_policy = 21;</code>
+     */
+    protected $override_feedback_policy = 0;
 
     /**
      * Constructor.
@@ -25,6 +41,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_url
+     *     @type string $problem_id
+     *     @type int $cost
+     *     @type int $submit_limit
+     *     @type int $override_feedback_policy
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +70,94 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 cost = 10;</code>
+     * @return int
+     */
+    public function getCost()
+    {
+        return $this->cost;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 cost = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCost($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cost = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 submit_limit = 20;</code>
+     * @return int
+     */
+    public function getSubmitLimit()
+    {
+        return $this->submit_limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 submit_limit = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSubmitLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->submit_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy override_feedback_policy = 21;</code>
+     * @return int
+     */
+    public function getOverrideFeedbackPolicy()
+    {
+        return $this->override_feedback_policy;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.FeedbackPolicy override_feedback_policy = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOverrideFeedbackPolicy($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\FeedbackPolicy::class);
+        $this->override_feedback_policy = $var;
 
         return $this;
     }

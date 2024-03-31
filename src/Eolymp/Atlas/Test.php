@@ -38,6 +38,12 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $example = false;
     /**
+     * Secret test, input and answer are never populated
+     *
+     * Generated from protobuf field <code>bool secret = 6;</code>
+     */
+    protected $secret = false;
+    /**
      * Score for passing this test.
      *
      * Generated from protobuf field <code>float score = 5;</code>
@@ -50,11 +56,19 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $input_object_id = '';
     /**
+     * Generated from protobuf field <code>string input_url = 11;</code>
+     */
+    protected $input_url = '';
+    /**
      * Answer Object ID, use keeper service to upload or download actual test data.
      *
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
      */
     protected $answer_object_id = '';
+    /**
+     * Generated from protobuf field <code>string answer_url = 21;</code>
+     */
+    protected $answer_url = '';
 
     /**
      * Constructor.
@@ -70,12 +84,16 @@ class Test extends \Google\Protobuf\Internal\Message
      *           Index, a sequential number, of the test within testset.
      *     @type bool $example
      *           Flag which defines if test should be shown in as an example in the problem statement.
+     *     @type bool $secret
+     *           Secret test, input and answer are never populated
      *     @type float $score
      *           Score for passing this test.
      *     @type string $input_object_id
      *           Input Object ID, use keeper service to upload or download actual test data.
+     *     @type string $input_url
      *     @type string $answer_object_id
      *           Answer Object ID, use keeper service to upload or download actual test data.
+     *     @type string $answer_url
      * }
      */
     public function __construct($data = NULL) {
@@ -188,6 +206,32 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Secret test, input and answer are never populated
+     *
+     * Generated from protobuf field <code>bool secret = 6;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Secret test, input and answer are never populated
+     *
+     * Generated from protobuf field <code>bool secret = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
      * Score for passing this test.
      *
      * Generated from protobuf field <code>float score = 5;</code>
@@ -240,6 +284,28 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string input_url = 11;</code>
+     * @return string
+     */
+    public function getInputUrl()
+    {
+        return $this->input_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->input_url = $var;
+
+        return $this;
+    }
+
+    /**
      * Answer Object ID, use keeper service to upload or download actual test data.
      *
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
@@ -261,6 +327,28 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->answer_object_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 21;</code>
+     * @return string
+     */
+    public function getAnswerUrl()
+    {
+        return $this->answer_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->answer_url = $var;
 
         return $this;
     }
