@@ -26,7 +26,7 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * header and footer are secret
+     * header, footer and files are secret
      *
      * Generated from protobuf field <code>bool secret = 4;</code>
      */
@@ -58,7 +58,7 @@ class Template extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $runtime
      *     @type bool $secret
-     *           header and footer are secret
+     *           header, footer and files are secret
      *     @type string $source
      *     @type string $header
      *     @type string $footer
@@ -137,7 +137,7 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * header and footer are secret
+     * header, footer and files are secret
      *
      * Generated from protobuf field <code>bool secret = 4;</code>
      * @return bool
@@ -148,7 +148,7 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * header and footer are secret
+     * header, footer and files are secret
      *
      * Generated from protobuf field <code>bool secret = 4;</code>
      * @param bool $var
