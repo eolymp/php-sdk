@@ -26,6 +26,12 @@ class Solution extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * runtime and source are secret
+     *
+     * Generated from protobuf field <code>bool secret = 4;</code>
+     */
+    protected $secret = false;
+    /**
      * programming language
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
@@ -37,6 +43,12 @@ class Solution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 11;</code>
      */
     protected $source = '';
+    /**
+     * source code
+     *
+     * Generated from protobuf field <code>string source_url = 12;</code>
+     */
+    protected $source_url = '';
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      */
@@ -52,9 +64,13 @@ class Solution extends \Google\Protobuf\Internal\Message
      *           unique identifier
      *     @type string $name
      *           solution name
+     *     @type bool $secret
+     *           runtime and source are secret
      *     @type string $runtime
      *           programming language
      *     @type string $source
+     *           source code
+     *     @type string $source_url
      *           source code
      *     @type int $type
      * }
@@ -117,6 +133,32 @@ class Solution extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * runtime and source are secret
+     *
+     * Generated from protobuf field <code>bool secret = 4;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * runtime and source are secret
+     *
+     * Generated from protobuf field <code>bool secret = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
      * programming language
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
@@ -164,6 +206,32 @@ class Solution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * source code
+     *
+     * Generated from protobuf field <code>string source_url = 12;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * source code
+     *
+     * Generated from protobuf field <code>string source_url = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
 
         return $this;
     }

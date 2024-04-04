@@ -26,6 +26,12 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
+     * header and footer are secret
+     *
+     * Generated from protobuf field <code>bool secret = 4;</code>
+     */
+    protected $secret = false;
+    /**
      * Generated from protobuf field <code>string source = 10;</code>
      */
     protected $source = '';
@@ -37,24 +43,6 @@ class Template extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string footer = 12;</code>
      */
     protected $footer = '';
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string source_ern = 20;</code>
-     */
-    protected $source_ern = '';
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string header_ern = 21;</code>
-     */
-    protected $header_ern = '';
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string footer_ern = 22;</code>
-     */
-    protected $footer_ern = '';
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
      */
@@ -69,15 +57,11 @@ class Template extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $problem_id
      *     @type string $runtime
+     *     @type bool $secret
+     *           header and footer are secret
      *     @type string $source
      *     @type string $header
      *     @type string $footer
-     *     @type string $source_ern
-     *           deprecated
-     *     @type string $header_ern
-     *           deprecated
-     *     @type string $footer_ern
-     *           deprecated
      *     @type \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $files
      * }
      */
@@ -153,6 +137,32 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * header and footer are secret
+     *
+     * Generated from protobuf field <code>bool secret = 4;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * header and footer are secret
+     *
+     * Generated from protobuf field <code>bool secret = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string source = 10;</code>
      * @return string
      */
@@ -214,84 +224,6 @@ class Template extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->footer = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string source_ern = 20;</code>
-     * @return string
-     */
-    public function getSourceErn()
-    {
-        return $this->source_ern;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string source_ern = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSourceErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source_ern = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string header_ern = 21;</code>
-     * @return string
-     */
-    public function getHeaderErn()
-    {
-        return $this->header_ern;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string header_ern = 21;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHeaderErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->header_ern = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string footer_ern = 22;</code>
-     * @return string
-     */
-    public function getFooterErn()
-    {
-        return $this->footer_ern;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string footer_ern = 22;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFooterErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->footer_ern = $var;
 
         return $this;
     }
