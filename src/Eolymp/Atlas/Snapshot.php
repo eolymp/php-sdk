@@ -22,7 +22,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      */
     protected $testing = null;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Verifier checker = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
      */
     protected $checker = null;
     /**
@@ -66,7 +66,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Atlas\Problem $problem
      *     @type \Eolymp\Atlas\TestingConfig $testing
-     *     @type \Eolymp\Executor\Verifier $checker
+     *     @type \Eolymp\Executor\Checker $checker
      *     @type \Eolymp\Executor\Interactor $interactor
      *     @type \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
      *     @type \Eolymp\Atlas\Template[]|\Google\Protobuf\Internal\RepeatedField $templates
@@ -127,8 +127,8 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Verifier checker = 2;</code>
-     * @return \Eolymp\Executor\Verifier
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
+     * @return \Eolymp\Executor\Checker
      */
     public function getChecker()
     {
@@ -136,13 +136,13 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Verifier checker = 2;</code>
-     * @param \Eolymp\Executor\Verifier $var
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
+     * @param \Eolymp\Executor\Checker $var
      * @return $this
      */
     public function setChecker($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Verifier::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
         $this->checker = $var;
 
         return $this;

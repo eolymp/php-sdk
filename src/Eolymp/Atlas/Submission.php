@@ -56,6 +56,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
+     * source code URL
+     *
+     * Generated from protobuf field <code>string source_url = 13;</code>
+     */
+    protected $source_url = '';
+    /**
      * source code signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
@@ -152,6 +158,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           programming language
      *     @type string $source
      *           source code
+     *     @type string $source_url
+     *           source code URL
      *     @type string $signature
      *           source code signature
      *     @type int $status
@@ -362,6 +370,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * source code URL
+     *
+     * Generated from protobuf field <code>string source_url = 13;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * source code URL
+     *
+     * Generated from protobuf field <code>string source_url = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
 
         return $this;
     }

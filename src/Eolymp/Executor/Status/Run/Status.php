@@ -54,7 +54,7 @@ class Status
      */
     const RUNTIME_ERROR = 6;
     /**
-     * executed (it is a final status for tasks without verifier)
+     * executed (it is a final status for tasks without checker)
      *
      * Generated from protobuf enum <code>EXECUTED = 7;</code>
      */
@@ -72,7 +72,7 @@ class Status
      */
     const WRONG_ANSWER = 9;
     /**
-     * executed, but verifier returned an error during execution (use verifier_log to learn more about failure)
+     * executed, but checker returned an error during execution (use checker_log to learn more about failure)
      *
      * Generated from protobuf enum <code>VERIFICATION_FAILURE = 10;</code>
      */

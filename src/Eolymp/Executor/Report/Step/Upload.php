@@ -18,10 +18,6 @@ class Upload extends \Google\Protobuf\Internal\Message
      */
     protected $target_name = '';
     /**
-     * Generated from protobuf field <code>string target_ern = 2;</code>
-     */
-    protected $target_ern = '';
-    /**
      * Generated from protobuf field <code>string target_url = 3;</code>
      */
     protected $target_url = '';
@@ -33,7 +29,6 @@ class Upload extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $target_name
-     *     @type string $target_ern
      *     @type string $target_url
      * }
      */
@@ -60,28 +55,6 @@ class Upload extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->target_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string target_ern = 2;</code>
-     * @return string
-     */
-    public function getTargetErn()
-    {
-        return $this->target_ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string target_ern = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTargetErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->target_ern = $var;
 
         return $this;
     }

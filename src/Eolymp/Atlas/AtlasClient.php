@@ -226,41 +226,41 @@ class AtlasClient {
     }
 
     /**
-     * @param UpdateVerifierInput $input message
+     * @param UpdateCheckerInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateVerifierOutput output message
+     * @return UpdateCheckerOutput output message
      */
-    public function UpdateVerifier(UpdateVerifierInput $input, array $context = [])
+    public function UpdateChecker(UpdateCheckerInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/verifier";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/checker";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
 
-        $context['name'] = "eolymp.atlas.Atlas/UpdateVerifier";
+        $context['name'] = "eolymp.atlas.Atlas/UpdateChecker";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateVerifierOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateCheckerOutput::class, $context);
     }
 
     /**
-     * @param DescribeVerifierInput $input message
+     * @param DescribeCheckerInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeVerifierOutput output message
+     * @return DescribeCheckerOutput output message
      */
-    public function DescribeVerifier(DescribeVerifierInput $input, array $context = [])
+    public function DescribeChecker(DescribeCheckerInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/verifier";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/checker";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
 
-        $context['name'] = "eolymp.atlas.Atlas/DescribeVerifier";
+        $context['name'] = "eolymp.atlas.Atlas/DescribeChecker";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeVerifierOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCheckerOutput::class, $context);
     }
 
     /**

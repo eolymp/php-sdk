@@ -28,7 +28,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * score, number of points awarded by verifier
+     * score, number of points awarded by checker
      *
      * Generated from protobuf field <code>float score = 80;</code>
      */
@@ -88,73 +88,37 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $signal = 0;
     /**
-     * deprecated, use untruncated output_url
-     * output data
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string output = 10;</code>
-     */
-    protected $output = '';
-    /**
      * Generated from protobuf field <code>string output_url = 11;</code>
      */
     protected $output_url = '';
-    /**
-     * deprecated, use untruncated stderr_url
-     * stderr data
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string stderr = 20;</code>
-     */
-    protected $stderr = '';
     /**
      * Generated from protobuf field <code>string stderr_url = 21;</code>
      */
     protected $stderr_url = '';
     /**
-     * deprecated, use untruncated verifier_log_url
-     * output (incl. stderr) produced by verifier during execution
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
+     * URL for checker's full log
      *
-     * Generated from protobuf field <code>string verifier_log = 30;</code>
+     * Generated from protobuf field <code>string checker_log_url = 31;</code>
      */
-    protected $verifier_log = '';
+    protected $checker_log_url = '';
     /**
-     * URL for verifier's full log
+     * checker's wall time usage in milliseconds
      *
-     * Generated from protobuf field <code>string verifier_log_url = 31;</code>
+     * Generated from protobuf field <code>uint32 checker_wall_time_usage = 32;</code>
      */
-    protected $verifier_log_url = '';
+    protected $checker_wall_time_usage = 0;
     /**
-     * verifier's wall time usage in milliseconds
+     * checker's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint32 verifier_wall_time_usage = 32;</code>
+     * Generated from protobuf field <code>uint64 checker_memory_usage = 33;</code>
      */
-    protected $verifier_wall_time_usage = 0;
+    protected $checker_memory_usage = 0;
     /**
-     * verifier's wall time usage in bytes
+     * checker's exit code
      *
-     * Generated from protobuf field <code>uint64 verifier_memory_usage = 33;</code>
+     * Generated from protobuf field <code>uint32 checker_exit_code = 34;</code>
      */
-    protected $verifier_memory_usage = 0;
-    /**
-     * verifier's exit code
-     *
-     * Generated from protobuf field <code>uint32 verifier_exit_code = 34;</code>
-     */
-    protected $verifier_exit_code = 0;
-    /**
-     * deprecated, use untruncated interactor_log_url
-     * output (incl. stderr) produced by interactor during execution
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string interactor_log = 40;</code>
-     */
-    protected $interactor_log = '';
+    protected $checker_exit_code = 0;
     /**
      * URL for interactor's full log
      *
@@ -191,7 +155,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *           run status
      *     @type float $score
-     *           score, number of points awarded by verifier
+     *           score, number of points awarded by checker
      *     @type float $cost
      *           cost, maximum number of points awarded for the test (as defined in the task)
      *     @type int $wall_time_usage
@@ -210,36 +174,16 @@ class Run extends \Google\Protobuf\Internal\Message
      *           program exit code
      *     @type int $signal
      *           might contain signal used to kill program
-     *     @type string $output
-     *           deprecated, use untruncated output_url
-     *           output data
-     *           only populated if debug was set to true
-     *           up to 5KB, the rest is truncated
      *     @type string $output_url
-     *     @type string $stderr
-     *           deprecated, use untruncated stderr_url
-     *           stderr data
-     *           only populated if debug was set to true
-     *           up to 5KB, the rest is truncated
      *     @type string $stderr_url
-     *     @type string $verifier_log
-     *           deprecated, use untruncated verifier_log_url
-     *           output (incl. stderr) produced by verifier during execution
-     *           only populated if debug was set to true
-     *           up to 5KB, the rest is truncated
-     *     @type string $verifier_log_url
-     *           URL for verifier's full log
-     *     @type int $verifier_wall_time_usage
-     *           verifier's wall time usage in milliseconds
-     *     @type int|string $verifier_memory_usage
-     *           verifier's wall time usage in bytes
-     *     @type int $verifier_exit_code
-     *           verifier's exit code
-     *     @type string $interactor_log
-     *           deprecated, use untruncated interactor_log_url
-     *           output (incl. stderr) produced by interactor during execution
-     *           only populated if debug was set to true
-     *           up to 5KB, the rest is truncated
+     *     @type string $checker_log_url
+     *           URL for checker's full log
+     *     @type int $checker_wall_time_usage
+     *           checker's wall time usage in milliseconds
+     *     @type int|string $checker_memory_usage
+     *           checker's wall time usage in bytes
+     *     @type int $checker_exit_code
+     *           checker's exit code
      *     @type string $interactor_log_url
      *           URL for interactor's full log
      *     @type int $interactor_wall_time_usage
@@ -308,7 +252,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * score, number of points awarded by verifier
+     * score, number of points awarded by checker
      *
      * Generated from protobuf field <code>float score = 80;</code>
      * @return float
@@ -319,7 +263,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * score, number of points awarded by verifier
+     * score, number of points awarded by checker
      *
      * Generated from protobuf field <code>float score = 80;</code>
      * @param float $var
@@ -568,38 +512,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use untruncated output_url
-     * output data
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string output = 10;</code>
-     * @return string
-     */
-    public function getOutput()
-    {
-        return $this->output;
-    }
-
-    /**
-     * deprecated, use untruncated output_url
-     * output data
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string output = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setOutput($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->output = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string output_url = 11;</code>
      * @return string
      */
@@ -617,38 +529,6 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->output_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use untruncated stderr_url
-     * stderr data
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string stderr = 20;</code>
-     * @return string
-     */
-    public function getStderr()
-    {
-        return $this->stderr;
-    }
-
-    /**
-     * deprecated, use untruncated stderr_url
-     * stderr data
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string stderr = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStderr($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->stderr = $var;
 
         return $this;
     }
@@ -676,169 +556,105 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use untruncated verifier_log_url
-     * output (incl. stderr) produced by verifier during execution
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
+     * URL for checker's full log
      *
-     * Generated from protobuf field <code>string verifier_log = 30;</code>
+     * Generated from protobuf field <code>string checker_log_url = 31;</code>
      * @return string
      */
-    public function getVerifierLog()
+    public function getCheckerLogUrl()
     {
-        return $this->verifier_log;
+        return $this->checker_log_url;
     }
 
     /**
-     * deprecated, use untruncated verifier_log_url
-     * output (incl. stderr) produced by verifier during execution
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
+     * URL for checker's full log
      *
-     * Generated from protobuf field <code>string verifier_log = 30;</code>
+     * Generated from protobuf field <code>string checker_log_url = 31;</code>
      * @param string $var
      * @return $this
      */
-    public function setVerifierLog($var)
+    public function setCheckerLogUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->verifier_log = $var;
+        $this->checker_log_url = $var;
 
         return $this;
     }
 
     /**
-     * URL for verifier's full log
+     * checker's wall time usage in milliseconds
      *
-     * Generated from protobuf field <code>string verifier_log_url = 31;</code>
-     * @return string
-     */
-    public function getVerifierLogUrl()
-    {
-        return $this->verifier_log_url;
-    }
-
-    /**
-     * URL for verifier's full log
-     *
-     * Generated from protobuf field <code>string verifier_log_url = 31;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setVerifierLogUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->verifier_log_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * verifier's wall time usage in milliseconds
-     *
-     * Generated from protobuf field <code>uint32 verifier_wall_time_usage = 32;</code>
+     * Generated from protobuf field <code>uint32 checker_wall_time_usage = 32;</code>
      * @return int
      */
-    public function getVerifierWallTimeUsage()
+    public function getCheckerWallTimeUsage()
     {
-        return $this->verifier_wall_time_usage;
+        return $this->checker_wall_time_usage;
     }
 
     /**
-     * verifier's wall time usage in milliseconds
+     * checker's wall time usage in milliseconds
      *
-     * Generated from protobuf field <code>uint32 verifier_wall_time_usage = 32;</code>
+     * Generated from protobuf field <code>uint32 checker_wall_time_usage = 32;</code>
      * @param int $var
      * @return $this
      */
-    public function setVerifierWallTimeUsage($var)
+    public function setCheckerWallTimeUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->verifier_wall_time_usage = $var;
+        $this->checker_wall_time_usage = $var;
 
         return $this;
     }
 
     /**
-     * verifier's wall time usage in bytes
+     * checker's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint64 verifier_memory_usage = 33;</code>
+     * Generated from protobuf field <code>uint64 checker_memory_usage = 33;</code>
      * @return int|string
      */
-    public function getVerifierMemoryUsage()
+    public function getCheckerMemoryUsage()
     {
-        return $this->verifier_memory_usage;
+        return $this->checker_memory_usage;
     }
 
     /**
-     * verifier's wall time usage in bytes
+     * checker's wall time usage in bytes
      *
-     * Generated from protobuf field <code>uint64 verifier_memory_usage = 33;</code>
+     * Generated from protobuf field <code>uint64 checker_memory_usage = 33;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setVerifierMemoryUsage($var)
+    public function setCheckerMemoryUsage($var)
     {
         GPBUtil::checkUint64($var);
-        $this->verifier_memory_usage = $var;
+        $this->checker_memory_usage = $var;
 
         return $this;
     }
 
     /**
-     * verifier's exit code
+     * checker's exit code
      *
-     * Generated from protobuf field <code>uint32 verifier_exit_code = 34;</code>
+     * Generated from protobuf field <code>uint32 checker_exit_code = 34;</code>
      * @return int
      */
-    public function getVerifierExitCode()
+    public function getCheckerExitCode()
     {
-        return $this->verifier_exit_code;
+        return $this->checker_exit_code;
     }
 
     /**
-     * verifier's exit code
+     * checker's exit code
      *
-     * Generated from protobuf field <code>uint32 verifier_exit_code = 34;</code>
+     * Generated from protobuf field <code>uint32 checker_exit_code = 34;</code>
      * @param int $var
      * @return $this
      */
-    public function setVerifierExitCode($var)
+    public function setCheckerExitCode($var)
     {
         GPBUtil::checkUint32($var);
-        $this->verifier_exit_code = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use untruncated interactor_log_url
-     * output (incl. stderr) produced by interactor during execution
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string interactor_log = 40;</code>
-     * @return string
-     */
-    public function getInteractorLog()
-    {
-        return $this->interactor_log;
-    }
-
-    /**
-     * deprecated, use untruncated interactor_log_url
-     * output (incl. stderr) produced by interactor during execution
-     * only populated if debug was set to true
-     * up to 5KB, the rest is truncated
-     *
-     * Generated from protobuf field <code>string interactor_log = 40;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInteractorLog($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->interactor_log = $var;
+        $this->checker_exit_code = $var;
 
         return $this;
     }

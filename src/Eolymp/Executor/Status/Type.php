@@ -37,7 +37,7 @@ class Type
     /**
      * Failure report means agent has encountered an failure and can't perform runs.
      * Failure, unlike error, happens due to a problem with executor agent itself or task configuration, such as
-     * invalid object id references or verifier source does not compile. Detailed description of the failure can be
+     * invalid object id references or checker source does not compile. Detailed description of the failure can be
      * found in the failure field.
      *
      * Generated from protobuf enum <code>FAILURE = 3;</code>

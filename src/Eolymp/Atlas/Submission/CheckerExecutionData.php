@@ -9,30 +9,30 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.Submission.VerifierExecutionData</code>
+ * Generated from protobuf message <code>eolymp.atlas.Submission.CheckerExecutionData</code>
  */
-class VerifierExecutionData extends \Google\Protobuf\Internal\Message
+class CheckerExecutionData extends \Google\Protobuf\Internal\Message
 {
     /**
-     * URL for verifiers full log
+     * URL for checkers full log
      *
      * Generated from protobuf field <code>string log_url = 1;</code>
      */
     protected $log_url = '';
     /**
-     * verifiers wall time usage in milliseconds
+     * checkers wall time usage in milliseconds
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
      */
     protected $wall_time_usage = 0;
     /**
-     * verifiers wall time usage in bytes
+     * checkers wall time usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_usage = 3;</code>
      */
     protected $memory_usage = 0;
     /**
-     * verifiers exit code
+     * checkers exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 4;</code>
      */
@@ -45,13 +45,13 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $log_url
-     *           URL for verifiers full log
+     *           URL for checkers full log
      *     @type int $wall_time_usage
-     *           verifiers wall time usage in milliseconds
+     *           checkers wall time usage in milliseconds
      *     @type int|string $memory_usage
-     *           verifiers wall time usage in bytes
+     *           checkers wall time usage in bytes
      *     @type int $exit_code
-     *           verifiers exit code
+     *           checkers exit code
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * URL for verifiers full log
+     * URL for checkers full log
      *
      * Generated from protobuf field <code>string log_url = 1;</code>
      * @return string
@@ -71,7 +71,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * URL for verifiers full log
+     * URL for checkers full log
      *
      * Generated from protobuf field <code>string log_url = 1;</code>
      * @param string $var
@@ -86,7 +86,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifiers wall time usage in milliseconds
+     * checkers wall time usage in milliseconds
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
      * @return int
@@ -97,7 +97,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifiers wall time usage in milliseconds
+     * checkers wall time usage in milliseconds
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
      * @param int $var
@@ -112,7 +112,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifiers wall time usage in bytes
+     * checkers wall time usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_usage = 3;</code>
      * @return int|string
@@ -123,7 +123,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifiers wall time usage in bytes
+     * checkers wall time usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_usage = 3;</code>
      * @param int|string $var
@@ -138,7 +138,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifiers exit code
+     * checkers exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 4;</code>
      * @return int
@@ -149,7 +149,7 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * verifiers exit code
+     * checkers exit code
      *
      * Generated from protobuf field <code>uint32 exit_code = 4;</code>
      * @param int $var
@@ -166,5 +166,5 @@ class VerifierExecutionData extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VerifierExecutionData::class, \Eolymp\Atlas\Submission_VerifierExecutionData::class);
+class_alias(CheckerExecutionData::class, \Eolymp\Atlas\Submission_CheckerExecutionData::class);
 

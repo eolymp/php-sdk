@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.UpdateVerifierOutput</code>
+ * Generated from protobuf message <code>eolymp.atlas.UpdateCheckerOutput</code>
  */
-class UpdateVerifierOutput extends \Google\Protobuf\Internal\Message
+class UpdateCheckerOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

@@ -65,7 +65,7 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $use_file_io = false;
     /**
-     * Combine stderr and stdout when capturing output. Verifier will use combined output as answer. Status will capture
+     * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
      *
      * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
@@ -96,11 +96,11 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     private $constraints;
     /**
-     * Verifier configuration.
+     * Checker configuration.
      *
-     * Generated from protobuf field <code>.eolymp.executor.Verifier verifier = 24;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
      */
-    protected $verifier = null;
+    protected $checker = null;
     /**
      * Interactor configuration
      *
@@ -148,7 +148,7 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
      *           Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
      *     @type bool $redirect_stderr_to_stdout
-     *           Combine stderr and stdout when capturing output. Verifier will use combined output as answer. Status will capture
+     *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
      *     @type bool $use_workspace_archive
      *           Create workspace archive for every run and upload it to the storage
@@ -158,8 +158,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
      *           Execution constraints, define limits imposed on each run.
-     *     @type \Eolymp\Executor\Verifier $verifier
-     *           Verifier configuration.
+     *     @type \Eolymp\Executor\Checker $checker
+     *           Checker configuration.
      *     @type \Eolymp\Executor\Interactor $interactor
      *           Interactor configuration
      *     @type \Eolymp\Executor\Task\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
@@ -370,7 +370,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Combine stderr and stdout when capturing output. Verifier will use combined output as answer. Status will capture
+     * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
      *
      * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
@@ -382,7 +382,7 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Combine stderr and stdout when capturing output. Verifier will use combined output as answer. Status will capture
+     * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
      *
      * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
@@ -502,27 +502,27 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Verifier configuration.
+     * Checker configuration.
      *
-     * Generated from protobuf field <code>.eolymp.executor.Verifier verifier = 24;</code>
-     * @return \Eolymp\Executor\Verifier
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     * @return \Eolymp\Executor\Checker
      */
-    public function getVerifier()
+    public function getChecker()
     {
-        return $this->verifier;
+        return $this->checker;
     }
 
     /**
-     * Verifier configuration.
+     * Checker configuration.
      *
-     * Generated from protobuf field <code>.eolymp.executor.Verifier verifier = 24;</code>
-     * @param \Eolymp\Executor\Verifier $var
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     * @param \Eolymp\Executor\Checker $var
      * @return $this
      */
-    public function setVerifier($var)
+    public function setChecker($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Verifier::class);
-        $this->verifier = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
+        $this->checker = $var;
 
         return $this;
     }

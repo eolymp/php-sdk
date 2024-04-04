@@ -48,7 +48,7 @@ class Status
      */
     const BLOCKED = 11;
     /**
-     * verifier couldn't run
+     * checker couldn't run
      *
      * Generated from protobuf enum <code>VERIFICATION_ERROR = 9;</code>
      */

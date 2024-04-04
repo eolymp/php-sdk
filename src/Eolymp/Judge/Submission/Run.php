@@ -72,9 +72,9 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $verdict = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Submission.CheckerExecutionData checker_execution_data = 30;</code>
      */
-    protected $verifier_execution_data = null;
+    protected $checker_execution_data = null;
     /**
      * Generated from protobuf field <code>.eolymp.judge.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
      */
@@ -103,7 +103,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *     @type int $verdict
      *           overall verdict based on verdicts in groups/runs
-     *     @type \Eolymp\Judge\Submission\VerifierExecutionData $verifier_execution_data
+     *     @type \Eolymp\Judge\Submission\CheckerExecutionData $checker_execution_data
      *     @type \Eolymp\Judge\Submission\InteractorExecutionData $interactor_execution_data
      * }
      */
@@ -397,23 +397,23 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
-     * @return \Eolymp\Judge\Submission\VerifierExecutionData
+     * Generated from protobuf field <code>.eolymp.judge.Submission.CheckerExecutionData checker_execution_data = 30;</code>
+     * @return \Eolymp\Judge\Submission\CheckerExecutionData
      */
-    public function getVerifierExecutionData()
+    public function getCheckerExecutionData()
     {
-        return $this->verifier_execution_data;
+        return $this->checker_execution_data;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
-     * @param \Eolymp\Judge\Submission\VerifierExecutionData $var
+     * Generated from protobuf field <code>.eolymp.judge.Submission.CheckerExecutionData checker_execution_data = 30;</code>
+     * @param \Eolymp\Judge\Submission\CheckerExecutionData $var
      * @return $this
      */
-    public function setVerifierExecutionData($var)
+    public function setCheckerExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission_VerifierExecutionData::class);
-        $this->verifier_execution_data = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission_CheckerExecutionData::class);
+        $this->checker_execution_data = $var;
 
         return $this;
     }

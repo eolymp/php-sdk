@@ -16,10 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Write extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string source_ern = 1;</code>
-     */
-    protected $source_ern = '';
-    /**
      * Generated from protobuf field <code>string source_url = 5;</code>
      */
     protected $source_url = '';
@@ -44,7 +40,6 @@ class Write extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $source_ern
      *     @type string $source_url
      *     @type string $target_actor
      *     @type string $target_path
@@ -55,28 +50,6 @@ class Write extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Executor\Job::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string source_ern = 1;</code>
-     * @return string
-     */
-    public function getSourceErn()
-    {
-        return $this->source_ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string source_ern = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSourceErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source_ern = $var;
-
-        return $this;
     }
 
     /**

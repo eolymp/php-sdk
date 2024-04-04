@@ -55,35 +55,35 @@ class TestingServiceClient {
     }
 
     /**
-     * @param UpdateVerifierInput $input message
+     * @param UpdateCheckerInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateVerifierOutput output message
+     * @return UpdateCheckerOutput output message
      */
-    public function UpdateChecker(UpdateVerifierInput $input, array $context = [])
+    public function UpdateChecker(UpdateCheckerInput $input, array $context = [])
     {
-        $path = "/verifier";
+        $path = "/checker";
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateChecker";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateVerifierOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateCheckerOutput::class, $context);
     }
 
     /**
-     * @param DescribeVerifierInput $input message
+     * @param DescribeCheckerInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeVerifierOutput output message
+     * @return DescribeCheckerOutput output message
      */
-    public function DescribeChecker(DescribeVerifierInput $input, array $context = [])
+    public function DescribeChecker(DescribeCheckerInput $input, array $context = [])
     {
-        $path = "/verifier";
+        $path = "/checker";
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeChecker";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeVerifierOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCheckerOutput::class, $context);
     }
 
     /**

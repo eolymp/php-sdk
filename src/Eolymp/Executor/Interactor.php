@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Interactor extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Verifier type (see types enumeration for details)
+     * Interactor type (see types enumeration for details)
      *
      * Generated from protobuf field <code>.eolymp.executor.Interactor.Type type = 1;</code>
      */
@@ -28,11 +28,23 @@ class Interactor extends \Google\Protobuf\Internal\Message
      */
     protected $lang = '';
     /**
-     * Source code for interactor
+     * deprecated
      *
      * Generated from protobuf field <code>string source = 3;</code>
      */
     protected $source = '';
+    /**
+     * Source code for interactor
+     *
+     * Generated from protobuf field <code>string source_url = 8;</code>
+     */
+    protected $source_url = '';
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     */
+    protected $secret = false;
     /**
      * Additional files placed into workdir during compilation and execution
      *
@@ -47,11 +59,15 @@ class Interactor extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $type
-     *           Verifier type (see types enumeration for details)
+     *           Interactor type (see types enumeration for details)
      *     @type string $lang
      *           Programming language in which interactor is written
      *     @type string $source
+     *           deprecated
+     *     @type string $source_url
      *           Source code for interactor
+     *     @type bool $secret
+     *           Secret means checker code and configuration must not be exposed to users
      *     @type \Eolymp\Executor\Interactor\File[]|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
      * }
@@ -62,7 +78,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Verifier type (see types enumeration for details)
+     * Interactor type (see types enumeration for details)
      *
      * Generated from protobuf field <code>.eolymp.executor.Interactor.Type type = 1;</code>
      * @return int
@@ -73,7 +89,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Verifier type (see types enumeration for details)
+     * Interactor type (see types enumeration for details)
      *
      * Generated from protobuf field <code>.eolymp.executor.Interactor.Type type = 1;</code>
      * @param int $var
@@ -114,7 +130,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code for interactor
+     * deprecated
      *
      * Generated from protobuf field <code>string source = 3;</code>
      * @return string
@@ -125,7 +141,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code for interactor
+     * deprecated
      *
      * Generated from protobuf field <code>string source = 3;</code>
      * @param string $var
@@ -135,6 +151,58 @@ class Interactor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Source code for interactor
+     *
+     * Generated from protobuf field <code>string source_url = 8;</code>
+     * @return string
+     */
+    public function getSourceUrl()
+    {
+        return $this->source_url;
+    }
+
+    /**
+     * Source code for interactor
+     *
+     * Generated from protobuf field <code>string source_url = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSourceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
 
         return $this;
     }

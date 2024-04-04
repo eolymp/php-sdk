@@ -72,7 +72,7 @@ class Status
      */
     const RUNTIME_ERROR = 8;
     /**
-     * verifier couldn't run
+     * checker couldn't run
      *
      * Generated from protobuf enum <code>VERIFICATION_ERROR = 9;</code>
      */

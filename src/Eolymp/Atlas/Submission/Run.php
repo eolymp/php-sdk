@@ -74,13 +74,25 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $verdict = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
      */
-    protected $verifier_execution_data = null;
+    protected $stats = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
+     */
+    protected $checker_execution_data = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 31;</code>
+     */
+    protected $checker_stats = null;
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
      */
     protected $interactor_execution_data = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 41;</code>
+     */
+    protected $interactor_stats = null;
 
     /**
      * Constructor.
@@ -105,8 +117,11 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *     @type int $status
      *     @type int $verdict
-     *     @type \Eolymp\Atlas\Submission\VerifierExecutionData $verifier_execution_data
+     *     @type \Eolymp\Executor\Stats $stats
+     *     @type \Eolymp\Atlas\Submission\CheckerExecutionData $checker_execution_data
+     *     @type \Eolymp\Executor\Stats $checker_stats
      *     @type \Eolymp\Atlas\Submission\InteractorExecutionData $interactor_execution_data
+     *     @type \Eolymp\Executor\Stats $interactor_stats
      * }
      */
     public function __construct($data = NULL) {
@@ -417,23 +432,67 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
-     * @return \Eolymp\Atlas\Submission\VerifierExecutionData
+     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
+     * @return \Eolymp\Executor\Stats
      */
-    public function getVerifierExecutionData()
+    public function getStats()
     {
-        return $this->verifier_execution_data;
+        return $this->stats;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.VerifierExecutionData verifier_execution_data = 30;</code>
-     * @param \Eolymp\Atlas\Submission\VerifierExecutionData $var
+     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
+     * @param \Eolymp\Executor\Stats $var
      * @return $this
      */
-    public function setVerifierExecutionData($var)
+    public function setStats($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_VerifierExecutionData::class);
-        $this->verifier_execution_data = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
+        $this->stats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
+     * @return \Eolymp\Atlas\Submission\CheckerExecutionData
+     */
+    public function getCheckerExecutionData()
+    {
+        return $this->checker_execution_data;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
+     * @param \Eolymp\Atlas\Submission\CheckerExecutionData $var
+     * @return $this
+     */
+    public function setCheckerExecutionData($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_CheckerExecutionData::class);
+        $this->checker_execution_data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 31;</code>
+     * @return \Eolymp\Executor\Stats
+     */
+    public function getCheckerStats()
+    {
+        return $this->checker_stats;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 31;</code>
+     * @param \Eolymp\Executor\Stats $var
+     * @return $this
+     */
+    public function setCheckerStats($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
+        $this->checker_stats = $var;
 
         return $this;
     }
@@ -456,6 +515,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_InteractorExecutionData::class);
         $this->interactor_execution_data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 41;</code>
+     * @return \Eolymp\Executor\Stats
+     */
+    public function getInteractorStats()
+    {
+        return $this->interactor_stats;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 41;</code>
+     * @param \Eolymp\Executor\Stats $var
+     * @return $this
+     */
+    public function setInteractorStats($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
+        $this->interactor_stats = $var;
 
         return $this;
     }

@@ -9,20 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DescribeVerifierInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.UpdateCheckerInput</code>
  */
-class DescribeVerifierInput extends \Google\Protobuf\Internal\Message
+class UpdateCheckerInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
     /**
-     * request data for specific problem version
-     *
-     * Generated from protobuf field <code>uint32 version = 100;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
      */
-    protected $version = 0;
+    protected $checker = null;
 
     /**
      * Constructor.
@@ -31,8 +29,7 @@ class DescribeVerifierInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type int $version
-     *           request data for specific problem version
+     *     @type \Eolymp\Executor\Checker $checker
      * }
      */
     public function __construct($data = NULL) {
@@ -63,27 +60,23 @@ class DescribeVerifierInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * request data for specific problem version
-     *
-     * Generated from protobuf field <code>uint32 version = 100;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
+     * @return \Eolymp\Executor\Checker
      */
-    public function getVersion()
+    public function getChecker()
     {
-        return $this->version;
+        return $this->checker;
     }
 
     /**
-     * request data for specific problem version
-     *
-     * Generated from protobuf field <code>uint32 version = 100;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
+     * @param \Eolymp\Executor\Checker $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setChecker($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->version = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
+        $this->checker = $var;
 
         return $this;
     }

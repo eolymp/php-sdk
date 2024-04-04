@@ -9,18 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.UpdateVerifierInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.DescribeCheckerInput</code>
  */
-class UpdateVerifierInput extends \Google\Protobuf\Internal\Message
+class DescribeCheckerInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Verifier verifier = 2;</code>
+     * request data for specific problem version
+     *
+     * Generated from protobuf field <code>uint32 version = 100;</code>
      */
-    protected $verifier = null;
+    protected $version = 0;
 
     /**
      * Constructor.
@@ -29,7 +31,8 @@ class UpdateVerifierInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type \Eolymp\Executor\Verifier $verifier
+     *     @type int $version
+     *           request data for specific problem version
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +63,27 @@ class UpdateVerifierInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Verifier verifier = 2;</code>
-     * @return \Eolymp\Executor\Verifier
+     * request data for specific problem version
+     *
+     * Generated from protobuf field <code>uint32 version = 100;</code>
+     * @return int
      */
-    public function getVerifier()
+    public function getVersion()
     {
-        return $this->verifier;
+        return $this->version;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Verifier verifier = 2;</code>
-     * @param \Eolymp\Executor\Verifier $var
+     * request data for specific problem version
+     *
+     * Generated from protobuf field <code>uint32 version = 100;</code>
+     * @param int $var
      * @return $this
      */
-    public function setVerifier($var)
+    public function setVersion($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Verifier::class);
-        $this->verifier = $var;
+        GPBUtil::checkUint32($var);
+        $this->version = $var;
 
         return $this;
     }

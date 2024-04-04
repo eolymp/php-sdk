@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Job represents task to be executed by judge agent.
+ * deprecated
  *
  * Generated from protobuf message <code>eolymp.executor.Job</code>
  */

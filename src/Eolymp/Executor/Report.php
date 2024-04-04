@@ -10,6 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Status represents results of the executing task.
+ * deprecated
  *
  * Generated from protobuf message <code>eolymp.executor.Report</code>
  */
