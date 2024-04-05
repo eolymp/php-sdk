@@ -47,6 +47,13 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $estimate = 0;
     /**
+     * Score weight among other entries in the section. For example, entry with weight 2 will give twice as much points
+     * as entry with weight 1. Entry with weight 0 will not give any points.
+     *
+     * Generated from protobuf field <code>uint32 weight = 30;</code>
+     */
+    protected $weight = 0;
+    /**
      * List of nested entries, read only, only populated when calling DescribeTOC API
      *
      * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 900;</code>
@@ -70,6 +77,9 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type int $estimate
      *           Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
      *           For section entries this represents sum of its nested entries.
+     *     @type int $weight
+     *           Score weight among other entries in the section. For example, entry with weight 2 will give twice as much points
+     *           as entry with weight 1. Entry with weight 0 will not give any points.
      *     @type \Eolymp\Course\Section $section
      *     @type \Eolymp\Ecm\Content $document
      *     @type \Eolymp\Course\Video $video
@@ -243,6 +253,34 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Score weight among other entries in the section. For example, entry with weight 2 will give twice as much points
+     * as entry with weight 1. Entry with weight 0 will not give any points.
+     *
+     * Generated from protobuf field <code>uint32 weight = 30;</code>
+     * @return int
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Score weight among other entries in the section. For example, entry with weight 2 will give twice as much points
+     * as entry with weight 1. Entry with weight 0 will not give any points.
+     *
+     * Generated from protobuf field <code>uint32 weight = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->weight = $var;
 
         return $this;
     }

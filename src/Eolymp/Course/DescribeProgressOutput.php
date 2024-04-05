@@ -17,6 +17,10 @@ class DescribeProgressOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float progress = 1;</code>
      */
     protected $progress = 0.0;
+    /**
+     * Generated from protobuf field <code>uint32 grade = 2;</code>
+     */
+    protected $grade = 0;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DescribeProgressOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $progress
+     *     @type int $grade
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DescribeProgressOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 2;</code>
+     * @return int
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade = $var;
 
         return $this;
     }

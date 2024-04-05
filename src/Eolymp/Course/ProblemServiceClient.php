@@ -106,22 +106,6 @@ class ProblemServiceClient {
     }
 
     /**
-     * @param DescribeScoreInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeScoreOutput output message
-     */
-    public function DescribeScore(DescribeScoreInput $input, array $context = [])
-    {
-        $path = "/score";
-
-        $context['name'] = "eolymp.course.ProblemService/DescribeScore";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreOutput::class, $context);
-    }
-
-    /**
      * @param LookupCodeTemplateInput $input message
      * @param array $context request parameters
      *
