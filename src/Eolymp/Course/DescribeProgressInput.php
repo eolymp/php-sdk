@@ -17,6 +17,12 @@ class DescribeProgressInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string entry_id = 1;</code>
      */
     protected $entry_id = '';
+    /**
+     * authenticated student, if empty
+     *
+     * Generated from protobuf field <code>string student_id = 2;</code>
+     */
+    protected $student_id = '';
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class DescribeProgressInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $entry_id
+     *     @type string $student_id
+     *           authenticated student, if empty
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class DescribeProgressInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->entry_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * authenticated student, if empty
+     *
+     * Generated from protobuf field <code>string student_id = 2;</code>
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * authenticated student, if empty
+     *
+     * Generated from protobuf field <code>string student_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStudentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
 
         return $this;
     }

@@ -69,6 +69,18 @@ class Student extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 complete_in = 26;</code>
      */
     protected $complete_in = 0;
+    /**
+     * overall grade for the course (0...100)
+     *
+     * Generated from protobuf field <code>uint32 grade = 100;</code>
+     */
+    protected $grade = 0;
+    /**
+     * grades for each entry (0...100)
+     *
+     * Generated from protobuf field <code>map<string, uint32> breakdown = 101;</code>
+     */
+    private $breakdown;
 
     /**
      * Constructor.
@@ -92,6 +104,10 @@ class Student extends \Google\Protobuf\Internal\Message
      *           time when user has finished (will finish) participating (incl. bonus time)
      *     @type int $complete_in
      *           time in seconds when user has finished (will finish) participating  (incl. bonus time)
+     *     @type int $grade
+     *           overall grade for the course (0...100)
+     *     @type array|\Google\Protobuf\Internal\MapField $breakdown
+     *           grades for each entry (0...100)
      * }
      */
     public function __construct($data = NULL) {
@@ -375,6 +391,58 @@ class Student extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->complete_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * overall grade for the course (0...100)
+     *
+     * Generated from protobuf field <code>uint32 grade = 100;</code>
+     * @return int
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * overall grade for the course (0...100)
+     *
+     * Generated from protobuf field <code>uint32 grade = 100;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * grades for each entry (0...100)
+     *
+     * Generated from protobuf field <code>map<string, uint32> breakdown = 101;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getBreakdown()
+    {
+        return $this->breakdown;
+    }
+
+    /**
+     * grades for each entry (0...100)
+     *
+     * Generated from protobuf field <code>map<string, uint32> breakdown = 101;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setBreakdown($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::UINT32);
+        $this->breakdown = $arr;
 
         return $this;
     }
