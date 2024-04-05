@@ -24,6 +24,10 @@ class Patch
      */
     const DRAFT = 2;
     /**
+     * Generated from protobuf enum <code>WEIGHT = 4;</code>
+     */
+    const WEIGHT = 4;
+    /**
      * Generated from protobuf enum <code>CONTENT_ALL = 3;</code>
      */
     const CONTENT_ALL = 3;
@@ -52,6 +56,7 @@ class Patch
         self::ALL => 'ALL',
         self::TITLE => 'TITLE',
         self::DRAFT => 'DRAFT',
+        self::WEIGHT => 'WEIGHT',
         self::CONTENT_ALL => 'CONTENT_ALL',
         self::SECTION_IMAGE => 'SECTION_IMAGE',
         self::SECTION_DESCRIPTION => 'SECTION_DESCRIPTION',
