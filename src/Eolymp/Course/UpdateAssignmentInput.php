@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string entry_id = 1;</code>
+     * Generated from protobuf field <code>string student_id = 1;</code>
+     */
+    protected $student_id = '';
+    /**
+     * Generated from protobuf field <code>string entry_id = 2;</code>
      */
     protected $entry_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
      */
     protected $assignment = null;
 
@@ -28,6 +32,7 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $student_id
      *     @type string $entry_id
      *     @type \Eolymp\Course\Assignment $assignment
      * }
@@ -38,7 +43,29 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 1;</code>
+     * Generated from protobuf field <code>string student_id = 1;</code>
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string student_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStudentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string entry_id = 2;</code>
      * @return string
      */
     public function getEntryId()
@@ -47,7 +74,7 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 1;</code>
+     * Generated from protobuf field <code>string entry_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -60,7 +87,7 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
      * @return \Eolymp\Course\Assignment
      */
     public function getAssignment()
@@ -69,7 +96,7 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
      * @param \Eolymp\Course\Assignment $var
      * @return $this
      */
