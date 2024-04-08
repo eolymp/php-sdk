@@ -36,51 +36,29 @@ class Student extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * additional time in seconds to complete the course (included in complete_at and complete_in)
+     * optionally, time when course will commence
      *
-     * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
      */
-    protected $bonus_time = 0;
+    protected $start_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
-     */
-    protected $started_at = null;
-    /**
-     * Generated from protobuf field <code>uint32 started_in = 22;</code>
-     */
-    protected $started_in = 0;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 23;</code>
+     * optionally, time by when course should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
      */
     protected $end_at = null;
     /**
-     * Generated from protobuf field <code>uint32 end_in = 24;</code>
-     */
-    protected $end_in = 0;
-    /**
-     * time when user has finished (will finish) participating (incl. bonus time)
+     * optionally, time when course was actually complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
      */
     protected $complete_at = null;
     /**
-     * time in seconds when user has finished (will finish) participating  (incl. bonus time)
+     * optionally, duration of the course in seconds
      *
-     * Generated from protobuf field <code>uint32 complete_in = 26;</code>
+     * Generated from protobuf field <code>uint32 duration = 15;</code>
      */
-    protected $complete_in = 0;
-    /**
-     * overall grade for the course (0...100)
-     *
-     * Generated from protobuf field <code>uint32 grade = 100;</code>
-     */
-    protected $grade = 0;
-    /**
-     * grades for each entry (0...100)
-     *
-     * Generated from protobuf field <code>map<string, uint32> breakdown = 101;</code>
-     */
-    private $breakdown;
+    protected $duration = 0;
 
     /**
      * Constructor.
@@ -94,20 +72,14 @@ class Student extends \Google\Protobuf\Internal\Message
      *           community member
      *     @type string $name
      *     @type int $status
-     *     @type int $bonus_time
-     *           additional time in seconds to complete the course (included in complete_at and complete_in)
-     *     @type \Google\Protobuf\Timestamp $started_at
-     *     @type int $started_in
+     *     @type \Google\Protobuf\Timestamp $start_at
+     *           optionally, time when course will commence
      *     @type \Google\Protobuf\Timestamp $end_at
-     *     @type int $end_in
+     *           optionally, time by when course should be complete
      *     @type \Google\Protobuf\Timestamp $complete_at
-     *           time when user has finished (will finish) participating (incl. bonus time)
-     *     @type int $complete_in
-     *           time in seconds when user has finished (will finish) participating  (incl. bonus time)
-     *     @type int $grade
-     *           overall grade for the course (0...100)
-     *     @type array|\Google\Protobuf\Internal\MapField $breakdown
-     *           grades for each entry (0...100)
+     *           optionally, time when course was actually complete
+     *     @type int $duration
+     *           optionally, duration of the course in seconds
      * }
      */
     public function __construct($data = NULL) {
@@ -230,77 +202,35 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * additional time in seconds to complete the course (included in complete_at and complete_in)
+     * optionally, time when course will commence
      *
-     * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
-     * @return int
-     */
-    public function getBonusTime()
-    {
-        return $this->bonus_time;
-    }
-
-    /**
-     * additional time in seconds to complete the course (included in complete_at and complete_in)
-     *
-     * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setBonusTime($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->bonus_time = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getStartedAt()
+    public function getStartAt()
     {
-        return $this->started_at;
+        return $this->start_at;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
+     * optionally, time when course will commence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartedAt($var)
+    public function setStartAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->started_at = $var;
+        $this->start_at = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 started_in = 22;</code>
-     * @return int
-     */
-    public function getStartedIn()
-    {
-        return $this->started_in;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 started_in = 22;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setStartedIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->started_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 23;</code>
+     * optionally, time by when course should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getEndAt()
@@ -309,7 +239,9 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 23;</code>
+     * optionally, time by when course should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -322,31 +254,9 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 end_in = 24;</code>
-     * @return int
-     */
-    public function getEndIn()
-    {
-        return $this->end_in;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 end_in = 24;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setEndIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->end_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * time when user has finished (will finish) participating (incl. bonus time)
+     * optionally, time when course was actually complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getCompleteAt()
@@ -355,9 +265,9 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has finished (will finish) participating (incl. bonus time)
+     * optionally, time when course was actually complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -370,79 +280,27 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time in seconds when user has finished (will finish) participating  (incl. bonus time)
+     * optionally, duration of the course in seconds
      *
-     * Generated from protobuf field <code>uint32 complete_in = 26;</code>
+     * Generated from protobuf field <code>uint32 duration = 15;</code>
      * @return int
      */
-    public function getCompleteIn()
+    public function getDuration()
     {
-        return $this->complete_in;
+        return $this->duration;
     }
 
     /**
-     * time in seconds when user has finished (will finish) participating  (incl. bonus time)
+     * optionally, duration of the course in seconds
      *
-     * Generated from protobuf field <code>uint32 complete_in = 26;</code>
+     * Generated from protobuf field <code>uint32 duration = 15;</code>
      * @param int $var
      * @return $this
      */
-    public function setCompleteIn($var)
+    public function setDuration($var)
     {
         GPBUtil::checkUint32($var);
-        $this->complete_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * overall grade for the course (0...100)
-     *
-     * Generated from protobuf field <code>uint32 grade = 100;</code>
-     * @return int
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * overall grade for the course (0...100)
-     *
-     * Generated from protobuf field <code>uint32 grade = 100;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGrade($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->grade = $var;
-
-        return $this;
-    }
-
-    /**
-     * grades for each entry (0...100)
-     *
-     * Generated from protobuf field <code>map<string, uint32> breakdown = 101;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getBreakdown()
-    {
-        return $this->breakdown;
-    }
-
-    /**
-     * grades for each entry (0...100)
-     *
-     * Generated from protobuf field <code>map<string, uint32> breakdown = 101;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setBreakdown($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::UINT32);
-        $this->breakdown = $arr;
+        $this->duration = $var;
 
         return $this;
     }
