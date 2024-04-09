@@ -18,6 +18,10 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>bool explicit = 2;</code>
+     */
+    protected $explicit = false;
+    /**
      * optionally, time by when assignment should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
@@ -47,18 +51,6 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 duration = 19;</code>
      */
     protected $duration = 0;
-    /**
-     * progress from 0 to 1
-     *
-     * Generated from protobuf field <code>float progress = 20;</code>
-     */
-    protected $progress = 0.0;
-    /**
-     * grade from 0 to 100
-     *
-     * Generated from protobuf field <code>uint32 grade = 30;</code>
-     */
-    protected $grade = 0;
 
     /**
      * Constructor.
@@ -67,6 +59,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $status
+     *     @type bool $explicit
      *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
      *     @type \Google\Protobuf\Timestamp $complete_before
@@ -77,10 +70,6 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *           optionally, time when assignment will actually be complete
      *     @type int $duration
      *           optionally, duration of the assignment in seconds
-     *     @type float $progress
-     *           progress from 0 to 1
-     *     @type int $grade
-     *           grade from 0 to 100
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +95,28 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Course\Assignment_Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool explicit = 2;</code>
+     * @return bool
+     */
+    public function getExplicit()
+    {
+        return $this->explicit;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool explicit = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExplicit($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->explicit = $var;
 
         return $this;
     }
@@ -236,58 +247,6 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->duration = $var;
-
-        return $this;
-    }
-
-    /**
-     * progress from 0 to 1
-     *
-     * Generated from protobuf field <code>float progress = 20;</code>
-     * @return float
-     */
-    public function getProgress()
-    {
-        return $this->progress;
-    }
-
-    /**
-     * progress from 0 to 1
-     *
-     * Generated from protobuf field <code>float progress = 20;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setProgress($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->progress = $var;
-
-        return $this;
-    }
-
-    /**
-     * grade from 0 to 100
-     *
-     * Generated from protobuf field <code>uint32 grade = 30;</code>
-     * @return int
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * grade from 0 to 100
-     *
-     * Generated from protobuf field <code>uint32 grade = 30;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGrade($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->grade = $var;
 
         return $this;
     }
