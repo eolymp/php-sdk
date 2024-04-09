@@ -30,7 +30,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $end_at = null;
     /**
-     * optionally, time when assignment was actually complete
+     * optionally, time when assignment will actually be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
      */
@@ -66,7 +66,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $end_at
      *           optionally, time by when assignment should be complete
      *     @type \Google\Protobuf\Timestamp $complete_at
-     *           optionally, time when assignment was actually complete
+     *           optionally, time when assignment will actually be complete
      *     @type int $duration
      *           optionally, duration of the assignment in seconds
      *     @type float $progress
@@ -155,7 +155,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment was actually complete
+     * optionally, time when assignment will actually be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
      * @return \Google\Protobuf\Timestamp
@@ -166,7 +166,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment was actually complete
+     * optionally, time when assignment will actually be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
      * @param \Google\Protobuf\Timestamp $var

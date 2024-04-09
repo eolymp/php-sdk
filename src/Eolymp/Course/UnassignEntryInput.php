@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.course.UpdateAssignmentInput</code>
+ * Generated from protobuf message <code>eolymp.course.UnassignEntryInput</code>
  */
-class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
+class UnassignEntryInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string student_id = 1;</code>
@@ -21,10 +21,6 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string entry_id = 2;</code>
      */
     protected $entry_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
-     */
-    protected $assignment = null;
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $student_id
      *     @type string $entry_id
-     *     @type \Eolymp\Course\Assignment $assignment
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->entry_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
-     * @return \Eolymp\Course\Assignment
-     */
-    public function getAssignment()
-    {
-        return $this->assignment;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
-     * @param \Eolymp\Course\Assignment $var
-     * @return $this
-     */
-    public function setAssignment($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Course\Assignment::class);
-        $this->assignment = $var;
 
         return $this;
     }

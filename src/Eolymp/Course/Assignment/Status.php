@@ -16,17 +16,11 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
-     * same as parent element (same as PENDING on course level)
+     * assignment is not assigned
      *
-     * Generated from protobuf enum <code>INHERITED = 1;</code>
+     * Generated from protobuf enum <code>UNASSIGNED = 1;</code>
      */
-    const INHERITED = 1;
-    /**
-     * assignment is not assigned to the user
-     *
-     * Generated from protobuf enum <code>INACTIVE = 2;</code>
-     */
-    const INACTIVE = 2;
+    const UNASSIGNED = 1;
     /**
      * assignment will start automatically at start_at
      *
@@ -60,8 +54,7 @@ class Status
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::INHERITED => 'INHERITED',
-        self::INACTIVE => 'INACTIVE',
+        self::UNASSIGNED => 'UNASSIGNED',
         self::SCHEDULED => 'SCHEDULED',
         self::READY => 'READY',
         self::ACTIVE => 'ACTIVE',
