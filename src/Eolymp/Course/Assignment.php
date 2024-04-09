@@ -18,27 +18,33 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * optionally, time when assignment will commence
+     * optionally, time by when assignment should be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
      */
-    protected $start_at = null;
+    protected $start_after = null;
     /**
      * optionally, time by when assignment should be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
      */
-    protected $end_at = null;
+    protected $complete_before = null;
+    /**
+     * optionally, time when assignment will commence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 15;</code>
+     */
+    protected $started_at = null;
     /**
      * optionally, time when assignment will actually be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 16;</code>
      */
-    protected $complete_at = null;
+    protected $completed_at = null;
     /**
      * optionally, duration of the assignment in seconds
      *
-     * Generated from protobuf field <code>uint32 duration = 15;</code>
+     * Generated from protobuf field <code>uint32 duration = 19;</code>
      */
     protected $duration = 0;
     /**
@@ -61,11 +67,13 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $status
-     *     @type \Google\Protobuf\Timestamp $start_at
-     *           optionally, time when assignment will commence
-     *     @type \Google\Protobuf\Timestamp $end_at
+     *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
-     *     @type \Google\Protobuf\Timestamp $complete_at
+     *     @type \Google\Protobuf\Timestamp $complete_before
+     *           optionally, time by when assignment should be complete
+     *     @type \Google\Protobuf\Timestamp $started_at
+     *           optionally, time when assignment will commence
+     *     @type \Google\Protobuf\Timestamp $completed_at
      *           optionally, time when assignment will actually be complete
      *     @type int $duration
      *           optionally, duration of the assignment in seconds
@@ -103,27 +111,27 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment will commence
+     * optionally, time by when assignment should be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getStartAt()
+    public function getStartAfter()
     {
-        return $this->start_at;
+        return $this->start_after;
     }
 
     /**
-     * optionally, time when assignment will commence
+     * optionally, time by when assignment should be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartAt($var)
+    public function setStartAfter($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->start_at = $var;
+        $this->start_after = $var;
 
         return $this;
     }
@@ -131,25 +139,51 @@ class Assignment extends \Google\Protobuf\Internal\Message
     /**
      * optionally, time by when assignment should be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getEndAt()
+    public function getCompleteBefore()
     {
-        return $this->end_at;
+        return $this->complete_before;
     }
 
     /**
      * optionally, time by when assignment should be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndAt($var)
+    public function setCompleteBefore($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->end_at = $var;
+        $this->complete_before = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, time when assignment will commence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 15;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getStartedAt()
+    {
+        return $this->started_at;
+    }
+
+    /**
+     * optionally, time when assignment will commence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 15;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->started_at = $var;
 
         return $this;
     }
@@ -157,25 +191,25 @@ class Assignment extends \Google\Protobuf\Internal\Message
     /**
      * optionally, time when assignment will actually be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 16;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getCompleteAt()
+    public function getCompletedAt()
     {
-        return $this->complete_at;
+        return $this->completed_at;
     }
 
     /**
      * optionally, time when assignment will actually be complete
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 16;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCompleteAt($var)
+    public function setCompletedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->complete_at = $var;
+        $this->completed_at = $var;
 
         return $this;
     }
@@ -183,7 +217,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
     /**
      * optionally, duration of the assignment in seconds
      *
-     * Generated from protobuf field <code>uint32 duration = 15;</code>
+     * Generated from protobuf field <code>uint32 duration = 19;</code>
      * @return int
      */
     public function getDuration()
@@ -194,7 +228,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
     /**
      * optionally, duration of the assignment in seconds
      *
-     * Generated from protobuf field <code>uint32 duration = 15;</code>
+     * Generated from protobuf field <code>uint32 duration = 19;</code>
      * @param int $var
      * @return $this
      */

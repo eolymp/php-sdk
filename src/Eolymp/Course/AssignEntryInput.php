@@ -22,17 +22,23 @@ class AssignEntryInput extends \Google\Protobuf\Internal\Message
      */
     protected $entry_id = '';
     /**
-     * optionally, time when assignment will commence
+     * optionally, a timestamp after which the assignment will become available
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 10;</code>
      */
-    protected $start_at = null;
+    protected $start_after = null;
     /**
-     * optionally, time by when assignment should be complete
+     * optionally, a timestamp before which the assignment should be complete (after which assignment will become complete)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 11;</code>
      */
-    protected $end_at = null;
+    protected $complete_before = null;
+    /**
+     * optionally, additional time limit in seconds to complete the task
+     *
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     */
+    protected $duration = 0;
 
     /**
      * Constructor.
@@ -42,10 +48,12 @@ class AssignEntryInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $student_id
      *     @type string $entry_id
-     *     @type \Google\Protobuf\Timestamp $start_at
-     *           optionally, time when assignment will commence
-     *     @type \Google\Protobuf\Timestamp $end_at
-     *           optionally, time by when assignment should be complete
+     *     @type \Google\Protobuf\Timestamp $start_after
+     *           optionally, a timestamp after which the assignment will become available
+     *     @type \Google\Protobuf\Timestamp $complete_before
+     *           optionally, a timestamp before which the assignment should be complete (after which assignment will become complete)
+     *     @type int $duration
+     *           optionally, additional time limit in seconds to complete the task
      * }
      */
     public function __construct($data = NULL) {
@@ -98,53 +106,79 @@ class AssignEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment will commence
+     * optionally, a timestamp after which the assignment will become available
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 10;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getStartAt()
+    public function getStartAfter()
     {
-        return $this->start_at;
+        return $this->start_after;
     }
 
     /**
-     * optionally, time when assignment will commence
+     * optionally, a timestamp after which the assignment will become available
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 10;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartAt($var)
+    public function setStartAfter($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->start_at = $var;
+        $this->start_after = $var;
 
         return $this;
     }
 
     /**
-     * optionally, time by when assignment should be complete
+     * optionally, a timestamp before which the assignment should be complete (after which assignment will become complete)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 11;</code>
      * @return \Google\Protobuf\Timestamp
      */
-    public function getEndAt()
+    public function getCompleteBefore()
     {
-        return $this->end_at;
+        return $this->complete_before;
     }
 
     /**
-     * optionally, time by when assignment should be complete
+     * optionally, a timestamp before which the assignment should be complete (after which assignment will become complete)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndAt($var)
+    public function setCompleteBefore($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->end_at = $var;
+        $this->complete_before = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, additional time limit in seconds to complete the task
+     *
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * @return int
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * optionally, additional time limit in seconds to complete the task
+     *
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDuration($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->duration = $var;
 
         return $this;
     }
