@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.course.UnassignEntryInput</code>
+ * Generated from protobuf message <code>eolymp.course.StartEntryInput</code>
  */
-class UnassignEntryInput extends \Google\Protobuf\Internal\Message
+class StartEntryInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string entry_id = 1;</code>
      */
     protected $entry_id = '';
-    /**
-     * Generated from protobuf field <code>string student_id = 2;</code>
-     */
-    protected $student_id = '';
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class UnassignEntryInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $entry_id
-     *     @type string $student_id
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class UnassignEntryInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->entry_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string student_id = 2;</code>
-     * @return string
-     */
-    public function getStudentId()
-    {
-        return $this->student_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string student_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStudentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->student_id = $var;
 
         return $this;
     }

@@ -54,6 +54,12 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $weight = 0;
     /**
+     * Assignment status
+     *
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 200;</code>
+     */
+    protected $assignment = null;
+    /**
      * List of nested entries, read only, only populated when calling DescribeTOC API
      *
      * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 900;</code>
@@ -84,6 +90,8 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $document
      *     @type \Eolymp\Course\Video $video
      *     @type \Eolymp\Course\Problem $problem
+     *     @type \Eolymp\Course\Assignment $assignment
+     *           Assignment status
      *     @type \Eolymp\Course\Entry[]|\Google\Protobuf\Internal\RepeatedField $items
      *           List of nested entries, read only, only populated when calling DescribeTOC API
      * }
@@ -369,6 +377,32 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\Problem::class);
         $this->writeOneof(103, $var);
+
+        return $this;
+    }
+
+    /**
+     * Assignment status
+     *
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 200;</code>
+     * @return \Eolymp\Course\Assignment
+     */
+    public function getAssignment()
+    {
+        return $this->assignment;
+    }
+
+    /**
+     * Assignment status
+     *
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 200;</code>
+     * @param \Eolymp\Course\Assignment $var
+     * @return $this
+     */
+    public function setAssignment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\Assignment::class);
+        $this->assignment = $var;
 
         return $this;
     }

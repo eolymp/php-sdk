@@ -7,32 +7,32 @@ namespace Eolymp\Course\Course;
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>eolymp.course.Course.Visibility</code>
+ * Protobuf type <code>eolymp.course.Course.Extra</code>
  */
-class Visibility
+class Extra
 {
     /**
-     * Generated from protobuf enum <code>UNKNOWN_VISIBILITY = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_EXTRA = 0;</code>
      */
-    const UNKNOWN_VISIBILITY = 0;
+    const UNKNOWN_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>PUBLIC = 1;</code>
+     * Generated from protobuf enum <code>DESCRIPTION_VALUE = 1;</code>
      */
-    const PBPUBLIC = 1;
+    const DESCRIPTION_VALUE = 1;
     /**
-     * Generated from protobuf enum <code>UNLISTED = 2;</code>
+     * Generated from protobuf enum <code>DESCRIPTION_RENDER = 2;</code>
      */
-    const UNLISTED = 2;
+    const DESCRIPTION_RENDER = 2;
     /**
-     * Generated from protobuf enum <code>PRIVATE = 3;</code>
+     * Generated from protobuf enum <code>ASSIGNMENT = 3;</code>
      */
-    const PBPRIVATE = 3;
+    const ASSIGNMENT = 3;
 
     private static $valueToName = [
-        self::UNKNOWN_VISIBILITY => 'UNKNOWN_VISIBILITY',
-        self::PBPUBLIC => 'PBPUBLIC',
-        self::UNLISTED => 'UNLISTED',
-        self::PBPRIVATE => 'PBPRIVATE',
+        self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
+        self::DESCRIPTION_VALUE => 'DESCRIPTION_VALUE',
+        self::DESCRIPTION_RENDER => 'DESCRIPTION_RENDER',
+        self::ASSIGNMENT => 'ASSIGNMENT',
     ];
 
     public static function name($value)
@@ -57,5 +57,5 @@ class Visibility
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Visibility::class, \Eolymp\Course\Course_Visibility::class);
+class_alias(Extra::class, \Eolymp\Course\Course_Extra::class);
 

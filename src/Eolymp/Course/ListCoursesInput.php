@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListCoursesInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool render = 1;</code>
-     */
-    protected $render = false;
-    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -41,6 +37,16 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
      */
     protected $order = 0;
+    /**
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     */
+    protected $student_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Course.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -48,7 +54,6 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $render
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -56,33 +61,14 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
      *           data filters
      *     @type int $sort
      *     @type int $order
+     *     @type string $student_id
+     *           include assignment status for a given student
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\CourseService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 1;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 1;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
-
-        return $this;
     }
 
     /**
@@ -199,6 +185,54 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
         $this->order = $var;
+
+        return $this;
+    }
+
+    /**
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStudentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Course.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Course.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\Course\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

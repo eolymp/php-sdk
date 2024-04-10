@@ -111,4 +111,62 @@ class CourseServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCoursesOutput::class, $context);
     }
 
+    /**
+     * @param AssignCourseInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignCourseOutput output message
+     */
+    public function AssignCourse(AssignCourseInput $input, array $context = [])
+    {
+        $path = "/courses/".rawurlencode($input->getCourseId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+
+        $context['name'] = "eolymp.course.CourseService/AssignCourse";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignCourseOutput::class, $context);
+    }
+
+    /**
+     * @param UnassignCourseInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignCourseOutput output message
+     */
+    public function UnassignCourse(UnassignCourseInput $input, array $context = [])
+    {
+        $path = "/courses/".rawurlencode($input->getCourseId())."/assignments/".rawurlencode($input->getStudentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setStudentId("");
+
+        $context['name'] = "eolymp.course.CourseService/UnassignCourse";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignCourseOutput::class, $context);
+    }
+
+    /**
+     * @param StartCourseInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartCourseOutput output message
+     */
+    public function StartCourse(StartCourseInput $input, array $context = [])
+    {
+        $path = "/courses/".rawurlencode($input->getCourseId())."/start";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+
+        $context['name'] = "eolymp.course.CourseService/StartCourse";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartCourseOutput::class, $context);
+    }
+
 }

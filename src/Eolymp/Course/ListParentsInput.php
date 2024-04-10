@@ -17,6 +17,16 @@ class ListParentsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string entry_id = 1;</code>
      */
     protected $entry_id = '';
+    /**
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     */
+    protected $student_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -25,6 +35,9 @@ class ListParentsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $entry_id
+     *     @type string $student_id
+     *           include assignment status for a given student
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +63,54 @@ class ListParentsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->entry_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStudentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\Entry\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

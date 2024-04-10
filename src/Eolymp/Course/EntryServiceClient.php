@@ -222,4 +222,62 @@ class EntryServiceClient {
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ReportProgressOutput::class, $context);
     }
 
+    /**
+     * @param AssignEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignEntryOutput output message
+     */
+    public function AssignEntry(AssignEntryInput $input, array $context = [])
+    {
+        $path = "/entries/".rawurlencode($input->getEntryId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.course.EntryService/AssignEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignEntryOutput::class, $context);
+    }
+
+    /**
+     * @param UnassignEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignEntryOutput output message
+     */
+    public function UnassignEntry(UnassignEntryInput $input, array $context = [])
+    {
+        $path = "/entries/".rawurlencode($input->getEntryId())."/assignments/".rawurlencode($input->getStudentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setEntryId("");
+        $input->setStudentId("");
+
+        $context['name'] = "eolymp.course.EntryService/UnassignEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignEntryOutput::class, $context);
+    }
+
+    /**
+     * @param StartEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartEntryOutput output message
+     */
+    public function StartEntry(StartEntryInput $input, array $context = [])
+    {
+        $path = "/entries/".rawurlencode($input->getEntryId())."/start";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.course.EntryService/StartEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartEntryOutput::class, $context);
+    }
+
 }

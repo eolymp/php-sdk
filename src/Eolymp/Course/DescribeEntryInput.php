@@ -18,9 +18,15 @@ class DescribeEntryInput extends \Google\Protobuf\Internal\Message
      */
     protected $entry_id = '';
     /**
-     * Generated from protobuf field <code>bool render = 2;</code>
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
      */
-    protected $render = false;
+    protected $student_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -29,7 +35,9 @@ class DescribeEntryInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $entry_id
-     *     @type bool $render
+     *     @type string $student_id
+     *           include assignment status for a given student
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +68,49 @@ class DescribeEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool render = 2;</code>
-     * @return bool
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     * @return string
      */
-    public function getRender()
+    public function getStudentId()
     {
-        return $this->render;
+        return $this->student_id;
     }
 
     /**
-     * Generated from protobuf field <code>bool render = 2;</code>
-     * @param bool $var
+     * include assignment status for a given student
+     *
+     * Generated from protobuf field <code>string student_id = 100;</code>
+     * @param string $var
      * @return $this
      */
-    public function setRender($var)
+    public function setStudentId($var)
     {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\Entry\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }
