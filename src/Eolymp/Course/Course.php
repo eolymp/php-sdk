@@ -55,6 +55,10 @@ class Course extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 estimate = 20;</code>
      */
     protected $estimate = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Course.ParticipationMode participation_mode = 30;</code>
+     */
+    protected $participation_mode = 0;
 
     /**
      * Constructor.
@@ -73,6 +77,7 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type int $estimate
+     *     @type int $participation_mode
      * }
      */
     public function __construct($data = NULL) {
@@ -300,6 +305,28 @@ class Course extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->estimate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Course.ParticipationMode participation_mode = 30;</code>
+     * @return int
+     */
+    public function getParticipationMode()
+    {
+        return $this->participation_mode;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Course.ParticipationMode participation_mode = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setParticipationMode($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Course\Course_ParticipationMode::class);
+        $this->participation_mode = $var;
 
         return $this;
     }

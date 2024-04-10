@@ -184,42 +184,4 @@ class EntryServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListParentsOutput::class, $context);
     }
 
-    /**
-     * @param DescribeProgressInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeProgressOutput output message
-     */
-    public function DescribeProgress(DescribeProgressInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/progress";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/DescribeProgress";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProgressOutput::class, $context);
-    }
-
-    /**
-     * @param ReportProgressInput $input message
-     * @param array $context request parameters
-     *
-     * @return ReportProgressOutput output message
-     */
-    public function ReportProgress(ReportProgressInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/progress";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/ReportProgress";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ReportProgressOutput::class, $context);
-    }
-
 }
