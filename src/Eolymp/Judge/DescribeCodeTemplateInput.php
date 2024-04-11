@@ -25,6 +25,10 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string template_id = 3;</code>
      */
     protected $template_id = '';
+    /**
+     * Generated from protobuf field <code>string template_ern = 4;</code>
+     */
+    protected $template_ern = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $problem_id
      *     @type string $template_id
+     *     @type string $template_ern
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->template_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string template_ern = 4;</code>
+     * @return string
+     */
+    public function getTemplateErn()
+    {
+        return $this->template_ern;
+    }
+
+    /**
+     * Generated from protobuf field <code>string template_ern = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTemplateErn($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->template_ern = $var;
 
         return $this;
     }
