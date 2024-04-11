@@ -20,7 +20,7 @@ class Score extends \Google\Protobuf\Internal\Message
      */
     protected $valid_after = 0;
     /**
-     * time when score was overriden by newer value, number of seconds since start of contest (participation)
+     * time when score was overridden by newer value, number of seconds since start of contest (participation)
      *
      * Generated from protobuf field <code>uint32 valid_until = 2;</code>
      */
@@ -59,7 +59,7 @@ class Score extends \Google\Protobuf\Internal\Message
      *     @type int $valid_after
      *           time when score was set, number of seconds since start of contest (participation)
      *     @type int $valid_until
-     *           time when score was overriden by newer value, number of seconds since start of contest (participation)
+     *           time when score was overridden by newer value, number of seconds since start of contest (participation)
      *     @type \Google\Protobuf\Timestamp $timestamp
      *           absolute time when score was set
      *     @type float $score
@@ -101,7 +101,7 @@ class Score extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when score was overriden by newer value, number of seconds since start of contest (participation)
+     * time when score was overridden by newer value, number of seconds since start of contest (participation)
      *
      * Generated from protobuf field <code>uint32 valid_until = 2;</code>
      * @return int
@@ -112,7 +112,7 @@ class Score extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when score was overriden by newer value, number of seconds since start of contest (participation)
+     * time when score was overridden by newer value, number of seconds since start of contest (participation)
      *
      * Generated from protobuf field <code>uint32 valid_until = 2;</code>
      * @param int $var

@@ -137,4 +137,25 @@ class SubmissionServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RestoreSubmissionOutput::class, $context);
     }
 
+    /**
+     * RetestProblem resets existing submissions for the problem and triggers testing process again.
+     *
+     * @param RetestProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return RetestProblemOutput output message
+     */
+    public function RetestProblem(RetestProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/retest";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.SubmissionService/RetestProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, RetestProblemOutput::class, $context);
+    }
+
 }
