@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Assignment extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string id = 5;</code>
+     */
+    protected $id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      */
     protected $status = 0;
@@ -61,6 +65,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $member_id
      *     @type string $group_id
      *     @type int $status
@@ -81,6 +86,28 @@ class Assignment extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\Assignment::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 5;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
     }
 
     /**
