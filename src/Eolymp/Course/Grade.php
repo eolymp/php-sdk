@@ -22,6 +22,10 @@ class Grade extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * Generated from protobuf field <code>string display_name = 3;</code>
+     */
+    protected $display_name = '';
+    /**
      * Generated from protobuf field <code>float progress = 10;</code>
      */
     protected $progress = 0.0;
@@ -50,6 +54,7 @@ class Grade extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $member_id
+     *     @type string $display_name
      *     @type float $progress
      *     @type int $grade
      *     @type \Eolymp\Course\Grade\Breakdown[]|\Google\Protobuf\Internal\RepeatedField $breakdown
@@ -102,6 +107,28 @@ class Grade extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string display_name = 3;</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string display_name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
 
         return $this;
     }
