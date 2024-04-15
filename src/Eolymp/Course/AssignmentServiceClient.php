@@ -96,6 +96,22 @@ class AssignmentServiceClient {
     }
 
     /**
+     * @param IntrospectAssignmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return IntrospectAssignmentOutput output message
+     */
+    public function IntrospectAssignment(IntrospectAssignmentInput $input, array $context = [])
+    {
+        $path = "/viewer/assignment";
+
+        $context['name'] = "eolymp.course.AssignmentService/IntrospectAssignment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectAssignmentOutput::class, $context);
+    }
+
+    /**
      * @param ListAssignmentsInput $input message
      * @param array $context request parameters
      *
