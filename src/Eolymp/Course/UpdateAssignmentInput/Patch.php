@@ -16,48 +16,23 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>LOCALE = 1;</code>
+     * Generated from protobuf enum <code>START_AFTER = 1;</code>
      */
-    const LOCALE = 1;
+    const START_AFTER = 1;
     /**
-     * Generated from protobuf enum <code>NAME = 2;</code>
+     * Generated from protobuf enum <code>COMPLETE_BEFORE = 2;</code>
      */
-    const NAME = 2;
+    const COMPLETE_BEFORE = 2;
     /**
-     * Generated from protobuf enum <code>DESCRIPTION = 3;</code>
+     * Generated from protobuf enum <code>DURATION = 3;</code>
      */
-    const DESCRIPTION = 3;
-    /**
-     * Generated from protobuf enum <code>IMAGE = 4;</code>
-     */
-    const IMAGE = 4;
-    /**
-     * Generated from protobuf enum <code>VISIBILITY = 5;</code>
-     */
-    const VISIBILITY = 5;
-    /**
-     * Generated from protobuf enum <code>DURATION = 6;</code>
-     */
-    const DURATION = 6;
-    /**
-     * Generated from protobuf enum <code>TOPICS = 7;</code>
-     */
-    const TOPICS = 7;
-    /**
-     * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
-     */
-    const PARTICIPATION_MODE = 8;
+    const DURATION = 3;
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::LOCALE => 'LOCALE',
-        self::NAME => 'NAME',
-        self::DESCRIPTION => 'DESCRIPTION',
-        self::IMAGE => 'IMAGE',
-        self::VISIBILITY => 'VISIBILITY',
+        self::START_AFTER => 'START_AFTER',
+        self::COMPLETE_BEFORE => 'COMPLETE_BEFORE',
         self::DURATION => 'DURATION',
-        self::TOPICS => 'TOPICS',
-        self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
     ];
 
     public static function name($value)
