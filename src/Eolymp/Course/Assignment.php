@@ -14,13 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Assignment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 1;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      */
     protected $status = 0;
-    /**
-     * Generated from protobuf field <code>bool explicit = 2;</code>
-     */
-    protected $explicit = false;
     /**
      * optionally, time by when assignment should be complete
      *
@@ -34,23 +30,30 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $complete_before = null;
     /**
-     * optionally, time when assignment will commence
+     * optionally, duration of the assignment in seconds
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 15;</code>
+     * Generated from protobuf field <code>uint32 duration = 13;</code>
+     */
+    protected $duration = 0;
+    /**
+     * read-only, time when assignment was created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
+     */
+    protected $created_at = null;
+    /**
+     * read-only, time when assignment has been started (via StartAssignment API)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 25;</code>
      */
     protected $started_at = null;
     /**
-     * optionally, time when assignment will actually be complete
+     * read-only, time when assignment will complete (started_at + duration)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 26;</code>
      */
     protected $completed_at = null;
-    /**
-     * optionally, duration of the assignment in seconds
-     *
-     * Generated from protobuf field <code>uint32 duration = 19;</code>
-     */
-    protected $duration = 0;
+    protected $assignee;
 
     /**
      * Constructor.
@@ -58,18 +61,21 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $member_id
+     *     @type string $group_id
      *     @type int $status
-     *     @type bool $explicit
      *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
      *     @type \Google\Protobuf\Timestamp $complete_before
      *           optionally, time by when assignment should be complete
-     *     @type \Google\Protobuf\Timestamp $started_at
-     *           optionally, time when assignment will commence
-     *     @type \Google\Protobuf\Timestamp $completed_at
-     *           optionally, time when assignment will actually be complete
      *     @type int $duration
      *           optionally, duration of the assignment in seconds
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *           read-only, time when assignment was created
+     *     @type \Google\Protobuf\Timestamp $started_at
+     *           read-only, time when assignment has been started (via StartAssignment API)
+     *     @type \Google\Protobuf\Timestamp $completed_at
+     *           read-only, time when assignment will complete (started_at + duration)
      * }
      */
     public function __construct($data = NULL) {
@@ -78,7 +84,51 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 1;</code>
+     * Generated from protobuf field <code>string member_id = 1;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->readOneof(1);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 2;</code>
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->readOneof(2);
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      * @return int
      */
     public function getStatus()
@@ -87,7 +137,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 1;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      * @param int $var
      * @return $this
      */
@@ -95,28 +145,6 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Course\Assignment_Status::class);
         $this->status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool explicit = 2;</code>
-     * @return bool
-     */
-    public function getExplicit()
-    {
-        return $this->explicit;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool explicit = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setExplicit($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->explicit = $var;
 
         return $this;
     }
@@ -174,9 +202,61 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment will commence
+     * optionally, duration of the assignment in seconds
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 15;</code>
+     * Generated from protobuf field <code>uint32 duration = 13;</code>
+     * @return int
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * optionally, duration of the assignment in seconds
+     *
+     * Generated from protobuf field <code>uint32 duration = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDuration($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * read-only, time when assignment was created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * read-only, time when assignment was created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * read-only, time when assignment has been started (via StartAssignment API)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 25;</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getStartedAt()
@@ -185,9 +265,9 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment will commence
+     * read-only, time when assignment has been started (via StartAssignment API)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 25;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -200,9 +280,9 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment will actually be complete
+     * read-only, time when assignment will complete (started_at + duration)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 26;</code>
      * @return \Google\Protobuf\Timestamp
      */
     public function getCompletedAt()
@@ -211,9 +291,9 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time when assignment will actually be complete
+     * read-only, time when assignment will complete (started_at + duration)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 26;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -226,29 +306,11 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, duration of the assignment in seconds
-     *
-     * Generated from protobuf field <code>uint32 duration = 19;</code>
-     * @return int
+     * @return string
      */
-    public function getDuration()
+    public function getAssignee()
     {
-        return $this->duration;
-    }
-
-    /**
-     * optionally, duration of the assignment in seconds
-     *
-     * Generated from protobuf field <code>uint32 duration = 19;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDuration($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->duration = $var;
-
-        return $this;
+        return $this->whichOneof("assignee");
     }
 
 }
