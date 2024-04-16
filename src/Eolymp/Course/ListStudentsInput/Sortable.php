@@ -15,24 +15,9 @@ class Sortable
      * Generated from protobuf enum <code>DEFAULT = 0;</code>
      */
     const PBDEFAULT = 0;
-    /**
-     * Generated from protobuf enum <code>STARTED_AT = 1;</code>
-     */
-    const STARTED_AT = 1;
-    /**
-     * Generated from protobuf enum <code>COMPLETE_AT = 2;</code>
-     */
-    const COMPLETE_AT = 2;
-    /**
-     * Generated from protobuf enum <code>NAME = 3;</code>
-     */
-    const NAME = 3;
 
     private static $valueToName = [
         self::PBDEFAULT => 'PBDEFAULT',
-        self::STARTED_AT => 'STARTED_AT',
-        self::COMPLETE_AT => 'COMPLETE_AT',
-        self::NAME => 'NAME',
     ];
 
     public static function name($value)

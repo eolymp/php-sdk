@@ -27,17 +27,12 @@ class Extra
      * Generated from protobuf enum <code>CONTENT_RENDER = 3;</code>
      */
     const CONTENT_RENDER = 3;
-    /**
-     * Generated from protobuf enum <code>ASSIGNMENT = 4;</code>
-     */
-    const ASSIGNMENT = 4;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::CONTENT => 'CONTENT',
         self::CONTENT_VALUE => 'CONTENT_VALUE',
         self::CONTENT_RENDER => 'CONTENT_RENDER',
-        self::ASSIGNMENT => 'ASSIGNMENT',
     ];
 
     public static function name($value)

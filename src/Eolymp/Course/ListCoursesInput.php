@@ -38,12 +38,6 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
      */
     protected $order = 0;
     /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     */
-    protected $student_id = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.course.Course.Extra extra = 1123;</code>
      */
     private $extra;
@@ -61,8 +55,6 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
      *           data filters
      *     @type int $sort
      *     @type int $order
-     *     @type string $student_id
-     *           include assignment status for a given student
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -185,32 +177,6 @@ class ListCoursesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
         $this->order = $var;
-
-        return $this;
-    }
-
-    /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     * @return string
-     */
-    public function getStudentId()
-    {
-        return $this->student_id;
-    }
-
-    /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStudentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->student_id = $var;
 
         return $this;
     }

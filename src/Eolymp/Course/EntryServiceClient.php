@@ -150,19 +150,19 @@ class EntryServiceClient {
     }
 
     /**
-     * @param DescribeTOCInput $input message
+     * @param DescribeTreeInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeTOCOutput output message
+     * @return DescribeTreeOutput output message
      */
-    public function DescribeTOC(DescribeTOCInput $input, array $context = [])
+    public function DescribeTree(DescribeTreeInput $input, array $context = [])
     {
         $path = "/toc";
 
-        $context['name'] = "eolymp.course.EntryService/DescribeTOC";
+        $context['name'] = "eolymp.course.EntryService/DescribeTree";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTOCOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTreeOutput::class, $context);
     }
 
     /**
@@ -182,102 +182,6 @@ class EntryServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListParentsOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeProgressInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeProgressOutput output message
-     */
-    public function DescribeProgress(DescribeProgressInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/progress";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/DescribeProgress";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProgressOutput::class, $context);
-    }
-
-    /**
-     * @param ReportProgressInput $input message
-     * @param array $context request parameters
-     *
-     * @return ReportProgressOutput output message
-     */
-    public function ReportProgress(ReportProgressInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/progress";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/ReportProgress";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ReportProgressOutput::class, $context);
-    }
-
-    /**
-     * @param AssignEntryInput $input message
-     * @param array $context request parameters
-     *
-     * @return AssignEntryOutput output message
-     */
-    public function AssignEntry(AssignEntryInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/assignments";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/AssignEntry";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignEntryOutput::class, $context);
-    }
-
-    /**
-     * @param UnassignEntryInput $input message
-     * @param array $context request parameters
-     *
-     * @return UnassignEntryOutput output message
-     */
-    public function UnassignEntry(UnassignEntryInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/assignments/".rawurlencode($input->getStudentId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-        $input->setStudentId("");
-
-        $context['name'] = "eolymp.course.EntryService/UnassignEntry";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignEntryOutput::class, $context);
-    }
-
-    /**
-     * @param StartEntryInput $input message
-     * @param array $context request parameters
-     *
-     * @return StartEntryOutput output message
-     */
-    public function StartEntry(StartEntryInput $input, array $context = [])
-    {
-        $path = "/entries/".rawurlencode($input->getEntryId())."/start";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setEntryId("");
-
-        $context['name'] = "eolymp.course.EntryService/StartEntry";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartEntryOutput::class, $context);
     }
 
 }

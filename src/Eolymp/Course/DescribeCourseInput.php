@@ -18,12 +18,6 @@ class DescribeCourseInput extends \Google\Protobuf\Internal\Message
      */
     protected $course_id = '';
     /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     */
-    protected $student_id = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.course.Course.Extra extra = 1123;</code>
      */
     private $extra;
@@ -35,8 +29,6 @@ class DescribeCourseInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $course_id
-     *     @type string $student_id
-     *           include assignment status for a given student
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -63,32 +55,6 @@ class DescribeCourseInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->course_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     * @return string
-     */
-    public function getStudentId()
-    {
-        return $this->student_id;
-    }
-
-    /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStudentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->student_id = $var;
 
         return $this;
     }

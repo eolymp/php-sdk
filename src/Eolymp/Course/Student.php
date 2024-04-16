@@ -18,17 +18,33 @@ class Student extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string course_id = 2;</code>
-     */
-    protected $course_id = '';
-    /**
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>string display_name = 10;</code>
+     * Generated from protobuf field <code>string display_name = 3;</code>
      */
     protected $display_name = '';
+    /**
+     * Generated from protobuf field <code>float overall_progress = 10;</code>
+     */
+    protected $overall_progress = 0.0;
+    /**
+     * Generated from protobuf field <code>uint32 overall_grade = 15;</code>
+     */
+    protected $overall_grade = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
+     */
+    private $grades;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 25;</code>
+     */
+    protected $updated_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     */
+    protected $graded_at = null;
 
     /**
      * Constructor.
@@ -37,9 +53,13 @@ class Student extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $course_id
      *     @type string $member_id
      *     @type string $display_name
+     *     @type float $overall_progress
+     *     @type int $overall_grade
+     *     @type \Eolymp\Course\Student\Grade[]|\Google\Protobuf\Internal\RepeatedField $grades
+     *     @type \Google\Protobuf\Timestamp $updated_at
+     *     @type \Google\Protobuf\Timestamp $graded_at
      * }
      */
     public function __construct($data = NULL) {
@@ -70,29 +90,7 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string course_id = 2;</code>
-     * @return string
-     */
-    public function getCourseId()
-    {
-        return $this->course_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string course_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCourseId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->course_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
     public function getMemberId()
@@ -101,7 +99,7 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -114,7 +112,7 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string display_name = 10;</code>
+     * Generated from protobuf field <code>string display_name = 3;</code>
      * @return string
      */
     public function getDisplayName()
@@ -123,7 +121,7 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string display_name = 10;</code>
+     * Generated from protobuf field <code>string display_name = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -131,6 +129,116 @@ class Student extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float overall_progress = 10;</code>
+     * @return float
+     */
+    public function getOverallProgress()
+    {
+        return $this->overall_progress;
+    }
+
+    /**
+     * Generated from protobuf field <code>float overall_progress = 10;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setOverallProgress($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->overall_progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 overall_grade = 15;</code>
+     * @return int
+     */
+    public function getOverallGrade()
+    {
+        return $this->overall_grade;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 overall_grade = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOverallGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->overall_grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGrades()
+    {
+        return $this->grades;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
+     * @param \Eolymp\Course\Student\Grade[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGrades($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Student\Grade::class);
+        $this->grades = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 25;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 25;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getGradedAt()
+    {
+        return $this->graded_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setGradedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->graded_at = $var;
 
         return $this;
     }

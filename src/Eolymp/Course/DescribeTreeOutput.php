@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.course.DescribeTOCOutput</code>
+ * Generated from protobuf message <code>eolymp.course.DescribeTreeOutput</code>
  */
-class DescribeTOCOutput extends \Google\Protobuf\Internal\Message
+class DescribeTreeOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 2;</code>

@@ -61,12 +61,6 @@ class Course extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.course.Course.ParticipationMode participation_mode = 30;</code>
      */
     protected $participation_mode = 0;
-    /**
-     * Assignment status
-     *
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 100;</code>
-     */
-    protected $assignment = null;
 
     /**
      * Constructor.
@@ -87,8 +81,6 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type int $estimate
      *     @type int $participation_mode
      *           Participation mode defines if assignments are used in course
-     *     @type \Eolymp\Course\Assignment $assignment
-     *           Assignment status
      * }
      */
     public function __construct($data = NULL) {
@@ -342,32 +334,6 @@ class Course extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Course\Course_ParticipationMode::class);
         $this->participation_mode = $var;
-
-        return $this;
-    }
-
-    /**
-     * Assignment status
-     *
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 100;</code>
-     * @return \Eolymp\Course\Assignment
-     */
-    public function getAssignment()
-    {
-        return $this->assignment;
-    }
-
-    /**
-     * Assignment status
-     *
-     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 100;</code>
-     * @param \Eolymp\Course\Assignment $var
-     * @return $this
-     */
-    public function setAssignment($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Course\Assignment::class);
-        $this->assignment = $var;
 
         return $this;
     }

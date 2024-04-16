@@ -23,60 +23,6 @@ class StudentServiceClient {
     }
 
     /**
-     * @param CreateStudentInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateStudentOutput output message
-     */
-    public function CreateStudent(CreateStudentInput $input, array $context = [])
-    {
-        $path = "/students";
-
-        $context['name'] = "eolymp.course.StudentService/CreateStudent";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CreateStudentOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateStudentInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateStudentOutput output message
-     */
-    public function UpdateStudent(UpdateStudentInput $input, array $context = [])
-    {
-        $path = "/students/".rawurlencode($input->getStudentId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setStudentId("");
-
-        $context['name'] = "eolymp.course.StudentService/UpdateStudent";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateStudentOutput::class, $context);
-    }
-
-    /**
-     * @param DeleteStudentInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteStudentOutput output message
-     */
-    public function DeleteStudent(DeleteStudentInput $input, array $context = [])
-    {
-        $path = "/students/".rawurlencode($input->getStudentId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setStudentId("");
-
-        $context['name'] = "eolymp.course.StudentService/DeleteStudent";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteStudentOutput::class, $context);
-    }
-
-    /**
      * @param DescribeStudentInput $input message
      * @param array $context request parameters
      *
@@ -84,15 +30,31 @@ class StudentServiceClient {
      */
     public function DescribeStudent(DescribeStudentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getStudentId());
+        $path = "/students/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setStudentId("");
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/DescribeStudent";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeStudentOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeViewerInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeViewerOutput output message
+     */
+    public function DescribeViewer(DescribeViewerInput $input, array $context = [])
+    {
+        $path = "/viewer/student";
+
+        $context['name'] = "eolymp.course.StudentService/DescribeViewer";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerOutput::class, $context);
     }
 
     /**
@@ -109,22 +71,6 @@ class StudentServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStudentsOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeViewerInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeViewerOutput output message
-     */
-    public function DescribeViewer(DescribeViewerInput $input, array $context = [])
-    {
-        $path = "/viewer";
-
-        $context['name'] = "eolymp.course.StudentService/DescribeViewer";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DescribeViewerOutput::class, $context);
     }
 
 }

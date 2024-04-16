@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.course.DescribeTOCInput</code>
+ * Generated from protobuf message <code>eolymp.course.DescribeTreeInput</code>
  */
-class DescribeTOCInput extends \Google\Protobuf\Internal\Message
+class DescribeTreeInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string root_id = 1;</code>
@@ -26,12 +26,6 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
      */
     protected $draft = false;
     /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     */
-    protected $student_id = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.course.Entry.Extra extra = 1123;</code>
      */
     private $extra;
@@ -45,8 +39,6 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
      *     @type string $root_id
      *     @type int $depth
      *     @type bool $draft
-     *     @type string $student_id
-     *           include assignment status for a given student
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -117,32 +109,6 @@ class DescribeTOCInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->draft = $var;
-
-        return $this;
-    }
-
-    /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     * @return string
-     */
-    public function getStudentId()
-    {
-        return $this->student_id;
-    }
-
-    /**
-     * include assignment status for a given student
-     *
-     * Generated from protobuf field <code>string student_id = 100;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStudentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->student_id = $var;
 
         return $this;
     }
