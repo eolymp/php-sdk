@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class WatchStudentInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string student_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
-    protected $student_id = '';
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class WatchStudentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $student_id
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class WatchStudentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string student_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
-    public function getStudentId()
+    public function getMemberId()
     {
-        return $this->student_id;
+        return $this->member_id;
     }
 
     /**
-     * Generated from protobuf field <code>string student_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setStudentId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->student_id = $var;
+        $this->member_id = $var;
 
         return $this;
     }
