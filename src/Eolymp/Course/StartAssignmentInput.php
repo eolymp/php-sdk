@@ -14,9 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class StartAssignmentInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string assignment_id = 1;</code>
+     * optionally start particular entry
+     *
+     * Generated from protobuf field <code>string entry_id = 1;</code>
      */
-    protected $assignment_id = '';
+    protected $entry_id = '';
 
     /**
      * Constructor.
@@ -24,7 +26,8 @@ class StartAssignmentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $assignment_id
+     *     @type string $entry_id
+     *           optionally start particular entry
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +36,27 @@ class StartAssignmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string assignment_id = 1;</code>
+     * optionally start particular entry
+     *
+     * Generated from protobuf field <code>string entry_id = 1;</code>
      * @return string
      */
-    public function getAssignmentId()
+    public function getEntryId()
     {
-        return $this->assignment_id;
+        return $this->entry_id;
     }
 
     /**
-     * Generated from protobuf field <code>string assignment_id = 1;</code>
+     * optionally start particular entry
+     *
+     * Generated from protobuf field <code>string entry_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setAssignmentId($var)
+    public function setEntryId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->assignment_id = $var;
+        $this->entry_id = $var;
 
         return $this;
     }

@@ -135,10 +135,7 @@ class AssignmentServiceClient {
      */
     public function StartAssignment(StartAssignmentInput $input, array $context = [])
     {
-        $path = "/assignments/".rawurlencode($input->getAssignmentId())."/start";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setAssignmentId("");
+        $path = "/start";
 
         $context['name'] = "eolymp.course.AssignmentService/StartAssignment";
         $context['path'] = $path;
