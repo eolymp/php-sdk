@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListRankingPointsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string member_id = 1;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -40,6 +44,7 @@ class ListRankingPointsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $member_id
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Community\ListRankingPointsInput\Filter $filters
@@ -50,6 +55,28 @@ class ListRankingPointsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\RankingService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 1;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
+
+        return $this;
     }
 
     /**
