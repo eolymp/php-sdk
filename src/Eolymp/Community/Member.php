@@ -32,6 +32,10 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $rank = 0;
     /**
+     * Generated from protobuf field <code>int32 rank_length = 72;</code>
+     */
+    protected $rank_length = 0;
+    /**
      * Generated from protobuf field <code>int32 score = 71;</code>
      */
     protected $score = 0;
@@ -94,6 +98,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *           display name, readonly, users nickname, ghosts name or teams name
      *     @type string $url
      *     @type int $rank
+     *     @type int $rank_length
      *     @type int $score
      *     @type bool $active
      *     @type bool $incomplete
@@ -206,6 +211,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->rank = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 rank_length = 72;</code>
+     * @return int
+     */
+    public function getRankLength()
+    {
+        return $this->rank_length;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 rank_length = 72;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRankLength($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->rank_length = $var;
 
         return $this;
     }
