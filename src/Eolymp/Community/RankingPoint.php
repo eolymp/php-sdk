@@ -30,9 +30,9 @@ class RankingPoint extends \Google\Protobuf\Internal\Message
      */
     protected $rank = 0;
     /**
-     * Generated from protobuf field <code>uint32 rank_length = 21;</code>
+     * Generated from protobuf field <code>uint32 rank_lower = 21;</code>
      */
-    protected $rank_length = 0;
+    protected $rank_lower = 0;
     /**
      * Generated from protobuf field <code>uint32 score = 30;</code>
      */
@@ -48,7 +48,7 @@ class RankingPoint extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type string $event_id
      *     @type int $rank
-     *     @type int $rank_length
+     *     @type int $rank_lower
      *     @type int $score
      * }
      */
@@ -146,23 +146,23 @@ class RankingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rank_length = 21;</code>
+     * Generated from protobuf field <code>uint32 rank_lower = 21;</code>
      * @return int
      */
-    public function getRankLength()
+    public function getRankLower()
     {
-        return $this->rank_length;
+        return $this->rank_lower;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rank_length = 21;</code>
+     * Generated from protobuf field <code>uint32 rank_lower = 21;</code>
      * @param int $var
      * @return $this
      */
-    public function setRankLength($var)
+    public function setRankLower($var)
     {
         GPBUtil::checkUint32($var);
-        $this->rank_length = $var;
+        $this->rank_lower = $var;
 
         return $this;
     }
