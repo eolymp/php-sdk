@@ -16,14 +16,20 @@ class Visibility
      */
     const UNKNOWN_VISIBILITY = 0;
     /**
+     * anyone can join, displayed in the list
+     *
      * Generated from protobuf enum <code>PUBLIC = 1;</code>
      */
     const PBPUBLIC = 1;
     /**
+     * anyone can join, not displayed in the list
+     *
      * Generated from protobuf enum <code>UNLISTED = 2;</code>
      */
     const UNLISTED = 2;
     /**
+     * course must be explicitly assigned
+     *
      * Generated from protobuf enum <code>PRIVATE = 3;</code>
      */
     const PBPRIVATE = 3;
