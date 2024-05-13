@@ -25,10 +25,6 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 seats = 3;</code>
      */
     protected $seats = 0;
-    /**
-     * Generated from protobuf field <code>bool trial = 4;</code>
-     */
-    protected $trial = false;
 
     /**
      * Constructor.
@@ -39,7 +35,6 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
      *     @type string $plan_id
      *     @type string $variant_id
      *     @type int $seats
-     *     @type bool $trial
      * }
      */
     public function __construct($data = NULL) {
@@ -109,28 +104,6 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->seats = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool trial = 4;</code>
-     * @return bool
-     */
-    public function getTrial()
-    {
-        return $this->trial;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool trial = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setTrial($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->trial = $var;
 
         return $this;
     }

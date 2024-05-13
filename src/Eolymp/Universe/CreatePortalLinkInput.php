@@ -14,21 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * empty, payment_method_update or subscription_cancel
+     *
      * Generated from protobuf field <code>string flow = 1;</code>
      */
     protected $flow = '';
     /**
+     * user clicks back button
+     *
      * Generated from protobuf field <code>string back_url = 2;</code>
      */
     protected $back_url = '';
     /**
+     * user completes flow
+     *
      * Generated from protobuf field <code>string return_url = 3;</code>
      */
     protected $return_url = '';
-    /**
-     * Generated from protobuf field <code>string complete_url = 4;</code>
-     */
-    protected $complete_url = '';
 
     /**
      * Constructor.
@@ -37,9 +39,11 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $flow
+     *           empty, payment_method_update or subscription_cancel
      *     @type string $back_url
+     *           user clicks back button
      *     @type string $return_url
-     *     @type string $complete_url
+     *           user completes flow
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +52,8 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * empty, payment_method_update or subscription_cancel
+     *
      * Generated from protobuf field <code>string flow = 1;</code>
      * @return string
      */
@@ -57,6 +63,8 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * empty, payment_method_update or subscription_cancel
+     *
      * Generated from protobuf field <code>string flow = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +78,8 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user clicks back button
+     *
      * Generated from protobuf field <code>string back_url = 2;</code>
      * @return string
      */
@@ -79,6 +89,8 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user clicks back button
+     *
      * Generated from protobuf field <code>string back_url = 2;</code>
      * @param string $var
      * @return $this
@@ -92,6 +104,8 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user completes flow
+     *
      * Generated from protobuf field <code>string return_url = 3;</code>
      * @return string
      */
@@ -101,6 +115,8 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user completes flow
+     *
      * Generated from protobuf field <code>string return_url = 3;</code>
      * @param string $var
      * @return $this
@@ -109,28 +125,6 @@ class CreatePortalLinkInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->return_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string complete_url = 4;</code>
-     * @return string
-     */
-    public function getCompleteUrl()
-    {
-        return $this->complete_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string complete_url = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCompleteUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->complete_url = $var;
 
         return $this;
     }

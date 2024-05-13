@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.universe.CreateSubscriptionInput</code>
+ * Generated from protobuf message <code>eolymp.universe.StartSubscriptionTrialInput</code>
  */
-class CreateSubscriptionInput extends \Google\Protobuf\Internal\Message
+class StartSubscriptionTrialInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string plan_id = 1;</code>
@@ -21,10 +21,6 @@ class CreateSubscriptionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string variant_id = 2;</code>
      */
     protected $variant_id = '';
-    /**
-     * Generated from protobuf field <code>uint32 seats = 3;</code>
-     */
-    protected $seats = 0;
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class CreateSubscriptionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $plan_id
      *     @type string $variant_id
-     *     @type int $seats
      * }
      */
     public function __construct($data = NULL) {
@@ -82,28 +77,6 @@ class CreateSubscriptionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->variant_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 seats = 3;</code>
-     * @return int
-     */
-    public function getSeats()
-    {
-        return $this->seats;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 seats = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSeats($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->seats = $var;
 
         return $this;
     }

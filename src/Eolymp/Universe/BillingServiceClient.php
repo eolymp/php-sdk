@@ -119,6 +119,38 @@ class BillingServiceClient {
     }
 
     /**
+     * @param StartSubscriptionTrialInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartSubscriptionTrialOutput output message
+     */
+    public function StartSubscriptionTrial(StartSubscriptionTrialInput $input, array $context = [])
+    {
+        $path = "/billing/trial/start";
+
+        $context['name'] = "eolymp.universe.BillingService/StartSubscriptionTrial";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartSubscriptionTrialOutput::class, $context);
+    }
+
+    /**
+     * @param EndSubscriptionTrialInput $input message
+     * @param array $context request parameters
+     *
+     * @return EndSubscriptionTrialOutput output message
+     */
+    public function EndSubscriptionTrial(EndSubscriptionTrialInput $input, array $context = [])
+    {
+        $path = "/billing/trial/end";
+
+        $context['name'] = "eolymp.universe.BillingService/EndSubscriptionTrial";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, EndSubscriptionTrialOutput::class, $context);
+    }
+
+    /**
      * @param SimulateSubscriptionInput $input message
      * @param array $context request parameters
      *

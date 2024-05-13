@@ -31,6 +31,12 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $irregular = false;
     /**
+     * Defines if payment method has been added to the subscription
+     *
+     * Generated from protobuf field <code>bool has_payment_method = 4;</code>
+     */
+    protected $has_payment_method = false;
+    /**
      * Generated from protobuf field <code>.eolymp.universe.Plan plan = 10;</code>
      */
     protected $plan = null;
@@ -110,6 +116,8 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *           If this flag is set to true, show warning to the customer because subscription might have multiple items,
      *           unrecognized changes or other irregularities. It might be due to an error or special manual configuration.
      *           Updating irregular subscriptions is not possible without intervention from support.
+     *     @type bool $has_payment_method
+     *           Defines if payment method has been added to the subscription
      *     @type \Eolymp\Universe\Plan $plan
      *     @type \Eolymp\Universe\Plan\Variant $variant
      *     @type int $seats
@@ -210,6 +218,32 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->irregular = $var;
+
+        return $this;
+    }
+
+    /**
+     * Defines if payment method has been added to the subscription
+     *
+     * Generated from protobuf field <code>bool has_payment_method = 4;</code>
+     * @return bool
+     */
+    public function getHasPaymentMethod()
+    {
+        return $this->has_payment_method;
+    }
+
+    /**
+     * Defines if payment method has been added to the subscription
+     *
+     * Generated from protobuf field <code>bool has_payment_method = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasPaymentMethod($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->has_payment_method = $var;
 
         return $this;
     }
