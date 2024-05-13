@@ -26,9 +26,9 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
      */
     protected $seats = 0;
     /**
-     * Generated from protobuf field <code>bool trail = 4;</code>
+     * Generated from protobuf field <code>bool trial = 4;</code>
      */
-    protected $trail = false;
+    protected $trial = false;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
      *     @type string $plan_id
      *     @type string $variant_id
      *     @type int $seats
-     *     @type bool $trail
+     *     @type bool $trial
      * }
      */
     public function __construct($data = NULL) {
@@ -114,23 +114,23 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool trail = 4;</code>
+     * Generated from protobuf field <code>bool trial = 4;</code>
      * @return bool
      */
-    public function getTrail()
+    public function getTrial()
     {
-        return $this->trail;
+        return $this->trial;
     }
 
     /**
-     * Generated from protobuf field <code>bool trail = 4;</code>
+     * Generated from protobuf field <code>bool trial = 4;</code>
      * @param bool $var
      * @return $this
      */
-    public function setTrail($var)
+    public function setTrial($var)
     {
         GPBUtil::checkBool($var);
-        $this->trail = $var;
+        $this->trial = $var;
 
         return $this;
     }
