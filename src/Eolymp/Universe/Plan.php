@@ -34,6 +34,14 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
+     * Generated from protobuf field <code>uint32 min_seats = 10;</code>
+     */
+    protected $min_seats = 0;
+    /**
+     * Generated from protobuf field <code>uint32 max_seats = 11;</code>
+     */
+    protected $max_seats = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
      */
     private $variants;
@@ -49,6 +57,8 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Quota $quota
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type int $min_seats
+     *     @type int $max_seats
      *     @type \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
@@ -163,6 +173,50 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 min_seats = 10;</code>
+     * @return int
+     */
+    public function getMinSeats()
+    {
+        return $this->min_seats;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 min_seats = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinSeats($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_seats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 max_seats = 11;</code>
+     * @return int
+     */
+    public function getMaxSeats()
+    {
+        return $this->max_seats;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 max_seats = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxSeats($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_seats = $var;
 
         return $this;
     }
