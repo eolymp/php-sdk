@@ -39,6 +39,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string tie_breaker = 5;</code>
      */
     protected $tie_breaker = '';
+    /**
+     * hides results in participant UI, to prevent one participant seeing result of another during onsite competitions
+     *
+     * Generated from protobuf field <code>bool no_spoiler_ui = 6;</code>
+     */
+    protected $no_spoiler_ui = false;
 
     /**
      * Constructor.
@@ -54,6 +60,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type int $attempt_penalty
      *     @type string $tie_breaker
      *           tie breaker parameter
+     *     @type bool $no_spoiler_ui
+     *           hides results in participant UI, to prevent one participant seeing result of another during onsite competitions
      * }
      */
     public function __construct($data = NULL) {
@@ -179,6 +187,32 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tie_breaker = $var;
+
+        return $this;
+    }
+
+    /**
+     * hides results in participant UI, to prevent one participant seeing result of another during onsite competitions
+     *
+     * Generated from protobuf field <code>bool no_spoiler_ui = 6;</code>
+     * @return bool
+     */
+    public function getNoSpoilerUi()
+    {
+        return $this->no_spoiler_ui;
+    }
+
+    /**
+     * hides results in participant UI, to prevent one participant seeing result of another during onsite competitions
+     *
+     * Generated from protobuf field <code>bool no_spoiler_ui = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setNoSpoilerUi($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->no_spoiler_ui = $var;
 
         return $this;
     }
