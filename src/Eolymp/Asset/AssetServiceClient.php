@@ -23,6 +23,8 @@ class AssetServiceClient {
     }
 
     /**
+     * deprecated, use universal UploadAsset API instead
+     *
      * @param UploadImageInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +41,8 @@ class AssetServiceClient {
     }
 
     /**
+     * deprecated, use universal UploadAsset API instead
+     *
      * @param UploadFileInput $input message
      * @param array $context request parameters
      *
@@ -52,6 +56,86 @@ class AssetServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadFileOutput::class, $context);
+    }
+
+    /**
+     * UploadAsset allows to upload a file under 5 MB, files over 5MB must be uploaded using multipart upload API
+     *
+     * @param UploadAssetInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadAssetOutput output message
+     */
+    public function UploadAsset(UploadAssetInput $input, array $context = [])
+    {
+        $path = "/assets";
+
+        $context['name'] = "eolymp.asset.AssetService/UploadAsset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadAssetOutput::class, $context);
+    }
+
+    /**
+     * StartMultipartUpload creates an upload_id, which then can be used with UploadPart API to upload file in parts of 5MB
+     *
+     * @param StartMultipartUploadInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartMultipartUploadOutput output message
+     */
+    public function StartMultipartUpload(StartMultipartUploadInput $input, array $context = [])
+    {
+        $path = "/uploads";
+
+        $context['name'] = "eolymp.asset.AssetService/StartMultipartUpload";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, StartMultipartUploadOutput::class, $context);
+    }
+
+    /**
+     * UploadPart of a file, before calling this method you must start upload process using StartMultipartUpload API, once
+     * all parts are uploaded you must call CompleteMultipartUpload to finalize upload process and get asset_url.
+     * Every part, except last one, must be 5MB. You can use from 1 to 1000 parts per upload.
+     *
+     * @param UploadPartInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadPartOutput output message
+     */
+    public function UploadPart(UploadPartInput $input, array $context = [])
+    {
+        $path = "/uploads/".rawurlencode($input->getUploadId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUploadId("");
+
+        $context['name'] = "eolymp.asset.AssetService/UploadPart";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadPartOutput::class, $context);
+    }
+
+    /**
+     * CompleteMultipartUpload finalizes upload process and generates asset_url.
+     *
+     * @param CompleteMultipartUploadInput $input message
+     * @param array $context request parameters
+     *
+     * @return CompleteMultipartUploadOutput output message
+     */
+    public function CompleteMultipartUpload(CompleteMultipartUploadInput $input, array $context = [])
+    {
+        $path = "/uploads/".rawurlencode($input->getUploadId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setUploadId("");
+
+        $context['name'] = "eolymp.asset.AssetService/CompleteMultipartUpload";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CompleteMultipartUploadOutput::class, $context);
     }
 
 }
