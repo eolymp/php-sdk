@@ -30,9 +30,23 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
+     * true if fragment is public and available, otherwise it's considered to be draft
+     *
+     * Generated from protobuf field <code>string public = 13;</code>
+     */
+    protected $public = '';
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
     protected $content = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     */
+    protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
+     */
+    protected $updated_at = null;
     /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
@@ -48,7 +62,11 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *     @type string $locale
      *     @type string $title
+     *     @type string $public
+     *           true if fragment is public and available, otherwise it's considered to be draft
      *     @type \Eolymp\Ecm\Content $content
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
@@ -146,6 +164,32 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * true if fragment is public and available, otherwise it's considered to be draft
+     *
+     * Generated from protobuf field <code>string public = 13;</code>
+     * @return string
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * true if fragment is public and available, otherwise it's considered to be draft
+     *
+     * Generated from protobuf field <code>string public = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPublic($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->public = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      * @return \Eolymp\Ecm\Content
      */
@@ -163,6 +207,50 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
+     * @return \Google\Protobuf\Timestamp
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_at = $var;
 
         return $this;
     }
