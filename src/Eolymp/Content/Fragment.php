@@ -32,9 +32,9 @@ class Fragment extends \Google\Protobuf\Internal\Message
     /**
      * true if fragment is public and available, otherwise it's considered to be draft
      *
-     * Generated from protobuf field <code>string public = 13;</code>
+     * Generated from protobuf field <code>bool public = 13;</code>
      */
-    protected $public = '';
+    protected $public = false;
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
@@ -62,7 +62,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $path
      *     @type string $locale
      *     @type string $title
-     *     @type string $public
+     *     @type bool $public
      *           true if fragment is public and available, otherwise it's considered to be draft
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -166,8 +166,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
     /**
      * true if fragment is public and available, otherwise it's considered to be draft
      *
-     * Generated from protobuf field <code>string public = 13;</code>
-     * @return string
+     * Generated from protobuf field <code>bool public = 13;</code>
+     * @return bool
      */
     public function getPublic()
     {
@@ -177,13 +177,13 @@ class Fragment extends \Google\Protobuf\Internal\Message
     /**
      * true if fragment is public and available, otherwise it's considered to be draft
      *
-     * Generated from protobuf field <code>string public = 13;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool public = 13;</code>
+     * @param bool $var
      * @return $this
      */
     public function setPublic($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkBool($var);
         $this->public = $var;
 
         return $this;
