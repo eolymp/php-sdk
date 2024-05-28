@@ -4,7 +4,7 @@
 
 namespace Eolymp\Helpdesk;
 
-class SupportClient {
+class TicketServiceClient {
 
     /** @var string base URL */
     private $url;
@@ -32,7 +32,7 @@ class SupportClient {
     {
         $path = "/helpdesk/tickets";
 
-        $context['name'] = "eolymp.helpdesk.Support/CreateTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/CreateTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateTicketOutput::class, $context);
@@ -51,7 +51,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/UpdateTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/UpdateTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateTicketOutput::class, $context);
@@ -70,7 +70,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/DeleteTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/DeleteTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteTicketOutput::class, $context);
@@ -89,7 +89,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/DescribeTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/DescribeTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTicketOutput::class, $context);
@@ -105,7 +105,7 @@ class SupportClient {
     {
         $path = "/helpdesk/tickets";
 
-        $context['name'] = "eolymp.helpdesk.Support/ListTickets";
+        $context['name'] = "eolymp.helpdesk.TicketService/ListTickets";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTicketsOutput::class, $context);
@@ -124,7 +124,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/ApproveTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/ApproveTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, ApproveTicketOutput::class, $context);
@@ -143,7 +143,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/RejectTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/RejectTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RejectTicketOutput::class, $context);
@@ -162,7 +162,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/CloseTicket";
+        $context['name'] = "eolymp.helpdesk.TicketService/CloseTicket";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CloseTicketOutput::class, $context);
@@ -181,7 +181,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/AddComment";
+        $context['name'] = "eolymp.helpdesk.TicketService/AddComment";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddCommentOutput::class, $context);
@@ -201,7 +201,7 @@ class SupportClient {
         $input->setTicketId("");
         $input->setCommentId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/UpdateComment";
+        $context['name'] = "eolymp.helpdesk.TicketService/UpdateComment";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateCommentOutput::class, $context);
@@ -221,7 +221,7 @@ class SupportClient {
         $input->setTicketId("");
         $input->setCommentId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/DeleteComment";
+        $context['name'] = "eolymp.helpdesk.TicketService/DeleteComment";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCommentOutput::class, $context);
@@ -240,7 +240,7 @@ class SupportClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setTicketId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/ListComments";
+        $context['name'] = "eolymp.helpdesk.TicketService/ListComments";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCommentsOutput::class, $context);
@@ -260,99 +260,10 @@ class SupportClient {
         $input->setTicketId("");
         $input->setCommentId("");
 
-        $context['name'] = "eolymp.helpdesk.Support/DescribeComment";
+        $context['name'] = "eolymp.helpdesk.TicketService/DescribeComment";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCommentOutput::class, $context);
-    }
-
-    /**
-     * @param CreateAutoReplyInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateAutoReplyOutput output message
-     */
-    public function CreateAutoReply(CreateAutoReplyInput $input, array $context = [])
-    {
-        $path = "/helpdesk/autoreplies";
-
-        $context['name'] = "eolymp.helpdesk.Support/CreateAutoReply";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAutoReplyOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateAutoReplyInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateAutoReplyOutput output message
-     */
-    public function UpdateAutoReply(UpdateAutoReplyInput $input, array $context = [])
-    {
-        $path = "/helpdesk/autoreplies/".rawurlencode($input->getReplyId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setReplyId("");
-
-        $context['name'] = "eolymp.helpdesk.Support/UpdateAutoReply";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateAutoReplyOutput::class, $context);
-    }
-
-    /**
-     * @param DeleteAutoReplyInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteAutoReplyOutput output message
-     */
-    public function DeleteAutoReply(DeleteAutoReplyInput $input, array $context = [])
-    {
-        $path = "/helpdesk/autoreplies/".rawurlencode($input->getReplyId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setReplyId("");
-
-        $context['name'] = "eolymp.helpdesk.Support/DeleteAutoReply";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAutoReplyOutput::class, $context);
-    }
-
-    /**
-     * @param ListAutoRepliesInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListAutoRepliesOutput output message
-     */
-    public function ListAutoReplies(ListAutoRepliesInput $input, array $context = [])
-    {
-        $path = "/helpdesk/autoreplies";
-
-        $context['name'] = "eolymp.helpdesk.Support/ListAutoReplies";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAutoRepliesOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeAutoReplyInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeAutoReplyOutput output message
-     */
-    public function DescribeAutoReply(DescribeAutoReplyInput $input, array $context = [])
-    {
-        $path = "/helpdesk/autoreplies/".rawurlencode($input->getReplyId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setReplyId("");
-
-        $context['name'] = "eolymp.helpdesk.Support/DescribeAutoReply";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAutoReplyOutput::class, $context);
     }
 
     /**
@@ -365,7 +276,7 @@ class SupportClient {
     {
         $path = "/helpdesk/attachments";
 
-        $context['name'] = "eolymp.helpdesk.Support/UploadAttachment";
+        $context['name'] = "eolymp.helpdesk.TicketService/UploadAttachment";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadAttachmentOutput::class, $context);

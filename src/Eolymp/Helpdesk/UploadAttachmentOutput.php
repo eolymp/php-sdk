@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.helpdesk.DeleteTicketInput</code>
+ * Generated from protobuf message <code>eolymp.helpdesk.UploadAttachmentOutput</code>
  */
-class DeleteTicketInput extends \Google\Protobuf\Internal\Message
+class UploadAttachmentOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * Generated from protobuf field <code>string attachment_url = 1;</code>
      */
-    protected $ticket_id = '';
+    protected $attachment_url = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeleteTicketInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $ticket_id
+     *     @type string $attachment_url
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DeleteTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * Generated from protobuf field <code>string attachment_url = 1;</code>
      * @return string
      */
-    public function getTicketId()
+    public function getAttachmentUrl()
     {
-        return $this->ticket_id;
+        return $this->attachment_url;
     }
 
     /**
-     * Generated from protobuf field <code>string ticket_id = 1;</code>
+     * Generated from protobuf field <code>string attachment_url = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setTicketId($var)
+    public function setAttachmentUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->ticket_id = $var;
+        $this->attachment_url = $var;
 
         return $this;
     }
