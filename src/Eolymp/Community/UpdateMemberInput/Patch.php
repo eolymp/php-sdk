@@ -102,9 +102,9 @@ class Patch
      */
     const USER_PREFERENCES_RUNTIME = 192;
     /**
-     * Generated from protobuf enum <code>USER_PREFERENCES_NOTIFICATIONS = 193;</code>
+     * Generated from protobuf enum <code>USER_EMAIL_SUBSCRIPTIONS = 110;</code>
      */
-    const USER_PREFERENCES_NOTIFICATIONS = 193;
+    const USER_EMAIL_SUBSCRIPTIONS = 110;
     /**
      * Generated from protobuf enum <code>TEAM_NAME = 200;</code>
      */
@@ -140,7 +140,7 @@ class Patch
         self::USER_PREFERENCES_LOCALE => 'USER_PREFERENCES_LOCALE',
         self::USER_PREFERENCES_TIMEZONE => 'USER_PREFERENCES_TIMEZONE',
         self::USER_PREFERENCES_RUNTIME => 'USER_PREFERENCES_RUNTIME',
-        self::USER_PREFERENCES_NOTIFICATIONS => 'USER_PREFERENCES_NOTIFICATIONS',
+        self::USER_EMAIL_SUBSCRIPTIONS => 'USER_EMAIL_SUBSCRIPTIONS',
         self::TEAM_NAME => 'TEAM_NAME',
         self::GHOST_NAME => 'GHOST_NAME',
         self::ATTRIBUTES => 'ATTRIBUTES',

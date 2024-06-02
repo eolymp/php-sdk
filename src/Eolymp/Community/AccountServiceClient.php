@@ -169,36 +169,4 @@ class AccountServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteRecoverOutput::class, $context);
     }
 
-    /**
-     * @param DescribeNotificationPreferencesInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeNotificationPreferencesOutput output message
-     */
-    public function DescribeNotificationPreferences(DescribeNotificationPreferencesInput $input, array $context = [])
-    {
-        $path = "/account/notifications";
-
-        $context['name'] = "eolymp.community.AccountService/DescribeNotificationPreferences";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeNotificationPreferencesOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateNotificationPreferencesInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateNotificationPreferencesOutput output message
-     */
-    public function UpdateNotificationPreferences(UpdateNotificationPreferencesInput $input, array $context = [])
-    {
-        $path = "/account/notifications";
-
-        $context['name'] = "eolymp.community.AccountService/UpdateNotificationPreferences";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateNotificationPreferencesOutput::class, $context);
-    }
-
 }

@@ -38,6 +38,10 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $email_verified = false;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType email_subscriptions = 22;</code>
+     */
+    private $email_subscriptions;
+    /**
      * Generated from protobuf field <code>string password = 30;</code>
      */
     protected $password = '';
@@ -86,6 +90,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type int $nickname_change_timeout
      *     @type string $email
      *     @type bool $email_verified
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $email_subscriptions
      *     @type string $password
      *     @type int $password_age
      *     @type string $name
@@ -230,6 +235,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType email_subscriptions = 22;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getEmailSubscriptions()
+    {
+        return $this->email_subscriptions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType email_subscriptions = 22;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setEmailSubscriptions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mailing\EmailType::class);
+        $this->email_subscriptions = $arr;
 
         return $this;
     }
