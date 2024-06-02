@@ -170,35 +170,19 @@ class AccountServiceClient {
     }
 
     /**
-     * @param ConfigureActiveSubscriptionInput $input message
+     * @param UpdateNotificationPreferencesInput $input message
      * @param array $context request parameters
      *
-     * @return ConfigureActiveSubscriptionOutput output message
+     * @return UpdateNotificationPreferencesOutput output message
      */
-    public function ConfigureActiveSubscription(ConfigureActiveSubscriptionInput $input, array $context = [])
+    public function UpdateNotificationPreferences(UpdateNotificationPreferencesInput $input, array $context = [])
     {
-        $path = "/account/subscription";
+        $path = "/account/notifications";
 
-        $context['name'] = "eolymp.community.AccountService/ConfigureActiveSubscription";
+        $context['name'] = "eolymp.community.AccountService/UpdateNotificationPreferences";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureActiveSubscriptionOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeActiveSubscriptionInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeActiveSubscriptionOutput output message
-     */
-    public function DescribeActiveSubscription(DescribeActiveSubscriptionInput $input, array $context = [])
-    {
-        $path = "/account/subscription";
-
-        $context['name'] = "eolymp.community.AccountService/DescribeActiveSubscription";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeActiveSubscriptionOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UpdateNotificationPreferencesOutput::class, $context);
     }
 
 }

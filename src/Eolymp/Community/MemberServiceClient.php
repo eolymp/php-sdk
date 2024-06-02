@@ -189,23 +189,4 @@ class MemberServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberUsageOutput::class, $context);
     }
 
-    /**
-     * @param UnsubscribeMemberInput $input message
-     * @param array $context request parameters
-     *
-     * @return UnsubscribeMemberOutput output message
-     */
-    public function UnsubscribeMember(UnsubscribeMemberInput $input, array $context = [])
-    {
-        $path = "/members/".rawurlencode($input->getMemberId())."/unsubscribe";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
-
-        $context['name'] = "eolymp.community.MemberService/UnsubscribeMember";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnsubscribeMemberOutput::class, $context);
-    }
-
 }
