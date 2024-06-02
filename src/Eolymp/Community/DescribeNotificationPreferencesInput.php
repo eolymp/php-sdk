@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.UpdateNotificationPreferencesInput</code>
+ * Generated from protobuf message <code>eolymp.community.DescribeNotificationPreferencesInput</code>
  */
-class UpdateNotificationPreferencesInput extends \Google\Protobuf\Internal\Message
+class DescribeNotificationPreferencesInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * secret from the email
@@ -19,10 +19,6 @@ class UpdateNotificationPreferencesInput extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string token = 1;</code>
      */
     protected $token = '';
-    /**
-     * Generated from protobuf field <code>repeated string topics = 2;</code>
-     */
-    private $topics;
 
     /**
      * Constructor.
@@ -32,7 +28,6 @@ class UpdateNotificationPreferencesInput extends \Google\Protobuf\Internal\Messa
      *
      *     @type string $token
      *           secret from the email
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
      * }
      */
     public function __construct($data = NULL) {
@@ -62,28 +57,6 @@ class UpdateNotificationPreferencesInput extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkString($var, True);
         $this->token = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getTopics()
-    {
-        return $this->topics;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setTopics($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->topics = $arr;
 
         return $this;
     }
