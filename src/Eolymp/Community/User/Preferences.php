@@ -25,6 +25,10 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string runtime = 10;</code>
      */
     protected $runtime = '';
+    /**
+     * Generated from protobuf field <code>repeated string notifications = 20;</code>
+     */
+    private $notifications;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $timezone
      *     @type string $runtime
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $notifications
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class Preferences extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string notifications = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getNotifications()
+    {
+        return $this->notifications;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string notifications = 20;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setNotifications($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->notifications = $arr;
 
         return $this;
     }
