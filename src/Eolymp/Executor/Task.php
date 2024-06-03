@@ -39,13 +39,6 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $priority = 0;
     /**
-     * Programming language.
-     * Deprecated: use runtime instead.
-     *
-     * Generated from protobuf field <code>string lang = 1000;</code>
-     */
-    protected $lang = '';
-    /**
      * Runtime which should be used to execute source code.
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
@@ -58,12 +51,23 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
-     * Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
-     * Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
+     * source code URL (overrides source)
      *
-     * Generated from protobuf field <code>bool use_file_io = 12;</code>
+     * Generated from protobuf field <code>string source_url = 110;</code>
      */
-    protected $use_file_io = false;
+    protected $source_url = '';
+    /**
+     * prepend source code before executing
+     *
+     * Generated from protobuf field <code>string header_url = 111;</code>
+     */
+    protected $header_url = '';
+    /**
+     * append source code before executing
+     *
+     * Generated from protobuf field <code>string footer_url = 112;</code>
+     */
+    protected $footer_url = '';
     /**
      * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
@@ -71,12 +75,6 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
      */
     protected $redirect_stderr_to_stdout = false;
-    /**
-     * Create workspace archive for every run and upload it to the storage
-     *
-     * Generated from protobuf field <code>bool use_workspace_archive = 15;</code>
-     */
-    protected $use_workspace_archive = false;
     /**
      * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *
@@ -137,21 +135,19 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type int $priority
      *           Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
      *           Currently not supported.
-     *     @type string $lang
-     *           Programming language.
-     *           Deprecated: use runtime instead.
      *     @type string $runtime
      *           Runtime which should be used to execute source code.
      *     @type string $source
      *           Source code.
-     *     @type bool $use_file_io
-     *           Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
-     *           Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
+     *     @type string $source_url
+     *           source code URL (overrides source)
+     *     @type string $header_url
+     *           prepend source code before executing
+     *     @type string $footer_url
+     *           append source code before executing
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
-     *     @type bool $use_workspace_archive
-     *           Create workspace archive for every run and upload it to the storage
      *     @type int $run_count
      *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
@@ -262,34 +258,6 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Programming language.
-     * Deprecated: use runtime instead.
-     *
-     * Generated from protobuf field <code>string lang = 1000;</code>
-     * @return string
-     */
-    public function getLang()
-    {
-        return $this->lang;
-    }
-
-    /**
-     * Programming language.
-     * Deprecated: use runtime instead.
-     *
-     * Generated from protobuf field <code>string lang = 1000;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLang($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->lang = $var;
-
-        return $this;
-    }
-
-    /**
      * Runtime which should be used to execute source code.
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
@@ -342,29 +310,79 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
-     * Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
+     * source code URL (overrides source)
      *
-     * Generated from protobuf field <code>bool use_file_io = 12;</code>
-     * @return bool
+     * Generated from protobuf field <code>string source_url = 110;</code>
+     * @return string
      */
-    public function getUseFileIo()
+    public function getSourceUrl()
     {
-        return $this->use_file_io;
+        return $this->source_url;
     }
 
     /**
-     * Program handles input and output on it's own: if true stdin will be empty and stdout will be ignored.
-     * Deprecated: always use `false`. Even if value is false program can read and write to the input.txt and output.txt.
+     * source code URL (overrides source)
      *
-     * Generated from protobuf field <code>bool use_file_io = 12;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>string source_url = 110;</code>
+     * @param string $var
      * @return $this
      */
-    public function setUseFileIo($var)
+    public function setSourceUrl($var)
     {
-        GPBUtil::checkBool($var);
-        $this->use_file_io = $var;
+        GPBUtil::checkString($var, True);
+        $this->source_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * prepend source code before executing
+     *
+     * Generated from protobuf field <code>string header_url = 111;</code>
+     * @return string
+     */
+    public function getHeaderUrl()
+    {
+        return $this->header_url;
+    }
+
+    /**
+     * prepend source code before executing
+     *
+     * Generated from protobuf field <code>string header_url = 111;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHeaderUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->header_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * append source code before executing
+     *
+     * Generated from protobuf field <code>string footer_url = 112;</code>
+     * @return string
+     */
+    public function getFooterUrl()
+    {
+        return $this->footer_url;
+    }
+
+    /**
+     * append source code before executing
+     *
+     * Generated from protobuf field <code>string footer_url = 112;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFooterUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->footer_url = $var;
 
         return $this;
     }
@@ -393,32 +411,6 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->redirect_stderr_to_stdout = $var;
-
-        return $this;
-    }
-
-    /**
-     * Create workspace archive for every run and upload it to the storage
-     *
-     * Generated from protobuf field <code>bool use_workspace_archive = 15;</code>
-     * @return bool
-     */
-    public function getUseWorkspaceArchive()
-    {
-        return $this->use_workspace_archive;
-    }
-
-    /**
-     * Create workspace archive for every run and upload it to the storage
-     *
-     * Generated from protobuf field <code>bool use_workspace_archive = 15;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setUseWorkspaceArchive($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->use_workspace_archive = $var;
 
         return $this;
     }
