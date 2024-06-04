@@ -96,6 +96,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $error = '';
     /**
+     * a URL with error output
+     *
+     * Generated from protobuf field <code>string error_url = 23;</code>
+     */
+    protected $error_url = '';
+    /**
      * maximum possible score for the submission
      *
      * Generated from protobuf field <code>float cost = 30;</code>
@@ -151,6 +157,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           overall verdict based on verdicts in groups/runs
      *     @type string $error
      *           error message in case status is ERROR
+     *     @type string $error_url
+     *           a URL with error output
      *     @type float $cost
      *           maximum possible score for the submission
      *     @type float $score
@@ -521,6 +529,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * a URL with error output
+     *
+     * Generated from protobuf field <code>string error_url = 23;</code>
+     * @return string
+     */
+    public function getErrorUrl()
+    {
+        return $this->error_url;
+    }
+
+    /**
+     * a URL with error output
+     *
+     * Generated from protobuf field <code>string error_url = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_url = $var;
 
         return $this;
     }
