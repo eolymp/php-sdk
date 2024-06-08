@@ -38,9 +38,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $region_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum class = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum level = 6;</code>
      */
-    private $class;
+    private $level;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 7;</code>
      */
@@ -62,7 +62,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $abbr
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $country_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $region_id
-     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $class
+     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $level
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $type
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $governance
      * }
@@ -205,23 +205,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum class = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum level = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getClass()
+    public function getLevel()
     {
-        return $this->class;
+        return $this->level;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum class = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum level = 6;</code>
      * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setClass($var)
+    public function setLevel($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->class = $arr;
+        $this->level = $arr;
 
         return $this;
     }
