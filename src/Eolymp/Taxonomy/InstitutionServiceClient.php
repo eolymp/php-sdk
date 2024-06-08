@@ -23,6 +23,22 @@ class InstitutionServiceClient {
     }
 
     /**
+     * @param ListInstitutionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListInstitutionsOutput output message
+     */
+    public function ListInstitutions(ListInstitutionsInput $input, array $context = [])
+    {
+        $path = "/institutions";
+
+        $context['name'] = "eolymp.taxonomy.InstitutionService/ListInstitutions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListInstitutionsOutput::class, $context);
+    }
+
+    /**
      * @param DescribeInstitutionInput $input message
      * @param array $context request parameters
      *
@@ -39,22 +55,6 @@ class InstitutionServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeInstitutionOutput::class, $context);
-    }
-
-    /**
-     * @param ListInstitutionsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListInstitutionsOutput output message
-     */
-    public function ListInstitutions(ListInstitutionsInput $input, array $context = [])
-    {
-        $path = "/institutions";
-
-        $context['name'] = "eolymp.taxonomy.InstitutionService/ListInstitutions";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListInstitutionsOutput::class, $context);
     }
 
 }

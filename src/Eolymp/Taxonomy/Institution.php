@@ -24,12 +24,6 @@ class Institution extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * in local language
-     *
-     * Generated from protobuf field <code>string name_locale = 3;</code>
-     */
-    protected $name_locale = '';
-    /**
      * in english
      *
      * Generated from protobuf field <code>string abbr = 4;</code>
@@ -38,9 +32,15 @@ class Institution extends \Google\Protobuf\Internal\Message
     /**
      * in local language
      *
-     * Generated from protobuf field <code>string abbr_local = 5;</code>
+     * Generated from protobuf field <code>string local_name = 3;</code>
      */
-    protected $abbr_local = '';
+    protected $local_name = '';
+    /**
+     * in local language
+     *
+     * Generated from protobuf field <code>string local_abbr = 5;</code>
+     */
+    protected $local_abbr = '';
     /**
      * Generated from protobuf field <code>string logo_url = 20;</code>
      */
@@ -83,11 +83,11 @@ class Institution extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *           in english
-     *     @type string $name_locale
-     *           in local language
      *     @type string $abbr
      *           in english
-     *     @type string $abbr_local
+     *     @type string $local_name
+     *           in local language
+     *     @type string $local_abbr
      *           in local language
      *     @type string $logo_url
      *     @type int $governance
@@ -153,32 +153,6 @@ class Institution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in local language
-     *
-     * Generated from protobuf field <code>string name_locale = 3;</code>
-     * @return string
-     */
-    public function getNameLocale()
-    {
-        return $this->name_locale;
-    }
-
-    /**
-     * in local language
-     *
-     * Generated from protobuf field <code>string name_locale = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNameLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name_locale = $var;
-
-        return $this;
-    }
-
-    /**
      * in english
      *
      * Generated from protobuf field <code>string abbr = 4;</code>
@@ -207,25 +181,51 @@ class Institution extends \Google\Protobuf\Internal\Message
     /**
      * in local language
      *
-     * Generated from protobuf field <code>string abbr_local = 5;</code>
+     * Generated from protobuf field <code>string local_name = 3;</code>
      * @return string
      */
-    public function getAbbrLocal()
+    public function getLocalName()
     {
-        return $this->abbr_local;
+        return $this->local_name;
     }
 
     /**
      * in local language
      *
-     * Generated from protobuf field <code>string abbr_local = 5;</code>
+     * Generated from protobuf field <code>string local_name = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setAbbrLocal($var)
+    public function setLocalName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->abbr_local = $var;
+        $this->local_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * in local language
+     *
+     * Generated from protobuf field <code>string local_abbr = 5;</code>
+     * @return string
+     */
+    public function getLocalAbbr()
+    {
+        return $this->local_abbr;
+    }
+
+    /**
+     * in local language
+     *
+     * Generated from protobuf field <code>string local_abbr = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocalAbbr($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->local_abbr = $var;
 
         return $this;
     }

@@ -12,9 +12,9 @@ use UnexpectedValueException;
 class Level
 {
     /**
-     * Generated from protobuf enum <code>UNKNOWN_CLASS = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_LEVEL = 0;</code>
      */
-    const UNKNOWN_CLASS = 0;
+    const UNKNOWN_LEVEL = 0;
     /**
      * under 5 yo.: kindergartens, etc. (here mostly for completeness)
      *
@@ -41,7 +41,7 @@ class Level
     const TERTIARY = 4;
 
     private static $valueToName = [
-        self::UNKNOWN_CLASS => 'UNKNOWN_CLASS',
+        self::UNKNOWN_LEVEL => 'UNKNOWN_LEVEL',
         self::PRESCHOOL => 'PRESCHOOL',
         self::PRIMARY => 'PRIMARY',
         self::SECONDARY => 'SECONDARY',
