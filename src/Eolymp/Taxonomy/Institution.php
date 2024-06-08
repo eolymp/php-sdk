@@ -18,29 +18,21 @@ class Institution extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * in english
-     *
      * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
     /**
-     * in english
-     *
-     * Generated from protobuf field <code>string abbr = 4;</code>
+     * Generated from protobuf field <code>string acronym = 4;</code>
      */
-    protected $abbr = '';
+    protected $acronym = '';
     /**
-     * in local language
-     *
      * Generated from protobuf field <code>string local_name = 3;</code>
      */
     protected $local_name = '';
     /**
-     * in local language
-     *
-     * Generated from protobuf field <code>string local_abbr = 5;</code>
+     * Generated from protobuf field <code>string local_acronym = 5;</code>
      */
-    protected $local_abbr = '';
+    protected $local_acronym = '';
     /**
      * Generated from protobuf field <code>string logo_url = 20;</code>
      */
@@ -82,13 +74,9 @@ class Institution extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *           in english
-     *     @type string $abbr
-     *           in english
+     *     @type string $acronym
      *     @type string $local_name
-     *           in local language
-     *     @type string $local_abbr
-     *           in local language
+     *     @type string $local_acronym
      *     @type string $logo_url
      *     @type int $governance
      *     @type int $level
@@ -127,8 +115,6 @@ class Institution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in english
-     *
      * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
@@ -138,8 +124,6 @@ class Institution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in english
-     *
      * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
@@ -153,34 +137,28 @@ class Institution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in english
-     *
-     * Generated from protobuf field <code>string abbr = 4;</code>
+     * Generated from protobuf field <code>string acronym = 4;</code>
      * @return string
      */
-    public function getAbbr()
+    public function getAcronym()
     {
-        return $this->abbr;
+        return $this->acronym;
     }
 
     /**
-     * in english
-     *
-     * Generated from protobuf field <code>string abbr = 4;</code>
+     * Generated from protobuf field <code>string acronym = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setAbbr($var)
+    public function setAcronym($var)
     {
         GPBUtil::checkString($var, True);
-        $this->abbr = $var;
+        $this->acronym = $var;
 
         return $this;
     }
 
     /**
-     * in local language
-     *
      * Generated from protobuf field <code>string local_name = 3;</code>
      * @return string
      */
@@ -190,8 +168,6 @@ class Institution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in local language
-     *
      * Generated from protobuf field <code>string local_name = 3;</code>
      * @param string $var
      * @return $this
@@ -205,27 +181,23 @@ class Institution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in local language
-     *
-     * Generated from protobuf field <code>string local_abbr = 5;</code>
+     * Generated from protobuf field <code>string local_acronym = 5;</code>
      * @return string
      */
-    public function getLocalAbbr()
+    public function getLocalAcronym()
     {
-        return $this->local_abbr;
+        return $this->local_acronym;
     }
 
     /**
-     * in local language
-     *
-     * Generated from protobuf field <code>string local_abbr = 5;</code>
+     * Generated from protobuf field <code>string local_acronym = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setLocalAbbr($var)
+    public function setLocalAcronym($var)
     {
         GPBUtil::checkString($var, True);
-        $this->local_abbr = $var;
+        $this->local_acronym = $var;
 
         return $this;
     }

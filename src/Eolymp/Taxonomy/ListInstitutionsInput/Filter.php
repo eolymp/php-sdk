@@ -26,9 +26,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $name;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString abbr = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString acronym = 9;</code>
      */
-    private $abbr;
+    private $acronym;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID country_id = 4;</code>
      */
@@ -59,7 +59,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type string $query
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $id
      *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $name
-     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $abbr
+     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $acronym
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $country_id
      *     @type \Eolymp\Wellknown\ExpressionID[]|\Google\Protobuf\Internal\RepeatedField $region_id
      *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $level
@@ -139,23 +139,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString abbr = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString acronym = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAbbr()
+    public function getAcronym()
     {
-        return $this->abbr;
+        return $this->acronym;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString abbr = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString acronym = 9;</code>
      * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAbbr($var)
+    public function setAcronym($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
-        $this->abbr = $arr;
+        $this->acronym = $arr;
 
         return $this;
     }
