@@ -20,7 +20,19 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     protected $key = '';
     /**
-     * field localized data, such as label and help message
+     * label, normally displayed above the field
+     *
+     * Generated from protobuf field <code>string label = 2;</code>
+     */
+    protected $label = '';
+    /**
+     * help message, normally displayed right below the field
+     *
+     * Generated from protobuf field <code>string help = 3;</code>
+     */
+    protected $help = '';
+    /**
+     * deprecated, field localized data, such as label and help message
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
      */
@@ -83,6 +95,12 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string country = 104;</code>
      */
     protected $country = '';
+    /**
+     * additional constraints
+     *
+     * Generated from protobuf field <code>repeated string constraints = 105;</code>
+     */
+    private $constraints;
 
     /**
      * Constructor.
@@ -92,8 +110,12 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key
      *           unique field identifier (should be unique within the form, not globally unique)
+     *     @type string $label
+     *           label, normally displayed above the field
+     *     @type string $help
+     *           help message, normally displayed right below the field
      *     @type \Eolymp\Community\Attribute\Description[]|\Google\Protobuf\Internal\RepeatedField $description
-     *           field localized data, such as label and help message
+     *           deprecated, field localized data, such as label and help message
      *     @type int $type
      *           type of the field
      *     @type int $index
@@ -113,6 +135,8 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           possible choices validation (see field types for details)
      *     @type string $country
      *           restrict region selector to a specific country
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $constraints
+     *           additional constraints
      * }
      */
     public function __construct($data = NULL) {
@@ -147,7 +171,59 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * field localized data, such as label and help message
+     * label, normally displayed above the field
+     *
+     * Generated from protobuf field <code>string label = 2;</code>
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * label, normally displayed above the field
+     *
+     * Generated from protobuf field <code>string label = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
+
+        return $this;
+    }
+
+    /**
+     * help message, normally displayed right below the field
+     *
+     * Generated from protobuf field <code>string help = 3;</code>
+     * @return string
+     */
+    public function getHelp()
+    {
+        return $this->help;
+    }
+
+    /**
+     * help message, normally displayed right below the field
+     *
+     * Generated from protobuf field <code>string help = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHelp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->help = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, field localized data, such as label and help message
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -158,7 +234,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * field localized data, such as label and help message
+     * deprecated, field localized data, such as label and help message
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
      * @param \Eolymp\Community\Attribute\Description[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -424,6 +500,32 @@ class Attribute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * additional constraints
+     *
+     * Generated from protobuf field <code>repeated string constraints = 105;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getConstraints()
+    {
+        return $this->constraints;
+    }
+
+    /**
+     * additional constraints
+     *
+     * Generated from protobuf field <code>repeated string constraints = 105;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setConstraints($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->constraints = $arr;
 
         return $this;
     }

@@ -93,12 +93,29 @@ class Type
     /**
      * Country and Region value.
      * Validation:
-     *  - required - field must be non-empty
-     *  - country  - region must belong to a specific country
+     *  - required  - field must be non-empty
+     *  - countries - region must belong to a specific country
      *
      * Generated from protobuf enum <code>REGION = 9;</code>
      */
     const REGION = 9;
+    /**
+     * Country and Region value.
+     * Validation:
+     *  - required  - field must be non-empty
+     * Constraints:
+     *  - governance:public
+     *  - governance:private
+     *  - governance:charter
+     *  - level:preschool
+     *  - level:primary
+     *  - level:secondary
+     *  - level:tertiary
+     *  - country:??
+     *
+     * Generated from protobuf enum <code>INSTITUTION = 10;</code>
+     */
+    const INSTITUTION = 10;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -111,6 +128,7 @@ class Type
         self::CHECKBOX => 'CHECKBOX',
         self::COUNTRY => 'COUNTRY',
         self::REGION => 'REGION',
+        self::INSTITUTION => 'INSTITUTION',
     ];
 
     public static function name($value)

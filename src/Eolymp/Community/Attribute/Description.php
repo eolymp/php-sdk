@@ -16,12 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Description extends \Google\Protobuf\Internal\Message
 {
     /**
-     * default description used in case translation is not available
-     *
-     * Generated from protobuf field <code>bool default = 1;</code>
-     */
-    protected $default = false;
-    /**
      * locale
      *
      * Generated from protobuf field <code>string locale = 2;</code>
@@ -52,8 +46,6 @@ class Description extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $default
-     *           default description used in case translation is not available
      *     @type string $locale
      *           locale
      *     @type string $label
@@ -67,32 +59,6 @@ class Description extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Attribute::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * default description used in case translation is not available
-     *
-     * Generated from protobuf field <code>bool default = 1;</code>
-     * @return bool
-     */
-    public function getDefault()
-    {
-        return $this->default;
-    }
-
-    /**
-     * default description used in case translation is not available
-     *
-     * Generated from protobuf field <code>bool default = 1;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setDefault($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->default = $var;
-
-        return $this;
     }
 
     /**
