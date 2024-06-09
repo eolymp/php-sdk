@@ -111,11 +111,35 @@ class Type
      *  - level:primary
      *  - level:secondary
      *  - level:tertiary
-     *  - country:??
+     *  - country:[two-letter]
      *
      * Generated from protobuf enum <code>INSTITUTION = 10;</code>
      */
     const INSTITUTION = 10;
+    /**
+     * An image as a URL to eolympusercontent.com.
+     * Validation:
+     *  - required - field must be non-empty
+     *  - max      - maximal file size in bytes
+     *  - min      - minimal file size in bytes
+     * Constraints:
+     *  - type:[mime-type]]
+     *
+     * Generated from protobuf enum <code>IMAGE = 11;</code>
+     */
+    const IMAGE = 11;
+    /**
+     * A file value as a URL to eolympusercontent.com.
+     * Validation:
+     *  - required - field must be non-empty
+     *  - max      - maximal file size in bytes
+     *  - min      - minimal file size in bytes
+     * Constraints:
+     *  - type:[mime-type]]
+     *
+     * Generated from protobuf enum <code>FILE = 12;</code>
+     */
+    const FILE = 12;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -129,6 +153,8 @@ class Type
         self::COUNTRY => 'COUNTRY',
         self::REGION => 'REGION',
         self::INSTITUTION => 'INSTITUTION',
+        self::IMAGE => 'IMAGE',
+        self::FILE => 'FILE',
     ];
 
     public static function name($value)
