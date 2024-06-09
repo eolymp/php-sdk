@@ -48,23 +48,27 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * field is required (see field types for details)
+     * value is required (see field types for details)
      *
      * Generated from protobuf field <code>bool required = 31;</code>
      */
     protected $required = false;
     /**
-     * field is hidden (only visible to admin)
+     * only administrator can change the value (member can be set during registration)
+     *
+     * Generated from protobuf field <code>bool readonly = 33;</code>
+     */
+    protected $readonly = false;
+    /**
+     * field is hidden (only visible to admin), deprecated, use visibility instead
      *
      * Generated from protobuf field <code>bool hidden = 32;</code>
      */
     protected $hidden = false;
     /**
-     * attribute can only be changed by administrator
-     *
-     * Generated from protobuf field <code>bool readonly = 33;</code>
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Visibility visibility = 34;</code>
      */
-    protected $readonly = false;
+    protected $visibility = 0;
     /**
      * validation
      *
@@ -120,11 +124,12 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           type of the field
      *     @type int $index
      *     @type bool $required
-     *           field is required (see field types for details)
-     *     @type bool $hidden
-     *           field is hidden (only visible to admin)
+     *           value is required (see field types for details)
      *     @type bool $readonly
-     *           attribute can only be changed by administrator
+     *           only administrator can change the value (member can be set during registration)
+     *     @type bool $hidden
+     *           field is hidden (only visible to admin), deprecated, use visibility instead
+     *     @type int $visibility
      *     @type string $regexp
      *           validation
      *     @type int $min
@@ -297,7 +302,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * field is required (see field types for details)
+     * value is required (see field types for details)
      *
      * Generated from protobuf field <code>bool required = 31;</code>
      * @return bool
@@ -308,7 +313,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * field is required (see field types for details)
+     * value is required (see field types for details)
      *
      * Generated from protobuf field <code>bool required = 31;</code>
      * @param bool $var
@@ -323,7 +328,33 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * field is hidden (only visible to admin)
+     * only administrator can change the value (member can be set during registration)
+     *
+     * Generated from protobuf field <code>bool readonly = 33;</code>
+     * @return bool
+     */
+    public function getReadonly()
+    {
+        return $this->readonly;
+    }
+
+    /**
+     * only administrator can change the value (member can be set during registration)
+     *
+     * Generated from protobuf field <code>bool readonly = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReadonly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->readonly = $var;
+
+        return $this;
+    }
+
+    /**
+     * field is hidden (only visible to admin), deprecated, use visibility instead
      *
      * Generated from protobuf field <code>bool hidden = 32;</code>
      * @return bool
@@ -334,7 +365,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * field is hidden (only visible to admin)
+     * field is hidden (only visible to admin), deprecated, use visibility instead
      *
      * Generated from protobuf field <code>bool hidden = 32;</code>
      * @param bool $var
@@ -349,27 +380,23 @@ class Attribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * attribute can only be changed by administrator
-     *
-     * Generated from protobuf field <code>bool readonly = 33;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Visibility visibility = 34;</code>
+     * @return int
      */
-    public function getReadonly()
+    public function getVisibility()
     {
-        return $this->readonly;
+        return $this->visibility;
     }
 
     /**
-     * attribute can only be changed by administrator
-     *
-     * Generated from protobuf field <code>bool readonly = 33;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Visibility visibility = 34;</code>
+     * @param int $var
      * @return $this
      */
-    public function setReadonly($var)
+    public function setVisibility($var)
     {
-        GPBUtil::checkBool($var);
-        $this->readonly = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute_Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }
