@@ -77,6 +77,25 @@ class ContestServiceClient {
     }
 
     /**
+     * @param CopyContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return CopyContestOutput output message
+     */
+    public function CopyContest(CopyContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/copy";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ContestService/CopyContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CopyContestOutput::class, $context);
+    }
+
+    /**
      * @param DescribeContestInput $input message
      * @param array $context request parameters
      *

@@ -127,12 +127,12 @@ class ScoreServiceClient {
      */
     public function ExportResult(ExportResultInput $input, array $context = [])
     {
-        $path = "/results/export";
+        $path = "/results-export";
 
         $context['name'] = "eolymp.judge.ScoreService/ExportResult";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ExportResultOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportResultOutput::class, $context);
     }
 
     /**
