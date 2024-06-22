@@ -16,14 +16,20 @@ class Visibility
      */
     const UNKNOWN_VISIBILITY = 0;
     /**
+     * visible only to organizers
+     *
      * Generated from protobuf enum <code>INVISIBLE = 1;</code>
      */
     const INVISIBLE = 1;
     /**
+     * visible to participants and organizers
+     *
      * Generated from protobuf enum <code>INTERNAL = 2;</code>
      */
     const INTERNAL = 2;
     /**
+     * visible to everyone
+     *
      * Generated from protobuf enum <code>PUBLIC = 3;</code>
      */
     const PBPUBLIC = 3;

@@ -45,6 +45,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool no_spoiler_ui = 6;</code>
      */
     protected $no_spoiler_ui = false;
+    /**
+     * key to share invisible and internal scoreboards with others
+     *
+     * Generated from protobuf field <code>string share_key = 7;</code>
+     */
+    protected $share_key = '';
 
     /**
      * Constructor.
@@ -62,6 +68,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           tie breaker parameter
      *     @type bool $no_spoiler_ui
      *           hides results in participant UI, to prevent one participant seeing result of another during onsite competitions
+     *     @type string $share_key
+     *           key to share invisible and internal scoreboards with others
      * }
      */
     public function __construct($data = NULL) {
@@ -213,6 +221,32 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->no_spoiler_ui = $var;
+
+        return $this;
+    }
+
+    /**
+     * key to share invisible and internal scoreboards with others
+     *
+     * Generated from protobuf field <code>string share_key = 7;</code>
+     * @return string
+     */
+    public function getShareKey()
+    {
+        return $this->share_key;
+    }
+
+    /**
+     * key to share invisible and internal scoreboards with others
+     *
+     * Generated from protobuf field <code>string share_key = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setShareKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->share_key = $var;
 
         return $this;
     }

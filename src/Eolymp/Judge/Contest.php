@@ -36,7 +36,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $starts_at = null;
     /**
-     * Time in seconds until beginning of the contest
+     * deprecated: Time in seconds until beginning of the contest
+     * this value may be off due to caching, calculate time using starts_at field
      *
      * Generated from protobuf field <code>uint32 starts_in = 11;</code>
      */
@@ -48,7 +49,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $ends_at = null;
     /**
-     * Time in seconds until end of the contest
+     * deprecated: Time in seconds until end of the contest
+     * this value may be off due to caching, calculate time using ends_at field
      *
      * Generated from protobuf field <code>uint32 ends_in = 16;</code>
      */
@@ -100,17 +102,31 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $format = 0;
     /**
-     * Domain for contest, used to lookup for contest by domain name.
+     * contest key used to make human friendly URLs.
      *
-     * Generated from protobuf field <code>string domain = 40;</code>
+     * Generated from protobuf field <code>string key = 40;</code>
      */
-    protected $domain = '';
+    protected $key = '';
     /**
-     * Deprecated, space where contest was created, should be avoided.
+     * Number of problems in the contest, might be "hidden".
      *
-     * Generated from protobuf field <code>string space_id = 1000;</code>
+     * Generated from protobuf field <code>uint32 problem_count = 60;</code>
      */
-    protected $space_id = '';
+    protected $problem_count = 0;
+    /**
+     * Generated from protobuf field <code>bool problem_count_hidden = 61;</code>
+     */
+    protected $problem_count_hidden = false;
+    /**
+     * Number of participants in the contest.
+     *
+     * Generated from protobuf field <code>uint32 participant_count = 62;</code>
+     */
+    protected $participant_count = 0;
+    /**
+     * Generated from protobuf field <code>bool participant_count_hidden = 63;</code>
+     */
+    protected $participant_count_hidden = false;
     /**
      * Taxonomy information
      *
@@ -156,11 +172,13 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $starts_at
      *           Contest starting time, after this time users will be able to see problems and make submissions.
      *     @type int $starts_in
-     *           Time in seconds until beginning of the contest
+     *           deprecated: Time in seconds until beginning of the contest
+     *           this value may be off due to caching, calculate time using starts_at field
      *     @type \Google\Protobuf\Timestamp $ends_at
      *           Contest ending time, after this time users submissions won't be counted to the score anymore.
      *     @type int $ends_in
-     *           Time in seconds until end of the contest
+     *           deprecated: Time in seconds until end of the contest
+     *           this value may be off due to caching, calculate time using ends_at field
      *     @type \Google\Protobuf\Timestamp $featured_until
      *           Date and time until contest is displayed in Featured contests
      *     @type int $duration
@@ -179,10 +197,14 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Participation mode defines timeframe for participation: online or virtual.
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
-     *     @type string $domain
-     *           Domain for contest, used to lookup for contest by domain name.
-     *     @type string $space_id
-     *           Deprecated, space where contest was created, should be avoided.
+     *     @type string $key
+     *           contest key used to make human friendly URLs.
+     *     @type int $problem_count
+     *           Number of problems in the contest, might be "hidden".
+     *     @type bool $problem_count_hidden
+     *     @type int $participant_count
+     *           Number of participants in the contest.
+     *     @type bool $participant_count_hidden
      *     @type \Eolymp\Judge\Contest\Taxonomy $taxonomy
      *           Taxonomy information
      *     @type \Eolymp\Judge\Contest\Appearance $appearance
@@ -301,7 +323,8 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time in seconds until beginning of the contest
+     * deprecated: Time in seconds until beginning of the contest
+     * this value may be off due to caching, calculate time using starts_at field
      *
      * Generated from protobuf field <code>uint32 starts_in = 11;</code>
      * @return int
@@ -312,7 +335,8 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time in seconds until beginning of the contest
+     * deprecated: Time in seconds until beginning of the contest
+     * this value may be off due to caching, calculate time using starts_at field
      *
      * Generated from protobuf field <code>uint32 starts_in = 11;</code>
      * @param int $var
@@ -353,7 +377,8 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time in seconds until end of the contest
+     * deprecated: Time in seconds until end of the contest
+     * this value may be off due to caching, calculate time using ends_at field
      *
      * Generated from protobuf field <code>uint32 ends_in = 16;</code>
      * @return int
@@ -364,7 +389,8 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time in seconds until end of the contest
+     * deprecated: Time in seconds until end of the contest
+     * this value may be off due to caching, calculate time using ends_at field
      *
      * Generated from protobuf field <code>uint32 ends_in = 16;</code>
      * @param int $var
@@ -569,53 +595,123 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Domain for contest, used to lookup for contest by domain name.
+     * contest key used to make human friendly URLs.
      *
-     * Generated from protobuf field <code>string domain = 40;</code>
+     * Generated from protobuf field <code>string key = 40;</code>
      * @return string
      */
-    public function getDomain()
+    public function getKey()
     {
-        return $this->domain;
+        return $this->key;
     }
 
     /**
-     * Domain for contest, used to lookup for contest by domain name.
+     * contest key used to make human friendly URLs.
      *
-     * Generated from protobuf field <code>string domain = 40;</code>
+     * Generated from protobuf field <code>string key = 40;</code>
      * @param string $var
      * @return $this
      */
-    public function setDomain($var)
+    public function setKey($var)
     {
         GPBUtil::checkString($var, True);
-        $this->domain = $var;
+        $this->key = $var;
 
         return $this;
     }
 
     /**
-     * Deprecated, space where contest was created, should be avoided.
+     * Number of problems in the contest, might be "hidden".
      *
-     * Generated from protobuf field <code>string space_id = 1000;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 problem_count = 60;</code>
+     * @return int
      */
-    public function getSpaceId()
+    public function getProblemCount()
     {
-        return $this->space_id;
+        return $this->problem_count;
     }
 
     /**
-     * Deprecated, space where contest was created, should be avoided.
+     * Number of problems in the contest, might be "hidden".
      *
-     * Generated from protobuf field <code>string space_id = 1000;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 problem_count = 60;</code>
+     * @param int $var
      * @return $this
      */
-    public function setSpaceId($var)
+    public function setProblemCount($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->space_id = $var;
+        GPBUtil::checkUint32($var);
+        $this->problem_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool problem_count_hidden = 61;</code>
+     * @return bool
+     */
+    public function getProblemCountHidden()
+    {
+        return $this->problem_count_hidden;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool problem_count_hidden = 61;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setProblemCountHidden($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->problem_count_hidden = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of participants in the contest.
+     *
+     * Generated from protobuf field <code>uint32 participant_count = 62;</code>
+     * @return int
+     */
+    public function getParticipantCount()
+    {
+        return $this->participant_count;
+    }
+
+    /**
+     * Number of participants in the contest.
+     *
+     * Generated from protobuf field <code>uint32 participant_count = 62;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setParticipantCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->participant_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool participant_count_hidden = 63;</code>
+     * @return bool
+     */
+    public function getParticipantCountHidden()
+    {
+        return $this->participant_count_hidden;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool participant_count_hidden = 63;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setParticipantCountHidden($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->participant_count_hidden = $var;
 
         return $this;
     }
