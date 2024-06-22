@@ -44,17 +44,25 @@ class Patch
      */
     const PARTICIPATION_MODE = 8;
     /**
-     * Generated from protobuf enum <code>FEATURED_UNTIL = 9;</code>
-     */
-    const FEATURED_UNTIL = 9;
-    /**
      * Generated from protobuf enum <code>FORMAT = 10;</code>
      */
     const FORMAT = 10;
     /**
-     * Generated from protobuf enum <code>DOMAIN = 11;</code>
+     * Generated from protobuf enum <code>KEY = 11;</code>
      */
-    const DOMAIN = 11;
+    const KEY = 11;
+    /**
+     * Generated from protobuf enum <code>PROBLEM_COUNT_HIDDEN = 12;</code>
+     */
+    const PROBLEM_COUNT_HIDDEN = 12;
+    /**
+     * Generated from protobuf enum <code>PARTICIPANT_COUNT_HIDDEN = 13;</code>
+     */
+    const PARTICIPANT_COUNT_HIDDEN = 13;
+    /**
+     * Generated from protobuf enum <code>FEATURED_UNTIL = 9;</code>
+     */
+    const FEATURED_UNTIL = 9;
     /**
      * Generated from protobuf enum <code>TAXONOMY = 140;</code>
      */
@@ -85,9 +93,11 @@ class Patch
         self::VISIBILITY => 'VISIBILITY',
         self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
-        self::FEATURED_UNTIL => 'FEATURED_UNTIL',
         self::FORMAT => 'FORMAT',
-        self::DOMAIN => 'DOMAIN',
+        self::KEY => 'KEY',
+        self::PROBLEM_COUNT_HIDDEN => 'PROBLEM_COUNT_HIDDEN',
+        self::PARTICIPANT_COUNT_HIDDEN => 'PARTICIPANT_COUNT_HIDDEN',
+        self::FEATURED_UNTIL => 'FEATURED_UNTIL',
         self::TAXONOMY => 'TAXONOMY',
         self::APPEARANCE => 'APPEARANCE',
         self::ENVIRONMENT => 'ENVIRONMENT',

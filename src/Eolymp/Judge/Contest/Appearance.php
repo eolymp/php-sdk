@@ -18,25 +18,13 @@ class Appearance extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>string tagline = 2;</code>
-     */
-    protected $tagline = '';
-    /**
      * Generated from protobuf field <code>string description = 6;</code>
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>string logo_image = 3;</code>
+     * Generated from protobuf field <code>string logo_url = 3;</code>
      */
-    protected $logo_image = '';
-    /**
-     * Generated from protobuf field <code>string primary_color = 4;</code>
-     */
-    protected $primary_color = '';
-    /**
-     * Generated from protobuf field <code>string secondary_color = 5;</code>
-     */
-    protected $secondary_color = '';
+    protected $logo_url = '';
 
     /**
      * Constructor.
@@ -45,11 +33,8 @@ class Appearance extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $title
-     *     @type string $tagline
      *     @type string $description
-     *     @type string $logo_image
-     *     @type string $primary_color
-     *     @type string $secondary_color
+     *     @type string $logo_url
      * }
      */
     public function __construct($data = NULL) {
@@ -80,28 +65,6 @@ class Appearance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tagline = 2;</code>
-     * @return string
-     */
-    public function getTagline()
-    {
-        return $this->tagline;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tagline = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTagline($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->tagline = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string description = 6;</code>
      * @return string
      */
@@ -124,67 +87,23 @@ class Appearance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string logo_image = 3;</code>
+     * Generated from protobuf field <code>string logo_url = 3;</code>
      * @return string
      */
-    public function getLogoImage()
+    public function getLogoUrl()
     {
-        return $this->logo_image;
+        return $this->logo_url;
     }
 
     /**
-     * Generated from protobuf field <code>string logo_image = 3;</code>
+     * Generated from protobuf field <code>string logo_url = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setLogoImage($var)
+    public function setLogoUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->logo_image = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string primary_color = 4;</code>
-     * @return string
-     */
-    public function getPrimaryColor()
-    {
-        return $this->primary_color;
-    }
-
-    /**
-     * Generated from protobuf field <code>string primary_color = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPrimaryColor($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->primary_color = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string secondary_color = 5;</code>
-     * @return string
-     */
-    public function getSecondaryColor()
-    {
-        return $this->secondary_color;
-    }
-
-    /**
-     * Generated from protobuf field <code>string secondary_color = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSecondaryColor($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->secondary_color = $var;
+        $this->logo_url = $var;
 
         return $this;
     }
