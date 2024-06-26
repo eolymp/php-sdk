@@ -52,6 +52,10 @@ class Patch
      */
     const KEY = 11;
     /**
+     * Generated from protobuf enum <code>LOGO_URL = 14;</code>
+     */
+    const LOGO_URL = 14;
+    /**
      * Generated from protobuf enum <code>PROBLEM_COUNT_HIDDEN = 12;</code>
      */
     const PROBLEM_COUNT_HIDDEN = 12;
@@ -95,6 +99,7 @@ class Patch
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
         self::FORMAT => 'FORMAT',
         self::KEY => 'KEY',
+        self::LOGO_URL => 'LOGO_URL',
         self::PROBLEM_COUNT_HIDDEN => 'PROBLEM_COUNT_HIDDEN',
         self::PARTICIPANT_COUNT_HIDDEN => 'PARTICIPANT_COUNT_HIDDEN',
         self::FEATURED_UNTIL => 'FEATURED_UNTIL',

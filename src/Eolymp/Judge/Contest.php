@@ -30,6 +30,10 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Generated from protobuf field <code>string logo_url = 4;</code>
+     */
+    protected $logo_url = '';
+    /**
      * Contest starting time, after this time users will be able to see problems and make submissions.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
@@ -169,6 +173,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type string $url
      *     @type string $name
      *           Contest name.
+     *     @type string $logo_url
      *     @type \Google\Protobuf\Timestamp $starts_at
      *           Contest starting time, after this time users will be able to see problems and make submissions.
      *     @type int $starts_in
@@ -292,6 +297,28 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logo_url = 4;</code>
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->logo_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logo_url = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogoUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->logo_url = $var;
 
         return $this;
     }
