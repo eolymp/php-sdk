@@ -169,6 +169,7 @@ class ParticipantServiceClient {
 
     /**
      * Allows a participant (currently authorized user) to join (add himself to) a public contest.
+     * deprecated: use registration service instead
      *
      * @param JoinContestInput $input message
      * @param array $context request parameters
