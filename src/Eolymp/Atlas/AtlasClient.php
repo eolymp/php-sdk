@@ -74,6 +74,25 @@ class AtlasClient {
     }
 
     /**
+     * @param VoteProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return VoteProblemOutput output message
+     */
+    public function VoteProblem(VoteProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/vote";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.Atlas/VoteProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, VoteProblemOutput::class, $context);
+    }
+
+    /**
      * @param DescribeProblemInput $input message
      * @param array $context request parameters
      *
