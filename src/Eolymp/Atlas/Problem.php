@@ -58,6 +58,30 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     private $topics;
     /**
+     * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
+     *
+     * Generated from protobuf field <code>float acceptance_rate = 40;</code>
+     */
+    protected $acceptance_rate = 0.0;
+    /**
+     * Generated from protobuf field <code>float submissions_count = 42;</code>
+     */
+    protected $submissions_count = 0.0;
+    /**
+     * Generated from protobuf field <code>float submissions_accepted = 43;</code>
+     */
+    protected $submissions_accepted = 0.0;
+    /**
+     * Number of votes for the problem
+     *
+     * Generated from protobuf field <code>int32 vote = 50;</code>
+     */
+    protected $vote = 0;
+    /**
+     * Generated from protobuf field <code>int32 vote_count = 51;</code>
+     */
+    protected $vote_count = 0;
+    /**
      * Difficulty from 0 (very easy) to 5 (very hard)
      *
      * Generated from protobuf field <code>uint32 difficulty = 21;</code>
@@ -84,6 +108,13 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           For imported problems, provides the source from where the problem is imported and synchronized.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *     @type float $acceptance_rate
+     *           Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
+     *     @type float $submissions_count
+     *     @type float $submissions_accepted
+     *     @type int $vote
+     *           Number of votes for the problem
+     *     @type int $vote_count
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
      * }
@@ -289,6 +320,124 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
+     *
+     * Generated from protobuf field <code>float acceptance_rate = 40;</code>
+     * @return float
+     */
+    public function getAcceptanceRate()
+    {
+        return $this->acceptance_rate;
+    }
+
+    /**
+     * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
+     *
+     * Generated from protobuf field <code>float acceptance_rate = 40;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setAcceptanceRate($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->acceptance_rate = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float submissions_count = 42;</code>
+     * @return float
+     */
+    public function getSubmissionsCount()
+    {
+        return $this->submissions_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>float submissions_count = 42;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSubmissionsCount($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->submissions_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float submissions_accepted = 43;</code>
+     * @return float
+     */
+    public function getSubmissionsAccepted()
+    {
+        return $this->submissions_accepted;
+    }
+
+    /**
+     * Generated from protobuf field <code>float submissions_accepted = 43;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setSubmissionsAccepted($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->submissions_accepted = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of votes for the problem
+     *
+     * Generated from protobuf field <code>int32 vote = 50;</code>
+     * @return int
+     */
+    public function getVote()
+    {
+        return $this->vote;
+    }
+
+    /**
+     * Number of votes for the problem
+     *
+     * Generated from protobuf field <code>int32 vote = 50;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVote($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->vote = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 vote_count = 51;</code>
+     * @return int
+     */
+    public function getVoteCount()
+    {
+        return $this->vote_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 vote_count = 51;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVoteCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->vote_count = $var;
 
         return $this;
     }

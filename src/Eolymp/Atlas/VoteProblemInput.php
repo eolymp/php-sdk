@@ -9,14 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DeleteProblemInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.VoteProblemInput</code>
  */
-class DeleteProblemInput extends \Google\Protobuf\Internal\Message
+class VoteProblemInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>int32 vote = 2;</code>
+     */
+    protected $vote = 0;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DeleteProblemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
+     *     @type int $vote
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DeleteProblemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 vote = 2;</code>
+     * @return int
+     */
+    public function getVote()
+    {
+        return $this->vote;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 vote = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVote($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->vote = $var;
 
         return $this;
     }
