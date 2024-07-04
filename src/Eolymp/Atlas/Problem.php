@@ -64,13 +64,13 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $acceptance_rate = 0.0;
     /**
-     * Generated from protobuf field <code>float submissions_count = 42;</code>
+     * Generated from protobuf field <code>uint32 submissions_count = 42;</code>
      */
-    protected $submissions_count = 0.0;
+    protected $submissions_count = 0;
     /**
-     * Generated from protobuf field <code>float submissions_accepted = 43;</code>
+     * Generated from protobuf field <code>uint32 submissions_accepted = 43;</code>
      */
-    protected $submissions_accepted = 0.0;
+    protected $submissions_accepted = 0;
     /**
      * Number of votes for the problem
      *
@@ -110,8 +110,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type float $acceptance_rate
      *           Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
-     *     @type float $submissions_count
-     *     @type float $submissions_accepted
+     *     @type int $submissions_count
+     *     @type int $submissions_accepted
      *     @type int $vote
      *           Number of votes for the problem
      *     @type int $vote_count
@@ -351,8 +351,8 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float submissions_count = 42;</code>
-     * @return float
+     * Generated from protobuf field <code>uint32 submissions_count = 42;</code>
+     * @return int
      */
     public function getSubmissionsCount()
     {
@@ -360,21 +360,21 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float submissions_count = 42;</code>
-     * @param float $var
+     * Generated from protobuf field <code>uint32 submissions_count = 42;</code>
+     * @param int $var
      * @return $this
      */
     public function setSubmissionsCount($var)
     {
-        GPBUtil::checkFloat($var);
+        GPBUtil::checkUint32($var);
         $this->submissions_count = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>float submissions_accepted = 43;</code>
-     * @return float
+     * Generated from protobuf field <code>uint32 submissions_accepted = 43;</code>
+     * @return int
      */
     public function getSubmissionsAccepted()
     {
@@ -382,13 +382,13 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float submissions_accepted = 43;</code>
-     * @param float $var
+     * Generated from protobuf field <code>uint32 submissions_accepted = 43;</code>
+     * @param int $var
      * @return $this
      */
     public function setSubmissionsAccepted($var)
     {
-        GPBUtil::checkFloat($var);
+        GPBUtil::checkUint32($var);
         $this->submissions_accepted = $var;
 
         return $this;
