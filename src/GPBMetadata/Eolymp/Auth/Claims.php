@@ -16,8 +16,8 @@ class Claims
         }
         $pool->internalAddGeneratedFile(
             '
-Å
-eolymp/auth/claims.protoeolymp.auth"¢
+‹
+eolymp/auth/claims.protoeolymp.auth"˝
 Claims
 idË (	
 issuer (	
@@ -29,12 +29,10 @@ class Claims
 nickname (	
 picture( (	
 locale2 (	
-timezone3 (	
+timezone3 (	
+birthday< (	
 minor= (
-countryF (	
-cityI (	
-companyP (	
-business_titleQ (	
+countryF (	
 preferred_runtimeZ (	B+Z)github.com/eolymp/go-sdk/eolymp/auth;authbproto3'
         , true);
 

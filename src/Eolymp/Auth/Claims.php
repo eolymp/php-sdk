@@ -74,6 +74,12 @@ class Claims extends \Google\Protobuf\Internal\Message
      */
     protected $timezone = '';
     /**
+     * user's birthday in 2006-01-02 format
+     *
+     * Generated from protobuf field <code>string birthday = 60;</code>
+     */
+    protected $birthday = '';
+    /**
      * true if user is a minor
      *
      * Generated from protobuf field <code>bool minor = 61;</code>
@@ -85,24 +91,6 @@ class Claims extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string country = 70;</code>
      */
     protected $country = '';
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string city = 73;</code>
-     */
-    protected $city = '';
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string company = 80;</code>
-     */
-    protected $company = '';
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string business_title = 81;</code>
-     */
-    protected $business_title = '';
     /**
      * user's preferred runtime (programming language, compiler) at Eolymp
      *
@@ -136,16 +124,12 @@ class Claims extends \Google\Protobuf\Internal\Message
      *           user's preferred locale
      *     @type string $timezone
      *           user's preferred timezone
+     *     @type string $birthday
+     *           user's birthday in 2006-01-02 format
      *     @type bool $minor
      *           true if user is a minor
      *     @type string $country
      *           country where the user is from
-     *     @type string $city
-     *           deprecated: not used
-     *     @type string $company
-     *           deprecated: not used
-     *     @type string $business_title
-     *           deprecated: not used
      *     @type string $preferred_runtime
      *           user's preferred runtime (programming language, compiler) at Eolymp
      * }
@@ -416,6 +400,32 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * user's birthday in 2006-01-02 format
+     *
+     * Generated from protobuf field <code>string birthday = 60;</code>
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * user's birthday in 2006-01-02 format
+     *
+     * Generated from protobuf field <code>string birthday = 60;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBirthday($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->birthday = $var;
+
+        return $this;
+    }
+
+    /**
      * true if user is a minor
      *
      * Generated from protobuf field <code>bool minor = 61;</code>
@@ -463,84 +473,6 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->country = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string city = 73;</code>
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
-
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string city = 73;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCity($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->city = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string company = 80;</code>
-     * @return string
-     */
-    public function getCompany()
-    {
-        return $this->company;
-    }
-
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string company = 80;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCompany($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->company = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string business_title = 81;</code>
-     * @return string
-     */
-    public function getBusinessTitle()
-    {
-        return $this->business_title;
-    }
-
-    /**
-     * deprecated: not used
-     *
-     * Generated from protobuf field <code>string business_title = 81;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBusinessTitle($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->business_title = $var;
 
         return $this;
     }
