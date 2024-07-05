@@ -100,11 +100,21 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.course.ListSubmissionsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Course\ListSubmissionsInput\Filter
+     * @return \Eolymp\Course\ListSubmissionsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -116,7 +126,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Course\ListSubmissionsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Course\ListSubmissionsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

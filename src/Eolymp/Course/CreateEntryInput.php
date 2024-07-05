@@ -34,11 +34,21 @@ class CreateEntryInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Entry entry = 1;</code>
-     * @return \Eolymp\Course\Entry
+     * @return \Eolymp\Course\Entry|null
      */
     public function getEntry()
     {
         return $this->entry;
+    }
+
+    public function hasEntry()
+    {
+        return isset($this->entry);
+    }
+
+    public function clearEntry()
+    {
+        unset($this->entry);
     }
 
     /**

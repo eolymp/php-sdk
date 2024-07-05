@@ -32,7 +32,7 @@ class UpdateEntryInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $entry_id
      *     @type \Eolymp\Course\Entry $entry
      * }
@@ -53,7 +53,7 @@ class UpdateEntryInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.UpdateEntryInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -88,11 +88,21 @@ class UpdateEntryInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Entry entry = 3;</code>
-     * @return \Eolymp\Course\Entry
+     * @return \Eolymp\Course\Entry|null
      */
     public function getEntry()
     {
         return $this->entry;
+    }
+
+    public function hasEntry()
+    {
+        return isset($this->entry);
+    }
+
+    public function clearEntry()
+    {
+        unset($this->entry);
     }
 
     /**

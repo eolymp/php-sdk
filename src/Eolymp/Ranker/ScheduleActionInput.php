@@ -61,11 +61,21 @@ class ScheduleActionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Action action = 2;</code>
-     * @return \Eolymp\Ranker\Scoreboard\Action
+     * @return \Eolymp\Ranker\Scoreboard\Action|null
      */
     public function getAction()
     {
         return $this->action;
+    }
+
+    public function hasAction()
+    {
+        return isset($this->action);
+    }
+
+    public function clearAction()
+    {
+        unset($this->action);
     }
 
     /**
@@ -75,7 +85,7 @@ class ScheduleActionInput extends \Google\Protobuf\Internal\Message
      */
     public function setAction($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Action::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard\Action::class);
         $this->action = $var;
 
         return $this;

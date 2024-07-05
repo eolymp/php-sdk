@@ -354,11 +354,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Contest starting time, after this time users will be able to see problems and make submissions.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartsAt()
     {
         return $this->starts_at;
+    }
+
+    public function hasStartsAt()
+    {
+        return isset($this->starts_at);
+    }
+
+    public function clearStartsAt()
+    {
+        unset($this->starts_at);
     }
 
     /**
@@ -408,11 +418,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Contest ending time, after this time users submissions won't be counted to the score anymore.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 15;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndsAt()
     {
         return $this->ends_at;
+    }
+
+    public function hasEndsAt()
+    {
+        return isset($this->ends_at);
+    }
+
+    public function clearEndsAt()
+    {
+        unset($this->ends_at);
     }
 
     /**
@@ -512,7 +532,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Status::class);
         $this->status = $var;
 
         return $this;
@@ -538,7 +558,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Visibility::class);
         $this->visibility = $var;
 
         return $this;
@@ -590,7 +610,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setParticipationMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_ParticipationMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ParticipationMode::class);
         $this->participation_mode = $var;
 
         return $this;
@@ -616,7 +636,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setFormat($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Format::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Format::class);
         $this->format = $var;
 
         return $this;
@@ -748,11 +768,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Date and time until contest is displayed in Featured contests
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getFeaturedUntil()
     {
         return $this->featured_until;
+    }
+
+    public function hasFeaturedUntil()
+    {
+        return isset($this->featured_until);
+    }
+
+    public function clearFeaturedUntil()
+    {
+        unset($this->featured_until);
     }
 
     /**
@@ -774,11 +804,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Taxonomy information
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
-     * @return \Eolymp\Judge\Contest\Taxonomy
+     * @return \Eolymp\Judge\Contest\Taxonomy|null
      */
     public function getTaxonomy()
     {
         return $this->taxonomy;
+    }
+
+    public function hasTaxonomy()
+    {
+        return isset($this->taxonomy);
+    }
+
+    public function clearTaxonomy()
+    {
+        unset($this->taxonomy);
     }
 
     /**
@@ -790,7 +830,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setTaxonomy($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Taxonomy::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Taxonomy::class);
         $this->taxonomy = $var;
 
         return $this;
@@ -800,11 +840,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Appearance configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Appearance appearance = 101;</code>
-     * @return \Eolymp\Judge\Contest\Appearance
+     * @return \Eolymp\Judge\Contest\Appearance|null
      */
     public function getAppearance()
     {
         return $this->appearance;
+    }
+
+    public function hasAppearance()
+    {
+        return isset($this->appearance);
+    }
+
+    public function clearAppearance()
+    {
+        unset($this->appearance);
     }
 
     /**
@@ -816,7 +866,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setAppearance($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Appearance::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Appearance::class);
         $this->appearance = $var;
 
         return $this;
@@ -826,11 +876,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Environment configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Environment environment = 103;</code>
-     * @return \Eolymp\Judge\Contest\Environment
+     * @return \Eolymp\Judge\Contest\Environment|null
      */
     public function getEnvironment()
     {
         return $this->environment;
+    }
+
+    public function hasEnvironment()
+    {
+        return isset($this->environment);
+    }
+
+    public function clearEnvironment()
+    {
+        unset($this->environment);
     }
 
     /**
@@ -842,7 +902,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setEnvironment($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Environment::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Environment::class);
         $this->environment = $var;
 
         return $this;
@@ -852,11 +912,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Upsolve configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Upsolve upsolve = 102;</code>
-     * @return \Eolymp\Judge\Contest\Upsolve
+     * @return \Eolymp\Judge\Contest\Upsolve|null
      */
     public function getUpsolve()
     {
         return $this->upsolve;
+    }
+
+    public function hasUpsolve()
+    {
+        return isset($this->upsolve);
+    }
+
+    public function clearUpsolve()
+    {
+        unset($this->upsolve);
     }
 
     /**
@@ -868,7 +938,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setUpsolve($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Upsolve::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Upsolve::class);
         $this->upsolve = $var;
 
         return $this;
@@ -878,11 +948,21 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Scoreboard configuration
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
-     * @return \Eolymp\Judge\Contest\Scoreboard
+     * @return \Eolymp\Judge\Contest\Scoreboard|null
      */
     public function getScoreboard()
     {
         return $this->scoreboard;
+    }
+
+    public function hasScoreboard()
+    {
+        return isset($this->scoreboard);
+    }
+
+    public function clearScoreboard()
+    {
+        unset($this->scoreboard);
     }
 
     /**
@@ -894,7 +974,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     public function setScoreboard($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest_Scoreboard::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Scoreboard::class);
         $this->scoreboard = $var;
 
         return $this;

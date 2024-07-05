@@ -15,9 +15,23 @@ class CodeTemplate
           return;
         }
         \GPBMetadata\Eolymp\Atlas\CodeTemplateFile::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a88020a20656f6c796d702f61746c61732f636f64655f74656d706c6174652e70726f746f120c656f6c796d702e61746c6173229e010a0854656d706c617465120a0a02696418012001280912120a0a70726f626c656d5f6964180220012809120f0a0772756e74696d65180320012809120e0a06736563726574180420012808120e0a06736f75726365180a20012809120e0a06686561646572180b20012809120e0a06666f6f746572180c2001280912210a0566696c6573181e2003280b32122e656f6c796d702e61746c61732e46696c65422d5a2b6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f61746c61733b61746c6173620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ˆ
+ eolymp/atlas/code_template.protoeolymp.atlas"ž
+Template
+
+id (	
+
+problem_id (	
+runtime (	
+secret (
+source
+ (	
+header (	
+footer (	!
+files (2.eolymp.atlas.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

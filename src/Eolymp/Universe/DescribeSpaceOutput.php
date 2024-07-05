@@ -34,11 +34,21 @@ class DescribeSpaceOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Space space = 1;</code>
-     * @return \Eolymp\Universe\Space
+     * @return \Eolymp\Universe\Space|null
      */
     public function getSpace()
     {
         return $this->space;
+    }
+
+    public function hasSpace()
+    {
+        return isset($this->space);
+    }
+
+    public function clearSpace()
+    {
+        unset($this->space);
     }
 
     /**

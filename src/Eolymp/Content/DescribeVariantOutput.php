@@ -34,11 +34,21 @@ class DescribeVariantOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.content.Variant variant = 1;</code>
-     * @return \Eolymp\Content\Variant
+     * @return \Eolymp\Content\Variant|null
      */
     public function getVariant()
     {
         return $this->variant;
+    }
+
+    public function hasVariant()
+    {
+        return isset($this->variant);
+    }
+
+    public function clearVariant()
+    {
+        unset($this->variant);
     }
 
     /**

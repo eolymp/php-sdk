@@ -53,7 +53,7 @@ class SpaceChangeRecord extends \Google\Protobuf\Internal\Message
      */
     public function setOp($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\SpaceChangeRecord_Operation::class);
+        GPBUtil::checkEnum($var, \Eolymp\Universe\SpaceChangeRecord\Operation::class);
         $this->op = $var;
 
         return $this;
@@ -61,11 +61,21 @@ class SpaceChangeRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Space space = 2;</code>
-     * @return \Eolymp\Universe\Space
+     * @return \Eolymp\Universe\Space|null
      */
     public function getSpace()
     {
         return $this->space;
+    }
+
+    public function hasSpace()
+    {
+        return isset($this->space);
+    }
+
+    public function clearSpace()
+    {
+        unset($this->space);
     }
 
     /**

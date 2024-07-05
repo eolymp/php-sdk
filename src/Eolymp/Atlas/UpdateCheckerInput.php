@@ -61,11 +61,21 @@ class UpdateCheckerInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
-     * @return \Eolymp\Executor\Checker
+     * @return \Eolymp\Executor\Checker|null
      */
     public function getChecker()
     {
         return $this->checker;
+    }
+
+    public function hasChecker()
+    {
+        return isset($this->checker);
+    }
+
+    public function clearChecker()
+    {
+        unset($this->checker);
     }
 
     /**

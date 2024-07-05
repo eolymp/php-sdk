@@ -14,9 +14,17 @@ class Blob
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0aae010a18656f6c796d702f6b65657065722f626c6f622e70726f746f120d656f6c796d702e6b6565706572224a0a04426c6f62120b0a0365726e180120012809120b0a036b6579180220012809120c0a0468617368180320012809120c0a0473697a6518042001280d120c0a046461746118642001280c422f5a2d6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6b65657065723b6b6565706572620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+®
+eolymp/keeper/blob.protoeolymp.keeper"J
+Blob
+ern (	
+key (	
+hash (	
+size (
+datad (B/Z-github.com/eolymp/go-sdk/eolymp/keeper;keeperbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

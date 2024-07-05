@@ -88,7 +88,7 @@ class CreateTokenInput extends \Google\Protobuf\Internal\Message
      */
     public function setGrantType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Cognito\CreateTokenInput_GrantType::class);
+        GPBUtil::checkEnum($var, \Eolymp\Cognito\CreateTokenInput\GrantType::class);
         $this->grant_type = $var;
 
         return $this;

@@ -67,7 +67,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
     public function __construct($data = NULL) {
@@ -191,11 +191,21 @@ class Fragment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
     }
 
     /**
@@ -213,11 +223,21 @@ class Fragment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -235,11 +255,21 @@ class Fragment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
     }
 
     /**
@@ -266,7 +296,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)

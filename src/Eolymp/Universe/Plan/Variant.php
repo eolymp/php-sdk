@@ -85,7 +85,7 @@ class Variant extends \Google\Protobuf\Internal\Message
      */
     public function setRecurrence($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Plan_Recurrence::class);
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Plan\Recurrence::class);
         $this->recurrence = $var;
 
         return $this;

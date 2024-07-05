@@ -34,11 +34,21 @@ class WatchContestOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
-     * @return \Eolymp\Judge\Contest
+     * @return \Eolymp\Judge\Contest|null
      */
     public function getContest()
     {
         return $this->contest;
+    }
+
+    public function hasContest()
+    {
+        return isset($this->contest);
+    }
+
+    public function clearContest()
+    {
+        unset($this->contest);
     }
 
     /**

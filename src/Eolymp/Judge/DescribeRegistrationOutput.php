@@ -28,8 +28,8 @@ class DescribeRegistrationOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Community\Attribute[]|\Google\Protobuf\Internal\RepeatedField $attributes
-     *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Eolymp\Community\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
     public function __construct($data = NULL) {
@@ -48,7 +48,7 @@ class DescribeRegistrationOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute attributes = 20;</code>
-     * @param \Eolymp\Community\Attribute[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Community\Attribute>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttributes($var)
@@ -70,7 +70,7 @@ class DescribeRegistrationOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value values = 21;</code>
-     * @param \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)

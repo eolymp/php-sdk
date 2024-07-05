@@ -66,11 +66,21 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
         return $this->timestamp;
+    }
+
+    public function hasTimestamp()
+    {
+        return isset($this->timestamp);
+    }
+
+    public function clearTimestamp()
+    {
+        unset($this->timestamp);
     }
 
     /**
@@ -88,11 +98,21 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 3;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**

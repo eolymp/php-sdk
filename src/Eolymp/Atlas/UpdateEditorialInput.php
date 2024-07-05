@@ -34,7 +34,7 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
      *     @type string $editorial_id
      *     @type \Eolymp\Atlas\Editorial $editorial
@@ -60,7 +60,7 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
      * specify list of fields to update, if empty all fields are updated
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateEditorialInput.Patch patch = 10;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Editorial editorial = 3;</code>
-     * @return \Eolymp\Atlas\Editorial
+     * @return \Eolymp\Atlas\Editorial|null
      */
     public function getEditorial()
     {
         return $this->editorial;
+    }
+
+    public function hasEditorial()
+    {
+        return isset($this->editorial);
+    }
+
+    public function clearEditorial()
+    {
+        unset($this->editorial);
     }
 
     /**

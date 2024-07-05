@@ -34,11 +34,21 @@ class DescribeScoreboardOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 1;</code>
-     * @return \Eolymp\Ranker\Scoreboard
+     * @return \Eolymp\Ranker\Scoreboard|null
      */
     public function getScoreboard()
     {
         return $this->scoreboard;
+    }
+
+    public function hasScoreboard()
+    {
+        return isset($this->scoreboard);
+    }
+
+    public function clearScoreboard()
+    {
+        unset($this->scoreboard);
     }
 
     /**

@@ -114,8 +114,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
      *     @type \Eolymp\Community\Member\Stats $stats
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $groups
-     *     @type \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
+     *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -405,11 +405,21 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -427,11 +437,16 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.User user = 100;</code>
-     * @return \Eolymp\Community\User
+     * @return \Eolymp\Community\User|null
      */
     public function getUser()
     {
         return $this->readOneof(100);
+    }
+
+    public function hasUser()
+    {
+        return $this->hasOneof(100);
     }
 
     /**
@@ -449,11 +464,16 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Team team = 101;</code>
-     * @return \Eolymp\Community\Team
+     * @return \Eolymp\Community\Team|null
      */
     public function getTeam()
     {
         return $this->readOneof(101);
+    }
+
+    public function hasTeam()
+    {
+        return $this->hasOneof(101);
     }
 
     /**
@@ -471,11 +491,16 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Ghost ghost = 102;</code>
-     * @return \Eolymp\Community\Ghost
+     * @return \Eolymp\Community\Ghost|null
      */
     public function getGhost()
     {
         return $this->readOneof(102);
+    }
+
+    public function hasGhost()
+    {
+        return $this->hasOneof(102);
     }
 
     /**
@@ -493,11 +518,21 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
-     * @return \Eolymp\Community\Member\Stats
+     * @return \Eolymp\Community\Member\Stats|null
      */
     public function getStats()
     {
         return $this->stats;
+    }
+
+    public function hasStats()
+    {
+        return isset($this->stats);
+    }
+
+    public function clearStats()
+    {
+        unset($this->stats);
     }
 
     /**
@@ -507,7 +542,7 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     public function setStats($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Member_Stats::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member\Stats::class);
         $this->stats = $var;
 
         return $this;
@@ -524,7 +559,7 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string groups = 200;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGroups($var)
@@ -546,7 +581,7 @@ class Member extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
-     * @param \Eolymp\Community\Attribute\Value[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttributes($var)

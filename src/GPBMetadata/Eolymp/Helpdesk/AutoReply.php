@@ -15,9 +15,18 @@ class AutoReply
           return;
         }
         \GPBMetadata\Eolymp\Ecm\Content::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0add010a20656f6c796d702f68656c706465736b2f6175746f5f7265706c792e70726f746f120f656f6c796d702e68656c706465736b226b0a094175746f5265706c79120a0a026964180120012809120e0a066c6f63616c65180220012809120c0a046e616d6518142001280912240a076d65737361676518152001280b32132e656f6c796d702e65636d2e436f6e74656e74120e0a066c6162656c7318162003280942335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f68656c706465736b3b68656c706465736b620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+Ý
+ eolymp/helpdesk/auto_reply.protoeolymp.helpdesk"k
+	AutoReply
+
+id (	
+locale (	
+name (	$
+message (2.eolymp.ecm.Content
+labels (	B3Z1github.com/eolymp/go-sdk/eolymp/helpdesk;helpdeskbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

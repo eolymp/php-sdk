@@ -135,11 +135,21 @@ class ListValuesInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.taxonomy.ListValuesInput.Filter filters = 40;</code>
-     * @return \Eolymp\Taxonomy\ListValuesInput\Filter
+     * @return \Eolymp\Taxonomy\ListValuesInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -151,7 +161,7 @@ class ListValuesInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListValuesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\ListValuesInput\Filter::class);
         $this->filters = $var;
 
         return $this;

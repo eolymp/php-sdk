@@ -80,7 +80,7 @@ class Value extends \Google\Protobuf\Internal\Message
      */
     public function setAttributeType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute\Type::class);
         $this->attribute_type = $var;
 
         return $this;
@@ -93,6 +93,11 @@ class Value extends \Google\Protobuf\Internal\Message
     public function getString()
     {
         return $this->readOneof(10);
+    }
+
+    public function hasString()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
@@ -115,6 +120,11 @@ class Value extends \Google\Protobuf\Internal\Message
     public function getNumber()
     {
         return $this->readOneof(11);
+    }
+
+    public function hasNumber()
+    {
+        return $this->hasOneof(11);
     }
 
     /**

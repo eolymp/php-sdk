@@ -88,11 +88,11 @@ class Actor extends \Google\Protobuf\Internal\Message
      *           Footer code URL, automatically added after source code
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           Additional environment variable during init
-     *     @type \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Executor\Job\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files mounted before init
      *     @type int $output_format
      *           Defines how to treat program exit status and output parameters
-     *     @type \Eolymp\Executor\Job\Mount[]|\Google\Protobuf\Internal\RepeatedField $mount
+     *     @type array<\Eolymp\Executor\Job\Mount>|\Google\Protobuf\Internal\RepeatedField $mount
      *           Allows to mount workdir from another actor locally
      * }
      */
@@ -272,7 +272,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      * Additional files mounted before init
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.File files = 41;</code>
-     * @param \Eolymp\Executor\Job\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Job\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)
@@ -303,7 +303,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     public function setOutputFormat($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Job_Actor_OutputFormat::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Job\Actor\OutputFormat::class);
         $this->output_format = $var;
 
         return $this;
@@ -324,7 +324,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      * Allows to mount workdir from another actor locally
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Mount mount = 50;</code>
-     * @param \Eolymp\Executor\Job\Mount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Job\Mount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMount($var)

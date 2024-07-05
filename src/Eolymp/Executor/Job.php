@@ -71,13 +71,13 @@ class Job extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *           Task originator (service which has created task). This field will be added to task status reports, so consumers
      *           can easily filter status reports they are interested in.
-     *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
+     *     @type array<\Eolymp\Executor\Task\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *     @type \Eolymp\Executor\Job\Actor[]|\Google\Protobuf\Internal\RepeatedField $actors
+     *     @type array<\Eolymp\Executor\Job\Actor>|\Google\Protobuf\Internal\RepeatedField $actors
      *           Actors of the task.
-     *     @type \Eolymp\Executor\Job\Step[]|\Google\Protobuf\Internal\RepeatedField $scenario
+     *     @type array<\Eolymp\Executor\Job\Step>|\Google\Protobuf\Internal\RepeatedField $scenario
      *           Scenario defines template for runs, steps in run are merged with scenario
-     *     @type \Eolymp\Executor\Job\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type array<\Eolymp\Executor\Job\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           Runs of the task.
      * }
      */
@@ -161,7 +161,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 10;</code>
-     * @param \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Task\Precondition>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPreconditions($var)
@@ -187,7 +187,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Actors of the task.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Actor actors = 20;</code>
-     * @param \Eolymp\Executor\Job\Actor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Job\Actor>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setActors($var)
@@ -213,7 +213,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Scenario defines template for runs, steps in run are merged with scenario
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step scenario = 40;</code>
-     * @param \Eolymp\Executor\Job\Step[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Job\Step>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScenario($var)
@@ -239,7 +239,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * Runs of the task.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Run runs = 30;</code>
-     * @param \Eolymp\Executor\Job\Run[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Job\Run>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuns($var)

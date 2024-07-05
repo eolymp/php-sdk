@@ -55,7 +55,7 @@ class ExpressionTimestamp extends \Google\Protobuf\Internal\Message
      */
     public function setIs($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionTimestamp_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionTimestamp\Type::class);
         $this->is = $var;
 
         return $this;
@@ -63,11 +63,21 @@ class ExpressionTimestamp extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp value = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getValue()
     {
         return $this->value;
+    }
+
+    public function hasValue()
+    {
+        return isset($this->value);
+    }
+
+    public function clearValue()
+    {
+        unset($this->value);
     }
 
     /**

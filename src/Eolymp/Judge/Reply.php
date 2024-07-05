@@ -123,6 +123,11 @@ class Reply extends \Google\Protobuf\Internal\Message
         return $this->readOneof(3);
     }
 
+    public function hasUserId()
+    {
+        return $this->hasOneof(3);
+    }
+
     /**
      * Generated from protobuf field <code>string user_id = 3;</code>
      * @param string $var
@@ -145,6 +150,11 @@ class Reply extends \Google\Protobuf\Internal\Message
         return $this->readOneof(4);
     }
 
+    public function hasMemberId()
+    {
+        return $this->hasOneof(4);
+    }
+
     /**
      * Generated from protobuf field <code>string member_id = 4;</code>
      * @param string $var
@@ -162,11 +172,21 @@ class Reply extends \Google\Protobuf\Internal\Message
      * Message of the reply.
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**
@@ -188,11 +208,21 @@ class Reply extends \Google\Protobuf\Internal\Message
      * Timestamp when reply was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**

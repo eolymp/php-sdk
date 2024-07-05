@@ -34,11 +34,21 @@ class DescribeNewsletterTranslationOutput extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.eolymp.newsletter.Newsletter.Translation translation = 1;</code>
-     * @return \Eolymp\Newsletter\Newsletter\Translation
+     * @return \Eolymp\Newsletter\Newsletter\Translation|null
      */
     public function getTranslation()
     {
         return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**
@@ -48,7 +58,7 @@ class DescribeNewsletterTranslationOutput extends \Google\Protobuf\Internal\Mess
      */
     public function setTranslation($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Newsletter\Newsletter_Translation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Newsletter\Newsletter\Translation::class);
         $this->translation = $var;
 
         return $this;

@@ -32,7 +32,7 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $ticket_id
      *     @type \Eolymp\Judge\Ticket $ticket
      * }
@@ -53,7 +53,7 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.UpdateTicketInput.Patch patch = 3;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -88,11 +88,21 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 2;</code>
-     * @return \Eolymp\Judge\Ticket
+     * @return \Eolymp\Judge\Ticket|null
      */
     public function getTicket()
     {
         return $this->ticket;
+    }
+
+    public function hasTicket()
+    {
+        return isset($this->ticket);
+    }
+
+    public function clearTicket()
+    {
+        unset($this->ticket);
     }
 
     /**

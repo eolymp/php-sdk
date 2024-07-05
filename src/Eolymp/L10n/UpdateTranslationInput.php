@@ -88,11 +88,21 @@ class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Translation translation = 3;</code>
-     * @return \Eolymp\L10n\Translation
+     * @return \Eolymp\L10n\Translation|null
      */
     public function getTranslation()
     {
         return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**

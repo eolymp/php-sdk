@@ -171,11 +171,21 @@ class ListSolutionsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.atlas.ListSolutionsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Atlas\ListSolutionsInput\Filter
+     * @return \Eolymp\Atlas\ListSolutionsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -187,7 +197,7 @@ class ListSolutionsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListSolutionsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListSolutionsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
@@ -209,7 +219,7 @@ class ListSolutionsInput extends \Google\Protobuf\Internal\Message
      */
     public function setSort($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\ListSolutionsInput_Sortable::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\ListSolutionsInput\Sortable::class);
         $this->sort = $var;
 
         return $this;

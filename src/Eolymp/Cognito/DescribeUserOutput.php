@@ -34,11 +34,21 @@ class DescribeUserOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.cognito.User user = 1;</code>
-     * @return \Eolymp\Cognito\User
+     * @return \Eolymp\Cognito\User|null
      */
     public function getUser()
     {
         return $this->user;
+    }
+
+    public function hasUser()
+    {
+        return isset($this->user);
+    }
+
+    public function clearUser()
+    {
+        unset($this->user);
     }
 
     /**

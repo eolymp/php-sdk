@@ -36,7 +36,7 @@ class UpdatePostTranslationInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $post_id
      *     @type string $translation_id
      *     @type \Eolymp\Discussion\Post\Translation $translation
@@ -58,7 +58,7 @@ class UpdatePostTranslationInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.UpdatePostTranslationInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -115,11 +115,21 @@ class UpdatePostTranslationInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post.Translation translation = 4;</code>
-     * @return \Eolymp\Discussion\Post\Translation
+     * @return \Eolymp\Discussion\Post\Translation|null
      */
     public function getTranslation()
     {
         return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**
@@ -129,7 +139,7 @@ class UpdatePostTranslationInput extends \Google\Protobuf\Internal\Message
      */
     public function setTranslation($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Translation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post\Translation::class);
         $this->translation = $var;
 
         return $this;

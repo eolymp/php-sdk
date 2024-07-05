@@ -34,7 +34,7 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           defines group props to be updated, empty means update everything
      *     @type string $group_id
      *     @type \Eolymp\Community\Group $group
@@ -60,7 +60,7 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
      * defines group props to be updated, empty means update everything
      *
      * Generated from protobuf field <code>repeated .eolymp.community.UpdateGroupInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Group group = 3;</code>
-     * @return \Eolymp\Community\Group
+     * @return \Eolymp\Community\Group|null
      */
     public function getGroup()
     {
         return $this->group;
+    }
+
+    public function hasGroup()
+    {
+        return isset($this->group);
+    }
+
+    public function clearGroup()
+    {
+        unset($this->group);
     }
 
     /**

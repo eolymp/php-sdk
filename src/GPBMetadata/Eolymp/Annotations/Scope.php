@@ -14,9 +14,14 @@ class Scope
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0aab010a1e656f6c796d702f616e6e6f746174696f6e732f73636f70652e70726f746f120a656f6c796d702e6170691a20676f6f676c652f70726f746f6275662f64657363726970746f722e70726f746f22180a0553636f7065120f0a0573636f706518b1ac012003280942395a376769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f616e6e6f746174696f6e733b616e6e6f746174696f6e73620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+«
+eolymp/annotations/scope.proto
+eolymp.api google/protobuf/descriptor.proto"
+Scope
+scope±¬ (	B9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

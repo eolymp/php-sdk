@@ -34,11 +34,21 @@ class DescribePathOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 1;</code>
-     * @return \Eolymp\Content\Fragment
+     * @return \Eolymp\Content\Fragment|null
      */
     public function getFragment()
     {
         return $this->fragment;
+    }
+
+    public function hasFragment()
+    {
+        return isset($this->fragment);
+    }
+
+    public function clearFragment()
+    {
+        unset($this->fragment);
     }
 
     /**

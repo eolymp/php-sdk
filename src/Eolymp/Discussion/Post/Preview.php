@@ -66,11 +66,21 @@ class Preview extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post.Image image = 2;</code>
-     * @return \Eolymp\Discussion\Post\Image
+     * @return \Eolymp\Discussion\Post\Image|null
      */
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
     }
 
     /**
@@ -80,7 +90,7 @@ class Preview extends \Google\Protobuf\Internal\Message
      */
     public function setImage($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Image::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post\Image::class);
         $this->image = $var;
 
         return $this;
@@ -88,11 +98,21 @@ class Preview extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Node content = 3;</code>
-     * @return \Eolymp\Ecm\Node
+     * @return \Eolymp\Ecm\Node|null
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
     }
 
     /**

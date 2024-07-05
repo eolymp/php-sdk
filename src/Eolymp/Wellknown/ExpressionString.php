@@ -55,7 +55,7 @@ class ExpressionString extends \Google\Protobuf\Internal\Message
      */
     public function setIs($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionString_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionString\Type::class);
         $this->is = $var;
 
         return $this;

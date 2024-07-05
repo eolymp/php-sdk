@@ -179,11 +179,21 @@ class Information extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.commerce.Address address = 20;</code>
-     * @return \Eolymp\Commerce\Address
+     * @return \Eolymp\Commerce\Address|null
      */
     public function getAddress()
     {
         return $this->address;
+    }
+
+    public function hasAddress()
+    {
+        return isset($this->address);
+    }
+
+    public function clearAddress()
+    {
+        unset($this->address);
     }
 
     /**

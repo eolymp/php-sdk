@@ -62,7 +62,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Use debugging (report content of stdout, stderr and exit code).
      *     @type float $cost
      *           A number of points awarded for passing this run.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to match constraints and preconditions.
      *     @type string $input_object_id
      *           download input from object storage
@@ -202,7 +202,7 @@ class Run extends \Google\Protobuf\Internal\Message
      * Labels used to match constraints and preconditions.
      *
      * Generated from protobuf field <code>repeated string labels = 30;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -222,6 +222,11 @@ class Run extends \Google\Protobuf\Internal\Message
     public function getInputObjectId()
     {
         return $this->readOneof(10);
+    }
+
+    public function hasInputObjectId()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
@@ -250,6 +255,11 @@ class Run extends \Google\Protobuf\Internal\Message
         return $this->readOneof(11);
     }
 
+    public function hasInputContent()
+    {
+        return $this->hasOneof(11);
+    }
+
     /**
      * use input from this field (up to 1KB)
      *
@@ -274,6 +284,11 @@ class Run extends \Google\Protobuf\Internal\Message
     public function getInputUrl()
     {
         return $this->readOneof(12);
+    }
+
+    public function hasInputUrl()
+    {
+        return $this->hasOneof(12);
     }
 
     /**
@@ -302,6 +317,11 @@ class Run extends \Google\Protobuf\Internal\Message
         return $this->readOneof(20);
     }
 
+    public function hasAnswerObjectId()
+    {
+        return $this->hasOneof(20);
+    }
+
     /**
      * download answer from object storage
      *
@@ -328,6 +348,11 @@ class Run extends \Google\Protobuf\Internal\Message
         return $this->readOneof(21);
     }
 
+    public function hasAnswerContent()
+    {
+        return $this->hasOneof(21);
+    }
+
     /**
      * use answer from this field (up to 1KB)
      *
@@ -352,6 +377,11 @@ class Run extends \Google\Protobuf\Internal\Message
     public function getAnswerUrl()
     {
         return $this->readOneof(22);
+    }
+
+    public function hasAnswerUrl()
+    {
+        return $this->hasOneof(22);
     }
 
     /**

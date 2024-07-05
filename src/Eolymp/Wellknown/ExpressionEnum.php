@@ -55,7 +55,7 @@ class ExpressionEnum extends \Google\Protobuf\Internal\Message
      */
     public function setIs($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionEnum_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionEnum\Type::class);
         $this->is = $var;
 
         return $this;

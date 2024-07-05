@@ -16,9 +16,25 @@ class Newsletter
         }
         \GPBMetadata\Eolymp\Ecm\Content::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0afd020a22656f6c796d702f6e6577736c65747465722f6e6577736c65747465722e70726f746f1211656f6c796d702e6e6577736c65747465721a1f676f6f676c652f70726f746f6275662f74696d657374616d702e70726f746f22e1010a0a4e6577736c6574746572120a0a026964180120012809122e0a0a637265617465645f617418022001280b321a2e676f6f676c652e70726f746f6275662e54696d657374616d70120f0a077375626a656374180b2001280912240a07636f6e74656e74180c2001280b32132e656f6c796d702e65636d2e436f6e74656e741a600a0b5472616e736c6174696f6e120a0a026964180120012809120e0a066c6f63616c65186620012809120f0a077375626a65637418672001280912240a07636f6e74656e7418682001280b32132e656f6c796d702e65636d2e436f6e74656e7442375a356769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6e6577736c65747465723b6e6577736c6574746572620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ý
+"eolymp/newsletter/newsletter.protoeolymp.newslettergoogle/protobuf/timestamp.proto"á
+
+Newsletter
+
+id (	.
+
+created_at (2.google.protobuf.Timestamp
+subject (	$
+content (2.eolymp.ecm.Content`
+Translation
+
+id (	
+localef (	
+subjectg (	$
+contenth (2.eolymp.ecm.ContentB7Z5github.com/eolymp/go-sdk/eolymp/newsletter;newsletterbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

@@ -66,11 +66,21 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment before = 2;</code>
-     * @return \Eolymp\Helpdesk\Ticket\Comment
+     * @return \Eolymp\Helpdesk\Ticket\Comment|null
      */
     public function getBefore()
     {
         return $this->before;
+    }
+
+    public function hasBefore()
+    {
+        return isset($this->before);
+    }
+
+    public function clearBefore()
+    {
+        unset($this->before);
     }
 
     /**
@@ -80,7 +90,7 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
      */
     public function setBefore($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket_Comment::class);
+        GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket\Comment::class);
         $this->before = $var;
 
         return $this;
@@ -88,11 +98,21 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment after = 3;</code>
-     * @return \Eolymp\Helpdesk\Ticket\Comment
+     * @return \Eolymp\Helpdesk\Ticket\Comment|null
      */
     public function getAfter()
     {
         return $this->after;
+    }
+
+    public function hasAfter()
+    {
+        return isset($this->after);
+    }
+
+    public function clearAfter()
+    {
+        unset($this->after);
     }
 
     /**
@@ -102,7 +122,7 @@ class CommentChangedEvent extends \Google\Protobuf\Internal\Message
      */
     public function setAfter($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket_Comment::class);
+        GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket\Comment::class);
         $this->after = $var;
 
         return $this;

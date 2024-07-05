@@ -44,11 +44,21 @@ class VariantChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 3;</code>
-     * @return \Eolymp\Content\Fragment
+     * @return \Eolymp\Content\Fragment|null
      */
     public function getFragment()
     {
         return $this->fragment;
+    }
+
+    public function hasFragment()
+    {
+        return isset($this->fragment);
+    }
+
+    public function clearFragment()
+    {
+        unset($this->fragment);
     }
 
     /**
@@ -66,11 +76,21 @@ class VariantChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.content.Variant before = 1;</code>
-     * @return \Eolymp\Content\Variant
+     * @return \Eolymp\Content\Variant|null
      */
     public function getBefore()
     {
         return $this->before;
+    }
+
+    public function hasBefore()
+    {
+        return isset($this->before);
+    }
+
+    public function clearBefore()
+    {
+        unset($this->before);
     }
 
     /**
@@ -88,11 +108,21 @@ class VariantChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.content.Variant after = 2;</code>
-     * @return \Eolymp\Content\Variant
+     * @return \Eolymp\Content\Variant|null
      */
     public function getAfter()
     {
         return $this->after;
+    }
+
+    public function hasAfter()
+    {
+        return isset($this->after);
+    }
+
+    public function clearAfter()
+    {
+        unset($this->after);
     }
 
     /**

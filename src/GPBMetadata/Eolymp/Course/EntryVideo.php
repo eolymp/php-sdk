@@ -14,9 +14,15 @@ class EntryVideo
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0aaa010a1f656f6c796d702f636f757273652f656e7472795f766964656f2e70726f746f120d656f6c796d702e636f75727365223f0a05566964656f12110a09696d6167655f75726c18012001280912110a09766964656f5f75726c18022001280912100a086475726174696f6e18032001280d422f5a2d6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f636f757273653b636f75727365620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ª
+eolymp/course/entry_video.protoeolymp.course"?
+Video
+	image_url (	
+	video_url (	
+duration (B/Z-github.com/eolymp/go-sdk/eolymp/course;coursebproto3'
+        , true);
 
         static::$is_initialized = true;
     }

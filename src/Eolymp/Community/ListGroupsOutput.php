@@ -29,7 +29,7 @@ class ListGroupsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Community\Group[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Community\Group>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListGroupsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Group items = 2;</code>
-     * @param \Eolymp\Community\Group[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Community\Group>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

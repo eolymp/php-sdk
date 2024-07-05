@@ -34,11 +34,21 @@ class DescribeCountryOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.taxonomy.Country country = 1;</code>
-     * @return \Eolymp\Taxonomy\Country
+     * @return \Eolymp\Taxonomy\Country|null
      */
     public function getCountry()
     {
         return $this->country;
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
     }
 
     /**

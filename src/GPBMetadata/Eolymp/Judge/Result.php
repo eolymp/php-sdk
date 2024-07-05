@@ -16,9 +16,26 @@ class Result
         }
         \GPBMetadata\Eolymp\Judge\Medal::initOnce();
         \GPBMetadata\Eolymp\Judge\Score::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0adf020a19656f6c796d702f6a756467652f726573756c742e70726f746f120c656f6c796d702e6a756467651a18656f6c796d702f6a756467652f73636f72652e70726f746f22e2010a06526573756c7412160a0e7061727469636970616e745f696418012001280912110a096d656d6265725f696418072001280912120a0a636f6e746573745f6964180220012809120c0a046e616d6518032001280912120a0a756e6f6666696369616c180420012808120d0a0567686f737418092001280812220a056d6564616c18082001280e32132e656f6c796d702e6a756467652e4d6564616c120c0a0472616e6b18052001280d12120a0a72616e6b5f6c6f77657218062001280d12220a0573636f7265180a2001280b32132e656f6c796d702e6a756467652e53636f7265422d5a2b6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6a756467653b6a75646765620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ß
+eolymp/judge/result.protoeolymp.judgeeolymp/judge/score.proto"â
+Result
+participant_id (	
+	member_id (	
+
+contest_id (	
+name (	
+
+unofficial (
+ghost	 ("
+medal (2.eolymp.judge.Medal
+rank (
+
+rank_lower ("
+score
+ (2.eolymp.judge.ScoreB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
+        , true);
 
         static::$is_initialized = true;
     }

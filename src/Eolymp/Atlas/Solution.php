@@ -252,7 +252,7 @@ class Solution extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution\Type::class);
         $this->type = $var;
 
         return $this;

@@ -146,8 +146,8 @@ class Post extends \Google\Protobuf\Internal\Message
      *           total vote count
      *     @type int $reply_count
      *           total number of replies
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
-     *     @type \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
      * }
      */
     public function __construct($data = NULL) {
@@ -323,7 +323,7 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     public function setModeration($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Discussion\Post_Moderation::class);
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\Post\Moderation::class);
         $this->moderation = $var;
 
         return $this;
@@ -336,6 +336,11 @@ class Post extends \Google\Protobuf\Internal\Message
     public function getUserId()
     {
         return $this->readOneof(10);
+    }
+
+    public function hasUserId()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
@@ -360,6 +365,11 @@ class Post extends \Google\Protobuf\Internal\Message
         return $this->readOneof(11);
     }
 
+    public function hasMemberId()
+    {
+        return $this->hasOneof(11);
+    }
+
     /**
      * Generated from protobuf field <code>string member_id = 11;</code>
      * @param string $var
@@ -375,11 +385,21 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -397,11 +417,21 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPublishedAt()
     {
         return $this->published_at;
+    }
+
+    public function hasPublishedAt()
+    {
+        return isset($this->published_at);
+    }
+
+    public function clearPublishedAt()
+    {
+        unset($this->published_at);
     }
 
     /**
@@ -419,11 +449,21 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
     }
 
     /**
@@ -489,11 +529,21 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 101;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
     }
 
     /**
@@ -513,11 +563,21 @@ class Post extends \Google\Protobuf\Internal\Message
      * preview is generated automatically from the content
      *
      * Generated from protobuf field <code>.eolymp.discussion.Post.Preview preview = 110;</code>
-     * @return \Eolymp\Discussion\Post\Preview
+     * @return \Eolymp\Discussion\Post\Preview|null
      */
     public function getPreview()
     {
         return $this->preview;
+    }
+
+    public function hasPreview()
+    {
+        return isset($this->preview);
+    }
+
+    public function clearPreview()
+    {
+        unset($this->preview);
     }
 
     /**
@@ -529,7 +589,7 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     public function setPreview($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Preview::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post\Preview::class);
         $this->preview = $var;
 
         return $this;
@@ -624,7 +684,7 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 120;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -646,7 +706,7 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
-     * @param \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLinks($var)

@@ -52,10 +52,10 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $selector
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $selector
      *           Precondition will apply to all runs matching this label selector.
      *           Run must have all labels defined by selector. Empty selector will match all runs.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $depends_on
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $depends_on
      *           Defines label selector for runs which must be ACCEPTED before.
      *           Dependent runs will match if they have at least one of the labels defined in depends_on.
      *           To match dependent runs with by multiple labels, use two different preconditions.
@@ -90,7 +90,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Run must have all labels defined by selector. Empty selector will match all runs.
      *
      * Generated from protobuf field <code>repeated string selector = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSelector($var)
@@ -122,7 +122,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Empty depends_on means no dependencies.
      *
      * Generated from protobuf field <code>repeated string depends_on = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDependsOn($var)

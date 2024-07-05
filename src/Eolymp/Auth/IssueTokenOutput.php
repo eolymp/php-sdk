@@ -179,11 +179,21 @@ class IssueTokenOutput extends \Google\Protobuf\Internal\Message
      * temporarily expose claims directly without wrapping them into id_token
      *
      * Generated from protobuf field <code>.eolymp.auth.Claims claims = 10;</code>
-     * @return \Eolymp\Auth\Claims
+     * @return \Eolymp\Auth\Claims|null
      */
     public function getClaims()
     {
         return $this->claims;
+    }
+
+    public function hasClaims()
+    {
+        return isset($this->claims);
+    }
+
+    public function clearClaims()
+    {
+        unset($this->claims);
     }
 
     /**

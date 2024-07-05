@@ -14,9 +14,18 @@ class GeographyCountry
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ac2010a27656f6c796d702f7461786f6e6f6d792f67656f6772617068795f636f756e7472792e70726f746f120f656f6c796d702e7461786f6e6f6d7922490a07436f756e747279120a0a026964180120012809120c0a046e616d6518022001280912120a0a6c6f63616c5f6e616d6518032001280912100a08666c61675f75726c18042001280942335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f7461786f6e6f6d793b7461786f6e6f6d79620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+Â
+\'eolymp/taxonomy/geography_country.protoeolymp.taxonomy"I
+Country
+
+id (	
+name (	
+
+local_name (	
+flag_url (	B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

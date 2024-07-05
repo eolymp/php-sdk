@@ -65,7 +65,7 @@ class Score extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *     @type float $penalty
      *     @type bool $upsolve
-     *     @type \Eolymp\Judge\Score\Problem[]|\Google\Protobuf\Internal\RepeatedField $breakdown
+     *     @type array<\Eolymp\Judge\Score\Problem>|\Google\Protobuf\Internal\RepeatedField $breakdown
      *           breakdown of total score by problem
      * }
      */
@@ -130,11 +130,21 @@ class Score extends \Google\Protobuf\Internal\Message
      * absolute time when score was set
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
         return $this->timestamp;
+    }
+
+    public function hasTimestamp()
+    {
+        return isset($this->timestamp);
+    }
+
+    public function clearTimestamp()
+    {
+        unset($this->timestamp);
     }
 
     /**
@@ -233,7 +243,7 @@ class Score extends \Google\Protobuf\Internal\Message
      * breakdown of total score by problem
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score.Problem breakdown = 20;</code>
-     * @param \Eolymp\Judge\Score\Problem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Judge\Score\Problem>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBreakdown($var)

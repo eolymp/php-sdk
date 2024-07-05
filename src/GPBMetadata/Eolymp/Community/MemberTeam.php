@@ -14,9 +14,14 @@ class MemberTeam
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a9c010a22656f6c796d702f636f6d6d756e6974792f6d656d6265725f7465616d2e70726f746f1210656f6c796d702e636f6d6d756e69747922250a045465616d120c0a046e616d65180120012809120f0a077374616666656418022001280842355a336769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f636f6d6d756e6974793b636f6d6d756e697479620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+œ
+"eolymp/community/member_team.protoeolymp.community"%
+Team
+name (	
+staffed (B5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

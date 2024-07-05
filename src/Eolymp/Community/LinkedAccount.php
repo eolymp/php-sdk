@@ -85,7 +85,7 @@ class LinkedAccount extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\LinkedAccount_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\LinkedAccount\Type::class);
         $this->type = $var;
 
         return $this;

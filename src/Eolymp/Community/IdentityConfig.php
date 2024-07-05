@@ -51,11 +51,16 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.IdentityProvider.Local local = 1;</code>
-     * @return \Eolymp\Community\IdentityProvider\Local
+     * @return \Eolymp\Community\IdentityProvider\Local|null
      */
     public function getLocal()
     {
         return $this->readOneof(1);
+    }
+
+    public function hasLocal()
+    {
+        return $this->hasOneof(1);
     }
 
     /**
@@ -65,7 +70,7 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      */
     public function setLocal($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider_Local::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider\Local::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -73,11 +78,16 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.IdentityProvider.Basecamp basecamp = 2;</code>
-     * @return \Eolymp\Community\IdentityProvider\Basecamp
+     * @return \Eolymp\Community\IdentityProvider\Basecamp|null
      */
     public function getBasecamp()
     {
         return $this->readOneof(2);
+    }
+
+    public function hasBasecamp()
+    {
+        return $this->hasOneof(2);
     }
 
     /**
@@ -87,7 +97,7 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      */
     public function setBasecamp($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider_Basecamp::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider\Basecamp::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -95,11 +105,16 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.IdentityProvider.OIDC oidc = 3;</code>
-     * @return \Eolymp\Community\IdentityProvider\OIDC
+     * @return \Eolymp\Community\IdentityProvider\OIDC|null
      */
     public function getOidc()
     {
         return $this->readOneof(3);
+    }
+
+    public function hasOidc()
+    {
+        return $this->hasOneof(3);
     }
 
     /**
@@ -109,7 +124,7 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      */
     public function setOidc($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider_OIDC::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider\OIDC::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -131,7 +146,7 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      */
     public function setDisplayNameType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\IdentityConfig_DisplayNameType::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\IdentityConfig\DisplayNameType::class);
         $this->display_name_type = $var;
 
         return $this;

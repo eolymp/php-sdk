@@ -55,7 +55,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *           abbreviation
      *     @type string $summary
      *           topic summary (short description)
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
      *           alternative names and keywords related to the entry (used for search)
      * }
      */
@@ -179,7 +179,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      * alternative names and keywords related to the entry (used for search)
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setKeywords($var)

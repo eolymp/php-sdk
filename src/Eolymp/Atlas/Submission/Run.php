@@ -403,7 +403,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Run_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Run\Status::class);
         $this->status = $var;
 
         return $this;
@@ -425,7 +425,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setVerdict($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Verdict::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Verdict::class);
         $this->verdict = $var;
 
         return $this;
@@ -433,11 +433,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
-     * @return \Eolymp\Executor\Stats
+     * @return \Eolymp\Executor\Stats|null
      */
     public function getStats()
     {
         return $this->stats;
+    }
+
+    public function hasStats()
+    {
+        return isset($this->stats);
+    }
+
+    public function clearStats()
+    {
+        unset($this->stats);
     }
 
     /**
@@ -455,11 +465,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
-     * @return \Eolymp\Atlas\Submission\CheckerExecutionData
+     * @return \Eolymp\Atlas\Submission\CheckerExecutionData|null
      */
     public function getCheckerExecutionData()
     {
         return $this->checker_execution_data;
+    }
+
+    public function hasCheckerExecutionData()
+    {
+        return isset($this->checker_execution_data);
+    }
+
+    public function clearCheckerExecutionData()
+    {
+        unset($this->checker_execution_data);
     }
 
     /**
@@ -469,7 +489,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setCheckerExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_CheckerExecutionData::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\CheckerExecutionData::class);
         $this->checker_execution_data = $var;
 
         return $this;
@@ -477,11 +497,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 31;</code>
-     * @return \Eolymp\Executor\Stats
+     * @return \Eolymp\Executor\Stats|null
      */
     public function getCheckerStats()
     {
         return $this->checker_stats;
+    }
+
+    public function hasCheckerStats()
+    {
+        return isset($this->checker_stats);
+    }
+
+    public function clearCheckerStats()
+    {
+        unset($this->checker_stats);
     }
 
     /**
@@ -499,11 +529,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
-     * @return \Eolymp\Atlas\Submission\InteractorExecutionData
+     * @return \Eolymp\Atlas\Submission\InteractorExecutionData|null
      */
     public function getInteractorExecutionData()
     {
         return $this->interactor_execution_data;
+    }
+
+    public function hasInteractorExecutionData()
+    {
+        return isset($this->interactor_execution_data);
+    }
+
+    public function clearInteractorExecutionData()
+    {
+        unset($this->interactor_execution_data);
     }
 
     /**
@@ -513,7 +553,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setInteractorExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission_InteractorExecutionData::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\InteractorExecutionData::class);
         $this->interactor_execution_data = $var;
 
         return $this;
@@ -521,11 +561,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 41;</code>
-     * @return \Eolymp\Executor\Stats
+     * @return \Eolymp\Executor\Stats|null
      */
     public function getInteractorStats()
     {
         return $this->interactor_stats;
+    }
+
+    public function hasInteractorStats()
+    {
+        return isset($this->interactor_stats);
+    }
+
+    public function clearInteractorStats()
+    {
+        unset($this->interactor_stats);
     }
 
     /**

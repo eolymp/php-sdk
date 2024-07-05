@@ -92,7 +92,7 @@ class Status extends \Google\Protobuf\Internal\Message
      *           Error message for ERROR report
      *     @type string $failure
      *           Failure message for FAILURE report
-     *     @type \Eolymp\Executor\Status\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type array<\Eolymp\Executor\Status\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           Runs for UPDATE report
      *     @type string $signature
      *           Source code signature is a unique fingerprint of the code, calculated by agent for a specific language.
@@ -185,7 +185,7 @@ class Status extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Status_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Status\Type::class);
         $this->type = $var;
 
         return $this;
@@ -258,7 +258,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * Runs for UPDATE report
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Status.Run runs = 40;</code>
-     * @param \Eolymp\Executor\Status\Run[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Status\Run>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuns($var)

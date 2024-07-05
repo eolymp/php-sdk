@@ -93,7 +93,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     public function setVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Scoreboard_Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Scoreboard\Visibility::class);
         $this->visibility = $var;
 
         return $this;

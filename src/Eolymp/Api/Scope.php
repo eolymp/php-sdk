@@ -26,7 +26,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scope
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
      *           required OAuth scopes
      * }
      */
@@ -50,7 +50,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * required OAuth scopes
      *
      * Generated from protobuf field <code>repeated string scope = 22065;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScope($var)

@@ -34,11 +34,21 @@ class DescribeProjectOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Project project = 1;</code>
-     * @return \Eolymp\L10n\Project
+     * @return \Eolymp\L10n\Project|null
      */
     public function getProject()
     {
         return $this->project;
+    }
+
+    public function hasProject()
+    {
+        return isset($this->project);
+    }
+
+    public function clearProject()
+    {
+        unset($this->project);
     }
 
     /**

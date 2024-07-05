@@ -93,6 +93,11 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
         return $this->readOneof(101);
     }
 
+    public function hasInputData()
+    {
+        return $this->hasOneof(101);
+    }
+
     /**
      * Generated from protobuf field <code>bytes input_data = 101;</code>
      * @param string $var
@@ -113,6 +118,11 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     public function getInputRef()
     {
         return $this->readOneof(102);
+    }
+
+    public function hasInputRef()
+    {
+        return $this->hasOneof(102);
     }
 
     /**

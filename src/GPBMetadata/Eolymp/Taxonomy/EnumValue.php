@@ -14,9 +14,25 @@ class EnumValue
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ab2020a20656f6c796d702f7461786f6e6f6d792f656e756d5f76616c75652e70726f746f120f656f6c796d702e7461786f6e6f6d7922bf010a0556616c7565120a0a026964180120012809120c0a046e616d65180220012809120f0a0773756d6d617279180320012809120c0a0461626272180520012809120d0a05696d61676518062001280912100a086b6579776f7264731804200328091a5c0a0b5472616e736c6174696f6e120e0a066c6f63616c65180120012809120c0a046e616d65180220012809120c0a0461626272180520012809120f0a0773756d6d61727918032001280912100a086b6579776f72647318042003280942335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f7461786f6e6f6d793b7461786f6e6f6d79620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+²
+ eolymp/taxonomy/enum_value.protoeolymp.taxonomy"¿
+Value
+
+id (	
+name (	
+summary (	
+abbr (	
+image (	
+keywords (	\\
+Translation
+locale (	
+name (	
+abbr (	
+summary (	
+keywords (	B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

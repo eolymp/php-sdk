@@ -29,7 +29,7 @@ class ListInvoicesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Commerce\Invoice[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Commerce\Invoice>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListInvoicesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice items = 2;</code>
-     * @param \Eolymp\Commerce\Invoice[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Commerce\Invoice>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

@@ -26,7 +26,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $allowed_runtimes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $allowed_runtimes
      *           List of available runtimes, empty means all
      * }
      */
@@ -50,7 +50,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * List of available runtimes, empty means all
      *
      * Generated from protobuf field <code>repeated string allowed_runtimes = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAllowedRuntimes($var)

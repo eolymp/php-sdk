@@ -39,11 +39,21 @@ class DescribeMemberUsageInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_start = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPeriodStart()
     {
         return $this->period_start;
+    }
+
+    public function hasPeriodStart()
+    {
+        return isset($this->period_start);
+    }
+
+    public function clearPeriodStart()
+    {
+        unset($this->period_start);
     }
 
     /**
@@ -61,11 +71,21 @@ class DescribeMemberUsageInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPeriodEnd()
     {
         return $this->period_end;
+    }
+
+    public function hasPeriodEnd()
+    {
+        return isset($this->period_end);
+    }
+
+    public function clearPeriodEnd()
+    {
+        unset($this->period_end);
     }
 
     /**

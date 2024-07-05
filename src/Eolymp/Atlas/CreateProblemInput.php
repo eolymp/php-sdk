@@ -39,11 +39,21 @@ class CreateProblemInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
-     * @return \Eolymp\Atlas\Problem
+     * @return \Eolymp\Atlas\Problem|null
      */
     public function getProblem()
     {
         return $this->problem;
+    }
+
+    public function hasProblem()
+    {
+        return isset($this->problem);
+    }
+
+    public function clearProblem()
+    {
+        unset($this->problem);
     }
 
     /**
@@ -61,11 +71,21 @@ class CreateProblemInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
-     * @return \Eolymp\Atlas\Statement
+     * @return \Eolymp\Atlas\Statement|null
      */
     public function getStatement()
     {
         return $this->statement;
+    }
+
+    public function hasStatement()
+    {
+        return isset($this->statement);
+    }
+
+    public function clearStatement()
+    {
+        unset($this->statement);
     }
 
     /**

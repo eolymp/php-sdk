@@ -34,11 +34,21 @@ class DescribeRuntimeOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Runtime runtime = 1;</code>
-     * @return \Eolymp\Executor\Runtime
+     * @return \Eolymp\Executor\Runtime|null
      */
     public function getRuntime()
     {
         return $this->runtime;
+    }
+
+    public function hasRuntime()
+    {
+        return isset($this->runtime);
+    }
+
+    public function clearRuntime()
+    {
+        unset($this->runtime);
     }
 
     /**

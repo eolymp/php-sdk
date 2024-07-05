@@ -100,11 +100,21 @@ class ListJobsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.worker.ListJobsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Worker\ListJobsInput\Filter
+     * @return \Eolymp\Worker\ListJobsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -116,7 +126,7 @@ class ListJobsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Worker\ListJobsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Worker\ListJobsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

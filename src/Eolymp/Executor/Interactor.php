@@ -68,7 +68,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      *           Source code for interactor
      *     @type bool $secret
      *           Secret means checker code and configuration must not be exposed to users
-     *     @type \Eolymp\Executor\Interactor\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Executor\Interactor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
      * }
      */
@@ -97,7 +97,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Interactor_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Interactor\Type::class);
         $this->type = $var;
 
         return $this;
@@ -222,7 +222,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Interactor.File files = 10;</code>
-     * @param \Eolymp\Executor\Interactor\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Interactor\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)

@@ -34,11 +34,21 @@ class DescribePermissionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.acl.Permission permission = 1;</code>
-     * @return \Eolymp\Acl\Permission
+     * @return \Eolymp\Acl\Permission|null
      */
     public function getPermission()
     {
         return $this->permission;
+    }
+
+    public function hasPermission()
+    {
+        return isset($this->permission);
+    }
+
+    public function clearPermission()
+    {
+        unset($this->permission);
     }
 
     /**

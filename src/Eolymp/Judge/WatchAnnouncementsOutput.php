@@ -53,7 +53,7 @@ class WatchAnnouncementsOutput extends \Google\Protobuf\Internal\Message
      */
     public function setEvent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchAnnouncementsOutput_Event::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchAnnouncementsOutput\Event::class);
         $this->event = $var;
 
         return $this;
@@ -61,11 +61,21 @@ class WatchAnnouncementsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 2;</code>
-     * @return \Eolymp\Judge\Announcement
+     * @return \Eolymp\Judge\Announcement|null
      */
     public function getAnnouncement()
     {
         return $this->announcement;
+    }
+
+    public function hasAnnouncement()
+    {
+        return isset($this->announcement);
+    }
+
+    public function clearAnnouncement()
+    {
+        unset($this->announcement);
     }
 
     /**

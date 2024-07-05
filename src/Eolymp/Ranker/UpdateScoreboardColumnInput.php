@@ -36,7 +36,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $scoreboard_id
      *     @type string $column_id
      *     @type \Eolymp\Ranker\Scoreboard\Column $column
@@ -58,7 +58,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardColumnInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -115,11 +115,21 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 4;</code>
-     * @return \Eolymp\Ranker\Scoreboard\Column
+     * @return \Eolymp\Ranker\Scoreboard\Column|null
      */
     public function getColumn()
     {
         return $this->column;
+    }
+
+    public function hasColumn()
+    {
+        return isset($this->column);
+    }
+
+    public function clearColumn()
+    {
+        unset($this->column);
     }
 
     /**
@@ -129,7 +139,7 @@ class UpdateScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      */
     public function setColumn($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Column::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard\Column::class);
         $this->column = $var;
 
         return $this;

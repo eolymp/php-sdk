@@ -34,11 +34,21 @@ class DescribeRankingEventOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.RankingEvent event = 1;</code>
-     * @return \Eolymp\Community\RankingEvent
+     * @return \Eolymp\Community\RankingEvent|null
      */
     public function getEvent()
     {
         return $this->event;
+    }
+
+    public function hasEvent()
+    {
+        return isset($this->event);
+    }
+
+    public function clearEvent()
+    {
+        unset($this->event);
     }
 
     /**

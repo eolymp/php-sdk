@@ -15,9 +15,26 @@ class Template
           return;
         }
         \GPBMetadata\Eolymp\Atlas\CodeTemplateFile::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a8d020a1b656f6c796d702f6a756467652f74656d706c6174652e70726f746f120c656f6c796d702e6a7564676522a8010a0854656d706c617465120a0a026964180120012809120c0a0365726e188f4e2001280912120a0a70726f626c656d5f6964180220012809120f0a0772756e74696d6518032001280912120a0a736f757263655f65726e180a2001280912120a0a6865616465725f65726e180b2001280912120a0a666f6f7465725f65726e180c2001280912210a0566696c6573181e2003280b32122e656f6c796d702e61746c61732e46696c65422d5a2b6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6a756467653b6a75646765620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ç
+eolymp/judge/template.protoeolymp.judge"®
+Template
+
+id (	
+ernèN (	
+
+problem_id (	
+runtime (	
+
+source_ern
+ (	
+
+header_ern (	
+
+footer_ern (	!
+files (2.eolymp.atlas.FileB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
+        , true);
 
         static::$is_initialized = true;
     }

@@ -29,7 +29,7 @@ class ListNewslettersOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Newsletter\Newsletter[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Newsletter\Newsletter>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListNewslettersOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.newsletter.Newsletter items = 2;</code>
-     * @param \Eolymp\Newsletter\Newsletter[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Newsletter\Newsletter>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

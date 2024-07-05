@@ -34,11 +34,21 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.newsletter.Recipient recipient = 10;</code>
-     * @return \Eolymp\Newsletter\Recipient
+     * @return \Eolymp\Newsletter\Recipient|null
      */
     public function getRecipient()
     {
         return $this->recipient;
+    }
+
+    public function hasRecipient()
+    {
+        return isset($this->recipient);
+    }
+
+    public function clearRecipient()
+    {
+        unset($this->recipient);
     }
 
     /**

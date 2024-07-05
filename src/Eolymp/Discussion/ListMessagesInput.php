@@ -60,7 +60,7 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      *     @type int $order
      *     @type \Eolymp\Discussion\ListMessagesInput\Filter $filters
      *           data filters
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -154,7 +154,7 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      */
     public function setSort($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Discussion\ListMessagesInput_Sortable::class);
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\ListMessagesInput\Sortable::class);
         $this->sort = $var;
 
         return $this;
@@ -186,11 +186,21 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Filter filters = 40;</code>
-     * @return \Eolymp\Discussion\ListMessagesInput\Filter
+     * @return \Eolymp\Discussion\ListMessagesInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -202,7 +212,7 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\ListMessagesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\ListMessagesInput\Filter::class);
         $this->filters = $var;
 
         return $this;
@@ -219,7 +229,7 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Message.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

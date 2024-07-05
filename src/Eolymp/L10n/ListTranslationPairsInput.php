@@ -155,6 +155,11 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
         return $this->readOneof(11);
     }
 
+    public function hasOffset()
+    {
+        return $this->hasOneof(11);
+    }
+
     /**
      * starting row number
      *
@@ -179,6 +184,11 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
     public function getAfter()
     {
         return $this->readOneof(12);
+    }
+
+    public function hasAfter()
+    {
+        return $this->hasOneof(12);
     }
 
     /**
@@ -207,6 +217,11 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
         return $this->readOneof(13);
     }
 
+    public function hasBefore()
+    {
+        return $this->hasOneof(13);
+    }
+
     /**
      * ending record
      *
@@ -226,11 +241,21 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.l10n.ListTranslationPairsInput.Filter filters = 40;</code>
-     * @return \Eolymp\L10n\ListTranslationPairsInput\Filter
+     * @return \Eolymp\L10n\ListTranslationPairsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -242,7 +267,7 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\L10n\ListTranslationPairsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\L10n\ListTranslationPairsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

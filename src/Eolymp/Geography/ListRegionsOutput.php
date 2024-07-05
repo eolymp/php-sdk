@@ -28,7 +28,7 @@ class ListRegionsOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Geography\Region[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Geography\Region>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type int $total
      * }
      */
@@ -48,7 +48,7 @@ class ListRegionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.geography.Region items = 1;</code>
-     * @param \Eolymp\Geography\Region[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Geography\Region>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

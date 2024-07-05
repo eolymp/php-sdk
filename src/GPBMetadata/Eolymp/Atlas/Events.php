@@ -14,11 +14,42 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Acl\AclService::initOnce();
+        \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         \GPBMetadata\Eolymp\Atlas\ScoringScore::initOnce();
+        \GPBMetadata\Eolymp\Atlas\Statement::initOnce();
         \GPBMetadata\Eolymp\Atlas\Submission::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ad1020a19656f6c796d702f61746c61732f6576656e74732e70726f746f120c656f6c796d702e61746c61731a1d656f6c796d702f61746c61732f7375626d697373696f6e2e70726f746f223e0a175065726d697373696f6e7344656c657465644576656e7412120a0a70726f626c656d5f6964180120012809120f0a07757365725f696418022001280922570a175375626d697373696f6e436f6d706c6574654576656e74122c0a0a7375626d697373696f6e18012001280b32182e656f6c796d702e61746c61732e5375626d697373696f6e120e0a0675706461746518022001280822370a1153636f7265557064617465644576656e7412220a0573636f726518012001280b32132e656f6c796d702e61746c61732e53636f7265422d5a2b6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f61746c61733b61746c6173620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+¼
+eolymp/atlas/events.protoeolymp.atlaseolymp/atlas/problem.proto eolymp/atlas/scoring_score.protoeolymp/atlas/statement.protoeolymp/atlas/submission.proto"W
+SubmissionCompleteEvent,
+
+submission (2.eolymp.atlas.Submission
+update ("7
+ScoreUpdatedEvent"
+score (2.eolymp.atlas.Score"b
+ProblemChangedEvent%
+before (2.eolymp.atlas.Problem$
+after (2.eolymp.atlas.Problem"|
+StatementChangedEvent
+
+problem_id (	\'
+before (2.eolymp.atlas.Statement&
+after (2.eolymp.atlas.Statement"\\
+BookmarkChangedEvent
+
+problem_id (	
+	member_id (	
+before (
+after ("Œ
+PermissionChangedEvent
+
+problem_id (	
+user_id (	&
+before (2.eolymp.acl.Permission%
+after (2.eolymp.acl.PermissionB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

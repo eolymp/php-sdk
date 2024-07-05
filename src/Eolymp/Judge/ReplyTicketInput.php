@@ -66,11 +66,21 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**
@@ -102,7 +112,7 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      */
     public function setChangeStatusTo($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Ticket_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Ticket\Status::class);
         $this->change_status_to = $var;
 
         return $this;

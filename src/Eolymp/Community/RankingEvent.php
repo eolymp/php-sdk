@@ -93,11 +93,21 @@ class RankingEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
         return $this->timestamp;
+    }
+
+    public function hasTimestamp()
+    {
+        return isset($this->timestamp);
+    }
+
+    public function clearTimestamp()
+    {
+        unset($this->timestamp);
     }
 
     /**

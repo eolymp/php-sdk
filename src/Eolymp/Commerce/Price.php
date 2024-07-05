@@ -85,7 +85,7 @@ class Price extends \Google\Protobuf\Internal\Message
      */
     public function setRecurrence($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Commerce\Price_Recurrence::class);
+        GPBUtil::checkEnum($var, \Eolymp\Commerce\Price\Recurrence::class);
         $this->recurrence = $var;
 
         return $this;

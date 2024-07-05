@@ -88,11 +88,21 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.ListSpacesInput.Filter filters = 40;</code>
-     * @return \Eolymp\Universe\ListSpacesInput\Filter
+     * @return \Eolymp\Universe\ListSpacesInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -102,7 +112,7 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\ListSpacesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\ListSpacesInput\Filter::class);
         $this->filters = $var;
 
         return $this;

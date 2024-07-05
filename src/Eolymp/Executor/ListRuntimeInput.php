@@ -34,11 +34,21 @@ class ListRuntimeInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.ListRuntimeInput.Filter filters = 40;</code>
-     * @return \Eolymp\Executor\ListRuntimeInput\Filter
+     * @return \Eolymp\Executor\ListRuntimeInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -48,7 +58,7 @@ class ListRuntimeInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\ListRuntimeInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\ListRuntimeInput\Filter::class);
         $this->filters = $var;
 
         return $this;

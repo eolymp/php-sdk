@@ -34,11 +34,21 @@ class WatchTicketOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 1;</code>
-     * @return \Eolymp\Judge\Ticket
+     * @return \Eolymp\Judge\Ticket|null
      */
     public function getTicket()
     {
         return $this->ticket;
+    }
+
+    public function hasTicket()
+    {
+        return isset($this->ticket);
+    }
+
+    public function clearTicket()
+    {
+        unset($this->ticket);
     }
 
     /**

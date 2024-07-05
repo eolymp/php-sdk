@@ -255,7 +255,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Playground\Run_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Playground\Run\Status::class);
         $this->status = $var;
 
         return $this;
@@ -421,11 +421,21 @@ class Run extends \Google\Protobuf\Internal\Message
      * Resource usage statistics as reported by getrusage
      *
      * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 35;</code>
-     * @return \Eolymp\Executor\ResourceUsage
+     * @return \Eolymp\Executor\ResourceUsage|null
      */
     public function getResourceUsage()
     {
         return $this->resource_usage;
+    }
+
+    public function hasResourceUsage()
+    {
+        return isset($this->resource_usage);
+    }
+
+    public function clearResourceUsage()
+    {
+        unset($this->resource_usage);
     }
 
     /**

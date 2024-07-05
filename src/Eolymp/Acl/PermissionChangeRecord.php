@@ -58,7 +58,7 @@ class PermissionChangeRecord extends \Google\Protobuf\Internal\Message
      */
     public function setOp($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Acl\PermissionChangeRecord_Operation::class);
+        GPBUtil::checkEnum($var, \Eolymp\Acl\PermissionChangeRecord\Operation::class);
         $this->op = $var;
 
         return $this;
@@ -88,11 +88,21 @@ class PermissionChangeRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.acl.Permission permission = 3;</code>
-     * @return \Eolymp\Acl\Permission
+     * @return \Eolymp\Acl\Permission|null
      */
     public function getPermission()
     {
         return $this->permission;
+    }
+
+    public function hasPermission()
+    {
+        return isset($this->permission);
+    }
+
+    public function clearPermission()
+    {
+        unset($this->permission);
     }
 
     /**

@@ -34,11 +34,21 @@ class DescribeEnumOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.taxonomy.Enum enum = 1;</code>
-     * @return \Eolymp\Taxonomy\Enum
+     * @return \Eolymp\Taxonomy\Enum|null
      */
     public function getEnum()
     {
         return $this->enum;
+    }
+
+    public function hasEnum()
+    {
+        return isset($this->enum);
+    }
+
+    public function clearEnum()
+    {
+        unset($this->enum);
     }
 
     /**

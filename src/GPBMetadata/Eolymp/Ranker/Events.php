@@ -14,9 +14,15 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0abc010a1a656f6c796d702f72616e6b65722f6576656e74732e70726f746f120d656f6c796d702e72616e6b657222560a1652656275696c6453636f7265626f6172644576656e7412100a0873706163655f696418012001280912150a0d73636f7265626f6172645f696418022001280912130a0b61637469766974795f6964180320012809422f5a2d6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f72616e6b65723b72616e6b6572620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+¼
+eolymp/ranker/events.protoeolymp.ranker"V
+RebuildScoreboardEvent
+space_id (	
+scoreboard_id (	
+activity_id (	B/Z-github.com/eolymp/go-sdk/eolymp/ranker;rankerbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

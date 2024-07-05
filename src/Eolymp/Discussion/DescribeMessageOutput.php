@@ -34,11 +34,21 @@ class DescribeMessageOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Message message = 1;</code>
-     * @return \Eolymp\Discussion\Message
+     * @return \Eolymp\Discussion\Message|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**

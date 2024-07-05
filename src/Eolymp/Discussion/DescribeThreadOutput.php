@@ -34,11 +34,21 @@ class DescribeThreadOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Thread thread = 1;</code>
-     * @return \Eolymp\Discussion\Thread
+     * @return \Eolymp\Discussion\Thread|null
      */
     public function getThread()
     {
         return $this->thread;
+    }
+
+    public function hasThread()
+    {
+        return isset($this->thread);
+    }
+
+    public function clearThread()
+    {
+        unset($this->thread);
     }
 
     /**

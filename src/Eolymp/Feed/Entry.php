@@ -44,7 +44,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
-     *     @type \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
      * }
      */
     public function __construct($data = NULL) {
@@ -98,11 +98,21 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
         return $this->timestamp;
+    }
+
+    public function hasTimestamp()
+    {
+        return isset($this->timestamp);
+    }
+
+    public function clearTimestamp()
+    {
+        unset($this->timestamp);
     }
 
     /**
@@ -151,7 +161,7 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 20;</code>
-     * @param \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLinks($var)

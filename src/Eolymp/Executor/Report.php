@@ -91,9 +91,9 @@ class Report extends \Google\Protobuf\Internal\Message
      *           receives run #1 v.20 it's newer and should be processed, but run #2 v.20 should be ignored).
      *     @type int $state
      *           Overall task state
-     *     @type \Eolymp\Executor\Report\Actor[]|\Google\Protobuf\Internal\RepeatedField $actors
+     *     @type array<\Eolymp\Executor\Report\Actor>|\Google\Protobuf\Internal\RepeatedField $actors
      *           Actor statuses.
-     *     @type \Eolymp\Executor\Report\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type array<\Eolymp\Executor\Report\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           Runs statuses.
      *     @type string $error
      *           Error message.
@@ -238,7 +238,7 @@ class Report extends \Google\Protobuf\Internal\Message
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_State::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report\State::class);
         $this->state = $var;
 
         return $this;
@@ -259,7 +259,7 @@ class Report extends \Google\Protobuf\Internal\Message
      * Actor statuses.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Report.Actor actors = 50;</code>
-     * @param \Eolymp\Executor\Report\Actor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Report\Actor>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setActors($var)
@@ -285,7 +285,7 @@ class Report extends \Google\Protobuf\Internal\Message
      * Runs statuses.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Report.Run runs = 40;</code>
-     * @param \Eolymp\Executor\Report\Run[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Report\Run>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuns($var)

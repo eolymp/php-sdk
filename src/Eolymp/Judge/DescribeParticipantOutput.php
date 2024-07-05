@@ -34,11 +34,21 @@ class DescribeParticipantOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Participant participant = 1;</code>
-     * @return \Eolymp\Judge\Participant
+     * @return \Eolymp\Judge\Participant|null
      */
     public function getParticipant()
     {
         return $this->participant;
+    }
+
+    public function hasParticipant()
+    {
+        return isset($this->participant);
+    }
+
+    public function clearParticipant()
+    {
+        unset($this->participant);
     }
 
     /**

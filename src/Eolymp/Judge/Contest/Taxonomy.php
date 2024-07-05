@@ -155,7 +155,7 @@ class Taxonomy extends \Google\Protobuf\Internal\Message
      */
     public function setScale($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Taxonomy_Scale::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Taxonomy\Scale::class);
         $this->scale = $var;
 
         return $this;

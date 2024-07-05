@@ -61,11 +61,21 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Attribute attribute = 2;</code>
-     * @return \Eolymp\Community\Attribute
+     * @return \Eolymp\Community\Attribute|null
      */
     public function getAttribute()
     {
         return $this->attribute;
+    }
+
+    public function hasAttribute()
+    {
+        return isset($this->attribute);
+    }
+
+    public function clearAttribute()
+    {
+        unset($this->attribute);
     }
 
     /**

@@ -32,7 +32,7 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $post_id
      *     @type \Eolymp\Discussion\Post $post
      * }
@@ -53,7 +53,7 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.UpdatePostInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -88,11 +88,21 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post post = 3;</code>
-     * @return \Eolymp\Discussion\Post
+     * @return \Eolymp\Discussion\Post|null
      */
     public function getPost()
     {
         return $this->post;
+    }
+
+    public function hasPost()
+    {
+        return isset($this->post);
+    }
+
+    public function clearPost()
+    {
+        unset($this->post);
     }
 
     /**

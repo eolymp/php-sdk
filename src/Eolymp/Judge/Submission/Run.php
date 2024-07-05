@@ -364,7 +364,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Submission_Run_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Submission\Run\Status::class);
         $this->status = $var;
 
         return $this;
@@ -390,7 +390,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setVerdict($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Verdict::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Verdict::class);
         $this->verdict = $var;
 
         return $this;
@@ -398,11 +398,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Submission.CheckerExecutionData checker_execution_data = 30;</code>
-     * @return \Eolymp\Judge\Submission\CheckerExecutionData
+     * @return \Eolymp\Judge\Submission\CheckerExecutionData|null
      */
     public function getCheckerExecutionData()
     {
         return $this->checker_execution_data;
+    }
+
+    public function hasCheckerExecutionData()
+    {
+        return isset($this->checker_execution_data);
+    }
+
+    public function clearCheckerExecutionData()
+    {
+        unset($this->checker_execution_data);
     }
 
     /**
@@ -412,7 +422,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setCheckerExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission_CheckerExecutionData::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission\CheckerExecutionData::class);
         $this->checker_execution_data = $var;
 
         return $this;
@@ -420,11 +430,21 @@ class Run extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
-     * @return \Eolymp\Judge\Submission\InteractorExecutionData
+     * @return \Eolymp\Judge\Submission\InteractorExecutionData|null
      */
     public function getInteractorExecutionData()
     {
         return $this->interactor_execution_data;
+    }
+
+    public function hasInteractorExecutionData()
+    {
+        return isset($this->interactor_execution_data);
+    }
+
+    public function clearInteractorExecutionData()
+    {
+        unset($this->interactor_execution_data);
     }
 
     /**
@@ -434,7 +454,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setInteractorExecutionData($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission_InteractorExecutionData::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission\InteractorExecutionData::class);
         $this->interactor_execution_data = $var;
 
         return $this;

@@ -28,7 +28,7 @@ class Http extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Api\HttpRule[]|\Google\Protobuf\Internal\RepeatedField $rules
+     *     @type array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $rules
      *     @type bool $fully_decode_reserved_expansion
      * }
      */
@@ -48,7 +48,7 @@ class Http extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule rules = 1;</code>
-     * @param \Eolymp\Api\HttpRule[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRules($var)

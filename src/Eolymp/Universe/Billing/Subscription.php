@@ -184,7 +184,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Billing_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Billing\Status::class);
         $this->status = $var;
 
         return $this;
@@ -250,11 +250,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Plan plan = 10;</code>
-     * @return \Eolymp\Universe\Plan
+     * @return \Eolymp\Universe\Plan|null
      */
     public function getPlan()
     {
         return $this->plan;
+    }
+
+    public function hasPlan()
+    {
+        return isset($this->plan);
+    }
+
+    public function clearPlan()
+    {
+        unset($this->plan);
     }
 
     /**
@@ -272,11 +282,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Plan.Variant variant = 11;</code>
-     * @return \Eolymp\Universe\Plan\Variant
+     * @return \Eolymp\Universe\Plan\Variant|null
      */
     public function getVariant()
     {
         return $this->variant;
+    }
+
+    public function hasVariant()
+    {
+        return isset($this->variant);
+    }
+
+    public function clearVariant()
+    {
+        unset($this->variant);
     }
 
     /**
@@ -286,7 +306,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     public function setVariant($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Plan_Variant::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Plan\Variant::class);
         $this->variant = $var;
 
         return $this;
@@ -318,11 +338,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when subscription was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 210;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -344,11 +374,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when subscription was started (activated first time)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 211;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedAt()
     {
         return $this->started_at;
+    }
+
+    public function hasStartedAt()
+    {
+        return isset($this->started_at);
+    }
+
+    public function clearStartedAt()
+    {
+        unset($this->started_at);
     }
 
     /**
@@ -370,11 +410,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when subscription was/will be cancelled
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp cancel_at = 213;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCancelAt()
     {
         return $this->cancel_at;
+    }
+
+    public function hasCancelAt()
+    {
+        return isset($this->cancel_at);
+    }
+
+    public function clearCancelAt()
+    {
+        unset($this->cancel_at);
     }
 
     /**
@@ -396,11 +446,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when subscription was/will be cancelled
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 214;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCancelledAt()
     {
         return $this->cancelled_at;
+    }
+
+    public function hasCancelledAt()
+    {
+        return isset($this->cancelled_at);
+    }
+
+    public function clearCancelledAt()
+    {
+        unset($this->cancelled_at);
     }
 
     /**
@@ -422,11 +482,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when subscription was/will be cancelled
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 215;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndedAt()
     {
         return $this->ended_at;
+    }
+
+    public function hasEndedAt()
+    {
+        return isset($this->ended_at);
+    }
+
+    public function clearEndedAt()
+    {
+        unset($this->ended_at);
     }
 
     /**
@@ -448,11 +518,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * current billing period start
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_start = 240;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPeriodStart()
     {
         return $this->period_start;
+    }
+
+    public function hasPeriodStart()
+    {
+        return isset($this->period_start);
+    }
+
+    public function clearPeriodStart()
+    {
+        unset($this->period_start);
     }
 
     /**
@@ -474,11 +554,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * current billing period end
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp period_end = 241;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPeriodEnd()
     {
         return $this->period_end;
+    }
+
+    public function hasPeriodEnd()
+    {
+        return isset($this->period_end);
+    }
+
+    public function clearPeriodEnd()
+    {
+        unset($this->period_end);
     }
 
     /**
@@ -500,11 +590,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when trial has started
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_start = 270;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTrialStart()
     {
         return $this->trial_start;
+    }
+
+    public function hasTrialStart()
+    {
+        return isset($this->trial_start);
+    }
+
+    public function clearTrialStart()
+    {
+        unset($this->trial_start);
     }
 
     /**
@@ -526,11 +626,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
      * time when trial will be over
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp trial_end = 271;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTrialEnd()
     {
         return $this->trial_end;
+    }
+
+    public function hasTrialEnd()
+    {
+        return isset($this->trial_end);
+    }
+
+    public function clearTrialEnd()
+    {
+        unset($this->trial_end);
     }
 
     /**

@@ -154,11 +154,21 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.atlas.ListSubmissionsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Atlas\ListSubmissionsInput\Filter
+     * @return \Eolymp\Atlas\ListSubmissionsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -170,7 +180,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListSubmissionsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListSubmissionsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

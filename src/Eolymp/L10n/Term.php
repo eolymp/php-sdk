@@ -156,7 +156,7 @@ class Term extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\L10n\Term_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\L10n\Term\Status::class);
         $this->status = $var;
 
         return $this;

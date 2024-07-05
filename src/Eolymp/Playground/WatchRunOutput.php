@@ -34,11 +34,21 @@ class WatchRunOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.playground.Run run = 1;</code>
-     * @return \Eolymp\Playground\Run
+     * @return \Eolymp\Playground\Run|null
      */
     public function getRun()
     {
         return $this->run;
+    }
+
+    public function hasRun()
+    {
+        return isset($this->run);
+    }
+
+    public function clearRun()
+    {
+        unset($this->run);
     }
 
     /**

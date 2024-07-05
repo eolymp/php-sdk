@@ -34,7 +34,7 @@ class Node extends \Google\Protobuf\Internal\Message
      *
      *     @type string $type
      *     @type array|\Google\Protobuf\Internal\MapField $attr
-     *     @type \Eolymp\Ecm\Node[]|\Google\Protobuf\Internal\RepeatedField $children
+     *     @type array<\Eolymp\Ecm\Node>|\Google\Protobuf\Internal\RepeatedField $children
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +97,7 @@ class Node extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ecm.Node children = 3;</code>
-     * @param \Eolymp\Ecm\Node[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Ecm\Node>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChildren($var)

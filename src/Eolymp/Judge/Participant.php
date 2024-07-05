@@ -147,7 +147,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           passcode is a code participant has to enter before she can begin contest
      *           this field is only populated when request is made by contest owner
      *           passcode is read-only and should be set using ResetPasscode method.
-     *     @type \Eolymp\Judge\Participant\Submit[]|\Google\Protobuf\Internal\RepeatedField $submits
+     *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
      *           Submit counter is used to count how many times user submitted the problem.
      * }
      */
@@ -380,7 +380,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Participant_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Participant\Status::class);
         $this->status = $var;
 
         return $this;
@@ -390,11 +390,21 @@ class Participant extends \Google\Protobuf\Internal\Message
      * time when user has started participating
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedAt()
     {
         return $this->started_at;
+    }
+
+    public function hasStartedAt()
+    {
+        return isset($this->started_at);
+    }
+
+    public function clearStartedAt()
+    {
+        unset($this->started_at);
     }
 
     /**
@@ -442,11 +452,21 @@ class Participant extends \Google\Protobuf\Internal\Message
      * time when user has finished (will finish) participating (incl. bonus time)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndAt()
     {
         return $this->end_at;
+    }
+
+    public function hasEndAt()
+    {
+        return isset($this->end_at);
+    }
+
+    public function clearEndAt()
+    {
+        unset($this->end_at);
     }
 
     /**
@@ -561,7 +581,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Submit counter is used to count how many times user submitted the problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
-     * @param \Eolymp\Judge\Participant\Submit[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSubmits($var)

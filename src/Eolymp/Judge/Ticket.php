@@ -268,7 +268,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Ticket_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Ticket\Status::class);
         $this->status = $var;
 
         return $this;
@@ -304,11 +304,21 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Ticket message.
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 12;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**
@@ -404,11 +414,21 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Timestamp when ticket was initially created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -430,11 +450,21 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Timestamp when ticket was modified/replied.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
     }
 
     /**
@@ -456,11 +486,21 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Timestamp when ticket was read by current user
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadAt()
     {
         return $this->read_at;
+    }
+
+    public function hasReadAt()
+    {
+        return isset($this->read_at);
+    }
+
+    public function clearReadAt()
+    {
+        unset($this->read_at);
     }
 
     /**
@@ -482,11 +522,21 @@ class Ticket extends \Google\Protobuf\Internal\Message
      * Timestamp when last reply was added
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastReplyAt()
     {
         return $this->last_reply_at;
+    }
+
+    public function hasLastReplyAt()
+    {
+        return isset($this->last_reply_at);
+    }
+
+    public function clearLastReplyAt()
+    {
+        unset($this->last_reply_at);
     }
 
     /**

@@ -33,7 +33,7 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Ranker\Scoreboard\Row[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Ranker\Scoreboard\Row>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type bool $frozen
      * }
      */
@@ -75,7 +75,7 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row items = 2;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Row[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Ranker\Scoreboard\Row>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

@@ -14,9 +14,18 @@ class Region
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ab6010a1d656f6c796d702f67656f6772617068792f726567696f6e2e70726f746f1210656f6c796d702e67656f67726170687922440a06526567696f6e120a0a02696418012001280912120a0a636f756e7472795f6964180220012809120c0a046e616d65180320012809120c0a04666c616718042001280942355a336769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f67656f6772617068793b67656f677261706879620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+¶
+eolymp/geography/region.protoeolymp.geography"D
+Region
+
+id (	
+
+country_id (	
+name (	
+flag (	B5Z3github.com/eolymp/go-sdk/eolymp/geography;geographybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

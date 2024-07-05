@@ -88,11 +88,21 @@ class DeleteRankingPointInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.RankingPoint point = 10;</code>
-     * @return \Eolymp\Community\RankingPoint
+     * @return \Eolymp\Community\RankingPoint|null
      */
     public function getPoint()
     {
         return $this->point;
+    }
+
+    public function hasPoint()
+    {
+        return isset($this->point);
+    }
+
+    public function clearPoint()
+    {
+        unset($this->point);
     }
 
     /**

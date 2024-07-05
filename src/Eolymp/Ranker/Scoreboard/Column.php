@@ -223,7 +223,7 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard_Column_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard\Column\Type::class);
         $this->type = $var;
 
         return $this;

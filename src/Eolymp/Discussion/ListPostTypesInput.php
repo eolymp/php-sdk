@@ -42,7 +42,7 @@ class ListPostTypesInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type string $locale
      *           if set, load type name in a given locale
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -131,7 +131,7 @@ class ListPostTypesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

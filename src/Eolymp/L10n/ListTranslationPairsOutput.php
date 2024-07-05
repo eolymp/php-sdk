@@ -34,7 +34,7 @@ class ListTranslationPairsOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total
      *     @type bool $has_more
-     *     @type \Eolymp\L10n\TranslationPair[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\L10n\TranslationPair>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +97,7 @@ class ListTranslationPairsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.l10n.TranslationPair items = 3;</code>
-     * @param \Eolymp\L10n\TranslationPair[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\L10n\TranslationPair>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

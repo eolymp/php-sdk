@@ -392,11 +392,21 @@ class Stats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 50;</code>
-     * @return \Eolymp\Executor\ResourceUsage
+     * @return \Eolymp\Executor\ResourceUsage|null
      */
     public function getResourceUsage()
     {
         return $this->resource_usage;
+    }
+
+    public function hasResourceUsage()
+    {
+        return isset($this->resource_usage);
+    }
+
+    public function clearResourceUsage()
+    {
+        unset($this->resource_usage);
     }
 
     /**

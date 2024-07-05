@@ -34,11 +34,21 @@ class DescribePostTypeOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.PostType type = 1;</code>
-     * @return \Eolymp\Discussion\PostType
+     * @return \Eolymp\Discussion\PostType|null
      */
     public function getType()
     {
         return $this->type;
+    }
+
+    public function hasType()
+    {
+        return isset($this->type);
+    }
+
+    public function clearType()
+    {
+        unset($this->type);
     }
 
     /**

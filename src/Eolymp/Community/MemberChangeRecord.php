@@ -80,7 +80,7 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
      */
     public function setOp($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\MemberChangeRecord_Operation::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\MemberChangeRecord\Operation::class);
         $this->op = $var;
 
         return $this;
@@ -88,11 +88,21 @@ class MemberChangeRecord extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
-     * @return \Eolymp\Community\Member
+     * @return \Eolymp\Community\Member|null
      */
     public function getMember()
     {
         return $this->member;
+    }
+
+    public function hasMember()
+    {
+        return isset($this->member);
+    }
+
+    public function clearMember()
+    {
+        unset($this->member);
     }
 
     /**

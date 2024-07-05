@@ -53,7 +53,7 @@ class WatchRepliesOutput extends \Google\Protobuf\Internal\Message
      */
     public function setEvent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchRepliesOutput_Event::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchRepliesOutput\Event::class);
         $this->event = $var;
 
         return $this;
@@ -61,11 +61,21 @@ class WatchRepliesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Reply reply = 2;</code>
-     * @return \Eolymp\Judge\Reply
+     * @return \Eolymp\Judge\Reply|null
      */
     public function getReply()
     {
         return $this->reply;
+    }
+
+    public function hasReply()
+    {
+        return isset($this->reply);
+    }
+
+    public function clearReply()
+    {
+        unset($this->reply);
     }
 
     /**

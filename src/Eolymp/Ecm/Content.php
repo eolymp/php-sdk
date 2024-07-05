@@ -46,6 +46,11 @@ class Content extends \Google\Protobuf\Internal\Message
         return $this->readOneof(1);
     }
 
+    public function hasHtml()
+    {
+        return $this->hasOneof(1);
+    }
+
     /**
      * Generated from protobuf field <code>string html = 1;</code>
      * @param string $var
@@ -66,6 +71,11 @@ class Content extends \Google\Protobuf\Internal\Message
     public function getLatex()
     {
         return $this->readOneof(2);
+    }
+
+    public function hasLatex()
+    {
+        return $this->hasOneof(2);
     }
 
     /**
@@ -90,6 +100,11 @@ class Content extends \Google\Protobuf\Internal\Message
         return $this->readOneof(3);
     }
 
+    public function hasMarkdown()
+    {
+        return $this->hasOneof(3);
+    }
+
     /**
      * Generated from protobuf field <code>string markdown = 3;</code>
      * @param string $var
@@ -105,11 +120,16 @@ class Content extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Node ecm = 4;</code>
-     * @return \Eolymp\Ecm\Node
+     * @return \Eolymp\Ecm\Node|null
      */
     public function getEcm()
     {
         return $this->readOneof(4);
+    }
+
+    public function hasEcm()
+    {
+        return $this->hasOneof(4);
     }
 
     /**
@@ -127,11 +147,21 @@ class Content extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
-     * @return \Eolymp\Ecm\Node
+     * @return \Eolymp\Ecm\Node|null
      */
     public function getRender()
     {
         return $this->render;
+    }
+
+    public function hasRender()
+    {
+        return isset($this->render);
+    }
+
+    public function clearRender()
+    {
+        unset($this->render);
     }
 
     /**

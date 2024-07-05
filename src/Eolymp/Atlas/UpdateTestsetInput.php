@@ -88,11 +88,21 @@ class UpdateTestsetInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Testset testset = 3;</code>
-     * @return \Eolymp\Atlas\Testset
+     * @return \Eolymp\Atlas\Testset|null
      */
     public function getTestset()
     {
         return $this->testset;
+    }
+
+    public function hasTestset()
+    {
+        return isset($this->testset);
+    }
+
+    public function clearTestset()
+    {
+        unset($this->testset);
     }
 
     /**

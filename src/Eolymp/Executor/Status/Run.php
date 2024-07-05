@@ -245,7 +245,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Status_Run_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Status\Run\Status::class);
         $this->status = $var;
 
         return $this;

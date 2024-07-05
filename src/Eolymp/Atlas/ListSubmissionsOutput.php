@@ -37,7 +37,7 @@ class ListSubmissionsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Atlas\Submission[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Atlas\Submission>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type string $next_page_cursor
      *     @type string $prev_page_cursor
      * }
@@ -80,7 +80,7 @@ class ListSubmissionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission items = 2;</code>
-     * @param \Eolymp\Atlas\Submission[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Submission>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

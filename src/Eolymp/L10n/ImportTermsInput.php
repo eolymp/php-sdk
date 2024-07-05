@@ -24,7 +24,7 @@ class ImportTermsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\L10n\Term[]|\Google\Protobuf\Internal\RepeatedField $terms
+     *     @type array<\Eolymp\L10n\Term>|\Google\Protobuf\Internal\RepeatedField $terms
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class ImportTermsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.l10n.Term terms = 1;</code>
-     * @param \Eolymp\L10n\Term[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\L10n\Term>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTerms($var)

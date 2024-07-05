@@ -123,11 +123,21 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * Timestamp when announcement was initially created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -175,11 +185,21 @@ class Announcement extends \Google\Protobuf\Internal\Message
      * Announcement content.
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 11;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**

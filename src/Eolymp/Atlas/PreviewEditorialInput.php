@@ -34,11 +34,21 @@ class PreviewEditorialInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Editorial editorial = 2;</code>
-     * @return \Eolymp\Atlas\Editorial
+     * @return \Eolymp\Atlas\Editorial|null
      */
     public function getEditorial()
     {
         return $this->editorial;
+    }
+
+    public function hasEditorial()
+    {
+        return isset($this->editorial);
+    }
+
+    public function clearEditorial()
+    {
+        unset($this->editorial);
     }
 
     /**

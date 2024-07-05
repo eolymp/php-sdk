@@ -50,9 +50,9 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Run reference.
      *     @type int $index
      *           Index defines order in which runs are executed.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to match constraints and preconditions.
-     *     @type \Eolymp\Executor\Job\Step[]|\Google\Protobuf\Internal\RepeatedField $steps
+     *     @type array<\Eolymp\Executor\Job\Step>|\Google\Protobuf\Internal\RepeatedField $steps
      *           Steps to execute the run
      * }
      */
@@ -128,7 +128,7 @@ class Run extends \Google\Protobuf\Internal\Message
      * Labels used to match constraints and preconditions.
      *
      * Generated from protobuf field <code>repeated string labels = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -154,7 +154,7 @@ class Run extends \Google\Protobuf\Internal\Message
      * Steps to execute the run
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Job.Step steps = 20;</code>
-     * @param \Eolymp\Executor\Job\Step[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Job\Step>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSteps($var)

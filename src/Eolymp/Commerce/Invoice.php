@@ -130,12 +130,12 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *           total of all items
      *     @type int $subtotal_excluding_tax
      *           total of all items without taxes
-     *     @type \Eolymp\Commerce\Invoice\TaxAmount[]|\Google\Protobuf\Internal\RepeatedField $tax_amounts
+     *     @type array<\Eolymp\Commerce\Invoice\TaxAmount>|\Google\Protobuf\Internal\RepeatedField $tax_amounts
      *     @type int $tax
-     *     @type \Eolymp\Commerce\Invoice\DiscountAmount[]|\Google\Protobuf\Internal\RepeatedField $discount_amounts
+     *     @type array<\Eolymp\Commerce\Invoice\DiscountAmount>|\Google\Protobuf\Internal\RepeatedField $discount_amounts
      *     @type int $total
      *     @type int $total_excluding_tax
-     *     @type \Eolymp\Commerce\Invoice\Item[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Commerce\Invoice\Item>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -203,7 +203,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Commerce\Invoice_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Commerce\Invoice\Status::class);
         $this->status = $var;
 
         return $this;
@@ -255,11 +255,21 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.commerce.Invoice.FromInvoice from_invoice = 6;</code>
-     * @return \Eolymp\Commerce\Invoice\FromInvoice
+     * @return \Eolymp\Commerce\Invoice\FromInvoice|null
      */
     public function getFromInvoice()
     {
         return $this->from_invoice;
+    }
+
+    public function hasFromInvoice()
+    {
+        return isset($this->from_invoice);
+    }
+
+    public function clearFromInvoice()
+    {
+        unset($this->from_invoice);
     }
 
     /**
@@ -269,7 +279,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     public function setFromInvoice($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Commerce\Invoice_FromInvoice::class);
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Invoice\FromInvoice::class);
         $this->from_invoice = $var;
 
         return $this;
@@ -277,11 +287,21 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -299,11 +319,21 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp due_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDueAt()
     {
         return $this->due_at;
+    }
+
+    public function hasDueAt()
+    {
+        return isset($this->due_at);
+    }
+
+    public function clearDueAt()
+    {
+        unset($this->due_at);
     }
 
     /**
@@ -514,7 +544,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.TaxAmount tax_amounts = 141;</code>
-     * @param \Eolymp\Commerce\Invoice\TaxAmount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Commerce\Invoice\TaxAmount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTaxAmounts($var)
@@ -558,7 +588,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.DiscountAmount discount_amounts = 150;</code>
-     * @param \Eolymp\Commerce\Invoice\DiscountAmount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Commerce\Invoice\DiscountAmount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDiscountAmounts($var)
@@ -624,7 +654,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.Item items = 999;</code>
-     * @param \Eolymp\Commerce\Invoice\Item[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Commerce\Invoice\Item>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

@@ -37,7 +37,7 @@ class InvalidArgument extends \Google\Protobuf\Internal\Message
      *
      *     @type string $argument_path
      *           deprecated: argument path, instead see validation errors with list of arguments
-     *     @type \Eolymp\Wellknown\Validation[]|\Google\Protobuf\Internal\RepeatedField $validation
+     *     @type array<\Eolymp\Wellknown\Validation>|\Google\Protobuf\Internal\RepeatedField $validation
      *           validation errors
      * }
      */
@@ -87,7 +87,7 @@ class InvalidArgument extends \Google\Protobuf\Internal\Message
      * validation errors
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Validation validation = 2;</code>
-     * @param \Eolymp\Wellknown\Validation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\Validation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValidation($var)

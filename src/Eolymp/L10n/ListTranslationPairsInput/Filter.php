@@ -55,15 +55,15 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
-     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $term_key
+     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $term_key
      *           filter by term key
-     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $term_status
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $term_status
      *           filter by term status
-     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $source_message
+     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $source_message
      *           filter by source message
-     *     @type \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $translation_status
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $translation_status
      *           filter by translation status
-     *     @type \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $translation_message
+     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $translation_message
      *           filter by translation status
      * }
      */
@@ -109,7 +109,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * filter by term key
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString term_key = 10;</code>
-     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTermKey($var)
@@ -135,7 +135,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * filter by term status
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11;</code>
-     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTermStatus($var)
@@ -161,7 +161,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * filter by source message
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString source_message = 20;</code>
-     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSourceMessage($var)
@@ -187,7 +187,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * filter by translation status
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30;</code>
-     * @param \Eolymp\Wellknown\ExpressionEnum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTranslationStatus($var)
@@ -213,7 +213,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * filter by translation status
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString translation_message = 31;</code>
-     * @param \Eolymp\Wellknown\ExpressionString[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTranslationMessage($var)

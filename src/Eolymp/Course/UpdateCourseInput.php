@@ -34,7 +34,7 @@ class UpdateCourseInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
      *     @type string $course_id
      *     @type \Eolymp\Course\Course $course
@@ -60,7 +60,7 @@ class UpdateCourseInput extends \Google\Protobuf\Internal\Message
      * specify list of fields to update, if empty all fields are updated
      *
      * Generated from protobuf field <code>repeated .eolymp.course.UpdateCourseInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateCourseInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Course course = 3;</code>
-     * @return \Eolymp\Course\Course
+     * @return \Eolymp\Course\Course|null
      */
     public function getCourse()
     {
         return $this->course;
+    }
+
+    public function hasCourse()
+    {
+        return isset($this->course);
+    }
+
+    public function clearCourse()
+    {
+        unset($this->course);
     }
 
     /**

@@ -53,7 +53,7 @@ class WatchTicketsOutput extends \Google\Protobuf\Internal\Message
      */
     public function setEvent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchTicketsOutput_Event::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchTicketsOutput\Event::class);
         $this->event = $var;
 
         return $this;
@@ -61,11 +61,21 @@ class WatchTicketsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 2;</code>
-     * @return \Eolymp\Judge\Ticket
+     * @return \Eolymp\Judge\Ticket|null
      */
     public function getTicket()
     {
         return $this->ticket;
+    }
+
+    public function hasTicket()
+    {
+        return isset($this->ticket);
+    }
+
+    public function clearTicket()
+    {
+        unset($this->ticket);
     }
 
     /**

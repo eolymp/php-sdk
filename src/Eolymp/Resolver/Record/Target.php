@@ -53,7 +53,7 @@ class Target extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Resolver\Record_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Resolver\Record\Type::class);
         $this->type = $var;
 
         return $this;

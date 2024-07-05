@@ -15,9 +15,19 @@ class Version
           return;
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ae9010a1a656f6c796d702f61746c61732f76657273696f6e2e70726f746f120c656f6c796d702e61746c61732285010a0756657273696f6e120e0a066e756d62657218012001280d122e0a0a637265617465645f617418022001280b321a2e676f6f676c652e70726f746f6275662e54696d657374616d7012120a0a637265617465645f627918032001280912110a096368616e67655f6f7018042001280912130a0b6368616e67655f70617468180520012809422d5a2b6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f61746c61733b61746c6173620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+é
+eolymp/atlas/version.protoeolymp.atlas"…
+Version
+number (.
+
+created_at (2.google.protobuf.Timestamp
+
+created_by (	
+	change_op (	
+change_path (	B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

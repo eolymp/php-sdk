@@ -33,7 +33,7 @@ class DescribeProblemGradingOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Atlas\DescribeProblemGradingOutput\Range[]|\Google\Protobuf\Internal\RepeatedField $ranges
+     *     @type array<\Eolymp\Atlas\DescribeProblemGradingOutput\Range>|\Google\Protobuf\Internal\RepeatedField $ranges
      *           Problem grade ranges from highest grade to lowest
      *           to grade a submission, iterate over grade ranges and compare resource_usage value with upper_bound,
      *           first grade which has upper_bound higher or equal to resource usage is the grade for submission.
@@ -78,7 +78,7 @@ class DescribeProblemGradingOutput extends \Google\Protobuf\Internal\Message
      * }
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.DescribeProblemGradingOutput.Range ranges = 2;</code>
-     * @param \Eolymp\Atlas\DescribeProblemGradingOutput\Range[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\DescribeProblemGradingOutput\Range>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRanges($var)

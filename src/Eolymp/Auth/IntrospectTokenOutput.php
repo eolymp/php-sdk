@@ -93,11 +93,21 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpire()
     {
         return $this->expire;
+    }
+
+    public function hasExpire()
+    {
+        return isset($this->expire);
+    }
+
+    public function clearExpire()
+    {
+        unset($this->expire);
     }
 
     /**
@@ -115,11 +125,21 @@ class IntrospectTokenOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.auth.Claims claims = 10;</code>
-     * @return \Eolymp\Auth\Claims
+     * @return \Eolymp\Auth\Claims|null
      */
     public function getClaims()
     {
         return $this->claims;
+    }
+
+    public function hasClaims()
+    {
+        return isset($this->claims);
+    }
+
+    public function clearClaims()
+    {
+        unset($this->claims);
     }
 
     /**

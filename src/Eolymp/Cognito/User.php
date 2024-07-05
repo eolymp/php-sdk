@@ -329,7 +329,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     public function setRankTrend($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Cognito\User_RankTrend::class);
+        GPBUtil::checkEnum($var, \Eolymp\Cognito\User\RankTrend::class);
         $this->rank_trend = $var;
 
         return $this;
@@ -547,11 +547,21 @@ class User extends \Google\Protobuf\Internal\Message
      * Exact time when user registered
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp registered_on = 34;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getRegisteredOn()
     {
         return $this->registered_on;
+    }
+
+    public function hasRegisteredOn()
+    {
+        return isset($this->registered_on);
+    }
+
+    public function clearRegisteredOn()
+    {
+        unset($this->registered_on);
     }
 
     /**
@@ -573,11 +583,21 @@ class User extends \Google\Protobuf\Internal\Message
      * Exact time when user was last active
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_activity = 35;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastActivity()
     {
         return $this->last_activity;
+    }
+
+    public function hasLastActivity()
+    {
+        return isset($this->last_activity);
+    }
+
+    public function clearLastActivity()
+    {
+        unset($this->last_activity);
     }
 
     /**
@@ -599,11 +619,21 @@ class User extends \Google\Protobuf\Internal\Message
      * Exact time when user has changed username last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp username_changed_on = 36;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUsernameChangedOn()
     {
         return $this->username_changed_on;
+    }
+
+    public function hasUsernameChangedOn()
+    {
+        return isset($this->username_changed_on);
+    }
+
+    public function clearUsernameChangedOn()
+    {
+        unset($this->username_changed_on);
     }
 
     /**
@@ -625,11 +655,21 @@ class User extends \Google\Protobuf\Internal\Message
      * Exact time when user has changed password last time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp password_changed_on = 37;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPasswordChangedOn()
     {
         return $this->password_changed_on;
+    }
+
+    public function hasPasswordChangedOn()
+    {
+        return isset($this->password_changed_on);
+    }
+
+    public function clearPasswordChangedOn()
+    {
+        unset($this->password_changed_on);
     }
 
     /**

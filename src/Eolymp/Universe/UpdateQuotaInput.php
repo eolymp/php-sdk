@@ -61,11 +61,21 @@ class UpdateQuotaInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 2;</code>
-     * @return \Eolymp\Universe\Quota
+     * @return \Eolymp\Universe\Quota|null
      */
     public function getQuota()
     {
         return $this->quota;
+    }
+
+    public function hasQuota()
+    {
+        return isset($this->quota);
+    }
+
+    public function clearQuota()
+    {
+        unset($this->quota);
     }
 
     /**

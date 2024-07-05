@@ -32,7 +32,7 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $scoreboard_id
      *     @type \Eolymp\Ranker\Scoreboard $scoreboard
      * }
@@ -53,7 +53,7 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.UpdateScoreboardInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -88,11 +88,21 @@ class UpdateScoreboardInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 3;</code>
-     * @return \Eolymp\Ranker\Scoreboard
+     * @return \Eolymp\Ranker\Scoreboard|null
      */
     public function getScoreboard()
     {
         return $this->scoreboard;
+    }
+
+    public function hasScoreboard()
+    {
+        return isset($this->scoreboard);
+    }
+
+    public function clearScoreboard()
+    {
+        unset($this->scoreboard);
     }
 
     /**

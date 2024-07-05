@@ -88,11 +88,21 @@ class UpdateCommentInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.helpdesk.Ticket.Comment comment = 3;</code>
-     * @return \Eolymp\Helpdesk\Ticket\Comment
+     * @return \Eolymp\Helpdesk\Ticket\Comment|null
      */
     public function getComment()
     {
         return $this->comment;
+    }
+
+    public function hasComment()
+    {
+        return isset($this->comment);
+    }
+
+    public function clearComment()
+    {
+        unset($this->comment);
     }
 
     /**
@@ -102,7 +112,7 @@ class UpdateCommentInput extends \Google\Protobuf\Internal\Message
      */
     public function setComment($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket_Comment::class);
+        GPBUtil::checkMessage($var, \Eolymp\Helpdesk\Ticket\Comment::class);
         $this->comment = $var;
 
         return $this;

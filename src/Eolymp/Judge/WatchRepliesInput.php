@@ -37,7 +37,7 @@ class WatchRepliesInput extends \Google\Protobuf\Internal\Message
      *     @type string $ticket_id
      *     @type string $cursor
      *           optionally, id of the last reply already received by client
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -104,7 +104,7 @@ class WatchRepliesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

@@ -125,11 +125,21 @@ class ListParticipantsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.ListParticipantsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Judge\ListParticipantsInput\Filter
+     * @return \Eolymp\Judge\ListParticipantsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -139,7 +149,7 @@ class ListParticipantsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\ListParticipantsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\ListParticipantsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
@@ -161,7 +171,7 @@ class ListParticipantsInput extends \Google\Protobuf\Internal\Message
      */
     public function setSort($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\ListParticipantsInput_Sortable::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\ListParticipantsInput\Sortable::class);
         $this->sort = $var;
 
         return $this;

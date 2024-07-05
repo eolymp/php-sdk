@@ -108,7 +108,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      */
     public function setGrantType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Auth\IssueTokenInput_GrantType::class);
+        GPBUtil::checkEnum($var, \Eolymp\Auth\IssueTokenInput\GrantType::class);
         $this->grant_type = $var;
 
         return $this;

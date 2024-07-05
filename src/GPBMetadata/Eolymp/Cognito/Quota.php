@@ -14,9 +14,14 @@ class Quota
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a92010a1a656f6c796d702f636f676e69746f2f71756f74612e70726f746f120e656f6c796d702e636f676e69746f22290a0551756f7461120d0a0576616c756518012001280512110a09756e6c696d6974656418022001280842315a2f6769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f636f676e69746f3b636f676e69746f620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+’
+eolymp/cognito/quota.protoeolymp.cognito")
+Quota
+value (
+	unlimited (B1Z/github.com/eolymp/go-sdk/eolymp/cognito;cognitobproto3'
+        , true);
 
         static::$is_initialized = true;
     }

@@ -52,7 +52,7 @@ class Description extends \Google\Protobuf\Internal\Message
      *           label, normally displayed above the field
      *     @type string $help
      *           help message, normally displayed right below the field
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $choices
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
      *           translation for choices (must be in the same order)
      * }
      */
@@ -154,7 +154,7 @@ class Description extends \Google\Protobuf\Internal\Message
      * translation for choices (must be in the same order)
      *
      * Generated from protobuf field <code>repeated string choices = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChoices($var)

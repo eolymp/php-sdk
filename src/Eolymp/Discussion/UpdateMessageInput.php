@@ -61,11 +61,21 @@ class UpdateMessageInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Message message = 2;</code>
-     * @return \Eolymp\Discussion\Message
+     * @return \Eolymp\Discussion\Message|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**

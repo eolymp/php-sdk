@@ -39,11 +39,21 @@ class ParticipantJoinedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
-     * @return \Eolymp\Judge\Contest
+     * @return \Eolymp\Judge\Contest|null
      */
     public function getContest()
     {
         return $this->contest;
+    }
+
+    public function hasContest()
+    {
+        return isset($this->contest);
+    }
+
+    public function clearContest()
+    {
+        unset($this->contest);
     }
 
     /**
@@ -61,11 +71,21 @@ class ParticipantJoinedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     * @return \Eolymp\Judge\Participant
+     * @return \Eolymp\Judge\Participant|null
      */
     public function getParticipant()
     {
         return $this->participant;
+    }
+
+    public function hasParticipant()
+    {
+        return isset($this->participant);
+    }
+
+    public function clearParticipant()
+    {
+        unset($this->participant);
     }
 
     /**

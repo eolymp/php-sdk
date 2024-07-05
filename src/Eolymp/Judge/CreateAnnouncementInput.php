@@ -61,11 +61,21 @@ class CreateAnnouncementInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Announcement announcement = 2;</code>
-     * @return \Eolymp\Judge\Announcement
+     * @return \Eolymp\Judge\Announcement|null
      */
     public function getAnnouncement()
     {
         return $this->announcement;
+    }
+
+    public function hasAnnouncement()
+    {
+        return isset($this->announcement);
+    }
+
+    public function clearAnnouncement()
+    {
+        unset($this->announcement);
     }
 
     /**

@@ -68,8 +68,8 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type int $amount
      *     @type int $amount_excluding_tax
      *     @type int $unit_amount_excluding_tax
-     *     @type \Eolymp\Commerce\Invoice\DiscountAmount[]|\Google\Protobuf\Internal\RepeatedField $discount_amounts
-     *     @type \Eolymp\Commerce\Invoice\TaxAmount[]|\Google\Protobuf\Internal\RepeatedField $tax_amounts
+     *     @type array<\Eolymp\Commerce\Invoice\DiscountAmount>|\Google\Protobuf\Internal\RepeatedField $discount_amounts
+     *     @type array<\Eolymp\Commerce\Invoice\TaxAmount>|\Google\Protobuf\Internal\RepeatedField $tax_amounts
      * }
      */
     public function __construct($data = NULL) {
@@ -145,11 +145,21 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.commerce.Price price = 20;</code>
-     * @return \Eolymp\Commerce\Price
+     * @return \Eolymp\Commerce\Price|null
      */
     public function getPrice()
     {
         return $this->price;
+    }
+
+    public function hasPrice()
+    {
+        return isset($this->price);
+    }
+
+    public function clearPrice()
+    {
+        unset($this->price);
     }
 
     /**
@@ -264,7 +274,7 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.DiscountAmount discount_amounts = 104;</code>
-     * @param \Eolymp\Commerce\Invoice\DiscountAmount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Commerce\Invoice\DiscountAmount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDiscountAmounts($var)
@@ -286,7 +296,7 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.TaxAmount tax_amounts = 105;</code>
-     * @param \Eolymp\Commerce\Invoice\TaxAmount[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Commerce\Invoice\TaxAmount>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTaxAmounts($var)

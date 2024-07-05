@@ -14,9 +14,19 @@ class Node
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ae8010a15656f6c796d702f65636d2f6e6f64652e70726f746f120a656f6c796d702e65636d228f010a044e6f6465120c0a047479706518012001280912280a046174747218022003280b321a2e656f6c796d702e65636d2e4e6f64652e41747472456e74727912220a086368696c6472656e18032003280b32102e656f6c796d702e65636d2e4e6f64651a2b0a0941747472456e747279120b0a036b6579180120012809120d0a0576616c75651802200128093a02380142295a276769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f65636d3b65636d620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+Ë
+eolymp/ecm/node.proto
+eolymp.ecm"è
+Node
+type (	(
+attr (2.eolymp.ecm.Node.AttrEntry"
+children (2.eolymp.ecm.Node+
+	AttrEntry
+key (	
+value (	:8B)Z\'github.com/eolymp/go-sdk/eolymp/ecm;ecmbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

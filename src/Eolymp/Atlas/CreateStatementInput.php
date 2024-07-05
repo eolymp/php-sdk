@@ -61,11 +61,21 @@ class CreateStatementInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
-     * @return \Eolymp\Atlas\Statement
+     * @return \Eolymp\Atlas\Statement|null
      */
     public function getStatement()
     {
         return $this->statement;
+    }
+
+    public function hasStatement()
+    {
+        return isset($this->statement);
+    }
+
+    public function clearStatement()
+    {
+        unset($this->statement);
     }
 
     /**

@@ -135,11 +135,21 @@ class ListAttachmentsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.atlas.ListAttachmentsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Atlas\ListAttachmentsInput\Filter
+     * @return \Eolymp\Atlas\ListAttachmentsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -151,7 +161,7 @@ class ListAttachmentsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListAttachmentsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\ListAttachmentsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

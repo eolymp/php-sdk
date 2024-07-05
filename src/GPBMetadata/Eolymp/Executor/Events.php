@@ -16,9 +16,15 @@ class Events
         }
         \GPBMetadata\Eolymp\Executor\Report::initOnce();
         \GPBMetadata\Eolymp\Executor\Status::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a86020a1c656f6c796d702f6578656375746f722f6576656e74732e70726f746f120f656f6c796d702e6578656375746f721a1c656f6c796d702f6578656375746f722f7374617475732e70726f746f223d0a12537461747573557064617465644576656e7412270a0673746174757318012001280b32172e656f6c796d702e6578656375746f722e537461747573223b0a104a6f625265706f727465644576656e7412270a067265706f727418012001280b32172e656f6c796d702e6578656375746f722e5265706f727442335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6578656375746f723b6578656375746f72620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+†
+eolymp/executor/events.protoeolymp.executoreolymp/executor/status.proto"=
+StatusUpdatedEvent\'
+status (2.eolymp.executor.Status";
+JobReportedEvent\'
+report (2.eolymp.executor.ReportB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

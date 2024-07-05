@@ -57,7 +57,7 @@ class Student extends \Google\Protobuf\Internal\Message
      *     @type string $display_name
      *     @type float $overall_progress
      *     @type int $overall_grade
-     *     @type \Eolymp\Course\Student\Grade[]|\Google\Protobuf\Internal\RepeatedField $grades
+     *     @type array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $grades
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $graded_at
      * }
@@ -188,7 +188,7 @@ class Student extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
-     * @param \Eolymp\Course\Student\Grade[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGrades($var)
@@ -201,11 +201,21 @@ class Student extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 25;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
     }
 
     /**
@@ -223,11 +233,21 @@ class Student extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getGradedAt()
     {
         return $this->graded_at;
+    }
+
+    public function hasGradedAt()
+    {
+        return isset($this->graded_at);
+    }
+
+    public function clearGradedAt()
+    {
+        unset($this->graded_at);
     }
 
     /**

@@ -29,7 +29,7 @@ class ListRankingEventsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Community\RankingEvent[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Community\RankingEvent>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListRankingEventsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.RankingEvent items = 2;</code>
-     * @param \Eolymp\Community\RankingEvent[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Community\RankingEvent>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

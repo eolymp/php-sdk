@@ -34,11 +34,21 @@ class WatchSubmissionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Submission submission = 1;</code>
-     * @return \Eolymp\Judge\Submission
+     * @return \Eolymp\Judge\Submission|null
      */
     public function getSubmission()
     {
         return $this->submission;
+    }
+
+    public function hasSubmission()
+    {
+        return isset($this->submission);
+    }
+
+    public function clearSubmission()
+    {
+        unset($this->submission);
     }
 
     /**

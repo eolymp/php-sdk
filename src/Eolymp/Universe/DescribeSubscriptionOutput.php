@@ -47,11 +47,21 @@ class DescribeSubscriptionOutput extends \Google\Protobuf\Internal\Message
      * currently active subscription
      *
      * Generated from protobuf field <code>.eolymp.universe.Billing.Subscription current = 1;</code>
-     * @return \Eolymp\Universe\Billing\Subscription
+     * @return \Eolymp\Universe\Billing\Subscription|null
      */
     public function getCurrent()
     {
         return $this->current;
+    }
+
+    public function hasCurrent()
+    {
+        return isset($this->current);
+    }
+
+    public function clearCurrent()
+    {
+        unset($this->current);
     }
 
     /**
@@ -63,7 +73,7 @@ class DescribeSubscriptionOutput extends \Google\Protobuf\Internal\Message
      */
     public function setCurrent($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Billing_Subscription::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Billing\Subscription::class);
         $this->current = $var;
 
         return $this;
@@ -73,11 +83,21 @@ class DescribeSubscriptionOutput extends \Google\Protobuf\Internal\Message
      * updated subscription, if any changes are pending
      *
      * Generated from protobuf field <code>.eolymp.universe.Billing.Subscription upcoming = 2;</code>
-     * @return \Eolymp\Universe\Billing\Subscription
+     * @return \Eolymp\Universe\Billing\Subscription|null
      */
     public function getUpcoming()
     {
         return $this->upcoming;
+    }
+
+    public function hasUpcoming()
+    {
+        return isset($this->upcoming);
+    }
+
+    public function clearUpcoming()
+    {
+        unset($this->upcoming);
     }
 
     /**
@@ -89,7 +109,7 @@ class DescribeSubscriptionOutput extends \Google\Protobuf\Internal\Message
      */
     public function setUpcoming($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Billing_Subscription::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Billing\Subscription::class);
         $this->upcoming = $var;
 
         return $this;

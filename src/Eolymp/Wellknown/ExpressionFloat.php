@@ -55,7 +55,7 @@ class ExpressionFloat extends \Google\Protobuf\Internal\Message
      */
     public function setIs($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionFloat_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionFloat\Type::class);
         $this->is = $var;
 
         return $this;

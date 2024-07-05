@@ -34,11 +34,21 @@ class CreateGroupInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Group group = 1;</code>
-     * @return \Eolymp\Community\Group
+     * @return \Eolymp\Community\Group|null
      */
     public function getGroup()
     {
         return $this->group;
+    }
+
+    public function hasGroup()
+    {
+        return isset($this->group);
+    }
+
+    public function clearGroup()
+    {
+        unset($this->group);
     }
 
     /**

@@ -34,11 +34,21 @@ class CreatePostInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
-     * @return \Eolymp\Discussion\Post
+     * @return \Eolymp\Discussion\Post|null
      */
     public function getPost()
     {
         return $this->post;
+    }
+
+    public function hasPost()
+    {
+        return isset($this->post);
+    }
+
+    public function clearPost()
+    {
+        unset($this->post);
     }
 
     /**

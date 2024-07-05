@@ -118,7 +118,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           label, normally displayed above the field
      *     @type string $help
      *           help message, normally displayed right below the field
-     *     @type \Eolymp\Community\Attribute\Description[]|\Google\Protobuf\Internal\RepeatedField $description
+     *     @type array<\Eolymp\Community\Attribute\Description>|\Google\Protobuf\Internal\RepeatedField $description
      *           deprecated, field localized data, such as label and help message
      *     @type int $type
      *           type of the field
@@ -136,11 +136,11 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           min value validation (see field types for details)
      *     @type int $max
      *           max value validation (see field types for details)
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $choices
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
      *           possible choices validation (see field types for details)
      *     @type string $country
      *           restrict region selector to a specific country
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $constraints
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $constraints
      *           additional constraints
      * }
      */
@@ -242,7 +242,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * deprecated, field localized data, such as label and help message
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
-     * @param \Eolymp\Community\Attribute\Description[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Community\Attribute\Description>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDescription($var)
@@ -273,7 +273,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute\Type::class);
         $this->type = $var;
 
         return $this;
@@ -395,7 +395,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      */
     public function setVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute_Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute\Visibility::class);
         $this->visibility = $var;
 
         return $this;
@@ -494,7 +494,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * possible choices validation (see field types for details)
      *
      * Generated from protobuf field <code>repeated string choices = 103;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChoices($var)
@@ -546,7 +546,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * additional constraints
      *
      * Generated from protobuf field <code>repeated string constraints = 105;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConstraints($var)

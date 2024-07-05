@@ -88,11 +88,21 @@ class UpdateSuggestionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Suggestion suggestion = 3;</code>
-     * @return \Eolymp\Atlas\Suggestion
+     * @return \Eolymp\Atlas\Suggestion|null
      */
     public function getSuggestion()
     {
         return $this->suggestion;
+    }
+
+    public function hasSuggestion()
+    {
+        return isset($this->suggestion);
+    }
+
+    public function clearSuggestion()
+    {
+        unset($this->suggestion);
     }
 
     /**

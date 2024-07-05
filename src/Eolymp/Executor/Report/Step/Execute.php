@@ -169,7 +169,7 @@ class Execute extends \Google\Protobuf\Internal\Message
      */
     public function setExitStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_Step_Execute_Exit::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report\Step\Execute\PBExit::class);
         $this->exit_status = $var;
 
         return $this;
@@ -413,11 +413,21 @@ class Execute extends \Google\Protobuf\Internal\Message
      * resource usage as reported by getrusage
      *
      * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 80;</code>
-     * @return \Eolymp\Executor\ResourceUsage
+     * @return \Eolymp\Executor\ResourceUsage|null
      */
     public function getResourceUsage()
     {
         return $this->resource_usage;
+    }
+
+    public function hasResourceUsage()
+    {
+        return isset($this->resource_usage);
+    }
+
+    public function clearResourceUsage()
+    {
+        unset($this->resource_usage);
     }
 
     /**

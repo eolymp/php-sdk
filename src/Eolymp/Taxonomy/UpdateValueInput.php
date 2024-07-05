@@ -42,7 +42,7 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           patch defines which fields should be set, if empty ALL fields are set
      *     @type string $enum_id
      *     @type string $value_id
@@ -71,7 +71,7 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
      * patch defines which fields should be set, if empty ALL fields are set
      *
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateValueInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -134,11 +134,21 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
      * value to set (id field is ignored during update)
      *
      * Generated from protobuf field <code>.eolymp.taxonomy.Value value = 4;</code>
-     * @return \Eolymp\Taxonomy\Value
+     * @return \Eolymp\Taxonomy\Value|null
      */
     public function getValue()
     {
         return $this->value;
+    }
+
+    public function hasValue()
+    {
+        return isset($this->value);
+    }
+
+    public function clearValue()
+    {
+        unset($this->value);
     }
 
     /**

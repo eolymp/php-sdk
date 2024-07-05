@@ -34,11 +34,21 @@ class DescribeInteractorOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 1;</code>
-     * @return \Eolymp\Executor\Interactor
+     * @return \Eolymp\Executor\Interactor|null
      */
     public function getInteractor()
     {
         return $this->interactor;
+    }
+
+    public function hasInteractor()
+    {
+        return isset($this->interactor);
+    }
+
+    public function clearInteractor()
+    {
+        unset($this->interactor);
     }
 
     /**

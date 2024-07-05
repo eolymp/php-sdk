@@ -88,11 +88,21 @@ class ListAttributesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.ListAttributesInput.Filter filters = 40;</code>
-     * @return \Eolymp\Community\ListAttributesInput\Filter
+     * @return \Eolymp\Community\ListAttributesInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -102,7 +112,7 @@ class ListAttributesInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\ListAttributesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\ListAttributesInput\Filter::class);
         $this->filters = $var;
 
         return $this;

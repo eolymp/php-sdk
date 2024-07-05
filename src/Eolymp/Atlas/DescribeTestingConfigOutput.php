@@ -34,11 +34,21 @@ class DescribeTestingConfigOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.TestingConfig config = 2;</code>
-     * @return \Eolymp\Atlas\TestingConfig
+     * @return \Eolymp\Atlas\TestingConfig|null
      */
     public function getConfig()
     {
         return $this->config;
+    }
+
+    public function hasConfig()
+    {
+        return isset($this->config);
+    }
+
+    public function clearConfig()
+    {
+        unset($this->config);
     }
 
     /**

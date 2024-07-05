@@ -92,7 +92,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Rank in the scoreboard
      *     @type int $rank_lower
      *           Lower bound of the rank (when shared)
-     *     @type \Eolymp\Ranker\Scoreboard\Row\Value[]|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Eolymp\Ranker\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *           Score breakdown by contest and problem.
      * }
      */
@@ -342,7 +342,7 @@ class Row extends \Google\Protobuf\Internal\Message
      * Score breakdown by contest and problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
-     * @param \Eolymp\Ranker\Scoreboard\Row\Value[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Ranker\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)

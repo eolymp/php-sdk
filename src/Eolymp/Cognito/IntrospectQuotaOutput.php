@@ -63,11 +63,21 @@ class IntrospectQuotaOutput extends \Google\Protobuf\Internal\Message
      * number of contests per user
      *
      * Generated from protobuf field <code>.eolymp.cognito.Quota contests_per_user = 10;</code>
-     * @return \Eolymp\Cognito\Quota
+     * @return \Eolymp\Cognito\Quota|null
      */
     public function getContestsPerUser()
     {
         return $this->contests_per_user;
+    }
+
+    public function hasContestsPerUser()
+    {
+        return isset($this->contests_per_user);
+    }
+
+    public function clearContestsPerUser()
+    {
+        unset($this->contests_per_user);
     }
 
     /**
@@ -89,11 +99,21 @@ class IntrospectQuotaOutput extends \Google\Protobuf\Internal\Message
      * number of problems per contest
      *
      * Generated from protobuf field <code>.eolymp.cognito.Quota problems_per_contest = 11;</code>
-     * @return \Eolymp\Cognito\Quota
+     * @return \Eolymp\Cognito\Quota|null
      */
     public function getProblemsPerContest()
     {
         return $this->problems_per_contest;
+    }
+
+    public function hasProblemsPerContest()
+    {
+        return isset($this->problems_per_contest);
+    }
+
+    public function clearProblemsPerContest()
+    {
+        unset($this->problems_per_contest);
     }
 
     /**
@@ -115,11 +135,21 @@ class IntrospectQuotaOutput extends \Google\Protobuf\Internal\Message
      * number of participants per contest
      *
      * Generated from protobuf field <code>.eolymp.cognito.Quota participants_per_contest = 12;</code>
-     * @return \Eolymp\Cognito\Quota
+     * @return \Eolymp\Cognito\Quota|null
      */
     public function getParticipantsPerContest()
     {
         return $this->participants_per_contest;
+    }
+
+    public function hasParticipantsPerContest()
+    {
+        return isset($this->participants_per_contest);
+    }
+
+    public function clearParticipantsPerContest()
+    {
+        unset($this->participants_per_contest);
     }
 
     /**
@@ -141,11 +171,21 @@ class IntrospectQuotaOutput extends \Google\Protobuf\Internal\Message
      * number of problems per user
      *
      * Generated from protobuf field <code>.eolymp.cognito.Quota problems_per_user = 20;</code>
-     * @return \Eolymp\Cognito\Quota
+     * @return \Eolymp\Cognito\Quota|null
      */
     public function getProblemsPerUser()
     {
         return $this->problems_per_user;
+    }
+
+    public function hasProblemsPerUser()
+    {
+        return isset($this->problems_per_user);
+    }
+
+    public function clearProblemsPerUser()
+    {
+        unset($this->problems_per_user);
     }
 
     /**

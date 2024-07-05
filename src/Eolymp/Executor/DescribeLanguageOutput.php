@@ -34,11 +34,21 @@ class DescribeLanguageOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Language language = 1;</code>
-     * @return \Eolymp\Executor\Language
+     * @return \Eolymp\Executor\Language|null
      */
     public function getLanguage()
     {
         return $this->language;
+    }
+
+    public function hasLanguage()
+    {
+        return isset($this->language);
+    }
+
+    public function clearLanguage()
+    {
+        unset($this->language);
     }
 
     /**

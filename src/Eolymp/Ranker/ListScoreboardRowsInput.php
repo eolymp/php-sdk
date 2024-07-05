@@ -115,7 +115,7 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard_FetchingMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard\FetchingMode::class);
         $this->mode = $var;
 
         return $this;
@@ -193,11 +193,21 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.ListScoreboardRowsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Ranker\ListScoreboardRowsInput\Filter
+     * @return \Eolymp\Ranker\ListScoreboardRowsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -207,7 +217,7 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\ListScoreboardRowsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\ListScoreboardRowsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

@@ -34,11 +34,21 @@ class DescribeDiscussionConfigOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Configuration config = 1;</code>
-     * @return \Eolymp\Discussion\Configuration
+     * @return \Eolymp\Discussion\Configuration|null
      */
     public function getConfig()
     {
         return $this->config;
+    }
+
+    public function hasConfig()
+    {
+        return isset($this->config);
+    }
+
+    public function clearConfig()
+    {
+        unset($this->config);
     }
 
     /**

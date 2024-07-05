@@ -34,11 +34,21 @@ class RenderContentOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Node render = 1;</code>
-     * @return \Eolymp\Ecm\Node
+     * @return \Eolymp\Ecm\Node|null
      */
     public function getRender()
     {
         return $this->render;
+    }
+
+    public function hasRender()
+    {
+        return isset($this->render);
+    }
+
+    public function clearRender()
+    {
+        unset($this->render);
     }
 
     /**

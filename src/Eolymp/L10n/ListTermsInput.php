@@ -100,11 +100,21 @@ class ListTermsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.l10n.ListTermsInput.Filter filters = 40;</code>
-     * @return \Eolymp\L10n\ListTermsInput\Filter
+     * @return \Eolymp\L10n\ListTermsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -116,7 +126,7 @@ class ListTermsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\L10n\ListTermsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\L10n\ListTermsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

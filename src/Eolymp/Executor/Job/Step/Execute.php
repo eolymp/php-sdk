@@ -90,7 +90,7 @@ class Execute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $actor
      *           Name of the actor to execute.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $args
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $args
      *           If set will override arguments set in Actor.
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           If set will append environment variables set in Actor.
@@ -158,7 +158,7 @@ class Execute extends \Google\Protobuf\Internal\Message
      * If set will override arguments set in Actor.
      *
      * Generated from protobuf field <code>repeated string args = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setArgs($var)

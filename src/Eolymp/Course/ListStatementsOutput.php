@@ -29,7 +29,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Statement items = 2;</code>
-     * @param \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

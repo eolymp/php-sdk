@@ -84,7 +84,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $document
      *     @type \Eolymp\Course\Video $video
      *     @type \Eolymp\Course\Problem $problem
-     *     @type \Eolymp\Course\Entry[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Course\Entry>|\Google\Protobuf\Internal\RepeatedField $items
      *           List of nested entries, read only, only populated when calling DescribeTOC API
      * }
      */
@@ -287,11 +287,16 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Section section = 100;</code>
-     * @return \Eolymp\Course\Section
+     * @return \Eolymp\Course\Section|null
      */
     public function getSection()
     {
         return $this->readOneof(100);
+    }
+
+    public function hasSection()
+    {
+        return $this->hasOneof(100);
     }
 
     /**
@@ -309,11 +314,16 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content document = 101;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getDocument()
     {
         return $this->readOneof(101);
+    }
+
+    public function hasDocument()
+    {
+        return $this->hasOneof(101);
     }
 
     /**
@@ -331,11 +341,16 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Video video = 102;</code>
-     * @return \Eolymp\Course\Video
+     * @return \Eolymp\Course\Video|null
      */
     public function getVideo()
     {
         return $this->readOneof(102);
+    }
+
+    public function hasVideo()
+    {
+        return $this->hasOneof(102);
     }
 
     /**
@@ -353,11 +368,16 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Problem problem = 103;</code>
-     * @return \Eolymp\Course\Problem
+     * @return \Eolymp\Course\Problem|null
      */
     public function getProblem()
     {
         return $this->readOneof(103);
+    }
+
+    public function hasProblem()
+    {
+        return $this->hasOneof(103);
     }
 
     /**
@@ -388,7 +408,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      * List of nested entries, read only, only populated when calling DescribeTOC API
      *
      * Generated from protobuf field <code>repeated .eolymp.course.Entry items = 900;</code>
-     * @param \Eolymp\Course\Entry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Course\Entry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

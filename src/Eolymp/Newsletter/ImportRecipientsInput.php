@@ -38,6 +38,11 @@ class ImportRecipientsInput extends \Google\Protobuf\Internal\Message
         return $this->readOneof(11);
     }
 
+    public function hasGroupId()
+    {
+        return $this->hasOneof(11);
+    }
+
     /**
      * Generated from protobuf field <code>string group_id = 11;</code>
      * @param string $var

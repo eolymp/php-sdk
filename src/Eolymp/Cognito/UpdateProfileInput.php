@@ -62,7 +62,7 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
      *     @type string $username
      *     @type string $email
@@ -95,7 +95,7 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      * specify list of fields to update, if empty all fields are updated
      *
      * Generated from protobuf field <code>repeated .eolymp.cognito.UpdateProfileInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)

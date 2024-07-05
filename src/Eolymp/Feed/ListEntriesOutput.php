@@ -33,7 +33,7 @@ class ListEntriesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Feed\Entry[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Feed\Entry>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type string $next_page_cursor
      * }
      */
@@ -75,7 +75,7 @@ class ListEntriesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.feed.Entry items = 2;</code>
-     * @param \Eolymp\Feed\Entry[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Feed\Entry>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

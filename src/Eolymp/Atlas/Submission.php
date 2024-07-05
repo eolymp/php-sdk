@@ -189,7 +189,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           maximum memory usage
      *     @type float $resource_usage
      *           maximum resource usage
-     *     @type \Eolymp\Atlas\Submission\Group[]|\Google\Protobuf\Internal\RepeatedField $groups
+     *     @type array<\Eolymp\Atlas\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
      *     @type string $cursor
      *           cursor in the list
@@ -308,11 +308,21 @@ class Submission extends \Google\Protobuf\Internal\Message
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp submitted_at = 5;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getSubmittedAt()
     {
         return $this->submitted_at;
+    }
+
+    public function hasSubmittedAt()
+    {
+        return isset($this->submitted_at);
+    }
+
+    public function clearSubmittedAt()
+    {
+        unset($this->submitted_at);
     }
 
     /**
@@ -454,7 +464,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Status::class);
         $this->status = $var;
 
         return $this;
@@ -480,7 +490,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     public function setVerdict($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Verdict::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Verdict::class);
         $this->verdict = $var;
 
         return $this;
@@ -731,7 +741,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      * status for each run by group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Group groups = 50;</code>
-     * @param \Eolymp\Atlas\Submission\Group[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGroups($var)

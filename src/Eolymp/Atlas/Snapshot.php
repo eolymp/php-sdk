@@ -68,13 +68,13 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Atlas\TestingConfig $testing
      *     @type \Eolymp\Executor\Checker $checker
      *     @type \Eolymp\Executor\Interactor $interactor
-     *     @type \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $statements
-     *     @type \Eolymp\Atlas\Template[]|\Google\Protobuf\Internal\RepeatedField $templates
-     *     @type \Eolymp\Atlas\Attachment[]|\Google\Protobuf\Internal\RepeatedField $attachments
-     *     @type \Eolymp\Atlas\Testset[]|\Google\Protobuf\Internal\RepeatedField $testsets
-     *     @type \Eolymp\Atlas\Test[]|\Google\Protobuf\Internal\RepeatedField $tests
-     *     @type \Eolymp\Atlas\Editorial[]|\Google\Protobuf\Internal\RepeatedField $editorials
-     *     @type \Eolymp\Atlas\Solution[]|\Google\Protobuf\Internal\RepeatedField $solutions
+     *     @type array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $statements
+     *     @type array<\Eolymp\Atlas\Template>|\Google\Protobuf\Internal\RepeatedField $templates
+     *     @type array<\Eolymp\Atlas\Attachment>|\Google\Protobuf\Internal\RepeatedField $attachments
+     *     @type array<\Eolymp\Atlas\Testset>|\Google\Protobuf\Internal\RepeatedField $testsets
+     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $tests
+     *     @type array<\Eolymp\Atlas\Editorial>|\Google\Protobuf\Internal\RepeatedField $editorials
+     *     @type array<\Eolymp\Atlas\Solution>|\Google\Protobuf\Internal\RepeatedField $solutions
      * }
      */
     public function __construct($data = NULL) {
@@ -84,11 +84,21 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
-     * @return \Eolymp\Atlas\Problem
+     * @return \Eolymp\Atlas\Problem|null
      */
     public function getProblem()
     {
         return $this->problem;
+    }
+
+    public function hasProblem()
+    {
+        return isset($this->problem);
+    }
+
+    public function clearProblem()
+    {
+        unset($this->problem);
     }
 
     /**
@@ -106,11 +116,21 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.TestingConfig testing = 10;</code>
-     * @return \Eolymp\Atlas\TestingConfig
+     * @return \Eolymp\Atlas\TestingConfig|null
      */
     public function getTesting()
     {
         return $this->testing;
+    }
+
+    public function hasTesting()
+    {
+        return isset($this->testing);
+    }
+
+    public function clearTesting()
+    {
+        unset($this->testing);
     }
 
     /**
@@ -128,11 +148,21 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
-     * @return \Eolymp\Executor\Checker
+     * @return \Eolymp\Executor\Checker|null
      */
     public function getChecker()
     {
         return $this->checker;
+    }
+
+    public function hasChecker()
+    {
+        return isset($this->checker);
+    }
+
+    public function clearChecker()
+    {
+        unset($this->checker);
     }
 
     /**
@@ -150,11 +180,21 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 3;</code>
-     * @return \Eolymp\Executor\Interactor
+     * @return \Eolymp\Executor\Interactor|null
      */
     public function getInteractor()
     {
         return $this->interactor;
+    }
+
+    public function hasInteractor()
+    {
+        return isset($this->interactor);
+    }
+
+    public function clearInteractor()
+    {
+        unset($this->interactor);
     }
 
     /**
@@ -181,7 +221,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Statement statements = 4;</code>
-     * @param \Eolymp\Atlas\Statement[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatements($var)
@@ -203,7 +243,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Template templates = 5;</code>
-     * @param \Eolymp\Atlas\Template[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Template>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTemplates($var)
@@ -225,7 +265,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Attachment attachments = 6;</code>
-     * @param \Eolymp\Atlas\Attachment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Attachment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttachments($var)
@@ -247,7 +287,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Testset testsets = 7;</code>
-     * @param \Eolymp\Atlas\Testset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Testset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTestsets($var)
@@ -269,7 +309,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test tests = 8;</code>
-     * @param \Eolymp\Atlas\Test[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTests($var)
@@ -291,7 +331,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial editorials = 9;</code>
-     * @param \Eolymp\Atlas\Editorial[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Editorial>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEditorials($var)
@@ -313,7 +353,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Solution solutions = 11;</code>
-     * @param \Eolymp\Atlas\Solution[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Solution>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSolutions($var)

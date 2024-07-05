@@ -40,7 +40,7 @@ class Validation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $argument_path
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $argument_path
      *           argument path
      *     @type string $error_message
      *           basic error message
@@ -68,7 +68,7 @@ class Validation extends \Google\Protobuf\Internal\Message
      * argument path
      *
      * Generated from protobuf field <code>repeated string argument_path = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setArgumentPath($var)
@@ -109,11 +109,21 @@ class Validation extends \Google\Protobuf\Internal\Message
      * optionally localization data
      *
      * Generated from protobuf field <code>.eolymp.wellknown.ErrorLocalization localization = 3;</code>
-     * @return \Eolymp\Wellknown\ErrorLocalization
+     * @return \Eolymp\Wellknown\ErrorLocalization|null
      */
     public function getLocalization()
     {
         return $this->localization;
+    }
+
+    public function hasLocalization()
+    {
+        return isset($this->localization);
+    }
+
+    public function clearLocalization()
+    {
+        unset($this->localization);
     }
 
     /**

@@ -66,11 +66,21 @@ class Action extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp execute_at = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExecuteAt()
     {
         return $this->execute_at;
+    }
+
+    public function hasExecuteAt()
+    {
+        return isset($this->execute_at);
+    }
+
+    public function clearExecuteAt()
+    {
+        unset($this->execute_at);
     }
 
     /**
@@ -102,7 +112,7 @@ class Action extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard_Action_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard\Action\Type::class);
         $this->type = $var;
 
         return $this;

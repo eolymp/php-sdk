@@ -89,7 +89,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           amount of time it took user to get accepted
      *     @type bool $changed
      *           if true, means there is a newer value for this score
-     *     @type \Eolymp\Judge\Score\Testset[]|\Google\Protobuf\Internal\RepeatedField $breakdown
+     *     @type array<\Eolymp\Judge\Score\Testset>|\Google\Protobuf\Internal\RepeatedField $breakdown
      *           breakdown of problem score by testset
      * }
      */
@@ -246,11 +246,21 @@ class Problem extends \Google\Protobuf\Internal\Message
      * time when first accepted submission is made
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp solved_at = 8;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getSolvedAt()
     {
         return $this->solved_at;
+    }
+
+    public function hasSolvedAt()
+    {
+        return isset($this->solved_at);
+    }
+
+    public function clearSolvedAt()
+    {
+        unset($this->solved_at);
     }
 
     /**
@@ -335,7 +345,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * breakdown of problem score by testset
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score.Testset breakdown = 20;</code>
-     * @param \Eolymp\Judge\Score\Testset[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Judge\Score\Testset>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setBreakdown($var)

@@ -247,11 +247,21 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp freeze_at = 21;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getFreezeAt()
     {
         return $this->freeze_at;
+    }
+
+    public function hasFreezeAt()
+    {
+        return isset($this->freeze_at);
+    }
+
+    public function clearFreezeAt()
+    {
+        unset($this->freeze_at);
     }
 
     /**
@@ -291,11 +301,21 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp unfreeze_at = 23;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUnfreezeAt()
     {
         return $this->unfreeze_at;
+    }
+
+    public function hasUnfreezeAt()
+    {
+        return isset($this->unfreeze_at);
+    }
+
+    public function clearUnfreezeAt()
+    {
+        unset($this->unfreeze_at);
     }
 
     /**

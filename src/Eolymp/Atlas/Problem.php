@@ -106,7 +106,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem is only accessible to users who were specifically granted access to it.
      *     @type string $origin
      *           For imported problems, provides the source from where the problem is imported and synchronized.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type float $acceptance_rate
      *           Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
@@ -313,7 +313,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTopics($var)

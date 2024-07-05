@@ -16,9 +16,23 @@ class Entry
         }
         \GPBMetadata\Eolymp\Wellknown\Link::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ae1020a17656f6c796d702f666565642f656e7472792e70726f746f120b656f6c796d702e666565641a1f676f6f676c652f70726f746f6275662f74696d657374616d702e70726f746f22e2010a05456e747279120a0a026964180120012809120c0a0474797065180220012809122d0a0974696d657374616d7018032001280b321a2e676f6f676c652e70726f746f6275662e54696d657374616d7012360a0a61747472696275746573180a2003280b32222e656f6c796d702e666565642e456e7472792e41747472696275746573456e74727912250a056c696e6b7318142003280b32162e656f6c796d702e77656c6c6b6e6f776e2e4c696e6b1a310a0f41747472696275746573456e747279120b0a036b6579180120012809120d0a0576616c75651802200128093a023801422b5a296769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f666565643b66656564620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+á
+eolymp/feed/entry.protoeolymp.feedgoogle/protobuf/timestamp.proto"â
+Entry
+
+id (	
+type (	-
+	timestamp (2.google.protobuf.Timestamp6
+
+attributes
+ (2".eolymp.feed.Entry.AttributesEntry%
+links (2.eolymp.wellknown.Link1
+AttributesEntry
+key (	
+value (	:8B+Z)github.com/eolymp/go-sdk/eolymp/feed;feedbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

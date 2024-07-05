@@ -100,11 +100,21 @@ class ListLocalesInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.l10n.ListLocalesInput.Filter filters = 40;</code>
-     * @return \Eolymp\L10n\ListLocalesInput\Filter
+     * @return \Eolymp\L10n\ListLocalesInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -116,7 +126,7 @@ class ListLocalesInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\L10n\ListLocalesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\L10n\ListLocalesInput\Filter::class);
         $this->filters = $var;
 
         return $this;

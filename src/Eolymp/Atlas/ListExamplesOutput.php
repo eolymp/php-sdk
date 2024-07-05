@@ -24,7 +24,7 @@ class ListExamplesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Atlas\Test[]|\Google\Protobuf\Internal\RepeatedField $examples
+     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $examples
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class ListExamplesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test examples = 2;</code>
-     * @param \Eolymp\Atlas\Test[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExamples($var)

@@ -24,7 +24,7 @@ class DescribeEmailSubscriptionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $subscriptions
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $subscriptions
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class DescribeEmailSubscriptionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType subscriptions = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSubscriptions($var)

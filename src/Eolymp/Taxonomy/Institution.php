@@ -240,7 +240,7 @@ class Institution extends \Google\Protobuf\Internal\Message
      */
     public function setGovernance($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Taxonomy\Institution_Governance::class);
+        GPBUtil::checkEnum($var, \Eolymp\Taxonomy\Institution\Governance::class);
         $this->governance = $var;
 
         return $this;
@@ -262,7 +262,7 @@ class Institution extends \Google\Protobuf\Internal\Message
      */
     public function setLevel($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Taxonomy\Institution_Level::class);
+        GPBUtil::checkEnum($var, \Eolymp\Taxonomy\Institution\Level::class);
         $this->level = $var;
 
         return $this;
@@ -284,7 +284,7 @@ class Institution extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Taxonomy\Institution_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Taxonomy\Institution\Type::class);
         $this->type = $var;
 
         return $this;

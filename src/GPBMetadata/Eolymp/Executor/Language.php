@@ -14,9 +14,18 @@ class Language
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0aa8010a1e656f6c796d702f6578656375746f722f6c616e67756167652e70726f746f120f656f6c796d702e6578656375746f7222380a084c616e6775616765120a0a026964180120012809120c0a046e616d65180a2001280912120a0a64657072656361746564180b2001280842335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6578656375746f723b6578656375746f72620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+¨
+eolymp/executor/language.protoeolymp.executor"8
+Language
+
+id (	
+name
+ (	
+
+deprecated (B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

@@ -34,11 +34,21 @@ class DescribeProblemOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Problem problem = 1;</code>
-     * @return \Eolymp\Judge\Problem
+     * @return \Eolymp\Judge\Problem|null
      */
     public function getProblem()
     {
         return $this->problem;
+    }
+
+    public function hasProblem()
+    {
+        return isset($this->problem);
+    }
+
+    public function clearProblem()
+    {
+        unset($this->problem);
     }
 
     /**

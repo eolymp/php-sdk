@@ -34,11 +34,21 @@ class DescribePostTranslationOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post.Translation translation = 1;</code>
-     * @return \Eolymp\Discussion\Post\Translation
+     * @return \Eolymp\Discussion\Post\Translation|null
      */
     public function getTranslation()
     {
         return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**
@@ -48,7 +58,7 @@ class DescribePostTranslationOutput extends \Google\Protobuf\Internal\Message
      */
     public function setTranslation($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Translation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post\Translation::class);
         $this->translation = $var;
 
         return $this;

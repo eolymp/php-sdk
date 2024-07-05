@@ -39,11 +39,21 @@ class MessageChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Message before = 1;</code>
-     * @return \Eolymp\Discussion\Message
+     * @return \Eolymp\Discussion\Message|null
      */
     public function getBefore()
     {
         return $this->before;
+    }
+
+    public function hasBefore()
+    {
+        return isset($this->before);
+    }
+
+    public function clearBefore()
+    {
+        unset($this->before);
     }
 
     /**
@@ -61,11 +71,21 @@ class MessageChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Message after = 2;</code>
-     * @return \Eolymp\Discussion\Message
+     * @return \Eolymp\Discussion\Message|null
      */
     public function getAfter()
     {
         return $this->after;
+    }
+
+    public function hasAfter()
+    {
+        return isset($this->after);
+    }
+
+    public function clearAfter()
+    {
+        unset($this->after);
     }
 
     /**

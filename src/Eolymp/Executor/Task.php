@@ -150,17 +150,17 @@ class Task extends \Google\Protobuf\Internal\Message
      *           both stderr and stdout in output field while stderr will be empty.
      *     @type int $run_count
      *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
-     *     @type \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $preconditions
+     *     @type array<\Eolymp\Executor\Task\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *     @type \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $constraints
+     *     @type array<\Eolymp\Executor\Task\Constraint>|\Google\Protobuf\Internal\RepeatedField $constraints
      *           Execution constraints, define limits imposed on each run.
      *     @type \Eolymp\Executor\Checker $checker
      *           Checker configuration.
      *     @type \Eolymp\Executor\Interactor $interactor
      *           Interactor configuration
-     *     @type \Eolymp\Executor\Task\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type array<\Eolymp\Executor\Task\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           Run configurations.
-     *     @type \Eolymp\Executor\Task\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Executor\Task\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files to be placed in the work directory during compilation and runs*
      * }
      */
@@ -456,7 +456,7 @@ class Task extends \Google\Protobuf\Internal\Message
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Precondition preconditions = 40;</code>
-     * @param \Eolymp\Executor\Task\Precondition[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Task\Precondition>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPreconditions($var)
@@ -482,7 +482,7 @@ class Task extends \Google\Protobuf\Internal\Message
      * Execution constraints, define limits imposed on each run.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Constraint constraints = 20;</code>
-     * @param \Eolymp\Executor\Task\Constraint[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Task\Constraint>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConstraints($var)
@@ -497,11 +497,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Checker configuration.
      *
      * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
-     * @return \Eolymp\Executor\Checker
+     * @return \Eolymp\Executor\Checker|null
      */
     public function getChecker()
     {
         return $this->checker;
+    }
+
+    public function hasChecker()
+    {
+        return isset($this->checker);
+    }
+
+    public function clearChecker()
+    {
+        unset($this->checker);
     }
 
     /**
@@ -523,11 +533,21 @@ class Task extends \Google\Protobuf\Internal\Message
      * Interactor configuration
      *
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
-     * @return \Eolymp\Executor\Interactor
+     * @return \Eolymp\Executor\Interactor|null
      */
     public function getInteractor()
     {
         return $this->interactor;
+    }
+
+    public function hasInteractor()
+    {
+        return isset($this->interactor);
+    }
+
+    public function clearInteractor()
+    {
+        unset($this->interactor);
     }
 
     /**
@@ -560,7 +580,7 @@ class Task extends \Google\Protobuf\Internal\Message
      * Run configurations.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.Run runs = 30;</code>
-     * @param \Eolymp\Executor\Task\Run[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Task\Run>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuns($var)
@@ -586,7 +606,7 @@ class Task extends \Google\Protobuf\Internal\Message
      * Additional files to be placed in the work directory during compilation and runs*
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
-     * @param \Eolymp\Executor\Task\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Task\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)

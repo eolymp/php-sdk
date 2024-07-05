@@ -34,11 +34,21 @@ class DescribeIdentityConfigOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.IdentityConfig config = 1;</code>
-     * @return \Eolymp\Community\IdentityConfig
+     * @return \Eolymp\Community\IdentityConfig|null
      */
     public function getConfig()
     {
         return $this->config;
+    }
+
+    public function hasConfig()
+    {
+        return isset($this->config);
+    }
+
+    public function clearConfig()
+    {
+        unset($this->config);
     }
 
     /**

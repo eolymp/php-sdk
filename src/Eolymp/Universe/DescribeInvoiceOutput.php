@@ -34,11 +34,21 @@ class DescribeInvoiceOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.commerce.Invoice invoice = 1;</code>
-     * @return \Eolymp\Commerce\Invoice
+     * @return \Eolymp\Commerce\Invoice|null
      */
     public function getInvoice()
     {
         return $this->invoice;
+    }
+
+    public function hasInvoice()
+    {
+        return isset($this->invoice);
+    }
+
+    public function clearInvoice()
+    {
+        unset($this->invoice);
     }
 
     /**

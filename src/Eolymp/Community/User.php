@@ -90,7 +90,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type int $nickname_change_timeout
      *     @type string $email
      *     @type bool $email_verified
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $email_subscriptions
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $email_subscriptions
      *     @type string $password
      *     @type int $password_age
      *     @type string $name
@@ -250,7 +250,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType email_subscriptions = 22;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEmailSubscriptions($var)
@@ -351,11 +351,21 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 60;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getBirthday()
     {
         return $this->birthday;
+    }
+
+    public function hasBirthday()
+    {
+        return isset($this->birthday);
+    }
+
+    public function clearBirthday()
+    {
+        unset($this->birthday);
     }
 
     /**
@@ -439,11 +449,21 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.User.Preferences preferences = 800;</code>
-     * @return \Eolymp\Community\User\Preferences
+     * @return \Eolymp\Community\User\Preferences|null
      */
     public function getPreferences()
     {
         return $this->preferences;
+    }
+
+    public function hasPreferences()
+    {
+        return isset($this->preferences);
+    }
+
+    public function clearPreferences()
+    {
+        unset($this->preferences);
     }
 
     /**
@@ -453,7 +473,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     public function setPreferences($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\User_Preferences::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\User\Preferences::class);
         $this->preferences = $var;
 
         return $this;

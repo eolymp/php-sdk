@@ -81,7 +81,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setOutcome($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_Step_Outcome::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report\Step\Outcome::class);
         $this->outcome = $var;
 
         return $this;
@@ -89,11 +89,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Report.Step.Execute execute = 12;</code>
-     * @return \Eolymp\Executor\Report\Step\Execute
+     * @return \Eolymp\Executor\Report\Step\Execute|null
      */
     public function getExecute()
     {
         return $this->readOneof(12);
+    }
+
+    public function hasExecute()
+    {
+        return $this->hasOneof(12);
     }
 
     /**
@@ -103,7 +108,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setExecute($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Report_Step_Execute::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Report\Step\Execute::class);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -111,11 +116,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Report.Step.Upload upload = 13;</code>
-     * @return \Eolymp\Executor\Report\Step\Upload
+     * @return \Eolymp\Executor\Report\Step\Upload|null
      */
     public function getUpload()
     {
         return $this->readOneof(13);
+    }
+
+    public function hasUpload()
+    {
+        return $this->hasOneof(13);
     }
 
     /**
@@ -125,7 +135,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setUpload($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Report_Step_Upload::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Report\Step\Upload::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -133,11 +143,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Report.Step.Group group = 14;</code>
-     * @return \Eolymp\Executor\Report\Step\Group
+     * @return \Eolymp\Executor\Report\Step\Group|null
      */
     public function getGroup()
     {
         return $this->readOneof(14);
+    }
+
+    public function hasGroup()
+    {
+        return $this->hasOneof(14);
     }
 
     /**
@@ -147,7 +162,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setGroup($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Report_Step_Group::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Report\Step\Group::class);
         $this->writeOneof(14, $var);
 
         return $this;

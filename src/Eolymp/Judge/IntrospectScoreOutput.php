@@ -34,11 +34,21 @@ class IntrospectScoreOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Score score = 1;</code>
-     * @return \Eolymp\Judge\Score
+     * @return \Eolymp\Judge\Score|null
      */
     public function getScore()
     {
         return $this->score;
+    }
+
+    public function hasScore()
+    {
+        return isset($this->score);
+    }
+
+    public function clearScore()
+    {
+        unset($this->score);
     }
 
     /**

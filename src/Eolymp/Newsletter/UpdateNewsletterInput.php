@@ -32,7 +32,7 @@ class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $newsletter_id
      *     @type \Eolymp\Newsletter\Newsletter $newsletter
      * }
@@ -53,7 +53,7 @@ class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.newsletter.UpdateNewsletterInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -88,11 +88,21 @@ class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.newsletter.Newsletter newsletter = 3;</code>
-     * @return \Eolymp\Newsletter\Newsletter
+     * @return \Eolymp\Newsletter\Newsletter|null
      */
     public function getNewsletter()
     {
         return $this->newsletter;
+    }
+
+    public function hasNewsletter()
+    {
+        return isset($this->newsletter);
+    }
+
+    public function clearNewsletter()
+    {
+        unset($this->newsletter);
     }
 
     /**

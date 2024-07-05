@@ -50,7 +50,7 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type \Eolymp\Content\ListVariantsInput\Filter $filters
      *           data filters
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -132,11 +132,21 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Content\ListVariantsInput\Filter
+     * @return \Eolymp\Content\ListVariantsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -148,7 +158,7 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\ListVariantsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Content\ListVariantsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
@@ -165,7 +175,7 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

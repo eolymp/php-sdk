@@ -37,7 +37,7 @@ class CopyContestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $copy_scope
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $copy_scope
      *     @type string $copy_name
      *     @type int $copy_visibility
      * }
@@ -80,7 +80,7 @@ class CopyContestInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.CopyContestInput.Scope copy_scope = 2;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCopyScope($var)
@@ -129,7 +129,7 @@ class CopyContestInput extends \Google\Protobuf\Internal\Message
      */
     public function setCopyVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest_Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Visibility::class);
         $this->copy_visibility = $var;
 
         return $this;

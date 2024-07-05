@@ -40,7 +40,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $contest_id
      *           Participant identifier to update
@@ -68,7 +68,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * Patch request to update participant partially (all fields are updated if not specified)
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -129,11 +129,21 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Participant participant = 4;</code>
-     * @return \Eolymp\Judge\Participant
+     * @return \Eolymp\Judge\Participant|null
      */
     public function getParticipant()
     {
         return $this->participant;
+    }
+
+    public function hasParticipant()
+    {
+        return isset($this->participant);
+    }
+
+    public function clearParticipant()
+    {
+        unset($this->participant);
     }
 
     /**

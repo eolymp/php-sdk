@@ -14,9 +14,15 @@ class Enum
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a8c010a1a656f6c796d702f7461786f6e6f6d792f656e756d2e70726f746f120f656f6c796d702e7461786f6e6f6d7922200a04456e756d120a0a026964180120012809120c0a046e616d6518022001280942335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f7461786f6e6f6d793b7461786f6e6f6d79620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+Œ
+eolymp/taxonomy/enum.protoeolymp.taxonomy" 
+Enum
+
+id (	
+name (	B3Z1github.com/eolymp/go-sdk/eolymp/taxonomy;taxonomybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

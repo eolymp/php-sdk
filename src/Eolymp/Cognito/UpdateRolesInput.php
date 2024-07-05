@@ -29,7 +29,7 @@ class UpdateRolesInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $user_id
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $roles
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $roles
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class UpdateRolesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string roles = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRoles($var)

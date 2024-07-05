@@ -70,7 +70,7 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type int $visibility
      *     @type int $duration
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type int $estimate
      * }
@@ -170,11 +170,21 @@ class Course extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 12;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
     }
 
     /**
@@ -228,7 +238,7 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     public function setVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Course\Course_Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Course\Course\Visibility::class);
         $this->visibility = $var;
 
         return $this;
@@ -271,7 +281,7 @@ class Course extends \Google\Protobuf\Internal\Message
      * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 16;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTopics($var)

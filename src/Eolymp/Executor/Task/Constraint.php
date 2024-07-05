@@ -59,7 +59,7 @@ class Constraint extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $selector
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $selector
      *           Constraint will apply to all runs matching this label selector.
      *           Run must have all labels defined by selector. Empty selector will match all runs.
      *     @type string $actor
@@ -96,7 +96,7 @@ class Constraint extends \Google\Protobuf\Internal\Message
      * Run must have all labels defined by selector. Empty selector will match all runs.
      *
      * Generated from protobuf field <code>repeated string selector = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSelector($var)

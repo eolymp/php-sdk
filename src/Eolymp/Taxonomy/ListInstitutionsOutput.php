@@ -29,7 +29,7 @@ class ListInstitutionsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Taxonomy\Institution[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Taxonomy\Institution>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListInstitutionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Institution items = 2;</code>
-     * @param \Eolymp\Taxonomy\Institution[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Taxonomy\Institution>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

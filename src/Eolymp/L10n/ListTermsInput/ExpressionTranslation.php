@@ -61,11 +61,21 @@ class ExpressionTranslation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.wellknown.ExpressionEnum status = 3;</code>
-     * @return \Eolymp\Wellknown\ExpressionEnum
+     * @return \Eolymp\Wellknown\ExpressionEnum|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**

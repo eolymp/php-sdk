@@ -106,7 +106,7 @@ class Group extends \Google\Protobuf\Internal\Message
      *           status of the group
      *     @type int $verdict
      *           overall verdict based on verdicts in groups/runs
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $dependencies
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dependencies
      *           other group indices which need to pass for this group to run
      *     @type float $cost
      *           max possible score for passing all tests in the group
@@ -122,7 +122,7 @@ class Group extends \Google\Protobuf\Internal\Message
      *           provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *     @type int|string $memory_usage
      *           provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
-     *     @type \Eolymp\Judge\Submission\Run[]|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type array<\Eolymp\Judge\Submission\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           runs of the group
      * }
      */
@@ -203,7 +203,7 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Submission_Group_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Submission\Group\Status::class);
         $this->status = $var;
 
         return $this;
@@ -229,7 +229,7 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     public function setVerdict($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission_Verdict::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Verdict::class);
         $this->verdict = $var;
 
         return $this;
@@ -250,7 +250,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * other group indices which need to pass for this group to run
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 11;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDependencies($var)
@@ -458,7 +458,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * runs of the group
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Run runs = 100;</code>
-     * @param \Eolymp\Judge\Submission\Run[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Judge\Submission\Run>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRuns($var)

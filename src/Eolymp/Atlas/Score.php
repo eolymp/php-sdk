@@ -190,11 +190,21 @@ class Score extends \Google\Protobuf\Internal\Message
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp solved_at = 4;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getSolvedAt()
     {
         return $this->solved_at;
+    }
+
+    public function hasSolvedAt()
+    {
+        return isset($this->solved_at);
+    }
+
+    public function clearSolvedAt()
+    {
+        unset($this->solved_at);
     }
 
     /**

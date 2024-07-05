@@ -109,7 +109,7 @@ class WatchScoreInput extends \Google\Protobuf\Internal\Message
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Score_FetchingMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Score\FetchingMode::class);
         $this->mode = $var;
 
         return $this;

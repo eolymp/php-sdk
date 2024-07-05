@@ -71,7 +71,7 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *     @type int $difficulty
      *     @type \Eolymp\Ecm\Content $statement
      *     @type \Eolymp\Ecm\Content $editorial
@@ -120,7 +120,7 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Suggestion_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Suggestion\Status::class);
         $this->status = $var;
 
         return $this;
@@ -194,11 +194,21 @@ class Suggestion extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -216,11 +226,21 @@ class Suggestion extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
     }
 
     /**
@@ -247,7 +267,7 @@ class Suggestion extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 100;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTopics($var)
@@ -282,11 +302,21 @@ class Suggestion extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content statement = 102;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getStatement()
     {
         return $this->statement;
+    }
+
+    public function hasStatement()
+    {
+        return isset($this->statement);
+    }
+
+    public function clearStatement()
+    {
+        unset($this->statement);
     }
 
     /**
@@ -304,11 +334,21 @@ class Suggestion extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content editorial = 103;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getEditorial()
     {
         return $this->editorial;
+    }
+
+    public function hasEditorial()
+    {
+        return isset($this->editorial);
+    }
+
+    public function clearEditorial()
+    {
+        unset($this->editorial);
     }
 
     /**

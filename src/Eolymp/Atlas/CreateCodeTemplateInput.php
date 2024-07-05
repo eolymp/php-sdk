@@ -61,11 +61,21 @@ class CreateCodeTemplateInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Template template = 2;</code>
-     * @return \Eolymp\Atlas\Template
+     * @return \Eolymp\Atlas\Template|null
      */
     public function getTemplate()
     {
         return $this->template;
+    }
+
+    public function hasTemplate()
+    {
+        return isset($this->template);
+    }
+
+    public function clearTemplate()
+    {
+        unset($this->template);
     }
 
     /**

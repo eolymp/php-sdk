@@ -125,11 +125,21 @@ class ListRankingPointsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.ListRankingPointsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Community\ListRankingPointsInput\Filter
+     * @return \Eolymp\Community\ListRankingPointsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -139,7 +149,7 @@ class ListRankingPointsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\ListRankingPointsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\ListRankingPointsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
@@ -161,7 +171,7 @@ class ListRankingPointsInput extends \Google\Protobuf\Internal\Message
      */
     public function setSort($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Community\ListRankingPointsInput_Sortable::class);
+        GPBUtil::checkEnum($var, \Eolymp\Community\ListRankingPointsInput\Sortable::class);
         $this->sort = $var;
 
         return $this;

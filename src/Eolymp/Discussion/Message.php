@@ -98,7 +98,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $deleted_at
      *     @type int $revision
      *     @type \Eolymp\Ecm\Content $message
-     *     @type \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
      * }
      */
     public function __construct($data = NULL) {
@@ -296,11 +296,21 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp posted_at = 20;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getPostedAt()
     {
         return $this->posted_at;
+    }
+
+    public function hasPostedAt()
+    {
+        return isset($this->posted_at);
+    }
+
+    public function clearPostedAt()
+    {
+        unset($this->posted_at);
     }
 
     /**
@@ -318,11 +328,21 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp edited_at = 21;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getEditedAt()
     {
         return $this->edited_at;
+    }
+
+    public function hasEditedAt()
+    {
+        return isset($this->edited_at);
+    }
+
+    public function clearEditedAt()
+    {
+        unset($this->edited_at);
     }
 
     /**
@@ -340,11 +360,21 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 22;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeletedAt()
     {
         return $this->deleted_at;
+    }
+
+    public function hasDeletedAt()
+    {
+        return isset($this->deleted_at);
+    }
+
+    public function clearDeletedAt()
+    {
+        unset($this->deleted_at);
     }
 
     /**
@@ -384,11 +414,21 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 100;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
         return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**
@@ -415,7 +455,7 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
-     * @param \Eolymp\Wellknown\Link[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLinks($var)

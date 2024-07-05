@@ -34,11 +34,21 @@ class UpdateBillingInformationInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Billing.Information info = 1;</code>
-     * @return \Eolymp\Universe\Billing\Information
+     * @return \Eolymp\Universe\Billing\Information|null
      */
     public function getInfo()
     {
         return $this->info;
+    }
+
+    public function hasInfo()
+    {
+        return isset($this->info);
+    }
+
+    public function clearInfo()
+    {
+        unset($this->info);
     }
 
     /**
@@ -48,7 +58,7 @@ class UpdateBillingInformationInput extends \Google\Protobuf\Internal\Message
      */
     public function setInfo($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Billing_Information::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Billing\Information::class);
         $this->info = $var;
 
         return $this;

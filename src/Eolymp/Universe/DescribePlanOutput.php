@@ -34,11 +34,21 @@ class DescribePlanOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Plan plan = 1;</code>
-     * @return \Eolymp\Universe\Plan
+     * @return \Eolymp\Universe\Plan|null
      */
     public function getPlan()
     {
         return $this->plan;
+    }
+
+    public function hasPlan()
+    {
+        return isset($this->plan);
+    }
+
+    public function clearPlan()
+    {
+        unset($this->plan);
     }
 
     /**

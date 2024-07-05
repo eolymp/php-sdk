@@ -49,11 +49,21 @@ class SubmissionCompleteEvent extends \Google\Protobuf\Internal\Message
      * submission
      *
      * Generated from protobuf field <code>.eolymp.atlas.Submission submission = 1;</code>
-     * @return \Eolymp\Atlas\Submission
+     * @return \Eolymp\Atlas\Submission|null
      */
     public function getSubmission()
     {
         return $this->submission;
+    }
+
+    public function hasSubmission()
+    {
+        return isset($this->submission);
+    }
+
+    public function clearSubmission()
+    {
+        unset($this->submission);
     }
 
     /**

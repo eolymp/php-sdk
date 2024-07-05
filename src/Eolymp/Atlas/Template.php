@@ -62,7 +62,7 @@ class Template extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *     @type string $header
      *     @type string $footer
-     *     @type \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Atlas\File>|\Google\Protobuf\Internal\RepeatedField $files
      * }
      */
     public function __construct($data = NULL) {
@@ -239,7 +239,7 @@ class Template extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.File files = 30;</code>
-     * @param \Eolymp\Atlas\File[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Atlas\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)

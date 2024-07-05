@@ -142,7 +142,7 @@ class Activity extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Activity_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Activity\Type::class);
         $this->type = $var;
 
         return $this;
@@ -164,7 +164,7 @@ class Activity extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Activity_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Activity\Status::class);
         $this->status = $var;
 
         return $this;
@@ -200,11 +200,21 @@ class Activity extends \Google\Protobuf\Internal\Message
      * Timestamp when activity was created, started, updated and complete.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -224,11 +234,21 @@ class Activity extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedAt()
     {
         return $this->started_at;
+    }
+
+    public function hasStartedAt()
+    {
+        return isset($this->started_at);
+    }
+
+    public function clearStartedAt()
+    {
+        unset($this->started_at);
     }
 
     /**
@@ -246,11 +266,21 @@ class Activity extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp progress_at = 12;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getProgressAt()
     {
         return $this->progress_at;
+    }
+
+    public function hasProgressAt()
+    {
+        return isset($this->progress_at);
+    }
+
+    public function clearProgressAt()
+    {
+        unset($this->progress_at);
     }
 
     /**
@@ -268,11 +298,21 @@ class Activity extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 13;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCompleteAt()
     {
         return $this->complete_at;
+    }
+
+    public function hasCompleteAt()
+    {
+        return isset($this->complete_at);
+    }
+
+    public function clearCompleteAt()
+    {
+        unset($this->complete_at);
     }
 
     /**

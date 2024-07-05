@@ -34,7 +34,7 @@ class GrantPermissionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $user_id
      *     @type string $role
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $entitlements
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $entitlements
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +97,7 @@ class GrantPermissionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string entitlements = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEntitlements($var)

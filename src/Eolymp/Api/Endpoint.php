@@ -29,7 +29,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $field
-     *     @type \Eolymp\Api\Endpoint\Service[]|\Google\Protobuf\Internal\RepeatedField $service
+     *     @type array<\Eolymp\Api\Endpoint\Service>|\Google\Protobuf\Internal\RepeatedField $service
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.Endpoint.Service service = 2;</code>
-     * @param \Eolymp\Api\Endpoint\Service[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Api\Endpoint\Service>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setService($var)

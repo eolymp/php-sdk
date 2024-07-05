@@ -73,7 +73,7 @@ class DescribeScoreboardRowInput extends \Google\Protobuf\Internal\Message
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard_FetchingMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Ranker\Scoreboard\FetchingMode::class);
         $this->mode = $var;
 
         return $this;

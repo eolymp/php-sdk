@@ -34,11 +34,21 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 20;</code>
-     * @return \Eolymp\Resolver\Record\Target
+     * @return \Eolymp\Resolver\Record\Target|null
      */
     public function getTarget()
     {
         return $this->target;
+    }
+
+    public function hasTarget()
+    {
+        return isset($this->target);
+    }
+
+    public function clearTarget()
+    {
+        unset($this->target);
     }
 
     /**
@@ -48,7 +58,7 @@ class Record extends \Google\Protobuf\Internal\Message
      */
     public function setTarget($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Resolver\Record_Target::class);
+        GPBUtil::checkMessage($var, \Eolymp\Resolver\Record\Target::class);
         $this->target = $var;
 
         return $this;

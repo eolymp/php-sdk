@@ -344,7 +344,7 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     public function setVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space\Visibility::class);
         $this->visibility = $var;
 
         return $this;
@@ -370,7 +370,7 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Universe\Space_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space\Status::class);
         $this->status = $var;
 
         return $this;
@@ -380,11 +380,21 @@ class Space extends \Google\Protobuf\Internal\Message
      * subscription details (private)
      *
      * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
-     * @return \Eolymp\Universe\Space\Subscription
+     * @return \Eolymp\Universe\Space\Subscription|null
      */
     public function getSubscription()
     {
         return $this->subscription;
+    }
+
+    public function hasSubscription()
+    {
+        return isset($this->subscription);
+    }
+
+    public function clearSubscription()
+    {
+        unset($this->subscription);
     }
 
     /**
@@ -396,7 +406,7 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     public function setSubscription($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Space_Subscription::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Space\Subscription::class);
         $this->subscription = $var;
 
         return $this;

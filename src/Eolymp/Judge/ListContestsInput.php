@@ -100,11 +100,21 @@ class ListContestsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.judge.ListContestsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Judge\ListContestsInput\Filter
+     * @return \Eolymp\Judge\ListContestsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -116,7 +126,7 @@ class ListContestsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\ListContestsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\ListContestsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

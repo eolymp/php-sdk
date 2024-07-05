@@ -34,11 +34,21 @@ class JobReportedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Report report = 1;</code>
-     * @return \Eolymp\Executor\Report
+     * @return \Eolymp\Executor\Report|null
      */
     public function getReport()
     {
         return $this->report;
+    }
+
+    public function hasReport()
+    {
+        return isset($this->report);
+    }
+
+    public function clearReport()
+    {
+        unset($this->report);
     }
 
     /**

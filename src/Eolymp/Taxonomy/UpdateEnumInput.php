@@ -38,7 +38,7 @@ class UpdateEnumInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           patch defines which fields should be set, if empty ALL fields are set
      *     @type string $enum_id
      *           enum to update
@@ -66,7 +66,7 @@ class UpdateEnumInput extends \Google\Protobuf\Internal\Message
      * patch defines which fields should be set, if empty ALL fields are set
      *
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateEnumInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -107,11 +107,21 @@ class UpdateEnumInput extends \Google\Protobuf\Internal\Message
      * value to set (id field is ignored during update)
      *
      * Generated from protobuf field <code>.eolymp.taxonomy.Enum enum = 3;</code>
-     * @return \Eolymp\Taxonomy\Enum
+     * @return \Eolymp\Taxonomy\Enum|null
      */
     public function getEnum()
     {
         return $this->enum;
+    }
+
+    public function hasEnum()
+    {
+        return isset($this->enum);
+    }
+
+    public function clearEnum()
+    {
+        unset($this->enum);
     }
 
     /**

@@ -46,7 +46,7 @@ class HttpRule extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Api\CustomHttpPattern $custom
      *     @type string $body
      *     @type string $response_body
-     *     @type \Eolymp\Api\HttpRule[]|\Google\Protobuf\Internal\RepeatedField $additional_bindings
+     *     @type array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $additional_bindings
      * }
      */
     public function __construct($data = NULL) {
@@ -85,6 +85,11 @@ class HttpRule extends \Google\Protobuf\Internal\Message
         return $this->readOneof(2);
     }
 
+    public function hasGet()
+    {
+        return $this->hasOneof(2);
+    }
+
     /**
      * Generated from protobuf field <code>string get = 2;</code>
      * @param string $var
@@ -105,6 +110,11 @@ class HttpRule extends \Google\Protobuf\Internal\Message
     public function getPut()
     {
         return $this->readOneof(3);
+    }
+
+    public function hasPut()
+    {
+        return $this->hasOneof(3);
     }
 
     /**
@@ -129,6 +139,11 @@ class HttpRule extends \Google\Protobuf\Internal\Message
         return $this->readOneof(4);
     }
 
+    public function hasPost()
+    {
+        return $this->hasOneof(4);
+    }
+
     /**
      * Generated from protobuf field <code>string post = 4;</code>
      * @param string $var
@@ -149,6 +164,11 @@ class HttpRule extends \Google\Protobuf\Internal\Message
     public function getDelete()
     {
         return $this->readOneof(5);
+    }
+
+    public function hasDelete()
+    {
+        return $this->hasOneof(5);
     }
 
     /**
@@ -173,6 +193,11 @@ class HttpRule extends \Google\Protobuf\Internal\Message
         return $this->readOneof(6);
     }
 
+    public function hasPatch()
+    {
+        return $this->hasOneof(6);
+    }
+
     /**
      * Generated from protobuf field <code>string patch = 6;</code>
      * @param string $var
@@ -188,11 +213,16 @@ class HttpRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.api.CustomHttpPattern custom = 8;</code>
-     * @return \Eolymp\Api\CustomHttpPattern
+     * @return \Eolymp\Api\CustomHttpPattern|null
      */
     public function getCustom()
     {
         return $this->readOneof(8);
+    }
+
+    public function hasCustom()
+    {
+        return $this->hasOneof(8);
     }
 
     /**
@@ -263,7 +293,7 @@ class HttpRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule additional_bindings = 11;</code>
-     * @param \Eolymp\Api\HttpRule[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAdditionalBindings($var)

@@ -34,11 +34,21 @@ class DescribeRegionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.taxonomy.Region region = 1;</code>
-     * @return \Eolymp\Taxonomy\Region
+     * @return \Eolymp\Taxonomy\Region|null
      */
     public function getRegion()
     {
         return $this->region;
+    }
+
+    public function hasRegion()
+    {
+        return isset($this->region);
+    }
+
+    public function clearRegion()
+    {
+        unset($this->region);
     }
 
     /**

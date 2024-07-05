@@ -39,6 +39,11 @@ class DescribeIdentityProviderOutput extends \Google\Protobuf\Internal\Message
         return $this->readOneof(1);
     }
 
+    public function hasLocal()
+    {
+        return $this->hasOneof(1);
+    }
+
     /**
      * Generated from protobuf field <code>bool local = 1;</code>
      * @param bool $var
@@ -54,11 +59,16 @@ class DescribeIdentityProviderOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.IdentityProvider.OIDC oidc = 3;</code>
-     * @return \Eolymp\Community\IdentityProvider\OIDC
+     * @return \Eolymp\Community\IdentityProvider\OIDC|null
      */
     public function getOidc()
     {
         return $this->readOneof(3);
+    }
+
+    public function hasOidc()
+    {
+        return $this->hasOneof(3);
     }
 
     /**
@@ -68,7 +78,7 @@ class DescribeIdentityProviderOutput extends \Google\Protobuf\Internal\Message
      */
     public function setOidc($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider_OIDC::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\IdentityProvider\OIDC::class);
         $this->writeOneof(3, $var);
 
         return $this;

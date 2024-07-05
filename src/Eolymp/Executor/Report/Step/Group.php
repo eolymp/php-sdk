@@ -24,7 +24,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Executor\Report\Step\Execute[]|\Google\Protobuf\Internal\RepeatedField $processes
+     *     @type array<\Eolymp\Executor\Report\Step\Execute>|\Google\Protobuf\Internal\RepeatedField $processes
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class Group extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.Report.Step.Execute processes = 1;</code>
-     * @param \Eolymp\Executor\Report\Step\Execute[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Report\Step\Execute>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProcesses($var)

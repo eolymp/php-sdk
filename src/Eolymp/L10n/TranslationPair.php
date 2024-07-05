@@ -49,11 +49,21 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Term term = 1;</code>
-     * @return \Eolymp\L10n\Term
+     * @return \Eolymp\L10n\Term|null
      */
     public function getTerm()
     {
         return $this->term;
+    }
+
+    public function hasTerm()
+    {
+        return isset($this->term);
+    }
+
+    public function clearTerm()
+    {
+        unset($this->term);
     }
 
     /**
@@ -71,11 +81,21 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Translation source = 2;</code>
-     * @return \Eolymp\L10n\Translation
+     * @return \Eolymp\L10n\Translation|null
      */
     public function getSource()
     {
         return $this->source;
+    }
+
+    public function hasSource()
+    {
+        return isset($this->source);
+    }
+
+    public function clearSource()
+    {
+        unset($this->source);
     }
 
     /**
@@ -93,11 +113,21 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Translation translation = 3;</code>
-     * @return \Eolymp\L10n\Translation
+     * @return \Eolymp\L10n\Translation|null
      */
     public function getTranslation()
     {
         return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**
@@ -115,11 +145,21 @@ class TranslationPair extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Translation suggestion = 4;</code>
-     * @return \Eolymp\L10n\Translation
+     * @return \Eolymp\L10n\Translation|null
      */
     public function getSuggestion()
     {
         return $this->suggestion;
+    }
+
+    public function hasSuggestion()
+    {
+        return isset($this->suggestion);
+    }
+
+    public function clearSuggestion()
+    {
+        unset($this->suggestion);
     }
 
     /**

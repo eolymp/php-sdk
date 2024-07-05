@@ -24,7 +24,7 @@ class ExportScoreOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Judge\Score[]|\Google\Protobuf\Internal\RepeatedField $scores
+     *     @type array<\Eolymp\Judge\Score>|\Google\Protobuf\Internal\RepeatedField $scores
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class ExportScoreOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Score scores = 10;</code>
-     * @param \Eolymp\Judge\Score[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Judge\Score>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScores($var)

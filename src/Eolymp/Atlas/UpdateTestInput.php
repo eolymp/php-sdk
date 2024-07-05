@@ -115,11 +115,21 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Test test = 4;</code>
-     * @return \Eolymp\Atlas\Test
+     * @return \Eolymp\Atlas\Test|null
      */
     public function getTest()
     {
         return $this->test;
+    }
+
+    public function hasTest()
+    {
+        return isset($this->test);
+    }
+
+    public function clearTest()
+    {
+        unset($this->test);
     }
 
     /**

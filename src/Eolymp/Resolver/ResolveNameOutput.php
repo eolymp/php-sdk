@@ -40,11 +40,21 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.resolver.Record.Target target = 1;</code>
-     * @return \Eolymp\Resolver\Record\Target
+     * @return \Eolymp\Resolver\Record\Target|null
      */
     public function getTarget()
     {
         return $this->target;
+    }
+
+    public function hasTarget()
+    {
+        return isset($this->target);
+    }
+
+    public function clearTarget()
+    {
+        unset($this->target);
     }
 
     /**
@@ -54,7 +64,7 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
      */
     public function setTarget($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Resolver\Record_Target::class);
+        GPBUtil::checkMessage($var, \Eolymp\Resolver\Record\Target::class);
         $this->target = $var;
 
         return $this;
@@ -62,11 +72,16 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Space space = 10;</code>
-     * @return \Eolymp\Universe\Space
+     * @return \Eolymp\Universe\Space|null
      */
     public function getSpace()
     {
         return $this->readOneof(10);
+    }
+
+    public function hasSpace()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
@@ -84,11 +99,16 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Contest contest = 11;</code>
-     * @return \Eolymp\Judge\Contest
+     * @return \Eolymp\Judge\Contest|null
      */
     public function getContest()
     {
         return $this->readOneof(11);
+    }
+
+    public function hasContest()
+    {
+        return $this->hasOneof(11);
     }
 
     /**
@@ -106,11 +126,16 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 12;</code>
-     * @return \Eolymp\Ranker\Scoreboard
+     * @return \Eolymp\Ranker\Scoreboard|null
      */
     public function getScoreboard()
     {
         return $this->readOneof(12);
+    }
+
+    public function hasScoreboard()
+    {
+        return $this->hasOneof(12);
     }
 
     /**
@@ -128,11 +153,16 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.resolver.Authorization.OAuth2 oauth2 = 20;</code>
-     * @return \Eolymp\Resolver\Authorization\OAuth2
+     * @return \Eolymp\Resolver\Authorization\OAuth2|null
      */
     public function getOauth2()
     {
         return $this->readOneof(20);
+    }
+
+    public function hasOauth2()
+    {
+        return $this->hasOneof(20);
     }
 
     /**
@@ -142,7 +172,7 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
      */
     public function setOauth2($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Resolver\Authorization_OAuth2::class);
+        GPBUtil::checkMessage($var, \Eolymp\Resolver\Authorization\OAuth2::class);
         $this->writeOneof(20, $var);
 
         return $this;

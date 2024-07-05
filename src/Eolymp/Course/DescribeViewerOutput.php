@@ -34,11 +34,21 @@ class DescribeViewerOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Student student = 1;</code>
-     * @return \Eolymp\Course\Student
+     * @return \Eolymp\Course\Student|null
      */
     public function getStudent()
     {
         return $this->student;
+    }
+
+    public function hasStudent()
+    {
+        return isset($this->student);
+    }
+
+    public function clearStudent()
+    {
+        unset($this->student);
     }
 
     /**

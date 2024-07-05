@@ -39,11 +39,21 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Row row = 1;</code>
-     * @return \Eolymp\Ranker\Scoreboard\Row
+     * @return \Eolymp\Ranker\Scoreboard\Row|null
      */
     public function getRow()
     {
         return $this->row;
+    }
+
+    public function hasRow()
+    {
+        return isset($this->row);
+    }
+
+    public function clearRow()
+    {
+        unset($this->row);
     }
 
     /**
@@ -53,7 +63,7 @@ class DescribeScoreboardRowOutput extends \Google\Protobuf\Internal\Message
      */
     public function setRow($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Row::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard\Row::class);
         $this->row = $var;
 
         return $this;

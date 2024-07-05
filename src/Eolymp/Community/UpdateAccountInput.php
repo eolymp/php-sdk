@@ -32,7 +32,7 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $current_password
      *     @type \Eolymp\Community\Member $member
      * }
@@ -53,7 +53,7 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -88,11 +88,21 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Member member = 10;</code>
-     * @return \Eolymp\Community\Member
+     * @return \Eolymp\Community\Member|null
      */
     public function getMember()
     {
         return $this->member;
+    }
+
+    public function hasMember()
+    {
+        return isset($this->member);
+    }
+
+    public function clearMember()
+    {
+        unset($this->member);
     }
 
     /**

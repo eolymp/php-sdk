@@ -34,11 +34,21 @@ class DescribeCountryOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.geography.Country country = 1;</code>
-     * @return \Eolymp\Geography\Country
+     * @return \Eolymp\Geography\Country|null
      */
     public function getCountry()
     {
         return $this->country;
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
     }
 
     /**

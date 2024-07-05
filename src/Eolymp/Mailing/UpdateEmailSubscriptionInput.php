@@ -32,7 +32,7 @@ class UpdateEmailSubscriptionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $token
      *           secret from the email
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $subscriptions
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $subscriptions
      * }
      */
     public function __construct($data = NULL) {
@@ -77,7 +77,7 @@ class UpdateEmailSubscriptionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType subscriptions = 2;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSubscriptions($var)

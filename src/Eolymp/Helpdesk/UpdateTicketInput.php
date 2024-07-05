@@ -61,11 +61,21 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.helpdesk.Ticket ticket = 2;</code>
-     * @return \Eolymp\Helpdesk\Ticket
+     * @return \Eolymp\Helpdesk\Ticket|null
      */
     public function getTicket()
     {
         return $this->ticket;
+    }
+
+    public function hasTicket()
+    {
+        return isset($this->ticket);
+    }
+
+    public function clearTicket()
+    {
+        unset($this->ticket);
     }
 
     /**

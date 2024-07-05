@@ -108,11 +108,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 10;</code>
-     * @return \Eolymp\Universe\Quota
+     * @return \Eolymp\Universe\Quota|null
      */
     public function getQuota()
     {
         return $this->quota;
+    }
+
+    public function hasQuota()
+    {
+        return isset($this->quota);
+    }
+
+    public function clearQuota()
+    {
+        unset($this->quota);
     }
 
     /**
@@ -130,11 +140,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp billing_period_start = 90;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getBillingPeriodStart()
     {
         return $this->billing_period_start;
+    }
+
+    public function hasBillingPeriodStart()
+    {
+        return isset($this->billing_period_start);
+    }
+
+    public function clearBillingPeriodStart()
+    {
+        unset($this->billing_period_start);
     }
 
     /**
@@ -152,11 +172,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp billing_period_end = 91;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getBillingPeriodEnd()
     {
         return $this->billing_period_end;
+    }
+
+    public function hasBillingPeriodEnd()
+    {
+        return isset($this->billing_period_end);
+    }
+
+    public function clearBillingPeriodEnd()
+    {
+        unset($this->billing_period_end);
     }
 
     /**
@@ -174,11 +204,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp quota_period_start = 92;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getQuotaPeriodStart()
     {
         return $this->quota_period_start;
+    }
+
+    public function hasQuotaPeriodStart()
+    {
+        return isset($this->quota_period_start);
+    }
+
+    public function clearQuotaPeriodStart()
+    {
+        unset($this->quota_period_start);
     }
 
     /**
@@ -196,11 +236,21 @@ class Subscription extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp quota_period_end = 93;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getQuotaPeriodEnd()
     {
         return $this->quota_period_end;
+    }
+
+    public function hasQuotaPeriodEnd()
+    {
+        return isset($this->quota_period_end);
+    }
+
+    public function clearQuotaPeriodEnd()
+    {
+        unset($this->quota_period_end);
     }
 
     /**

@@ -34,11 +34,21 @@ class ListLanguagesInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.ListLanguagesInput.Filter filters = 40;</code>
-     * @return \Eolymp\Executor\ListLanguagesInput\Filter
+     * @return \Eolymp\Executor\ListLanguagesInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -48,7 +58,7 @@ class ListLanguagesInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\ListLanguagesInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\ListLanguagesInput\Filter::class);
         $this->filters = $var;
 
         return $this;

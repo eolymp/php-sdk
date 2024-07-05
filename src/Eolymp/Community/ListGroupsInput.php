@@ -88,11 +88,21 @@ class ListGroupsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.ListGroupsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Community\ListGroupsInput\Filter
+     * @return \Eolymp\Community\ListGroupsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -102,7 +112,7 @@ class ListGroupsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\ListGroupsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\ListGroupsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

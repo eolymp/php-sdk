@@ -132,11 +132,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Job.Step.Write write = 10;</code>
-     * @return \Eolymp\Executor\Job\Step\Write
+     * @return \Eolymp\Executor\Job\Step\Write|null
      */
     public function getWrite()
     {
         return $this->readOneof(10);
+    }
+
+    public function hasWrite()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
@@ -146,7 +151,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setWrite($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Write::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Job\Step\Write::class);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -154,11 +159,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Job.Step.Copy copy = 11;</code>
-     * @return \Eolymp\Executor\Job\Step\Copy
+     * @return \Eolymp\Executor\Job\Step\Copy|null
      */
     public function getCopy()
     {
         return $this->readOneof(11);
+    }
+
+    public function hasCopy()
+    {
+        return $this->hasOneof(11);
     }
 
     /**
@@ -168,7 +178,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setCopy($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Copy::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Job\Step\Copy::class);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -176,11 +186,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Job.Step.Execute execute = 12;</code>
-     * @return \Eolymp\Executor\Job\Step\Execute
+     * @return \Eolymp\Executor\Job\Step\Execute|null
      */
     public function getExecute()
     {
         return $this->readOneof(12);
+    }
+
+    public function hasExecute()
+    {
+        return $this->hasOneof(12);
     }
 
     /**
@@ -190,7 +205,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setExecute($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Execute::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Job\Step\Execute::class);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -198,11 +213,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Job.Step.Upload upload = 13;</code>
-     * @return \Eolymp\Executor\Job\Step\Upload
+     * @return \Eolymp\Executor\Job\Step\Upload|null
      */
     public function getUpload()
     {
         return $this->readOneof(13);
+    }
+
+    public function hasUpload()
+    {
+        return $this->hasOneof(13);
     }
 
     /**
@@ -212,7 +232,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setUpload($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Upload::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Job\Step\Upload::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -220,11 +240,16 @@ class Step extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Job.Step.Group group = 14;</code>
-     * @return \Eolymp\Executor\Job\Step\Group
+     * @return \Eolymp\Executor\Job\Step\Group|null
      */
     public function getGroup()
     {
         return $this->readOneof(14);
+    }
+
+    public function hasGroup()
+    {
+        return $this->hasOneof(14);
     }
 
     /**
@@ -234,7 +259,7 @@ class Step extends \Google\Protobuf\Internal\Message
      */
     public function setGroup($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job_Step_Group::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Job\Step\Group::class);
         $this->writeOneof(14, $var);
 
         return $this;

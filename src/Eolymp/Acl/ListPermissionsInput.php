@@ -88,11 +88,21 @@ class ListPermissionsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.acl.ListPermissionsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Acl\ListPermissionsInput\Filter
+     * @return \Eolymp\Acl\ListPermissionsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -102,7 +112,7 @@ class ListPermissionsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Acl\ListPermissionsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Acl\ListPermissionsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

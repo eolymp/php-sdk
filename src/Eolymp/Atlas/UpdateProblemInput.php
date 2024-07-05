@@ -34,7 +34,7 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
      *     @type string $problem_id
      *     @type \Eolymp\Atlas\Problem $problem
@@ -60,7 +60,7 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      * specify list of fields to update, if empty all fields are updated
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateProblemInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 3;</code>
-     * @return \Eolymp\Atlas\Problem
+     * @return \Eolymp\Atlas\Problem|null
      */
     public function getProblem()
     {
         return $this->problem;
+    }
+
+    public function hasProblem()
+    {
+        return isset($this->problem);
+    }
+
+    public function clearProblem()
+    {
+        unset($this->problem);
     }
 
     /**

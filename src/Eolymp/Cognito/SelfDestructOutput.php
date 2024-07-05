@@ -34,11 +34,21 @@ class SelfDestructOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp delete_on = 1;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeleteOn()
     {
         return $this->delete_on;
+    }
+
+    public function hasDeleteOn()
+    {
+        return isset($this->delete_on);
+    }
+
+    public function clearDeleteOn()
+    {
+        unset($this->delete_on);
     }
 
     /**

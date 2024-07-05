@@ -34,11 +34,21 @@ class DescribeTranslationOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.l10n.Term term = 1;</code>
-     * @return \Eolymp\L10n\Term
+     * @return \Eolymp\L10n\Term|null
      */
     public function getTerm()
     {
         return $this->term;
+    }
+
+    public function hasTerm()
+    {
+        return isset($this->term);
+    }
+
+    public function clearTerm()
+    {
+        unset($this->term);
     }
 
     /**

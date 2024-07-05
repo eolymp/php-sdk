@@ -34,11 +34,21 @@ class CreateAutoReplyInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.helpdesk.AutoReply reply = 1;</code>
-     * @return \Eolymp\Helpdesk\AutoReply
+     * @return \Eolymp\Helpdesk\AutoReply|null
      */
     public function getReply()
     {
         return $this->reply;
+    }
+
+    public function hasReply()
+    {
+        return isset($this->reply);
+    }
+
+    public function clearReply()
+    {
+        unset($this->reply);
     }
 
     /**

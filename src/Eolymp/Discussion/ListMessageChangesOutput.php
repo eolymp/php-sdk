@@ -24,7 +24,7 @@ class ListMessageChangesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Discussion\ListMessageChangesOutput\Record[]|\Google\Protobuf\Internal\RepeatedField $history
+     *     @type array<\Eolymp\Discussion\ListMessageChangesOutput\Record>|\Google\Protobuf\Internal\RepeatedField $history
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class ListMessageChangesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.ListMessageChangesOutput.Record history = 1;</code>
-     * @param \Eolymp\Discussion\ListMessageChangesOutput\Record[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Discussion\ListMessageChangesOutput\Record>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHistory($var)

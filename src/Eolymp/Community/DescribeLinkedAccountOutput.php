@@ -34,11 +34,21 @@ class DescribeLinkedAccountOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.LinkedAccount link = 1;</code>
-     * @return \Eolymp\Community\LinkedAccount
+     * @return \Eolymp\Community\LinkedAccount|null
      */
     public function getLink()
     {
         return $this->link;
+    }
+
+    public function hasLink()
+    {
+        return isset($this->link);
+    }
+
+    public function clearLink()
+    {
+        unset($this->link);
     }
 
     /**

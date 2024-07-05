@@ -127,11 +127,21 @@ class ListNewsletterTranslationsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.newsletter.ListNewsletterTranslationsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Newsletter\ListNewsletterTranslationsInput\Filter
+     * @return \Eolymp\Newsletter\ListNewsletterTranslationsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -143,7 +153,7 @@ class ListNewsletterTranslationsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Newsletter\ListNewsletterTranslationsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Newsletter\ListNewsletterTranslationsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

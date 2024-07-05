@@ -149,7 +149,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\L10n\Translation_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\L10n\Translation\Status::class);
         $this->status = $var;
 
         return $this;
@@ -201,11 +201,21 @@ class Translation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -223,11 +233,21 @@ class Translation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getApprovedAt()
     {
         return $this->approved_at;
+    }
+
+    public function hasApprovedAt()
+    {
+        return isset($this->approved_at);
+    }
+
+    public function clearApprovedAt()
+    {
+        unset($this->approved_at);
     }
 
     /**

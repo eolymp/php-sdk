@@ -115,11 +115,21 @@ class TranslateValueInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.taxonomy.Value.Translation translation = 4;</code>
-     * @return \Eolymp\Taxonomy\Value\Translation
+     * @return \Eolymp\Taxonomy\Value\Translation|null
      */
     public function getTranslation()
     {
         return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**
@@ -129,7 +139,7 @@ class TranslateValueInput extends \Google\Protobuf\Internal\Message
      */
     public function setTranslation($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\Value_Translation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\Value\Translation::class);
         $this->translation = $var;
 
         return $this;

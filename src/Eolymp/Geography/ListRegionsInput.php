@@ -108,11 +108,21 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.geography.ListRegionsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Geography\ListRegionsInput\Filter
+     * @return \Eolymp\Geography\ListRegionsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -124,7 +134,7 @@ class ListRegionsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Geography\ListRegionsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Geography\ListRegionsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

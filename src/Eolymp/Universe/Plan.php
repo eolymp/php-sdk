@@ -56,10 +56,10 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Quota $quota
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *     @type int $min_seats
      *     @type int $max_seats
-     *     @type \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
     public function __construct($data = NULL) {
@@ -113,11 +113,21 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
     }
 
     /**
@@ -135,11 +145,21 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 4;</code>
-     * @return \Eolymp\Universe\Quota
+     * @return \Eolymp\Universe\Quota|null
      */
     public function getQuota()
     {
         return $this->quota;
+    }
+
+    public function hasQuota()
+    {
+        return isset($this->quota);
+    }
+
+    public function clearQuota()
+    {
+        unset($this->quota);
     }
 
     /**
@@ -166,7 +186,7 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
@@ -232,7 +252,7 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
-     * @param \Eolymp\Universe\Plan\Variant[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setVariants($var)

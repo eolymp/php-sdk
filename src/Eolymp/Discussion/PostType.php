@@ -44,7 +44,7 @@ class PostType extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type bool $hidden
      *     @type int $order
-     *     @type \Eolymp\Discussion\PostType\Variant[]|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type array<\Eolymp\Discussion\PostType\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
      * }
      */
     public function __construct($data = NULL) {
@@ -151,7 +151,7 @@ class PostType extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.PostType.Variant variants = 100;</code>
-     * @param \Eolymp\Discussion\PostType\Variant[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Discussion\PostType\Variant>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setVariants($var)

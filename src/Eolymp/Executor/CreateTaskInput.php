@@ -39,11 +39,21 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Task task = 1;</code>
-     * @return \Eolymp\Executor\Task
+     * @return \Eolymp\Executor\Task|null
      */
     public function getTask()
     {
         return $this->task;
+    }
+
+    public function hasTask()
+    {
+        return isset($this->task);
+    }
+
+    public function clearTask()
+    {
+        unset($this->task);
     }
 
     /**
@@ -61,11 +71,21 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Job job = 2;</code>
-     * @return \Eolymp\Executor\Job
+     * @return \Eolymp\Executor\Job|null
      */
     public function getJob()
     {
         return $this->job;
+    }
+
+    public function hasJob()
+    {
+        return isset($this->job);
+    }
+
+    public function clearJob()
+    {
+        unset($this->job);
     }
 
     /**

@@ -44,11 +44,21 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
-     * @return \Eolymp\Discussion\Post
+     * @return \Eolymp\Discussion\Post|null
      */
     public function getPost()
     {
         return $this->post;
+    }
+
+    public function hasPost()
+    {
+        return isset($this->post);
+    }
+
+    public function clearPost()
+    {
+        unset($this->post);
     }
 
     /**
@@ -66,11 +76,21 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 2;</code>
-     * @return \Eolymp\Discussion\Post\Translation
+     * @return \Eolymp\Discussion\Post\Translation|null
      */
     public function getBefore()
     {
         return $this->before;
+    }
+
+    public function hasBefore()
+    {
+        return isset($this->before);
+    }
+
+    public function clearBefore()
+    {
+        unset($this->before);
     }
 
     /**
@@ -80,7 +100,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
      */
     public function setBefore($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Translation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post\Translation::class);
         $this->before = $var;
 
         return $this;
@@ -88,11 +108,21 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post.Translation after = 3;</code>
-     * @return \Eolymp\Discussion\Post\Translation
+     * @return \Eolymp\Discussion\Post\Translation|null
      */
     public function getAfter()
     {
         return $this->after;
+    }
+
+    public function hasAfter()
+    {
+        return isset($this->after);
+    }
+
+    public function clearAfter()
+    {
+        unset($this->after);
     }
 
     /**
@@ -102,7 +132,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
      */
     public function setAfter($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post_Translation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post\Translation::class);
         $this->after = $var;
 
         return $this;

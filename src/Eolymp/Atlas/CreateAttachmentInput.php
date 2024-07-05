@@ -61,11 +61,21 @@ class CreateAttachmentInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Attachment attachment = 2;</code>
-     * @return \Eolymp\Atlas\Attachment
+     * @return \Eolymp\Atlas\Attachment|null
      */
     public function getAttachment()
     {
         return $this->attachment;
+    }
+
+    public function hasAttachment()
+    {
+        return isset($this->attachment);
+    }
+
+    public function clearAttachment()
+    {
+        unset($this->attachment);
     }
 
     /**

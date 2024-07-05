@@ -14,9 +14,21 @@ class Usage
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a83030a1b656f6c796d702f6578656375746f722f75736167652e70726f746f120f656f6c796d702e6578656375746f722295020a0d5265736f75726365557361676512150a0d757365725f6370755f74696d6518012001280d12170a0f73797374656d5f6370755f74696d6518022001280d121d0a156d61785f7265736964656e745f7365745f73697a6518032001280d12150a0d706167655f7265636c61696d7318042001280d12130a0b706167655f6661756c747318052001280d121e0a16626c6f636b5f696e7075745f6f7065726174696f6e7318062001280d121f0a17626c6f636b5f6f75747075745f6f7065726174696f6e7318072001280d12220a1a766f6c756e746172795f636f6e746578745f737769746368657318082001280d12240a1c696e766f6c756e746172795f636f6e746578745f737769746368657318092001280d42335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6578656375746f723b6578656375746f72620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ƒ
+eolymp/executor/usage.protoeolymp.executor"•
+ResourceUsage
+user_cpu_time (
+system_cpu_time (
+max_resident_set_size (
+page_reclaims (
+page_faults (
+block_input_operations (
+block_output_operations ("
+voluntary_context_switches ($
+involuntary_context_switches	 (B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

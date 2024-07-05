@@ -34,7 +34,7 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Community\Member $member
      *     @type \Eolymp\Community\Member $team
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -44,11 +44,21 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Member member = 1;</code>
-     * @return \Eolymp\Community\Member
+     * @return \Eolymp\Community\Member|null
      */
     public function getMember()
     {
         return $this->member;
+    }
+
+    public function hasMember()
+    {
+        return isset($this->member);
+    }
+
+    public function clearMember()
+    {
+        unset($this->member);
     }
 
     /**
@@ -66,11 +76,21 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Member team = 2;</code>
-     * @return \Eolymp\Community\Member
+     * @return \Eolymp\Community\Member|null
      */
     public function getTeam()
     {
         return $this->team;
+    }
+
+    public function hasTeam()
+    {
+        return isset($this->team);
+    }
+
+    public function clearTeam()
+    {
+        unset($this->team);
     }
 
     /**
@@ -97,7 +117,7 @@ class DescribeAccountOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

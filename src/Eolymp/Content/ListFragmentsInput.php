@@ -60,7 +60,7 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      *     @type int $sort
      *     @type int $order
      *     @type string $locale
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -120,11 +120,21 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.content.ListFragmentsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Content\ListFragmentsInput\Filter
+     * @return \Eolymp\Content\ListFragmentsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -136,7 +146,7 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\ListFragmentsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Content\ListFragmentsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
@@ -158,7 +168,7 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      */
     public function setSort($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Content\ListFragmentsInput_Sort::class);
+        GPBUtil::checkEnum($var, \Eolymp\Content\ListFragmentsInput\Sort::class);
         $this->sort = $var;
 
         return $this;
@@ -219,7 +229,7 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

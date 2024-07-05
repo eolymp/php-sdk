@@ -39,7 +39,7 @@ class Image extends \Google\Protobuf\Internal\Message
      *     @type string $src
      *     @type int $width
      *     @type int $height
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $class
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $class
      * }
      */
     public function __construct($data = NULL) {
@@ -124,7 +124,7 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string class = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setClass($var)

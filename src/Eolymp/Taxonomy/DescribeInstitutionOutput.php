@@ -34,11 +34,21 @@ class DescribeInstitutionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.taxonomy.Institution institution = 1;</code>
-     * @return \Eolymp\Taxonomy\Institution
+     * @return \Eolymp\Taxonomy\Institution|null
      */
     public function getInstitution()
     {
         return $this->institution;
+    }
+
+    public function hasInstitution()
+    {
+        return isset($this->institution);
+    }
+
+    public function clearInstitution()
+    {
+        unset($this->institution);
     }
 
     /**

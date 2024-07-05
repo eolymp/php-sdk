@@ -34,11 +34,21 @@ class LookupCodeTemplateOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Template template = 1;</code>
-     * @return \Eolymp\Judge\Template
+     * @return \Eolymp\Judge\Template|null
      */
     public function getTemplate()
     {
         return $this->template;
+    }
+
+    public function hasTemplate()
+    {
+        return isset($this->template);
+    }
+
+    public function clearTemplate()
+    {
+        unset($this->template);
     }
 
     /**

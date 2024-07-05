@@ -34,11 +34,21 @@ class StatusUpdatedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.executor.Status status = 1;</code>
-     * @return \Eolymp\Executor\Status
+     * @return \Eolymp\Executor\Status|null
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**

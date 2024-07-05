@@ -137,7 +137,7 @@ class Actor extends \Google\Protobuf\Internal\Message
      */
     public function setErrorCode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_Actor_Error::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report\Actor\Error::class);
         $this->error_code = $var;
 
         return $this;

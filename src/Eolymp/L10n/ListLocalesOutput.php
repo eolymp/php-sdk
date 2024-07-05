@@ -29,7 +29,7 @@ class ListLocalesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\L10n\ListLocalesOutput\Locale[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\L10n\ListLocalesOutput\Locale>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListLocalesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.l10n.ListLocalesOutput.Locale items = 2;</code>
-     * @param \Eolymp\L10n\ListLocalesOutput\Locale[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\L10n\ListLocalesOutput\Locale>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

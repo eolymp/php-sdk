@@ -134,7 +134,7 @@ class Configuration extends \Google\Protobuf\Internal\Message
      */
     public function setPostModeration($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Discussion\Configuration_Moderation::class);
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\Configuration\Moderation::class);
         $this->post_moderation = $var;
 
         return $this;
@@ -156,7 +156,7 @@ class Configuration extends \Google\Protobuf\Internal\Message
      */
     public function setCommentModeration($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Discussion\Configuration_Moderation::class);
+        GPBUtil::checkEnum($var, \Eolymp\Discussion\Configuration\Moderation::class);
         $this->comment_moderation = $var;
 
         return $this;

@@ -34,7 +34,7 @@ class UpdateRankingEventInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           defines rankingEvent props to be updated, empty means update everything
      *     @type string $event_id
      *     @type \Eolymp\Community\RankingEvent $event
@@ -60,7 +60,7 @@ class UpdateRankingEventInput extends \Google\Protobuf\Internal\Message
      * defines rankingEvent props to be updated, empty means update everything
      *
      * Generated from protobuf field <code>repeated .eolymp.community.UpdateRankingEventInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateRankingEventInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.RankingEvent event = 3;</code>
-     * @return \Eolymp\Community\RankingEvent
+     * @return \Eolymp\Community\RankingEvent|null
      */
     public function getEvent()
     {
         return $this->event;
+    }
+
+    public function hasEvent()
+    {
+        return isset($this->event);
+    }
+
+    public function clearEvent()
+    {
+        unset($this->event);
     }
 
     /**

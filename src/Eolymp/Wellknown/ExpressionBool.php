@@ -55,7 +55,7 @@ class ExpressionBool extends \Google\Protobuf\Internal\Message
      */
     public function setIs($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionBool_Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\ExpressionBool\Type::class);
         $this->is = $var;
 
         return $this;

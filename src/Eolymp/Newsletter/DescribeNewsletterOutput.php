@@ -34,11 +34,21 @@ class DescribeNewsletterOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.newsletter.Newsletter newsletter = 1;</code>
-     * @return \Eolymp\Newsletter\Newsletter
+     * @return \Eolymp\Newsletter\Newsletter|null
      */
     public function getNewsletter()
     {
         return $this->newsletter;
+    }
+
+    public function hasNewsletter()
+    {
+        return isset($this->newsletter);
+    }
+
+    public function clearNewsletter()
+    {
+        unset($this->newsletter);
     }
 
     /**

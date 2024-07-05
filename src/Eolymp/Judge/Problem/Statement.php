@@ -137,11 +137,21 @@ class Statement extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Node content = 4;</code>
-     * @return \Eolymp\Ecm\Node
+     * @return \Eolymp\Ecm\Node|null
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
     }
 
     /**
@@ -177,7 +187,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     public function setFormat($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Problem_Statement_Format::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Problem\Statement\Format::class);
         $this->format = $var;
 
         return $this;

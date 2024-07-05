@@ -45,7 +45,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
      *           optionally, request name and description in particular locale
      *     @type string $currency
      *           optionally, request variants in particular currency
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -138,7 +138,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Extra extra = 1123;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)

@@ -24,7 +24,7 @@ class ListRuntimeOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Executor\Runtime[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Executor\Runtime>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class ListRuntimeOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.Runtime items = 2;</code>
-     * @param \Eolymp\Executor\Runtime[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Runtime>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

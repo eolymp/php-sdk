@@ -107,7 +107,7 @@ class ReviewSuggestionInput extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Suggestion_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Suggestion\Status::class);
         $this->status = $var;
 
         return $this;
@@ -115,11 +115,21 @@ class ReviewSuggestionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content comment = 4;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getComment()
     {
         return $this->comment;
+    }
+
+    public function hasComment()
+    {
+        return isset($this->comment);
+    }
+
+    public function clearComment()
+    {
+        unset($this->comment);
     }
 
     /**

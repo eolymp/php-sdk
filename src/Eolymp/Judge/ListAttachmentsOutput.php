@@ -29,7 +29,7 @@ class ListAttachmentsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Judge\Problem\Attachment[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Judge\Problem\Attachment>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ListAttachmentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Attachment items = 2;</code>
-     * @param \Eolymp\Judge\Problem\Attachment[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Judge\Problem\Attachment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

@@ -100,11 +100,21 @@ class ListUsersInput extends \Google\Protobuf\Internal\Message
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.cognito.ListUsersInput.Filter filters = 40;</code>
-     * @return \Eolymp\Cognito\ListUsersInput\Filter
+     * @return \Eolymp\Cognito\ListUsersInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -116,7 +126,7 @@ class ListUsersInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Cognito\ListUsersInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Cognito\ListUsersInput\Filter::class);
         $this->filters = $var;
 
         return $this;

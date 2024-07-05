@@ -34,7 +34,7 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
      *     @type string $assignment_id
      *     @type \Eolymp\Course\Assignment $assignment
@@ -60,7 +60,7 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
      * specify list of fields to update, if empty all fields are updated
      *
      * Generated from protobuf field <code>repeated .eolymp.course.UpdateAssignmentInput.Patch patch = 1;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateAssignmentInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 3;</code>
-     * @return \Eolymp\Course\Assignment
+     * @return \Eolymp\Course\Assignment|null
      */
     public function getAssignment()
     {
         return $this->assignment;
+    }
+
+    public function hasAssignment()
+    {
+        return isset($this->assignment);
+    }
+
+    public function clearAssignment()
+    {
+        unset($this->assignment);
     }
 
     /**

@@ -71,11 +71,21 @@ class ExpressionColumn extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 10;</code>
-     * @return \Eolymp\Wellknown\ExpressionString
+     * @return \Eolymp\Wellknown\ExpressionString|null
      */
     public function getString()
     {
         return $this->string;
+    }
+
+    public function hasString()
+    {
+        return isset($this->string);
+    }
+
+    public function clearString()
+    {
+        unset($this->string);
     }
 
     /**
@@ -93,11 +103,21 @@ class ExpressionColumn extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt number = 11;</code>
-     * @return \Eolymp\Wellknown\ExpressionInt
+     * @return \Eolymp\Wellknown\ExpressionInt|null
      */
     public function getNumber()
     {
         return $this->number;
+    }
+
+    public function hasNumber()
+    {
+        return isset($this->number);
+    }
+
+    public function clearNumber()
+    {
+        unset($this->number);
     }
 
     /**
@@ -115,11 +135,21 @@ class ExpressionColumn extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.wellknown.ExpressionEnum enum = 12;</code>
-     * @return \Eolymp\Wellknown\ExpressionEnum
+     * @return \Eolymp\Wellknown\ExpressionEnum|null
      */
     public function getEnum()
     {
         return $this->enum;
+    }
+
+    public function hasEnum()
+    {
+        return isset($this->enum);
+    }
+
+    public function clearEnum()
+    {
+        unset($this->enum);
     }
 
     /**

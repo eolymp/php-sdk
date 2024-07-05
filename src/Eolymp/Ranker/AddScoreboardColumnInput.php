@@ -61,11 +61,21 @@ class AddScoreboardColumnInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard.Column column = 2;</code>
-     * @return \Eolymp\Ranker\Scoreboard\Column
+     * @return \Eolymp\Ranker\Scoreboard\Column|null
      */
     public function getColumn()
     {
         return $this->column;
+    }
+
+    public function hasColumn()
+    {
+        return isset($this->column);
+    }
+
+    public function clearColumn()
+    {
+        unset($this->column);
     }
 
     /**
@@ -75,7 +85,7 @@ class AddScoreboardColumnInput extends \Google\Protobuf\Internal\Message
      */
     public function setColumn($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard_Column::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard\Column::class);
         $this->column = $var;
 
         return $this;

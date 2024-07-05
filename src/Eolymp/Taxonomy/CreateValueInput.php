@@ -61,11 +61,21 @@ class CreateValueInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.taxonomy.Value value = 2;</code>
-     * @return \Eolymp\Taxonomy\Value
+     * @return \Eolymp\Taxonomy\Value|null
      */
     public function getValue()
     {
         return $this->value;
+    }
+
+    public function hasValue()
+    {
+        return isset($this->value);
+    }
+
+    public function clearValue()
+    {
+        unset($this->value);
     }
 
     /**

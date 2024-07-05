@@ -88,11 +88,21 @@ class ListScoreboardsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.ranker.ListScoreboardsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Ranker\ListScoreboardsInput\Filter
+     * @return \Eolymp\Ranker\ListScoreboardsInput\Filter|null
      */
     public function getFilters()
     {
         return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
@@ -102,7 +112,7 @@ class ListScoreboardsInput extends \Google\Protobuf\Internal\Message
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\ListScoreboardsInput_Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Ranker\ListScoreboardsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

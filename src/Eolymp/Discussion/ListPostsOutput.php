@@ -33,7 +33,7 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Discussion\Post[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Discussion\Post>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type string $next_page_cursor
      * }
      */
@@ -75,7 +75,7 @@ class ListPostsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Post items = 2;</code>
-     * @param \Eolymp\Discussion\Post[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Discussion\Post>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

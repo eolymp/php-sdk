@@ -52,7 +52,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Overall run status.
      *     @type string $error_message
      *           Error message in case of failure.
-     *     @type \Eolymp\Executor\Report\Step[]|\Google\Protobuf\Internal\RepeatedField $steps
+     *     @type array<\Eolymp\Executor\Report\Step>|\Google\Protobuf\Internal\RepeatedField $steps
      *           Statuses for steps.
      * }
      */
@@ -107,7 +107,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\Report_State::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\Report\State::class);
         $this->state = $var;
 
         return $this;
@@ -154,7 +154,7 @@ class Run extends \Google\Protobuf\Internal\Message
      * Statuses for steps.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Report.Step steps = 10;</code>
-     * @param \Eolymp\Executor\Report\Step[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Eolymp\Executor\Report\Step>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSteps($var)

@@ -51,7 +51,7 @@ class CreateTokenOutput extends \Google\Protobuf\Internal\Message
      *     @type string $token
      *     @type string $type
      *     @type \Google\Protobuf\Timestamp $expires_at
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $scopes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scopes
      *     @type string $refresh_token
      *     @type string $user_id
      *     @type string $username
@@ -108,11 +108,21 @@ class CreateTokenOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 3;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpiresAt()
     {
         return $this->expires_at;
+    }
+
+    public function hasExpiresAt()
+    {
+        return isset($this->expires_at);
+    }
+
+    public function clearExpiresAt()
+    {
+        unset($this->expires_at);
     }
 
     /**
@@ -139,7 +149,7 @@ class CreateTokenOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string scopes = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setScopes($var)

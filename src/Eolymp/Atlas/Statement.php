@@ -199,11 +199,21 @@ class Statement extends \Google\Protobuf\Internal\Message
      * Statement content.
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
-     * @return \Eolymp\Ecm\Content
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getContent()
     {
         return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
     }
 
     /**

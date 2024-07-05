@@ -42,11 +42,21 @@ class CreateAccountInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.community.Member member = 1;</code>
-     * @return \Eolymp\Community\Member
+     * @return \Eolymp\Community\Member|null
      */
     public function getMember()
     {
         return $this->member;
+    }
+
+    public function hasMember()
+    {
+        return isset($this->member);
+    }
+
+    public function clearMember()
+    {
+        unset($this->member);
     }
 
     /**

@@ -61,11 +61,21 @@ class CreateSolutionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Solution solution = 2;</code>
-     * @return \Eolymp\Atlas\Solution
+     * @return \Eolymp\Atlas\Solution|null
      */
     public function getSolution()
     {
         return $this->solution;
+    }
+
+    public function hasSolution()
+    {
+        return isset($this->solution);
+    }
+
+    public function clearSolution()
+    {
+        unset($this->solution);
     }
 
     /**

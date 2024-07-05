@@ -34,11 +34,21 @@ class JobTriggerEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.worker.Job job = 1;</code>
-     * @return \Eolymp\Worker\Job
+     * @return \Eolymp\Worker\Job|null
      */
     public function getJob()
     {
         return $this->job;
+    }
+
+    public function hasJob()
+    {
+        return isset($this->job);
+    }
+
+    public function clearJob()
+    {
+        unset($this->job);
     }
 
     /**

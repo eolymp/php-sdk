@@ -119,6 +119,11 @@ class Assignment extends \Google\Protobuf\Internal\Message
         return $this->readOneof(1);
     }
 
+    public function hasMemberId()
+    {
+        return $this->hasOneof(1);
+    }
+
     /**
      * Generated from protobuf field <code>string member_id = 1;</code>
      * @param string $var
@@ -139,6 +144,11 @@ class Assignment extends \Google\Protobuf\Internal\Message
     public function getGroupId()
     {
         return $this->readOneof(2);
+    }
+
+    public function hasGroupId()
+    {
+        return $this->hasOneof(2);
     }
 
     /**
@@ -170,7 +180,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Course\Assignment_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Course\Assignment\Status::class);
         $this->status = $var;
 
         return $this;
@@ -180,11 +190,21 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * optionally, time by when assignment should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartAfter()
     {
         return $this->start_after;
+    }
+
+    public function hasStartAfter()
+    {
+        return isset($this->start_after);
+    }
+
+    public function clearStartAfter()
+    {
+        unset($this->start_after);
     }
 
     /**
@@ -206,11 +226,21 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * optionally, time by when assignment should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCompleteBefore()
     {
         return $this->complete_before;
+    }
+
+    public function hasCompleteBefore()
+    {
+        return isset($this->complete_before);
+    }
+
+    public function clearCompleteBefore()
+    {
+        unset($this->complete_before);
     }
 
     /**
@@ -258,11 +288,21 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * read-only, time when assignment was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -284,11 +324,21 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * read-only, time when assignment has been started (via StartAssignment API)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 25;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedAt()
     {
         return $this->started_at;
+    }
+
+    public function hasStartedAt()
+    {
+        return isset($this->started_at);
+    }
+
+    public function clearStartedAt()
+    {
+        unset($this->started_at);
     }
 
     /**
@@ -310,11 +360,21 @@ class Assignment extends \Google\Protobuf\Internal\Message
      * read-only, time when assignment will complete (started_at + duration)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 26;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCompletedAt()
     {
         return $this->completed_at;
+    }
+
+    public function hasCompletedAt()
+    {
+        return isset($this->completed_at);
+    }
+
+    public function clearCompletedAt()
+    {
+        unset($this->completed_at);
     }
 
     /**

@@ -86,11 +86,21 @@ class Recipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
     }
 
     /**
@@ -108,11 +118,21 @@ class Recipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
     }
 
     /**
@@ -130,11 +150,21 @@ class Recipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp sent_at = 12;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getSentAt()
     {
         return $this->sent_at;
+    }
+
+    public function hasSentAt()
+    {
+        return isset($this->sent_at);
+    }
+
+    public function clearSentAt()
+    {
+        unset($this->sent_at);
     }
 
     /**
@@ -152,11 +182,21 @@ class Recipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp delivered_at = 13;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeliveredAt()
     {
         return $this->delivered_at;
+    }
+
+    public function hasDeliveredAt()
+    {
+        return isset($this->delivered_at);
+    }
+
+    public function clearDeliveredAt()
+    {
+        unset($this->delivered_at);
     }
 
     /**
@@ -210,7 +250,7 @@ class Recipient extends \Google\Protobuf\Internal\Message
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Newsletter\Recipient_Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Newsletter\Recipient\Status::class);
         $this->status = $var;
 
         return $this;

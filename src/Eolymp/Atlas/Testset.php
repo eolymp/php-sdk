@@ -94,7 +94,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      *           Memory limit in bytes for runs within this testset.
      *     @type int|string $file_size_limit
      *           File size limit in bytes for runs within this testset.
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $dependencies
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dependencies
      *           List of other testset indices which must pass before this testset is executed.
      *     @type int $scoring_mode
      *           Score mode defines how score points are awarded for this testset. See ScoringMode enumeration for details.
@@ -304,7 +304,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      * List of other testset indices which must pass before this testset is executed.
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 20;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDependencies($var)

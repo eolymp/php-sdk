@@ -34,11 +34,21 @@ class DescribeCourseOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Course course = 1;</code>
-     * @return \Eolymp\Course\Course
+     * @return \Eolymp\Course\Course|null
      */
     public function getCourse()
     {
         return $this->course;
+    }
+
+    public function hasCourse()
+    {
+        return isset($this->course);
+    }
+
+    public function clearCourse()
+    {
+        unset($this->course);
     }
 
     /**

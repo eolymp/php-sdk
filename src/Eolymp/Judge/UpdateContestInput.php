@@ -34,7 +34,7 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
      *     @type string $contest_id
      *     @type \Eolymp\Judge\Contest $contest
@@ -60,7 +60,7 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
      * specify list of fields to update, if empty all fields are updated
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.UpdateContestInput.Patch patch = 3;</code>
-     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
@@ -95,11 +95,21 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.judge.Contest contest = 2;</code>
-     * @return \Eolymp\Judge\Contest
+     * @return \Eolymp\Judge\Contest|null
      */
     public function getContest()
     {
         return $this->contest;
+    }
+
+    public function hasContest()
+    {
+        return isset($this->contest);
+    }
+
+    public function clearContest()
+    {
+        unset($this->contest);
     }
 
     /**

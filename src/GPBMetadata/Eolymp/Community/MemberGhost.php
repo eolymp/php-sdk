@@ -14,9 +14,13 @@ class MemberGhost
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0a8d010a23656f6c796d702f636f6d6d756e6974792f6d656d6265725f67686f73742e70726f746f1210656f6c796d702e636f6d6d756e69747922150a0547686f7374120c0a046e616d6518012001280942355a336769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f636f6d6d756e6974793b636f6d6d756e697479620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ç
+#eolymp/community/member_ghost.protoeolymp.community"
+Ghost
+name (	B5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

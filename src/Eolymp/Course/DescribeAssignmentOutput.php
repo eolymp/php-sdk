@@ -34,11 +34,21 @@ class DescribeAssignmentOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 1;</code>
-     * @return \Eolymp\Course\Assignment
+     * @return \Eolymp\Course\Assignment|null
      */
     public function getAssignment()
     {
         return $this->assignment;
+    }
+
+    public function hasAssignment()
+    {
+        return isset($this->assignment);
+    }
+
+    public function clearAssignment()
+    {
+        unset($this->assignment);
     }
 
     /**

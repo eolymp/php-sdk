@@ -15,9 +15,18 @@ class RankingEvent
           return;
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ae4010a24656f6c796d702f636f6d6d756e6974792f72616e6b696e675f6576656e742e70726f746f1210656f6c796d702e636f6d6d756e697479226b0a0c52616e6b696e674576656e74120a0a026964180120012809120c0a046e616d65180220012809122d0a0974696d657374616d7018032001280b321a2e676f6f676c652e70726f746f6275662e54696d657374616d7012120a0a636f6e746573745f696418642001280942355a336769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f636f6d6d756e6974793b636f6d6d756e697479620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ä
+$eolymp/community/ranking_event.protoeolymp.community"k
+RankingEvent
+
+id (	
+name (	-
+	timestamp (2.google.protobuf.Timestamp
+
+contest_idd (	B5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
+        , true);
 
         static::$is_initialized = true;
     }

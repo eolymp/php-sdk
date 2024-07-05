@@ -47,11 +47,21 @@ class SimulateSubscriptionOutput extends \Google\Protobuf\Internal\Message
      * immediate due invoice
      *
      * Generated from protobuf field <code>.eolymp.commerce.Invoice due = 1;</code>
-     * @return \Eolymp\Commerce\Invoice
+     * @return \Eolymp\Commerce\Invoice|null
      */
     public function getDue()
     {
         return $this->due;
+    }
+
+    public function hasDue()
+    {
+        return isset($this->due);
+    }
+
+    public function clearDue()
+    {
+        unset($this->due);
     }
 
     /**
@@ -73,11 +83,21 @@ class SimulateSubscriptionOutput extends \Google\Protobuf\Internal\Message
      * next invoice in the end of the billing period
      *
      * Generated from protobuf field <code>.eolymp.commerce.Invoice invoice = 2;</code>
-     * @return \Eolymp\Commerce\Invoice
+     * @return \Eolymp\Commerce\Invoice|null
      */
     public function getInvoice()
     {
         return $this->invoice;
+    }
+
+    public function hasInvoice()
+    {
+        return isset($this->invoice);
+    }
+
+    public function clearInvoice()
+    {
+        unset($this->invoice);
     }
 
     /**

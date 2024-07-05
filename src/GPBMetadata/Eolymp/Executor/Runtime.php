@@ -14,9 +14,20 @@ class Runtime
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0ac5010a1d656f6c796d702f6578656375746f722f72756e74696d652e70726f746f120f656f6c796d702e6578656375746f7222560a0752756e74696d65120a0a026964180120012809120c0a046c616e67180220012809120f0a0776657273696f6e180320012809120c0a046e616d65180a2001280912120a0a64657072656361746564180c2001280842335a316769746875622e636f6d2f656f6c796d702f676f2d73646b2f656f6c796d702f6578656375746f723b6578656375746f72620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+Å
+eolymp/executor/runtime.protoeolymp.executor"V
+Runtime
+
+id (	
+lang (	
+version (	
+name
+ (	
+
+deprecated (B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

@@ -34,11 +34,21 @@ class DescribeSubscriptionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Subscription subscription = 1;</code>
-     * @return \Eolymp\Discussion\Subscription
+     * @return \Eolymp\Discussion\Subscription|null
      */
     public function getSubscription()
     {
         return $this->subscription;
+    }
+
+    public function hasSubscription()
+    {
+        return isset($this->subscription);
+    }
+
+    public function clearSubscription()
+    {
+        unset($this->subscription);
     }
 
     /**
