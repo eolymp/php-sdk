@@ -12,32 +12,22 @@ use UnexpectedValueException;
 class Sortable
 {
     /**
-     * Generated from protobuf enum <code>RANK = 0;</code>
+     * Generated from protobuf enum <code>DEFAULT = 0;</code>
      */
-    const RANK = 0;
+    const PBDEFAULT = 0;
     /**
-     * Generated from protobuf enum <code>SCORE = 1;</code>
+     * Generated from protobuf enum <code>DISPLAY_NAME = 1;</code>
      */
-    const SCORE = 1;
+    const DISPLAY_NAME = 1;
     /**
-     * Generated from protobuf enum <code>PENALTY = 2;</code>
+     * Generated from protobuf enum <code>STARTED_AT = 2;</code>
      */
-    const PENALTY = 2;
-    /**
-     * Generated from protobuf enum <code>STARTED_AT = 3;</code>
-     */
-    const STARTED_AT = 3;
-    /**
-     * Generated from protobuf enum <code>COMPLETE_AT = 4;</code>
-     */
-    const COMPLETE_AT = 4;
+    const STARTED_AT = 2;
 
     private static $valueToName = [
-        self::RANK => 'RANK',
-        self::SCORE => 'SCORE',
-        self::PENALTY => 'PENALTY',
+        self::PBDEFAULT => 'DEFAULT',
+        self::DISPLAY_NAME => 'DISPLAY_NAME',
         self::STARTED_AT => 'STARTED_AT',
-        self::COMPLETE_AT => 'COMPLETE_AT',
     ];
 
     public static function name($value)
@@ -54,8 +44,12 @@ class Sortable
     {
         $const = __CLASS__ . '::' . strtoupper($name);
         if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+            $pbconst =  __CLASS__. '::PB' . strtoupper($name);
+            if (!defined($pbconst)) {
+                throw new UnexpectedValueException(sprintf(
+                        'Enum %s has no value defined for name %s', __CLASS__, $name));
+            }
+            return constant($pbconst);
         }
         return constant($const);
     }

@@ -32,21 +32,21 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 4;</code>
-     */
-    private $score;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat penalty = 5;</code>
-     */
-    private $penalty;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp started_at = 6;</code>
      */
     private $started_at;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp complete_at = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool unofficial = 10;</code>
      */
-    private $complete_at;
+    private $unofficial;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool disqualified = 11;</code>
+     */
+    private $disqualified;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 12;</code>
+     */
+    private $inactive;
 
     /**
      * Constructor.
@@ -58,10 +58,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $member_id
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $score
-     *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $penalty
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $started_at
-     *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $complete_at
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $disqualified
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $inactive
      * }
      */
     public function __construct($data = NULL) {
@@ -158,50 +158,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getScore()
-    {
-        return $this->score;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 4;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setScore($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionFloat::class);
-        $this->score = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat penalty = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPenalty()
-    {
-        return $this->penalty;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat penalty = 5;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPenalty($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionFloat::class);
-        $this->penalty = $arr;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp started_at = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -224,23 +180,67 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp complete_at = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool unofficial = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getCompleteAt()
+    public function getUnofficial()
     {
-        return $this->complete_at;
+        return $this->unofficial;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp complete_at = 7;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool unofficial = 10;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setCompleteAt($var)
+    public function setUnofficial($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
-        $this->complete_at = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->unofficial = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool disqualified = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDisqualified()
+    {
+        return $this->disqualified;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool disqualified = 11;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDisqualified($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->disqualified = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 12;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->inactive = $arr;
 
         return $this;
     }
