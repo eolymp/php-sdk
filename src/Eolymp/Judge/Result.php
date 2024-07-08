@@ -34,6 +34,10 @@ class Result extends \Google\Protobuf\Internal\Message
      */
     protected $unofficial = false;
     /**
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     */
+    protected $disqualified = false;
+    /**
      * Generated from protobuf field <code>bool ghost = 9;</code>
      */
     protected $ghost = false;
@@ -65,6 +69,7 @@ class Result extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $name
      *     @type bool $unofficial
+     *     @type bool $disqualified
      *     @type bool $ghost
      *     @type int $medal
      *     @type int $rank
@@ -183,6 +188,28 @@ class Result extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     * @return bool
+     */
+    public function getDisqualified()
+    {
+        return $this->disqualified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisqualified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disqualified = $var;
 
         return $this;
     }

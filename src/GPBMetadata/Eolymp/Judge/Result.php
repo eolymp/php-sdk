@@ -18,8 +18,8 @@ class Result
         \GPBMetadata\Eolymp\Judge\Score::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ß
-eolymp/judge/result.protoeolymp.judgeeolymp/judge/score.proto"â
+õ
+eolymp/judge/result.protoeolymp.judgeeolymp/judge/score.proto"ø
 Result
 participant_id (	
 	member_id (	
@@ -27,7 +27,8 @@ class Result
 contest_id (	
 name (	
 
-unofficial (
+unofficial (
+disqualified (
 ghost	 ("
 medal (2.eolymp.judge.Medal
 rank (
