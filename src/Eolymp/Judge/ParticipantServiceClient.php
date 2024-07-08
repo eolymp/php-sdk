@@ -77,6 +77,25 @@ class ParticipantServiceClient {
     }
 
     /**
+     * @param DisqualifyParticipantInput $input message
+     * @param array $context request parameters
+     *
+     * @return DisqualifyParticipantOutput output message
+     */
+    public function DisqualifyParticipant(DisqualifyParticipantInput $input, array $context = [])
+    {
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/disqualify";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/DisqualifyParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DisqualifyParticipantOutput::class, $context);
+    }
+
+    /**
      * @param UpdateParticipantInput $input message
      * @param array $context request parameters
      *

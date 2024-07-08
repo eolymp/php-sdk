@@ -44,11 +44,17 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $unofficial = false;
     /**
-     * participant is active
+     * participant is inactive
      *
-     * Generated from protobuf field <code>bool active = 7;</code>
+     * Generated from protobuf field <code>bool inactive = 10;</code>
      */
-    protected $active = false;
+    protected $inactive = false;
+    /**
+     * participant is disqualified
+     *
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     */
+    protected $disqualified = false;
     /**
      * participant is a ghost
      *
@@ -126,8 +132,10 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           display name
      *     @type bool $unofficial
      *           if true, participant won't be assigned rank in scoreboard
-     *     @type bool $active
-     *           participant is active
+     *     @type bool $inactive
+     *           participant is inactive
+     *     @type bool $disqualified
+     *           participant is disqualified
      *     @type bool $ghost
      *           participant is a ghost
      *     @type int $medal
@@ -287,27 +295,53 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * participant is active
+     * participant is inactive
      *
-     * Generated from protobuf field <code>bool active = 7;</code>
+     * Generated from protobuf field <code>bool inactive = 10;</code>
      * @return bool
      */
-    public function getActive()
+    public function getInactive()
     {
-        return $this->active;
+        return $this->inactive;
     }
 
     /**
-     * participant is active
+     * participant is inactive
      *
-     * Generated from protobuf field <code>bool active = 7;</code>
+     * Generated from protobuf field <code>bool inactive = 10;</code>
      * @param bool $var
      * @return $this
      */
-    public function setActive($var)
+    public function setInactive($var)
     {
         GPBUtil::checkBool($var);
-        $this->active = $var;
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * participant is disqualified
+     *
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     * @return bool
+     */
+    public function getDisqualified()
+    {
+        return $this->disqualified;
+    }
+
+    /**
+     * participant is disqualified
+     *
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisqualified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disqualified = $var;
 
         return $this;
     }
