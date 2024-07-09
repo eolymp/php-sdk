@@ -4,7 +4,7 @@
 
 namespace Eolymp\Executor;
 
-class ExecutorClient {
+class LanguageServiceClient {
 
     /** @var string base URL */
     private $url;
@@ -35,7 +35,7 @@ class ExecutorClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setLanguageId("");
 
-        $context['name'] = "eolymp.executor.Executor/DescribeLanguage";
+        $context['name'] = "eolymp.executor.LanguageService/DescribeLanguage";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeLanguageOutput::class, $context);
@@ -51,7 +51,7 @@ class ExecutorClient {
     {
         $path = "/exec/languages";
 
-        $context['name'] = "eolymp.executor.Executor/ListLanguages";
+        $context['name'] = "eolymp.executor.LanguageService/ListLanguages";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListLanguagesOutput::class, $context);
@@ -70,7 +70,7 @@ class ExecutorClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRuntimeId("");
 
-        $context['name'] = "eolymp.executor.Executor/DescribeRuntime";
+        $context['name'] = "eolymp.executor.LanguageService/DescribeRuntime";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRuntimeOutput::class, $context);
@@ -86,7 +86,7 @@ class ExecutorClient {
     {
         $path = "/exec/runtime";
 
-        $context['name'] = "eolymp.executor.Executor/ListRuntime";
+        $context['name'] = "eolymp.executor.LanguageService/ListRuntime";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimeOutput::class, $context);
@@ -105,7 +105,7 @@ class ExecutorClient {
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRuntimeId("");
 
-        $context['name'] = "eolymp.executor.Executor/DescribeCodeTemplate";
+        $context['name'] = "eolymp.executor.LanguageService/DescribeCodeTemplate";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCodeTemplateOutput::class, $context);

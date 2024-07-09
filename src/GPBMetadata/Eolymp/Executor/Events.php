@@ -14,7 +14,7 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Executor\Report::initOnce();
+        \GPBMetadata\Eolymp\Executor\DeprecatedReport::initOnce();
         \GPBMetadata\Eolymp\Executor\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
