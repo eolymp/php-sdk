@@ -34,8 +34,8 @@ class RatingPoint
 url (	
 name (	
 score
- (
-penalty (
+ (
+penalty (
 tie_breaker (
 rank (
 

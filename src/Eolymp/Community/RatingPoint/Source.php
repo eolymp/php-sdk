@@ -26,13 +26,13 @@ class Source extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>uint32 score = 10;</code>
+     * Generated from protobuf field <code>float score = 10;</code>
      */
-    protected $score = 0;
+    protected $score = 0.0;
     /**
-     * Generated from protobuf field <code>uint32 penalty = 11;</code>
+     * Generated from protobuf field <code>float penalty = 11;</code>
      */
-    protected $penalty = 0;
+    protected $penalty = 0.0;
     /**
      * Generated from protobuf field <code>uint32 tie_breaker = 12;</code>
      */
@@ -59,8 +59,8 @@ class Source extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type string $name
-     *     @type int $score
-     *     @type int $penalty
+     *     @type float $score
+     *     @type float $penalty
      *     @type int $tie_breaker
      *     @type int $rank
      *     @type int $rank_lower
@@ -139,8 +139,8 @@ class Source extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 score = 10;</code>
-     * @return int
+     * Generated from protobuf field <code>float score = 10;</code>
+     * @return float
      */
     public function getScore()
     {
@@ -148,21 +148,21 @@ class Source extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 score = 10;</code>
-     * @param int $var
+     * Generated from protobuf field <code>float score = 10;</code>
+     * @param float $var
      * @return $this
      */
     public function setScore($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkFloat($var);
         $this->score = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 penalty = 11;</code>
-     * @return int
+     * Generated from protobuf field <code>float penalty = 11;</code>
+     * @return float
      */
     public function getPenalty()
     {
@@ -170,13 +170,13 @@ class Source extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 penalty = 11;</code>
-     * @param int $var
+     * Generated from protobuf field <code>float penalty = 11;</code>
+     * @param float $var
      * @return $this
      */
     public function setPenalty($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkFloat($var);
         $this->penalty = $var;
 
         return $this;
