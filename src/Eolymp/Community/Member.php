@@ -40,6 +40,12 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $rating = 0;
     /**
+     * level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
+     *
+     * Generated from protobuf field <code>uint32 level = 79;</code>
+     */
+    protected $level = 0;
+    /**
      * Generated from protobuf field <code>bool active = 10;</code>
      */
     protected $active = false;
@@ -100,6 +106,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type int $rank
      *     @type int $rank_lower
      *     @type int $rating
+     *     @type int $level
+     *           level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
      *     @type bool $active
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
@@ -255,6 +263,32 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->rating = $var;
+
+        return $this;
+    }
+
+    /**
+     * level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
+     *
+     * Generated from protobuf field <code>uint32 level = 79;</code>
+     * @return int
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
+     *
+     * Generated from protobuf field <code>uint32 level = 79;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLevel($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->level = $var;
 
         return $this;
     }
