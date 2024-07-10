@@ -189,4 +189,20 @@ class MemberServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberUsageOutput::class, $context);
     }
 
+    /**
+     * @param ListLevelsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListLevelsOutput output message
+     */
+    public function ListLevels(ListLevelsInput $input, array $context = [])
+    {
+        $path = "/levels";
+
+        $context['name'] = "eolymp.community.MemberService/ListLevels";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListLevelsOutput::class, $context);
+    }
+
 }
