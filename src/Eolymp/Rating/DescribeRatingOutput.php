@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeRatingOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating point = 1;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 1;</code>
      */
-    protected $point = null;
+    protected $rating = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribeRatingOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Rating\Rating $point
+     *     @type \Eolymp\Rating\Rating $rating
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +33,33 @@ class DescribeRatingOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating point = 1;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 1;</code>
      * @return \Eolymp\Rating\Rating|null
      */
-    public function getPoint()
+    public function getRating()
     {
-        return $this->point;
+        return $this->rating;
     }
 
-    public function hasPoint()
+    public function hasRating()
     {
-        return isset($this->point);
+        return isset($this->rating);
     }
 
-    public function clearPoint()
+    public function clearRating()
     {
-        unset($this->point);
+        unset($this->rating);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating point = 1;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 1;</code>
      * @param \Eolymp\Rating\Rating $var
      * @return $this
      */
-    public function setPoint($var)
+    public function setRating($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Rating\Rating::class);
-        $this->point = $var;
+        $this->rating = $var;
 
         return $this;
     }

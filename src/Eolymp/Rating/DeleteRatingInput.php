@@ -14,13 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteRatingInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string rating_id = 2;</code>
+     * Generated from protobuf field <code>string rating_id = 1;</code>
      */
     protected $rating_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating point = 3;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 2;</code>
      */
-    protected $point = null;
+    protected $rating = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class DeleteRatingInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $rating_id
-     *     @type \Eolymp\Rating\Rating $point
+     *     @type \Eolymp\Rating\Rating $rating
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class DeleteRatingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string rating_id = 2;</code>
+     * Generated from protobuf field <code>string rating_id = 1;</code>
      * @return string
      */
     public function getRatingId()
@@ -47,7 +47,7 @@ class DeleteRatingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string rating_id = 2;</code>
+     * Generated from protobuf field <code>string rating_id = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -60,33 +60,33 @@ class DeleteRatingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating point = 3;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 2;</code>
      * @return \Eolymp\Rating\Rating|null
      */
-    public function getPoint()
+    public function getRating()
     {
-        return $this->point;
+        return $this->rating;
     }
 
-    public function hasPoint()
+    public function hasRating()
     {
-        return isset($this->point);
+        return isset($this->rating);
     }
 
-    public function clearPoint()
+    public function clearRating()
     {
-        unset($this->point);
+        unset($this->rating);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating point = 3;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 2;</code>
      * @param \Eolymp\Rating\Rating $var
      * @return $this
      */
-    public function setPoint($var)
+    public function setRating($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Rating\Rating::class);
-        $this->point = $var;
+        $this->rating = $var;
 
         return $this;
     }
