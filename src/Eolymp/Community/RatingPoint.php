@@ -20,6 +20,10 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string ref = 2;</code>
+     */
+    protected $ref = '';
+    /**
      * rating point time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 4;</code>
@@ -32,21 +36,7 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      */
     protected $value = 0;
     /**
-     * contest_id which triggered rating change
-     *
-     * Generated from protobuf field <code>string contest_id = 20;</code>
-     */
-    protected $contest_id = '';
-    /**
-     * deprecated: keep empty
-     *
-     * Generated from protobuf field <code>string ref = 2;</code>
-     */
-    protected $ref = '';
-    /**
-     * deprecated: use contest_id instead
-     *
-     * Generated from protobuf field <code>string target_link = 22;</code>
+     * Generated from protobuf field <code>string target_link = 20;</code>
      */
     protected $target_link = '';
 
@@ -58,16 +48,12 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique rating point identifier
+     *     @type string $ref
      *     @type \Google\Protobuf\Timestamp $timestamp
      *           rating point time
      *     @type int $value
      *           rating value
-     *     @type string $contest_id
-     *           contest_id which triggered rating change
-     *     @type string $ref
-     *           deprecated: keep empty
      *     @type string $target_link
-     *           deprecated: use contest_id instead
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +83,28 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ref = 2;</code>
+     * @return string
+     */
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    /**
+     * Generated from protobuf field <code>string ref = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRef($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ref = $var;
 
         return $this;
     }
@@ -164,61 +172,7 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * contest_id which triggered rating change
-     *
-     * Generated from protobuf field <code>string contest_id = 20;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * contest_id which triggered rating change
-     *
-     * Generated from protobuf field <code>string contest_id = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: keep empty
-     *
-     * Generated from protobuf field <code>string ref = 2;</code>
-     * @return string
-     */
-    public function getRef()
-    {
-        return $this->ref;
-    }
-
-    /**
-     * deprecated: keep empty
-     *
-     * Generated from protobuf field <code>string ref = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRef($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ref = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use contest_id instead
-     *
-     * Generated from protobuf field <code>string target_link = 22;</code>
+     * Generated from protobuf field <code>string target_link = 20;</code>
      * @return string
      */
     public function getTargetLink()
@@ -227,9 +181,7 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use contest_id instead
-     *
-     * Generated from protobuf field <code>string target_link = 22;</code>
+     * Generated from protobuf field <code>string target_link = 20;</code>
      * @param string $var
      * @return $this
      */

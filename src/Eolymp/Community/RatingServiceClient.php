@@ -60,39 +60,4 @@ class RatingServiceClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteRatingOutput::class, $context);
     }
 
-    /**
-     * @param DescribeRatingInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeRatingOutput output message
-     */
-    public function DescribeRating(DescribeRatingInput $input, array $context = [])
-    {
-        $path = "/rating/".rawurlencode($input->getRatingId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setRatingId("");
-
-        $context['name'] = "eolymp.community.RatingService/DescribeRating";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRatingOutput::class, $context);
-    }
-
-    /**
-     * @param ListRatingInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListRatingOutput output message
-     */
-    public function ListRating(ListRatingInput $input, array $context = [])
-    {
-        $path = "/rating";
-
-        $context['name'] = "eolymp.community.RatingService/ListRating";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRatingOutput::class, $context);
-    }
-
 }
