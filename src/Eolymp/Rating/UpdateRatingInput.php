@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateRatingInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 1;</code>
+     * Generated from protobuf field <code>string rating_id = 1;</code>
+     */
+    protected $rating_id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 2;</code>
      */
     protected $rating = null;
 
@@ -24,6 +28,7 @@ class UpdateRatingInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $rating_id
      *     @type \Eolymp\Rating\Rating $rating
      * }
      */
@@ -33,7 +38,29 @@ class UpdateRatingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 1;</code>
+     * Generated from protobuf field <code>string rating_id = 1;</code>
+     * @return string
+     */
+    public function getRatingId()
+    {
+        return $this->rating_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string rating_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRatingId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->rating_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 2;</code>
      * @return \Eolymp\Rating\Rating|null
      */
     public function getRating()
@@ -52,7 +79,7 @@ class UpdateRatingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 1;</code>
+     * Generated from protobuf field <code>.eolymp.rating.Rating rating = 2;</code>
      * @param \Eolymp\Rating\Rating $var
      * @return $this
      */
