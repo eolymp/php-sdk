@@ -38,9 +38,13 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      */
     protected $value = 0;
     /**
-     * optional url to the object being rated
+     * Generated from protobuf field <code>.eolymp.community.RatingPoint.Source source = 20;</code>
+     */
+    protected $source = null;
+    /**
+     * deprecated: use source instead
      *
-     * Generated from protobuf field <code>string target_link = 20;</code>
+     * Generated from protobuf field <code>string target_link = 22;</code>
      */
     protected $target_link = '';
 
@@ -58,8 +62,9 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      *           rating point time
      *     @type int $value
      *           rating value
+     *     @type \Eolymp\Community\RatingPoint\Source $source
      *     @type string $target_link
-     *           optional url to the object being rated
+     *           deprecated: use source instead
      * }
      */
     public function __construct($data = NULL) {
@@ -182,9 +187,41 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optional url to the object being rated
+     * Generated from protobuf field <code>.eolymp.community.RatingPoint.Source source = 20;</code>
+     * @return \Eolymp\Community\RatingPoint\Source|null
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    public function hasSource()
+    {
+        return isset($this->source);
+    }
+
+    public function clearSource()
+    {
+        unset($this->source);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.RatingPoint.Source source = 20;</code>
+     * @param \Eolymp\Community\RatingPoint\Source $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\RatingPoint\Source::class);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated: use source instead
      *
-     * Generated from protobuf field <code>string target_link = 20;</code>
+     * Generated from protobuf field <code>string target_link = 22;</code>
      * @return string
      */
     public function getTargetLink()
@@ -193,9 +230,9 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optional url to the object being rated
+     * deprecated: use source instead
      *
-     * Generated from protobuf field <code>string target_link = 20;</code>
+     * Generated from protobuf field <code>string target_link = 22;</code>
      * @param string $var
      * @return $this
      */

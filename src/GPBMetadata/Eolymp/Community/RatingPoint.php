@@ -17,16 +17,31 @@ class RatingPoint
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ñ
-#eolymp/community/rating_point.protoeolymp.community"y
+Å
+#eolymp/community/rating_point.protoeolymp.community"Ì
 RatingPoint
 
 id (	
 ref (	-
 	timestamp (2.google.protobuf.Timestamp
 value
- (
-target_link (	B5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
+ (4
+source (2$.eolymp.community.RatingPoint.Source
+target_link (	š
+Source
+
+id (	
+url (	
+name (	
+score
+ (
+penalty (
+tie_breaker (
+rank (
+
+rank_lower (
+
+rank_total (B5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
         , true);
 
         static::$is_initialized = true;
