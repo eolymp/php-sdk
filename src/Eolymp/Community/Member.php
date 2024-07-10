@@ -36,9 +36,9 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $rank_lower = 0;
     /**
-     * Generated from protobuf field <code>int32 score = 71;</code>
+     * Generated from protobuf field <code>int32 rating = 71;</code>
      */
-    protected $score = 0;
+    protected $rating = 0;
     /**
      * Generated from protobuf field <code>bool active = 10;</code>
      */
@@ -99,7 +99,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $url
      *     @type int $rank
      *     @type int $rank_lower
-     *     @type int $score
+     *     @type int $rating
      *     @type bool $active
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
@@ -238,23 +238,23 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 score = 71;</code>
+     * Generated from protobuf field <code>int32 rating = 71;</code>
      * @return int
      */
-    public function getScore()
+    public function getRating()
     {
-        return $this->score;
+        return $this->rating;
     }
 
     /**
-     * Generated from protobuf field <code>int32 score = 71;</code>
+     * Generated from protobuf field <code>int32 rating = 71;</code>
      * @param int $var
      * @return $this
      */
-    public function setScore($var)
+    public function setRating($var)
     {
         GPBUtil::checkInt32($var);
-        $this->score = $var;
+        $this->rating = $var;
 
         return $this;
     }

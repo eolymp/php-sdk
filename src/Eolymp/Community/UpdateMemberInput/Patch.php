@@ -30,6 +30,12 @@ class Patch
      */
     const UNOFFICIAL = 2;
     /**
+     * change rating
+     *
+     * Generated from protobuf enum <code>RATING = 6;</code>
+     */
+    const RATING = 6;
+    /**
      * change groups
      *
      * Generated from protobuf enum <code>GROUPS = 3;</code>
@@ -124,6 +130,7 @@ class Patch
         self::ALL => 'ALL',
         self::ACTIVE => 'ACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
+        self::RATING => 'RATING',
         self::GROUPS => 'GROUPS',
         self::GROUPS_ADD => 'GROUPS_ADD',
         self::GROUPS_REMOVE => 'GROUPS_REMOVE',

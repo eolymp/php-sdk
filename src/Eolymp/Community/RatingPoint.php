@@ -20,12 +20,6 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * optional, user provided reference key used to find rating point easily
-     *
-     * Generated from protobuf field <code>string ref = 2;</code>
-     */
-    protected $ref = '';
-    /**
      * rating point time
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 4;</code>
@@ -38,11 +32,19 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      */
     protected $value = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.community.RatingPoint.Source source = 20;</code>
+     * contest_id which triggered rating change
+     *
+     * Generated from protobuf field <code>string contest_id = 20;</code>
      */
-    protected $source = null;
+    protected $contest_id = '';
     /**
-     * deprecated: use source instead
+     * deprecated: keep empty
+     *
+     * Generated from protobuf field <code>string ref = 2;</code>
+     */
+    protected $ref = '';
+    /**
+     * deprecated: use contest_id instead
      *
      * Generated from protobuf field <code>string target_link = 22;</code>
      */
@@ -56,15 +58,16 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique rating point identifier
-     *     @type string $ref
-     *           optional, user provided reference key used to find rating point easily
      *     @type \Google\Protobuf\Timestamp $timestamp
      *           rating point time
      *     @type int $value
      *           rating value
-     *     @type \Eolymp\Community\RatingPoint\Source $source
+     *     @type string $contest_id
+     *           contest_id which triggered rating change
+     *     @type string $ref
+     *           deprecated: keep empty
      *     @type string $target_link
-     *           deprecated: use source instead
+     *           deprecated: use contest_id instead
      * }
      */
     public function __construct($data = NULL) {
@@ -94,32 +97,6 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * optional, user provided reference key used to find rating point easily
-     *
-     * Generated from protobuf field <code>string ref = 2;</code>
-     * @return string
-     */
-    public function getRef()
-    {
-        return $this->ref;
-    }
-
-    /**
-     * optional, user provided reference key used to find rating point easily
-     *
-     * Generated from protobuf field <code>string ref = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRef($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ref = $var;
 
         return $this;
     }
@@ -187,39 +164,59 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.RatingPoint.Source source = 20;</code>
-     * @return \Eolymp\Community\RatingPoint\Source|null
+     * contest_id which triggered rating change
+     *
+     * Generated from protobuf field <code>string contest_id = 20;</code>
+     * @return string
      */
-    public function getSource()
+    public function getContestId()
     {
-        return $this->source;
-    }
-
-    public function hasSource()
-    {
-        return isset($this->source);
-    }
-
-    public function clearSource()
-    {
-        unset($this->source);
+        return $this->contest_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.RatingPoint.Source source = 20;</code>
-     * @param \Eolymp\Community\RatingPoint\Source $var
+     * contest_id which triggered rating change
+     *
+     * Generated from protobuf field <code>string contest_id = 20;</code>
+     * @param string $var
      * @return $this
      */
-    public function setSource($var)
+    public function setContestId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\RatingPoint\Source::class);
-        $this->source = $var;
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
 
         return $this;
     }
 
     /**
-     * deprecated: use source instead
+     * deprecated: keep empty
+     *
+     * Generated from protobuf field <code>string ref = 2;</code>
+     * @return string
+     */
+    public function getRef()
+    {
+        return $this->ref;
+    }
+
+    /**
+     * deprecated: keep empty
+     *
+     * Generated from protobuf field <code>string ref = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRef($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->ref = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated: use contest_id instead
      *
      * Generated from protobuf field <code>string target_link = 22;</code>
      * @return string
@@ -230,7 +227,7 @@ class RatingPoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use source instead
+     * deprecated: use contest_id instead
      *
      * Generated from protobuf field <code>string target_link = 22;</code>
      * @param string $var
