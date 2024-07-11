@@ -17,8 +17,8 @@ class Rating
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ß
-eolymp/rating/rating.protoeolymp.rating"y
+ï
+eolymp/rating/rating.protoeolymp.rating"ˆ
 Rating
 
 id (	-
@@ -27,7 +27,8 @@ class Rating
 
 contest_id (	
 value
- (B/Z-github.com/eolymp/go-sdk/eolymp/rating;ratingbproto3'
+ (
+level (B/Z-github.com/eolymp/go-sdk/eolymp/rating;ratingbproto3'
         , true);
 
         static::$is_initialized = true;

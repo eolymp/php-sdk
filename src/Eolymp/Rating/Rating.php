@@ -33,6 +33,10 @@ class Rating extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 value = 10;</code>
      */
     protected $value = 0;
+    /**
+     * Generated from protobuf field <code>uint32 level = 11;</code>
+     */
+    protected $level = 0;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Rating extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type string $contest_id
      *     @type int $value
+     *     @type int $level
      * }
      */
     public function __construct($data = NULL) {
@@ -168,6 +173,28 @@ class Rating extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 level = 11;</code>
+     * @return int
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 level = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLevel($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->level = $var;
 
         return $this;
     }
