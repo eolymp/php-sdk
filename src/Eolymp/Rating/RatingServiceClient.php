@@ -114,4 +114,36 @@ class RatingServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRatingOutput::class, $context);
     }
 
+    /**
+     * @param DescribeRatingBoundariesInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeRatingBoundariesOutput output message
+     */
+    public function DescribeRatingBoundaries(DescribeRatingBoundariesInput $input, array $context = [])
+    {
+        $path = "/rating-boundaries";
+
+        $context['name'] = "eolymp.rating.RatingService/DescribeRatingBoundaries";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRatingBoundariesOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeRatingDistributionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeRatingDistributionOutput output message
+     */
+    public function DescribeRatingDistribution(DescribeRatingDistributionInput $input, array $context = [])
+    {
+        $path = "/rating-distribution";
+
+        $context['name'] = "eolymp.rating.RatingService/DescribeRatingDistribution";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeRatingDistributionOutput::class, $context);
+    }
+
 }
