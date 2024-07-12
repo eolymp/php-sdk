@@ -30,10 +30,9 @@ class AchievementServiceClient {
      */
     public function AssignAchievement(AssignAchievementInput $input, array $context = [])
     {
-        $path = "/members/".rawurlencode($input->getMemberId())."/achievements/".rawurlencode($input->getAchievementId());
+        $path = "/achievements/".rawurlencode($input->getAchievementId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
         $input->setAchievementId("");
 
         $context['name'] = "eolymp.community.AchievementService/AssignAchievement";
@@ -50,10 +49,9 @@ class AchievementServiceClient {
      */
     public function UnassignAchievement(UnassignAchievementInput $input, array $context = [])
     {
-        $path = "/members/".rawurlencode($input->getMemberId())."/achievements/".rawurlencode($input->getAchievementId());
+        $path = "/achievements/".rawurlencode($input->getAchievementId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
         $input->setAchievementId("");
 
         $context['name'] = "eolymp.community.AchievementService/UnassignAchievement";
@@ -70,10 +68,7 @@ class AchievementServiceClient {
      */
     public function ListAchievements(ListAchievementsInput $input, array $context = [])
     {
-        $path = "/members/".rawurlencode($input->getMemberId())."/achievements";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $path = "/achievements";
 
         $context['name'] = "eolymp.community.AchievementService/ListAchievements";
         $context['path'] = $path;

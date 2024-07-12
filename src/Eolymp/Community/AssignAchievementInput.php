@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class AssignAchievementInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
-     */
-    protected $member_id = '';
-    /**
      * Generated from protobuf field <code>string achievement_id = 2;</code>
      */
     protected $achievement_id = '';
@@ -29,7 +25,6 @@ class AssignAchievementInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $member_id
      *     @type string $achievement_id
      *     @type int $set_to
      *     @type int $inc_by
@@ -38,28 +33,6 @@ class AssignAchievementInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\AchievementService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
-     * @return string
-     */
-    public function getMemberId()
-    {
-        return $this->member_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMemberId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->member_id = $var;
-
-        return $this;
     }
 
     /**
