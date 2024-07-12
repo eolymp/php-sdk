@@ -14,11 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateAchievementInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string achievement_id = 1;</code>
-     */
-    protected $achievement_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 1;</code>
      */
     protected $achievement = null;
 
@@ -28,7 +24,6 @@ class CreateAchievementInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $achievement_id
      *     @type \Eolymp\Reward\Achievement $achievement
      * }
      */
@@ -38,29 +33,7 @@ class CreateAchievementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string achievement_id = 1;</code>
-     * @return string
-     */
-    public function getAchievementId()
-    {
-        return $this->achievement_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string achievement_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAchievementId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->achievement_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 1;</code>
      * @return \Eolymp\Reward\Achievement|null
      */
     public function getAchievement()
@@ -79,7 +52,7 @@ class CreateAchievementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 1;</code>
      * @param \Eolymp\Reward\Achievement $var
      * @return $this
      */

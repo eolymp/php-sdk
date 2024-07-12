@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class CreateAchievementOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string achievement_id = 1;</code>
+     */
+    protected $achievement_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class CreateAchievementOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $achievement_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Reward\AchievementService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string achievement_id = 1;</code>
+     * @return string
+     */
+    public function getAchievementId()
+    {
+        return $this->achievement_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string achievement_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAchievementId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->achievement_id = $var;
+
+        return $this;
     }
 
 }
