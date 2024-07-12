@@ -22,8 +22,8 @@ class Achievement
 Achievement
 
 id (	
-value (	
-rarity (	
+value (
+rarity (
 quantity (
 name
  (	

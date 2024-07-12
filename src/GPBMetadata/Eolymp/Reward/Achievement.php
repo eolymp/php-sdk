@@ -22,7 +22,7 @@ class Achievement
 Achievement
 
 id (	
-value (	
+value (
 name
  (	
 	image_url (	$

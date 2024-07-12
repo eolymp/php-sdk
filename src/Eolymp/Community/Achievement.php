@@ -20,15 +20,15 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * the estimated value of the achievement (the higher the more "prestigious")
      *
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>uint32 value = 2;</code>
      */
-    protected $value = '';
+    protected $value = 0;
     /**
      * a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *
-     * Generated from protobuf field <code>string rarity = 3;</code>
+     * Generated from protobuf field <code>uint32 rarity = 3;</code>
      */
-    protected $rarity = '';
+    protected $rarity = 0;
     /**
      * how many times achievement was received
      *
@@ -55,9 +55,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $value
+     *     @type int $value
      *           the estimated value of the achievement (the higher the more "prestigious")
-     *     @type string $rarity
+     *     @type int $rarity
      *           a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *     @type int $quantity
      *           how many times achievement was received
@@ -96,8 +96,8 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * the estimated value of the achievement (the higher the more "prestigious")
      *
-     * Generated from protobuf field <code>string value = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * @return int
      */
     public function getValue()
     {
@@ -107,13 +107,13 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * the estimated value of the achievement (the higher the more "prestigious")
      *
-     * Generated from protobuf field <code>string value = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setValue($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->value = $var;
 
         return $this;
@@ -122,8 +122,8 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *
-     * Generated from protobuf field <code>string rarity = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * @return int
      */
     public function getRarity()
     {
@@ -133,13 +133,13 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *
-     * Generated from protobuf field <code>string rarity = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * @param int $var
      * @return $this
      */
     public function setRarity($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->rarity = $var;
 
         return $this;

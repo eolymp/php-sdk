@@ -18,9 +18,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>uint32 value = 2;</code>
      */
-    protected $value = '';
+    protected $value = 0;
     /**
      * Generated from protobuf field <code>string name = 10;</code>
      */
@@ -41,7 +41,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $value
+     *     @type int $value
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
@@ -75,8 +75,8 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * @return int
      */
     public function getValue()
     {
@@ -84,13 +84,13 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setValue($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->value = $var;
 
         return $this;
