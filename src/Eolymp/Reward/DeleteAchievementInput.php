@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.reward.RemoveAchievementInput</code>
+ * Generated from protobuf message <code>eolymp.reward.DeleteAchievementInput</code>
  */
-class RemoveAchievementInput extends \Google\Protobuf\Internal\Message
+class DeleteAchievementInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string achievement_id = 1;</code>

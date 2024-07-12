@@ -58,22 +58,22 @@ class AchievementServiceClient {
     }
 
     /**
-     * @param RemoveAchievementInput $input message
+     * @param DeleteAchievementInput $input message
      * @param array $context request parameters
      *
-     * @return RemoveAchievementOutput output message
+     * @return DeleteAchievementOutput output message
      */
-    public function RemoveAchievement(RemoveAchievementInput $input, array $context = [])
+    public function DeleteAchievement(DeleteAchievementInput $input, array $context = [])
     {
         $path = "/achievements/".rawurlencode($input->getAchievementId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setAchievementId("");
 
-        $context['name'] = "eolymp.reward.AchievementService/RemoveAchievement";
+        $context['name'] = "eolymp.reward.AchievementService/DeleteAchievement";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveAchievementOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAchievementOutput::class, $context);
     }
 
     /**
