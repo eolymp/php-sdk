@@ -36,6 +36,12 @@ class Achievement extends \Google\Protobuf\Internal\Message
      */
     protected $quantity = 0;
     /**
+     * when the achievement was awarded for the first time
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_on = 5;</code>
+     */
+    protected $awarded_on = null;
+    /**
      * Generated from protobuf field <code>string name = 10;</code>
      */
     protected $name = '';
@@ -61,6 +67,8 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *           a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *     @type int $quantity
      *           how many times achievement was received
+     *     @type \Google\Protobuf\Timestamp $awarded_on
+     *           when the achievement was awarded for the first time
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
@@ -167,6 +175,42 @@ class Achievement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->quantity = $var;
+
+        return $this;
+    }
+
+    /**
+     * when the achievement was awarded for the first time
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_on = 5;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getAwardedOn()
+    {
+        return $this->awarded_on;
+    }
+
+    public function hasAwardedOn()
+    {
+        return isset($this->awarded_on);
+    }
+
+    public function clearAwardedOn()
+    {
+        unset($this->awarded_on);
+    }
+
+    /**
+     * when the achievement was awarded for the first time
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_on = 5;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setAwardedOn($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->awarded_on = $var;
 
         return $this;
     }

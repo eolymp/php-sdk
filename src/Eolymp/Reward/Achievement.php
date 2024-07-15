@@ -22,6 +22,10 @@ class Achievement extends \Google\Protobuf\Internal\Message
      */
     protected $value = 0;
     /**
+     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     */
+    protected $rarity = 0;
+    /**
      * Generated from protobuf field <code>string name = 10;</code>
      */
     protected $name = '';
@@ -42,6 +46,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $value
+     *     @type int $rarity
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
@@ -92,6 +97,28 @@ class Achievement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * @return int
+     */
+    public function getRarity()
+    {
+        return $this->rarity;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRarity($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rarity = $var;
 
         return $this;
     }
