@@ -18,11 +18,11 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * display name, readonly, users nickname, ghosts name or teams name
+     * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string display_name = 2;</code>
      */
-    protected $name = '';
+    protected $display_name = '';
     /**
      * Generated from protobuf field <code>string url = 3;</code>
      */
@@ -46,9 +46,15 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $level = 0;
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>bool active = 10;</code>
      */
     protected $active = false;
+    /**
+     * Generated from protobuf field <code>bool inactive = 11;</code>
+     */
+    protected $inactive = false;
     /**
      * member profile (attributes) is missing some information
      *
@@ -100,8 +106,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $name
-     *           display name, readonly, users nickname, ghosts name or teams name
+     *     @type string $display_name
+     *           display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *     @type string $url
      *     @type int $rank
      *     @type int $rank_lower
@@ -109,6 +115,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type int $level
      *           level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
      *     @type bool $active
+     *           deprecated
+     *     @type bool $inactive
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
      *     @type bool $unofficial
@@ -154,27 +162,27 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * display name, readonly, users nickname, ghosts name or teams name
+     * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string display_name = 2;</code>
      * @return string
      */
-    public function getName()
+    public function getDisplayName()
     {
-        return $this->name;
+        return $this->display_name;
     }
 
     /**
-     * display name, readonly, users nickname, ghosts name or teams name
+     * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string display_name = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setDisplayName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->display_name = $var;
 
         return $this;
     }
@@ -294,6 +302,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>bool active = 10;</code>
      * @return bool
      */
@@ -303,6 +313,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>bool active = 10;</code>
      * @param bool $var
      * @return $this
@@ -311,6 +323,28 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool inactive = 11;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool inactive = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
 
         return $this;
     }
