@@ -111,4 +111,102 @@ class AchievementServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAchievementsOutput::class, $context);
     }
 
+    /**
+     * @param DescribeAchievementTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeAchievementTranslationOutput output message
+     */
+    public function DescribeAchievementTranslation(DescribeAchievementTranslationInput $input, array $context = [])
+    {
+        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations/".rawurlencode($input->getTranslationId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAchievementId("");
+        $input->setTranslationId("");
+
+        $context['name'] = "eolymp.reward.AchievementService/DescribeAchievementTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAchievementTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param ListAchievementTranslationsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAchievementTranslationsOutput output message
+     */
+    public function ListAchievementTranslations(ListAchievementTranslationsInput $input, array $context = [])
+    {
+        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAchievementId("");
+
+        $context['name'] = "eolymp.reward.AchievementService/ListAchievementTranslations";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAchievementTranslationsOutput::class, $context);
+    }
+
+    /**
+     * @param CreateAchievementTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateAchievementTranslationOutput output message
+     */
+    public function CreateAchievementTranslation(CreateAchievementTranslationInput $input, array $context = [])
+    {
+        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAchievementId("");
+
+        $context['name'] = "eolymp.reward.AchievementService/CreateAchievementTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAchievementTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateAchievementTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateAchievementTranslationOutput output message
+     */
+    public function UpdateAchievementTranslation(UpdateAchievementTranslationInput $input, array $context = [])
+    {
+        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations/".rawurlencode($input->getTranslationId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAchievementId("");
+        $input->setTranslationId("");
+
+        $context['name'] = "eolymp.reward.AchievementService/UpdateAchievementTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateAchievementTranslationOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteAchievementTranslationInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteAchievementTranslationOutput output message
+     */
+    public function DeleteAchievementTranslation(DeleteAchievementTranslationInput $input, array $context = [])
+    {
+        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations/".rawurlencode($input->getTranslationId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAchievementId("");
+        $input->setTranslationId("");
+
+        $context['name'] = "eolymp.reward.AchievementService/DeleteAchievementTranslation";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAchievementTranslationOutput::class, $context);
+    }
+
 }
