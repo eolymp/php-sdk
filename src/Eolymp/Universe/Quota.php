@@ -50,6 +50,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $allow_discussions = false;
     /**
+     * max number of achievements
+     *
+     * Generated from protobuf field <code>uint32 achievements_per_space = 15;</code>
+     */
+    protected $achievements_per_space = 0;
+    /**
      * submission evaluation quota and features
      *
      * Generated from protobuf field <code>uint32 monthly_evaluations_by_seat = 13;</code>
@@ -192,6 +198,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           customer support reply time in hours
      *     @type bool $allow_discussions
      *           enable discussion post and comment features
+     *     @type int $achievements_per_space
+     *           max number of achievements
      *     @type int $monthly_evaluations_by_seat
      *           submission evaluation quota and features
      *     @type bool $priority_evaluation_queue
@@ -390,6 +398,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->allow_discussions = $var;
+
+        return $this;
+    }
+
+    /**
+     * max number of achievements
+     *
+     * Generated from protobuf field <code>uint32 achievements_per_space = 15;</code>
+     * @return int
+     */
+    public function getAchievementsPerSpace()
+    {
+        return $this->achievements_per_space;
+    }
+
+    /**
+     * max number of achievements
+     *
+     * Generated from protobuf field <code>uint32 achievements_per_space = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAchievementsPerSpace($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->achievements_per_space = $var;
 
         return $this;
     }
