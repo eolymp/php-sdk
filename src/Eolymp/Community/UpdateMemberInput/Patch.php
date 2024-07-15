@@ -20,9 +20,9 @@ class Patch
     /**
      * change active/inactive flag
      *
-     * Generated from protobuf enum <code>ACTIVE = 1;</code>
+     * Generated from protobuf enum <code>INACTIVE = 1;</code>
      */
-    const ACTIVE = 1;
+    const INACTIVE = 1;
     /**
      * change official/unofficial flag
      *
@@ -128,7 +128,7 @@ class Patch
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::ACTIVE => 'ACTIVE',
+        self::INACTIVE => 'INACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
         self::RATING => 'RATING',
         self::GROUPS => 'GROUPS',

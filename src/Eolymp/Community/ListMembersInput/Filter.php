@@ -28,9 +28,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $name;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool active = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 4;</code>
      */
-    private $active;
+    private $inactive;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool incomplete = 5;</code>
      */
@@ -86,7 +86,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
      *           user, team or ghost
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $active
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $inactive
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $incomplete
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $team_id
@@ -177,23 +177,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool active = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getActive()
+    public function getInactive()
     {
-        return $this->active;
+        return $this->inactive;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool active = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 4;</code>
      * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setActive($var)
+    public function setInactive($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->active = $arr;
+        $this->inactive = $arr;
 
         return $this;
     }
