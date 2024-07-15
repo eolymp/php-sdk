@@ -38,9 +38,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * when the achievement was awarded for the first time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_on = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5;</code>
      */
-    protected $awarded_on = null;
+    protected $awarded_at = null;
     /**
      * Generated from protobuf field <code>string name = 10;</code>
      */
@@ -67,7 +67,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *           a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *     @type int $quantity
      *           how many times achievement was received
-     *     @type \Google\Protobuf\Timestamp $awarded_on
+     *     @type \Google\Protobuf\Timestamp $awarded_at
      *           when the achievement was awarded for the first time
      *     @type string $name
      *     @type string $image_url
@@ -182,35 +182,35 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * when the achievement was awarded for the first time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_on = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
-    public function getAwardedOn()
+    public function getAwardedAt()
     {
-        return $this->awarded_on;
+        return $this->awarded_at;
     }
 
-    public function hasAwardedOn()
+    public function hasAwardedAt()
     {
-        return isset($this->awarded_on);
+        return isset($this->awarded_at);
     }
 
-    public function clearAwardedOn()
+    public function clearAwardedAt()
     {
-        unset($this->awarded_on);
+        unset($this->awarded_at);
     }
 
     /**
      * when the achievement was awarded for the first time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_on = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setAwardedOn($var)
+    public function setAwardedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->awarded_on = $var;
+        $this->awarded_at = $var;
 
         return $this;
     }
