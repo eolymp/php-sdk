@@ -18,6 +18,10 @@ class ListAchievementsOutput extends \Google\Protobuf\Internal\Message
      */
     protected $total = 0;
     /**
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     */
+    protected $next_page_cursor = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.community.Achievement items = 2;</code>
      */
     private $items;
@@ -29,6 +33,7 @@ class ListAchievementsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
+     *     @type string $next_page_cursor
      *     @type array<\Eolymp\Community\Achievement>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
@@ -55,6 +60,28 @@ class ListAchievementsOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     * @return string
+     */
+    public function getNextPageCursor()
+    {
+        return $this->next_page_cursor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNextPageCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->next_page_cursor = $var;
 
         return $this;
     }
