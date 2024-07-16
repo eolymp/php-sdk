@@ -14,13 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListAchievementsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * Generated from protobuf field <code>string after = 12;</code>
      */
-    protected $offset = 0;
+    protected $after = '';
     /**
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
     protected $size = 0;
+    /**
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     */
+    protected $offset = 0;
     /**
      * Generated from protobuf field <code>.eolymp.reward.ListAchievementsInput.Filter filters = 40;</code>
      */
@@ -36,8 +40,9 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $offset
+     *     @type string $after
      *     @type int $size
+     *     @type int $offset
      *     @type \Eolymp\Reward\ListAchievementsInput\Filter $filters
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
@@ -48,23 +53,23 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     * @return int
+     * Generated from protobuf field <code>string after = 12;</code>
+     * @return string
      */
-    public function getOffset()
+    public function getAfter()
     {
-        return $this->offset;
+        return $this->after;
     }
 
     /**
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string after = 12;</code>
+     * @param string $var
      * @return $this
      */
-    public function setOffset($var)
+    public function setAfter($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->offset = $var;
+        GPBUtil::checkString($var, True);
+        $this->after = $var;
 
         return $this;
     }
@@ -87,6 +92,28 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
 
         return $this;
     }

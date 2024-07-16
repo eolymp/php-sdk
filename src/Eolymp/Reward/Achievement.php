@@ -37,6 +37,10 @@ class Achievement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content summary = 11;</code>
      */
     protected $summary = null;
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     */
+    protected $cursor = '';
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
+     *     @type string $cursor
      * }
      */
     public function __construct($data = NULL) {
@@ -195,6 +200,28 @@ class Achievement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @return string
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cursor = $var;
 
         return $this;
     }
