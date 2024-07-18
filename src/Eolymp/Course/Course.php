@@ -34,9 +34,9 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
-     * Generated from protobuf field <code>string image = 13;</code>
+     * Generated from protobuf field <code>string image_url = 13;</code>
      */
-    protected $image = '';
+    protected $image_url = '';
     /**
      * Generated from protobuf field <code>.eolymp.course.Course.Visibility visibility = 14;</code>
      */
@@ -67,7 +67,7 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
-     *     @type string $image
+     *     @type string $image_url
      *     @type int $visibility
      *     @type int $duration
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
@@ -201,23 +201,23 @@ class Course extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string image = 13;</code>
+     * Generated from protobuf field <code>string image_url = 13;</code>
      * @return string
      */
-    public function getImage()
+    public function getImageUrl()
     {
-        return $this->image;
+        return $this->image_url;
     }
 
     /**
-     * Generated from protobuf field <code>string image = 13;</code>
+     * Generated from protobuf field <code>string image_url = 13;</code>
      * @param string $var
      * @return $this
      */
-    public function setImage($var)
+    public function setImageUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->image = $var;
+        $this->image_url = $var;
 
         return $this;
     }

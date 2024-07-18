@@ -40,6 +40,10 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Generated from protobuf field <code>uint32 depth = 12;</code>
+     */
+    protected $depth = 0;
+    /**
      * Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
      * For section entries this represents sum of its nested entries.
      *
@@ -74,6 +78,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *           Draft means entry is only available to the admin and won't be shown to students.
      *     @type string $parent_id
      *     @type int $index
+     *     @type int $depth
      *     @type int $estimate
      *           Progress estimate in seconds, ie. amount of time it would take student to complete this entry.
      *           For section entries this represents sum of its nested entries.
@@ -225,6 +230,28 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 depth = 12;</code>
+     * @return int
+     */
+    public function getDepth()
+    {
+        return $this->depth;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 depth = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDepth($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->depth = $var;
 
         return $this;
     }
