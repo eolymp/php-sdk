@@ -26,9 +26,9 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $draft = false;
     /**
-     * Generated from protobuf field <code>string title = 4;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
      */
-    protected $title = '';
+    protected $name = '';
     /**
      * Generated from protobuf field <code>string image_url = 5;</code>
      */
@@ -83,7 +83,7 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type bool $draft
-     *     @type string $title
+     *     @type string $name
      *     @type string $image_url
      *     @type int $index
      *     @type \Eolymp\Ecm\Content $description
@@ -170,23 +170,23 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string title = 4;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
      * @return string
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>string title = 4;</code>
+     * Generated from protobuf field <code>string name = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setTitle($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->title = $var;
+        $this->name = $var;
 
         return $this;
     }
