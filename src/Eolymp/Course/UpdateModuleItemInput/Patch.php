@@ -32,9 +32,17 @@ class Patch
      */
     const INDEX = 4;
     /**
-     * Generated from protobuf enum <code>DESCRIPTION = 5;</code>
+     * Generated from protobuf enum <code>DEPTH = 5;</code>
      */
-    const DESCRIPTION = 5;
+    const DEPTH = 5;
+    /**
+     * Generated from protobuf enum <code>TARGET = 6;</code>
+     */
+    const TARGET = 6;
+    /**
+     * Generated from protobuf enum <code>GRADING = 7;</code>
+     */
+    const GRADING = 7;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -42,7 +50,9 @@ class Patch
         self::NAME => 'NAME',
         self::IMAGE_URL => 'IMAGE_URL',
         self::INDEX => 'INDEX',
-        self::DESCRIPTION => 'DESCRIPTION',
+        self::DEPTH => 'DEPTH',
+        self::TARGET => 'TARGET',
+        self::GRADING => 'GRADING',
     ];
 
     public static function name($value)
