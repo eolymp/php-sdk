@@ -42,10 +42,6 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      */
     protected $depth = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Target target = 20;</code>
-     */
-    protected $target = null;
-    /**
      * Generated from protobuf field <code>.eolymp.course.ModuleItem.Grading grading = 30;</code>
      */
     protected $grading = null;
@@ -73,6 +69,7 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 1012;</code>
      */
     protected $complete_at = null;
+    protected $content;
 
     /**
      * Constructor.
@@ -87,8 +84,9 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      *     @type string $image_url
      *     @type int $index
      *     @type int $depth
-     *     @type \Eolymp\Course\ModuleItem\Target $target
      *     @type \Eolymp\Course\ModuleItem\Grading $grading
+     *     @type \Eolymp\Course\ModuleItem\Document $document
+     *     @type \Eolymp\Course\ModuleItem\Assignment $assignment
      *     @type float $progress
      *           value from 0 to 1 showing overall progress in the module
      *     @type int $grade
@@ -258,38 +256,6 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Target target = 20;</code>
-     * @return \Eolymp\Course\ModuleItem\Target|null
-     */
-    public function getTarget()
-    {
-        return $this->target;
-    }
-
-    public function hasTarget()
-    {
-        return isset($this->target);
-    }
-
-    public function clearTarget()
-    {
-        unset($this->target);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Target target = 20;</code>
-     * @param \Eolymp\Course\ModuleItem\Target $var
-     * @return $this
-     */
-    public function setTarget($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Target::class);
-        $this->target = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.course.ModuleItem.Grading grading = 30;</code>
      * @return \Eolymp\Course\ModuleItem\Grading|null
      */
@@ -317,6 +283,60 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Grading::class);
         $this->grading = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Document document = 100;</code>
+     * @return \Eolymp\Course\ModuleItem\Document|null
+     */
+    public function getDocument()
+    {
+        return $this->readOneof(100);
+    }
+
+    public function hasDocument()
+    {
+        return $this->hasOneof(100);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Document document = 100;</code>
+     * @param \Eolymp\Course\ModuleItem\Document $var
+     * @return $this
+     */
+    public function setDocument($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Document::class);
+        $this->writeOneof(100, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Assignment assignment = 101;</code>
+     * @return \Eolymp\Course\ModuleItem\Assignment|null
+     */
+    public function getAssignment()
+    {
+        return $this->readOneof(101);
+    }
+
+    public function hasAssignment()
+    {
+        return $this->hasOneof(101);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Assignment assignment = 101;</code>
+     * @param \Eolymp\Course\ModuleItem\Assignment $var
+     * @return $this
+     */
+    public function setAssignment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Assignment::class);
+        $this->writeOneof(101, $var);
 
         return $this;
     }
@@ -467,6 +487,14 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
         $this->complete_at = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->whichOneof("content");
     }
 
 }
