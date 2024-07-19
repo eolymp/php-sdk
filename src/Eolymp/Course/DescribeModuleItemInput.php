@@ -17,6 +17,10 @@ class DescribeModuleItemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string item_id = 1;</code>
      */
     protected $item_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.ModuleItem.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DescribeModuleItemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $item_id
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DescribeModuleItemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->item_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.ModuleItem.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.ModuleItem.Extra extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\ModuleItem\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

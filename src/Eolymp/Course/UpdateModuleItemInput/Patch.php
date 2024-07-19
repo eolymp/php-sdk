@@ -36,9 +36,9 @@ class Patch
      */
     const DEPTH = 5;
     /**
-     * Generated from protobuf enum <code>TARGET = 6;</code>
+     * Generated from protobuf enum <code>CONTENT = 6;</code>
      */
-    const TARGET = 6;
+    const CONTENT = 6;
     /**
      * Generated from protobuf enum <code>GRADING = 7;</code>
      */
@@ -51,7 +51,7 @@ class Patch
         self::IMAGE_URL => 'IMAGE_URL',
         self::INDEX => 'INDEX',
         self::DEPTH => 'DEPTH',
-        self::TARGET => 'TARGET',
+        self::CONTENT => 'CONTENT',
         self::GRADING => 'GRADING',
     ];
 
