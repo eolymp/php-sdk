@@ -58,6 +58,25 @@ class ModuleItemServiceClient {
     }
 
     /**
+     * @param MoveModuleItemInput $input message
+     * @param array $context request parameters
+     *
+     * @return MoveModuleItemOutput output message
+     */
+    public function MoveModuleItem(MoveModuleItemInput $input, array $context = [])
+    {
+        $path = "/items/".rawurlencode($input->getItemId())."/move";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setItemId("");
+
+        $context['name'] = "eolymp.course.ModuleItemService/MoveModuleItem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, MoveModuleItemOutput::class, $context);
+    }
+
+    /**
      * @param DeleteModuleItemInput $input message
      * @param array $context request parameters
      *
