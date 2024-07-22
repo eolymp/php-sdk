@@ -41,10 +41,6 @@ class Module extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 10;</code>
      */
     protected $description = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Assignment assignment = 20;</code>
-     */
-    protected $assignment = null;
 
     /**
      * Constructor.
@@ -59,7 +55,6 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type string $image_url
      *     @type int $index
      *     @type \Eolymp\Ecm\Content $description
-     *     @type \Eolymp\Course\Module\Assignment $assignment
      * }
      */
     public function __construct($data = NULL) {
@@ -227,38 +222,6 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Assignment assignment = 20;</code>
-     * @return \Eolymp\Course\Module\Assignment|null
-     */
-    public function getAssignment()
-    {
-        return $this->assignment;
-    }
-
-    public function hasAssignment()
-    {
-        return isset($this->assignment);
-    }
-
-    public function clearAssignment()
-    {
-        unset($this->assignment);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Assignment assignment = 20;</code>
-     * @param \Eolymp\Course\Module\Assignment $var
-     * @return $this
-     */
-    public function setAssignment($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Course\Module\Assignment::class);
-        $this->assignment = $var;
 
         return $this;
     }
