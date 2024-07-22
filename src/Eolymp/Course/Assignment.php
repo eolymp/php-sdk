@@ -18,6 +18,10 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Assignment.Module modules = 30;</code>
+     */
+    private $modules;
+    /**
      * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      */
     protected $status = 0;
@@ -68,6 +72,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $member_id
      *     @type string $group_id
+     *     @type array<\Eolymp\Course\Assignment\Module>|\Google\Protobuf\Internal\RepeatedField $modules
      *     @type int $status
      *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
@@ -160,6 +165,28 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Assignment.Module modules = 30;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getModules()
+    {
+        return $this->modules;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Assignment.Module modules = 30;</code>
+     * @param array<\Eolymp\Course\Assignment\Module>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setModules($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Assignment\Module::class);
+        $this->modules = $arr;
 
         return $this;
     }
