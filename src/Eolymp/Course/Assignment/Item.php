@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Item extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool wildcard = 1;</code>
-     */
-    protected $wildcard = false;
-    /**
      * Generated from protobuf field <code>string module_id = 2;</code>
      */
     protected $module_id = '';
@@ -32,7 +28,6 @@ class Item extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $wildcard
      *     @type string $module_id
      *     @type string $item_id
      * }
@@ -40,28 +35,6 @@ class Item extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\Assignment::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>bool wildcard = 1;</code>
-     * @return bool
-     */
-    public function getWildcard()
-    {
-        return $this->wildcard;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool wildcard = 1;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setWildcard($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->wildcard = $var;
-
-        return $this;
     }
 
     /**
