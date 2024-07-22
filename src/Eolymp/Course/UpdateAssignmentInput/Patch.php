@@ -27,12 +27,17 @@ class Patch
      * Generated from protobuf enum <code>DURATION = 3;</code>
      */
     const DURATION = 3;
+    /**
+     * Generated from protobuf enum <code>ITEMS = 4;</code>
+     */
+    const ITEMS = 4;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::START_AFTER => 'START_AFTER',
         self::COMPLETE_BEFORE => 'COMPLETE_BEFORE',
         self::DURATION => 'DURATION',
+        self::ITEMS => 'ITEMS',
     ];
 
     public static function name($value)
