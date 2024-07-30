@@ -42,6 +42,65 @@ class StudentServiceClient {
     }
 
     /**
+     * @param UpdateStudentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateStudentOutput output message
+     */
+    public function UpdateStudent(UpdateStudentInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/UpdateStudent";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateStudentOutput::class, $context);
+    }
+
+    /**
+     * @param AssignModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignModuleOutput output message
+     */
+    public function AssignModule(AssignModuleInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.StudentService/AssignModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignModuleOutput::class, $context);
+    }
+
+    /**
+     * @param UnassignModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignModuleOutput output message
+     */
+    public function UnassignModule(UnassignModuleInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.StudentService/UnassignModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignModuleOutput::class, $context);
+    }
+
+    /**
      * @param DescribeViewerInput $input message
      * @param array $context request parameters
      *

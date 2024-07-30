@@ -38,6 +38,10 @@ class Student extends \Google\Protobuf\Internal\Message
      */
     private $grades;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Student.Assignment assignments = 21;</code>
+     */
+    private $assignments;
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 25;</code>
      */
     protected $updated_at = null;
@@ -58,6 +62,7 @@ class Student extends \Google\Protobuf\Internal\Message
      *     @type float $overall_progress
      *     @type int $overall_grade
      *     @type array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $grades
+     *     @type array<\Eolymp\Course\Student\Assignment>|\Google\Protobuf\Internal\RepeatedField $assignments
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $graded_at
      * }
@@ -195,6 +200,28 @@ class Student extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Student\Grade::class);
         $this->grades = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Student.Assignment assignments = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAssignments()
+    {
+        return $this->assignments;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.course.Student.Assignment assignments = 21;</code>
+     * @param array<\Eolymp\Course\Student\Assignment>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAssignments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Student\Assignment::class);
+        $this->assignments = $arr;
 
         return $this;
     }

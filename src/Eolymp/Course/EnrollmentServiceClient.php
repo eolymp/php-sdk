@@ -35,7 +35,7 @@ class EnrollmentServiceClient {
         $context['name'] = "eolymp.course.EnrollmentService/CreateEnrollment";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CreateEnrollmentOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateEnrollmentOutput::class, $context);
     }
 
     /**
