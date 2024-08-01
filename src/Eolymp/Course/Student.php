@@ -26,6 +26,12 @@ class Student extends \Google\Protobuf\Internal\Message
      */
     protected $inactive = false;
     /**
+     * assign all modules
+     *
+     * Generated from protobuf field <code>bool assign_all = 5;</code>
+     */
+    protected $assign_all = false;
+    /**
      * Generated from protobuf field <code>float overall_progress = 10;</code>
      */
     protected $overall_progress = 0.0;
@@ -59,6 +65,8 @@ class Student extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $member_id
      *     @type bool $inactive
+     *     @type bool $assign_all
+     *           assign all modules
      *     @type float $overall_progress
      *     @type int $overall_grade
      *     @type array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $grades
@@ -134,6 +142,32 @@ class Student extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * assign all modules
+     *
+     * Generated from protobuf field <code>bool assign_all = 5;</code>
+     * @return bool
+     */
+    public function getAssignAll()
+    {
+        return $this->assign_all;
+    }
+
+    /**
+     * assign all modules
+     *
+     * Generated from protobuf field <code>bool assign_all = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAssignAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->assign_all = $var;
 
         return $this;
     }

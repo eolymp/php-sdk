@@ -19,10 +19,15 @@ class Patch
      * Generated from protobuf enum <code>INACTIVE = 1;</code>
      */
     const INACTIVE = 1;
+    /**
+     * Generated from protobuf enum <code>ASSIGN_ALL = 2;</code>
+     */
+    const ASSIGN_ALL = 2;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::INACTIVE => 'INACTIVE',
+        self::ASSIGN_ALL => 'ASSIGN_ALL',
     ];
 
     public static function name($value)
