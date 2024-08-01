@@ -23,22 +23,19 @@ class StudentServiceClient {
     }
 
     /**
-     * @param DescribeStudentInput $input message
+     * @param CreateStudentInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeStudentOutput output message
+     * @return CreateStudentOutput output message
      */
-    public function DescribeStudent(DescribeStudentInput $input, array $context = [])
+    public function CreateStudent(CreateStudentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId());
+        $path = "/students";
 
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
-
-        $context['name'] = "eolymp.course.StudentService/DescribeStudent";
+        $context['name'] = "eolymp.course.StudentService/CreateStudent";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeStudentOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateStudentOutput::class, $context);
     }
 
     /**
@@ -114,6 +111,25 @@ class StudentServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeStudentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeStudentOutput output message
+     */
+    public function DescribeStudent(DescribeStudentInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/DescribeStudent";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeStudentOutput::class, $context);
     }
 
     /**
