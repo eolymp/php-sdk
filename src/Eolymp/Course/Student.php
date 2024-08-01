@@ -22,9 +22,9 @@ class Student extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>string display_name = 3;</code>
+     * Generated from protobuf field <code>bool inactive = 4;</code>
      */
-    protected $display_name = '';
+    protected $inactive = false;
     /**
      * Generated from protobuf field <code>float overall_progress = 10;</code>
      */
@@ -58,7 +58,7 @@ class Student extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $member_id
-     *     @type string $display_name
+     *     @type bool $inactive
      *     @type float $overall_progress
      *     @type int $overall_grade
      *     @type array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $grades
@@ -117,23 +117,23 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string display_name = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>bool inactive = 4;</code>
+     * @return bool
      */
-    public function getDisplayName()
+    public function getInactive()
     {
-        return $this->display_name;
+        return $this->inactive;
     }
 
     /**
-     * Generated from protobuf field <code>string display_name = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool inactive = 4;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setDisplayName($var)
+    public function setInactive($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->display_name = $var;
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
 
         return $this;
     }
