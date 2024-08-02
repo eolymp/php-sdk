@@ -58,6 +58,25 @@ class StudentServiceClient {
     }
 
     /**
+     * @param DeleteStudentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteStudentOutput output message
+     */
+    public function DeleteModule(DeleteStudentInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/DeleteModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteStudentOutput::class, $context);
+    }
+
+    /**
      * @param AssignModuleInput $input message
      * @param array $context request parameters
      *
