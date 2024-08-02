@@ -77,46 +77,6 @@ class StudentServiceClient {
     }
 
     /**
-     * @param AssignModuleInput $input message
-     * @param array $context request parameters
-     *
-     * @return AssignModuleOutput output message
-     */
-    public function AssignModule(AssignModuleInput $input, array $context = [])
-    {
-        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
-        $input->setModuleId("");
-
-        $context['name'] = "eolymp.course.StudentService/AssignModule";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignModuleOutput::class, $context);
-    }
-
-    /**
-     * @param UnassignModuleInput $input message
-     * @param array $context request parameters
-     *
-     * @return UnassignModuleOutput output message
-     */
-    public function UnassignModule(UnassignModuleInput $input, array $context = [])
-    {
-        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
-        $input->setModuleId("");
-
-        $context['name'] = "eolymp.course.StudentService/UnassignModule";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignModuleOutput::class, $context);
-    }
-
-    /**
      * @param DescribeViewerInput $input message
      * @param array $context request parameters
      *
@@ -165,6 +125,65 @@ class StudentServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStudentsOutput::class, $context);
+    }
+
+    /**
+     * @param AssignModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignModuleOutput output message
+     */
+    public function AssignModule(AssignModuleInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.StudentService/AssignModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignModuleOutput::class, $context);
+    }
+
+    /**
+     * @param UnassignModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignModuleOutput output message
+     */
+    public function UnassignModule(UnassignModuleInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.StudentService/UnassignModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignModuleOutput::class, $context);
+    }
+
+    /**
+     * @param ListAssignmentsXInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAssignmentsXOutput output message
+     */
+    public function ListAssignments(ListAssignmentsXInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/ListAssignments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAssignmentsXOutput::class, $context);
     }
 
 }
