@@ -186,4 +186,24 @@ class StudentServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAssignmentsXOutput::class, $context);
     }
 
+    /**
+     * @param ListGradesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListGradesOutput output message
+     */
+    public function ListGrades(ListGradesInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments/".rawurlencode($input->getModuleId())."/grades";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.StudentService/ListGrades";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListGradesOutput::class, $context);
+    }
+
 }
