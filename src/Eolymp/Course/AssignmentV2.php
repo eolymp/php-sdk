@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AssignmentV2 extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module module = 1;</code>
+     * Generated from protobuf field <code>string module_id = 2;</code>
      */
-    protected $module = null;
+    protected $module_id = '';
     /**
      * Generated from protobuf field <code>.eolymp.course.AssignmentV2.Status status = 10;</code>
      */
@@ -64,7 +64,7 @@ class AssignmentV2 extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Course\Module $module
+     *     @type string $module_id
      *     @type int $status
      *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
@@ -86,33 +86,23 @@ class AssignmentV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module module = 1;</code>
-     * @return \Eolymp\Course\Module|null
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @return string
      */
-    public function getModule()
+    public function getModuleId()
     {
-        return $this->module;
-    }
-
-    public function hasModule()
-    {
-        return isset($this->module);
-    }
-
-    public function clearModule()
-    {
-        unset($this->module);
+        return $this->module_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module module = 1;</code>
-     * @param \Eolymp\Course\Module $var
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setModule($var)
+    public function setModuleId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Course\Module::class);
-        $this->module = $var;
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
 
         return $this;
     }

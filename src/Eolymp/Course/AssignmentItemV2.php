@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem item = 1;</code>
+     * Generated from protobuf field <code>string item_id = 2;</code>
      */
-    protected $item = null;
+    protected $item_id = '';
     /**
      * Generated from protobuf field <code>float progress = 10;</code>
      */
@@ -40,7 +40,7 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Course\ModuleItem $item
+     *     @type string $item_id
      *     @type float $progress
      *     @type int $grade
      *     @type bool $excused
@@ -53,33 +53,23 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem item = 1;</code>
-     * @return \Eolymp\Course\ModuleItem|null
+     * Generated from protobuf field <code>string item_id = 2;</code>
+     * @return string
      */
-    public function getItem()
+    public function getItemId()
     {
-        return $this->item;
-    }
-
-    public function hasItem()
-    {
-        return isset($this->item);
-    }
-
-    public function clearItem()
-    {
-        unset($this->item);
+        return $this->item_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem item = 1;</code>
-     * @param \Eolymp\Course\ModuleItem $var
+     * Generated from protobuf field <code>string item_id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setItem($var)
+    public function setItemId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem::class);
-        $this->item = $var;
+        GPBUtil::checkString($var, True);
+        $this->item_id = $var;
 
         return $this;
     }
