@@ -23,11 +23,16 @@ class Patch
      * Generated from protobuf enum <code>GRADE_OVERRIDE = 2;</code>
      */
     const GRADE_OVERRIDE = 2;
+    /**
+     * Generated from protobuf enum <code>GRADE_OVERRIDE_RESET = 3;</code>
+     */
+    const GRADE_OVERRIDE_RESET = 3;
 
     private static $valueToName = [
         self::ALL => 'ALL',
         self::EXCUSED => 'EXCUSED',
         self::GRADE_OVERRIDE => 'GRADE_OVERRIDE',
+        self::GRADE_OVERRIDE_RESET => 'GRADE_OVERRIDE_RESET',
     ];
 
     public static function name($value)
