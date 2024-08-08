@@ -18,10 +18,10 @@ class AssignmentItemV2
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-˜
-&eolymp/course/assignment_item_v2.protoeolymp.coursegoogle/protobuf/timestamp.proto"„
-AssignmentItemV2
-item_id (	
+Ÿ
+&eolymp/course/assignment_item_v2.protoeolymp.coursegoogle/protobuf/timestamp.proto"‹
+AssignmentItemV2
+module_item_id (	
 progress
  (
 grade (

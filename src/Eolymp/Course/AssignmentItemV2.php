@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string item_id = 2;</code>
+     * Generated from protobuf field <code>string module_item_id = 2;</code>
      */
-    protected $item_id = '';
+    protected $module_item_id = '';
     /**
      * Generated from protobuf field <code>float progress = 10;</code>
      */
@@ -40,7 +40,7 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $item_id
+     *     @type string $module_item_id
      *     @type float $progress
      *     @type int $grade
      *     @type bool $excused
@@ -53,23 +53,23 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string item_id = 2;</code>
+     * Generated from protobuf field <code>string module_item_id = 2;</code>
      * @return string
      */
-    public function getItemId()
+    public function getModuleItemId()
     {
-        return $this->item_id;
+        return $this->module_item_id;
     }
 
     /**
-     * Generated from protobuf field <code>string item_id = 2;</code>
+     * Generated from protobuf field <code>string module_item_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setItemId($var)
+    public function setModuleItemId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->item_id = $var;
+        $this->module_item_id = $var;
 
         return $this;
     }
