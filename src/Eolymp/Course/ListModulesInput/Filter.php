@@ -17,6 +17,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string query = 1;</code>
      */
     protected $query = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 2;</code>
+     */
+    private $draft;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $draft
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool draft = 2;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->draft = $arr;
 
         return $this;
     }
