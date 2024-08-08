@@ -22,13 +22,29 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
      */
     protected $progress = 0.0;
     /**
+     * final grade
+     *
      * Generated from protobuf field <code>uint32 grade = 15;</code>
      */
     protected $grade = 0;
     /**
+     * excused by the instructor, grade is not counted towards the overall grade
+     *
      * Generated from protobuf field <code>bool excused = 16;</code>
      */
     protected $excused = false;
+    /**
+     * grade set automatically by the system
+     *
+     * Generated from protobuf field <code>uint32 grade_automatic = 17;</code>
+     */
+    protected $grade_automatic = 0;
+    /**
+     * grade set manually by the instructor
+     *
+     * Generated from protobuf field <code>uint32 grade_override = 18;</code>
+     */
+    protected $grade_override = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
      */
@@ -43,7 +59,13 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
      *     @type string $module_item_id
      *     @type float $progress
      *     @type int $grade
+     *           final grade
      *     @type bool $excused
+     *           excused by the instructor, grade is not counted towards the overall grade
+     *     @type int $grade_automatic
+     *           grade set automatically by the system
+     *     @type int $grade_override
+     *           grade set manually by the instructor
      *     @type \Google\Protobuf\Timestamp $graded_at
      * }
      */
@@ -97,6 +119,8 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * final grade
+     *
      * Generated from protobuf field <code>uint32 grade = 15;</code>
      * @return int
      */
@@ -106,6 +130,8 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * final grade
+     *
      * Generated from protobuf field <code>uint32 grade = 15;</code>
      * @param int $var
      * @return $this
@@ -119,6 +145,8 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * excused by the instructor, grade is not counted towards the overall grade
+     *
      * Generated from protobuf field <code>bool excused = 16;</code>
      * @return bool
      */
@@ -128,6 +156,8 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * excused by the instructor, grade is not counted towards the overall grade
+     *
      * Generated from protobuf field <code>bool excused = 16;</code>
      * @param bool $var
      * @return $this
@@ -136,6 +166,58 @@ class AssignmentItemV2 extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->excused = $var;
+
+        return $this;
+    }
+
+    /**
+     * grade set automatically by the system
+     *
+     * Generated from protobuf field <code>uint32 grade_automatic = 17;</code>
+     * @return int
+     */
+    public function getGradeAutomatic()
+    {
+        return $this->grade_automatic;
+    }
+
+    /**
+     * grade set automatically by the system
+     *
+     * Generated from protobuf field <code>uint32 grade_automatic = 17;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGradeAutomatic($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade_automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * grade set manually by the instructor
+     *
+     * Generated from protobuf field <code>uint32 grade_override = 18;</code>
+     * @return int
+     */
+    public function getGradeOverride()
+    {
+        return $this->grade_override;
+    }
+
+    /**
+     * grade set manually by the instructor
+     *
+     * Generated from protobuf field <code>uint32 grade_override = 18;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGradeOverride($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade_override = $var;
 
         return $this;
     }

@@ -17,6 +17,12 @@ class Grading extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 max_score = 1;</code>
      */
     protected $max_score = 0;
+    /**
+     * grade weight in the module
+     *
+     * Generated from protobuf field <code>float weight = 2;</code>
+     */
+    protected $weight = 0.0;
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class Grading extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $max_score
+     *     @type float $weight
+     *           grade weight in the module
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class Grading extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->max_score = $var;
+
+        return $this;
+    }
+
+    /**
+     * grade weight in the module
+     *
+     * Generated from protobuf field <code>float weight = 2;</code>
+     * @return float
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * grade weight in the module
+     *
+     * Generated from protobuf field <code>float weight = 2;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->weight = $var;
 
         return $this;
     }

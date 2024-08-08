@@ -45,30 +45,6 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.course.ModuleItem.Grading grading = 30;</code>
      */
     protected $grading = null;
-    /**
-     * value from 0 to 1 showing overall progress in the module
-     *
-     * Generated from protobuf field <code>float progress = 1001;</code>
-     */
-    protected $progress = 0.0;
-    /**
-     * value from 0 to 100 showing overall grade in the module
-     *
-     * Generated from protobuf field <code>uint32 grade = 1002;</code>
-     */
-    protected $grade = 0;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp due_at = 1010;</code>
-     */
-    protected $due_at = null;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 1011;</code>
-     */
-    protected $start_at = null;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 1012;</code>
-     */
-    protected $complete_at = null;
     protected $content;
 
     /**
@@ -86,14 +62,7 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      *     @type int $depth
      *     @type \Eolymp\Course\ModuleItem\Grading $grading
      *     @type \Eolymp\Course\ModuleItem\Document $document
-     *     @type \Eolymp\Course\ModuleItem\Assignment $assignment
-     *     @type float $progress
-     *           value from 0 to 1 showing overall progress in the module
-     *     @type int $grade
-     *           value from 0 to 100 showing overall grade in the module
-     *     @type \Google\Protobuf\Timestamp $due_at
-     *     @type \Google\Protobuf\Timestamp $start_at
-     *     @type \Google\Protobuf\Timestamp $complete_at
+     *     @type \Eolymp\Course\ModuleItem\Task $task
      * }
      */
     public function __construct($data = NULL) {
@@ -315,176 +284,28 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Assignment assignment = 101;</code>
-     * @return \Eolymp\Course\ModuleItem\Assignment|null
+     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Task task = 101;</code>
+     * @return \Eolymp\Course\ModuleItem\Task|null
      */
-    public function getAssignment()
+    public function getTask()
     {
         return $this->readOneof(101);
     }
 
-    public function hasAssignment()
+    public function hasTask()
     {
         return $this->hasOneof(101);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Assignment assignment = 101;</code>
-     * @param \Eolymp\Course\ModuleItem\Assignment $var
+     * Generated from protobuf field <code>.eolymp.course.ModuleItem.Task task = 101;</code>
+     * @param \Eolymp\Course\ModuleItem\Task $var
      * @return $this
      */
-    public function setAssignment($var)
+    public function setTask($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Assignment::class);
+        GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Task::class);
         $this->writeOneof(101, $var);
-
-        return $this;
-    }
-
-    /**
-     * value from 0 to 1 showing overall progress in the module
-     *
-     * Generated from protobuf field <code>float progress = 1001;</code>
-     * @return float
-     */
-    public function getProgress()
-    {
-        return $this->progress;
-    }
-
-    /**
-     * value from 0 to 1 showing overall progress in the module
-     *
-     * Generated from protobuf field <code>float progress = 1001;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setProgress($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->progress = $var;
-
-        return $this;
-    }
-
-    /**
-     * value from 0 to 100 showing overall grade in the module
-     *
-     * Generated from protobuf field <code>uint32 grade = 1002;</code>
-     * @return int
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * value from 0 to 100 showing overall grade in the module
-     *
-     * Generated from protobuf field <code>uint32 grade = 1002;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGrade($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->grade = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp due_at = 1010;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getDueAt()
-    {
-        return $this->due_at;
-    }
-
-    public function hasDueAt()
-    {
-        return isset($this->due_at);
-    }
-
-    public function clearDueAt()
-    {
-        unset($this->due_at);
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp due_at = 1010;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setDueAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->due_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 1011;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getStartAt()
-    {
-        return $this->start_at;
-    }
-
-    public function hasStartAt()
-    {
-        return isset($this->start_at);
-    }
-
-    public function clearStartAt()
-    {
-        unset($this->start_at);
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_at = 1011;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setStartAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->start_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 1012;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getCompleteAt()
-    {
-        return $this->complete_at;
-    }
-
-    public function hasCompleteAt()
-    {
-        return isset($this->complete_at);
-    }
-
-    public function clearCompleteAt()
-    {
-        unset($this->complete_at);
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_at = 1012;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCompleteAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->complete_at = $var;
 
         return $this;
     }

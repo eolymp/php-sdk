@@ -131,4 +131,44 @@ class AssignmentServiceV2Client {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAssignmentItemV2Output::class, $context);
     }
 
+    /**
+     * @param UpdateAssignmentItemV2Input $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateAssignmentItemV2Output output message
+     */
+    public function UpdateAssignmentItem(UpdateAssignmentItemV2Input $input, array $context = [])
+    {
+        $path = "/assignments/".rawurlencode($input->getModuleId())."/items/".rawurlencode($input->getItemId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setModuleId("");
+        $input->setItemId("");
+
+        $context['name'] = "eolymp.course.AssignmentServiceV2/UpdateAssignmentItem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateAssignmentItemV2Output::class, $context);
+    }
+
+    /**
+     * @param ResetAssignmentItemV2Input $input message
+     * @param array $context request parameters
+     *
+     * @return ResetAssignmentItemV2Output output message
+     */
+    public function ResetAssignmentItem(ResetAssignmentItemV2Input $input, array $context = [])
+    {
+        $path = "/assignments/".rawurlencode($input->getModuleId())."/items/".rawurlencode($input->getItemId())."/reset";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setModuleId("");
+        $input->setItemId("");
+
+        $context['name'] = "eolymp.course.AssignmentServiceV2/ResetAssignmentItem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResetAssignmentItemV2Output::class, $context);
+    }
+
 }

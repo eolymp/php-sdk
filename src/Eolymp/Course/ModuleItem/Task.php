@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.course.ModuleItem.Assignment</code>
+ * Generated from protobuf message <code>eolymp.course.ModuleItem.Task</code>
  */
-class Assignment extends \Google\Protobuf\Internal\Message
+class Task extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
@@ -57,5 +57,5 @@ class Assignment extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Assignment::class, \Eolymp\Course\ModuleItem_Assignment::class);
+class_alias(Task::class, \Eolymp\Course\ModuleItem_Task::class);
 
