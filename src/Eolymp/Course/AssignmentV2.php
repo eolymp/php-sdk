@@ -57,6 +57,14 @@ class AssignmentV2 extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp completed_at = 26;</code>
      */
     protected $completed_at = null;
+    /**
+     * Generated from protobuf field <code>uint32 grade = 30;</code>
+     */
+    protected $grade = 0;
+    /**
+     * Generated from protobuf field <code>float progress = 31;</code>
+     */
+    protected $progress = 0.0;
 
     /**
      * Constructor.
@@ -78,6 +86,8 @@ class AssignmentV2 extends \Google\Protobuf\Internal\Message
      *           read-only, time when assignment has been started (via StartAssignment API)
      *     @type \Google\Protobuf\Timestamp $completed_at
      *           read-only, time when assignment will complete (started_at + duration)
+     *     @type int $grade
+     *     @type float $progress
      * }
      */
     public function __construct($data = NULL) {
@@ -331,6 +341,50 @@ class AssignmentV2 extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->completed_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 30;</code>
+     * @return int
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float progress = 31;</code>
+     * @return float
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    /**
+     * Generated from protobuf field <code>float progress = 31;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->progress = $var;
 
         return $this;
     }
