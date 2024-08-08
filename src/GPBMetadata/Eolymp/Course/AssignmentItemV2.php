@@ -14,12 +14,11 @@ class AssignmentItemV2
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Course\ModuleItem::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ð
-&eolymp/course/assignment_item_v2.protoeolymp.coursegoogle/protobuf/timestamp.proto"¼
+¯
+&eolymp/course/assignment_item_v2.protoeolymp.course"¼
 AssignmentItemV2
 module_item_id (	
 progress
