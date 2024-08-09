@@ -45,6 +45,14 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.course.ModuleItem.Grading grading = 30;</code>
      */
     protected $grading = null;
+    /**
+     * Generated from protobuf field <code>float progress = 20;</code>
+     */
+    protected $progress = 0.0;
+    /**
+     * Generated from protobuf field <code>uint32 grade = 21;</code>
+     */
+    protected $grade = 0;
     protected $content;
 
     /**
@@ -63,6 +71,8 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Course\ModuleItem\Grading $grading
      *     @type \Eolymp\Course\ModuleItem\Document $document
      *     @type \Eolymp\Course\ModuleItem\Task $task
+     *     @type float $progress
+     *     @type int $grade
      * }
      */
     public function __construct($data = NULL) {
@@ -306,6 +316,50 @@ class ModuleItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem\Task::class);
         $this->writeOneof(101, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float progress = 20;</code>
+     * @return float
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    /**
+     * Generated from protobuf field <code>float progress = 20;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 21;</code>
+     * @return int
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade = $var;
 
         return $this;
     }

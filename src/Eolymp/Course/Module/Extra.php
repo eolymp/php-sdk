@@ -23,11 +23,26 @@ class Extra
      * Generated from protobuf enum <code>DESCRIPTION_RENDER = 2;</code>
      */
     const DESCRIPTION_RENDER = 2;
+    /**
+     * Generated from protobuf enum <code>ASSIGNMENT = 3;</code>
+     */
+    const ASSIGNMENT = 3;
+    /**
+     * Generated from protobuf enum <code>PROGRESS = 4;</code>
+     */
+    const PROGRESS = 4;
+    /**
+     * Generated from protobuf enum <code>GRADE = 5;</code>
+     */
+    const GRADE = 5;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::DESCRIPTION_VALUE => 'DESCRIPTION_VALUE',
         self::DESCRIPTION_RENDER => 'DESCRIPTION_RENDER',
+        self::ASSIGNMENT => 'ASSIGNMENT',
+        self::PROGRESS => 'PROGRESS',
+        self::GRADE => 'GRADE',
     ];
 
     public static function name($value)

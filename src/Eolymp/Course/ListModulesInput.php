@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListModulesInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *
+     * Generated from protobuf field <code>string student_id = 5;</code>
+     */
+    protected $student_id = '';
+    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -48,6 +54,8 @@ class ListModulesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $student_id
+     *           optionally, student who's assignment and grade will be returned, if empty authorized user is used
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -61,6 +69,32 @@ class ListModulesInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\ModuleService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *
+     * Generated from protobuf field <code>string student_id = 5;</code>
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *
+     * Generated from protobuf field <code>string student_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStudentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
+
+        return $this;
     }
 
     /**

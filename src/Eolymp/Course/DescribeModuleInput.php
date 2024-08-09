@@ -18,6 +18,12 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
      */
     protected $module_id = '';
     /**
+     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *
+     * Generated from protobuf field <code>string student_id = 2;</code>
+     */
+    protected $student_id = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.course.Module.Extra extra = 1123;</code>
      */
     private $extra;
@@ -29,6 +35,8 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $module_id
+     *     @type string $student_id
+     *           optionally, student who's assignment and grade will be returned, if empty authorized user is used
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -55,6 +63,32 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->module_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *
+     * Generated from protobuf field <code>string student_id = 2;</code>
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->student_id;
+    }
+
+    /**
+     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *
+     * Generated from protobuf field <code>string student_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStudentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->student_id = $var;
 
         return $this;
     }

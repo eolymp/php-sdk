@@ -26,6 +26,12 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $draft = false;
     /**
+     * extra module, will only be shown when explicitly assigned
+     *
+     * Generated from protobuf field <code>bool extra = 7;</code>
+     */
+    protected $extra = false;
+    /**
      * Generated from protobuf field <code>string name = 4;</code>
      */
     protected $name = '';
@@ -41,6 +47,18 @@ class Module extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 10;</code>
      */
     protected $description = null;
+    /**
+     * Generated from protobuf field <code>float progress = 20;</code>
+     */
+    protected $progress = 0.0;
+    /**
+     * Generated from protobuf field <code>uint32 grade = 21;</code>
+     */
+    protected $grade = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Module.Assignment assignment = 30;</code>
+     */
+    protected $assignment = null;
 
     /**
      * Constructor.
@@ -51,10 +69,15 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type bool $draft
+     *     @type bool $extra
+     *           extra module, will only be shown when explicitly assigned
      *     @type string $name
      *     @type string $image_url
      *     @type int $index
      *     @type \Eolymp\Ecm\Content $description
+     *     @type float $progress
+     *     @type int $grade
+     *     @type \Eolymp\Course\Module\Assignment $assignment
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +147,32 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * extra module, will only be shown when explicitly assigned
+     *
+     * Generated from protobuf field <code>bool extra = 7;</code>
+     * @return bool
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * extra module, will only be shown when explicitly assigned
+     *
+     * Generated from protobuf field <code>bool extra = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->extra = $var;
 
         return $this;
     }
@@ -222,6 +271,82 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float progress = 20;</code>
+     * @return float
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    /**
+     * Generated from protobuf field <code>float progress = 20;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 21;</code>
+     * @return int
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Module.Assignment assignment = 30;</code>
+     * @return \Eolymp\Course\Module\Assignment|null
+     */
+    public function getAssignment()
+    {
+        return $this->assignment;
+    }
+
+    public function hasAssignment()
+    {
+        return isset($this->assignment);
+    }
+
+    public function clearAssignment()
+    {
+        unset($this->assignment);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Module.Assignment assignment = 30;</code>
+     * @param \Eolymp\Course\Module\Assignment $var
+     * @return $this
+     */
+    public function setAssignment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\Module\Assignment::class);
+        $this->assignment = $var;
 
         return $this;
     }

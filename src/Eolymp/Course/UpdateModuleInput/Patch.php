@@ -20,6 +20,10 @@ class Patch
      */
     const DRAFT = 1;
     /**
+     * Generated from protobuf enum <code>EXTRA = 6;</code>
+     */
+    const EXTRA = 6;
+    /**
      * Generated from protobuf enum <code>NAME = 2;</code>
      */
     const NAME = 2;
@@ -39,6 +43,7 @@ class Patch
     private static $valueToName = [
         self::ALL => 'ALL',
         self::DRAFT => 'DRAFT',
+        self::EXTRA => 'EXTRA',
         self::NAME => 'NAME',
         self::IMAGE_URL => 'IMAGE_URL',
         self::INDEX => 'INDEX',
