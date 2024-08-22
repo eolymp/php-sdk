@@ -17,6 +17,10 @@ class CreateModuleItemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.course.ModuleItem item = 1;</code>
      */
     protected $item = null;
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     */
+    protected $module_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateModuleItemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Course\ModuleItem $item
+     *     @type string $module_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class CreateModuleItemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\ModuleItem::class);
         $this->item = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @return string
+     */
+    public function getModuleId()
+    {
+        return $this->module_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
 
         return $this;
     }

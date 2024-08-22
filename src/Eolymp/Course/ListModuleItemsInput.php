@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListModuleItemsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     */
+    protected $module_id = '';
+    /**
      * Generated from protobuf field <code>string student_id = 5;</code>
      */
     protected $student_id = '';
@@ -52,6 +56,7 @@ class ListModuleItemsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $module_id
      *     @type string $student_id
      *     @type int $offset
      *           pagination
@@ -66,6 +71,28 @@ class ListModuleItemsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\ModuleItemService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @return string
+     */
+    public function getModuleId()
+    {
+        return $this->module_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
+
+        return $this;
     }
 
     /**
