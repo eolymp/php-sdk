@@ -111,4 +111,63 @@ class ModuleServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListModulesOutput::class, $context);
     }
 
+    /**
+     * @param StartModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartModuleOutput output message
+     */
+    public function StartModule(StartModuleInput $input, array $context = [])
+    {
+        $path = "/modules/".rawurlencode($input->getModuleId())."/start";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.ModuleService/StartModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartModuleOutput::class, $context);
+    }
+
+    /**
+     * @param AssignModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignModuleOutput output message
+     */
+    public function AssignModule(AssignModuleInput $input, array $context = [])
+    {
+        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setModuleId("");
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.ModuleService/AssignModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, AssignModuleOutput::class, $context);
+    }
+
+    /**
+     * @param UnassignModuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignModuleOutput output message
+     */
+    public function UnassignModule(UnassignModuleInput $input, array $context = [])
+    {
+        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setModuleId("");
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.ModuleService/UnassignModule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignModuleOutput::class, $context);
+    }
+
 }

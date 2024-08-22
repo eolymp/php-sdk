@@ -44,21 +44,17 @@ class Student extends \Google\Protobuf\Internal\Message
      */
     protected $overall_grade = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
      */
-    private $grades;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.course.Student.Assignment assignments = 21;</code>
-     */
-    private $assignments;
+    protected $graded_at = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 25;</code>
      */
     protected $updated_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 27;</code>
      */
-    protected $graded_at = null;
+    protected $created_at = null;
 
     /**
      * Constructor.
@@ -74,10 +70,9 @@ class Student extends \Google\Protobuf\Internal\Message
      *           assign all modules
      *     @type float $overall_progress
      *     @type int $overall_grade
-     *     @type array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $grades
-     *     @type array<\Eolymp\Course\Student\Assignment>|\Google\Protobuf\Internal\RepeatedField $assignments
-     *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $graded_at
+     *     @type \Google\Protobuf\Timestamp $updated_at
+     *     @type \Google\Protobuf\Timestamp $created_at
      * }
      */
     public function __construct($data = NULL) {
@@ -244,45 +239,33 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * @return \Google\Protobuf\Timestamp|null
      */
-    public function getGrades()
+    public function getGradedAt()
     {
-        return $this->grades;
+        return $this->graded_at;
+    }
+
+    public function hasGradedAt()
+    {
+        return isset($this->graded_at);
+    }
+
+    public function clearGradedAt()
+    {
+        unset($this->graded_at);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
-     * @param array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setGrades($var)
+    public function setGradedAt($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Student\Grade::class);
-        $this->grades = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.course.Student.Assignment assignments = 21;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAssignments()
-    {
-        return $this->assignments;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.course.Student.Assignment assignments = 21;</code>
-     * @param array<\Eolymp\Course\Student\Assignment>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAssignments($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Course\Student\Assignment::class);
-        $this->assignments = $arr;
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->graded_at = $var;
 
         return $this;
     }
@@ -320,33 +303,33 @@ class Student extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 27;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
-    public function getGradedAt()
+    public function getCreatedAt()
     {
-        return $this->graded_at;
+        return $this->created_at;
     }
 
-    public function hasGradedAt()
+    public function hasCreatedAt()
     {
-        return isset($this->graded_at);
+        return isset($this->created_at);
     }
 
-    public function clearGradedAt()
+    public function clearCreatedAt()
     {
-        unset($this->graded_at);
+        unset($this->created_at);
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp graded_at = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 27;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setGradedAt($var)
+    public function setCreatedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->graded_at = $var;
+        $this->created_at = $var;
 
         return $this;
     }
