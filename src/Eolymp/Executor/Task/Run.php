@@ -65,17 +65,21 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to match constraints and preconditions.
      *     @type string $input_object_id
-     *           download input from object storage
+     *           deprecated: download input from object storage
      *     @type string $input_content
      *           use input from this field (up to 1KB)
      *     @type string $input_url
      *           download input via URL
+     *     @type \Eolymp\Executor\Task\Generator $input_generator
+     *           generate input using script
      *     @type string $answer_object_id
-     *           download answer from object storage
+     *           deprecated: download answer from object storage
      *     @type string $answer_content
      *           use answer from this field (up to 1KB)
      *     @type string $answer_url
      *           download answer via URL
+     *     @type \Eolymp\Executor\Task\Generator $answer_generator
+     *           generate input using script
      * }
      */
     public function __construct($data = NULL) {
@@ -214,7 +218,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * download input from object storage
+     * deprecated: download input from object storage
      *
      * Generated from protobuf field <code>string input_object_id = 10;</code>
      * @return string
@@ -230,7 +234,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * download input from object storage
+     * deprecated: download input from object storage
      *
      * Generated from protobuf field <code>string input_object_id = 10;</code>
      * @param string $var
@@ -307,7 +311,38 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * download answer from object storage
+     * generate input using script
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Task.Generator input_generator = 13;</code>
+     * @return \Eolymp\Executor\Task\Generator|null
+     */
+    public function getInputGenerator()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasInputGenerator()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * generate input using script
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Task.Generator input_generator = 13;</code>
+     * @param \Eolymp\Executor\Task\Generator $var
+     * @return $this
+     */
+    public function setInputGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Task\Generator::class);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * deprecated: download answer from object storage
      *
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
      * @return string
@@ -323,7 +358,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * download answer from object storage
+     * deprecated: download answer from object storage
      *
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
      * @param string $var
@@ -395,6 +430,37 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * generate input using script
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Task.Generator answer_generator = 23;</code>
+     * @return \Eolymp\Executor\Task\Generator|null
+     */
+    public function getAnswerGenerator()
+    {
+        return $this->readOneof(23);
+    }
+
+    public function hasAnswerGenerator()
+    {
+        return $this->hasOneof(23);
+    }
+
+    /**
+     * generate input using script
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Task.Generator answer_generator = 23;</code>
+     * @param \Eolymp\Executor\Task\Generator $var
+     * @return $this
+     */
+    public function setAnswerGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Task\Generator::class);
+        $this->writeOneof(23, $var);
 
         return $this;
     }

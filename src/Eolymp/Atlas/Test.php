@@ -20,7 +20,7 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Testset where this test belongs.
+     * deprecated
      *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      */
@@ -32,11 +32,17 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * Flag which defines if test should be shown in as an example in the problem statement.
+     * Flag which defines if test should be shown in as an example in the problem statement
      *
      * Generated from protobuf field <code>bool example = 4;</code>
      */
     protected $example = false;
+    /**
+     * The test is inactive
+     *
+     * Generated from protobuf field <code>bool inactive = 7;</code>
+     */
+    protected $inactive = false;
     /**
      * Secret test, input and answer are never populated
      *
@@ -44,31 +50,25 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $secret = false;
     /**
-     * Score for passing this test.
+     * Score for passing this test
      *
      * Generated from protobuf field <code>float score = 5;</code>
      */
     protected $score = 0.0;
     /**
-     * Input Object ID, use keeper service to upload or download actual test data.
+     * Optionally, override input data for example in statement
      *
-     * Generated from protobuf field <code>string input_object_id = 10;</code>
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
      */
-    protected $input_object_id = '';
+    protected $example_input_url = '';
     /**
-     * Generated from protobuf field <code>string input_url = 11;</code>
-     */
-    protected $input_url = '';
-    /**
-     * Answer Object ID, use keeper service to upload or download actual test data.
+     * Optionally, override answer data for example in statement
      *
-     * Generated from protobuf field <code>string answer_object_id = 20;</code>
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
      */
-    protected $answer_object_id = '';
-    /**
-     * Generated from protobuf field <code>string answer_url = 21;</code>
-     */
-    protected $answer_url = '';
+    protected $example_answer_url = '';
+    protected $input;
+    protected $answer;
 
     /**
      * Constructor.
@@ -79,21 +79,27 @@ class Test extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Test unique identifier.
      *     @type string $testset_id
-     *           Testset where this test belongs.
+     *           deprecated
      *     @type int $index
      *           Index, a sequential number, of the test within testset.
      *     @type bool $example
-     *           Flag which defines if test should be shown in as an example in the problem statement.
+     *           Flag which defines if test should be shown in as an example in the problem statement
+     *     @type bool $inactive
+     *           The test is inactive
      *     @type bool $secret
      *           Secret test, input and answer are never populated
      *     @type float $score
-     *           Score for passing this test.
+     *           Score for passing this test
+     *     @type string $example_input_url
+     *           Optionally, override input data for example in statement
+     *     @type string $example_answer_url
+     *           Optionally, override answer data for example in statement
      *     @type string $input_object_id
-     *           Input Object ID, use keeper service to upload or download actual test data.
      *     @type string $input_url
+     *     @type \Eolymp\Atlas\Test\Generator $input_generator
      *     @type string $answer_object_id
-     *           Answer Object ID, use keeper service to upload or download actual test data.
      *     @type string $answer_url
+     *     @type \Eolymp\Atlas\Test\Generator $answer_generator
      * }
      */
     public function __construct($data = NULL) {
@@ -128,7 +134,7 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Testset where this test belongs.
+     * deprecated
      *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      * @return string
@@ -139,7 +145,7 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Testset where this test belongs.
+     * deprecated
      *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      * @param string $var
@@ -180,7 +186,7 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flag which defines if test should be shown in as an example in the problem statement.
+     * Flag which defines if test should be shown in as an example in the problem statement
      *
      * Generated from protobuf field <code>bool example = 4;</code>
      * @return bool
@@ -191,7 +197,7 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Flag which defines if test should be shown in as an example in the problem statement.
+     * Flag which defines if test should be shown in as an example in the problem statement
      *
      * Generated from protobuf field <code>bool example = 4;</code>
      * @param bool $var
@@ -201,6 +207,32 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->example = $var;
+
+        return $this;
+    }
+
+    /**
+     * The test is inactive
+     *
+     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * The test is inactive
+     *
+     * Generated from protobuf field <code>bool inactive = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
 
         return $this;
     }
@@ -232,7 +264,7 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Score for passing this test.
+     * Score for passing this test
      *
      * Generated from protobuf field <code>float score = 5;</code>
      * @return float
@@ -243,7 +275,7 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Score for passing this test.
+     * Score for passing this test
      *
      * Generated from protobuf field <code>float score = 5;</code>
      * @param float $var
@@ -258,19 +290,72 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input Object ID, use keeper service to upload or download actual test data.
+     * Optionally, override input data for example in statement
      *
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
+     * @return string
+     */
+    public function getExampleInputUrl()
+    {
+        return $this->example_input_url;
+    }
+
+    /**
+     * Optionally, override input data for example in statement
+     *
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->example_input_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optionally, override answer data for example in statement
+     *
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
+     * @return string
+     */
+    public function getExampleAnswerUrl()
+    {
+        return $this->example_answer_url;
+    }
+
+    /**
+     * Optionally, override answer data for example in statement
+     *
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->example_answer_url = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string input_object_id = 10;</code>
      * @return string
      */
     public function getInputObjectId()
     {
-        return $this->input_object_id;
+        return $this->readOneof(10);
+    }
+
+    public function hasInputObjectId()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
-     * Input Object ID, use keeper service to upload or download actual test data.
-     *
      * Generated from protobuf field <code>string input_object_id = 10;</code>
      * @param string $var
      * @return $this
@@ -278,7 +363,7 @@ class Test extends \Google\Protobuf\Internal\Message
     public function setInputObjectId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->input_object_id = $var;
+        $this->writeOneof(10, $var);
 
         return $this;
     }
@@ -289,7 +374,12 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     public function getInputUrl()
     {
-        return $this->input_url;
+        return $this->readOneof(11);
+    }
+
+    public function hasInputUrl()
+    {
+        return $this->hasOneof(11);
     }
 
     /**
@@ -300,25 +390,53 @@ class Test extends \Google\Protobuf\Internal\Message
     public function setInputUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->input_url = $var;
+        $this->writeOneof(11, $var);
 
         return $this;
     }
 
     /**
-     * Answer Object ID, use keeper service to upload or download actual test data.
-     *
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator input_generator = 12;</code>
+     * @return \Eolymp\Atlas\Test\Generator|null
+     */
+    public function getInputGenerator()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasInputGenerator()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator input_generator = 12;</code>
+     * @param \Eolymp\Atlas\Test\Generator $var
+     * @return $this
+     */
+    public function setInputGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Test\Generator::class);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
      * @return string
      */
     public function getAnswerObjectId()
     {
-        return $this->answer_object_id;
+        return $this->readOneof(20);
+    }
+
+    public function hasAnswerObjectId()
+    {
+        return $this->hasOneof(20);
     }
 
     /**
-     * Answer Object ID, use keeper service to upload or download actual test data.
-     *
      * Generated from protobuf field <code>string answer_object_id = 20;</code>
      * @param string $var
      * @return $this
@@ -326,7 +444,7 @@ class Test extends \Google\Protobuf\Internal\Message
     public function setAnswerObjectId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->answer_object_id = $var;
+        $this->writeOneof(20, $var);
 
         return $this;
     }
@@ -337,7 +455,12 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     public function getAnswerUrl()
     {
-        return $this->answer_url;
+        return $this->readOneof(21);
+    }
+
+    public function hasAnswerUrl()
+    {
+        return $this->hasOneof(21);
     }
 
     /**
@@ -348,9 +471,52 @@ class Test extends \Google\Protobuf\Internal\Message
     public function setAnswerUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->answer_url = $var;
+        $this->writeOneof(21, $var);
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator answer_generator = 22;</code>
+     * @return \Eolymp\Atlas\Test\Generator|null
+     */
+    public function getAnswerGenerator()
+    {
+        return $this->readOneof(22);
+    }
+
+    public function hasAnswerGenerator()
+    {
+        return $this->hasOneof(22);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator answer_generator = 22;</code>
+     * @param \Eolymp\Atlas\Test\Generator $var
+     * @return $this
+     */
+    public function setAnswerGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Test\Generator::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInput()
+    {
+        return $this->whichOneof("input");
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnswer()
+    {
+        return $this->whichOneof("answer");
     }
 
 }

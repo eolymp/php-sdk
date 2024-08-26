@@ -117,6 +117,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
      */
     private $files;
+    /**
+     * Additional scripts to be used during execution.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
+     */
+    private $scripts;
 
     /**
      * Constructor.
@@ -162,6 +168,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Run configurations.
      *     @type array<\Eolymp\Executor\Task\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files to be placed in the work directory during compilation and runs*
+     *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *           Additional scripts to be used during execution.
      * }
      */
     public function __construct($data = NULL) {
@@ -613,6 +621,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\File::class);
         $this->files = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Additional scripts to be used during execution.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScripts()
+    {
+        return $this->scripts;
+    }
+
+    /**
+     * Additional scripts to be used during execution.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
+     * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScripts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Script::class);
+        $this->scripts = $arr;
 
         return $this;
     }

@@ -17,10 +17,6 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.executor.Task task = 1;</code>
      */
     protected $task = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.Job job = 2;</code>
-     */
-    protected $job = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Executor\Task $task
-     *     @type \Eolymp\Executor\Job $job
      * }
      */
     public function __construct($data = NULL) {
@@ -65,38 +60,6 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Task::class);
         $this->task = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.Job job = 2;</code>
-     * @return \Eolymp\Executor\Job|null
-     */
-    public function getJob()
-    {
-        return $this->job;
-    }
-
-    public function hasJob()
-    {
-        return isset($this->job);
-    }
-
-    public function clearJob()
-    {
-        unset($this->job);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.Job job = 2;</code>
-     * @param \Eolymp\Executor\Job $var
-     * @return $this
-     */
-    public function setJob($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Job::class);
-        $this->job = $var;
 
         return $this;
     }
