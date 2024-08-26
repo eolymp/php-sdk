@@ -14,17 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeScriptInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     */
-    protected $problem_id = '';
-    /**
-     * Generated from protobuf field <code>string script_id = 2;</code>
+     * Generated from protobuf field <code>string script_id = 1;</code>
      */
     protected $script_id = '';
-    /**
-     * Generated from protobuf field <code>bool render = 3;</code>
-     */
-    protected $render = false;
     /**
      * request data for specific problem version
      *
@@ -38,9 +30,7 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $problem_id
      *     @type string $script_id
-     *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -51,29 +41,7 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string script_id = 2;</code>
+     * Generated from protobuf field <code>string script_id = 1;</code>
      * @return string
      */
     public function getScriptId()
@@ -82,7 +50,7 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string script_id = 2;</code>
+     * Generated from protobuf field <code>string script_id = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -90,28 +58,6 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->script_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
 
         return $this;
     }

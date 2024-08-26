@@ -14,11 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateScriptInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     */
-    protected $problem_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Script script = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Script script = 1;</code>
      */
     protected $script = null;
 
@@ -28,7 +24,6 @@ class CreateScriptInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $problem_id
      *     @type \Eolymp\Atlas\Script $script
      * }
      */
@@ -38,29 +33,7 @@ class CreateScriptInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Script script = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Script script = 1;</code>
      * @return \Eolymp\Atlas\Script|null
      */
     public function getScript()
@@ -79,7 +52,7 @@ class CreateScriptInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Script script = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Script script = 1;</code>
      * @param \Eolymp\Atlas\Script $var
      * @return $this
      */

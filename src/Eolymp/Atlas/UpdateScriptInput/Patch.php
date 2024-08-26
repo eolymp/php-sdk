@@ -16,38 +16,33 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>LOCALE = 1;</code>
+     * Generated from protobuf enum <code>NAME = 1;</code>
      */
-    const LOCALE = 1;
+    const NAME = 1;
     /**
-     * Generated from protobuf enum <code>TITLE = 2;</code>
+     * Generated from protobuf enum <code>SECRET = 2;</code>
      */
-    const TITLE = 2;
+    const SECRET = 2;
     /**
-     * Generated from protobuf enum <code>CONTENT = 3;</code>
+     * Generated from protobuf enum <code>RUNTIME = 3;</code>
      */
-    const CONTENT = 3;
+    const RUNTIME = 3;
     /**
-     * Generated from protobuf enum <code>DOWNLOAD_LINK = 4;</code>
+     * Generated from protobuf enum <code>SOURCE_URL = 4;</code>
      */
-    const DOWNLOAD_LINK = 4;
+    const SOURCE_URL = 4;
     /**
-     * Generated from protobuf enum <code>AUTHOR = 5;</code>
+     * Generated from protobuf enum <code>FILES = 5;</code>
      */
-    const AUTHOR = 5;
-    /**
-     * Generated from protobuf enum <code>SOURCE = 6;</code>
-     */
-    const SOURCE = 6;
+    const FILES = 5;
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::LOCALE => 'LOCALE',
-        self::TITLE => 'TITLE',
-        self::CONTENT => 'CONTENT',
-        self::DOWNLOAD_LINK => 'DOWNLOAD_LINK',
-        self::AUTHOR => 'AUTHOR',
-        self::SOURCE => 'SOURCE',
+        self::NAME => 'NAME',
+        self::SECRET => 'SECRET',
+        self::RUNTIME => 'RUNTIME',
+        self::SOURCE_URL => 'SOURCE_URL',
+        self::FILES => 'FILES',
     ];
 
     public static function name($value)

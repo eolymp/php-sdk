@@ -20,8 +20,6 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * deprecated
-     *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      */
     protected $testset_id = '';
@@ -79,7 +77,6 @@ class Test extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Test unique identifier.
      *     @type string $testset_id
-     *           deprecated
      *     @type int $index
      *           Index, a sequential number, of the test within testset.
      *     @type bool $example
@@ -134,8 +131,6 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated
-     *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      * @return string
      */
@@ -145,8 +140,6 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated
-     *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      * @param string $var
      * @return $this

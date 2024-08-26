@@ -14,14 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListScriptsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     */
-    protected $problem_id = '';
-    /**
-     * Generated from protobuf field <code>bool render = 2;</code>
-     */
-    protected $render = false;
-    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
@@ -34,8 +26,6 @@ class ListScriptsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $problem_id
-     *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -43,50 +33,6 @@ class ListScriptsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\ScriptService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 2;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
-
-        return $this;
     }
 
     /**

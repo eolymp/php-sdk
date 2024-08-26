@@ -16,13 +16,9 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateScriptInput.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateScriptInput.Patch patch = 1;</code>
      */
     private $patch;
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     */
-    protected $problem_id = '';
     /**
      * Generated from protobuf field <code>string script_id = 2;</code>
      */
@@ -40,7 +36,6 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
-     *     @type string $problem_id
      *     @type string $script_id
      *     @type \Eolymp\Atlas\Script $script
      * }
@@ -53,7 +48,7 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateScriptInput.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateScriptInput.Patch patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -64,7 +59,7 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateScriptInput.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateScriptInput.Patch patch = 1;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -72,28 +67,6 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateScriptInput\Patch::class);
         $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
 
         return $this;
     }
