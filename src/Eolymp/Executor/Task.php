@@ -114,7 +114,7 @@ class Task extends \Google\Protobuf\Internal\Message
     /**
      * Additional files to be placed in the work directory during compilation and runs*
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      */
     private $files;
     /**
@@ -166,7 +166,7 @@ class Task extends \Google\Protobuf\Internal\Message
      *           Interactor configuration
      *     @type array<\Eolymp\Executor\Task\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           Run configurations.
-     *     @type array<\Eolymp\Executor\Task\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files to be placed in the work directory during compilation and runs*
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
      *           Additional scripts to be used during execution.
@@ -602,7 +602,7 @@ class Task extends \Google\Protobuf\Internal\Message
     /**
      * Additional files to be placed in the work directory during compilation and runs*
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFiles()
@@ -613,13 +613,13 @@ class Task extends \Google\Protobuf\Internal\Message
     /**
      * Additional files to be placed in the work directory during compilation and runs*
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Task.File files = 50;</code>
-     * @param array<\Eolymp\Executor\Task\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
+     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Task\File::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
         $this->files = $arr;
 
         return $this;

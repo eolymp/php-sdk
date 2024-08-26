@@ -14,11 +14,11 @@ class Script
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Atlas\File::initOnce();
+        \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ü
-eolymp/atlas/script.protoeolymp.atlas"z
+ß
+eolymp/atlas/script.protoeolymp.atlas"}
 Script
 
 id (	
@@ -27,8 +27,8 @@ class Script
 runtime
  (	
 
-source_url (	!
-files (2.eolymp.atlas.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+source_url (	$
+files (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

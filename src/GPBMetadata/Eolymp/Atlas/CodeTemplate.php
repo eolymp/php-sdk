@@ -14,11 +14,11 @@ class CodeTemplate
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Atlas\File::initOnce();
+        \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ˆ
- eolymp/atlas/code_template.protoeolymp.atlas"ž
+‹
+ eolymp/atlas/code_template.protoeolymp.atlas"¡
 Template
 
 id (	
@@ -29,8 +29,8 @@ problem_id (	
 source
  (	
 header (	
-footer (	!
-files (2.eolymp.atlas.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+footer (	$
+files (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -36,7 +36,7 @@ class Script extends \Google\Protobuf\Internal\Message
     /**
      * Additional files placed into workdir during compilation and execution
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Script.File files = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
      */
     private $files;
 
@@ -52,7 +52,7 @@ class Script extends \Google\Protobuf\Internal\Message
      *           Programming language in which script is written
      *     @type string $source_url
      *           Source code for script
-     *     @type array<\Eolymp\Executor\Script\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
      * }
      */
@@ -142,7 +142,7 @@ class Script extends \Google\Protobuf\Internal\Message
     /**
      * Additional files placed into workdir during compilation and execution
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Script.File files = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFiles()
@@ -153,13 +153,13 @@ class Script extends \Google\Protobuf\Internal\Message
     /**
      * Additional files placed into workdir during compilation and execution
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Script.File files = 10;</code>
-     * @param array<\Eolymp\Executor\Script\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
+     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Script\File::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
         $this->files = $arr;
 
         return $this;

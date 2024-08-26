@@ -67,7 +67,7 @@ class Checker extends \Google\Protobuf\Internal\Message
     /**
      * Additional files placed into workdir during compilation and execution
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Checker.File files = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
      */
     private $files;
 
@@ -94,7 +94,7 @@ class Checker extends \Google\Protobuf\Internal\Message
      *           If set to false the rows of output and answer will be sorted before comparison.
      *     @type bool $secret
      *           Secret means checker code and configuration must not be exposed to users
-     *     @type array<\Eolymp\Executor\Checker\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
      * }
      */
@@ -316,7 +316,7 @@ class Checker extends \Google\Protobuf\Internal\Message
     /**
      * Additional files placed into workdir during compilation and execution
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Checker.File files = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFiles()
@@ -327,13 +327,13 @@ class Checker extends \Google\Protobuf\Internal\Message
     /**
      * Additional files placed into workdir during compilation and execution
      *
-     * Generated from protobuf field <code>repeated .eolymp.executor.Checker.File files = 10;</code>
-     * @param array<\Eolymp\Executor\Checker\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
+     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFiles($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Checker\File::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
         $this->files = $arr;
 
         return $this;

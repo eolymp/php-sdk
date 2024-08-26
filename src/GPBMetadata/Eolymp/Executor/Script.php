@@ -14,21 +14,18 @@ class Script
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Å
-eolymp/executor/script.protoeolymp.executor"í
+œ
+eolymp/executor/script.protoeolymp.executor"a
 Script
 name (	
 runtime (	
 
-source_url (	+
+source_url (	$
 files
- (2.eolymp.executor.Script.File(
-File
-path (	
-
-source_url (	B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
+ (2.eolymp.executor.FileB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
         , true);
 
         static::$is_initialized = true;

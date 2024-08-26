@@ -14,11 +14,11 @@ class Template
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Atlas\File::initOnce();
+        \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ç
-eolymp/judge/template.protoeolymp.judge"®
+ê
+eolymp/judge/template.protoeolymp.judge"´
 Template
 
 id (	
@@ -32,8 +32,8 @@ source_ern
 
 header_ern (	
 
-footer_ern (	!
-files (2.eolymp.atlas.FileB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
+footer_ern (	$
+files (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
         , true);
 
         static::$is_initialized = true;
