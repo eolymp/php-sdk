@@ -14,7 +14,7 @@ class Template
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Atlas\CodeTemplateFile::initOnce();
+        \GPBMetadata\Eolymp\Atlas\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
 
