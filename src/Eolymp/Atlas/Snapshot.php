@@ -57,6 +57,10 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Solution solutions = 11;</code>
      */
     private $solutions;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Script scripts = 12;</code>
+     */
+    private $scripts;
 
     /**
      * Constructor.
@@ -75,6 +79,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $tests
      *     @type array<\Eolymp\Atlas\Editorial>|\Google\Protobuf\Internal\RepeatedField $editorials
      *     @type array<\Eolymp\Atlas\Solution>|\Google\Protobuf\Internal\RepeatedField $solutions
+     *     @type array<\Eolymp\Atlas\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
      * }
      */
     public function __construct($data = NULL) {
@@ -360,6 +365,28 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Solution::class);
         $this->solutions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Script scripts = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScripts()
+    {
+        return $this->scripts;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Script scripts = 12;</code>
+     * @param array<\Eolymp\Atlas\Script>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScripts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Script::class);
+        $this->scripts = $arr;
 
         return $this;
     }
