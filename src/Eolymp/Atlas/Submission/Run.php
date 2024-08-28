@@ -58,12 +58,6 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $answer_url = '';
     /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>string stderr_url = 7;</code>
-     */
-    protected $stderr_url = '';
-    /**
      * Generated from protobuf field <code>float cost = 12;</code>
      */
     protected $cost = 0.0;
@@ -118,8 +112,6 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $input_url
      *     @type string $output_url
      *     @type string $answer_url
-     *     @type string $stderr_url
-     *           deprecated, use stats instead
      *     @type float $cost
      *     @type float $score
      *     @type int $status
@@ -360,32 +352,6 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->answer_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>string stderr_url = 7;</code>
-     * @return string
-     */
-    public function getStderrUrl()
-    {
-        return $this->stderr_url;
-    }
-
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>string stderr_url = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStderrUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->stderr_url = $var;
 
         return $this;
     }
