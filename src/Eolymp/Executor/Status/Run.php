@@ -40,38 +40,26 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $cost = 0.0;
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      */
     protected $wall_time_usage = 0;
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
      */
     protected $wall_time_limit = 0;
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      */
     protected $cpu_time_usage = 0;
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
      */
     protected $cpu_time_limit = 0;
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      */
     protected $memory_usage = 0;
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      */
     protected $memory_limit = 0;
@@ -187,17 +175,11 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type float $cost
      *           cost, maximum number of points awarded for the test (as defined in the task)
      *     @type int $wall_time_usage
-     *           deprecated, use stats instead
      *     @type int $wall_time_limit
-     *           deprecated, use stats instead
      *     @type int $cpu_time_usage
-     *           deprecated, use stats instead
      *     @type int $cpu_time_limit
-     *           deprecated, use stats instead
      *     @type int|string $memory_usage
-     *           deprecated, use stats instead
      *     @type int|string $memory_limit
-     *           deprecated, use stats instead
      *     @type int $exit_code
      *           deprecated, use stats instead
      *     @type int $signal
@@ -341,8 +323,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      * @return int
      */
@@ -352,8 +332,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      * @param int $var
      * @return $this
@@ -367,8 +345,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
      * @return int
      */
@@ -378,8 +354,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
      * @param int $var
      * @return $this
@@ -393,8 +367,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      * @return int
      */
@@ -404,8 +376,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      * @param int $var
      * @return $this
@@ -419,8 +389,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
      * @return int
      */
@@ -430,8 +398,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
      * @param int $var
      * @return $this
@@ -445,8 +411,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      * @return int|string
      */
@@ -456,8 +420,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      * @param int|string $var
      * @return $this
@@ -471,8 +433,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      * @return int|string
      */
@@ -482,8 +442,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      * @param int|string $var
      * @return $this

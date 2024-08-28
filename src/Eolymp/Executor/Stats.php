@@ -40,35 +40,17 @@ class Stats extends \Google\Protobuf\Internal\Message
      */
     protected $wall_time_duration = 0;
     /**
-     *  // wall time limit
-     *
-     * Generated from protobuf field <code>uint32 wall_time_limit = 21;</code>
-     */
-    protected $wall_time_limit = 0;
-    /**
      * CPU time in milliseconds
      *
      * Generated from protobuf field <code>uint32 cpu_time_duration = 25;</code>
      */
     protected $cpu_time_duration = 0;
     /**
-     *  // CPU time limit
-     *
-     * Generated from protobuf field <code>uint32 cpu_time_limit = 26;</code>
-     */
-    protected $cpu_time_limit = 0;
-    /**
      * peak memory usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_peak = 30;</code>
      */
     protected $memory_peak = 0;
-    /**
-     * memory usage limit
-     *
-     * Generated from protobuf field <code>uint64 memory_limit = 31;</code>
-     */
-    protected $memory_limit = 0;
     /**
      * termination signal, if any
      *
@@ -96,16 +78,10 @@ class Stats extends \Google\Protobuf\Internal\Message
      *           stderr content
      *     @type int $wall_time_duration
      *           wall time in milliseconds
-     *     @type int $wall_time_limit
-     *            // wall time limit
      *     @type int $cpu_time_duration
      *           CPU time in milliseconds
-     *     @type int $cpu_time_limit
-     *            // CPU time limit
      *     @type int|string $memory_peak
      *           peak memory usage in bytes
-     *     @type int|string $memory_limit
-     *           memory usage limit
      *     @type int $signal
      *           termination signal, if any
      *     @type int $exit_code
@@ -222,32 +198,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *  // wall time limit
-     *
-     * Generated from protobuf field <code>uint32 wall_time_limit = 21;</code>
-     * @return int
-     */
-    public function getWallTimeLimit()
-    {
-        return $this->wall_time_limit;
-    }
-
-    /**
-     *  // wall time limit
-     *
-     * Generated from protobuf field <code>uint32 wall_time_limit = 21;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setWallTimeLimit($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->wall_time_limit = $var;
-
-        return $this;
-    }
-
-    /**
      * CPU time in milliseconds
      *
      * Generated from protobuf field <code>uint32 cpu_time_duration = 25;</code>
@@ -274,32 +224,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *  // CPU time limit
-     *
-     * Generated from protobuf field <code>uint32 cpu_time_limit = 26;</code>
-     * @return int
-     */
-    public function getCpuTimeLimit()
-    {
-        return $this->cpu_time_limit;
-    }
-
-    /**
-     *  // CPU time limit
-     *
-     * Generated from protobuf field <code>uint32 cpu_time_limit = 26;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCpuTimeLimit($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->cpu_time_limit = $var;
-
-        return $this;
-    }
-
-    /**
      * peak memory usage in bytes
      *
      * Generated from protobuf field <code>uint64 memory_peak = 30;</code>
@@ -321,32 +245,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->memory_peak = $var;
-
-        return $this;
-    }
-
-    /**
-     * memory usage limit
-     *
-     * Generated from protobuf field <code>uint64 memory_limit = 31;</code>
-     * @return int|string
-     */
-    public function getMemoryLimit()
-    {
-        return $this->memory_limit;
-    }
-
-    /**
-     * memory usage limit
-     *
-     * Generated from protobuf field <code>uint64 memory_limit = 31;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setMemoryLimit($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->memory_limit = $var;
 
         return $this;
     }

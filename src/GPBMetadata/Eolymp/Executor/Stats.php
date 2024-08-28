@@ -16,20 +16,17 @@ class Stats
         }
         $pool->internalAddGeneratedFile(
             '
-æ
-eolymp/executor/stats.protoeolymp.executor"ø
+Ÿ
+eolymp/executor/stats.protoeolymp.executor"±
 Stats
 	stdin_url (	
 
 stdout_url (	
 
 stderr_url (	
-wall_time_duration (
-wall_time_limit (
-cpu_time_duration (
-cpu_time_limit (
-memory_peak (
-memory_limit (
+wall_time_duration (
+cpu_time_duration (
+memory_peak (
 signale (
 	exit_coded (B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
         , true);
