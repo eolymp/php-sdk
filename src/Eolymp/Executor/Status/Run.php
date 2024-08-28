@@ -96,9 +96,9 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * execution stats
      *
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
      */
-    protected $stats = null;
+    protected $debug_stats = null;
     /**
      * deprecated, use checker_stats instead
      *
@@ -189,7 +189,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $answer_url
      *     @type string $stderr_url
      *           deprecated, use stats instead
-     *     @type \Eolymp\Executor\Stats $stats
+     *     @type \Eolymp\Executor\Stats $debug_stats
      *           execution stats
      *     @type string $checker_log_url
      *           deprecated, use checker_stats instead
@@ -601,35 +601,35 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * execution stats
      *
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
      * @return \Eolymp\Executor\Stats|null
      */
-    public function getStats()
+    public function getDebugStats()
     {
-        return $this->stats;
+        return $this->debug_stats;
     }
 
-    public function hasStats()
+    public function hasDebugStats()
     {
-        return isset($this->stats);
+        return isset($this->debug_stats);
     }
 
-    public function clearStats()
+    public function clearDebugStats()
     {
-        unset($this->stats);
+        unset($this->debug_stats);
     }
 
     /**
      * execution stats
      *
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
      * @param \Eolymp\Executor\Stats $var
      * @return $this
      */
-    public function setStats($var)
+    public function setDebugStats($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
-        $this->stats = $var;
+        $this->debug_stats = $var;
 
         return $this;
     }
