@@ -4,7 +4,7 @@
 
 namespace Eolymp\Executor;
 
-class ExecutorServiceClient {
+class TaskServiceClient {
 
     /** @var string base URL */
     private $url;
