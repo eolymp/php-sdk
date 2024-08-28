@@ -64,18 +64,6 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $memory_limit = 0;
     /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>uint32 exit_code = 70;</code>
-     */
-    protected $exit_code = 0;
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>uint32 signal = 71;</code>
-     */
-    protected $signal = 0;
-    /**
      * Generated from protobuf field <code>string input_url = 10;</code>
      */
     protected $input_url = '';
@@ -88,73 +76,19 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $answer_url = '';
     /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>string stderr_url = 21;</code>
-     */
-    protected $stderr_url = '';
-    /**
      * execution stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
      */
     protected $debug_stats = null;
     /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>string checker_log_url = 31;</code>
-     */
-    protected $checker_log_url = '';
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint32 checker_wall_time_usage = 32;</code>
-     */
-    protected $checker_wall_time_usage = 0;
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint64 checker_memory_usage = 33;</code>
-     */
-    protected $checker_memory_usage = 0;
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint32 checker_exit_code = 34;</code>
-     */
-    protected $checker_exit_code = 0;
-    /**
-     * execution stats
+     * checker stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 35;</code>
      */
     protected $checker_stats = null;
     /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>string interactor_log_url = 41;</code>
-     */
-    protected $interactor_log_url = '';
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint32 interactor_wall_time_usage = 42;</code>
-     */
-    protected $interactor_wall_time_usage = 0;
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint64 interactor_memory_usage = 43;</code>
-     */
-    protected $interactor_memory_usage = 0;
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint32 interactor_exit_code = 44;</code>
-     */
-    protected $interactor_exit_code = 0;
-    /**
-     * execution stats
+     * interactor stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 45;</code>
      */
@@ -180,37 +114,15 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type int $cpu_time_limit
      *     @type int|string $memory_usage
      *     @type int|string $memory_limit
-     *     @type int $exit_code
-     *           deprecated, use stats instead
-     *     @type int $signal
-     *           deprecated, use stats instead
      *     @type string $input_url
      *     @type string $output_url
      *     @type string $answer_url
-     *     @type string $stderr_url
-     *           deprecated, use stats instead
      *     @type \Eolymp\Executor\Stats $debug_stats
      *           execution stats
-     *     @type string $checker_log_url
-     *           deprecated, use checker_stats instead
-     *     @type int $checker_wall_time_usage
-     *           deprecated, use checker_stats instead
-     *     @type int|string $checker_memory_usage
-     *           deprecated, use checker_stats instead
-     *     @type int $checker_exit_code
-     *           deprecated, use checker_stats instead
      *     @type \Eolymp\Executor\Stats $checker_stats
-     *           execution stats
-     *     @type string $interactor_log_url
-     *           deprecated, use interactor_stats instead
-     *     @type int $interactor_wall_time_usage
-     *           deprecated, use interactor_stats instead
-     *     @type int|string $interactor_memory_usage
-     *           deprecated, use interactor_stats instead
-     *     @type int $interactor_exit_code
-     *           deprecated, use interactor_stats instead
+     *           checker stats
      *     @type \Eolymp\Executor\Stats $interactor_stats
-     *           execution stats
+     *           interactor stats
      * }
      */
     public function __construct($data = NULL) {
@@ -455,58 +367,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>uint32 exit_code = 70;</code>
-     * @return int
-     */
-    public function getExitCode()
-    {
-        return $this->exit_code;
-    }
-
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>uint32 exit_code = 70;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setExitCode($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->exit_code = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>uint32 signal = 71;</code>
-     * @return int
-     */
-    public function getSignal()
-    {
-        return $this->signal;
-    }
-
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>uint32 signal = 71;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSignal($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->signal = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string input_url = 10;</code>
      * @return string
      */
@@ -573,32 +433,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>string stderr_url = 21;</code>
-     * @return string
-     */
-    public function getStderrUrl()
-    {
-        return $this->stderr_url;
-    }
-
-    /**
-     * deprecated, use stats instead
-     *
-     * Generated from protobuf field <code>string stderr_url = 21;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStderrUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->stderr_url = $var;
-
-        return $this;
-    }
-
-    /**
      * execution stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
@@ -635,111 +469,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>string checker_log_url = 31;</code>
-     * @return string
-     */
-    public function getCheckerLogUrl()
-    {
-        return $this->checker_log_url;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>string checker_log_url = 31;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCheckerLogUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->checker_log_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint32 checker_wall_time_usage = 32;</code>
-     * @return int
-     */
-    public function getCheckerWallTimeUsage()
-    {
-        return $this->checker_wall_time_usage;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint32 checker_wall_time_usage = 32;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCheckerWallTimeUsage($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->checker_wall_time_usage = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint64 checker_memory_usage = 33;</code>
-     * @return int|string
-     */
-    public function getCheckerMemoryUsage()
-    {
-        return $this->checker_memory_usage;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint64 checker_memory_usage = 33;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setCheckerMemoryUsage($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->checker_memory_usage = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint32 checker_exit_code = 34;</code>
-     * @return int
-     */
-    public function getCheckerExitCode()
-    {
-        return $this->checker_exit_code;
-    }
-
-    /**
-     * deprecated, use checker_stats instead
-     *
-     * Generated from protobuf field <code>uint32 checker_exit_code = 34;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCheckerExitCode($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->checker_exit_code = $var;
-
-        return $this;
-    }
-
-    /**
-     * execution stats
+     * checker stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 35;</code>
      * @return \Eolymp\Executor\Stats|null
@@ -760,7 +490,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * execution stats
+     * checker stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 35;</code>
      * @param \Eolymp\Executor\Stats $var
@@ -775,111 +505,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>string interactor_log_url = 41;</code>
-     * @return string
-     */
-    public function getInteractorLogUrl()
-    {
-        return $this->interactor_log_url;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>string interactor_log_url = 41;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInteractorLogUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->interactor_log_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint32 interactor_wall_time_usage = 42;</code>
-     * @return int
-     */
-    public function getInteractorWallTimeUsage()
-    {
-        return $this->interactor_wall_time_usage;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint32 interactor_wall_time_usage = 42;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setInteractorWallTimeUsage($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->interactor_wall_time_usage = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint64 interactor_memory_usage = 43;</code>
-     * @return int|string
-     */
-    public function getInteractorMemoryUsage()
-    {
-        return $this->interactor_memory_usage;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint64 interactor_memory_usage = 43;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setInteractorMemoryUsage($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->interactor_memory_usage = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint32 interactor_exit_code = 44;</code>
-     * @return int
-     */
-    public function getInteractorExitCode()
-    {
-        return $this->interactor_exit_code;
-    }
-
-    /**
-     * deprecated, use interactor_stats instead
-     *
-     * Generated from protobuf field <code>uint32 interactor_exit_code = 44;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setInteractorExitCode($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->interactor_exit_code = $var;
-
-        return $this;
-    }
-
-    /**
-     * execution stats
+     * interactor stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 45;</code>
      * @return \Eolymp\Executor\Stats|null
@@ -900,7 +526,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * execution stats
+     * interactor stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 45;</code>
      * @param \Eolymp\Executor\Stats $var
