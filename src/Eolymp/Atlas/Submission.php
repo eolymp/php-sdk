@@ -50,7 +50,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $lang = '';
     /**
-     * source code
+     * deprecated: source code
      *
      * Generated from protobuf field <code>string source = 11;</code>
      */
@@ -163,7 +163,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *     @type string $lang
      *           programming language
      *     @type string $source
-     *           source code
+     *           deprecated: source code
      *     @type string $source_url
      *           source code URL
      *     @type string $signature
@@ -367,7 +367,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code
+     * deprecated: source code
      *
      * Generated from protobuf field <code>string source = 11;</code>
      * @return string
@@ -378,7 +378,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code
+     * deprecated: source code
      *
      * Generated from protobuf field <code>string source = 11;</code>
      * @param string $var
