@@ -94,11 +94,17 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $signal = 0;
     /**
-     * deprecated, use stats instead
-     *
+     * Generated from protobuf field <code>string input_url = 10;</code>
+     */
+    protected $input_url = '';
+    /**
      * Generated from protobuf field <code>string output_url = 11;</code>
      */
     protected $output_url = '';
+    /**
+     * Generated from protobuf field <code>string answer_url = 12;</code>
+     */
+    protected $answer_url = '';
     /**
      * deprecated, use stats instead
      *
@@ -198,8 +204,9 @@ class Run extends \Google\Protobuf\Internal\Message
      *           deprecated, use stats instead
      *     @type int $signal
      *           deprecated, use stats instead
+     *     @type string $input_url
      *     @type string $output_url
-     *           deprecated, use stats instead
+     *     @type string $answer_url
      *     @type string $stderr_url
      *           deprecated, use stats instead
      *     @type string $checker_log_url
@@ -578,8 +585,28 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
+     * Generated from protobuf field <code>string input_url = 10;</code>
+     * @return string
+     */
+    public function getInputUrl()
+    {
+        return $this->input_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->input_url = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string output_url = 11;</code>
      * @return string
      */
@@ -589,8 +616,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use stats instead
-     *
      * Generated from protobuf field <code>string output_url = 11;</code>
      * @param string $var
      * @return $this
@@ -599,6 +624,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->output_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 12;</code>
+     * @return string
+     */
+    public function getAnswerUrl()
+    {
+        return $this->answer_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->answer_url = $var;
 
         return $this;
     }
