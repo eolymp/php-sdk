@@ -18,6 +18,14 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>uint32 index = 10;</code>
+     */
+    protected $index = 0;
+    /**
+     * Generated from protobuf field <code>string test_id = 11;</code>
+     */
+    protected $test_id = '';
+    /**
      * wall time (real-world time) usage
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
@@ -38,10 +46,6 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $resource_usage = 0.0;
     /**
-     * Generated from protobuf field <code>string input_url = 8;</code>
-     */
-    protected $input_url = '';
-    /**
      * Generated from protobuf field <code>string output_url = 6;</code>
      */
     protected $output_url = '';
@@ -49,18 +53,6 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string stderr_url = 7;</code>
      */
     protected $stderr_url = '';
-    /**
-     * Generated from protobuf field <code>string answer_url = 9;</code>
-     */
-    protected $answer_url = '';
-    /**
-     * Generated from protobuf field <code>uint32 index = 10;</code>
-     */
-    protected $index = 0;
-    /**
-     * Generated from protobuf field <code>string test_id = 11;</code>
-     */
-    protected $test_id = '';
     /**
      * Generated from protobuf field <code>float cost = 12;</code>
      */
@@ -105,18 +97,16 @@ class Run extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type int $index
+     *     @type string $test_id
      *     @type int $wall_time_usage
      *           wall time (real-world time) usage
      *     @type int $cpu_time_usage
      *           cpu time (time cpu was active)
      *     @type int|string $memory_usage
      *     @type float $resource_usage
-     *     @type string $input_url
      *     @type string $output_url
      *     @type string $stderr_url
-     *     @type string $answer_url
-     *     @type int $index
-     *     @type string $test_id
      *     @type float $cost
      *     @type float $score
      *     @type int $status
@@ -151,6 +141,50 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 10;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 index = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string test_id = 11;</code>
+     * @return string
+     */
+    public function getTestId()
+    {
+        return $this->test_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string test_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->test_id = $var;
 
         return $this;
     }
@@ -252,28 +286,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string input_url = 8;</code>
-     * @return string
-     */
-    public function getInputUrl()
-    {
-        return $this->input_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string input_url = 8;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInputUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->input_url = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string output_url = 6;</code>
      * @return string
      */
@@ -313,72 +325,6 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stderr_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string answer_url = 9;</code>
-     * @return string
-     */
-    public function getAnswerUrl()
-    {
-        return $this->answer_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string answer_url = 9;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAnswerUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->answer_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 index = 10;</code>
-     * @return int
-     */
-    public function getIndex()
-    {
-        return $this->index;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 index = 10;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setIndex($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->index = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string test_id = 11;</code>
-     * @return string
-     */
-    public function getTestId()
-    {
-        return $this->test_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string test_id = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->test_id = $var;
 
         return $this;
     }
