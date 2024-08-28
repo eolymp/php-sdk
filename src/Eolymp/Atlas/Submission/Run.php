@@ -46,10 +46,20 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $resource_usage = 0.0;
     /**
+     * Generated from protobuf field <code>string input_url = 8;</code>
+     */
+    protected $input_url = '';
+    /**
      * Generated from protobuf field <code>string output_url = 6;</code>
      */
     protected $output_url = '';
     /**
+     * Generated from protobuf field <code>string answer_url = 9;</code>
+     */
+    protected $answer_url = '';
+    /**
+     * deprecated, use stats instead
+     *
      * Generated from protobuf field <code>string stderr_url = 7;</code>
      */
     protected $stderr_url = '';
@@ -70,9 +80,9 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $verdict = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 14;</code>
      */
-    protected $stats = null;
+    protected $debug_stats = null;
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
      */
@@ -105,13 +115,16 @@ class Run extends \Google\Protobuf\Internal\Message
      *           cpu time (time cpu was active)
      *     @type int|string $memory_usage
      *     @type float $resource_usage
+     *     @type string $input_url
      *     @type string $output_url
+     *     @type string $answer_url
      *     @type string $stderr_url
+     *           deprecated, use stats instead
      *     @type float $cost
      *     @type float $score
      *     @type int $status
      *     @type int $verdict
-     *     @type \Eolymp\Executor\Stats $stats
+     *     @type \Eolymp\Executor\Stats $debug_stats
      *     @type \Eolymp\Atlas\Submission\CheckerExecutionData $checker_execution_data
      *     @type \Eolymp\Executor\Stats $checker_stats
      *     @type \Eolymp\Atlas\Submission\InteractorExecutionData $interactor_execution_data
@@ -286,6 +299,28 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string input_url = 8;</code>
+     * @return string
+     */
+    public function getInputUrl()
+    {
+        return $this->input_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->input_url = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string output_url = 6;</code>
      * @return string
      */
@@ -308,6 +343,30 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string answer_url = 9;</code>
+     * @return string
+     */
+    public function getAnswerUrl()
+    {
+        return $this->answer_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->answer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, use stats instead
+     *
      * Generated from protobuf field <code>string stderr_url = 7;</code>
      * @return string
      */
@@ -317,6 +376,8 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use stats instead
+     *
      * Generated from protobuf field <code>string stderr_url = 7;</code>
      * @param string $var
      * @return $this
@@ -418,33 +479,33 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 14;</code>
      * @return \Eolymp\Executor\Stats|null
      */
-    public function getStats()
+    public function getDebugStats()
     {
-        return $this->stats;
+        return $this->debug_stats;
     }
 
-    public function hasStats()
+    public function hasDebugStats()
     {
-        return isset($this->stats);
+        return isset($this->debug_stats);
     }
 
-    public function clearStats()
+    public function clearDebugStats()
     {
-        unset($this->stats);
+        unset($this->debug_stats);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 14;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 14;</code>
      * @param \Eolymp\Executor\Stats $var
      * @return $this
      */
-    public function setStats($var)
+    public function setDebugStats($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
-        $this->stats = $var;
+        $this->debug_stats = $var;
 
         return $this;
     }

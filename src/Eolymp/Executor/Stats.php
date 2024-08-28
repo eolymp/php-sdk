@@ -16,29 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class Stats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * input used during run
+     * stdin content
      *
      * Generated from protobuf field <code>string stdin_url = 1;</code>
      */
     protected $stdin_url = '';
     /**
-     * stdout output
+     * stdout content
      *
      * Generated from protobuf field <code>string stdout_url = 2;</code>
      */
     protected $stdout_url = '';
     /**
-     * stderr output
+     * stderr content
      *
      * Generated from protobuf field <code>string stderr_url = 3;</code>
      */
     protected $stderr_url = '';
-    /**
-     * overall resource usage to the limits (0..1)
-     *
-     * Generated from protobuf field <code>float overall_usage = 10;</code>
-     */
-    protected $overall_usage = 0.0;
     /**
      * wall time in milliseconds
      *
@@ -46,11 +40,11 @@ class Stats extends \Google\Protobuf\Internal\Message
      */
     protected $wall_time_duration = 0;
     /**
-     * wall time usage to the time limit (0..1)
+     *  // wall time limit
      *
-     * Generated from protobuf field <code>float wall_time_usage = 21;</code>
+     * Generated from protobuf field <code>uint32 wall_time_limit = 21;</code>
      */
-    protected $wall_time_usage = 0.0;
+    protected $wall_time_limit = 0;
     /**
      * CPU time in milliseconds
      *
@@ -58,11 +52,11 @@ class Stats extends \Google\Protobuf\Internal\Message
      */
     protected $cpu_time_duration = 0;
     /**
-     * CPU time usage to the time limit (0..1)
+     *  // CPU time limit
      *
-     * Generated from protobuf field <code>float cpu_time_usage = 26;</code>
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 26;</code>
      */
-    protected $cpu_time_usage = 0.0;
+    protected $cpu_time_limit = 0;
     /**
      * peak memory usage in bytes
      *
@@ -70,27 +64,23 @@ class Stats extends \Google\Protobuf\Internal\Message
      */
     protected $memory_peak = 0;
     /**
-     * memory usage to the memory limit (0..1)
+     * memory usage limit
      *
-     * Generated from protobuf field <code>float memory_usage = 31;</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 31;</code>
      */
-    protected $memory_usage = 0.0;
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 50;</code>
-     */
-    protected $resource_usage = null;
-    /**
-     * exit code
-     *
-     * Generated from protobuf field <code>uint32 exit_code = 100;</code>
-     */
-    protected $exit_code = 0;
+    protected $memory_limit = 0;
     /**
      * termination signal, if any
      *
      * Generated from protobuf field <code>uint32 signal = 101;</code>
      */
     protected $signal = 0;
+    /**
+     * exit code
+     *
+     * Generated from protobuf field <code>uint32 exit_code = 100;</code>
+     */
+    protected $exit_code = 0;
 
     /**
      * Constructor.
@@ -99,30 +89,27 @@ class Stats extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $stdin_url
-     *           input used during run
+     *           stdin content
      *     @type string $stdout_url
-     *           stdout output
+     *           stdout content
      *     @type string $stderr_url
-     *           stderr output
-     *     @type float $overall_usage
-     *           overall resource usage to the limits (0..1)
+     *           stderr content
      *     @type int $wall_time_duration
      *           wall time in milliseconds
-     *     @type float $wall_time_usage
-     *           wall time usage to the time limit (0..1)
+     *     @type int $wall_time_limit
+     *            // wall time limit
      *     @type int $cpu_time_duration
      *           CPU time in milliseconds
-     *     @type float $cpu_time_usage
-     *           CPU time usage to the time limit (0..1)
+     *     @type int $cpu_time_limit
+     *            // CPU time limit
      *     @type int|string $memory_peak
      *           peak memory usage in bytes
-     *     @type float $memory_usage
-     *           memory usage to the memory limit (0..1)
-     *     @type \Eolymp\Executor\ResourceUsage $resource_usage
-     *     @type int $exit_code
-     *           exit code
+     *     @type int|string $memory_limit
+     *           memory usage limit
      *     @type int $signal
      *           termination signal, if any
+     *     @type int $exit_code
+     *           exit code
      * }
      */
     public function __construct($data = NULL) {
@@ -131,7 +118,7 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * input used during run
+     * stdin content
      *
      * Generated from protobuf field <code>string stdin_url = 1;</code>
      * @return string
@@ -142,7 +129,7 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * input used during run
+     * stdin content
      *
      * Generated from protobuf field <code>string stdin_url = 1;</code>
      * @param string $var
@@ -157,7 +144,7 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * stdout output
+     * stdout content
      *
      * Generated from protobuf field <code>string stdout_url = 2;</code>
      * @return string
@@ -168,7 +155,7 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * stdout output
+     * stdout content
      *
      * Generated from protobuf field <code>string stdout_url = 2;</code>
      * @param string $var
@@ -183,7 +170,7 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * stderr output
+     * stderr content
      *
      * Generated from protobuf field <code>string stderr_url = 3;</code>
      * @return string
@@ -194,7 +181,7 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * stderr output
+     * stderr content
      *
      * Generated from protobuf field <code>string stderr_url = 3;</code>
      * @param string $var
@@ -204,32 +191,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stderr_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * overall resource usage to the limits (0..1)
-     *
-     * Generated from protobuf field <code>float overall_usage = 10;</code>
-     * @return float
-     */
-    public function getOverallUsage()
-    {
-        return $this->overall_usage;
-    }
-
-    /**
-     * overall resource usage to the limits (0..1)
-     *
-     * Generated from protobuf field <code>float overall_usage = 10;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setOverallUsage($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->overall_usage = $var;
 
         return $this;
     }
@@ -261,27 +222,27 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * wall time usage to the time limit (0..1)
+     *  // wall time limit
      *
-     * Generated from protobuf field <code>float wall_time_usage = 21;</code>
-     * @return float
+     * Generated from protobuf field <code>uint32 wall_time_limit = 21;</code>
+     * @return int
      */
-    public function getWallTimeUsage()
+    public function getWallTimeLimit()
     {
-        return $this->wall_time_usage;
+        return $this->wall_time_limit;
     }
 
     /**
-     * wall time usage to the time limit (0..1)
+     *  // wall time limit
      *
-     * Generated from protobuf field <code>float wall_time_usage = 21;</code>
-     * @param float $var
+     * Generated from protobuf field <code>uint32 wall_time_limit = 21;</code>
+     * @param int $var
      * @return $this
      */
-    public function setWallTimeUsage($var)
+    public function setWallTimeLimit($var)
     {
-        GPBUtil::checkFloat($var);
-        $this->wall_time_usage = $var;
+        GPBUtil::checkUint32($var);
+        $this->wall_time_limit = $var;
 
         return $this;
     }
@@ -313,27 +274,27 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * CPU time usage to the time limit (0..1)
+     *  // CPU time limit
      *
-     * Generated from protobuf field <code>float cpu_time_usage = 26;</code>
-     * @return float
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 26;</code>
+     * @return int
      */
-    public function getCpuTimeUsage()
+    public function getCpuTimeLimit()
     {
-        return $this->cpu_time_usage;
+        return $this->cpu_time_limit;
     }
 
     /**
-     * CPU time usage to the time limit (0..1)
+     *  // CPU time limit
      *
-     * Generated from protobuf field <code>float cpu_time_usage = 26;</code>
-     * @param float $var
+     * Generated from protobuf field <code>uint32 cpu_time_limit = 26;</code>
+     * @param int $var
      * @return $this
      */
-    public function setCpuTimeUsage($var)
+    public function setCpuTimeLimit($var)
     {
-        GPBUtil::checkFloat($var);
-        $this->cpu_time_usage = $var;
+        GPBUtil::checkUint32($var);
+        $this->cpu_time_limit = $var;
 
         return $this;
     }
@@ -365,85 +326,27 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * memory usage to the memory limit (0..1)
+     * memory usage limit
      *
-     * Generated from protobuf field <code>float memory_usage = 31;</code>
-     * @return float
+     * Generated from protobuf field <code>uint64 memory_limit = 31;</code>
+     * @return int|string
      */
-    public function getMemoryUsage()
+    public function getMemoryLimit()
     {
-        return $this->memory_usage;
+        return $this->memory_limit;
     }
 
     /**
-     * memory usage to the memory limit (0..1)
+     * memory usage limit
      *
-     * Generated from protobuf field <code>float memory_usage = 31;</code>
-     * @param float $var
+     * Generated from protobuf field <code>uint64 memory_limit = 31;</code>
+     * @param int|string $var
      * @return $this
      */
-    public function setMemoryUsage($var)
+    public function setMemoryLimit($var)
     {
-        GPBUtil::checkFloat($var);
-        $this->memory_usage = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 50;</code>
-     * @return \Eolymp\Executor\ResourceUsage|null
-     */
-    public function getResourceUsage()
-    {
-        return $this->resource_usage;
-    }
-
-    public function hasResourceUsage()
-    {
-        return isset($this->resource_usage);
-    }
-
-    public function clearResourceUsage()
-    {
-        unset($this->resource_usage);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.ResourceUsage resource_usage = 50;</code>
-     * @param \Eolymp\Executor\ResourceUsage $var
-     * @return $this
-     */
-    public function setResourceUsage($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\ResourceUsage::class);
-        $this->resource_usage = $var;
-
-        return $this;
-    }
-
-    /**
-     * exit code
-     *
-     * Generated from protobuf field <code>uint32 exit_code = 100;</code>
-     * @return int
-     */
-    public function getExitCode()
-    {
-        return $this->exit_code;
-    }
-
-    /**
-     * exit code
-     *
-     * Generated from protobuf field <code>uint32 exit_code = 100;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setExitCode($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->exit_code = $var;
+        GPBUtil::checkUint64($var);
+        $this->memory_limit = $var;
 
         return $this;
     }
@@ -470,6 +373,32 @@ class Stats extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->signal = $var;
+
+        return $this;
+    }
+
+    /**
+     * exit code
+     *
+     * Generated from protobuf field <code>uint32 exit_code = 100;</code>
+     * @return int
+     */
+    public function getExitCode()
+    {
+        return $this->exit_code;
+    }
+
+    /**
+     * exit code
+     *
+     * Generated from protobuf field <code>uint32 exit_code = 100;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setExitCode($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->exit_code = $var;
 
         return $this;
     }

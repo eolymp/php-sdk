@@ -28,12 +28,6 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * execution stats
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
-     */
-    protected $stats = null;
-    /**
      * score, number of points awarded by checker
      *
      * Generated from protobuf field <code>float score = 80;</code>
@@ -46,37 +40,37 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $cost = 0.0;
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      */
     protected $wall_time_usage = 0;
     /**
-     * wall time limit in milliseconds
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
      */
     protected $wall_time_limit = 0;
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      */
     protected $cpu_time_usage = 0;
     /**
-     * cpu time limit in milliseconds
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
      */
     protected $cpu_time_limit = 0;
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      */
     protected $memory_usage = 0;
     /**
-     * memory limit in bytes
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      */
@@ -111,6 +105,12 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string stderr_url = 21;</code>
      */
     protected $stderr_url = '';
+    /**
+     * execution stats
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
+     */
+    protected $stats = null;
     /**
      * deprecated, use checker_stats instead
      *
@@ -182,24 +182,22 @@ class Run extends \Google\Protobuf\Internal\Message
      *           run reference as set by originator
      *     @type int $status
      *           run status
-     *     @type \Eolymp\Executor\Stats $stats
-     *           execution stats
      *     @type float $score
      *           score, number of points awarded by checker
      *     @type float $cost
      *           cost, maximum number of points awarded for the test (as defined in the task)
      *     @type int $wall_time_usage
-     *           // deprecated, use stats instead
+     *           deprecated, use stats instead
      *     @type int $wall_time_limit
-     *           wall time limit in milliseconds
+     *           deprecated, use stats instead
      *     @type int $cpu_time_usage
-     *           // deprecated, use stats instead
+     *           deprecated, use stats instead
      *     @type int $cpu_time_limit
-     *           cpu time limit in milliseconds
+     *           deprecated, use stats instead
      *     @type int|string $memory_usage
-     *           // deprecated, use stats instead
+     *           deprecated, use stats instead
      *     @type int|string $memory_limit
-     *           memory limit in bytes
+     *           deprecated, use stats instead
      *     @type int $exit_code
      *           deprecated, use stats instead
      *     @type int $signal
@@ -209,6 +207,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $answer_url
      *     @type string $stderr_url
      *           deprecated, use stats instead
+     *     @type \Eolymp\Executor\Stats $stats
+     *           execution stats
      *     @type string $checker_log_url
      *           deprecated, use checker_stats instead
      *     @type int $checker_wall_time_usage
@@ -289,42 +289,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * execution stats
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
-     * @return \Eolymp\Executor\Stats|null
-     */
-    public function getStats()
-    {
-        return $this->stats;
-    }
-
-    public function hasStats()
-    {
-        return isset($this->stats);
-    }
-
-    public function clearStats()
-    {
-        unset($this->stats);
-    }
-
-    /**
-     * execution stats
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
-     * @param \Eolymp\Executor\Stats $var
-     * @return $this
-     */
-    public function setStats($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
-        $this->stats = $var;
-
-        return $this;
-    }
-
-    /**
      * score, number of points awarded by checker
      *
      * Generated from protobuf field <code>float score = 80;</code>
@@ -377,7 +341,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      * @return int
@@ -388,7 +352,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
      * @param int $var
@@ -403,7 +367,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * wall time limit in milliseconds
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
      * @return int
@@ -414,7 +378,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * wall time limit in milliseconds
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
      * @param int $var
@@ -429,7 +393,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      * @return int
@@ -440,7 +404,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
      * @param int $var
@@ -455,7 +419,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * cpu time limit in milliseconds
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
      * @return int
@@ -466,7 +430,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * cpu time limit in milliseconds
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
      * @param int $var
@@ -481,7 +445,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      * @return int|string
@@ -492,7 +456,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * // deprecated, use stats instead
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      * @param int|string $var
@@ -507,7 +471,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * memory limit in bytes
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      * @return int|string
@@ -518,7 +482,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * memory limit in bytes
+     * deprecated, use stats instead
      *
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      * @param int|string $var
@@ -672,6 +636,42 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stderr_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * execution stats
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
+     * @return \Eolymp\Executor\Stats|null
+     */
+    public function getStats()
+    {
+        return $this->stats;
+    }
+
+    public function hasStats()
+    {
+        return isset($this->stats);
+    }
+
+    public function clearStats()
+    {
+        unset($this->stats);
+    }
+
+    /**
+     * execution stats
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Stats stats = 90;</code>
+     * @param \Eolymp\Executor\Stats $var
+     * @return $this
+     */
+    public function setStats($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
+        $this->stats = $var;
 
         return $this;
     }

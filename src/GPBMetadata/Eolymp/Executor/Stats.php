@@ -14,28 +14,24 @@ class Stats
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Executor\Usage::initOnce();
         $pool->internalAddGeneratedFile(
             '
-µ
-eolymp/executor/stats.protoeolymp.executor"Ç
+æ
+eolymp/executor/stats.protoeolymp.executor"ø
 Stats
 	stdin_url (	
 
 stdout_url (	
 
-stderr_url (	
-overall_usage
- (
+stderr_url (	
 wall_time_duration (
-wall_time_usage (
+wall_time_limit (
 cpu_time_duration (
-cpu_time_usage (
+cpu_time_limit (
 memory_peak (
-memory_usage (6
-resource_usage2 (2.eolymp.executor.ResourceUsage
-	exit_coded (
-signale (B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
+memory_limit (
+signale (
+	exit_coded (B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
         , true);
 
         static::$is_initialized = true;
