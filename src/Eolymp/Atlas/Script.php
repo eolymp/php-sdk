@@ -36,9 +36,9 @@ class Script extends \Google\Protobuf\Internal\Message
     /**
      * Source code for script
      *
-     * Generated from protobuf field <code>string source_url = 11;</code>
+     * Generated from protobuf field <code>string source = 11;</code>
      */
-    protected $source_url = '';
+    protected $source = '';
     /**
      * Additional files placed into workdir during compilation and execution
      *
@@ -58,7 +58,7 @@ class Script extends \Google\Protobuf\Internal\Message
      *           Secret means code and configuration must not be exposed to users
      *     @type string $runtime
      *           The runtime to execute the script
-     *     @type string $source_url
+     *     @type string $source
      *           Source code for script
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
@@ -168,25 +168,25 @@ class Script extends \Google\Protobuf\Internal\Message
     /**
      * Source code for script
      *
-     * Generated from protobuf field <code>string source_url = 11;</code>
+     * Generated from protobuf field <code>string source = 11;</code>
      * @return string
      */
-    public function getSourceUrl()
+    public function getSource()
     {
-        return $this->source_url;
+        return $this->source;
     }
 
     /**
      * Source code for script
      *
-     * Generated from protobuf field <code>string source_url = 11;</code>
+     * Generated from protobuf field <code>string source = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setSourceUrl($var)
+    public function setSource($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source_url = $var;
+        $this->source = $var;
 
         return $this;
     }

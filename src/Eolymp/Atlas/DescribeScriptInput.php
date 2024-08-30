@@ -23,6 +23,10 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 version = 100;</code>
      */
     protected $version = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Script.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -33,6 +37,7 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
      *     @type string $script_id
      *     @type int $version
      *           request data for specific problem version
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -84,6 +89,28 @@ class DescribeScriptInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Script.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Script.Extra extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Script\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }
