@@ -65,6 +65,18 @@ class Test extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string example_answer_url = 41;</code>
      */
     protected $example_answer_url = '';
+    /**
+     * Generated input data
+     *
+     * Generated from protobuf field <code>string generated_input_url = 50;</code>
+     */
+    protected $generated_input_url = '';
+    /**
+     * Generated answer data
+     *
+     * Generated from protobuf field <code>string generated_answer_url = 51;</code>
+     */
+    protected $generated_answer_url = '';
     protected $input;
     protected $answer;
 
@@ -91,6 +103,10 @@ class Test extends \Google\Protobuf\Internal\Message
      *           Optionally, override input data for example in statement
      *     @type string $example_answer_url
      *           Optionally, override answer data for example in statement
+     *     @type string $generated_input_url
+     *           Generated input data
+     *     @type string $generated_answer_url
+     *           Generated answer data
      *     @type string $input_object_id
      *     @type string $input_url
      *     @type \Eolymp\Atlas\Test\Generator $input_generator
@@ -330,6 +346,58 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->example_answer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated input data
+     *
+     * Generated from protobuf field <code>string generated_input_url = 50;</code>
+     * @return string
+     */
+    public function getGeneratedInputUrl()
+    {
+        return $this->generated_input_url;
+    }
+
+    /**
+     * Generated input data
+     *
+     * Generated from protobuf field <code>string generated_input_url = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGeneratedInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->generated_input_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated answer data
+     *
+     * Generated from protobuf field <code>string generated_answer_url = 51;</code>
+     * @return string
+     */
+    public function getGeneratedAnswerUrl()
+    {
+        return $this->generated_answer_url;
+    }
+
+    /**
+     * Generated answer data
+     *
+     * Generated from protobuf field <code>string generated_answer_url = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGeneratedAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->generated_answer_url = $var;
 
         return $this;
     }
