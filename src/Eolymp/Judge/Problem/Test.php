@@ -32,6 +32,14 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $answer_object_id = '';
     /**
+     * Generated from protobuf field <code>string input_url = 13;</code>
+     */
+    protected $input_url = '';
+    /**
+     * Generated from protobuf field <code>string answer_url = 14;</code>
+     */
+    protected $answer_url = '';
+    /**
      * Generated from protobuf field <code>float score = 5;</code>
      */
     protected $score = 0.0;
@@ -46,6 +54,8 @@ class Test extends \Google\Protobuf\Internal\Message
      *     @type bool $example
      *     @type string $input_object_id
      *     @type string $answer_object_id
+     *     @type string $input_url
+     *     @type string $answer_url
      *     @type float $score
      * }
      */
@@ -138,6 +148,50 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->answer_object_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 13;</code>
+     * @return string
+     */
+    public function getInputUrl()
+    {
+        return $this->input_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->input_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 14;</code>
+     * @return string
+     */
+    public function getAnswerUrl()
+    {
+        return $this->answer_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->answer_url = $var;
 
         return $this;
     }
