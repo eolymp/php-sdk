@@ -36,6 +36,14 @@ class Patch
      */
     const ANSWER = 5;
     /**
+     * Generated from protobuf enum <code>INDEX = 8;</code>
+     */
+    const INDEX = 8;
+    /**
+     * Generated from protobuf enum <code>SECRET = 9;</code>
+     */
+    const SECRET = 9;
+    /**
      * Generated from protobuf enum <code>EXAMPLE_INPUT = 6;</code>
      */
     const EXAMPLE_INPUT = 6;
@@ -51,6 +59,8 @@ class Patch
         self::SCORE => 'SCORE',
         self::INPUT => 'INPUT',
         self::ANSWER => 'ANSWER',
+        self::INDEX => 'INDEX',
+        self::SECRET => 'SECRET',
         self::EXAMPLE_INPUT => 'EXAMPLE_INPUT',
         self::EXAMPLE_ANSWER => 'EXAMPLE_ANSWER',
     ];
