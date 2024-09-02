@@ -26,6 +26,12 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
+     * time to live in seconds, 0 - forever
+     *
+     * Generated from protobuf field <code>uint32 ttl = 20;</code>
+     */
+    protected $ttl = 0;
+    /**
      * up to 5MB (5M bytes) of data
      *
      * Generated from protobuf field <code>bytes data = 100;</code>
@@ -42,6 +48,8 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      *           name might be used to infer file type and to set Content-Disposition header
      *     @type string $type
      *           mime type, if empty inferred from extension in the filename
+     *     @type int $ttl
+     *           time to live in seconds, 0 - forever
      *     @type string $data
      *           up to 5MB (5M bytes) of data
      * }
@@ -99,6 +107,32 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * time to live in seconds, 0 - forever
+     *
+     * Generated from protobuf field <code>uint32 ttl = 20;</code>
+     * @return int
+     */
+    public function getTtl()
+    {
+        return $this->ttl;
+    }
+
+    /**
+     * time to live in seconds, 0 - forever
+     *
+     * Generated from protobuf field <code>uint32 ttl = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTtl($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->ttl = $var;
 
         return $this;
     }

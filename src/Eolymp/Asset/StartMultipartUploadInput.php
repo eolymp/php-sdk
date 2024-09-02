@@ -25,6 +25,12 @@ class StartMultipartUploadInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string type = 2;</code>
      */
     protected $type = '';
+    /**
+     * time to live in seconds, 0 - forever
+     *
+     * Generated from protobuf field <code>uint32 ttl = 20;</code>
+     */
+    protected $ttl = 0;
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class StartMultipartUploadInput extends \Google\Protobuf\Internal\Message
      *           name might be used to infer file type and to set Content-Disposition header
      *     @type string $type
      *           mime type, if empty inferred from extension in the filename
+     *     @type int $ttl
+     *           time to live in seconds, 0 - forever
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class StartMultipartUploadInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * time to live in seconds, 0 - forever
+     *
+     * Generated from protobuf field <code>uint32 ttl = 20;</code>
+     * @return int
+     */
+    public function getTtl()
+    {
+        return $this->ttl;
+    }
+
+    /**
+     * time to live in seconds, 0 - forever
+     *
+     * Generated from protobuf field <code>uint32 ttl = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTtl($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->ttl = $var;
 
         return $this;
     }
