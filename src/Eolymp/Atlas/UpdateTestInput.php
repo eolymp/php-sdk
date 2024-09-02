@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTestInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateTestInput.Patch patch = 5;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
@@ -36,6 +42,8 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *           specify list of fields to update, if empty all fields are updated
      *     @type string $problem_id
      *     @type string $testset_id
      *     @type string $test_id
@@ -45,6 +53,32 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\TestingService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateTestInput.Patch patch = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * specify list of fields to update, if empty all fields are updated
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateTestInput.Patch patch = 5;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateTestInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
