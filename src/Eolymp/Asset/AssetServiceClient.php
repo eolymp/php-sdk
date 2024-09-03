@@ -77,6 +77,24 @@ class AssetServiceClient {
     }
 
     /**
+     * ResolveAlias allows to resolve asset alias to asset_url
+     *
+     * @param ResolveAliasInput $input message
+     * @param array $context request parameters
+     *
+     * @return ResolveAliasOutput output message
+     */
+    public function ResolveAlias(ResolveAliasInput $input, array $context = [])
+    {
+        $path = "/resolve-asset-alias";
+
+        $context['name'] = "eolymp.asset.AssetService/ResolveAlias";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResolveAliasOutput::class, $context);
+    }
+
+    /**
      * StartMultipartUpload creates an upload_id, which then can be used with UploadPart API to upload file in parts of 5MB
      *
      * @param StartMultipartUploadInput $input message
