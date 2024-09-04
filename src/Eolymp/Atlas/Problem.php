@@ -60,39 +60,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>uint32 min_time_limit = 60;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
      */
-    protected $min_time_limit = 0;
-    /**
-     * Maximum time limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 max_time_limit = 61;</code>
-     */
-    protected $max_time_limit = 0;
-    /**
-     * Minimum CPU limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 min_cpu_limit = 62;</code>
-     */
-    protected $min_cpu_limit = 0;
-    /**
-     * Maximum CPU limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 max_cpu_limit = 63;</code>
-     */
-    protected $max_cpu_limit = 0;
-    /**
-     * Minimum memory limit in bytes among all testsets.
-     *
-     * Generated from protobuf field <code>uint64 min_memory_limit = 64;</code>
-     */
-    protected $min_memory_limit = 0;
-    /**
-     * Maximum memory limit in bytes among all testsets.
-     *
-     * Generated from protobuf field <code>uint64 max_memory_limit = 65;</code>
-     */
-    protected $max_memory_limit = 0;
+    protected $constraints = null;
     /**
      * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *
@@ -144,18 +114,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           For imported problems, provides the source from where the problem is imported and synchronized.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
-     *     @type int $min_time_limit
+     *     @type \Eolymp\Atlas\Problem\Constraints $constraints
      *           Constraints
-     *     @type int $max_time_limit
-     *           Maximum time limit in milliseconds among all testsets.
-     *     @type int $min_cpu_limit
-     *           Minimum CPU limit in milliseconds among all testsets.
-     *     @type int $max_cpu_limit
-     *           Maximum CPU limit in milliseconds among all testsets.
-     *     @type int|string $min_memory_limit
-     *           Minimum memory limit in bytes among all testsets.
-     *     @type int|string $max_memory_limit
-     *           Maximum memory limit in bytes among all testsets.
      *     @type float $acceptance_rate
      *           Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *     @type int $submissions_count
@@ -375,155 +335,35 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>uint32 min_time_limit = 60;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
+     * @return \Eolymp\Atlas\Problem\Constraints|null
      */
-    public function getMinTimeLimit()
+    public function getConstraints()
     {
-        return $this->min_time_limit;
+        return $this->constraints;
+    }
+
+    public function hasConstraints()
+    {
+        return isset($this->constraints);
+    }
+
+    public function clearConstraints()
+    {
+        unset($this->constraints);
     }
 
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>uint32 min_time_limit = 60;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
+     * @param \Eolymp\Atlas\Problem\Constraints $var
      * @return $this
      */
-    public function setMinTimeLimit($var)
+    public function setConstraints($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->min_time_limit = $var;
-
-        return $this;
-    }
-
-    /**
-     * Maximum time limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 max_time_limit = 61;</code>
-     * @return int
-     */
-    public function getMaxTimeLimit()
-    {
-        return $this->max_time_limit;
-    }
-
-    /**
-     * Maximum time limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 max_time_limit = 61;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMaxTimeLimit($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->max_time_limit = $var;
-
-        return $this;
-    }
-
-    /**
-     * Minimum CPU limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 min_cpu_limit = 62;</code>
-     * @return int
-     */
-    public function getMinCpuLimit()
-    {
-        return $this->min_cpu_limit;
-    }
-
-    /**
-     * Minimum CPU limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 min_cpu_limit = 62;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMinCpuLimit($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->min_cpu_limit = $var;
-
-        return $this;
-    }
-
-    /**
-     * Maximum CPU limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 max_cpu_limit = 63;</code>
-     * @return int
-     */
-    public function getMaxCpuLimit()
-    {
-        return $this->max_cpu_limit;
-    }
-
-    /**
-     * Maximum CPU limit in milliseconds among all testsets.
-     *
-     * Generated from protobuf field <code>uint32 max_cpu_limit = 63;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setMaxCpuLimit($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->max_cpu_limit = $var;
-
-        return $this;
-    }
-
-    /**
-     * Minimum memory limit in bytes among all testsets.
-     *
-     * Generated from protobuf field <code>uint64 min_memory_limit = 64;</code>
-     * @return int|string
-     */
-    public function getMinMemoryLimit()
-    {
-        return $this->min_memory_limit;
-    }
-
-    /**
-     * Minimum memory limit in bytes among all testsets.
-     *
-     * Generated from protobuf field <code>uint64 min_memory_limit = 64;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setMinMemoryLimit($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->min_memory_limit = $var;
-
-        return $this;
-    }
-
-    /**
-     * Maximum memory limit in bytes among all testsets.
-     *
-     * Generated from protobuf field <code>uint64 max_memory_limit = 65;</code>
-     * @return int|string
-     */
-    public function getMaxMemoryLimit()
-    {
-        return $this->max_memory_limit;
-    }
-
-    /**
-     * Maximum memory limit in bytes among all testsets.
-     *
-     * Generated from protobuf field <code>uint64 max_memory_limit = 65;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setMaxMemoryLimit($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->max_memory_limit = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem\Constraints::class);
+        $this->constraints = $var;
 
         return $this;
     }
