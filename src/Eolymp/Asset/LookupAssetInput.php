@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.asset.ResolveAliasInput</code>
+ * Generated from protobuf message <code>eolymp.asset.LookupAssetInput</code>
  */
-class ResolveAliasInput extends \Google\Protobuf\Internal\Message
+class LookupAssetInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string alias = 1;</code>
+     * Generated from protobuf field <code>string key = 1;</code>
      */
-    protected $alias = '';
+    protected $key = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ResolveAliasInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $alias
+     *     @type string $key
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ResolveAliasInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string alias = 1;</code>
+     * Generated from protobuf field <code>string key = 1;</code>
      * @return string
      */
-    public function getAlias()
+    public function getKey()
     {
-        return $this->alias;
+        return $this->key;
     }
 
     /**
-     * Generated from protobuf field <code>string alias = 1;</code>
+     * Generated from protobuf field <code>string key = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setAlias($var)
+    public function setKey($var)
     {
         GPBUtil::checkString($var, True);
-        $this->alias = $var;
+        $this->key = $var;
 
         return $this;
     }

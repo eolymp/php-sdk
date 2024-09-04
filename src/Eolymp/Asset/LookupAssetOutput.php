@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.asset.ResolveAliasOutput</code>
+ * Generated from protobuf message <code>eolymp.asset.LookupAssetOutput</code>
  */
-class ResolveAliasOutput extends \Google\Protobuf\Internal\Message
+class LookupAssetOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string asset_url = 1;</code>

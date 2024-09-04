@@ -26,9 +26,9 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * Generated from protobuf field <code>repeated string aliases = 3;</code>
+     * Generated from protobuf field <code>repeated string keys = 3;</code>
      */
-    private $aliases;
+    private $keys;
     /**
      * time to live in seconds, 0 - forever
      *
@@ -52,7 +52,7 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      *           name might be used to infer file type and to set Content-Disposition header
      *     @type string $type
      *           mime type, if empty inferred from extension in the filename
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $aliases
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keys
      *     @type int $ttl
      *           time to live in seconds, 0 - forever
      *     @type string $data
@@ -117,23 +117,23 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string aliases = 3;</code>
+     * Generated from protobuf field <code>repeated string keys = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAliases()
+    public function getKeys()
     {
-        return $this->aliases;
+        return $this->keys;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string aliases = 3;</code>
+     * Generated from protobuf field <code>repeated string keys = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAliases($var)
+    public function setKeys($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->aliases = $arr;
+        $this->keys = $arr;
 
         return $this;
     }

@@ -77,21 +77,21 @@ class AssetServiceClient {
     }
 
     /**
-     * ResolveAlias allows to resolve asset alias to asset_url
+     * LookupAsset allows to lookup asset by the key
      *
-     * @param ResolveAliasInput $input message
+     * @param LookupAssetInput $input message
      * @param array $context request parameters
      *
-     * @return ResolveAliasOutput output message
+     * @return LookupAssetOutput output message
      */
-    public function ResolveAlias(ResolveAliasInput $input, array $context = [])
+    public function LookupAsset(LookupAssetInput $input, array $context = [])
     {
-        $path = "/resolve-asset-alias";
+        $path = "/assets:lookup";
 
-        $context['name'] = "eolymp.asset.AssetService/ResolveAlias";
+        $context['name'] = "eolymp.asset.AssetService/LookupAsset";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResolveAliasOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, LookupAssetOutput::class, $context);
     }
 
     /**
