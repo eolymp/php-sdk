@@ -17,10 +17,6 @@ class CloseStreamInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string stream_id = 1;</code>
      */
     protected $stream_id = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.asset.CloseStreamInput.Part parts = 10;</code>
-     */
-    private $parts;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class CloseStreamInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $stream_id
-     *     @type array<\Eolymp\Asset\CloseStreamInput\Part>|\Google\Protobuf\Internal\RepeatedField $parts
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class CloseStreamInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stream_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.asset.CloseStreamInput.Part parts = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getParts()
-    {
-        return $this->parts;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.asset.CloseStreamInput.Part parts = 10;</code>
-     * @param array<\Eolymp\Asset\CloseStreamInput\Part>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setParts($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Asset\CloseStreamInput\Part::class);
-        $this->parts = $arr;
 
         return $this;
     }

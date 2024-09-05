@@ -13,10 +13,6 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class CloseStreamOutput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string asset_url = 1;</code>
-     */
-    protected $asset_url = '';
 
     /**
      * Constructor.
@@ -24,34 +20,11 @@ class CloseStreamOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $asset_url
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Asset\AssetService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string asset_url = 1;</code>
-     * @return string
-     */
-    public function getAssetUrl()
-    {
-        return $this->asset_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string asset_url = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAssetUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->asset_url = $var;
-
-        return $this;
     }
 
 }

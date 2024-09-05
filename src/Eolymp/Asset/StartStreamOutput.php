@@ -17,6 +17,10 @@ class StartStreamOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string stream_id = 1;</code>
      */
     protected $stream_id = '';
+    /**
+     * Generated from protobuf field <code>string stream_url = 2;</code>
+     */
+    protected $stream_url = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class StartStreamOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $stream_id
+     *     @type string $stream_url
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class StartStreamOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stream_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stream_url = 2;</code>
+     * @return string
+     */
+    public function getStreamUrl()
+    {
+        return $this->stream_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stream_url = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStreamUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stream_url = $var;
 
         return $this;
     }

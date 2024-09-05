@@ -20,7 +20,7 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
      */
     protected $stream_id = '';
     /**
-     * must be 5MB
+     * up to 5MB
      *
      * Generated from protobuf field <code>bytes data = 100;</code>
      */
@@ -35,7 +35,7 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
      *     @type string $stream_id
      *           stream_id given by StartStream API
      *     @type string $data
-     *           must be 5MB
+     *           up to 5MB
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * must be 5MB
+     * up to 5MB
      *
      * Generated from protobuf field <code>bytes data = 100;</code>
      * @return string
@@ -81,7 +81,7 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * must be 5MB
+     * up to 5MB
      *
      * Generated from protobuf field <code>bytes data = 100;</code>
      * @param string $var
