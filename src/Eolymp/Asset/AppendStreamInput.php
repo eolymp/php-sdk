@@ -20,8 +20,10 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
      */
     protected $stream_id = '';
     /**
-     * up to 5MB
-     *
+     * Generated from protobuf field <code>uint32 offset = 2;</code>
+     */
+    protected $offset = 0;
+    /**
      * Generated from protobuf field <code>bytes data = 100;</code>
      */
     protected $data = '';
@@ -34,8 +36,8 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $stream_id
      *           stream_id given by StartStream API
+     *     @type int $offset
      *     @type string $data
-     *           up to 5MB
      * }
      */
     public function __construct($data = NULL) {
@@ -70,8 +72,28 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * up to 5MB
-     *
+     * Generated from protobuf field <code>uint32 offset = 2;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 offset = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>bytes data = 100;</code>
      * @return string
      */
@@ -81,8 +103,6 @@ class AppendStreamInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * up to 5MB
-     *
      * Generated from protobuf field <code>bytes data = 100;</code>
      * @param string $var
      * @return $this
