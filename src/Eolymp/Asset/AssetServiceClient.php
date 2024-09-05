@@ -156,4 +156,60 @@ class AssetServiceClient {
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CompleteMultipartUploadOutput::class, $context);
     }
 
+    /**
+     * StartStream creates a data stream, which then can be used with AppendStream API to upload data
+     *
+     * @param StartStreamInput $input message
+     * @param array $context request parameters
+     *
+     * @return StartStreamOutput output message
+     */
+    public function StartStream(StartStreamInput $input, array $context = [])
+    {
+        $path = "/streams";
+
+        $context['name'] = "eolymp.asset.AssetService/StartStream";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, StartStreamOutput::class, $context);
+    }
+
+    /**
+     * @param AppendStreamInput $input message
+     * @param array $context request parameters
+     *
+     * @return AppendStreamOutput output message
+     */
+    public function AppendStream(AppendStreamInput $input, array $context = [])
+    {
+        $path = "/streams/".rawurlencode($input->getStreamId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setStreamId("");
+
+        $context['name'] = "eolymp.asset.AssetService/AppendStream";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AppendStreamOutput::class, $context);
+    }
+
+    /**
+     * @param CloseStreamInput $input message
+     * @param array $context request parameters
+     *
+     * @return CloseStreamOutput output message
+     */
+    public function CloseStream(CloseStreamInput $input, array $context = [])
+    {
+        $path = "/streams/".rawurlencode($input->getStreamId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setStreamId("");
+
+        $context['name'] = "eolymp.asset.AssetService/CloseStream";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, CloseStreamOutput::class, $context);
+    }
+
 }
