@@ -110,15 +110,15 @@ class Submission extends \Google\Protobuf\Internal\Message
     /**
      * maximum wall time
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      */
-    protected $wall_time_usage = 0;
+    protected $time_usage = 0;
     /**
      * maximum cpu time
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 42;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      */
-    protected $cpu_time_usage = 0;
+    protected $cpu_usage = 0;
     /**
      * maximum memory usage
      *
@@ -181,9 +181,9 @@ class Submission extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *           sum of earned points
      *     @type float $percentage
-     *     @type int $wall_time_usage
+     *     @type int $time_usage
      *           maximum wall time
-     *     @type int $cpu_time_usage
+     *     @type int $cpu_usage
      *           maximum cpu time
      *     @type int|string $memory_usage
      *           maximum memory usage
@@ -625,25 +625,25 @@ class Submission extends \Google\Protobuf\Internal\Message
     /**
      * maximum wall time
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @return int
      */
-    public function getWallTimeUsage()
+    public function getTimeUsage()
     {
-        return $this->wall_time_usage;
+        return $this->time_usage;
     }
 
     /**
      * maximum wall time
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @param int $var
      * @return $this
      */
-    public function setWallTimeUsage($var)
+    public function setTimeUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->wall_time_usage = $var;
+        $this->time_usage = $var;
 
         return $this;
     }
@@ -651,25 +651,25 @@ class Submission extends \Google\Protobuf\Internal\Message
     /**
      * maximum cpu time
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 42;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      * @return int
      */
-    public function getCpuTimeUsage()
+    public function getCpuUsage()
     {
-        return $this->cpu_time_usage;
+        return $this->cpu_usage;
     }
 
     /**
      * maximum cpu time
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 42;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      * @param int $var
      * @return $this
      */
-    public function setCpuTimeUsage($var)
+    public function setCpuUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->cpu_time_usage = $var;
+        $this->cpu_usage = $var;
 
         return $this;
     }

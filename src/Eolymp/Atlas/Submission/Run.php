@@ -28,15 +28,15 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * wall time (real-world time) usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 2;</code>
      */
-    protected $wall_time_usage = 0;
+    protected $time_usage = 0;
     /**
      * cpu time (time cpu was active)
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 3;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 3;</code>
      */
-    protected $cpu_time_usage = 0;
+    protected $cpu_usage = 0;
     /**
      * Generated from protobuf field <code>uint64 memory_usage = 4;</code>
      */
@@ -66,7 +66,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $score = 0.0;
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.Status status = 20;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 20;</code>
      */
     protected $status = 0;
     /**
@@ -78,17 +78,9 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $debug_stats = null;
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
-     */
-    protected $checker_execution_data = null;
-    /**
      * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 31;</code>
      */
     protected $checker_stats = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
-     */
-    protected $interactor_execution_data = null;
     /**
      * Generated from protobuf field <code>.eolymp.executor.Stats interactor_stats = 41;</code>
      */
@@ -103,9 +95,9 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $index
      *     @type string $test_id
-     *     @type int $wall_time_usage
+     *     @type int $time_usage
      *           wall time (real-world time) usage
-     *     @type int $cpu_time_usage
+     *     @type int $cpu_usage
      *           cpu time (time cpu was active)
      *     @type int|string $memory_usage
      *     @type float $resource_usage
@@ -117,9 +109,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *     @type int $verdict
      *     @type \Eolymp\Executor\Stats $debug_stats
-     *     @type \Eolymp\Atlas\Submission\CheckerExecutionData $checker_execution_data
      *     @type \Eolymp\Executor\Stats $checker_stats
-     *     @type \Eolymp\Atlas\Submission\InteractorExecutionData $interactor_execution_data
      *     @type \Eolymp\Executor\Stats $interactor_stats
      * }
      */
@@ -197,25 +187,25 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * wall time (real-world time) usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 2;</code>
      * @return int
      */
-    public function getWallTimeUsage()
+    public function getTimeUsage()
     {
-        return $this->wall_time_usage;
+        return $this->time_usage;
     }
 
     /**
      * wall time (real-world time) usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setWallTimeUsage($var)
+    public function setTimeUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->wall_time_usage = $var;
+        $this->time_usage = $var;
 
         return $this;
     }
@@ -223,25 +213,25 @@ class Run extends \Google\Protobuf\Internal\Message
     /**
      * cpu time (time cpu was active)
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 3;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 3;</code>
      * @return int
      */
-    public function getCpuTimeUsage()
+    public function getCpuUsage()
     {
-        return $this->cpu_time_usage;
+        return $this->cpu_usage;
     }
 
     /**
      * cpu time (time cpu was active)
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 3;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 3;</code>
      * @param int $var
      * @return $this
      */
-    public function setCpuTimeUsage($var)
+    public function setCpuUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->cpu_time_usage = $var;
+        $this->cpu_usage = $var;
 
         return $this;
     }
@@ -401,7 +391,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.Status status = 20;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 20;</code>
      * @return int
      */
     public function getStatus()
@@ -410,13 +400,13 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Run.Status status = 20;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 20;</code>
      * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Run\Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Status::class);
         $this->status = $var;
 
         return $this;
@@ -477,38 +467,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
-     * @return \Eolymp\Atlas\Submission\CheckerExecutionData|null
-     */
-    public function getCheckerExecutionData()
-    {
-        return $this->checker_execution_data;
-    }
-
-    public function hasCheckerExecutionData()
-    {
-        return isset($this->checker_execution_data);
-    }
-
-    public function clearCheckerExecutionData()
-    {
-        unset($this->checker_execution_data);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.CheckerExecutionData checker_execution_data = 30;</code>
-     * @param \Eolymp\Atlas\Submission\CheckerExecutionData $var
-     * @return $this
-     */
-    public function setCheckerExecutionData($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\CheckerExecutionData::class);
-        $this->checker_execution_data = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.executor.Stats checker_stats = 31;</code>
      * @return \Eolymp\Executor\Stats|null
      */
@@ -536,38 +494,6 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
         $this->checker_stats = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
-     * @return \Eolymp\Atlas\Submission\InteractorExecutionData|null
-     */
-    public function getInteractorExecutionData()
-    {
-        return $this->interactor_execution_data;
-    }
-
-    public function hasInteractorExecutionData()
-    {
-        return isset($this->interactor_execution_data);
-    }
-
-    public function clearInteractorExecutionData()
-    {
-        unset($this->interactor_execution_data);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.InteractorExecutionData interactor_execution_data = 40;</code>
-     * @param \Eolymp\Atlas\Submission\InteractorExecutionData $var
-     * @return $this
-     */
-    public function setInteractorExecutionData($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\InteractorExecutionData::class);
-        $this->interactor_execution_data = $var;
 
         return $this;
     }

@@ -28,7 +28,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * status of the group
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
      */
     protected $status = 0;
     /**
@@ -70,15 +70,15 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      */
-    protected $wall_time_usage = 0;
+    protected $time_usage = 0;
     /**
      * provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 42;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      */
-    protected $cpu_time_usage = 0;
+    protected $cpu_usage = 0;
     /**
      * provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
      *
@@ -122,9 +122,9 @@ class Group extends \Google\Protobuf\Internal\Message
      *           how group is scored
      *     @type int $feedback_policy
      *           how tests are shown to the user
-     *     @type int $wall_time_usage
+     *     @type int $time_usage
      *           provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
-     *     @type int $cpu_time_usage
+     *     @type int $cpu_usage
      *           provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *     @type int|string $memory_usage
      *           provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
@@ -194,7 +194,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * status of the group
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
      * @return int
      */
     public function getStatus()
@@ -205,13 +205,13 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * status of the group
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Group.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Group\Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Status::class);
         $this->status = $var;
 
         return $this;
@@ -376,25 +376,25 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @return int
      */
-    public function getWallTimeUsage()
+    public function getTimeUsage()
     {
-        return $this->wall_time_usage;
+        return $this->time_usage;
     }
 
     /**
      * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @param int $var
      * @return $this
      */
-    public function setWallTimeUsage($var)
+    public function setTimeUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->wall_time_usage = $var;
+        $this->time_usage = $var;
 
         return $this;
     }
@@ -402,25 +402,25 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 42;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      * @return int
      */
-    public function getCpuTimeUsage()
+    public function getCpuUsage()
     {
-        return $this->cpu_time_usage;
+        return $this->cpu_usage;
     }
 
     /**
      * provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 42;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      * @param int $var
      * @return $this
      */
-    public function setCpuTimeUsage($var)
+    public function setCpuUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->cpu_time_usage = $var;
+        $this->cpu_usage = $var;
 
         return $this;
     }
