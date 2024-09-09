@@ -18,41 +18,53 @@ class Status
      */
     const NONE = 0;
     /**
-     * submission created and awaiting testing
+     * awaiting testing
      *
      * Generated from protobuf enum <code>PENDING = 1;</code>
      */
     const PENDING = 1;
     /**
-     * submission is being tested by an agent
+     * testing in progress
      *
      * Generated from protobuf enum <code>TESTING = 2;</code>
      */
     const TESTING = 2;
     /**
-     * submission testing took too long (too many timeouts in tests)
+     *  testing took too long (too many timeouts in tests)
      *
      * Generated from protobuf enum <code>TIMEOUT = 3;</code>
      */
     const TIMEOUT = 3;
     /**
-     * submission testing complete (score is populated)
+     * testing complete (score is populated)
      *
      * Generated from protobuf enum <code>COMPLETE = 4;</code>
      */
     const COMPLETE = 4;
     /**
-     * submission produced an error (eg. compilation error)
+     * testing produced an error (eg. compilation error or runtime error)
      *
      * Generated from protobuf enum <code>ERROR = 5;</code>
      */
     const ERROR = 5;
     /**
-     * submission testing failed due to system error (or problem configuration error)
+     * testing failed due to system error (or problem configuration error)
      *
      * Generated from protobuf enum <code>FAILURE = 6;</code>
      */
     const FAILURE = 6;
+    /**
+     * testing is skipped because previous test failed
+     *
+     * Generated from protobuf enum <code>SKIPPED = 7;</code>
+     */
+    const SKIPPED = 7;
+    /**
+     * testing is blocked because the dependency failed
+     *
+     * Generated from protobuf enum <code>BLOCKED = 8;</code>
+     */
+    const BLOCKED = 8;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -62,6 +74,8 @@ class Status
         self::COMPLETE => 'COMPLETE',
         self::ERROR => 'ERROR',
         self::FAILURE => 'FAILURE',
+        self::SKIPPED => 'SKIPPED',
+        self::BLOCKED => 'BLOCKED',
     ];
 
     public static function name($value)
