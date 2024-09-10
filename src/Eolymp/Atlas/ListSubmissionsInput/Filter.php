@@ -42,6 +42,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
+     */
+    private $verdict;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 7;</code>
      */
     private $score;
@@ -63,6 +67,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $submitted_at
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $runtime
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $verdict
      *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $score
      *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $percentage
      * }
@@ -222,6 +227,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->status = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getVerdict()
+    {
+        return $this->verdict;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setVerdict($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->verdict = $arr;
 
         return $this;
     }
