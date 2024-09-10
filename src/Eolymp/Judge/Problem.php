@@ -42,21 +42,25 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $base_id = '';
     /**
+     * Generated from protobuf field <code>uint32 base_number = 45;</code>
+     */
+    protected $base_number = 0;
+    /**
      * Generated from protobuf field <code>string base_space_id = 40;</code>
      */
     protected $base_space_id = '';
     /**
-     * Generated from protobuf field <code>string base_title = 41;</code>
+     * Generated from protobuf field <code>string base_space_name = 41;</code>
      */
-    protected $base_title = '';
+    protected $base_space_name = '';
     /**
-     * Generated from protobuf field <code>string base_number = 42;</code>
+     * Generated from protobuf field <code>string base_space_key = 42;</code>
      */
-    protected $base_number = '';
+    protected $base_space_key = '';
     /**
-     * Generated from protobuf field <code>string base_web_url = 43;</code>
+     * Generated from protobuf field <code>string base_space_home_url = 43;</code>
      */
-    protected $base_web_url = '';
+    protected $base_space_home_url = '';
     /**
      * contest
      *
@@ -121,10 +125,11 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           score for solving problem
      *     @type string $base_id
      *           ID of the problem in database achieve
+     *     @type int $base_number
      *     @type string $base_space_id
-     *     @type string $base_title
-     *     @type string $base_number
-     *     @type string $base_web_url
+     *     @type string $base_space_name
+     *     @type string $base_space_key
+     *     @type string $base_space_home_url
      *     @type string $contest_id
      *           contest
      *     @type int $feedback_policy
@@ -275,6 +280,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>uint32 base_number = 45;</code>
+     * @return int
+     */
+    public function getBaseNumber()
+    {
+        return $this->base_number;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 base_number = 45;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBaseNumber($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->base_number = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string base_space_id = 40;</code>
      * @return string
      */
@@ -297,67 +324,67 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string base_title = 41;</code>
+     * Generated from protobuf field <code>string base_space_name = 41;</code>
      * @return string
      */
-    public function getBaseTitle()
+    public function getBaseSpaceName()
     {
-        return $this->base_title;
+        return $this->base_space_name;
     }
 
     /**
-     * Generated from protobuf field <code>string base_title = 41;</code>
+     * Generated from protobuf field <code>string base_space_name = 41;</code>
      * @param string $var
      * @return $this
      */
-    public function setBaseTitle($var)
+    public function setBaseSpaceName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->base_title = $var;
+        $this->base_space_name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string base_number = 42;</code>
+     * Generated from protobuf field <code>string base_space_key = 42;</code>
      * @return string
      */
-    public function getBaseNumber()
+    public function getBaseSpaceKey()
     {
-        return $this->base_number;
+        return $this->base_space_key;
     }
 
     /**
-     * Generated from protobuf field <code>string base_number = 42;</code>
+     * Generated from protobuf field <code>string base_space_key = 42;</code>
      * @param string $var
      * @return $this
      */
-    public function setBaseNumber($var)
+    public function setBaseSpaceKey($var)
     {
         GPBUtil::checkString($var, True);
-        $this->base_number = $var;
+        $this->base_space_key = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string base_web_url = 43;</code>
+     * Generated from protobuf field <code>string base_space_home_url = 43;</code>
      * @return string
      */
-    public function getBaseWebUrl()
+    public function getBaseSpaceHomeUrl()
     {
-        return $this->base_web_url;
+        return $this->base_space_home_url;
     }
 
     /**
-     * Generated from protobuf field <code>string base_web_url = 43;</code>
+     * Generated from protobuf field <code>string base_space_home_url = 43;</code>
      * @param string $var
      * @return $this
      */
-    public function setBaseWebUrl($var)
+    public function setBaseSpaceHomeUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->base_web_url = $var;
+        $this->base_space_home_url = $var;
 
         return $this;
     }
