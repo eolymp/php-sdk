@@ -21,12 +21,15 @@ class Events
         \GPBMetadata\Eolymp\Atlas\Submission::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¼
+©
 eolymp/atlas/events.protoeolymp.atlaseolymp/atlas/problem.proto eolymp/atlas/scoring_score.protoeolymp/atlas/statement.protoeolymp/atlas/submission.proto"W
 SubmissionCompleteEvent,
 
 submission (2.eolymp.atlas.Submission
-update ("7
+update ("k
+SubmissionChangedEvent(
+before (2.eolymp.atlas.Submission\'
+after (2.eolymp.atlas.Submission"7
 ScoreUpdatedEvent"
 score (2.eolymp.atlas.Score"b
 ProblemChangedEvent%
