@@ -38,11 +38,23 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * constantly increasing number to track changes in the submission
+     *
+     * Generated from protobuf field <code>uint32 version = 99;</code>
+     */
+    protected $version = 0;
+    /**
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp submitted_at = 5;</code>
      */
     protected $submitted_at = null;
+    /**
+     * time when submission was judged
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp judged_at = 6;</code>
+     */
+    protected $judged_at = null;
     /**
      * programming language
      *
@@ -158,8 +170,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           submitter
      *     @type string $member_id
      *           submitter
+     *     @type int $version
+     *           constantly increasing number to track changes in the submission
      *     @type \Google\Protobuf\Timestamp $submitted_at
      *           time when submission was created
+     *     @type \Google\Protobuf\Timestamp $judged_at
+     *           time when submission was judged
      *     @type string $lang
      *           programming language
      *     @type string $source
@@ -305,6 +321,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * constantly increasing number to track changes in the submission
+     *
+     * Generated from protobuf field <code>uint32 version = 99;</code>
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * constantly increasing number to track changes in the submission
+     *
+     * Generated from protobuf field <code>uint32 version = 99;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->version = $var;
+
+        return $this;
+    }
+
+    /**
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp submitted_at = 5;</code>
@@ -336,6 +378,42 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->submitted_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * time when submission was judged
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp judged_at = 6;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getJudgedAt()
+    {
+        return $this->judged_at;
+    }
+
+    public function hasJudgedAt()
+    {
+        return isset($this->judged_at);
+    }
+
+    public function clearJudgedAt()
+    {
+        unset($this->judged_at);
+    }
+
+    /**
+     * time when submission was judged
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp judged_at = 6;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setJudgedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->judged_at = $var;
 
         return $this;
     }
