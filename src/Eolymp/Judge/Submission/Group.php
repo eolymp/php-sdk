@@ -28,7 +28,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * status of the group
      *
-     * Generated from protobuf field <code>.eolymp.judge.Submission.Group.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
      */
     protected $status = 0;
     /**
@@ -186,7 +186,7 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * status of the group
      *
-     * Generated from protobuf field <code>.eolymp.judge.Submission.Group.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
      * @return int
      */
     public function getStatus()
@@ -197,13 +197,13 @@ class Group extends \Google\Protobuf\Internal\Message
     /**
      * status of the group
      *
-     * Generated from protobuf field <code>.eolymp.judge.Submission.Group.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Submission\Group\Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Status::class);
         $this->status = $var;
 
         return $this;
