@@ -30,9 +30,9 @@ class Interactor extends \Google\Protobuf\Internal\Message
     /**
      * Source code for interactor
      *
-     * Generated from protobuf field <code>string source_url = 8;</code>
+     * Generated from protobuf field <code>string source = 8;</code>
      */
-    protected $source_url = '';
+    protected $source = '';
     /**
      * Secret means checker code and configuration must not be exposed to users
      *
@@ -56,7 +56,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      *           Interactor type (see types enumeration for details)
      *     @type string $runtime
      *           Programming language in which interactor is written
-     *     @type string $source_url
+     *     @type string $source
      *           Source code for interactor
      *     @type bool $secret
      *           Secret means checker code and configuration must not be exposed to users
@@ -124,25 +124,25 @@ class Interactor extends \Google\Protobuf\Internal\Message
     /**
      * Source code for interactor
      *
-     * Generated from protobuf field <code>string source_url = 8;</code>
+     * Generated from protobuf field <code>string source = 8;</code>
      * @return string
      */
-    public function getSourceUrl()
+    public function getSource()
     {
-        return $this->source_url;
+        return $this->source;
     }
 
     /**
      * Source code for interactor
      *
-     * Generated from protobuf field <code>string source_url = 8;</code>
+     * Generated from protobuf field <code>string source = 8;</code>
      * @param string $var
      * @return $this
      */
-    public function setSourceUrl($var)
+    public function setSource($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source_url = $var;
+        $this->source = $var;
 
         return $this;
     }
