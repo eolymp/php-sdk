@@ -18,29 +18,13 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     */
-    protected $problem_id = '';
-    /**
      * Generated from protobuf field <code>string runtime = 3;</code>
      */
     protected $runtime = '';
     /**
-     * Generated from protobuf field <code>string source_url = 10;</code>
+     * Generated from protobuf field <code>string source = 10;</code>
      */
-    protected $source_url = '';
-    /**
-     * Generated from protobuf field <code>string header_url = 11;</code>
-     */
-    protected $header_url = '';
-    /**
-     * Generated from protobuf field <code>string footer_url = 12;</code>
-     */
-    protected $footer_url = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 30;</code>
-     */
-    private $files;
+    protected $source = '';
 
     /**
      * Constructor.
@@ -49,12 +33,8 @@ class Template extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $problem_id
      *     @type string $runtime
-     *     @type string $source_url
-     *     @type string $header_url
-     *     @type string $footer_url
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type string $source
      * }
      */
     public function __construct($data = NULL) {
@@ -85,28 +65,6 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string runtime = 3;</code>
      * @return string
      */
@@ -129,89 +87,23 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string source_url = 10;</code>
+     * Generated from protobuf field <code>string source = 10;</code>
      * @return string
      */
-    public function getSourceUrl()
+    public function getSource()
     {
-        return $this->source_url;
+        return $this->source;
     }
 
     /**
-     * Generated from protobuf field <code>string source_url = 10;</code>
+     * Generated from protobuf field <code>string source = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setSourceUrl($var)
+    public function setSource($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string header_url = 11;</code>
-     * @return string
-     */
-    public function getHeaderUrl()
-    {
-        return $this->header_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string header_url = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHeaderUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->header_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string footer_url = 12;</code>
-     * @return string
-     */
-    public function getFooterUrl()
-    {
-        return $this->footer_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string footer_url = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFooterUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->footer_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 30;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 30;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFiles($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
-        $this->files = $arr;
+        $this->source = $var;
 
         return $this;
     }

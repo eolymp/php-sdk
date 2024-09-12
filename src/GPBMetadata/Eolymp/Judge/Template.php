@@ -17,22 +17,14 @@ class Template
         \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ç
-eolymp/judge/template.protoeolymp.judge"ù
+õ
+eolymp/judge/template.protoeolymp.judge"7
 Template
 
-id (	
-
-problem_id (	
-runtime (	
-
-source_url
- (	
-
-header_url (	
-
-footer_url (	$
-files (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
+id (	
+runtime (	
+source
+ (	B-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
         , true);
 
         static::$is_initialized = true;
