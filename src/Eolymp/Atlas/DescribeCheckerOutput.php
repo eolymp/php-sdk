@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeCheckerOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 1;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Checker checker = 1;</code>
      */
     protected $checker = null;
 
@@ -24,7 +24,7 @@ class DescribeCheckerOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Executor\Checker $checker
+     *     @type \Eolymp\Atlas\Checker $checker
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DescribeCheckerOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 1;</code>
-     * @return \Eolymp\Executor\Checker|null
+     * Generated from protobuf field <code>.eolymp.atlas.Checker checker = 1;</code>
+     * @return \Eolymp\Atlas\Checker|null
      */
     public function getChecker()
     {
@@ -52,13 +52,13 @@ class DescribeCheckerOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 1;</code>
-     * @param \Eolymp\Executor\Checker $var
+     * Generated from protobuf field <code>.eolymp.atlas.Checker checker = 1;</code>
+     * @param \Eolymp\Atlas\Checker $var
      * @return $this
      */
     public function setChecker($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Checker::class);
         $this->checker = $var;
 
         return $this;

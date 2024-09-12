@@ -15,8 +15,10 @@ class Snapshot
           return;
         }
         \GPBMetadata\Eolymp\Atlas\Attachment::initOnce();
+        \GPBMetadata\Eolymp\Atlas\Checker::initOnce();
         \GPBMetadata\Eolymp\Atlas\CodeTemplate::initOnce();
         \GPBMetadata\Eolymp\Atlas\Editorial::initOnce();
+        \GPBMetadata\Eolymp\Atlas\Interactor::initOnce();
         \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         \GPBMetadata\Eolymp\Atlas\Script::initOnce();
         \GPBMetadata\Eolymp\Atlas\Solution::initOnce();
@@ -24,19 +26,17 @@ class Snapshot
         \GPBMetadata\Eolymp\Atlas\TestingConfig::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingTest::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingTestset::initOnce();
-        \GPBMetadata\Eolymp\Executor\Checker::initOnce();
-        \GPBMetadata\Eolymp\Executor\Interactor::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Î
-eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto!eolymp/atlas/testing_config.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.protoeolymp/executor/checker.proto eolymp/executor/interactor.proto"Ž
+Â
+eolymp/atlas/snapshot.protoeolymp.atlaseolymp/atlas/checker.proto eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/interactor.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto!eolymp/atlas/testing_config.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto"ˆ
 Snapshot&
 problem (2.eolymp.atlas.Problem,
 testing
- (2.eolymp.atlas.TestingConfig)
-checker (2.eolymp.executor.Checker/
+ (2.eolymp.atlas.TestingConfig&
+checker (2.eolymp.atlas.Checker,
 
-interactor (2.eolymp.executor.Interactor+
+interactor (2.eolymp.atlas.Interactor+
 
 statements (2.eolymp.atlas.Statement)
 	templates (2.eolymp.atlas.Template-

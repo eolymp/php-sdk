@@ -22,11 +22,11 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      */
     protected $testing = null;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Checker checker = 2;</code>
      */
     protected $checker = null;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 3;</code>
      */
     protected $interactor = null;
     /**
@@ -70,8 +70,8 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Atlas\Problem $problem
      *     @type \Eolymp\Atlas\TestingConfig $testing
-     *     @type \Eolymp\Executor\Checker $checker
-     *     @type \Eolymp\Executor\Interactor $interactor
+     *     @type \Eolymp\Atlas\Checker $checker
+     *     @type \Eolymp\Atlas\Interactor $interactor
      *     @type array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $statements
      *     @type array<\Eolymp\Atlas\Template>|\Google\Protobuf\Internal\RepeatedField $templates
      *     @type array<\Eolymp\Atlas\Attachment>|\Google\Protobuf\Internal\RepeatedField $attachments
@@ -152,8 +152,8 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
-     * @return \Eolymp\Executor\Checker|null
+     * Generated from protobuf field <code>.eolymp.atlas.Checker checker = 2;</code>
+     * @return \Eolymp\Atlas\Checker|null
      */
     public function getChecker()
     {
@@ -171,21 +171,21 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 2;</code>
-     * @param \Eolymp\Executor\Checker $var
+     * Generated from protobuf field <code>.eolymp.atlas.Checker checker = 2;</code>
+     * @param \Eolymp\Atlas\Checker $var
      * @return $this
      */
     public function setChecker($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Checker::class);
         $this->checker = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 3;</code>
-     * @return \Eolymp\Executor\Interactor|null
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 3;</code>
+     * @return \Eolymp\Atlas\Interactor|null
      */
     public function getInteractor()
     {
@@ -203,13 +203,13 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 3;</code>
-     * @param \Eolymp\Executor\Interactor $var
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 3;</code>
+     * @param \Eolymp\Atlas\Interactor $var
      * @return $this
      */
     public function setInteractor($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Interactor::class);
         $this->interactor = $var;
 
         return $this;
