@@ -26,18 +26,6 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * submitter
-     *
-     * Generated from protobuf field <code>string user_id = 3;</code>
-     */
-    protected $user_id = '';
-    /**
-     * submitter
-     *
-     * Generated from protobuf field <code>string member_id = 4;</code>
-     */
-    protected $member_id = '';
-    /**
      * constantly increasing number to track changes in the submission
      *
      * Generated from protobuf field <code>uint32 version = 99;</code>
@@ -155,6 +143,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cursor = 100;</code>
      */
     protected $cursor = '';
+    protected $submitter;
 
     /**
      * Constructor.
@@ -166,12 +155,10 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           unique identifier
      *     @type string $problem_id
      *           problem
-     *     @type string $user_id
-     *           submitter
-     *     @type string $member_id
-     *           submitter
      *     @type int $version
      *           constantly increasing number to track changes in the submission
+     *     @type string $user_id
+     *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $submitted_at
      *           time when submission was created
      *     @type \Google\Protobuf\Timestamp $judged_at
@@ -269,58 +256,6 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * submitter
-     *
-     * Generated from protobuf field <code>string user_id = 3;</code>
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * submitter
-     *
-     * Generated from protobuf field <code>string user_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUserId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->user_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * submitter
-     *
-     * Generated from protobuf field <code>string member_id = 4;</code>
-     * @return string
-     */
-    public function getMemberId()
-    {
-        return $this->member_id;
-    }
-
-    /**
-     * submitter
-     *
-     * Generated from protobuf field <code>string member_id = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMemberId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->member_id = $var;
-
-        return $this;
-    }
-
-    /**
      * constantly increasing number to track changes in the submission
      *
      * Generated from protobuf field <code>uint32 version = 99;</code>
@@ -342,6 +277,60 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasUserId()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasMemberId()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(4, $var);
 
         return $this;
     }
@@ -854,6 +843,14 @@ class Submission extends \Google\Protobuf\Internal\Message
         $this->cursor = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubmitter()
+    {
+        return $this->whichOneof("submitter");
     }
 
 }

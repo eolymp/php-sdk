@@ -22,10 +22,6 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * Generated from protobuf field <code>string test_id = 11;</code>
-     */
-    protected $test_id = '';
-    /**
      * wall time (real-world time) usage
      *
      * Generated from protobuf field <code>uint32 time_usage = 2;</code>
@@ -94,7 +90,6 @@ class Run extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $index
-     *     @type string $test_id
      *     @type int $time_usage
      *           wall time (real-world time) usage
      *     @type int $cpu_usage
@@ -158,28 +153,6 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string test_id = 11;</code>
-     * @return string
-     */
-    public function getTestId()
-    {
-        return $this->test_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string test_id = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->test_id = $var;
 
         return $this;
     }

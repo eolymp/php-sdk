@@ -20,12 +20,6 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * testset associated with the group
-     *
-     * Generated from protobuf field <code>string testset_id = 2;</code>
-     */
-    protected $testset_id = '';
-    /**
      * status of the group
      *
      * Generated from protobuf field <code>.eolymp.atlas.Submission.Status status = 10;</code>
@@ -106,8 +100,6 @@ class Group extends \Google\Protobuf\Internal\Message
      *
      *     @type int $index
      *           group index
-     *     @type string $testset_id
-     *           testset associated with the group
      *     @type int $status
      *           status of the group
      *     @type int $verdict
@@ -161,32 +153,6 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
-
-        return $this;
-    }
-
-    /**
-     * testset associated with the group
-     *
-     * Generated from protobuf field <code>string testset_id = 2;</code>
-     * @return string
-     */
-    public function getTestsetId()
-    {
-        return $this->testset_id;
-    }
-
-    /**
-     * testset associated with the group
-     *
-     * Generated from protobuf field <code>string testset_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTestsetId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->testset_id = $var;
 
         return $this;
     }

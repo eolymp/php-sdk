@@ -107,10 +107,8 @@ class Test extends \Google\Protobuf\Internal\Message
      *           Generated input data
      *     @type string $generated_answer_url
      *           Generated answer data
-     *     @type string $input_object_id
      *     @type string $input_url
      *     @type \Eolymp\Atlas\Test\Generator $input_generator
-     *     @type string $answer_object_id
      *     @type string $answer_url
      *     @type \Eolymp\Atlas\Test\Generator $answer_generator
      * }
@@ -403,33 +401,6 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string input_object_id = 10;</code>
-     * @return string
-     */
-    public function getInputObjectId()
-    {
-        return $this->readOneof(10);
-    }
-
-    public function hasInputObjectId()
-    {
-        return $this->hasOneof(10);
-    }
-
-    /**
-     * Generated from protobuf field <code>string input_object_id = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInputObjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(10, $var);
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string input_url = 11;</code>
      * @return string
      */
@@ -479,33 +450,6 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Test\Generator::class);
         $this->writeOneof(12, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string answer_object_id = 20;</code>
-     * @return string
-     */
-    public function getAnswerObjectId()
-    {
-        return $this->readOneof(20);
-    }
-
-    public function hasAnswerObjectId()
-    {
-        return $this->hasOneof(20);
-    }
-
-    /**
-     * Generated from protobuf field <code>string answer_object_id = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAnswerObjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(20, $var);
 
         return $this;
     }

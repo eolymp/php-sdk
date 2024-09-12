@@ -18,13 +18,11 @@ class TestingTestset
         \GPBMetadata\Eolymp\Atlas\TestingScoring::initOnce();
         $pool->internalAddGeneratedFile(
             '
-œ
-"eolymp/atlas/testing_testset.protoeolymp.atlas"eolymp/atlas/testing_scoring.proto"Œ
+ˆ
+"eolymp/atlas/testing_testset.protoeolymp.atlas"eolymp/atlas/testing_scoring.proto"ø
 Testset
 
-id (	
-
-problem_id (	
+id (	
 index (
 
 time_limit

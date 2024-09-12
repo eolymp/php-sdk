@@ -20,12 +20,6 @@ class Testset extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Problem where this testset belongs. Keep empty when creating new testset.
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     */
-    protected $problem_id = '';
-    /**
      * Index, a sequential number, of the testset within a problem.
      *
      * Generated from protobuf field <code>uint32 index = 3;</code>
@@ -82,8 +76,6 @@ class Testset extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Unique identifier. Keep empty when creating new testset.
-     *     @type string $problem_id
-     *           Problem where this testset belongs. Keep empty when creating new testset.
      *     @type int $index
      *           Index, a sequential number, of the testset within a problem.
      *     @type int $time_limit
@@ -129,32 +121,6 @@ class Testset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Problem where this testset belongs. Keep empty when creating new testset.
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Problem where this testset belongs. Keep empty when creating new testset.
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
 
         return $this;
     }

@@ -44,12 +44,6 @@ class Solution extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
-     * source code
-     *
-     * Generated from protobuf field <code>string source_url = 12;</code>
-     */
-    protected $source_url = '';
-    /**
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      */
     protected $type = 0;
@@ -69,8 +63,6 @@ class Solution extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *           programming language
      *     @type string $source
-     *           source code
-     *     @type string $source_url
      *           source code
      *     @type int $type
      * }
@@ -206,32 +198,6 @@ class Solution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
-
-        return $this;
-    }
-
-    /**
-     * source code
-     *
-     * Generated from protobuf field <code>string source_url = 12;</code>
-     * @return string
-     */
-    public function getSourceUrl()
-    {
-        return $this->source_url;
-    }
-
-    /**
-     * source code
-     *
-     * Generated from protobuf field <code>string source_url = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSourceUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source_url = $var;
 
         return $this;
     }
