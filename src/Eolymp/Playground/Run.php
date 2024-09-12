@@ -86,7 +86,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $resource_usage = null;
     /**
-     * Combined output ERN (data or blob)
+     * Combined output (data or blob)
      *
      * Generated from protobuf field <code>string output_url = 42;</code>
      */
@@ -123,7 +123,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Executor\ResourceUsage $resource_usage
      *           Resource usage statistics as reported by getrusage
      *     @type string $output_url
-     *           Combined output ERN (data or blob)
+     *           Combined output (data or blob)
      * }
      */
     public function __construct($data = NULL) {
@@ -454,7 +454,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Combined output ERN (data or blob)
+     * Combined output (data or blob)
      *
      * Generated from protobuf field <code>string output_url = 42;</code>
      * @return string
@@ -465,7 +465,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Combined output ERN (data or blob)
+     * Combined output (data or blob)
      *
      * Generated from protobuf field <code>string output_url = 42;</code>
      * @param string $var

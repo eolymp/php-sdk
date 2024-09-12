@@ -22,10 +22,6 @@ class LookupCodeTemplateInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>string problem_ern = 999;</code>
-     */
-    protected $problem_ern = '';
-    /**
      * Generated from protobuf field <code>string runtime = 10;</code>
      */
     protected $runtime = '';
@@ -38,7 +34,6 @@ class LookupCodeTemplateInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $problem_id
-     *     @type string $problem_ern
      *     @type string $runtime
      * }
      */
@@ -87,28 +82,6 @@ class LookupCodeTemplateInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_ern = 999;</code>
-     * @return string
-     */
-    public function getProblemErn()
-    {
-        return $this->problem_ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_ern = 999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_ern = $var;
 
         return $this;
     }

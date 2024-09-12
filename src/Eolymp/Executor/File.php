@@ -14,17 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class File extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Path where file should be placed (always relative to the workdir)
-     *
      * Generated from protobuf field <code>string path = 1;</code>
      */
     protected $path = '';
-    /**
-     * deprecated, use source_url instead
-     *
-     * Generated from protobuf field <code>string source_ern = 2;</code>
-     */
-    protected $source_ern = '';
     /**
      * Generated from protobuf field <code>string source_url = 3;</code>
      */
@@ -37,9 +29,6 @@ class File extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
-     *           Path where file should be placed (always relative to the workdir)
-     *     @type string $source_ern
-     *           deprecated, use source_url instead
      *     @type string $source_url
      * }
      */
@@ -49,8 +38,6 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Path where file should be placed (always relative to the workdir)
-     *
      * Generated from protobuf field <code>string path = 1;</code>
      * @return string
      */
@@ -60,8 +47,6 @@ class File extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Path where file should be placed (always relative to the workdir)
-     *
      * Generated from protobuf field <code>string path = 1;</code>
      * @param string $var
      * @return $this
@@ -70,32 +55,6 @@ class File extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->path = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, use source_url instead
-     *
-     * Generated from protobuf field <code>string source_ern = 2;</code>
-     * @return string
-     */
-    public function getSourceErn()
-    {
-        return $this->source_ern;
-    }
-
-    /**
-     * deprecated, use source_url instead
-     *
-     * Generated from protobuf field <code>string source_ern = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSourceErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source_ern = $var;
 
         return $this;
     }

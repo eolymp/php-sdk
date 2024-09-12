@@ -22,12 +22,6 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      */
     protected $template_id = '';
     /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string template_ern = 9999;</code>
-     */
-    protected $template_ern = '';
-    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
@@ -42,8 +36,6 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $problem_id
      *     @type string $template_id
-     *     @type string $template_ern
-     *           deprecated
      *     @type int $version
      *           request data for specific problem version
      * }
@@ -93,32 +85,6 @@ class DescribeCodeTemplateInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->template_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string template_ern = 9999;</code>
-     * @return string
-     */
-    public function getTemplateErn()
-    {
-        return $this->template_ern;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>string template_ern = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTemplateErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->template_ern = $var;
 
         return $this;
     }

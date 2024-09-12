@@ -24,14 +24,6 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $example = false;
     /**
-     * Generated from protobuf field <code>string input_object_id = 3;</code>
-     */
-    protected $input_object_id = '';
-    /**
-     * Generated from protobuf field <code>string answer_object_id = 4;</code>
-     */
-    protected $answer_object_id = '';
-    /**
      * Generated from protobuf field <code>string input_url = 13;</code>
      */
     protected $input_url = '';
@@ -52,8 +44,6 @@ class Test extends \Google\Protobuf\Internal\Message
      *
      *     @type int $index
      *     @type bool $example
-     *     @type string $input_object_id
-     *     @type string $answer_object_id
      *     @type string $input_url
      *     @type string $answer_url
      *     @type float $score
@@ -104,50 +94,6 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->example = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string input_object_id = 3;</code>
-     * @return string
-     */
-    public function getInputObjectId()
-    {
-        return $this->input_object_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string input_object_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInputObjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->input_object_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string answer_object_id = 4;</code>
-     * @return string
-     */
-    public function getAnswerObjectId()
-    {
-        return $this->answer_object_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string answer_object_id = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAnswerObjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->answer_object_id = $var;
 
         return $this;
     }

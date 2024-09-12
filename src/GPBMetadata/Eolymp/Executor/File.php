@@ -16,12 +16,10 @@ class File
         }
         $pool->internalAddGeneratedFile(
             '
-¨
-eolymp/executor/file.protoeolymp.executor"<
+”
+eolymp/executor/file.protoeolymp.executor"(
 File
 path (	
-
-source_ern (	
 
 source_url (	B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
         , true);

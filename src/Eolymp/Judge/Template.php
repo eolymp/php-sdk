@@ -18,10 +18,6 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     */
-    protected $ern = '';
-    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
@@ -30,17 +26,17 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * Generated from protobuf field <code>string source_ern = 10;</code>
+     * Generated from protobuf field <code>string source_url = 10;</code>
      */
-    protected $source_ern = '';
+    protected $source_url = '';
     /**
-     * Generated from protobuf field <code>string header_ern = 11;</code>
+     * Generated from protobuf field <code>string header_url = 11;</code>
      */
-    protected $header_ern = '';
+    protected $header_url = '';
     /**
-     * Generated from protobuf field <code>string footer_ern = 12;</code>
+     * Generated from protobuf field <code>string footer_url = 12;</code>
      */
-    protected $footer_ern = '';
+    protected $footer_url = '';
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 30;</code>
      */
@@ -53,12 +49,11 @@ class Template extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $ern
      *     @type string $problem_id
      *     @type string $runtime
-     *     @type string $source_ern
-     *     @type string $header_ern
-     *     @type string $footer_ern
+     *     @type string $source_url
+     *     @type string $header_url
+     *     @type string $footer_url
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      * }
      */
@@ -85,28 +80,6 @@ class Template extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @return string
-     */
-    public function getErn()
-    {
-        return $this->ern;
-    }
-
-    /**
-     * Generated from protobuf field <code>string ern = 9999;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setErn($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->ern = $var;
 
         return $this;
     }
@@ -156,67 +129,67 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string source_ern = 10;</code>
+     * Generated from protobuf field <code>string source_url = 10;</code>
      * @return string
      */
-    public function getSourceErn()
+    public function getSourceUrl()
     {
-        return $this->source_ern;
+        return $this->source_url;
     }
 
     /**
-     * Generated from protobuf field <code>string source_ern = 10;</code>
+     * Generated from protobuf field <code>string source_url = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setSourceErn($var)
+    public function setSourceUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->source_ern = $var;
+        $this->source_url = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string header_ern = 11;</code>
+     * Generated from protobuf field <code>string header_url = 11;</code>
      * @return string
      */
-    public function getHeaderErn()
+    public function getHeaderUrl()
     {
-        return $this->header_ern;
+        return $this->header_url;
     }
 
     /**
-     * Generated from protobuf field <code>string header_ern = 11;</code>
+     * Generated from protobuf field <code>string header_url = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setHeaderErn($var)
+    public function setHeaderUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->header_ern = $var;
+        $this->header_url = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string footer_ern = 12;</code>
+     * Generated from protobuf field <code>string footer_url = 12;</code>
      * @return string
      */
-    public function getFooterErn()
+    public function getFooterUrl()
     {
-        return $this->footer_ern;
+        return $this->footer_url;
     }
 
     /**
-     * Generated from protobuf field <code>string footer_ern = 12;</code>
+     * Generated from protobuf field <code>string footer_url = 12;</code>
      * @param string $var
      * @return $this
      */
-    public function setFooterErn($var)
+    public function setFooterUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->footer_ern = $var;
+        $this->footer_url = $var;
 
         return $this;
     }

@@ -64,20 +64,16 @@ class Run extends \Google\Protobuf\Internal\Message
      *           A number of points awarded for passing this run.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to match constraints and preconditions.
-     *     @type string $input_object_id
-     *           deprecated: download input from object storage
-     *     @type string $input_content
-     *           use input from this field (up to 1KB)
      *     @type string $input_url
      *           download input via URL
+     *     @type string $input_content
+     *           use input from this field (up to 1KB)
      *     @type \Eolymp\Executor\EvaluationTask\Generator $input_generator
      *           generate input using script
-     *     @type string $answer_object_id
-     *           deprecated: download answer from object storage
-     *     @type string $answer_content
-     *           use answer from this field (up to 1KB)
      *     @type string $answer_url
      *           download answer via URL
+     *     @type string $answer_content
+     *           use answer from this field (up to 1KB)
      *     @type \Eolymp\Executor\EvaluationTask\Generator $answer_generator
      *           generate input using script
      * }
@@ -218,32 +214,32 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: download input from object storage
+     * download input via URL
      *
-     * Generated from protobuf field <code>string input_object_id = 10;</code>
+     * Generated from protobuf field <code>string input_url = 12;</code>
      * @return string
      */
-    public function getInputObjectId()
+    public function getInputUrl()
     {
-        return $this->readOneof(10);
+        return $this->readOneof(12);
     }
 
-    public function hasInputObjectId()
+    public function hasInputUrl()
     {
-        return $this->hasOneof(10);
+        return $this->hasOneof(12);
     }
 
     /**
-     * deprecated: download input from object storage
+     * download input via URL
      *
-     * Generated from protobuf field <code>string input_object_id = 10;</code>
+     * Generated from protobuf field <code>string input_url = 12;</code>
      * @param string $var
      * @return $this
      */
-    public function setInputObjectId($var)
+    public function setInputUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(10, $var);
+        $this->writeOneof(12, $var);
 
         return $this;
     }
@@ -280,37 +276,6 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * download input via URL
-     *
-     * Generated from protobuf field <code>string input_url = 12;</code>
-     * @return string
-     */
-    public function getInputUrl()
-    {
-        return $this->readOneof(12);
-    }
-
-    public function hasInputUrl()
-    {
-        return $this->hasOneof(12);
-    }
-
-    /**
-     * download input via URL
-     *
-     * Generated from protobuf field <code>string input_url = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setInputUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(12, $var);
-
-        return $this;
-    }
-
-    /**
      * generate input using script
      *
      * Generated from protobuf field <code>.eolymp.executor.EvaluationTask.Generator input_generator = 13;</code>
@@ -342,32 +307,32 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: download answer from object storage
+     * download answer via URL
      *
-     * Generated from protobuf field <code>string answer_object_id = 20;</code>
+     * Generated from protobuf field <code>string answer_url = 22;</code>
      * @return string
      */
-    public function getAnswerObjectId()
+    public function getAnswerUrl()
     {
-        return $this->readOneof(20);
+        return $this->readOneof(22);
     }
 
-    public function hasAnswerObjectId()
+    public function hasAnswerUrl()
     {
-        return $this->hasOneof(20);
+        return $this->hasOneof(22);
     }
 
     /**
-     * deprecated: download answer from object storage
+     * download answer via URL
      *
-     * Generated from protobuf field <code>string answer_object_id = 20;</code>
+     * Generated from protobuf field <code>string answer_url = 22;</code>
      * @param string $var
      * @return $this
      */
-    public function setAnswerObjectId($var)
+    public function setAnswerUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(20, $var);
+        $this->writeOneof(22, $var);
 
         return $this;
     }
@@ -399,37 +364,6 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(21, $var);
-
-        return $this;
-    }
-
-    /**
-     * download answer via URL
-     *
-     * Generated from protobuf field <code>string answer_url = 22;</code>
-     * @return string
-     */
-    public function getAnswerUrl()
-    {
-        return $this->readOneof(22);
-    }
-
-    public function hasAnswerUrl()
-    {
-        return $this->hasOneof(22);
-    }
-
-    /**
-     * download answer via URL
-     *
-     * Generated from protobuf field <code>string answer_url = 22;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAnswerUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(22, $var);
 
         return $this;
     }
