@@ -18,7 +18,7 @@ class UpdateInteractorInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 2;</code>
      */
     protected $interactor = null;
 
@@ -29,7 +29,7 @@ class UpdateInteractorInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type \Eolymp\Executor\Interactor $interactor
+     *     @type \Eolymp\Atlas\Interactor $interactor
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +60,8 @@ class UpdateInteractorInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 2;</code>
-     * @return \Eolymp\Executor\Interactor|null
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 2;</code>
+     * @return \Eolymp\Atlas\Interactor|null
      */
     public function getInteractor()
     {
@@ -79,13 +79,13 @@ class UpdateInteractorInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 2;</code>
-     * @param \Eolymp\Executor\Interactor $var
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 2;</code>
+     * @param \Eolymp\Atlas\Interactor $var
      * @return $this
      */
     public function setInteractor($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Interactor::class);
         $this->interactor = $var;
 
         return $this;

@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeInteractorOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 1;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 1;</code>
      */
     protected $interactor = null;
 
@@ -24,7 +24,7 @@ class DescribeInteractorOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Executor\Interactor $interactor
+     *     @type \Eolymp\Atlas\Interactor $interactor
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DescribeInteractorOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 1;</code>
-     * @return \Eolymp\Executor\Interactor|null
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 1;</code>
+     * @return \Eolymp\Atlas\Interactor|null
      */
     public function getInteractor()
     {
@@ -52,13 +52,13 @@ class DescribeInteractorOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 1;</code>
-     * @param \Eolymp\Executor\Interactor $var
+     * Generated from protobuf field <code>.eolymp.atlas.Interactor interactor = 1;</code>
+     * @param \Eolymp\Atlas\Interactor $var
      * @return $this
      */
     public function setInteractor($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Interactor::class);
         $this->interactor = $var;
 
         return $this;
