@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DeletePolicyInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string policy_id = 1;</code>
+     */
+    protected $policy_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class DeletePolicyInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $policy_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Acl\PolicyService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string policy_id = 1;</code>
+     * @return string
+     */
+    public function getPolicyId()
+    {
+        return $this->policy_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string policy_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPolicyId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->policy_id = $var;
+
+        return $this;
     }
 
 }
