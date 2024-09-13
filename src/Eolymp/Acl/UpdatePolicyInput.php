@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>repeated .eolymp.acl.UpdatePolicyInput.Patch patch = 10;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string policy_id = 1;</code>
      */
     protected $policy_id = '';
@@ -28,6 +32,7 @@ class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $policy_id
      *     @type \Eolymp\Acl\Policy $policy
      * }
@@ -35,6 +40,28 @@ class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Acl\PolicyService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.acl.UpdatePolicyInput.Patch patch = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.acl.UpdatePolicyInput.Patch patch = 10;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\UpdatePolicyInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**

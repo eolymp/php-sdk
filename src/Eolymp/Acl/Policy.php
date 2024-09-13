@@ -22,17 +22,29 @@ class Policy extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * policy subject (user id)
+     *
      * Generated from protobuf field <code>string subject = 3;</code>
      */
     protected $subject = '';
     /**
+     * policy resource url, for example /contests/xyz, empty means policy applies globally
+     *
      * Generated from protobuf field <code>string resource = 10;</code>
      */
     protected $resource = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 11;</code>
+     * allow all actions
+     *
+     * Generated from protobuf field <code>bool allow_all = 12;</code>
      */
-    private $actions;
+    protected $allow_all = false;
+    /**
+     * list of allowed actions
+     *
+     * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
+     */
+    private $allows;
 
     /**
      * Constructor.
@@ -43,8 +55,13 @@ class Policy extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type string $subject
+     *           policy subject (user id)
      *     @type string $resource
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $actions
+     *           policy resource url, for example /contests/xyz, empty means policy applies globally
+     *     @type bool $allow_all
+     *           allow all actions
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $allows
+     *           list of allowed actions
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +114,8 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * policy subject (user id)
+     *
      * Generated from protobuf field <code>string subject = 3;</code>
      * @return string
      */
@@ -106,6 +125,8 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * policy subject (user id)
+     *
      * Generated from protobuf field <code>string subject = 3;</code>
      * @param string $var
      * @return $this
@@ -119,6 +140,8 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * policy resource url, for example /contests/xyz, empty means policy applies globally
+     *
      * Generated from protobuf field <code>string resource = 10;</code>
      * @return string
      */
@@ -128,6 +151,8 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * policy resource url, for example /contests/xyz, empty means policy applies globally
+     *
      * Generated from protobuf field <code>string resource = 10;</code>
      * @param string $var
      * @return $this
@@ -141,23 +166,53 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * allow all actions
+     *
+     * Generated from protobuf field <code>bool allow_all = 12;</code>
+     * @return bool
      */
-    public function getActions()
+    public function getAllowAll()
     {
-        return $this->actions;
+        return $this->allow_all;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 11;</code>
+     * allow all actions
+     *
+     * Generated from protobuf field <code>bool allow_all = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_all = $var;
+
+        return $this;
+    }
+
+    /**
+     * list of allowed actions
+     *
+     * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAllows()
+    {
+        return $this->allows;
+    }
+
+    /**
+     * list of allowed actions
+     *
+     * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setActions($var)
+    public function setAllows($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Action::class);
-        $this->actions = $arr;
+        $this->allows = $arr;
 
         return $this;
     }

@@ -17,17 +17,18 @@ class Policy
         \GPBMetadata\Eolymp\Acl\Action::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ä
+Ö
 eolymp/acl/policy.proto
-eolymp.acl"j
+eolymp.acl"|
 Policy
 
 id (	
 name (	
 subject (	
 resource
- (	#
-actions (2.eolymp.acl.ActionB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclbproto3'
+ (	
+	allow_all ("
+allows (2.eolymp.acl.ActionB)Z\'github.com/eolymp/go-sdk/eolymp/acl;aclbproto3'
         , true);
 
         static::$is_initialized = true;
