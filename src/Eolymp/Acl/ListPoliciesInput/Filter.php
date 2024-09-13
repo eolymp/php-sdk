@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string query = 10;</code>
+     */
+    protected $query = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
      */
     private $id;
@@ -29,10 +33,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum resource = 4;</code>
      */
     private $resource;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum entitlement = 5;</code>
-     */
-    private $entitlement;
 
     /**
      * Constructor.
@@ -40,16 +40,38 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $query
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $subject
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $resource
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $entitlement
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Acl\PolicyService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string query = 10;</code>
+     * @return string
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Generated from protobuf field <code>string query = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setQuery($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->query = $var;
+
+        return $this;
     }
 
     /**
@@ -136,28 +158,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->resource = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum entitlement = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getEntitlement()
-    {
-        return $this->entitlement;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum entitlement = 5;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setEntitlement($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->entitlement = $arr;
 
         return $this;
     }
