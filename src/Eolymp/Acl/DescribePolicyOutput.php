@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribePolicyOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string policy_id = 1;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Policy policy = 1;</code>
      */
-    protected $policy_id = '';
+    protected $policy = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribePolicyOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $policy_id
+     *     @type \Eolymp\Acl\Policy $policy
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,33 @@ class DescribePolicyOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string policy_id = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.acl.Policy policy = 1;</code>
+     * @return \Eolymp\Acl\Policy|null
      */
-    public function getPolicyId()
+    public function getPolicy()
     {
-        return $this->policy_id;
+        return $this->policy;
+    }
+
+    public function hasPolicy()
+    {
+        return isset($this->policy);
+    }
+
+    public function clearPolicy()
+    {
+        unset($this->policy);
     }
 
     /**
-     * Generated from protobuf field <code>string policy_id = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.acl.Policy policy = 1;</code>
+     * @param \Eolymp\Acl\Policy $var
      * @return $this
      */
-    public function setPolicyId($var)
+    public function setPolicy($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->policy_id = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Acl\Policy::class);
+        $this->policy = $var;
 
         return $this;
     }
