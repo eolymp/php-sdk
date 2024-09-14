@@ -22,11 +22,11 @@ class Policy extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * policy subject (user id)
+     * policy principal (user id)
      *
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string principal = 3;</code>
      */
-    protected $subject = '';
+    protected $principal = '';
     /**
      * policy resource url, for example /contests/xyz, empty means policy applies globally
      *
@@ -54,8 +54,8 @@ class Policy extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *     @type string $subject
-     *           policy subject (user id)
+     *     @type string $principal
+     *           policy principal (user id)
      *     @type string $resource
      *           policy resource url, for example /contests/xyz, empty means policy applies globally
      *     @type bool $allow_all
@@ -114,27 +114,27 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * policy subject (user id)
+     * policy principal (user id)
      *
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string principal = 3;</code>
      * @return string
      */
-    public function getSubject()
+    public function getPrincipal()
     {
-        return $this->subject;
+        return $this->principal;
     }
 
     /**
-     * policy subject (user id)
+     * policy principal (user id)
      *
-     * Generated from protobuf field <code>string subject = 3;</code>
+     * Generated from protobuf field <code>string principal = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setSubject($var)
+    public function setPrincipal($var)
     {
         GPBUtil::checkString($var, True);
-        $this->subject = $var;
+        $this->principal = $var;
 
         return $this;
     }
