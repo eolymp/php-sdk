@@ -40,6 +40,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $unofficial;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool seated = 9;</code>
+     */
+    private $seated;
+    /**
      * find members of particular team
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID team_id = 7;</code>
@@ -89,6 +93,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $inactive
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $incomplete
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $seated
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $team_id
      *           find members of particular team
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $group_id
@@ -238,6 +243,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->unofficial = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool seated = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSeated()
+    {
+        return $this->seated;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool seated = 9;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSeated($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->seated = $arr;
 
         return $this;
     }

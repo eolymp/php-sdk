@@ -86,6 +86,14 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
+     */
+    protected $seated_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
+     */
+    protected $active_at = null;
+    /**
      * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
      */
     protected $stats = null;
@@ -126,6 +134,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type string $tier_id
      *     @type string $fallback_tier_id
      *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $seated_at
+     *     @type \Google\Protobuf\Timestamp $active_at
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
@@ -499,6 +509,70 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getSeatedAt()
+    {
+        return $this->seated_at;
+    }
+
+    public function hasSeatedAt()
+    {
+        return isset($this->seated_at);
+    }
+
+    public function clearSeatedAt()
+    {
+        unset($this->seated_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setSeatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->seated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getActiveAt()
+    {
+        return $this->active_at;
+    }
+
+    public function hasActiveAt()
+    {
+        return isset($this->active_at);
+    }
+
+    public function clearActiveAt()
+    {
+        unset($this->active_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setActiveAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->active_at = $var;
 
         return $this;
     }
