@@ -22,9 +22,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID subject = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID principal = 2;</code>
      */
-    private $subject;
+    private $principal;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      */
@@ -42,7 +42,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type string $query
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $subject
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $principal
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $resource
      * }
@@ -97,23 +97,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID subject = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID principal = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getSubject()
+    public function getPrincipal()
     {
-        return $this->subject;
+        return $this->principal;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID subject = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID principal = 2;</code>
      * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setSubject($var)
+    public function setPrincipal($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
-        $this->subject = $arr;
+        $this->principal = $arr;
 
         return $this;
     }
