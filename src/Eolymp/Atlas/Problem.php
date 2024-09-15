@@ -58,6 +58,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     private $topics;
     /**
+     * Total score
+     *
+     * Generated from protobuf field <code>float score = 31;</code>
+     */
+    protected $score = 0.0;
+    /**
      * Constraints
      *
      * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
@@ -114,6 +120,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           For imported problems, provides the source from where the problem is imported and synchronized.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *     @type float $score
+     *           Total score
      *     @type \Eolymp\Atlas\Problem\Constraints $constraints
      *           Constraints
      *     @type float $acceptance_rate
@@ -328,6 +336,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Total score
+     *
+     * Generated from protobuf field <code>float score = 31;</code>
+     * @return float
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Total score
+     *
+     * Generated from protobuf field <code>float score = 31;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->score = $var;
 
         return $this;
     }
