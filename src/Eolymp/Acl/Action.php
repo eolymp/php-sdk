@@ -16,6 +16,12 @@ class Action
      */
     const UNKNOWN_ACTION = 0;
     /**
+     * if set, the space will appear in the ListSpaces API, automatically assigned if user has any permissions in the space
+     *
+     * Generated from protobuf enum <code>SPACE_LIST = 10;</code>
+     */
+    const SPACE_LIST = 10;
+    /**
      * Generated from protobuf enum <code>SPACE_READ = 11;</code>
      */
     const SPACE_READ = 11;
@@ -36,6 +42,12 @@ class Action
      */
     const BILLING_WRITE = 15;
     /**
+     * allows to list policies, automatically assigned if user has read access to any of the policies
+     *
+     * Generated from protobuf enum <code>POLICY_LIST = 22;</code>
+     */
+    const POLICY_LIST = 22;
+    /**
      * view/list space permissions
      *
      * Generated from protobuf enum <code>POLICY_READ = 20;</code>
@@ -47,6 +59,12 @@ class Action
      * Generated from protobuf enum <code>POLICY_WRITE = 21;</code>
      */
     const POLICY_WRITE = 21;
+    /**
+     * allows to list problems, automatically assigned if user has read access to any of the problems
+     *
+     * Generated from protobuf enum <code>PROBLEM_LIST = 30;</code>
+     */
+    const PROBLEM_LIST = 30;
     /**
      * Generated from protobuf enum <code>PROBLEM_READ = 31;</code>
      */
@@ -62,6 +80,12 @@ class Action
      */
     const PROBLEM_TESTING = 34;
     /**
+     * allows to list contests, automatically assigned if user has read access to any of the contests
+     *
+     * Generated from protobuf enum <code>CONTEST_LIST = 50;</code>
+     */
+    const CONTEST_LIST = 50;
+    /**
      * Generated from protobuf enum <code>CONTEST_READ = 51;</code>
      */
     const CONTEST_READ = 51;
@@ -69,6 +93,12 @@ class Action
      * Generated from protobuf enum <code>CONTEST_WRITE = 62;</code>
      */
     const CONTEST_WRITE = 62;
+    /**
+     * allows to list tickets, automatically assigned if user has read access to any of the tickets
+     *
+     * Generated from protobuf enum <code>TICKET_LIST = 72;</code>
+     */
+    const TICKET_LIST = 72;
     /**
      * Generated from protobuf enum <code>TICKET_READ = 70;</code>
      */
@@ -80,6 +110,12 @@ class Action
      */
     const TICKET_WRITE = 71;
     /**
+     * allows to list members, automatically assigned if user has read access to any of the members
+     *
+     * Generated from protobuf enum <code>MEMBER_LIST = 90;</code>
+     */
+    const MEMBER_LIST = 90;
+    /**
      * Generated from protobuf enum <code>MEMBER_READ = 91;</code>
      */
     const MEMBER_READ = 91;
@@ -87,6 +123,12 @@ class Action
      * Generated from protobuf enum <code>MEMBER_WRITE = 92;</code>
      */
     const MEMBER_WRITE = 92;
+    /**
+     * allows to list scoreboards, automatically assigned if user has read access to any of the scoreboards
+     *
+     * Generated from protobuf enum <code>SCOREBOARD_LIST = 110;</code>
+     */
+    const SCOREBOARD_LIST = 110;
     /**
      * Generated from protobuf enum <code>SCOREBOARD_READ = 111;</code>
      */
@@ -96,6 +138,12 @@ class Action
      */
     const SCOREBOARD_WRITE = 112;
     /**
+     * allows to list fragments, automatically assigned if user has read access to any of the fragments
+     *
+     * Generated from protobuf enum <code>CONTENT_LIST = 122;</code>
+     */
+    const CONTENT_LIST = 122;
+    /**
      * Generated from protobuf enum <code>CONTENT_READ = 120;</code>
      */
     const CONTENT_READ = 120;
@@ -103,6 +151,12 @@ class Action
      * Generated from protobuf enum <code>CONTENT_WRITE = 121;</code>
      */
     const CONTENT_WRITE = 121;
+    /**
+     * allows to list courses, automatically assigned if user has read access to any of the courses
+     *
+     * Generated from protobuf enum <code>COURSE_LIST = 133;</code>
+     */
+    const COURSE_LIST = 133;
     /**
      * Generated from protobuf enum <code>COURSE_READ = 130;</code>
      */
@@ -118,6 +172,12 @@ class Action
      */
     const COURSE_ASSIGN = 132;
     /**
+     * allows to list posts, automatically assigned if user has read access to any of the posts
+     *
+     * Generated from protobuf enum <code>POST_LIST = 142;</code>
+     */
+    const POST_LIST = 142;
+    /**
      * Generated from protobuf enum <code>POST_READ = 140;</code>
      */
     const POST_READ = 140;
@@ -128,29 +188,39 @@ class Action
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
+        self::SPACE_LIST => 'SPACE_LIST',
         self::SPACE_READ => 'SPACE_READ',
         self::SPACE_WRITE => 'SPACE_WRITE',
         self::SPACE_DELETE => 'SPACE_DELETE',
         self::BILLING_READ => 'BILLING_READ',
         self::BILLING_WRITE => 'BILLING_WRITE',
+        self::POLICY_LIST => 'POLICY_LIST',
         self::POLICY_READ => 'POLICY_READ',
         self::POLICY_WRITE => 'POLICY_WRITE',
+        self::PROBLEM_LIST => 'PROBLEM_LIST',
         self::PROBLEM_READ => 'PROBLEM_READ',
         self::PROBLEM_WRITE => 'PROBLEM_WRITE',
         self::PROBLEM_TESTING => 'PROBLEM_TESTING',
+        self::CONTEST_LIST => 'CONTEST_LIST',
         self::CONTEST_READ => 'CONTEST_READ',
         self::CONTEST_WRITE => 'CONTEST_WRITE',
+        self::TICKET_LIST => 'TICKET_LIST',
         self::TICKET_READ => 'TICKET_READ',
         self::TICKET_WRITE => 'TICKET_WRITE',
+        self::MEMBER_LIST => 'MEMBER_LIST',
         self::MEMBER_READ => 'MEMBER_READ',
         self::MEMBER_WRITE => 'MEMBER_WRITE',
+        self::SCOREBOARD_LIST => 'SCOREBOARD_LIST',
         self::SCOREBOARD_READ => 'SCOREBOARD_READ',
         self::SCOREBOARD_WRITE => 'SCOREBOARD_WRITE',
+        self::CONTENT_LIST => 'CONTENT_LIST',
         self::CONTENT_READ => 'CONTENT_READ',
         self::CONTENT_WRITE => 'CONTENT_WRITE',
+        self::COURSE_LIST => 'COURSE_LIST',
         self::COURSE_READ => 'COURSE_READ',
         self::COURSE_WRITE => 'COURSE_WRITE',
         self::COURSE_ASSIGN => 'COURSE_ASSIGN',
+        self::POST_LIST => 'POST_LIST',
         self::POST_READ => 'POST_READ',
         self::POST_WRITE => 'POST_WRITE',
     ];
