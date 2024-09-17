@@ -25,6 +25,10 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.universe.ListSpacesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Universe\ListSpacesInput\Filter $filters
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +119,28 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Universe\ListSpacesInput\Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }
