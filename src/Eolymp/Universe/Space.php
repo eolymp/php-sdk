@@ -83,10 +83,6 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string affiliation = 15;</code>
      */
     protected $affiliation = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     */
-    private $actions;
 
     /**
      * Constructor.
@@ -117,7 +113,6 @@ class Space extends \Google\Protobuf\Internal\Message
      *           subscription details (private)
      *     @type string $affiliation
      *           space affiliation label
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $actions
      * }
      */
     public function __construct($data = NULL) {
@@ -439,28 +434,6 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->affiliation = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getActions()
-    {
-        return $this->actions;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setActions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Action::class);
-        $this->actions = $arr;
 
         return $this;
     }

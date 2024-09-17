@@ -19,15 +19,10 @@ class Extra
      * Generated from protobuf enum <code>SUBSCRIPTION = 1;</code>
      */
     const SUBSCRIPTION = 1;
-    /**
-     * Generated from protobuf enum <code>ACTIONS = 2;</code>
-     */
-    const ACTIONS = 2;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::SUBSCRIPTION => 'SUBSCRIPTION',
-        self::ACTIONS => 'ACTIONS',
     ];
 
     public static function name($value)

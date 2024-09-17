@@ -55,10 +55,6 @@ class Course extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 estimate = 20;</code>
      */
     protected $estimate = 0;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     */
-    private $actions;
 
     /**
      * Constructor.
@@ -77,7 +73,6 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type int $estimate
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $actions
      * }
      */
     public function __construct($data = NULL) {
@@ -315,28 +310,6 @@ class Course extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->estimate = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getActions()
-    {
-        return $this->actions;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setActions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Action::class);
-        $this->actions = $arr;
 
         return $this;
     }

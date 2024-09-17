@@ -165,10 +165,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
      */
     protected $scoreboard = null;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     */
-    private $actions;
 
     /**
      * Constructor.
@@ -229,7 +225,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Upsolve configuration
      *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
      *           Scoreboard configuration
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $actions
      * }
      */
     public function __construct($data = NULL) {
@@ -981,28 +976,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Scoreboard::class);
         $this->scoreboard = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getActions()
-    {
-        return $this->actions;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setActions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Action::class);
-        $this->actions = $arr;
 
         return $this;
     }

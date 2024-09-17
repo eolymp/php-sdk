@@ -99,10 +99,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 difficulty = 21;</code>
      */
     protected $difficulty = 0;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     */
-    private $actions;
 
     /**
      * Constructor.
@@ -137,7 +133,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int $vote_count
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $actions
      * }
      */
     public function __construct($data = NULL) {
@@ -547,28 +542,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->difficulty = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getActions()
-    {
-        return $this->actions;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Action actions = 100;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setActions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Action::class);
-        $this->actions = $arr;
 
         return $this;
     }
