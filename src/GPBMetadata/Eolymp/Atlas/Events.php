@@ -19,10 +19,11 @@ class Events
         \GPBMetadata\Eolymp\Atlas\ScoringScore::initOnce();
         \GPBMetadata\Eolymp\Atlas\Statement::initOnce();
         \GPBMetadata\Eolymp\Atlas\Submission::initOnce();
+        \GPBMetadata\Eolymp\Atlas\Suggestion::initOnce();
         $pool->internalAddGeneratedFile(
             '
-©
-eolymp/atlas/events.protoeolymp.atlaseolymp/atlas/problem.proto eolymp/atlas/scoring_score.protoeolymp/atlas/statement.protoeolymp/atlas/submission.proto"W
+É
+eolymp/atlas/events.protoeolymp.atlaseolymp/atlas/problem.proto eolymp/atlas/scoring_score.protoeolymp/atlas/statement.protoeolymp/atlas/submission.protoeolymp/atlas/suggestion.proto"W
 SubmissionCompleteEvent,
 
 submission (2.eolymp.atlas.Submission
@@ -51,7 +52,12 @@ problem_id (	
 problem_id (	
 user_id (	&
 before (2.eolymp.acl.Permission%
-after (2.eolymp.acl.PermissionB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+after (2.eolymp.acl.Permission"
+SuggestionChangedEvent
+
+problem_id (	(
+before (2.eolymp.atlas.Suggestion\'
+after (2.eolymp.atlas.SuggestionB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;
