@@ -185,6 +185,18 @@ class Action
      * Generated from protobuf enum <code>POST_WRITE = 141;</code>
      */
     const POST_WRITE = 141;
+    /**
+     * Generated from protobuf enum <code>SUBMISSION_LIST = 150;</code>
+     */
+    const SUBMISSION_LIST = 150;
+    /**
+     * Generated from protobuf enum <code>SUBMISSION_READ = 152;</code>
+     */
+    const SUBMISSION_READ = 152;
+    /**
+     * Generated from protobuf enum <code>SUBMISSION_WRITE = 153;</code>
+     */
+    const SUBMISSION_WRITE = 153;
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
@@ -223,6 +235,9 @@ class Action
         self::POST_LIST => 'POST_LIST',
         self::POST_READ => 'POST_READ',
         self::POST_WRITE => 'POST_WRITE',
+        self::SUBMISSION_LIST => 'SUBMISSION_LIST',
+        self::SUBMISSION_READ => 'SUBMISSION_READ',
+        self::SUBMISSION_WRITE => 'SUBMISSION_WRITE',
     ];
 
     public static function name($value)
