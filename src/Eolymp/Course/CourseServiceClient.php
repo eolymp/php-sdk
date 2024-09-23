@@ -111,4 +111,23 @@ class CourseServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCoursesOutput::class, $context);
     }
 
+    /**
+     * @param CopyCourseInput $input message
+     * @param array $context request parameters
+     *
+     * @return CopyCourseOutput output message
+     */
+    public function CopyCourse(CopyCourseInput $input, array $context = [])
+    {
+        $path = "/courses/".rawurlencode($input->getCourseId())."/copy";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+
+        $context['name'] = "eolymp.course.CourseService/CopyCourse";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CopyCourseOutput::class, $context);
+    }
+
 }

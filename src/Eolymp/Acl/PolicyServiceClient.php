@@ -111,4 +111,23 @@ class PolicyServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPoliciesOutput::class, $context);
     }
 
+    /**
+     * CopyPolicies for given resource or principal
+     * At least one of src_principal or src_resource should be set
+     *
+     * @param CopyPoliciesInput $input message
+     * @param array $context request parameters
+     *
+     * @return CopyPoliciesOutput output message
+     */
+    public function CopyPolicies(CopyPoliciesInput $input, array $context = [])
+    {
+        $path = "/policies:copy";
+
+        $context['name'] = "eolymp.acl.PolicyService/CopyPolicies";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CopyPoliciesOutput::class, $context);
+    }
+
 }
