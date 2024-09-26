@@ -127,4 +127,20 @@ class StudentServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStudentsOutput::class, $context);
     }
 
+    /**
+     * @param JoinCourseInput $input message
+     * @param array $context request parameters
+     *
+     * @return JoinCourseOutput output message
+     */
+    public function JoinCourse(JoinCourseInput $input, array $context = [])
+    {
+        $path = "/join";
+
+        $context['name'] = "eolymp.course.StudentService/JoinCourse";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, JoinCourseOutput::class, $context);
+    }
+
 }
