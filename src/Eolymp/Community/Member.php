@@ -46,6 +46,12 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $level = 0;
     /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>bool active = 10;</code>
+     */
+    protected $active = false;
+    /**
      * Generated from protobuf field <code>bool inactive = 11;</code>
      */
     protected $inactive = false;
@@ -116,6 +122,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type int $rating
      *     @type int $level
      *           level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
+     *     @type bool $active
+     *           deprecated
      *     @type bool $inactive
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
@@ -299,6 +307,32 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->level = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>bool active = 10;</code>
+     * @return bool
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>bool active = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->active = $var;
 
         return $this;
     }
