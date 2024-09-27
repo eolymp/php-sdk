@@ -14,13 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UnassignModuleInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string member_id = 1;</code>
-     */
-    protected $member_id = '';
-    /**
      * Generated from protobuf field <code>string module_id = 2;</code>
      */
     protected $module_id = '';
+    protected $assignee;
 
     /**
      * Constructor.
@@ -29,6 +26,7 @@ class UnassignModuleInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
+     *     @type string $group_id
      *     @type string $module_id
      * }
      */
@@ -43,7 +41,12 @@ class UnassignModuleInput extends \Google\Protobuf\Internal\Message
      */
     public function getMemberId()
     {
-        return $this->member_id;
+        return $this->readOneof(1);
+    }
+
+    public function hasMemberId()
+    {
+        return $this->hasOneof(1);
     }
 
     /**
@@ -54,7 +57,34 @@ class UnassignModuleInput extends \Google\Protobuf\Internal\Message
     public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->member_id = $var;
+        $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 3;</code>
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasGroupId()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(3, $var);
 
         return $this;
     }
@@ -79,6 +109,14 @@ class UnassignModuleInput extends \Google\Protobuf\Internal\Message
         $this->module_id = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAssignee()
+    {
+        return $this->whichOneof("assignee");
     }
 
 }

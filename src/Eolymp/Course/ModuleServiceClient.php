@@ -138,16 +138,15 @@ class ModuleServiceClient {
      */
     public function AssignModule(AssignModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments/".rawurlencode($input->getMemberId());
+        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setModuleId("");
-        $input->setMemberId("");
 
         $context['name'] = "eolymp.course.ModuleService/AssignModule";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, AssignModuleOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignModuleOutput::class, $context);
     }
 
     /**
@@ -158,11 +157,10 @@ class ModuleServiceClient {
      */
     public function UnassignModule(UnassignModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments/".rawurlencode($input->getMemberId());
+        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setModuleId("");
-        $input->setMemberId("");
 
         $context['name'] = "eolymp.course.ModuleService/UnassignModule";
         $context['path'] = $path;
