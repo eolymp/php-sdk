@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.MemberChangedRecord</code>
+ * Generated from protobuf message <code>eolymp.community.GroupChangedEvent</code>
  */
-class MemberChangedRecord extends \Google\Protobuf\Internal\Message
+class GroupChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.community.Group before = 1;</code>
      */
     protected $before = null;
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Group after = 2;</code>
      */
     protected $after = null;
 
@@ -28,8 +28,8 @@ class MemberChangedRecord extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Community\Member $before
-     *     @type \Eolymp\Community\Member $after
+     *     @type \Eolymp\Community\Group $before
+     *     @type \Eolymp\Community\Group $after
      * }
      */
     public function __construct($data = NULL) {
@@ -38,8 +38,8 @@ class MemberChangedRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member before = 1;</code>
-     * @return \Eolymp\Community\Member|null
+     * Generated from protobuf field <code>.eolymp.community.Group before = 1;</code>
+     * @return \Eolymp\Community\Group|null
      */
     public function getBefore()
     {
@@ -57,21 +57,21 @@ class MemberChangedRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member before = 1;</code>
-     * @param \Eolymp\Community\Member $var
+     * Generated from protobuf field <code>.eolymp.community.Group before = 1;</code>
+     * @param \Eolymp\Community\Group $var
      * @return $this
      */
     public function setBefore($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Group::class);
         $this->before = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member after = 2;</code>
-     * @return \Eolymp\Community\Member|null
+     * Generated from protobuf field <code>.eolymp.community.Group after = 2;</code>
+     * @return \Eolymp\Community\Group|null
      */
     public function getAfter()
     {
@@ -89,13 +89,13 @@ class MemberChangedRecord extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member after = 2;</code>
-     * @param \Eolymp\Community\Member $var
+     * Generated from protobuf field <code>.eolymp.community.Group after = 2;</code>
+     * @param \Eolymp\Community\Group $var
      * @return $this
      */
     public function setAfter($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Group::class);
         $this->after = $var;
 
         return $this;

@@ -18,18 +18,18 @@ class Events
         \GPBMetadata\Eolymp\Community\Member::initOnce();
         $pool->internalAddGeneratedFile(
             '
- 
+ž
 eolymp/community/events.protoeolymp.communityeolymp/community/member.proto">
 MemberCreatedEvent(
 member (2.eolymp.community.Member">
 MemberUpdatedEvent(
 member (2.eolymp.community.Member">
 MemberDeletedEvent(
-member (2.eolymp.community.Member"h
-MemberChangedRecord(
+member (2.eolymp.community.Member"g
+MemberChangedEvent(
 before (2.eolymp.community.Member\'
-after (2.eolymp.community.Member"e
-GroupChangedRecord\'
+after (2.eolymp.community.Member"d
+GroupChangedEvent\'
 before (2.eolymp.community.Group&
 after (2.eolymp.community.GroupB5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
         , true);
