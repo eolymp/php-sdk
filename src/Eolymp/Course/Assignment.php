@@ -18,6 +18,10 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string module_id = 4;</code>
+     */
+    protected $module_id = '';
+    /**
      * optionally, time by when assignment should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
@@ -50,6 +54,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $module_id
      *     @type string $member_id
      *     @type string $group_id
      *     @type \Google\Protobuf\Timestamp $start_after
@@ -85,6 +90,28 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 4;</code>
+     * @return string
+     */
+    public function getModuleId()
+    {
+        return $this->module_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
 
         return $this;
     }
