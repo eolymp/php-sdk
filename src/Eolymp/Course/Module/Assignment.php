@@ -36,6 +36,12 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $duration = 0;
     /**
+     * if true the task will be available after time runs out
+     *
+     * Generated from protobuf field <code>bool upsolve = 30;</code>
+     */
+    protected $upsolve = false;
+    /**
      * read-only, time when assignment was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp assigned_at = 20;</code>
@@ -67,6 +73,8 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *           optionally, time by when assignment should be complete
      *     @type int $duration
      *           optionally, duration of the assignment in seconds
+     *     @type bool $upsolve
+     *           if true the task will be available after time runs out
      *     @type \Google\Protobuf\Timestamp $assigned_at
      *           read-only, time when assignment was created
      *     @type \Google\Protobuf\Timestamp $started_at
@@ -196,6 +204,32 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * if true the task will be available after time runs out
+     *
+     * Generated from protobuf field <code>bool upsolve = 30;</code>
+     * @return bool
+     */
+    public function getUpsolve()
+    {
+        return $this->upsolve;
+    }
+
+    /**
+     * if true the task will be available after time runs out
+     *
+     * Generated from protobuf field <code>bool upsolve = 30;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUpsolve($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->upsolve = $var;
 
         return $this;
     }

@@ -48,6 +48,24 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
+     * optionally, time by when module should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
+     */
+    protected $start_after = null;
+    /**
+     * optionally, time by when module should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
+     */
+    protected $complete_before = null;
+    /**
+     * optionally, duration of the module in seconds
+     *
+     * Generated from protobuf field <code>uint32 duration = 13;</code>
+     */
+    protected $duration = 0;
+    /**
      * Generated from protobuf field <code>float progress = 20;</code>
      */
     protected $progress = 0.0;
@@ -75,6 +93,12 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type string $image_url
      *     @type int $index
      *     @type \Eolymp\Ecm\Content $description
+     *     @type \Google\Protobuf\Timestamp $start_after
+     *           optionally, time by when module should be complete
+     *     @type \Google\Protobuf\Timestamp $complete_before
+     *           optionally, time by when module should be complete
+     *     @type int $duration
+     *           optionally, duration of the module in seconds
      *     @type float $progress
      *     @type int $grade
      *     @type \Eolymp\Course\Module\Assignment $assignment
@@ -271,6 +295,104 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, time by when module should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getStartAfter()
+    {
+        return $this->start_after;
+    }
+
+    public function hasStartAfter()
+    {
+        return isset($this->start_after);
+    }
+
+    public function clearStartAfter()
+    {
+        unset($this->start_after);
+    }
+
+    /**
+     * optionally, time by when module should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartAfter($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->start_after = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, time by when module should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCompleteBefore()
+    {
+        return $this->complete_before;
+    }
+
+    public function hasCompleteBefore()
+    {
+        return isset($this->complete_before);
+    }
+
+    public function clearCompleteBefore()
+    {
+        unset($this->complete_before);
+    }
+
+    /**
+     * optionally, time by when module should be complete
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCompleteBefore($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->complete_before = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, duration of the module in seconds
+     *
+     * Generated from protobuf field <code>uint32 duration = 13;</code>
+     * @return int
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * optionally, duration of the module in seconds
+     *
+     * Generated from protobuf field <code>uint32 duration = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDuration($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->duration = $var;
 
         return $this;
     }

@@ -39,6 +39,12 @@ class AssignModuleInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 duration = 13;</code>
      */
     protected $duration = 0;
+    /**
+     * allow student to upsolve
+     *
+     * Generated from protobuf field <code>bool upsolve = 30;</code>
+     */
+    protected $upsolve = false;
 
     /**
      * Constructor.
@@ -54,6 +60,8 @@ class AssignModuleInput extends \Google\Protobuf\Internal\Message
      *           optionally, time by when assignment should be complete
      *     @type int $duration
      *           optionally, duration of the assignment in seconds
+     *     @type bool $upsolve
+     *           allow student to upsolve
      * }
      */
     public function __construct($data = NULL) {
@@ -199,6 +207,32 @@ class AssignModuleInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * allow student to upsolve
+     *
+     * Generated from protobuf field <code>bool upsolve = 30;</code>
+     * @return bool
+     */
+    public function getUpsolve()
+    {
+        return $this->upsolve;
+    }
+
+    /**
+     * allow student to upsolve
+     *
+     * Generated from protobuf field <code>bool upsolve = 30;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUpsolve($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->upsolve = $var;
 
         return $this;
     }
