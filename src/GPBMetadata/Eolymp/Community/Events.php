@@ -14,11 +14,12 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Community\Group::initOnce();
         \GPBMetadata\Eolymp\Community\Member::initOnce();
         $pool->internalAddGeneratedFile(
             '
-š
-eolymp/community/events.protoeolymp.community">
+ 
+eolymp/community/events.protoeolymp.communityeolymp/community/member.proto">
 MemberCreatedEvent(
 member (2.eolymp.community.Member">
 MemberUpdatedEvent(
@@ -27,7 +28,10 @@ class Events
 member (2.eolymp.community.Member"h
 MemberChangedRecord(
 before (2.eolymp.community.Member\'
-after (2.eolymp.community.MemberB5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
+after (2.eolymp.community.Member"e
+GroupChangedRecord\'
+before (2.eolymp.community.Group&
+after (2.eolymp.community.GroupB5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'
         , true);
 
         static::$is_initialized = true;
