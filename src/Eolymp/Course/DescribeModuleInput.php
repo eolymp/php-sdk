@@ -18,15 +18,10 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
      */
     protected $module_id = '';
     /**
-     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
-     *
-     * Generated from protobuf field <code>string student_id = 2;</code>
-     */
-    protected $student_id = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.course.Module.Extra extra = 1123;</code>
      */
     private $extra;
+    protected $assignee;
 
     /**
      * Constructor.
@@ -35,8 +30,9 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $module_id
-     *     @type string $student_id
-     *           optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *     @type string $member_id
+     *           optionally, student who's progress/assignment and grade will be returned, if empty authorized user is used
+     *     @type string $group_id
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -68,27 +64,59 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     * optionally, student who's progress/assignment and grade will be returned, if empty authorized user is used
      *
-     * Generated from protobuf field <code>string student_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
-    public function getStudentId()
+    public function getMemberId()
     {
-        return $this->student_id;
+        return $this->readOneof(2);
+    }
+
+    public function hasMemberId()
+    {
+        return $this->hasOneof(2);
     }
 
     /**
-     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     * optionally, student who's progress/assignment and grade will be returned, if empty authorized user is used
      *
-     * Generated from protobuf field <code>string student_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setStudentId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->student_id = $var;
+        $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 3;</code>
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasGroupId()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(3, $var);
 
         return $this;
     }
@@ -113,6 +141,14 @@ class DescribeModuleInput extends \Google\Protobuf\Internal\Message
         $this->extra = $arr;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAssignee()
+    {
+        return $this->whichOneof("assignee");
     }
 
 }

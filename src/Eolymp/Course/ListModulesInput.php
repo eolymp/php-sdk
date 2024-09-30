@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListModulesInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
-     *
-     * Generated from protobuf field <code>string student_id = 5;</code>
-     */
-    protected $student_id = '';
-    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -47,6 +41,7 @@ class ListModulesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.course.Module.Extra extra = 1123;</code>
      */
     private $extra;
+    protected $assignee;
 
     /**
      * Constructor.
@@ -54,8 +49,9 @@ class ListModulesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $student_id
-     *           optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     *     @type string $member_id
+     *           optionally, student who's progress/assignment and grade will be returned, if empty authorized user is used
+     *     @type string $group_id
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -72,27 +68,59 @@ class ListModulesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     * optionally, student who's progress/assignment and grade will be returned, if empty authorized user is used
      *
-     * Generated from protobuf field <code>string student_id = 5;</code>
+     * Generated from protobuf field <code>string member_id = 5;</code>
      * @return string
      */
-    public function getStudentId()
+    public function getMemberId()
     {
-        return $this->student_id;
+        return $this->readOneof(5);
+    }
+
+    public function hasMemberId()
+    {
+        return $this->hasOneof(5);
     }
 
     /**
-     * optionally, student who's assignment and grade will be returned, if empty authorized user is used
+     * optionally, student who's progress/assignment and grade will be returned, if empty authorized user is used
      *
-     * Generated from protobuf field <code>string student_id = 5;</code>
+     * Generated from protobuf field <code>string member_id = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setStudentId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->student_id = $var;
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 6;</code>
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasGroupId()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(6, $var);
 
         return $this;
     }
@@ -245,6 +273,14 @@ class ListModulesInput extends \Google\Protobuf\Internal\Message
         $this->extra = $arr;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAssignee()
+    {
+        return $this->whichOneof("assignee");
     }
 
 }

@@ -69,6 +69,10 @@ class Module extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.course.Module.Progress progress = 31;</code>
      */
     protected $progress = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 32;</code>
+     */
+    protected $assignment = null;
 
     /**
      * Constructor.
@@ -92,6 +96,7 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type int $duration
      *           optionally, duration of the module in seconds
      *     @type \Eolymp\Course\Module\Progress $progress
+     *     @type \Eolymp\Course\Assignment $assignment
      * }
      */
     public function __construct($data = NULL) {
@@ -415,6 +420,38 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\Module\Progress::class);
         $this->progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 32;</code>
+     * @return \Eolymp\Course\Assignment|null
+     */
+    public function getAssignment()
+    {
+        return $this->assignment;
+    }
+
+    public function hasAssignment()
+    {
+        return isset($this->assignment);
+    }
+
+    public function clearAssignment()
+    {
+        unset($this->assignment);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 32;</code>
+     * @param \Eolymp\Course\Assignment $var
+     * @return $this
+     */
+    public function setAssignment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\Assignment::class);
+        $this->assignment = $var;
 
         return $this;
     }
