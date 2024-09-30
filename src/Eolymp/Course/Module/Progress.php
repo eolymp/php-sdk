@@ -9,16 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * deprecated
- *
- * Generated from protobuf message <code>eolymp.course.Module.Assignment</code>
+ * Generated from protobuf message <code>eolymp.course.Module.Progress</code>
  */
-class Assignment extends \Google\Protobuf\Internal\Message
+class Progress extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Assignment.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module.Progress.Status status = 10;</code>
      */
     protected $status = 0;
+    /**
+     * Generated from protobuf field <code>float percentage = 40;</code>
+     */
+    protected $percentage = 0.0;
+    /**
+     * Generated from protobuf field <code>uint32 grade = 41;</code>
+     */
+    protected $grade = 0;
     /**
      * optionally, time by when assignment should be complete
      *
@@ -69,6 +75,8 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $status
+     *     @type float $percentage
+     *     @type int $grade
      *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
      *     @type \Google\Protobuf\Timestamp $complete_before
@@ -91,7 +99,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Assignment.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module.Progress.Status status = 10;</code>
      * @return int
      */
     public function getStatus()
@@ -100,14 +108,58 @@ class Assignment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Assignment.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module.Progress.Status status = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Course\Module\Assignment\Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Course\Module\Progress\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float percentage = 40;</code>
+     * @return float
+     */
+    public function getPercentage()
+    {
+        return $this->percentage;
+    }
+
+    /**
+     * Generated from protobuf field <code>float percentage = 40;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPercentage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->percentage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 41;</code>
+     * @return int
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade = 41;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGrade($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade = $var;
 
         return $this;
     }
@@ -347,5 +399,5 @@ class Assignment extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Assignment::class, \Eolymp\Course\Module_Assignment::class);
+class_alias(Progress::class, \Eolymp\Course\Module_Progress::class);
 
