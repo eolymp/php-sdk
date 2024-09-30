@@ -30,10 +30,10 @@ class NotificationServiceClient {
      */
     public function DescribeNotification(DescribeNotificationInput $input, array $context = [])
     {
-        $path = "/notifications/".rawurlencode($input->getNotification());
+        $path = "/notifications/".rawurlencode($input->getNotificationId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setNotification("");
+        $input->setNotificationId("");
 
         $context['name'] = "eolymp.notify.NotificationService/DescribeNotification";
         $context['path'] = $path;
@@ -49,10 +49,10 @@ class NotificationServiceClient {
      */
     public function ReadNotification(ReadNotificationInput $input, array $context = [])
     {
-        $path = "/notifications/".rawurlencode($input->getNotification())."/read";
+        $path = "/notifications/".rawurlencode($input->getNotificationId())."/read";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setNotification("");
+        $input->setNotificationId("");
 
         $context['name'] = "eolymp.notify.NotificationService/ReadNotification";
         $context['path'] = $path;
@@ -68,10 +68,10 @@ class NotificationServiceClient {
      */
     public function DeleteNotification(DeleteNotificationInput $input, array $context = [])
     {
-        $path = "/notifications/".rawurlencode($input->getNotification());
+        $path = "/notifications/".rawurlencode($input->getNotificationId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setNotification("");
+        $input->setNotificationId("");
 
         $context['name'] = "eolymp.notify.NotificationService/DeleteNotification";
         $context['path'] = $path;
