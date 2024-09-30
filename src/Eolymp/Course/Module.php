@@ -66,10 +66,14 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $duration = 0;
     /**
+     * progress carries information about module status and grade for a specific student
+     *
      * Generated from protobuf field <code>.eolymp.course.Module.Progress progress = 31;</code>
      */
     protected $progress = null;
     /**
+     * assignment carries parameters of the assignment for a given student (member) or a class (group)
+     *
      * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 32;</code>
      */
     protected $assignment = null;
@@ -96,7 +100,9 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type int $duration
      *           optionally, duration of the module in seconds
      *     @type \Eolymp\Course\Module\Progress $progress
+     *           progress carries information about module status and grade for a specific student
      *     @type \Eolymp\Course\Assignment $assignment
+     *           assignment carries parameters of the assignment for a given student (member) or a class (group)
      * }
      */
     public function __construct($data = NULL) {
@@ -393,6 +399,8 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * progress carries information about module status and grade for a specific student
+     *
      * Generated from protobuf field <code>.eolymp.course.Module.Progress progress = 31;</code>
      * @return \Eolymp\Course\Module\Progress|null
      */
@@ -412,6 +420,8 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * progress carries information about module status and grade for a specific student
+     *
      * Generated from protobuf field <code>.eolymp.course.Module.Progress progress = 31;</code>
      * @param \Eolymp\Course\Module\Progress $var
      * @return $this
@@ -425,6 +435,8 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * assignment carries parameters of the assignment for a given student (member) or a class (group)
+     *
      * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 32;</code>
      * @return \Eolymp\Course\Assignment|null
      */
@@ -444,6 +456,8 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * assignment carries parameters of the assignment for a given student (member) or a class (group)
+     *
      * Generated from protobuf field <code>.eolymp.course.Assignment assignment = 32;</code>
      * @param \Eolymp\Course\Assignment $var
      * @return $this
