@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListClassAssignmentsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string group_id = 1;</code>
+     */
+    protected $group_id = '';
+    /**
      * pagination
      *
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -36,6 +40,7 @@ class ListClassAssignmentsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $group_id
      *     @type int $offset
      *           pagination
      *     @type int $size
@@ -46,6 +51,28 @@ class ListClassAssignmentsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\ClassService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 1;</code>
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->group_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->group_id = $var;
+
+        return $this;
     }
 
     /**
