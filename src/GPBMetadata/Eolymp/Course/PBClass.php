@@ -16,16 +16,13 @@ class PBClass
         }
         $pool->internalAddGeneratedFile(
             '
-¾
-eolymp/course/class.protoeolymp.course"Y
+ 
+eolymp/course/class.protoeolymp.course";
 Class
 
-id (	
-name (	
-group_id (	
-inactive (
-
-assign_all (B/Z-github.com/eolymp/go-sdk/eolymp/course;coursebproto3'
+id (	
+group_id (	
+module_count (B/Z-github.com/eolymp/go-sdk/eolymp/course;coursebproto3'
         , true);
 
         static::$is_initialized = true;

@@ -111,4 +111,61 @@ class ClassServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListClassesOutput::class, $context);
     }
 
+    /**
+     * @param ListClassAssignmentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListClassAssignmentsOutput output message
+     */
+    public function ListClassAssignments(ListClassAssignmentsInput $input, array $context = [])
+    {
+        $path = "/classes/".rawurlencode($input->getGroupId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setGroupId("");
+
+        $context['name'] = "eolymp.course.ClassService/ListClassAssignments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListClassAssignmentsOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateClassAssignmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateClassAssignmentOutput output message
+     */
+    public function UpdateClassAssignment(UpdateClassAssignmentInput $input, array $context = [])
+    {
+        $path = "/classes/".rawurlencode($input->getGroupId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setGroupId("");
+
+        $context['name'] = "eolymp.course.ClassService/UpdateClassAssignment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateClassAssignmentOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteClassAssignmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteClassAssignmentOutput output message
+     */
+    public function DeleteClassAssignment(DeleteClassAssignmentInput $input, array $context = [])
+    {
+        $path = "/classes/".rawurlencode($input->getGroupId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setGroupId("");
+
+        $context['name'] = "eolymp.course.ClassService/DeleteClassAssignment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteClassAssignmentOutput::class, $context);
+    }
+
 }

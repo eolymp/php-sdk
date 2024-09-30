@@ -18,23 +18,15 @@ class PBClass extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     */
-    protected $name = '';
-    /**
      * Generated from protobuf field <code>string group_id = 3;</code>
      */
     protected $group_id = '';
     /**
-     * Generated from protobuf field <code>bool inactive = 4;</code>
-     */
-    protected $inactive = false;
-    /**
-     * assign all modules
+     * number of assigned modules (in all statuses)
      *
-     * Generated from protobuf field <code>bool assign_all = 5;</code>
+     * Generated from protobuf field <code>uint32 module_count = 6;</code>
      */
-    protected $assign_all = false;
+    protected $module_count = 0;
 
     /**
      * Constructor.
@@ -43,11 +35,9 @@ class PBClass extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $name
      *     @type string $group_id
-     *     @type bool $inactive
-     *     @type bool $assign_all
-     *           assign all modules
+     *     @type int $module_count
+     *           number of assigned modules (in all statuses)
      * }
      */
     public function __construct($data = NULL) {
@@ -78,28 +68,6 @@ class PBClass extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string name = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string group_id = 3;</code>
      * @return string
      */
@@ -122,49 +90,27 @@ class PBClass extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool inactive = 4;</code>
-     * @return bool
+     * number of assigned modules (in all statuses)
+     *
+     * Generated from protobuf field <code>uint32 module_count = 6;</code>
+     * @return int
      */
-    public function getInactive()
+    public function getModuleCount()
     {
-        return $this->inactive;
+        return $this->module_count;
     }
 
     /**
-     * Generated from protobuf field <code>bool inactive = 4;</code>
-     * @param bool $var
+     * number of assigned modules (in all statuses)
+     *
+     * Generated from protobuf field <code>uint32 module_count = 6;</code>
+     * @param int $var
      * @return $this
      */
-    public function setInactive($var)
+    public function setModuleCount($var)
     {
-        GPBUtil::checkBool($var);
-        $this->inactive = $var;
-
-        return $this;
-    }
-
-    /**
-     * assign all modules
-     *
-     * Generated from protobuf field <code>bool assign_all = 5;</code>
-     * @return bool
-     */
-    public function getAssignAll()
-    {
-        return $this->assign_all;
-    }
-
-    /**
-     * assign all modules
-     *
-     * Generated from protobuf field <code>bool assign_all = 5;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAssignAll($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->assign_all = $var;
+        GPBUtil::checkUint32($var);
+        $this->module_count = $var;
 
         return $this;
     }

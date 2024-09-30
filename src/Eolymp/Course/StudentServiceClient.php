@@ -143,4 +143,61 @@ class StudentServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerOutput::class, $context);
     }
 
+    /**
+     * @param ListStudentAssignmentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListStudentAssignmentsOutput output message
+     */
+    public function ListStudentAssignments(ListStudentAssignmentsInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/ListStudentAssignments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStudentAssignmentsOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateStudentAssignmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateStudentAssignmentOutput output message
+     */
+    public function UpdateStudentAssignment(UpdateStudentAssignmentInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/UpdateStudentAssignment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateStudentAssignmentOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteStudentAssignmentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteStudentAssignmentOutput output message
+     */
+    public function DeleteStudentAssignment(DeleteStudentAssignmentInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/DeleteStudentAssignment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteStudentAssignmentOutput::class, $context);
+    }
+
 }
