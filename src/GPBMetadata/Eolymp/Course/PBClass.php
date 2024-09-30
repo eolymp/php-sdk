@@ -14,7 +14,6 @@ class PBClass
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
 ¾
