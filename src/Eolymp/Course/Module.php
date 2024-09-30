@@ -66,14 +66,6 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $duration = 0;
     /**
-     * Generated from protobuf field <code>float percentage = 20;</code>
-     */
-    protected $percentage = 0.0;
-    /**
-     * Generated from protobuf field <code>uint32 grade = 21;</code>
-     */
-    protected $grade = 0;
-    /**
      * Generated from protobuf field <code>.eolymp.course.Module.Progress progress = 31;</code>
      */
     protected $progress = null;
@@ -99,8 +91,6 @@ class Module extends \Google\Protobuf\Internal\Message
      *           optionally, time by when module should be complete
      *     @type int $duration
      *           optionally, duration of the module in seconds
-     *     @type float $percentage
-     *     @type int $grade
      *     @type \Eolymp\Course\Module\Progress $progress
      * }
      */
@@ -393,50 +383,6 @@ class Module extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->duration = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>float percentage = 20;</code>
-     * @return float
-     */
-    public function getPercentage()
-    {
-        return $this->percentage;
-    }
-
-    /**
-     * Generated from protobuf field <code>float percentage = 20;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setPercentage($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->percentage = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 grade = 21;</code>
-     * @return int
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 grade = 21;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGrade($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->grade = $var;
 
         return $this;
     }
