@@ -22,6 +22,10 @@ class Assignment extends \Google\Protobuf\Internal\Message
      */
     protected $module_id = '';
     /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 6;</code>
+     */
+    protected $status = 0;
+    /**
      * optionally, time by when assignment should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
@@ -55,6 +59,7 @@ class Assignment extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $module_id
+     *     @type int $status
      *     @type string $member_id
      *     @type string $group_id
      *     @type \Google\Protobuf\Timestamp $start_after
@@ -112,6 +117,28 @@ class Assignment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->module_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 6;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Course\Assignment\Status::class);
+        $this->status = $var;
 
         return $this;
     }
