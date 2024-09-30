@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Progress extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Progress.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      */
     protected $status = 0;
     /**
@@ -99,7 +99,7 @@ class Progress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Progress.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      * @return int
      */
     public function getStatus()
@@ -108,13 +108,13 @@ class Progress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module.Progress.Status status = 10;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment.Status status = 10;</code>
      * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Course\Module\Progress\Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Course\Assignment\Status::class);
         $this->status = $var;
 
         return $this;
