@@ -16,13 +16,13 @@ class Extra
      */
     const UNKNOWN_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>BREAKDOWN = 1;</code>
+     * Generated from protobuf enum <code>GRADES = 1;</code>
      */
-    const BREAKDOWN = 1;
+    const GRADES = 1;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::BREAKDOWN => 'BREAKDOWN',
+        self::GRADES => 'GRADES',
     ];
 
     public static function name($value)

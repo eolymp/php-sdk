@@ -46,13 +46,17 @@ class Material extends \Google\Protobuf\Internal\Message
      */
     protected $grading = null;
     /**
-     * Generated from protobuf field <code>float progress = 20;</code>
+     * Generated from protobuf field <code>float percentage = 20;</code>
      */
-    protected $progress = 0.0;
+    protected $percentage = 0.0;
     /**
      * Generated from protobuf field <code>uint32 grade = 21;</code>
      */
     protected $grade = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Material.Progress progress = 22;</code>
+     */
+    protected $progress = null;
     protected $content;
 
     /**
@@ -71,8 +75,9 @@ class Material extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Course\Material\Grading $grading
      *     @type \Eolymp\Course\Material\Document $document
      *     @type \Eolymp\Course\Material\Task $task
-     *     @type float $progress
+     *     @type float $percentage
      *     @type int $grade
+     *     @type \Eolymp\Course\Material\Progress $progress
      * }
      */
     public function __construct($data = NULL) {
@@ -321,23 +326,23 @@ class Material extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>float progress = 20;</code>
+     * Generated from protobuf field <code>float percentage = 20;</code>
      * @return float
      */
-    public function getProgress()
+    public function getPercentage()
     {
-        return $this->progress;
+        return $this->percentage;
     }
 
     /**
-     * Generated from protobuf field <code>float progress = 20;</code>
+     * Generated from protobuf field <code>float percentage = 20;</code>
      * @param float $var
      * @return $this
      */
-    public function setProgress($var)
+    public function setPercentage($var)
     {
         GPBUtil::checkFloat($var);
-        $this->progress = $var;
+        $this->percentage = $var;
 
         return $this;
     }
@@ -360,6 +365,38 @@ class Material extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Material.Progress progress = 22;</code>
+     * @return \Eolymp\Course\Material\Progress|null
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    public function hasProgress()
+    {
+        return isset($this->progress);
+    }
+
+    public function clearProgress()
+    {
+        unset($this->progress);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Material.Progress progress = 22;</code>
+     * @param \Eolymp\Course\Material\Progress $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Course\Material\Progress::class);
+        $this->progress = $var;
 
         return $this;
     }

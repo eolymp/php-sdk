@@ -28,21 +28,30 @@ class Extra
      */
     const CONTENT_RENDER = 3;
     /**
-     * Generated from protobuf enum <code>PROGRESS = 4;</code>
+     * deprecated
+     *
+     * Generated from protobuf enum <code>PERCENTAGE = 4;</code>
      */
-    const PROGRESS = 4;
+    const PERCENTAGE = 4;
     /**
+     * deprecated
+     *
      * Generated from protobuf enum <code>GRADE = 5;</code>
      */
     const GRADE = 5;
+    /**
+     * Generated from protobuf enum <code>PROGRESS = 6;</code>
+     */
+    const PROGRESS = 6;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::CONTENT => 'CONTENT',
         self::CONTENT_VALUE => 'CONTENT_VALUE',
         self::CONTENT_RENDER => 'CONTENT_RENDER',
-        self::PROGRESS => 'PROGRESS',
+        self::PERCENTAGE => 'PERCENTAGE',
         self::GRADE => 'GRADE',
+        self::PROGRESS => 'PROGRESS',
     ];
 
     public static function name($value)

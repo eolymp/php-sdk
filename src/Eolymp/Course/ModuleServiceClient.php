@@ -131,41 +131,22 @@ class ModuleServiceClient {
     }
 
     /**
-     * @param AssignModuleInput $input message
+     * @param GradeModuleInput $input message
      * @param array $context request parameters
      *
-     * @return AssignModuleOutput output message
+     * @return GradeModuleOutput output message
      */
-    public function AssignModule(AssignModuleInput $input, array $context = [])
+    public function GradeModule(GradeModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments";
+        $path = "/modules/".rawurlencode($input->getModuleId())."/grade";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setModuleId("");
 
-        $context['name'] = "eolymp.course.ModuleService/AssignModule";
+        $context['name'] = "eolymp.course.ModuleService/GradeModule";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignModuleOutput::class, $context);
-    }
-
-    /**
-     * @param UnassignModuleInput $input message
-     * @param array $context request parameters
-     *
-     * @return UnassignModuleOutput output message
-     */
-    public function UnassignModule(UnassignModuleInput $input, array $context = [])
-    {
-        $path = "/modules/".rawurlencode($input->getModuleId())."/assignments";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setModuleId("");
-
-        $context['name'] = "eolymp.course.ModuleService/UnassignModule";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignModuleOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, GradeModuleOutput::class, $context);
     }
 
 }

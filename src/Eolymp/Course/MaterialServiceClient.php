@@ -149,4 +149,23 @@ class MaterialServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, ReportProgressOutput::class, $context);
     }
 
+    /**
+     * @param GradeMaterialInput $input message
+     * @param array $context request parameters
+     *
+     * @return GradeMaterialOutput output message
+     */
+    public function GradeMaterial(GradeMaterialInput $input, array $context = [])
+    {
+        $path = "/materials/".rawurlencode($input->getMaterialId())."/grade";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMaterialId("");
+
+        $context['name'] = "eolymp.course.MaterialService/GradeMaterial";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, GradeMaterialOutput::class, $context);
+    }
+
 }

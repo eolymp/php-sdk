@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.course.UnassignModuleOutput</code>
+ * Generated from protobuf message <code>eolymp.course.GradeModuleOutput</code>
  */
-class UnassignModuleOutput extends \Google\Protobuf\Internal\Message
+class GradeModuleOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**
