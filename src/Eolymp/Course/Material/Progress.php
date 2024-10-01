@@ -29,6 +29,10 @@ class Progress extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 grade_override = 23;</code>
      */
     protected $grade_override = 0;
+    /**
+     * Generated from protobuf field <code>bool excused = 24;</code>
+     */
+    protected $excused = false;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Progress extends \Google\Protobuf\Internal\Message
      *     @type int $grade
      *     @type int $grade_automatic
      *     @type int $grade_override
+     *     @type bool $excused
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class Progress extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->grade_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 24;</code>
+     * @return bool
+     */
+    public function getExcused()
+    {
+        return $this->excused;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 24;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExcused($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->excused = $var;
 
         return $this;
     }

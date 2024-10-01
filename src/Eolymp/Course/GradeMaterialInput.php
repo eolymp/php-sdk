@@ -25,6 +25,10 @@ class GradeMaterialInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 grade = 3;</code>
      */
     protected $grade = 0;
+    /**
+     * Generated from protobuf field <code>bool excused = 4;</code>
+     */
+    protected $excused = false;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class GradeMaterialInput extends \Google\Protobuf\Internal\Message
      *     @type string $material_id
      *     @type string $member_id
      *     @type int $grade
+     *     @type bool $excused
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class GradeMaterialInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 4;</code>
+     * @return bool
+     */
+    public function getExcused()
+    {
+        return $this->excused;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExcused($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->excused = $var;
 
         return $this;
     }

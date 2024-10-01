@@ -46,10 +46,14 @@ class Material extends \Google\Protobuf\Internal\Message
      */
     protected $grading = null;
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>float percentage = 20;</code>
      */
     protected $percentage = 0.0;
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>uint32 grade = 21;</code>
      */
     protected $grade = 0;
@@ -76,7 +80,9 @@ class Material extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Course\Material\Document $document
      *     @type \Eolymp\Course\Material\Task $task
      *     @type float $percentage
+     *           deprecated
      *     @type int $grade
+     *           deprecated
      *     @type \Eolymp\Course\Material\Progress $progress
      * }
      */
@@ -326,6 +332,8 @@ class Material extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>float percentage = 20;</code>
      * @return float
      */
@@ -335,6 +343,8 @@ class Material extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>float percentage = 20;</code>
      * @param float $var
      * @return $this
@@ -348,6 +358,8 @@ class Material extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>uint32 grade = 21;</code>
      * @return int
      */
@@ -357,6 +369,8 @@ class Material extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>uint32 grade = 21;</code>
      * @param int $var
      * @return $this

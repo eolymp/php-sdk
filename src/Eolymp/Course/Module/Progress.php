@@ -26,6 +26,18 @@ class Progress extends \Google\Protobuf\Internal\Message
      */
     protected $grade = 0;
     /**
+     * Generated from protobuf field <code>uint32 grade_automatic = 42;</code>
+     */
+    protected $grade_automatic = 0;
+    /**
+     * Generated from protobuf field <code>uint32 grade_override = 43;</code>
+     */
+    protected $grade_override = 0;
+    /**
+     * Generated from protobuf field <code>bool excused = 44;</code>
+     */
+    protected $excused = false;
+    /**
      * optionally, time by when assignment should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
@@ -77,6 +89,9 @@ class Progress extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *     @type float $percentage
      *     @type int $grade
+     *     @type int $grade_automatic
+     *     @type int $grade_override
+     *     @type bool $excused
      *     @type \Google\Protobuf\Timestamp $start_after
      *           optionally, time by when assignment should be complete
      *     @type \Google\Protobuf\Timestamp $complete_before
@@ -160,6 +175,72 @@ class Progress extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->grade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade_automatic = 42;</code>
+     * @return int
+     */
+    public function getGradeAutomatic()
+    {
+        return $this->grade_automatic;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade_automatic = 42;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGradeAutomatic($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade_automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade_override = 43;</code>
+     * @return int
+     */
+    public function getGradeOverride()
+    {
+        return $this->grade_override;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 grade_override = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGradeOverride($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->grade_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 44;</code>
+     * @return bool
+     */
+    public function getExcused()
+    {
+        return $this->excused;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 44;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExcused($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->excused = $var;
 
         return $this;
     }
