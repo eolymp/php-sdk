@@ -59,6 +59,10 @@ class Student extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 27;</code>
      */
     protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     */
+    protected $cursor = '';
 
     /**
      * Constructor.
@@ -78,6 +82,7 @@ class Student extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $graded_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type string $cursor
      * }
      */
     public function __construct($data = NULL) {
@@ -357,6 +362,28 @@ class Student extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @return string
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cursor = $var;
 
         return $this;
     }
