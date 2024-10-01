@@ -21,14 +21,7 @@ class GradeModuleInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string member_id = 2;</code>
      */
     protected $member_id = '';
-    /**
-     * Generated from protobuf field <code>uint32 grade = 3;</code>
-     */
-    protected $grade = 0;
-    /**
-     * Generated from protobuf field <code>bool excused = 4;</code>
-     */
-    protected $excused = false;
+    protected $value;
 
     /**
      * Constructor.
@@ -97,7 +90,12 @@ class GradeModuleInput extends \Google\Protobuf\Internal\Message
      */
     public function getGrade()
     {
-        return $this->grade;
+        return $this->readOneof(3);
+    }
+
+    public function hasGrade()
+    {
+        return $this->hasOneof(3);
     }
 
     /**
@@ -108,7 +106,7 @@ class GradeModuleInput extends \Google\Protobuf\Internal\Message
     public function setGrade($var)
     {
         GPBUtil::checkUint32($var);
-        $this->grade = $var;
+        $this->writeOneof(3, $var);
 
         return $this;
     }
@@ -119,7 +117,12 @@ class GradeModuleInput extends \Google\Protobuf\Internal\Message
      */
     public function getExcused()
     {
-        return $this->excused;
+        return $this->readOneof(4);
+    }
+
+    public function hasExcused()
+    {
+        return $this->hasOneof(4);
     }
 
     /**
@@ -130,9 +133,17 @@ class GradeModuleInput extends \Google\Protobuf\Internal\Message
     public function setExcused($var)
     {
         GPBUtil::checkBool($var);
-        $this->excused = $var;
+        $this->writeOneof(4, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->whichOneof("value");
     }
 
 }
