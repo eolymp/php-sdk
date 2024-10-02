@@ -15,10 +15,22 @@ class Events
           return;
         }
         \GPBMetadata\Eolymp\Course\Assignment::initOnce();
+        \GPBMetadata\Eolymp\Course\Material::initOnce();
+        \GPBMetadata\Eolymp\Course\Module::initOnce();
+        \GPBMetadata\Eolymp\Course\Student::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ó
-eolymp/course/events.protoeolymp.course"m
+Ü
+eolymp/course/events.protoeolymp.courseeolymp/course/material.protoeolymp/course/module.protoeolymp/course/student.proto"a
+ModuleChangedEvent%
+before (2.eolymp.course.Module$
+after (2.eolymp.course.Module"g
+MaterialChangedEvent\'
+before (2.eolymp.course.Material&
+after (2.eolymp.course.Material"d
+StudentChangedEvent&
+before (2.eolymp.course.Student%
+after (2.eolymp.course.Student"m
 AssignmentChangedEvent)
 before (2.eolymp.course.Assignment(
 after (2.eolymp.course.AssignmentB/Z-github.com/eolymp/go-sdk/eolymp/course;coursebproto3'
