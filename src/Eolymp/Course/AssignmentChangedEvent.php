@@ -14,11 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class AssignmentChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment before = 1;</code>
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     */
+    protected $course_id = '';
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     */
+    protected $module_id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment before = 3;</code>
      */
     protected $before = null;
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment after = 4;</code>
      */
     protected $after = null;
 
@@ -28,6 +36,8 @@ class AssignmentChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $course_id
+     *     @type string $module_id
      *     @type \Eolymp\Course\Assignment $before
      *     @type \Eolymp\Course\Assignment $after
      * }
@@ -38,7 +48,51 @@ class AssignmentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment before = 1;</code>
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->course_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCourseId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->course_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @return string
+     */
+    public function getModuleId()
+    {
+        return $this->module_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Assignment before = 3;</code>
      * @return \Eolymp\Course\Assignment|null
      */
     public function getBefore()
@@ -57,7 +111,7 @@ class AssignmentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment before = 3;</code>
      * @param \Eolymp\Course\Assignment $var
      * @return $this
      */
@@ -70,7 +124,7 @@ class AssignmentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment after = 4;</code>
      * @return \Eolymp\Course\Assignment|null
      */
     public function getAfter()
@@ -89,7 +143,7 @@ class AssignmentChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Assignment after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Assignment after = 4;</code>
      * @param \Eolymp\Course\Assignment $var
      * @return $this
      */

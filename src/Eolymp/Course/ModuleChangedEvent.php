@@ -14,11 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class ModuleChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module before = 1;</code>
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     */
+    protected $course_id = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Module before = 2;</code>
      */
     protected $before = null;
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module after = 3;</code>
      */
     protected $after = null;
 
@@ -28,6 +32,7 @@ class ModuleChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $course_id
      *     @type \Eolymp\Course\Module $before
      *     @type \Eolymp\Course\Module $after
      * }
@@ -38,7 +43,29 @@ class ModuleChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module before = 1;</code>
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->course_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCourseId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->course_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.course.Module before = 2;</code>
      * @return \Eolymp\Course\Module|null
      */
     public function getBefore()
@@ -57,7 +84,7 @@ class ModuleChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module before = 1;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module before = 2;</code>
      * @param \Eolymp\Course\Module $var
      * @return $this
      */
@@ -70,7 +97,7 @@ class ModuleChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module after = 3;</code>
      * @return \Eolymp\Course\Module|null
      */
     public function getAfter()
@@ -89,7 +116,7 @@ class ModuleChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Module after = 2;</code>
+     * Generated from protobuf field <code>.eolymp.course.Module after = 3;</code>
      * @param \Eolymp\Course\Module $var
      * @return $this
      */
