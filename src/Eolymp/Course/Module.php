@@ -34,9 +34,9 @@ class Module extends \Google\Protobuf\Internal\Message
     /**
      * weight of the module when calculating course score
      *
-     * Generated from protobuf field <code>bool weight = 8;</code>
+     * Generated from protobuf field <code>uint32 weight = 8;</code>
      */
-    protected $weight = false;
+    protected $weight = 0;
     /**
      * Generated from protobuf field <code>string name = 4;</code>
      */
@@ -95,7 +95,7 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type bool $draft
      *     @type bool $extra
      *           extra module, will only be shown when explicitly assigned
-     *     @type bool $weight
+     *     @type int $weight
      *           weight of the module when calculating course score
      *     @type string $name
      *     @type string $image_url
@@ -213,8 +213,8 @@ class Module extends \Google\Protobuf\Internal\Message
     /**
      * weight of the module when calculating course score
      *
-     * Generated from protobuf field <code>bool weight = 8;</code>
-     * @return bool
+     * Generated from protobuf field <code>uint32 weight = 8;</code>
+     * @return int
      */
     public function getWeight()
     {
@@ -224,13 +224,13 @@ class Module extends \Google\Protobuf\Internal\Message
     /**
      * weight of the module when calculating course score
      *
-     * Generated from protobuf field <code>bool weight = 8;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>uint32 weight = 8;</code>
+     * @param int $var
      * @return $this
      */
     public function setWeight($var)
     {
-        GPBUtil::checkBool($var);
+        GPBUtil::checkUint32($var);
         $this->weight = $var;
 
         return $this;
