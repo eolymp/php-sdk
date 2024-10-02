@@ -34,6 +34,10 @@ class Material extends \Google\Protobuf\Internal\Message
      */
     protected $image_url = '';
     /**
+     * Generated from protobuf field <code>string module_id = 6;</code>
+     */
+    protected $module_id = '';
+    /**
      * Generated from protobuf field <code>uint32 index = 11;</code>
      */
     protected $index = 0;
@@ -74,6 +78,7 @@ class Material extends \Google\Protobuf\Internal\Message
      *     @type bool $draft
      *     @type string $name
      *     @type string $image_url
+     *     @type string $module_id
      *     @type int $index
      *     @type int $depth
      *     @type \Eolymp\Course\Material\Grading $grading
@@ -197,6 +202,28 @@ class Material extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 6;</code>
+     * @return string
+     */
+    public function getModuleId()
+    {
+        return $this->module_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string module_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setModuleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->module_id = $var;
 
         return $this;
     }

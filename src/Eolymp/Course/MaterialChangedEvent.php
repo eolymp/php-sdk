@@ -18,10 +18,6 @@ class MaterialChangedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $course_id = '';
     /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
-     */
-    protected $module_id = '';
-    /**
      * Generated from protobuf field <code>.eolymp.course.Material before = 3;</code>
      */
     protected $before = null;
@@ -37,7 +33,6 @@ class MaterialChangedEvent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $course_id
-     *     @type string $module_id
      *     @type \Eolymp\Course\Material $before
      *     @type \Eolymp\Course\Material $after
      * }
@@ -65,28 +60,6 @@ class MaterialChangedEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->course_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
-     * @return string
-     */
-    public function getModuleId()
-    {
-        return $this->module_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string module_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setModuleId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->module_id = $var;
 
         return $this;
     }
