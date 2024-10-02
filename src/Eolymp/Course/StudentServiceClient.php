@@ -200,4 +200,43 @@ class StudentServiceClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteStudentAssignmentOutput::class, $context);
     }
 
+    /**
+     * @param ListStudentGradesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListStudentGradesOutput output message
+     */
+    public function ListStudentGrades(ListStudentGradesInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/grades";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.course.StudentService/ListStudentGrades";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStudentGradesOutput::class, $context);
+    }
+
+    /**
+     * @param ListModuleGradesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListModuleGradesOutput output message
+     */
+    public function ListModuleGrades(ListModuleGradesInput $input, array $context = [])
+    {
+        $path = "/students/".rawurlencode($input->getMemberId())."/grades/".rawurlencode($input->getModuleId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+        $input->setModuleId("");
+
+        $context['name'] = "eolymp.course.StudentService/ListModuleGrades";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListModuleGradesOutput::class, $context);
+    }
+
 }

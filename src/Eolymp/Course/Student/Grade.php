@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Grade extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string module_id = 1;</code>
+     */
+    protected $module_id = '';
+    /**
      * Generated from protobuf field <code>uint32 grade = 10;</code>
      */
     protected $grade = 0;
@@ -25,7 +29,10 @@ class Grade extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 grade_override = 12;</code>
      */
     protected $grade_override = 0;
-    protected $source;
+    /**
+     * Generated from protobuf field <code>bool excused = 3;</code>
+     */
+    protected $excused = false;
 
     /**
      * Constructor.
@@ -34,10 +41,10 @@ class Grade extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $module_id
-     *     @type string $material_id
      *     @type int $grade
      *     @type int $grade_automatic
      *     @type int $grade_override
+     *     @type bool $excused
      * }
      */
     public function __construct($data = NULL) {
@@ -51,12 +58,7 @@ class Grade extends \Google\Protobuf\Internal\Message
      */
     public function getModuleId()
     {
-        return $this->readOneof(1);
-    }
-
-    public function hasModuleId()
-    {
-        return $this->hasOneof(1);
+        return $this->module_id;
     }
 
     /**
@@ -67,34 +69,7 @@ class Grade extends \Google\Protobuf\Internal\Message
     public function setModuleId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(1, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string material_id = 2;</code>
-     * @return string
-     */
-    public function getMaterialId()
-    {
-        return $this->readOneof(2);
-    }
-
-    public function hasMaterialId()
-    {
-        return $this->hasOneof(2);
-    }
-
-    /**
-     * Generated from protobuf field <code>string material_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMaterialId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(2, $var);
+        $this->module_id = $var;
 
         return $this;
     }
@@ -166,11 +141,25 @@ class Grade extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * @return string
+     * Generated from protobuf field <code>bool excused = 3;</code>
+     * @return bool
      */
-    public function getSource()
+    public function getExcused()
     {
-        return $this->whichOneof("source");
+        return $this->excused;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool excused = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExcused($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->excused = $var;
+
+        return $this;
     }
 
 }

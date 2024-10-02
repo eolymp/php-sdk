@@ -32,6 +32,12 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $extra = false;
     /**
+     * weight of the module when calculating course score
+     *
+     * Generated from protobuf field <code>bool weight = 8;</code>
+     */
+    protected $weight = false;
+    /**
      * Generated from protobuf field <code>string name = 4;</code>
      */
     protected $name = '';
@@ -48,19 +54,19 @@ class Module extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
-     * optionally, time by when module should be complete
+     * optionally, default time by when module should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
      */
     protected $start_after = null;
     /**
-     * optionally, time by when module should be complete
+     * optionally, default time by when module should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
      */
     protected $complete_before = null;
     /**
-     * optionally, duration of the module in seconds
+     * optionally, default duration of the module in seconds
      *
      * Generated from protobuf field <code>uint32 duration = 13;</code>
      */
@@ -89,16 +95,18 @@ class Module extends \Google\Protobuf\Internal\Message
      *     @type bool $draft
      *     @type bool $extra
      *           extra module, will only be shown when explicitly assigned
+     *     @type bool $weight
+     *           weight of the module when calculating course score
      *     @type string $name
      *     @type string $image_url
      *     @type int $index
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Google\Protobuf\Timestamp $start_after
-     *           optionally, time by when module should be complete
+     *           optionally, default time by when module should be complete
      *     @type \Google\Protobuf\Timestamp $complete_before
-     *           optionally, time by when module should be complete
+     *           optionally, default time by when module should be complete
      *     @type int $duration
-     *           optionally, duration of the module in seconds
+     *           optionally, default duration of the module in seconds
      *     @type \Eolymp\Course\Module\Progress $progress
      *           progress carries information about module status and grade for a specific student
      *     @type \Eolymp\Course\Assignment $assignment
@@ -203,6 +211,32 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * weight of the module when calculating course score
+     *
+     * Generated from protobuf field <code>bool weight = 8;</code>
+     * @return bool
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * weight of the module when calculating course score
+     *
+     * Generated from protobuf field <code>bool weight = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->weight = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string name = 4;</code>
      * @return string
      */
@@ -301,7 +335,7 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time by when module should be complete
+     * optionally, default time by when module should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -322,7 +356,7 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time by when module should be complete
+     * optionally, default time by when module should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp start_after = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -337,7 +371,7 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time by when module should be complete
+     * optionally, default time by when module should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -358,7 +392,7 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, time by when module should be complete
+     * optionally, default time by when module should be complete
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp complete_before = 12;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -373,7 +407,7 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, duration of the module in seconds
+     * optionally, default duration of the module in seconds
      *
      * Generated from protobuf field <code>uint32 duration = 13;</code>
      * @return int
@@ -384,7 +418,7 @@ class Module extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * optionally, duration of the module in seconds
+     * optionally, default duration of the module in seconds
      *
      * Generated from protobuf field <code>uint32 duration = 13;</code>
      * @param int $var
