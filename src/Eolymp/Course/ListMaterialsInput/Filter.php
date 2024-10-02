@@ -17,6 +17,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string query = 1;</code>
      */
     protected $query = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool graded = 4;</code>
+     */
+    private $graded;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt weight = 5;</code>
+     */
+    private $weight;
 
     /**
      * Constructor.
@@ -25,6 +33,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $graded
+     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $weight
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +60,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool graded = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGraded()
+    {
+        return $this->graded;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool graded = 4;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGraded($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->graded = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt weight = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt weight = 5;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWeight($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->weight = $arr;
 
         return $this;
     }
