@@ -118,8 +118,22 @@ class ScoreServiceClient {
     }
 
     /**
-     * ListResult retrieves scoreboard
+     * @param ListResultsInput $input message
+     * @param array $context request parameters
      *
+     * @return ListResultsOutput output message
+     */
+    public function ListResults(ListResultsInput $input, array $context = [])
+    {
+        $path = "/results-v2";
+
+        $context['name'] = "eolymp.judge.ScoreService/ListResults";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListResultsOutput::class, $context);
+    }
+
+    /**
      * @param ExportResultInput $input message
      * @param array $context request parameters
      *

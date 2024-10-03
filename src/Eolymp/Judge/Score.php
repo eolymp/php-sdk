@@ -40,6 +40,10 @@ class Score extends \Google\Protobuf\Internal\Message
      */
     protected $penalty = 0.0;
     /**
+     * Generated from protobuf field <code>uint32 tie_breaker = 13;</code>
+     */
+    protected $tie_breaker = 0;
+    /**
      * Generated from protobuf field <code>bool upsolve = 12;</code>
      */
     protected $upsolve = false;
@@ -64,6 +68,7 @@ class Score extends \Google\Protobuf\Internal\Message
      *           absolute time when score was set
      *     @type float $score
      *     @type float $penalty
+     *     @type int $tie_breaker
      *     @type bool $upsolve
      *     @type array<\Eolymp\Judge\Score\Problem>|\Google\Protobuf\Internal\RepeatedField $breakdown
      *           breakdown of total score by problem
@@ -202,6 +207,28 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 tie_breaker = 13;</code>
+     * @return int
+     */
+    public function getTieBreaker()
+    {
+        return $this->tie_breaker;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 tie_breaker = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTieBreaker($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->tie_breaker = $var;
 
         return $this;
     }
