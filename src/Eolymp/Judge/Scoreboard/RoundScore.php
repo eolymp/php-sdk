@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.Scoreboard.TotalScore</code>
+ * Generated from protobuf message <code>eolymp.judge.Scoreboard.RoundScore</code>
  */
-class TotalScore extends \Google\Protobuf\Internal\Message
+class RoundScore extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>float score = 1;</code>
@@ -165,5 +165,5 @@ class TotalScore extends \Google\Protobuf\Internal\Message
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(TotalScore::class, \Eolymp\Judge\Scoreboard_TotalScore::class);
+class_alias(RoundScore::class, \Eolymp\Judge\Scoreboard_RoundScore::class);
 

@@ -26,8 +26,7 @@ class Value extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $column_id
-     *     @type \Eolymp\Judge\Scoreboard\TotalScore $total_score
-     *     @type \Eolymp\Judge\Scoreboard\TotalScore $round_score
+     *     @type \Eolymp\Judge\Scoreboard\RoundScore $round_score
      *     @type \Eolymp\Judge\Scoreboard\ProblemScore $problem_score
      * }
      */
@@ -59,35 +58,8 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore total_score = 10;</code>
-     * @return \Eolymp\Judge\Scoreboard\TotalScore|null
-     */
-    public function getTotalScore()
-    {
-        return $this->readOneof(10);
-    }
-
-    public function hasTotalScore()
-    {
-        return $this->hasOneof(10);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore total_score = 10;</code>
-     * @param \Eolymp\Judge\Scoreboard\TotalScore $var
-     * @return $this
-     */
-    public function setTotalScore($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\TotalScore::class);
-        $this->writeOneof(10, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore round_score = 11;</code>
-     * @return \Eolymp\Judge\Scoreboard\TotalScore|null
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.RoundScore round_score = 11;</code>
+     * @return \Eolymp\Judge\Scoreboard\RoundScore|null
      */
     public function getRoundScore()
     {
@@ -100,13 +72,13 @@ class Value extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore round_score = 11;</code>
-     * @param \Eolymp\Judge\Scoreboard\TotalScore $var
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.RoundScore round_score = 11;</code>
+     * @param \Eolymp\Judge\Scoreboard\RoundScore $var
      * @return $this
      */
     public function setRoundScore($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\TotalScore::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\RoundScore::class);
         $this->writeOneof(11, $var);
 
         return $this;
