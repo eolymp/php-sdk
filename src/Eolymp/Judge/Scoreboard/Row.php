@@ -34,17 +34,25 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $rank_length = 0;
     /**
-     * Generated from protobuf field <code>bool unofficial = 20;</code>
+     * Generated from protobuf field <code>float score = 20;</code>
+     */
+    protected $score = 0.0;
+    /**
+     * Generated from protobuf field <code>float penalty = 21;</code>
+     */
+    protected $penalty = 0.0;
+    /**
+     * Generated from protobuf field <code>uint32 tie_breaker = 22;</code>
+     */
+    protected $tie_breaker = 0;
+    /**
+     * Generated from protobuf field <code>bool unofficial = 30;</code>
      */
     protected $unofficial = false;
     /**
-     * Generated from protobuf field <code>bool disqualified = 21;</code>
+     * Generated from protobuf field <code>bool disqualified = 31;</code>
      */
     protected $disqualified = false;
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore score = 22;</code>
-     */
-    protected $score = null;
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Value values = 50;</code>
      */
@@ -65,9 +73,11 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type int $rank
      *     @type int $rank_length
+     *     @type float $score
+     *     @type float $penalty
+     *     @type int $tie_breaker
      *     @type bool $unofficial
      *     @type bool $disqualified
-     *     @type \Eolymp\Judge\Scoreboard\TotalScore $score
      *     @type array<\Eolymp\Judge\Scoreboard\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type string $cursor
      * }
@@ -188,7 +198,73 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool unofficial = 20;</code>
+     * Generated from protobuf field <code>float score = 20;</code>
+     * @return float
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Generated from protobuf field <code>float score = 20;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float penalty = 21;</code>
+     * @return float
+     */
+    public function getPenalty()
+    {
+        return $this->penalty;
+    }
+
+    /**
+     * Generated from protobuf field <code>float penalty = 21;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPenalty($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->penalty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 tie_breaker = 22;</code>
+     * @return int
+     */
+    public function getTieBreaker()
+    {
+        return $this->tie_breaker;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 tie_breaker = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTieBreaker($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->tie_breaker = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool unofficial = 30;</code>
      * @return bool
      */
     public function getUnofficial()
@@ -197,7 +273,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool unofficial = 20;</code>
+     * Generated from protobuf field <code>bool unofficial = 30;</code>
      * @param bool $var
      * @return $this
      */
@@ -210,7 +286,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool disqualified = 21;</code>
+     * Generated from protobuf field <code>bool disqualified = 31;</code>
      * @return bool
      */
     public function getDisqualified()
@@ -219,7 +295,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool disqualified = 21;</code>
+     * Generated from protobuf field <code>bool disqualified = 31;</code>
      * @param bool $var
      * @return $this
      */
@@ -227,38 +303,6 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->disqualified = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore score = 22;</code>
-     * @return \Eolymp\Judge\Scoreboard\TotalScore|null
-     */
-    public function getScore()
-    {
-        return $this->score;
-    }
-
-    public function hasScore()
-    {
-        return isset($this->score);
-    }
-
-    public function clearScore()
-    {
-        unset($this->score);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.TotalScore score = 22;</code>
-     * @param \Eolymp\Judge\Scoreboard\TotalScore $var
-     * @return $this
-     */
-    public function setScore($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\TotalScore::class);
-        $this->score = $var;
 
         return $this;
     }

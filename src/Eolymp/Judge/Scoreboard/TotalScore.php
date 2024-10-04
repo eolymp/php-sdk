@@ -25,6 +25,14 @@ class TotalScore extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 tie_breaker = 3;</code>
      */
     protected $tie_breaker = 0;
+    /**
+     * Generated from protobuf field <code>bool unofficial = 10;</code>
+     */
+    protected $unofficial = false;
+    /**
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     */
+    protected $disqualified = false;
 
     /**
      * Constructor.
@@ -35,6 +43,8 @@ class TotalScore extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *     @type float $penalty
      *     @type int $tie_breaker
+     *     @type bool $unofficial
+     *     @type bool $disqualified
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +114,50 @@ class TotalScore extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->tie_breaker = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool unofficial = 10;</code>
+     * @return bool
+     */
+    public function getUnofficial()
+    {
+        return $this->unofficial;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool unofficial = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnofficial($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     * @return bool
+     */
+    public function getDisqualified()
+    {
+        return $this->disqualified;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool disqualified = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisqualified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disqualified = $var;
 
         return $this;
     }
