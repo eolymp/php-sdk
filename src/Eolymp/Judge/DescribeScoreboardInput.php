@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string round_id = 1;</code>
+     */
+    protected $round_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $round_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ScoreboardService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string round_id = 1;</code>
+     * @return string
+     */
+    public function getRoundId()
+    {
+        return $this->round_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string round_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRoundId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->round_id = $var;
+
+        return $this;
     }
 
 }
