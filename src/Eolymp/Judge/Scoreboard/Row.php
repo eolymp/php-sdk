@@ -57,10 +57,6 @@ class Row extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
      */
     private $values;
-    /**
-     * Generated from protobuf field <code>string cursor = 100;</code>
-     */
-    protected $cursor = '';
 
     /**
      * Constructor.
@@ -79,7 +75,6 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type bool $unofficial
      *     @type bool $disqualified
      *     @type array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
-     *     @type string $cursor
      * }
      */
     public function __construct($data = NULL) {
@@ -325,28 +320,6 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Scoreboard\Row\Value::class);
         $this->values = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cursor = 100;</code>
-     * @return string
-     */
-    public function getCursor()
-    {
-        return $this->cursor;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cursor = 100;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCursor($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->cursor = $var;
 
         return $this;
     }

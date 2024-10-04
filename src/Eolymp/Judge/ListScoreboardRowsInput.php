@@ -20,26 +20,31 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      */
     protected $mode = 0;
     /**
+     * Generated from protobuf field <code>string round_id = 2;</code>
+     */
+    protected $round_id = '';
+    /**
      * Number of results per page, (max. 100, default 100)
      *
      * Generated from protobuf field <code>int32 size = 10;</code>
      */
     protected $size = 0;
     /**
-     * Cursor for fetching next page
-     *
-     * Generated from protobuf field <code>string after = 11;</code>
+     * Generated from protobuf field <code>int32 offset = 12;</code>
      */
-    protected $after = '';
+    protected $offset = 0;
     /**
      * Generated from protobuf field <code>.eolymp.judge.ListScoreboardRowsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
     /**
+     * Generated from protobuf field <code>string sort = 50;</code>
+     */
+    protected $sort = '';
+    /**
      * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 60;</code>
      */
     protected $order = 0;
-    protected $sort;
 
     /**
      * Constructor.
@@ -49,13 +54,12 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $mode
      *           Mode for fetching score value (see enum description).
+     *     @type string $round_id
      *     @type int $size
      *           Number of results per page, (max. 100, default 100)
-     *     @type string $after
-     *           Cursor for fetching next page
+     *     @type int $offset
      *     @type \Eolymp\Judge\ListScoreboardRowsInput\Filter $filters
-     *     @type string $round_id
-     *     @type string $problem_id
+     *     @type string $sort
      *     @type int $order
      * }
      */
@@ -91,6 +95,28 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string round_id = 2;</code>
+     * @return string
+     */
+    public function getRoundId()
+    {
+        return $this->round_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string round_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRoundId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->round_id = $var;
+
+        return $this;
+    }
+
+    /**
      * Number of results per page, (max. 100, default 100)
      *
      * Generated from protobuf field <code>int32 size = 10;</code>
@@ -117,27 +143,23 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Cursor for fetching next page
-     *
-     * Generated from protobuf field <code>string after = 11;</code>
-     * @return string
+     * Generated from protobuf field <code>int32 offset = 12;</code>
+     * @return int
      */
-    public function getAfter()
+    public function getOffset()
     {
-        return $this->after;
+        return $this->offset;
     }
 
     /**
-     * Cursor for fetching next page
-     *
-     * Generated from protobuf field <code>string after = 11;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int32 offset = 12;</code>
+     * @param int $var
      * @return $this
      */
-    public function setAfter($var)
+    public function setOffset($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->after = $var;
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
 
         return $this;
     }
@@ -175,55 +197,23 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string round_id = 51;</code>
+     * Generated from protobuf field <code>string sort = 50;</code>
      * @return string
      */
-    public function getRoundId()
+    public function getSort()
     {
-        return $this->readOneof(51);
-    }
-
-    public function hasRoundId()
-    {
-        return $this->hasOneof(51);
+        return $this->sort;
     }
 
     /**
-     * Generated from protobuf field <code>string round_id = 51;</code>
+     * Generated from protobuf field <code>string sort = 50;</code>
      * @param string $var
      * @return $this
      */
-    public function setRoundId($var)
+    public function setSort($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(51, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 52;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->readOneof(52);
-    }
-
-    public function hasProblemId()
-    {
-        return $this->hasOneof(52);
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 52;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(52, $var);
+        $this->sort = $var;
 
         return $this;
     }
@@ -248,14 +238,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
         $this->order = $var;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSort()
-    {
-        return $this->whichOneof("sort");
     }
 
 }
