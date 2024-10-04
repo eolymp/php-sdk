@@ -18,7 +18,7 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Column.Type type = 2;</code>
      */
     protected $type = 0;
     /**
@@ -75,7 +75,7 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Column.Type type = 2;</code>
      * @return int
      */
     public function getType()
@@ -84,13 +84,13 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Type type = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Column.Type type = 2;</code>
      * @param int $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Type::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Column\Type::class);
         $this->type = $var;
 
         return $this;

@@ -54,7 +54,7 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $disqualified = false;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Value values = 50;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
      */
     private $values;
     /**
@@ -78,7 +78,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type int $tie_breaker
      *     @type bool $unofficial
      *     @type bool $disqualified
-     *     @type array<\Eolymp\Judge\Scoreboard\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type string $cursor
      * }
      */
@@ -308,7 +308,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Value values = 50;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getValues()
@@ -317,13 +317,13 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Value values = 50;</code>
-     * @param array<\Eolymp\Judge\Scoreboard\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
+     * @param array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Scoreboard\Value::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Scoreboard\Row\Value::class);
         $this->values = $arr;
 
         return $this;
