@@ -18,7 +18,7 @@ class Result
         \GPBMetadata\Eolymp\Judge\Score::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¯
+õ
 eolymp/judge/result.protoeolymp.judgeeolymp/judge/score.proto"ø
 Result
 participant_id (	
@@ -35,40 +35,7 @@ unofficial (
 
 rank_lower ("
 score
- (2.eolymp.judge.Score"·
-ResultV2
-	member_id (	
-display_name (	
-picture (	
-country (	
-
-unofficial
- (
-disqualified (
-ghost ("
-medal (2.eolymp.judge.Medal
-index (
-rank (
-rank_to (
-score2 (
-penalty3 (4
-	breakdown4 (2!.eolymp.judge.ResultV2.RoundScore
-cursord (	w
-ProblemScore
-
-problem_id (	
-solved (
-score (
-penalty (
-attempts (
-	solved_in	 (v
-
-RoundScore
-round_id (	
-score (
-penalty (6
-	breakdown
- (2#.eolymp.judge.ResultV2.ProblemScoreB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
+ (2.eolymp.judge.ScoreB-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
         , true);
 
         static::$is_initialized = true;
