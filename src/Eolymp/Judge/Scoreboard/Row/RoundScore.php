@@ -33,6 +33,10 @@ class RoundScore extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool disqualified = 11;</code>
      */
     protected $disqualified = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 32;</code>
+     */
+    protected $medal = 0;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class RoundScore extends \Google\Protobuf\Internal\Message
      *     @type int $tie_breaker
      *     @type bool $unofficial
      *     @type bool $disqualified
+     *     @type int $medal
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class RoundScore extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->disqualified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 32;</code>
+     * @return int
+     */
+    public function getMedal()
+    {
+        return $this->medal;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMedal($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Medal::class);
+        $this->medal = $var;
 
         return $this;
     }

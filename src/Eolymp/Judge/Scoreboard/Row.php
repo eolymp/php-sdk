@@ -54,6 +54,10 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $disqualified = false;
     /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 32;</code>
+     */
+    protected $medal = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
      */
     private $values;
@@ -74,6 +78,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type int $tie_breaker
      *     @type bool $unofficial
      *     @type bool $disqualified
+     *     @type int $medal
      *     @type array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
@@ -298,6 +303,28 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->disqualified = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 32;</code>
+     * @return int
+     */
+    public function getMedal()
+    {
+        return $this->medal;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Medal medal = 32;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMedal($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Medal::class);
+        $this->medal = $var;
 
         return $this;
     }
