@@ -18,6 +18,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     private $modes;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Round rounds = 12;</code>
+     */
+    private $rounds;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Column columns = 11;</code>
      */
     private $columns;
@@ -29,6 +33,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $modes
+     *     @type array<\Eolymp\Judge\Scoreboard\Round>|\Google\Protobuf\Internal\RepeatedField $rounds
      *     @type array<\Eolymp\Judge\Scoreboard\Column>|\Google\Protobuf\Internal\RepeatedField $columns
      * }
      */
@@ -55,6 +60,28 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Scoreboard\Mode::class);
         $this->modes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Round rounds = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRounds()
+    {
+        return $this->rounds;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Round rounds = 12;</code>
+     * @param array<\Eolymp\Judge\Scoreboard\Round>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRounds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Scoreboard\Round::class);
+        $this->rounds = $arr;
 
         return $this;
     }
