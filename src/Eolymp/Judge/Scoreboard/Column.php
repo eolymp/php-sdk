@@ -26,6 +26,10 @@ class Column extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
+     * Generated from protobuf field <code>repeated string choices = 10;</code>
+     */
+    private $choices;
+    /**
      * Generated from protobuf field <code>bool sortable = 20;</code>
      */
     protected $sortable = false;
@@ -43,6 +47,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $type
      *     @type string $title
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
      *     @type bool $sortable
      *     @type bool $filterable
      * }
@@ -114,6 +119,28 @@ class Column extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string choices = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChoices()
+    {
+        return $this->choices;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string choices = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setChoices($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->choices = $arr;
 
         return $this;
     }

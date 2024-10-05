@@ -23,11 +23,56 @@ class Type
      * Generated from protobuf enum <code>PROBLEM_SCORE = 3;</code>
      */
     const PROBLEM_SCORE = 3;
+    /**
+     * Generated from protobuf enum <code>STRING = 10;</code>
+     */
+    const STRING = 10;
+    /**
+     * Generated from protobuf enum <code>NUMBER = 11;</code>
+     */
+    const NUMBER = 11;
+    /**
+     * Generated from protobuf enum <code>CHOICE = 12;</code>
+     */
+    const CHOICE = 12;
+    /**
+     * Generated from protobuf enum <code>DATE = 13;</code>
+     */
+    const DATE = 13;
+    /**
+     * Generated from protobuf enum <code>EMAIL = 14;</code>
+     */
+    const EMAIL = 14;
+    /**
+     * Generated from protobuf enum <code>CHECKBOX = 15;</code>
+     */
+    const CHECKBOX = 15;
+    /**
+     * Generated from protobuf enum <code>COUNTRY = 16;</code>
+     */
+    const COUNTRY = 16;
+    /**
+     * Generated from protobuf enum <code>REGION = 17;</code>
+     */
+    const REGION = 17;
+    /**
+     * Generated from protobuf enum <code>INSTITUTION = 18;</code>
+     */
+    const INSTITUTION = 18;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::ROUND_SCORE => 'ROUND_SCORE',
         self::PROBLEM_SCORE => 'PROBLEM_SCORE',
+        self::STRING => 'STRING',
+        self::NUMBER => 'NUMBER',
+        self::CHOICE => 'CHOICE',
+        self::DATE => 'DATE',
+        self::EMAIL => 'EMAIL',
+        self::CHECKBOX => 'CHECKBOX',
+        self::COUNTRY => 'COUNTRY',
+        self::REGION => 'REGION',
+        self::INSTITUTION => 'INSTITUTION',
     ];
 
     public static function name($value)

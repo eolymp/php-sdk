@@ -28,6 +28,8 @@ class Value extends \Google\Protobuf\Internal\Message
      *     @type string $column_id
      *     @type \Eolymp\Judge\Scoreboard\Row\RoundScore $round_score
      *     @type \Eolymp\Judge\Scoreboard\Row\ProblemScore $problem_score
+     *     @type string $string
+     *     @type string $number
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +109,60 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\Row\ProblemScore::class);
         $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string string = 13;</code>
+     * @return string
+     */
+    public function getString()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasString()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Generated from protobuf field <code>string string = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setString($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string number = 14;</code>
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->readOneof(14);
+    }
+
+    public function hasNumber()
+    {
+        return $this->hasOneof(14);
+    }
+
+    /**
+     * Generated from protobuf field <code>string number = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(14, $var);
 
         return $this;
     }
