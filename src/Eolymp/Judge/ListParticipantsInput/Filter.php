@@ -32,10 +32,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $group_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString display_name = 8;</code>
-     */
-    private $display_name;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
      */
     private $status;
@@ -66,7 +62,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $member_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $group_id
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $display_name
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $started_at
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
@@ -163,28 +158,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->group_id = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString display_name = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getDisplayName()
-    {
-        return $this->display_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString display_name = 8;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setDisplayName($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
-        $this->display_name = $arr;
 
         return $this;
     }
