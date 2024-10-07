@@ -474,14 +474,14 @@ class JudgeClient {
      *
      * @return AssignParticipantOutput output message
      */
-    public function AddParticipant(AssignParticipantInput $input, array $context = [])
+    public function AssignParticipant(AssignParticipantInput $input, array $context = [])
     {
         $path = "/contests/".rawurlencode($input->getContestId())."/participants";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
 
-        $context['name'] = "eolymp.judge.Judge/AddParticipant";
+        $context['name'] = "eolymp.judge.Judge/AssignParticipant";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignParticipantOutput::class, $context);
