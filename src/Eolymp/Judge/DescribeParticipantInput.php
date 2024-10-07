@@ -18,9 +18,9 @@ class DescribeParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>string participant_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      */
-    protected $participant_id = '';
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class DescribeParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type string $participant_id
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class DescribeParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
      */
-    public function getParticipantId()
+    public function getMemberId()
     {
-        return $this->participant_id;
+        return $this->member_id;
     }
 
     /**
-     * Generated from protobuf field <code>string participant_id = 2;</code>
+     * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setParticipantId($var)
+    public function setMemberId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->participant_id = $var;
+        $this->member_id = $var;
 
         return $this;
     }

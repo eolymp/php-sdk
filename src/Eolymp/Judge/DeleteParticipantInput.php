@@ -9,14 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.IntrospectParticipantInput</code>
+ * Generated from protobuf message <code>eolymp.judge.DeleteParticipantInput</code>
  */
-class IntrospectParticipantInput extends \Google\Protobuf\Internal\Message
+class DeleteParticipantInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     */
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class IntrospectParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class IntrospectParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

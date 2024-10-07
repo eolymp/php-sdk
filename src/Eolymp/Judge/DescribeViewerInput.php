@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.AddParticipantInput</code>
+ * Generated from protobuf message <code>eolymp.judge.DescribeViewerInput</code>
  */
-class AddParticipantInput extends \Google\Protobuf\Internal\Message
+class DescribeViewerInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     */
-    protected $participant = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type \Eolymp\Judge\Participant $participant
      * }
      */
     public function __construct($data = NULL) {
@@ -55,38 +50,6 @@ class AddParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     * @return \Eolymp\Judge\Participant|null
-     */
-    public function getParticipant()
-    {
-        return $this->participant;
-    }
-
-    public function hasParticipant()
-    {
-        return isset($this->participant);
-    }
-
-    public function clearParticipant()
-    {
-        unset($this->participant);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     * @param \Eolymp\Judge\Participant $var
-     * @return $this
-     */
-    public function setParticipant($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant::class);
-        $this->participant = $var;
 
         return $this;
     }

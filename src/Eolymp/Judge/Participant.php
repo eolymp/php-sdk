@@ -34,9 +34,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * display name
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>string display_name = 5;</code>
      */
-    protected $name = '';
+    protected $display_name = '';
     /**
      * if true, participant won't be assigned rank in scoreboard
      *
@@ -128,7 +128,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           contest
      *     @type string $member_id
      *           community member
-     *     @type string $name
+     *     @type string $display_name
      *           display name
      *     @type bool $unofficial
      *           if true, participant won't be assigned rank in scoreboard
@@ -245,25 +245,25 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * display name
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>string display_name = 5;</code>
      * @return string
      */
-    public function getName()
+    public function getDisplayName()
     {
-        return $this->name;
+        return $this->display_name;
     }
 
     /**
      * display name
      *
-     * Generated from protobuf field <code>string name = 5;</code>
+     * Generated from protobuf field <code>string display_name = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setDisplayName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $this->display_name = $var;
 
         return $this;
     }

@@ -16,9 +16,9 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>NAME = 1;</code>
+     * Generated from protobuf enum <code>DISPLAY_NAME = 1;</code>
      */
-    const NAME = 1;
+    const DISPLAY_NAME = 1;
     /**
      * Generated from protobuf enum <code>BONUS_TIME = 3;</code>
      */
@@ -32,9 +32,9 @@ class Patch
      */
     const MEDAL = 5;
     /**
-     * Generated from protobuf enum <code>ACTIVE = 6;</code>
+     * Generated from protobuf enum <code>INACTIVE = 6;</code>
      */
-    const ACTIVE = 6;
+    const INACTIVE = 6;
     /**
      * Generated from protobuf enum <code>PASSCODE = 7;</code>
      */
@@ -42,11 +42,11 @@ class Patch
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::NAME => 'NAME',
+        self::DISPLAY_NAME => 'DISPLAY_NAME',
         self::BONUS_TIME => 'BONUS_TIME',
         self::UNOFFICIAL => 'UNOFFICIAL',
         self::MEDAL => 'MEDAL',
-        self::ACTIVE => 'ACTIVE',
+        self::INACTIVE => 'INACTIVE',
         self::PASSCODE => 'PASSCODE',
     ];
 

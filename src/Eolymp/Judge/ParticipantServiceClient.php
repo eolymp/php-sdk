@@ -23,22 +23,24 @@ class ParticipantServiceClient {
     }
 
     /**
-     * @param AddParticipantInput $input message
+     * @param AssignParticipantInput $input message
      * @param array $context request parameters
      *
-     * @return AddParticipantOutput output message
+     * @return AssignParticipantOutput output message
      */
-    public function AddParticipant(AddParticipantInput $input, array $context = [])
+    public function AssignParticipant(AssignParticipantInput $input, array $context = [])
     {
         $path = "/participants";
 
-        $context['name'] = "eolymp.judge.ParticipantService/AddParticipant";
+        $context['name'] = "eolymp.judge.ParticipantService/AssignParticipant";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddParticipantOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AssignParticipantOutput::class, $context);
     }
 
     /**
+     * deprecated, use UpdateParticipant instead
+     *
      * @param EnableParticipantInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +60,8 @@ class ParticipantServiceClient {
     }
 
     /**
+     * deprecated, use UpdateParticipant instead
+     *
      * @param DisableParticipantInput $input message
      * @param array $context request parameters
      *
@@ -77,25 +81,6 @@ class ParticipantServiceClient {
     }
 
     /**
-     * @param DisqualifyParticipantInput $input message
-     * @param array $context request parameters
-     *
-     * @return DisqualifyParticipantOutput output message
-     */
-    public function DisqualifyParticipant(DisqualifyParticipantInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/disqualify";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/DisqualifyParticipant";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DisqualifyParticipantOutput::class, $context);
-    }
-
-    /**
      * @param UpdateParticipantInput $input message
      * @param array $context request parameters
      *
@@ -103,10 +88,10 @@ class ParticipantServiceClient {
      */
     public function UpdateParticipant(UpdateParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId());
+        $path = "/participants/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/UpdateParticipant";
         $context['path'] = $path;
@@ -115,22 +100,60 @@ class ParticipantServiceClient {
     }
 
     /**
-     * @param RemoveParticipantInput $input message
+     * @param DisqualifyParticipantInput $input message
      * @param array $context request parameters
      *
-     * @return RemoveParticipantOutput output message
+     * @return DisqualifyParticipantOutput output message
      */
-    public function RemoveParticipant(RemoveParticipantInput $input, array $context = [])
+    public function DisqualifyParticipant(DisqualifyParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId());
+        $path = "/participants/".rawurlencode($input->getMemberId())."/disqualify";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
+        $input->setMemberId("");
 
-        $context['name'] = "eolymp.judge.ParticipantService/RemoveParticipant";
+        $context['name'] = "eolymp.judge.ParticipantService/DisqualifyParticipant";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveParticipantOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DisqualifyParticipantOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteParticipantInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteParticipantOutput output message
+     */
+    public function DeleteParticipant(DeleteParticipantInput $input, array $context = [])
+    {
+        $path = "/participants/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/DeleteParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteParticipantOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeParticipantInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeParticipantOutput output message
+     */
+    public function DescribeParticipant(DescribeParticipantInput $input, array $context = [])
+    {
+        $path = "/participants/".rawurlencode($input->getMemberId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/DescribeParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeParticipantOutput::class, $context);
     }
 
     /**
@@ -150,40 +173,21 @@ class ParticipantServiceClient {
     }
 
     /**
-     * @param DescribeParticipantInput $input message
+     * DescribeViewer allows to fetch participant data for a currently authorized user.
+     *
+     * @param DescribeViewerInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeParticipantOutput output message
+     * @return DescribeViewerOutput output message
      */
-    public function DescribeParticipant(DescribeParticipantInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/DescribeParticipant";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeParticipantOutput::class, $context);
-    }
-
-    /**
-     * IntrospectParticipant allows to fetch participant data for a currently authorized user.
-     *
-     * @param IntrospectParticipantInput $input message
-     * @param array $context request parameters
-     *
-     * @return IntrospectParticipantOutput output message
-     */
-    public function IntrospectParticipant(IntrospectParticipantInput $input, array $context = [])
+    public function DescribeViewer(DescribeViewerInput $input, array $context = [])
     {
         $path = "/introspect";
 
-        $context['name'] = "eolymp.judge.ParticipantService/IntrospectParticipant";
+        $context['name'] = "eolymp.judge.ParticipantService/DescribeViewer";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectParticipantOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerOutput::class, $context);
     }
 
     /**
@@ -221,105 +225,6 @@ class ParticipantServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartContestOutput::class, $context);
-    }
-
-    /**
-     * Verify if passcode is required for the contest and if authenticated token has entered the passcode.
-     *
-     * @param VerifyPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return VerifyPasscodeOutput output message
-     */
-    public function VerifyPasscode(VerifyPasscodeInput $input, array $context = [])
-    {
-        $path = "/verify-passcode";
-
-        $context['name'] = "eolymp.judge.ParticipantService/VerifyPasscode";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, VerifyPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Enter passcode marks current session as one authenticated by passcode.
-     *
-     * @param EnterPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return EnterPasscodeOutput output message
-     */
-    public function EnterPasscode(EnterPasscodeInput $input, array $context = [])
-    {
-        $path = "/enter-passcode";
-
-        $context['name'] = "eolymp.judge.ParticipantService/EnterPasscode";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, EnterPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Set a new passcode to the participant, if passcode was not set it will be now required
-     *
-     * @param ResetPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return ResetPasscodeOutput output message
-     */
-    public function ResetPasscode(ResetPasscodeInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/passcode";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/ResetPasscode";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ResetPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Set a new passcode to the participant, if passcode was not set it will be now required
-     *
-     * @param SetPasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return SetPasscodeOutput output message
-     */
-    public function SetPasscode(SetPasscodeInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/passcode";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/SetPasscode";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, SetPasscodeOutput::class, $context);
-    }
-
-    /**
-     * Remove passcode from participant and allow her to enter contest without passcode.
-     *
-     * @param RemovePasscodeInput $input message
-     * @param array $context request parameters
-     *
-     * @return RemovePasscodeOutput output message
-     */
-    public function RemovePasscode(RemovePasscodeInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/passcode";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/RemovePasscode";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemovePasscodeOutput::class, $context);
     }
 
 }
