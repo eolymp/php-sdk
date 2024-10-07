@@ -46,10 +46,10 @@ class ScoreServiceClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId())."/score";
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/score";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/DescribeScore";
         $context['path'] = $path;
@@ -67,10 +67,10 @@ class ScoreServiceClient {
      */
     public function ImportScore(ImportScoreInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId())."/scores";
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/scores";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/ImportScore";
         $context['path'] = $path;
@@ -88,10 +88,10 @@ class ScoreServiceClient {
      */
     public function ExportScore(ExportScoreInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId())."/scores";
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/scores";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/ExportScore";
         $context['path'] = $path;

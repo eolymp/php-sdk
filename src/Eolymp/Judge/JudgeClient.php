@@ -535,11 +535,11 @@ class JudgeClient {
      */
     public function UpdateParticipant(UpdateParticipantInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/UpdateParticipant";
         $context['path'] = $path;
@@ -555,11 +555,11 @@ class JudgeClient {
      */
     public function DeleteParticipant(DeleteParticipantInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/DeleteParticipant";
         $context['path'] = $path;
@@ -594,11 +594,11 @@ class JudgeClient {
      */
     public function DescribeParticipant(DescribeParticipantInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/DescribeParticipant";
         $context['path'] = $path;
@@ -721,11 +721,11 @@ class JudgeClient {
      */
     public function ResetPasscode(ResetPasscodeInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId())."/passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/ResetPasscode";
         $context['path'] = $path;
@@ -743,11 +743,11 @@ class JudgeClient {
      */
     public function SetPasscode(SetPasscodeInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId())."/passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/SetPasscode";
         $context['path'] = $path;
@@ -765,11 +765,11 @@ class JudgeClient {
      */
     public function RemovePasscode(RemovePasscodeInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId())."/passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/RemovePasscode";
         $context['path'] = $path;
@@ -1079,11 +1079,11 @@ class JudgeClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId())."/score";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/score";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/DescribeScore";
         $context['path'] = $path;
@@ -1101,11 +1101,11 @@ class JudgeClient {
      */
     public function ImportScore(ImportScoreInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId())."/scores";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/scores";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/ImportScore";
         $context['path'] = $path;
@@ -1123,11 +1123,11 @@ class JudgeClient {
      */
     public function ExportScore(ExportScoreInput $input, array $context = [])
     {
-        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getMemberId())."/scores";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/scores";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setContestId("");
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.Judge/ExportScore";
         $context['path'] = $path;

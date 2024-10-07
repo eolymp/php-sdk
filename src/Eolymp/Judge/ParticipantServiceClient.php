@@ -88,10 +88,10 @@ class ParticipantServiceClient {
      */
     public function UpdateParticipant(UpdateParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId());
+        $path = "/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/UpdateParticipant";
         $context['path'] = $path;
@@ -107,10 +107,10 @@ class ParticipantServiceClient {
      */
     public function DisqualifyParticipant(DisqualifyParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId())."/disqualify";
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/disqualify";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DisqualifyParticipant";
         $context['path'] = $path;
@@ -126,10 +126,10 @@ class ParticipantServiceClient {
      */
     public function DeleteParticipant(DeleteParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId());
+        $path = "/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DeleteParticipant";
         $context['path'] = $path;
@@ -145,10 +145,10 @@ class ParticipantServiceClient {
      */
     public function DescribeParticipant(DescribeParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getMemberId());
+        $path = "/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
+        $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DescribeParticipant";
         $context['path'] = $path;
