@@ -92,4 +92,20 @@ class SubmissionServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSubmissionsOutput::class, $context);
     }
 
+    /**
+     * @param DescribeSubmissionUsageInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeSubmissionUsageOutput output message
+     */
+    public function DescribeSubmissionUsage(DescribeSubmissionUsageInput $input, array $context = [])
+    {
+        $path = "/usage/submissions";
+
+        $context['name'] = "eolymp.atlas.SubmissionService/DescribeSubmissionUsage";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubmissionUsageOutput::class, $context);
+    }
+
 }
