@@ -14,13 +14,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeSubmissionUsageOutput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * number of total number of submissions
+     *
      * Generated from protobuf field <code>uint32 total_submissions = 1;</code>
      */
     protected $total_submissions = 0;
     /**
-     * Generated from protobuf field <code>uint32 retested_submissions = 2;</code>
+     * number of submissions this month
+     *
+     * Generated from protobuf field <code>uint32 monthly_submissions = 2;</code>
      */
-    protected $retested_submissions = 0;
+    protected $monthly_submissions = 0;
+    /**
+     * number of evaluations this month
+     *
+     * Generated from protobuf field <code>uint32 monthly_evaluations = 3;</code>
+     */
+    protected $monthly_evaluations = 0;
+    /**
+     * current evaluation limit in the space
+     *
+     * Generated from protobuf field <code>uint32 available_evaluations = 4;</code>
+     */
+    protected $available_evaluations = 0;
 
     /**
      * Constructor.
@@ -29,7 +45,13 @@ class DescribeSubmissionUsageOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total_submissions
-     *     @type int $retested_submissions
+     *           number of total number of submissions
+     *     @type int $monthly_submissions
+     *           number of submissions this month
+     *     @type int $monthly_evaluations
+     *           number of evaluations this month
+     *     @type int $available_evaluations
+     *           current evaluation limit in the space
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +60,8 @@ class DescribeSubmissionUsageOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * number of total number of submissions
+     *
      * Generated from protobuf field <code>uint32 total_submissions = 1;</code>
      * @return int
      */
@@ -47,6 +71,8 @@ class DescribeSubmissionUsageOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * number of total number of submissions
+     *
      * Generated from protobuf field <code>uint32 total_submissions = 1;</code>
      * @param int $var
      * @return $this
@@ -60,23 +86,79 @@ class DescribeSubmissionUsageOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 retested_submissions = 2;</code>
+     * number of submissions this month
+     *
+     * Generated from protobuf field <code>uint32 monthly_submissions = 2;</code>
      * @return int
      */
-    public function getRetestedSubmissions()
+    public function getMonthlySubmissions()
     {
-        return $this->retested_submissions;
+        return $this->monthly_submissions;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 retested_submissions = 2;</code>
+     * number of submissions this month
+     *
+     * Generated from protobuf field <code>uint32 monthly_submissions = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setRetestedSubmissions($var)
+    public function setMonthlySubmissions($var)
     {
         GPBUtil::checkUint32($var);
-        $this->retested_submissions = $var;
+        $this->monthly_submissions = $var;
+
+        return $this;
+    }
+
+    /**
+     * number of evaluations this month
+     *
+     * Generated from protobuf field <code>uint32 monthly_evaluations = 3;</code>
+     * @return int
+     */
+    public function getMonthlyEvaluations()
+    {
+        return $this->monthly_evaluations;
+    }
+
+    /**
+     * number of evaluations this month
+     *
+     * Generated from protobuf field <code>uint32 monthly_evaluations = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMonthlyEvaluations($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->monthly_evaluations = $var;
+
+        return $this;
+    }
+
+    /**
+     * current evaluation limit in the space
+     *
+     * Generated from protobuf field <code>uint32 available_evaluations = 4;</code>
+     * @return int
+     */
+    public function getAvailableEvaluations()
+    {
+        return $this->available_evaluations;
+    }
+
+    /**
+     * current evaluation limit in the space
+     *
+     * Generated from protobuf field <code>uint32 available_evaluations = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAvailableEvaluations($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->available_evaluations = $var;
 
         return $this;
     }
