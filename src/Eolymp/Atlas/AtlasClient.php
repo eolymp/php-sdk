@@ -4,6 +4,9 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * deprecated
+     */
 class AtlasClient {
 
     /** @var string base URL */
