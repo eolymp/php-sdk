@@ -17,8 +17,8 @@ class Notification
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-õ
- eolymp/notify/notification.protoeolymp.notify"ˆ
+¢
+ eolymp/notify/notification.protoeolymp.notify"µ
 Notification
 
 id (	
@@ -29,6 +29,7 @@ class Notification
 parameters (2+.eolymp.notify.Notification.ParametersEntry.
 
 created_at (2.google.protobuf.Timestamp+
+sent_at (2.google.protobuf.Timestamp+
 read_at (2.google.protobuf.Timestamp1
 ParametersEntry
 key (	

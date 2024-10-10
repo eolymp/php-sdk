@@ -34,6 +34,10 @@ class Notification extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp sent_at = 22;</code>
+     */
+    protected $sent_at = null;
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 21;</code>
      */
     protected $read_at = null;
@@ -49,6 +53,7 @@ class Notification extends \Google\Protobuf\Internal\Message
      *     @type string $topic
      *     @type array|\Google\Protobuf\Internal\MapField $parameters
      *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $sent_at
      *     @type \Google\Protobuf\Timestamp $read_at
      * }
      */
@@ -173,6 +178,38 @@ class Notification extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp sent_at = 22;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getSentAt()
+    {
+        return $this->sent_at;
+    }
+
+    public function hasSentAt()
+    {
+        return isset($this->sent_at);
+    }
+
+    public function clearSentAt()
+    {
+        unset($this->sent_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp sent_at = 22;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setSentAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->sent_at = $var;
 
         return $this;
     }
