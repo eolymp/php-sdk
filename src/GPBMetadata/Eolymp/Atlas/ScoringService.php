@@ -20,7 +20,7 @@ class ScoringService
         \GPBMetadata\Eolymp\Atlas\Submission::initOnce();
         $pool->internalAddGeneratedFile(
             '
-÷
+˝
 "eolymp/atlas/scoring_service.protoeolymp.atlaseolymp/annotations/scope.proto eolymp/atlas/scoring_score.protoeolymp/atlas/submission.proto"\\
 ScoreChangedEvent#
 before (2.eolymp.atlas.Score"
@@ -28,16 +28,13 @@ class ScoringService
 DescribeScoreInput
 	member_id (	"9
 DescribeScoreOutput"
-score (2.eolymp.atlas.Score"
-ListProblemTopInput"?
-ListProblemTopOutput\'
-items (2.eolymp.atlas.Submission"
+score (2.eolymp.atlas.Score"
 DescribeProblemGradingInput"ç
 DescribeProblemGradingOutput@
 ranges (20.eolymp.atlas.DescribeProblemGradingOutput.Range+
 Range
 grade (
-upper_bound (2¿
+upper_bound (2ø
 ScoringServiceé
 DescribeScore .eolymp.atlas.DescribeScoreInput!.eolymp.atlas.DescribeScoreOutput"8Ç„
 ä„
@@ -45,10 +42,7 @@ class ScoringService
 DescribeProblemGrading).eolymp.atlas.DescribeProblemGradingInput*.eolymp.atlas.DescribeProblemGradingOutput"*Ç„
 ä„
 atlas:problem:readÇ”‰ì
-/grading
-ListProblemTop!.eolymp.atlas.ListProblemTopInput".eolymp.atlas.ListProblemTopOutput"&Ç„
-ä„
-atlas:problem:readÇ”‰ì/topB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+/gradingB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

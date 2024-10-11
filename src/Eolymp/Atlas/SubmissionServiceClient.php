@@ -108,4 +108,23 @@ class SubmissionServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubmissionUsageOutput::class, $context);
     }
 
+    /**
+     * @param ListProblemTopInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListProblemTopOutput output message
+     */
+    public function ListProblemTop(ListProblemTopInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/top";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.SubmissionService/ListProblemTop";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemTopOutput::class, $context);
+    }
+
 }
