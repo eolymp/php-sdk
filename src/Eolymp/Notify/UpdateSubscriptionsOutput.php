@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.notify.DescribeNotificationConfigInput</code>
+ * Generated from protobuf message <code>eolymp.notify.UpdateSubscriptionsOutput</code>
  */
-class DescribeNotificationConfigInput extends \Google\Protobuf\Internal\Message
+class UpdateSubscriptionsOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**

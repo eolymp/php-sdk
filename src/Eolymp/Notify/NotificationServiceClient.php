@@ -96,35 +96,41 @@ class NotificationServiceClient {
     }
 
     /**
-     * @param DescribeNotificationConfigInput $input message
+     * @param DescribeSubscriptionsInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeNotificationConfigOutput output message
+     * @return DescribeSubscriptionsOutput output message
      */
-    public function DescribeNotificationConfig(DescribeNotificationConfigInput $input, array $context = [])
+    public function DescribeSubscriptions(DescribeSubscriptionsInput $input, array $context = [])
     {
-        $path = "/configs/notifications";
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/notifications";
 
-        $context['name'] = "eolymp.notify.NotificationService/DescribeNotificationConfig";
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.notify.NotificationService/DescribeSubscriptions";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeNotificationConfigOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubscriptionsOutput::class, $context);
     }
 
     /**
-     * @param UpdateNotificationConfigInput $input message
+     * @param UpdateSubscriptionsInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateNotificationConfigOutput output message
+     * @return UpdateSubscriptionsOutput output message
      */
-    public function UpdateNotificationConfig(UpdateNotificationConfigInput $input, array $context = [])
+    public function UpdateSubscriptions(UpdateSubscriptionsInput $input, array $context = [])
     {
-        $path = "/configs/notifications";
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/notifications";
 
-        $context['name'] = "eolymp.notify.NotificationService/UpdateNotificationConfig";
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.notify.NotificationService/UpdateSubscriptions";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateNotificationConfigOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateSubscriptionsOutput::class, $context);
     }
 
 }
