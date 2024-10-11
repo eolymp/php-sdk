@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>repeated .eolymp.notify.UpdatePreferencesInput.Patch patch = 3;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
@@ -28,6 +32,7 @@ class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $space_id
      *     @type \Eolymp\Notify\Preferences $preferences
      * }
@@ -35,6 +40,28 @@ class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Notify\NotificationService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.notify.UpdatePreferencesInput.Patch patch = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.notify.UpdatePreferencesInput.Patch patch = 3;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Notify\UpdatePreferencesInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
