@@ -103,10 +103,7 @@ class NotificationServiceClient {
      */
     public function DescribePreferences(DescribePreferencesInput $input, array $context = [])
     {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/preferences";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSpaceId("");
+        $path = "/preferences/notifications";
 
         $context['name'] = "eolymp.notify.NotificationService/DescribePreferences";
         $context['path'] = $path;
@@ -122,10 +119,7 @@ class NotificationServiceClient {
      */
     public function UpdatePreferences(UpdatePreferencesInput $input, array $context = [])
     {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/preferences";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setSpaceId("");
+        $path = "/preferences/notifications";
 
         $context['name'] = "eolymp.notify.NotificationService/UpdatePreferences";
         $context['path'] = $path;

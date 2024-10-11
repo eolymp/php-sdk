@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Preferences extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscription = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscriptions = 10;</code>
      */
-    private $subscription;
+    private $subscriptions;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class Preferences extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $subscription
+     *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $subscriptions
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class Preferences extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscription = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscriptions = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getSubscription()
+    public function getSubscriptions()
     {
-        return $this->subscription;
+        return $this->subscriptions;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscription = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscriptions = 10;</code>
      * @param array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setSubscription($var)
+    public function setSubscriptions($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Notify\Preferences\Subscription::class);
-        $this->subscription = $arr;
+        $this->subscriptions = $arr;
 
         return $this;
     }
