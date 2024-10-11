@@ -149,4 +149,23 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, VoteProblemOutput::class, $context);
     }
 
+    /**
+     * @param ListVersionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListVersionsOutput output message
+     */
+    public function ListVersions(ListVersionsInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/versions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.ProblemService/ListVersions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListVersionsOutput::class, $context);
+    }
+
 }
