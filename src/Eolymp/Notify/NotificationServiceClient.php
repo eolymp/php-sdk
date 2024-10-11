@@ -96,41 +96,41 @@ class NotificationServiceClient {
     }
 
     /**
-     * @param DescribeSubscriptionsInput $input message
+     * @param DescribePreferencesInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeSubscriptionsOutput output message
+     * @return DescribePreferencesOutput output message
      */
-    public function DescribeSubscriptions(DescribeSubscriptionsInput $input, array $context = [])
+    public function DescribePreferences(DescribePreferencesInput $input, array $context = [])
     {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/notifications";
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/preferences";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.notify.NotificationService/DescribeSubscriptions";
+        $context['name'] = "eolymp.notify.NotificationService/DescribePreferences";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSubscriptionsOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePreferencesOutput::class, $context);
     }
 
     /**
-     * @param UpdateSubscriptionsInput $input message
+     * @param UpdatePreferencesInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateSubscriptionsOutput output message
+     * @return UpdatePreferencesOutput output message
      */
-    public function UpdateSubscriptions(UpdateSubscriptionsInput $input, array $context = [])
+    public function UpdatePreferences(UpdatePreferencesInput $input, array $context = [])
     {
-        $path = "/spaces/".rawurlencode($input->getSpaceId())."/notifications";
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/preferences";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSpaceId("");
 
-        $context['name'] = "eolymp.notify.NotificationService/UpdateSubscriptions";
+        $context['name'] = "eolymp.notify.NotificationService/UpdatePreferences";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateSubscriptionsOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePreferencesOutput::class, $context);
     }
 
 }

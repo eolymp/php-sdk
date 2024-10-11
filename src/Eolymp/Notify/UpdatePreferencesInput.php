@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.notify.UpdateSubscriptionsInput</code>
+ * Generated from protobuf message <code>eolymp.notify.UpdatePreferencesInput</code>
  */
-class UpdateSubscriptionsInput extends \Google\Protobuf\Internal\Message
+class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Subscription subscriptions = 2;</code>
+     * Generated from protobuf field <code>.eolymp.notify.Preferences preferences = 2;</code>
      */
-    private $subscriptions;
+    protected $preferences = null;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class UpdateSubscriptionsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $space_id
-     *     @type array<\Eolymp\Notify\Subscription>|\Google\Protobuf\Internal\RepeatedField $subscriptions
+     *     @type \Eolymp\Notify\Preferences $preferences
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,33 @@ class UpdateSubscriptionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Subscription subscriptions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.notify.Preferences preferences = 2;</code>
+     * @return \Eolymp\Notify\Preferences|null
      */
-    public function getSubscriptions()
+    public function getPreferences()
     {
-        return $this->subscriptions;
+        return $this->preferences;
+    }
+
+    public function hasPreferences()
+    {
+        return isset($this->preferences);
+    }
+
+    public function clearPreferences()
+    {
+        unset($this->preferences);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Subscription subscriptions = 2;</code>
-     * @param array<\Eolymp\Notify\Subscription>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.notify.Preferences preferences = 2;</code>
+     * @param \Eolymp\Notify\Preferences $var
      * @return $this
      */
-    public function setSubscriptions($var)
+    public function setPreferences($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Notify\Subscription::class);
-        $this->subscriptions = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Notify\Preferences::class);
+        $this->preferences = $var;
 
         return $this;
     }
