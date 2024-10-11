@@ -14,6 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class ScoreChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string problem_id = 3;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Score before = 1;</code>
      */
     protected $before = null;
@@ -28,6 +36,8 @@ class ScoreChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
+     *     @type string $member_id
      *     @type \Eolymp\Atlas\Score $before
      *     @type \Eolymp\Atlas\Score $after
      * }
@@ -35,6 +45,50 @@ class ScoreChangedEvent extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\ScoringService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 3;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
+
+        return $this;
     }
 
     /**

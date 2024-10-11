@@ -19,9 +19,12 @@ class ScoringService
         \GPBMetadata\Eolymp\Atlas\ScoringScore::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Þ
-"eolymp/atlas/scoring_service.protoeolymp.atlaseolymp/annotations/scope.proto eolymp/atlas/scoring_score.proto"\\
-ScoreChangedEvent#
+†
+"eolymp/atlas/scoring_service.protoeolymp.atlaseolymp/annotations/scope.proto eolymp/atlas/scoring_score.proto"ƒ
+ScoreChangedEvent
+
+problem_id (	
+	member_id (	#
 before (2.eolymp.atlas.Score"
 after (2.eolymp.atlas.Score"\'
 DescribeScoreInput
