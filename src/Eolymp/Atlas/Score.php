@@ -22,12 +22,6 @@ class Score extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * problem
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     */
-    protected $problem_id = '';
-    /**
      * user
      *
      * Generated from protobuf field <code>string user_id = 3;</code>
@@ -64,8 +58,6 @@ class Score extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique identifier
-     *     @type string $problem_id
-     *           problem
      *     @type string $user_id
      *           user
      *     @type string $member_id
@@ -104,32 +96,6 @@ class Score extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * problem
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * problem
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
 
         return $this;
     }

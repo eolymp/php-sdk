@@ -20,10 +20,6 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     */
-    protected $problem_id = '';
-    /**
      * Generated from protobuf field <code>string solution_id = 3;</code>
      */
     protected $solution_id = '';
@@ -40,7 +36,6 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
-     *     @type string $problem_id
      *     @type string $solution_id
      *     @type \Eolymp\Atlas\Solution $solution
      * }
@@ -72,28 +67,6 @@ class UpdateSolutionInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateSolutionInput\Patch::class);
         $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
 
         return $this;
     }

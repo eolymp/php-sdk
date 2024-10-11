@@ -18,6 +18,8 @@ class Attachment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * deprecate
+     *
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
@@ -38,6 +40,7 @@ class Attachment extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $problem_id
+     *           deprecate
      *     @type string $name
      *     @type string $link
      * }
@@ -70,6 +73,8 @@ class Attachment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecate
+     *
      * Generated from protobuf field <code>string problem_id = 2;</code>
      * @return string
      */
@@ -79,6 +84,8 @@ class Attachment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecate
+     *
      * Generated from protobuf field <code>string problem_id = 2;</code>
      * @param string $var
      * @return $this

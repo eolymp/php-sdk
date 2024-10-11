@@ -20,12 +20,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Problem where this statement belongs. Keep empty when creating new statement.
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     */
-    protected $problem_id = '';
-    /**
      * Statement locale code, should consist of two lowercase latin letters.
      *
      * Generated from protobuf field <code>string locale = 3;</code>
@@ -52,8 +46,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Unique identifier, assigned when statement is created. Keep empty when creating new statement.
-     *     @type string $problem_id
-     *           Problem where this statement belongs. Keep empty when creating new statement.
      *     @type string $locale
      *           Statement locale code, should consist of two lowercase latin letters.
      *     @type \Eolymp\Ecm\Content $content
@@ -89,32 +81,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Problem where this statement belongs. Keep empty when creating new statement.
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @return string
-     */
-    public function getProblemId()
-    {
-        return $this->problem_id;
-    }
-
-    /**
-     * Problem where this statement belongs. Keep empty when creating new statement.
-     *
-     * Generated from protobuf field <code>string problem_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProblemId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->problem_id = $var;
 
         return $this;
     }

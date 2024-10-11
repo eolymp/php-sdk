@@ -17,13 +17,11 @@ class CodeTemplate
         \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‹
- eolymp/atlas/code_template.protoeolymp.atlas"¡
+÷
+ eolymp/atlas/code_template.protoeolymp.atlas"
 Template
 
-id (	
-
-problem_id (	
+id (	
 runtime (	
 secret (
 source

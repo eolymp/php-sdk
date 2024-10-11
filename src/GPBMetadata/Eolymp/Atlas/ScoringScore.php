@@ -17,13 +17,11 @@ class ScoringScore
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-…
- eolymp/atlas/scoring_score.protoeolymp.atlas"›
+ñ
+ eolymp/atlas/scoring_score.protoeolymp.atlas"‡
 Score
 
-id (	
-
-problem_id (	
+id (	
 user_id (	
 	member_id (	-
 	solved_at (2.google.protobuf.Timestamp

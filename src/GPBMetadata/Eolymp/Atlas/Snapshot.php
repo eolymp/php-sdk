@@ -15,21 +15,21 @@ class Snapshot
           return;
         }
         \GPBMetadata\Eolymp\Atlas\Attachment::initOnce();
-        \GPBMetadata\Eolymp\Atlas\Checker::initOnce();
         \GPBMetadata\Eolymp\Atlas\CodeTemplate::initOnce();
         \GPBMetadata\Eolymp\Atlas\Editorial::initOnce();
-        \GPBMetadata\Eolymp\Atlas\Interactor::initOnce();
         \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         \GPBMetadata\Eolymp\Atlas\Script::initOnce();
         \GPBMetadata\Eolymp\Atlas\Solution::initOnce();
         \GPBMetadata\Eolymp\Atlas\Statement::initOnce();
+        \GPBMetadata\Eolymp\Atlas\TestingChecker::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingConfig::initOnce();
+        \GPBMetadata\Eolymp\Atlas\TestingInteractor::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingTest::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingTestset::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Â
-eolymp/atlas/snapshot.protoeolymp.atlaseolymp/atlas/checker.proto eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/interactor.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto!eolymp/atlas/testing_config.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto"ˆ
+Ò
+eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto"ˆ
 Snapshot&
 problem (2.eolymp.atlas.Problem,
 testing

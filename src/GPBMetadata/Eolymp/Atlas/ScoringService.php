@@ -20,22 +20,19 @@ class ScoringService
         \GPBMetadata\Eolymp\Atlas\Submission::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¥
-"eolymp/atlas/scoring_service.protoeolymp.atlaseolymp/annotations/scope.proto eolymp/atlas/scoring_score.protoeolymp/atlas/submission.proto";
-DescribeScoreInput
-
-problem_id (	
+÷
+"eolymp/atlas/scoring_service.protoeolymp.atlaseolymp/annotations/scope.proto eolymp/atlas/scoring_score.protoeolymp/atlas/submission.proto"\\
+ScoreChangedEvent#
+before (2.eolymp.atlas.Score"
+after (2.eolymp.atlas.Score"\'
+DescribeScoreInput
 	member_id (	"9
 DescribeScoreOutput"
-score (2.eolymp.atlas.Score")
-ListProblemTopInput
-
-problem_id (	"?
+score (2.eolymp.atlas.Score"
+ListProblemTopInput"?
 ListProblemTopOutput\'
-items (2.eolymp.atlas.Submission"1
-DescribeProblemGradingInput
-
-problem_id (	"ç
+items (2.eolymp.atlas.Submission"
+DescribeProblemGradingInput"ç
 DescribeProblemGradingOutput@
 ranges (20.eolymp.atlas.DescribeProblemGradingOutput.Range+
 Range

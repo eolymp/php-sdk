@@ -17,13 +17,11 @@ class Editorial
         \GPBMetadata\Eolymp\Ecm\Content::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ý
-eolymp/atlas/editorial.protoeolymp.atlas"x
+É
+eolymp/atlas/editorial.protoeolymp.atlas"d
 	Editorial
 
-id (	
-
-problem_id (	
+id (	
 locale (	$
 content (2.eolymp.ecm.Content
 download_link (	B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
