@@ -180,6 +180,28 @@ class TicketServiceClient {
     /**
      * DeleteReply allows author to delete his own reply.
      *
+     * @param DescribeReplyInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeReplyOutput output message
+     */
+    public function DescribeReply(DescribeReplyInput $input, array $context = [])
+    {
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/replies/".rawurlencode($input->getReplyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+        $input->setReplyId("");
+
+        $context['name'] = "eolymp.judge.TicketService/DescribeReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeReplyOutput::class, $context);
+    }
+
+    /**
+     * DeleteReply allows author to delete his own reply.
+     *
      * @param DeleteReplyInput $input message
      * @param array $context request parameters
      *
