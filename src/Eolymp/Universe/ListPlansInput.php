@@ -34,6 +34,12 @@ class ListPlansInput extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
+     * include plans even if they are not available for purchase
+     *
+     * Generated from protobuf field <code>bool show_unavailable = 104;</code>
+     */
+    protected $show_unavailable = false;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Extra extra = 1123;</code>
      */
     private $extra;
@@ -50,6 +56,8 @@ class ListPlansInput extends \Google\Protobuf\Internal\Message
      *           optionally, request name and description in particular language
      *     @type string $currency
      *           optionally, request prices in particular currency
+     *     @type bool $show_unavailable
+     *           include plans even if they are not available for purchase
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -150,6 +158,32 @@ class ListPlansInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->currency = $var;
+
+        return $this;
+    }
+
+    /**
+     * include plans even if they are not available for purchase
+     *
+     * Generated from protobuf field <code>bool show_unavailable = 104;</code>
+     * @return bool
+     */
+    public function getShowUnavailable()
+    {
+        return $this->show_unavailable;
+    }
+
+    /**
+     * include plans even if they are not available for purchase
+     *
+     * Generated from protobuf field <code>bool show_unavailable = 104;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setShowUnavailable($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->show_unavailable = $var;
 
         return $this;
     }

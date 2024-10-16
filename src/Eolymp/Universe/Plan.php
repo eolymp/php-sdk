@@ -34,6 +34,10 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
+     * Generated from protobuf field <code>bool available = 6;</code>
+     */
+    protected $available = false;
+    /**
      * Generated from protobuf field <code>uint32 min_seats = 10;</code>
      */
     protected $min_seats = 0;
@@ -57,6 +61,7 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Quota $quota
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type bool $available
      *     @type int $min_seats
      *     @type int $max_seats
      *     @type array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
@@ -193,6 +198,28 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool available = 6;</code>
+     * @return bool
+     */
+    public function getAvailable()
+    {
+        return $this->available;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool available = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAvailable($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->available = $var;
 
         return $this;
     }
