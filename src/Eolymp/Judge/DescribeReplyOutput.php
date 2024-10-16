@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DescribeReplyOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Reply reply = 1;</code>
+     */
+    protected $reply = null;
 
     /**
      * Constructor.
@@ -20,11 +24,44 @@ class DescribeReplyOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Eolymp\Judge\Reply $reply
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\TicketService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Reply reply = 1;</code>
+     * @return \Eolymp\Judge\Reply|null
+     */
+    public function getReply()
+    {
+        return $this->reply;
+    }
+
+    public function hasReply()
+    {
+        return isset($this->reply);
+    }
+
+    public function clearReply()
+    {
+        unset($this->reply);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Reply reply = 1;</code>
+     * @param \Eolymp\Judge\Reply $var
+     * @return $this
+     */
+    public function setReply($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Reply::class);
+        $this->reply = $var;
+
+        return $this;
     }
 
 }
