@@ -27,6 +27,12 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool allow_sign_up = 102;</code>
      */
     protected $allow_sign_up = false;
+    /**
+     * users must verify email to use the site, setting this flag to false will override "email_verified" to true for all members
+     *
+     * Generated from protobuf field <code>bool require_email_verified = 103;</code>
+     */
+    protected $require_email_verified = false;
     protected $provider;
 
     /**
@@ -42,6 +48,8 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      *     @type string $display_name_attribute
      *     @type bool $allow_sign_up
      *           users can join on their own
+     *     @type bool $require_email_verified
+     *           users must verify email to use the site, setting this flag to false will override "email_verified" to true for all members
      * }
      */
     public function __construct($data = NULL) {
@@ -196,6 +204,32 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->allow_sign_up = $var;
+
+        return $this;
+    }
+
+    /**
+     * users must verify email to use the site, setting this flag to false will override "email_verified" to true for all members
+     *
+     * Generated from protobuf field <code>bool require_email_verified = 103;</code>
+     * @return bool
+     */
+    public function getRequireEmailVerified()
+    {
+        return $this->require_email_verified;
+    }
+
+    /**
+     * users must verify email to use the site, setting this flag to false will override "email_verified" to true for all members
+     *
+     * Generated from protobuf field <code>bool require_email_verified = 103;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequireEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->require_email_verified = $var;
 
         return $this;
     }
