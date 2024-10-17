@@ -38,6 +38,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $email_verified = false;
     /**
+     * true if email verification is required but not complete
+     *
+     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     */
+    protected $email_restricted = false;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.mailing.EmailType email_subscriptions = 22;</code>
      */
     private $email_subscriptions;
@@ -90,6 +96,8 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type int $nickname_change_timeout
      *     @type string $email
      *     @type bool $email_verified
+     *     @type bool $email_restricted
+     *           true if email verification is required but not complete
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $email_subscriptions
      *     @type string $password
      *     @type int $password_age
@@ -235,6 +243,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * true if email verification is required but not complete
+     *
+     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * @return bool
+     */
+    public function getEmailRestricted()
+    {
+        return $this->email_restricted;
+    }
+
+    /**
+     * true if email verification is required but not complete
+     *
+     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailRestricted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_restricted = $var;
 
         return $this;
     }

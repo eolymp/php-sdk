@@ -38,11 +38,17 @@ class Claims extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * true if user has confirmed their email
+     * true if user has verified their email
      *
      * Generated from protobuf field <code>bool email_verified = 11;</code>
      */
     protected $email_verified = false;
+    /**
+     * true if email verification is required but not complete
+     *
+     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     */
+    protected $email_restricted = false;
     /**
      * user's name
      *
@@ -113,7 +119,9 @@ class Claims extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *           email
      *     @type bool $email_verified
-     *           true if user has confirmed their email
+     *           true if user has verified their email
+     *     @type bool $email_restricted
+     *           true if email verification is required but not complete
      *     @type string $name
      *           user's name
      *     @type string $nickname
@@ -244,7 +252,7 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * true if user has confirmed their email
+     * true if user has verified their email
      *
      * Generated from protobuf field <code>bool email_verified = 11;</code>
      * @return bool
@@ -255,7 +263,7 @@ class Claims extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * true if user has confirmed their email
+     * true if user has verified their email
      *
      * Generated from protobuf field <code>bool email_verified = 11;</code>
      * @param bool $var
@@ -265,6 +273,32 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * true if email verification is required but not complete
+     *
+     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * @return bool
+     */
+    public function getEmailRestricted()
+    {
+        return $this->email_restricted;
+    }
+
+    /**
+     * true if email verification is required but not complete
+     *
+     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailRestricted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_restricted = $var;
 
         return $this;
     }
