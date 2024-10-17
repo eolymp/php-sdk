@@ -34,9 +34,11 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
-     * Generated from protobuf field <code>bool available = 6;</code>
+     * special plan which requires approval
+     *
+     * Generated from protobuf field <code>bool requires_approval = 7;</code>
      */
-    protected $available = false;
+    protected $requires_approval = false;
     /**
      * Generated from protobuf field <code>uint32 min_seats = 10;</code>
      */
@@ -61,7 +63,8 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Quota $quota
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
-     *     @type bool $available
+     *     @type bool $requires_approval
+     *           special plan which requires approval
      *     @type int $min_seats
      *     @type int $max_seats
      *     @type array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
@@ -203,23 +206,27 @@ class Plan extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool available = 6;</code>
+     * special plan which requires approval
+     *
+     * Generated from protobuf field <code>bool requires_approval = 7;</code>
      * @return bool
      */
-    public function getAvailable()
+    public function getRequiresApproval()
     {
-        return $this->available;
+        return $this->requires_approval;
     }
 
     /**
-     * Generated from protobuf field <code>bool available = 6;</code>
+     * special plan which requires approval
+     *
+     * Generated from protobuf field <code>bool requires_approval = 7;</code>
      * @param bool $var
      * @return $this
      */
-    public function setAvailable($var)
+    public function setRequiresApproval($var)
     {
         GPBUtil::checkBool($var);
-        $this->available = $var;
+        $this->requires_approval = $var;
 
         return $this;
     }

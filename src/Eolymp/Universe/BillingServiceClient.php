@@ -252,4 +252,20 @@ class BillingServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, ListInvoicesOutput::class, $context);
     }
 
+    /**
+     * @param ListAvailablePlansInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListAvailablePlansOutput output message
+     */
+    public function ListAvailablePlans(ListAvailablePlansInput $input, array $context = [])
+    {
+        $path = "/billing/plans";
+
+        $context['name'] = "eolymp.universe.BillingService/ListAvailablePlans";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ListAvailablePlansOutput::class, $context);
+    }
+
 }
