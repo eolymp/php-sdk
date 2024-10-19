@@ -40,6 +40,12 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $cost = 0.0;
     /**
+     * Additional environment variables used during run
+     *
+     * Generated from protobuf field <code>map<string, string> env = 5;</code>
+     */
+    private $env;
+    /**
      * Labels used to match constraints and preconditions.
      *
      * Generated from protobuf field <code>repeated string labels = 30;</code>
@@ -62,6 +68,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Use debugging (report content of stdout, stderr and exit code).
      *     @type float $cost
      *           A number of points awarded for passing this run.
+     *     @type array|\Google\Protobuf\Internal\MapField $env
+     *           Additional environment variables used during run
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Labels used to match constraints and preconditions.
      *     @type string $input_url
@@ -183,6 +191,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->cost = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional environment variables used during run
+     *
+     * Generated from protobuf field <code>map<string, string> env = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getEnv()
+    {
+        return $this->env;
+    }
+
+    /**
+     * Additional environment variables used during run
+     *
+     * Generated from protobuf field <code>map<string, string> env = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setEnv($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->env = $arr;
 
         return $this;
     }
