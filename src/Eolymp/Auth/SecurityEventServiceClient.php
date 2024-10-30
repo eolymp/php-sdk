@@ -4,7 +4,7 @@
 
 namespace Eolymp\Auth;
 
-class RISCServiceClient {
+class SecurityEventServiceClient {
 
     /** @var string base URL */
     private $url;

@@ -23,25 +23,6 @@ class CognitoClient {
     }
 
     /**
-     * Signout revokes all user's tokens or all tokens of current session.
-     * DEPRECATED: use oauth service directly
-     *
-     * @param SignoutInput $input message
-     * @param array $context request parameters
-     *
-     * @return SignoutOutput output message
-     */
-    public function Signout(SignoutInput $input, array $context = [])
-    {
-        $path = "/self/signout";
-
-        $context['name'] = "eolymp.cognito.Cognito/Signout";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SignoutOutput::class, $context);
-    }
-
-    /**
      * Create API key.
      *
      * @param CreateAccessKeyInput $input message
@@ -291,66 +272,6 @@ class CognitoClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectQuotaOutput::class, $context);
-    }
-
-    /**
-     * List own roles.
-     *
-     * @param IntrospectRolesInput $input message
-     * @param array $context request parameters
-     *
-     * @return IntrospectRolesOutput output message
-     */
-    public function IntrospectRoles(IntrospectRolesInput $input, array $context = [])
-    {
-        $path = "/self/roles";
-
-        $context['name'] = "eolymp.cognito.Cognito/IntrospectRoles";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectRolesOutput::class, $context);
-    }
-
-    /**
-     * List roles assigned to a user.
-     *
-     * @param ListRolesInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListRolesOutput output message
-     */
-    public function ListRoles(ListRolesInput $input, array $context = [])
-    {
-        $path = "/users/".rawurlencode($input->getUserId())."/roles";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setUserId("");
-
-        $context['name'] = "eolymp.cognito.Cognito/ListRoles";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRolesOutput::class, $context);
-    }
-
-    /**
-     * Update user's roles.
-     *
-     * @param UpdateRolesInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateRolesOutput output message
-     */
-    public function UpdateRoles(UpdateRolesInput $input, array $context = [])
-    {
-        $path = "/users/".rawurlencode($input->getUserId())."/roles";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setUserId("");
-
-        $context['name'] = "eolymp.cognito.Cognito/UpdateRoles";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateRolesOutput::class, $context);
     }
 
     /**

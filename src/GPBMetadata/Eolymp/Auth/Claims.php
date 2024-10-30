@@ -16,12 +16,14 @@ class Claims
         }
         $pool->internalAddGeneratedFile(
             '
-ö
-eolymp/auth/claims.protoeolymp.auth"—
+Š
+eolymp/auth/claims.protoeolymp.auth"«
 Claims
 idè (	
 issuer (	
-subject (	
+subject (	
+
+session_id (	
 email
  (	
 email_verified (

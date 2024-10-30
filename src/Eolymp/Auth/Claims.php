@@ -32,6 +32,12 @@ class Claims extends \Google\Protobuf\Internal\Message
      */
     protected $subject = '';
     /**
+     * sid
+     *
+     * Generated from protobuf field <code>string session_id = 3;</code>
+     */
+    protected $session_id = '';
+    /**
      * email
      *
      * Generated from protobuf field <code>string email = 10;</code>
@@ -116,6 +122,8 @@ class Claims extends \Google\Protobuf\Internal\Message
      *           iss
      *     @type string $subject
      *           sub
+     *     @type string $session_id
+     *           sid
      *     @type string $email
      *           email
      *     @type bool $email_verified
@@ -221,6 +229,32 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->subject = $var;
+
+        return $this;
+    }
+
+    /**
+     * sid
+     *
+     * Generated from protobuf field <code>string session_id = 3;</code>
+     * @return string
+     */
+    public function getSessionId()
+    {
+        return $this->session_id;
+    }
+
+    /**
+     * sid
+     *
+     * Generated from protobuf field <code>string session_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSessionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->session_id = $var;
 
         return $this;
     }
