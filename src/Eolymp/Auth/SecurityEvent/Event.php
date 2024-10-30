@@ -20,9 +20,9 @@ class Event extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subjects = 10;</code>
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subject = 10;</code>
      */
-    protected $subjects = null;
+    protected $subject = null;
     /**
      * Generated from protobuf field <code>.eolymp.auth.Claims claims = 11;</code>
      */
@@ -56,7 +56,7 @@ class Event extends \Google\Protobuf\Internal\Message
      *
      *     @type string $type
      *           a URI of the event type: https://schemas.openid.net/secevent/(risc|caep)/event-type/[...]
-     *     @type \Eolymp\Auth\SecurityEvent\Subject $subjects
+     *     @type \Eolymp\Auth\SecurityEvent\Subject $subject
      *     @type \Eolymp\Auth\Claims $claims
      *     @type string $reason
      *     @type string $state
@@ -97,33 +97,33 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subjects = 10;</code>
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subject = 10;</code>
      * @return \Eolymp\Auth\SecurityEvent\Subject|null
      */
-    public function getSubjects()
+    public function getSubject()
     {
-        return $this->subjects;
+        return $this->subject;
     }
 
-    public function hasSubjects()
+    public function hasSubject()
     {
-        return isset($this->subjects);
+        return isset($this->subject);
     }
 
-    public function clearSubjects()
+    public function clearSubject()
     {
-        unset($this->subjects);
+        unset($this->subject);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subjects = 10;</code>
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subject = 10;</code>
      * @param \Eolymp\Auth\SecurityEvent\Subject $var
      * @return $this
      */
-    public function setSubjects($var)
+    public function setSubject($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Auth\SecurityEvent\Subject::class);
-        $this->subjects = $var;
+        $this->subject = $var;
 
         return $this;
     }
