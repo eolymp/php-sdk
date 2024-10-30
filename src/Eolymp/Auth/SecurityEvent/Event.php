@@ -14,15 +14,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class Event extends \Google\Protobuf\Internal\Message
 {
     /**
-     * a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
+     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep)/event-type/[...]
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
     protected $type = '';
     /**
-     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subject = 10;</code>
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subjects = 10;</code>
      */
-    protected $subject = null;
+    protected $subjects = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.Claims claims = 11;</code>
+     */
+    protected $claims = null;
     /**
      * Generated from protobuf field <code>string reason = 20;</code>
      */
@@ -51,8 +55,9 @@ class Event extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $type
-     *           a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
-     *     @type \Eolymp\Auth\SecurityEvent\Subject $subject
+     *           a URI of the event type: https://schemas.openid.net/secevent/(risc|caep)/event-type/[...]
+     *     @type \Eolymp\Auth\SecurityEvent\Subject $subjects
+     *     @type \Eolymp\Auth\Claims $claims
      *     @type string $reason
      *     @type string $state
      *     @type string $token
@@ -66,7 +71,7 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
+     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep)/event-type/[...]
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @return string
@@ -77,7 +82,7 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
+     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep)/event-type/[...]
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @param string $var
@@ -92,33 +97,65 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subject = 10;</code>
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subjects = 10;</code>
      * @return \Eolymp\Auth\SecurityEvent\Subject|null
      */
-    public function getSubject()
+    public function getSubjects()
     {
-        return $this->subject;
+        return $this->subjects;
     }
 
-    public function hasSubject()
+    public function hasSubjects()
     {
-        return isset($this->subject);
+        return isset($this->subjects);
     }
 
-    public function clearSubject()
+    public function clearSubjects()
     {
-        unset($this->subject);
+        unset($this->subjects);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subject = 10;</code>
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.Subject subjects = 10;</code>
      * @param \Eolymp\Auth\SecurityEvent\Subject $var
      * @return $this
      */
-    public function setSubject($var)
+    public function setSubjects($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Auth\SecurityEvent\Subject::class);
-        $this->subject = $var;
+        $this->subjects = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.Claims claims = 11;</code>
+     * @return \Eolymp\Auth\Claims|null
+     */
+    public function getClaims()
+    {
+        return $this->claims;
+    }
+
+    public function hasClaims()
+    {
+        return isset($this->claims);
+    }
+
+    public function clearClaims()
+    {
+        unset($this->claims);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.Claims claims = 11;</code>
+     * @param \Eolymp\Auth\Claims $var
+     * @return $this
+     */
+    public function setClaims($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Auth\Claims::class);
+        $this->claims = $var;
 
         return $this;
     }
