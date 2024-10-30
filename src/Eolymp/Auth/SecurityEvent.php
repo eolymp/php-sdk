@@ -22,9 +22,9 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
      */
     protected $aud = '';
     /**
-     * Generated from protobuf field <code>string iat = 3;</code>
+     * Generated from protobuf field <code>int64 iat = 3;</code>
      */
-    protected $iat = '';
+    protected $iat = 0;
     /**
      * Generated from protobuf field <code>string jti = 4;</code>
      */
@@ -42,7 +42,7 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type string $iss
      *     @type string $aud
-     *     @type string $iat
+     *     @type int|string $iat
      *     @type string $jti
      *     @type array<\Eolymp\Auth\SecurityEvent\Event>|\Google\Protobuf\Internal\RepeatedField $events
      * }
@@ -97,8 +97,8 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string iat = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>int64 iat = 3;</code>
+     * @return int|string
      */
     public function getIat()
     {
@@ -106,13 +106,13 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string iat = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int64 iat = 3;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setIat($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt64($var);
         $this->iat = $var;
 
         return $this;
