@@ -30,6 +30,10 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
      */
     protected $jti = '';
     /**
+     * Generated from protobuf field <code>string sid = 5;</code>
+     */
+    protected $sid = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.auth.SecurityEvent.Event events = 10;</code>
      */
     private $events;
@@ -44,6 +48,7 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
      *     @type string $aud
      *     @type int|string $iat
      *     @type string $jti
+     *     @type string $sid
      *     @type array<\Eolymp\Auth\SecurityEvent\Event>|\Google\Protobuf\Internal\RepeatedField $events
      * }
      */
@@ -136,6 +141,28 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->jti = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string sid = 5;</code>
+     * @return string
+     */
+    public function getSid()
+    {
+        return $this->sid;
+    }
+
+    /**
+     * Generated from protobuf field <code>string sid = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSid($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sid = $var;
 
         return $this;
     }

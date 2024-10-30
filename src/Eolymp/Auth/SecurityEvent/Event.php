@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Event extends \Google\Protobuf\Internal\Message
 {
     /**
-     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...]
+     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...] or http://schemas.openid.net/event/backchannel-logout
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
@@ -55,7 +55,7 @@ class Event extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $type
-     *           a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...]
+     *           a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...] or http://schemas.openid.net/event/backchannel-logout
      *     @type \Eolymp\Auth\SecurityEvent\Subject $subject
      *     @type \Eolymp\Auth\Claims $claims
      *     @type string $reason
@@ -71,7 +71,7 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...]
+     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...] or http://schemas.openid.net/event/backchannel-logout
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @return string
@@ -82,7 +82,7 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...]
+     * a URI of the event type: https://schemas.openid.net/secevent/(risc|caep|oauth)/event-type/[...] or http://schemas.openid.net/event/backchannel-logout
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @param string $var
