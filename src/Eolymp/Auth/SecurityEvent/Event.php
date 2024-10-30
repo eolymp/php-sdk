@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class Event extends \Google\Protobuf\Internal\Message
 {
     /**
+     * a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
+     *
      * Generated from protobuf field <code>string type = 1;</code>
      */
     protected $type = '';
@@ -49,6 +51,7 @@ class Event extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $type
+     *           a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
      *     @type \Eolymp\Auth\SecurityEvent\Subject $subject
      *     @type string $reason
      *     @type string $state
@@ -63,6 +66,8 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
+     *
      * Generated from protobuf field <code>string type = 1;</code>
      * @return string
      */
@@ -72,6 +77,8 @@ class Event extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * a URI of the event type: https://schemas.openid.net/secevent/risc/event-type/[...]
+     *
      * Generated from protobuf field <code>string type = 1;</code>
      * @param string $var
      * @return $this
