@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.ListRuntimeInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.ListRuntimesInput</code>
  */
-class ListRuntimeInput extends \Google\Protobuf\Internal\Message
+class ListRuntimesInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string problem_id = 1;</code>

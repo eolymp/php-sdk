@@ -169,22 +169,22 @@ class ProblemServiceClient {
     }
 
     /**
-     * @param ListRuntimeInput $input message
+     * @param ListRuntimesInput $input message
      * @param array $context request parameters
      *
-     * @return ListRuntimeOutput output message
+     * @return ListRuntimesOutput output message
      */
-    public function ListRuntime(ListRuntimeInput $input, array $context = [])
+    public function ListRuntimes(ListRuntimesInput $input, array $context = [])
     {
         $path = "/problems/".rawurlencode($input->getProblemId())."/runtime";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
 
-        $context['name'] = "eolymp.atlas.ProblemService/ListRuntime";
+        $context['name'] = "eolymp.atlas.ProblemService/ListRuntimes";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimeOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimesOutput::class, $context);
     }
 
 }
