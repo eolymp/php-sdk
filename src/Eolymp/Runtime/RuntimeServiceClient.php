@@ -30,7 +30,7 @@ class RuntimeServiceClient {
      */
     public function DescribeLanguage(DescribeLanguageInput $input, array $context = [])
     {
-        $path = "/exec/languages/".rawurlencode($input->getLanguageId());
+        $path = "/languages/".rawurlencode($input->getLanguageId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setLanguageId("");
@@ -49,7 +49,7 @@ class RuntimeServiceClient {
      */
     public function ListLanguages(ListLanguagesInput $input, array $context = [])
     {
-        $path = "/exec/languages";
+        $path = "/languages";
 
         $context['name'] = "eolymp.runtime.RuntimeService/ListLanguages";
         $context['path'] = $path;
@@ -65,7 +65,7 @@ class RuntimeServiceClient {
      */
     public function DescribeRuntime(DescribeRuntimeInput $input, array $context = [])
     {
-        $path = "/exec/runtime/".rawurlencode($input->getRuntimeId());
+        $path = "/runtime/".rawurlencode($input->getRuntimeId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRuntimeId("");
@@ -84,7 +84,7 @@ class RuntimeServiceClient {
      */
     public function ListRuntimes(ListRuntimesInput $input, array $context = [])
     {
-        $path = "/exec/runtime";
+        $path = "/runtime";
 
         $context['name'] = "eolymp.runtime.RuntimeService/ListRuntimes";
         $context['path'] = $path;
