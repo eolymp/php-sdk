@@ -100,7 +100,7 @@ class RuntimeServiceClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        $path = "/exec/runtime/".rawurlencode($input->getRuntimeId())."/template";
+        $path = "/runtime/".rawurlencode($input->getRuntimeId())."/template";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setRuntimeId("");
