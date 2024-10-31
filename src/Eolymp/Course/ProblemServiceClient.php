@@ -175,4 +175,20 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, WatchRunOutput::class, $context);
     }
 
+    /**
+     * @param ListRuntimesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListRuntimesOutput output message
+     */
+    public function ListRuntimes(ListRuntimesInput $input, array $context = [])
+    {
+        $path = "/runtime";
+
+        $context['name'] = "eolymp.course.ProblemService/ListRuntimes";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimesOutput::class, $context);
+    }
+
 }
