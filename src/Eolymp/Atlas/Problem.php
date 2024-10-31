@@ -40,12 +40,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $visible = false;
     /**
-     * Problem is only accessible to users who were specifically granted access to it.
-     *
-     * Generated from protobuf field <code>bool private = 12;</code>
-     */
-    protected $private = false;
-    /**
      * For imported problems, provides the source from where the problem is imported and synchronized.
      *
      * Generated from protobuf field <code>string origin = 13;</code>
@@ -57,6 +51,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string topics = 20;</code>
      */
     private $topics;
+    /**
+     * Problem runtimes, if empty all runtimes are allowed.
+     *
+     * Generated from protobuf field <code>repeated string allowed_runtimes = 22;</code>
+     */
+    private $allowed_runtimes;
     /**
      * Total score
      *
@@ -114,12 +114,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Index in the public problem catalog.
      *     @type bool $visible
      *           Problem is visible to users in public catalog.
-     *     @type bool $private
-     *           Problem is only accessible to users who were specifically granted access to it.
      *     @type string $origin
      *           For imported problems, provides the source from where the problem is imported and synchronized.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $allowed_runtimes
+     *           Problem runtimes, if empty all runtimes are allowed.
      *     @type float $score
      *           Total score
      *     @type \Eolymp\Atlas\Problem\Constraints $constraints
@@ -263,32 +263,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem is only accessible to users who were specifically granted access to it.
-     *
-     * Generated from protobuf field <code>bool private = 12;</code>
-     * @return bool
-     */
-    public function getPrivate()
-    {
-        return $this->private;
-    }
-
-    /**
-     * Problem is only accessible to users who were specifically granted access to it.
-     *
-     * Generated from protobuf field <code>bool private = 12;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setPrivate($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->private = $var;
-
-        return $this;
-    }
-
-    /**
      * For imported problems, provides the source from where the problem is imported and synchronized.
      *
      * Generated from protobuf field <code>string origin = 13;</code>
@@ -336,6 +310,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Problem runtimes, if empty all runtimes are allowed.
+     *
+     * Generated from protobuf field <code>repeated string allowed_runtimes = 22;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAllowedRuntimes()
+    {
+        return $this->allowed_runtimes;
+    }
+
+    /**
+     * Problem runtimes, if empty all runtimes are allowed.
+     *
+     * Generated from protobuf field <code>repeated string allowed_runtimes = 22;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAllowedRuntimes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->allowed_runtimes = $arr;
 
         return $this;
     }

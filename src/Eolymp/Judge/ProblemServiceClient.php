@@ -234,4 +234,23 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListExamplesOutput::class, $context);
     }
 
+    /**
+     * @param ListRuntimeInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListRuntimeOutput output message
+     */
+    public function ListRuntime(ListRuntimeInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/runtime";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.ProblemService/ListRuntime";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimeOutput::class, $context);
+    }
+
 }
