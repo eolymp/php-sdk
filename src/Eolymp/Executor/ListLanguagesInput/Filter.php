@@ -25,10 +25,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool deprecated = 3;</code>
      */
     private $deprecated;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 4;</code>
-     */
-    private $type;
 
     /**
      * Constructor.
@@ -39,7 +35,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $deprecated
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
      * }
      */
     public function __construct($data = NULL) {
@@ -109,28 +104,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->deprecated = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 4;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->type = $arr;
 
         return $this;
     }
