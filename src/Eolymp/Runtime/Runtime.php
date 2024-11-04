@@ -32,6 +32,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      */
     protected $version = '';
     /**
+     * Generated from protobuf field <code>.eolymp.runtime.Language.Type type = 4;</code>
+     */
+    protected $type = 0;
+    /**
      * Runtime friendly name (without language name), for example: Mono 5.20.
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -56,6 +60,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      *           Language identifier, for example: csharp
      *     @type string $version
      *           Runtime version, follows docker style version numbers, for example: 5.20.1-mono
+     *     @type int $type
      *     @type string $name
      *           Runtime friendly name (without language name), for example: Mono 5.20.
      *     @type bool $deprecated
@@ -141,6 +146,28 @@ class Runtime extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.runtime.Language.Type type = 4;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.runtime.Language.Type type = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Runtime\Language\Type::class);
+        $this->type = $var;
 
         return $this;
     }

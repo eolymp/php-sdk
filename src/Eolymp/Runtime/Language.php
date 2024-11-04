@@ -26,6 +26,10 @@ class Language extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * Generated from protobuf field <code>.eolymp.runtime.Language.Type type = 2;</code>
+     */
+    protected $type = 0;
+    /**
      * Deprecated, means this language should be avoided
      *
      * Generated from protobuf field <code>bool deprecated = 11;</code>
@@ -42,6 +46,7 @@ class Language extends \Google\Protobuf\Internal\Message
      *           Language unique identifier
      *     @type string $name
      *           Human friendly name
+     *     @type int $type
      *     @type bool $deprecated
      *           Deprecated, means this language should be avoided
      * }
@@ -99,6 +104,28 @@ class Language extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.runtime.Language.Type type = 2;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.runtime.Language.Type type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Runtime\Language\Type::class);
+        $this->type = $var;
 
         return $this;
     }

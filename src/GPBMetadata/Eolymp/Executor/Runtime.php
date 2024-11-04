@@ -14,17 +14,15 @@ class Runtime
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Executor\Language::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ô
-eolymp/executor/runtime.protoeolymp.executor"„
+Å
+eolymp/executor/runtime.protoeolymp.executor"V
 Runtime
 
 id (	
 lang (	
-version (	,
-type (2.eolymp.executor.Language.Type
+version (	
 name
  (	
 
