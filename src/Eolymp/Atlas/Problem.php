@@ -24,6 +24,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 23;</code>
+     */
+    protected $type = 0;
+    /**
      * Generated from protobuf field <code>map<string, string> links = 683;</code>
      */
     private $links;
@@ -51,12 +55,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string topics = 20;</code>
      */
     private $topics;
-    /**
-     * Problem runtimes, if empty all runtimes are allowed.
-     *
-     * Generated from protobuf field <code>repeated string allowed_runtimes = 22;</code>
-     */
-    private $allowed_runtimes;
     /**
      * Total score
      *
@@ -109,6 +107,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Unique identifier.
      *     @type string $url
+     *     @type int $type
      *     @type array|\Google\Protobuf\Internal\MapField $links
      *     @type int $number
      *           Index in the public problem catalog.
@@ -118,8 +117,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           For imported problems, provides the source from where the problem is imported and synchronized.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $allowed_runtimes
-     *           Problem runtimes, if empty all runtimes are allowed.
      *     @type float $score
      *           Total score
      *     @type \Eolymp\Atlas\Problem\Constraints $constraints
@@ -184,6 +181,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 23;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 23;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
+        $this->type = $var;
 
         return $this;
     }
@@ -310,32 +329,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Problem runtimes, if empty all runtimes are allowed.
-     *
-     * Generated from protobuf field <code>repeated string allowed_runtimes = 22;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAllowedRuntimes()
-    {
-        return $this->allowed_runtimes;
-    }
-
-    /**
-     * Problem runtimes, if empty all runtimes are allowed.
-     *
-     * Generated from protobuf field <code>repeated string allowed_runtimes = 22;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAllowedRuntimes($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->allowed_runtimes = $arr;
 
         return $this;
     }

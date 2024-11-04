@@ -36,9 +36,9 @@ class Patch
      */
     const ORIGIN = 5;
     /**
-     * Generated from protobuf enum <code>ALLOWED_RUNTIMES = 6;</code>
+     * Generated from protobuf enum <code>TYPE = 6;</code>
      */
-    const ALLOWED_RUNTIMES = 6;
+    const TYPE = 6;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -47,7 +47,7 @@ class Patch
         self::TOPICS => 'TOPICS',
         self::DIFFICULTY => 'DIFFICULTY',
         self::ORIGIN => 'ORIGIN',
-        self::ALLOWED_RUNTIMES => 'ALLOWED_RUNTIMES',
+        self::TYPE => 'TYPE',
     ];
 
     public static function name($value)
