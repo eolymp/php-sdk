@@ -23,6 +23,7 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Auth\SecurityEvent\SessionClosed $session_closed
      *     @type \Eolymp\Auth\SecurityEvent\TokenRevoked $token_revoked
+     *     @type \Eolymp\Auth\SecurityEvent\AccountPurged $account_purged
      * }
      */
     public function __construct($data = NULL) {
@@ -80,6 +81,33 @@ class SecurityEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Auth\SecurityEvent\TokenRevoked::class);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.AccountPurged account_purged = 3;</code>
+     * @return \Eolymp\Auth\SecurityEvent\AccountPurged|null
+     */
+    public function getAccountPurged()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasAccountPurged()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.SecurityEvent.AccountPurged account_purged = 3;</code>
+     * @param \Eolymp\Auth\SecurityEvent\AccountPurged $var
+     * @return $this
+     */
+    public function setAccountPurged($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Auth\SecurityEvent\AccountPurged::class);
+        $this->writeOneof(3, $var);
 
         return $this;
     }
