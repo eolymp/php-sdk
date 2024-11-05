@@ -26,6 +26,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $member_id;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID material_id = 11;</code>
+     */
+    private $material_id;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp submitted_at = 4;</code>
      */
     private $submitted_at;
@@ -59,6 +63,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $user_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $member_id
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $material_id
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $submitted_at
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $runtime
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
@@ -134,6 +139,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->member_id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID material_id = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMaterialId()
+    {
+        return $this->material_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID material_id = 11;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMaterialId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->material_id = $arr;
 
         return $this;
     }
