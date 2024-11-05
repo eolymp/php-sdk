@@ -20,10 +20,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      */
     protected $after = '';
     /**
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     */
-    protected $offset = 0;
-    /**
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
     protected $size = 0;
@@ -42,7 +38,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $after
      *           pagination
-     *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Course\ListSubmissionsInput\Filter $filters
      *           data filters
@@ -75,28 +70,6 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->after = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     * @return int
-     */
-    public function getOffset()
-    {
-        return $this->offset;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 offset = 10;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setOffset($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->offset = $var;
 
         return $this;
     }
