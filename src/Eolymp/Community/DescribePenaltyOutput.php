@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DescribePenaltyOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 1;</code>
+     */
+    protected $penalty = null;
 
     /**
      * Constructor.
@@ -20,11 +24,44 @@ class DescribePenaltyOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Eolymp\Community\Penalty $penalty
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\PenaltyService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 1;</code>
+     * @return \Eolymp\Community\Penalty|null
+     */
+    public function getPenalty()
+    {
+        return $this->penalty;
+    }
+
+    public function hasPenalty()
+    {
+        return isset($this->penalty);
+    }
+
+    public function clearPenalty()
+    {
+        unset($this->penalty);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 1;</code>
+     * @param \Eolymp\Community\Penalty $var
+     * @return $this
+     */
+    public function setPenalty($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\Penalty::class);
+        $this->penalty = $var;
+
+        return $this;
     }
 
 }
