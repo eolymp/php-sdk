@@ -14,26 +14,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class Statement extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unique identifier, assigned when statement is created. Keep empty when creating new statement.
-     *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * Statement locale code, should consist of two lowercase latin letters.
-     *
      * Generated from protobuf field <code>string locale = 3;</code>
      */
     protected $locale = '';
     /**
-     * Statement title.
+     * if true means the statement was created automatically (probably translation from another language)
      *
+     * Generated from protobuf field <code>string automatic = 8;</code>
+     */
+    protected $automatic = '';
+    /**
      * Generated from protobuf field <code>string title = 4;</code>
      */
     protected $title = '';
     /**
-     * Statement content.
-     *
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      */
     protected $content = null;
@@ -63,13 +61,11 @@ class Statement extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           Unique identifier, assigned when statement is created. Keep empty when creating new statement.
      *     @type string $locale
-     *           Statement locale code, should consist of two lowercase latin letters.
+     *     @type string $automatic
+     *           if true means the statement was created automatically (probably translation from another language)
      *     @type string $title
-     *           Statement title.
      *     @type \Eolymp\Ecm\Content $content
-     *           Statement content.
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
      *     @type string $author
@@ -84,8 +80,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier, assigned when statement is created. Keep empty when creating new statement.
-     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
@@ -95,8 +89,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier, assigned when statement is created. Keep empty when creating new statement.
-     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
@@ -110,8 +102,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement locale code, should consist of two lowercase latin letters.
-     *
      * Generated from protobuf field <code>string locale = 3;</code>
      * @return string
      */
@@ -121,8 +111,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement locale code, should consist of two lowercase latin letters.
-     *
      * Generated from protobuf field <code>string locale = 3;</code>
      * @param string $var
      * @return $this
@@ -136,8 +124,32 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement title.
+     * if true means the statement was created automatically (probably translation from another language)
      *
+     * Generated from protobuf field <code>string automatic = 8;</code>
+     * @return string
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * if true means the statement was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>string automatic = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string title = 4;</code>
      * @return string
      */
@@ -147,8 +159,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement title.
-     *
      * Generated from protobuf field <code>string title = 4;</code>
      * @param string $var
      * @return $this
@@ -162,8 +172,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content.
-     *
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      * @return \Eolymp\Ecm\Content|null
      */
@@ -183,8 +191,6 @@ class Statement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content.
-     *
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this

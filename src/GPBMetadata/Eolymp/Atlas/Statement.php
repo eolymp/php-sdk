@@ -17,12 +17,13 @@ class Statement
         \GPBMetadata\Eolymp\Ecm\Content::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ù
-eolymp/atlas/statement.protoeolymp.atlas"“
+Œ
+eolymp/atlas/statement.protoeolymp.atlas"¦
 	Statement
 
 id (	
-locale (	
+locale (	
+	automatic (	
 title (	$
 content (2.eolymp.ecm.Content
 download_link (	

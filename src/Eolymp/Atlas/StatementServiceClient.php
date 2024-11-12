@@ -151,4 +151,20 @@ class StatementServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListStatementsOutput::class, $context);
     }
 
+    /**
+     * @param TranslateStatementsInput $input message
+     * @param array $context request parameters
+     *
+     * @return TranslateStatementsOutput output message
+     */
+    public function TranslateStatements(TranslateStatementsInput $input, array $context = [])
+    {
+        $path = "/statements:translate";
+
+        $context['name'] = "eolymp.atlas.StatementService/TranslateStatements";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateStatementsOutput::class, $context);
+    }
+
 }
