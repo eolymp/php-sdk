@@ -17,16 +17,19 @@ class Version
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-é
-eolymp/atlas/version.protoeolymp.atlas"…
-Version
+…
+eolymp/atlas/version.protoeolymp.atlas"¡
+Version
+
+id (	
 number (.
 
 created_at (2.google.protobuf.Timestamp
 
 created_by (	
 	change_op (	
-change_path (	B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+change_path (	
+cursord (	B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

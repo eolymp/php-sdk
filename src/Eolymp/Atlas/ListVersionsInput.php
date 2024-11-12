@@ -28,6 +28,10 @@ class ListVersionsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
+     * Generated from protobuf field <code>string after = 12;</code>
+     */
+    protected $after = '';
+    /**
      * data filters
      *
      * Generated from protobuf field <code>.eolymp.atlas.ListVersionsInput.Filter filters = 40;</code>
@@ -44,6 +48,7 @@ class ListVersionsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
+     *     @type string $after
      *     @type \Eolymp\Atlas\ListVersionsInput\Filter $filters
      *           data filters
      * }
@@ -119,6 +124,28 @@ class ListVersionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string after = 12;</code>
+     * @return string
+     */
+    public function getAfter()
+    {
+        return $this->after;
+    }
+
+    /**
+     * Generated from protobuf field <code>string after = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAfter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->after = $var;
 
         return $this;
     }

@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Version extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string id = 6;</code>
+     */
+    protected $id = '';
+    /**
      * Generated from protobuf field <code>uint32 number = 1;</code>
      */
     protected $number = 0;
@@ -33,6 +37,10 @@ class Version extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string change_path = 5;</code>
      */
     protected $change_path = '';
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     */
+    protected $cursor = '';
 
     /**
      * Constructor.
@@ -40,16 +48,40 @@ class Version extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type int $number
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type string $created_by
      *     @type string $change_op
      *     @type string $change_path
+     *     @type string $cursor
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Version::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 6;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
     }
 
     /**
@@ -168,6 +200,28 @@ class Version extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->change_path = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @return string
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cursor = $var;
 
         return $this;
     }
