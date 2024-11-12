@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class TranslateStatementsOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string job_id = 1;</code>
+     */
+    protected $job_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class TranslateStatementsOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $job_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\StatementService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string job_id = 1;</code>
+     * @return string
+     */
+    public function getJobId()
+    {
+        return $this->job_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string job_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJobId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->job_id = $var;
+
+        return $this;
     }
 
 }

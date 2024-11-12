@@ -24,9 +24,9 @@ class Statement extends \Google\Protobuf\Internal\Message
     /**
      * if true means the statement was created automatically (probably translation from another language)
      *
-     * Generated from protobuf field <code>string automatic = 8;</code>
+     * Generated from protobuf field <code>bool automatic = 8;</code>
      */
-    protected $automatic = '';
+    protected $automatic = false;
     /**
      * Generated from protobuf field <code>string title = 4;</code>
      */
@@ -62,7 +62,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $locale
-     *     @type string $automatic
+     *     @type bool $automatic
      *           if true means the statement was created automatically (probably translation from another language)
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
@@ -126,8 +126,8 @@ class Statement extends \Google\Protobuf\Internal\Message
     /**
      * if true means the statement was created automatically (probably translation from another language)
      *
-     * Generated from protobuf field <code>string automatic = 8;</code>
-     * @return string
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @return bool
      */
     public function getAutomatic()
     {
@@ -137,13 +137,13 @@ class Statement extends \Google\Protobuf\Internal\Message
     /**
      * if true means the statement was created automatically (probably translation from another language)
      *
-     * Generated from protobuf field <code>string automatic = 8;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @param bool $var
      * @return $this
      */
     public function setAutomatic($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkBool($var);
         $this->automatic = $var;
 
         return $this;

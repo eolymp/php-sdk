@@ -23,7 +23,7 @@ class Statement
 
 id (	
 locale (	
-	automatic (	
+	automatic (
 title (	$
 content (2.eolymp.ecm.Content
 download_link (	
