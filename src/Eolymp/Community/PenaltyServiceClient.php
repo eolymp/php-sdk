@@ -58,22 +58,22 @@ class PenaltyServiceClient {
     }
 
     /**
-     * @param CancelPenaltyInput $input message
+     * @param DeletePenaltyInput $input message
      * @param array $context request parameters
      *
-     * @return CancelPenaltyOutput output message
+     * @return DeletePenaltyOutput output message
      */
-    public function CancelPenalty(CancelPenaltyInput $input, array $context = [])
+    public function DeletePenalty(DeletePenaltyInput $input, array $context = [])
     {
         $path = "/penalties/".rawurlencode($input->getPenaltyId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setPenaltyId("");
 
-        $context['name'] = "eolymp.community.PenaltyService/CancelPenalty";
+        $context['name'] = "eolymp.community.PenaltyService/DeletePenalty";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, CancelPenaltyOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeletePenaltyOutput::class, $context);
     }
 
     /**

@@ -22,9 +22,9 @@ class Penalty extends \Google\Protobuf\Internal\Message
      */
     protected $summary = '';
     /**
-     * Generated from protobuf field <code>string description = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
      */
-    protected $description = '';
+    protected $description = null;
     /**
      * Generated from protobuf field <code>repeated string scope = 20;</code>
      */
@@ -50,7 +50,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $summary
-     *     @type string $description
+     *     @type \Eolymp\Ecm\Content $description
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $expires_at
@@ -107,22 +107,32 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string description = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getDescription()
     {
         return $this->description;
     }
 
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
+    }
+
     /**
-     * Generated from protobuf field <code>string description = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setDescription($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
 
         return $this;
