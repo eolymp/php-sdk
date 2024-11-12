@@ -22,7 +22,11 @@ class Penalty extends \Google\Protobuf\Internal\Message
      */
     protected $summary = '';
     /**
-     * Generated from protobuf field <code>repeated string scope = 3;</code>
+     * Generated from protobuf field <code>string description = 3;</code>
+     */
+    protected $description = '';
+    /**
+     * Generated from protobuf field <code>repeated string scope = 20;</code>
      */
     private $scope;
     /**
@@ -33,6 +37,10 @@ class Penalty extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
      */
     protected $expires_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     */
+    protected $cancelled_at = null;
 
     /**
      * Constructor.
@@ -42,9 +50,11 @@ class Penalty extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $summary
+     *     @type string $description
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $expires_at
+     *     @type \Google\Protobuf\Timestamp $cancelled_at
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +107,29 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string scope = 3;</code>
+     * Generated from protobuf field <code>string description = 3;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Generated from protobuf field <code>string description = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string scope = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getScope()
@@ -106,7 +138,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string scope = 3;</code>
+     * Generated from protobuf field <code>repeated string scope = 20;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -178,6 +210,38 @@ class Penalty extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expires_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCancelledAt()
+    {
+        return $this->cancelled_at;
+    }
+
+    public function hasCancelledAt()
+    {
+        return isset($this->cancelled_at);
+    }
+
+    public function clearCancelledAt()
+    {
+        unset($this->cancelled_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCancelledAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->cancelled_at = $var;
 
         return $this;
     }

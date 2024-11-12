@@ -39,6 +39,25 @@ class PenaltyServiceClient {
     }
 
     /**
+     * @param UpdatePenaltyInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePenaltyOutput output message
+     */
+    public function UpdatePenalty(UpdatePenaltyInput $input, array $context = [])
+    {
+        $path = "/penalties/".rawurlencode($input->getPenaltyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPenaltyId("");
+
+        $context['name'] = "eolymp.community.PenaltyService/UpdatePenalty";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdatePenaltyOutput::class, $context);
+    }
+
+    /**
      * @param CancelPenaltyInput $input message
      * @param array $context request parameters
      *
