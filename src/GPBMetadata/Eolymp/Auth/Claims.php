@@ -16,8 +16,8 @@ class Claims
         }
         $pool->internalAddGeneratedFile(
             '
-Š
-eolymp/auth/claims.protoeolymp.auth"«
+ 
+eolymp/auth/claims.protoeolymp.auth"Á
 Claims
 idè (	
 issuer (	
@@ -36,7 +36,8 @@ session_id (	
 birthday< (	
 minor= (
 countryF (	
-preferred_runtimeZ (	B+Z)github.com/eolymp/go-sdk/eolymp/auth;authbproto3'
+preferred_runtimeZ (	
+restrictionsd (	B+Z)github.com/eolymp/go-sdk/eolymp/auth;authbproto3'
         , true);
 
         static::$is_initialized = true;

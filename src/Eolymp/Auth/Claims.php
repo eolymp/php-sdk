@@ -109,6 +109,12 @@ class Claims extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string preferred_runtime = 90;</code>
      */
     protected $preferred_runtime = '';
+    /**
+     * user's restrictions
+     *
+     * Generated from protobuf field <code>string restrictions = 100;</code>
+     */
+    protected $restrictions = '';
 
     /**
      * Constructor.
@@ -148,6 +154,8 @@ class Claims extends \Google\Protobuf\Internal\Message
      *           country where the user is from
      *     @type string $preferred_runtime
      *           user's preferred runtime (programming language, compiler) at Eolymp
+     *     @type string $restrictions
+     *           user's restrictions
      * }
      */
     public function __construct($data = NULL) {
@@ -567,6 +575,32 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->preferred_runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * user's restrictions
+     *
+     * Generated from protobuf field <code>string restrictions = 100;</code>
+     * @return string
+     */
+    public function getRestrictions()
+    {
+        return $this->restrictions;
+    }
+
+    /**
+     * user's restrictions
+     *
+     * Generated from protobuf field <code>string restrictions = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRestrictions($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->restrictions = $var;
 
         return $this;
     }
