@@ -46,6 +46,12 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $public = false;
     /**
+     * marked as featured (shown on home page)
+     *
+     * Generated from protobuf field <code>bool featured = 9;</code>
+     */
+    protected $featured = false;
+    /**
      * moderation status
      *
      * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
@@ -73,6 +79,18 @@ class Post extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 102;</code>
      */
     protected $locale = '';
+    /**
+     * automatically populated from content
+     *
+     * Generated from protobuf field <code>string title = 103;</code>
+     */
+    protected $title = '';
+    /**
+     * automatically populated from content
+     *
+     * Generated from protobuf field <code>string image_url = 104;</code>
+     */
+    protected $image_url = '';
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 101;</code>
      */
@@ -127,6 +145,8 @@ class Post extends \Google\Protobuf\Internal\Message
      *           marked as draft and only shown to author
      *     @type bool $public
      *           visible and available to everyone (ie. published and passed moderation)
+     *     @type bool $featured
+     *           marked as featured (shown on home page)
      *     @type int $moderation
      *           moderation status
      *     @type string $user_id
@@ -137,6 +157,10 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $type_id
      *           optionally, post type from PostTypeService
      *     @type string $locale
+     *     @type string $title
+     *           automatically populated from content
+     *     @type string $image_url
+     *           automatically populated from content
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Eolymp\Discussion\Post\Preview $preview
      *           preview is generated automatically from the content
@@ -299,6 +323,32 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->public = $var;
+
+        return $this;
+    }
+
+    /**
+     * marked as featured (shown on home page)
+     *
+     * Generated from protobuf field <code>bool featured = 9;</code>
+     * @return bool
+     */
+    public function getFeatured()
+    {
+        return $this->featured;
+    }
+
+    /**
+     * marked as featured (shown on home page)
+     *
+     * Generated from protobuf field <code>bool featured = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFeatured($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->featured = $var;
 
         return $this;
     }
@@ -523,6 +573,58 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * automatically populated from content
+     *
+     * Generated from protobuf field <code>string title = 103;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * automatically populated from content
+     *
+     * Generated from protobuf field <code>string title = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * automatically populated from content
+     *
+     * Generated from protobuf field <code>string image_url = 104;</code>
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->image_url;
+    }
+
+    /**
+     * automatically populated from content
+     *
+     * Generated from protobuf field <code>string image_url = 104;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImageUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image_url = $var;
 
         return $this;
     }

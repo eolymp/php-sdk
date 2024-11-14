@@ -93,6 +93,44 @@ class PostServiceClient {
     }
 
     /**
+     * @param PublishPostInput $input message
+     * @param array $context request parameters
+     *
+     * @return PublishPostOutput output message
+     */
+    public function PublishPost(PublishPostInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/publish";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+
+        $context['name'] = "eolymp.discussion.PostService/PublishPost";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PublishPostOutput::class, $context);
+    }
+
+    /**
+     * @param UnpublishPostInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnpublishPostOutput output message
+     */
+    public function UnpublishPost(UnpublishPostInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/publish";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+
+        $context['name'] = "eolymp.discussion.PostService/UnpublishPost";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnpublishPostOutput::class, $context);
+    }
+
+    /**
      * @param DeletePostInput $input message
      * @param array $context request parameters
      *
