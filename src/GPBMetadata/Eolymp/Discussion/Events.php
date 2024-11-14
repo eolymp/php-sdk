@@ -18,11 +18,8 @@ class Events
         \GPBMetadata\Eolymp\Discussion\Post::initOnce();
         $pool->internalAddGeneratedFile(
             '
-•
-eolymp/discussion/events.protoeolymp.discussioneolymp/discussion/post.proto"l
-MessageChangedEvent*
-before (2.eolymp.discussion.Message)
-after (2.eolymp.discussion.Message"c
+§
+eolymp/discussion/events.protoeolymp.discussioneolymp/discussion/post.proto"c
 PostChangedEvent\'
 before (2.eolymp.discussion.Post&
 after (2.eolymp.discussion.Post"­
