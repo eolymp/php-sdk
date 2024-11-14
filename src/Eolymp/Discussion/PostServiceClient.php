@@ -131,6 +131,25 @@ class PostServiceClient {
     }
 
     /**
+     * @param ModeratePostInput $input message
+     * @param array $context request parameters
+     *
+     * @return ModeratePostOutput output message
+     */
+    public function ModeratePost(ModeratePostInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/moderate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+
+        $context['name'] = "eolymp.discussion.PostService/ModeratePost";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ModeratePostOutput::class, $context);
+    }
+
+    /**
      * @param DeletePostInput $input message
      * @param array $context request parameters
      *
