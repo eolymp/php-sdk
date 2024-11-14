@@ -52,6 +52,12 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $featured = false;
     /**
+     * pinned on top of the page
+     *
+     * Generated from protobuf field <code>bool pinned = 13;</code>
+     */
+    protected $pinned = false;
+    /**
      * moderation status
      *
      * Generated from protobuf field <code>.eolymp.discussion.Post.Moderation moderation = 5;</code>
@@ -147,6 +153,8 @@ class Post extends \Google\Protobuf\Internal\Message
      *           visible and available to everyone (ie. published and passed moderation)
      *     @type bool $featured
      *           marked as featured (shown on home page)
+     *     @type bool $pinned
+     *           pinned on top of the page
      *     @type int $moderation
      *           moderation status
      *     @type string $user_id
@@ -349,6 +357,32 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->featured = $var;
+
+        return $this;
+    }
+
+    /**
+     * pinned on top of the page
+     *
+     * Generated from protobuf field <code>bool pinned = 13;</code>
+     * @return bool
+     */
+    public function getPinned()
+    {
+        return $this->pinned;
+    }
+
+    /**
+     * pinned on top of the page
+     *
+     * Generated from protobuf field <code>bool pinned = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPinned($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->pinned = $var;
 
         return $this;
     }

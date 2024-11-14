@@ -40,6 +40,10 @@ class Patch
      */
     const FEATURED = 7;
     /**
+     * Generated from protobuf enum <code>PINNED = 8;</code>
+     */
+    const PINNED = 8;
+    /**
      * Generated from protobuf enum <code>MODERATION = 6;</code>
      */
     const MODERATION = 6;
@@ -52,6 +56,7 @@ class Patch
         self::LOCALE => 'LOCALE',
         self::DRAFT => 'DRAFT',
         self::FEATURED => 'FEATURED',
+        self::PINNED => 'PINNED',
         self::MODERATION => 'MODERATION',
     ];
 
