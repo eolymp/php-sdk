@@ -16,10 +16,6 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
-     * Generated from protobuf field <code>string after = 12;</code>
-     */
-    protected $after = '';
-    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -30,6 +26,10 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.course.ListStudentsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -52,12 +52,12 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $after
-     *           pagination
      *     @type int $offset
+     *           pagination
      *     @type int $size
-     *     @type \Eolymp\Course\ListStudentsInput\Filter $filters
+     *     @type string $search
      *           data filters
+     *     @type \Eolymp\Course\ListStudentsInput\Filter $filters
      *     @type int $sort
      *     @type int $order
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
@@ -71,30 +71,6 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
-     * Generated from protobuf field <code>string after = 12;</code>
-     * @return string
-     */
-    public function getAfter()
-    {
-        return $this->after;
-    }
-
-    /**
-     * pagination
-     *
-     * Generated from protobuf field <code>string after = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAfter($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->after = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @return int
      */
@@ -104,6 +80,8 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * pagination
+     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @param int $var
      * @return $this
@@ -141,6 +119,30 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.course.ListStudentsInput.Filter filters = 40;</code>
      * @return \Eolymp\Course\ListStudentsInput\Filter|null
      */
@@ -160,8 +162,6 @@ class ListStudentsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * data filters
-     *
      * Generated from protobuf field <code>.eolymp.course.ListStudentsInput.Filter filters = 40;</code>
      * @param \Eolymp\Course\ListStudentsInput\Filter $var
      * @return $this

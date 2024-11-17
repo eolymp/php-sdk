@@ -26,6 +26,10 @@ class ListClassesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.course.ListClassesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -47,8 +51,9 @@ class ListClassesInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Course\ListClassesInput\Filter $filters
+     *     @type string $search
      *           data filters
+     *     @type \Eolymp\Course\ListClassesInput\Filter $filters
      *     @type int $sort
      *     @type int $order
      * }
@@ -109,6 +114,30 @@ class ListClassesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.course.ListClassesInput.Filter filters = 40;</code>
      * @return \Eolymp\Course\ListClassesInput\Filter|null
      */
@@ -128,8 +157,6 @@ class ListClassesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * data filters
-     *
      * Generated from protobuf field <code>.eolymp.course.ListClassesInput.Filter filters = 40;</code>
      * @param \Eolymp\Course\ListClassesInput\Filter $var
      * @return $this

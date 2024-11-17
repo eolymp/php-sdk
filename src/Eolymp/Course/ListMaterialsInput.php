@@ -24,6 +24,10 @@ class ListMaterialsInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -58,8 +62,9 @@ class ListMaterialsInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $module_id
      *     @type string $member_id
-     *     @type int $offset
+     *     @type string $search
      *           pagination
+     *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Course\ListMaterialsInput\Filter $filters
      *           data filters
@@ -120,6 +125,30 @@ class ListMaterialsInput extends \Google\Protobuf\Internal\Message
     /**
      * pagination
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * pagination
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @return int
      */
@@ -129,8 +158,6 @@ class ListMaterialsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * pagination
-     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @param int $var
      * @return $this

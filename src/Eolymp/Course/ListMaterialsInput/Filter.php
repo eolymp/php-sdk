@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
-     */
-    protected $query = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool graded = 4;</code>
      */
     private $graded;
@@ -32,7 +28,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $query
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $graded
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $weight
      * }
@@ -40,28 +35,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\MaterialService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string query = 1;</code>
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->query;
-    }
-
-    /**
-     * Generated from protobuf field <code>string query = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->query = $var;
-
-        return $this;
     }
 
     /**
