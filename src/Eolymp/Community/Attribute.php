@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Attribute extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string id = 4;</code>
+     */
+    protected $id = '';
+    /**
      * unique field identifier (should be unique within the form, not globally unique)
      *
      * Generated from protobuf field <code>string key = 1;</code>
@@ -31,12 +35,6 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string help = 3;</code>
      */
     protected $help = '';
-    /**
-     * deprecated, field localized data, such as label and help message
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
-     */
-    private $description;
     /**
      * type of the field
      *
@@ -112,14 +110,13 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type string $key
      *           unique field identifier (should be unique within the form, not globally unique)
      *     @type string $label
      *           label, normally displayed above the field
      *     @type string $help
      *           help message, normally displayed right below the field
-     *     @type array<\Eolymp\Community\Attribute\Description>|\Google\Protobuf\Internal\RepeatedField $description
-     *           deprecated, field localized data, such as label and help message
      *     @type int $type
      *           type of the field
      *     @type int $index
@@ -147,6 +144,28 @@ class Attribute extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Attribute::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 4;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
     }
 
     /**
@@ -223,32 +242,6 @@ class Attribute extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->help = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, field localized data, such as label and help message
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * deprecated, field localized data, such as label and help message
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Description description = 10;</code>
-     * @param array<\Eolymp\Community\Attribute\Description>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setDescription($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Attribute\Description::class);
-        $this->description = $arr;
 
         return $this;
     }

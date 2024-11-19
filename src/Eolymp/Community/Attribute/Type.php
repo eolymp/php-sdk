@@ -14,9 +14,9 @@ use UnexpectedValueException;
 class Type
 {
     /**
-     * Generated from protobuf enum <code>UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_TYPE = 0;</code>
      */
-    const UNKNOWN = 0;
+    const UNKNOWN_TYPE = 0;
     /**
      * Single line of text.
      * Validation:
@@ -123,7 +123,7 @@ class Type
      *  - max      - maximal file size in bytes
      *  - min      - minimal file size in bytes
      * Constraints:
-     *  - type:[mime-type]]
+     *  - type:[mime-type]
      *
      * Generated from protobuf enum <code>IMAGE = 11;</code>
      */
@@ -135,14 +135,14 @@ class Type
      *  - max      - maximal file size in bytes
      *  - min      - minimal file size in bytes
      * Constraints:
-     *  - type:[mime-type]]
+     *  - type:[mime-type]
      *
      * Generated from protobuf enum <code>FILE = 12;</code>
      */
     const FILE = 12;
 
     private static $valueToName = [
-        self::UNKNOWN => 'UNKNOWN',
+        self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::STRING => 'STRING',
         self::TEXT => 'TEXT',
         self::NUMBER => 'NUMBER',

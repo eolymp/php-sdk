@@ -12,11 +12,11 @@ use UnexpectedValueException;
 class Visibility
 {
     /**
-     * visible only to administrators
+     * unused
      *
-     * Generated from protobuf enum <code>INTERNAL = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_VISIBILITY = 0;</code>
      */
-    const INTERNAL = 0;
+    const UNKNOWN_VISIBILITY = 0;
     /**
      * visible only to administrators and member itself
      *
@@ -29,11 +29,18 @@ class Visibility
      * Generated from protobuf enum <code>PUBLIC = 2;</code>
      */
     const PBPUBLIC = 2;
+    /**
+     * visible only to administrators
+     *
+     * Generated from protobuf enum <code>INTERNAL = 3;</code>
+     */
+    const INTERNAL = 3;
 
     private static $valueToName = [
-        self::INTERNAL => 'INTERNAL',
+        self::UNKNOWN_VISIBILITY => 'UNKNOWN_VISIBILITY',
         self::PBPRIVATE => 'PRIVATE',
         self::PBPUBLIC => 'PUBLIC',
+        self::INTERNAL => 'INTERNAL',
     ];
 
     public static function name($value)
