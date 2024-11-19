@@ -18,6 +18,12 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra extra = 1123;</code>
      */
     private $extra;
@@ -29,6 +35,8 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
+     *     @type string $locale
+     *           load title and content in a specific locale
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -55,6 +63,32 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

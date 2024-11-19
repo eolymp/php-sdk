@@ -50,6 +50,14 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $origin = '';
     /**
+     * Generated from protobuf field <code>string title = 2;</code>
+     */
+    protected $title = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 3;</code>
+     */
+    protected $content = null;
+    /**
      * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
@@ -115,6 +123,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem is visible to users in public catalog.
      *     @type string $origin
      *           For imported problems, provides the source from where the problem is imported and synchronized.
+     *     @type string $title
+     *     @type \Eolymp\Ecm\Content $content
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
      *     @type float $score
@@ -303,6 +313,60 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->origin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string title = 2;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Generated from protobuf field <code>string title = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 3;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
 
         return $this;
     }

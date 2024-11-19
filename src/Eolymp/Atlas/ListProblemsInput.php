@@ -42,6 +42,12 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
      */
     protected $order = 0;
     /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra extra = 1123;</code>
      */
     private $extra;
@@ -60,6 +66,8 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Atlas\ListProblemsInput\Filter $filters
      *     @type int $sort
      *     @type int $order
+     *     @type string $locale
+     *           load title and content in a specific locale
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -214,6 +222,32 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
         $this->order = $var;
+
+        return $this;
+    }
+
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

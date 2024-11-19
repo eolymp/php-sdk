@@ -16,11 +16,17 @@ class Type
      */
     const UNKNOWN_TYPE = 0;
     /**
-     * programming problem, user should write a program to solve it
+     * algorithmic problem, user should write a program to solve it
      *
-     * Generated from protobuf enum <code>PROGRAMMING = 1;</code>
+     * Generated from protobuf enum <code>ALGORITHMIC = 1;</code>
      */
-    const PROGRAMMING = 1;
+    const ALGORITHMIC = 1;
+    /**
+     * function problem, user should write a function to solve it
+     *
+     * Generated from protobuf enum <code>FUNCTION = 2;</code>
+     */
+    const PBFUNCTION = 2;
     /**
      * output-only problem, user should upload answer file to solve it
      *
@@ -36,7 +42,8 @@ class Type
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
-        self::PROGRAMMING => 'PROGRAMMING',
+        self::ALGORITHMIC => 'ALGORITHMIC',
+        self::PBFUNCTION => 'FUNCTION',
         self::OUTPUT => 'OUTPUT',
         self::SQL => 'SQL',
     ];
@@ -55,8 +62,12 @@ class Type
     {
         $const = __CLASS__ . '::' . strtoupper($name);
         if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+            $pbconst =  __CLASS__. '::PB' . strtoupper($name);
+            if (!defined($pbconst)) {
+                throw new UnexpectedValueException(sprintf(
+                        'Enum %s has no value defined for name %s', __CLASS__, $name));
+            }
+            return constant($pbconst);
         }
         return constant($const);
     }
