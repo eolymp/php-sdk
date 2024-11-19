@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateProblemInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Patch request to update participant partially (all fields are updated if not specified)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateProblemInput.Patch patch = 3;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
@@ -22,17 +28,9 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>uint32 index = 10;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Problem problem = 4;</code>
      */
-    protected $index = 0;
-    /**
-     * Generated from protobuf field <code>uint32 submit_limit = 11;</code>
-     */
-    protected $submit_limit = 0;
-    /**
-     * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
-     */
-    protected $score_by_best_testset = false;
+    protected $problem = null;
 
     /**
      * Constructor.
@@ -40,16 +38,42 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $contest_id
      *     @type string $problem_id
-     *     @type int $index
-     *     @type int $submit_limit
-     *     @type bool $score_by_best_testset
+     *     @type \Eolymp\Judge\Problem $problem
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ProblemService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Patch request to update participant partially (all fields are updated if not specified)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateProblemInput.Patch patch = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Patch request to update participant partially (all fields are updated if not specified)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateProblemInput.Patch patch = 3;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateProblemInput\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
@@ -97,67 +121,33 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 index = 10;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.judge.Problem problem = 4;</code>
+     * @return \Eolymp\Judge\Problem|null
      */
-    public function getIndex()
+    public function getProblem()
     {
-        return $this->index;
+        return $this->problem;
+    }
+
+    public function hasProblem()
+    {
+        return isset($this->problem);
+    }
+
+    public function clearProblem()
+    {
+        unset($this->problem);
     }
 
     /**
-     * Generated from protobuf field <code>uint32 index = 10;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.judge.Problem problem = 4;</code>
+     * @param \Eolymp\Judge\Problem $var
      * @return $this
      */
-    public function setIndex($var)
+    public function setProblem($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->index = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 submit_limit = 11;</code>
-     * @return int
-     */
-    public function getSubmitLimit()
-    {
-        return $this->submit_limit;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 submit_limit = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setSubmitLimit($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->submit_limit = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
-     * @return bool
-     */
-    public function getScoreByBestTestset()
-    {
-        return $this->score_by_best_testset;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setScoreByBestTestset($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->score_by_best_testset = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Problem::class);
+        $this->problem = $var;
 
         return $this;
     }
