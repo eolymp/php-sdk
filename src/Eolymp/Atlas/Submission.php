@@ -138,6 +138,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     private $groups;
     /**
+     * if true, submission can be debugged using submission assistant
+     *
+     * Generated from protobuf field <code>bool assistant_available = 60;</code>
+     */
+    protected $assistant_available = false;
+    /**
      * cursor in the list
      *
      * Generated from protobuf field <code>string cursor = 100;</code>
@@ -194,6 +200,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           maximum resource usage
      *     @type array<\Eolymp\Atlas\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
+     *     @type bool $assistant_available
+     *           if true, submission can be debugged using submission assistant
      *     @type string $cursor
      *           cursor in the list
      * }
@@ -815,6 +823,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Group::class);
         $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * if true, submission can be debugged using submission assistant
+     *
+     * Generated from protobuf field <code>bool assistant_available = 60;</code>
+     * @return bool
+     */
+    public function getAssistantAvailable()
+    {
+        return $this->assistant_available;
+    }
+
+    /**
+     * if true, submission can be debugged using submission assistant
+     *
+     * Generated from protobuf field <code>bool assistant_available = 60;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAssistantAvailable($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->assistant_available = $var;
 
         return $this;
     }
