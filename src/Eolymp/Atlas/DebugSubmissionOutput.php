@@ -14,13 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string assistance_id = 1;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 2;</code>
      */
-    protected $assistance_id = '';
-    /**
-     * Generated from protobuf field <code>string assistance_message = 2;</code>
-     */
-    protected $assistance_message = '';
+    protected $message = null;
 
     /**
      * Constructor.
@@ -28,8 +24,7 @@ class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $assistance_id
-     *     @type string $assistance_message
+     *     @type \Eolymp\Ecm\Node $message
      * }
      */
     public function __construct($data = NULL) {
@@ -38,45 +33,33 @@ class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string assistance_id = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 2;</code>
+     * @return \Eolymp\Ecm\Node|null
      */
-    public function getAssistanceId()
+    public function getMessage()
     {
-        return $this->assistance_id;
+        return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
     }
 
     /**
-     * Generated from protobuf field <code>string assistance_id = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Node message = 2;</code>
+     * @param \Eolymp\Ecm\Node $var
      * @return $this
      */
-    public function setAssistanceId($var)
+    public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->assistance_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string assistance_message = 2;</code>
-     * @return string
-     */
-    public function getAssistanceMessage()
-    {
-        return $this->assistance_message;
-    }
-
-    /**
-     * Generated from protobuf field <code>string assistance_message = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAssistanceMessage($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->assistance_message = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        $this->message = $var;
 
         return $this;
     }
