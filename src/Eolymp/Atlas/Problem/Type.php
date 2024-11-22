@@ -16,11 +16,11 @@ class Type
      */
     const UNKNOWN_TYPE = 0;
     /**
-     * algorithmic problem, user should write a program to solve it
+     * program problem, user should write a program to solve it
      *
-     * Generated from protobuf enum <code>ALGORITHMIC = 1;</code>
+     * Generated from protobuf enum <code>PROGRAM = 1;</code>
      */
-    const ALGORITHMIC = 1;
+    const PROGRAM = 1;
     /**
      * function problem, user should write a function to solve it
      *
@@ -48,7 +48,7 @@ class Type
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
-        self::ALGORITHMIC => 'ALGORITHMIC',
+        self::PROGRAM => 'PROGRAM',
         self::PBFUNCTION => 'FUNCTION',
         self::OUTPUT => 'OUTPUT',
         self::SQL => 'SQL',
