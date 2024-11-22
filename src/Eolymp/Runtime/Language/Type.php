@@ -24,6 +24,10 @@ class Type
      */
     const SQL = 3;
     /**
+     * Generated from protobuf enum <code>ML = 4;</code>
+     */
+    const ML = 4;
+    /**
      * Generated from protobuf enum <code>OTHER = 999;</code>
      */
     const OTHER = 999;
@@ -32,6 +36,7 @@ class Type
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::PROGRAMMING => 'PROGRAMMING',
         self::SQL => 'SQL',
+        self::ML => 'ML',
         self::OTHER => 'OTHER',
     ];
 
