@@ -39,6 +39,12 @@ class Type
      * Generated from protobuf enum <code>SQL = 4;</code>
      */
     const SQL = 4;
+    /**
+     * Machine learning problem
+     *
+     * Generated from protobuf enum <code>ML = 5;</code>
+     */
+    const ML = 5;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
@@ -46,6 +52,7 @@ class Type
         self::PBFUNCTION => 'FUNCTION',
         self::OUTPUT => 'OUTPUT',
         self::SQL => 'SQL',
+        self::ML => 'ML',
     ];
 
     public static function name($value)
