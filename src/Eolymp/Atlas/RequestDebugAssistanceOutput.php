@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DebugSubmissionOutput</code>
+ * Generated from protobuf message <code>eolymp.atlas.RequestDebugAssistanceOutput</code>
  */
-class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
+class RequestDebugAssistanceOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.DebugAssistanceMessage message = 2;</code>
      */
     protected $message = null;
 
@@ -24,7 +24,7 @@ class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Ecm\Node $message
+     *     @type \Eolymp\Atlas\DebugAssistanceMessage $message
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message = 2;</code>
-     * @return \Eolymp\Ecm\Node|null
+     * Generated from protobuf field <code>.eolymp.atlas.DebugAssistanceMessage message = 2;</code>
+     * @return \Eolymp\Atlas\DebugAssistanceMessage|null
      */
     public function getMessage()
     {
@@ -52,13 +52,13 @@ class DebugSubmissionOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node message = 2;</code>
-     * @param \Eolymp\Ecm\Node $var
+     * Generated from protobuf field <code>.eolymp.atlas.DebugAssistanceMessage message = 2;</code>
+     * @param \Eolymp\Atlas\DebugAssistanceMessage $var
      * @return $this
      */
     public function setMessage($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\DebugAssistanceMessage::class);
         $this->message = $var;
 
         return $this;

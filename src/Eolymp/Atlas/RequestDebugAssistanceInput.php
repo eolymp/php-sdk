@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DebugSubmissionInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.RequestDebugAssistanceInput</code>
  */
-class DebugSubmissionInput extends \Google\Protobuf\Internal\Message
+class RequestDebugAssistanceInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string submission_id = 1;</code>

@@ -23,22 +23,41 @@ class SubmissionAssistantServiceClient {
     }
 
     /**
-     * @param DebugSubmissionInput $input message
+     * @param RequestDebugAssistanceInput $input message
      * @param array $context request parameters
      *
-     * @return DebugSubmissionOutput output message
+     * @return RequestDebugAssistanceOutput output message
      */
-    public function DebugSubmission(DebugSubmissionInput $input, array $context = [])
+    public function RequestDebugAssistance(RequestDebugAssistanceInput $input, array $context = [])
     {
         $path = "/submissions/".rawurlencode($input->getSubmissionId())."/assistant:debug";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setSubmissionId("");
 
-        $context['name'] = "eolymp.atlas.SubmissionAssistantService/DebugSubmission";
+        $context['name'] = "eolymp.atlas.SubmissionAssistantService/RequestDebugAssistance";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DebugSubmissionOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RequestDebugAssistanceOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeDebugAssistanceInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeDebugAssistanceOutput output message
+     */
+    public function DescribeDebugAssistance(DescribeDebugAssistanceInput $input, array $context = [])
+    {
+        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/assistant:debug";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.atlas.SubmissionAssistantService/DescribeDebugAssistance";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeDebugAssistanceOutput::class, $context);
     }
 
     /**
