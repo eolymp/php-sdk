@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class VariantChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 3;</code>
+     * Generated from protobuf field <code>string fragment_id = 10;</code>
      */
-    protected $fragment = null;
+    protected $fragment_id = '';
     /**
      * Generated from protobuf field <code>.eolymp.content.Variant before = 1;</code>
      */
@@ -32,7 +32,7 @@ class VariantChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Content\Fragment $fragment
+     *     @type string $fragment_id
      *     @type \Eolymp\Content\Variant $before
      *     @type \Eolymp\Content\Variant $after
      * }
@@ -43,33 +43,23 @@ class VariantChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 3;</code>
-     * @return \Eolymp\Content\Fragment|null
+     * Generated from protobuf field <code>string fragment_id = 10;</code>
+     * @return string
      */
-    public function getFragment()
+    public function getFragmentId()
     {
-        return $this->fragment;
-    }
-
-    public function hasFragment()
-    {
-        return isset($this->fragment);
-    }
-
-    public function clearFragment()
-    {
-        unset($this->fragment);
+        return $this->fragment_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 3;</code>
-     * @param \Eolymp\Content\Fragment $var
+     * Generated from protobuf field <code>string fragment_id = 10;</code>
+     * @param string $var
      * @return $this
      */
-    public function setFragment($var)
+    public function setFragmentId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\Fragment::class);
-        $this->fragment = $var;
+        GPBUtil::checkString($var, True);
+        $this->fragment_id = $var;
 
         return $this;
     }

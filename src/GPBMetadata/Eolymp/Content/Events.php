@@ -18,13 +18,16 @@ class Events
         \GPBMetadata\Eolymp\Content\Variant::initOnce();
         $pool->internalAddGeneratedFile(
             '
-†
-eolymp/content/events.protoeolymp.contenteolymp/content/variant.proto"i
-FragmentChangedEvent(
+ý
+eolymp/content/events.protoeolymp.contenteolymp/content/variant.proto"x
+FragmentChangedEvent
+scope
+ (	(
 before (2.eolymp.content.Fragment\'
-after (2.eolymp.content.Fragment"’
-VariantChangedEvent*
-fragment (2.eolymp.content.Fragment\'
+after (2.eolymp.content.Fragment"{
+VariantChangedEvent
+fragment_id
+ (	\'
 before (2.eolymp.content.Variant&
 after (2.eolymp.content.VariantB1Z/github.com/eolymp/go-sdk/eolymp/content;contentbproto3'
         , true);

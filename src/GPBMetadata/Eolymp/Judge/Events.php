@@ -14,33 +14,40 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Judge\Contest::initOnce();
         \GPBMetadata\Eolymp\Judge\Participant::initOnce();
         \GPBMetadata\Eolymp\Judge\Score::initOnce();
         \GPBMetadata\Eolymp\Judge\Submission::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ï
-eolymp/judge/events.protoeolymp.judgeeolymp/judge/participant.protoeolymp/judge/score.protoeolymp/judge/submission.proto"H
-SubmissionCompletedEvent,
+ä
+eolymp/judge/events.protoeolymp.judgeeolymp/judge/score.protoeolymp/judge/submission.proto"\\
+SubmissionCompletedEvent
+
+contest_id
+ (	,
 
 submission (2.eolymp.judge.Submission"<
 RebuildScoreEvent
 
 contest_id (	
 activity_id (	"w
-ScoreUpdatedEvent
+ScoreChangedEvent
 
 contest_id (	
 participant_id (	
 
 unofficial ("
-score (2.eolymp.judge.Score"n
-ParticipantChangedEvent)
+score (2.eolymp.judge.Score"‚
+ParticipantChangedEvent
+
+contest_id
+ (	)
 before (2.eolymp.judge.Participant(
-after (2.eolymp.judge.Participant"p
-ParticipantJoinedEvent&
-contest (2.eolymp.judge.Contest.
+after (2.eolymp.judge.Participant"\\
+ParticipantJoinedEvent
+
+contest_id
+ (	.
 participant (2.eolymp.judge.Participant"Q
 RetestProblemEvent
 

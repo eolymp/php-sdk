@@ -20,12 +20,6 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * contest
-     *
-     * Generated from protobuf field <code>string contest_id = 3;</code>
-     */
-    protected $contest_id = '';
-    /**
      * community member
      *
      * Generated from protobuf field <code>string member_id = 4;</code>
@@ -124,8 +118,6 @@ class Participant extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique identifier of the participant (can not be set when creating participant)
-     *     @type string $contest_id
-     *           contest
      *     @type string $member_id
      *           community member
      *     @type string $display_name
@@ -186,32 +178,6 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * contest
-     *
-     * Generated from protobuf field <code>string contest_id = 3;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * contest
-     *
-     * Generated from protobuf field <code>string contest_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
 
         return $this;
     }

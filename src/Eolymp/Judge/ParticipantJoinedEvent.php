@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ParticipantJoinedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 10;</code>
      */
-    protected $contest = null;
+    protected $contest_id = '';
     /**
      * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
      */
@@ -28,7 +28,7 @@ class ParticipantJoinedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Judge\Contest $contest
+     *     @type string $contest_id
      *     @type \Eolymp\Judge\Participant $participant
      * }
      */
@@ -38,33 +38,23 @@ class ParticipantJoinedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
-     * @return \Eolymp\Judge\Contest|null
+     * Generated from protobuf field <code>string contest_id = 10;</code>
+     * @return string
      */
-    public function getContest()
+    public function getContestId()
     {
-        return $this->contest;
-    }
-
-    public function hasContest()
-    {
-        return isset($this->contest);
-    }
-
-    public function clearContest()
-    {
-        unset($this->contest);
+        return $this->contest_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 1;</code>
-     * @param \Eolymp\Judge\Contest $var
+     * Generated from protobuf field <code>string contest_id = 10;</code>
+     * @param string $var
      * @return $this
      */
-    public function setContest($var)
+    public function setContestId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest::class);
-        $this->contest = $var;
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
 
         return $this;
     }

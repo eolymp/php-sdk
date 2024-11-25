@@ -17,9 +17,11 @@ class Events
         \GPBMetadata\Eolymp\Helpdesk\Ticket::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ß
-eolymp/helpdesk/events.protoeolymp.helpdesk"e
-TicketChangedEvent\'
+î
+eolymp/helpdesk/events.protoeolymp.helpdesk"t
+TicketChangedEvent
+scope
+ (	\'
 before (2.eolymp.helpdesk.Ticket&
 after (2.eolymp.helpdesk.Ticket"‰
 CommentChangedEvent

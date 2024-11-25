@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class FragmentChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     */
+    protected $scope = '';
+    /**
      * Generated from protobuf field <code>.eolymp.content.Fragment before = 1;</code>
      */
     protected $before = null;
@@ -28,6 +32,7 @@ class FragmentChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $scope
      *     @type \Eolymp\Content\Fragment $before
      *     @type \Eolymp\Content\Fragment $after
      * }
@@ -35,6 +40,28 @@ class FragmentChangedEvent extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Content\Events::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScope($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scope = $var;
+
+        return $this;
     }
 
     /**

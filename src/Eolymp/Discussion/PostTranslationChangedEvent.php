@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
+     * Generated from protobuf field <code>string post_id = 10;</code>
      */
-    protected $post = null;
+    protected $post_id = '';
     /**
      * Generated from protobuf field <code>.eolymp.discussion.Post.Translation before = 2;</code>
      */
@@ -36,7 +36,7 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Discussion\Post $post
+     *     @type string $post_id
      *     @type \Eolymp\Discussion\Post\Translation $before
      *     @type \Eolymp\Discussion\Post\Translation $after
      *     @type \Eolymp\Ecm\Content $reason
@@ -48,33 +48,23 @@ class PostTranslationChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
-     * @return \Eolymp\Discussion\Post|null
+     * Generated from protobuf field <code>string post_id = 10;</code>
+     * @return string
      */
-    public function getPost()
+    public function getPostId()
     {
-        return $this->post;
-    }
-
-    public function hasPost()
-    {
-        return isset($this->post);
-    }
-
-    public function clearPost()
-    {
-        unset($this->post);
+        return $this->post_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Post post = 1;</code>
-     * @param \Eolymp\Discussion\Post $var
+     * Generated from protobuf field <code>string post_id = 10;</code>
+     * @param string $var
      * @return $this
      */
-    public function setPost($var)
+    public function setPostId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Discussion\Post::class);
-        $this->post = $var;
+        GPBUtil::checkString($var, True);
+        $this->post_id = $var;
 
         return $this;
     }

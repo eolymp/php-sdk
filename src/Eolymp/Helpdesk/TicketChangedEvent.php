@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class TicketChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     */
+    protected $scope = '';
+    /**
      * Generated from protobuf field <code>.eolymp.helpdesk.Ticket before = 1;</code>
      */
     protected $before = null;
@@ -28,6 +32,7 @@ class TicketChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $scope
      *     @type \Eolymp\Helpdesk\Ticket $before
      *     @type \Eolymp\Helpdesk\Ticket $after
      * }
@@ -35,6 +40,28 @@ class TicketChangedEvent extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Helpdesk\Events::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScope($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scope = $var;
+
+        return $this;
     }
 
     /**

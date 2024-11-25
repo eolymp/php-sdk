@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class MessageChangedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     */
+    protected $scope = '';
+    /**
      * Generated from protobuf field <code>.eolymp.discussion.Message before = 1;</code>
      */
     protected $before = null;
@@ -32,6 +36,7 @@ class MessageChangedEvent extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $scope
      *     @type \Eolymp\Discussion\Message $before
      *     @type \Eolymp\Discussion\Message $after
      *     @type string $reason
@@ -40,6 +45,28 @@ class MessageChangedEvent extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Discussion\MessageService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     * @return string
+     */
+    public function getScope()
+    {
+        return $this->scope;
+    }
+
+    /**
+     * Generated from protobuf field <code>string scope = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setScope($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->scope = $var;
+
+        return $this;
     }
 
     /**
