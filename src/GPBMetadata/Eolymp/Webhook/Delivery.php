@@ -19,14 +19,13 @@ class Delivery
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
-eolymp/webhook/delivery.protoeolymp.webhookgoogle/protobuf/any.protogoogle/protobuf/timestamp.proto"Á
+×
+eolymp/webhook/delivery.protoeolymp.webhookgoogle/protobuf/any.protogoogle/protobuf/timestamp.proto"®
 Delivery
 
 id (	
 
-webhook_id (	
-	signature (	-
+webhook_id (	-
 	timestamp (2.google.protobuf.Timestamp,
 event
  (2.eolymp.webhook.Webhook.Event%

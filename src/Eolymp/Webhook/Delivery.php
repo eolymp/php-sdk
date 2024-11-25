@@ -22,10 +22,6 @@ class Delivery extends \Google\Protobuf\Internal\Message
      */
     protected $webhook_id = '';
     /**
-     * Generated from protobuf field <code>string signature = 3;</code>
-     */
-    protected $signature = '';
-    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 4;</code>
      */
     protected $timestamp = null;
@@ -46,7 +42,6 @@ class Delivery extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $webhook_id
-     *     @type string $signature
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type int $event
      *     @type \Google\Protobuf\Any $payload
@@ -97,28 +92,6 @@ class Delivery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->webhook_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string signature = 3;</code>
-     * @return string
-     */
-    public function getSignature()
-    {
-        return $this->signature;
-    }
-
-    /**
-     * Generated from protobuf field <code>string signature = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSignature($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->signature = $var;
 
         return $this;
     }
