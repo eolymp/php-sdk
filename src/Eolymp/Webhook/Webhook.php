@@ -18,21 +18,53 @@ class Webhook extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>bool inactive = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    protected $inactive = false;
+    protected $name = '';
     /**
-     * Generated from protobuf field <code>string link = 3;</code>
-     */
-    protected $link = '';
-    /**
-     * Generated from protobuf field <code>string secret = 4;</code>
+     * Generated from protobuf field <code>string secret = 3;</code>
      */
     protected $secret = '';
+    /**
+     * Generated from protobuf field <code>string endpoint = 4;</code>
+     */
+    protected $endpoint = '';
+    /**
+     * Generated from protobuf field <code>bool inactive = 5;</code>
+     */
+    protected $inactive = false;
     /**
      * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Event events = 10;</code>
      */
     private $events;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 30;</code>
+     */
+    protected $created_at = null;
+    /**
+     * time of the last failure
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_failure_at = 32;</code>
+     */
+    protected $last_failure_at = null;
+    /**
+     * time of the last success
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_success_at = 33;</code>
+     */
+    protected $last_success_at = null;
+    /**
+     * number overall attempts to send something to the endpoint
+     *
+     * Generated from protobuf field <code>int32 delivery_count = 20;</code>
+     */
+    protected $delivery_count = 0;
+    /**
+     * number of failed attempts since last success
+     *
+     * Generated from protobuf field <code>int32 failure_count = 21;</code>
+     */
+    protected $failure_count = 0;
 
     /**
      * Constructor.
@@ -41,10 +73,20 @@ class Webhook extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type bool $inactive
-     *     @type string $link
+     *     @type string $name
      *     @type string $secret
+     *     @type string $endpoint
+     *     @type bool $inactive
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $events
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $last_failure_at
+     *           time of the last failure
+     *     @type \Google\Protobuf\Timestamp $last_success_at
+     *           time of the last success
+     *     @type int $delivery_count
+     *           number overall attempts to send something to the endpoint
+     *     @type int $failure_count
+     *           number of failed attempts since last success
      * }
      */
     public function __construct($data = NULL) {
@@ -75,51 +117,29 @@ class Webhook extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool inactive = 2;</code>
-     * @return bool
-     */
-    public function getInactive()
-    {
-        return $this->inactive;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool inactive = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setInactive($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->inactive = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string link = 3;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
-    public function getLink()
+    public function getName()
     {
-        return $this->link;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>string link = 3;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setLink($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->link = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string secret = 4;</code>
+     * Generated from protobuf field <code>string secret = 3;</code>
      * @return string
      */
     public function getSecret()
@@ -128,7 +148,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string secret = 4;</code>
+     * Generated from protobuf field <code>string secret = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -136,6 +156,50 @@ class Webhook extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string endpoint = 4;</code>
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * Generated from protobuf field <code>string endpoint = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEndpoint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->endpoint = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool inactive = 5;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool inactive = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
 
         return $this;
     }
@@ -158,6 +222,162 @@ class Webhook extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Webhook\Webhook\Event::class);
         $this->events = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 30;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 30;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * time of the last failure
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_failure_at = 32;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastFailureAt()
+    {
+        return $this->last_failure_at;
+    }
+
+    public function hasLastFailureAt()
+    {
+        return isset($this->last_failure_at);
+    }
+
+    public function clearLastFailureAt()
+    {
+        unset($this->last_failure_at);
+    }
+
+    /**
+     * time of the last failure
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_failure_at = 32;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastFailureAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_failure_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * time of the last success
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_success_at = 33;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastSuccessAt()
+    {
+        return $this->last_success_at;
+    }
+
+    public function hasLastSuccessAt()
+    {
+        return isset($this->last_success_at);
+    }
+
+    public function clearLastSuccessAt()
+    {
+        unset($this->last_success_at);
+    }
+
+    /**
+     * time of the last success
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_success_at = 33;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastSuccessAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_success_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * number overall attempts to send something to the endpoint
+     *
+     * Generated from protobuf field <code>int32 delivery_count = 20;</code>
+     * @return int
+     */
+    public function getDeliveryCount()
+    {
+        return $this->delivery_count;
+    }
+
+    /**
+     * number overall attempts to send something to the endpoint
+     *
+     * Generated from protobuf field <code>int32 delivery_count = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDeliveryCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->delivery_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * number of failed attempts since last success
+     *
+     * Generated from protobuf field <code>int32 failure_count = 21;</code>
+     * @return int
+     */
+    public function getFailureCount()
+    {
+        return $this->failure_count;
+    }
+
+    /**
+     * number of failed attempts since last success
+     *
+     * Generated from protobuf field <code>int32 failure_count = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFailureCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->failure_count = $var;
 
         return $this;
     }
