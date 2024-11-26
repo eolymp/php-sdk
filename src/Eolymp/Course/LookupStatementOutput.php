@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class LookupStatementOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement statement = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
      */
-    private $statement;
+    protected $statement = null;
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class LookupStatementOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $statement
+     *     @type \Eolymp\Atlas\Statement $statement
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,33 @@ class LookupStatementOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement statement = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
+     * @return \Eolymp\Atlas\Statement|null
      */
     public function getStatement()
     {
         return $this->statement;
     }
 
+    public function hasStatement()
+    {
+        return isset($this->statement);
+    }
+
+    public function clearStatement()
+    {
+        unset($this->statement);
+    }
+
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement statement = 2;</code>
-     * @param array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 2;</code>
+     * @param \Eolymp\Atlas\Statement $var
      * @return $this
      */
     public function setStatement($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Statement::class);
-        $this->statement = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Statement::class);
+        $this->statement = $var;
 
         return $this;
     }
