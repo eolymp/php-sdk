@@ -22,9 +22,29 @@ class Job extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
+     * Generated from protobuf field <code>string namespace = 3;</code>
+     */
+    protected $namespace = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.worker.Job.Status status = 30;</code>
+     */
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     */
+    protected $progress = 0;
+    /**
+     * Generated from protobuf field <code>uint32 total = 21;</code>
+     */
+    protected $total = 0;
+    /**
      * Generated from protobuf field <code>map<string, string> inputs = 4;</code>
      */
     private $inputs;
+    /**
+     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
+     */
+    private $outputs;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
      */
@@ -42,27 +62,9 @@ class Job extends \Google\Protobuf\Internal\Message
      */
     protected $complete_at = null;
     /**
-     * progress is a number from 0 to `total`, showing amount of work complete
-     *
-     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     * Generated from protobuf field <code>string logs_url = 100;</code>
      */
-    protected $progress = 0;
-    /**
-     * Generated from protobuf field <code>uint32 total = 21;</code>
-     */
-    protected $total = 0;
-    /**
-     * Generated from protobuf field <code>.eolymp.worker.Job.Status status = 30;</code>
-     */
-    protected $status = 0;
-    /**
-     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
-     */
-    private $outputs;
-    /**
-     * Generated from protobuf field <code>string logs = 100;</code>
-     */
-    protected $logs = '';
+    protected $logs_url = '';
 
     /**
      * Constructor.
@@ -72,17 +74,17 @@ class Job extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $type
+     *     @type string $namespace
+     *     @type int $status
+     *     @type int $progress
+     *     @type int $total
      *     @type array|\Google\Protobuf\Internal\MapField $inputs
+     *     @type array|\Google\Protobuf\Internal\MapField $outputs
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $started_at
      *     @type \Google\Protobuf\Timestamp $progress_at
      *     @type \Google\Protobuf\Timestamp $complete_at
-     *     @type int $progress
-     *           progress is a number from 0 to `total`, showing amount of work complete
-     *     @type int $total
-     *     @type int $status
-     *     @type array|\Google\Protobuf\Internal\MapField $outputs
-     *     @type string $logs
+     *     @type string $logs_url
      * }
      */
     public function __construct($data = NULL) {
@@ -135,6 +137,94 @@ class Job extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string namespace = 3;</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.worker.Job.Status status = 30;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.worker.Job.Status status = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Worker\Job\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     * @return int
+     */
+    public function getProgress()
+    {
+        return $this->progress;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 progress = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProgress($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->progress = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 total = 21;</code>
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 total = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->total = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>map<string, string> inputs = 4;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -152,6 +242,28 @@ class Job extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->inputs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getOutputs()
+    {
+        return $this->outputs;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setOutputs($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->outputs = $arr;
 
         return $this;
     }
@@ -285,115 +397,23 @@ class Job extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * progress is a number from 0 to `total`, showing amount of work complete
-     *
-     * Generated from protobuf field <code>uint32 progress = 20;</code>
-     * @return int
-     */
-    public function getProgress()
-    {
-        return $this->progress;
-    }
-
-    /**
-     * progress is a number from 0 to `total`, showing amount of work complete
-     *
-     * Generated from protobuf field <code>uint32 progress = 20;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setProgress($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->progress = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 total = 21;</code>
-     * @return int
-     */
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 total = 21;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTotal($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->total = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.worker.Job.Status status = 30;</code>
-     * @return int
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.worker.Job.Status status = 30;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setStatus($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Worker\Job\Status::class);
-        $this->status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getOutputs()
-    {
-        return $this->outputs;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> outputs = 31;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setOutputs($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->outputs = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string logs = 100;</code>
+     * Generated from protobuf field <code>string logs_url = 100;</code>
      * @return string
      */
-    public function getLogs()
+    public function getLogsUrl()
     {
-        return $this->logs;
+        return $this->logs_url;
     }
 
     /**
-     * Generated from protobuf field <code>string logs = 100;</code>
+     * Generated from protobuf field <code>string logs_url = 100;</code>
      * @param string $var
      * @return $this
      */
-    public function setLogs($var)
+    public function setLogsUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->logs = $var;
+        $this->logs_url = $var;
 
         return $this;
     }

@@ -23,22 +23,6 @@ class WorkerServiceClient {
     }
 
     /**
-     * @param CreateJobInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateJobOutput output message
-     */
-    public function CreateJob(CreateJobInput $input, array $context = [])
-    {
-        $path = "/jobs";
-
-        $context['name'] = "eolymp.worker.WorkerService/CreateJob";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateJobOutput::class, $context);
-    }
-
-    /**
      * @param DescribeJobInput $input message
      * @param array $context request parameters
      *
