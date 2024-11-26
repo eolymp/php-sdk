@@ -39,6 +39,22 @@ class ProblemServiceClient {
     }
 
     /**
+     * @param LookupStatementInput $input message
+     * @param array $context request parameters
+     *
+     * @return LookupStatementOutput output message
+     */
+    public function LookupStatement(LookupStatementInput $input, array $context = [])
+    {
+        $path = "/statements:lookup";
+
+        $context['name'] = "eolymp.course.ProblemService/LookupStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupStatementOutput::class, $context);
+    }
+
+    /**
      * @param ListExamplesInput $input message
      * @param array $context request parameters
      *
