@@ -16,36 +16,41 @@ class Patch
      */
     const UNKNOWN_PATCH = 0;
     /**
-     * Generated from protobuf enum <code>PATCH_PATH = 1;</code>
+     * Generated from protobuf enum <code>PATCH_ALL = 1;</code>
      */
-    const PATCH_PATH = 1;
+    const PATCH_ALL = 1;
     /**
-     * Generated from protobuf enum <code>PATCH_LOCALE = 2;</code>
+     * Generated from protobuf enum <code>PATCH_PATH = 2;</code>
      */
-    const PATCH_LOCALE = 2;
+    const PATCH_PATH = 2;
     /**
-     * Generated from protobuf enum <code>PATCH_AUTOMATIC = 3;</code>
+     * Generated from protobuf enum <code>PATCH_LOCALE = 3;</code>
      */
-    const PATCH_AUTOMATIC = 3;
+    const PATCH_LOCALE = 3;
     /**
-     * Generated from protobuf enum <code>PATCH_DRAFT = 4;</code>
+     * Generated from protobuf enum <code>PATCH_AUTOMATIC = 4;</code>
      */
-    const PATCH_DRAFT = 4;
+    const PATCH_AUTOMATIC = 4;
     /**
-     * Generated from protobuf enum <code>PATCH_TITLE = 5;</code>
+     * Generated from protobuf enum <code>PATCH_DRAFT = 5;</code>
      */
-    const PATCH_TITLE = 5;
+    const PATCH_DRAFT = 5;
     /**
-     * Generated from protobuf enum <code>PATCH_CONTENT = 6;</code>
+     * Generated from protobuf enum <code>PATCH_TITLE = 6;</code>
      */
-    const PATCH_CONTENT = 6;
+    const PATCH_TITLE = 6;
     /**
-     * Generated from protobuf enum <code>PATCH_LABELS = 7;</code>
+     * Generated from protobuf enum <code>PATCH_CONTENT = 7;</code>
      */
-    const PATCH_LABELS = 7;
+    const PATCH_CONTENT = 7;
+    /**
+     * Generated from protobuf enum <code>PATCH_LABELS = 8;</code>
+     */
+    const PATCH_LABELS = 8;
 
     private static $valueToName = [
         self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
+        self::PATCH_ALL => 'PATCH_ALL',
         self::PATCH_PATH => 'PATCH_PATH',
         self::PATCH_LOCALE => 'PATCH_LOCALE',
         self::PATCH_AUTOMATIC => 'PATCH_AUTOMATIC',
