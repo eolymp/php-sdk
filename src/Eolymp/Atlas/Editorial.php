@@ -14,29 +14,39 @@ use Google\Protobuf\Internal\GPBUtil;
 class Editorial extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unique identifier, assigned when statement is created. Keep empty when creating new statement.
+     * Unique identifier, assigned when editorial is created. Keep empty when creating new editorial.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
-     * Statement locale code, should consist of two lowercase latin letters.
+     * Editorial locale code, should consist of two lowercase latin letters.
      *
      * Generated from protobuf field <code>string locale = 3;</code>
      */
     protected $locale = '';
     /**
-     * Statement content.
+     * if true means the editorial was created automatically (probably translation from another language)
      *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     */
+    protected $automatic = false;
+    /**
+     * Generated from protobuf field <code>bool draft = 10;</code>
+     */
+    protected $draft = false;
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      */
     protected $content = null;
     /**
-     * Statement download link, allows to download statement in original format.
-     *
      * Generated from protobuf field <code>string download_link = 7;</code>
      */
     protected $download_link = '';
+    /**
+     * Generated from protobuf field <code>string author_id = 103;</code>
+     */
+    protected $author_id = '';
 
     /**
      * Constructor.
@@ -45,13 +55,15 @@ class Editorial extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *           Unique identifier, assigned when statement is created. Keep empty when creating new statement.
+     *           Unique identifier, assigned when editorial is created. Keep empty when creating new editorial.
      *     @type string $locale
-     *           Statement locale code, should consist of two lowercase latin letters.
+     *           Editorial locale code, should consist of two lowercase latin letters.
+     *     @type bool $automatic
+     *           if true means the editorial was created automatically (probably translation from another language)
+     *     @type bool $draft
      *     @type \Eolymp\Ecm\Content $content
-     *           Statement content.
      *     @type string $download_link
-     *           Statement download link, allows to download statement in original format.
+     *     @type string $author_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +72,7 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier, assigned when statement is created. Keep empty when creating new statement.
+     * Unique identifier, assigned when editorial is created. Keep empty when creating new editorial.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
@@ -71,7 +83,7 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier, assigned when statement is created. Keep empty when creating new statement.
+     * Unique identifier, assigned when editorial is created. Keep empty when creating new editorial.
      *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
@@ -86,7 +98,7 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement locale code, should consist of two lowercase latin letters.
+     * Editorial locale code, should consist of two lowercase latin letters.
      *
      * Generated from protobuf field <code>string locale = 3;</code>
      * @return string
@@ -97,7 +109,7 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement locale code, should consist of two lowercase latin letters.
+     * Editorial locale code, should consist of two lowercase latin letters.
      *
      * Generated from protobuf field <code>string locale = 3;</code>
      * @param string $var
@@ -112,8 +124,54 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content.
+     * if true means the editorial was created automatically (probably translation from another language)
      *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * if true means the editorial was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 10;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      * @return \Eolymp\Ecm\Content|null
      */
@@ -133,8 +191,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement content.
-     *
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this
@@ -148,8 +204,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement download link, allows to download statement in original format.
-     *
      * Generated from protobuf field <code>string download_link = 7;</code>
      * @return string
      */
@@ -159,8 +213,6 @@ class Editorial extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Statement download link, allows to download statement in original format.
-     *
      * Generated from protobuf field <code>string download_link = 7;</code>
      * @param string $var
      * @return $this
@@ -169,6 +221,28 @@ class Editorial extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->download_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string author_id = 103;</code>
+     * @return string
+     */
+    public function getAuthorId()
+    {
+        return $this->author_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string author_id = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author_id = $var;
 
         return $this;
     }

@@ -151,4 +151,20 @@ class EditorialServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListEditorialsOutput::class, $context);
     }
 
+    /**
+     * @param TranslateEditorialsInput $input message
+     * @param array $context request parameters
+     *
+     * @return TranslateEditorialsOutput output message
+     */
+    public function TranslateEditorials(TranslateEditorialsInput $input, array $context = [])
+    {
+        $path = "/editorials:translate";
+
+        $context['name'] = "eolymp.atlas.EditorialService/TranslateEditorials";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateEditorialsOutput::class, $context);
+    }
+
 }

@@ -26,15 +26,19 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * if true means the statement was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     */
+    protected $automatic = false;
+    /**
+     * Generated from protobuf field <code>bool draft = 13;</code>
+     */
+    protected $draft = false;
+    /**
      * Generated from protobuf field <code>string title = 12;</code>
      */
     protected $title = '';
-    /**
-     * true if fragment is public and available, otherwise it's considered to be draft
-     *
-     * Generated from protobuf field <code>bool public = 13;</code>
-     */
-    protected $public = false;
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
@@ -61,9 +65,10 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $path
      *     @type string $locale
+     *     @type bool $automatic
+     *           if true means the statement was created automatically (probably translation from another language)
+     *     @type bool $draft
      *     @type string $title
-     *     @type bool $public
-     *           true if fragment is public and available, otherwise it's considered to be draft
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
@@ -142,6 +147,54 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * if true means the statement was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * if true means the statement was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 13;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string title = 12;</code>
      * @return string
      */
@@ -159,32 +212,6 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->title = $var;
-
-        return $this;
-    }
-
-    /**
-     * true if fragment is public and available, otherwise it's considered to be draft
-     *
-     * Generated from protobuf field <code>bool public = 13;</code>
-     * @return bool
-     */
-    public function getPublic()
-    {
-        return $this->public;
-    }
-
-    /**
-     * true if fragment is public and available, otherwise it's considered to be draft
-     *
-     * Generated from protobuf field <code>bool public = 13;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setPublic($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->public = $var;
 
         return $this;
     }

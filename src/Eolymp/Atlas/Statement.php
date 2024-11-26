@@ -28,6 +28,10 @@ class Statement extends \Google\Protobuf\Internal\Message
      */
     protected $automatic = false;
     /**
+     * Generated from protobuf field <code>bool draft = 9;</code>
+     */
+    protected $draft = false;
+    /**
      * Generated from protobuf field <code>string title = 4;</code>
      */
     protected $title = '';
@@ -53,6 +57,10 @@ class Statement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 102;</code>
      */
     protected $source = '';
+    /**
+     * Generated from protobuf field <code>string author_id = 103;</code>
+     */
+    protected $author_id = '';
 
     /**
      * Constructor.
@@ -64,6 +72,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type bool $automatic
      *           if true means the statement was created automatically (probably translation from another language)
+     *     @type bool $draft
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type string $download_link
@@ -72,6 +81,7 @@ class Statement extends \Google\Protobuf\Internal\Message
      *           Problem author name.
      *     @type string $source
      *           Problem source, name of the contest or olympiad where this problem was initially published.
+     *     @type string $author_id
      * }
      */
     public function __construct($data = NULL) {
@@ -145,6 +155,28 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 9;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return $this->draft;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool draft = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
 
         return $this;
     }
@@ -277,6 +309,28 @@ class Statement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string author_id = 103;</code>
+     * @return string
+     */
+    public function getAuthorId()
+    {
+        return $this->author_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string author_id = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author_id = $var;
 
         return $this;
     }

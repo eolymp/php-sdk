@@ -18,6 +18,8 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      */
     protected $statement_id = '';
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>bool render = 3;</code>
      */
     protected $render = false;
@@ -27,6 +29,10 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 version = 100;</code>
      */
     protected $version = 0;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Extra extra = 10;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -36,8 +42,10 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $statement_id
      *     @type bool $render
+     *           deprecated
      *     @type int $version
      *           request data for specific problem version
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -68,6 +76,8 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>bool render = 3;</code>
      * @return bool
      */
@@ -77,6 +87,8 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated
+     *
      * Generated from protobuf field <code>bool render = 3;</code>
      * @param bool $var
      * @return $this
@@ -111,6 +123,28 @@ class DescribeStatementInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Extra extra = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Extra extra = 10;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Statement\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

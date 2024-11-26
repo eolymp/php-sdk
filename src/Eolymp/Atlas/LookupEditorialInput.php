@@ -18,15 +18,21 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>bool render = 3;</code>
-     */
-    protected $render = false;
-    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
      */
     protected $version = 0;
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>bool render = 3;</code>
+     */
+    protected $render = false;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -35,9 +41,11 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $locale
-     *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
+     *     @type bool $render
+     *           deprecated
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -68,28 +76,6 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
-
-        return $this;
-    }
-
-    /**
      * request data for specific problem version
      *
      * Generated from protobuf field <code>uint32 version = 100;</code>
@@ -111,6 +97,54 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @return bool
+     */
+    public function getRender()
+    {
+        return $this->render;
+    }
+
+    /**
+     * deprecated
+     *
+     * Generated from protobuf field <code>bool render = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRender($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->render = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Extra::class);
+        $this->extra = $arr;
 
         return $this;
     }

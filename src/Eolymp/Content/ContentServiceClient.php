@@ -112,6 +112,22 @@ class ContentServiceClient {
     }
 
     /**
+     * @param TranslateFragmentsInput $input message
+     * @param array $context request parameters
+     *
+     * @return TranslateFragmentsOutput output message
+     */
+    public function TranslateFragments(TranslateFragmentsInput $input, array $context = [])
+    {
+        $path = "/content/fragments:translate";
+
+        $context['name'] = "eolymp.content.ContentService/TranslateFragments";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateFragmentsOutput::class, $context);
+    }
+
+    /**
      * @param DescribeVariantInput $input message
      * @param array $context request parameters
      *

@@ -14,9 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateStatementInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateStatementInput.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Patch patch = 10;</code>
      */
     private $patch;
     /**
@@ -35,7 +33,6 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           specify list of fields to update, if empty all fields are updated
      *     @type string $statement_id
      *     @type \Eolymp\Atlas\Statement $statement
      * }
@@ -46,9 +43,7 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateStatementInput.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Patch patch = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -57,15 +52,13 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateStatementInput.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Patch patch = 10;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateStatementInput\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Statement\Patch::class);
         $this->patch = $arr;
 
         return $this;

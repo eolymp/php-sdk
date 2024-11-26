@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Patch patch = 3;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>string fragment_id = 1;</code>
      */
     protected $fragment_id = '';
@@ -28,6 +32,7 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $fragment_id
      *     @type \Eolymp\Content\Fragment $fragment
      * }
@@ -35,6 +40,28 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Content\ContentService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Patch patch = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Patch patch = 3;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Fragment\Patch::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**
