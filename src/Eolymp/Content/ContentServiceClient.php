@@ -119,7 +119,10 @@ class ContentServiceClient {
      */
     public function TranslateFragments(TranslateFragmentsInput $input, array $context = [])
     {
-        $path = "/content/fragments:translate";
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setFragmentId("");
 
         $context['name'] = "eolymp.content.ContentService/TranslateFragments";
         $context['path'] = $path;
