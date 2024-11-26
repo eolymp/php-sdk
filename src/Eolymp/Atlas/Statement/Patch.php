@@ -51,6 +51,10 @@ class Patch
      * Generated from protobuf enum <code>PATCH_SOURCE = 7;</code>
      */
     const PATCH_SOURCE = 7;
+    /**
+     * Generated from protobuf enum <code>PATCH_AUTHOR_ID = 10;</code>
+     */
+    const PATCH_AUTHOR_ID = 10;
 
     private static $valueToName = [
         self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
@@ -63,6 +67,7 @@ class Patch
         self::PATCH_DOWNLOAD_LINK => 'PATCH_DOWNLOAD_LINK',
         self::PATCH_AUTHOR => 'PATCH_AUTHOR',
         self::PATCH_SOURCE => 'PATCH_SOURCE',
+        self::PATCH_AUTHOR_ID => 'PATCH_AUTHOR_ID',
     ];
 
     public static function name($value)

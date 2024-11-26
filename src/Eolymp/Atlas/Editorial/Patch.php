@@ -16,33 +16,43 @@ class Patch
      */
     const UNKNOWN_PATCH = 0;
     /**
-     * Generated from protobuf enum <code>PATCH_LOCALE = 1;</code>
+     * Generated from protobuf enum <code>PATCH_ALL = 1;</code>
      */
-    const PATCH_LOCALE = 1;
+    const PATCH_ALL = 1;
     /**
-     * Generated from protobuf enum <code>PATCH_AUTOMATIC = 2;</code>
+     * Generated from protobuf enum <code>PATCH_LOCALE = 2;</code>
      */
-    const PATCH_AUTOMATIC = 2;
+    const PATCH_LOCALE = 2;
     /**
-     * Generated from protobuf enum <code>PATCH_DRAFT = 3;</code>
+     * Generated from protobuf enum <code>PATCH_AUTOMATIC = 3;</code>
      */
-    const PATCH_DRAFT = 3;
+    const PATCH_AUTOMATIC = 3;
     /**
-     * Generated from protobuf enum <code>PATCH_CONTENT = 4;</code>
+     * Generated from protobuf enum <code>PATCH_DRAFT = 4;</code>
      */
-    const PATCH_CONTENT = 4;
+    const PATCH_DRAFT = 4;
     /**
-     * Generated from protobuf enum <code>PATCH_DOWNLOAD_LINK = 5;</code>
+     * Generated from protobuf enum <code>PATCH_CONTENT = 5;</code>
      */
-    const PATCH_DOWNLOAD_LINK = 5;
+    const PATCH_CONTENT = 5;
+    /**
+     * Generated from protobuf enum <code>PATCH_DOWNLOAD_LINK = 6;</code>
+     */
+    const PATCH_DOWNLOAD_LINK = 6;
+    /**
+     * Generated from protobuf enum <code>PATCH_AUTHOR_ID = 7;</code>
+     */
+    const PATCH_AUTHOR_ID = 7;
 
     private static $valueToName = [
         self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
+        self::PATCH_ALL => 'PATCH_ALL',
         self::PATCH_LOCALE => 'PATCH_LOCALE',
         self::PATCH_AUTOMATIC => 'PATCH_AUTOMATIC',
         self::PATCH_DRAFT => 'PATCH_DRAFT',
         self::PATCH_CONTENT => 'PATCH_CONTENT',
         self::PATCH_DOWNLOAD_LINK => 'PATCH_DOWNLOAD_LINK',
+        self::PATCH_AUTHOR_ID => 'PATCH_AUTHOR_ID',
     ];
 
     public static function name($value)
