@@ -29,6 +29,12 @@ class Variant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
     protected $content = null;
+    /**
+     * if true means the variant was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     */
+    protected $automatic = false;
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
+     *     @type bool $automatic
+     *           if true means the variant was created automatically (probably translation from another language)
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +149,32 @@ class Variant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * if true means the variant was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * if true means the variant was created automatically (probably translation from another language)
+     *
+     * Generated from protobuf field <code>bool automatic = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
 
         return $this;
     }

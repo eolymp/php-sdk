@@ -28,10 +28,6 @@ class Patch
      */
     const PATCH_LOCALE = 3;
     /**
-     * Generated from protobuf enum <code>PATCH_AUTOMATIC = 4;</code>
-     */
-    const PATCH_AUTOMATIC = 4;
-    /**
      * Generated from protobuf enum <code>PATCH_DRAFT = 5;</code>
      */
     const PATCH_DRAFT = 5;
@@ -53,7 +49,6 @@ class Patch
         self::PATCH_ALL => 'PATCH_ALL',
         self::PATCH_PATH => 'PATCH_PATH',
         self::PATCH_LOCALE => 'PATCH_LOCALE',
-        self::PATCH_AUTOMATIC => 'PATCH_AUTOMATIC',
         self::PATCH_DRAFT => 'PATCH_DRAFT',
         self::PATCH_TITLE => 'PATCH_TITLE',
         self::PATCH_CONTENT => 'PATCH_CONTENT',

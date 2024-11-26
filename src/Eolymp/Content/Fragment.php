@@ -26,12 +26,6 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * if true means the statement was created automatically (probably translation from another language)
-     *
-     * Generated from protobuf field <code>bool automatic = 8;</code>
-     */
-    protected $automatic = false;
-    /**
      * Generated from protobuf field <code>bool draft = 13;</code>
      */
     protected $draft = false;
@@ -65,8 +59,6 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $path
      *     @type string $locale
-     *     @type bool $automatic
-     *           if true means the statement was created automatically (probably translation from another language)
      *     @type bool $draft
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
@@ -142,32 +134,6 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * if true means the statement was created automatically (probably translation from another language)
-     *
-     * Generated from protobuf field <code>bool automatic = 8;</code>
-     * @return bool
-     */
-    public function getAutomatic()
-    {
-        return $this->automatic;
-    }
-
-    /**
-     * if true means the statement was created automatically (probably translation from another language)
-     *
-     * Generated from protobuf field <code>bool automatic = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAutomatic($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->automatic = $var;
 
         return $this;
     }
