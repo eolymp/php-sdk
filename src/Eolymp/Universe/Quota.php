@@ -122,6 +122,18 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $code_templates_per_problem = 0;
     /**
+     * Generated from protobuf field <code>uint32 debug_assistant = 120;</code>
+     */
+    protected $debug_assistant = 0;
+    /**
+     * Generated from protobuf field <code>uint32 debug_hints_daily_per_admin = 121;</code>
+     */
+    protected $debug_hints_daily_per_admin = 0;
+    /**
+     * Generated from protobuf field <code>uint32 debug_hints_daily_per_member = 122;</code>
+     */
+    protected $debug_hints_daily_per_member = 0;
+    /**
      * contest quota and features
      *
      * Generated from protobuf field <code>uint32 contests_per_space = 3;</code>
@@ -220,6 +232,9 @@ class Quota extends \Google\Protobuf\Internal\Message
      *     @type int $editorial_per_problem
      *     @type int $solutions_per_problem
      *     @type int $code_templates_per_problem
+     *     @type int $debug_assistant
+     *     @type int $debug_hints_daily_per_admin
+     *     @type int $debug_hints_daily_per_member
      *     @type int $contests_per_space
      *           contest quota and features
      *     @type int $active_contests_per_space
@@ -738,6 +753,72 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->code_templates_per_problem = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 debug_assistant = 120;</code>
+     * @return int
+     */
+    public function getDebugAssistant()
+    {
+        return $this->debug_assistant;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 debug_assistant = 120;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDebugAssistant($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->debug_assistant = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 debug_hints_daily_per_admin = 121;</code>
+     * @return int
+     */
+    public function getDebugHintsDailyPerAdmin()
+    {
+        return $this->debug_hints_daily_per_admin;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 debug_hints_daily_per_admin = 121;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDebugHintsDailyPerAdmin($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->debug_hints_daily_per_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 debug_hints_daily_per_member = 122;</code>
+     * @return int
+     */
+    public function getDebugHintsDailyPerMember()
+    {
+        return $this->debug_hints_daily_per_member;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 debug_hints_daily_per_member = 122;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDebugHintsDailyPerMember($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->debug_hints_daily_per_member = $var;
 
         return $this;
     }
