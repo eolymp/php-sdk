@@ -188,6 +188,25 @@ class PostServiceClient {
     }
 
     /**
+     * @param TranslatePostInput $input message
+     * @param array $context request parameters
+     *
+     * @return TranslatePostOutput output message
+     */
+    public function TranslatePost(TranslatePostInput $input, array $context = [])
+    {
+        $path = "/posts/".rawurlencode($input->getPostId())."/translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPostId("");
+
+        $context['name'] = "eolymp.discussion.PostService/TranslatePost";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslatePostOutput::class, $context);
+    }
+
+    /**
      * @param DescribePostTranslationInput $input message
      * @param array $context request parameters
      *

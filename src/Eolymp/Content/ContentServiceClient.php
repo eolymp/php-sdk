@@ -112,22 +112,22 @@ class ContentServiceClient {
     }
 
     /**
-     * @param TranslateFragmentsInput $input message
+     * @param TranslateFragmentInput $input message
      * @param array $context request parameters
      *
-     * @return TranslateFragmentsOutput output message
+     * @return TranslateFragmentOutput output message
      */
-    public function TranslateFragments(TranslateFragmentsInput $input, array $context = [])
+    public function TranslateFragment(TranslateFragmentInput $input, array $context = [])
     {
         $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translate";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFragmentId("");
 
-        $context['name'] = "eolymp.content.ContentService/TranslateFragments";
+        $context['name'] = "eolymp.content.ContentService/TranslateFragment";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateFragmentsOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateFragmentOutput::class, $context);
     }
 
     /**

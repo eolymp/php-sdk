@@ -29,6 +29,10 @@ class Translation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string labels = 120;</code>
      */
     private $labels;
+    /**
+     * Generated from protobuf field <code>bool automatic = 103;</code>
+     */
+    protected $automatic = false;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type \Eolymp\Ecm\Content $content
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type bool $automatic
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +146,28 @@ class Translation extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool automatic = 103;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool automatic = 103;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
 
         return $this;
     }

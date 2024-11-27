@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.TranslateFragmentsOutput</code>
+ * Generated from protobuf message <code>eolymp.content.TranslateFragmentOutput</code>
  */
-class TranslateFragmentsOutput extends \Google\Protobuf\Internal\Message
+class TranslateFragmentOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string job_id = 1;</code>
