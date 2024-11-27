@@ -122,9 +122,9 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $code_templates_per_problem = 0;
     /**
-     * Generated from protobuf field <code>uint32 debug_assistant = 120;</code>
+     * Generated from protobuf field <code>bool debug_assistant = 120;</code>
      */
-    protected $debug_assistant = 0;
+    protected $debug_assistant = false;
     /**
      * Generated from protobuf field <code>uint32 debug_hints_daily_per_admin = 121;</code>
      */
@@ -232,7 +232,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *     @type int $editorial_per_problem
      *     @type int $solutions_per_problem
      *     @type int $code_templates_per_problem
-     *     @type int $debug_assistant
+     *     @type bool $debug_assistant
      *     @type int $debug_hints_daily_per_admin
      *     @type int $debug_hints_daily_per_member
      *     @type int $contests_per_space
@@ -758,8 +758,8 @@ class Quota extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 debug_assistant = 120;</code>
-     * @return int
+     * Generated from protobuf field <code>bool debug_assistant = 120;</code>
+     * @return bool
      */
     public function getDebugAssistant()
     {
@@ -767,13 +767,13 @@ class Quota extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 debug_assistant = 120;</code>
-     * @param int $var
+     * Generated from protobuf field <code>bool debug_assistant = 120;</code>
+     * @param bool $var
      * @return $this
      */
     public function setDebugAssistant($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkBool($var);
         $this->debug_assistant = $var;
 
         return $this;

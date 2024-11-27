@@ -39,7 +39,7 @@ class Quota
 editorial_per_problemh (
 solutions_per_problemi ("
 code_templates_per_problemj (
-debug_assistantx (#
+debug_assistantx (#
 debug_hints_daily_per_adminy ($
 debug_hints_daily_per_memberz (
 contests_per_space (!
