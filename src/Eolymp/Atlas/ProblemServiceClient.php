@@ -187,4 +187,23 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimesOutput::class, $context);
     }
 
+    /**
+     * @param ExportProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportProblemOutput output message
+     */
+    public function ExportProblem(ExportProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/snapshot";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.ProblemService/ExportProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ExportProblemOutput::class, $context);
+    }
+
 }
