@@ -24,6 +24,14 @@ class Status
      */
     const PENDING = 1;
     /**
+     * Generated from protobuf enum <code>PROVISIONING = 9;</code>
+     */
+    const PROVISIONING = 9;
+    /**
+     * Generated from protobuf enum <code>INITIALIZING = 10;</code>
+     */
+    const INITIALIZING = 10;
+    /**
      * Program is being executed.
      *
      * Generated from protobuf enum <code>EXECUTING = 2;</code>
@@ -69,6 +77,8 @@ class Status
     private static $valueToName = [
         self::NONE => 'NONE',
         self::PENDING => 'PENDING',
+        self::PROVISIONING => 'PROVISIONING',
+        self::INITIALIZING => 'INITIALIZING',
         self::EXECUTING => 'EXECUTING',
         self::EXECUTED => 'EXECUTED',
         self::TIMEOUT => 'TIMEOUT',
