@@ -51,25 +51,24 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
     protected $version = 0;
     /**
      * Report type, see explanation to Type enumeration
+     * deprecated: use status instead
      *
      * Generated from protobuf field <code>.eolymp.executor.EvaluationReport.Type type = 10;</code>
      */
     protected $type = 0;
     /**
-     * Error message for ERROR report
+     * Status of the evaluation
      *
-     * Generated from protobuf field <code>string error = 20;</code>
+     * Generated from protobuf field <code>.eolymp.executor.EvaluationReport.Status status = 11;</code>
      */
-    protected $error = '';
+    protected $status = 0;
     /**
-     * Failure message for FAILURE report
+     * Error message
      *
-     * Generated from protobuf field <code>string failure = 30;</code>
+     * Generated from protobuf field <code>string error_message = 20;</code>
      */
-    protected $failure = '';
+    protected $error_message = '';
     /**
-     * Runs for UPDATE report
-     *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationReport.Run runs = 40;</code>
      */
     private $runs;
@@ -96,12 +95,12 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
      *           receives run #1 v.20 it's newer and should be processed, but run #2 v.20 should be ignored).
      *     @type int $type
      *           Report type, see explanation to Type enumeration
-     *     @type string $error
-     *           Error message for ERROR report
-     *     @type string $failure
-     *           Failure message for FAILURE report
+     *           deprecated: use status instead
+     *     @type int $status
+     *           Status of the evaluation
+     *     @type string $error_message
+     *           Error message
      *     @type array<\Eolymp\Executor\EvaluationReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
-     *           Runs for UPDATE report
      * }
      */
     public function __construct($data = NULL) {
@@ -263,6 +262,7 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
 
     /**
      * Report type, see explanation to Type enumeration
+     * deprecated: use status instead
      *
      * Generated from protobuf field <code>.eolymp.executor.EvaluationReport.Type type = 10;</code>
      * @return int
@@ -274,6 +274,7 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
 
     /**
      * Report type, see explanation to Type enumeration
+     * deprecated: use status instead
      *
      * Generated from protobuf field <code>.eolymp.executor.EvaluationReport.Type type = 10;</code>
      * @param int $var
@@ -288,60 +289,58 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Error message for ERROR report
+     * Status of the evaluation
      *
-     * Generated from protobuf field <code>string error = 20;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.executor.EvaluationReport.Status status = 11;</code>
+     * @return int
      */
-    public function getError()
+    public function getStatus()
     {
-        return $this->error;
+        return $this->status;
     }
 
     /**
-     * Error message for ERROR report
+     * Status of the evaluation
      *
-     * Generated from protobuf field <code>string error = 20;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.executor.EvaluationReport.Status status = 11;</code>
+     * @param int $var
      * @return $this
      */
-    public function setError($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Executor\EvaluationReport\Status::class);
+        $this->status = $var;
 
         return $this;
     }
 
     /**
-     * Failure message for FAILURE report
+     * Error message
      *
-     * Generated from protobuf field <code>string failure = 30;</code>
+     * Generated from protobuf field <code>string error_message = 20;</code>
      * @return string
      */
-    public function getFailure()
+    public function getErrorMessage()
     {
-        return $this->failure;
+        return $this->error_message;
     }
 
     /**
-     * Failure message for FAILURE report
+     * Error message
      *
-     * Generated from protobuf field <code>string failure = 30;</code>
+     * Generated from protobuf field <code>string error_message = 20;</code>
      * @param string $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setErrorMessage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->failure = $var;
+        $this->error_message = $var;
 
         return $this;
     }
 
     /**
-     * Runs for UPDATE report
-     *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationReport.Run runs = 40;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -351,8 +350,6 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Runs for UPDATE report
-     *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationReport.Run runs = 40;</code>
      * @param array<\Eolymp\Executor\EvaluationReport\Run>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

@@ -24,6 +24,18 @@ class Status
      */
     const PENDING = 1;
     /**
+     * provisioning environment
+     *
+     * Generated from protobuf enum <code>PROVISIONING = 9;</code>
+     */
+    const PROVISIONING = 9;
+    /**
+     * initializing program
+     *
+     * Generated from protobuf enum <code>INITIALIZING = 10;</code>
+     */
+    const INITIALIZING = 10;
+    /**
      * testing in progress
      *
      * Generated from protobuf enum <code>TESTING = 2;</code>
@@ -69,6 +81,8 @@ class Status
     private static $valueToName = [
         self::NONE => 'NONE',
         self::PENDING => 'PENDING',
+        self::PROVISIONING => 'PROVISIONING',
+        self::INITIALIZING => 'INITIALIZING',
         self::TESTING => 'TESTING',
         self::TIMEOUT => 'TIMEOUT',
         self::COMPLETE => 'COMPLETE',
