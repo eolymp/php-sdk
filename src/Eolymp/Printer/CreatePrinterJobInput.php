@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreatePrinterJobInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string printer_job = 1;</code>
+     * Generated from protobuf field <code>string printer_id = 1;</code>
      */
-    protected $printer_job = '';
+    protected $printer_id = '';
     /**
      * Generated from protobuf field <code>string document_url = 2;</code>
      */
@@ -28,7 +28,7 @@ class CreatePrinterJobInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $printer_job
+     *     @type string $printer_id
      *     @type string $document_url
      * }
      */
@@ -38,23 +38,23 @@ class CreatePrinterJobInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string printer_job = 1;</code>
+     * Generated from protobuf field <code>string printer_id = 1;</code>
      * @return string
      */
-    public function getPrinterJob()
+    public function getPrinterId()
     {
-        return $this->printer_job;
+        return $this->printer_id;
     }
 
     /**
-     * Generated from protobuf field <code>string printer_job = 1;</code>
+     * Generated from protobuf field <code>string printer_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setPrinterJob($var)
+    public function setPrinterId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->printer_job = $var;
+        $this->printer_id = $var;
 
         return $this;
     }
