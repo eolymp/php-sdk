@@ -112,6 +112,25 @@ class PrinterServiceClient {
     }
 
     /**
+     * @param CreatePrinterJobInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreatePrinterJobOutput output message
+     */
+    public function CreatePrinterJob(CreatePrinterJobInput $input, array $context = [])
+    {
+        $path = "/printers/".rawurlencode($input->getPrinterId())."/jobs";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPrinterId("");
+
+        $context['name'] = "eolymp.printer.PrinterService/CreatePrinterJob";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreatePrinterJobOutput::class, $context);
+    }
+
+    /**
      * @param DescribePrinterJobInput $input message
      * @param array $context request parameters
      *

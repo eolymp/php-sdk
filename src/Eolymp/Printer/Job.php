@@ -22,9 +22,10 @@ class Job extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>string document_url = 10;</code>
+     * Generated from protobuf field <code>string document_url = 20;</code>
      */
     protected $document_url = '';
+    protected $creator;
 
     /**
      * Constructor.
@@ -34,6 +35,8 @@ class Job extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $status
+     *     @type string $user_id
+     *     @type string $member_id
      *     @type string $document_url
      * }
      */
@@ -87,7 +90,61 @@ class Job extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string document_url = 10;</code>
+     * Generated from protobuf field <code>string user_id = 10;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasUserId()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Generated from protobuf field <code>string user_id = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 11;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasMemberId()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string document_url = 20;</code>
      * @return string
      */
     public function getDocumentUrl()
@@ -96,7 +153,7 @@ class Job extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string document_url = 10;</code>
+     * Generated from protobuf field <code>string document_url = 20;</code>
      * @param string $var
      * @return $this
      */
@@ -106,6 +163,14 @@ class Job extends \Google\Protobuf\Internal\Message
         $this->document_url = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCreator()
+    {
+        return $this->whichOneof("creator");
     }
 
 }
