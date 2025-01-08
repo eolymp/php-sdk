@@ -31,6 +31,10 @@ class Status
      * Generated from protobuf enum <code>ERROR = 4;</code>
      */
     const ERROR = 4;
+    /**
+     * Generated from protobuf enum <code>EXPIRED = 5;</code>
+     */
+    const EXPIRED = 5;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
@@ -38,6 +42,7 @@ class Status
         self::PRINTING => 'PRINTING',
         self::COMPLETE => 'COMPLETE',
         self::ERROR => 'ERROR',
+        self::EXPIRED => 'EXPIRED',
     ];
 
     public static function name($value)

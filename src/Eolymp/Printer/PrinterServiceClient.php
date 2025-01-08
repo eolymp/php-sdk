@@ -170,12 +170,12 @@ class PrinterServiceClient {
     }
 
     /**
-     * @param CancelPrinterJobInput $input message
+     * @param DeletePrinterJobInput $input message
      * @param array $context request parameters
      *
-     * @return CancelPrinterJobOutput output message
+     * @return DeletePrinterJobOutput output message
      */
-    public function CancelPrinterJob(CancelPrinterJobInput $input, array $context = [])
+    public function DeletePrinterJob(DeletePrinterJobInput $input, array $context = [])
     {
         $path = "/printers/".rawurlencode($input->getPrinterId())."/jobs/".rawurlencode($input->getJobId());
 
@@ -183,10 +183,10 @@ class PrinterServiceClient {
         $input->setPrinterId("");
         $input->setJobId("");
 
-        $context['name'] = "eolymp.printer.PrinterService/CancelPrinterJob";
+        $context['name'] = "eolymp.printer.PrinterService/DeletePrinterJob";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, CancelPrinterJobOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeletePrinterJobOutput::class, $context);
     }
 
 }

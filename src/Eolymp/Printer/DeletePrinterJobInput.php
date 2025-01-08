@@ -9,15 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.printer.CreatePrinterJobInput</code>
+ * Generated from protobuf message <code>eolymp.printer.DeletePrinterJobInput</code>
  */
-class CreatePrinterJobInput extends \Google\Protobuf\Internal\Message
+class DeletePrinterJobInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string printer_id = 1;</code>
      */
     protected $printer_id = '';
-    protected $document;
+    /**
+     * Generated from protobuf field <code>string job_id = 2;</code>
+     */
+    protected $job_id = '';
 
     /**
      * Constructor.
@@ -26,7 +29,7 @@ class CreatePrinterJobInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $printer_id
-     *     @type string $html
+     *     @type string $job_id
      * }
      */
     public function __construct($data = NULL) {
@@ -57,38 +60,25 @@ class CreatePrinterJobInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string html = 3;</code>
+     * Generated from protobuf field <code>string job_id = 2;</code>
      * @return string
      */
-    public function getHtml()
+    public function getJobId()
     {
-        return $this->readOneof(3);
-    }
-
-    public function hasHtml()
-    {
-        return $this->hasOneof(3);
+        return $this->job_id;
     }
 
     /**
-     * Generated from protobuf field <code>string html = 3;</code>
+     * Generated from protobuf field <code>string job_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setHtml($var)
+    public function setJobId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(3, $var);
+        $this->job_id = $var;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDocument()
-    {
-        return $this->whichOneof("document");
     }
 
 }

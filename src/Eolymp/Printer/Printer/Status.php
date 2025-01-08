@@ -23,11 +23,16 @@ class Status
      * Generated from protobuf enum <code>READY = 2;</code>
      */
     const READY = 2;
+    /**
+     * Generated from protobuf enum <code>BUSY = 3;</code>
+     */
+    const BUSY = 3;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
         self::OFFLINE => 'OFFLINE',
         self::READY => 'READY',
+        self::BUSY => 'BUSY',
     ];
 
     public static function name($value)
