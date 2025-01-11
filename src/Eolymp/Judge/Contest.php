@@ -24,10 +24,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
-     * Generated from protobuf field <code>map<string, string> links = 683;</code>
-     */
-    private $links;
-    /**
      * Contest name.
      *
      * Generated from protobuf field <code>string name = 3;</code>
@@ -136,6 +132,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $featured_until = null;
     /**
+     * Printer used to print submissions
+     *
+     * Generated from protobuf field <code>string printer_id = 71;</code>
+     */
+    protected $printer_id = '';
+    /**
      * Taxonomy information
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Taxonomy taxonomy = 104;</code>
@@ -175,7 +177,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           Contest unique identifier, automatically allocated when contest is created.
      *     @type string $url
-     *     @type array|\Google\Protobuf\Internal\MapField $links
      *     @type string $name
      *           Contest name.
      *     @type string $logo_url
@@ -215,6 +216,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type bool $participant_count_hidden
      *     @type \Google\Protobuf\Timestamp $featured_until
      *           Date and time until contest is displayed in Featured contests
+     *     @type string $printer_id
+     *           Printer used to print submissions
      *     @type \Eolymp\Judge\Contest\Taxonomy $taxonomy
      *           Taxonomy information
      *     @type \Eolymp\Judge\Contest\Appearance $appearance
@@ -276,28 +279,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> links = 683;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getLinks()
-    {
-        return $this->links;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> links = 683;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setLinks($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->links = $arr;
 
         return $this;
     }
@@ -796,6 +777,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->featured_until = $var;
+
+        return $this;
+    }
+
+    /**
+     * Printer used to print submissions
+     *
+     * Generated from protobuf field <code>string printer_id = 71;</code>
+     * @return string
+     */
+    public function getPrinterId()
+    {
+        return $this->printer_id;
+    }
+
+    /**
+     * Printer used to print submissions
+     *
+     * Generated from protobuf field <code>string printer_id = 71;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrinterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->printer_id = $var;
 
         return $this;
     }

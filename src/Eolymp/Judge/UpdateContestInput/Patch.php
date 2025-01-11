@@ -68,6 +68,10 @@ class Patch
      */
     const FEATURED_UNTIL = 9;
     /**
+     * Generated from protobuf enum <code>PRINTER = 15;</code>
+     */
+    const PRINTER = 15;
+    /**
      * Generated from protobuf enum <code>TAXONOMY = 140;</code>
      */
     const TAXONOMY = 140;
@@ -103,6 +107,7 @@ class Patch
         self::PROBLEM_COUNT_HIDDEN => 'PROBLEM_COUNT_HIDDEN',
         self::PARTICIPANT_COUNT_HIDDEN => 'PARTICIPANT_COUNT_HIDDEN',
         self::FEATURED_UNTIL => 'FEATURED_UNTIL',
+        self::PRINTER => 'PRINTER',
         self::TAXONOMY => 'TAXONOMY',
         self::APPEARANCE => 'APPEARANCE',
         self::ENVIRONMENT => 'ENVIRONMENT',
