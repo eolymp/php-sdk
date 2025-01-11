@@ -79,6 +79,25 @@ class SubmissionServiceClient {
     }
 
     /**
+     * @param PrintSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return PrintSubmissionOutput output message
+     */
+    public function PrintSubmission(PrintSubmissionInput $input, array $context = [])
+    {
+        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/print";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.SubmissionService/PrintSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PrintSubmissionOutput::class, $context);
+    }
+
+    /**
      * Resets submission results and triggers testing process.
      *
      * @param RetestSubmissionInput $input message
