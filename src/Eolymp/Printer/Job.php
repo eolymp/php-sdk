@@ -25,6 +25,14 @@ class Job extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string document_url = 20;</code>
      */
     protected $document_url = '';
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 30;</code>
+     */
+    protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 31;</code>
+     */
+    protected $updated_at = null;
     protected $creator;
 
     /**
@@ -38,6 +46,8 @@ class Job extends \Google\Protobuf\Internal\Message
      *     @type string $user_id
      *     @type string $member_id
      *     @type string $document_url
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $updated_at
      * }
      */
     public function __construct($data = NULL) {
@@ -161,6 +171,70 @@ class Job extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->document_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 30;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 30;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 31;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 31;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_at = $var;
 
         return $this;
     }
