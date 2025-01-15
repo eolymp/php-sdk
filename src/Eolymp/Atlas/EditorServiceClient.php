@@ -23,19 +23,35 @@ class EditorServiceClient {
     }
 
     /**
-     * @param PrintCodeInput $input message
+     * @param DescribeStateInput $input message
      * @param array $context request parameters
      *
-     * @return PrintCodeOutput output message
+     * @return DescribeStateOutput output message
      */
-    public function PrintCode(PrintCodeInput $input, array $context = [])
+    public function DescribeState(DescribeStateInput $input, array $context = [])
     {
-        $path = "/editor:print";
+        $path = "/editor/state";
 
-        $context['name'] = "eolymp.atlas.EditorService/PrintCode";
+        $context['name'] = "eolymp.atlas.EditorService/DescribeState";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PrintCodeOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeStateOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateStateInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateStateOutput output message
+     */
+    public function UpdateState(UpdateStateInput $input, array $context = [])
+    {
+        $path = "/editor/state";
+
+        $context['name'] = "eolymp.atlas.EditorService/UpdateState";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateStateOutput::class, $context);
     }
 
 }
