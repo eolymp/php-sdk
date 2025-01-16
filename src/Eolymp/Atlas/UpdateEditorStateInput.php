@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.DescribeStateOutput</code>
+ * Generated from protobuf message <code>eolymp.atlas.UpdateEditorStateInput</code>
  */
-class DescribeStateOutput extends \Google\Protobuf\Internal\Message
+class UpdateEditorStateInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string runtime = 1;</code>

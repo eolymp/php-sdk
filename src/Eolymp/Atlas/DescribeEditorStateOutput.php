@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.UpdateStateInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.DescribeEditorStateOutput</code>
  */
-class UpdateStateInput extends \Google\Protobuf\Internal\Message
+class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string runtime = 1;</code>
@@ -25,6 +25,10 @@ class UpdateStateInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string input_data = 3;</code>
      */
     protected $input_data = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
+     */
+    private $features;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class UpdateStateInput extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type string $source_code
      *     @type string $input_data
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class UpdateStateInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->input_data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFeatures()
+    {
+        return $this->features;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFeatures($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editor\Feature::class);
+        $this->features = $arr;
 
         return $this;
     }
