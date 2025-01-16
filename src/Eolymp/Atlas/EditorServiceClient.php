@@ -54,4 +54,20 @@ class EditorServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateStateOutput::class, $context);
     }
 
+    /**
+     * @param PrintCodeInput $input message
+     * @param array $context request parameters
+     *
+     * @return PrintCodeOutput output message
+     */
+    public function PrintCode(PrintCodeInput $input, array $context = [])
+    {
+        $path = "/editor/print";
+
+        $context['name'] = "eolymp.atlas.EditorService/PrintCode";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PrintCodeOutput::class, $context);
+    }
+
 }
