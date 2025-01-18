@@ -56,6 +56,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $achievements_per_space = 0;
     /**
+     * max number of printers (0 - printers are disabled)
+     *
+     * Generated from protobuf field <code>uint32 printers_per_space = 26;</code>
+     */
+    protected $printers_per_space = 0;
+    /**
      * submission evaluation quota and features
      *
      * Generated from protobuf field <code>uint32 monthly_evaluations_by_seat = 13;</code>
@@ -212,6 +218,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           enable discussion post and comment features
      *     @type int $achievements_per_space
      *           max number of achievements
+     *     @type int $printers_per_space
+     *           max number of printers (0 - printers are disabled)
      *     @type int $monthly_evaluations_by_seat
      *           submission evaluation quota and features
      *     @type bool $priority_evaluation_queue
@@ -439,6 +447,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->achievements_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * max number of printers (0 - printers are disabled)
+     *
+     * Generated from protobuf field <code>uint32 printers_per_space = 26;</code>
+     * @return int
+     */
+    public function getPrintersPerSpace()
+    {
+        return $this->printers_per_space;
+    }
+
+    /**
+     * max number of printers (0 - printers are disabled)
+     *
+     * Generated from protobuf field <code>uint32 printers_per_space = 26;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPrintersPerSpace($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->printers_per_space = $var;
 
         return $this;
     }
