@@ -32,9 +32,9 @@ class Status
      */
     const ERROR = 4;
     /**
-     * Generated from protobuf enum <code>EXPIRED = 5;</code>
+     * Generated from protobuf enum <code>CANCELLED = 5;</code>
      */
-    const EXPIRED = 5;
+    const CANCELLED = 5;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
@@ -42,7 +42,7 @@ class Status
         self::PRINTING => 'PRINTING',
         self::COMPLETE => 'COMPLETE',
         self::ERROR => 'ERROR',
-        self::EXPIRED => 'EXPIRED',
+        self::CANCELLED => 'CANCELLED',
     ];
 
     public static function name($value)
