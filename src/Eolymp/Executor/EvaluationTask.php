@@ -41,7 +41,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * Source code.
+     * deprecated, use source_url instead
      *
      * Generated from protobuf field <code>string source = 11;</code>
      */
@@ -64,6 +64,12 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string footer_url = 112;</code>
      */
     protected $footer_url = '';
+    /**
+     * Additional files to be placed in the work directory during compilation and runs*
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
+     */
+    private $files;
     /**
      * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
@@ -102,17 +108,17 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $interactor = null;
     /**
+     * Additional scripts
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
+     */
+    private $scripts;
+    /**
      * Run configurations.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Run runs = 30;</code>
      */
     private $runs;
-    /**
-     * Additional files to be placed in the work directory during compilation and runs*
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
-     */
-    private $files;
 
     /**
      * Constructor.
@@ -129,13 +135,15 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *           Runtime which should be used to execute source code.
      *     @type string $source
-     *           Source code.
+     *           deprecated, use source_url instead
      *     @type string $source_url
      *           source code URL (overrides source)
      *     @type string $header_url
      *           prepend source code before executing
      *     @type string $footer_url
      *           append source code before executing
+     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *           Additional files to be placed in the work directory during compilation and runs*
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
@@ -149,10 +157,10 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Checker configuration.
      *     @type \Eolymp\Executor\Interactor $interactor
      *           Interactor configuration
+     *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *           Additional scripts
      *     @type array<\Eolymp\Executor\EvaluationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *           Run configurations.
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
-     *           Additional files to be placed in the work directory during compilation and runs*
      * }
      */
     public function __construct($data = NULL) {
@@ -281,7 +289,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code.
+     * deprecated, use source_url instead
      *
      * Generated from protobuf field <code>string source = 11;</code>
      * @return string
@@ -292,7 +300,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source code.
+     * deprecated, use source_url instead
      *
      * Generated from protobuf field <code>string source = 11;</code>
      * @param string $var
@@ -380,6 +388,32 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->footer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional files to be placed in the work directory during compilation and runs*
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Additional files to be placed in the work directory during compilation and runs*
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
+     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
+        $this->files = $arr;
 
         return $this;
     }
@@ -563,6 +597,32 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Additional scripts
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScripts()
+    {
+        return $this->scripts;
+    }
+
+    /**
+     * Additional scripts
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
+     * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScripts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Script::class);
+        $this->scripts = $arr;
+
+        return $this;
+    }
+
+    /**
      * Run configurations.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Run runs = 30;</code>
@@ -584,32 +644,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\EvaluationTask\Run::class);
         $this->runs = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Additional files to be placed in the work directory during compilation and runs*
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    /**
-     * Additional files to be placed in the work directory during compilation and runs*
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFiles($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
-        $this->files = $arr;
 
         return $this;
     }

@@ -76,6 +76,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           download input via URL
      *     @type string $input_content
      *           use input from this field (up to 1KB)
+     *     @type string $input_generator
+     *           use a script to generate input
      *     @type string $answer_url
      *           download answer via URL
      *     @type string $answer_content
@@ -301,6 +303,37 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * use a script to generate input
+     *
+     * Generated from protobuf field <code>string input_generator = 13;</code>
+     * @return string
+     */
+    public function getInputGenerator()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasInputGenerator()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * use a script to generate input
+     *
+     * Generated from protobuf field <code>string input_generator = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputGenerator($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(13, $var);
 
         return $this;
     }
