@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Generator extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string script_name = 1;</code>
-     */
-    protected $script_name = '';
-    /**
      * Generated from protobuf field <code>repeated string arguments = 2;</code>
      */
     private $arguments;
@@ -28,35 +24,12 @@ class Generator extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $script_name
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $arguments
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Executor\GenerationTask::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string script_name = 1;</code>
-     * @return string
-     */
-    public function getScriptName()
-    {
-        return $this->script_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string script_name = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setScriptName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->script_name = $var;
-
-        return $this;
     }
 
     /**

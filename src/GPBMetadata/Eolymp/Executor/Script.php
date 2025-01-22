@@ -17,13 +17,17 @@ class Script
         \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ï
-eolymp/executor/script.protoeolymp.executor"a
+ø
+eolymp/executor/script.protoeolymp.executor"‰
 Script
 name (	
 runtime (	
 
-source_url (	$
+source_url (	
+
+header_url (	
+
+footer_url (	$
 files
  (2.eolymp.executor.FileB3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'
         , true);

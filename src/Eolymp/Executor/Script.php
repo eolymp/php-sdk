@@ -34,6 +34,18 @@ class Script extends \Google\Protobuf\Internal\Message
      */
     protected $source_url = '';
     /**
+     * Header code is prepended to the source code
+     *
+     * Generated from protobuf field <code>string header_url = 11;</code>
+     */
+    protected $header_url = '';
+    /**
+     * Footer code is appended to the source code
+     *
+     * Generated from protobuf field <code>string footer_url = 12;</code>
+     */
+    protected $footer_url = '';
+    /**
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
@@ -52,6 +64,10 @@ class Script extends \Google\Protobuf\Internal\Message
      *           Programming language in which script is written
      *     @type string $source_url
      *           Source code for script
+     *     @type string $header_url
+     *           Header code is prepended to the source code
+     *     @type string $footer_url
+     *           Footer code is appended to the source code
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
      * }
@@ -135,6 +151,58 @@ class Script extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Header code is prepended to the source code
+     *
+     * Generated from protobuf field <code>string header_url = 11;</code>
+     * @return string
+     */
+    public function getHeaderUrl()
+    {
+        return $this->header_url;
+    }
+
+    /**
+     * Header code is prepended to the source code
+     *
+     * Generated from protobuf field <code>string header_url = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHeaderUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->header_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Footer code is appended to the source code
+     *
+     * Generated from protobuf field <code>string footer_url = 12;</code>
+     * @return string
+     */
+    public function getFooterUrl()
+    {
+        return $this->footer_url;
+    }
+
+    /**
+     * Footer code is appended to the source code
+     *
+     * Generated from protobuf field <code>string footer_url = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFooterUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->footer_url = $var;
 
         return $this;
     }

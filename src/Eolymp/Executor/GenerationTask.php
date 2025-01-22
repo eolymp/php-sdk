@@ -26,17 +26,25 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      */
     protected $origin = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
+     * Generated from protobuf field <code>uint32 run_count = 16;</code>
      */
-    private $runs;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 20;</code>
-     */
-    private $scripts;
+    protected $run_count = 0;
     /**
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
      */
     protected $interactor = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Script input_generator = 22;</code>
+     */
+    protected $input_generator = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Script answer_generator = 23;</code>
+     */
+    protected $answer_generator = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
+     */
+    private $runs;
 
     /**
      * Constructor.
@@ -47,9 +55,11 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *     @type string $reference
      *     @type string $origin
-     *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
-     *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *     @type int $run_count
      *     @type \Eolymp\Executor\Interactor $interactor
+     *     @type \Eolymp\Executor\Script $input_generator
+     *     @type \Eolymp\Executor\Script $answer_generator
+     *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      * }
      */
     public function __construct($data = NULL) {
@@ -124,45 +134,23 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * @return int
      */
-    public function getRuns()
+    public function getRunCount()
     {
-        return $this->runs;
+        return $this->run_count;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
-     * @param array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * @param int $var
      * @return $this
      */
-    public function setRuns($var)
+    public function setRunCount($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\GenerationTask\Run::class);
-        $this->runs = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getScripts()
-    {
-        return $this->scripts;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 20;</code>
-     * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setScripts($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Script::class);
-        $this->scripts = $arr;
+        GPBUtil::checkUint32($var);
+        $this->run_count = $var;
 
         return $this;
     }
@@ -195,6 +183,92 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
         $this->interactor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Script input_generator = 22;</code>
+     * @return \Eolymp\Executor\Script|null
+     */
+    public function getInputGenerator()
+    {
+        return $this->input_generator;
+    }
+
+    public function hasInputGenerator()
+    {
+        return isset($this->input_generator);
+    }
+
+    public function clearInputGenerator()
+    {
+        unset($this->input_generator);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Script input_generator = 22;</code>
+     * @param \Eolymp\Executor\Script $var
+     * @return $this
+     */
+    public function setInputGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
+        $this->input_generator = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Script answer_generator = 23;</code>
+     * @return \Eolymp\Executor\Script|null
+     */
+    public function getAnswerGenerator()
+    {
+        return $this->answer_generator;
+    }
+
+    public function hasAnswerGenerator()
+    {
+        return isset($this->answer_generator);
+    }
+
+    public function clearAnswerGenerator()
+    {
+        unset($this->answer_generator);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Script answer_generator = 23;</code>
+     * @param \Eolymp\Executor\Script $var
+     * @return $this
+     */
+    public function setAnswerGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
+        $this->answer_generator = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRuns()
+    {
+        return $this->runs;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
+     * @param array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRuns($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\GenerationTask\Run::class);
+        $this->runs = $arr;
 
         return $this;
     }

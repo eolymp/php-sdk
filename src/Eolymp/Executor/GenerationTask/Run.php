@@ -14,9 +14,35 @@ use Google\Protobuf\Internal\GPBUtil;
 class Run extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Run reference.
+     *
      * Generated from protobuf field <code>string reference = 1;</code>
      */
     protected $reference = '';
+    /**
+     * Index defines order in which runs are executed.
+     *
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     */
+    protected $index = 0;
+    /**
+     * Use debugging (report content of stdout, stderr and exit code).
+     *
+     * Generated from protobuf field <code>bool debug = 3;</code>
+     */
+    protected $debug = false;
+    /**
+     * A number of points awarded for passing this run.
+     *
+     * Generated from protobuf field <code>float cost = 4;</code>
+     */
+    protected $cost = 0.0;
+    /**
+     * Additional environment variables used during run
+     *
+     * Generated from protobuf field <code>map<string, string> env = 5;</code>
+     */
+    private $env;
     protected $input;
     protected $answer;
 
@@ -27,6 +53,15 @@ class Run extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $reference
+     *           Run reference.
+     *     @type int $index
+     *           Index defines order in which runs are executed.
+     *     @type bool $debug
+     *           Use debugging (report content of stdout, stderr and exit code).
+     *     @type float $cost
+     *           A number of points awarded for passing this run.
+     *     @type array|\Google\Protobuf\Internal\MapField $env
+     *           Additional environment variables used during run
      *     @type string $input_url
      *           download input via URL
      *     @type string $input_content
@@ -47,6 +82,8 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Run reference.
+     *
      * Generated from protobuf field <code>string reference = 1;</code>
      * @return string
      */
@@ -56,6 +93,8 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Run reference.
+     *
      * Generated from protobuf field <code>string reference = 1;</code>
      * @param string $var
      * @return $this
@@ -64,6 +103,110 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reference = $var;
+
+        return $this;
+    }
+
+    /**
+     * Index defines order in which runs are executed.
+     *
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->index;
+    }
+
+    /**
+     * Index defines order in which runs are executed.
+     *
+     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Use debugging (report content of stdout, stderr and exit code).
+     *
+     * Generated from protobuf field <code>bool debug = 3;</code>
+     * @return bool
+     */
+    public function getDebug()
+    {
+        return $this->debug;
+    }
+
+    /**
+     * Use debugging (report content of stdout, stderr and exit code).
+     *
+     * Generated from protobuf field <code>bool debug = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDebug($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->debug = $var;
+
+        return $this;
+    }
+
+    /**
+     * A number of points awarded for passing this run.
+     *
+     * Generated from protobuf field <code>float cost = 4;</code>
+     * @return float
+     */
+    public function getCost()
+    {
+        return $this->cost;
+    }
+
+    /**
+     * A number of points awarded for passing this run.
+     *
+     * Generated from protobuf field <code>float cost = 4;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setCost($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->cost = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional environment variables used during run
+     *
+     * Generated from protobuf field <code>map<string, string> env = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getEnv()
+    {
+        return $this->env;
+    }
+
+    /**
+     * Additional environment variables used during run
+     *
+     * Generated from protobuf field <code>map<string, string> env = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setEnv($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->env = $arr;
 
         return $this;
     }
