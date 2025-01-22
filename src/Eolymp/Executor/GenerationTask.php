@@ -33,6 +33,10 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 20;</code>
      */
     private $scripts;
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
+     */
+    protected $interactor = null;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *     @type \Eolymp\Executor\Interactor $interactor
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,38 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Script::class);
         $this->scripts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
+     * @return \Eolymp\Executor\Interactor|null
+     */
+    public function getInteractor()
+    {
+        return $this->interactor;
+    }
+
+    public function hasInteractor()
+    {
+        return isset($this->interactor);
+    }
+
+    public function clearInteractor()
+    {
+        unset($this->interactor);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
+     * @param \Eolymp\Executor\Interactor $var
+     * @return $this
+     */
+    public function setInteractor($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        $this->interactor = $var;
 
         return $this;
     }

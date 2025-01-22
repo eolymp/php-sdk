@@ -39,6 +39,10 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.executor.Stats answer_generator_stats = 30;</code>
      */
     protected $answer_generator_stats = null;
+    /**
+     * Generated from protobuf field <code>string error_message = 40;</code>
+     */
+    protected $error_message = '';
 
     /**
      * Constructor.
@@ -52,6 +56,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $answer_url
      *     @type \Eolymp\Executor\Stats $input_generator_stats
      *     @type \Eolymp\Executor\Stats $answer_generator_stats
+     *     @type string $error_message
      * }
      */
     public function __construct($data = NULL) {
@@ -207,6 +212,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
         $this->answer_generator_stats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_message = 40;</code>
+     * @return string
+     */
+    public function getErrorMessage()
+    {
+        return $this->error_message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_message = 40;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_message = $var;
 
         return $this;
     }

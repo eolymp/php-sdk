@@ -19,6 +19,10 @@ class Hello extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string comment = 1;</code>
      */
     protected $comment = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.printer.Printer printer = 2;</code>
+     */
+    protected $printer = null;
 
     /**
      * Constructor.
@@ -27,6 +31,7 @@ class Hello extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $comment
+     *     @type \Eolymp\Printer\Printer $printer
      * }
      */
     public function __construct($data = NULL) {
@@ -52,6 +57,38 @@ class Hello extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->comment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.printer.Printer printer = 2;</code>
+     * @return \Eolymp\Printer\Printer|null
+     */
+    public function getPrinter()
+    {
+        return $this->printer;
+    }
+
+    public function hasPrinter()
+    {
+        return isset($this->printer);
+    }
+
+    public function clearPrinter()
+    {
+        unset($this->printer);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.printer.Printer printer = 2;</code>
+     * @param \Eolymp\Printer\Printer $var
+     * @return $this
+     */
+    public function setPrinter($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Printer\Printer::class);
+        $this->printer = $var;
 
         return $this;
     }

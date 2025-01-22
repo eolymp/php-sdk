@@ -13,10 +13,6 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class PrinterConnectorClientMessage extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string id = 1;</code>
-     */
-    protected $id = '';
     protected $message;
 
     /**
@@ -25,8 +21,6 @@ class PrinterConnectorClientMessage extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
-     *     @type \Eolymp\Printer\PrinterConnectorClientMessage\Authenticate $authenticate
      *     @type \Eolymp\Printer\PrinterConnectorClientMessage\Status $status
      *     @type \Eolymp\Printer\PrinterConnectorClientMessage\Report $report
      * }
@@ -34,55 +28,6 @@ class PrinterConnectorClientMessage extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Printer\PrinterConnector::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string id = 1;</code>
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.printer.PrinterConnectorClientMessage.Authenticate authenticate = 100;</code>
-     * @return \Eolymp\Printer\PrinterConnectorClientMessage\Authenticate|null
-     */
-    public function getAuthenticate()
-    {
-        return $this->readOneof(100);
-    }
-
-    public function hasAuthenticate()
-    {
-        return $this->hasOneof(100);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.printer.PrinterConnectorClientMessage.Authenticate authenticate = 100;</code>
-     * @param \Eolymp\Printer\PrinterConnectorClientMessage\Authenticate $var
-     * @return $this
-     */
-    public function setAuthenticate($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Printer\PrinterConnectorClientMessage\Authenticate::class);
-        $this->writeOneof(100, $var);
-
-        return $this;
     }
 
     /**

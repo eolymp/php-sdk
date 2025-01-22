@@ -30,13 +30,13 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
      */
     protected $agent = '';
     /**
-     * Generated from protobuf field <code>string error = 20;</code>
-     */
-    protected $error = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.executor.GenerationReport.Run runs = 40;</code>
      */
     private $runs;
+    /**
+     * Generated from protobuf field <code>string error_message = 50;</code>
+     */
+    protected $error_message = '';
 
     /**
      * Constructor.
@@ -48,8 +48,8 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
      *     @type string $reference
      *     @type string $origin
      *     @type string $agent
-     *     @type string $error
      *     @type array<\Eolymp\Executor\GenerationReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type string $error_message
      * }
      */
     public function __construct($data = NULL) {
@@ -146,28 +146,6 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string error = 20;</code>
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * Generated from protobuf field <code>string error = 20;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setError($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->error = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>repeated .eolymp.executor.GenerationReport.Run runs = 40;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -185,6 +163,28 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\GenerationReport\Run::class);
         $this->runs = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_message = 50;</code>
+     * @return string
+     */
+    public function getErrorMessage()
+    {
+        return $this->error_message;
+    }
+
+    /**
+     * Generated from protobuf field <code>string error_message = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setErrorMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->error_message = $var;
 
         return $this;
     }

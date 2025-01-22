@@ -17,6 +17,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Report extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string id = 2;</code>
+     */
+    protected $id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.printer.Job.Status status = 1;</code>
      */
     protected $status = 0;
@@ -27,12 +31,35 @@ class Report extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $id
      *     @type int $status
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Printer\PrinterConnector::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 2;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
     }
 
     /**
