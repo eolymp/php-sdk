@@ -34,13 +34,9 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      */
     protected $interactor = null;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Script input_generator = 22;</code>
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      */
-    protected $input_generator = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.Script answer_generator = 23;</code>
-     */
-    protected $answer_generator = null;
+    private $scripts;
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
      */
@@ -57,8 +53,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type int $run_count
      *     @type \Eolymp\Executor\Interactor $interactor
-     *     @type \Eolymp\Executor\Script $input_generator
-     *     @type \Eolymp\Executor\Script $answer_generator
+     *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
      *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      * }
      */
@@ -188,65 +183,23 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Script input_generator = 22;</code>
-     * @return \Eolymp\Executor\Script|null
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getInputGenerator()
+    public function getScripts()
     {
-        return $this->input_generator;
-    }
-
-    public function hasInputGenerator()
-    {
-        return isset($this->input_generator);
-    }
-
-    public function clearInputGenerator()
-    {
-        unset($this->input_generator);
+        return $this->scripts;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Script input_generator = 22;</code>
-     * @param \Eolymp\Executor\Script $var
+     * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
+     * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setInputGenerator($var)
+    public function setScripts($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
-        $this->input_generator = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.Script answer_generator = 23;</code>
-     * @return \Eolymp\Executor\Script|null
-     */
-    public function getAnswerGenerator()
-    {
-        return $this->answer_generator;
-    }
-
-    public function hasAnswerGenerator()
-    {
-        return isset($this->answer_generator);
-    }
-
-    public function clearAnswerGenerator()
-    {
-        unset($this->answer_generator);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.executor.Script answer_generator = 23;</code>
-     * @param \Eolymp\Executor\Script $var
-     * @return $this
-     */
-    public function setAnswerGenerator($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
-        $this->answer_generator = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Script::class);
+        $this->scripts = $arr;
 
         return $this;
     }
