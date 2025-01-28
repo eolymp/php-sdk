@@ -80,6 +80,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $plagiarism_analysis = false;
     /**
+     * maximum amount of time a submission can be evaluated
+     *
+     * Generated from protobuf field <code>uint32 submission_evaluation_limit = 27;</code>
+     */
+    protected $submission_evaluation_limit = 0;
+    /**
      * member quota and features
      *
      * Generated from protobuf field <code>uint32 members_per_space = 2;</code>
@@ -226,6 +232,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           space uses priority testing queue
      *     @type bool $plagiarism_analysis
      *           analyse submission code to see similarities and generate a report
+     *     @type int $submission_evaluation_limit
+     *           maximum amount of time a submission can be evaluated
      *     @type int $members_per_space
      *           member quota and features
      *     @type int $scoreboards_per_space
@@ -551,6 +559,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->plagiarism_analysis = $var;
+
+        return $this;
+    }
+
+    /**
+     * maximum amount of time a submission can be evaluated
+     *
+     * Generated from protobuf field <code>uint32 submission_evaluation_limit = 27;</code>
+     * @return int
+     */
+    public function getSubmissionEvaluationLimit()
+    {
+        return $this->submission_evaluation_limit;
+    }
+
+    /**
+     * maximum amount of time a submission can be evaluated
+     *
+     * Generated from protobuf field <code>uint32 submission_evaluation_limit = 27;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSubmissionEvaluationLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->submission_evaluation_limit = $var;
 
         return $this;
     }
