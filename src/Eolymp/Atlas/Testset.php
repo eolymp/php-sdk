@@ -56,6 +56,10 @@ class Testset extends \Google\Protobuf\Internal\Message
      */
     private $dependencies;
     /**
+     * Generated from protobuf field <code>.eolymp.atlas.Testset.DependencyMode dependency_mode = 21;</code>
+     */
+    protected $dependency_mode = 0;
+    /**
      * Score mode defines how score points are awarded for this testset. See ScoringMode enumeration for details.
      *
      * Generated from protobuf field <code>.eolymp.atlas.ScoringMode scoring_mode = 30;</code>
@@ -88,6 +92,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      *           File size limit in bytes for runs within this testset.
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dependencies
      *           List of other testset indices which must pass before this testset is executed.
+     *     @type int $dependency_mode
      *     @type int $scoring_mode
      *           Score mode defines how score points are awarded for this testset. See ScoringMode enumeration for details.
      *     @type int $feedback_policy
@@ -277,6 +282,28 @@ class Testset extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->dependencies = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Testset.DependencyMode dependency_mode = 21;</code>
+     * @return int
+     */
+    public function getDependencyMode()
+    {
+        return $this->dependency_mode;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Testset.DependencyMode dependency_mode = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDependencyMode($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Testset\DependencyMode::class);
+        $this->dependency_mode = $var;
 
         return $this;
     }

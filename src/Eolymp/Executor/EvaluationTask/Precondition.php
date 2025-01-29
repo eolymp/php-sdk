@@ -23,7 +23,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      */
     private $selector;
     /**
-     * Defines label selector for runs which must be ACCEPTED before.
+     * Defines label selector for runs which must be passing.
      * Dependent runs will match if they have at least one of the labels defined in depends_on.
      * To match dependent runs with by multiple labels, use two different preconditions.
      * Empty depends_on means no dependencies.
@@ -31,6 +31,12 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string depends_on = 10;</code>
      */
     private $depends_on;
+    /**
+     * Defines what is considered as resolved dependency.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.EvaluationTask.DependencyMode dependency_mode = 20;</code>
+     */
+    protected $dependency_mode = 0;
     /**
      * Skip the rest of the runs if one fails.
      *
@@ -56,10 +62,12 @@ class Precondition extends \Google\Protobuf\Internal\Message
      *           Precondition will apply to all runs matching this label selector.
      *           Run must have all labels defined by selector. Empty selector will match all runs.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $depends_on
-     *           Defines label selector for runs which must be ACCEPTED before.
+     *           Defines label selector for runs which must be passing.
      *           Dependent runs will match if they have at least one of the labels defined in depends_on.
      *           To match dependent runs with by multiple labels, use two different preconditions.
      *           Empty depends_on means no dependencies.
+     *     @type int $dependency_mode
+     *           Defines what is considered as resolved dependency.
      *     @type bool $stop_on_failure
      *           Skip the rest of the runs if one fails.
      *     @type int $max_execution_time
@@ -102,7 +110,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Defines label selector for runs which must be ACCEPTED before.
+     * Defines label selector for runs which must be passing.
      * Dependent runs will match if they have at least one of the labels defined in depends_on.
      * To match dependent runs with by multiple labels, use two different preconditions.
      * Empty depends_on means no dependencies.
@@ -116,7 +124,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Defines label selector for runs which must be ACCEPTED before.
+     * Defines label selector for runs which must be passing.
      * Dependent runs will match if they have at least one of the labels defined in depends_on.
      * To match dependent runs with by multiple labels, use two different preconditions.
      * Empty depends_on means no dependencies.
@@ -129,6 +137,32 @@ class Precondition extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->depends_on = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Defines what is considered as resolved dependency.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.EvaluationTask.DependencyMode dependency_mode = 20;</code>
+     * @return int
+     */
+    public function getDependencyMode()
+    {
+        return $this->dependency_mode;
+    }
+
+    /**
+     * Defines what is considered as resolved dependency.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.EvaluationTask.DependencyMode dependency_mode = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDependencyMode($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Executor\EvaluationTask\DependencyMode::class);
+        $this->dependency_mode = $var;
 
         return $this;
     }
