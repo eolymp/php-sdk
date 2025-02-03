@@ -26,6 +26,12 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Use debugging (report content of stdout, stderr and exit code).
+     *
+     * Generated from protobuf field <code>bool debug = 3;</code>
+     */
+    protected $debug = false;
+    /**
      * A number of points awarded for passing this run.
      *
      * Generated from protobuf field <code>float cost = 4;</code>
@@ -50,6 +56,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Run reference.
      *     @type int $index
      *           Index defines order in which runs are executed.
+     *     @type bool $debug
+     *           Use debugging (report content of stdout, stderr and exit code).
      *     @type float $cost
      *           A number of points awarded for passing this run.
      *     @type array|\Google\Protobuf\Internal\MapField $env
@@ -121,6 +129,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Use debugging (report content of stdout, stderr and exit code).
+     *
+     * Generated from protobuf field <code>bool debug = 3;</code>
+     * @return bool
+     */
+    public function getDebug()
+    {
+        return $this->debug;
+    }
+
+    /**
+     * Use debugging (report content of stdout, stderr and exit code).
+     *
+     * Generated from protobuf field <code>bool debug = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDebug($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->debug = $var;
 
         return $this;
     }

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Generator defines configuration used to generate data on the fly.
+ *
  * Generated from protobuf message <code>eolymp.executor.GenerationTask.Generator</code>
  */
 class Generator extends \Google\Protobuf\Internal\Message

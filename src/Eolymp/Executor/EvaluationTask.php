@@ -41,12 +41,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
-     * deprecated, use source_url instead
-     *
-     * Generated from protobuf field <code>string source = 11;</code>
-     */
-    protected $source = '';
-    /**
      * source code URL (overrides source)
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
@@ -70,6 +64,12 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      */
     private $files;
+    /**
+     * Solution being evaluated.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
+     */
+    protected $solution = null;
     /**
      * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
@@ -134,8 +134,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Currently not supported.
      *     @type string $runtime
      *           Runtime which should be used to execute source code.
-     *     @type string $source
-     *           deprecated, use source_url instead
      *     @type string $source_url
      *           source code URL (overrides source)
      *     @type string $header_url
@@ -144,6 +142,8 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           append source code before executing
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files to be placed in the work directory during compilation and runs*
+     *     @type \Eolymp\Executor\Script $solution
+     *           Solution being evaluated.
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
@@ -289,32 +289,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated, use source_url instead
-     *
-     * Generated from protobuf field <code>string source = 11;</code>
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-
-    /**
-     * deprecated, use source_url instead
-     *
-     * Generated from protobuf field <code>string source = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSource($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source = $var;
-
-        return $this;
-    }
-
-    /**
      * source code URL (overrides source)
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
@@ -414,6 +388,42 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
         $this->files = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Solution being evaluated.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
+     * @return \Eolymp\Executor\Script|null
+     */
+    public function getSolution()
+    {
+        return $this->solution;
+    }
+
+    public function hasSolution()
+    {
+        return isset($this->solution);
+    }
+
+    public function clearSolution()
+    {
+        unset($this->solution);
+    }
+
+    /**
+     * Solution being evaluated.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
+     * @param \Eolymp\Executor\Script $var
+     * @return $this
+     */
+    public function setSolution($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
+        $this->solution = $var;
 
         return $this;
     }

@@ -7,6 +7,8 @@ namespace Eolymp\Executor\EvaluationTask;
 use UnexpectedValueException;
 
 /**
+ * Dependency mode used in depends_on preconditions.
+ *
  * Protobuf type <code>eolymp.executor.EvaluationTask.DependencyMode</code>
  */
 class DependencyMode
@@ -22,7 +24,7 @@ class DependencyMode
      */
     const FULLY_ACCEPTED = 1;
     /**
-     * to unlock dependency any of the matching runs must have at least one point
+     * to unlock dependency any of the matching runs must have at least one point or full accepted
      *
      * Generated from protobuf enum <code>FIRST_POINT = 2;</code>
      */
