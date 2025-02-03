@@ -35,31 +35,31 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $priority = 0;
     /**
-     * Runtime which should be used to execute source code.
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
      */
     protected $runtime = '';
     /**
-     * source code URL (overrides source)
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
      */
     protected $source_url = '';
     /**
-     * prepend source code before executing
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string header_url = 111;</code>
      */
     protected $header_url = '';
     /**
-     * append source code before executing
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string footer_url = 112;</code>
      */
     protected $footer_url = '';
     /**
-     * Additional files to be placed in the work directory during compilation and runs*
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      */
@@ -133,15 +133,15 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
      *           Currently not supported.
      *     @type string $runtime
-     *           Runtime which should be used to execute source code.
+     *           deprecated: use solution script instead
      *     @type string $source_url
-     *           source code URL (overrides source)
+     *           deprecated: use solution script instead
      *     @type string $header_url
-     *           prepend source code before executing
+     *           deprecated: use solution script instead
      *     @type string $footer_url
-     *           append source code before executing
+     *           deprecated: use solution script instead
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
-     *           Additional files to be placed in the work directory during compilation and runs*
+     *           deprecated: use solution script instead
      *     @type \Eolymp\Executor\Script $solution
      *           Solution being evaluated.
      *     @type bool $redirect_stderr_to_stdout
@@ -263,7 +263,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Runtime which should be used to execute source code.
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
      * @return string
@@ -274,7 +274,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Runtime which should be used to execute source code.
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
      * @param string $var
@@ -289,7 +289,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code URL (overrides source)
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
      * @return string
@@ -300,7 +300,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code URL (overrides source)
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
      * @param string $var
@@ -315,7 +315,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * prepend source code before executing
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string header_url = 111;</code>
      * @return string
@@ -326,7 +326,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * prepend source code before executing
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string header_url = 111;</code>
      * @param string $var
@@ -341,7 +341,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * append source code before executing
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string footer_url = 112;</code>
      * @return string
@@ -352,7 +352,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * append source code before executing
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>string footer_url = 112;</code>
      * @param string $var
@@ -367,7 +367,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Additional files to be placed in the work directory during compilation and runs*
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -378,7 +378,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Additional files to be placed in the work directory during compilation and runs*
+     * deprecated: use solution script instead
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var

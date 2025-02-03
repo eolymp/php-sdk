@@ -26,40 +26,14 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      */
     protected $origin = '';
     /**
-     * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
-     * Currently not supported.
-     *
-     * Generated from protobuf field <code>uint32 priority = 4;</code>
-     */
-    protected $priority = 0;
-    /**
-     * Solution being used to generate answers.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
-     */
-    protected $solution = null;
-    /**
-     * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
-     * both stderr and stdout in output field while stderr will be empty.
-     *
-     * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
-     */
-    protected $redirect_stderr_to_stdout = false;
-    /**
-     * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
-     *
      * Generated from protobuf field <code>uint32 run_count = 16;</code>
      */
     protected $run_count = 0;
     /**
-     * Interactor configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
      */
     protected $interactor = null;
     /**
-     * Additional scripts
-     *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      */
     private $scripts;
@@ -77,20 +51,9 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *     @type string $reference
      *     @type string $origin
-     *     @type int $priority
-     *           Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
-     *           Currently not supported.
-     *     @type \Eolymp\Executor\Script $solution
-     *           Solution being used to generate answers.
-     *     @type bool $redirect_stderr_to_stdout
-     *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
-     *           both stderr and stdout in output field while stderr will be empty.
      *     @type int $run_count
-     *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *     @type \Eolymp\Executor\Interactor $interactor
-     *           Interactor configuration
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
-     *           Additional scripts
      *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      * }
      */
@@ -166,100 +129,6 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
-     * Currently not supported.
-     *
-     * Generated from protobuf field <code>uint32 priority = 4;</code>
-     * @return int
-     */
-    public function getPriority()
-    {
-        return $this->priority;
-    }
-
-    /**
-     * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
-     * Currently not supported.
-     *
-     * Generated from protobuf field <code>uint32 priority = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPriority($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->priority = $var;
-
-        return $this;
-    }
-
-    /**
-     * Solution being used to generate answers.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
-     * @return \Eolymp\Executor\Script|null
-     */
-    public function getSolution()
-    {
-        return $this->solution;
-    }
-
-    public function hasSolution()
-    {
-        return isset($this->solution);
-    }
-
-    public function clearSolution()
-    {
-        unset($this->solution);
-    }
-
-    /**
-     * Solution being used to generate answers.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
-     * @param \Eolymp\Executor\Script $var
-     * @return $this
-     */
-    public function setSolution($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
-        $this->solution = $var;
-
-        return $this;
-    }
-
-    /**
-     * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
-     * both stderr and stdout in output field while stderr will be empty.
-     *
-     * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
-     * @return bool
-     */
-    public function getRedirectStderrToStdout()
-    {
-        return $this->redirect_stderr_to_stdout;
-    }
-
-    /**
-     * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
-     * both stderr and stdout in output field while stderr will be empty.
-     *
-     * Generated from protobuf field <code>bool redirect_stderr_to_stdout = 13;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRedirectStderrToStdout($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->redirect_stderr_to_stdout = $var;
-
-        return $this;
-    }
-
-    /**
-     * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
-     *
      * Generated from protobuf field <code>uint32 run_count = 16;</code>
      * @return int
      */
@@ -269,8 +138,6 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
-     *
      * Generated from protobuf field <code>uint32 run_count = 16;</code>
      * @param int $var
      * @return $this
@@ -284,8 +151,6 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Interactor configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
      * @return \Eolymp\Executor\Interactor|null
      */
@@ -305,8 +170,6 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Interactor configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
      * @param \Eolymp\Executor\Interactor $var
      * @return $this
@@ -320,8 +183,6 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Additional scripts
-     *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -331,8 +192,6 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Additional scripts
-     *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
