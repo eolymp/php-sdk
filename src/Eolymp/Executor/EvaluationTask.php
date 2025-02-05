@@ -35,41 +35,35 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $priority = 0;
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
      */
     protected $runtime = '';
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
      */
     protected $source_url = '';
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string header_url = 111;</code>
      */
     protected $header_url = '';
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string footer_url = 112;</code>
      */
     protected $footer_url = '';
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      */
     private $files;
-    /**
-     * Solution being evaluated.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
-     */
-    protected $solution = null;
     /**
      * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
@@ -96,15 +90,27 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     private $constraints;
     /**
+     * Submission being evaluated.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script submission = 12;</code>
+     */
+    protected $submission = null;
+    /**
      * Checker configuration.
      *
      * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
      */
     protected $checker = null;
     /**
+     * deprecated Interactor configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor_deprecated = 25;</code>
+     */
+    protected $interactor_deprecated = null;
+    /**
      * Interactor configuration
      *
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
+     * Generated from protobuf field <code>.eolymp.executor.Script interactor = 26;</code>
      */
     protected $interactor = null;
     /**
@@ -133,17 +139,15 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
      *           Currently not supported.
      *     @type string $runtime
-     *           deprecated: use solution script instead
+     *           deprecated: use submission script instead
      *     @type string $source_url
-     *           deprecated: use solution script instead
+     *           deprecated: use submission script instead
      *     @type string $header_url
-     *           deprecated: use solution script instead
+     *           deprecated: use submission script instead
      *     @type string $footer_url
-     *           deprecated: use solution script instead
+     *           deprecated: use submission script instead
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
-     *           deprecated: use solution script instead
-     *     @type \Eolymp\Executor\Script $solution
-     *           Solution being evaluated.
+     *           deprecated: use submission script instead
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
@@ -153,9 +157,13 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type array<\Eolymp\Executor\EvaluationTask\Constraint>|\Google\Protobuf\Internal\RepeatedField $constraints
      *           Execution constraints, define limits imposed on each run.
+     *     @type \Eolymp\Executor\Script $submission
+     *           Submission being evaluated.
      *     @type \Eolymp\Executor\Checker $checker
      *           Checker configuration.
-     *     @type \Eolymp\Executor\Interactor $interactor
+     *     @type \Eolymp\Executor\Interactor $interactor_deprecated
+     *           deprecated Interactor configuration
+     *     @type \Eolymp\Executor\Script $interactor
      *           Interactor configuration
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
      *           Additional scripts
@@ -263,7 +271,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
      * @return string
@@ -274,7 +282,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string runtime = 10;</code>
      * @param string $var
@@ -289,7 +297,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
      * @return string
@@ -300,7 +308,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string source_url = 110;</code>
      * @param string $var
@@ -315,7 +323,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string header_url = 111;</code>
      * @return string
@@ -326,7 +334,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string header_url = 111;</code>
      * @param string $var
@@ -341,7 +349,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string footer_url = 112;</code>
      * @return string
@@ -352,7 +360,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>string footer_url = 112;</code>
      * @param string $var
@@ -367,7 +375,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -378,7 +386,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: use solution script instead
+     * deprecated: use submission script instead
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
      * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
@@ -388,42 +396,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
         $this->files = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Solution being evaluated.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
-     * @return \Eolymp\Executor\Script|null
-     */
-    public function getSolution()
-    {
-        return $this->solution;
-    }
-
-    public function hasSolution()
-    {
-        return isset($this->solution);
-    }
-
-    public function clearSolution()
-    {
-        unset($this->solution);
-    }
-
-    /**
-     * Solution being evaluated.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 12;</code>
-     * @param \Eolymp\Executor\Script $var
-     * @return $this
-     */
-    public function setSolution($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
-        $this->solution = $var;
 
         return $this;
     }
@@ -535,6 +507,42 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Submission being evaluated.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script submission = 12;</code>
+     * @return \Eolymp\Executor\Script|null
+     */
+    public function getSubmission()
+    {
+        return $this->submission;
+    }
+
+    public function hasSubmission()
+    {
+        return isset($this->submission);
+    }
+
+    public function clearSubmission()
+    {
+        unset($this->submission);
+    }
+
+    /**
+     * Submission being evaluated.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script submission = 12;</code>
+     * @param \Eolymp\Executor\Script $var
+     * @return $this
+     */
+    public function setSubmission($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
+        $this->submission = $var;
+
+        return $this;
+    }
+
+    /**
      * Checker configuration.
      *
      * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
@@ -571,10 +579,46 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated Interactor configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor_deprecated = 25;</code>
+     * @return \Eolymp\Executor\Interactor|null
+     */
+    public function getInteractorDeprecated()
+    {
+        return $this->interactor_deprecated;
+    }
+
+    public function hasInteractorDeprecated()
+    {
+        return isset($this->interactor_deprecated);
+    }
+
+    public function clearInteractorDeprecated()
+    {
+        unset($this->interactor_deprecated);
+    }
+
+    /**
+     * deprecated Interactor configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor_deprecated = 25;</code>
+     * @param \Eolymp\Executor\Interactor $var
+     * @return $this
+     */
+    public function setInteractorDeprecated($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        $this->interactor_deprecated = $var;
+
+        return $this;
+    }
+
+    /**
      * Interactor configuration
      *
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
-     * @return \Eolymp\Executor\Interactor|null
+     * Generated from protobuf field <code>.eolymp.executor.Script interactor = 26;</code>
+     * @return \Eolymp\Executor\Script|null
      */
     public function getInteractor()
     {
@@ -594,13 +638,13 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     /**
      * Interactor configuration
      *
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
-     * @param \Eolymp\Executor\Interactor $var
+     * Generated from protobuf field <code>.eolymp.executor.Script interactor = 26;</code>
+     * @param \Eolymp\Executor\Script $var
      * @return $this
      */
     public function setInteractor($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
         $this->interactor = $var;
 
         return $this;
