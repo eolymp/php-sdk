@@ -28,42 +28,16 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $origin = '';
     /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     */
+    private $metadata;
+    /**
      * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
      * Currently not supported.
      *
      * Generated from protobuf field <code>uint32 priority = 4;</code>
      */
     protected $priority = 0;
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string runtime = 10;</code>
-     */
-    protected $runtime = '';
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string source_url = 110;</code>
-     */
-    protected $source_url = '';
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string header_url = 111;</code>
-     */
-    protected $header_url = '';
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string footer_url = 112;</code>
-     */
-    protected $footer_url = '';
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
-     */
-    private $files;
     /**
      * Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      * both stderr and stdout in output field while stderr will be empty.
@@ -96,23 +70,17 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $submission = null;
     /**
-     * Checker configuration.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
-     */
-    protected $checker = null;
-    /**
-     * deprecated Interactor configuration
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor_deprecated = 25;</code>
-     */
-    protected $interactor_deprecated = null;
-    /**
      * Interactor configuration
      *
      * Generated from protobuf field <code>.eolymp.executor.Script interactor = 26;</code>
      */
     protected $interactor = null;
+    /**
+     * Checker configuration.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     */
+    protected $checker = null;
     /**
      * Additional scripts
      *
@@ -135,19 +103,10 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *     @type string $reference
      *     @type string $origin
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type int $priority
      *           Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
      *           Currently not supported.
-     *     @type string $runtime
-     *           deprecated: use submission script instead
-     *     @type string $source_url
-     *           deprecated: use submission script instead
-     *     @type string $header_url
-     *           deprecated: use submission script instead
-     *     @type string $footer_url
-     *           deprecated: use submission script instead
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
-     *           deprecated: use submission script instead
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
@@ -159,12 +118,10 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Execution constraints, define limits imposed on each run.
      *     @type \Eolymp\Executor\Script $submission
      *           Submission being evaluated.
-     *     @type \Eolymp\Executor\Checker $checker
-     *           Checker configuration.
-     *     @type \Eolymp\Executor\Interactor $interactor_deprecated
-     *           deprecated Interactor configuration
      *     @type \Eolymp\Executor\Script $interactor
      *           Interactor configuration
+     *     @type \Eolymp\Executor\Checker $checker
+     *           Checker configuration.
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
      *           Additional scripts
      *     @type array<\Eolymp\Executor\EvaluationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
@@ -243,6 +200,28 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
+
+        return $this;
+    }
+
+    /**
      * Task priority. Allowed values 1-9. Messages with higher priority are precessed first.
      * Currently not supported.
      *
@@ -266,136 +245,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->priority = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string runtime = 10;</code>
-     * @return string
-     */
-    public function getRuntime()
-    {
-        return $this->runtime;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string runtime = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRuntime($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->runtime = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string source_url = 110;</code>
-     * @return string
-     */
-    public function getSourceUrl()
-    {
-        return $this->source_url;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string source_url = 110;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSourceUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string header_url = 111;</code>
-     * @return string
-     */
-    public function getHeaderUrl()
-    {
-        return $this->header_url;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string header_url = 111;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHeaderUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->header_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string footer_url = 112;</code>
-     * @return string
-     */
-    public function getFooterUrl()
-    {
-        return $this->footer_url;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>string footer_url = 112;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFooterUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->footer_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    /**
-     * deprecated: use submission script instead
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 50;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFiles($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
-        $this->files = $arr;
 
         return $this;
     }
@@ -543,78 +392,6 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Checker configuration.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
-     * @return \Eolymp\Executor\Checker|null
-     */
-    public function getChecker()
-    {
-        return $this->checker;
-    }
-
-    public function hasChecker()
-    {
-        return isset($this->checker);
-    }
-
-    public function clearChecker()
-    {
-        unset($this->checker);
-    }
-
-    /**
-     * Checker configuration.
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
-     * @param \Eolymp\Executor\Checker $var
-     * @return $this
-     */
-    public function setChecker($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
-        $this->checker = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated Interactor configuration
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor_deprecated = 25;</code>
-     * @return \Eolymp\Executor\Interactor|null
-     */
-    public function getInteractorDeprecated()
-    {
-        return $this->interactor_deprecated;
-    }
-
-    public function hasInteractorDeprecated()
-    {
-        return isset($this->interactor_deprecated);
-    }
-
-    public function clearInteractorDeprecated()
-    {
-        unset($this->interactor_deprecated);
-    }
-
-    /**
-     * deprecated Interactor configuration
-     *
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor_deprecated = 25;</code>
-     * @param \Eolymp\Executor\Interactor $var
-     * @return $this
-     */
-    public function setInteractorDeprecated($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
-        $this->interactor_deprecated = $var;
-
-        return $this;
-    }
-
-    /**
      * Interactor configuration
      *
      * Generated from protobuf field <code>.eolymp.executor.Script interactor = 26;</code>
@@ -646,6 +423,42 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
         $this->interactor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Checker configuration.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     * @return \Eolymp\Executor\Checker|null
+     */
+    public function getChecker()
+    {
+        return $this->checker;
+    }
+
+    public function hasChecker()
+    {
+        return isset($this->checker);
+    }
+
+    public function clearChecker()
+    {
+        unset($this->checker);
+    }
+
+    /**
+     * Checker configuration.
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     * @param \Eolymp\Executor\Checker $var
+     * @return $this
+     */
+    public function setChecker($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
+        $this->checker = $var;
 
         return $this;
     }

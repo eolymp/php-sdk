@@ -26,14 +26,22 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      */
     protected $origin = '';
     /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     */
+    private $metadata;
+    /**
      * Generated from protobuf field <code>uint32 run_count = 16;</code>
      */
     protected $run_count = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
+     * Interactor configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
      */
     protected $interactor = null;
     /**
+     * Additional scripts
+     *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      */
     private $scripts;
@@ -51,9 +59,12 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type string $task_id
      *     @type string $reference
      *     @type string $origin
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type int $run_count
-     *     @type \Eolymp\Executor\Interactor $interactor
+     *     @type \Eolymp\Executor\Script $interactor
+     *           Interactor configuration
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *           Additional scripts
      *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      * }
      */
@@ -129,6 +140,28 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>uint32 run_count = 16;</code>
      * @return int
      */
@@ -151,8 +184,10 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
-     * @return \Eolymp\Executor\Interactor|null
+     * Interactor configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
+     * @return \Eolymp\Executor\Script|null
      */
     public function getInteractor()
     {
@@ -170,19 +205,23 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Interactor interactor = 25;</code>
-     * @param \Eolymp\Executor\Interactor $var
+     * Interactor configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
+     * @param \Eolymp\Executor\Script $var
      * @return $this
      */
     public function setInteractor($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Executor\Interactor::class);
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
         $this->interactor = $var;
 
         return $this;
     }
 
     /**
+     * Additional scripts
+     *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -192,6 +231,8 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Additional scripts
+     *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
      * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
