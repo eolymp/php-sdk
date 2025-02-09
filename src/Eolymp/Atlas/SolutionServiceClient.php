@@ -111,4 +111,20 @@ class SolutionServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSolutionsOutput::class, $context);
     }
 
+    /**
+     * @param CheckSolutionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return CheckSolutionsOutput output message
+     */
+    public function CheckSolutions(CheckSolutionsInput $input, array $context = [])
+    {
+        $path = "/solutions:check";
+
+        $context['name'] = "eolymp.atlas.SolutionService/CheckSolutions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CheckSolutionsOutput::class, $context);
+    }
+
 }

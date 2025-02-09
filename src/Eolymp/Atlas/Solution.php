@@ -47,6 +47,14 @@ class Solution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      */
     protected $type = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Solution.Status status = 30;</code>
+     */
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>string submission_id = 31;</code>
+     */
+    protected $submission_id = '';
 
     /**
      * Constructor.
@@ -65,6 +73,8 @@ class Solution extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *           source code
      *     @type int $type
+     *     @type int $status
+     *     @type string $submission_id
      * }
      */
     public function __construct($data = NULL) {
@@ -220,6 +230,50 @@ class Solution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution\Type::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Solution.Status status = 30;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Solution.Status status = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string submission_id = 31;</code>
+     * @return string
+     */
+    public function getSubmissionId()
+    {
+        return $this->submission_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string submission_id = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubmissionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->submission_id = $var;
 
         return $this;
     }
