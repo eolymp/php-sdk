@@ -16,6 +16,10 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
+     * Generated from protobuf enum <code>PENDING = 9;</code>
+     */
+    const PENDING = 9;
+    /**
      * Generated from protobuf enum <code>PASS = 1;</code>
      */
     const PASS = 1;
@@ -30,6 +34,7 @@ class Status
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
+        self::PENDING => 'PENDING',
         self::PASS => 'PASS',
         self::FAIL => 'FAIL',
         self::ERROR => 'ERROR',
