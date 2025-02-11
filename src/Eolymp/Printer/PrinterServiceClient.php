@@ -170,6 +170,26 @@ class PrinterServiceClient {
     }
 
     /**
+     * @param UpdatePrinterJobInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdatePrinterJobOutput output message
+     */
+    public function UpdatePrinterJob(UpdatePrinterJobInput $input, array $context = [])
+    {
+        $path = "/printers/".rawurlencode($input->getPrinterId())."/jobs/".rawurlencode($input->getJobId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPrinterId("");
+        $input->setJobId("");
+
+        $context['name'] = "eolymp.printer.PrinterService/UpdatePrinterJob";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdatePrinterJobOutput::class, $context);
+    }
+
+    /**
      * @param DeletePrinterJobInput $input message
      * @param array $context request parameters
      *
