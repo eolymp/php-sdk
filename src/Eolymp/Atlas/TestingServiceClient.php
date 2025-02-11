@@ -119,6 +119,38 @@ class TestingServiceClient {
     }
 
     /**
+     * @param UpdateValidatorInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateValidatorOutput output message
+     */
+    public function UpdateValidator(UpdateValidatorInput $input, array $context = [])
+    {
+        $path = "/validator";
+
+        $context['name'] = "eolymp.atlas.TestingService/UpdateValidator";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateValidatorOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeValidatorInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeValidatorOutput output message
+     */
+    public function DescribeValidator(DescribeValidatorInput $input, array $context = [])
+    {
+        $path = "/validator";
+
+        $context['name'] = "eolymp.atlas.TestingService/DescribeValidator";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeValidatorOutput::class, $context);
+    }
+
+    /**
      * @param CreateTestsetInput $input message
      * @param array $context request parameters
      *
