@@ -18,17 +18,13 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test created = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test before = 2;</code>
      */
-    private $created;
+    private $before;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test updated = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test after = 3;</code>
      */
-    private $updated;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test deleted = 4;</code>
-     */
-    private $deleted;
+    private $after;
 
     /**
      * Constructor.
@@ -37,9 +33,8 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $created
-     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $updated
-     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $deleted
+     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $before
+     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $after
      * }
      */
     public function __construct($data = NULL) {
@@ -70,67 +65,45 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test created = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test before = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getCreated()
+    public function getBefore()
     {
-        return $this->created;
+        return $this->before;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test created = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test before = 2;</code>
      * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setCreated($var)
+    public function setBefore($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Test::class);
-        $this->created = $arr;
+        $this->before = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test updated = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test after = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getUpdated()
+    public function getAfter()
     {
-        return $this->updated;
+        return $this->after;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test updated = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test after = 3;</code>
      * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setUpdated($var)
+    public function setAfter($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Test::class);
-        $this->updated = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test deleted = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getDeleted()
-    {
-        return $this->deleted;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test deleted = 4;</code>
-     * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setDeleted($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Test::class);
-        $this->deleted = $arr;
+        $this->after = $arr;
 
         return $this;
     }
