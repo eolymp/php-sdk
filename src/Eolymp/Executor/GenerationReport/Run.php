@@ -24,6 +24,10 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>bool valid = 31;</code>
+     */
+    protected $valid = false;
+    /**
      * Generated from protobuf field <code>string input_url = 10;</code>
      */
     protected $input_url = '';
@@ -52,6 +56,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *
      *     @type string $reference
      *     @type int $status
+     *     @type bool $valid
      *     @type string $input_url
      *     @type string $answer_url
      *     @type \Eolymp\Executor\Stats $input_generator_stats
@@ -104,6 +109,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Executor\GenerationReport\Run\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool valid = 31;</code>
+     * @return bool
+     */
+    public function getValid()
+    {
+        return $this->valid;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool valid = 31;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setValid($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->valid = $var;
 
         return $this;
     }

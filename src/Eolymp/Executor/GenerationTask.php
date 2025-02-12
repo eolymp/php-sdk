@@ -40,6 +40,12 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      */
     protected $interactor = null;
     /**
+     * Validator configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script validator = 26;</code>
+     */
+    protected $validator = null;
+    /**
      * Additional scripts
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
@@ -63,6 +69,8 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type int $run_count
      *     @type \Eolymp\Executor\Script $interactor
      *           Interactor configuration
+     *     @type \Eolymp\Executor\Script $validator
+     *           Validator configuration
      *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
      *           Additional scripts
      *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
@@ -215,6 +223,42 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
         $this->interactor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Validator configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script validator = 26;</code>
+     * @return \Eolymp\Executor\Script|null
+     */
+    public function getValidator()
+    {
+        return $this->validator;
+    }
+
+    public function hasValidator()
+    {
+        return isset($this->validator);
+    }
+
+    public function clearValidator()
+    {
+        unset($this->validator);
+    }
+
+    /**
+     * Validator configuration
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script validator = 26;</code>
+     * @param \Eolymp\Executor\Script $var
+     * @return $this
+     */
+    public function setValidator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
+        $this->validator = $var;
 
         return $this;
     }

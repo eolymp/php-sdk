@@ -40,21 +40,21 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $cost = 0.0;
     /**
-     * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 51;</code>
      */
-    protected $wall_time_usage = 0;
+    protected $time_usage = 0;
     /**
-     * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
+     * Generated from protobuf field <code>uint32 time_limit = 61;</code>
      */
-    protected $wall_time_limit = 0;
+    protected $time_limit = 0;
     /**
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 52;</code>
      */
-    protected $cpu_time_usage = 0;
+    protected $cpu_usage = 0;
     /**
-     * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 62;</code>
      */
-    protected $cpu_time_limit = 0;
+    protected $cpu_limit = 0;
     /**
      * Generated from protobuf field <code>uint64 memory_usage = 53;</code>
      */
@@ -63,6 +63,12 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint64 memory_limit = 63;</code>
      */
     protected $memory_limit = 0;
+    /**
+     * time coefficient used to normalize cpu and time usage
+     *
+     * Generated from protobuf field <code>float time_coefficient = 14;</code>
+     */
+    protected $time_coefficient = 0.0;
     /**
      * Generated from protobuf field <code>string input_url = 10;</code>
      */
@@ -108,12 +114,14 @@ class Run extends \Google\Protobuf\Internal\Message
      *           score, number of points awarded by checker
      *     @type float $cost
      *           cost, maximum number of points awarded for the test (as defined in the task)
-     *     @type int $wall_time_usage
-     *     @type int $wall_time_limit
-     *     @type int $cpu_time_usage
-     *     @type int $cpu_time_limit
+     *     @type int $time_usage
+     *     @type int $time_limit
+     *     @type int $cpu_usage
+     *     @type int $cpu_limit
      *     @type int|string $memory_usage
      *     @type int|string $memory_limit
+     *     @type float $time_coefficient
+     *           time coefficient used to normalize cpu and time usage
      *     @type string $input_url
      *     @type string $output_url
      *     @type string $answer_url
@@ -235,89 +243,89 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 51;</code>
      * @return int
      */
-    public function getWallTimeUsage()
+    public function getTimeUsage()
     {
-        return $this->wall_time_usage;
+        return $this->time_usage;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 wall_time_usage = 51;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 51;</code>
      * @param int $var
      * @return $this
      */
-    public function setWallTimeUsage($var)
+    public function setTimeUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->wall_time_usage = $var;
+        $this->time_usage = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
+     * Generated from protobuf field <code>uint32 time_limit = 61;</code>
      * @return int
      */
-    public function getWallTimeLimit()
+    public function getTimeLimit()
     {
-        return $this->wall_time_limit;
+        return $this->time_limit;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 wall_time_limit = 61;</code>
+     * Generated from protobuf field <code>uint32 time_limit = 61;</code>
      * @param int $var
      * @return $this
      */
-    public function setWallTimeLimit($var)
+    public function setTimeLimit($var)
     {
         GPBUtil::checkUint32($var);
-        $this->wall_time_limit = $var;
+        $this->time_limit = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 52;</code>
      * @return int
      */
-    public function getCpuTimeUsage()
+    public function getCpuUsage()
     {
-        return $this->cpu_time_usage;
+        return $this->cpu_usage;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 cpu_time_usage = 52;</code>
+     * Generated from protobuf field <code>uint32 cpu_usage = 52;</code>
      * @param int $var
      * @return $this
      */
-    public function setCpuTimeUsage($var)
+    public function setCpuUsage($var)
     {
         GPBUtil::checkUint32($var);
-        $this->cpu_time_usage = $var;
+        $this->cpu_usage = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 62;</code>
      * @return int
      */
-    public function getCpuTimeLimit()
+    public function getCpuLimit()
     {
-        return $this->cpu_time_limit;
+        return $this->cpu_limit;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 cpu_time_limit = 62;</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 62;</code>
      * @param int $var
      * @return $this
      */
-    public function setCpuTimeLimit($var)
+    public function setCpuLimit($var)
     {
         GPBUtil::checkUint32($var);
-        $this->cpu_time_limit = $var;
+        $this->cpu_limit = $var;
 
         return $this;
     }
@@ -362,6 +370,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->memory_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * time coefficient used to normalize cpu and time usage
+     *
+     * Generated from protobuf field <code>float time_coefficient = 14;</code>
+     * @return float
+     */
+    public function getTimeCoefficient()
+    {
+        return $this->time_coefficient;
+    }
+
+    /**
+     * time coefficient used to normalize cpu and time usage
+     *
+     * Generated from protobuf field <code>float time_coefficient = 14;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setTimeCoefficient($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->time_coefficient = $var;
 
         return $this;
     }

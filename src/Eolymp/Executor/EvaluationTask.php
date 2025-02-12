@@ -46,6 +46,14 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $redirect_stderr_to_stdout = false;
     /**
+     * The agent will normalize execution time of each run within deviation range.
+     * Each agent calculates a time coefficient (a multiplier) based on the evaluation time of benchmark solution. This coefficient is used to normalize execution time of each run.
+     * This parameter allows to limit the coefficient deviation, for example 0.5 means the coefficient will be limited to range of 0.5-1.5, 0 means the coefficient will be ignored and actual execution time will be used.
+     *
+     * Generated from protobuf field <code>float time_coefficient_deviation = 14;</code>
+     */
+    protected $time_coefficient_deviation = 0.0;
+    /**
      * Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *
      * Generated from protobuf field <code>uint32 run_count = 16;</code>
@@ -110,6 +118,10 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
+     *     @type float $time_coefficient_deviation
+     *           The agent will normalize execution time of each run within deviation range.
+     *           Each agent calculates a time coefficient (a multiplier) based on the evaluation time of benchmark solution. This coefficient is used to normalize execution time of each run.
+     *           This parameter allows to limit the coefficient deviation, for example 0.5 means the coefficient will be limited to range of 0.5-1.5, 0 means the coefficient will be ignored and actual execution time will be used.
      *     @type int $run_count
      *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *     @type array<\Eolymp\Executor\EvaluationTask\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
@@ -273,6 +285,36 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->redirect_stderr_to_stdout = $var;
+
+        return $this;
+    }
+
+    /**
+     * The agent will normalize execution time of each run within deviation range.
+     * Each agent calculates a time coefficient (a multiplier) based on the evaluation time of benchmark solution. This coefficient is used to normalize execution time of each run.
+     * This parameter allows to limit the coefficient deviation, for example 0.5 means the coefficient will be limited to range of 0.5-1.5, 0 means the coefficient will be ignored and actual execution time will be used.
+     *
+     * Generated from protobuf field <code>float time_coefficient_deviation = 14;</code>
+     * @return float
+     */
+    public function getTimeCoefficientDeviation()
+    {
+        return $this->time_coefficient_deviation;
+    }
+
+    /**
+     * The agent will normalize execution time of each run within deviation range.
+     * Each agent calculates a time coefficient (a multiplier) based on the evaluation time of benchmark solution. This coefficient is used to normalize execution time of each run.
+     * This parameter allows to limit the coefficient deviation, for example 0.5 means the coefficient will be limited to range of 0.5-1.5, 0 means the coefficient will be ignored and actual execution time will be used.
+     *
+     * Generated from protobuf field <code>float time_coefficient_deviation = 14;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setTimeCoefficientDeviation($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->time_coefficient_deviation = $var;
 
         return $this;
     }
