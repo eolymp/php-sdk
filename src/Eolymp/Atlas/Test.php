@@ -30,6 +30,16 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Status status = 60;</code>
+     */
+    protected $status = 0;
+    /**
+     * Additional information regarding status
+     *
+     * Generated from protobuf field <code>string status_message = 61;</code>
+     */
+    protected $status_message = '';
+    /**
      * Flag which defines if test should be shown in as an example in the problem statement
      *
      * Generated from protobuf field <code>bool example = 4;</code>
@@ -91,6 +101,9 @@ class Test extends \Google\Protobuf\Internal\Message
      *     @type string $testset_id
      *     @type int $index
      *           Index, a sequential number, of the test within testset.
+     *     @type int $status
+     *     @type string $status_message
+     *           Additional information regarding status
      *     @type bool $example
      *           Flag which defines if test should be shown in as an example in the problem statement
      *     @type bool $inactive
@@ -188,6 +201,54 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Status status = 60;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Status status = 60;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Test\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional information regarding status
+     *
+     * Generated from protobuf field <code>string status_message = 61;</code>
+     * @return string
+     */
+    public function getStatusMessage()
+    {
+        return $this->status_message;
+    }
+
+    /**
+     * Additional information regarding status
+     *
+     * Generated from protobuf field <code>string status_message = 61;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatusMessage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status_message = $var;
 
         return $this;
     }
