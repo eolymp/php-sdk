@@ -18,14 +18,16 @@ class TestingInteractor
         \GPBMetadata\Eolymp\Executor\Interactor::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¤
-%eolymp/atlas/testing_interactor.protoeolymp.atlas eolymp/executor/interactor.proto"“
+¸
+%eolymp/atlas/testing_interactor.protoeolymp.atlas eolymp/executor/interactor.proto"§
 
-Interactor.
+Interactor
+
+version_id (	
+secret (.
 type (2 .eolymp.executor.Interactor.Type
 runtime (	
-source (	
-secret ($
+source (	$
 files
  (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);

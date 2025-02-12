@@ -26,17 +26,19 @@ class Snapshot
         \GPBMetadata\Eolymp\Atlas\TestingInteractor::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingTest::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingTestset::initOnce();
+        \GPBMetadata\Eolymp\Atlas\TestingValidator::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ò
-eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto"ˆ
+¤
+eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto$eolymp/atlas/testing_validator.proto"´
 Snapshot&
 problem (2.eolymp.atlas.Problem,
 testing
  (2.eolymp.atlas.TestingConfig&
 checker (2.eolymp.atlas.Checker,
 
-interactor (2.eolymp.atlas.Interactor+
+interactor (2.eolymp.atlas.Interactor*
+	validator (2.eolymp.atlas.Validator+
 
 statements (2.eolymp.atlas.Statement)
 	templates (2.eolymp.atlas.Template-

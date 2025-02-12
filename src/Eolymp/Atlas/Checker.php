@@ -16,6 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class Checker extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string version_id = 11;</code>
+     */
+    protected $version_id = '';
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     */
+    protected $secret = false;
+    /**
      * Generated from protobuf field <code>.eolymp.executor.Checker.Type type = 1;</code>
      */
     protected $type = 0;
@@ -31,6 +41,12 @@ class Checker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 3;</code>
      */
     protected $source = '';
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
+     */
+    private $files;
     /**
      * Precision for TOKEN checker
      *
@@ -50,18 +66,6 @@ class Checker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool order_sensitive = 6;</code>
      */
     protected $order_sensitive = false;
-    /**
-     * Secret means checker code and configuration must not be exposed to users
-     *
-     * Generated from protobuf field <code>bool secret = 7;</code>
-     */
-    protected $secret = false;
-    /**
-     * Additional files placed into workdir during compilation and execution
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     */
-    private $files;
 
     /**
      * Constructor.
@@ -69,11 +73,16 @@ class Checker extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $version_id
+     *     @type bool $secret
+     *           Secret means checker code and configuration must not be exposed to users
      *     @type int $type
      *     @type string $runtime
      *           Programming language for PROGRAM checker
      *     @type string $source
      *           Source code for PROGRAM checker
+     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *           Additional files placed into workdir during compilation and execution
      *     @type int $precision
      *           Precision for TOKEN checker
      *     @type bool $case_sensitive
@@ -81,15 +90,59 @@ class Checker extends \Google\Protobuf\Internal\Message
      *     @type bool $order_sensitive
      *           Order sensitivity option for QUERY_RESULTS checker.
      *           If set to false the rows of output and answer will be sorted before comparison.
-     *     @type bool $secret
-     *           Secret means checker code and configuration must not be exposed to users
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
-     *           Additional files placed into workdir during compilation and execution
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\TestingChecker::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 11;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
     }
 
     /**
@@ -162,6 +215,32 @@ class Checker extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Additional files placed into workdir during compilation and execution
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
+     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
+        $this->files = $arr;
 
         return $this;
     }
@@ -242,58 +321,6 @@ class Checker extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->order_sensitive = $var;
-
-        return $this;
-    }
-
-    /**
-     * Secret means checker code and configuration must not be exposed to users
-     *
-     * Generated from protobuf field <code>bool secret = 7;</code>
-     * @return bool
-     */
-    public function getSecret()
-    {
-        return $this->secret;
-    }
-
-    /**
-     * Secret means checker code and configuration must not be exposed to users
-     *
-     * Generated from protobuf field <code>bool secret = 7;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setSecret($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->secret = $var;
-
-        return $this;
-    }
-
-    /**
-     * Additional files placed into workdir during compilation and execution
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    /**
-     * Additional files placed into workdir during compilation and execution
-     *
-     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFiles($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
-        $this->files = $arr;
 
         return $this;
     }

@@ -18,18 +18,20 @@ class TestingChecker
         \GPBMetadata\Eolymp\Executor\File::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ù
-"eolymp/atlas/testing_checker.protoeolymp.atlaseolymp/executor/file.proto"Ñ
-Checker+
+í
+"eolymp/atlas/testing_checker.protoeolymp.atlaseolymp/executor/file.proto"å
+Checker
+
+version_id (	
+secret (+
 type (2.eolymp.executor.Checker.Type
 runtime (	
-source (	
+source (	$
+files
+ (2.eolymp.executor.File
 	precision (
 case_sensitive (
-order_sensitive (
-secret ($
-files
- (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+order_sensitive (B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

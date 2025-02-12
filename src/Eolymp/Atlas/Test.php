@@ -20,6 +20,10 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string version_id = 20;</code>
+     */
+    protected $version_id = '';
+    /**
      * Generated from protobuf field <code>string testset_id = 2;</code>
      */
     protected $testset_id = '';
@@ -98,6 +102,7 @@ class Test extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Test unique identifier.
+     *     @type string $version_id
      *     @type string $testset_id
      *     @type int $index
      *           Index, a sequential number, of the test within testset.
@@ -153,6 +158,28 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 20;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
 
         return $this;
     }

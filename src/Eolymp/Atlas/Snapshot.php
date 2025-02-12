@@ -30,6 +30,10 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      */
     protected $interactor = null;
     /**
+     * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 13;</code>
+     */
+    protected $validator = null;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Statement statements = 4;</code>
      */
     private $statements;
@@ -72,6 +76,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Atlas\TestingConfig $testing
      *     @type \Eolymp\Atlas\Checker $checker
      *     @type \Eolymp\Atlas\Interactor $interactor
+     *     @type \Eolymp\Atlas\Validator $validator
      *     @type array<\Eolymp\Atlas\Statement>|\Google\Protobuf\Internal\RepeatedField $statements
      *     @type array<\Eolymp\Atlas\Template>|\Google\Protobuf\Internal\RepeatedField $templates
      *     @type array<\Eolymp\Atlas\Attachment>|\Google\Protobuf\Internal\RepeatedField $attachments
@@ -211,6 +216,38 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Interactor::class);
         $this->interactor = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 13;</code>
+     * @return \Eolymp\Atlas\Validator|null
+     */
+    public function getValidator()
+    {
+        return $this->validator;
+    }
+
+    public function hasValidator()
+    {
+        return isset($this->validator);
+    }
+
+    public function clearValidator()
+    {
+        unset($this->validator);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 13;</code>
+     * @param \Eolymp\Atlas\Validator $var
+     * @return $this
+     */
+    public function setValidator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Validator::class);
+        $this->validator = $var;
 
         return $this;
     }

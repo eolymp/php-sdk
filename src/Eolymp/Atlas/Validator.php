@@ -16,6 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class Validator extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string version_id = 3;</code>
+     */
+    protected $version_id = '';
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     */
+    protected $secret = false;
+    /**
      * Programming language in which interactor is written
      *
      * Generated from protobuf field <code>string runtime = 2;</code>
@@ -27,12 +37,6 @@ class Validator extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 8;</code>
      */
     protected $source = '';
-    /**
-     * Secret means checker code and configuration must not be exposed to users
-     *
-     * Generated from protobuf field <code>bool secret = 7;</code>
-     */
-    protected $secret = false;
     /**
      * Additional files placed into workdir during compilation and execution
      *
@@ -46,12 +50,13 @@ class Validator extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $version_id
+     *     @type bool $secret
+     *           Secret means checker code and configuration must not be exposed to users
      *     @type string $runtime
      *           Programming language in which interactor is written
      *     @type string $source
      *           Source code for interactor
-     *     @type bool $secret
-     *           Secret means checker code and configuration must not be exposed to users
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
      * }
@@ -59,6 +64,54 @@ class Validator extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\TestingValidator::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 3;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Secret means checker code and configuration must not be exposed to users
+     *
+     * Generated from protobuf field <code>bool secret = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
     }
 
     /**
@@ -109,32 +162,6 @@ class Validator extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
-
-        return $this;
-    }
-
-    /**
-     * Secret means checker code and configuration must not be exposed to users
-     *
-     * Generated from protobuf field <code>bool secret = 7;</code>
-     * @return bool
-     */
-    public function getSecret()
-    {
-        return $this->secret;
-    }
-
-    /**
-     * Secret means checker code and configuration must not be exposed to users
-     *
-     * Generated from protobuf field <code>bool secret = 7;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setSecret($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->secret = $var;
 
         return $this;
     }

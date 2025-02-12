@@ -15,15 +15,16 @@ class TestingValidator
           return;
         }
         \GPBMetadata\Eolymp\Executor\File::initOnce();
-        \GPBMetadata\Eolymp\Executor\Interactor::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ñ
-$eolymp/atlas/testing_validator.protoeolymp.atlas eolymp/executor/interactor.proto"b
-	Validator
+ã
+$eolymp/atlas/testing_validator.protoeolymp.atlas"v
+	Validator
+
+version_id (	
+secret (
 runtime (	
-source (	
-secret ($
+source (	$
 files
  (2.eolymp.executor.FileB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);

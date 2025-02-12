@@ -20,6 +20,10 @@ class Testset extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string version_id = 4;</code>
+     */
+    protected $version_id = '';
+    /**
      * Index, a sequential number, of the testset within a problem.
      *
      * Generated from protobuf field <code>uint32 index = 3;</code>
@@ -80,6 +84,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           Unique identifier. Keep empty when creating new testset.
+     *     @type string $version_id
      *     @type int $index
      *           Index, a sequential number, of the testset within a problem.
      *     @type int $time_limit
@@ -126,6 +131,28 @@ class Testset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 4;</code>
+     * @return string
+     */
+    public function getVersionId()
+    {
+        return $this->version_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version_id = $var;
 
         return $this;
     }
