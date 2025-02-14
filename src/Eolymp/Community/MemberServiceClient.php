@@ -61,6 +61,25 @@ class MemberServiceClient {
     }
 
     /**
+     * @param UpdateMemberPictureInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateMemberPictureOutput output message
+     */
+    public function UpdateMemberPicture(UpdateMemberPictureInput $input, array $context = [])
+    {
+        $path = "/members/".rawurlencode($input->getMemberId())."/picture";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.community.MemberService/UpdateMemberPicture";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateMemberPictureOutput::class, $context);
+    }
+
+    /**
      * @param DeleteMemberInput $input message
      * @param array $context request parameters
      *

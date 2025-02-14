@@ -94,7 +94,7 @@ class Action
      */
     const CONTEST_WRITE = 62;
     /**
-     * allows to admit participants to the contest
+     * allows to admit participants to the contest (CONTEST_WRITE also allows to admit)
      *
      * Generated from protobuf enum <code>CONTEST_ADMIT = 63;</code>
      */

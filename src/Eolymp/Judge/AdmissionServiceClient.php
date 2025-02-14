@@ -41,6 +41,22 @@ class AdmissionServiceClient {
     }
 
     /**
+     * @param DescribeAdmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeAdmissionOutput output message
+     */
+    public function DescribeAdmission(DescribeAdmissionInput $input, array $context = [])
+    {
+        $path = "/admission:request";
+
+        $context['name'] = "eolymp.judge.AdmissionService/DescribeAdmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAdmissionOutput::class, $context);
+    }
+
+    /**
      * Accept admission code
      *
      * @param AcceptAdmissionInput $input message
