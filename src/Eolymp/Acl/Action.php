@@ -94,6 +94,12 @@ class Action
      */
     const CONTEST_WRITE = 62;
     /**
+     * allows to admit participants to the contest
+     *
+     * Generated from protobuf enum <code>CONTEST_ADMIT = 63;</code>
+     */
+    const CONTEST_ADMIT = 63;
+    /**
      * allows to list tickets, automatically assigned if user has read access to any of the tickets
      *
      * Generated from protobuf enum <code>TICKET_LIST = 72;</code>
@@ -204,6 +210,7 @@ class Action
         self::CONTEST_LIST => 'CONTEST_LIST',
         self::CONTEST_READ => 'CONTEST_READ',
         self::CONTEST_WRITE => 'CONTEST_WRITE',
+        self::CONTEST_ADMIT => 'CONTEST_ADMIT',
         self::TICKET_LIST => 'TICKET_LIST',
         self::TICKET_READ => 'TICKET_READ',
         self::TICKET_WRITE => 'TICKET_WRITE',
