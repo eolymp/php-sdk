@@ -26,6 +26,10 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Generated from protobuf field <code>uint32 group = 6;</code>
+     */
+    protected $group = 0;
+    /**
      * A number of points awarded for passing this run.
      *
      * Generated from protobuf field <code>float cost = 4;</code>
@@ -50,6 +54,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Run reference.
      *     @type int $index
      *           Index defines order in which runs are executed.
+     *     @type int $group
      *     @type float $cost
      *           A number of points awarded for passing this run.
      *     @type array|\Google\Protobuf\Internal\MapField $env
@@ -121,6 +126,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 group = 6;</code>
+     * @return int
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 group = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setGroup($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->group = $var;
 
         return $this;
     }
