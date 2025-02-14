@@ -94,6 +94,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $participation_mode = 0;
     /**
+     * Require manual admission to the contest
+     *
+     * Generated from protobuf field <code>bool require_admission = 35;</code>
+     */
+    protected $require_admission = false;
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -204,6 +210,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           When participants join contests by themselves they will participate unofficially.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
+     *     @type bool $require_admission
+     *           Require manual admission to the contest
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
@@ -593,6 +601,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ParticipationMode::class);
         $this->participation_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Require manual admission to the contest
+     *
+     * Generated from protobuf field <code>bool require_admission = 35;</code>
+     * @return bool
+     */
+    public function getRequireAdmission()
+    {
+        return $this->require_admission;
+    }
+
+    /**
+     * Require manual admission to the contest
+     *
+     * Generated from protobuf field <code>bool require_admission = 35;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequireAdmission($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->require_admission = $var;
 
         return $this;
     }

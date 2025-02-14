@@ -40,6 +40,10 @@ class Patch
      */
     const JOIN_UNOFFICIALLY = 7;
     /**
+     * Generated from protobuf enum <code>REQUIRE_ADMISSION = 16;</code>
+     */
+    const REQUIRE_ADMISSION = 16;
+    /**
      * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
      */
     const PARTICIPATION_MODE = 8;
@@ -100,6 +104,7 @@ class Patch
         self::DURATION => 'DURATION',
         self::VISIBILITY => 'VISIBILITY',
         self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
+        self::REQUIRE_ADMISSION => 'REQUIRE_ADMISSION',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
         self::FORMAT => 'FORMAT',
         self::KEY => 'KEY',
