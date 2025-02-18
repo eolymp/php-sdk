@@ -30,13 +30,13 @@ class Version extends \Google\Protobuf\Internal\Message
      */
     protected $created_by = '';
     /**
-     * Generated from protobuf field <code>string change_op = 4;</code>
+     * Generated from protobuf field <code>string summary = 9;</code>
      */
-    protected $change_op = '';
+    protected $summary = '';
     /**
-     * Generated from protobuf field <code>string change_path = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Version.Change changes = 10;</code>
      */
-    protected $change_path = '';
+    private $changes;
     /**
      * Generated from protobuf field <code>string cursor = 100;</code>
      */
@@ -52,8 +52,8 @@ class Version extends \Google\Protobuf\Internal\Message
      *     @type int $number
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type string $created_by
-     *     @type string $change_op
-     *     @type string $change_path
+     *     @type string $summary
+     *     @type array<\Eolymp\Atlas\Version\Change>|\Google\Protobuf\Internal\RepeatedField $changes
      *     @type string $cursor
      * }
      */
@@ -161,45 +161,45 @@ class Version extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string change_op = 4;</code>
+     * Generated from protobuf field <code>string summary = 9;</code>
      * @return string
      */
-    public function getChangeOp()
+    public function getSummary()
     {
-        return $this->change_op;
+        return $this->summary;
     }
 
     /**
-     * Generated from protobuf field <code>string change_op = 4;</code>
+     * Generated from protobuf field <code>string summary = 9;</code>
      * @param string $var
      * @return $this
      */
-    public function setChangeOp($var)
+    public function setSummary($var)
     {
         GPBUtil::checkString($var, True);
-        $this->change_op = $var;
+        $this->summary = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string change_path = 5;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Version.Change changes = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getChangePath()
+    public function getChanges()
     {
-        return $this->change_path;
+        return $this->changes;
     }
 
     /**
-     * Generated from protobuf field <code>string change_path = 5;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Version.Change changes = 10;</code>
+     * @param array<\Eolymp\Atlas\Version\Change>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setChangePath($var)
+    public function setChanges($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->change_path = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Version\Change::class);
+        $this->changes = $arr;
 
         return $this;
     }

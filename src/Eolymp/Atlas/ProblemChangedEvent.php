@@ -21,6 +21,10 @@ class ProblemChangedEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Problem after = 2;</code>
      */
     protected $after = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Version version = 3;</code>
+     */
+    protected $version = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class ProblemChangedEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Atlas\Problem $before
      *     @type \Eolymp\Atlas\Problem $after
+     *     @type \Eolymp\Atlas\Version $version
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +102,38 @@ class ProblemChangedEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem::class);
         $this->after = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Version version = 3;</code>
+     * @return \Eolymp\Atlas\Version|null
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    public function hasVersion()
+    {
+        return isset($this->version);
+    }
+
+    public function clearVersion()
+    {
+        unset($this->version);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Version version = 3;</code>
+     * @param \Eolymp\Atlas\Version $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Version::class);
+        $this->version = $var;
 
         return $this;
     }
