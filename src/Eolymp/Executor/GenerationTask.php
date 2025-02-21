@@ -34,6 +34,10 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      */
     protected $run_count = 0;
     /**
+     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     */
+    protected $interactive_followup = false;
+    /**
      * Interactor configuration
      *
      * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
@@ -67,6 +71,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type int $run_count
+     *     @type bool $interactive_followup
      *     @type \Eolymp\Executor\Script $interactor
      *           Interactor configuration
      *     @type \Eolymp\Executor\Script $validator
@@ -187,6 +192,28 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->run_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * @return bool
+     */
+    public function getInteractiveFollowup()
+    {
+        return $this->interactive_followup;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInteractiveFollowup($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->interactive_followup = $var;
 
         return $this;
     }

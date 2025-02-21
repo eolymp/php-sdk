@@ -16,10 +16,11 @@ class TestingConfig
         }
         $pool->internalAddGeneratedFile(
             '
-Œ
-!eolymp/atlas/testing_config.protoeolymp.atlas""
+ª
+!eolymp/atlas/testing_config.protoeolymp.atlas"@
 TestingConfig
-	run_count (B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+	run_count (
+interactive_followup (B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -14,9 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class TestingConfig extends \Google\Protobuf\Internal\Message
 {
     /**
+     * number of runs
+     *
      * Generated from protobuf field <code>uint32 run_count = 1;</code>
      */
     protected $run_count = 0;
+    /**
+     * use interactor in the second and subsequent runs
+     *
+     * Generated from protobuf field <code>bool interactive_followup = 2;</code>
+     */
+    protected $interactive_followup = false;
 
     /**
      * Constructor.
@@ -25,6 +33,9 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $run_count
+     *           number of runs
+     *     @type bool $interactive_followup
+     *           use interactor in the second and subsequent runs
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +44,8 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * number of runs
+     *
      * Generated from protobuf field <code>uint32 run_count = 1;</code>
      * @return int
      */
@@ -42,6 +55,8 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * number of runs
+     *
      * Generated from protobuf field <code>uint32 run_count = 1;</code>
      * @param int $var
      * @return $this
@@ -50,6 +65,32 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->run_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * use interactor in the second and subsequent runs
+     *
+     * Generated from protobuf field <code>bool interactive_followup = 2;</code>
+     * @return bool
+     */
+    public function getInteractiveFollowup()
+    {
+        return $this->interactive_followup;
+    }
+
+    /**
+     * use interactor in the second and subsequent runs
+     *
+     * Generated from protobuf field <code>bool interactive_followup = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInteractiveFollowup($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->interactive_followup = $var;
 
         return $this;
     }

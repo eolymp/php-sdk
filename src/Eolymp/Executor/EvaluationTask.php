@@ -60,6 +60,12 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $run_count = 0;
     /**
+     * Use interactor in the second and subsequent runs (when run_count > 1)
+     *
+     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     */
+    protected $interactive_followup = false;
+    /**
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Precondition preconditions = 40;</code>
@@ -124,6 +130,8 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           This parameter allows to limit the coefficient deviation, for example 0.5 means the coefficient will be limited to range of 0.5-1.5, 0 means the coefficient will be ignored and actual execution time will be used.
      *     @type int $run_count
      *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
+     *     @type bool $interactive_followup
+     *           Use interactor in the second and subsequent runs (when run_count > 1)
      *     @type array<\Eolymp\Executor\EvaluationTask\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type array<\Eolymp\Executor\EvaluationTask\Constraint>|\Google\Protobuf\Internal\RepeatedField $constraints
@@ -341,6 +349,32 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->run_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Use interactor in the second and subsequent runs (when run_count > 1)
+     *
+     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * @return bool
+     */
+    public function getInteractiveFollowup()
+    {
+        return $this->interactive_followup;
+    }
+
+    /**
+     * Use interactor in the second and subsequent runs (when run_count > 1)
+     *
+     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInteractiveFollowup($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->interactive_followup = $var;
 
         return $this;
     }
