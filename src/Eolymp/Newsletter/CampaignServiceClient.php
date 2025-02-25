@@ -150,6 +150,25 @@ class CampaignServiceClient {
     }
 
     /**
+     * @param TranslateCampaignInput $input message
+     * @param array $context request parameters
+     *
+     * @return TranslateCampaignOutput output message
+     */
+    public function TranslateCampaign(TranslateCampaignInput $input, array $context = [])
+    {
+        $path = "/campaigns/".rawurlencode($input->getCampaignId())."/translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCampaignId("");
+
+        $context['name'] = "eolymp.newsletter.CampaignService/TranslateCampaign";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateCampaignOutput::class, $context);
+    }
+
+    /**
      * @param CreateTranslationInput $input message
      * @param array $context request parameters
      *

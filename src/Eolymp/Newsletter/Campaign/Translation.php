@@ -29,6 +29,10 @@ class Translation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 104;</code>
      */
     protected $content = null;
+    /**
+     * Generated from protobuf field <code>bool automatic = 105;</code>
+     */
+    protected $automatic = false;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type string $subject
      *     @type \Eolymp\Ecm\Content $content
+     *     @type bool $automatic
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +146,28 @@ class Translation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool automatic = 105;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool automatic = 105;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
 
         return $this;
     }
