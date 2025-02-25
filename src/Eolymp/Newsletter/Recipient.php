@@ -41,6 +41,10 @@ class Recipient extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.newsletter.Recipient.Status status = 3;</code>
      */
     protected $status = 0;
+    /**
+     * Generated from protobuf field <code>string status_reason = 4;</code>
+     */
+    protected $status_reason = '';
 
     /**
      * Constructor.
@@ -55,6 +59,7 @@ class Recipient extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $delivered_at
      *     @type string $member_id
      *     @type int $status
+     *     @type string $status_reason
      * }
      */
     public function __construct($data = NULL) {
@@ -252,6 +257,28 @@ class Recipient extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Newsletter\Recipient\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status_reason = 4;</code>
+     * @return string
+     */
+    public function getStatusReason()
+    {
+        return $this->status_reason;
+    }
+
+    /**
+     * Generated from protobuf field <code>string status_reason = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatusReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status_reason = $var;
 
         return $this;
     }

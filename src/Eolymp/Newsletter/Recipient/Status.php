@@ -35,6 +35,14 @@ class Status
      * Generated from protobuf enum <code>BOUNCED = 5;</code>
      */
     const BOUNCED = 5;
+    /**
+     * Generated from protobuf enum <code>SKIPPED = 6;</code>
+     */
+    const SKIPPED = 6;
+    /**
+     * Generated from protobuf enum <code>ERROR = 7;</code>
+     */
+    const ERROR = 7;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
@@ -43,6 +51,8 @@ class Status
         self::SENT => 'SENT',
         self::DELIVERED => 'DELIVERED',
         self::BOUNCED => 'BOUNCED',
+        self::SKIPPED => 'SKIPPED',
+        self::ERROR => 'ERROR',
     ];
 
     public static function name($value)
