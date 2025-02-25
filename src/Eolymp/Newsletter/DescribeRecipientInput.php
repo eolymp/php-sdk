@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string campaign_id = 1;</code>
+     */
+    protected $campaign_id = '';
+    /**
+     * Generated from protobuf field <code>string recipient_id = 2;</code>
      */
     protected $recipient_id = '';
 
@@ -24,6 +28,7 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $campaign_id
      *     @type string $recipient_id
      * }
      */
@@ -33,7 +38,29 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string campaign_id = 1;</code>
+     * @return string
+     */
+    public function getCampaignId()
+    {
+        return $this->campaign_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string campaign_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaignId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string recipient_id = 2;</code>
      * @return string
      */
     public function getRecipientId()
@@ -42,7 +69,7 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string recipient_id = 2;</code>
      * @param string $var
      * @return $this
      */
