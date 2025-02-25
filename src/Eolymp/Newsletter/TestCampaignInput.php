@@ -9,15 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.newsletter.CreateRecipientInput</code>
+ * Generated from protobuf message <code>eolymp.newsletter.TestCampaignInput</code>
  */
-class CreateRecipientInput extends \Google\Protobuf\Internal\Message
+class TestCampaignInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string campaign_id = 1;</code>
      */
     protected $campaign_id = '';
-    protected $recipient;
+    /**
+     * Generated from protobuf field <code>string email = 2;</code>
+     */
+    protected $email = '';
+    /**
+     * Generated from protobuf field <code>string locale = 3;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -26,8 +33,8 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $campaign_id
-     *     @type string $member_id
-     *     @type string $group_id
+     *     @type string $email
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -58,65 +65,47 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
+     * Generated from protobuf field <code>string email = 2;</code>
      * @return string
      */
-    public function getMemberId()
+    public function getEmail()
     {
-        return $this->readOneof(11);
-    }
-
-    public function hasMemberId()
-    {
-        return $this->hasOneof(11);
+        return $this->email;
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
+     * Generated from protobuf field <code>string email = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setMemberId($var)
+    public function setEmail($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(11, $var);
+        $this->email = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string group_id = 12;</code>
+     * Generated from protobuf field <code>string locale = 3;</code>
      * @return string
      */
-    public function getGroupId()
+    public function getLocale()
     {
-        return $this->readOneof(12);
-    }
-
-    public function hasGroupId()
-    {
-        return $this->hasOneof(12);
+        return $this->locale;
     }
 
     /**
-     * Generated from protobuf field <code>string group_id = 12;</code>
+     * Generated from protobuf field <code>string locale = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setGroupId($var)
+    public function setLocale($var)
     {
         GPBUtil::checkString($var, True);
-        $this->writeOneof(12, $var);
+        $this->locale = $var;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRecipient()
-    {
-        return $this->whichOneof("recipient");
     }
 
 }

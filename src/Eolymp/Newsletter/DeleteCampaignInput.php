@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.newsletter.DescribeRecipientInput</code>
+ * Generated from protobuf message <code>eolymp.newsletter.DeleteCampaignInput</code>
  */
-class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
+class DeleteCampaignInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string campaign_id = 1;</code>
      */
-    protected $recipient_id = '';
+    protected $campaign_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $recipient_id
+     *     @type string $campaign_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string campaign_id = 1;</code>
      * @return string
      */
-    public function getRecipientId()
+    public function getCampaignId()
     {
-        return $this->recipient_id;
+        return $this->campaign_id;
     }
 
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string campaign_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setRecipientId($var)
+    public function setCampaignId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->recipient_id = $var;
+        $this->campaign_id = $var;
 
         return $this;
     }

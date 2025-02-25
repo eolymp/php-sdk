@@ -9,16 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.newsletter.ListRecipientsOutput</code>
+ * Generated from protobuf message <code>eolymp.newsletter.ListCampaignsOutput</code>
  */
-class ListRecipientsOutput extends \Google\Protobuf\Internal\Message
+class ListCampaignsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 total = 1;</code>
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.newsletter.Recipient items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.newsletter.Campaign items = 2;</code>
      */
     private $items;
 
@@ -29,7 +29,7 @@ class ListRecipientsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Newsletter\Recipient>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Newsletter\Campaign>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +60,7 @@ class ListRecipientsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.newsletter.Recipient items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.newsletter.Campaign items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -69,13 +69,13 @@ class ListRecipientsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.newsletter.Recipient items = 2;</code>
-     * @param array<\Eolymp\Newsletter\Recipient>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.newsletter.Campaign items = 2;</code>
+     * @param array<\Eolymp\Newsletter\Campaign>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Newsletter\Recipient::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Newsletter\Campaign::class);
         $this->items = $arr;
 
         return $this;

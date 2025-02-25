@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.newsletter.DescribeRecipientInput</code>
+ * Generated from protobuf message <code>eolymp.newsletter.CreateTranslationOutput</code>
  */
-class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
+class CreateTranslationOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string translation_id = 1;</code>
      */
-    protected $recipient_id = '';
+    protected $translation_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $recipient_id
+     *     @type string $translation_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class DescribeRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string translation_id = 1;</code>
      * @return string
      */
-    public function getRecipientId()
+    public function getTranslationId()
     {
-        return $this->recipient_id;
+        return $this->translation_id;
     }
 
     /**
-     * Generated from protobuf field <code>string recipient_id = 1;</code>
+     * Generated from protobuf field <code>string translation_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setRecipientId($var)
+    public function setTranslationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->recipient_id = $var;
+        $this->translation_id = $var;
 
         return $this;
     }

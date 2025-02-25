@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.newsletter.ListRecipientsInput</code>
+ * Generated from protobuf message <code>eolymp.newsletter.ListTranslationsInput</code>
  */
-class ListRecipientsInput extends \Google\Protobuf\Internal\Message
+class ListTranslationsInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string campaign_id = 2;</code>
@@ -30,7 +30,7 @@ class ListRecipientsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.newsletter.ListRecipientsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.newsletter.ListTranslationsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
 
@@ -44,7 +44,7 @@ class ListRecipientsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Newsletter\ListRecipientsInput\Filter $filters
+     *     @type \Eolymp\Newsletter\ListTranslationsInput\Filter $filters
      *           data filters
      * }
      */
@@ -126,8 +126,8 @@ class ListRecipientsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.newsletter.ListRecipientsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Newsletter\ListRecipientsInput\Filter|null
+     * Generated from protobuf field <code>.eolymp.newsletter.ListTranslationsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Newsletter\ListTranslationsInput\Filter|null
      */
     public function getFilters()
     {
@@ -147,13 +147,13 @@ class ListRecipientsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.newsletter.ListRecipientsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Newsletter\ListRecipientsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.newsletter.ListTranslationsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Newsletter\ListTranslationsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Newsletter\ListRecipientsInput\Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Newsletter\ListTranslationsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
