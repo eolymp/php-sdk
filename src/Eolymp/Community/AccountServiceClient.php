@@ -169,4 +169,36 @@ class AccountServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteRecoverOutput::class, $context);
     }
 
+    /**
+     * @param DescribeEmailSubscriptionInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeEmailSubscriptionOutput output message
+     */
+    public function DescribeEmailSubscription(DescribeEmailSubscriptionInput $input, array $context = [])
+    {
+        $path = "/account/email-subscription";
+
+        $context['name'] = "eolymp.community.AccountService/DescribeEmailSubscription";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeEmailSubscriptionOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateEmailSubscriptionInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateEmailSubscriptionOutput output message
+     */
+    public function UpdateEmailSubscription(UpdateEmailSubscriptionInput $input, array $context = [])
+    {
+        $path = "/account/email-subscription";
+
+        $context['name'] = "eolymp.community.AccountService/UpdateEmailSubscription";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateEmailSubscriptionOutput::class, $context);
+    }
+
 }

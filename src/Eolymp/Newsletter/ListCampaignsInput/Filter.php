@@ -18,9 +18,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 3;</code>
      */
-    private $status;
+    private $type;
 
     /**
      * Constructor.
@@ -29,7 +29,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
      * }
      */
     public function __construct($data = NULL) {
@@ -60,23 +60,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getStatus()
+    public function getType()
     {
-        return $this->status;
+        return $this->type;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 3;</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setType($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->status = $arr;
+        $this->type = $arr;
 
         return $this;
     }

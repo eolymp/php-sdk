@@ -14,12 +14,12 @@ class MemberUser
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Mailing\EmailType::initOnce();
+        \GPBMetadata\Eolymp\Community\EmailType::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ç
-"eolymp/community/member_user.protoeolymp.communitygoogle/protobuf/timestamp.proto"Ù
+è
+"eolymp/community/member_user.protoeolymp.communitygoogle/protobuf/timestamp.proto"ˆ
 User
 issuer (	
 subject (	
@@ -28,8 +28,8 @@ class MemberUser
 nickname_change_timeout (
 email (	
 email_verified (
-email_restricted (6
-email_subscriptions (2.eolymp.mailing.EmailType
+email_restricted (8
+email_subscriptions (2.eolymp.community.EmailType
 password (	
 password_age (
 name( (	

@@ -22,14 +22,10 @@ class Session extends \Google\Protobuf\Internal\Message
      */
     protected $user_agent = '';
     /**
-     * help message, normally displayed right below the field
-     *
      * Generated from protobuf field <code>string device = 4;</code>
      */
     protected $device = '';
     /**
-     * help message, normally displayed right below the field
-     *
      * Generated from protobuf field <code>string location = 5;</code>
      */
     protected $location = '';
@@ -55,9 +51,7 @@ class Session extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $user_agent
      *     @type string $device
-     *           help message, normally displayed right below the field
      *     @type string $location
-     *           help message, normally displayed right below the field
      *     @type string $ip_address
      *     @type \Google\Protobuf\Timestamp $first_seen_at
      *     @type \Google\Protobuf\Timestamp $last_seen_at
@@ -113,8 +107,6 @@ class Session extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * help message, normally displayed right below the field
-     *
      * Generated from protobuf field <code>string device = 4;</code>
      * @return string
      */
@@ -124,8 +116,6 @@ class Session extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * help message, normally displayed right below the field
-     *
      * Generated from protobuf field <code>string device = 4;</code>
      * @param string $var
      * @return $this
@@ -139,8 +129,6 @@ class Session extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * help message, normally displayed right below the field
-     *
      * Generated from protobuf field <code>string location = 5;</code>
      * @return string
      */
@@ -150,8 +138,6 @@ class Session extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * help message, normally displayed right below the field
-     *
      * Generated from protobuf field <code>string location = 5;</code>
      * @param string $var
      * @return $this

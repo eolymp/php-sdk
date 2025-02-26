@@ -193,6 +193,25 @@ class MemberServiceClient {
     }
 
     /**
+     * @param NotifyMemberInput $input message
+     * @param array $context request parameters
+     *
+     * @return NotifyMemberOutput output message
+     */
+    public function NotifyMember(NotifyMemberInput $input, array $context = [])
+    {
+        $path = "/members/".rawurlencode($input->getTeamId())."/notify";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTeamId("");
+
+        $context['name'] = "eolymp.community.MemberService/NotifyMember";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, NotifyMemberOutput::class, $context);
+    }
+
+    /**
      * @param DescribeMemberUsageInput $input message
      * @param array $context request parameters
      *

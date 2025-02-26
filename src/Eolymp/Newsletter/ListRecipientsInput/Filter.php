@@ -21,6 +21,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
      */
     private $status;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID member_id = 3;</code>
+     */
+    private $member_id;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->status = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID member_id = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID member_id = 3;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->member_id = $arr;
 
         return $this;
     }
