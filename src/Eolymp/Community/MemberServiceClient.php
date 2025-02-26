@@ -200,10 +200,10 @@ class MemberServiceClient {
      */
     public function NotifyMember(NotifyMemberInput $input, array $context = [])
     {
-        $path = "/members/".rawurlencode($input->getTeamId())."/notify";
+        $path = "/members/".rawurlencode($input->getMemberId())."/notify";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setTeamId("");
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.community.MemberService/NotifyMember";
         $context['path'] = $path;
