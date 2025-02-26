@@ -18,9 +18,9 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string type = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.EmailType type = 2;</code>
      */
-    protected $type = '';
+    protected $type = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
      */
@@ -57,7 +57,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $type
+     *     @type int $type
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type string $subject
      *     @type \Eolymp\Ecm\Content $content
@@ -95,8 +95,8 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.community.EmailType type = 2;</code>
+     * @return int
      */
     public function getType()
     {
@@ -104,13 +104,13 @@ class Campaign extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string type = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.community.EmailType type = 2;</code>
+     * @param int $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkEnum($var, \Eolymp\Community\EmailType::class);
         $this->type = $var;
 
         return $this;
