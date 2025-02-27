@@ -22,7 +22,7 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
      */
     protected $number = null;
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt string = 11;</code>
+     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 11;</code>
      */
     protected $string = null;
 
@@ -34,7 +34,7 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
      *
      *     @type string $attribute_key
      *     @type \Eolymp\Wellknown\ExpressionInt $number
-     *     @type \Eolymp\Wellknown\ExpressionInt $string
+     *     @type \Eolymp\Wellknown\ExpressionString $string
      * }
      */
     public function __construct($data = NULL) {
@@ -97,8 +97,8 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt string = 11;</code>
-     * @return \Eolymp\Wellknown\ExpressionInt|null
+     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 11;</code>
+     * @return \Eolymp\Wellknown\ExpressionString|null
      */
     public function getString()
     {
@@ -116,13 +116,13 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt string = 11;</code>
-     * @param \Eolymp\Wellknown\ExpressionInt $var
+     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 11;</code>
+     * @param \Eolymp\Wellknown\ExpressionString $var
      * @return $this
      */
     public function setString($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Wellknown\ExpressionInt::class);
+        GPBUtil::checkMessage($var, \Eolymp\Wellknown\ExpressionString::class);
         $this->string = $var;
 
         return $this;
