@@ -25,6 +25,10 @@ class TestCampaignInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 3;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class TestCampaignInput extends \Google\Protobuf\Internal\Message
      *     @type string $campaign_id
      *     @type string $email
      *     @type string $locale
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class TestCampaignInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

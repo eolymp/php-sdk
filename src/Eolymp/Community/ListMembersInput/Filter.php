@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string query = 10;</code>
-     */
-    protected $query = '';
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
      */
     private $id;
@@ -80,9 +76,21 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $user_nickname;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp birthday = 108;</code>
+     */
+    private $birthday;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID country = 109;</code>
+     */
+    private $country;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
      */
     private $score;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
+     */
+    private $attribute;
 
     /**
      * Constructor.
@@ -90,7 +98,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $query
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
      *           user, team or ghost
@@ -108,34 +115,15 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_email
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_name
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_nickname
+     *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $birthday
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $country
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $score
+     *     @type array<\Eolymp\Community\ListMembersInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $attribute
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\MemberService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string query = 10;</code>
-     * @return string
-     */
-    public function getQuery()
-    {
-        return $this->query;
-    }
-
-    /**
-     * Generated from protobuf field <code>string query = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->query = $var;
-
-        return $this;
     }
 
     /**
@@ -459,6 +447,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp birthday = 108;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp birthday = 108;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setBirthday($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
+        $this->birthday = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID country = 109;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID country = 109;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->country = $arr;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -476,6 +508,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
         $this->score = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttribute()
+    {
+        return $this->attribute;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
+     * @param array<\Eolymp\Community\ListMembersInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttribute($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\ListMembersInput\ExpressionAttribute::class);
+        $this->attribute = $arr;
 
         return $this;
     }

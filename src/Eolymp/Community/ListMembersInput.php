@@ -26,6 +26,10 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
+     * Generated from protobuf field <code>string search = 41;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.community.ListMembersInput.Sortable sort = 50;</code>
      */
     protected $sort = 0;
@@ -47,6 +51,7 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Community\ListMembersInput\Filter $filters
+     *     @type string $search
      *     @type int $sort
      *     @type int $order
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
@@ -129,6 +134,28 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\ListMembersInput\Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 41;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 41;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
 
         return $this;
     }
