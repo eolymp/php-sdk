@@ -9,18 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.newsletter.CreateRecipientInput</code>
+ * Generated from protobuf message <code>eolymp.newsletter.ImportRecipientInput</code>
  */
-class CreateRecipientInput extends \Google\Protobuf\Internal\Message
+class ImportRecipientInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string campaign_id = 1;</code>
      */
     protected $campaign_id = '';
-    /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
-     */
-    protected $member_id = '';
+    protected $source;
 
     /**
      * Constructor.
@@ -29,7 +26,8 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $campaign_id
-     *     @type string $member_id
+     *     @type bool $all_members
+     *     @type string $group_id
      * }
      */
     public function __construct($data = NULL) {
@@ -60,25 +58,65 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
-     * @return string
+     * Generated from protobuf field <code>bool all_members = 10;</code>
+     * @return bool
      */
-    public function getMemberId()
+    public function getAllMembers()
     {
-        return $this->member_id;
+        return $this->readOneof(10);
+    }
+
+    public function hasAllMembers()
+    {
+        return $this->hasOneof(10);
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
+     * Generated from protobuf field <code>bool all_members = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllMembers($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 11;</code>
+     * @return string
+     */
+    public function getGroupId()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasGroupId()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>string group_id = 11;</code>
      * @param string $var
      * @return $this
      */
-    public function setMemberId($var)
+    public function setGroupId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->member_id = $var;
+        $this->writeOneof(11, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->whichOneof("source");
     }
 
 }

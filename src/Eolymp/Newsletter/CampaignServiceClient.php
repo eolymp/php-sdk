@@ -286,6 +286,25 @@ class CampaignServiceClient {
     }
 
     /**
+     * @param ImportRecipientInput $input message
+     * @param array $context request parameters
+     *
+     * @return ImportRecipientOutput output message
+     */
+    public function ImportRecipient(ImportRecipientInput $input, array $context = [])
+    {
+        $path = "/campaigns/".rawurlencode($input->getCampaignId())."/recipients:import";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCampaignId("");
+
+        $context['name'] = "eolymp.newsletter.CampaignService/ImportRecipient";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ImportRecipientOutput::class, $context);
+    }
+
+    /**
      * @param DeleteRecipientInput $input message
      * @param array $context request parameters
      *
