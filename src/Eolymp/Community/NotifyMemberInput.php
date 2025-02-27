@@ -18,6 +18,18 @@ class NotifyMemberInput extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * send a test email to the current user instead of the member
+     *
+     * Generated from protobuf field <code>bool dry_run = 20;</code>
+     */
+    protected $dry_run = false;
+    /**
+     * send a copy of the email to the current user
+     *
+     * Generated from protobuf field <code>bool bcc_me = 21;</code>
+     */
+    protected $bcc_me = false;
+    /**
      * Generated from protobuf field <code>.eolymp.community.EmailType type = 10;</code>
      */
     protected $type = 0;
@@ -45,6 +57,10 @@ class NotifyMemberInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
+     *     @type bool $dry_run
+     *           send a test email to the current user instead of the member
+     *     @type bool $bcc_me
+     *           send a copy of the email to the current user
      *     @type int $type
      *     @type string $locale
      *     @type string $subject
@@ -75,6 +91,58 @@ class NotifyMemberInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * send a test email to the current user instead of the member
+     *
+     * Generated from protobuf field <code>bool dry_run = 20;</code>
+     * @return bool
+     */
+    public function getDryRun()
+    {
+        return $this->dry_run;
+    }
+
+    /**
+     * send a test email to the current user instead of the member
+     *
+     * Generated from protobuf field <code>bool dry_run = 20;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDryRun($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->dry_run = $var;
+
+        return $this;
+    }
+
+    /**
+     * send a copy of the email to the current user
+     *
+     * Generated from protobuf field <code>bool bcc_me = 21;</code>
+     * @return bool
+     */
+    public function getBccMe()
+    {
+        return $this->bcc_me;
+    }
+
+    /**
+     * send a copy of the email to the current user
+     *
+     * Generated from protobuf field <code>bool bcc_me = 21;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBccMe($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bcc_me = $var;
 
         return $this;
     }

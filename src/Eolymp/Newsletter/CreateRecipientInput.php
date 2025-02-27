@@ -28,6 +28,7 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
      *     @type string $campaign_id
      *     @type string $member_id
      *     @type string $group_id
+     *     @type bool $everybody
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +108,33 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool everybody = 13;</code>
+     * @return bool
+     */
+    public function getEverybody()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasEverybody()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Generated from protobuf field <code>bool everybody = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEverybody($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(13, $var);
 
         return $this;
     }
