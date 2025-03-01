@@ -92,6 +92,20 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $members_per_space = 0;
     /**
+     * newsletter quota
+     *
+     * Generated from protobuf field <code>uint32 newsletters_per_space = 200;</code>
+     */
+    protected $newsletters_per_space = 0;
+    /**
+     * Generated from protobuf field <code>uint32 emails_per_day = 201;</code>
+     */
+    protected $emails_per_day = 0;
+    /**
+     * Generated from protobuf field <code>uint32 emails_per_month = 202;</code>
+     */
+    protected $emails_per_month = 0;
+    /**
      * scoreboard quota and features
      *
      * Generated from protobuf field <code>uint32 scoreboards_per_space = 5;</code>
@@ -236,6 +250,10 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           maximum amount of time a submission can be evaluated
      *     @type int $members_per_space
      *           member quota and features
+     *     @type int $newsletters_per_space
+     *           newsletter quota
+     *     @type int $emails_per_day
+     *     @type int $emails_per_month
      *     @type int $scoreboards_per_space
      *           scoreboard quota and features
      *     @type int $courses_per_space
@@ -611,6 +629,76 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->members_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * newsletter quota
+     *
+     * Generated from protobuf field <code>uint32 newsletters_per_space = 200;</code>
+     * @return int
+     */
+    public function getNewslettersPerSpace()
+    {
+        return $this->newsletters_per_space;
+    }
+
+    /**
+     * newsletter quota
+     *
+     * Generated from protobuf field <code>uint32 newsletters_per_space = 200;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNewslettersPerSpace($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->newsletters_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 emails_per_day = 201;</code>
+     * @return int
+     */
+    public function getEmailsPerDay()
+    {
+        return $this->emails_per_day;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 emails_per_day = 201;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEmailsPerDay($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->emails_per_day = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 emails_per_month = 202;</code>
+     * @return int
+     */
+    public function getEmailsPerMonth()
+    {
+        return $this->emails_per_month;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 emails_per_month = 202;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEmailsPerMonth($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->emails_per_month = $var;
 
         return $this;
     }
