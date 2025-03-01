@@ -16,9 +16,8 @@ class Quota
         }
         $pool->internalAddGeneratedFile(
             '
-Œ
-
-eolymp/universe/quota.protoeolymp.universe"ž	
+ú	
+eolymp/universe/quota.protoeolymp.universe"Œ	
 Quota
 permissions_per_space (
 single_sing_on (
@@ -27,13 +26,13 @@ class Quota
 customer_support_reply_time (
 allow_discussions (
 achievements_per_space (
-printers_per_space (#
-monthly_evaluations_by_seat (!
+printers_per_space (!
+evaluations_by_seat_month (!
 priority_evaluation_queue (
 plagiarism_analysis (#
 submission_evaluation_limit (
-members_per_space ($
-monthly_campaigns_per_spaceÈ (
+members_per_space (
+campaigns_per_spaceÈ (
 emails_per_dayÉ (
 emails_per_monthÊ (
 scoreboards_per_space (
@@ -49,8 +48,8 @@ class Quota
 debug_hints_daily_per_adminy ($
 debug_hints_daily_per_memberz (
 contests_per_space (!
-active_contests_per_space ("
-monthly_contests_per_space (
+active_contests_per_space (
+contests_per_month (
 problems_per_contest
  ( 
 participants_per_contest (

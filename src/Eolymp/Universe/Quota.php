@@ -64,9 +64,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * submission evaluation quota and features
      *
-     * Generated from protobuf field <code>uint32 monthly_evaluations_by_seat = 13;</code>
+     * Generated from protobuf field <code>uint32 evaluations_by_seat_month = 13;</code>
      */
-    protected $monthly_evaluations_by_seat = 0;
+    protected $evaluations_by_seat_month = 0;
     /**
      * space uses priority testing queue
      *
@@ -94,9 +94,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * newsletter quota
      *
-     * Generated from protobuf field <code>uint32 monthly_campaigns_per_space = 200;</code>
+     * Generated from protobuf field <code>uint32 campaigns_per_space = 200;</code>
      */
-    protected $monthly_campaigns_per_space = 0;
+    protected $campaigns_per_space = 0;
     /**
      * Generated from protobuf field <code>uint32 emails_per_day = 201;</code>
      */
@@ -174,9 +174,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * max number of contests created (started) during current billing period
      *
-     * Generated from protobuf field <code>uint32 monthly_contests_per_space = 14;</code>
+     * Generated from protobuf field <code>uint32 contests_per_month = 14;</code>
      */
-    protected $monthly_contests_per_space = 0;
+    protected $contests_per_month = 0;
     /**
      * Generated from protobuf field <code>uint32 problems_per_contest = 10;</code>
      */
@@ -240,7 +240,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           max number of achievements
      *     @type int $printers_per_space
      *           max number of printers (0 - printers are disabled)
-     *     @type int $monthly_evaluations_by_seat
+     *     @type int $evaluations_by_seat_month
      *           submission evaluation quota and features
      *     @type bool $priority_evaluation_queue
      *           space uses priority testing queue
@@ -250,7 +250,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           maximum amount of time a submission can be evaluated
      *     @type int $members_per_space
      *           member quota and features
-     *     @type int $monthly_campaigns_per_space
+     *     @type int $campaigns_per_space
      *           newsletter quota
      *     @type int $emails_per_day
      *     @type int $emails_per_month
@@ -273,7 +273,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           contest quota and features
      *     @type int $active_contests_per_space
      *           max number of simultaneously active contests (ongoing and upsolve)
-     *     @type int $monthly_contests_per_space
+     *     @type int $contests_per_month
      *           max number of contests created (started) during current billing period
      *     @type int $problems_per_contest
      *     @type int $participants_per_contest
@@ -506,25 +506,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * submission evaluation quota and features
      *
-     * Generated from protobuf field <code>uint32 monthly_evaluations_by_seat = 13;</code>
+     * Generated from protobuf field <code>uint32 evaluations_by_seat_month = 13;</code>
      * @return int
      */
-    public function getMonthlyEvaluationsBySeat()
+    public function getEvaluationsBySeatMonth()
     {
-        return $this->monthly_evaluations_by_seat;
+        return $this->evaluations_by_seat_month;
     }
 
     /**
      * submission evaluation quota and features
      *
-     * Generated from protobuf field <code>uint32 monthly_evaluations_by_seat = 13;</code>
+     * Generated from protobuf field <code>uint32 evaluations_by_seat_month = 13;</code>
      * @param int $var
      * @return $this
      */
-    public function setMonthlyEvaluationsBySeat($var)
+    public function setEvaluationsBySeatMonth($var)
     {
         GPBUtil::checkUint32($var);
-        $this->monthly_evaluations_by_seat = $var;
+        $this->evaluations_by_seat_month = $var;
 
         return $this;
     }
@@ -636,25 +636,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * newsletter quota
      *
-     * Generated from protobuf field <code>uint32 monthly_campaigns_per_space = 200;</code>
+     * Generated from protobuf field <code>uint32 campaigns_per_space = 200;</code>
      * @return int
      */
-    public function getMonthlyCampaignsPerSpace()
+    public function getCampaignsPerSpace()
     {
-        return $this->monthly_campaigns_per_space;
+        return $this->campaigns_per_space;
     }
 
     /**
      * newsletter quota
      *
-     * Generated from protobuf field <code>uint32 monthly_campaigns_per_space = 200;</code>
+     * Generated from protobuf field <code>uint32 campaigns_per_space = 200;</code>
      * @param int $var
      * @return $this
      */
-    public function setMonthlyCampaignsPerSpace($var)
+    public function setCampaignsPerSpace($var)
     {
         GPBUtil::checkUint32($var);
-        $this->monthly_campaigns_per_space = $var;
+        $this->campaigns_per_space = $var;
 
         return $this;
     }
@@ -1034,25 +1034,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * max number of contests created (started) during current billing period
      *
-     * Generated from protobuf field <code>uint32 monthly_contests_per_space = 14;</code>
+     * Generated from protobuf field <code>uint32 contests_per_month = 14;</code>
      * @return int
      */
-    public function getMonthlyContestsPerSpace()
+    public function getContestsPerMonth()
     {
-        return $this->monthly_contests_per_space;
+        return $this->contests_per_month;
     }
 
     /**
      * max number of contests created (started) during current billing period
      *
-     * Generated from protobuf field <code>uint32 monthly_contests_per_space = 14;</code>
+     * Generated from protobuf field <code>uint32 contests_per_month = 14;</code>
      * @param int $var
      * @return $this
      */
-    public function setMonthlyContestsPerSpace($var)
+    public function setContestsPerMonth($var)
     {
         GPBUtil::checkUint32($var);
-        $this->monthly_contests_per_space = $var;
+        $this->contests_per_month = $var;
 
         return $this;
     }
