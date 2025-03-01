@@ -227,4 +227,20 @@ class MemberServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberUsageOutput::class, $context);
     }
 
+    /**
+     * @param DescribeNotificationUsageInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeNotificationUsageOutput output message
+     */
+    public function DescribeNotificationUsage(DescribeNotificationUsageInput $input, array $context = [])
+    {
+        $path = "/usage/notifications";
+
+        $context['name'] = "eolymp.community.MemberService/DescribeNotificationUsage";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeNotificationUsageOutput::class, $context);
+    }
+
 }
