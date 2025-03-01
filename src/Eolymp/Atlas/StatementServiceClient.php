@@ -167,4 +167,23 @@ class StatementServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateStatementsOutput::class, $context);
     }
 
+    /**
+     * @param ExportStatementInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportStatementOutput output message
+     */
+    public function ExportStatement(ExportStatementInput $input, array $context = [])
+    {
+        $path = "/statements/".rawurlencode($input->getStatementId())."/export";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setStatementId("");
+
+        $context['name'] = "eolymp.atlas.StatementService/ExportStatement";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportStatementOutput::class, $context);
+    }
+
 }
