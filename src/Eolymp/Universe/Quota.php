@@ -94,9 +94,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * newsletter quota
      *
-     * Generated from protobuf field <code>uint32 newsletters_per_space = 200;</code>
+     * Generated from protobuf field <code>uint32 monthly_campaigns_per_space = 200;</code>
      */
-    protected $newsletters_per_space = 0;
+    protected $monthly_campaigns_per_space = 0;
     /**
      * Generated from protobuf field <code>uint32 emails_per_day = 201;</code>
      */
@@ -250,7 +250,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           maximum amount of time a submission can be evaluated
      *     @type int $members_per_space
      *           member quota and features
-     *     @type int $newsletters_per_space
+     *     @type int $monthly_campaigns_per_space
      *           newsletter quota
      *     @type int $emails_per_day
      *     @type int $emails_per_month
@@ -636,25 +636,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * newsletter quota
      *
-     * Generated from protobuf field <code>uint32 newsletters_per_space = 200;</code>
+     * Generated from protobuf field <code>uint32 monthly_campaigns_per_space = 200;</code>
      * @return int
      */
-    public function getNewslettersPerSpace()
+    public function getMonthlyCampaignsPerSpace()
     {
-        return $this->newsletters_per_space;
+        return $this->monthly_campaigns_per_space;
     }
 
     /**
      * newsletter quota
      *
-     * Generated from protobuf field <code>uint32 newsletters_per_space = 200;</code>
+     * Generated from protobuf field <code>uint32 monthly_campaigns_per_space = 200;</code>
      * @param int $var
      * @return $this
      */
-    public function setNewslettersPerSpace($var)
+    public function setMonthlyCampaignsPerSpace($var)
     {
         GPBUtil::checkUint32($var);
-        $this->newsletters_per_space = $var;
+        $this->monthly_campaigns_per_space = $var;
 
         return $this;
     }
