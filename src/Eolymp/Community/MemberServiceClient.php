@@ -193,25 +193,6 @@ class MemberServiceClient {
     }
 
     /**
-     * @param NotifyMemberInput $input message
-     * @param array $context request parameters
-     *
-     * @return NotifyMemberOutput output message
-     */
-    public function NotifyMember(NotifyMemberInput $input, array $context = [])
-    {
-        $path = "/members/".rawurlencode($input->getMemberId())."/notify";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
-
-        $context['name'] = "eolymp.community.MemberService/NotifyMember";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, NotifyMemberOutput::class, $context);
-    }
-
-    /**
      * @param DescribeMemberUsageInput $input message
      * @param array $context request parameters
      *
@@ -225,22 +206,6 @@ class MemberServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberUsageOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeNotificationUsageInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeNotificationUsageOutput output message
-     */
-    public function DescribeNotificationUsage(DescribeNotificationUsageInput $input, array $context = [])
-    {
-        $path = "/usage/notifications";
-
-        $context['name'] = "eolymp.community.MemberService/DescribeNotificationUsage";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeNotificationUsageOutput::class, $context);
     }
 
 }
