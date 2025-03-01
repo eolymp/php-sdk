@@ -64,9 +64,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * submission evaluation quota and features
      *
-     * Generated from protobuf field <code>uint32 evaluations_by_seat_month = 13;</code>
+     * Generated from protobuf field <code>uint32 evaluations_by_seat_per_month = 13;</code>
      */
-    protected $evaluations_by_seat_month = 0;
+    protected $evaluations_by_seat_per_month = 0;
     /**
      * space uses priority testing queue
      *
@@ -240,7 +240,7 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           max number of achievements
      *     @type int $printers_per_space
      *           max number of printers (0 - printers are disabled)
-     *     @type int $evaluations_by_seat_month
+     *     @type int $evaluations_by_seat_per_month
      *           submission evaluation quota and features
      *     @type bool $priority_evaluation_queue
      *           space uses priority testing queue
@@ -506,25 +506,25 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * submission evaluation quota and features
      *
-     * Generated from protobuf field <code>uint32 evaluations_by_seat_month = 13;</code>
+     * Generated from protobuf field <code>uint32 evaluations_by_seat_per_month = 13;</code>
      * @return int
      */
-    public function getEvaluationsBySeatMonth()
+    public function getEvaluationsBySeatPerMonth()
     {
-        return $this->evaluations_by_seat_month;
+        return $this->evaluations_by_seat_per_month;
     }
 
     /**
      * submission evaluation quota and features
      *
-     * Generated from protobuf field <code>uint32 evaluations_by_seat_month = 13;</code>
+     * Generated from protobuf field <code>uint32 evaluations_by_seat_per_month = 13;</code>
      * @param int $var
      * @return $this
      */
-    public function setEvaluationsBySeatMonth($var)
+    public function setEvaluationsBySeatPerMonth($var)
     {
         GPBUtil::checkUint32($var);
-        $this->evaluations_by_seat_month = $var;
+        $this->evaluations_by_seat_per_month = $var;
 
         return $this;
     }
