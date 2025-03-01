@@ -30,12 +30,28 @@ class RenderServiceClient {
      */
     public function RenderContent(RenderContentInput $input, array $context = [])
     {
-        $path = "/renderer";
+        $path = "/content:render";
 
         $context['name'] = "eolymp.content.RenderService/RenderContent";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RenderContentOutput::class, $context);
+    }
+
+    /**
+     * @param ExportContentInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportContentOutput output message
+     */
+    public function ExportContent(ExportContentInput $input, array $context = [])
+    {
+        $path = "/content:export";
+
+        $context['name'] = "eolymp.content.RenderService/ExportContent";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportContentOutput::class, $context);
     }
 
 }
