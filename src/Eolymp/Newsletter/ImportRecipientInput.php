@@ -17,6 +17,10 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string campaign_id = 1;</code>
      */
     protected $campaign_id = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
+     */
+    private $parameters;
     protected $source;
 
     /**
@@ -28,6 +32,8 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
      *     @type string $campaign_id
      *     @type bool $all_members
      *     @type string $group_id
+     *     @type string $contest_id
+     *     @type array|\Google\Protobuf\Internal\MapField $parameters
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +113,55 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 12;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasContestId()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getParameters()
+    {
+        return $this->parameters;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setParameters($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->parameters = $arr;
 
         return $this;
     }

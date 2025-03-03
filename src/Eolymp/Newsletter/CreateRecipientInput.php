@@ -21,6 +21,10 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string member_id = 11;</code>
      */
     protected $member_id = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
+     */
+    private $parameters;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $campaign_id
      *     @type string $member_id
+     *     @type array|\Google\Protobuf\Internal\MapField $parameters
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class CreateRecipientInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getParameters()
+    {
+        return $this->parameters;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setParameters($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->parameters = $arr;
 
         return $this;
     }
