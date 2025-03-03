@@ -26,6 +26,10 @@ class Campaign extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
+     * Generated from protobuf field <code>string name = 10;</code>
+     */
+    protected $name = '';
+    /**
      * Generated from protobuf field <code>string subject = 11;</code>
      */
     protected $subject = '';
@@ -59,6 +63,7 @@ class Campaign extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $type
      *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type string $name
      *     @type string $subject
      *     @type \Eolymp\Ecm\Content $content
      *     @type int $recipients_count
@@ -144,6 +149,28 @@ class Campaign extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 10;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }

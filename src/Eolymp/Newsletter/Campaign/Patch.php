@@ -20,6 +20,10 @@ class Patch
      */
     const TYPE = 1;
     /**
+     * Generated from protobuf enum <code>NAME = 5;</code>
+     */
+    const NAME = 5;
+    /**
      * Generated from protobuf enum <code>SUBJECT = 2;</code>
      */
     const SUBJECT = 2;
@@ -35,6 +39,7 @@ class Patch
     private static $valueToName = [
         self::ALL => 'ALL',
         self::TYPE => 'TYPE',
+        self::NAME => 'NAME',
         self::SUBJECT => 'SUBJECT',
         self::CONTENT => 'CONTENT',
         self::LOCALE => 'LOCALE',

@@ -45,6 +45,10 @@ class Recipient extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string status_reason = 4;</code>
      */
     protected $status_reason = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 5;</code>
+     */
+    private $parameters;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Recipient extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type int $status
      *     @type string $status_reason
+     *     @type array|\Google\Protobuf\Internal\MapField $parameters
      * }
      */
     public function __construct($data = NULL) {
@@ -279,6 +284,28 @@ class Recipient extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->status_reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getParameters()
+    {
+        return $this->parameters;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> parameters = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setParameters($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->parameters = $arr;
 
         return $this;
     }

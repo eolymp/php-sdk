@@ -34,6 +34,14 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
+     * for internal use, campaign id for tracking feedback
+     *
+     * Generated from protobuf field <code>string campaign = 15;</code>
+     */
+    protected $campaign = '';
+    /**
+     * locale for the content
+     *
      * Generated from protobuf field <code>string locale = 11;</code>
      */
     protected $locale = '';
@@ -62,7 +70,10 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      *     @type bool $bcc_me
      *           send a copy of the email to the current user
      *     @type int $type
+     *     @type string $campaign
+     *           for internal use, campaign id for tracking feedback
      *     @type string $locale
+     *           locale for the content
      *     @type string $subject
      *     @type \Eolymp\Ecm\Content $content
      *     @type array|\Google\Protobuf\Internal\MapField $parameters
@@ -170,6 +181,34 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * for internal use, campaign id for tracking feedback
+     *
+     * Generated from protobuf field <code>string campaign = 15;</code>
+     * @return string
+     */
+    public function getCampaign()
+    {
+        return $this->campaign;
+    }
+
+    /**
+     * for internal use, campaign id for tracking feedback
+     *
+     * Generated from protobuf field <code>string campaign = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCampaign($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->campaign = $var;
+
+        return $this;
+    }
+
+    /**
+     * locale for the content
+     *
      * Generated from protobuf field <code>string locale = 11;</code>
      * @return string
      */
@@ -179,6 +218,8 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * locale for the content
+     *
      * Generated from protobuf field <code>string locale = 11;</code>
      * @param string $var
      * @return $this
