@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.RequestLinkedAccountOutput</code>
+ * Generated from protobuf message <code>eolymp.community.CreateLinkedAccountOutput</code>
  */
-class RequestLinkedAccountOutput extends \Google\Protobuf\Internal\Message
+class CreateLinkedAccountOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string redirect_uri = 1;</code>
+     * Generated from protobuf field <code>string link_id = 1;</code>
      */
-    protected $redirect_uri = '';
+    protected $link_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class RequestLinkedAccountOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $redirect_uri
+     *     @type string $link_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class RequestLinkedAccountOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string redirect_uri = 1;</code>
+     * Generated from protobuf field <code>string link_id = 1;</code>
      * @return string
      */
-    public function getRedirectUri()
+    public function getLinkId()
     {
-        return $this->redirect_uri;
+        return $this->link_id;
     }
 
     /**
-     * Generated from protobuf field <code>string redirect_uri = 1;</code>
+     * Generated from protobuf field <code>string link_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setRedirectUri($var)
+    public function setLinkId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->redirect_uri = $var;
+        $this->link_id = $var;
 
         return $this;
     }

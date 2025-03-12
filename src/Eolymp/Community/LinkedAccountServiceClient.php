@@ -33,12 +33,28 @@ class LinkedAccountServiceClient {
      */
     public function RequestLinkedAccount(RequestLinkedAccountInput $input, array $context = [])
     {
-        $path = "/linked-accounts";
+        $path = "/linked-accounts:request";
 
         $context['name'] = "eolymp.community.LinkedAccountService/RequestLinkedAccount";
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RequestLinkedAccountOutput::class, $context);
+    }
+
+    /**
+     * @param CreateLinkedAccountInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateLinkedAccountOutput output message
+     */
+    public function CreateLinkedAccount(CreateLinkedAccountInput $input, array $context = [])
+    {
+        $path = "/linked-accounts";
+
+        $context['name'] = "eolymp.community.LinkedAccountService/CreateLinkedAccount";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateLinkedAccountOutput::class, $context);
     }
 
     /**
