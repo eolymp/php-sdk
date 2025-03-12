@@ -19,10 +19,20 @@ class Type
      * Generated from protobuf enum <code>GOOGLE = 1;</code>
      */
     const GOOGLE = 1;
+    /**
+     * Generated from protobuf enum <code>GITHUB = 2;</code>
+     */
+    const GITHUB = 2;
+    /**
+     * Generated from protobuf enum <code>DISCORD = 3;</code>
+     */
+    const DISCORD = 3;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::GOOGLE => 'GOOGLE',
+        self::GITHUB => 'GITHUB',
+        self::DISCORD => 'DISCORD',
     ];
 
     public static function name($value)

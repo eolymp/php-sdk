@@ -26,6 +26,41 @@ class LinkedAccountServiceClient {
     }
 
     /**
+     * @param RequestLinkedAccountInput $input message
+     * @param array $context request parameters
+     *
+     * @return RequestLinkedAccountOutput output message
+     */
+    public function RequestLinkedAccount(RequestLinkedAccountInput $input, array $context = [])
+    {
+        $path = "/linked-accounts";
+
+        $context['name'] = "eolymp.community.LinkedAccountService/RequestLinkedAccount";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RequestLinkedAccountOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteLinkedAccountInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteLinkedAccountOutput output message
+     */
+    public function DeleteLinkedAccount(DeleteLinkedAccountInput $input, array $context = [])
+    {
+        $path = "/linked-accounts/".rawurlencode($input->getLinkId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLinkId("");
+
+        $context['name'] = "eolymp.community.LinkedAccountService/DeleteLinkedAccount";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteLinkedAccountOutput::class, $context);
+    }
+
+    /**
      * @param DescribeLinkedAccountInput $input message
      * @param array $context request parameters
      *
@@ -58,25 +93,6 @@ class LinkedAccountServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListLinkedAccountsOutput::class, $context);
-    }
-
-    /**
-     * @param DeleteLinkedAccountInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteLinkedAccountOutput output message
-     */
-    public function DeleteLinkedAccount(DeleteLinkedAccountInput $input, array $context = [])
-    {
-        $path = "/linked-accounts/".rawurlencode($input->getLinkId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setLinkId("");
-
-        $context['name'] = "eolymp.community.LinkedAccountService/DeleteLinkedAccount";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteLinkedAccountOutput::class, $context);
     }
 
 }
