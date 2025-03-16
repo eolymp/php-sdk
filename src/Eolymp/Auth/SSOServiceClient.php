@@ -23,35 +23,35 @@ class SSOServiceClient {
     }
 
     /**
-     * @param AuthorizeRequestInput $input message
+     * @param SignonRequestInput $input message
      * @param array $context request parameters
      *
-     * @return AuthorizeRequestOutput output message
+     * @return SignonRequestOutput output message
      */
-    public function AuthorizeRequest(AuthorizeRequestInput $input, array $context = [])
+    public function SignonRequest(SignonRequestInput $input, array $context = [])
     {
-        $path = "/sso:authorize";
+        $path = "/sso:request";
 
-        $context['name'] = "eolymp.auth.SSOService/AuthorizeRequest";
+        $context['name'] = "eolymp.auth.SSOService/SignonRequest";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeRequestOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SignonRequestOutput::class, $context);
     }
 
     /**
-     * @param AuthorizeCallbackInput $input message
+     * @param SignonExchangeInput $input message
      * @param array $context request parameters
      *
-     * @return AuthorizeCallbackOutput output message
+     * @return SignonExchangeOutput output message
      */
-    public function AuthorizeCallback(AuthorizeCallbackInput $input, array $context = [])
+    public function SignonExchange(SignonExchangeInput $input, array $context = [])
     {
         $path = "/sso:exchange";
 
-        $context['name'] = "eolymp.auth.SSOService/AuthorizeCallback";
+        $context['name'] = "eolymp.auth.SSOService/SignonExchange";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeCallbackOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SignonExchangeOutput::class, $context);
     }
 
 }

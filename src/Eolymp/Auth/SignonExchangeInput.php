@@ -9,18 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.auth.AuthorizeCallbackOutput</code>
+ * Generated from protobuf message <code>eolymp.auth.SignonExchangeInput</code>
  */
-class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
+class SignonExchangeInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string redirect_uri = 1;</code>
-     */
-    protected $redirect_uri = '';
-    /**
-     * Generated from protobuf field <code>string code = 2;</code>
+     * Generated from protobuf field <code>string code = 1;</code>
      */
     protected $code = '';
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     */
+    protected $state = '';
 
     /**
      * Constructor.
@@ -28,8 +28,8 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $redirect_uri
      *     @type string $code
+     *     @type string $state
      * }
      */
     public function __construct($data = NULL) {
@@ -38,29 +38,7 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string redirect_uri = 1;</code>
-     * @return string
-     */
-    public function getRedirectUri()
-    {
-        return $this->redirect_uri;
-    }
-
-    /**
-     * Generated from protobuf field <code>string redirect_uri = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRedirectUri($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->redirect_uri = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code = 2;</code>
+     * Generated from protobuf field <code>string code = 1;</code>
      * @return string
      */
     public function getCode()
@@ -69,7 +47,7 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string code = 2;</code>
+     * Generated from protobuf field <code>string code = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -77,6 +55,28 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
 
         return $this;
     }
