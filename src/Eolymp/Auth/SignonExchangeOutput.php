@@ -14,9 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignonExchangeOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string authorization_code = 1;</code>
+     * Generated from protobuf field <code>string access_token = 1;</code>
      */
-    protected $authorization_code = '';
+    protected $access_token = '';
+    /**
+     * Generated from protobuf field <code>string token_type = 2;</code>
+     */
+    protected $token_type = '';
+    /**
+     * Generated from protobuf field <code>uint32 expires_in = 3;</code>
+     */
+    protected $expires_in = 0;
+    /**
+     * Generated from protobuf field <code>string refresh_token = 4;</code>
+     */
+    protected $refresh_token = '';
 
     /**
      * Constructor.
@@ -24,7 +36,10 @@ class SignonExchangeOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $authorization_code
+     *     @type string $access_token
+     *     @type string $token_type
+     *     @type int $expires_in
+     *     @type string $refresh_token
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +48,89 @@ class SignonExchangeOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string authorization_code = 1;</code>
+     * Generated from protobuf field <code>string access_token = 1;</code>
      * @return string
      */
-    public function getAuthorizationCode()
+    public function getAccessToken()
     {
-        return $this->authorization_code;
+        return $this->access_token;
     }
 
     /**
-     * Generated from protobuf field <code>string authorization_code = 1;</code>
+     * Generated from protobuf field <code>string access_token = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setAuthorizationCode($var)
+    public function setAccessToken($var)
     {
         GPBUtil::checkString($var, True);
-        $this->authorization_code = $var;
+        $this->access_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_type = 2;</code>
+     * @return string
+     */
+    public function getTokenType()
+    {
+        return $this->token_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_type = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 expires_in = 3;</code>
+     * @return int
+     */
+    public function getExpiresIn()
+    {
+        return $this->expires_in;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 expires_in = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setExpiresIn($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->expires_in = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string refresh_token = 4;</code>
+     * @return string
+     */
+    public function getRefreshToken()
+    {
+        return $this->refresh_token;
+    }
+
+    /**
+     * Generated from protobuf field <code>string refresh_token = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRefreshToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->refresh_token = $var;
 
         return $this;
     }
