@@ -22,4 +22,36 @@ class SSOServiceClient {
         $this->invoker = $invoker;
     }
 
+    /**
+     * @param AuthorizeRequestInput $input message
+     * @param array $context request parameters
+     *
+     * @return AuthorizeRequestOutput output message
+     */
+    public function AuthorizeRequest(AuthorizeRequestInput $input, array $context = [])
+    {
+        $path = "/sso:authorize";
+
+        $context['name'] = "eolymp.auth.SSOService/AuthorizeRequest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeRequestOutput::class, $context);
+    }
+
+    /**
+     * @param AuthorizeCallbackInput $input message
+     * @param array $context request parameters
+     *
+     * @return AuthorizeCallbackOutput output message
+     */
+    public function AuthorizeCallback(AuthorizeCallbackInput $input, array $context = [])
+    {
+        $path = "/sso:exchange";
+
+        $context['name'] = "eolymp.auth.SSOService/AuthorizeCallback";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AuthorizeCallbackOutput::class, $context);
+    }
+
 }

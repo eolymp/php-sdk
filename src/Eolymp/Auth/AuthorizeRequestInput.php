@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class AuthorizeRequestInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string via = 10;</code>
+     */
+    protected $via = '';
+    /**
      * Generated from protobuf field <code>string client_id = 1;</code>
      */
     protected $client_id = '';
@@ -48,6 +52,7 @@ class AuthorizeRequestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $via
      *     @type string $client_id
      *     @type string $code_challenge
      *     @type string $code_challenge_method
@@ -60,6 +65,28 @@ class AuthorizeRequestInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Auth\SsoService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string via = 10;</code>
+     * @return string
+     */
+    public function getVia()
+    {
+        return $this->via;
+    }
+
+    /**
+     * Generated from protobuf field <code>string via = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVia($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->via = $var;
+
+        return $this;
     }
 
     /**

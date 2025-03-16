@@ -17,6 +17,10 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string redirect_uri = 1;</code>
      */
     protected $redirect_uri = '';
+    /**
+     * Generated from protobuf field <code>string code = 2;</code>
+     */
+    protected $code = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $redirect_uri
+     *     @type string $code
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class AuthorizeCallbackOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->redirect_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code = 2;</code>
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code = $var;
 
         return $this;
     }
