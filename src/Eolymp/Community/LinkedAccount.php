@@ -29,6 +29,10 @@ class LinkedAccount extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string subject = 4;</code>
      */
     protected $subject = '';
+    /**
+     * Generated from protobuf field <code>string nickname = 5;</code>
+     */
+    protected $nickname = '';
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class LinkedAccount extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *     @type string $issuer
      *     @type string $subject
+     *     @type string $nickname
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class LinkedAccount extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->subject = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 5;</code>
+     * @return string
+     */
+    public function getNickname()
+    {
+        return $this->nickname;
+    }
+
+    /**
+     * Generated from protobuf field <code>string nickname = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNickname($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->nickname = $var;
 
         return $this;
     }
