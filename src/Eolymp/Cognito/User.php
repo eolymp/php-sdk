@@ -38,17 +38,11 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $active = false;
     /**
-     * Rank
+     * Rating
      *
-     * Generated from protobuf field <code>uint32 rank = 41;</code>
+     * Generated from protobuf field <code>uint32 rating = 60;</code>
      */
-    protected $rank = 0;
-    /**
-     * Rank trend (up or down)
-     *
-     * Generated from protobuf field <code>.eolymp.cognito.User.RankTrend rank_trend = 42;</code>
-     */
-    protected $rank_trend = 0;
+    protected $rating = 0;
     /**
      * Full name
      *
@@ -142,10 +136,8 @@ class User extends \Google\Protobuf\Internal\Message
      *           Email address
      *     @type bool $active
      *           Account is active, user can login
-     *     @type int $rank
-     *           Rank
-     *     @type int $rank_trend
-     *           Rank trend (up or down)
+     *     @type int $rating
+     *           Rating
      *     @type string $name
      *           Full name
      *     @type string $picture
@@ -284,53 +276,27 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Rank
+     * Rating
      *
-     * Generated from protobuf field <code>uint32 rank = 41;</code>
+     * Generated from protobuf field <code>uint32 rating = 60;</code>
      * @return int
      */
-    public function getRank()
+    public function getRating()
     {
-        return $this->rank;
+        return $this->rating;
     }
 
     /**
-     * Rank
+     * Rating
      *
-     * Generated from protobuf field <code>uint32 rank = 41;</code>
+     * Generated from protobuf field <code>uint32 rating = 60;</code>
      * @param int $var
      * @return $this
      */
-    public function setRank($var)
+    public function setRating($var)
     {
         GPBUtil::checkUint32($var);
-        $this->rank = $var;
-
-        return $this;
-    }
-
-    /**
-     * Rank trend (up or down)
-     *
-     * Generated from protobuf field <code>.eolymp.cognito.User.RankTrend rank_trend = 42;</code>
-     * @return int
-     */
-    public function getRankTrend()
-    {
-        return $this->rank_trend;
-    }
-
-    /**
-     * Rank trend (up or down)
-     *
-     * Generated from protobuf field <code>.eolymp.cognito.User.RankTrend rank_trend = 42;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setRankTrend($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Cognito\User\RankTrend::class);
-        $this->rank_trend = $var;
+        $this->rating = $var;
 
         return $this;
     }
