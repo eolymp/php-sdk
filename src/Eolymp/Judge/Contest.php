@@ -88,6 +88,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $join_unofficially = false;
     /**
+     * Issue participation certificates to participants after contest is finalized.
+     *
+     * Generated from protobuf field <code>bool issue_certificates = 36;</code>
+     */
+    protected $issue_certificates = false;
+    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -208,6 +214,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest visibility defines who can participate and where contest is listed.
      *     @type bool $join_unofficially
      *           When participants join contests by themselves they will participate unofficially.
+     *     @type bool $issue_certificates
+     *           Issue participation certificates to participants after contest is finalized.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
      *     @type bool $require_admission
@@ -575,6 +583,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->join_unofficially = $var;
+
+        return $this;
+    }
+
+    /**
+     * Issue participation certificates to participants after contest is finalized.
+     *
+     * Generated from protobuf field <code>bool issue_certificates = 36;</code>
+     * @return bool
+     */
+    public function getIssueCertificates()
+    {
+        return $this->issue_certificates;
+    }
+
+    /**
+     * Issue participation certificates to participants after contest is finalized.
+     *
+     * Generated from protobuf field <code>bool issue_certificates = 36;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIssueCertificates($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->issue_certificates = $var;
 
         return $this;
     }

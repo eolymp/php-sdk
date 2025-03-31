@@ -47,6 +47,12 @@ class Status
      * Generated from protobuf enum <code>FROZEN = 5;</code>
      */
     const FROZEN = 5;
+    /**
+     * contest has been finalized and archived
+     *
+     * Generated from protobuf enum <code>FINALIZED = 6;</code>
+     */
+    const FINALIZED = 6;
 
     private static $valueToName = [
         self::STATUS_UNKNOWN => 'STATUS_UNKNOWN',
@@ -55,6 +61,7 @@ class Status
         self::COMPLETE => 'COMPLETE',
         self::SUSPENDED => 'SUSPENDED',
         self::FROZEN => 'FROZEN',
+        self::FINALIZED => 'FINALIZED',
     ];
 
     public static function name($value)

@@ -218,6 +218,30 @@ class ContestServiceClient {
     }
 
     /**
+     * Finalize contest results.
+     * This action finalizes contest standings, issues participation certificates and awards medals etc.
+     * After finalizing a contest it is not possible to change any parameters or results.
+     * This action is irreversible.
+     *
+     * @param FinalizeContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return FinalizeContestOutput output message
+     */
+    public function FinalizeContest(FinalizeContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/finalize";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ContestService/FinalizeContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, FinalizeContestOutput::class, $context);
+    }
+
+    /**
      * Re-start suspended or frozen contest
      *
      * @param ResumeContestInput $input message
