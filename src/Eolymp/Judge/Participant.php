@@ -104,6 +104,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $passcode = '';
     /**
+     * participation certificate URL
+     *
+     * Generated from protobuf field <code>string certificate_url = 31;</code>
+     */
+    protected $certificate_url = '';
+    /**
      * Submit counter is used to count how many times user submitted the problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
@@ -147,6 +153,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           passcode is a code participant has to enter before she can begin contest
      *           this field is only populated when request is made by contest owner
      *           passcode is read-only and should be set using ResetPasscode method.
+     *     @type string $certificate_url
+     *           participation certificate URL
      *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
      *           Submit counter is used to count how many times user submitted the problem.
      * }
@@ -562,6 +570,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->passcode = $var;
+
+        return $this;
+    }
+
+    /**
+     * participation certificate URL
+     *
+     * Generated from protobuf field <code>string certificate_url = 31;</code>
+     * @return string
+     */
+    public function getCertificateUrl()
+    {
+        return $this->certificate_url;
+    }
+
+    /**
+     * participation certificate URL
+     *
+     * Generated from protobuf field <code>string certificate_url = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCertificateUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->certificate_url = $var;
 
         return $this;
     }
