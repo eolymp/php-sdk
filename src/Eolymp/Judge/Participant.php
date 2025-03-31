@@ -56,6 +56,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $ghost = false;
     /**
+     * participant result is finalized
+     *
+     * Generated from protobuf field <code>bool finalized = 12;</code>
+     */
+    protected $finalized = false;
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Medal medal = 9;</code>
      */
     protected $medal = 0;
@@ -136,6 +142,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           participant is disqualified
      *     @type bool $ghost
      *           participant is a ghost
+     *     @type bool $finalized
+     *           participant result is finalized
      *     @type int $medal
      *     @type int $status
      *           status (see explanation to enumeration values)
@@ -342,6 +350,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->ghost = $var;
+
+        return $this;
+    }
+
+    /**
+     * participant result is finalized
+     *
+     * Generated from protobuf field <code>bool finalized = 12;</code>
+     * @return bool
+     */
+    public function getFinalized()
+    {
+        return $this->finalized;
+    }
+
+    /**
+     * participant result is finalized
+     *
+     * Generated from protobuf field <code>bool finalized = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFinalized($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->finalized = $var;
 
         return $this;
     }

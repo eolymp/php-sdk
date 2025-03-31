@@ -19,7 +19,7 @@ class Events
         \GPBMetadata\Eolymp\Judge\Submission::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‰
+Å
 eolymp/judge/events.protoeolymp.judgeeolymp/judge/score.protoeolymp/judge/submission.proto"\\
 SubmissionCompletedEvent
 
@@ -37,18 +37,7 @@ contest_id (	
 participant_id (	
 
 unofficial ("
-score (2.eolymp.judge.Score"Ç
-ParticipantChangedEvent
-
-contest_id
- (	)
-before (2.eolymp.judge.Participant(
-after (2.eolymp.judge.Participant"\\
-ParticipantJoinedEvent
-
-contest_id
- (	.
-participant (2.eolymp.judge.Participant"Q
+score (2.eolymp.judge.Score"Q
 RetestProblemEvent
 
 contest_id (	

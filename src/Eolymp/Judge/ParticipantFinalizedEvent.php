@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.ParticipantJoinedEvent</code>
+ * Generated from protobuf message <code>eolymp.judge.ParticipantFinalizedEvent</code>
  */
-class ParticipantJoinedEvent extends \Google\Protobuf\Internal\Message
+class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string contest_id = 10;</code>
