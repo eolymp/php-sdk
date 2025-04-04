@@ -95,6 +95,10 @@ class Patch
      * Generated from protobuf enum <code>SCOREBOARD = 150;</code>
      */
     const SCOREBOARD = 150;
+    /**
+     * Generated from protobuf enum <code>CERTIFICATION = 160;</code>
+     */
+    const CERTIFICATION = 160;
 
     private static $valueToName = [
         self::ALL => 'ALL',
@@ -118,6 +122,7 @@ class Patch
         self::ENVIRONMENT => 'ENVIRONMENT',
         self::UPSOLVE => 'UPSOLVE',
         self::SCOREBOARD => 'SCOREBOARD',
+        self::CERTIFICATION => 'CERTIFICATION',
     ];
 
     public static function name($value)

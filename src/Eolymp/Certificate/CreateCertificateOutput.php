@@ -17,6 +17,10 @@ class CreateCertificateOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string certificate_id = 1;</code>
      */
     protected $certificate_id = '';
+    /**
+     * Generated from protobuf field <code>string download_url = 2;</code>
+     */
+    protected $download_url = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CreateCertificateOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $certificate_id
+     *     @type string $download_url
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CreateCertificateOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->certificate_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string download_url = 2;</code>
+     * @return string
+     */
+    public function getDownloadUrl()
+    {
+        return $this->download_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string download_url = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_url = $var;
 
         return $this;
     }

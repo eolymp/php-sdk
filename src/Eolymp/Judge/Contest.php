@@ -88,12 +88,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $join_unofficially = false;
     /**
-     * Issue participation certificates to participants after contest is finalized.
-     *
-     * Generated from protobuf field <code>bool issue_certificates = 36;</code>
-     */
-    protected $issue_certificates = false;
-    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -179,6 +173,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
      */
     protected $scoreboard = null;
+    /**
+     * Certification configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Certification certification = 106;</code>
+     */
+    protected $certification = null;
 
     /**
      * Constructor.
@@ -214,8 +214,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest visibility defines who can participate and where contest is listed.
      *     @type bool $join_unofficially
      *           When participants join contests by themselves they will participate unofficially.
-     *     @type bool $issue_certificates
-     *           Issue participation certificates to participants after contest is finalized.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
      *     @type bool $require_admission
@@ -244,6 +242,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Upsolve configuration
      *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
      *           Scoreboard configuration
+     *     @type \Eolymp\Judge\Contest\Certification $certification
+     *           Certification configuration
      * }
      */
     public function __construct($data = NULL) {
@@ -583,32 +583,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->join_unofficially = $var;
-
-        return $this;
-    }
-
-    /**
-     * Issue participation certificates to participants after contest is finalized.
-     *
-     * Generated from protobuf field <code>bool issue_certificates = 36;</code>
-     * @return bool
-     */
-    public function getIssueCertificates()
-    {
-        return $this->issue_certificates;
-    }
-
-    /**
-     * Issue participation certificates to participants after contest is finalized.
-     *
-     * Generated from protobuf field <code>bool issue_certificates = 36;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIssueCertificates($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->issue_certificates = $var;
 
         return $this;
     }
@@ -1051,6 +1025,42 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Scoreboard::class);
         $this->scoreboard = $var;
+
+        return $this;
+    }
+
+    /**
+     * Certification configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Certification certification = 106;</code>
+     * @return \Eolymp\Judge\Contest\Certification|null
+     */
+    public function getCertification()
+    {
+        return $this->certification;
+    }
+
+    public function hasCertification()
+    {
+        return isset($this->certification);
+    }
+
+    public function clearCertification()
+    {
+        unset($this->certification);
+    }
+
+    /**
+     * Certification configuration
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Certification certification = 106;</code>
+     * @param \Eolymp\Judge\Contest\Certification $var
+     * @return $this
+     */
+    public function setCertification($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Certification::class);
+        $this->certification = $var;
 
         return $this;
     }

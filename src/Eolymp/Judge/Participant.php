@@ -110,11 +110,11 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $passcode = '';
     /**
-     * participation certificate URL
+     * participation certificate ID
      *
-     * Generated from protobuf field <code>string certificate_url = 31;</code>
+     * Generated from protobuf field <code>string certificate_id = 32;</code>
      */
-    protected $certificate_url = '';
+    protected $certificate_id = '';
     /**
      * Submit counter is used to count how many times user submitted the problem.
      *
@@ -161,8 +161,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           passcode is a code participant has to enter before she can begin contest
      *           this field is only populated when request is made by contest owner
      *           passcode is read-only and should be set using ResetPasscode method.
-     *     @type string $certificate_url
-     *           participation certificate URL
+     *     @type string $certificate_id
+     *           participation certificate ID
      *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
      *           Submit counter is used to count how many times user submitted the problem.
      * }
@@ -609,27 +609,27 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * participation certificate URL
+     * participation certificate ID
      *
-     * Generated from protobuf field <code>string certificate_url = 31;</code>
+     * Generated from protobuf field <code>string certificate_id = 32;</code>
      * @return string
      */
-    public function getCertificateUrl()
+    public function getCertificateId()
     {
-        return $this->certificate_url;
+        return $this->certificate_id;
     }
 
     /**
-     * participation certificate URL
+     * participation certificate ID
      *
-     * Generated from protobuf field <code>string certificate_url = 31;</code>
+     * Generated from protobuf field <code>string certificate_id = 32;</code>
      * @param string $var
      * @return $this
      */
-    public function setCertificateUrl($var)
+    public function setCertificateId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->certificate_url = $var;
+        $this->certificate_id = $var;
 
         return $this;
     }

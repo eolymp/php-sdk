@@ -17,8 +17,8 @@ class Certificate
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-æ
-$eolymp/certificate/certificate.protoeolymp.certificate"æ
+ö
+$eolymp/certificate/certificate.protoeolymp.certificate"ö
 Certificate
 
 id (	
@@ -26,7 +26,8 @@ $eolymp/certificate/certificate.protoeolymp.certificate"æ
 	target_id (	
 verification_url (	
 download_url (	
-html_url (	
+html_url (	
+locale (	
 type (	C
 
 attributes (2/.eolymp.certificate.Certificate.AttributesEntry-

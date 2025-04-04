@@ -48,6 +48,10 @@ class Certificate extends \Google\Protobuf\Internal\Message
      */
     protected $html_url = '';
     /**
+     * Generated from protobuf field <code>string locale = 7;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>string type = 5;</code>
      */
     protected $type = '';
@@ -81,6 +85,7 @@ class Certificate extends \Google\Protobuf\Internal\Message
      *           URL to download certificate in PDF
      *     @type string $html_url
      *           URL to download certificate in HTML
+     *     @type string $locale
      *     @type string $type
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
      *     @type \Google\Protobuf\Timestamp $issued_at
@@ -240,6 +245,28 @@ class Certificate extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->html_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 7;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
