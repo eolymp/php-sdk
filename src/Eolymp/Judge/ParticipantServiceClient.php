@@ -173,24 +173,6 @@ class ParticipantServiceClient {
     }
 
     /**
-     * DescribeViewer allows to fetch participant data for a currently authorized user.
-     *
-     * @param DescribeViewerInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeViewerOutput output message
-     */
-    public function DescribeViewer(DescribeViewerInput $input, array $context = [])
-    {
-        $path = "/introspect";
-
-        $context['name'] = "eolymp.judge.ParticipantService/DescribeViewer";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerOutput::class, $context);
-    }
-
-    /**
      * Allows a participant (currently authorized user) to join (add himself to) a public contest.
      * deprecated: use registration service instead
      *
@@ -210,6 +192,24 @@ class ParticipantServiceClient {
     }
 
     /**
+     * DescribeViewer allows to fetch participant data for a currently authorized user.
+     *
+     * @param DescribeViewerInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeViewerOutput output message
+     */
+    public function DescribeViewer(DescribeViewerInput $input, array $context = [])
+    {
+        $path = "/introspect";
+
+        $context['name'] = "eolymp.judge.ParticipantService/DescribeViewer";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerOutput::class, $context);
+    }
+
+    /**
      * Allows a participant (currently authorized user) to start participating in the contest, see problems and submit solutions.
      *
      * @param StartContestInput $input message
@@ -225,6 +225,42 @@ class ParticipantServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, StartContestOutput::class, $context);
+    }
+
+    /**
+     * Allows a participant to temporarily stop participating in the contest. Participation can be restarted using StartContest API.
+     *
+     * @param PauseContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return PauseContestOutput output message
+     */
+    public function PauseContest(PauseContestInput $input, array $context = [])
+    {
+        $path = "/pause";
+
+        $context['name'] = "eolymp.judge.ParticipantService/PauseContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PauseContestOutput::class, $context);
+    }
+
+    /**
+     * FinishContest allows to finish contest before the end time.
+     *
+     * @param FinishContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return FinishContestOutput output message
+     */
+    public function FinishContest(FinishContestInput $input, array $context = [])
+    {
+        $path = "/finish";
+
+        $context['name'] = "eolymp.judge.ParticipantService/FinishContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, FinishContestOutput::class, $context);
     }
 
 }

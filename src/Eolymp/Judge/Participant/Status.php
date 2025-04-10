@@ -53,6 +53,12 @@ class Status
      * Generated from protobuf enum <code>BLOCKED = 8;</code>
      */
     const BLOCKED = 8;
+    /**
+     * participant has voluntarily paused contest (can be restarted using StartContest method)
+     *
+     * Generated from protobuf enum <code>PAUSED = 9;</code>
+     */
+    const PAUSED = 9;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
@@ -62,6 +68,7 @@ class Status
         self::COMPLETE => 'COMPLETE',
         self::UPSOLVE => 'UPSOLVE',
         self::BLOCKED => 'BLOCKED',
+        self::PAUSED => 'PAUSED',
     ];
 
     public static function name($value)
