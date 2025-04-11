@@ -100,6 +100,18 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $require_admission = false;
     /**
+     * Allow participants to pause their screen
+     *
+     * Generated from protobuf field <code>bool allow_pause = 36;</code>
+     */
+    protected $allow_pause = false;
+    /**
+     * Allow participants to finish contest before the end time
+     *
+     * Generated from protobuf field <code>bool allow_finish_early = 37;</code>
+     */
+    protected $allow_finish_early = false;
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -218,6 +230,10 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Participation mode defines timeframe for participation: online or virtual.
      *     @type bool $require_admission
      *           Require manual admission to the contest
+     *     @type bool $allow_pause
+     *           Allow participants to pause their screen
+     *     @type bool $allow_finish_early
+     *           Allow participants to finish contest before the end time
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
@@ -635,6 +651,58 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->require_admission = $var;
+
+        return $this;
+    }
+
+    /**
+     * Allow participants to pause their screen
+     *
+     * Generated from protobuf field <code>bool allow_pause = 36;</code>
+     * @return bool
+     */
+    public function getAllowPause()
+    {
+        return $this->allow_pause;
+    }
+
+    /**
+     * Allow participants to pause their screen
+     *
+     * Generated from protobuf field <code>bool allow_pause = 36;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowPause($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_pause = $var;
+
+        return $this;
+    }
+
+    /**
+     * Allow participants to finish contest before the end time
+     *
+     * Generated from protobuf field <code>bool allow_finish_early = 37;</code>
+     * @return bool
+     */
+    public function getAllowFinishEarly()
+    {
+        return $this->allow_finish_early;
+    }
+
+    /**
+     * Allow participants to finish contest before the end time
+     *
+     * Generated from protobuf field <code>bool allow_finish_early = 37;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowFinishEarly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_finish_early = $var;
 
         return $this;
     }

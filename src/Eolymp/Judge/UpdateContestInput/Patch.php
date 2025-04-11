@@ -44,6 +44,14 @@ class Patch
      */
     const REQUIRE_ADMISSION = 16;
     /**
+     * Generated from protobuf enum <code>ALLOW_PAUSE = 17;</code>
+     */
+    const ALLOW_PAUSE = 17;
+    /**
+     * Generated from protobuf enum <code>ALLOW_FINISH_EARLY = 18;</code>
+     */
+    const ALLOW_FINISH_EARLY = 18;
+    /**
      * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
      */
     const PARTICIPATION_MODE = 8;
@@ -109,6 +117,8 @@ class Patch
         self::VISIBILITY => 'VISIBILITY',
         self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
         self::REQUIRE_ADMISSION => 'REQUIRE_ADMISSION',
+        self::ALLOW_PAUSE => 'ALLOW_PAUSE',
+        self::ALLOW_FINISH_EARLY => 'ALLOW_FINISH_EARLY',
         self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
         self::FORMAT => 'FORMAT',
         self::KEY => 'KEY',
