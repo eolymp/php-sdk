@@ -24,6 +24,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 23;</code>
+     */
+    protected $type = 0;
+    /**
      * problem index within contest
      *
      * Generated from protobuf field <code>uint32 index = 2;</code>
@@ -107,6 +111,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           globally problem ID
      *     @type string $url
+     *     @type int $type
      *     @type int $index
      *           problem index within contest
      *     @type float $score
@@ -182,6 +187,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 23;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 23;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
+        $this->type = $var;
 
         return $this;
     }

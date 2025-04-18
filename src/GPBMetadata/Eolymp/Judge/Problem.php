@@ -14,16 +14,18 @@ class Problem
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingFeedback::initOnce();
         \GPBMetadata\Eolymp\Ecm\Node::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Œ
-eolymp/judge/problem.protoeolymp.judgeeolymp/ecm/node.proto"”
+ù
+eolymp/judge/problem.protoeolymp.judge#eolymp/atlas/testing_feedback.protoeolymp/ecm/node.proto"˝
 Problem
 
 id (	
-url (	
+url (	(
+type (2.eolymp.atlas.Problem.Type
 index (
 score (
 base_id (	
