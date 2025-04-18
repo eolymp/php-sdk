@@ -16,13 +16,36 @@ class Feature
      */
     const UNKNOWN_FEATURE = 0;
     /**
+     * show print code button
+     *
      * Generated from protobuf enum <code>PRINT_CODE = 1;</code>
      */
     const PRINT_CODE = 1;
+    /**
+     * show run code button
+     *
+     * Generated from protobuf enum <code>RUN_CODE = 2;</code>
+     */
+    const RUN_CODE = 2;
+    /**
+     * show upload code button
+     *
+     * Generated from protobuf enum <code>UPLOAD_CODE = 3;</code>
+     */
+    const UPLOAD_CODE = 3;
+    /**
+     * allow to edit code inline
+     *
+     * Generated from protobuf enum <code>EDIT_CODE = 4;</code>
+     */
+    const EDIT_CODE = 4;
 
     private static $valueToName = [
         self::UNKNOWN_FEATURE => 'UNKNOWN_FEATURE',
         self::PRINT_CODE => 'PRINT_CODE',
+        self::RUN_CODE => 'RUN_CODE',
+        self::UPLOAD_CODE => 'UPLOAD_CODE',
+        self::EDIT_CODE => 'EDIT_CODE',
     ];
 
     public static function name($value)
