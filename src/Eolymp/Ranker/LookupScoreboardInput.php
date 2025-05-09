@@ -9,14 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.DescribeScoreboardInput</code>
+ * Generated from protobuf message <code>eolymp.ranker.LookupScoreboardInput</code>
  */
-class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
+class LookupScoreboardInput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
-     */
-    protected $scoreboard_id = '';
     /**
      * Generated from protobuf field <code>string scoreboard_key = 2;</code>
      */
@@ -32,7 +28,6 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $scoreboard_id
      *     @type string $scoreboard_key
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
@@ -40,28 +35,6 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Ranker\ScoreboardService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
-     * @return string
-     */
-    public function getScoreboardId()
-    {
-        return $this->scoreboard_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string scoreboard_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setScoreboardId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->scoreboard_id = $var;
-
-        return $this;
     }
 
     /**

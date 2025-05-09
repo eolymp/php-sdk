@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.ranker.DescribeScoreboardOutput</code>
+ * Generated from protobuf message <code>eolymp.ranker.LookupScoreboardOutput</code>
  */
-class DescribeScoreboardOutput extends \Google\Protobuf\Internal\Message
+class LookupScoreboardOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 1;</code>

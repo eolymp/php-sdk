@@ -49,17 +49,9 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $freeze_at = null;
     /**
-     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
-     */
-    protected $freeze_in = 0;
-    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp unfreeze_at = 23;</code>
      */
     protected $unfreeze_at = null;
-    /**
-     * Generated from protobuf field <code>uint32 unfreeze_in = 24;</code>
-     */
-    protected $unfreeze_in = 0;
     /**
      * Column ID used to sort records by default and to calculate row ranking.
      *
@@ -78,6 +70,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ranker.Format format = 10;</code>
      */
     protected $format = 0;
+    /**
+     * List of associated contests
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 51;</code>
+     */
+    private $contests;
 
     /**
      * Constructor.
@@ -97,15 +95,15 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type bool $frozen
      *           This flag means the scoreboard is currently frozen.
      *     @type \Google\Protobuf\Timestamp $freeze_at
-     *     @type int $freeze_in
      *     @type \Google\Protobuf\Timestamp $unfreeze_at
-     *     @type int $unfreeze_in
      *     @type string $default_sort_column
      *           Column ID used to sort records by default and to calculate row ranking.
      *     @type int $default_sort_order
      *           Sorting direction by default.
      *     @type int $format
      *           Scoreboard format (IOI, ICPC). Can not be modified.
+     *     @type array<\Eolymp\Ranker\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $contests
+     *           List of associated contests
      * }
      */
     public function __construct($data = NULL) {
@@ -278,28 +276,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
-     * @return int
-     */
-    public function getFreezeIn()
-    {
-        return $this->freeze_in;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 freeze_in = 22;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setFreezeIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->freeze_in = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp unfreeze_at = 23;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -327,28 +303,6 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->unfreeze_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 unfreeze_in = 24;</code>
-     * @return int
-     */
-    public function getUnfreezeIn()
-    {
-        return $this->unfreeze_in;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 unfreeze_in = 24;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setUnfreezeIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->unfreeze_in = $var;
 
         return $this;
     }
@@ -427,6 +381,32 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Ranker\Format::class);
         $this->format = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of associated contests
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 51;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getContests()
+    {
+        return $this->contests;
+    }
+
+    /**
+     * List of associated contests
+     *
+     * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 51;</code>
+     * @param array<\Eolymp\Ranker\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setContests($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ranker\Scoreboard\Contest::class);
+        $this->contests = $arr;
 
         return $this;
     }
