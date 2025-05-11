@@ -21,6 +21,10 @@ class ListSubmissionsOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.judge.Submission items = 2;</code>
      */
     private $items;
+    /**
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     */
+    protected $next_page_cursor = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class ListSubmissionsOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total
      *     @type array<\Eolymp\Judge\Submission>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type string $next_page_cursor
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class ListSubmissionsOutput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Submission::class);
         $this->items = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     * @return string
+     */
+    public function getNextPageCursor()
+    {
+        return $this->next_page_cursor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string next_page_cursor = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNextPageCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->next_page_cursor = $var;
 
         return $this;
     }

@@ -118,6 +118,30 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $percentage = 0.0;
     /**
+     * maximum wall time
+     *
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
+     */
+    protected $time_usage = 0;
+    /**
+     * maximum cpu time
+     *
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
+     */
+    protected $cpu_usage = 0;
+    /**
+     * maximum memory usage
+     *
+     * Generated from protobuf field <code>uint64 memory_usage = 46;</code>
+     */
+    protected $memory_usage = 0;
+    /**
+     * maximum resource usage
+     *
+     * Generated from protobuf field <code>float resource_usage = 47;</code>
+     */
+    protected $resource_usage = 0.0;
+    /**
      * status for each run by group
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Group groups = 50;</code>
@@ -164,6 +188,14 @@ class Submission extends \Google\Protobuf\Internal\Message
      *     @type float $score
      *           sum of earned points
      *     @type float $percentage
+     *     @type int $time_usage
+     *           maximum wall time
+     *     @type int $cpu_usage
+     *           maximum cpu time
+     *     @type int|string $memory_usage
+     *           maximum memory usage
+     *     @type float $resource_usage
+     *           maximum resource usage
      *     @type array<\Eolymp\Judge\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
      * }
@@ -639,6 +671,110 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->percentage = $var;
+
+        return $this;
+    }
+
+    /**
+     * maximum wall time
+     *
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
+     * @return int
+     */
+    public function getTimeUsage()
+    {
+        return $this->time_usage;
+    }
+
+    /**
+     * maximum wall time
+     *
+     * Generated from protobuf field <code>uint32 time_usage = 41;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * maximum cpu time
+     *
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
+     * @return int
+     */
+    public function getCpuUsage()
+    {
+        return $this->cpu_usage;
+    }
+
+    /**
+     * maximum cpu time
+     *
+     * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCpuUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cpu_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * maximum memory usage
+     *
+     * Generated from protobuf field <code>uint64 memory_usage = 46;</code>
+     * @return int|string
+     */
+    public function getMemoryUsage()
+    {
+        return $this->memory_usage;
+    }
+
+    /**
+     * maximum memory usage
+     *
+     * Generated from protobuf field <code>uint64 memory_usage = 46;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMemoryUsage($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->memory_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * maximum resource usage
+     *
+     * Generated from protobuf field <code>float resource_usage = 47;</code>
+     * @return float
+     */
+    public function getResourceUsage()
+    {
+        return $this->resource_usage;
+    }
+
+    /**
+     * maximum resource usage
+     *
+     * Generated from protobuf field <code>float resource_usage = 47;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setResourceUsage($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->resource_usage = $var;
 
         return $this;
     }
