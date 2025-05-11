@@ -147,6 +147,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Group groups = 50;</code>
      */
     private $groups;
+    /**
+     * cursor in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     */
+    protected $cursor = '';
 
     /**
      * Constructor.
@@ -198,6 +204,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           maximum resource usage
      *     @type array<\Eolymp\Judge\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
+     *     @type string $cursor
+     *           cursor in the list
      * }
      */
     public function __construct($data = NULL) {
@@ -801,6 +809,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Submission\Group::class);
         $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * cursor in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @return string
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
+    }
+
+    /**
+     * cursor in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cursor = $var;
 
         return $this;
     }
