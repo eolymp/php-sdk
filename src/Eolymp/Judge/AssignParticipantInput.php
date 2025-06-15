@@ -19,12 +19,6 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     */
-    protected $participant = null;
-    /**
      * Generated from protobuf field <code>bool unofficial = 20;</code>
      */
     protected $unofficial = false;
@@ -32,6 +26,10 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool inactive = 21;</code>
      */
     protected $inactive = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Role role = 30;</code>
+     */
+    protected $role = 0;
     protected $assignee;
 
     /**
@@ -41,12 +39,11 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type \Eolymp\Judge\Participant $participant
-     *           deprecated
      *     @type string $member_id
      *     @type string $group_id
      *     @type bool $unofficial
      *     @type bool $inactive
+     *     @type int $role
      * }
      */
     public function __construct($data = NULL) {
@@ -72,42 +69,6 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     * @return \Eolymp\Judge\Participant|null
-     */
-    public function getParticipant()
-    {
-        return $this->participant;
-    }
-
-    public function hasParticipant()
-    {
-        return isset($this->participant);
-    }
-
-    public function clearParticipant()
-    {
-        unset($this->participant);
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
-     * @param \Eolymp\Judge\Participant $var
-     * @return $this
-     */
-    public function setParticipant($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant::class);
-        $this->participant = $var;
 
         return $this;
     }
@@ -206,6 +167,28 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Role role = 30;</code>
+     * @return int
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Role role = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Participant\Role::class);
+        $this->role = $var;
 
         return $this;
     }

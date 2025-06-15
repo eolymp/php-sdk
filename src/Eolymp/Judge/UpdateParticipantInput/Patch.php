@@ -21,6 +21,10 @@ class Patch
      */
     const DISPLAY_NAME = 1;
     /**
+     * Generated from protobuf enum <code>ROLE = 8;</code>
+     */
+    const ROLE = 8;
+    /**
      * Generated from protobuf enum <code>BONUS_TIME = 3;</code>
      */
     const BONUS_TIME = 3;
@@ -44,6 +48,7 @@ class Patch
     private static $valueToName = [
         self::ALL => 'ALL',
         self::DISPLAY_NAME => 'DISPLAY_NAME',
+        self::ROLE => 'ROLE',
         self::BONUS_TIME => 'BONUS_TIME',
         self::UNOFFICIAL => 'UNOFFICIAL',
         self::MEDAL => 'MEDAL',

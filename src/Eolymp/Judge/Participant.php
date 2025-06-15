@@ -33,6 +33,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
+     * role of the participant in the contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Role role = 3;</code>
+     */
+    protected $role = 0;
+    /**
      * if true, participant won't be assigned rank in scoreboard
      *
      * Generated from protobuf field <code>bool unofficial = 6;</code>
@@ -135,6 +141,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           community member
      *     @type string $display_name
      *           display name
+     *     @type int $role
+     *           role of the participant in the contest
      *     @type bool $unofficial
      *           if true, participant won't be assigned rank in scoreboard
      *     @type bool $inactive
@@ -247,6 +255,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * role of the participant in the contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Role role = 3;</code>
+     * @return int
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * role of the participant in the contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Role role = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Participant\Role::class);
+        $this->role = $var;
 
         return $this;
     }
