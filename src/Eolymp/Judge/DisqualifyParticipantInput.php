@@ -23,13 +23,13 @@ class DisqualifyParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
-     * true to disqualify, false to un-disqualify
+     * True to disqualify, false to un-disqualify
      *
      * Generated from protobuf field <code>bool disqualify = 3;</code>
      */
     protected $disqualify = false;
     /**
-     * reason for disqualification
+     * Reason for disqualification
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content reason = 4;</code>
      */
@@ -44,9 +44,9 @@ class DisqualifyParticipantInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $participant_id
      *     @type bool $disqualify
-     *           true to disqualify, false to un-disqualify
+     *           True to disqualify, false to un-disqualify
      *     @type \Eolymp\Ecm\Content $reason
-     *           reason for disqualification
+     *           Reason for disqualification
      * }
      */
     public function __construct($data = NULL) {
@@ -99,7 +99,7 @@ class DisqualifyParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * true to disqualify, false to un-disqualify
+     * True to disqualify, false to un-disqualify
      *
      * Generated from protobuf field <code>bool disqualify = 3;</code>
      * @return bool
@@ -110,7 +110,7 @@ class DisqualifyParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * true to disqualify, false to un-disqualify
+     * True to disqualify, false to un-disqualify
      *
      * Generated from protobuf field <code>bool disqualify = 3;</code>
      * @param bool $var
@@ -125,7 +125,7 @@ class DisqualifyParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * reason for disqualification
+     * Reason for disqualification
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content reason = 4;</code>
      * @return \Eolymp\Ecm\Content|null
@@ -146,7 +146,7 @@ class DisqualifyParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * reason for disqualification
+     * Reason for disqualification
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content reason = 4;</code>
      * @param \Eolymp\Ecm\Content $var

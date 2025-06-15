@@ -5,140 +5,28 @@
 
 namespace Eolymp\Judge\Contest;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.judge.Contest.Patch</code>
+ * Generated from protobuf message <code>eolymp.judge.Contest.Patch</code>
  */
-class Patch
+class Patch extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf enum <code>ALL = 0;</code>
-     */
-    const ALL = 0;
-    /**
-     * Generated from protobuf enum <code>NAME = 2;</code>
-     */
-    const NAME = 2;
-    /**
-     * Generated from protobuf enum <code>STARTS_AT = 3;</code>
-     */
-    const STARTS_AT = 3;
-    /**
-     * Generated from protobuf enum <code>ENDS_AT = 4;</code>
-     */
-    const ENDS_AT = 4;
-    /**
-     * Generated from protobuf enum <code>DURATION = 5;</code>
-     */
-    const DURATION = 5;
-    /**
-     * Generated from protobuf enum <code>VISIBILITY = 6;</code>
-     */
-    const VISIBILITY = 6;
-    /**
-     * Generated from protobuf enum <code>JOIN_UNOFFICIALLY = 7;</code>
-     */
-    const JOIN_UNOFFICIALLY = 7;
-    /**
-     * Generated from protobuf enum <code>REQUIRE_ADMISSION = 16;</code>
-     */
-    const REQUIRE_ADMISSION = 16;
-    /**
-     * Generated from protobuf enum <code>ALLOW_PAUSE = 17;</code>
-     */
-    const ALLOW_PAUSE = 17;
-    /**
-     * Generated from protobuf enum <code>ALLOW_FINISH_EARLY = 18;</code>
-     */
-    const ALLOW_FINISH_EARLY = 18;
-    /**
-     * Generated from protobuf enum <code>ALLOW_UPSOLVE = 120;</code>
-     */
-    const ALLOW_UPSOLVE = 120;
-    /**
-     * Generated from protobuf enum <code>ALLOW_FOLLOWUP = 121;</code>
-     */
-    const ALLOW_FOLLOWUP = 121;
-    /**
-     * Generated from protobuf enum <code>PARTICIPATION_MODE = 8;</code>
-     */
-    const PARTICIPATION_MODE = 8;
-    /**
-     * Generated from protobuf enum <code>FORMAT = 10;</code>
-     */
-    const FORMAT = 10;
-    /**
-     * Generated from protobuf enum <code>KEY = 11;</code>
-     */
-    const KEY = 11;
-    /**
-     * Generated from protobuf enum <code>IMAGE_URL = 14;</code>
-     */
-    const IMAGE_URL = 14;
-    /**
-     * Generated from protobuf enum <code>PROBLEM_COUNT_HIDDEN = 12;</code>
-     */
-    const PROBLEM_COUNT_HIDDEN = 12;
-    /**
-     * Generated from protobuf enum <code>PARTICIPANT_COUNT_HIDDEN = 13;</code>
-     */
-    const PARTICIPANT_COUNT_HIDDEN = 13;
-    /**
-     * Generated from protobuf enum <code>FEATURED_UNTIL = 9;</code>
-     */
-    const FEATURED_UNTIL = 9;
-    /**
-     * Generated from protobuf enum <code>PRINTER = 15;</code>
-     */
-    const PRINTER = 15;
-    /**
-     * Generated from protobuf enum <code>SCOREBOARD = 150;</code>
-     */
-    const SCOREBOARD = 150;
 
-    private static $valueToName = [
-        self::ALL => 'ALL',
-        self::NAME => 'NAME',
-        self::STARTS_AT => 'STARTS_AT',
-        self::ENDS_AT => 'ENDS_AT',
-        self::DURATION => 'DURATION',
-        self::VISIBILITY => 'VISIBILITY',
-        self::JOIN_UNOFFICIALLY => 'JOIN_UNOFFICIALLY',
-        self::REQUIRE_ADMISSION => 'REQUIRE_ADMISSION',
-        self::ALLOW_PAUSE => 'ALLOW_PAUSE',
-        self::ALLOW_FINISH_EARLY => 'ALLOW_FINISH_EARLY',
-        self::ALLOW_UPSOLVE => 'ALLOW_UPSOLVE',
-        self::ALLOW_FOLLOWUP => 'ALLOW_FOLLOWUP',
-        self::PARTICIPATION_MODE => 'PARTICIPATION_MODE',
-        self::FORMAT => 'FORMAT',
-        self::KEY => 'KEY',
-        self::IMAGE_URL => 'IMAGE_URL',
-        self::PROBLEM_COUNT_HIDDEN => 'PROBLEM_COUNT_HIDDEN',
-        self::PARTICIPANT_COUNT_HIDDEN => 'PARTICIPANT_COUNT_HIDDEN',
-        self::FEATURED_UNTIL => 'FEATURED_UNTIL',
-        self::PRINTER => 'PRINTER',
-        self::SCOREBOARD => 'SCOREBOARD',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Judge\Contest::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
-    {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
-    }
 }
 

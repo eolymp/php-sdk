@@ -17,7 +17,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Patch.Field patch = 3;</code>
      */
     private $patch;
     /**
@@ -57,7 +57,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Patch.Field patch = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -68,13 +68,13 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     /**
      * Patch request to update participant partially (all fields are updated if not specified)
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateParticipantInput.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Patch.Field patch = 3;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateParticipantInput\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Participant\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;

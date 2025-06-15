@@ -73,51 +73,39 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $medal = 0;
     /**
-     * status (see explanation to enumeration values)
+     * Status (see explanation to enumeration values)
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Status status = 20;</code>
      */
     protected $status = 0;
     /**
-     * time when user has started participating
+     * Time when user has started participating
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
      */
     protected $started_at = null;
     /**
-     * time in seconds when user has started participating
-     *
-     * Generated from protobuf field <code>uint32 started_in = 22;</code>
-     */
-    protected $started_in = 0;
-    /**
-     * time when user has finished (will finish) participating (incl. bonus time)
+     * Time when user has finished (will finish) participating (incl. bonus time)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
      */
     protected $end_at = null;
     /**
-     * time in seconds when user has finished (will finish) participating (incl. bonus time)
-     *
-     * Generated from protobuf field <code>uint32 end_in = 26;</code>
-     */
-    protected $end_in = 0;
-    /**
-     * additional time in seconds for participation
+     * Additional time in seconds for participation
      *
      * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
      */
     protected $bonus_time = 0;
     /**
-     * passcode is a code participant has to enter before she can begin contest
-     * this field is only populated when request is made by contest owner
-     * passcode is read-only and should be set using ResetPasscode method.
+     * Passcode is a code participant has to enter before she can begin contest.
+     * This field is only populated when request is made by contest owner.
+     * Passcode is read-only and should be set using ResetPasscode method.
      *
      * Generated from protobuf field <code>string passcode = 30;</code>
      */
     protected $passcode = '';
     /**
-     * participation certificate ID
+     * Participation certificate ID.
      *
      * Generated from protobuf field <code>string certificate_id = 32;</code>
      */
@@ -155,23 +143,19 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           participant result is finalized
      *     @type int $medal
      *     @type int $status
-     *           status (see explanation to enumeration values)
+     *           Status (see explanation to enumeration values)
      *     @type \Google\Protobuf\Timestamp $started_at
-     *           time when user has started participating
-     *     @type int $started_in
-     *           time in seconds when user has started participating
+     *           Time when user has started participating
      *     @type \Google\Protobuf\Timestamp $end_at
-     *           time when user has finished (will finish) participating (incl. bonus time)
-     *     @type int $end_in
-     *           time in seconds when user has finished (will finish) participating (incl. bonus time)
+     *           Time when user has finished (will finish) participating (incl. bonus time)
      *     @type int $bonus_time
-     *           additional time in seconds for participation
+     *           Additional time in seconds for participation
      *     @type string $passcode
-     *           passcode is a code participant has to enter before she can begin contest
-     *           this field is only populated when request is made by contest owner
-     *           passcode is read-only and should be set using ResetPasscode method.
+     *           Passcode is a code participant has to enter before she can begin contest.
+     *           This field is only populated when request is made by contest owner.
+     *           Passcode is read-only and should be set using ResetPasscode method.
      *     @type string $certificate_id
-     *           participation certificate ID
+     *           Participation certificate ID.
      *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
      *           Submit counter is used to count how many times user submitted the problem.
      * }
@@ -438,7 +422,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * status (see explanation to enumeration values)
+     * Status (see explanation to enumeration values)
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Status status = 20;</code>
      * @return int
@@ -449,7 +433,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * status (see explanation to enumeration values)
+     * Status (see explanation to enumeration values)
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Status status = 20;</code>
      * @param int $var
@@ -464,7 +448,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has started participating
+     * Time when user has started participating
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -485,7 +469,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has started participating
+     * Time when user has started participating
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -500,33 +484,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time in seconds when user has started participating
-     *
-     * Generated from protobuf field <code>uint32 started_in = 22;</code>
-     * @return int
-     */
-    public function getStartedIn()
-    {
-        return $this->started_in;
-    }
-
-    /**
-     * time in seconds when user has started participating
-     *
-     * Generated from protobuf field <code>uint32 started_in = 22;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setStartedIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->started_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * time when user has finished (will finish) participating (incl. bonus time)
+     * Time when user has finished (will finish) participating (incl. bonus time)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -547,7 +505,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time when user has finished (will finish) participating (incl. bonus time)
+     * Time when user has finished (will finish) participating (incl. bonus time)
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -562,33 +520,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * time in seconds when user has finished (will finish) participating (incl. bonus time)
-     *
-     * Generated from protobuf field <code>uint32 end_in = 26;</code>
-     * @return int
-     */
-    public function getEndIn()
-    {
-        return $this->end_in;
-    }
-
-    /**
-     * time in seconds when user has finished (will finish) participating (incl. bonus time)
-     *
-     * Generated from protobuf field <code>uint32 end_in = 26;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setEndIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->end_in = $var;
-
-        return $this;
-    }
-
-    /**
-     * additional time in seconds for participation
+     * Additional time in seconds for participation
      *
      * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
      * @return int
@@ -599,7 +531,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * additional time in seconds for participation
+     * Additional time in seconds for participation
      *
      * Generated from protobuf field <code>uint32 bonus_time = 27;</code>
      * @param int $var
@@ -614,9 +546,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * passcode is a code participant has to enter before she can begin contest
-     * this field is only populated when request is made by contest owner
-     * passcode is read-only and should be set using ResetPasscode method.
+     * Passcode is a code participant has to enter before she can begin contest.
+     * This field is only populated when request is made by contest owner.
+     * Passcode is read-only and should be set using ResetPasscode method.
      *
      * Generated from protobuf field <code>string passcode = 30;</code>
      * @return string
@@ -627,9 +559,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * passcode is a code participant has to enter before she can begin contest
-     * this field is only populated when request is made by contest owner
-     * passcode is read-only and should be set using ResetPasscode method.
+     * Passcode is a code participant has to enter before she can begin contest.
+     * This field is only populated when request is made by contest owner.
+     * Passcode is read-only and should be set using ResetPasscode method.
      *
      * Generated from protobuf field <code>string passcode = 30;</code>
      * @param string $var
@@ -644,7 +576,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * participation certificate ID
+     * Participation certificate ID.
      *
      * Generated from protobuf field <code>string certificate_id = 32;</code>
      * @return string
@@ -655,7 +587,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * participation certificate ID
+     * Participation certificate ID.
      *
      * Generated from protobuf field <code>string certificate_id = 32;</code>
      * @param string $var

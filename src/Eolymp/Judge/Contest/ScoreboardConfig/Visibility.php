@@ -3,12 +3,12 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: eolymp/judge/contest.proto
 
-namespace Eolymp\Judge\Contest\Scoreboard;
+namespace Eolymp\Judge\Contest\ScoreboardConfig;
 
 use UnexpectedValueException;
 
 /**
- * Protobuf type <code>eolymp.judge.Contest.Scoreboard.Visibility</code>
+ * Protobuf type <code>eolymp.judge.Contest.ScoreboardConfig.Visibility</code>
  */
 class Visibility
 {

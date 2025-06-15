@@ -10,12 +10,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.Contest.Scoreboard</code>
+ * Generated from protobuf message <code>eolymp.judge.Contest.ScoreboardConfig</code>
  */
-class Scoreboard extends \Google\Protobuf\Internal\Message
+class ScoreboardConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard.Visibility visibility = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig.Visibility visibility = 1;</code>
      */
     protected $visibility = 0;
     /**
@@ -79,7 +79,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard.Visibility visibility = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig.Visibility visibility = 1;</code>
      * @return int
      */
     public function getVisibility()
@@ -88,13 +88,13 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard.Visibility visibility = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig.Visibility visibility = 1;</code>
      * @param int $var
      * @return $this
      */
     public function setVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Scoreboard\Visibility::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ScoreboardConfig\Visibility::class);
         $this->visibility = $var;
 
         return $this;

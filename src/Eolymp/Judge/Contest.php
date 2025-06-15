@@ -41,25 +41,11 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $starts_at = null;
     /**
-     * deprecated: Time in seconds until beginning of the contest
-     * this value may be off due to caching, calculate time using starts_at field
-     *
-     * Generated from protobuf field <code>uint32 starts_in = 11;</code>
-     */
-    protected $starts_in = 0;
-    /**
      * Contest ending time, after this time users submissions won't be counted to the score anymore.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 15;</code>
      */
     protected $ends_at = null;
-    /**
-     * deprecated: Time in seconds until end of the contest
-     * this value may be off due to caching, calculate time using ends_at field
-     *
-     * Generated from protobuf field <code>uint32 ends_in = 16;</code>
-     */
-    protected $ends_in = 0;
     /**
      * Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
      * and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
@@ -83,17 +69,17 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * When participants join contests by themselves they will participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
-     */
-    protected $join_unofficially = false;
-    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
      */
     protected $participation_mode = 0;
+    /**
+     * When participants join contests by themselves they will participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
+     */
+    protected $join_unofficially = false;
     /**
      * Require manual admission to the contest
      *
@@ -131,7 +117,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $format = 0;
     /**
-     * contest key used to make human friendly URLs.
+     * Contest key used to make human friendly URLs.
      *
      * Generated from protobuf field <code>string key = 40;</code>
      */
@@ -169,17 +155,29 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $printer_id = '';
     /**
-     * Scoreboard configuration
+     * Classification information about the contest, such as contest series, year and location where contest was held etc.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Classification classification = 110;</code>
      */
-    protected $scoreboard = null;
+    protected $classification = null;
     /**
-     * Taxonomy information for the contest
+     * Scoreboard configuration allows to specify how the scoreboard should be displayed.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Taxonomy taxonomy = 110;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig scoreboard_config = 105;</code>
      */
-    protected $taxonomy = null;
+    protected $scoreboard_config = null;
+    /**
+     * Environment configuration allows to describe the environment in which the submissions are run.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.EnvironmentConfig environment_config = 111;</code>
+     */
+    protected $environment_config = null;
+    /**
+     * Certification configuration allows to automatically issue participant certificates after finalization of the contest.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
+     */
+    protected $certification_config = null;
 
     /**
      * Constructor.
@@ -195,14 +193,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type string $image_url
      *     @type \Google\Protobuf\Timestamp $starts_at
      *           Contest starting time, after this time users will be able to see problems and make submissions.
-     *     @type int $starts_in
-     *           deprecated: Time in seconds until beginning of the contest
-     *           this value may be off due to caching, calculate time using starts_at field
      *     @type \Google\Protobuf\Timestamp $ends_at
      *           Contest ending time, after this time users submissions won't be counted to the score anymore.
-     *     @type int $ends_in
-     *           deprecated: Time in seconds until end of the contest
-     *           this value may be off due to caching, calculate time using ends_at field
      *     @type int $duration
      *           Duration in seconds for virtual participation mode. Users can start participating at any moment between startsAt
      *           and endsAt, but once started they would have to finish in Duration amount of time. For example contest maybe will
@@ -213,10 +205,10 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Contest status (see statuses above)
      *     @type int $visibility
      *           Contest visibility defines who can participate and where contest is listed.
-     *     @type bool $join_unofficially
-     *           When participants join contests by themselves they will participate unofficially.
      *     @type int $participation_mode
      *           Participation mode defines timeframe for participation: online or virtual.
+     *     @type bool $join_unofficially
+     *           When participants join contests by themselves they will participate unofficially.
      *     @type bool $require_admission
      *           Require manual admission to the contest
      *     @type bool $allow_pause
@@ -230,7 +222,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
-     *           contest key used to make human friendly URLs.
+     *           Contest key used to make human friendly URLs.
      *     @type int $problem_count
      *           Number of problems in the contest, might be "hidden".
      *     @type bool $problem_count_hidden
@@ -241,10 +233,14 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Date and time until contest is displayed in Featured contests
      *     @type string $printer_id
      *           Printer used to print submissions
-     *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
-     *           Scoreboard configuration
-     *     @type \Eolymp\Judge\Taxonomy $taxonomy
-     *           Taxonomy information for the contest
+     *     @type \Eolymp\Judge\Contest\Classification $classification
+     *           Classification information about the contest, such as contest series, year and location where contest was held etc.
+     *     @type \Eolymp\Judge\Contest\ScoreboardConfig $scoreboard_config
+     *           Scoreboard configuration allows to specify how the scoreboard should be displayed.
+     *     @type \Eolymp\Judge\Contest\EnvironmentConfig $environment_config
+     *           Environment configuration allows to describe the environment in which the submissions are run.
+     *     @type \Eolymp\Judge\Contest\CertificationConfig $certification_config
+     *           Certification configuration allows to automatically issue participant certificates after finalization of the contest.
      * }
      */
     public function __construct($data = NULL) {
@@ -385,34 +381,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated: Time in seconds until beginning of the contest
-     * this value may be off due to caching, calculate time using starts_at field
-     *
-     * Generated from protobuf field <code>uint32 starts_in = 11;</code>
-     * @return int
-     */
-    public function getStartsIn()
-    {
-        return $this->starts_in;
-    }
-
-    /**
-     * deprecated: Time in seconds until beginning of the contest
-     * this value may be off due to caching, calculate time using starts_at field
-     *
-     * Generated from protobuf field <code>uint32 starts_in = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setStartsIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->starts_in = $var;
-
-        return $this;
-    }
-
-    /**
      * Contest ending time, after this time users submissions won't be counted to the score anymore.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 15;</code>
@@ -444,34 +412,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ends_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated: Time in seconds until end of the contest
-     * this value may be off due to caching, calculate time using ends_at field
-     *
-     * Generated from protobuf field <code>uint32 ends_in = 16;</code>
-     * @return int
-     */
-    public function getEndsIn()
-    {
-        return $this->ends_in;
-    }
-
-    /**
-     * deprecated: Time in seconds until end of the contest
-     * this value may be off due to caching, calculate time using ends_at field
-     *
-     * Generated from protobuf field <code>uint32 ends_in = 16;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setEndsIn($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->ends_in = $var;
 
         return $this;
     }
@@ -563,32 +503,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When participants join contests by themselves they will participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
-     * @return bool
-     */
-    public function getJoinUnofficially()
-    {
-        return $this->join_unofficially;
-    }
-
-    /**
-     * When participants join contests by themselves they will participate unofficially.
-     *
-     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setJoinUnofficially($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->join_unofficially = $var;
-
-        return $this;
-    }
-
-    /**
      * Participation mode defines timeframe for participation: online or virtual.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipationMode participation_mode = 31;</code>
@@ -610,6 +524,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ParticipationMode::class);
         $this->participation_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * When participants join contests by themselves they will participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
+     * @return bool
+     */
+    public function getJoinUnofficially()
+    {
+        return $this->join_unofficially;
+    }
+
+    /**
+     * When participants join contests by themselves they will participate unofficially.
+     *
+     * Generated from protobuf field <code>bool join_unofficially = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setJoinUnofficially($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->join_unofficially = $var;
 
         return $this;
     }
@@ -771,7 +711,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * contest key used to make human friendly URLs.
+     * Contest key used to make human friendly URLs.
      *
      * Generated from protobuf field <code>string key = 40;</code>
      * @return string
@@ -782,7 +722,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * contest key used to make human friendly URLs.
+     * Contest key used to make human friendly URLs.
      *
      * Generated from protobuf field <code>string key = 40;</code>
      * @param string $var
@@ -955,73 +895,145 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Scoreboard configuration
+     * Classification information about the contest, such as contest series, year and location where contest was held etc.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
-     * @return \Eolymp\Judge\Contest\Scoreboard|null
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Classification classification = 110;</code>
+     * @return \Eolymp\Judge\Contest\Classification|null
      */
-    public function getScoreboard()
+    public function getClassification()
     {
-        return $this->scoreboard;
+        return $this->classification;
     }
 
-    public function hasScoreboard()
+    public function hasClassification()
     {
-        return isset($this->scoreboard);
+        return isset($this->classification);
     }
 
-    public function clearScoreboard()
+    public function clearClassification()
     {
-        unset($this->scoreboard);
+        unset($this->classification);
     }
 
     /**
-     * Scoreboard configuration
+     * Classification information about the contest, such as contest series, year and location where contest was held etc.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
-     * @param \Eolymp\Judge\Contest\Scoreboard $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Classification classification = 110;</code>
+     * @param \Eolymp\Judge\Contest\Classification $var
      * @return $this
      */
-    public function setScoreboard($var)
+    public function setClassification($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Scoreboard::class);
-        $this->scoreboard = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Classification::class);
+        $this->classification = $var;
 
         return $this;
     }
 
     /**
-     * Taxonomy information for the contest
+     * Scoreboard configuration allows to specify how the scoreboard should be displayed.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Taxonomy taxonomy = 110;</code>
-     * @return \Eolymp\Judge\Taxonomy|null
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig scoreboard_config = 105;</code>
+     * @return \Eolymp\Judge\Contest\ScoreboardConfig|null
      */
-    public function getTaxonomy()
+    public function getScoreboardConfig()
     {
-        return $this->taxonomy;
+        return $this->scoreboard_config;
     }
 
-    public function hasTaxonomy()
+    public function hasScoreboardConfig()
     {
-        return isset($this->taxonomy);
+        return isset($this->scoreboard_config);
     }
 
-    public function clearTaxonomy()
+    public function clearScoreboardConfig()
     {
-        unset($this->taxonomy);
+        unset($this->scoreboard_config);
     }
 
     /**
-     * Taxonomy information for the contest
+     * Scoreboard configuration allows to specify how the scoreboard should be displayed.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Taxonomy taxonomy = 110;</code>
-     * @param \Eolymp\Judge\Taxonomy $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig scoreboard_config = 105;</code>
+     * @param \Eolymp\Judge\Contest\ScoreboardConfig $var
      * @return $this
      */
-    public function setTaxonomy($var)
+    public function setScoreboardConfig($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Taxonomy::class);
-        $this->taxonomy = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\ScoreboardConfig::class);
+        $this->scoreboard_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Environment configuration allows to describe the environment in which the submissions are run.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.EnvironmentConfig environment_config = 111;</code>
+     * @return \Eolymp\Judge\Contest\EnvironmentConfig|null
+     */
+    public function getEnvironmentConfig()
+    {
+        return $this->environment_config;
+    }
+
+    public function hasEnvironmentConfig()
+    {
+        return isset($this->environment_config);
+    }
+
+    public function clearEnvironmentConfig()
+    {
+        unset($this->environment_config);
+    }
+
+    /**
+     * Environment configuration allows to describe the environment in which the submissions are run.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.EnvironmentConfig environment_config = 111;</code>
+     * @param \Eolymp\Judge\Contest\EnvironmentConfig $var
+     * @return $this
+     */
+    public function setEnvironmentConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\EnvironmentConfig::class);
+        $this->environment_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Certification configuration allows to automatically issue participant certificates after finalization of the contest.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
+     * @return \Eolymp\Judge\Contest\CertificationConfig|null
+     */
+    public function getCertificationConfig()
+    {
+        return $this->certification_config;
+    }
+
+    public function hasCertificationConfig()
+    {
+        return isset($this->certification_config);
+    }
+
+    public function clearCertificationConfig()
+    {
+        unset($this->certification_config);
+    }
+
+    /**
+     * Certification configuration allows to automatically issue participant certificates after finalization of the contest.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
+     * @param \Eolymp\Judge\Contest\CertificationConfig $var
+     * @return $this
+     */
+    public function setCertificationConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\CertificationConfig::class);
+        $this->certification_config = $var;
 
         return $this;
     }

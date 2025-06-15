@@ -17,7 +17,7 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch.Field patch = 3;</code>
      */
     private $patch;
     /**
@@ -49,7 +49,7 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch.Field patch = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -60,13 +60,13 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch patch = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch.Field patch = 3;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Contest\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Contest\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;

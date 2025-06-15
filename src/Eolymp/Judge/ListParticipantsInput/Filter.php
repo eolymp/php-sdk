@@ -49,13 +49,13 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $inactive;
     /**
-     * filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     * Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
      */
     private $role;
     /**
-     * filter participants who are staff members of the contest
+     * Filter participants who are staff members of the contest
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
      */
@@ -76,9 +76,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $disqualified
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $inactive
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $role
-     *           filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     *           Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $staff
-     *           filter participants who are staff members of the contest
+     *           Filter participants who are staff members of the contest
      * }
      */
     public function __construct($data = NULL) {
@@ -263,7 +263,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     * Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -274,7 +274,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     * Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
@@ -289,7 +289,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * filter participants who are staff members of the contest
+     * Filter participants who are staff members of the contest
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -300,7 +300,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * filter participants who are staff members of the contest
+     * Filter participants who are staff members of the contest
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
      * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var

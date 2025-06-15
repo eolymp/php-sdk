@@ -67,8 +67,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $scale;
     /**
-     * see taxonomy enumeration "contest_series"
-     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
      */
     private $series;
@@ -113,7 +111,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $year
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $scale
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $series
-     *           see taxonomy enumeration "contest_series"
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $difficulty
      *           1 to 5
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $country
@@ -385,8 +382,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * see taxonomy enumeration "contest_series"
-     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -396,8 +391,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * see taxonomy enumeration "contest_series"
-     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

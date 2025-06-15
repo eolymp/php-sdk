@@ -19,7 +19,7 @@ class DescribeContestInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -61,7 +61,7 @@ class DescribeContestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -70,13 +70,13 @@ class DescribeContestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Contest\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Contest\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

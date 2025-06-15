@@ -5,49 +5,28 @@
 
 namespace Eolymp\Judge\Contest;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.judge.Contest.Extra</code>
+ * Generated from protobuf message <code>eolymp.judge.Contest.Extra</code>
  */
-class Extra
+class Extra extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * reserved, should not be used
-     *
-     * Generated from protobuf enum <code>UNKNOWN_EXTRA = 0;</code>
-     */
-    const UNKNOWN_EXTRA = 0;
-    /**
-     * contest taxonomy information
-     *
-     * Generated from protobuf enum <code>TAXONOMY = 1;</code>
-     */
-    const TAXONOMY = 1;
 
-    private static $valueToName = [
-        self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::TAXONOMY => 'TAXONOMY',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Judge\Contest::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
-    {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
-    }
 }
 
