@@ -48,6 +48,18 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 12;</code>
      */
     private $inactive;
+    /**
+     * filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
+     */
+    private $role;
+    /**
+     * filter participants who are staff members of the contest
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
+     */
+    private $staff;
 
     /**
      * Constructor.
@@ -63,6 +75,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $disqualified
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $inactive
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $role
+     *           filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $staff
+     *           filter participants who are staff members of the contest
      * }
      */
     public function __construct($data = NULL) {
@@ -242,6 +258,58 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->inactive = $arr;
+
+        return $this;
+    }
+
+    /**
+     * filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->role = $arr;
+
+        return $this;
+    }
+
+    /**
+     * filter participants who are staff members of the contest
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStaff()
+    {
+        return $this->staff;
+    }
+
+    /**
+     * filter participants who are staff members of the contest
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStaff($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->staff = $arr;
 
         return $this;
     }

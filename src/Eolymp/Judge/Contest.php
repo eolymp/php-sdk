@@ -174,6 +174,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.Scoreboard scoreboard = 105;</code>
      */
     protected $scoreboard = null;
+    /**
+     * Taxonomy information for the contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Taxonomy taxonomy = 110;</code>
+     */
+    protected $taxonomy = null;
 
     /**
      * Constructor.
@@ -237,6 +243,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Printer used to print submissions
      *     @type \Eolymp\Judge\Contest\Scoreboard $scoreboard
      *           Scoreboard configuration
+     *     @type \Eolymp\Judge\Taxonomy $taxonomy
+     *           Taxonomy information for the contest
      * }
      */
     public function __construct($data = NULL) {
@@ -978,6 +986,42 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Scoreboard::class);
         $this->scoreboard = $var;
+
+        return $this;
+    }
+
+    /**
+     * Taxonomy information for the contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Taxonomy taxonomy = 110;</code>
+     * @return \Eolymp\Judge\Taxonomy|null
+     */
+    public function getTaxonomy()
+    {
+        return $this->taxonomy;
+    }
+
+    public function hasTaxonomy()
+    {
+        return isset($this->taxonomy);
+    }
+
+    public function clearTaxonomy()
+    {
+        unset($this->taxonomy);
+    }
+
+    /**
+     * Taxonomy information for the contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Taxonomy taxonomy = 110;</code>
+     * @param \Eolymp\Judge\Taxonomy $var
+     * @return $this
+     */
+    public function setTaxonomy($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Taxonomy::class);
+        $this->taxonomy = $var;
 
         return $this;
     }
