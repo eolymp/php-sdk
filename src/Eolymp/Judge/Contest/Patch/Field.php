@@ -106,6 +106,10 @@ class Field
      * Generated from protobuf enum <code>CERTIFICATION_CONFIG = 151;</code>
      */
     const CERTIFICATION_CONFIG = 151;
+    /**
+     * Generated from protobuf enum <code>ENVIRONMENT_CONFIG = 152;</code>
+     */
+    const ENVIRONMENT_CONFIG = 152;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -131,6 +135,7 @@ class Field
         self::CLASSIFICATION => 'CLASSIFICATION',
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
+        self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
     ];
 
     public static function name($value)
