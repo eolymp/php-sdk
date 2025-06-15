@@ -18,6 +18,10 @@ class WatchContestInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra.Field extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -26,6 +30,7 @@ class WatchContestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -51,6 +56,28 @@ class WatchContestInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra.Field extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Extra.Field extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Contest\Extra\Field::class);
+        $this->extra = $arr;
 
         return $this;
     }
