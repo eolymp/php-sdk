@@ -178,6 +178,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
      */
     protected $certification_config = null;
+    /**
+     * Staff members of the contest (coordinator, tester, problem setter etc)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120;</code>
+     */
+    private $staff;
 
     /**
      * Constructor.
@@ -241,6 +247,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Environment configuration allows to describe the environment in which the submissions are run.
      *     @type \Eolymp\Judge\Contest\CertificationConfig $certification_config
      *           Certification configuration allows to automatically issue participant certificates after finalization of the contest.
+     *     @type array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $staff
+     *           Staff members of the contest (coordinator, tester, problem setter etc)
      * }
      */
     public function __construct($data = NULL) {
@@ -1034,6 +1042,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\CertificationConfig::class);
         $this->certification_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Staff members of the contest (coordinator, tester, problem setter etc)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStaff()
+    {
+        return $this->staff;
+    }
+
+    /**
+     * Staff members of the contest (coordinator, tester, problem setter etc)
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120;</code>
+     * @param array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStaff($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Contest\Staff::class);
+        $this->staff = $arr;
 
         return $this;
     }

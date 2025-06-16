@@ -34,6 +34,12 @@ class Field
      * Generated from protobuf enum <code>ENVIRONMENT_CONFIG = 4;</code>
      */
     const ENVIRONMENT_CONFIG = 4;
+    /**
+     * Staff members of the contest, used to display staff members in the contest UI
+     *
+     * Generated from protobuf enum <code>STAFF = 5;</code>
+     */
+    const STAFF = 5;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -41,6 +47,7 @@ class Field
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
         self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
+        self::STAFF => 'STAFF',
     ];
 
     public static function name($value)
