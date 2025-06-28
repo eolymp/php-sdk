@@ -23,9 +23,9 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $participant = null;
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Result result = 3;</code>
      */
-    protected $score = null;
+    protected $result = null;
 
     /**
      * Constructor.
@@ -35,7 +35,7 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type \Eolymp\Judge\Participant $participant
-     *     @type \Eolymp\Judge\Score $score
+     *     @type \Eolymp\Judge\Result $result
      * }
      */
     public function __construct($data = NULL) {
@@ -98,33 +98,33 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
-     * @return \Eolymp\Judge\Score|null
+     * Generated from protobuf field <code>.eolymp.judge.Result result = 3;</code>
+     * @return \Eolymp\Judge\Result|null
      */
-    public function getScore()
+    public function getResult()
     {
-        return $this->score;
+        return $this->result;
     }
 
-    public function hasScore()
+    public function hasResult()
     {
-        return isset($this->score);
+        return isset($this->result);
     }
 
-    public function clearScore()
+    public function clearResult()
     {
-        unset($this->score);
+        unset($this->result);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
-     * @param \Eolymp\Judge\Score $var
+     * Generated from protobuf field <code>.eolymp.judge.Result result = 3;</code>
+     * @param \Eolymp\Judge\Result $var
      * @return $this
      */
-    public function setScore($var)
+    public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Score::class);
-        $this->score = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Result::class);
+        $this->result = $var;
 
         return $this;
     }
