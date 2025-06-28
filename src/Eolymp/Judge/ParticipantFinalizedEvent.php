@@ -22,6 +22,10 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Participant participant = 2;</code>
      */
     protected $participant = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
+     */
+    protected $score = null;
 
     /**
      * Constructor.
@@ -31,6 +35,7 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type \Eolymp\Judge\Participant $participant
+     *     @type \Eolymp\Judge\Score $score
      * }
      */
     public function __construct($data = NULL) {
@@ -88,6 +93,38 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Participant::class);
         $this->participant = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
+     * @return \Eolymp\Judge\Score|null
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    public function hasScore()
+    {
+        return isset($this->score);
+    }
+
+    public function clearScore()
+    {
+        unset($this->score);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Score score = 3;</code>
+     * @param \Eolymp\Judge\Score $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Score::class);
+        $this->score = $var;
 
         return $this;
     }
