@@ -24,11 +24,16 @@ class Type
      * Generated from protobuf enum <code>SCOREBOARD_REBUILD = 2;</code>
      */
     const SCOREBOARD_REBUILD = 2;
+    /**
+     * Generated from protobuf enum <code>ANALYZE_CONTEST = 3;</code>
+     */
+    const ANALYZE_CONTEST = 3;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::PROBLEM_RETEST => 'PROBLEM_RETEST',
         self::SCOREBOARD_REBUILD => 'SCOREBOARD_REBUILD',
+        self::ANALYZE_CONTEST => 'ANALYZE_CONTEST',
     ];
 
     public static function name($value)
