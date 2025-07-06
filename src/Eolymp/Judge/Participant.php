@@ -97,6 +97,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $bonus_time = 0;
     /**
+     * Number of non-cancelled violations participant has received
+     *
+     * Generated from protobuf field <code>uint32 violation_count = 28;</code>
+     */
+    protected $violation_count = 0;
+    /**
      * Passcode is a code participant has to enter before she can begin contest.
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
@@ -150,6 +156,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           Time when user has finished (will finish) participating (incl. bonus time)
      *     @type int $bonus_time
      *           Additional time in seconds for participation
+     *     @type int $violation_count
+     *           Number of non-cancelled violations participant has received
      *     @type string $passcode
      *           Passcode is a code participant has to enter before she can begin contest.
      *           This field is only populated when request is made by contest owner.
@@ -541,6 +549,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->bonus_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of non-cancelled violations participant has received
+     *
+     * Generated from protobuf field <code>uint32 violation_count = 28;</code>
+     * @return int
+     */
+    public function getViolationCount()
+    {
+        return $this->violation_count;
+    }
+
+    /**
+     * Number of non-cancelled violations participant has received
+     *
+     * Generated from protobuf field <code>uint32 violation_count = 28;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setViolationCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->violation_count = $var;
 
         return $this;
     }

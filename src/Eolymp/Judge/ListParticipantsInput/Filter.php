@@ -60,6 +60,12 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
      */
     private $staff;
+    /**
+     * Filter participants who have non-cancelled violations
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15;</code>
+     */
+    private $has_violations;
 
     /**
      * Constructor.
@@ -79,6 +85,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $staff
      *           Filter participants who are staff members of the contest
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $has_violations
+     *           Filter participants who have non-cancelled violations
      * }
      */
     public function __construct($data = NULL) {
@@ -310,6 +318,32 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->staff = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter participants who have non-cancelled violations
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getHasViolations()
+    {
+        return $this->has_violations;
+    }
+
+    /**
+     * Filter participants who have non-cancelled violations
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setHasViolations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->has_violations = $arr;
 
         return $this;
     }

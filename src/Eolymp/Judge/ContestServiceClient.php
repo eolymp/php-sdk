@@ -263,6 +263,27 @@ class ContestServiceClient {
     }
 
     /**
+     * Analyze contest submissions for plagiarism, cheating and other violations.
+     *
+     * @param AnalyzeContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return AnalyzeContestOutput output message
+     */
+    public function AnalyzeContest(AnalyzeContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/analyze";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ContestService/AnalyzeContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AnalyzeContestOutput::class, $context);
+    }
+
+    /**
      * @param ListActivitiesInput $input message
      * @param array $context request parameters
      *

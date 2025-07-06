@@ -110,6 +110,10 @@ class Field
      * Generated from protobuf enum <code>ENVIRONMENT_CONFIG = 152;</code>
      */
     const ENVIRONMENT_CONFIG = 152;
+    /**
+     * Generated from protobuf enum <code>PLAGIARISM_CONFIG = 153;</code>
+     */
+    const PLAGIARISM_CONFIG = 153;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -136,6 +140,7 @@ class Field
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
         self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
+        self::PLAGIARISM_CONFIG => 'PLAGIARISM_CONFIG',
     ];
 
     public static function name($value)

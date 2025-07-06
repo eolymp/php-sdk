@@ -35,6 +35,10 @@ class Field
      */
     const ENVIRONMENT_CONFIG = 4;
     /**
+     * Generated from protobuf enum <code>PLAGIARISM_CONFIG = 6;</code>
+     */
+    const PLAGIARISM_CONFIG = 6;
+    /**
      * Staff members of the contest, used to display staff members in the contest UI
      *
      * Generated from protobuf enum <code>STAFF = 5;</code>
@@ -47,6 +51,7 @@ class Field
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
         self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
+        self::PLAGIARISM_CONFIG => 'PLAGIARISM_CONFIG',
         self::STAFF => 'STAFF',
     ];
 
