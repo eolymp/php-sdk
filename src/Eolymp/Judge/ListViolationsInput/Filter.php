@@ -31,7 +31,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $automatic;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID given_by = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID participant_id = 6;</code>
+     */
+    private $participant_id;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID given_by = 7;</code>
      */
     private $given_by;
 
@@ -45,6 +49,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $cancelled
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $summary
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $automatic
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $participant_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $given_by
      * }
      */
@@ -142,7 +147,29 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID given_by = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID participant_id = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getParticipantId()
+    {
+        return $this->participant_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID participant_id = 6;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setParticipantId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->participant_id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID given_by = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGivenBy()
@@ -151,7 +178,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID given_by = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID given_by = 7;</code>
      * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -37,6 +37,12 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $automatic = false;
     /**
+     * participant who received the violation
+     *
+     * Generated from protobuf field <code>string participant_id = 5;</code>
+     */
+    protected $participant_id = '';
+    /**
      * user ID of the person who created the violation
      *
      * Generated from protobuf field <code>string given_by = 10;</code>
@@ -60,6 +66,8 @@ class Violation extends \Google\Protobuf\Internal\Message
      *           short summary of the violation
      *     @type bool $automatic
      *           whether the violation was given by an automatic process
+     *     @type string $participant_id
+     *           participant who received the violation
      *     @type string $given_by
      *           user ID of the person who created the violation
      *     @type \Google\Protobuf\Timestamp $given_at
@@ -166,6 +174,32 @@ class Violation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * participant who received the violation
+     *
+     * Generated from protobuf field <code>string participant_id = 5;</code>
+     * @return string
+     */
+    public function getParticipantId()
+    {
+        return $this->participant_id;
+    }
+
+    /**
+     * participant who received the violation
+     *
+     * Generated from protobuf field <code>string participant_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParticipantId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->participant_id = $var;
 
         return $this;
     }
