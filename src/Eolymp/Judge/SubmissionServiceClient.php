@@ -177,4 +177,23 @@ class SubmissionServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, RetestProblemOutput::class, $context);
     }
 
+    /**
+     * @param AnalyzeSubmissionInput $input message
+     * @param array $context request parameters
+     *
+     * @return AnalyzeSubmissionOutput output message
+     */
+    public function AnalyzeSubmission(AnalyzeSubmissionInput $input, array $context = [])
+    {
+        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/analyze";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.SubmissionService/AnalyzeSubmission";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AnalyzeSubmissionOutput::class, $context);
+    }
+
 }
