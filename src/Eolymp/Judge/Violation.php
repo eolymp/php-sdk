@@ -19,11 +19,13 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * whether the violation has been cancelled
-     *
-     * Generated from protobuf field <code>bool cancelled = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7;</code>
      */
-    protected $cancelled = false;
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Type type = 8;</code>
+     */
+    protected $type = 0;
     /**
      * short summary of the violation
      *
@@ -31,27 +33,37 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $summary = '';
     /**
-     * whether the violation was given by an automatic process
-     *
-     * Generated from protobuf field <code>bool automatic = 4;</code>
-     */
-    protected $automatic = false;
-    /**
      * participant who received the violation
      *
      * Generated from protobuf field <code>string participant_id = 5;</code>
      */
     protected $participant_id = '';
     /**
+     * submission ID, if applicable
+     *
+     * Generated from protobuf field <code>string submission_id = 6;</code>
+     */
+    protected $submission_id = '';
+    /**
      * user ID of the person who created the violation
      *
-     * Generated from protobuf field <code>string given_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10;</code>
      */
-    protected $given_by = '';
+    protected $created_by = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp given_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
      */
-    protected $given_at = null;
+    protected $created_at = null;
+    /**
+     * user ID of the person who confirmed the violation
+     *
+     * Generated from protobuf field <code>string confirmed_by = 12;</code>
+     */
+    protected $confirmed_by = '';
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13;</code>
+     */
+    protected $confirmed_at = null;
 
     /**
      * Constructor.
@@ -60,17 +72,20 @@ class Violation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type bool $cancelled
-     *           whether the violation has been cancelled
+     *     @type int $status
+     *     @type int $type
      *     @type string $summary
      *           short summary of the violation
-     *     @type bool $automatic
-     *           whether the violation was given by an automatic process
      *     @type string $participant_id
      *           participant who received the violation
-     *     @type string $given_by
+     *     @type string $submission_id
+     *           submission ID, if applicable
+     *     @type string $created_by
      *           user ID of the person who created the violation
-     *     @type \Google\Protobuf\Timestamp $given_at
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type string $confirmed_by
+     *           user ID of the person who confirmed the violation
+     *     @type \Google\Protobuf\Timestamp $confirmed_at
      * }
      */
     public function __construct($data = NULL) {
@@ -101,27 +116,45 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * whether the violation has been cancelled
-     *
-     * Generated from protobuf field <code>bool cancelled = 2;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7;</code>
+     * @return int
      */
-    public function getCancelled()
+    public function getStatus()
     {
-        return $this->cancelled;
+        return $this->status;
     }
 
     /**
-     * whether the violation has been cancelled
-     *
-     * Generated from protobuf field <code>bool cancelled = 2;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7;</code>
+     * @param int $var
      * @return $this
      */
-    public function setCancelled($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkBool($var);
-        $this->cancelled = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Violation\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Type type = 8;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Type type = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Violation\Type::class);
+        $this->type = $var;
 
         return $this;
     }
@@ -153,32 +186,6 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * whether the violation was given by an automatic process
-     *
-     * Generated from protobuf field <code>bool automatic = 4;</code>
-     * @return bool
-     */
-    public function getAutomatic()
-    {
-        return $this->automatic;
-    }
-
-    /**
-     * whether the violation was given by an automatic process
-     *
-     * Generated from protobuf field <code>bool automatic = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAutomatic($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->automatic = $var;
-
-        return $this;
-    }
-
-    /**
      * participant who received the violation
      *
      * Generated from protobuf field <code>string participant_id = 5;</code>
@@ -205,59 +212,143 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * user ID of the person who created the violation
+     * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string given_by = 10;</code>
+     * Generated from protobuf field <code>string submission_id = 6;</code>
      * @return string
      */
-    public function getGivenBy()
+    public function getSubmissionId()
     {
-        return $this->given_by;
+        return $this->submission_id;
     }
 
     /**
-     * user ID of the person who created the violation
+     * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string given_by = 10;</code>
+     * Generated from protobuf field <code>string submission_id = 6;</code>
      * @param string $var
      * @return $this
      */
-    public function setGivenBy($var)
+    public function setSubmissionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->given_by = $var;
+        $this->submission_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp given_at = 11;</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * user ID of the person who created the violation
+     *
+     * Generated from protobuf field <code>string created_by = 10;</code>
+     * @return string
      */
-    public function getGivenAt()
+    public function getCreatedBy()
     {
-        return $this->given_at;
-    }
-
-    public function hasGivenAt()
-    {
-        return isset($this->given_at);
-    }
-
-    public function clearGivenAt()
-    {
-        unset($this->given_at);
+        return $this->created_by;
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp given_at = 11;</code>
+     * user ID of the person who created the violation
+     *
+     * Generated from protobuf field <code>string created_by = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCreatedBy($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->created_by = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setGivenAt($var)
+    public function setCreatedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->given_at = $var;
+        $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * user ID of the person who confirmed the violation
+     *
+     * Generated from protobuf field <code>string confirmed_by = 12;</code>
+     * @return string
+     */
+    public function getConfirmedBy()
+    {
+        return $this->confirmed_by;
+    }
+
+    /**
+     * user ID of the person who confirmed the violation
+     *
+     * Generated from protobuf field <code>string confirmed_by = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setConfirmedBy($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->confirmed_by = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getConfirmedAt()
+    {
+        return $this->confirmed_at;
+    }
+
+    public function hasConfirmedAt()
+    {
+        return isset($this->confirmed_at);
+    }
+
+    public function clearConfirmedAt()
+    {
+        unset($this->confirmed_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setConfirmedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->confirmed_at = $var;
 
         return $this;
     }
