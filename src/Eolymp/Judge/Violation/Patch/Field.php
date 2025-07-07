@@ -21,9 +21,9 @@ class Field
      */
     const SUMMARY = 1;
     /**
-     * Generated from protobuf enum <code>CANCELLED = 2;</code>
+     * Generated from protobuf enum <code>STATUS = 2;</code>
      */
-    const CANCELLED = 2;
+    const STATUS = 2;
     /**
      * Generated from protobuf enum <code>AUTOMATIC = 3;</code>
      */
@@ -32,7 +32,7 @@ class Field
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::SUMMARY => 'SUMMARY',
-        self::CANCELLED => 'CANCELLED',
+        self::STATUS => 'STATUS',
         self::AUTOMATIC => 'AUTOMATIC',
     ];
 

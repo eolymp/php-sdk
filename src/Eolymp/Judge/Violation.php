@@ -33,6 +33,12 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $summary = '';
     /**
+     * whether the violation was automatically detected by the system
+     *
+     * Generated from protobuf field <code>bool automatic = 4;</code>
+     */
+    protected $automatic = false;
+    /**
      * participant who received the violation
      *
      * Generated from protobuf field <code>string participant_id = 5;</code>
@@ -76,6 +82,8 @@ class Violation extends \Google\Protobuf\Internal\Message
      *     @type int $type
      *     @type string $summary
      *           short summary of the violation
+     *     @type bool $automatic
+     *           whether the violation was automatically detected by the system
      *     @type string $participant_id
      *           participant who received the violation
      *     @type string $submission_id
@@ -181,6 +189,32 @@ class Violation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * whether the violation was automatically detected by the system
+     *
+     * Generated from protobuf field <code>bool automatic = 4;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * whether the violation was automatically detected by the system
+     *
+     * Generated from protobuf field <code>bool automatic = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
 
         return $this;
     }
