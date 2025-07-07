@@ -15,13 +15,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class AnalyzeSubmissionInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string contest_id = 10;</code>
+     * Generated from protobuf field <code>string submission_id = 10;</code>
      */
-    protected $contest_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Submission submission = 1;</code>
-     */
-    protected $submission = null;
+    protected $submission_id = '';
 
     /**
      * Constructor.
@@ -29,8 +25,7 @@ class AnalyzeSubmissionInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $contest_id
-     *     @type \Eolymp\Judge\Submission $submission
+     *     @type string $submission_id
      * }
      */
     public function __construct($data = NULL) {
@@ -39,55 +34,23 @@ class AnalyzeSubmissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string contest_id = 10;</code>
+     * Generated from protobuf field <code>string submission_id = 10;</code>
      * @return string
      */
-    public function getContestId()
+    public function getSubmissionId()
     {
-        return $this->contest_id;
+        return $this->submission_id;
     }
 
     /**
-     * Generated from protobuf field <code>string contest_id = 10;</code>
+     * Generated from protobuf field <code>string submission_id = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setContestId($var)
+    public function setSubmissionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Submission submission = 1;</code>
-     * @return \Eolymp\Judge\Submission|null
-     */
-    public function getSubmission()
-    {
-        return $this->submission;
-    }
-
-    public function hasSubmission()
-    {
-        return isset($this->submission);
-    }
-
-    public function clearSubmission()
-    {
-        unset($this->submission);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Submission submission = 1;</code>
-     * @param \Eolymp\Judge\Submission $var
-     * @return $this
-     */
-    public function setSubmission($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Submission::class);
-        $this->submission = $var;
+        $this->submission_id = $var;
 
         return $this;
     }
