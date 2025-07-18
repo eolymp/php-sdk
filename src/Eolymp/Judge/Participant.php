@@ -103,6 +103,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $violation_count = 0;
     /**
+     * deprecated: use admission API instead
      * Passcode is a code participant has to enter before she can begin contest.
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
@@ -159,6 +160,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      *     @type int $violation_count
      *           Number of non-cancelled violations participant has received
      *     @type string $passcode
+     *           deprecated: use admission API instead
      *           Passcode is a code participant has to enter before she can begin contest.
      *           This field is only populated when request is made by contest owner.
      *           Passcode is read-only and should be set using ResetPasscode method.
@@ -580,6 +582,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use admission API instead
      * Passcode is a code participant has to enter before she can begin contest.
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
@@ -593,6 +596,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use admission API instead
      * Passcode is a code participant has to enter before she can begin contest.
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.

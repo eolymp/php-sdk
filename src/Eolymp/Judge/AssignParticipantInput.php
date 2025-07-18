@@ -41,6 +41,7 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $member_id
      *     @type string $group_id
+     *     @type \Eolymp\Judge\AssignParticipantInput\Ghost $ghost
      *     @type bool $unofficial
      *     @type bool $inactive
      *     @type int $role
@@ -123,6 +124,33 @@ class AssignParticipantInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.AssignParticipantInput.Ghost ghost = 12;</code>
+     * @return \Eolymp\Judge\AssignParticipantInput\Ghost|null
+     */
+    public function getGhost()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasGhost()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.AssignParticipantInput.Ghost ghost = 12;</code>
+     * @param \Eolymp\Judge\AssignParticipantInput\Ghost $var
+     * @return $this
+     */
+    public function setGhost($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\AssignParticipantInput\Ghost::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }
