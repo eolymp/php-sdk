@@ -4,6 +4,10 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * CreditService provides methods to manage members "credits", a point based system of rewards.
+     * Members can be rewarded credits for various actions, and these credits can be redeemed for rewards.
+     */
 class CreditServiceClient {
 
     /** @var string base URL */
@@ -23,6 +27,8 @@ class CreditServiceClient {
     }
 
     /**
+     * DescribeBalance returns the current balance of credits for a member.
+     *
      * @param DescribeBalanceInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +45,27 @@ class CreditServiceClient {
     }
 
     /**
+     * ListCredits returns a list of credit records for a member.
+     *
+     * @param ListCreditsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListCreditsOutput output message
+     */
+    public function ListCredits(ListCreditsInput $input, array $context = [])
+    {
+        $path = "/credits";
+
+        $context['name'] = "eolymp.community.CreditService/ListCredits";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditsOutput::class, $context);
+    }
+
+    /**
+     * RecordCredit adds a new credit record for a member.
+     * This can be used to reward a member with credits for specific actions (amount > 0) or redeem credits (amount < 0).
+     *
      * @param RecordCreditInput $input message
      * @param array $context request parameters
      *
@@ -55,6 +82,10 @@ class CreditServiceClient {
     }
 
     /**
+     * DeleteCredit allows to "erase" credit record.
+     * This method should be used in rare cases, when it's necessary to leave no trace of a credit record.
+     * Generally and changes in user balance should be done by creating new credit records.
+     *
      * @param DeleteCreditInput $input message
      * @param array $context request parameters
      *
@@ -71,22 +102,6 @@ class CreditServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCreditOutput::class, $context);
-    }
-
-    /**
-     * @param ListCreditsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListCreditsOutput output message
-     */
-    public function ListCredits(ListCreditsInput $input, array $context = [])
-    {
-        $path = "/credits";
-
-        $context['name'] = "eolymp.community.CreditService/ListCredits";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditsOutput::class, $context);
     }
 
 }
