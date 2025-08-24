@@ -24,11 +24,16 @@ class Feature
      * Generated from protobuf enum <code>NEWSLETTERS = 2;</code>
      */
     const NEWSLETTERS = 2;
+    /**
+     * Generated from protobuf enum <code>MEMBER_CREDITS = 3;</code>
+     */
+    const MEMBER_CREDITS = 3;
 
     private static $valueToName = [
         self::UNKNOWN_FEATURE => 'UNKNOWN_FEATURE',
         self::PRINTERS => 'PRINTERS',
         self::NEWSLETTERS => 'NEWSLETTERS',
+        self::MEMBER_CREDITS => 'MEMBER_CREDITS',
     ];
 
     public static function name($value)

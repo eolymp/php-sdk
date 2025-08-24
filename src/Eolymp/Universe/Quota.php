@@ -93,6 +93,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $members_per_space = 0;
     /**
+     * allow members to have credits
+     *
+     * Generated from protobuf field <code>bool member_credits = 28;</code>
+     */
+    protected $member_credits = false;
+    /**
      * newsletter quota
      *
      * Generated from protobuf field <code>uint32 campaigns_per_space = 200;</code>
@@ -251,6 +257,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           maximum amount of time a submission can be evaluated
      *     @type int $members_per_space
      *           member quota and features
+     *     @type bool $member_credits
+     *           allow members to have credits
      *     @type int $campaigns_per_space
      *           newsletter quota
      *     @type int $emails_per_day
@@ -630,6 +638,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->members_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * allow members to have credits
+     *
+     * Generated from protobuf field <code>bool member_credits = 28;</code>
+     * @return bool
+     */
+    public function getMemberCredits()
+    {
+        return $this->member_credits;
+    }
+
+    /**
+     * allow members to have credits
+     *
+     * Generated from protobuf field <code>bool member_credits = 28;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMemberCredits($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->member_credits = $var;
 
         return $this;
     }
