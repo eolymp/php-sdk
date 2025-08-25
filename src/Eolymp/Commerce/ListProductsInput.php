@@ -49,7 +49,7 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -69,7 +69,7 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
      *     @type int $order
      *     @type string $locale
      *           load title and content in a specific locale
-     *     @type array<\Eolymp\Commerce\Product\Extra>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -254,7 +254,7 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -263,13 +263,13 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Extra extra = 1123;</code>
-     * @param array<\Eolymp\Commerce\Product\Extra>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Extra.Field extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Product\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Commerce\Product\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;
