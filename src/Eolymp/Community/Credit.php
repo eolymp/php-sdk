@@ -33,11 +33,23 @@ class Credit extends \Google\Protobuf\Internal\Message
      */
     protected $note = '';
     /**
-     * amount of credit
+     * whether the credit is active (not redeemed or expired)
      *
-     * Generated from protobuf field <code>uint32 amount = 4;</code>
+     * Generated from protobuf field <code>bool active = 20;</code>
      */
-    protected $amount = 0;
+    protected $active = false;
+    /**
+     * amount of credits granted
+     *
+     * Generated from protobuf field <code>uint32 total_amount = 4;</code>
+     */
+    protected $total_amount = 0;
+    /**
+     * amount of credit already redeemed
+     *
+     * Generated from protobuf field <code>uint32 redeemed_amount = 5;</code>
+     */
+    protected $redeemed_amount = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
@@ -59,8 +71,12 @@ class Credit extends \Google\Protobuf\Internal\Message
      *           a unique credit reference, ensures the same credit is not granted twice
      *     @type string $note
      *           a note for the credit, describes why the credit was granted
-     *     @type int $amount
-     *           amount of credit
+     *     @type bool $active
+     *           whether the credit is active (not redeemed or expired)
+     *     @type int $total_amount
+     *           amount of credits granted
+     *     @type int $redeemed_amount
+     *           amount of credit already redeemed
      *     @type \Google\Protobuf\Timestamp $granted_at
      *     @type \Google\Protobuf\Timestamp $expires_at
      * }
@@ -149,27 +165,79 @@ class Credit extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * amount of credit
+     * whether the credit is active (not redeemed or expired)
      *
-     * Generated from protobuf field <code>uint32 amount = 4;</code>
-     * @return int
+     * Generated from protobuf field <code>bool active = 20;</code>
+     * @return bool
      */
-    public function getAmount()
+    public function getActive()
     {
-        return $this->amount;
+        return $this->active;
     }
 
     /**
-     * amount of credit
+     * whether the credit is active (not redeemed or expired)
      *
-     * Generated from protobuf field <code>uint32 amount = 4;</code>
+     * Generated from protobuf field <code>bool active = 20;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * amount of credits granted
+     *
+     * Generated from protobuf field <code>uint32 total_amount = 4;</code>
+     * @return int
+     */
+    public function getTotalAmount()
+    {
+        return $this->total_amount;
+    }
+
+    /**
+     * amount of credits granted
+     *
+     * Generated from protobuf field <code>uint32 total_amount = 4;</code>
      * @param int $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setTotalAmount($var)
     {
         GPBUtil::checkUint32($var);
-        $this->amount = $var;
+        $this->total_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * amount of credit already redeemed
+     *
+     * Generated from protobuf field <code>uint32 redeemed_amount = 5;</code>
+     * @return int
+     */
+    public function getRedeemedAmount()
+    {
+        return $this->redeemed_amount;
+    }
+
+    /**
+     * amount of credit already redeemed
+     *
+     * Generated from protobuf field <code>uint32 redeemed_amount = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRedeemedAmount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->redeemed_amount = $var;
 
         return $this;
     }

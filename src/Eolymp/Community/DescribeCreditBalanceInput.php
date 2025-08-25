@@ -10,9 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.DescribeBalanceInput</code>
+ * Generated from protobuf message <code>eolymp.community.DescribeCreditBalanceInput</code>
  */
-class DescribeBalanceInput extends \Google\Protobuf\Internal\Message
+class DescribeCreditBalanceInput extends \Google\Protobuf\Internal\Message
 {
 
     /**

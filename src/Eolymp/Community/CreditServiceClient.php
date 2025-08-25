@@ -27,58 +27,21 @@ class CreditServiceClient {
     }
 
     /**
-     * DescribeBalance returns the current balance of credits for a member.
+     * CreateCredit adds a new credit record for a member.
      *
-     * @param DescribeBalanceInput $input message
+     * @param CreateCreditInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeBalanceOutput output message
+     * @return CreateCreditOutput output message
      */
-    public function DescribeBalance(DescribeBalanceInput $input, array $context = [])
-    {
-        $path = "/balance";
-
-        $context['name'] = "eolymp.community.CreditService/DescribeBalance";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeBalanceOutput::class, $context);
-    }
-
-    /**
-     * ListCredits returns a list of credit records for a member.
-     *
-     * @param ListCreditsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListCreditsOutput output message
-     */
-    public function ListCredits(ListCreditsInput $input, array $context = [])
+    public function CreateCredit(CreateCreditInput $input, array $context = [])
     {
         $path = "/credits";
 
-        $context['name'] = "eolymp.community.CreditService/ListCredits";
+        $context['name'] = "eolymp.community.CreditService/CreateCredit";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditsOutput::class, $context);
-    }
-
-    /**
-     * RecordCredit adds a new credit record for a member.
-     * This can be used to reward a member with credits for specific actions (amount > 0) or redeem credits (amount < 0).
-     *
-     * @param RecordCreditInput $input message
-     * @param array $context request parameters
-     *
-     * @return RecordCreditOutput output message
-     */
-    public function RecordCredit(RecordCreditInput $input, array $context = [])
-    {
-        $path = "/credits";
-
-        $context['name'] = "eolymp.community.CreditService/RecordCredit";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RecordCreditOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateCreditOutput::class, $context);
     }
 
     /**
@@ -102,6 +65,61 @@ class CreditServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCreditOutput::class, $context);
+    }
+
+    /**
+     * ListCredits returns a list of credit records for a member.
+     *
+     * @param ListCreditsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListCreditsOutput output message
+     */
+    public function ListCredits(ListCreditsInput $input, array $context = [])
+    {
+        $path = "/credits";
+
+        $context['name'] = "eolymp.community.CreditService/ListCredits";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditsOutput::class, $context);
+    }
+
+    /**
+     * RedeemCredit adds a new credit redeem for a member.
+     * This can be used to reward a member with credits for specific actions (amount > 0) or redeem credits (amount < 0).
+     *
+     * @param RedeemCreditInput $input message
+     * @param array $context request parameters
+     *
+     * @return RedeemCreditOutput output message
+     */
+    public function RedeemCredit(RedeemCreditInput $input, array $context = [])
+    {
+        $path = "/credits:redeem";
+
+        $context['name'] = "eolymp.community.CreditService/RedeemCredit";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RedeemCreditOutput::class, $context);
+    }
+
+    /**
+     * DescribeBalance returns the current balance of credits for a member.
+     *
+     * @param DescribeCreditBalanceInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeCreditBalanceOutput output message
+     */
+    public function DescribeBalance(DescribeCreditBalanceInput $input, array $context = [])
+    {
+        $path = "/credits:balance";
+
+        $context['name'] = "eolymp.community.CreditService/DescribeBalance";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCreditBalanceOutput::class, $context);
     }
 
 }

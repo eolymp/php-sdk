@@ -10,9 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.RecordCreditOutput</code>
+ * Generated from protobuf message <code>eolymp.community.CreateCreditOutput</code>
  */
-class RecordCreditOutput extends \Google\Protobuf\Internal\Message
+class CreateCreditOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string credit_id = 1;</code>
