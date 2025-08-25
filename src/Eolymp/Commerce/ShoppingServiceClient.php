@@ -116,7 +116,7 @@ class ShoppingServiceClient {
      */
     public function UpdateBillingAddress(UpdateBillingAddressInput $input, array $context = [])
     {
-        $path = "/store/cart/shipping-address";
+        $path = "/store/cart/billing-address";
 
         $context['name'] = "eolymp.commerce.ShoppingService/UpdateBillingAddress";
         $context['path'] = $path;
