@@ -39,13 +39,13 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>string unit_price = 21;</code>
+     * Generated from protobuf field <code>uint32 unit_price = 21;</code>
      */
-    protected $unit_price = '';
+    protected $unit_price = 0;
     /**
-     * Generated from protobuf field <code>string credit_equivalence = 22;</code>
+     * Generated from protobuf field <code>uint32 credit_equivalence = 22;</code>
      */
-    protected $credit_equivalence = '';
+    protected $credit_equivalence = 0;
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
      */
@@ -67,8 +67,8 @@ class Product extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
      *     @type string $currency
-     *     @type string $unit_price
-     *     @type string $credit_equivalence
+     *     @type int $unit_price
+     *     @type int $credit_equivalence
      *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
      * }
@@ -221,8 +221,8 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string unit_price = 21;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 unit_price = 21;</code>
+     * @return int
      */
     public function getUnitPrice()
     {
@@ -230,21 +230,21 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string unit_price = 21;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 unit_price = 21;</code>
+     * @param int $var
      * @return $this
      */
     public function setUnitPrice($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->unit_price = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string credit_equivalence = 22;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 credit_equivalence = 22;</code>
+     * @return int
      */
     public function getCreditEquivalence()
     {
@@ -252,13 +252,13 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string credit_equivalence = 22;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 credit_equivalence = 22;</code>
+     * @param int $var
      * @return $this
      */
     public function setCreditEquivalence($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint32($var);
         $this->credit_equivalence = $var;
 
         return $this;
