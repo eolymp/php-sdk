@@ -111,4 +111,20 @@ class ScriptServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScriptsOutput::class, $context);
     }
 
+    /**
+     * @param ExecuteStressCheckInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExecuteStressCheckOutput output message
+     */
+    public function ExecuteStressCheck(ExecuteStressCheckInput $input, array $context = [])
+    {
+        $path = "/scripts:stress-check";
+
+        $context['name'] = "eolymp.atlas.ScriptService/ExecuteStressCheck";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExecuteStressCheckOutput::class, $context);
+    }
+
 }
