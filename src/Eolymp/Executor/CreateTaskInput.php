@@ -24,6 +24,7 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Executor\EvaluationTask $evaluation
      *     @type \Eolymp\Executor\GenerationTask $generation
+     *     @type \Eolymp\Executor\StressTask $stress
      * }
      */
     public function __construct($data = NULL) {
@@ -81,6 +82,33 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\GenerationTask::class);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.StressTask stress = 3;</code>
+     * @return \Eolymp\Executor\StressTask|null
+     */
+    public function getStress()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasStress()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.StressTask stress = 3;</code>
+     * @param \Eolymp\Executor\StressTask $var
+     * @return $this
+     */
+    public function setStress($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\StressTask::class);
+        $this->writeOneof(3, $var);
 
         return $this;
     }

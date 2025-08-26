@@ -18,8 +18,9 @@ class TaskService
         \GPBMetadata\Eolymp\Annotations\Ratelimit::initOnce();
         \GPBMetadata\Eolymp\Executor\EvaluationTask::initOnce();
         \GPBMetadata\Eolymp\Executor\GenerationTask::initOnce();
+        \GPBMetadata\Eolymp\Executor\StressTask::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xE3\x03\x0A\"eolymp/executor/task_service.proto\x12\x0Feolymp.executor\x1A%eolymp/executor/evaluation_task.proto\x1A%eolymp/executor/generation_task.proto\"\x87\x01\x0A\x0FCreateTaskInput\x125\x0A\x0Aevaluation\x18\x01 \x01(\x0B2\x1F.eolymp.executor.EvaluationTaskH\x00\x125\x0A\x0Ageneration\x18\x02 \x01(\x0B2\x1F.eolymp.executor.GenerationTaskH\x00B\x06\x0A\x04task\"#\x0A\x10CreateTaskOutput\x12\x0F\x0A\x07task_id\x18\x01 \x01(\x092r\x0A\x0BTaskService\x12c\x0A\x0ACreateTask\x12 .eolymp.executor.CreateTaskInput\x1A!.eolymp.executor.CreateTaskOutput\"\x10\xEA\xE2\x0A\x0C\xF5\xE2\x0A\x00\x00\xA0A\xF8\xE2\x0A\xC8\x01B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3"
+            "\x0A\xB5\x04\x0A\"eolymp/executor/task_service.proto\x12\x0Feolymp.executor\x1A%eolymp/executor/evaluation_task.proto\x1A%eolymp/executor/generation_task.proto\x1A!eolymp/executor/stress_task.proto\"\xB6\x01\x0A\x0FCreateTaskInput\x125\x0A\x0Aevaluation\x18\x01 \x01(\x0B2\x1F.eolymp.executor.EvaluationTaskH\x00\x125\x0A\x0Ageneration\x18\x02 \x01(\x0B2\x1F.eolymp.executor.GenerationTaskH\x00\x12-\x0A\x06stress\x18\x03 \x01(\x0B2\x1B.eolymp.executor.StressTaskH\x00B\x06\x0A\x04task\"#\x0A\x10CreateTaskOutput\x12\x0F\x0A\x07task_id\x18\x01 \x01(\x092r\x0A\x0BTaskService\x12c\x0A\x0ACreateTask\x12 .eolymp.executor.CreateTaskInput\x1A!.eolymp.executor.CreateTaskOutput\"\x10\xEA\xE2\x0A\x0C\xF5\xE2\x0A\x00\x00\xA0A\xF8\xE2\x0A\xC8\x01B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorb\x06proto3"
         , true);
 
         static::$is_initialized = true;
