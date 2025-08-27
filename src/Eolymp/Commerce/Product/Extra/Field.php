@@ -24,11 +24,21 @@ class Field
      * Generated from protobuf enum <code>DESCRIPTION_RENDER = 2;</code>
      */
     const DESCRIPTION_RENDER = 2;
+    /**
+     * Generated from protobuf enum <code>ATTRIBUTES = 3;</code>
+     */
+    const ATTRIBUTES = 3;
+    /**
+     * Generated from protobuf enum <code>VARIANTS = 4;</code>
+     */
+    const VARIANTS = 4;
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
         self::DESCRIPTION_VALUE => 'DESCRIPTION_VALUE',
         self::DESCRIPTION_RENDER => 'DESCRIPTION_RENDER',
+        self::ATTRIBUTES => 'ATTRIBUTES',
+        self::VARIANTS => 'VARIANTS',
     ];
 
     public static function name($value)
