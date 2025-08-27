@@ -30,7 +30,7 @@ class ProductServiceClient {
      */
     public function CreateProduct(CreateProductInput $input, array $context = [])
     {
-        $path = "/products";
+        $path = "/store/products";
 
         $context['name'] = "eolymp.commerce.ProductService/CreateProduct";
         $context['path'] = $path;
@@ -46,7 +46,7 @@ class ProductServiceClient {
      */
     public function UpdateProduct(UpdateProductInput $input, array $context = [])
     {
-        $path = "/products/".rawurlencode($input->getProductId());
+        $path = "/store/products/".rawurlencode($input->getProductId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProductId("");
@@ -65,7 +65,7 @@ class ProductServiceClient {
      */
     public function DeleteProduct(DeleteProductInput $input, array $context = [])
     {
-        $path = "/products/".rawurlencode($input->getProductId());
+        $path = "/store/products/".rawurlencode($input->getProductId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProductId("");
@@ -84,7 +84,7 @@ class ProductServiceClient {
      */
     public function DescribeProduct(DescribeProductInput $input, array $context = [])
     {
-        $path = "/products/".rawurlencode($input->getProductId());
+        $path = "/store/products/".rawurlencode($input->getProductId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProductId("");
@@ -103,7 +103,7 @@ class ProductServiceClient {
      */
     public function ListProducts(ListProductsInput $input, array $context = [])
     {
-        $path = "/products";
+        $path = "/store/products";
 
         $context['name'] = "eolymp.commerce.ProductService/ListProducts";
         $context['path'] = $path;
