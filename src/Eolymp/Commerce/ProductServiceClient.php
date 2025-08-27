@@ -23,6 +23,60 @@ class ProductServiceClient {
     }
 
     /**
+     * @param CreateProductInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateProductOutput output message
+     */
+    public function CreateProduct(CreateProductInput $input, array $context = [])
+    {
+        $path = "/products";
+
+        $context['name'] = "eolymp.commerce.ProductService/CreateProduct";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateProductOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateProductInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateProductOutput output message
+     */
+    public function UpdateProduct(UpdateProductInput $input, array $context = [])
+    {
+        $path = "/products/".rawurlencode($input->getProductId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/UpdateProduct";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateProductOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteProductInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteProductOutput output message
+     */
+    public function DeleteProduct(DeleteProductInput $input, array $context = [])
+    {
+        $path = "/products/".rawurlencode($input->getProductId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/DeleteProduct";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteProductOutput::class, $context);
+    }
+
+    /**
      * @param DescribeProductInput $input message
      * @param array $context request parameters
      *
