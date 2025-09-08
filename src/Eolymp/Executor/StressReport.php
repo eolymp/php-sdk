@@ -15,6 +15,30 @@ use Google\Protobuf\Internal\GPBUtil;
 class StressReport extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     */
+    protected $task_id = '';
+    /**
+     * Generated from protobuf field <code>string reference = 2;</code>
+     */
+    protected $reference = '';
+    /**
+     * Generated from protobuf field <code>string origin = 3;</code>
+     */
+    protected $origin = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     */
+    private $metadata;
+    /**
+     * Generated from protobuf field <code>string agent = 4;</code>
+     */
+    protected $agent = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
+     */
+    private $runs;
+    /**
      * Generated from protobuf field <code>string error_message = 50;</code>
      */
     protected $error_message = '';
@@ -25,12 +49,150 @@ class StressReport extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $task_id
+     *     @type string $reference
+     *     @type string $origin
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *     @type string $agent
+     *     @type array<\Eolymp\Executor\StressReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *     @type string $error_message
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Executor\StressReport::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     * @return string
+     */
+    public function getTaskId()
+    {
+        return $this->task_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reference = 2;</code>
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reference = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReference($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reference = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 3;</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Generated from protobuf field <code>string origin = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string agent = 4;</code>
+     * @return string
+     */
+    public function getAgent()
+    {
+        return $this->agent;
+    }
+
+    /**
+     * Generated from protobuf field <code>string agent = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAgent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->agent = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRuns()
+    {
+        return $this->runs;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
+     * @param array<\Eolymp\Executor\StressReport\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRuns($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\StressReport\Run::class);
+        $this->runs = $arr;
+
+        return $this;
     }
 
     /**
