@@ -37,10 +37,6 @@ class Field
      */
     const UNIT_PRICE = 5;
     /**
-     * Generated from protobuf enum <code>CREDIT_EQUIVALENCE = 6;</code>
-     */
-    const CREDIT_EQUIVALENCE = 6;
-    /**
      * Generated from protobuf enum <code>ATTRIBUTES = 7;</code>
      */
     const ATTRIBUTES = 7;
@@ -56,7 +52,6 @@ class Field
         self::DESCRIPTION => 'DESCRIPTION',
         self::IMAGES => 'IMAGES',
         self::UNIT_PRICE => 'UNIT_PRICE',
-        self::CREDIT_EQUIVALENCE => 'CREDIT_EQUIVALENCE',
         self::ATTRIBUTES => 'ATTRIBUTES',
         self::VARIANTS => 'VARIANTS',
     ];

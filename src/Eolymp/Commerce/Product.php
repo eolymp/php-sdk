@@ -43,10 +43,6 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     protected $unit_price = 0;
     /**
-     * Generated from protobuf field <code>uint32 credit_equivalence = 22;</code>
-     */
-    protected $credit_equivalence = 0;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
      */
     private $attributes;
@@ -68,7 +64,6 @@ class Product extends \Google\Protobuf\Internal\Message
      *     @type bool $out_of_stock
      *     @type string $currency
      *     @type int $unit_price
-     *     @type int $credit_equivalence
      *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
      * }
@@ -238,28 +233,6 @@ class Product extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->unit_price = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 credit_equivalence = 22;</code>
-     * @return int
-     */
-    public function getCreditEquivalence()
-    {
-        return $this->credit_equivalence;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 credit_equivalence = 22;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCreditEquivalence($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->credit_equivalence = $var;
 
         return $this;
     }
