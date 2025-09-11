@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Order represents a finalized and submitted shopping cart.
+ * All amounts are specified in cents, for example 100 means €1.
+ *
  * Generated from protobuf message <code>eolymp.commerce.Order</code>
  */
 class Order extends \Google\Protobuf\Internal\Message
@@ -18,6 +21,10 @@ class Order extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
+    /**
+     * Generated from protobuf field <code>string reference = 2;</code>
+     */
+    protected $reference = '';
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Order.Item items = 10;</code>
      */
@@ -55,6 +62,8 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $tax_amount = 0;
     /**
+     * in hundredth of percent, e.g. 755 means 7.55%
+     *
      * Generated from protobuf field <code>uint32 tax_rate = 25;</code>
      */
     protected $tax_rate = 0;
@@ -74,6 +83,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $reference
      *     @type array<\Eolymp\Commerce\Order\Item>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type \Eolymp\Commerce\Address $billing_address
      *     @type \Eolymp\Commerce\Address $shipping_address
@@ -84,6 +94,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type int $discount_amount
      *     @type int $tax_amount
      *     @type int $tax_rate
+     *           in hundredth of percent, e.g. 755 means 7.55%
      *     @type string $tax_note
      *     @type int $grand_total
      * }
@@ -111,6 +122,28 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reference = 2;</code>
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Generated from protobuf field <code>string reference = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReference($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reference = $var;
 
         return $this;
     }
@@ -334,6 +367,8 @@ class Order extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * in hundredth of percent, e.g. 755 means 7.55%
+     *
      * Generated from protobuf field <code>uint32 tax_rate = 25;</code>
      * @return int
      */
@@ -343,6 +378,8 @@ class Order extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * in hundredth of percent, e.g. 755 means 7.55%
+     *
      * Generated from protobuf field <code>uint32 tax_rate = 25;</code>
      * @param int $var
      * @return $this

@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Shopping cart is a staging area of an order.
+ * All amounts are specified in cents, for example 100 means €1.
+ *
  * Generated from protobuf message <code>eolymp.commerce.ShoppingCart</code>
  */
 class ShoppingCart extends \Google\Protobuf\Internal\Message
