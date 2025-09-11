@@ -35,9 +35,21 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $variant_id = '';
     /**
-     * Generated from protobuf field <code>int32 quantity = 10;</code>
+     * Generated from protobuf field <code>uint32 quantity_ordered = 10;</code>
      */
-    protected $quantity = 0;
+    protected $quantity_ordered = 0;
+    /**
+     * Generated from protobuf field <code>uint32 quantity_cancelled = 11;</code>
+     */
+    protected $quantity_cancelled = 0;
+    /**
+     * Generated from protobuf field <code>uint32 quantity_shipped = 12;</code>
+     */
+    protected $quantity_shipped = 0;
+    /**
+     * Generated from protobuf field <code>uint32 quantity_returned = 13;</code>
+     */
+    protected $quantity_returned = 0;
     /**
      * Generated from protobuf field <code>uint32 unit_amount = 21;</code>
      */
@@ -62,7 +74,10 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type string $image_url
      *     @type string $product_id
      *     @type string $variant_id
-     *     @type int $quantity
+     *     @type int $quantity_ordered
+     *     @type int $quantity_cancelled
+     *     @type int $quantity_shipped
+     *     @type int $quantity_returned
      *     @type int $unit_amount
      *     @type int $total_amount
      *     @type int $discount_amount
@@ -184,23 +199,89 @@ class Item extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 quantity = 10;</code>
+     * Generated from protobuf field <code>uint32 quantity_ordered = 10;</code>
      * @return int
      */
-    public function getQuantity()
+    public function getQuantityOrdered()
     {
-        return $this->quantity;
+        return $this->quantity_ordered;
     }
 
     /**
-     * Generated from protobuf field <code>int32 quantity = 10;</code>
+     * Generated from protobuf field <code>uint32 quantity_ordered = 10;</code>
      * @param int $var
      * @return $this
      */
-    public function setQuantity($var)
+    public function setQuantityOrdered($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->quantity = $var;
+        GPBUtil::checkUint32($var);
+        $this->quantity_ordered = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_cancelled = 11;</code>
+     * @return int
+     */
+    public function getQuantityCancelled()
+    {
+        return $this->quantity_cancelled;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_cancelled = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setQuantityCancelled($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->quantity_cancelled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_shipped = 12;</code>
+     * @return int
+     */
+    public function getQuantityShipped()
+    {
+        return $this->quantity_shipped;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_shipped = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setQuantityShipped($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->quantity_shipped = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_returned = 13;</code>
+     * @return int
+     */
+    public function getQuantityReturned()
+    {
+        return $this->quantity_returned;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_returned = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setQuantityReturned($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->quantity_returned = $var;
 
         return $this;
     }

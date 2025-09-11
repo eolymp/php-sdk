@@ -26,6 +26,10 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $reference = '';
     /**
+     * Generated from protobuf field <code>.eolymp.commerce.Order.Status status = 3;</code>
+     */
+    protected $status = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Order.Item items = 10;</code>
      */
     private $items;
@@ -84,6 +88,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $reference
+     *     @type int $status
      *     @type array<\Eolymp\Commerce\Order\Item>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type \Eolymp\Commerce\Address $billing_address
      *     @type \Eolymp\Commerce\Address $shipping_address
@@ -144,6 +149,28 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reference = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Order.Status status = 3;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Order.Status status = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Commerce\Order\Status::class);
+        $this->status = $var;
 
         return $this;
     }
