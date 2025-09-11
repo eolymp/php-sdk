@@ -19,41 +19,41 @@ class Status
     /**
      * Order is created but not ready for processing yet (eg. unpaid).
      *
-     * Generated from protobuf enum <code>STATUS_CREATED = 1;</code>
+     * Generated from protobuf enum <code>CREATED = 1;</code>
      */
-    const STATUS_CREATED = 1;
+    const CREATED = 1;
     /**
      * Order is pending to be processed.
      *
-     * Generated from protobuf enum <code>STATUS_PENDING = 2;</code>
+     * Generated from protobuf enum <code>PENDING = 2;</code>
      */
-    const STATUS_PENDING = 2;
+    const PENDING = 2;
     /**
      * Order is ready for processing.
      *
-     * Generated from protobuf enum <code>STATUS_PROCESSING = 3;</code>
+     * Generated from protobuf enum <code>PROCESSING = 3;</code>
      */
-    const STATUS_PROCESSING = 3;
+    const PROCESSING = 3;
     /**
      * Order is canceled.
      *
-     * Generated from protobuf enum <code>STATUS_CANCELED = 4;</code>
+     * Generated from protobuf enum <code>CANCELED = 4;</code>
      */
-    const STATUS_CANCELED = 4;
+    const CANCELED = 4;
     /**
      * Order is shipped.
      *
-     * Generated from protobuf enum <code>STATUS_SHIPPED = 5;</code>
+     * Generated from protobuf enum <code>SHIPPED = 5;</code>
      */
-    const STATUS_SHIPPED = 5;
+    const SHIPPED = 5;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
-        self::STATUS_CREATED => 'STATUS_CREATED',
-        self::STATUS_PENDING => 'STATUS_PENDING',
-        self::STATUS_PROCESSING => 'STATUS_PROCESSING',
-        self::STATUS_CANCELED => 'STATUS_CANCELED',
-        self::STATUS_SHIPPED => 'STATUS_SHIPPED',
+        self::CREATED => 'CREATED',
+        self::PENDING => 'PENDING',
+        self::PROCESSING => 'PROCESSING',
+        self::CANCELED => 'CANCELED',
+        self::SHIPPED => 'SHIPPED',
     ];
 
     public static function name($value)
