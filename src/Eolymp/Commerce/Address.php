@@ -15,6 +15,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class Address extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string name = 100;</code>
+     */
+    protected $name = '';
+    /**
+     * Generated from protobuf field <code>string phone = 101;</code>
+     */
+    protected $phone = '';
+    /**
+     * Generated from protobuf field <code>string email = 102;</code>
+     */
+    protected $email = '';
+    /**
      * two letter code, lowercase
      *
      * Generated from protobuf field <code>string country = 200;</code>
@@ -37,9 +49,17 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     protected $line1 = '';
     /**
+     * Generated from protobuf field <code>string house_number = 212;</code>
+     */
+    protected $house_number = '';
+    /**
      * Generated from protobuf field <code>string line2 = 211;</code>
      */
     protected $line2 = '';
+    /**
+     * Generated from protobuf field <code>string pickup_location = 300;</code>
+     */
+    protected $pickup_location = '';
 
     /**
      * Constructor.
@@ -47,18 +67,89 @@ class Address extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type string $phone
+     *     @type string $email
      *     @type string $country
      *           two letter code, lowercase
      *     @type string $state
      *     @type string $postal_code
      *     @type string $city
      *     @type string $line1
+     *     @type string $house_number
      *     @type string $line2
+     *     @type string $pickup_location
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\Address::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 100;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string phone = 101;</code>
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string phone = 101;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPhone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->phone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 102;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Generated from protobuf field <code>string email = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
     }
 
     /**
@@ -176,6 +267,28 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string house_number = 212;</code>
+     * @return string
+     */
+    public function getHouseNumber()
+    {
+        return $this->house_number;
+    }
+
+    /**
+     * Generated from protobuf field <code>string house_number = 212;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHouseNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->house_number = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string line2 = 211;</code>
      * @return string
      */
@@ -193,6 +306,28 @@ class Address extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->line2 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pickup_location = 300;</code>
+     * @return string
+     */
+    public function getPickupLocation()
+    {
+        return $this->pickup_location;
+    }
+
+    /**
+     * Generated from protobuf field <code>string pickup_location = 300;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPickupLocation($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pickup_location = $var;
 
         return $this;
     }
