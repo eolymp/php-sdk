@@ -46,18 +46,7 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 11;</code>
      */
     protected $locale = '';
-    /**
-     * Generated from protobuf field <code>string subject = 12;</code>
-     */
-    protected $subject = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 13;</code>
-     */
-    protected $content = null;
-    /**
-     * Generated from protobuf field <code>map<string, string> parameters = 14;</code>
-     */
-    private $parameters;
+    protected $content;
 
     /**
      * Constructor.
@@ -75,9 +64,10 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      *           for internal use, campaign id for tracking feedback
      *     @type string $locale
      *           locale for the content
-     *     @type string $subject
-     *     @type \Eolymp\Ecm\Content $content
-     *     @type array|\Google\Protobuf\Internal\MapField $parameters
+     *     @type \Eolymp\Community\SendEmailInput\Message $message
+     *           send specific message
+     *     @type \Eolymp\Community\SendEmailInput\Fragment $fragment
+     *           send message from content fragment
      * }
      */
     public function __construct($data = NULL) {
@@ -234,79 +224,73 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 12;</code>
-     * @return string
+     * send specific message
+     *
+     * Generated from protobuf field <code>.eolymp.community.SendEmailInput.Message message = 30;</code>
+     * @return \Eolymp\Community\SendEmailInput\Message|null
      */
-    public function getSubject()
+    public function getMessage()
     {
-        return $this->subject;
+        return $this->readOneof(30);
+    }
+
+    public function hasMessage()
+    {
+        return $this->hasOneof(30);
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 12;</code>
-     * @param string $var
+     * send specific message
+     *
+     * Generated from protobuf field <code>.eolymp.community.SendEmailInput.Message message = 30;</code>
+     * @param \Eolymp\Community\SendEmailInput\Message $var
      * @return $this
      */
-    public function setSubject($var)
+    public function setMessage($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->subject = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Community\SendEmailInput\Message::class);
+        $this->writeOneof(30, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 13;</code>
-     * @return \Eolymp\Ecm\Content|null
+     * send message from content fragment
+     *
+     * Generated from protobuf field <code>.eolymp.community.SendEmailInput.Fragment fragment = 31;</code>
+     * @return \Eolymp\Community\SendEmailInput\Fragment|null
+     */
+    public function getFragment()
+    {
+        return $this->readOneof(31);
+    }
+
+    public function hasFragment()
+    {
+        return $this->hasOneof(31);
+    }
+
+    /**
+     * send message from content fragment
+     *
+     * Generated from protobuf field <code>.eolymp.community.SendEmailInput.Fragment fragment = 31;</code>
+     * @param \Eolymp\Community\SendEmailInput\Fragment $var
+     * @return $this
+     */
+    public function setFragment($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\SendEmailInput\Fragment::class);
+        $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
      */
     public function getContent()
     {
-        return $this->content;
-    }
-
-    public function hasContent()
-    {
-        return isset($this->content);
-    }
-
-    public function clearContent()
-    {
-        unset($this->content);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 13;</code>
-     * @param \Eolymp\Ecm\Content $var
-     * @return $this
-     */
-    public function setContent($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->content = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> parameters = 14;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getParameters()
-    {
-        return $this->parameters;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> parameters = 14;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setParameters($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->parameters = $arr;
-
-        return $this;
+        return $this->whichOneof("content");
     }
 
 }
