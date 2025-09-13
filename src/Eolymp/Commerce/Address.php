@@ -23,10 +23,6 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     protected $phone = '';
     /**
-     * Generated from protobuf field <code>string email = 102;</code>
-     */
-    protected $email = '';
-    /**
      * two letter code, lowercase
      *
      * Generated from protobuf field <code>string country = 200;</code>
@@ -69,7 +65,6 @@ class Address extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *     @type string $phone
-     *     @type string $email
      *     @type string $country
      *           two letter code, lowercase
      *     @type string $state
@@ -126,28 +121,6 @@ class Address extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->phone = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 102;</code>
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string email = 102;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->email = $var;
 
         return $this;
     }
