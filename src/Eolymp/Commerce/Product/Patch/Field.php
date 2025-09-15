@@ -56,6 +56,10 @@ class Field
      * Generated from protobuf enum <code>INACTIVE = 10;</code>
      */
     const INACTIVE = 10;
+    /**
+     * Generated from protobuf enum <code>BACKORDER = 12;</code>
+     */
+    const BACKORDER = 12;
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
@@ -69,6 +73,7 @@ class Field
         self::VARIANTS => 'VARIANTS',
         self::FEATURED => 'FEATURED',
         self::INACTIVE => 'INACTIVE',
+        self::BACKORDER => 'BACKORDER',
     ];
 
     public static function name($value)

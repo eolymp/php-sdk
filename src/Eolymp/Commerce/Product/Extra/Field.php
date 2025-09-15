@@ -17,6 +17,14 @@ class Field
      */
     const UNKNOWN_FIELD = 0;
     /**
+     * Generated from protobuf enum <code>SUMMARY_VALUE = 5;</code>
+     */
+    const SUMMARY_VALUE = 5;
+    /**
+     * Generated from protobuf enum <code>SUMMARY_RENDER = 6;</code>
+     */
+    const SUMMARY_RENDER = 6;
+    /**
      * Generated from protobuf enum <code>DESCRIPTION_VALUE = 1;</code>
      */
     const DESCRIPTION_VALUE = 1;
@@ -35,6 +43,8 @@ class Field
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
+        self::SUMMARY_VALUE => 'SUMMARY_VALUE',
+        self::SUMMARY_RENDER => 'SUMMARY_RENDER',
         self::DESCRIPTION_VALUE => 'DESCRIPTION_VALUE',
         self::DESCRIPTION_RENDER => 'DESCRIPTION_RENDER',
         self::ATTRIBUTES => 'ATTRIBUTES',
