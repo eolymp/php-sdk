@@ -23,7 +23,15 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * short product specification
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 3;</code>
+     */
+    protected $summary = null;
+    /**
+     * longer product description
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
      */
     protected $description = null;
     /**
@@ -34,6 +42,18 @@ class Product extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      */
     protected $out_of_stock = false;
+    /**
+     * Generated from protobuf field <code>bool featured = 31;</code>
+     */
+    protected $featured = false;
+    /**
+     * Generated from protobuf field <code>bool inactive = 32;</code>
+     */
+    protected $inactive = false;
+    /**
+     * Generated from protobuf field <code>bool backorder = 33;</code>
+     */
+    protected $backorder = false;
     /**
      * Generated from protobuf field <code>string currency = 20;</code>
      */
@@ -59,9 +79,15 @@ class Product extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
+     *     @type \Eolymp\Ecm\Content $summary
+     *           short product specification
      *     @type \Eolymp\Ecm\Content $description
+     *           longer product description
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
+     *     @type bool $featured
+     *     @type bool $inactive
+     *     @type bool $backorder
      *     @type string $currency
      *     @type int $unit_price
      *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
@@ -118,7 +144,45 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * short product specification
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 3;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    public function hasSummary()
+    {
+        return isset($this->summary);
+    }
+
+    public function clearSummary()
+    {
+        unset($this->summary);
+    }
+
+    /**
+     * short product specification
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * longer product description
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
      * @return \Eolymp\Ecm\Content|null
      */
     public function getDescription()
@@ -137,7 +201,9 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * longer product description
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
@@ -189,6 +255,72 @@ class Product extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->out_of_stock = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool featured = 31;</code>
+     * @return bool
+     */
+    public function getFeatured()
+    {
+        return $this->featured;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool featured = 31;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFeatured($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->featured = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool inactive = 32;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool inactive = 32;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool backorder = 33;</code>
+     * @return bool
+     */
+    public function getBackorder()
+    {
+        return $this->backorder;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool backorder = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBackorder($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->backorder = $var;
 
         return $this;
     }

@@ -25,6 +25,10 @@ class Field
      */
     const NAME = 2;
     /**
+     * Generated from protobuf enum <code>SUMMARY = 11;</code>
+     */
+    const SUMMARY = 11;
+    /**
      * Generated from protobuf enum <code>DESCRIPTION = 3;</code>
      */
     const DESCRIPTION = 3;
@@ -44,16 +48,27 @@ class Field
      * Generated from protobuf enum <code>VARIANTS = 8;</code>
      */
     const VARIANTS = 8;
+    /**
+     * Generated from protobuf enum <code>FEATURED = 9;</code>
+     */
+    const FEATURED = 9;
+    /**
+     * Generated from protobuf enum <code>INACTIVE = 10;</code>
+     */
+    const INACTIVE = 10;
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
         self::ALL => 'ALL',
         self::NAME => 'NAME',
+        self::SUMMARY => 'SUMMARY',
         self::DESCRIPTION => 'DESCRIPTION',
         self::IMAGES => 'IMAGES',
         self::UNIT_PRICE => 'UNIT_PRICE',
         self::ATTRIBUTES => 'ATTRIBUTES',
         self::VARIANTS => 'VARIANTS',
+        self::FEATURED => 'FEATURED',
+        self::INACTIVE => 'INACTIVE',
     ];
 
     public static function name($value)

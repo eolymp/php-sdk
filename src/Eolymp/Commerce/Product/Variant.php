@@ -21,6 +21,10 @@ class Variant extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     */
+    protected $name = '';
+    /**
      * Generated from protobuf field <code>map<string, string> values = 2;</code>
      */
     private $values;
@@ -32,6 +36,10 @@ class Variant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      */
     protected $out_of_stock = false;
+    /**
+     * Generated from protobuf field <code>bool available_qty = 33;</code>
+     */
+    protected $available_qty = false;
 
     /**
      * Constructor.
@@ -40,9 +48,11 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $name
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
+     *     @type bool $available_qty
      * }
      */
     public function __construct($data = NULL) {
@@ -68,6 +78,28 @@ class Variant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }
@@ -134,6 +166,28 @@ class Variant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->out_of_stock = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool available_qty = 33;</code>
+     * @return bool
+     */
+    public function getAvailableQty()
+    {
+        return $this->available_qty;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool available_qty = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAvailableQty($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->available_qty = $var;
 
         return $this;
     }
