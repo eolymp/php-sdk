@@ -37,9 +37,9 @@ class Variant extends \Google\Protobuf\Internal\Message
      */
     protected $out_of_stock = false;
     /**
-     * Generated from protobuf field <code>bool available_qty = 33;</code>
+     * Generated from protobuf field <code>int32 available_quantity = 33;</code>
      */
-    protected $available_qty = false;
+    protected $available_quantity = 0;
 
     /**
      * Constructor.
@@ -52,7 +52,7 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
-     *     @type bool $available_qty
+     *     @type int $available_quantity
      * }
      */
     public function __construct($data = NULL) {
@@ -171,23 +171,23 @@ class Variant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool available_qty = 33;</code>
-     * @return bool
+     * Generated from protobuf field <code>int32 available_quantity = 33;</code>
+     * @return int
      */
-    public function getAvailableQty()
+    public function getAvailableQuantity()
     {
-        return $this->available_qty;
+        return $this->available_quantity;
     }
 
     /**
-     * Generated from protobuf field <code>bool available_qty = 33;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>int32 available_quantity = 33;</code>
+     * @param int $var
      * @return $this
      */
-    public function setAvailableQty($var)
+    public function setAvailableQuantity($var)
     {
-        GPBUtil::checkBool($var);
-        $this->available_qty = $var;
+        GPBUtil::checkInt32($var);
+        $this->available_quantity = $var;
 
         return $this;
     }
