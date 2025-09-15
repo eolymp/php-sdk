@@ -33,10 +33,20 @@ class Variant extends \Google\Protobuf\Internal\Message
      */
     private $images;
     /**
+     * read-only, true if the variant is not available for order
+     *
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      */
     protected $out_of_stock = false;
     /**
+     * read-only, maximum quantity allowed in shopping cart
+     *
+     * Generated from protobuf field <code>int32 max_quantity = 34;</code>
+     */
+    protected $max_quantity = 0;
+    /**
+     * available quantity
+     *
      * Generated from protobuf field <code>int32 available_quantity = 33;</code>
      */
     protected $available_quantity = 0;
@@ -52,7 +62,11 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
+     *           read-only, true if the variant is not available for order
+     *     @type int $max_quantity
+     *           read-only, maximum quantity allowed in shopping cart
      *     @type int $available_quantity
+     *           available quantity
      * }
      */
     public function __construct($data = NULL) {
@@ -149,6 +163,8 @@ class Variant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * read-only, true if the variant is not available for order
+     *
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      * @return bool
      */
@@ -158,6 +174,8 @@ class Variant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * read-only, true if the variant is not available for order
+     *
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      * @param bool $var
      * @return $this
@@ -171,6 +189,34 @@ class Variant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * read-only, maximum quantity allowed in shopping cart
+     *
+     * Generated from protobuf field <code>int32 max_quantity = 34;</code>
+     * @return int
+     */
+    public function getMaxQuantity()
+    {
+        return $this->max_quantity;
+    }
+
+    /**
+     * read-only, maximum quantity allowed in shopping cart
+     *
+     * Generated from protobuf field <code>int32 max_quantity = 34;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxQuantity($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->max_quantity = $var;
+
+        return $this;
+    }
+
+    /**
+     * available quantity
+     *
      * Generated from protobuf field <code>int32 available_quantity = 33;</code>
      * @return int
      */
@@ -180,6 +226,8 @@ class Variant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * available quantity
+     *
      * Generated from protobuf field <code>int32 available_quantity = 33;</code>
      * @param int $var
      * @return $this

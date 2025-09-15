@@ -51,6 +51,10 @@ class Item extends \Google\Protobuf\Internal\Message
      */
     protected $quantity_returned = 0;
     /**
+     * Generated from protobuf field <code>uint32 quantity_allocated = 14;</code>
+     */
+    protected $quantity_allocated = 0;
+    /**
      * Generated from protobuf field <code>uint32 unit_amount = 21;</code>
      */
     protected $unit_amount = 0;
@@ -78,6 +82,7 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type int $quantity_cancelled
      *     @type int $quantity_shipped
      *     @type int $quantity_returned
+     *     @type int $quantity_allocated
      *     @type int $unit_amount
      *     @type int $total_amount
      *     @type int $discount_amount
@@ -282,6 +287,28 @@ class Item extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->quantity_returned = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_allocated = 14;</code>
+     * @return int
+     */
+    public function getQuantityAllocated()
+    {
+        return $this->quantity_allocated;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 quantity_allocated = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setQuantityAllocated($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->quantity_allocated = $var;
 
         return $this;
     }

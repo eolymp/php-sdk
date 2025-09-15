@@ -39,6 +39,8 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     private $images;
     /**
+     * all variants are out of stock
+     *
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      */
     protected $out_of_stock = false;
@@ -85,6 +87,7 @@ class Product extends \Google\Protobuf\Internal\Message
      *           longer product description
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
+     *           all variants are out of stock
      *     @type bool $featured
      *     @type bool $inactive
      *     @type bool $backorder
@@ -238,6 +241,8 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * all variants are out of stock
+     *
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      * @return bool
      */
@@ -247,6 +252,8 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * all variants are out of stock
+     *
      * Generated from protobuf field <code>bool out_of_stock = 30;</code>
      * @param bool $var
      * @return $this
