@@ -26,6 +26,10 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $reference = '';
     /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.commerce.Order.Status status = 3;</code>
      */
     protected $status = 0;
@@ -100,6 +104,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $reference
+     *     @type string $member_id
      *     @type int $status
      *     @type array<\Eolymp\Commerce\Order\Item>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type \Eolymp\Commerce\Address $billing_address
@@ -164,6 +169,28 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reference = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
