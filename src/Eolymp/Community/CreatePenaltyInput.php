@@ -18,10 +18,6 @@ class CreatePenaltyInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 1;</code>
      */
     protected $penalty = null;
-    /**
-     * Generated from protobuf field <code>bool dont_notify = 2;</code>
-     */
-    protected $dont_notify = false;
 
     /**
      * Constructor.
@@ -30,7 +26,6 @@ class CreatePenaltyInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Community\Penalty $penalty
-     *     @type bool $dont_notify
      * }
      */
     public function __construct($data = NULL) {
@@ -66,28 +61,6 @@ class CreatePenaltyInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\Penalty::class);
         $this->penalty = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool dont_notify = 2;</code>
-     * @return bool
-     */
-    public function getDontNotify()
-    {
-        return $this->dont_notify;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool dont_notify = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setDontNotify($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->dont_notify = $var;
 
         return $this;
     }

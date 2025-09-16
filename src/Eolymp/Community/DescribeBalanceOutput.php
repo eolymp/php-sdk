@@ -10,14 +10,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.CreateCreditOutput</code>
+ * Generated from protobuf message <code>eolymp.community.DescribeBalanceOutput</code>
  */
-class CreateCreditOutput extends \Google\Protobuf\Internal\Message
+class DescribeBalanceOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>uint32 balance = 1;</code>
      */
-    protected $credit_id = '';
+    protected $balance = 0;
 
     /**
      * Constructor.
@@ -25,7 +25,7 @@ class CreateCreditOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $credit_id
+     *     @type int $balance
      * }
      */
     public function __construct($data = NULL) {
@@ -34,23 +34,23 @@ class CreateCreditOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 balance = 1;</code>
+     * @return int
      */
-    public function getCreditId()
+    public function getBalance()
     {
-        return $this->credit_id;
+        return $this->balance;
     }
 
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 balance = 1;</code>
+     * @param int $var
      * @return $this
      */
-    public function setCreditId($var)
+    public function setBalance($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->credit_id = $var;
+        GPBUtil::checkUint32($var);
+        $this->balance = $var;
 
         return $this;
     }

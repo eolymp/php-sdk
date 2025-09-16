@@ -3,14 +3,14 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: eolymp/community/credit_service.proto
 
-namespace Eolymp\Community\ListCreditsInput;
+namespace Eolymp\Community\ListCreditGrantsInput;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.ListCreditsInput.Filter</code>
+ * Generated from protobuf message <code>eolymp.community.ListCreditGrantsInput.Filter</code>
  */
 class Filter extends \Google\Protobuf\Internal\Message
 {

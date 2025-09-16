@@ -27,6 +27,10 @@ class Penalty extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
+     * Generated from protobuf field <code>bool silent = 4;</code>
+     */
+    protected $silent = false;
+    /**
      * Generated from protobuf field <code>repeated string scope = 20;</code>
      */
     private $scope;
@@ -52,6 +56,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $summary
      *     @type \Eolymp\Ecm\Content $description
+     *     @type bool $silent
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $expires_at
@@ -135,6 +140,28 @@ class Penalty extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool silent = 4;</code>
+     * @return bool
+     */
+    public function getSilent()
+    {
+        return $this->silent;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool silent = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSilent($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->silent = $var;
 
         return $this;
     }

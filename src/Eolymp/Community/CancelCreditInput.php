@@ -10,14 +10,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.DeleteCreditInput</code>
+ * Generated from protobuf message <code>eolymp.community.CancelCreditInput</code>
  */
-class DeleteCreditInput extends \Google\Protobuf\Internal\Message
+class CancelCreditInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>string grant_id = 1;</code>
      */
-    protected $credit_id = '';
+    protected $grant_id = '';
 
     /**
      * Constructor.
@@ -25,7 +25,7 @@ class DeleteCreditInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $credit_id
+     *     @type string $grant_id
      * }
      */
     public function __construct($data = NULL) {
@@ -34,23 +34,23 @@ class DeleteCreditInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>string grant_id = 1;</code>
      * @return string
      */
-    public function getCreditId()
+    public function getGrantId()
     {
-        return $this->credit_id;
+        return $this->grant_id;
     }
 
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>string grant_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setCreditId($var)
+    public function setGrantId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->credit_id = $var;
+        $this->grant_id = $var;
 
         return $this;
     }

@@ -10,16 +10,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.ListCreditsOutput</code>
+ * Generated from protobuf message <code>eolymp.community.ListCreditTransactionsOutput</code>
  */
-class ListCreditsOutput extends \Google\Protobuf\Internal\Message
+class ListCreditTransactionsOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 total = 1;</code>
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Credit items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Credit.Transaction items = 2;</code>
      */
     private $items;
 
@@ -30,7 +30,7 @@ class ListCreditsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Community\Credit>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\Eolymp\Community\Credit\Transaction>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -61,7 +61,7 @@ class ListCreditsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Credit items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Credit.Transaction items = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -70,13 +70,13 @@ class ListCreditsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Credit items = 2;</code>
-     * @param array<\Eolymp\Community\Credit>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.community.Credit.Transaction items = 2;</code>
+     * @param array<\Eolymp\Community\Credit\Transaction>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Credit::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Credit\Transaction::class);
         $this->items = $arr;
 
         return $this;

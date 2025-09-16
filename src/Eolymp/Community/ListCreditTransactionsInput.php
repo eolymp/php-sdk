@@ -10,9 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.community.ListCreditsInput</code>
+ * Generated from protobuf message <code>eolymp.community.ListCreditTransactionsInput</code>
  */
-class ListCreditsInput extends \Google\Protobuf\Internal\Message
+class ListCreditTransactionsInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
@@ -23,7 +23,7 @@ class ListCreditsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.community.ListCreditsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.community.ListCreditTransactionsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
 
@@ -35,7 +35,7 @@ class ListCreditsInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $offset
      *     @type int $size
-     *     @type \Eolymp\Community\ListCreditsInput\Filter $filters
+     *     @type \Eolymp\Community\ListCreditTransactionsInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
@@ -88,8 +88,8 @@ class ListCreditsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.ListCreditsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Community\ListCreditsInput\Filter|null
+     * Generated from protobuf field <code>.eolymp.community.ListCreditTransactionsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Community\ListCreditTransactionsInput\Filter|null
      */
     public function getFilters()
     {
@@ -107,13 +107,13 @@ class ListCreditsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.ListCreditsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Community\ListCreditsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.community.ListCreditTransactionsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Community\ListCreditTransactionsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\ListCreditsInput\Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\ListCreditTransactionsInput\Filter::class);
         $this->filters = $var;
 
         return $this;

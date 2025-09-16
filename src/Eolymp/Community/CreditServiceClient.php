@@ -27,21 +27,39 @@ class CreditServiceClient {
     }
 
     /**
-     * CreateCredit adds a new credit record for a member.
+     * DescribeBalance returns the current balance of credits for a member.
      *
-     * @param CreateCreditInput $input message
+     * @param DescribeBalanceInput $input message
      * @param array $context request parameters
      *
-     * @return CreateCreditOutput output message
+     * @return DescribeBalanceOutput output message
      */
-    public function CreateCredit(CreateCreditInput $input, array $context = [])
+    public function DescribeBalance(DescribeBalanceInput $input, array $context = [])
     {
-        $path = "/credits";
+        $path = "/credit/balance";
 
-        $context['name'] = "eolymp.community.CreditService/CreateCredit";
+        $context['name'] = "eolymp.community.CreditService/DescribeBalance";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateCreditOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeBalanceOutput::class, $context);
+    }
+
+    /**
+     * GrantCredit grants new credits to a member.
+     *
+     * @param GrantCreditInput $input message
+     * @param array $context request parameters
+     *
+     * @return GrantCreditOutput output message
+     */
+    public function GrantCredit(GrantCreditInput $input, array $context = [])
+    {
+        $path = "/credit/grants";
+
+        $context['name'] = "eolymp.community.CreditService/GrantCredit";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, GrantCreditOutput::class, $context);
     }
 
     /**
@@ -49,40 +67,40 @@ class CreditServiceClient {
      * This method should be used in rare cases, when it's necessary to leave no trace of a credit record.
      * Generally and changes in user balance should be done by creating new credit records.
      *
-     * @param DeleteCreditInput $input message
+     * @param CancelCreditInput $input message
      * @param array $context request parameters
      *
-     * @return DeleteCreditOutput output message
+     * @return CancelCreditOutput output message
      */
-    public function DeleteCredit(DeleteCreditInput $input, array $context = [])
+    public function CancelCredit(CancelCreditInput $input, array $context = [])
     {
-        $path = "/credits/".rawurlencode($input->getCreditId());
+        $path = "/credit/grants/".rawurlencode($input->getGrantId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setCreditId("");
+        $input->setGrantId("");
 
-        $context['name'] = "eolymp.community.CreditService/DeleteCredit";
+        $context['name'] = "eolymp.community.CreditService/CancelCredit";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteCreditOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, CancelCreditOutput::class, $context);
     }
 
     /**
      * ListCredits returns a list of credit records for a member.
      *
-     * @param ListCreditsInput $input message
+     * @param ListCreditGrantsInput $input message
      * @param array $context request parameters
      *
-     * @return ListCreditsOutput output message
+     * @return ListCreditGrantsOutput output message
      */
-    public function ListCredits(ListCreditsInput $input, array $context = [])
+    public function ListCreditGrants(ListCreditGrantsInput $input, array $context = [])
     {
-        $path = "/credits";
+        $path = "/credit/grants";
 
-        $context['name'] = "eolymp.community.CreditService/ListCredits";
+        $context['name'] = "eolymp.community.CreditService/ListCreditGrants";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditsOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditGrantsOutput::class, $context);
     }
 
     /**
@@ -96,7 +114,7 @@ class CreditServiceClient {
      */
     public function RedeemCredit(RedeemCreditInput $input, array $context = [])
     {
-        $path = "/credits:redeem";
+        $path = "/credit/redeem";
 
         $context['name'] = "eolymp.community.CreditService/RedeemCredit";
         $context['path'] = $path;
@@ -105,21 +123,21 @@ class CreditServiceClient {
     }
 
     /**
-     * DescribeBalance returns the current balance of credits for a member.
+     * ListCredits returns a list of credit records for a member.
      *
-     * @param DescribeCreditBalanceInput $input message
+     * @param ListCreditTransactionsInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeCreditBalanceOutput output message
+     * @return ListCreditTransactionsOutput output message
      */
-    public function DescribeBalance(DescribeCreditBalanceInput $input, array $context = [])
+    public function ListCreditTransactions(ListCreditTransactionsInput $input, array $context = [])
     {
-        $path = "/credits:balance";
+        $path = "/credit/grants";
 
-        $context['name'] = "eolymp.community.CreditService/DescribeBalance";
+        $context['name'] = "eolymp.community.CreditService/ListCreditTransactions";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCreditBalanceOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListCreditTransactionsOutput::class, $context);
     }
 
     /**
@@ -133,10 +151,10 @@ class CreditServiceClient {
      */
     public function RefundCredit(RefundCreditInput $input, array $context = [])
     {
-        $path = "/credits/".rawurlencode($input->getCreditId())."/refund";
+        $path = "/credit/transactions/".rawurlencode($input->getTransactionId())."/refund";
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setCreditId("");
+        $input->setTransactionId("");
 
         $context['name'] = "eolymp.community.CreditService/RefundCredit";
         $context['path'] = $path;

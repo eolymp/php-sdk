@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class RedeemCreditOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string transaction_id = 1;</code>
+     */
+    protected $transaction_id = '';
 
     /**
      * Constructor.
@@ -21,11 +25,34 @@ class RedeemCreditOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $transaction_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\CreditService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string transaction_id = 1;</code>
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->transaction_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string transaction_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTransactionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->transaction_id = $var;
+
+        return $this;
     }
 
 }

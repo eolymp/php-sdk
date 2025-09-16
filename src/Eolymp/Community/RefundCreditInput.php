@@ -15,9 +15,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class RefundCreditInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>string transaction_id = 1;</code>
      */
-    protected $credit_id = '';
+    protected $transaction_id = '';
     /**
      * Generated from protobuf field <code>uint32 amount = 2;</code>
      */
@@ -29,7 +29,7 @@ class RefundCreditInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $credit_id
+     *     @type string $transaction_id
      *     @type int $amount
      * }
      */
@@ -39,23 +39,23 @@ class RefundCreditInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>string transaction_id = 1;</code>
      * @return string
      */
-    public function getCreditId()
+    public function getTransactionId()
     {
-        return $this->credit_id;
+        return $this->transaction_id;
     }
 
     /**
-     * Generated from protobuf field <code>string credit_id = 1;</code>
+     * Generated from protobuf field <code>string transaction_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setCreditId($var)
+    public function setTransactionId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->credit_id = $var;
+        $this->transaction_id = $var;
 
         return $this;
     }
