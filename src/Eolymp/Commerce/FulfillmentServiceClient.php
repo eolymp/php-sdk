@@ -41,4 +41,26 @@ class FulfillmentServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, AllocateStockOutput::class, $context);
     }
 
+    /**
+     * RejectOrder allows admin to reject an order with a reason that will be shown to the user.
+     * This is different from CancelOrder which is user-initiated without a reason.
+     *
+     * @param RejectOrderInput $input message
+     * @param array $context request parameters
+     *
+     * @return RejectOrderOutput output message
+     */
+    public function RejectOrder(RejectOrderInput $input, array $context = [])
+    {
+        $path = "/store/orders/".rawurlencode($input->getOrderId())."/reject";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setOrderId("");
+
+        $context['name'] = "eolymp.commerce.FulfillmentService/RejectOrder";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RejectOrderOutput::class, $context);
+    }
+
 }

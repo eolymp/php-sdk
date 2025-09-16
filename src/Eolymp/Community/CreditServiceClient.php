@@ -122,4 +122,26 @@ class CreditServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeCreditBalanceOutput::class, $context);
     }
 
+    /**
+     * RefundCredit refunds a specified amount from a credit record.
+     * This creates a new credit record with negative amount to reverse the original credit.
+     *
+     * @param RefundCreditInput $input message
+     * @param array $context request parameters
+     *
+     * @return RefundCreditOutput output message
+     */
+    public function RefundCredit(RefundCreditInput $input, array $context = [])
+    {
+        $path = "/credits/".rawurlencode($input->getCreditId())."/refund";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCreditId("");
+
+        $context['name'] = "eolymp.community.CreditService/RefundCredit";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RefundCreditOutput::class, $context);
+    }
+
 }

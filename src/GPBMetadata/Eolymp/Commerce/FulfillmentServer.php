@@ -18,11 +18,9 @@ class FulfillmentServer
         \GPBMetadata\Eolymp\Annotations\Http::initOnce();
         \GPBMetadata\Eolymp\Annotations\Ratelimit::initOnce();
         \GPBMetadata\Eolymp\Annotations\Scope::initOnce();
-        \GPBMetadata\Eolymp\Commerce\Order::initOnce();
-        \GPBMetadata\Eolymp\Wellknown\Direction::initOnce();
-        \GPBMetadata\Eolymp\Wellknown\Expression::initOnce();
+        \GPBMetadata\Eolymp\Ecm\Content::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xA8\x04\x0A(eolymp/commerce/fulfillment_server.proto\x12\x0Feolymp.commerce\x1A\"eolymp/annotations/ratelimit.proto\x1A\x1Eeolymp/annotations/scope.proto\x1A\x1Beolymp/commerce/order.proto\x1A eolymp/wellknown/direction.proto\x1A!eolymp/wellknown/expression.proto\"&\x0A\x12AllocateStockInput\x12\x10\x0A\x08order_id\x18\x01 \x01(\x09\"\x15\x0A\x13AllocateStockOutput2\xC8\x01\x0A\x12FulfillmentService\x12\xB1\x01\x0A\x0DAllocateStock\x12#.eolymp.commerce.AllocateStockInput\x1A\$.eolymp.commerce.AllocateStockOutput\"U\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A2\x82\xE3\x0A\x19\x8A\xE3\x0A\x15commerce:orders:write\x82\xD3\xE4\x93\x02#\"!/store/orders/{order_id}/allocateB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3"
+            "\x0A\xEC\x05\x0A(eolymp/commerce/fulfillment_server.proto\x12\x0Feolymp.commerce\x1A\"eolymp/annotations/ratelimit.proto\x1A\x1Eeolymp/annotations/scope.proto\x1A\x18eolymp/ecm/content.proto\"&\x0A\x12AllocateStockInput\x12\x10\x0A\x08order_id\x18\x01 \x01(\x09\"\x15\x0A\x13AllocateStockOutput\"I\x0A\x10RejectOrderInput\x12\x10\x0A\x08order_id\x18\x01 \x01(\x09\x12#\x0A\x06reason\x18\x02 \x01(\x0B2\x13.eolymp.ecm.Content\"\x13\x0A\x11RejectOrderOutput2\xF4\x02\x0A\x12FulfillmentService\x12\xB1\x01\x0A\x0DAllocateStock\x12#.eolymp.commerce.AllocateStockInput\x1A\$.eolymp.commerce.AllocateStockOutput\"U\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A2\x82\xE3\x0A\x19\x8A\xE3\x0A\x15commerce:orders:write\x82\xD3\xE4\x93\x02#\"!/store/orders/{order_id}/allocate\x12\xA9\x01\x0A\x0BRejectOrder\x12!.eolymp.commerce.RejectOrderInput\x1A\".eolymp.commerce.RejectOrderOutput\"S\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A2\x82\xE3\x0A\x19\x8A\xE3\x0A\x15commerce:orders:write\x82\xD3\xE4\x93\x02!\"\x1F/store/orders/{order_id}/rejectB3Z1github.com/eolymp/go-sdk/eolymp/commerce;commerceb\x06proto3"
         , true);
 
         static::$is_initialized = true;
