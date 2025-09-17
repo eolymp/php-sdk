@@ -88,6 +88,10 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $grand_total = 0;
     /**
+     * Generated from protobuf field <code>string tracking_url = 50;</code>
+     */
+    protected $tracking_url = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 100;</code>
      */
     protected $created_at = null;
@@ -120,6 +124,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *           in hundredth of percent, e.g. 755 means 7.55%
      *     @type string $tax_note
      *     @type int $grand_total
+     *     @type string $tracking_url
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      * }
@@ -533,6 +538,28 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->grand_total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tracking_url = 50;</code>
+     * @return string
+     */
+    public function getTrackingUrl()
+    {
+        return $this->tracking_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tracking_url = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrackingUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tracking_url = $var;
 
         return $this;
     }

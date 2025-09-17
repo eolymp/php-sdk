@@ -64,6 +64,25 @@ class FulfillmentServiceClient {
     }
 
     /**
+     * @param ProcessOrderInput $input message
+     * @param array $context request parameters
+     *
+     * @return ProcessOrderOutput output message
+     */
+    public function ProcessOrder(ProcessOrderInput $input, array $context = [])
+    {
+        $path = "/store/orders/".rawurlencode($input->getOrderId())."/process";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setOrderId("");
+
+        $context['name'] = "eolymp.commerce.FulfillmentService/ProcessOrder";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ProcessOrderOutput::class, $context);
+    }
+
+    /**
      * @param ShipOrderInput $input message
      * @param array $context request parameters
      *
