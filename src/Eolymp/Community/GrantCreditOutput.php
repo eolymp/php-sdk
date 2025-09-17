@@ -18,6 +18,10 @@ class GrantCreditOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string grant_id = 1;</code>
      */
     protected $grant_id = '';
+    /**
+     * Generated from protobuf field <code>string transaction_id = 2;</code>
+     */
+    protected $transaction_id = '';
 
     /**
      * Constructor.
@@ -26,6 +30,7 @@ class GrantCreditOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $grant_id
+     *     @type string $transaction_id
      * }
      */
     public function __construct($data = NULL) {
@@ -51,6 +56,28 @@ class GrantCreditOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->grant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string transaction_id = 2;</code>
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->transaction_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string transaction_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTransactionId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->transaction_id = $var;
 
         return $this;
     }
