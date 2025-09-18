@@ -10,18 +10,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.commerce.ShipOrderInput</code>
+ * Generated from protobuf message <code>eolymp.commerce.CompleteOrderInput</code>
  */
-class ShipOrderInput extends \Google\Protobuf\Internal\Message
+class CompleteOrderInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string order_id = 1;</code>
      */
     protected $order_id = '';
-    /**
-     * Generated from protobuf field <code>string tracking_link = 2;</code>
-     */
-    protected $tracking_link = '';
 
     /**
      * Constructor.
@@ -30,7 +26,6 @@ class ShipOrderInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $order_id
-     *     @type string $tracking_link
      * }
      */
     public function __construct($data = NULL) {
@@ -56,28 +51,6 @@ class ShipOrderInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->order_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tracking_link = 2;</code>
-     * @return string
-     */
-    public function getTrackingLink()
-    {
-        return $this->tracking_link;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tracking_link = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTrackingLink($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->tracking_link = $var;
 
         return $this;
     }

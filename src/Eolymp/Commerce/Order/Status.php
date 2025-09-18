@@ -46,6 +46,12 @@ class Status
      * Generated from protobuf enum <code>SHIPPED = 5;</code>
      */
     const SHIPPED = 5;
+    /**
+     * Order is complete.
+     *
+     * Generated from protobuf enum <code>COMPLETE = 6;</code>
+     */
+    const COMPLETE = 6;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -54,6 +60,7 @@ class Status
         self::PROCESSING => 'PROCESSING',
         self::CANCELED => 'CANCELED',
         self::SHIPPED => 'SHIPPED',
+        self::COMPLETE => 'COMPLETE',
     ];
 
     public static function name($value)
