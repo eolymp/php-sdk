@@ -42,9 +42,9 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>string shipping_method = 50;</code>
+     * Generated from protobuf field <code>string shipping_method_id = 50;</code>
      */
-    protected $shipping_method = '';
+    protected $shipping_method_id = '';
     /**
      * Generated from protobuf field <code>uint32 total_amount = 21;</code>
      */
@@ -86,7 +86,7 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Commerce\Address $shipping_address
      *     @type bool $billing_same_as_shipping
      *     @type string $currency
-     *     @type string $shipping_method
+     *     @type string $shipping_method_id
      *     @type int $total_amount
      *     @type int $shipping_amount
      *     @type int $discount_amount
@@ -254,23 +254,23 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string shipping_method = 50;</code>
+     * Generated from protobuf field <code>string shipping_method_id = 50;</code>
      * @return string
      */
-    public function getShippingMethod()
+    public function getShippingMethodId()
     {
-        return $this->shipping_method;
+        return $this->shipping_method_id;
     }
 
     /**
-     * Generated from protobuf field <code>string shipping_method = 50;</code>
+     * Generated from protobuf field <code>string shipping_method_id = 50;</code>
      * @param string $var
      * @return $this
      */
-    public function setShippingMethod($var)
+    public function setShippingMethodId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->shipping_method = $var;
+        $this->shipping_method_id = $var;
 
         return $this;
     }
