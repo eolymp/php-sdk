@@ -122,6 +122,10 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 40;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
+     */
+    private $aliases;
 
     /**
      * Constructor.
@@ -165,6 +169,7 @@ class User extends \Google\Protobuf\Internal\Message
      *           Exact time when user has changed password last time
      *     @type string $locale
      *           Locale
+     *     @type array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
      * }
      */
     public function __construct($data = NULL) {
@@ -676,6 +681,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAliases()
+    {
+        return $this->aliases;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
+     * @param array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAliases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Cognito\User\Alias::class);
+        $this->aliases = $arr;
 
         return $this;
     }
