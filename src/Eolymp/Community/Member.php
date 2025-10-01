@@ -111,7 +111,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * List of groups IDs assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated string groups = 201;</code>
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
      */
     private $groups;
     /**
@@ -719,7 +719,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * List of groups IDs assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated string groups = 201;</code>
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGroups()
@@ -731,7 +731,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * List of groups IDs assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated string groups = 201;</code>
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
