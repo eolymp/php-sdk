@@ -25,9 +25,9 @@ class Field
      */
     const DESCRIPTION = 2;
     /**
-     * Generated from protobuf enum <code>KEY = 3;</code>
+     * Generated from protobuf enum <code>EXTERNAL_REF = 3;</code>
      */
-    const KEY = 3;
+    const EXTERNAL_REF = 3;
     /**
      * Generated from protobuf enum <code>ICON = 4;</code>
      */
@@ -40,15 +40,20 @@ class Field
      * Generated from protobuf enum <code>COLOR = 6;</code>
      */
     const COLOR = 6;
+    /**
+     * Generated from protobuf enum <code>METADATA = 7;</code>
+     */
+    const METADATA = 7;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
         self::NAME => 'NAME',
         self::DESCRIPTION => 'DESCRIPTION',
-        self::KEY => 'KEY',
+        self::EXTERNAL_REF => 'EXTERNAL_REF',
         self::ICON => 'ICON',
         self::BADGE => 'BADGE',
         self::COLOR => 'COLOR',
+        self::METADATA => 'METADATA',
     ];
 
     public static function name($value)
