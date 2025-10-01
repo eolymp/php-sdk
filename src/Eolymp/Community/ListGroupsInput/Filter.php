@@ -23,9 +23,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID key = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 4;</code>
      */
-    private $key;
+    private $external_ref;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
      */
@@ -39,7 +39,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type string $query
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $key
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $external_ref
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
      * }
      */
@@ -93,23 +93,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID key = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getKey()
+    public function getExternalRef()
     {
-        return $this->key;
+        return $this->external_ref;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID key = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 4;</code>
      * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setKey($var)
+    public function setExternalRef($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
-        $this->key = $arr;
+        $this->external_ref = $arr;
 
         return $this;
     }

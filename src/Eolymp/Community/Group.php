@@ -24,12 +24,6 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * a human friendly ID, optional
-     *
-     * Generated from protobuf field <code>string key = 4;</code>
-     */
-    protected $key = '';
-    /**
      * group name
      *
      * Generated from protobuf field <code>string name = 2;</code>
@@ -42,11 +36,9 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * index group order
-     *
-     * Generated from protobuf field <code>uint32 index = 5;</code>
+     * Generated from protobuf field <code>string external_ref = 4;</code>
      */
-    protected $index = 0;
+    protected $external_ref = '';
     /**
      * a URL for an icon, displayed in front of a username on the site
      *
@@ -65,6 +57,12 @@ class Group extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string color = 12;</code>
      */
     protected $color = '';
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     */
+    private $metadata;
 
     /**
      * Constructor.
@@ -73,20 +71,19 @@ class Group extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
-     *     @type string $key
-     *           a human friendly ID, optional
      *     @type string $name
      *           group name
      *     @type string $description
      *           group description
-     *     @type int $index
-     *           index group order
+     *     @type string $external_ref
      *     @type string $icon
      *           a URL for an icon, displayed in front of a username on the site
      *     @type string $badge
      *           a string displayed next to the username on the site
      *     @type string $color
      *           a hexadecimal color code, displayed in the given color.
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *           additional key-value properties used by external systems
      * }
      */
     public function __construct($data = NULL) {
@@ -112,32 +109,6 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * a human friendly ID, optional
-     *
-     * Generated from protobuf field <code>string key = 4;</code>
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-
-    /**
-     * a human friendly ID, optional
-     *
-     * Generated from protobuf field <code>string key = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setKey($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->key = $var;
 
         return $this;
     }
@@ -195,27 +166,23 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * index group order
-     *
-     * Generated from protobuf field <code>uint32 index = 5;</code>
-     * @return int
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * @return string
      */
-    public function getIndex()
+    public function getExternalRef()
     {
-        return $this->index;
+        return $this->external_ref;
     }
 
     /**
-     * index group order
-     *
-     * Generated from protobuf field <code>uint32 index = 5;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * @param string $var
      * @return $this
      */
-    public function setIndex($var)
+    public function setExternalRef($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->index = $var;
+        GPBUtil::checkString($var, True);
+        $this->external_ref = $var;
 
         return $this;
     }
@@ -294,6 +261,32 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->color = $var;
+
+        return $this;
+    }
+
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
 
         return $this;
     }

@@ -19,15 +19,21 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     */
+    protected $url = '';
+    /**
+     * a member's ID in the external system
+     *
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     */
+    protected $external_ref = '';
+    /**
      * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      */
     protected $display_name = '';
-    /**
-     * Generated from protobuf field <code>string url = 3;</code>
-     */
-    protected $url = '';
     /**
      * User rank based on EloMMR rating
      *
@@ -102,12 +108,16 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $stats = null;
     /**
-     * List of Group ID assigned to the member.
+     * List of groups assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Group groups = 201;</code>
      */
     private $groups;
+    /**
+     * Generated from protobuf field <code>repeated string group_ids = 200;</code>
+     */
+    private $group_ids;
     /**
      * Additional profile attributes about the member.
      * Requires ATTRIBUTES extra.
@@ -115,6 +125,12 @@ class Member extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      */
     private $attributes;
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     */
+    private $metadata;
     protected $account;
 
     /**
@@ -124,9 +140,11 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $url
+     *     @type string $external_ref
+     *           a member's ID in the external system
      *     @type string $display_name
      *           display name, readonly, users nickname, name, attribute, ghosts name or teams name
-     *     @type string $url
      *     @type int $rank
      *           User rank based on EloMMR rating
      *     @type int $rank_lower
@@ -155,12 +173,15 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\Member\Stats $stats
      *           Member statistics.
      *           Requires STATS extra.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
-     *           List of Group ID assigned to the member.
+     *     @type array<\Eolymp\Community\Group>|\Google\Protobuf\Internal\RepeatedField $groups
+     *           List of groups assigned to the member.
      *           Requires GROUPS extra.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $group_ids
      *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
      *           Additional profile attributes about the member.
      *           Requires ATTRIBUTES extra.
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *           additional key-value properties used by external systems
      * }
      */
     public function __construct($data = NULL) {
@@ -191,6 +212,54 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * a member's ID in the external system
+     *
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * @return string
+     */
+    public function getExternalRef()
+    {
+        return $this->external_ref;
+    }
+
+    /**
+     * a member's ID in the external system
+     *
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExternalRef($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->external_ref = $var;
+
+        return $this;
+    }
+
+    /**
      * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
@@ -212,28 +281,6 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 3;</code>
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->url = $var;
 
         return $this;
     }
@@ -674,10 +721,10 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of Group ID assigned to the member.
+     * List of groups assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Group groups = 201;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGroups()
@@ -686,17 +733,39 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of Group ID assigned to the member.
+     * List of groups assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated string groups = 200;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.community.Group groups = 201;</code>
+     * @param array<\Eolymp\Community\Group>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGroups($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Group::class);
         $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string group_ids = 200;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGroupIds()
+    {
+        return $this->group_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string group_ids = 200;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGroupIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->group_ids = $arr;
 
         return $this;
     }
@@ -725,6 +794,32 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Attribute\Value::class);
         $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
 
         return $this;
     }
