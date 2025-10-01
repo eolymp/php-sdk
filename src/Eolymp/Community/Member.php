@@ -108,16 +108,12 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $stats = null;
     /**
-     * List of groups assigned to the member.
+     * List of groups IDs assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated .eolymp.community.Group groups = 201;</code>
+     * Generated from protobuf field <code>repeated string groups = 201;</code>
      */
     private $groups;
-    /**
-     * Generated from protobuf field <code>repeated string group_ids = 200;</code>
-     */
-    private $group_ids;
     /**
      * Additional profile attributes about the member.
      * Requires ATTRIBUTES extra.
@@ -173,10 +169,9 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\Member\Stats $stats
      *           Member statistics.
      *           Requires STATS extra.
-     *     @type array<\Eolymp\Community\Group>|\Google\Protobuf\Internal\RepeatedField $groups
-     *           List of groups assigned to the member.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
+     *           List of groups IDs assigned to the member.
      *           Requires GROUPS extra.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $group_ids
      *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
      *           Additional profile attributes about the member.
      *           Requires ATTRIBUTES extra.
@@ -721,10 +716,10 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of groups assigned to the member.
+     * List of groups IDs assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated .eolymp.community.Group groups = 201;</code>
+     * Generated from protobuf field <code>repeated string groups = 201;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getGroups()
@@ -733,39 +728,17 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of groups assigned to the member.
+     * List of groups IDs assigned to the member.
      * Requires GROUPS extra.
      *
-     * Generated from protobuf field <code>repeated .eolymp.community.Group groups = 201;</code>
-     * @param array<\Eolymp\Community\Group>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated string groups = 201;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setGroups($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Group::class);
-        $this->groups = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string group_ids = 200;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getGroupIds()
-    {
-        return $this->group_ids;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string group_ids = 200;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setGroupIds($var)
-    {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->group_ids = $arr;
+        $this->groups = $arr;
 
         return $this;
     }
