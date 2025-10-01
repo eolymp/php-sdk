@@ -17,10 +17,6 @@ class Extra
      */
     const NO_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>TIER = 1;</code>
-     */
-    const TIER = 1;
-    /**
      * Generated from protobuf enum <code>STATS = 2;</code>
      */
     const STATS = 2;
@@ -35,7 +31,6 @@ class Extra
 
     private static $valueToName = [
         self::NO_EXTRA => 'NO_EXTRA',
-        self::TIER => 'TIER',
         self::STATS => 'STATS',
         self::GROUPS => 'GROUPS',
         self::ATTRIBUTES => 'ATTRIBUTES',

@@ -10,6 +10,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Group describes a group of members in the space.
+ * Members can belong to multiple groups.
+ * Groups may give members "decorations" (icons, badges and color highlights). If multiple groups define decorations,
+ * the one with highest index takes over.
+ *
  * Generated from protobuf message <code>eolymp.community.Group</code>
  */
 class Group extends \Google\Protobuf\Internal\Message
@@ -19,17 +24,47 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * a human friendly ID, optional
+     *
+     * Generated from protobuf field <code>string key = 4;</code>
+     */
+    protected $key = '';
+    /**
+     * group name
+     *
      * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
     /**
+     * group description
+     *
      * Generated from protobuf field <code>string description = 3;</code>
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>string tier_id = 4;</code>
+     * index group order
+     *
+     * Generated from protobuf field <code>uint32 index = 5;</code>
      */
-    protected $tier_id = '';
+    protected $index = 0;
+    /**
+     * a URL for an icon, displayed in front of a username on the site
+     *
+     * Generated from protobuf field <code>string icon = 10;</code>
+     */
+    protected $icon = '';
+    /**
+     * a string displayed next to the username on the site
+     *
+     * Generated from protobuf field <code>string badge = 11;</code>
+     */
+    protected $badge = '';
+    /**
+     * a hexadecimal color code, displayed in the given color.
+     *
+     * Generated from protobuf field <code>string color = 12;</code>
+     */
+    protected $color = '';
 
     /**
      * Constructor.
@@ -38,9 +73,20 @@ class Group extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $key
+     *           a human friendly ID, optional
      *     @type string $name
+     *           group name
      *     @type string $description
-     *     @type string $tier_id
+     *           group description
+     *     @type int $index
+     *           index group order
+     *     @type string $icon
+     *           a URL for an icon, displayed in front of a username on the site
+     *     @type string $badge
+     *           a string displayed next to the username on the site
+     *     @type string $color
+     *           a hexadecimal color code, displayed in the given color.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,6 +117,34 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * a human friendly ID, optional
+     *
+     * Generated from protobuf field <code>string key = 4;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * a human friendly ID, optional
+     *
+     * Generated from protobuf field <code>string key = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * group name
+     *
      * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
@@ -80,6 +154,8 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * group name
+     *
      * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
@@ -93,6 +169,8 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * group description
+     *
      * Generated from protobuf field <code>string description = 3;</code>
      * @return string
      */
@@ -102,6 +180,8 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * group description
+     *
      * Generated from protobuf field <code>string description = 3;</code>
      * @param string $var
      * @return $this
@@ -115,23 +195,105 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tier_id = 4;</code>
-     * @return string
+     * index group order
+     *
+     * Generated from protobuf field <code>uint32 index = 5;</code>
+     * @return int
      */
-    public function getTierId()
+    public function getIndex()
     {
-        return $this->tier_id;
+        return $this->index;
     }
 
     /**
-     * Generated from protobuf field <code>string tier_id = 4;</code>
+     * index group order
+     *
+     * Generated from protobuf field <code>uint32 index = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * a URL for an icon, displayed in front of a username on the site
+     *
+     * Generated from protobuf field <code>string icon = 10;</code>
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * a URL for an icon, displayed in front of a username on the site
+     *
+     * Generated from protobuf field <code>string icon = 10;</code>
      * @param string $var
      * @return $this
      */
-    public function setTierId($var)
+    public function setIcon($var)
     {
         GPBUtil::checkString($var, True);
-        $this->tier_id = $var;
+        $this->icon = $var;
+
+        return $this;
+    }
+
+    /**
+     * a string displayed next to the username on the site
+     *
+     * Generated from protobuf field <code>string badge = 11;</code>
+     * @return string
+     */
+    public function getBadge()
+    {
+        return $this->badge;
+    }
+
+    /**
+     * a string displayed next to the username on the site
+     *
+     * Generated from protobuf field <code>string badge = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBadge($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->badge = $var;
+
+        return $this;
+    }
+
+    /**
+     * a hexadecimal color code, displayed in the given color.
+     *
+     * Generated from protobuf field <code>string color = 12;</code>
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * a hexadecimal color code, displayed in the given color.
+     *
+     * Generated from protobuf field <code>string color = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setColor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->color = $var;
 
         return $this;
     }
