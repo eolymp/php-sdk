@@ -31,10 +31,6 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $nickname_change_timeout = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13;</code>
-     */
-    private $aliases;
-    /**
      * Generated from protobuf field <code>string email = 20;</code>
      */
     protected $email = '';
@@ -99,7 +95,6 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $subject
      *     @type string $nickname
      *     @type int $nickname_change_timeout
-     *     @type array<\Eolymp\Community\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
      *     @type string $email
      *     @type bool $email_verified
      *     @type bool $email_restricted
@@ -205,28 +200,6 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->nickname_change_timeout = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getAliases()
-    {
-        return $this->aliases;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13;</code>
-     * @param array<\Eolymp\Community\User\Alias>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setAliases($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\User\Alias::class);
-        $this->aliases = $arr;
 
         return $this;
     }

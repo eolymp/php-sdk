@@ -15,26 +15,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class Stats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * how many days in a row member solved a problem
-     *
      * Generated from protobuf field <code>int32 streak = 10;</code>
      */
     protected $streak = 0;
     /**
-     * how many problems has been solved ever
-     *
      * Generated from protobuf field <code>int32 problems_solved = 20;</code>
      */
     protected $problems_solved = 0;
     /**
-     * how many submissions have been accepted
-     *
      * Generated from protobuf field <code>int32 submissions_accepted = 30;</code>
      */
     protected $submissions_accepted = 0;
     /**
-     * how many submissions where made
-     *
      * Generated from protobuf field <code>int32 submissions_total = 41;</code>
      */
     protected $submissions_total = 0;
@@ -46,13 +38,9 @@ class Stats extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $streak
-     *           how many days in a row member solved a problem
      *     @type int $problems_solved
-     *           how many problems has been solved ever
      *     @type int $submissions_accepted
-     *           how many submissions have been accepted
      *     @type int $submissions_total
-     *           how many submissions where made
      * }
      */
     public function __construct($data = NULL) {
@@ -61,8 +49,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many days in a row member solved a problem
-     *
      * Generated from protobuf field <code>int32 streak = 10;</code>
      * @return int
      */
@@ -72,8 +58,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many days in a row member solved a problem
-     *
      * Generated from protobuf field <code>int32 streak = 10;</code>
      * @param int $var
      * @return $this
@@ -87,8 +71,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many problems has been solved ever
-     *
      * Generated from protobuf field <code>int32 problems_solved = 20;</code>
      * @return int
      */
@@ -98,8 +80,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many problems has been solved ever
-     *
      * Generated from protobuf field <code>int32 problems_solved = 20;</code>
      * @param int $var
      * @return $this
@@ -113,8 +93,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many submissions have been accepted
-     *
      * Generated from protobuf field <code>int32 submissions_accepted = 30;</code>
      * @return int
      */
@@ -124,8 +102,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many submissions have been accepted
-     *
      * Generated from protobuf field <code>int32 submissions_accepted = 30;</code>
      * @param int $var
      * @return $this
@@ -139,8 +115,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many submissions where made
-     *
      * Generated from protobuf field <code>int32 submissions_total = 41;</code>
      * @return int
      */
@@ -150,8 +124,6 @@ class Stats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many submissions where made
-     *
      * Generated from protobuf field <code>int32 submissions_total = 41;</code>
      * @param int $var
      * @return $this

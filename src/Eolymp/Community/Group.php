@@ -10,11 +10,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Group describes a group of members in the space.
- * Members can belong to multiple groups.
- * Groups may give members "decorations" (icons, badges and color highlights). If multiple groups define decorations,
- * the one with highest index takes over.
- *
  * Generated from protobuf message <code>eolymp.community.Group</code>
  */
 class Group extends \Google\Protobuf\Internal\Message
@@ -24,45 +19,17 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * group name
-     *
      * Generated from protobuf field <code>string name = 2;</code>
      */
     protected $name = '';
     /**
-     * group description
-     *
      * Generated from protobuf field <code>string description = 3;</code>
      */
     protected $description = '';
     /**
-     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * Generated from protobuf field <code>string tier_id = 4;</code>
      */
-    protected $external_ref = '';
-    /**
-     * a URL for an icon, displayed in front of a username on the site
-     *
-     * Generated from protobuf field <code>string icon = 10;</code>
-     */
-    protected $icon = '';
-    /**
-     * a string displayed next to the username on the site
-     *
-     * Generated from protobuf field <code>string badge = 11;</code>
-     */
-    protected $badge = '';
-    /**
-     * a hexadecimal color code, displayed in the given color.
-     *
-     * Generated from protobuf field <code>string color = 12;</code>
-     */
-    protected $color = '';
-    /**
-     * additional key-value properties used by external systems
-     *
-     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
-     */
-    private $metadata;
+    protected $tier_id = '';
 
     /**
      * Constructor.
@@ -72,18 +39,8 @@ class Group extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $name
-     *           group name
      *     @type string $description
-     *           group description
-     *     @type string $external_ref
-     *     @type string $icon
-     *           a URL for an icon, displayed in front of a username on the site
-     *     @type string $badge
-     *           a string displayed next to the username on the site
-     *     @type string $color
-     *           a hexadecimal color code, displayed in the given color.
-     *     @type array|\Google\Protobuf\Internal\MapField $metadata
-     *           additional key-value properties used by external systems
+     *     @type string $tier_id
      * }
      */
     public function __construct($data = NULL) {
@@ -114,8 +71,6 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * group name
-     *
      * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
@@ -125,8 +80,6 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * group name
-     *
      * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
@@ -140,8 +93,6 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * group description
-     *
      * Generated from protobuf field <code>string description = 3;</code>
      * @return string
      */
@@ -151,8 +102,6 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * group description
-     *
      * Generated from protobuf field <code>string description = 3;</code>
      * @param string $var
      * @return $this
@@ -166,127 +115,23 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * Generated from protobuf field <code>string tier_id = 4;</code>
      * @return string
      */
-    public function getExternalRef()
+    public function getTierId()
     {
-        return $this->external_ref;
+        return $this->tier_id;
     }
 
     /**
-     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * Generated from protobuf field <code>string tier_id = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setExternalRef($var)
+    public function setTierId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->external_ref = $var;
-
-        return $this;
-    }
-
-    /**
-     * a URL for an icon, displayed in front of a username on the site
-     *
-     * Generated from protobuf field <code>string icon = 10;</code>
-     * @return string
-     */
-    public function getIcon()
-    {
-        return $this->icon;
-    }
-
-    /**
-     * a URL for an icon, displayed in front of a username on the site
-     *
-     * Generated from protobuf field <code>string icon = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setIcon($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->icon = $var;
-
-        return $this;
-    }
-
-    /**
-     * a string displayed next to the username on the site
-     *
-     * Generated from protobuf field <code>string badge = 11;</code>
-     * @return string
-     */
-    public function getBadge()
-    {
-        return $this->badge;
-    }
-
-    /**
-     * a string displayed next to the username on the site
-     *
-     * Generated from protobuf field <code>string badge = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBadge($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->badge = $var;
-
-        return $this;
-    }
-
-    /**
-     * a hexadecimal color code, displayed in the given color.
-     *
-     * Generated from protobuf field <code>string color = 12;</code>
-     * @return string
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    /**
-     * a hexadecimal color code, displayed in the given color.
-     *
-     * Generated from protobuf field <code>string color = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setColor($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->color = $var;
-
-        return $this;
-    }
-
-    /**
-     * additional key-value properties used by external systems
-     *
-     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getMetadata()
-    {
-        return $this->metadata;
-    }
-
-    /**
-     * additional key-value properties used by external systems
-     *
-     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setMetadata($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->metadata = $arr;
+        $this->tier_id = $var;
 
         return $this;
     }

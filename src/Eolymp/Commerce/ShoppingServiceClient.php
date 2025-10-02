@@ -125,38 +125,6 @@ class ShoppingServiceClient {
     }
 
     /**
-     * @param UpdateShippingMethodInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateShippingMethodOutput output message
-     */
-    public function UpdateShippingMethod(UpdateShippingMethodInput $input, array $context = [])
-    {
-        $path = "/store/cart/shipping-method";
-
-        $context['name'] = "eolymp.commerce.ShoppingService/UpdateShippingMethod";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateShippingMethodOutput::class, $context);
-    }
-
-    /**
-     * @param ListShippingMethodsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListShippingMethodsOutput output message
-     */
-    public function ListShippingMethods(ListShippingMethodsInput $input, array $context = [])
-    {
-        $path = "/store/cart/shipping-methods";
-
-        $context['name'] = "eolymp.commerce.ShoppingService/ListShippingMethods";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListShippingMethodsOutput::class, $context);
-    }
-
-    /**
      * @param PlaceOrderInput $input message
      * @param array $context request parameters
      *

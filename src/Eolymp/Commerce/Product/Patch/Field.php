@@ -37,13 +37,9 @@ class Field
      */
     const IMAGES = 4;
     /**
-     * Generated from protobuf enum <code>PRICE = 5;</code>
+     * Generated from protobuf enum <code>UNIT_PRICE = 5;</code>
      */
-    const PRICE = 5;
-    /**
-     * Generated from protobuf enum <code>REGULAR_PRICE = 6;</code>
-     */
-    const REGULAR_PRICE = 6;
+    const UNIT_PRICE = 5;
     /**
      * Generated from protobuf enum <code>ATTRIBUTES = 7;</code>
      */
@@ -72,8 +68,7 @@ class Field
         self::SUMMARY => 'SUMMARY',
         self::DESCRIPTION => 'DESCRIPTION',
         self::IMAGES => 'IMAGES',
-        self::PRICE => 'PRICE',
-        self::REGULAR_PRICE => 'REGULAR_PRICE',
+        self::UNIT_PRICE => 'UNIT_PRICE',
         self::ATTRIBUTES => 'ATTRIBUTES',
         self::VARIANTS => 'VARIANTS',
         self::FEATURED => 'FEATURED',

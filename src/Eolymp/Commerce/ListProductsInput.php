@@ -25,12 +25,6 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
-     * for cursor based pagination
-     *
-     * Generated from protobuf field <code>string after = 12;</code>
-     */
-    protected $after = '';
-    /**
      * data filters
      *
      * Generated from protobuf field <code>string search = 20;</code>
@@ -68,8 +62,6 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type string $after
-     *           for cursor based pagination
      *     @type string $search
      *           data filters
      *     @type \Eolymp\Commerce\ListProductsInput\Filter $filters
@@ -129,32 +121,6 @@ class ListProductsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
-
-        return $this;
-    }
-
-    /**
-     * for cursor based pagination
-     *
-     * Generated from protobuf field <code>string after = 12;</code>
-     * @return string
-     */
-    public function getAfter()
-    {
-        return $this->after;
-    }
-
-    /**
-     * for cursor based pagination
-     *
-     * Generated from protobuf field <code>string after = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAfter($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->after = $var;
 
         return $this;
     }

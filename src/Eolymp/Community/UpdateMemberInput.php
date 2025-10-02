@@ -17,7 +17,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     /**
      * defines member props to be updated, empty means update everything
      *
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Patch.Field patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateMemberInput.Patch patch = 1;</code>
      */
     private $patch;
     /**
@@ -49,7 +49,7 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     /**
      * defines member props to be updated, empty means update everything
      *
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Patch.Field patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateMemberInput.Patch patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -60,13 +60,13 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     /**
      * defines member props to be updated, empty means update everything
      *
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Patch.Field patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.UpdateMemberInput.Patch patch = 1;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Member\Patch\Field::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdateMemberInput\Patch::class);
         $this->patch = $arr;
 
         return $this;

@@ -5,28 +5,60 @@
 
 namespace Eolymp\Community\Member;
 
-use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
-use Google\Protobuf\Internal\GPBUtil;
+use UnexpectedValueException;
 
 /**
- * Generated from protobuf message <code>eolymp.community.Member.Extra</code>
+ * Protobuf type <code>eolymp.community.Member.Extra</code>
  */
-class Extra extends \Google\Protobuf\Internal\Message
+class Extra
 {
-
     /**
-     * Constructor.
-     *
-     * @param array $data {
-     *     Optional. Data for populating the Message object.
-     *
-     * }
+     * Generated from protobuf enum <code>NO_EXTRA = 0;</code>
      */
-    public function __construct($data = NULL) {
-        \GPBMetadata\Eolymp\Community\Member::initOnce();
-        parent::__construct($data);
+    const NO_EXTRA = 0;
+    /**
+     * Generated from protobuf enum <code>TIER = 1;</code>
+     */
+    const TIER = 1;
+    /**
+     * Generated from protobuf enum <code>STATS = 2;</code>
+     */
+    const STATS = 2;
+    /**
+     * Generated from protobuf enum <code>GROUPS = 3;</code>
+     */
+    const GROUPS = 3;
+    /**
+     * Generated from protobuf enum <code>ATTRIBUTES = 4;</code>
+     */
+    const ATTRIBUTES = 4;
+
+    private static $valueToName = [
+        self::NO_EXTRA => 'NO_EXTRA',
+        self::TIER => 'TIER',
+        self::STATS => 'STATS',
+        self::GROUPS => 'GROUPS',
+        self::ATTRIBUTES => 'ATTRIBUTES',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
     }
 
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
