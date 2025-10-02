@@ -61,9 +61,17 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     protected $currency = '';
     /**
-     * Generated from protobuf field <code>uint32 unit_price = 21;</code>
+     * current (sell) price
+     *
+     * Generated from protobuf field <code>uint32 price = 21;</code>
      */
-    protected $unit_price = 0;
+    protected $price = 0;
+    /**
+     * optionally, regular product price (before discount)
+     *
+     * Generated from protobuf field <code>uint32 regular_price = 22;</code>
+     */
+    protected $regular_price = 0;
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
      */
@@ -72,6 +80,10 @@ class Product extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Variant variants = 50;</code>
      */
     private $variants;
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     */
+    protected $cursor = '';
 
     /**
      * Constructor.
@@ -92,9 +104,13 @@ class Product extends \Google\Protobuf\Internal\Message
      *     @type bool $inactive
      *     @type bool $backorder
      *     @type string $currency
-     *     @type int $unit_price
+     *     @type int $price
+     *           current (sell) price
+     *     @type int $regular_price
+     *           optionally, regular product price (before discount)
      *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type string $cursor
      * }
      */
     public function __construct($data = NULL) {
@@ -355,23 +371,53 @@ class Product extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 unit_price = 21;</code>
+     * current (sell) price
+     *
+     * Generated from protobuf field <code>uint32 price = 21;</code>
      * @return int
      */
-    public function getUnitPrice()
+    public function getPrice()
     {
-        return $this->unit_price;
+        return $this->price;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 unit_price = 21;</code>
+     * current (sell) price
+     *
+     * Generated from protobuf field <code>uint32 price = 21;</code>
      * @param int $var
      * @return $this
      */
-    public function setUnitPrice($var)
+    public function setPrice($var)
     {
         GPBUtil::checkUint32($var);
-        $this->unit_price = $var;
+        $this->price = $var;
+
+        return $this;
+    }
+
+    /**
+     * optionally, regular product price (before discount)
+     *
+     * Generated from protobuf field <code>uint32 regular_price = 22;</code>
+     * @return int
+     */
+    public function getRegularPrice()
+    {
+        return $this->regular_price;
+    }
+
+    /**
+     * optionally, regular product price (before discount)
+     *
+     * Generated from protobuf field <code>uint32 regular_price = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRegularPrice($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->regular_price = $var;
 
         return $this;
     }
@@ -416,6 +462,28 @@ class Product extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Product\Variant::class);
         $this->variants = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @return string
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
+    }
+
+    /**
+     * Generated from protobuf field <code>string cursor = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCursor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->cursor = $var;
 
         return $this;
     }

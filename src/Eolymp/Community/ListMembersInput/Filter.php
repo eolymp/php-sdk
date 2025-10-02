@@ -19,6 +19,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 10;</code>
+     */
+    private $external_ref;
+    /**
      * user, team or ghost
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 2;</code>
@@ -100,6 +104,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $external_ref
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
      *           user, team or ghost
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $display_name
@@ -145,6 +150,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExternalRef()
+    {
+        return $this->external_ref;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 10;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExternalRef($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->external_ref = $arr;
 
         return $this;
     }

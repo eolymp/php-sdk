@@ -39,7 +39,7 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
      */
     protected $order = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -206,7 +206,7 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -215,13 +215,13 @@ class ListMembersInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.Member.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Member\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Member\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

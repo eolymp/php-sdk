@@ -88,6 +88,12 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string affiliation = 15;</code>
      */
     protected $affiliation = '';
+    /**
+     * discord guild ID
+     *
+     * Generated from protobuf field <code>string discord_guild_id = 18;</code>
+     */
+    protected $discord_guild_id = '';
 
     /**
      * Constructor.
@@ -119,6 +125,8 @@ class Space extends \Google\Protobuf\Internal\Message
      *           subscription details (private)
      *     @type string $affiliation
      *           space affiliation label
+     *     @type string $discord_guild_id
+     *           discord guild ID
      * }
      */
     public function __construct($data = NULL) {
@@ -462,6 +470,32 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->affiliation = $var;
+
+        return $this;
+    }
+
+    /**
+     * discord guild ID
+     *
+     * Generated from protobuf field <code>string discord_guild_id = 18;</code>
+     * @return string
+     */
+    public function getDiscordGuildId()
+    {
+        return $this->discord_guild_id;
+    }
+
+    /**
+     * discord guild ID
+     *
+     * Generated from protobuf field <code>string discord_guild_id = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDiscordGuildId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->discord_guild_id = $var;
 
         return $this;
     }

@@ -122,6 +122,14 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 40;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
+     */
+    private $aliases;
+    /**
+     * Generated from protobuf field <code>string discord_user_id = 100;</code>
+     */
+    protected $discord_user_id = '';
 
     /**
      * Constructor.
@@ -165,6 +173,8 @@ class User extends \Google\Protobuf\Internal\Message
      *           Exact time when user has changed password last time
      *     @type string $locale
      *           Locale
+     *     @type array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
+     *     @type string $discord_user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -676,6 +686,50 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAliases()
+    {
+        return $this->aliases;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
+     * @param array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAliases($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Cognito\User\Alias::class);
+        $this->aliases = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string discord_user_id = 100;</code>
+     * @return string
+     */
+    public function getDiscordUserId()
+    {
+        return $this->discord_user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string discord_user_id = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDiscordUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->discord_user_id = $var;
 
         return $this;
     }

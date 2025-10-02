@@ -19,24 +19,36 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     */
+    protected $url = '';
+    /**
+     * a member's ID in the external system
+     *
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     */
+    protected $external_ref = '';
+    /**
      * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      */
     protected $display_name = '';
     /**
-     * Generated from protobuf field <code>string url = 3;</code>
-     */
-    protected $url = '';
-    /**
+     * User rank based on EloMMR rating
+     *
      * Generated from protobuf field <code>int32 rank = 70;</code>
      */
     protected $rank = 0;
     /**
+     * User rank lower bound
+     *
      * Generated from protobuf field <code>int32 rank_lower = 72;</code>
      */
     protected $rank_lower = 0;
     /**
+     * EloMMR rating value
+     *
      * Generated from protobuf field <code>int32 rating = 71;</code>
      */
     protected $rating = 0;
@@ -47,6 +59,8 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $level = 0;
     /**
+     * member account is inactive
+     *
      * Generated from protobuf field <code>bool inactive = 11;</code>
      */
     protected $inactive = false;
@@ -69,37 +83,50 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $secret = false;
     /**
-     * Generated from protobuf field <code>string tier_id = 50;</code>
-     */
-    protected $tier_id = '';
-    /**
-     * Generated from protobuf field <code>string fallback_tier_id = 51;</code>
-     */
-    protected $fallback_tier_id = '';
-    /**
+     * Time when user account was created.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
      */
     protected $created_at = null;
     /**
+     * Time when user was seated in the space.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
      */
     protected $seated_at = null;
     /**
+     * Last time when user was active
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
      */
     protected $active_at = null;
     /**
+     * Member statistics.
+     * Requires STATS extra.
+     *
      * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
      */
     protected $stats = null;
     /**
+     * List of groups IDs assigned to the member.
+     * Requires GROUPS extra.
+     *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      */
     private $groups;
     /**
+     * Additional profile attributes about the member.
+     * Requires ATTRIBUTES extra.
+     *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      */
     private $attributes;
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     */
+    private $metadata;
     protected $account;
 
     /**
@@ -109,32 +136,47 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $url
+     *     @type string $external_ref
+     *           a member's ID in the external system
      *     @type string $display_name
      *           display name, readonly, users nickname, name, attribute, ghosts name or teams name
-     *     @type string $url
      *     @type int $rank
+     *           User rank based on EloMMR rating
      *     @type int $rank_lower
+     *           User rank lower bound
      *     @type int $rating
+     *           EloMMR rating value
      *     @type int $level
      *           level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
      *     @type bool $inactive
+     *           member account is inactive
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
      *     @type bool $unofficial
      *           member participates in all competitions unofficially
      *     @type bool $secret
      *           member is secret and does not appear on anywhere (for example, an admin who performs testing)
-     *     @type string $tier_id
-     *     @type string $fallback_tier_id
      *     @type \Google\Protobuf\Timestamp $created_at
+     *           Time when user account was created.
      *     @type \Google\Protobuf\Timestamp $seated_at
+     *           Time when user was seated in the space.
      *     @type \Google\Protobuf\Timestamp $active_at
+     *           Last time when user was active
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
      *     @type \Eolymp\Community\Member\Stats $stats
+     *           Member statistics.
+     *           Requires STATS extra.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
+     *           List of groups IDs assigned to the member.
+     *           Requires GROUPS extra.
      *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *           Additional profile attributes about the member.
+     *           Requires ATTRIBUTES extra.
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *           additional key-value properties used by external systems
      * }
      */
     public function __construct($data = NULL) {
@@ -160,6 +202,54 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
+
+        return $this;
+    }
+
+    /**
+     * a member's ID in the external system
+     *
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * @return string
+     */
+    public function getExternalRef()
+    {
+        return $this->external_ref;
+    }
+
+    /**
+     * a member's ID in the external system
+     *
+     * Generated from protobuf field <code>string external_ref = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExternalRef($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->external_ref = $var;
 
         return $this;
     }
@@ -191,28 +281,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 3;</code>
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string url = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->url = $var;
-
-        return $this;
-    }
-
-    /**
+     * User rank based on EloMMR rating
+     *
      * Generated from protobuf field <code>int32 rank = 70;</code>
      * @return int
      */
@@ -222,6 +292,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * User rank based on EloMMR rating
+     *
      * Generated from protobuf field <code>int32 rank = 70;</code>
      * @param int $var
      * @return $this
@@ -235,6 +307,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * User rank lower bound
+     *
      * Generated from protobuf field <code>int32 rank_lower = 72;</code>
      * @return int
      */
@@ -244,6 +318,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * User rank lower bound
+     *
      * Generated from protobuf field <code>int32 rank_lower = 72;</code>
      * @param int $var
      * @return $this
@@ -257,6 +333,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * EloMMR rating value
+     *
      * Generated from protobuf field <code>int32 rating = 71;</code>
      * @return int
      */
@@ -266,6 +344,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * EloMMR rating value
+     *
      * Generated from protobuf field <code>int32 rating = 71;</code>
      * @param int $var
      * @return $this
@@ -305,6 +385,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * member account is inactive
+     *
      * Generated from protobuf field <code>bool inactive = 11;</code>
      * @return bool
      */
@@ -314,6 +396,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * member account is inactive
+     *
      * Generated from protobuf field <code>bool inactive = 11;</code>
      * @param bool $var
      * @return $this
@@ -405,50 +489,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string tier_id = 50;</code>
-     * @return string
-     */
-    public function getTierId()
-    {
-        return $this->tier_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string tier_id = 50;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTierId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->tier_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string fallback_tier_id = 51;</code>
-     * @return string
-     */
-    public function getFallbackTierId()
-    {
-        return $this->fallback_tier_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string fallback_tier_id = 51;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFallbackTierId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->fallback_tier_id = $var;
-
-        return $this;
-    }
-
-    /**
+     * Time when user account was created.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -468,6 +510,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Time when user account was created.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
@@ -481,6 +525,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Time when user was seated in the space.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -500,6 +546,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Time when user was seated in the space.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
@@ -513,6 +561,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Last time when user was active
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -532,6 +582,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Last time when user was active
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
@@ -626,6 +678,9 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Member statistics.
+     * Requires STATS extra.
+     *
      * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
      * @return \Eolymp\Community\Member\Stats|null
      */
@@ -645,6 +700,9 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Member statistics.
+     * Requires STATS extra.
+     *
      * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
      * @param \Eolymp\Community\Member\Stats $var
      * @return $this
@@ -658,6 +716,9 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of groups IDs assigned to the member.
+     * Requires GROUPS extra.
+     *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -667,6 +728,9 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * List of groups IDs assigned to the member.
+     * Requires GROUPS extra.
+     *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -680,6 +744,9 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Additional profile attributes about the member.
+     * Requires ATTRIBUTES extra.
+     *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -689,6 +756,9 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Additional profile attributes about the member.
+     * Requires ATTRIBUTES extra.
+     *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      * @param array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -697,6 +767,32 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Attribute\Value::class);
         $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * additional key-value properties used by external systems
+     *
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
 
         return $this;
     }
