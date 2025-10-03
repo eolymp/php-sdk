@@ -22,6 +22,10 @@ class ShipOrderInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string tracking_link = 2;</code>
      */
     protected $tracking_link = '';
+    /**
+     * Generated from protobuf field <code>string tracking_number = 3;</code>
+     */
+    protected $tracking_number = '';
 
     /**
      * Constructor.
@@ -31,6 +35,7 @@ class ShipOrderInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $order_id
      *     @type string $tracking_link
+     *     @type string $tracking_number
      * }
      */
     public function __construct($data = NULL) {
@@ -78,6 +83,28 @@ class ShipOrderInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tracking_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tracking_number = 3;</code>
+     * @return string
+     */
+    public function getTrackingNumber()
+    {
+        return $this->tracking_number;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tracking_number = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrackingNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tracking_number = $var;
 
         return $this;
     }

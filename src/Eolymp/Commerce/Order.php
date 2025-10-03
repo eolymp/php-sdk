@@ -92,6 +92,10 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $tracking_link = '';
     /**
+     * Generated from protobuf field <code>string tracking_number = 51;</code>
+     */
+    protected $tracking_number = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 100;</code>
      */
     protected $created_at = null;
@@ -125,6 +129,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type string $tax_note
      *     @type int $grand_total
      *     @type string $tracking_link
+     *     @type string $tracking_number
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      * }
@@ -560,6 +565,28 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->tracking_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tracking_number = 51;</code>
+     * @return string
+     */
+    public function getTrackingNumber()
+    {
+        return $this->tracking_number;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tracking_number = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTrackingNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tracking_number = $var;
 
         return $this;
     }
