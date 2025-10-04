@@ -73,9 +73,9 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source_url = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Value values = 111;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 111;</code>
      */
-    protected $values = null;
+    private $values;
     /**
      * source code
      *
@@ -190,7 +190,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           source code
      *     @type string $source_url
      *           source code URL (overrides source)
-     *     @type \Eolymp\Atlas\Submission\Value $values
+     *     @type array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type string $signature
      *           source code
      *     @type int $status
@@ -494,33 +494,23 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Value values = 111;</code>
-     * @return \Eolymp\Atlas\Submission\Value|null
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 111;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getValues()
     {
         return $this->values;
     }
 
-    public function hasValues()
-    {
-        return isset($this->values);
-    }
-
-    public function clearValues()
-    {
-        unset($this->values);
-    }
-
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Value values = 111;</code>
-     * @param \Eolymp\Atlas\Submission\Value $var
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 111;</code>
+     * @param array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Value::class);
-        $this->values = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Value::class);
+        $this->values = $arr;
 
         return $this;
     }
