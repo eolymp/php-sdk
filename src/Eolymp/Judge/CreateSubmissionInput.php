@@ -30,6 +30,10 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 4;</code>
      */
     protected $source = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 5;</code>
+     */
+    private $values;
 
     /**
      * Constructor.
@@ -41,6 +45,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $lang
      *     @type string $source
+     *     @type array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
     public function __construct($data = NULL) {
@@ -132,6 +137,28 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getValues()
+    {
+        return $this->values;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 5;</code>
+     * @param array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setValues($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Value::class);
+        $this->values = $arr;
 
         return $this;
     }
