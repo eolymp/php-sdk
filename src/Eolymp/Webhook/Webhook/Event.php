@@ -17,127 +17,127 @@ class Event
      */
     const UNKNOWN_EVENT = 0;
     /**
-     * generic problem properties changed (eolymp.atlas.ProblemChangedEvent)
+     * generic problem properties changed (atlas.ProblemChangedEvent)
      *
      * Generated from protobuf enum <code>PROBLEM_CHANGED = 100;</code>
      */
     const PROBLEM_CHANGED = 100;
     /**
-     * problem statement changed (eolymp.atlas.StatementChangedEvent)
+     * problem statement changed (atlas.StatementChangedEvent)
      *
      * Generated from protobuf enum <code>PROBLEM_STATEMENT_CHANGED = 101;</code>
      */
     const PROBLEM_STATEMENT_CHANGED = 101;
     /**
-     * problem score for a member in a space changed (eolymp.atlas.ScoreChangedEvent)
+     * problem score for a member in a space changed (atlas.ScoreChangedEvent)
      *
      * Generated from protobuf enum <code>PROBLEM_SCORE_CHANGED = 102;</code>
      */
     const PROBLEM_SCORE_CHANGED = 102;
     /**
-     * submission properties changed (eolymp.atlas.SubmissionChangedEvent)
+     * submission properties changed (atlas.SubmissionChangedEvent)
      *
      * Generated from protobuf enum <code>SUBMISSION_CHANGED = 200;</code>
      */
     const SUBMISSION_CHANGED = 200;
     /**
-     * submission testing is complete and final verdict is available (eolymp.atlas.SubmissionCompleteEvent)
+     * submission testing is complete and final verdict is available (atlas.SubmissionCompleteEvent)
      *
      * Generated from protobuf enum <code>SUBMISSION_COMPLETED = 201;</code>
      */
     const SUBMISSION_COMPLETED = 201;
     /**
-     * member properties changed (eolymp.community.MemberChangedEvent)
+     * member properties changed (community.MemberChangedEvent)
      *
      * Generated from protobuf enum <code>MEMBER_CHANGED = 300;</code>
      */
     const MEMBER_CHANGED = 300;
     /**
-     * group properties changed (eolymp.community.GroupChangedEvent)
+     * group properties changed (community.GroupChangedEvent)
      *
      * Generated from protobuf enum <code>GROUP_CHANGED = 350;</code>
      */
     const GROUP_CHANGED = 350;
     /**
-     * course module properties changed (eolymp.course.ModuleChangedEvent)
+     * course module properties changed (course.ModuleChangedEvent)
      *
      * Generated from protobuf enum <code>COURSE_MODULE_CHANGED = 400;</code>
      */
     const COURSE_MODULE_CHANGED = 400;
     /**
-     * course material properties changed (eolymp.course.MaterialChangedEvent)
+     * course material properties changed (course.MaterialChangedEvent)
      *
      * Generated from protobuf enum <code>COURSE_MATERIAL_CHANGED = 401;</code>
      */
     const COURSE_MATERIAL_CHANGED = 401;
     /**
-     * course student properties changed (eolymp.course.StudentChangedEvent)
+     * course student properties changed (course.StudentChangedEvent)
      *
      * Generated from protobuf enum <code>COURSE_STUDENT_CHANGED = 402;</code>
      */
     const COURSE_STUDENT_CHANGED = 402;
     /**
-     * course assignment properties changed (eolymp.course.AssignmentChangedEvent)
+     * course assignment properties changed (course.AssignmentChangedEvent)
      *
      * Generated from protobuf enum <code>COURSE_ASSIGNMENT_CHANGED = 403;</code>
      */
     const COURSE_ASSIGNMENT_CHANGED = 403;
     /**
-     * discussion message (comments) properties changed (eolymp.discussion.MessageChangedEvent)
+     * discussion message (comments) properties changed (discussion.MessageChangedEvent)
      *
      * Generated from protobuf enum <code>DISCUSSION_MESSAGE_CHANGED = 500;</code>
      */
     const DISCUSSION_MESSAGE_CHANGED = 500;
     /**
-     * post properties changed (eolymp.discussion.PostChangedEvent)
+     * post properties changed (discussion.PostChangedEvent)
      *
      * Generated from protobuf enum <code>POST_CHANGED = 600;</code>
      */
     const POST_CHANGED = 600;
     /**
-     * post translation properties changed(eolymp.discussion.PostTranslationChangedEvent)
+     * post translation properties changed(discussion.PostTranslationChangedEvent)
      *
      * Generated from protobuf enum <code>POST_TRANSLATION_CHANGED = 601;</code>
      */
     const POST_TRANSLATION_CHANGED = 601;
     /**
-     * post published (eolymp.discussion.PostPublishedEvent)
+     * post published (discussion.PostPublishedEvent)
      *
      * Generated from protobuf enum <code>POST_PUBLISHED = 602;</code>
      */
     const POST_PUBLISHED = 602;
     /**
-     * ticket properties changed (eolymp.judge.TicketChangedEvent)
+     * ticket properties changed (judge.TicketChangedEvent)
      *
      * Generated from protobuf enum <code>TICKET_CHANGED = 700;</code>
      */
     const TICKET_CHANGED = 700;
     /**
-     * ticket reply properties changed (eolymp.judge.ReplyChangedEvent)
+     * ticket reply properties changed (judge.ReplyChangedEvent)
      *
      * Generated from protobuf enum <code>TICKET_REPLY_CHANGED = 701;</code>
      */
     const TICKET_REPLY_CHANGED = 701;
     /**
-     * contest submission testing is complete and final verdict is available (eolymp.judge.SubmissionCompletedEvent)
+     * contest submission testing is complete and final verdict is available (judge.SubmissionCompletedEvent)
      *
      * Generated from protobuf enum <code>CONTEST_SUBMISSION_COMPLETED = 800;</code>
      */
     const CONTEST_SUBMISSION_COMPLETED = 800;
     /**
-     * contest score for a participant changed (eolymp.judge.ScoreChangedEvent)
+     * contest score for a participant changed (judge.ScoreChangedEvent)
      *
      * Generated from protobuf enum <code>CONTEST_SCORE_CHANGED = 801;</code>
      */
     const CONTEST_SCORE_CHANGED = 801;
     /**
-     * contest participant properties changed (not score) (eolymp.judge.ParticipantChangedEvent)
+     * contest participant properties changed (not score) (judge.ParticipantChangedEvent)
      *
      * Generated from protobuf enum <code>CONTEST_PARTICIPANT_CHANGED = 802;</code>
      */
     const CONTEST_PARTICIPANT_CHANGED = 802;
     /**
-     * contest participant joined the contest (eolymp.judge.ParticipantJoinedEvent)
+     * contest participant joined the contest (judge.ParticipantJoinedEvent)
      *
      * Generated from protobuf enum <code>CONTEST_PARTICIPANT_JOINED = 803;</code>
      */

@@ -47,7 +47,7 @@ class Course extends \Google\Protobuf\Internal\Message
      */
     protected $duration = 0;
     /**
-     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 16;</code>
      */
@@ -72,7 +72,7 @@ class Course extends \Google\Protobuf\Internal\Message
      *     @type int $visibility
      *     @type int $duration
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
-     *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *           Problem topics (ID of topics from taxonomy.TopicService)
      *     @type int $estimate
      * }
      */
@@ -268,7 +268,7 @@ class Course extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 16;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -279,7 +279,7 @@ class Course extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 16;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var

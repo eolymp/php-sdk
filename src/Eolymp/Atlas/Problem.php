@@ -59,7 +59,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $content = null;
     /**
-     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
      */
@@ -127,7 +127,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
-     *           Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     *           Problem topics (ID of topics from taxonomy.TopicService)
      *     @type float $score
      *           Total score
      *     @type \Eolymp\Atlas\Problem\Constraints $constraints
@@ -373,7 +373,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -384,7 +384,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem topics (ID of topics from eolymp.taxonomy.TopicService)
+     * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
