@@ -27,6 +27,10 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
      */
     protected $input_data = '';
     /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 4;</code>
+     */
+    private $values;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
      */
     private $features;
@@ -40,6 +44,7 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type string $source_code
      *     @type string $input_data
+     *     @type array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
      * }
      */
@@ -110,6 +115,28 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->input_data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getValues()
+    {
+        return $this->values;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 4;</code>
+     * @param array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setValues($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Value::class);
+        $this->values = $arr;
 
         return $this;
     }

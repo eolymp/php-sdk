@@ -63,7 +63,13 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source_url = '';
     /**
-     * source code signature
+     * submission values
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 14;</code>
+     */
+    private $values;
+    /**
+     * submission signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
      */
@@ -176,8 +182,10 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           deprecated: source code
      *     @type string $source_url
      *           source code URL
+     *     @type array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *           submission values
      *     @type string $signature
-     *           source code signature
+     *           submission signature
      *     @type int $status
      *           status (see explanation for enumeration values)
      *     @type int $verdict
@@ -495,7 +503,33 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code signature
+     * submission values
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 14;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getValues()
+    {
+        return $this->values;
+    }
+
+    /**
+     * submission values
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 14;</code>
+     * @param array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setValues($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Value::class);
+        $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * submission signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
      * @return string
@@ -506,7 +540,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source code signature
+     * submission signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
      * @param string $var
