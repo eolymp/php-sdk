@@ -57,6 +57,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     protected $input;
+    protected $output;
     protected $answer;
 
     /**
@@ -84,6 +85,10 @@ class Run extends \Google\Protobuf\Internal\Message
      *           use input from this field (up to 1KB)
      *     @type \Eolymp\Executor\EvaluationTask\Generator $input_generator
      *           use a script to generate input
+     *     @type string $output_url
+     *           download output via URL
+     *     @type string $output_content
+     *           use output from this field (up to 1KB)
      *     @type string $answer_url
      *           download answer via URL
      *     @type string $answer_content
@@ -369,6 +374,68 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * download output via URL
+     *
+     * Generated from protobuf field <code>string output_url = 32;</code>
+     * @return string
+     */
+    public function getOutputUrl()
+    {
+        return $this->readOneof(32);
+    }
+
+    public function hasOutputUrl()
+    {
+        return $this->hasOneof(32);
+    }
+
+    /**
+     * download output via URL
+     *
+     * Generated from protobuf field <code>string output_url = 32;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(32, $var);
+
+        return $this;
+    }
+
+    /**
+     * use output from this field (up to 1KB)
+     *
+     * Generated from protobuf field <code>string output_content = 31;</code>
+     * @return string
+     */
+    public function getOutputContent()
+    {
+        return $this->readOneof(31);
+    }
+
+    public function hasOutputContent()
+    {
+        return $this->hasOneof(31);
+    }
+
+    /**
+     * use output from this field (up to 1KB)
+     *
+     * Generated from protobuf field <code>string output_content = 31;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(31, $var);
+
+        return $this;
+    }
+
+    /**
      * download answer via URL
      *
      * Generated from protobuf field <code>string answer_url = 22;</code>
@@ -467,6 +534,14 @@ class Run extends \Google\Protobuf\Internal\Message
     public function getInput()
     {
         return $this->whichOneof("input");
+    }
+
+    /**
+     * @return string
+     */
+    public function getOutput()
+    {
+        return $this->whichOneof("output");
     }
 
     /**
