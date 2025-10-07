@@ -15,7 +15,7 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Eolymp\Content\Fragment::initOnce();
+        \GPBMetadata\Eolymp\Content\ContentFragment::initOnce();
         \GPBMetadata\Eolymp\Content\Variant::initOnce();
         $pool->internalAddGeneratedFile(
             "\x0A\xFD\x02\x0A\x1Beolymp/content/events.proto\x12\x0Eeolymp.content\x1A\x1Ceolymp/content/variant.proto\"x\x0A\x14FragmentChangedEvent\x12\x0D\x0A\x05scope\x18\x0A \x01(\x09\x12(\x0A\x06before\x18\x01 \x01(\x0B2\x18.eolymp.content.Fragment\x12'\x0A\x05after\x18\x02 \x01(\x0B2\x18.eolymp.content.Fragment\"{\x0A\x13VariantChangedEvent\x12\x13\x0A\x0Bfragment_id\x18\x0A \x01(\x09\x12'\x0A\x06before\x18\x01 \x01(\x0B2\x17.eolymp.content.Variant\x12&\x0A\x05after\x18\x02 \x01(\x0B2\x17.eolymp.content.VariantB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3"

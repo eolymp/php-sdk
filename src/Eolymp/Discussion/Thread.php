@@ -44,6 +44,10 @@ class Thread extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 reply_count = 11;</code>
      */
     protected $reply_count = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Subscription subscription = 100;</code>
+     */
+    protected $subscription = null;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class Thread extends \Google\Protobuf\Internal\Message
      *           total vote count
      *     @type int $reply_count
      *           total number of replies
+     *     @type \Eolymp\Discussion\Subscription $subscription
      * }
      */
     public function __construct($data = NULL) {
@@ -207,6 +212,38 @@ class Thread extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->reply_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Subscription subscription = 100;</code>
+     * @return \Eolymp\Discussion\Subscription|null
+     */
+    public function getSubscription()
+    {
+        return $this->subscription;
+    }
+
+    public function hasSubscription()
+    {
+        return isset($this->subscription);
+    }
+
+    public function clearSubscription()
+    {
+        unset($this->subscription);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.discussion.Subscription subscription = 100;</code>
+     * @param \Eolymp\Discussion\Subscription $var
+     * @return $this
+     */
+    public function setSubscription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Discussion\Subscription::class);
+        $this->subscription = $var;
 
         return $this;
     }
