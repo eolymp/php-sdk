@@ -16,11 +16,12 @@ class RenderService
           return;
         }
         \GPBMetadata\Eolymp\Annotations\Http::initOnce();
+        \GPBMetadata\Eolymp\Annotations\PBNamespace::initOnce();
         \GPBMetadata\Eolymp\Annotations\Ratelimit::initOnce();
         \GPBMetadata\Eolymp\Ecm\Content::initOnce();
         \GPBMetadata\Eolymp\Ecm\Node::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xDC\x03\x0A#eolymp/content/render_service.proto\x12\x0Eeolymp.content\x1A\"eolymp/annotations/ratelimit.proto\x1A\x18eolymp/ecm/content.proto\x1A\x15eolymp/ecm/node.proto\":\x0A\x12RenderContentInput\x12\$\x0A\x07content\x18\x01 \x01(\x0B2\x13.eolymp.ecm.Content\"7\x0A\x13RenderContentOutput\x12 \x0A\x06render\x18\x01 \x01(\x0B2\x10.eolymp.ecm.Node2\x9F\x01\x0A\x0DRenderService\x12\x8D\x01\x0A\x0DRenderContent\x12\".eolymp.content.RenderContentInput\x1A#.eolymp.content.RenderContentOutput\"3\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xC8A\xF8\xE2\x0Ad\x82\xD3\xE4\x93\x02\x1E\"\x0F/content:renderZ\x0B\"\x09/rendererB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3"
+            "\x0A\x9D\x04\x0A#eolymp/content/render_service.proto\x12\x0Eeolymp.content\x1A\"eolymp/annotations/namespace.proto\x1A\"eolymp/annotations/ratelimit.proto\x1A\x18eolymp/ecm/content.proto\x1A\x15eolymp/ecm/node.proto\":\x0A\x12RenderContentInput\x12\$\x0A\x07content\x18\x01 \x01(\x0B2\x13.eolymp.ecm.Content\"7\x0A\x13RenderContentOutput\x12 \x0A\x06render\x18\x01 \x01(\x0B2\x10.eolymp.ecm.Node2\xBC\x01\x0A\x0DRenderService\x12\x8D\x01\x0A\x0DRenderContent\x12\".eolymp.content.RenderContentInput\x1A#.eolymp.content.RenderContentOutput\"3\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xC8A\xF8\xE2\x0Ad\x82\xD3\xE4\x93\x02\x1E\"\x0F/content:renderZ\x0B\"\x09/renderer\x1A\x1B\x82\xF0\xF0\xE4\x01\x15eolymp.universe.SpaceB1Z/github.com/eolymp/go-sdk/eolymp/content;contentb\x06proto3"
         , true);
 
         static::$is_initialized = true;

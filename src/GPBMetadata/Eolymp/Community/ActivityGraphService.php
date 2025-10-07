@@ -16,11 +16,12 @@ class ActivityGraphService
           return;
         }
         \GPBMetadata\Eolymp\Annotations\Http::initOnce();
+        \GPBMetadata\Eolymp\Annotations\PBNamespace::initOnce();
         \GPBMetadata\Eolymp\Annotations\Ratelimit::initOnce();
         \GPBMetadata\Eolymp\Annotations\Scope::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\x82\x05\x0A-eolymp/community/activity_graph_service.proto\x12\x10eolymp.community\x1A\"eolymp/annotations/ratelimit.proto\x1A\x1Eeolymp/annotations/scope.proto\x1A\x1Fgoogle/protobuf/timestamp.proto\"\x83\x01\x0A\x1ADescribeActivityGraphInput\x12)\x0A\x05after\x18\x01 \x01(\x0B2\x1A.google.protobuf.Timestamp\x12*\x0A\x06before\x18\x02 \x01(\x0B2\x1A.google.protobuf.Timestamp\x12\x0E\x0A\x06metric\x18\x03 \x01(\x09\"@\x0A\x1BDescribeActivityGraphOutput\x12\x0E\x0A\x06values\x18\x01 \x03(\x05\x12\x11\x0A\x09max_value\x18\x0A \x01(\x052\xD2\x01\x0A\x14ActivityGraphService\x12\xB9\x01\x0A\x15DescribeActivityGraph\x12,.eolymp.community.DescribeActivityGraphInput\x1A-.eolymp.community.DescribeActivityGraphOutput\"C\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A2\x82\xE3\x0A\x19\x8A\xE3\x0A\x15community:member:read\x82\xD3\xE4\x93\x02\x11\x12\x0F/activity-graphB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3"
+            "\x0A\xC5\x05\x0A-eolymp/community/activity_graph_service.proto\x12\x10eolymp.community\x1A\"eolymp/annotations/namespace.proto\x1A\"eolymp/annotations/ratelimit.proto\x1A\x1Eeolymp/annotations/scope.proto\x1A\x1Fgoogle/protobuf/timestamp.proto\"\x83\x01\x0A\x1ADescribeActivityGraphInput\x12)\x0A\x05after\x18\x01 \x01(\x0B2\x1A.google.protobuf.Timestamp\x12*\x0A\x06before\x18\x02 \x01(\x0B2\x1A.google.protobuf.Timestamp\x12\x0E\x0A\x06metric\x18\x03 \x01(\x09\"@\x0A\x1BDescribeActivityGraphOutput\x12\x0E\x0A\x06values\x18\x01 \x03(\x05\x12\x11\x0A\x09max_value\x18\x0A \x01(\x052\xF1\x01\x0A\x14ActivityGraphService\x12\xB9\x01\x0A\x15DescribeActivityGraph\x12,.eolymp.community.DescribeActivityGraphInput\x1A-.eolymp.community.DescribeActivityGraphOutput\"C\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A2\x82\xE3\x0A\x19\x8A\xE3\x0A\x15community:member:read\x82\xD3\xE4\x93\x02\x11\x12\x0F/activity-graph\x1A\x1D\x82\xF0\xF0\xE4\x01\x17eolymp.community.MemberB5Z3github.com/eolymp/go-sdk/eolymp/community;communityb\x06proto3"
         , true);
 
         static::$is_initialized = true;
