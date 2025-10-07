@@ -89,19 +89,19 @@ class Event
      */
     const DISCUSSION_MESSAGE_CHANGED = 500;
     /**
-     * post properties changed (discussion.PostChangedEvent)
+     * post properties changed (content.PostChangedEvent)
      *
      * Generated from protobuf enum <code>POST_CHANGED = 600;</code>
      */
     const POST_CHANGED = 600;
     /**
-     * post translation properties changed(discussion.PostTranslationChangedEvent)
+     * post translation properties changed (content.PostTranslationChangedEvent)
      *
      * Generated from protobuf enum <code>POST_TRANSLATION_CHANGED = 601;</code>
      */
     const POST_TRANSLATION_CHANGED = 601;
     /**
-     * post published (discussion.PostPublishedEvent)
+     * post published (content.PostPublishedEvent)
      *
      * Generated from protobuf enum <code>POST_PUBLISHED = 602;</code>
      */
