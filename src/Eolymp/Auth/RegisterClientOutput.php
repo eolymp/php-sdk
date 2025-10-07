@@ -30,6 +30,62 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp client_secret_expires_at = 4;</code>
      */
     protected $client_secret_expires_at = null;
+    /**
+     * Generated from protobuf field <code>string registration_access_token = 5;</code>
+     */
+    protected $registration_access_token = '';
+    /**
+     * Generated from protobuf field <code>string registration_client_uri = 6;</code>
+     */
+    protected $registration_client_uri = '';
+    /**
+     * Generated from protobuf field <code>string token_endpoint_auth_method = 7;</code>
+     */
+    protected $token_endpoint_auth_method = '';
+    /**
+     * Generated from protobuf field <code>string application_type = 8;</code>
+     */
+    protected $application_type = '';
+    /**
+     * Generated from protobuf field <code>repeated string redirect_uris = 9;</code>
+     */
+    private $redirect_uris;
+    /**
+     * Generated from protobuf field <code>string client_name = 10;</code>
+     */
+    protected $client_name = '';
+    /**
+     * Generated from protobuf field <code>string logo_uri = 11;</code>
+     */
+    protected $logo_uri = '';
+    /**
+     * Generated from protobuf field <code>string subject_type = 12;</code>
+     */
+    protected $subject_type = '';
+    /**
+     * Generated from protobuf field <code>string sector_identifier_uri = 13;</code>
+     */
+    protected $sector_identifier_uri = '';
+    /**
+     * Generated from protobuf field <code>string jwks_uri = 14;</code>
+     */
+    protected $jwks_uri = '';
+    /**
+     * Generated from protobuf field <code>string userinfo_encrypted_response_alg = 15;</code>
+     */
+    protected $userinfo_encrypted_response_alg = '';
+    /**
+     * Generated from protobuf field <code>string userinfo_encrypted_response_enc = 16;</code>
+     */
+    protected $userinfo_encrypted_response_enc = '';
+    /**
+     * Generated from protobuf field <code>repeated string contacts = 17;</code>
+     */
+    private $contacts;
+    /**
+     * Generated from protobuf field <code>repeated string request_uris = 18;</code>
+     */
+    private $request_uris;
 
     /**
      * Constructor.
@@ -41,6 +97,20 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
      *     @type string $client_secret
      *     @type \Google\Protobuf\Timestamp $client_id_issued_at
      *     @type \Google\Protobuf\Timestamp $client_secret_expires_at
+     *     @type string $registration_access_token
+     *     @type string $registration_client_uri
+     *     @type string $token_endpoint_auth_method
+     *     @type string $application_type
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $redirect_uris
+     *     @type string $client_name
+     *     @type string $logo_uri
+     *     @type string $subject_type
+     *     @type string $sector_identifier_uri
+     *     @type string $jwks_uri
+     *     @type string $userinfo_encrypted_response_alg
+     *     @type string $userinfo_encrypted_response_enc
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contacts
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $request_uris
      * }
      */
     public function __construct($data = NULL) {
@@ -152,6 +222,314 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->client_secret_expires_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string registration_access_token = 5;</code>
+     * @return string
+     */
+    public function getRegistrationAccessToken()
+    {
+        return $this->registration_access_token;
+    }
+
+    /**
+     * Generated from protobuf field <code>string registration_access_token = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegistrationAccessToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->registration_access_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string registration_client_uri = 6;</code>
+     * @return string
+     */
+    public function getRegistrationClientUri()
+    {
+        return $this->registration_client_uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string registration_client_uri = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegistrationClientUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->registration_client_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_endpoint_auth_method = 7;</code>
+     * @return string
+     */
+    public function getTokenEndpointAuthMethod()
+    {
+        return $this->token_endpoint_auth_method;
+    }
+
+    /**
+     * Generated from protobuf field <code>string token_endpoint_auth_method = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTokenEndpointAuthMethod($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token_endpoint_auth_method = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_type = 8;</code>
+     * @return string
+     */
+    public function getApplicationType()
+    {
+        return $this->application_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string application_type = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setApplicationType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->application_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string redirect_uris = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRedirectUris()
+    {
+        return $this->redirect_uris;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string redirect_uris = 9;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRedirectUris($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->redirect_uris = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string client_name = 10;</code>
+     * @return string
+     */
+    public function getClientName()
+    {
+        return $this->client_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string client_name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->client_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logo_uri = 11;</code>
+     * @return string
+     */
+    public function getLogoUri()
+    {
+        return $this->logo_uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string logo_uri = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogoUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->logo_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject_type = 12;</code>
+     * @return string
+     */
+    public function getSubjectType()
+    {
+        return $this->subject_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string subject_type = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubjectType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->subject_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string sector_identifier_uri = 13;</code>
+     * @return string
+     */
+    public function getSectorIdentifierUri()
+    {
+        return $this->sector_identifier_uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string sector_identifier_uri = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSectorIdentifierUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sector_identifier_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string jwks_uri = 14;</code>
+     * @return string
+     */
+    public function getJwksUri()
+    {
+        return $this->jwks_uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>string jwks_uri = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJwksUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->jwks_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_encrypted_response_alg = 15;</code>
+     * @return string
+     */
+    public function getUserinfoEncryptedResponseAlg()
+    {
+        return $this->userinfo_encrypted_response_alg;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_encrypted_response_alg = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserinfoEncryptedResponseAlg($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->userinfo_encrypted_response_alg = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_encrypted_response_enc = 16;</code>
+     * @return string
+     */
+    public function getUserinfoEncryptedResponseEnc()
+    {
+        return $this->userinfo_encrypted_response_enc;
+    }
+
+    /**
+     * Generated from protobuf field <code>string userinfo_encrypted_response_enc = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserinfoEncryptedResponseEnc($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->userinfo_encrypted_response_enc = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string contacts = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getContacts()
+    {
+        return $this->contacts;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string contacts = 17;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setContacts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->contacts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string request_uris = 18;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRequestUris()
+    {
+        return $this->request_uris;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string request_uris = 18;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRequestUris($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->request_uris = $arr;
 
         return $this;
     }
