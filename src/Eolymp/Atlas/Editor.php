@@ -33,7 +33,7 @@ class Editor extends \Google\Protobuf\Internal\Message
      */
     private $runtimes;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Field fields = 12;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
      */
     private $fields;
 
@@ -49,7 +49,7 @@ class Editor extends \Google\Protobuf\Internal\Message
      *           list of enabled features
      *     @type array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $runtimes
      *           list of available runtimes
-     *     @type array<\Eolymp\Atlas\Editor\Field>|\Google\Protobuf\Internal\RepeatedField $fields
+     *     @type array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $fields
      * }
      */
     public function __construct($data = NULL) {
@@ -146,7 +146,7 @@ class Editor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Field fields = 12;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFields()
@@ -155,13 +155,13 @@ class Editor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Field fields = 12;</code>
-     * @param array<\Eolymp\Atlas\Editor\Field>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
+     * @param array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFields($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Editor\Field::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Field::class);
         $this->fields = $arr;
 
         return $this;

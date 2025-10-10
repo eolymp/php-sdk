@@ -17,7 +17,7 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateProblemInput.Patch patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Patch.Field patch = 1;</code>
      */
     private $patch;
     /**
@@ -49,7 +49,7 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateProblemInput.Patch patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Patch.Field patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -60,13 +60,13 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     /**
      * specify list of fields to update, if empty all fields are updated
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateProblemInput.Patch patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Patch.Field patch = 1;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateProblemInput\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Problem\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;

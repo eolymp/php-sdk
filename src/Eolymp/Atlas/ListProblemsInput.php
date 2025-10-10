@@ -49,7 +49,7 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -254,7 +254,7 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -263,13 +263,13 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Problem\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Problem\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

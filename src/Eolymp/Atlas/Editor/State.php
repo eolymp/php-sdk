@@ -27,7 +27,7 @@ class State extends \Google\Protobuf\Internal\Message
      */
     protected $input_data = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 10;</code>
      */
     private $values;
 
@@ -40,7 +40,7 @@ class State extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type string $source_code
      *     @type string $input_data
-     *     @type array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
      * }
      */
     public function __construct($data = NULL) {
@@ -115,7 +115,7 @@ class State extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getValues()
@@ -124,13 +124,13 @@ class State extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 10;</code>
-     * @param array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 10;</code>
+     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Value::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
         $this->values = $arr;
 
         return $this;

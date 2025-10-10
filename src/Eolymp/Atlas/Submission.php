@@ -65,7 +65,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     /**
      * submission values
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 14;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
      */
     private $values;
     /**
@@ -182,7 +182,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           deprecated: source code
      *     @type string $source_url
      *           source code URL
-     *     @type array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *           submission values
      *     @type string $signature
      *           submission signature
@@ -505,7 +505,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     /**
      * submission values
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 14;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getValues()
@@ -516,13 +516,13 @@ class Submission extends \Google\Protobuf\Internal\Message
     /**
      * submission values
      *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Value values = 14;</code>
-     * @param array<\Eolymp\Atlas\Submission\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
+     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setValues($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Value::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
         $this->values = $arr;
 
         return $this;

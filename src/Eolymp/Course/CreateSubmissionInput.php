@@ -27,7 +27,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Value values = 4;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Value values = 4;</code>
      */
     protected $values = null;
 
@@ -40,7 +40,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $material_id
      *     @type string $runtime
      *     @type string $source
-     *     @type \Eolymp\Atlas\Submission\Value $values
+     *     @type \Eolymp\Atlas\Form\Value $values
      * }
      */
     public function __construct($data = NULL) {
@@ -115,8 +115,8 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Value values = 4;</code>
-     * @return \Eolymp\Atlas\Submission\Value|null
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Value values = 4;</code>
+     * @return \Eolymp\Atlas\Form\Value|null
      */
     public function getValues()
     {
@@ -134,13 +134,13 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Submission.Value values = 4;</code>
-     * @param \Eolymp\Atlas\Submission\Value $var
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Value values = 4;</code>
+     * @param \Eolymp\Atlas\Form\Value $var
      * @return $this
      */
     public function setValues($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Value::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form\Value::class);
         $this->values = $var;
 
         return $this;

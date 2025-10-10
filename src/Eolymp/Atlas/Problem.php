@@ -29,10 +29,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * Generated from protobuf field <code>map<string, string> links = 683;</code>
-     */
-    private $links;
-    /**
      * Index in the public problem catalog.
      *
      * Generated from protobuf field <code>int32 number = 10;</code>
@@ -51,13 +47,41 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $origin = '';
     /**
-     * Generated from protobuf field <code>string title = 2;</code>
+     * Statement language
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     */
+    protected $locale = '';
+    /**
+     * Problem title
+     *
+     * Generated from protobuf field <code>string title = 4;</code>
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 3;</code>
+     * Statement content
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      */
     protected $content = null;
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 7;</code>
+     */
+    protected $download_link = '';
+    /**
+     * Problem author name.
+     *
+     * Generated from protobuf field <code>string author = 101;</code>
+     */
+    protected $author = '';
+    /**
+     * Problem source, name of the contest or olympiad where this problem was initially published.
+     *
+     * Generated from protobuf field <code>string source = 102;</code>
+     */
+    protected $source = '';
     /**
      * Problem topics (ID of topics from taxonomy.TopicService)
      *
@@ -106,6 +130,16 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 difficulty = 21;</code>
      */
     protected $difficulty = 0;
+    /**
+     * Submission form description
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22;</code>
+     */
+    protected $submission_form = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
+     */
+    private $examples;
 
     /**
      * Constructor.
@@ -117,15 +151,24 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Unique identifier.
      *     @type string $url
      *     @type int $type
-     *     @type array|\Google\Protobuf\Internal\MapField $links
      *     @type int $number
      *           Index in the public problem catalog.
      *     @type bool $visible
      *           Problem is visible to users in public catalog.
      *     @type string $origin
      *           For imported problems, provides the source from where the problem is imported and synchronized.
+     *     @type string $locale
+     *           Statement language
      *     @type string $title
+     *           Problem title
      *     @type \Eolymp\Ecm\Content $content
+     *           Statement content
+     *     @type string $download_link
+     *           Statement download link, allows to download statement in original format.
+     *     @type string $author
+     *           Problem author name.
+     *     @type string $source
+     *           Problem source, name of the contest or olympiad where this problem was initially published.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from taxonomy.TopicService)
      *     @type float $score
@@ -141,6 +184,9 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int $vote_count
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
+     *     @type \Eolymp\Atlas\Form $submission_form
+     *           Submission form description
+     *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
      * }
      */
     public function __construct($data = NULL) {
@@ -214,28 +260,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
         $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> links = 683;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getLinks()
-    {
-        return $this->links;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> links = 683;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setLinks($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->links = $arr;
 
         return $this;
     }
@@ -319,7 +343,35 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string title = 2;</code>
+     * Statement language
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Statement language
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem title
+     *
+     * Generated from protobuf field <code>string title = 4;</code>
      * @return string
      */
     public function getTitle()
@@ -328,7 +380,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string title = 2;</code>
+     * Problem title
+     *
+     * Generated from protobuf field <code>string title = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -341,7 +395,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 3;</code>
+     * Statement content
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      * @return \Eolymp\Ecm\Content|null
      */
     public function getContent()
@@ -360,7 +416,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 3;</code>
+     * Statement content
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
@@ -368,6 +426,84 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 7;</code>
+     * @return string
+     */
+    public function getDownloadLink()
+    {
+        return $this->download_link;
+    }
+
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem author name.
+     *
+     * Generated from protobuf field <code>string author = 101;</code>
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Problem author name.
+     *
+     * Generated from protobuf field <code>string author = 101;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem source, name of the contest or olympiad where this problem was initially published.
+     *
+     * Generated from protobuf field <code>string source = 102;</code>
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * Problem source, name of the contest or olympiad where this problem was initially published.
+     *
+     * Generated from protobuf field <code>string source = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
 
         return $this;
     }
@@ -600,6 +736,64 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->difficulty = $var;
+
+        return $this;
+    }
+
+    /**
+     * Submission form description
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22;</code>
+     * @return \Eolymp\Atlas\Form|null
+     */
+    public function getSubmissionForm()
+    {
+        return $this->submission_form;
+    }
+
+    public function hasSubmissionForm()
+    {
+        return isset($this->submission_form);
+    }
+
+    public function clearSubmissionForm()
+    {
+        unset($this->submission_form);
+    }
+
+    /**
+     * Submission form description
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22;</code>
+     * @param \Eolymp\Atlas\Form $var
+     * @return $this
+     */
+    public function setSubmissionForm($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form::class);
+        $this->submission_form = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExamples()
+    {
+        return $this->examples;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
+     * @param array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExamples($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Problem\Example::class);
+        $this->examples = $arr;
 
         return $this;
     }
