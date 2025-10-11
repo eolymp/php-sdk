@@ -15,9 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTestInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateTestInput.Patch patch = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test.Patch.Field patch = 5;</code>
      */
     private $patch;
     /**
@@ -40,7 +38,6 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           specify list of fields to update, if empty all fields are updated
      *     @type string $testset_id
      *     @type string $test_id
      *     @type \Eolymp\Atlas\Test $test
@@ -52,9 +49,7 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateTestInput.Patch patch = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test.Patch.Field patch = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -63,15 +58,13 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.UpdateTestInput.Patch patch = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Test.Patch.Field patch = 5;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\UpdateTestInput\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Test\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;

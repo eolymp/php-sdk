@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch.Field patch = 10;</code>
      */
     private $patch;
     /**
@@ -44,7 +44,7 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch.Field patch = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -53,13 +53,13 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch patch = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch.Field patch = 10;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;

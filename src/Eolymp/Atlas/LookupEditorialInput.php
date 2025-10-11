@@ -25,13 +25,7 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
      */
     protected $version = 0;
     /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     */
-    protected $render = false;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -44,8 +38,6 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *     @type int $version
      *           request data for specific problem version
-     *     @type bool $render
-     *           deprecated
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -103,33 +95,7 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @return bool
-     */
-    public function getRender()
-    {
-        return $this->render;
-    }
-
-    /**
-     * deprecated
-     *
-     * Generated from protobuf field <code>bool render = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRender($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->render = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -138,13 +104,13 @@ class LookupEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

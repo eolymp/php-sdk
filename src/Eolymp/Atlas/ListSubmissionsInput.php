@@ -35,7 +35,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -166,7 +166,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -175,13 +175,13 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Submission\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Submission\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

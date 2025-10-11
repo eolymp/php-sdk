@@ -5,50 +5,28 @@
 
 namespace Eolymp\Atlas\Submission;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.atlas.Submission.Extra</code>
+ * Generated from protobuf message <code>eolymp.atlas.Submission.Extra</code>
  */
-class Extra
+class Extra extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf enum <code>NO_EXTRA = 0;</code>
-     */
-    const NO_EXTRA = 0;
-    /**
-     * Generated from protobuf enum <code>GROUPS = 3;</code>
-     */
-    const GROUPS = 3;
-    /**
-     * Generated from protobuf enum <code>RUNS = 4;</code>
-     */
-    const RUNS = 4;
 
-    private static $valueToName = [
-        self::NO_EXTRA => 'NO_EXTRA',
-        self::GROUPS => 'GROUPS',
-        self::RUNS => 'RUNS',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Atlas\Submission::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
-    {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
-    }
 }
 
