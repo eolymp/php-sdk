@@ -17,11 +17,11 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 682 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string url = 682 [(.eolymp.api.read_only) = true];</code>
      */
     protected $url = '';
     /**
@@ -49,37 +49,37 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.read_only) = true];</code>
      */
     protected $locale = '';
     /**
      * Problem title
      *
-     * Generated from protobuf field <code>string title = 4 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string title = 4 [(.eolymp.api.read_only) = true];</code>
      */
     protected $title = '';
     /**
      * Statement content
      *
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6 [(.eolymp.api.read_only) = true];</code>
      */
     protected $content = null;
     /**
      * Statement download link, allows to download statement in original format.
      *
-     * Generated from protobuf field <code>string download_link = 7 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string download_link = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $download_link = '';
     /**
      * Problem author name.
      *
-     * Generated from protobuf field <code>string author = 101 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string author = 101 [(.eolymp.api.read_only) = true];</code>
      */
     protected $author = '';
     /**
      * Problem source, name of the contest or olympiad where this problem was initially published.
      *
-     * Generated from protobuf field <code>string source = 102 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string source = 102 [(.eolymp.api.read_only) = true];</code>
      */
     protected $source = '';
     /**
@@ -91,37 +91,37 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Total score
      *
-     * Generated from protobuf field <code>float score = 31 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>float score = 31 [(.eolymp.api.read_only) = true];</code>
      */
     protected $score = 0.0;
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
      */
     protected $constraints = null;
     /**
      * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *
-     * Generated from protobuf field <code>float acceptance_rate = 40 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>float acceptance_rate = 40 [(.eolymp.api.read_only) = true];</code>
      */
     protected $acceptance_rate = 0.0;
     /**
-     * Generated from protobuf field <code>uint32 submissions_count = 42 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>uint32 submissions_count = 42 [(.eolymp.api.read_only) = true];</code>
      */
     protected $submissions_count = 0;
     /**
-     * Generated from protobuf field <code>uint32 submissions_accepted = 43 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>uint32 submissions_accepted = 43 [(.eolymp.api.read_only) = true];</code>
      */
     protected $submissions_accepted = 0;
     /**
      * Number of votes for the problem
      *
-     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.read_only) = true];</code>
      */
     protected $vote = 0;
     /**
-     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.read_only) = true];</code>
      */
     protected $vote_count = 0;
     /**
@@ -133,11 +133,11 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Submission form description
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.read_only) = true];</code>
      */
     protected $submission_form = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
      */
     private $examples;
 
@@ -197,7 +197,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -208,7 +208,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -221,7 +221,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 682 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string url = 682 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getUrl()
@@ -230,7 +230,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 682 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string url = 682 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -345,7 +345,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getLocale()
@@ -356,7 +356,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -371,7 +371,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Problem title
      *
-     * Generated from protobuf field <code>string title = 4 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string title = 4 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getTitle()
@@ -382,7 +382,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Problem title
      *
-     * Generated from protobuf field <code>string title = 4 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string title = 4 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -397,7 +397,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement content
      *
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Ecm\Content|null
      */
     public function getContent()
@@ -418,7 +418,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement content
      *
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
@@ -433,7 +433,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement download link, allows to download statement in original format.
      *
-     * Generated from protobuf field <code>string download_link = 7 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string download_link = 7 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getDownloadLink()
@@ -444,7 +444,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement download link, allows to download statement in original format.
      *
-     * Generated from protobuf field <code>string download_link = 7 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string download_link = 7 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -459,7 +459,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Problem author name.
      *
-     * Generated from protobuf field <code>string author = 101 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string author = 101 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getAuthor()
@@ -470,7 +470,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Problem author name.
      *
-     * Generated from protobuf field <code>string author = 101 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string author = 101 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -485,7 +485,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Problem source, name of the contest or olympiad where this problem was initially published.
      *
-     * Generated from protobuf field <code>string source = 102 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string source = 102 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getSource()
@@ -496,7 +496,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Problem source, name of the contest or olympiad where this problem was initially published.
      *
-     * Generated from protobuf field <code>string source = 102 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>string source = 102 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -537,7 +537,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Total score
      *
-     * Generated from protobuf field <code>float score = 31 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>float score = 31 [(.eolymp.api.read_only) = true];</code>
      * @return float
      */
     public function getScore()
@@ -548,7 +548,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Total score
      *
-     * Generated from protobuf field <code>float score = 31 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>float score = 31 [(.eolymp.api.read_only) = true];</code>
      * @param float $var
      * @return $this
      */
@@ -563,7 +563,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Atlas\Problem\Constraints|null
      */
     public function getConstraints()
@@ -584,7 +584,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Atlas\Problem\Constraints $var
      * @return $this
      */
@@ -599,7 +599,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *
-     * Generated from protobuf field <code>float acceptance_rate = 40 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>float acceptance_rate = 40 [(.eolymp.api.read_only) = true];</code>
      * @return float
      */
     public function getAcceptanceRate()
@@ -610,7 +610,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *
-     * Generated from protobuf field <code>float acceptance_rate = 40 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>float acceptance_rate = 40 [(.eolymp.api.read_only) = true];</code>
      * @param float $var
      * @return $this
      */
@@ -623,7 +623,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 submissions_count = 42 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>uint32 submissions_count = 42 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getSubmissionsCount()
@@ -632,7 +632,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 submissions_count = 42 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>uint32 submissions_count = 42 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -645,7 +645,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 submissions_accepted = 43 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>uint32 submissions_accepted = 43 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getSubmissionsAccepted()
@@ -654,7 +654,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 submissions_accepted = 43 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>uint32 submissions_accepted = 43 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -669,7 +669,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Number of votes for the problem
      *
-     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getVote()
@@ -680,7 +680,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Number of votes for the problem
      *
-     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -693,7 +693,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getVoteCount()
@@ -702,7 +702,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -743,7 +743,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Submission form description
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Atlas\Form|null
      */
     public function getSubmissionForm()
@@ -764,7 +764,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Submission form description
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Atlas\Form $var
      * @return $this
      */
@@ -777,7 +777,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExamples()
@@ -786,7 +786,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.mcp_read_only) = true];</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
      * @param array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
