@@ -21,7 +21,7 @@ class Code extends \Google\Protobuf\Internal\Message
      */
     private $runtimes;
     /**
-     * maximum number of attachments, 0 means no attachments
+     * maximum number of attachments, 0 means no attachments are allowed
      *
      * Generated from protobuf field <code>uint32 max_attachments = 2;</code>
      */
@@ -29,9 +29,9 @@ class Code extends \Google\Protobuf\Internal\Message
     /**
      * max attachment size in bytes, 0 means not limit
      *
-     * Generated from protobuf field <code>uint32 max_attachment_size = 5;</code>
+     * Generated from protobuf field <code>uint32 attachment_max_size = 5;</code>
      */
-    protected $max_attachment_size = 0;
+    protected $attachment_max_size = 0;
     /**
      * allowed mime types for attachments, empty means all allowed
      *
@@ -54,8 +54,8 @@ class Code extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $runtimes
      *           allowed code execution runtimes
      *     @type int $max_attachments
-     *           maximum number of attachments, 0 means no attachments
-     *     @type int $max_attachment_size
+     *           maximum number of attachments, 0 means no attachments are allowed
+     *     @type int $attachment_max_size
      *           max attachment size in bytes, 0 means not limit
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attachment_types
      *           allowed mime types for attachments, empty means all allowed
@@ -95,7 +95,7 @@ class Code extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * maximum number of attachments, 0 means no attachments
+     * maximum number of attachments, 0 means no attachments are allowed
      *
      * Generated from protobuf field <code>uint32 max_attachments = 2;</code>
      * @return int
@@ -106,7 +106,7 @@ class Code extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * maximum number of attachments, 0 means no attachments
+     * maximum number of attachments, 0 means no attachments are allowed
      *
      * Generated from protobuf field <code>uint32 max_attachments = 2;</code>
      * @param int $var
@@ -123,25 +123,25 @@ class Code extends \Google\Protobuf\Internal\Message
     /**
      * max attachment size in bytes, 0 means not limit
      *
-     * Generated from protobuf field <code>uint32 max_attachment_size = 5;</code>
+     * Generated from protobuf field <code>uint32 attachment_max_size = 5;</code>
      * @return int
      */
-    public function getMaxAttachmentSize()
+    public function getAttachmentMaxSize()
     {
-        return $this->max_attachment_size;
+        return $this->attachment_max_size;
     }
 
     /**
      * max attachment size in bytes, 0 means not limit
      *
-     * Generated from protobuf field <code>uint32 max_attachment_size = 5;</code>
+     * Generated from protobuf field <code>uint32 attachment_max_size = 5;</code>
      * @param int $var
      * @return $this
      */
-    public function setMaxAttachmentSize($var)
+    public function setAttachmentMaxSize($var)
     {
         GPBUtil::checkUint32($var);
-        $this->max_attachment_size = $var;
+        $this->attachment_max_size = $var;
 
         return $this;
     }
