@@ -26,6 +26,7 @@ class Field extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Form.Field.Type type = 3;</code>
      */
     protected $type = 0;
+    protected $input;
 
     /**
      * Constructor.
@@ -36,6 +37,8 @@ class Field extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $label
      *     @type int $type
+     *     @type \Eolymp\Atlas\Form\Field\Code $code
+     *     @type \Eolymp\Atlas\Form\Field\File $file
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +110,68 @@ class Field extends \Google\Protobuf\Internal\Message
         $this->type = $var;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Field.Code code = 101;</code>
+     * @return \Eolymp\Atlas\Form\Field\Code|null
+     */
+    public function getCode()
+    {
+        return $this->readOneof(101);
+    }
+
+    public function hasCode()
+    {
+        return $this->hasOneof(101);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Field.Code code = 101;</code>
+     * @param \Eolymp\Atlas\Form\Field\Code $var
+     * @return $this
+     */
+    public function setCode($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form\Field\Code::class);
+        $this->writeOneof(101, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Field.File file = 102;</code>
+     * @return \Eolymp\Atlas\Form\Field\File|null
+     */
+    public function getFile()
+    {
+        return $this->readOneof(102);
+    }
+
+    public function hasFile()
+    {
+        return $this->hasOneof(102);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form.Field.File file = 102;</code>
+     * @param \Eolymp\Atlas\Form\Field\File $var
+     * @return $this
+     */
+    public function setFile($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form\Field\File::class);
+        $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInput()
+    {
+        return $this->whichOneof("input");
     }
 
 }

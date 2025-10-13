@@ -22,6 +22,10 @@ class Code extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source_url = 2;</code>
      */
     protected $source_url = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value.File attachments = 3;</code>
+     */
+    private $attachments;
 
     /**
      * Constructor.
@@ -31,6 +35,7 @@ class Code extends \Google\Protobuf\Internal\Message
      *
      *     @type string $runtime
      *     @type string $source_url
+     *     @type array<\Eolymp\Atlas\Form\Value\File>|\Google\Protobuf\Internal\RepeatedField $attachments
      * }
      */
     public function __construct($data = NULL) {
@@ -78,6 +83,28 @@ class Code extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value.File attachments = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttachments()
+    {
+        return $this->attachments;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value.File attachments = 3;</code>
+     * @param array<\Eolymp\Atlas\Form\Value\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttachments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value\File::class);
+        $this->attachments = $arr;
 
         return $this;
     }
