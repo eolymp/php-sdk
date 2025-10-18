@@ -131,101 +131,101 @@ class ContentServiceClient {
     }
 
     /**
-     * @param DescribeVariantInput $input message
+     * @param DescribeFragmentTranslationInput $input message
      * @param array $context request parameters
      *
-     * @return DescribeVariantOutput output message
+     * @return DescribeFragmentTranslationOutput output message
      */
-    public function DescribeVariant(DescribeVariantInput $input, array $context = [])
+    public function DescribeFragmentTranslation(DescribeFragmentTranslationInput $input, array $context = [])
     {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/variants/".rawurlencode($input->getVariantId());
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations/".rawurlencode($input->getTranslationId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFragmentId("");
-        $input->setVariantId("");
+        $input->setTranslationId("");
 
-        $context['name'] = "eolymp.content.ContentService/DescribeVariant";
+        $context['name'] = "eolymp.content.ContentService/DescribeFragmentTranslation";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeVariantOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeFragmentTranslationOutput::class, $context);
     }
 
     /**
-     * @param ListVariantsInput $input message
+     * @param ListFragmentTranslationsInput $input message
      * @param array $context request parameters
      *
-     * @return ListVariantsOutput output message
+     * @return ListFragmentTranslationsOutput output message
      */
-    public function ListVariants(ListVariantsInput $input, array $context = [])
+    public function ListFragmentTranslations(ListFragmentTranslationsInput $input, array $context = [])
     {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/variants";
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFragmentId("");
 
-        $context['name'] = "eolymp.content.ContentService/ListVariants";
+        $context['name'] = "eolymp.content.ContentService/ListFragmentTranslations";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListVariantsOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListFragmentTranslationsOutput::class, $context);
     }
 
     /**
-     * @param CreateVariantInput $input message
+     * @param CreateFragmentTranslationInput $input message
      * @param array $context request parameters
      *
-     * @return CreateVariantOutput output message
+     * @return CreateFragmentTranslationOutput output message
      */
-    public function CreateVariant(CreateVariantInput $input, array $context = [])
+    public function CreateFragmentTranslation(CreateFragmentTranslationInput $input, array $context = [])
     {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/variants";
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFragmentId("");
 
-        $context['name'] = "eolymp.content.ContentService/CreateVariant";
+        $context['name'] = "eolymp.content.ContentService/CreateFragmentTranslation";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateVariantOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateFragmentTranslationOutput::class, $context);
     }
 
     /**
-     * @param UpdateVariantInput $input message
+     * @param UpdateFragmentTranslationInput $input message
      * @param array $context request parameters
      *
-     * @return UpdateVariantOutput output message
+     * @return UpdateFragmentTranslationOutput output message
      */
-    public function UpdateVariant(UpdateVariantInput $input, array $context = [])
+    public function UpdateFragmentTranslation(UpdateFragmentTranslationInput $input, array $context = [])
     {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/variants/".rawurlencode($input->getVariantId());
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations/".rawurlencode($input->getTranslationId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFragmentId("");
-        $input->setVariantId("");
+        $input->setTranslationId("");
 
-        $context['name'] = "eolymp.content.ContentService/UpdateVariant";
+        $context['name'] = "eolymp.content.ContentService/UpdateFragmentTranslation";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateVariantOutput::class, $context);
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateFragmentTranslationOutput::class, $context);
     }
 
     /**
-     * @param DeleteVariantInput $input message
+     * @param DeleteFragmentTranslationInput $input message
      * @param array $context request parameters
      *
-     * @return DeleteVariantOutput output message
+     * @return DeleteFragmentTranslationOutput output message
      */
-    public function DeleteVariant(DeleteVariantInput $input, array $context = [])
+    public function DeleteFragmentTranslation(DeleteFragmentTranslationInput $input, array $context = [])
     {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/variants/".rawurlencode($input->getVariantId());
+        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations/".rawurlencode($input->getTranslationId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setFragmentId("");
-        $input->setVariantId("");
+        $input->setTranslationId("");
 
-        $context['name'] = "eolymp.content.ContentService/DeleteVariant";
+        $context['name'] = "eolymp.content.ContentService/DeleteFragmentTranslation";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteVariantOutput::class, $context);
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteFragmentTranslationOutput::class, $context);
     }
 
     /**

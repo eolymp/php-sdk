@@ -3,14 +3,14 @@
 # NO CHECKED-IN PROTOBUF GENCODE
 # source: eolymp/content/content_service.proto
 
-namespace Eolymp\Content\ListVariantsInput;
+namespace Eolymp\Content\ListFragmentTranslationsInput;
 
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.ListVariantsInput.Filter</code>
+ * Generated from protobuf message <code>eolymp.content.ListFragmentTranslationsInput.Filter</code>
  */
 class Filter extends \Google\Protobuf\Internal\Message
 {

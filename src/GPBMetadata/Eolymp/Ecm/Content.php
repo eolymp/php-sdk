@@ -15,9 +15,10 @@ class Content
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Annotations\Mcp::initOnce();
         \GPBMetadata\Eolymp\Ecm\Node::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xE6\x01\x0A\x18eolymp/ecm/content.proto\x12\x0Aeolymp.ecm\"\x8A\x01\x0A\x07Content\x12\x0E\x0A\x04html\x18\x01 \x01(\x09H\x00\x12\x0F\x0A\x05latex\x18\x02 \x01(\x09H\x00\x12\x12\x0A\x08markdown\x18\x03 \x01(\x09H\x00\x12\x1F\x0A\x03ecm\x18\x04 \x01(\x0B2\x10.eolymp.ecm.NodeH\x00\x12 \x0A\x06render\x18c \x01(\x0B2\x10.eolymp.ecm.NodeB\x07\x0A\x05valueB)Z'github.com/eolymp/go-sdk/eolymp/ecm;ecmb\x06proto3"
+            "\x0A\xE3\x01\x0A\x18eolymp/ecm/content.proto\x12\x0Aeolymp.ecm\x1A\x15eolymp/ecm/node.proto\"q\x0A\x07Content\x12\x0E\x0A\x04html\x18\x01 \x01(\x09H\x00\x12\x0F\x0A\x05latex\x18\x02 \x01(\x09H\x00\x12\x12\x0A\x08markdown\x18\x03 \x01(\x09H\x00\x12(\x0A\x06render\x18c \x01(\x0B2\x10.eolymp.ecm.NodeB\x06\xA8\xF0\xF0\xE4\x01\x01B\x07\x0A\x05valueB)Z'github.com/eolymp/go-sdk/eolymp/ecm;ecmb\x06proto3"
         , true);
 
         static::$is_initialized = true;

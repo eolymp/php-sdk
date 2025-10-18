@@ -10,9 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.ListVariantsInput</code>
+ * Generated from protobuf message <code>eolymp.content.ListFragmentTranslationsInput</code>
  */
-class ListVariantsInput extends \Google\Protobuf\Internal\Message
+class ListFragmentTranslationsInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string fragment_id = 2;</code>
@@ -31,11 +31,11 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
+     * Generated from protobuf field <code>.eolymp.content.ListFragmentTranslationsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -49,7 +49,7 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Content\ListVariantsInput\Filter $filters
+     *     @type \Eolymp\Content\ListFragmentTranslationsInput\Filter $filters
      *           data filters
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
@@ -132,8 +132,8 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
-     * @return \Eolymp\Content\ListVariantsInput\Filter|null
+     * Generated from protobuf field <code>.eolymp.content.ListFragmentTranslationsInput.Filter filters = 40;</code>
+     * @return \Eolymp\Content\ListFragmentTranslationsInput\Filter|null
      */
     public function getFilters()
     {
@@ -153,20 +153,20 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
-     * Generated from protobuf field <code>.eolymp.content.ListVariantsInput.Filter filters = 40;</code>
-     * @param \Eolymp\Content\ListVariantsInput\Filter $var
+     * Generated from protobuf field <code>.eolymp.content.ListFragmentTranslationsInput.Filter filters = 40;</code>
+     * @param \Eolymp\Content\ListFragmentTranslationsInput\Filter $var
      * @return $this
      */
     public function setFilters($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\ListVariantsInput\Filter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Content\ListFragmentTranslationsInput\Filter::class);
         $this->filters = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -175,13 +175,13 @@ class ListVariantsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.Fragment.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Variant\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Fragment\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

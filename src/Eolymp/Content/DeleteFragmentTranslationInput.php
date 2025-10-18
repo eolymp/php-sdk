@@ -10,18 +10,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.CreateVariantInput</code>
+ * Generated from protobuf message <code>eolymp.content.DeleteFragmentTranslationInput</code>
  */
-class CreateVariantInput extends \Google\Protobuf\Internal\Message
+class DeleteFragmentTranslationInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string fragment_id = 1;</code>
      */
     protected $fragment_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.content.Variant variant = 2;</code>
+     * Generated from protobuf field <code>string translation_id = 2;</code>
      */
-    protected $variant = null;
+    protected $translation_id = '';
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ class CreateVariantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $fragment_id
-     *     @type \Eolymp\Content\Variant $variant
+     *     @type string $translation_id
      * }
      */
     public function __construct($data = NULL) {
@@ -61,33 +61,23 @@ class CreateVariantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Variant variant = 2;</code>
-     * @return \Eolymp\Content\Variant|null
+     * Generated from protobuf field <code>string translation_id = 2;</code>
+     * @return string
      */
-    public function getVariant()
+    public function getTranslationId()
     {
-        return $this->variant;
-    }
-
-    public function hasVariant()
-    {
-        return isset($this->variant);
-    }
-
-    public function clearVariant()
-    {
-        unset($this->variant);
+        return $this->translation_id;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Variant variant = 2;</code>
-     * @param \Eolymp\Content\Variant $var
+     * Generated from protobuf field <code>string translation_id = 2;</code>
+     * @param string $var
      * @return $this
      */
-    public function setVariant($var)
+    public function setTranslationId($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\Variant::class);
-        $this->variant = $var;
+        GPBUtil::checkString($var, True);
+        $this->translation_id = $var;
 
         return $this;
     }

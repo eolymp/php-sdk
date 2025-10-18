@@ -5,75 +5,28 @@
 
 namespace Eolymp\Content\Fragment;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.content.Fragment.Patch</code>
+ * Generated from protobuf message <code>eolymp.content.Fragment.Patch</code>
  */
-class Patch
+class Patch extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf enum <code>UNKNOWN_PATCH = 0;</code>
-     */
-    const UNKNOWN_PATCH = 0;
-    /**
-     * Generated from protobuf enum <code>PATCH_ALL = 1;</code>
-     */
-    const PATCH_ALL = 1;
-    /**
-     * Generated from protobuf enum <code>PATCH_PATH = 2;</code>
-     */
-    const PATCH_PATH = 2;
-    /**
-     * Generated from protobuf enum <code>PATCH_LOCALE = 3;</code>
-     */
-    const PATCH_LOCALE = 3;
-    /**
-     * Generated from protobuf enum <code>PATCH_DRAFT = 5;</code>
-     */
-    const PATCH_DRAFT = 5;
-    /**
-     * Generated from protobuf enum <code>PATCH_TITLE = 6;</code>
-     */
-    const PATCH_TITLE = 6;
-    /**
-     * Generated from protobuf enum <code>PATCH_CONTENT = 7;</code>
-     */
-    const PATCH_CONTENT = 7;
-    /**
-     * Generated from protobuf enum <code>PATCH_LABELS = 8;</code>
-     */
-    const PATCH_LABELS = 8;
 
-    private static $valueToName = [
-        self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
-        self::PATCH_ALL => 'PATCH_ALL',
-        self::PATCH_PATH => 'PATCH_PATH',
-        self::PATCH_LOCALE => 'PATCH_LOCALE',
-        self::PATCH_DRAFT => 'PATCH_DRAFT',
-        self::PATCH_TITLE => 'PATCH_TITLE',
-        self::PATCH_CONTENT => 'PATCH_CONTENT',
-        self::PATCH_LABELS => 'PATCH_LABELS',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Content\ContentFragment::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
-    {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
-    }
 }
 

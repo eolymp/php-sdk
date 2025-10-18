@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Content extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99 [(.eolymp.api.read_only) = true];</code>
      */
     protected $render = null;
     protected $value;
@@ -29,7 +29,6 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type string $html
      *     @type string $latex
      *     @type string $markdown
-     *     @type \Eolymp\Ecm\Node $ecm
      *     @type \Eolymp\Ecm\Node $render
      * }
      */
@@ -120,34 +119,7 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node ecm = 4;</code>
-     * @return \Eolymp\Ecm\Node|null
-     */
-    public function getEcm()
-    {
-        return $this->readOneof(4);
-    }
-
-    public function hasEcm()
-    {
-        return $this->hasOneof(4);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node ecm = 4;</code>
-     * @param \Eolymp\Ecm\Node $var
-     * @return $this
-     */
-    public function setEcm($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
-        $this->writeOneof(4, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Ecm\Node|null
      */
     public function getRender()
@@ -166,7 +138,7 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Node render = 99 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Ecm\Node $var
      * @return $this
      */

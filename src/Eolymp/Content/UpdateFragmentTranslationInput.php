@@ -10,22 +10,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.DescribeVariantInput</code>
+ * Generated from protobuf message <code>eolymp.content.UpdateFragmentTranslationInput</code>
  */
-class DescribeVariantInput extends \Google\Protobuf\Internal\Message
+class UpdateFragmentTranslationInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string fragment_id = 1;</code>
      */
     protected $fragment_id = '';
     /**
-     * Generated from protobuf field <code>string variant_id = 2;</code>
+     * Generated from protobuf field <code>string translation_id = 2;</code>
      */
-    protected $variant_id = '';
+    protected $translation_id = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Translation translation = 3;</code>
      */
-    private $extra;
+    protected $translation = null;
 
     /**
      * Constructor.
@@ -34,8 +34,8 @@ class DescribeVariantInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $fragment_id
-     *     @type string $variant_id
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type string $translation_id
+     *     @type \Eolymp\Content\Fragment\Translation $translation
      * }
      */
     public function __construct($data = NULL) {
@@ -66,45 +66,55 @@ class DescribeVariantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string variant_id = 2;</code>
+     * Generated from protobuf field <code>string translation_id = 2;</code>
      * @return string
      */
-    public function getVariantId()
+    public function getTranslationId()
     {
-        return $this->variant_id;
+        return $this->translation_id;
     }
 
     /**
-     * Generated from protobuf field <code>string variant_id = 2;</code>
+     * Generated from protobuf field <code>string translation_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setVariantId($var)
+    public function setTranslationId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->variant_id = $var;
+        $this->translation_id = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Translation translation = 3;</code>
+     * @return \Eolymp\Content\Fragment\Translation|null
      */
-    public function getExtra()
+    public function getTranslation()
     {
-        return $this->extra;
+        return $this->translation;
+    }
+
+    public function hasTranslation()
+    {
+        return isset($this->translation);
+    }
+
+    public function clearTranslation()
+    {
+        unset($this->translation);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.Variant.Extra extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Translation translation = 3;</code>
+     * @param \Eolymp\Content\Fragment\Translation $var
      * @return $this
      */
-    public function setExtra($var)
+    public function setTranslation($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Variant\Extra::class);
-        $this->extra = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Content\Fragment\Translation::class);
+        $this->translation = $var;
 
         return $this;
     }

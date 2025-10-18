@@ -10,9 +10,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.UpdateVariantOutput</code>
+ * Generated from protobuf message <code>eolymp.content.DeleteFragmentTranslationOutput</code>
  */
-class UpdateVariantOutput extends \Google\Protobuf\Internal\Message
+class DeleteFragmentTranslationOutput extends \Google\Protobuf\Internal\Message
 {
 
     /**
