@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Translation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
@@ -27,7 +27,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     protected $message = '';
     /**
-     * Generated from protobuf field <code>.eolymp.l10n.Translation.Status status = 4;</code>
+     * Generated from protobuf field <code>.eolymp.l10n.Translation.Status status = 4 [(.eolymp.api.read_only) = true];</code>
      */
     protected $status = 0;
     /**
@@ -35,15 +35,15 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     protected $needs_review = false;
     /**
-     * Generated from protobuf field <code>string created_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_by = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12 [(.eolymp.api.read_only) = true];</code>
      */
     protected $approved_at = null;
 
@@ -69,7 +69,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -78,7 +78,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -135,7 +135,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.l10n.Translation.Status status = 4;</code>
+     * Generated from protobuf field <code>.eolymp.l10n.Translation.Status status = 4 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getStatus()
@@ -144,7 +144,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.l10n.Translation.Status status = 4;</code>
+     * Generated from protobuf field <code>.eolymp.l10n.Translation.Status status = 4 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -179,7 +179,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getCreatedBy()
@@ -188,7 +188,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string created_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -201,7 +201,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -220,7 +220,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -233,7 +233,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getApprovedAt()
@@ -252,7 +252,7 @@ class Translation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp approved_at = 12 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

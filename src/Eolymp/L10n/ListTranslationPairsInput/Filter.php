@@ -27,7 +27,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by term status
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11 [(.eolymp.api.mcp_field_desc) = "possible values: `ACTIVE`, `DEPRECATED`"];</code>
      */
     private $term_status;
     /**
@@ -39,7 +39,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by translation status
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30 [(.eolymp.api.mcp_field_desc) = "possible values: `MISSING`, `OUTDATED`, `NEEDS_REVIEW`, `APPROVED`"];</code>
      */
     private $translation_status;
     /**
@@ -124,7 +124,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by term status
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11 [(.eolymp.api.mcp_field_desc) = "possible values: `ACTIVE`, `DEPRECATED`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTermStatus()
@@ -135,7 +135,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by term status
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum term_status = 11 [(.eolymp.api.mcp_field_desc) = "possible values: `ACTIVE`, `DEPRECATED`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -176,7 +176,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by translation status
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30 [(.eolymp.api.mcp_field_desc) = "possible values: `MISSING`, `OUTDATED`, `NEEDS_REVIEW`, `APPROVED`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTranslationStatus()
@@ -187,7 +187,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * filter by translation status
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum translation_status = 30 [(.eolymp.api.mcp_field_desc) = "possible values: `MISSING`, `OUTDATED`, `NEEDS_REVIEW`, `APPROVED`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
