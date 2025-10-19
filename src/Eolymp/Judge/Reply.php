@@ -17,13 +17,13 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Reply unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
      * Ticket this reply belongs to.
      *
-     * Generated from protobuf field <code>string ticket_id = 2;</code>
+     * Generated from protobuf field <code>string ticket_id = 2 [(.eolymp.api.read_only) = true];</code>
      */
     protected $ticket_id = '';
     /**
@@ -35,7 +35,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when reply was created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     protected $author;
@@ -66,7 +66,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Reply unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -77,7 +77,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Reply unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -92,7 +92,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Ticket this reply belongs to.
      *
-     * Generated from protobuf field <code>string ticket_id = 2;</code>
+     * Generated from protobuf field <code>string ticket_id = 2 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getTicketId()
@@ -103,7 +103,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Ticket this reply belongs to.
      *
-     * Generated from protobuf field <code>string ticket_id = 2;</code>
+     * Generated from protobuf field <code>string ticket_id = 2 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -116,7 +116,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 3;</code>
+     * Generated from protobuf field <code>string user_id = 3 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getUserId()
@@ -130,7 +130,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 3;</code>
+     * Generated from protobuf field <code>string user_id = 3 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -143,7 +143,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 4 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getMemberId()
@@ -157,7 +157,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 4 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -208,7 +208,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when reply was created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -229,7 +229,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when reply was created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

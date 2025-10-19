@@ -15,23 +15,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class Post extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [(.eolymp.api.read_only) = true];</code>
      */
     protected $url = '';
     /**
      * if set, marks this post as translation for a post specified in this field
      *
-     * Generated from protobuf field <code>string source_id = 7;</code>
+     * Generated from protobuf field <code>string source_id = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $source_id = '';
     /**
      * populated if source_id is set
      *
-     * Generated from protobuf field <code>string source_url = 8;</code>
+     * Generated from protobuf field <code>string source_url = 8 [(.eolymp.api.read_only) = true];</code>
      */
     protected $source_url = '';
     /**
@@ -43,7 +43,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * visible and available to everyone (ie. published and passed moderation)
      *
-     * Generated from protobuf field <code>bool public = 4;</code>
+     * Generated from protobuf field <code>bool public = 4 [(.eolymp.api.read_only) = true];</code>
      */
     protected $public = false;
     /**
@@ -61,19 +61,19 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * moderation status
      *
-     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5;</code>
+     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $moderation = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21 [(.eolymp.api.read_only) = true];</code>
      */
     protected $published_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22 [(.eolymp.api.read_only) = true];</code>
      */
     protected $updated_at = null;
     /**
@@ -105,25 +105,25 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * preview is generated automatically from the content
      *
-     * Generated from protobuf field <code>.eolymp.content.Post.Preview preview = 110;</code>
+     * Generated from protobuf field <code>.eolymp.content.Post.Preview preview = 110 [(.eolymp.api.read_only) = true];</code>
      */
     protected $preview = null;
     /**
      * vote of authenticated user (+1 or -1)
      *
-     * Generated from protobuf field <code>int32 vote = 12;</code>
+     * Generated from protobuf field <code>int32 vote = 12 [(.eolymp.api.read_only) = true];</code>
      */
     protected $vote = 0;
     /**
      * total vote count
      *
-     * Generated from protobuf field <code>int32 vote_count = 30;</code>
+     * Generated from protobuf field <code>int32 vote_count = 30 [(.eolymp.api.read_only) = true];</code>
      */
     protected $vote_count = 0;
     /**
      * total number of replies
      *
-     * Generated from protobuf field <code>int32 reply_count = 31;</code>
+     * Generated from protobuf field <code>int32 reply_count = 31 [(.eolymp.api.read_only) = true];</code>
      */
     protected $reply_count = 0;
     /**
@@ -131,7 +131,7 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     private $labels;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200 [(.eolymp.api.read_only) = true];</code>
      */
     private $links;
     protected $author;
@@ -189,7 +189,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -198,7 +198,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -211,7 +211,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getUrl()
@@ -220,7 +220,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -235,7 +235,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * if set, marks this post as translation for a post specified in this field
      *
-     * Generated from protobuf field <code>string source_id = 7;</code>
+     * Generated from protobuf field <code>string source_id = 7 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getSourceId()
@@ -246,7 +246,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * if set, marks this post as translation for a post specified in this field
      *
-     * Generated from protobuf field <code>string source_id = 7;</code>
+     * Generated from protobuf field <code>string source_id = 7 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -261,7 +261,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * populated if source_id is set
      *
-     * Generated from protobuf field <code>string source_url = 8;</code>
+     * Generated from protobuf field <code>string source_url = 8 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getSourceUrl()
@@ -272,7 +272,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * populated if source_id is set
      *
-     * Generated from protobuf field <code>string source_url = 8;</code>
+     * Generated from protobuf field <code>string source_url = 8 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -313,7 +313,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * visible and available to everyone (ie. published and passed moderation)
      *
-     * Generated from protobuf field <code>bool public = 4;</code>
+     * Generated from protobuf field <code>bool public = 4 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getPublic()
@@ -324,7 +324,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * visible and available to everyone (ie. published and passed moderation)
      *
-     * Generated from protobuf field <code>bool public = 4;</code>
+     * Generated from protobuf field <code>bool public = 4 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -391,7 +391,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * moderation status
      *
-     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5;</code>
+     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getModeration()
@@ -402,7 +402,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * moderation status
      *
-     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5;</code>
+     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -415,7 +415,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 10;</code>
+     * Generated from protobuf field <code>string user_id = 10 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getUserId()
@@ -429,7 +429,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 10;</code>
+     * Generated from protobuf field <code>string user_id = 10 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -442,7 +442,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
+     * Generated from protobuf field <code>string member_id = 11 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getMemberId()
@@ -456,7 +456,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11;</code>
+     * Generated from protobuf field <code>string member_id = 11 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -469,7 +469,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -488,7 +488,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -501,7 +501,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getPublishedAt()
@@ -520,7 +520,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp published_at = 21 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -533,7 +533,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
@@ -552,7 +552,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 22 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -699,7 +699,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * preview is generated automatically from the content
      *
-     * Generated from protobuf field <code>.eolymp.content.Post.Preview preview = 110;</code>
+     * Generated from protobuf field <code>.eolymp.content.Post.Preview preview = 110 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Content\Post\Preview|null
      */
     public function getPreview()
@@ -720,7 +720,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * preview is generated automatically from the content
      *
-     * Generated from protobuf field <code>.eolymp.content.Post.Preview preview = 110;</code>
+     * Generated from protobuf field <code>.eolymp.content.Post.Preview preview = 110 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Content\Post\Preview $var
      * @return $this
      */
@@ -735,7 +735,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * vote of authenticated user (+1 or -1)
      *
-     * Generated from protobuf field <code>int32 vote = 12;</code>
+     * Generated from protobuf field <code>int32 vote = 12 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getVote()
@@ -746,7 +746,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * vote of authenticated user (+1 or -1)
      *
-     * Generated from protobuf field <code>int32 vote = 12;</code>
+     * Generated from protobuf field <code>int32 vote = 12 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -761,7 +761,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * total vote count
      *
-     * Generated from protobuf field <code>int32 vote_count = 30;</code>
+     * Generated from protobuf field <code>int32 vote_count = 30 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getVoteCount()
@@ -772,7 +772,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * total vote count
      *
-     * Generated from protobuf field <code>int32 vote_count = 30;</code>
+     * Generated from protobuf field <code>int32 vote_count = 30 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -787,7 +787,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * total number of replies
      *
-     * Generated from protobuf field <code>int32 reply_count = 31;</code>
+     * Generated from protobuf field <code>int32 reply_count = 31 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getReplyCount()
@@ -798,7 +798,7 @@ class Post extends \Google\Protobuf\Internal\Message
     /**
      * total number of replies
      *
-     * Generated from protobuf field <code>int32 reply_count = 31;</code>
+     * Generated from protobuf field <code>int32 reply_count = 31 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -833,7 +833,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLinks()
@@ -842,7 +842,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200 [(.eolymp.api.read_only) = true];</code>
      * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

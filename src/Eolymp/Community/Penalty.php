@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Penalty extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
@@ -35,15 +35,15 @@ class Penalty extends \Google\Protobuf\Internal\Message
      */
     private $scope;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $expires_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12 [(.eolymp.api.read_only) = true];</code>
      */
     protected $cancelled_at = null;
 
@@ -69,7 +69,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -78,7 +78,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -189,7 +189,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -208,7 +208,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -221,7 +221,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpiresAt()
@@ -240,7 +240,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -253,7 +253,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCancelledAt()
@@ -272,7 +272,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp cancelled_at = 12 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

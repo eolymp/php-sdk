@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Fragment extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
@@ -39,11 +39,11 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $content = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61 [(.eolymp.api.read_only) = true];</code>
      */
     protected $updated_at = null;
     /**
@@ -74,7 +74,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -83,7 +83,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -216,7 +216,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -235,7 +235,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -248,7 +248,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
@@ -267,7 +267,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 61 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

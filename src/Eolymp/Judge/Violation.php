@@ -15,11 +15,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Violation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $status = 0;
     /**
@@ -41,33 +41,33 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * participant who received the violation
      *
-     * Generated from protobuf field <code>string participant_id = 5;</code>
+     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $participant_id = '';
     /**
      * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string submission_id = 6;</code>
+     * Generated from protobuf field <code>string submission_id = 6 [(.eolymp.api.read_only) = true];</code>
      */
     protected $submission_id = '';
     /**
      * user ID of the person who created the violation
      *
-     * Generated from protobuf field <code>string created_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_by = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
      * user ID of the person who confirmed the violation
      *
-     * Generated from protobuf field <code>string confirmed_by = 12;</code>
+     * Generated from protobuf field <code>string confirmed_by = 12 [(.eolymp.api.read_only) = true];</code>
      */
     protected $confirmed_by = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13 [(.eolymp.api.read_only) = true];</code>
      */
     protected $confirmed_at = null;
 
@@ -102,7 +102,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -111,7 +111,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getStatus()
@@ -133,7 +133,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -222,7 +222,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * participant who received the violation
      *
-     * Generated from protobuf field <code>string participant_id = 5;</code>
+     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getParticipantId()
@@ -233,7 +233,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * participant who received the violation
      *
-     * Generated from protobuf field <code>string participant_id = 5;</code>
+     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -248,7 +248,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string submission_id = 6;</code>
+     * Generated from protobuf field <code>string submission_id = 6 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getSubmissionId()
@@ -259,7 +259,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string submission_id = 6;</code>
+     * Generated from protobuf field <code>string submission_id = 6 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -274,7 +274,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * user ID of the person who created the violation
      *
-     * Generated from protobuf field <code>string created_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getCreatedBy()
@@ -285,7 +285,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * user ID of the person who created the violation
      *
-     * Generated from protobuf field <code>string created_by = 10;</code>
+     * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -298,7 +298,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -317,7 +317,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -332,7 +332,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * user ID of the person who confirmed the violation
      *
-     * Generated from protobuf field <code>string confirmed_by = 12;</code>
+     * Generated from protobuf field <code>string confirmed_by = 12 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getConfirmedBy()
@@ -343,7 +343,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * user ID of the person who confirmed the violation
      *
-     * Generated from protobuf field <code>string confirmed_by = 12;</code>
+     * Generated from protobuf field <code>string confirmed_by = 12 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -356,7 +356,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getConfirmedAt()
@@ -375,7 +375,7 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp confirmed_at = 13 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Achievement extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
@@ -39,7 +39,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * when the achievement was awarded for the first time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $awarded_at = null;
     /**
@@ -57,7 +57,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * cursor in the list
      *
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      */
     protected $cursor = '';
 
@@ -89,7 +89,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -98,7 +98,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -191,7 +191,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * when the achievement was awarded for the first time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getAwardedAt()
@@ -212,7 +212,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * when the achievement was awarded for the first time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -303,7 +303,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * cursor in the list
      *
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getCursor()
@@ -314,7 +314,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * cursor in the list
      *
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */

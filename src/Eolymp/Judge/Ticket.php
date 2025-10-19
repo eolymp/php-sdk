@@ -17,31 +17,31 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
      * Contest where ticket was opened.
      *
-     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * Generated from protobuf field <code>string contest_id = 2 [(.eolymp.api.read_only) = true];</code>
      */
     protected $contest_id = '';
     /**
      * Participant who opened the ticket.
      *
-     * Generated from protobuf field <code>string participant_id = 3;</code>
+     * Generated from protobuf field <code>string participant_id = 3 [(.eolymp.api.read_only) = true];</code>
      */
     protected $participant_id = '';
     /**
      * Member who opened the ticket.
      *
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 4 [(.eolymp.api.read_only) = true];</code>
      */
     protected $member_id = '';
     /**
      * Ticket status as
      *
-     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $status = 0;
     /**
@@ -57,49 +57,49 @@ class Ticket extends \Google\Protobuf\Internal\Message
      */
     protected $message = null;
     /**
-     * Generated from protobuf field <code>string raw_message = 11;</code>
+     * Generated from protobuf field <code>string raw_message = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $raw_message = '';
     /**
      * True if ticket has not been read by current user
      *
-     * Generated from protobuf field <code>bool is_read = 21;</code>
+     * Generated from protobuf field <code>bool is_read = 21 [(.eolymp.api.read_only) = true];</code>
      */
     protected $is_read = false;
     /**
      * Number of replies in the ticket.
      *
-     * Generated from protobuf field <code>uint32 reply_count = 30;</code>
+     * Generated from protobuf field <code>uint32 reply_count = 30 [(.eolymp.api.read_only) = true];</code>
      */
     protected $reply_count = 0;
     /**
      * Timestamp when ticket was initially created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
      * Timestamp when ticket was modified/replied.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24 [(.eolymp.api.read_only) = true];</code>
      */
     protected $updated_at = null;
     /**
      * Timestamp when ticket was read by current user
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25 [(.eolymp.api.read_only) = true];</code>
      */
     protected $read_at = null;
     /**
      * Timestamp when last reply was added
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26 [(.eolymp.api.read_only) = true];</code>
      */
     protected $last_reply_at = null;
     /**
      * Cursor when ticket is queries in the list
      *
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      */
     protected $cursor = '';
 
@@ -148,7 +148,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -159,7 +159,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -174,7 +174,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Contest where ticket was opened.
      *
-     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * Generated from protobuf field <code>string contest_id = 2 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getContestId()
@@ -185,7 +185,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Contest where ticket was opened.
      *
-     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * Generated from protobuf field <code>string contest_id = 2 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -200,7 +200,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Participant who opened the ticket.
      *
-     * Generated from protobuf field <code>string participant_id = 3;</code>
+     * Generated from protobuf field <code>string participant_id = 3 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getParticipantId()
@@ -211,7 +211,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Participant who opened the ticket.
      *
-     * Generated from protobuf field <code>string participant_id = 3;</code>
+     * Generated from protobuf field <code>string participant_id = 3 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -226,7 +226,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Member who opened the ticket.
      *
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 4 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getMemberId()
@@ -237,7 +237,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Member who opened the ticket.
      *
-     * Generated from protobuf field <code>string member_id = 4;</code>
+     * Generated from protobuf field <code>string member_id = 4 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -252,7 +252,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket status as
      *
-     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getStatus()
@@ -263,7 +263,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Ticket status as
      *
-     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Status status = 5 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -338,7 +338,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string raw_message = 11;</code>
+     * Generated from protobuf field <code>string raw_message = 11 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getRawMessage()
@@ -347,7 +347,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string raw_message = 11;</code>
+     * Generated from protobuf field <code>string raw_message = 11 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -362,7 +362,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * True if ticket has not been read by current user
      *
-     * Generated from protobuf field <code>bool is_read = 21;</code>
+     * Generated from protobuf field <code>bool is_read = 21 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getIsRead()
@@ -373,7 +373,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * True if ticket has not been read by current user
      *
-     * Generated from protobuf field <code>bool is_read = 21;</code>
+     * Generated from protobuf field <code>bool is_read = 21 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -388,7 +388,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Number of replies in the ticket.
      *
-     * Generated from protobuf field <code>uint32 reply_count = 30;</code>
+     * Generated from protobuf field <code>uint32 reply_count = 30 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getReplyCount()
@@ -399,7 +399,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Number of replies in the ticket.
      *
-     * Generated from protobuf field <code>uint32 reply_count = 30;</code>
+     * Generated from protobuf field <code>uint32 reply_count = 30 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -414,7 +414,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when ticket was initially created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -435,7 +435,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when ticket was initially created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 23 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -450,7 +450,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when ticket was modified/replied.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
@@ -471,7 +471,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when ticket was modified/replied.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 24 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -486,7 +486,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when ticket was read by current user
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getReadAt()
@@ -507,7 +507,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when ticket was read by current user
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp read_at = 25 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -522,7 +522,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when last reply was added
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastReplyAt()
@@ -543,7 +543,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when last reply was added
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_reply_at = 26 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -558,7 +558,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Cursor when ticket is queries in the list
      *
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getCursor()
@@ -569,7 +569,7 @@ class Ticket extends \Google\Protobuf\Internal\Message
     /**
      * Cursor when ticket is queries in the list
      *
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */

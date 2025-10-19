@@ -17,7 +17,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * unique grant ID (assigned by the system)
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
@@ -35,13 +35,13 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * whether the grant is active (not redeemed or expired)
      *
-     * Generated from protobuf field <code>bool active = 20;</code>
+     * Generated from protobuf field <code>bool active = 20 [(.eolymp.api.read_only) = true];</code>
      */
     protected $active = false;
     /**
      * whether the grant was revoked/cancelled
      *
-     * Generated from protobuf field <code>bool revoked = 21;</code>
+     * Generated from protobuf field <code>bool revoked = 21 [(.eolymp.api.read_only) = true];</code>
      */
     protected $revoked = false;
     /**
@@ -53,15 +53,15 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * amount of credit already redeemed
      *
-     * Generated from protobuf field <code>uint32 redeemed_amount = 5;</code>
+     * Generated from protobuf field <code>uint32 redeemed_amount = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $redeemed_amount = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10 [(.eolymp.api.read_only) = true];</code>
      */
     protected $granted_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $expires_at = null;
 
@@ -97,7 +97,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * unique grant ID (assigned by the system)
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -108,7 +108,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * unique grant ID (assigned by the system)
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -175,7 +175,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * whether the grant is active (not redeemed or expired)
      *
-     * Generated from protobuf field <code>bool active = 20;</code>
+     * Generated from protobuf field <code>bool active = 20 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getActive()
@@ -186,7 +186,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * whether the grant is active (not redeemed or expired)
      *
-     * Generated from protobuf field <code>bool active = 20;</code>
+     * Generated from protobuf field <code>bool active = 20 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -201,7 +201,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * whether the grant was revoked/cancelled
      *
-     * Generated from protobuf field <code>bool revoked = 21;</code>
+     * Generated from protobuf field <code>bool revoked = 21 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getRevoked()
@@ -212,7 +212,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * whether the grant was revoked/cancelled
      *
-     * Generated from protobuf field <code>bool revoked = 21;</code>
+     * Generated from protobuf field <code>bool revoked = 21 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -253,7 +253,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * amount of credit already redeemed
      *
-     * Generated from protobuf field <code>uint32 redeemed_amount = 5;</code>
+     * Generated from protobuf field <code>uint32 redeemed_amount = 5 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getRedeemedAmount()
@@ -264,7 +264,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     /**
      * amount of credit already redeemed
      *
-     * Generated from protobuf field <code>uint32 redeemed_amount = 5;</code>
+     * Generated from protobuf field <code>uint32 redeemed_amount = 5 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -277,7 +277,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getGrantedAt()
@@ -296,7 +296,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp granted_at = 10 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -309,7 +309,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpiresAt()
@@ -328,7 +328,7 @@ class Grant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

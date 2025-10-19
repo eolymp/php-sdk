@@ -15,11 +15,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Member extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>string url = 3 [(.eolymp.api.read_only) = true];</code>
      */
     protected $url = '';
     /**
@@ -31,31 +31,31 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string display_name = 2;</code>
+     * Generated from protobuf field <code>string display_name = 2 [(.eolymp.api.read_only) = true];</code>
      */
     protected $display_name = '';
     /**
      * User rank based on EloMMR rating
      *
-     * Generated from protobuf field <code>int32 rank = 70;</code>
+     * Generated from protobuf field <code>int32 rank = 70 [(.eolymp.api.read_only) = true];</code>
      */
     protected $rank = 0;
     /**
      * User rank lower bound
      *
-     * Generated from protobuf field <code>int32 rank_lower = 72;</code>
+     * Generated from protobuf field <code>int32 rank_lower = 72 [(.eolymp.api.read_only) = true];</code>
      */
     protected $rank_lower = 0;
     /**
      * EloMMR rating value
      *
-     * Generated from protobuf field <code>int32 rating = 71;</code>
+     * Generated from protobuf field <code>int32 rating = 71 [(.eolymp.api.read_only) = true];</code>
      */
     protected $rating = 0;
     /**
      * level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
      *
-     * Generated from protobuf field <code>uint32 level = 79;</code>
+     * Generated from protobuf field <code>uint32 level = 79 [(.eolymp.api.read_only) = true];</code>
      */
     protected $level = 0;
     /**
@@ -85,26 +85,26 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Time when user account was created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
      * Time when user was seated in the space.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61 [(.eolymp.api.read_only) = true];</code>
      */
     protected $seated_at = null;
     /**
      * Last time when user was active
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62 [(.eolymp.api.read_only) = true];</code>
      */
     protected $active_at = null;
     /**
      * Member statistics.
      * Requires STATS extra.
      *
-     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300 [(.eolymp.api.read_only) = true];</code>
      */
     protected $stats = null;
     /**
@@ -185,7 +185,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -194,7 +194,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -207,7 +207,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>string url = 3 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getUrl()
@@ -216,7 +216,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 3;</code>
+     * Generated from protobuf field <code>string url = 3 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -257,7 +257,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string display_name = 2;</code>
+     * Generated from protobuf field <code>string display_name = 2 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getDisplayName()
@@ -268,7 +268,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * display name, readonly, users nickname, name, attribute, ghosts name or teams name
      *
-     * Generated from protobuf field <code>string display_name = 2;</code>
+     * Generated from protobuf field <code>string display_name = 2 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -283,7 +283,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * User rank based on EloMMR rating
      *
-     * Generated from protobuf field <code>int32 rank = 70;</code>
+     * Generated from protobuf field <code>int32 rank = 70 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getRank()
@@ -294,7 +294,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * User rank based on EloMMR rating
      *
-     * Generated from protobuf field <code>int32 rank = 70;</code>
+     * Generated from protobuf field <code>int32 rank = 70 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -309,7 +309,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * User rank lower bound
      *
-     * Generated from protobuf field <code>int32 rank_lower = 72;</code>
+     * Generated from protobuf field <code>int32 rank_lower = 72 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getRankLower()
@@ -320,7 +320,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * User rank lower bound
      *
-     * Generated from protobuf field <code>int32 rank_lower = 72;</code>
+     * Generated from protobuf field <code>int32 rank_lower = 72 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -335,7 +335,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * EloMMR rating value
      *
-     * Generated from protobuf field <code>int32 rating = 71;</code>
+     * Generated from protobuf field <code>int32 rating = 71 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getRating()
@@ -346,7 +346,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * EloMMR rating value
      *
-     * Generated from protobuf field <code>int32 rating = 71;</code>
+     * Generated from protobuf field <code>int32 rating = 71 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -361,7 +361,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
      *
-     * Generated from protobuf field <code>uint32 level = 79;</code>
+     * Generated from protobuf field <code>uint32 level = 79 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getLevel()
@@ -372,7 +372,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * level from 0 (beginner) to 12 (legendary), calculated based on the user's rating
      *
-     * Generated from protobuf field <code>uint32 level = 79;</code>
+     * Generated from protobuf field <code>uint32 level = 79 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -491,7 +491,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Time when user account was created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -512,7 +512,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Time when user account was created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -527,7 +527,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Time when user was seated in the space.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getSeatedAt()
@@ -548,7 +548,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Time when user was seated in the space.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp seated_at = 61 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -563,7 +563,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Last time when user was active
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getActiveAt()
@@ -584,7 +584,7 @@ class Member extends \Google\Protobuf\Internal\Message
     /**
      * Last time when user was active
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -681,7 +681,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Member statistics.
      * Requires STATS extra.
      *
-     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Community\Member\Stats|null
      */
     public function getStats()
@@ -703,7 +703,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Member statistics.
      * Requires STATS extra.
      *
-     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member.Stats stats = 300 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Community\Member\Stats $var
      * @return $this
      */

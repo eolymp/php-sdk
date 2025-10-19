@@ -17,7 +17,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * unique identifier of the participant (can not be set when creating participant)
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
@@ -29,7 +29,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * display name
      *
-     * Generated from protobuf field <code>string display_name = 5;</code>
+     * Generated from protobuf field <code>string display_name = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $display_name = '';
     /**
@@ -81,13 +81,13 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Time when user has started participating
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21 [(.eolymp.api.read_only) = true];</code>
      */
     protected $started_at = null;
     /**
      * Time when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25 [(.eolymp.api.read_only) = true];</code>
      */
     protected $end_at = null;
     /**
@@ -99,7 +99,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Number of non-cancelled violations participant has received
      *
-     * Generated from protobuf field <code>uint32 violation_count = 28;</code>
+     * Generated from protobuf field <code>uint32 violation_count = 28 [(.eolymp.api.read_only) = true];</code>
      */
     protected $violation_count = 0;
     /**
@@ -108,19 +108,19 @@ class Participant extends \Google\Protobuf\Internal\Message
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
      *
-     * Generated from protobuf field <code>string passcode = 30;</code>
+     * Generated from protobuf field <code>string passcode = 30 [(.eolymp.api.read_only) = true];</code>
      */
     protected $passcode = '';
     /**
      * Participation certificate ID.
      *
-     * Generated from protobuf field <code>string certificate_id = 32;</code>
+     * Generated from protobuf field <code>string certificate_id = 32 [(.eolymp.api.read_only) = true];</code>
      */
     protected $certificate_id = '';
     /**
      * Submit counter is used to count how many times user submitted the problem.
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
      */
     private $submits;
 
@@ -178,7 +178,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * unique identifier of the participant (can not be set when creating participant)
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -189,7 +189,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * unique identifier of the participant (can not be set when creating participant)
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -230,7 +230,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * display name
      *
-     * Generated from protobuf field <code>string display_name = 5;</code>
+     * Generated from protobuf field <code>string display_name = 5 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getDisplayName()
@@ -241,7 +241,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * display name
      *
-     * Generated from protobuf field <code>string display_name = 5;</code>
+     * Generated from protobuf field <code>string display_name = 5 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -460,7 +460,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Time when user has started participating
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedAt()
@@ -481,7 +481,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Time when user has started participating
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 21 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -496,7 +496,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Time when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndAt()
@@ -517,7 +517,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Time when user has finished (will finish) participating (incl. bonus time)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_at = 25 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -558,7 +558,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Number of non-cancelled violations participant has received
      *
-     * Generated from protobuf field <code>uint32 violation_count = 28;</code>
+     * Generated from protobuf field <code>uint32 violation_count = 28 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getViolationCount()
@@ -569,7 +569,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Number of non-cancelled violations participant has received
      *
-     * Generated from protobuf field <code>uint32 violation_count = 28;</code>
+     * Generated from protobuf field <code>uint32 violation_count = 28 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -587,7 +587,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
      *
-     * Generated from protobuf field <code>string passcode = 30;</code>
+     * Generated from protobuf field <code>string passcode = 30 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getPasscode()
@@ -601,7 +601,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
      *
-     * Generated from protobuf field <code>string passcode = 30;</code>
+     * Generated from protobuf field <code>string passcode = 30 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -616,7 +616,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Participation certificate ID.
      *
-     * Generated from protobuf field <code>string certificate_id = 32;</code>
+     * Generated from protobuf field <code>string certificate_id = 32 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getCertificateId()
@@ -627,7 +627,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Participation certificate ID.
      *
-     * Generated from protobuf field <code>string certificate_id = 32;</code>
+     * Generated from protobuf field <code>string certificate_id = 32 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -642,7 +642,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Submit counter is used to count how many times user submitted the problem.
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubmits()
@@ -653,7 +653,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * Submit counter is used to count how many times user submitted the problem.
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
      * @param array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

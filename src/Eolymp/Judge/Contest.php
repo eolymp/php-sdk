@@ -17,11 +17,11 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest unique identifier, automatically allocated when contest is created.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [(.eolymp.api.read_only) = true];</code>
      */
     protected $url = '';
     /**
@@ -59,7 +59,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest status (see statuses above)
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 20;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 20 [(.eolymp.api.read_only) = true];</code>
      */
     protected $status = 0;
     /**
@@ -125,21 +125,21 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Number of problems in the contest, might be "hidden".
      *
-     * Generated from protobuf field <code>uint32 problem_count = 60;</code>
+     * Generated from protobuf field <code>uint32 problem_count = 60 [(.eolymp.api.read_only) = true];</code>
      */
     protected $problem_count = 0;
     /**
-     * Generated from protobuf field <code>bool problem_count_hidden = 61;</code>
+     * Generated from protobuf field <code>bool problem_count_hidden = 61 [(.eolymp.api.read_only) = true];</code>
      */
     protected $problem_count_hidden = false;
     /**
      * Number of participants in the contest.
      *
-     * Generated from protobuf field <code>uint32 participant_count = 62;</code>
+     * Generated from protobuf field <code>uint32 participant_count = 62 [(.eolymp.api.read_only) = true];</code>
      */
     protected $participant_count = 0;
     /**
-     * Generated from protobuf field <code>bool participant_count_hidden = 63;</code>
+     * Generated from protobuf field <code>bool participant_count_hidden = 63 [(.eolymp.api.read_only) = true];</code>
      */
     protected $participant_count_hidden = false;
     /**
@@ -187,7 +187,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120 [(.eolymp.api.read_only) = true];</code>
      */
     private $staff;
 
@@ -267,7 +267,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest unique identifier, automatically allocated when contest is created.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -278,7 +278,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest unique identifier, automatically allocated when contest is created.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -291,7 +291,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getUrl()
@@ -300,7 +300,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 2;</code>
+     * Generated from protobuf field <code>string url = 2 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -469,7 +469,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest status (see statuses above)
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 20;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 20 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getStatus()
@@ -480,7 +480,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Contest status (see statuses above)
      *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 20;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 20 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -755,7 +755,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Number of problems in the contest, might be "hidden".
      *
-     * Generated from protobuf field <code>uint32 problem_count = 60;</code>
+     * Generated from protobuf field <code>uint32 problem_count = 60 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getProblemCount()
@@ -766,7 +766,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Number of problems in the contest, might be "hidden".
      *
-     * Generated from protobuf field <code>uint32 problem_count = 60;</code>
+     * Generated from protobuf field <code>uint32 problem_count = 60 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -779,7 +779,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool problem_count_hidden = 61;</code>
+     * Generated from protobuf field <code>bool problem_count_hidden = 61 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getProblemCountHidden()
@@ -788,7 +788,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool problem_count_hidden = 61;</code>
+     * Generated from protobuf field <code>bool problem_count_hidden = 61 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -803,7 +803,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Number of participants in the contest.
      *
-     * Generated from protobuf field <code>uint32 participant_count = 62;</code>
+     * Generated from protobuf field <code>uint32 participant_count = 62 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getParticipantCount()
@@ -814,7 +814,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Number of participants in the contest.
      *
-     * Generated from protobuf field <code>uint32 participant_count = 62;</code>
+     * Generated from protobuf field <code>uint32 participant_count = 62 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -827,7 +827,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool participant_count_hidden = 63;</code>
+     * Generated from protobuf field <code>bool participant_count_hidden = 63 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getParticipantCountHidden()
@@ -836,7 +836,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool participant_count_hidden = 63;</code>
+     * Generated from protobuf field <code>bool participant_count_hidden = 63 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -1093,7 +1093,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStaff()
@@ -1104,7 +1104,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120;</code>
+     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120 [(.eolymp.api.read_only) = true];</code>
      * @param array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

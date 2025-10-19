@@ -27,11 +27,11 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $nickname = '';
     /**
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11 [(.eolymp.api.read_only) = true];</code>
      */
     protected $nickname_change_timeout = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13 [(.eolymp.api.read_only) = true];</code>
      */
     private $aliases;
     /**
@@ -39,13 +39,13 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $email = '';
     /**
-     * Generated from protobuf field <code>bool email_verified = 21;</code>
+     * Generated from protobuf field <code>bool email_verified = 21 [(.eolymp.api.read_only) = true];</code>
      */
     protected $email_verified = false;
     /**
      * true if email verification is required but not complete
      *
-     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * Generated from protobuf field <code>bool email_restricted = 12 [(.eolymp.api.read_only) = true];</code>
      */
     protected $email_restricted = false;
     /**
@@ -57,7 +57,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $password = '';
     /**
-     * Generated from protobuf field <code>uint32 password_age = 31;</code>
+     * Generated from protobuf field <code>uint32 password_age = 31 [(.eolymp.api.read_only) = true];</code>
      */
     protected $password_age = 0;
     /**
@@ -188,7 +188,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getNicknameChangeTimeout()
@@ -197,7 +197,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11;</code>
+     * Generated from protobuf field <code>uint32 nickname_change_timeout = 11 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -210,7 +210,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAliases()
@@ -219,7 +219,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13 [(.eolymp.api.read_only) = true];</code>
      * @param array<\Eolymp\Community\User\Alias>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -254,7 +254,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 21;</code>
+     * Generated from protobuf field <code>bool email_verified = 21 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getEmailVerified()
@@ -263,7 +263,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool email_verified = 21;</code>
+     * Generated from protobuf field <code>bool email_verified = 21 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -278,7 +278,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * true if email verification is required but not complete
      *
-     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * Generated from protobuf field <code>bool email_restricted = 12 [(.eolymp.api.read_only) = true];</code>
      * @return bool
      */
     public function getEmailRestricted()
@@ -289,7 +289,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * true if email verification is required but not complete
      *
-     * Generated from protobuf field <code>bool email_restricted = 12;</code>
+     * Generated from protobuf field <code>bool email_restricted = 12 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -346,7 +346,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 password_age = 31;</code>
+     * Generated from protobuf field <code>uint32 password_age = 31 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getPasswordAge()
@@ -355,7 +355,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 password_age = 31;</code>
+     * Generated from protobuf field <code>uint32 password_age = 31 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
