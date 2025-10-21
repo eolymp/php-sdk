@@ -33,25 +33,26 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * deprecated, same as visibility=PUBLIC
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6 [deprecated = true];</code>
+     * @deprecated
      */
     private $public;
     /**
      * PUBLIC, UNLISTED, PRIVATE
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7 [(.eolymp.api.mcp_field_desc) = "valid values `PUBLIC` (visible and open to everyone), `UNLISTED` (not visible but open to everyone) and `PRIVATE` (visible and open for selected users)"];</code>
      */
     private $visibility;
     /**
      * IOI, ICPC
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8 [(.eolymp.api.mcp_field_desc) = "valid values `IOC`, `ICPC`"];</code>
      */
     private $format;
     /**
      * SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10 [(.eolymp.api.mcp_field_desc) = "valid values `SCHEDULED` (not started), `OPEN` (in progress), `ACTIVE` (current user participates), `COMPLETE` (finished), `UPSOLVE` (finished, but users can upsolve)"];</code>
      */
     private $status;
     /**
@@ -73,7 +74,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * 1 to 5
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103 [(.eolymp.api.mcp_field_desc) = "value from 1 (easiest) to 5 (hardest)"];</code>
      */
     private $difficulty;
     /**
@@ -214,24 +215,32 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * deprecated, same as visibility=PUBLIC
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getPublic()
     {
+        if ($this->public->count() !== 0) {
+            @trigger_error('public is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->public;
     }
 
     /**
      * deprecated, same as visibility=PUBLIC
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool public = 6 [deprecated = true];</code>
      * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setPublic($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        if ($arr->count() !== 0) {
+            @trigger_error('public is deprecated.', E_USER_DEPRECATED);
+        }
         $this->public = $arr;
 
         return $this;
@@ -240,7 +249,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * PUBLIC, UNLISTED, PRIVATE
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7 [(.eolymp.api.mcp_field_desc) = "valid values `PUBLIC` (visible and open to everyone), `UNLISTED` (not visible but open to everyone) and `PRIVATE` (visible and open for selected users)"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getVisibility()
@@ -251,7 +260,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * PUBLIC, UNLISTED, PRIVATE
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum visibility = 7 [(.eolymp.api.mcp_field_desc) = "valid values `PUBLIC` (visible and open to everyone), `UNLISTED` (not visible but open to everyone) and `PRIVATE` (visible and open for selected users)"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -266,7 +275,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * IOI, ICPC
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8 [(.eolymp.api.mcp_field_desc) = "valid values `IOC`, `ICPC`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFormat()
@@ -277,7 +286,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * IOI, ICPC
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum format = 8 [(.eolymp.api.mcp_field_desc) = "valid values `IOC`, `ICPC`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -292,7 +301,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10 [(.eolymp.api.mcp_field_desc) = "valid values `SCHEDULED` (not started), `OPEN` (in progress), `ACTIVE` (current user participates), `COMPLETE` (finished), `UPSOLVE` (finished, but users can upsolve)"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatus()
@@ -303,7 +312,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * SCHEDULED, OPEN, ACTIVE, COMPLETE, UPSOLVE
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 10 [(.eolymp.api.mcp_field_desc) = "valid values `SCHEDULED` (not started), `OPEN` (in progress), `ACTIVE` (current user participates), `COMPLETE` (finished), `UPSOLVE` (finished, but users can upsolve)"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -406,7 +415,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * 1 to 5
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103 [(.eolymp.api.mcp_field_desc) = "value from 1 (easiest) to 5 (hardest)"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getDifficulty()
@@ -417,7 +426,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * 1 to 5
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 103 [(.eolymp.api.mcp_field_desc) = "value from 1 (easiest) to 5 (hardest)"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

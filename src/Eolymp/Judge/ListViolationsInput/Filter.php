@@ -19,11 +19,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`"];</code>
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5 [(.eolymp.api.mcp_field_desc) = "valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`"];</code>
      */
     private $type;
     /**
@@ -96,7 +96,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatus()
@@ -105,7 +105,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -118,7 +118,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5 [(.eolymp.api.mcp_field_desc) = "valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getType()
@@ -127,7 +127,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5 [(.eolymp.api.mcp_field_desc) = "valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -29,7 +29,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $group_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `INACTIVE` (disabled), `READY` (ready to start), `ACTIVE` (actively participating), `COMPLETE` (finished)"];</code>
      */
     private $status;
     /**
@@ -51,19 +51,19 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13 [(.eolymp.api.mcp_field_desc) = "valid values `PARTICIPANT`, `STAFF`, `TESTER`, `AUTHOR`, `COORDINATOR`"];</code>
      */
     private $role;
     /**
      * Filter participants who are staff members of the contest
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14 [(.eolymp.api.mcp_field_desc) = "staff are all participants with role other than `PARTICIPANT`"];</code>
      */
     private $staff;
     /**
      * Filter participants who have non-cancelled violations
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15 [(.eolymp.api.mcp_field_desc) = "filter participants who have PENDING or CONFIRMED violations"];</code>
      */
     private $has_violations;
 
@@ -161,7 +161,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `INACTIVE` (disabled), `READY` (ready to start), `ACTIVE` (actively participating), `COMPLETE` (finished)"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatus()
@@ -170,7 +170,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `INACTIVE` (disabled), `READY` (ready to start), `ACTIVE` (actively participating), `COMPLETE` (finished)"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -273,7 +273,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13 [(.eolymp.api.mcp_field_desc) = "valid values `PARTICIPANT`, `STAFF`, `TESTER`, `AUTHOR`, `COORDINATOR`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRole()
@@ -284,7 +284,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants by their role in the contest (e.g. participant, tester, coordinator etc)
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum role = 13 [(.eolymp.api.mcp_field_desc) = "valid values `PARTICIPANT`, `STAFF`, `TESTER`, `AUTHOR`, `COORDINATOR`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -299,7 +299,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants who are staff members of the contest
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14 [(.eolymp.api.mcp_field_desc) = "staff are all participants with role other than `PARTICIPANT`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStaff()
@@ -310,7 +310,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants who are staff members of the contest
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool staff = 14 [(.eolymp.api.mcp_field_desc) = "staff are all participants with role other than `PARTICIPANT`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -325,7 +325,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants who have non-cancelled violations
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15 [(.eolymp.api.mcp_field_desc) = "filter participants who have PENDING or CONFIRMED violations"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getHasViolations()
@@ -336,7 +336,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * Filter participants who have non-cancelled violations
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15 [(.eolymp.api.mcp_field_desc) = "filter participants who have PENDING or CONFIRMED violations"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -43,7 +43,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $own;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 9 [(.eolymp.api.mcp_field_desc) = "valid values `AWAITING` (requires response from jury), `RESOLVED` (answered by jury), `CLOSED`"];</code>
      */
     private $status;
 
@@ -223,7 +223,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 9 [(.eolymp.api.mcp_field_desc) = "valid values `AWAITING` (requires response from jury), `RESOLVED` (answered by jury), `CLOSED`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatus()
@@ -232,7 +232,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 9 [(.eolymp.api.mcp_field_desc) = "valid values `AWAITING` (requires response from jury), `RESOLVED` (answered by jury), `CLOSED`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

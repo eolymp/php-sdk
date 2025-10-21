@@ -29,11 +29,11 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $problem_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING`, `PROVISIONING`, `INITIALIZING`, `TESTING`, `COMPLETE` (testing complete), `TIMEOUT` (took too long to test), `ERROR` (compilation error), `FAILURE` (system error)"];</code>
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
      */
     private $lang;
     /**
@@ -49,7 +49,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $submitted_at;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9 [(.eolymp.api.mcp_field_desc) = "source code fingerprint"];</code>
      */
     private $signature;
 
@@ -142,7 +142,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING`, `PROVISIONING`, `INITIALIZING`, `TESTING`, `COMPLETE` (testing complete), `TIMEOUT` (took too long to test), `ERROR` (compilation error), `FAILURE` (system error)"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStatus()
@@ -151,7 +151,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 4 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING`, `PROVISIONING`, `INITIALIZING`, `TESTING`, `COMPLETE` (testing complete), `TIMEOUT` (took too long to test), `ERROR` (compilation error), `FAILURE` (system error)"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -164,7 +164,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getLang()
@@ -173,7 +173,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -252,7 +252,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9 [(.eolymp.api.mcp_field_desc) = "source code fingerprint"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSignature()
@@ -261,7 +261,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9 [(.eolymp.api.mcp_field_desc) = "source code fingerprint"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

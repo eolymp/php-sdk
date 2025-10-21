@@ -16,7 +16,7 @@ class Mcp
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\xDF\x01\x0A\x1Ceolymp/annotations/mcp.proto\x12\x0Aeolymp.api\x1A google/protobuf/descriptor.proto\"N\x0A\x03MCP\x1AG\x0A\x04Tool\x12\x0C\x0A\x04name\x18\x01 \x01(\x09\x12\x13\x0A\x0Bdescription\x18\x02 \x01(\x09\x12\x1C\x0A\x14require_confirmation\x18\x03 \x01(\x08B9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3"
+            "\x0A\x8F\x01\x0A\x1Ceolymp/annotations/mcp.proto\x12\x0Aeolymp.api\x1A google/protobuf/descriptor.protoB9Z7github.com/eolymp/go-sdk/eolymp/annotations;annotationsb\x06proto3"
         , true);
 
         static::$is_initialized = true;
