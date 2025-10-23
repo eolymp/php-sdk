@@ -33,7 +33,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
      * This value is ignored if mode is not PUNCTUAL.
      *
-     * Generated from protobuf field <code>int32 time_offset = 4;</code>
+     * Generated from protobuf field <code>int32 time_offset = 4 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     protected $time_offset = 0;
 
@@ -133,7 +133,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
      * This value is ignored if mode is not PUNCTUAL.
      *
-     * Generated from protobuf field <code>int32 time_offset = 4;</code>
+     * Generated from protobuf field <code>int32 time_offset = 4 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return int
      */
     public function getTimeOffset()
@@ -146,7 +146,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
      * This value is ignored if mode is not PUNCTUAL.
      *
-     * Generated from protobuf field <code>int32 time_offset = 4;</code>
+     * Generated from protobuf field <code>int32 time_offset = 4 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param int $var
      * @return $this
      */
