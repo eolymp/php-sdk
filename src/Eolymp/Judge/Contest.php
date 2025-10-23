@@ -151,7 +151,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Printer used to print submissions
      *
-     * Generated from protobuf field <code>string printer_id = 71;</code>
+     * Generated from protobuf field <code>string printer_id = 71 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     protected $printer_id = '';
     /**
@@ -887,7 +887,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Printer used to print submissions
      *
-     * Generated from protobuf field <code>string printer_id = 71;</code>
+     * Generated from protobuf field <code>string printer_id = 71 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return string
      */
     public function getPrinterId()
@@ -898,7 +898,7 @@ class Contest extends \Google\Protobuf\Internal\Message
     /**
      * Printer used to print submissions
      *
-     * Generated from protobuf field <code>string printer_id = 71;</code>
+     * Generated from protobuf field <code>string printer_id = 71 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param string $var
      * @return $this
      */

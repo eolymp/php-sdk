@@ -19,21 +19,15 @@ class Visibility
      */
     const VISIBILITY_UNKNOWN = 0;
     /**
-     * visible to everyone and shown on the website
-     *
-     * Generated from protobuf enum <code>PUBLIC = 1;</code>
+     * Generated from protobuf enum <code>PUBLIC = 1 [(.eolymp.api.mcp_value_desc) = "visible to everyone and shown on the website"];</code>
      */
     const PBPUBLIC = 1;
     /**
-     * anyone can participate, but not shown on the website
-     *
-     * Generated from protobuf enum <code>UNLISTED = 2;</code>
+     * Generated from protobuf enum <code>UNLISTED = 2 [(.eolymp.api.mcp_value_desc) = "anyone can participate, but not shown on the website"];</code>
      */
     const UNLISTED = 2;
     /**
-     * only explicitly added participants can participate
-     *
-     * Generated from protobuf enum <code>PRIVATE = 3;</code>
+     * Generated from protobuf enum <code>PRIVATE = 3 [(.eolymp.api.mcp_value_desc) = "only explicitly added participants can participate"];</code>
      */
     const PBPRIVATE = 3;
 

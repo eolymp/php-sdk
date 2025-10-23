@@ -21,43 +21,43 @@ class Status
     /**
      * participant can not start yet
      *
-     * Generated from protobuf enum <code>WAITING = 5;</code>
+     * Generated from protobuf enum <code>WAITING = 5 [(.eolymp.api.mcp_value_desc) = "can not start yet"];</code>
      */
     const WAITING = 5;
     /**
      * participant is ready to start (via StartContest method)
      *
-     * Generated from protobuf enum <code>READY = 1;</code>
+     * Generated from protobuf enum <code>READY = 1 [(.eolymp.api.mcp_value_desc) = "ready to start"];</code>
      */
     const READY = 1;
     /**
      * participant is participating in the contest
      *
-     * Generated from protobuf enum <code>ACTIVE = 2;</code>
+     * Generated from protobuf enum <code>ACTIVE = 2 [(.eolymp.api.mcp_value_desc) = "started contest"];</code>
      */
     const ACTIVE = 2;
     /**
      * participant has completed contest (contest is complete, time run out etc)
      *
-     * Generated from protobuf enum <code>COMPLETE = 3;</code>
+     * Generated from protobuf enum <code>COMPLETE = 3 [(.eolymp.api.mcp_value_desc) = "finished contest"];</code>
      */
     const COMPLETE = 3;
     /**
      * participant has completed contest but can continue solve problems in upsolve mode
      *
-     * Generated from protobuf enum <code>UPSOLVE = 7;</code>
+     * Generated from protobuf enum <code>UPSOLVE = 7 [(.eolymp.api.mcp_value_desc) = "finished contest and can continue solving problems"];</code>
      */
     const UPSOLVE = 7;
     /**
      * participant can not participate (participant is blocked or contest is suspended)
      *
-     * Generated from protobuf enum <code>BLOCKED = 8;</code>
+     * Generated from protobuf enum <code>BLOCKED = 8 [(.eolymp.api.mcp_value_desc) = "blocked by organisers"];</code>
      */
     const BLOCKED = 8;
     /**
      * participant has voluntarily paused contest (can be restarted using StartContest method)
      *
-     * Generated from protobuf enum <code>PAUSED = 9;</code>
+     * Generated from protobuf enum <code>PAUSED = 9 [(.eolymp.api.mcp_value_desc) = "has paused participation voluntarily"];</code>
      */
     const PAUSED = 9;
 

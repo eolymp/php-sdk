@@ -19,15 +19,11 @@ class ParticipationMode
      */
     const PARTICIPATION_MODE_UNKNOWN = 0;
     /**
-     * everyone start and finish together
-     *
-     * Generated from protobuf enum <code>ONLINE = 1;</code>
+     * Generated from protobuf enum <code>ONLINE = 1 [(.eolymp.api.mcp_value_desc) = "everyone start and finish together"];</code>
      */
     const ONLINE = 1;
     /**
-     * participants can start contest individually
-     *
-     * Generated from protobuf enum <code>VIRTUAL = 2;</code>
+     * Generated from protobuf enum <code>VIRTUAL = 2 [(.eolymp.api.mcp_value_desc) = "participants can start contest individually"];</code>
      */
     const VIRTUAL = 2;
 

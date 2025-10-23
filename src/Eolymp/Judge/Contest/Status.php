@@ -19,39 +19,27 @@ class Status
      */
     const STATUS_UNKNOWN = 0;
     /**
-     * contest hasn't started yet
-     *
-     * Generated from protobuf enum <code>SCHEDULED = 1;</code>
+     * Generated from protobuf enum <code>SCHEDULED = 1 [(.eolymp.api.mcp_value_desc) = "contest hasn\'t started yet"];</code>
      */
     const SCHEDULED = 1;
     /**
-     * contest has started, participants can participate
-     *
-     * Generated from protobuf enum <code>OPEN = 2;</code>
+     * Generated from protobuf enum <code>OPEN = 2 [(.eolymp.api.mcp_value_desc) = "contest has started, participants can participate"];</code>
      */
     const OPEN = 2;
     /**
-     * contest is finished
-     *
-     * Generated from protobuf enum <code>COMPLETE = 3;</code>
+     * Generated from protobuf enum <code>COMPLETE = 3 [(.eolymp.api.mcp_value_desc) = "contest is finished"];</code>
      */
     const COMPLETE = 3;
     /**
-     * contest has been suspended, interface is not available
-     *
-     * Generated from protobuf enum <code>SUSPENDED = 4;</code>
+     * Generated from protobuf enum <code>SUSPENDED = 4 [(.eolymp.api.mcp_value_desc) = "contest has been suspended, interface is not available"];</code>
      */
     const SUSPENDED = 4;
     /**
-     * contest has been frozen, interface is available but submission is restricted
-     *
-     * Generated from protobuf enum <code>FROZEN = 5;</code>
+     * Generated from protobuf enum <code>FROZEN = 5 [(.eolymp.api.mcp_value_desc) = "contest has been frozen, interface is available but submission is restricted"];</code>
      */
     const FROZEN = 5;
     /**
-     * contest has been finalized and archived
-     *
-     * Generated from protobuf enum <code>FINALIZED = 6;</code>
+     * Generated from protobuf enum <code>FINALIZED = 6 [(.eolymp.api.mcp_value_desc) = "complete, results are final and can not be changed"];</code>
      */
     const FINALIZED = 6;
 

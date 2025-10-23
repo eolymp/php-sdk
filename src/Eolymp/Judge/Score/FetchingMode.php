@@ -22,7 +22,7 @@ class FetchingMode
      * - If authenticated user is not participating in the contest, an error will be returned (even if requested by a
      *   user with admin permissions)
      *
-     * Generated from protobuf enum <code>ACTUAL = 0;</code>
+     * Generated from protobuf enum <code>ACTUAL = 0 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const ACTUAL = 0;
     /**
@@ -30,27 +30,27 @@ class FetchingMode
      * intended to show historical score at a given moment. Value for time_offset will be capped by the freezing time
      * for participants.
      *
-     * Generated from protobuf enum <code>PUNCTUAL = 1;</code>
+     * Generated from protobuf enum <code>PUNCTUAL = 1 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const PUNCTUAL = 1;
     /**
      * Latest score returns the latest score recorded. This mode is intended for admins to see current scoreboard.
      * Users without admin permissions will get PermissionDenied error when requesting score in latest mode.
      *
-     * Generated from protobuf enum <code>LATEST = 2;</code>
+     * Generated from protobuf enum <code>LATEST = 2 [(.eolymp.api.mcp_value_desc) = "score received during official time"];</code>
      */
     const LATEST = 2;
     /**
      * Frozen score returns the latest score recorded before freezing time. This mode is intended for admins to see
      * frozen scoreboard.
      *
-     * Generated from protobuf enum <code>FROZEN = 3;</code>
+     * Generated from protobuf enum <code>FROZEN = 3 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const FROZEN = 3;
     /**
      * Upsolve score returns score counting upsolve time.
      *
-     * Generated from protobuf enum <code>UPSOLVE = 4;</code>
+     * Generated from protobuf enum <code>UPSOLVE = 4 [(.eolymp.api.mcp_value_desc) = "score received during upsolve"];</code>
      */
     const UPSOLVE = 4;
 

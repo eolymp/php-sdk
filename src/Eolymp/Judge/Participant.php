@@ -59,13 +59,13 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * participant is a ghost
      *
-     * Generated from protobuf field <code>bool ghost = 8;</code>
+     * Generated from protobuf field <code>bool ghost = 8 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     protected $ghost = false;
     /**
      * participant result is finalized
      *
-     * Generated from protobuf field <code>bool finalized = 12;</code>
+     * Generated from protobuf field <code>bool finalized = 12 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     protected $finalized = false;
     /**
@@ -108,7 +108,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
      *
-     * Generated from protobuf field <code>string passcode = 30 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string passcode = 30 [deprecated = true, (.eolymp.api.read_only) = true];</code>
+     * @deprecated
      */
     protected $passcode = '';
     /**
@@ -360,7 +361,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * participant is a ghost
      *
-     * Generated from protobuf field <code>bool ghost = 8;</code>
+     * Generated from protobuf field <code>bool ghost = 8 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return bool
      */
     public function getGhost()
@@ -371,7 +372,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * participant is a ghost
      *
-     * Generated from protobuf field <code>bool ghost = 8;</code>
+     * Generated from protobuf field <code>bool ghost = 8 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -386,7 +387,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * participant result is finalized
      *
-     * Generated from protobuf field <code>bool finalized = 12;</code>
+     * Generated from protobuf field <code>bool finalized = 12 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return bool
      */
     public function getFinalized()
@@ -397,7 +398,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     /**
      * participant result is finalized
      *
-     * Generated from protobuf field <code>bool finalized = 12;</code>
+     * Generated from protobuf field <code>bool finalized = 12 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param bool $var
      * @return $this
      */
@@ -587,11 +588,15 @@ class Participant extends \Google\Protobuf\Internal\Message
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
      *
-     * Generated from protobuf field <code>string passcode = 30 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string passcode = 30 [deprecated = true, (.eolymp.api.read_only) = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPasscode()
     {
+        if ($this->passcode !== '') {
+            @trigger_error('passcode is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->passcode;
     }
 
@@ -601,12 +606,14 @@ class Participant extends \Google\Protobuf\Internal\Message
      * This field is only populated when request is made by contest owner.
      * Passcode is read-only and should be set using ResetPasscode method.
      *
-     * Generated from protobuf field <code>string passcode = 30 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string passcode = 30 [deprecated = true, (.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPasscode($var)
     {
+        @trigger_error('passcode is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->passcode = $var;
 

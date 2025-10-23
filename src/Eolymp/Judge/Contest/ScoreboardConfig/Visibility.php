@@ -17,21 +17,15 @@ class Visibility
      */
     const UNKNOWN_VISIBILITY = 0;
     /**
-     * visible only to organizers
-     *
-     * Generated from protobuf enum <code>INVISIBLE = 1;</code>
+     * Generated from protobuf enum <code>INVISIBLE = 1 [(.eolymp.api.mcp_value_desc) = "visible only to organizers"];</code>
      */
     const INVISIBLE = 1;
     /**
-     * visible to participants and organizers
-     *
-     * Generated from protobuf enum <code>INTERNAL = 2;</code>
+     * Generated from protobuf enum <code>INTERNAL = 2 [(.eolymp.api.mcp_value_desc) = "visible to participants and organizers"];</code>
      */
     const INTERNAL = 2;
     /**
-     * visible to everyone
-     *
-     * Generated from protobuf enum <code>PUBLIC = 3;</code>
+     * Generated from protobuf enum <code>PUBLIC = 3 [(.eolymp.api.mcp_value_desc) = "visible to everyone"];</code>
      */
     const PBPUBLIC = 3;
 
