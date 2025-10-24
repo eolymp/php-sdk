@@ -17,33 +17,23 @@ class Type
      */
     const UNKNOWN_TYPE = 0;
     /**
-     * program problem, user should write a program to solve it
-     *
-     * Generated from protobuf enum <code>PROGRAM = 1;</code>
+     * Generated from protobuf enum <code>PROGRAM = 1 [(.eolymp.api.mcp_value_desc) = "program problem, user should write a program to solve it"];</code>
      */
     const PROGRAM = 1;
     /**
-     * function problem, user should write a function to solve it
-     *
-     * Generated from protobuf enum <code>FUNCTION = 2;</code>
+     * Generated from protobuf enum <code>FUNCTION = 2 [(.eolymp.api.mcp_value_desc) = "function problem, user should write a function to solve it"];</code>
      */
     const PBFUNCTION = 2;
     /**
-     * output-only problem, user should upload answer file to solve it
-     *
-     * Generated from protobuf enum <code>OUTPUT = 3;</code>
+     * Generated from protobuf enum <code>OUTPUT = 3 [(.eolymp.api.mcp_value_desc) = "output-only problem, user should upload answer file to solve it"];</code>
      */
     const OUTPUT = 3;
     /**
-     * SQL problem, user should write SQL queries to solve it
-     *
-     * Generated from protobuf enum <code>SQL = 4;</code>
+     * Generated from protobuf enum <code>SQL = 4 [(.eolymp.api.mcp_value_desc) = "SQL problem, user should write SQL queries to solve it"];</code>
      */
     const SQL = 4;
     /**
-     * Machine learning problem
-     *
-     * Generated from protobuf enum <code>ML = 5;</code>
+     * Generated from protobuf enum <code>ML = 5 [(.eolymp.api.mcp_value_desc) = "Machine learning problem"];</code>
      */
     const ML = 5;
 

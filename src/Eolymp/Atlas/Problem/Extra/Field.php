@@ -17,7 +17,7 @@ class Field
      */
     const UNKNOWN_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>VOTE = 1;</code>
+     * Generated from protobuf enum <code>VOTE = 1 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const VOTE = 1;
     /**
@@ -29,7 +29,7 @@ class Field
      */
     const CONTENT_VALUE = 3;
     /**
-     * Generated from protobuf enum <code>CONTENT_RENDER = 4;</code>
+     * Generated from protobuf enum <code>CONTENT_RENDER = 4 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const CONTENT_RENDER = 4;
     /**

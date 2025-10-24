@@ -15,13 +15,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class Problem extends \Google\Protobuf\Internal\Message
 {
     /**
+     * contest
+     *
+     * Generated from protobuf field <code>string contest_id = 5 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $contest_id = '';
+    /**
      * globally problem ID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>string url = 6;</code>
+     * Generated from protobuf field <code>string url = 6 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     protected $url = '';
     /**
@@ -31,35 +38,15 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * problem index within contest
      *
-     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * Generated from protobuf field <code>uint32 index = 2 [(.eolymp.api.mcp_field_desc) = "problem position in contest"];</code>
      */
     protected $index = 0;
     /**
-     * score for solving problem
-     *
-     * Generated from protobuf field <code>float score = 3;</code>
-     */
-    protected $score = 0.0;
-    /**
      * ID of the problem in database achieve
      *
-     * Generated from protobuf field <code>string base_id = 4;</code>
+     * Generated from protobuf field <code>string base_id = 4 [(.eolymp.api.mcp_field_desc) = "problem ID in the problem archive"];</code>
      */
     protected $base_id = '';
-    /**
-     * Generated from protobuf field <code>uint32 base_number = 45;</code>
-     */
-    protected $base_number = 0;
-    /**
-     * Generated from protobuf field <code>string base_space_id = 40;</code>
-     */
-    protected $base_space_id = '';
-    /**
-     * contest
-     *
-     * Generated from protobuf field <code>string contest_id = 5;</code>
-     */
-    protected $contest_id = '';
     /**
      * defines feedback policy for the problem
      *
@@ -67,21 +54,25 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $feedback_policy = 0;
     /**
+     * Generated from protobuf field <code>bool score_by_best_testset = 210 [(.eolymp.api.mcp_field_desc) = "problem score is calculated as sum of best score in each testset (best among all submissions)"];</code>
+     */
+    protected $score_by_best_testset = false;
+    /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 time_limit = 200;</code>
+     * Generated from protobuf field <code>uint32 time_limit = 200 [(.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
      */
     protected $time_limit = 0;
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 cpu_limit = 204;</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 204 [(.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
      */
     protected $cpu_limit = 0;
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 memory_limit = 201;</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 201 [(.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
      */
     protected $memory_limit = 0;
     /**
@@ -91,17 +82,53 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $file_size_limit = 0;
     /**
-     * in number of submits
-     *
-     * Generated from protobuf field <code>uint32 submit_limit = 203;</code>
+     * Generated from protobuf field <code>uint32 submit_limit = 203 [(.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
      */
     protected $submit_limit = 0;
     /**
-     * problem score is calculated as sum of best score in each testset (best among all submissions)
+     * score for solving problem
      *
-     * Generated from protobuf field <code>bool score_by_best_testset = 210;</code>
+     * Generated from protobuf field <code>float score = 3;</code>
      */
-    protected $score_by_best_testset = false;
+    protected $score = 0.0;
+    /**
+     * Constraints
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $constraints = null;
+    /**
+     * Statement language
+     *
+     * Generated from protobuf field <code>string locale = 20;</code>
+     */
+    protected $locale = '';
+    /**
+     * Problem title
+     *
+     * Generated from protobuf field <code>string title = 21;</code>
+     */
+    protected $title = '';
+    /**
+     * Statement content
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 22 [(.eolymp.api.mcp_field_desc) = "problem statement in requested language"];</code>
+     */
+    protected $content = null;
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 24 [(.eolymp.api.mcp_field_desc) = "a link to download statement in PDF format"];</code>
+     */
+    protected $download_link = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $submission_form = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
+     */
+    private $examples;
 
     /**
      * Constructor.
@@ -109,22 +136,19 @@ class Problem extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
+     *           contest
      *     @type string $id
      *           globally problem ID
      *     @type string $url
      *     @type int $type
      *     @type int $index
      *           problem index within contest
-     *     @type float $score
-     *           score for solving problem
      *     @type string $base_id
      *           ID of the problem in database achieve
-     *     @type int $base_number
-     *     @type string $base_space_id
-     *     @type string $contest_id
-     *           contest
      *     @type int $feedback_policy
      *           defines feedback policy for the problem
+     *     @type bool $score_by_best_testset
      *     @type int $time_limit
      *           in milliseconds
      *     @type int $cpu_limit
@@ -134,9 +158,20 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int|string $file_size_limit
      *           in bytes
      *     @type int $submit_limit
-     *           in number of submits
-     *     @type bool $score_by_best_testset
-     *           problem score is calculated as sum of best score in each testset (best among all submissions)
+     *     @type float $score
+     *           score for solving problem
+     *     @type \Eolymp\Atlas\Problem\Constraints $constraints
+     *           Constraints
+     *     @type string $locale
+     *           Statement language
+     *     @type string $title
+     *           Problem title
+     *     @type \Eolymp\Ecm\Content $content
+     *           Statement content
+     *     @type string $download_link
+     *           Statement download link, allows to download statement in original format.
+     *     @type \Eolymp\Atlas\Form $submission_form
+     *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
      * }
      */
     public function __construct($data = NULL) {
@@ -145,9 +180,41 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * contest
+     *
+     * Generated from protobuf field <code>string contest_id = 5 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getContestId()
+    {
+        if ($this->contest_id !== '') {
+            @trigger_error('contest_id is deprecated.', E_USER_DEPRECATED);
+        }
+        return $this->contest_id;
+    }
+
+    /**
+     * contest
+     *
+     * Generated from protobuf field <code>string contest_id = 5 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setContestId($var)
+    {
+        @trigger_error('contest_id is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
      * globally problem ID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -158,7 +225,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * globally problem ID
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -171,7 +238,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 6;</code>
+     * Generated from protobuf field <code>string url = 6 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return string
      */
     public function getUrl()
@@ -180,7 +247,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string url = 6;</code>
+     * Generated from protobuf field <code>string url = 6 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -217,7 +284,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * problem index within contest
      *
-     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * Generated from protobuf field <code>uint32 index = 2 [(.eolymp.api.mcp_field_desc) = "problem position in contest"];</code>
      * @return int
      */
     public function getIndex()
@@ -228,7 +295,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * problem index within contest
      *
-     * Generated from protobuf field <code>uint32 index = 2;</code>
+     * Generated from protobuf field <code>uint32 index = 2 [(.eolymp.api.mcp_field_desc) = "problem position in contest"];</code>
      * @param int $var
      * @return $this
      */
@@ -241,35 +308,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * score for solving problem
-     *
-     * Generated from protobuf field <code>float score = 3;</code>
-     * @return float
-     */
-    public function getScore()
-    {
-        return $this->score;
-    }
-
-    /**
-     * score for solving problem
-     *
-     * Generated from protobuf field <code>float score = 3;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setScore($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->score = $var;
-
-        return $this;
-    }
-
-    /**
      * ID of the problem in database achieve
      *
-     * Generated from protobuf field <code>string base_id = 4;</code>
+     * Generated from protobuf field <code>string base_id = 4 [(.eolymp.api.mcp_field_desc) = "problem ID in the problem archive"];</code>
      * @return string
      */
     public function getBaseId()
@@ -280,7 +321,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * ID of the problem in database achieve
      *
-     * Generated from protobuf field <code>string base_id = 4;</code>
+     * Generated from protobuf field <code>string base_id = 4 [(.eolymp.api.mcp_field_desc) = "problem ID in the problem archive"];</code>
      * @param string $var
      * @return $this
      */
@@ -288,76 +329,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->base_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 base_number = 45;</code>
-     * @return int
-     */
-    public function getBaseNumber()
-    {
-        return $this->base_number;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 base_number = 45;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setBaseNumber($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->base_number = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string base_space_id = 40;</code>
-     * @return string
-     */
-    public function getBaseSpaceId()
-    {
-        return $this->base_space_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string base_space_id = 40;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBaseSpaceId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->base_space_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * contest
-     *
-     * Generated from protobuf field <code>string contest_id = 5;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * contest
-     *
-     * Generated from protobuf field <code>string contest_id = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
 
         return $this;
     }
@@ -389,9 +360,31 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>bool score_by_best_testset = 210 [(.eolymp.api.mcp_field_desc) = "problem score is calculated as sum of best score in each testset (best among all submissions)"];</code>
+     * @return bool
+     */
+    public function getScoreByBestTestset()
+    {
+        return $this->score_by_best_testset;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool score_by_best_testset = 210 [(.eolymp.api.mcp_field_desc) = "problem score is calculated as sum of best score in each testset (best among all submissions)"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setScoreByBestTestset($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->score_by_best_testset = $var;
+
+        return $this;
+    }
+
+    /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 time_limit = 200;</code>
+     * Generated from protobuf field <code>uint32 time_limit = 200 [(.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
      * @return int
      */
     public function getTimeLimit()
@@ -402,7 +395,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 time_limit = 200;</code>
+     * Generated from protobuf field <code>uint32 time_limit = 200 [(.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
      * @param int $var
      * @return $this
      */
@@ -417,7 +410,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 cpu_limit = 204;</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 204 [(.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
      * @return int
      */
     public function getCpuLimit()
@@ -428,7 +421,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 cpu_limit = 204;</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 204 [(.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
      * @param int $var
      * @return $this
      */
@@ -443,7 +436,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 memory_limit = 201;</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 201 [(.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
      * @return int|string
      */
     public function getMemoryLimit()
@@ -454,7 +447,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 memory_limit = 201;</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 201 [(.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
      * @param int|string $var
      * @return $this
      */
@@ -493,9 +486,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in number of submits
-     *
-     * Generated from protobuf field <code>uint32 submit_limit = 203;</code>
+     * Generated from protobuf field <code>uint32 submit_limit = 203 [(.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
      * @return int
      */
     public function getSubmitLimit()
@@ -504,9 +495,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * in number of submits
-     *
-     * Generated from protobuf field <code>uint32 submit_limit = 203;</code>
+     * Generated from protobuf field <code>uint32 submit_limit = 203 [(.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
      * @param int $var
      * @return $this
      */
@@ -519,27 +508,231 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * problem score is calculated as sum of best score in each testset (best among all submissions)
+     * score for solving problem
      *
-     * Generated from protobuf field <code>bool score_by_best_testset = 210;</code>
-     * @return bool
+     * Generated from protobuf field <code>float score = 3;</code>
+     * @return float
      */
-    public function getScoreByBestTestset()
+    public function getScore()
     {
-        return $this->score_by_best_testset;
+        return $this->score;
     }
 
     /**
-     * problem score is calculated as sum of best score in each testset (best among all submissions)
+     * score for solving problem
      *
-     * Generated from protobuf field <code>bool score_by_best_testset = 210;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>float score = 3;</code>
+     * @param float $var
      * @return $this
      */
-    public function setScoreByBestTestset($var)
+    public function setScore($var)
     {
-        GPBUtil::checkBool($var);
-        $this->score_by_best_testset = $var;
+        GPBUtil::checkFloat($var);
+        $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Constraints
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
+     * @return \Eolymp\Atlas\Problem\Constraints|null
+     */
+    public function getConstraints()
+    {
+        return $this->constraints;
+    }
+
+    public function hasConstraints()
+    {
+        return isset($this->constraints);
+    }
+
+    public function clearConstraints()
+    {
+        unset($this->constraints);
+    }
+
+    /**
+     * Constraints
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
+     * @param \Eolymp\Atlas\Problem\Constraints $var
+     * @return $this
+     */
+    public function setConstraints($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem\Constraints::class);
+        $this->constraints = $var;
+
+        return $this;
+    }
+
+    /**
+     * Statement language
+     *
+     * Generated from protobuf field <code>string locale = 20;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Statement language
+     *
+     * Generated from protobuf field <code>string locale = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Problem title
+     *
+     * Generated from protobuf field <code>string title = 21;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Problem title
+     *
+     * Generated from protobuf field <code>string title = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Statement content
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 22 [(.eolymp.api.mcp_field_desc) = "problem statement in requested language"];</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Statement content
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 22 [(.eolymp.api.mcp_field_desc) = "problem statement in requested language"];</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 24 [(.eolymp.api.mcp_field_desc) = "a link to download statement in PDF format"];</code>
+     * @return string
+     */
+    public function getDownloadLink()
+    {
+        return $this->download_link;
+    }
+
+    /**
+     * Statement download link, allows to download statement in original format.
+     *
+     * Generated from protobuf field <code>string download_link = 24 [(.eolymp.api.mcp_field_desc) = "a link to download statement in PDF format"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61 [(.eolymp.api.read_only) = true];</code>
+     * @return \Eolymp\Atlas\Form|null
+     */
+    public function getSubmissionForm()
+    {
+        return $this->submission_form;
+    }
+
+    public function hasSubmissionForm()
+    {
+        return isset($this->submission_form);
+    }
+
+    public function clearSubmissionForm()
+    {
+        unset($this->submission_form);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61 [(.eolymp.api.read_only) = true];</code>
+     * @param \Eolymp\Atlas\Form $var
+     * @return $this
+     */
+    public function setSubmissionForm($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form::class);
+        $this->submission_form = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExamples()
+    {
+        return $this->examples;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
+     * @param array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExamples($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Problem\Example::class);
+        $this->examples = $arr;
 
         return $this;
     }

@@ -26,6 +26,16 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 size = 11;</code>
      */
     protected $size = 0;
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -36,6 +46,9 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type int $offset
      *     @type int $size
+     *     @type string $locale
+     *           load title and content in a specific locale
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -105,6 +118,54 @@ class ListProblemsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * load title and content in a specific locale
+     *
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Problem\Extra\Field::class);
+        $this->extra = $arr;
 
         return $this;
     }
