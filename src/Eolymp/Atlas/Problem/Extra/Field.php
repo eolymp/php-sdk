@@ -21,11 +21,11 @@ class Field
      */
     const VOTE = 1;
     /**
-     * Generated from protobuf enum <code>TITLE = 2;</code>
+     * Generated from protobuf enum <code>TITLE = 2 [(.eolymp.api.mcp_value_desc) = "include problem title"];</code>
      */
     const TITLE = 2;
     /**
-     * Generated from protobuf enum <code>CONTENT_VALUE = 3;</code>
+     * Generated from protobuf enum <code>CONTENT_VALUE = 3 [(.eolymp.api.mcp_value_desc) = "include problem statement"];</code>
      */
     const CONTENT_VALUE = 3;
     /**
@@ -33,11 +33,11 @@ class Field
      */
     const CONTENT_RENDER = 4;
     /**
-     * Generated from protobuf enum <code>SUBMISSION_FORM = 5;</code>
+     * Generated from protobuf enum <code>SUBMISSION_FORM = 5 [(.eolymp.api.mcp_value_desc) = "include submission form details"];</code>
      */
     const SUBMISSION_FORM = 5;
     /**
-     * Generated from protobuf enum <code>EXAMPLES = 6;</code>
+     * Generated from protobuf enum <code>EXAMPLES = 6 [(.eolymp.api.mcp_value_desc) = "include input and answer examples"];</code>
      */
     const EXAMPLES = 6;
 

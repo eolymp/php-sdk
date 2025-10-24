@@ -24,7 +24,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * globally problem ID
      *
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
@@ -60,29 +60,34 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 time_limit = 200 [(.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
+     * Generated from protobuf field <code>uint32 time_limit = 200 [deprecated = true, (.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
+     * @deprecated
      */
     protected $time_limit = 0;
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 cpu_limit = 204 [(.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 204 [deprecated = true, (.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
+     * @deprecated
      */
     protected $cpu_limit = 0;
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 memory_limit = 201 [(.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 201 [deprecated = true, (.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
+     * @deprecated
      */
     protected $memory_limit = 0;
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 file_size_limit = 202;</code>
+     * Generated from protobuf field <code>uint64 file_size_limit = 202 [deprecated = true, (.eolymp.api.mcp_field_ignore) = true];</code>
+     * @deprecated
      */
     protected $file_size_limit = 0;
     /**
-     * Generated from protobuf field <code>uint32 submit_limit = 203 [(.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
+     * Generated from protobuf field <code>uint32 submit_limit = 203 [deprecated = true, (.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
+     * @deprecated
      */
     protected $submit_limit = 0;
     /**
@@ -94,7 +99,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
      */
     protected $constraints = null;
     /**
@@ -122,11 +127,11 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $download_link = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
      */
     protected $submission_form = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
      */
     private $examples;
 
@@ -214,7 +219,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * globally problem ID
      *
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
     public function getId()
@@ -225,7 +230,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * globally problem ID
      *
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -384,23 +389,29 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 time_limit = 200 [(.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
+     * Generated from protobuf field <code>uint32 time_limit = 200 [deprecated = true, (.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
      * @return int
+     * @deprecated
      */
     public function getTimeLimit()
     {
+        if ($this->time_limit !== 0) {
+            @trigger_error('time_limit is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->time_limit;
     }
 
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 time_limit = 200 [(.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
+     * Generated from protobuf field <code>uint32 time_limit = 200 [deprecated = true, (.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setTimeLimit($var)
     {
+        @trigger_error('time_limit is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->time_limit = $var;
 
@@ -410,23 +421,29 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 cpu_limit = 204 [(.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 204 [deprecated = true, (.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
      * @return int
+     * @deprecated
      */
     public function getCpuLimit()
     {
+        if ($this->cpu_limit !== 0) {
+            @trigger_error('cpu_limit is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->cpu_limit;
     }
 
     /**
      * in milliseconds
      *
-     * Generated from protobuf field <code>uint32 cpu_limit = 204 [(.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
+     * Generated from protobuf field <code>uint32 cpu_limit = 204 [deprecated = true, (.eolymp.api.mcp_field_desc) = "cpu usage time limit in milliseconds"];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setCpuLimit($var)
     {
+        @trigger_error('cpu_limit is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->cpu_limit = $var;
 
@@ -436,23 +453,29 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 memory_limit = 201 [(.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 201 [deprecated = true, (.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
      * @return int|string
+     * @deprecated
      */
     public function getMemoryLimit()
     {
+        if ($this->memory_limit !== 0) {
+            @trigger_error('memory_limit is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->memory_limit;
     }
 
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 memory_limit = 201 [(.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
+     * Generated from protobuf field <code>uint64 memory_limit = 201 [deprecated = true, (.eolymp.api.mcp_field_desc) = "runtime memory limit in bytes"];</code>
      * @param int|string $var
      * @return $this
+     * @deprecated
      */
     public function setMemoryLimit($var)
     {
+        @trigger_error('memory_limit is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint64($var);
         $this->memory_limit = $var;
 
@@ -462,23 +485,29 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 file_size_limit = 202;</code>
+     * Generated from protobuf field <code>uint64 file_size_limit = 202 [deprecated = true, (.eolymp.api.mcp_field_ignore) = true];</code>
      * @return int|string
+     * @deprecated
      */
     public function getFileSizeLimit()
     {
+        if ($this->file_size_limit !== 0) {
+            @trigger_error('file_size_limit is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->file_size_limit;
     }
 
     /**
      * in bytes
      *
-     * Generated from protobuf field <code>uint64 file_size_limit = 202;</code>
+     * Generated from protobuf field <code>uint64 file_size_limit = 202 [deprecated = true, (.eolymp.api.mcp_field_ignore) = true];</code>
      * @param int|string $var
      * @return $this
+     * @deprecated
      */
     public function setFileSizeLimit($var)
     {
+        @trigger_error('file_size_limit is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint64($var);
         $this->file_size_limit = $var;
 
@@ -486,21 +515,27 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 submit_limit = 203 [(.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
+     * Generated from protobuf field <code>uint32 submit_limit = 203 [deprecated = true, (.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
      * @return int
+     * @deprecated
      */
     public function getSubmitLimit()
     {
+        if ($this->submit_limit !== 0) {
+            @trigger_error('submit_limit is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->submit_limit;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 submit_limit = 203 [(.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
+     * Generated from protobuf field <code>uint32 submit_limit = 203 [deprecated = true, (.eolymp.api.mcp_field_desc) = "limit in number of submissions per participant"];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setSubmitLimit($var)
     {
+        @trigger_error('submit_limit is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->submit_limit = $var;
 
@@ -536,7 +571,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
      * @return \Eolymp\Atlas\Problem\Constraints|null
      */
     public function getConstraints()
@@ -557,7 +592,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Constraints
      *
-     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Constraints constraints = 30;</code>
      * @param \Eolymp\Atlas\Problem\Constraints $var
      * @return $this
      */
@@ -684,7 +719,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
      * @return \Eolymp\Atlas\Form|null
      */
     public function getSubmissionForm()
@@ -703,7 +738,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
      * @param \Eolymp\Atlas\Form $var
      * @return $this
      */
@@ -716,7 +751,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExamples()
@@ -725,7 +760,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
      * @param array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
