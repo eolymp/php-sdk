@@ -17,19 +17,19 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Announcement unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
      * Contest where announcement was published.
      *
-     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * Generated from protobuf field <code>string contest_id = 2 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     protected $contest_id = '';
     /**
      * Timestamp when announcement was initially created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
     /**
@@ -71,7 +71,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Announcement unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -82,7 +82,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Announcement unique identifier.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -97,7 +97,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Contest where announcement was published.
      *
-     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * Generated from protobuf field <code>string contest_id = 2 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return string
      */
     public function getContestId()
@@ -108,7 +108,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Contest where announcement was published.
      *
-     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * Generated from protobuf field <code>string contest_id = 2 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -123,7 +123,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when announcement was initially created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -144,7 +144,7 @@ class Announcement extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when announcement was initially created.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 3 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

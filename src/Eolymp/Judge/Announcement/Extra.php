@@ -17,7 +17,7 @@ class Extra
      */
     const NO_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>MESSAGE_RENDER = 1;</code>
+     * Generated from protobuf enum <code>MESSAGE_RENDER = 1 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const MESSAGE_RENDER = 1;
     /**

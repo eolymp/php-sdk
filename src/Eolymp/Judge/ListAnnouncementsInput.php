@@ -15,10 +15,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListAnnouncementsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     */
-    protected $contest_id = '';
-    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -41,7 +37,6 @@ class ListAnnouncementsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $contest_id
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Judge\ListAnnouncementsInput\Filter $filters
@@ -51,28 +46,6 @@ class ListAnnouncementsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\AnnouncementService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
-
-        return $this;
     }
 
     /**

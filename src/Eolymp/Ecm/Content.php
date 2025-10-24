@@ -38,7 +38,7 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string html = 1;</code>
+     * Generated from protobuf field <code>string html = 1 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @return string
      */
     public function getHtml()
@@ -52,7 +52,7 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string html = 1;</code>
+     * Generated from protobuf field <code>string html = 1 [(.eolymp.api.mcp_field_ignore) = true];</code>
      * @param string $var
      * @return $this
      */
