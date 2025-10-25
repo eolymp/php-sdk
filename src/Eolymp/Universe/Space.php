@@ -21,12 +21,6 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * space key used to build URLs
-     *
-     * Generated from protobuf field <code>string key = 2;</code>
-     */
-    protected $key = '';
-    /**
      * space url
      *
      * Generated from protobuf field <code>string url = 3;</code>
@@ -51,6 +45,12 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $graphql_url = '';
     /**
+     * space key used to build URLs
+     *
+     * Generated from protobuf field <code>string key = 2;</code>
+     */
+    protected $key = '';
+    /**
      * human friendly name
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -67,33 +67,39 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
-     */
-    private $features;
-    /**
      * space status
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16 [(.eolymp.api.read_only) = true];</code>
      */
     protected $status = 0;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17 [(.eolymp.api.read_only) = true];</code>
+     */
+    private $features;
+    /**
      * subscription details (private)
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800 [(.eolymp.api.read_only) = true];</code>
      */
     protected $subscription = null;
     /**
      * space affiliation label
      *
-     * Generated from protobuf field <code>string affiliation = 15;</code>
+     * Generated from protobuf field <code>string affiliation = 15 [(.eolymp.api.read_only) = true];</code>
      */
     protected $affiliation = '';
     /**
      * discord guild ID
      *
-     * Generated from protobuf field <code>string discord_guild_id = 18;</code>
+     * Generated from protobuf field <code>string discord_guild_id = 18 [(.eolymp.api.read_only) = true];</code>
      */
     protected $discord_guild_id = '';
+    /**
+     * available locales
+     *
+     * Generated from protobuf field <code>repeated string locales = 19;</code>
+     */
+    private $locales;
 
     /**
      * Constructor.
@@ -103,8 +109,6 @@ class Space extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           space unique identifier
-     *     @type string $key
-     *           space key used to build URLs
      *     @type string $url
      *           space url
      *     @type string $home_url
@@ -113,20 +117,24 @@ class Space extends \Google\Protobuf\Internal\Message
      *           space issuer URL (used for issuing tokens)
      *     @type string $graphql_url
      *           space graphql endpoint
+     *     @type string $key
+     *           space key used to build URLs
      *     @type string $name
      *           human friendly name
      *     @type string $image
      *           space logo image
      *     @type int $visibility
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
      *     @type int $status
      *           space status
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
      *     @type \Eolymp\Universe\Space\Subscription $subscription
      *           subscription details (private)
      *     @type string $affiliation
      *           space affiliation label
      *     @type string $discord_guild_id
      *           discord guild ID
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *           available locales
      * }
      */
     public function __construct($data = NULL) {
@@ -156,32 +164,6 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * space key used to build URLs
-     *
-     * Generated from protobuf field <code>string key = 2;</code>
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-
-    /**
-     * space key used to build URLs
-     *
-     * Generated from protobuf field <code>string key = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setKey($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->key = $var;
 
         return $this;
     }
@@ -291,6 +273,32 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * space key used to build URLs
+     *
+     * Generated from protobuf field <code>string key = 2;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * space key used to build URLs
+     *
+     * Generated from protobuf field <code>string key = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
+
+        return $this;
+    }
+
+    /**
      * human friendly name
      *
      * Generated from protobuf field <code>string name = 10;</code>
@@ -365,31 +373,9 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFeatures()
-    {
-        return $this->features;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFeatures($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Feature::class);
-        $this->features = $arr;
-
-        return $this;
-    }
-
-    /**
      * space status
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getStatus()
@@ -400,7 +386,7 @@ class Space extends \Google\Protobuf\Internal\Message
     /**
      * space status
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Status status = 16 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -413,9 +399,31 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17 [(.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFeatures()
+    {
+        return $this->features;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17 [(.eolymp.api.read_only) = true];</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFeatures($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Feature::class);
+        $this->features = $arr;
+
+        return $this;
+    }
+
+    /**
      * subscription details (private)
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Universe\Space\Subscription|null
      */
     public function getSubscription()
@@ -436,7 +444,7 @@ class Space extends \Google\Protobuf\Internal\Message
     /**
      * subscription details (private)
      *
-     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Subscription subscription = 800 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Universe\Space\Subscription $var
      * @return $this
      */
@@ -451,7 +459,7 @@ class Space extends \Google\Protobuf\Internal\Message
     /**
      * space affiliation label
      *
-     * Generated from protobuf field <code>string affiliation = 15;</code>
+     * Generated from protobuf field <code>string affiliation = 15 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getAffiliation()
@@ -462,7 +470,7 @@ class Space extends \Google\Protobuf\Internal\Message
     /**
      * space affiliation label
      *
-     * Generated from protobuf field <code>string affiliation = 15;</code>
+     * Generated from protobuf field <code>string affiliation = 15 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -477,7 +485,7 @@ class Space extends \Google\Protobuf\Internal\Message
     /**
      * discord guild ID
      *
-     * Generated from protobuf field <code>string discord_guild_id = 18;</code>
+     * Generated from protobuf field <code>string discord_guild_id = 18 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getDiscordGuildId()
@@ -488,7 +496,7 @@ class Space extends \Google\Protobuf\Internal\Message
     /**
      * discord guild ID
      *
-     * Generated from protobuf field <code>string discord_guild_id = 18;</code>
+     * Generated from protobuf field <code>string discord_guild_id = 18 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -496,6 +504,32 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->discord_guild_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * available locales
+     *
+     * Generated from protobuf field <code>repeated string locales = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * available locales
+     *
+     * Generated from protobuf field <code>repeated string locales = 19;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->locales = $arr;
 
         return $this;
     }

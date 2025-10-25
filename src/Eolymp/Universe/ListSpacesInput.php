@@ -27,7 +27,7 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -125,7 +125,7 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -134,13 +134,13 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;
