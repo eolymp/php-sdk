@@ -243,4 +243,23 @@ class TicketServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateReplyOutput::class, $context);
     }
 
+    /**
+     * @param SuggestReplyInput $input message
+     * @param array $context request parameters
+     *
+     * @return SuggestReplyOutput output message
+     */
+    public function SuggestReply(SuggestReplyInput $input, array $context = [])
+    {
+        $path = "/tickets/".rawurlencode($input->getTicketId())."/replies:suggest";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTicketId("");
+
+        $context['name'] = "eolymp.judge.TicketService/SuggestReply";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SuggestReplyOutput::class, $context);
+    }
+
 }
