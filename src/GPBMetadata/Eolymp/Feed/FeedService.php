@@ -16,10 +16,11 @@ class FeedService
           return;
         }
         \GPBMetadata\Eolymp\Annotations\Http::initOnce();
+        \GPBMetadata\Eolymp\Annotations\PBNamespace::initOnce();
         \GPBMetadata\Eolymp\Annotations\Ratelimit::initOnce();
         \GPBMetadata\Eolymp\Feed\Entry::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xAC\x03\x0A\x1Eeolymp/feed/feed_service.proto\x12\x0Beolymp.feed\x1A\"eolymp/annotations/ratelimit.proto\x1A\x17eolymp/feed/entry.proto\"/\x0A\x10ListEntriesInput\x12\x0C\x0A\x04size\x18\x0B \x01(\x05\x12\x0D\x0A\x05after\x18\x0C \x01(\x09\"_\x0A\x11ListEntriesOutput\x12\x0D\x0A\x05total\x18\x01 \x01(\x05\x12!\x0A\x05items\x18\x02 \x03(\x0B2\x12.eolymp.feed.Entry\x12\x18\x0A\x10next_page_cursor\x18\x03 \x01(\x092y\x0A\x0BFeedService\x12j\x0A\x0BListEntries\x12\x1D.eolymp.feed.ListEntriesInput\x1A\x1E.eolymp.feed.ListEntriesOutput\"\x1C\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A\x14\x82\xD3\xE4\x93\x02\x07\x12\x05/feedB+Z)github.com/eolymp/go-sdk/eolymp/feed;feedb\x06proto3"
+            "\x0A\xF0\x03\x0A\x1Eeolymp/feed/feed_service.proto\x12\x0Beolymp.feed\x1A\"eolymp/annotations/namespace.proto\x1A\"eolymp/annotations/ratelimit.proto\x1A\x17eolymp/feed/entry.proto\"/\x0A\x10ListEntriesInput\x12\x0C\x0A\x04size\x18\x0B \x01(\x05\x12\x0D\x0A\x05after\x18\x0C \x01(\x09\"_\x0A\x11ListEntriesOutput\x12\x0D\x0A\x05total\x18\x01 \x01(\x05\x12!\x0A\x05items\x18\x02 \x03(\x0B2\x12.eolymp.feed.Entry\x12\x18\x0A\x10next_page_cursor\x18\x03 \x01(\x092\x98\x01\x0A\x0BFeedService\x12j\x0A\x0BListEntries\x12\x1D.eolymp.feed.ListEntriesInput\x1A\x1E.eolymp.feed.ListEntriesOutput\"\x1C\xEA\xE2\x0A\x0B\xF5\xE2\x0A\x00\x00\xA0@\xF8\xE2\x0A\x14\x82\xD3\xE4\x93\x02\x07\x12\x05/feed\x1A\x1D\x82\xF0\xF0\xE4\x01\x17eolymp.community.MemberB+Z)github.com/eolymp/go-sdk/eolymp/feed;feedb\x06proto3"
         , true);
 
         static::$is_initialized = true;
