@@ -32,6 +32,10 @@ class Field
      * Generated from protobuf enum <code>METADATA = 5;</code>
      */
     const METADATA = 5;
+    /**
+     * Generated from protobuf enum <code>RESTRICTIONS = 6;</code>
+     */
+    const RESTRICTIONS = 6;
 
     private static $valueToName = [
         self::NO_EXTRA => 'NO_EXTRA',
@@ -39,6 +43,7 @@ class Field
         self::GROUPS => 'GROUPS',
         self::ATTRIBUTES => 'ATTRIBUTES',
         self::METADATA => 'METADATA',
+        self::RESTRICTIONS => 'RESTRICTIONS',
     ];
 
     public static function name($value)

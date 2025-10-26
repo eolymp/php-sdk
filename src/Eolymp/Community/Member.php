@@ -101,6 +101,13 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $active_at = null;
     /**
+     * Restrictions applied to the member profile.
+     * Requires RESTRICTIONS extra.
+     *
+     * Generated from protobuf field <code>repeated string restrictions = 10 [(.eolymp.api.read_only) = true];</code>
+     */
+    private $restrictions;
+    /**
      * Member statistics.
      * Requires STATS extra.
      *
@@ -166,6 +173,9 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $restrictions
+     *           Restrictions applied to the member profile.
+     *           Requires RESTRICTIONS extra.
      *     @type \Eolymp\Community\Member\Stats $stats
      *           Member statistics.
      *           Requires STATS extra.
@@ -673,6 +683,34 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Community\Ghost::class);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * Restrictions applied to the member profile.
+     * Requires RESTRICTIONS extra.
+     *
+     * Generated from protobuf field <code>repeated string restrictions = 10 [(.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRestrictions()
+    {
+        return $this->restrictions;
+    }
+
+    /**
+     * Restrictions applied to the member profile.
+     * Requires RESTRICTIONS extra.
+     *
+     * Generated from protobuf field <code>repeated string restrictions = 10 [(.eolymp.api.read_only) = true];</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRestrictions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->restrictions = $arr;
 
         return $this;
     }
