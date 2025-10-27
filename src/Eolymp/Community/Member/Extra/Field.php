@@ -13,9 +13,9 @@ use UnexpectedValueException;
 class Field
 {
     /**
-     * Generated from protobuf enum <code>NO_EXTRA = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_EXTRA = 0;</code>
      */
-    const NO_EXTRA = 0;
+    const UNKNOWN_EXTRA = 0;
     /**
      * Generated from protobuf enum <code>RANK = 1;</code>
      */
@@ -42,7 +42,7 @@ class Field
     const RESTRICTIONS = 6;
 
     private static $valueToName = [
-        self::NO_EXTRA => 'NO_EXTRA',
+        self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::RANK => 'RANK',
         self::STATS => 'STATS',
         self::GROUPS => 'GROUPS',

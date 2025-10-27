@@ -15,9 +15,9 @@ class Field
     /**
      * change all properties (same as an empty patch)
      *
-     * Generated from protobuf enum <code>UNKNOWN = 0;</code>
+     * Generated from protobuf enum <code>UNKNOWN_PATCH = 0;</code>
      */
-    const UNKNOWN = 0;
+    const UNKNOWN_PATCH = 0;
     /**
      * Generated from protobuf enum <code>EXTERNAL_REF = 6;</code>
      */
@@ -128,7 +128,7 @@ class Field
     const METADATA = 901;
 
     private static $valueToName = [
-        self::UNKNOWN => 'UNKNOWN',
+        self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
         self::EXTERNAL_REF => 'EXTERNAL_REF',
         self::INACTIVE => 'INACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
