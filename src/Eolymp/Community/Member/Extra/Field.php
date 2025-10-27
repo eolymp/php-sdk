@@ -17,6 +17,10 @@ class Field
      */
     const NO_EXTRA = 0;
     /**
+     * Generated from protobuf enum <code>RANK = 1;</code>
+     */
+    const RANK = 1;
+    /**
      * Generated from protobuf enum <code>STATS = 2;</code>
      */
     const STATS = 2;
@@ -39,6 +43,7 @@ class Field
 
     private static $valueToName = [
         self::NO_EXTRA => 'NO_EXTRA',
+        self::RANK => 'RANK',
         self::STATS => 'STATS',
         self::GROUPS => 'GROUPS',
         self::ATTRIBUTES => 'ATTRIBUTES',
