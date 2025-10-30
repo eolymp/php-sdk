@@ -81,11 +81,17 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $city = '';
     /**
-     * Email confirmation status
+     * Email confirmation status. Deprecated, use email_verified instead.
      *
      * Generated from protobuf field <code>string email_status = 32;</code>
      */
     protected $email_status = '';
+    /**
+     * Email verified (confirmed)
+     *
+     * Generated from protobuf field <code>bool email_verified = 38;</code>
+     */
+    protected $email_verified = false;
     /**
      * Birthday
      *
@@ -160,7 +166,9 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $city
      *           City
      *     @type string $email_status
-     *           Email confirmation status
+     *           Email confirmation status. Deprecated, use email_verified instead.
+     *     @type bool $email_verified
+     *           Email verified (confirmed)
      *     @type string $birthday
      *           Birthday
      *     @type \Google\Protobuf\Timestamp $registered_on
@@ -469,7 +477,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email confirmation status
+     * Email confirmation status. Deprecated, use email_verified instead.
      *
      * Generated from protobuf field <code>string email_status = 32;</code>
      * @return string
@@ -480,7 +488,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email confirmation status
+     * Email confirmation status. Deprecated, use email_verified instead.
      *
      * Generated from protobuf field <code>string email_status = 32;</code>
      * @param string $var
@@ -490,6 +498,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Email verified (confirmed)
+     *
+     * Generated from protobuf field <code>bool email_verified = 38;</code>
+     * @return bool
+     */
+    public function getEmailVerified()
+    {
+        return $this->email_verified;
+    }
+
+    /**
+     * Email verified (confirmed)
+     *
+     * Generated from protobuf field <code>bool email_verified = 38;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEmailVerified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->email_verified = $var;
 
         return $this;
     }
