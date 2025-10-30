@@ -40,6 +40,12 @@ class Field
      * Generated from protobuf enum <code>RESTRICTIONS = 6;</code>
      */
     const RESTRICTIONS = 6;
+    /**
+     * add email, name, birthday and internal attributes
+     *
+     * Generated from protobuf enum <code>PRIVATE_DATA = 7;</code>
+     */
+    const PRIVATE_DATA = 7;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
@@ -49,6 +55,7 @@ class Field
         self::ATTRIBUTES => 'ATTRIBUTES',
         self::METADATA => 'METADATA',
         self::RESTRICTIONS => 'RESTRICTIONS',
+        self::PRIVATE_DATA => 'PRIVATE_DATA',
     ];
 
     public static function name($value)
