@@ -26,6 +26,10 @@ class ReviewSuggestionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content comment = 4;</code>
      */
     protected $comment = null;
+    /**
+     * Generated from protobuf field <code>uint32 contribution = 5;</code>
+     */
+    protected $contribution = 0;
 
     /**
      * Constructor.
@@ -36,6 +40,7 @@ class ReviewSuggestionInput extends \Google\Protobuf\Internal\Message
      *     @type string $suggestion_id
      *     @type int $status
      *     @type \Eolymp\Ecm\Content $comment
+     *     @type int $contribution
      * }
      */
     public function __construct($data = NULL) {
@@ -115,6 +120,28 @@ class ReviewSuggestionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->comment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 contribution = 5;</code>
+     * @return int
+     */
+    public function getContribution()
+    {
+        return $this->contribution;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 contribution = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setContribution($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->contribution = $var;
 
         return $this;
     }

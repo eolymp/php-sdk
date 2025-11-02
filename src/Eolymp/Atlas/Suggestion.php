@@ -23,17 +23,21 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>string locale = 4;</code>
+     * problem version this suggestion applies to
+     *
+     * Generated from protobuf field <code>uint32 version = 8;</code>
      */
-    protected $locale = '';
-    /**
-     * Generated from protobuf field <code>string title = 6;</code>
-     */
-    protected $title = '';
+    protected $version = 0;
     /**
      * Generated from protobuf field <code>string member_id = 5;</code>
      */
     protected $member_id = '';
+    /**
+     * contribution score 0 - not significant or between 1 (minor) - 5 (major)
+     *
+     * Generated from protobuf field <code>uint32 contribution = 7;</code>
+     */
+    protected $contribution = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
      */
@@ -42,22 +46,7 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
      */
     protected $updated_at = null;
-    /**
-     * Generated from protobuf field <code>repeated string topics = 100;</code>
-     */
-    private $topics;
-    /**
-     * Generated from protobuf field <code>uint32 difficulty = 101;</code>
-     */
-    protected $difficulty = 0;
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content statement = 102;</code>
-     */
-    protected $statement = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content editorial = 103;</code>
-     */
-    protected $editorial = null;
+    protected $change;
 
     /**
      * Constructor.
@@ -67,15 +56,16 @@ class Suggestion extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $status
-     *     @type string $locale
-     *     @type string $title
+     *     @type int $version
+     *           problem version this suggestion applies to
      *     @type string $member_id
+     *     @type int $contribution
+     *           contribution score 0 - not significant or between 1 (minor) - 5 (major)
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
-     *     @type int $difficulty
-     *     @type \Eolymp\Ecm\Content $statement
-     *     @type \Eolymp\Ecm\Content $editorial
+     *     @type \Eolymp\Atlas\Suggestion\Classification $classification
+     *     @type \Eolymp\Atlas\Suggestion\StatementChange $statement_change
+     *     @type \Eolymp\Atlas\Suggestion\EditorialChange $editorial_change
      * }
      */
     public function __construct($data = NULL) {
@@ -128,45 +118,27 @@ class Suggestion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 4;</code>
-     * @return string
+     * problem version this suggestion applies to
+     *
+     * Generated from protobuf field <code>uint32 version = 8;</code>
+     * @return int
      */
-    public function getLocale()
+    public function getVersion()
     {
-        return $this->locale;
+        return $this->version;
     }
 
     /**
-     * Generated from protobuf field <code>string locale = 4;</code>
-     * @param string $var
+     * problem version this suggestion applies to
+     *
+     * Generated from protobuf field <code>uint32 version = 8;</code>
+     * @param int $var
      * @return $this
      */
-    public function setLocale($var)
+    public function setVersion($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string title = 6;</code>
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * Generated from protobuf field <code>string title = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTitle($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->title = $var;
+        GPBUtil::checkUint32($var);
+        $this->version = $var;
 
         return $this;
     }
@@ -189,6 +161,32 @@ class Suggestion extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * contribution score 0 - not significant or between 1 (minor) - 5 (major)
+     *
+     * Generated from protobuf field <code>uint32 contribution = 7;</code>
+     * @return int
+     */
+    public function getContribution()
+    {
+        return $this->contribution;
+    }
+
+    /**
+     * contribution score 0 - not significant or between 1 (minor) - 5 (major)
+     *
+     * Generated from protobuf field <code>uint32 contribution = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setContribution($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->contribution = $var;
 
         return $this;
     }
@@ -258,111 +256,92 @@ class Suggestion extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string topics = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>.eolymp.atlas.Suggestion.Classification classification = 100;</code>
+     * @return \Eolymp\Atlas\Suggestion\Classification|null
      */
-    public function getTopics()
+    public function getClassification()
     {
-        return $this->topics;
+        return $this->readOneof(100);
+    }
+
+    public function hasClassification()
+    {
+        return $this->hasOneof(100);
     }
 
     /**
-     * Generated from protobuf field <code>repeated string topics = 100;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>.eolymp.atlas.Suggestion.Classification classification = 100;</code>
+     * @param \Eolymp\Atlas\Suggestion\Classification $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setClassification($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->topics = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Suggestion\Classification::class);
+        $this->writeOneof(100, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 difficulty = 101;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.atlas.Suggestion.StatementChange statement_change = 101;</code>
+     * @return \Eolymp\Atlas\Suggestion\StatementChange|null
      */
-    public function getDifficulty()
+    public function getStatementChange()
     {
-        return $this->difficulty;
+        return $this->readOneof(101);
+    }
+
+    public function hasStatementChange()
+    {
+        return $this->hasOneof(101);
     }
 
     /**
-     * Generated from protobuf field <code>uint32 difficulty = 101;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.atlas.Suggestion.StatementChange statement_change = 101;</code>
+     * @param \Eolymp\Atlas\Suggestion\StatementChange $var
      * @return $this
      */
-    public function setDifficulty($var)
+    public function setStatementChange($var)
     {
-        GPBUtil::checkUint32($var);
-        $this->difficulty = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Suggestion\StatementChange::class);
+        $this->writeOneof(101, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content statement = 102;</code>
-     * @return \Eolymp\Ecm\Content|null
+     * Generated from protobuf field <code>.eolymp.atlas.Suggestion.EditorialChange editorial_change = 102;</code>
+     * @return \Eolymp\Atlas\Suggestion\EditorialChange|null
      */
-    public function getStatement()
+    public function getEditorialChange()
     {
-        return $this->statement;
+        return $this->readOneof(102);
     }
 
-    public function hasStatement()
+    public function hasEditorialChange()
     {
-        return isset($this->statement);
-    }
-
-    public function clearStatement()
-    {
-        unset($this->statement);
+        return $this->hasOneof(102);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content statement = 102;</code>
-     * @param \Eolymp\Ecm\Content $var
+     * Generated from protobuf field <code>.eolymp.atlas.Suggestion.EditorialChange editorial_change = 102;</code>
+     * @param \Eolymp\Atlas\Suggestion\EditorialChange $var
      * @return $this
      */
-    public function setStatement($var)
+    public function setEditorialChange($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->statement = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Suggestion\EditorialChange::class);
+        $this->writeOneof(102, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content editorial = 103;</code>
-     * @return \Eolymp\Ecm\Content|null
+     * @return string
      */
-    public function getEditorial()
+    public function getChange()
     {
-        return $this->editorial;
-    }
-
-    public function hasEditorial()
-    {
-        return isset($this->editorial);
-    }
-
-    public function clearEditorial()
-    {
-        unset($this->editorial);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content editorial = 103;</code>
-     * @param \Eolymp\Ecm\Content $var
-     * @return $this
-     */
-    public function setEditorial($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->editorial = $var;
-
-        return $this;
+        return $this->whichOneof("change");
     }
 
 }

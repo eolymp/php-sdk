@@ -23,10 +23,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $key;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool hidden = 3;</code>
-     */
-    private $hidden;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool required = 4;</code>
      */
     private $required;
@@ -43,7 +39,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $key
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $hidden
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $required
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
      * }
@@ -93,28 +88,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->key = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool hidden = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getHidden()
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool hidden = 3;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setHidden($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->hidden = $arr;
 
         return $this;
     }
