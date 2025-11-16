@@ -19,6 +19,12 @@ class Field
      */
     const UNKNOWN = 0;
     /**
+     * Staff members of the contest, used to display staff members in the contest UI
+     *
+     * Generated from protobuf enum <code>STAFF = 5;</code>
+     */
+    const STAFF = 5;
+    /**
      * Generated from protobuf enum <code>CLASSIFICATION = 1;</code>
      */
     const CLASSIFICATION = 1;
@@ -39,20 +45,19 @@ class Field
      */
     const PLAGIARISM_CONFIG = 6;
     /**
-     * Staff members of the contest, used to display staff members in the contest UI
-     *
-     * Generated from protobuf enum <code>STAFF = 5;</code>
+     * Generated from protobuf enum <code>RATING_CONFIG = 7;</code>
      */
-    const STAFF = 5;
+    const RATING_CONFIG = 7;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
+        self::STAFF => 'STAFF',
         self::CLASSIFICATION => 'CLASSIFICATION',
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
         self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
         self::PLAGIARISM_CONFIG => 'PLAGIARISM_CONFIG',
-        self::STAFF => 'STAFF',
+        self::RATING_CONFIG => 'RATING_CONFIG',
     ];
 
     public static function name($value)

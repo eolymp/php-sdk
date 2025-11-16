@@ -180,10 +180,18 @@ class Contest extends \Google\Protobuf\Internal\Message
     protected $certification_config = null;
     /**
      * Plagiarism configuration allows to configure plagiarism detection features for the contest.
+     * This feature requires space to support plagiarism.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.PlagiarismConfig plagiarism_config = 113;</code>
      */
     protected $plagiarism_config = null;
+    /**
+     * Rating configuration allows to provide parameters for EloMMR rating calculation.
+     * This feature requires space to support ratings.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
+     */
+    protected $rating_config = null;
     /**
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
@@ -255,6 +263,10 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Certification configuration allows to automatically issue participant certificates after finalization of the contest.
      *     @type \Eolymp\Judge\Contest\PlagiarismConfig $plagiarism_config
      *           Plagiarism configuration allows to configure plagiarism detection features for the contest.
+     *           This feature requires space to support plagiarism.
+     *     @type \Eolymp\Judge\Contest\RatingConfig $rating_config
+     *           Rating configuration allows to provide parameters for EloMMR rating calculation.
+     *           This feature requires space to support ratings.
      *     @type array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $staff
      *           Staff members of the contest (coordinator, tester, problem setter etc)
      * }
@@ -1056,6 +1068,7 @@ class Contest extends \Google\Protobuf\Internal\Message
 
     /**
      * Plagiarism configuration allows to configure plagiarism detection features for the contest.
+     * This feature requires space to support plagiarism.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.PlagiarismConfig plagiarism_config = 113;</code>
      * @return \Eolymp\Judge\Contest\PlagiarismConfig|null
@@ -1077,6 +1090,7 @@ class Contest extends \Google\Protobuf\Internal\Message
 
     /**
      * Plagiarism configuration allows to configure plagiarism detection features for the contest.
+     * This feature requires space to support plagiarism.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.PlagiarismConfig plagiarism_config = 113;</code>
      * @param \Eolymp\Judge\Contest\PlagiarismConfig $var
@@ -1086,6 +1100,44 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\PlagiarismConfig::class);
         $this->plagiarism_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Rating configuration allows to provide parameters for EloMMR rating calculation.
+     * This feature requires space to support ratings.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
+     * @return \Eolymp\Judge\Contest\RatingConfig|null
+     */
+    public function getRatingConfig()
+    {
+        return $this->rating_config;
+    }
+
+    public function hasRatingConfig()
+    {
+        return isset($this->rating_config);
+    }
+
+    public function clearRatingConfig()
+    {
+        unset($this->rating_config);
+    }
+
+    /**
+     * Rating configuration allows to provide parameters for EloMMR rating calculation.
+     * This feature requires space to support ratings.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
+     * @param \Eolymp\Judge\Contest\RatingConfig $var
+     * @return $this
+     */
+    public function setRatingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\RatingConfig::class);
+        $this->rating_config = $var;
 
         return $this;
     }
