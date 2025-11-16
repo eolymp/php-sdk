@@ -71,6 +71,10 @@ class Field
      */
     const ALLOW_FOLLOWUP = 121;
     /**
+     * Generated from protobuf enum <code>DISPLAY_EDITORIALS = 122;</code>
+     */
+    const DISPLAY_EDITORIALS = 122;
+    /**
      * Generated from protobuf enum <code>FORMAT = 10;</code>
      */
     const FORMAT = 10;
@@ -134,6 +138,7 @@ class Field
         self::ALLOW_FINISH_EARLY => 'ALLOW_FINISH_EARLY',
         self::ALLOW_UPSOLVE => 'ALLOW_UPSOLVE',
         self::ALLOW_FOLLOWUP => 'ALLOW_FOLLOWUP',
+        self::DISPLAY_EDITORIALS => 'DISPLAY_EDITORIALS',
         self::FORMAT => 'FORMAT',
         self::KEY => 'KEY',
         self::PROBLEM_COUNT_HIDDEN => 'PROBLEM_COUNT_HIDDEN',

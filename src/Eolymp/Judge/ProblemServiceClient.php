@@ -197,6 +197,25 @@ class ProblemServiceClient {
     }
 
     /**
+     * @param DescribeEditorialInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeEditorialOutput output message
+     */
+    public function DescribeEditorial(DescribeEditorialInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorial";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.ProblemService/DescribeEditorial";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeEditorialOutput::class, $context);
+    }
+
+    /**
      * @param ListAttachmentsInput $input message
      * @param array $context request parameters
      *

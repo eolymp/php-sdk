@@ -111,6 +111,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $allow_followup = false;
     /**
+     * Display problem editorials after contest ends
+     *
+     * Generated from protobuf field <code>bool display_editorials = 41;</code>
+     */
+    protected $display_editorials = false;
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -239,6 +245,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Allow participants to solve problem after completing the contest
      *     @type bool $allow_followup
      *           Allow new participants to unofficially and virtually participate in contest after it's over
+     *     @type bool $display_editorials
+     *           Display problem editorials after contest ends
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
@@ -708,6 +716,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->allow_followup = $var;
+
+        return $this;
+    }
+
+    /**
+     * Display problem editorials after contest ends
+     *
+     * Generated from protobuf field <code>bool display_editorials = 41;</code>
+     * @return bool
+     */
+    public function getDisplayEditorials()
+    {
+        return $this->display_editorials;
+    }
+
+    /**
+     * Display problem editorials after contest ends
+     *
+     * Generated from protobuf field <code>bool display_editorials = 41;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisplayEditorials($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->display_editorials = $var;
 
         return $this;
     }
