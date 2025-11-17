@@ -18,6 +18,10 @@ class LookupAddressInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string ip_address = 1;</code>
      */
     protected $ip_address = '';
+    /**
+     * Generated from protobuf field <code>string secret = 2;</code>
+     */
+    protected $secret = '';
 
     /**
      * Constructor.
@@ -26,6 +30,7 @@ class LookupAddressInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $ip_address
+     *     @type string $secret
      * }
      */
     public function __construct($data = NULL) {
@@ -51,6 +56,28 @@ class LookupAddressInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->ip_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string secret = 2;</code>
+     * @return string
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Generated from protobuf field <code>string secret = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->secret = $var;
 
         return $this;
     }
