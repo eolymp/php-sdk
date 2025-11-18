@@ -21,10 +21,6 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     */
-    protected $contest_id = '';
-    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
@@ -41,7 +37,6 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           Patch request to update participant partially (all fields are updated if not specified)
-     *     @type string $contest_id
      *     @type string $problem_id
      *     @type \Eolymp\Judge\Problem $problem
      * }
@@ -73,28 +68,6 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateProblemInput\Patch::class);
         $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
 
         return $this;
     }

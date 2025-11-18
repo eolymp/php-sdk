@@ -15,10 +15,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeEditorialInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     */
-    protected $contest_id = '';
-    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
@@ -26,6 +22,10 @@ class DescribeEditorialInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 10;</code>
      */
     protected $locale = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra.Field extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -33,36 +33,14 @@ class DescribeEditorialInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $contest_id
      *     @type string $problem_id
      *     @type string $locale
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ProblemService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->contest_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->contest_id = $var;
-
-        return $this;
     }
 
     /**
@@ -105,6 +83,28 @@ class DescribeEditorialInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra.Field extra = 1123;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Extra.Field extra = 1123;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Extra\Field::class);
+        $this->extra = $arr;
 
         return $this;
     }
