@@ -28,10 +28,6 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Extra.Field extra = 1123;</code>
      */
     private $extra;
-    /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask fields = 1124;</code>
-     */
-    protected $fields = null;
 
     /**
      * Constructor.
@@ -43,7 +39,6 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *           load title and content in a specific locale
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
-     *     @type \Google\Protobuf\FieldMask $fields
      * }
      */
     public function __construct($data = NULL) {
@@ -117,38 +112,6 @@ class DescribeProblemInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Problem\Extra\Field::class);
         $this->extra = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask fields = 1124;</code>
-     * @return \Google\Protobuf\FieldMask|null
-     */
-    public function getFields()
-    {
-        return $this->fields;
-    }
-
-    public function hasFields()
-    {
-        return isset($this->fields);
-    }
-
-    public function clearFields()
-    {
-        unset($this->fields);
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.FieldMask fields = 1124;</code>
-     * @param \Google\Protobuf\FieldMask $var
-     * @return $this
-     */
-    public function setFields($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
-        $this->fields = $var;
 
         return $this;
     }
