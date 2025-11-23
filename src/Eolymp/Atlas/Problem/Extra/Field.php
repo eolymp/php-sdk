@@ -17,14 +17,6 @@ class Field
      */
     const UNKNOWN_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>VOTE = 1 [(.eolymp.api.mcp_value_ignore) = true];</code>
-     */
-    const VOTE = 1;
-    /**
-     * Generated from protobuf enum <code>TITLE = 2 [(.eolymp.api.mcp_value_desc) = "include problem title"];</code>
-     */
-    const TITLE = 2;
-    /**
      * Generated from protobuf enum <code>CONTENT_VALUE = 3 [(.eolymp.api.mcp_value_desc) = "include problem statement"];</code>
      */
     const CONTENT_VALUE = 3;
@@ -32,28 +24,11 @@ class Field
      * Generated from protobuf enum <code>CONTENT_RENDER = 4 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const CONTENT_RENDER = 4;
-    /**
-     * Generated from protobuf enum <code>SUBMISSION_FORM = 5 [(.eolymp.api.mcp_value_desc) = "include submission form details"];</code>
-     */
-    const SUBMISSION_FORM = 5;
-    /**
-     * Generated from protobuf enum <code>EXAMPLES = 6 [(.eolymp.api.mcp_value_desc) = "include input and answer examples"];</code>
-     */
-    const EXAMPLES = 6;
-    /**
-     * Generated from protobuf enum <code>CONSTRAINTS = 7 [(.eolymp.api.mcp_value_desc) = "include time, memory and file size constraints"];</code>
-     */
-    const CONSTRAINTS = 7;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::VOTE => 'VOTE',
-        self::TITLE => 'TITLE',
         self::CONTENT_VALUE => 'CONTENT_VALUE',
         self::CONTENT_RENDER => 'CONTENT_RENDER',
-        self::SUBMISSION_FORM => 'SUBMISSION_FORM',
-        self::EXAMPLES => 'EXAMPLES',
-        self::CONSTRAINTS => 'CONSTRAINTS',
     ];
 
     public static function name($value)
