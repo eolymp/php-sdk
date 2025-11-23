@@ -49,9 +49,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string language = 3 [(.eolymp.api.read_only) = true];</code>
      */
-    protected $locale = '';
+    protected $language = '';
     /**
      * Problem title
      *
@@ -82,6 +82,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 102 [(.eolymp.api.read_only) = true];</code>
      */
     protected $source = '';
+    /**
+     * list of languages the statement is available in
+     *
+     * Generated from protobuf field <code>repeated string languages = 103;</code>
+     */
+    private $languages;
     /**
      * Problem topics (ID of topics from taxonomy.TopicService)
      *
@@ -157,7 +163,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem is visible to users in public catalog.
      *     @type string $origin
      *           For imported problems, provides the source from where the problem is imported and synchronized.
-     *     @type string $locale
+     *     @type string $language
      *           Statement language
      *     @type string $title
      *           Problem title
@@ -169,6 +175,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem author name.
      *     @type string $source
      *           Problem source, name of the contest or olympiad where this problem was initially published.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
+     *           list of languages the statement is available in
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *           Problem topics (ID of topics from taxonomy.TopicService)
      *     @type float $score
@@ -345,25 +353,25 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string language = 3 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
-    public function getLocale()
+    public function getLanguage()
     {
-        return $this->locale;
+        return $this->language;
     }
 
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 3 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string language = 3 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
-    public function setLocale($var)
+    public function setLanguage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->locale = $var;
+        $this->language = $var;
 
         return $this;
     }
@@ -504,6 +512,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * list of languages the statement is available in
+     *
+     * Generated from protobuf field <code>repeated string languages = 103;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * list of languages the statement is available in
+     *
+     * Generated from protobuf field <code>repeated string languages = 103;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLanguages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->languages = $arr;
 
         return $this;
     }

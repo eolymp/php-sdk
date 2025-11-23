@@ -105,9 +105,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 20;</code>
+     * Generated from protobuf field <code>string language = 20;</code>
      */
-    protected $locale = '';
+    protected $language = '';
     /**
      * Problem title
      *
@@ -126,6 +126,12 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string download_link = 24 [(.eolymp.api.mcp_field_desc) = "a link to download statement in PDF format"];</code>
      */
     protected $download_link = '';
+    /**
+     * list of languages the statement is available in
+     *
+     * Generated from protobuf field <code>repeated string languages = 25;</code>
+     */
+    private $languages;
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
      */
@@ -167,7 +173,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           score for solving problem
      *     @type \Eolymp\Atlas\Problem\Constraints $constraints
      *           Constraints
-     *     @type string $locale
+     *     @type string $language
      *           Statement language
      *     @type string $title
      *           Problem title
@@ -175,6 +181,8 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Statement content
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
+     *           list of languages the statement is available in
      *     @type \Eolymp\Atlas\Form $submission_form
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
      * }
@@ -607,25 +615,25 @@ class Problem extends \Google\Protobuf\Internal\Message
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 20;</code>
+     * Generated from protobuf field <code>string language = 20;</code>
      * @return string
      */
-    public function getLocale()
+    public function getLanguage()
     {
-        return $this->locale;
+        return $this->language;
     }
 
     /**
      * Statement language
      *
-     * Generated from protobuf field <code>string locale = 20;</code>
+     * Generated from protobuf field <code>string language = 20;</code>
      * @param string $var
      * @return $this
      */
-    public function setLocale($var)
+    public function setLanguage($var)
     {
         GPBUtil::checkString($var, True);
-        $this->locale = $var;
+        $this->language = $var;
 
         return $this;
     }
@@ -714,6 +722,32 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->download_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * list of languages the statement is available in
+     *
+     * Generated from protobuf field <code>repeated string languages = 25;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * list of languages the statement is available in
+     *
+     * Generated from protobuf field <code>repeated string languages = 25;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLanguages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->languages = $arr;
 
         return $this;
     }

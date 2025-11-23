@@ -40,6 +40,10 @@ class Field
      * Generated from protobuf enum <code>EXAMPLES = 6 [(.eolymp.api.mcp_value_desc) = "include input and answer examples"];</code>
      */
     const EXAMPLES = 6;
+    /**
+     * Generated from protobuf enum <code>CONSTRAINTS = 7 [(.eolymp.api.mcp_value_desc) = "include time, memory and file size constraints"];</code>
+     */
+    const CONSTRAINTS = 7;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
@@ -49,6 +53,7 @@ class Field
         self::CONTENT_RENDER => 'CONTENT_RENDER',
         self::SUBMISSION_FORM => 'SUBMISSION_FORM',
         self::EXAMPLES => 'EXAMPLES',
+        self::CONSTRAINTS => 'CONSTRAINTS',
     ];
 
     public static function name($value)
