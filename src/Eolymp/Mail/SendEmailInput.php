@@ -21,9 +21,9 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     /**
      * a key uniquely identifies the message, it is used to ensure same email is not sent twice
      *
-     * Generated from protobuf field <code>string deduplication_key = 2;</code>
+     * Generated from protobuf field <code>string email_ref = 2;</code>
      */
-    protected $deduplication_key = '';
+    protected $email_ref = '';
     /**
      * send a test email to the current user instead of the member
      *
@@ -41,12 +41,6 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * for internal use, campaign id for tracking feedback
-     *
-     * Generated from protobuf field <code>string campaign = 15;</code>
-     */
-    protected $campaign = '';
-    /**
      * locale for the content
      *
      * Generated from protobuf field <code>string locale = 11;</code>
@@ -61,15 +55,13 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
-     *     @type string $deduplication_key
+     *     @type string $email_ref
      *           a key uniquely identifies the message, it is used to ensure same email is not sent twice
      *     @type bool $dry_run
      *           send a test email to the current user instead of the member
      *     @type bool $bcc_me
      *           send a copy of the email to the current user
      *     @type int $type
-     *     @type string $campaign
-     *           for internal use, campaign id for tracking feedback
      *     @type string $locale
      *           locale for the content
      *     @type \Eolymp\Mail\SendEmailInput\Message $message
@@ -108,25 +100,25 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     /**
      * a key uniquely identifies the message, it is used to ensure same email is not sent twice
      *
-     * Generated from protobuf field <code>string deduplication_key = 2;</code>
+     * Generated from protobuf field <code>string email_ref = 2;</code>
      * @return string
      */
-    public function getDeduplicationKey()
+    public function getEmailRef()
     {
-        return $this->deduplication_key;
+        return $this->email_ref;
     }
 
     /**
      * a key uniquely identifies the message, it is used to ensure same email is not sent twice
      *
-     * Generated from protobuf field <code>string deduplication_key = 2;</code>
+     * Generated from protobuf field <code>string email_ref = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setDeduplicationKey($var)
+    public function setEmailRef($var)
     {
         GPBUtil::checkString($var, True);
-        $this->deduplication_key = $var;
+        $this->email_ref = $var;
 
         return $this;
     }
@@ -201,32 +193,6 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Mail\EmailType::class);
         $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * for internal use, campaign id for tracking feedback
-     *
-     * Generated from protobuf field <code>string campaign = 15;</code>
-     * @return string
-     */
-    public function getCampaign()
-    {
-        return $this->campaign;
-    }
-
-    /**
-     * for internal use, campaign id for tracking feedback
-     *
-     * Generated from protobuf field <code>string campaign = 15;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCampaign($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->campaign = $var;
 
         return $this;
     }
