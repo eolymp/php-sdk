@@ -23,9 +23,9 @@ class Message extends \Google\Protobuf\Internal\Message
      */
     protected $body = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct parameters = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct data = 14;</code>
      */
-    protected $parameters = null;
+    protected $data = null;
 
     /**
      * Constructor.
@@ -35,7 +35,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *
      *     @type string $subject
      *     @type \Eolymp\Ecm\Content $body
-     *     @type \Google\Protobuf\Struct $parameters
+     *     @type \Google\Protobuf\Struct $data
      * }
      */
     public function __construct($data = NULL) {
@@ -98,33 +98,33 @@ class Message extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct parameters = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct data = 14;</code>
      * @return \Google\Protobuf\Struct|null
      */
-    public function getParameters()
+    public function getData()
     {
-        return $this->parameters;
+        return $this->data;
     }
 
-    public function hasParameters()
+    public function hasData()
     {
-        return isset($this->parameters);
+        return isset($this->data);
     }
 
-    public function clearParameters()
+    public function clearData()
     {
-        unset($this->parameters);
+        unset($this->data);
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct parameters = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct data = 14;</code>
      * @param \Google\Protobuf\Struct $var
      * @return $this
      */
-    public function setParameters($var)
+    public function setData($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
-        $this->parameters = $var;
+        $this->data = $var;
 
         return $this;
     }
