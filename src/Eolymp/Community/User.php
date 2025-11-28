@@ -49,7 +49,7 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $email_restricted = false;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.EmailType email_subscriptions = 22;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.EmailType email_subscriptions = 22;</code>
      */
     private $email_subscriptions;
     /**
@@ -302,7 +302,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.EmailType email_subscriptions = 22;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.EmailType email_subscriptions = 22;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getEmailSubscriptions()
@@ -311,13 +311,13 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.EmailType email_subscriptions = 22;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.EmailType email_subscriptions = 22;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEmailSubscriptions($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\EmailType::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\EmailType::class);
         $this->email_subscriptions = $arr;
 
         return $this;

@@ -21,7 +21,7 @@ class UpdateEmailSubscriptionInput extends \Google\Protobuf\Internal\Message
      */
     protected $token = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.EmailType subscriptions = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.EmailType subscriptions = 2;</code>
      */
     private $subscriptions;
 
@@ -68,7 +68,7 @@ class UpdateEmailSubscriptionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.EmailType subscriptions = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.EmailType subscriptions = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSubscriptions()
@@ -77,13 +77,13 @@ class UpdateEmailSubscriptionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.EmailType subscriptions = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.EmailType subscriptions = 2;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setSubscriptions($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\EmailType::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\EmailType::class);
         $this->subscriptions = $arr;
 
         return $this;
