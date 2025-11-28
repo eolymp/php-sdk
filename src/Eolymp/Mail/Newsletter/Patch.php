@@ -5,65 +5,28 @@
 
 namespace Eolymp\Mail\Newsletter;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.mail.Newsletter.Patch</code>
+ * Generated from protobuf message <code>eolymp.mail.Newsletter.Patch</code>
  */
-class Patch
+class Patch extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf enum <code>ALL = 0;</code>
-     */
-    const ALL = 0;
-    /**
-     * Generated from protobuf enum <code>TYPE = 1;</code>
-     */
-    const TYPE = 1;
-    /**
-     * Generated from protobuf enum <code>NAME = 5;</code>
-     */
-    const NAME = 5;
-    /**
-     * Generated from protobuf enum <code>SUBJECT = 2;</code>
-     */
-    const SUBJECT = 2;
-    /**
-     * Generated from protobuf enum <code>CONTENT = 3;</code>
-     */
-    const CONTENT = 3;
-    /**
-     * Generated from protobuf enum <code>LOCALE = 4;</code>
-     */
-    const LOCALE = 4;
 
-    private static $valueToName = [
-        self::ALL => 'ALL',
-        self::TYPE => 'TYPE',
-        self::NAME => 'NAME',
-        self::SUBJECT => 'SUBJECT',
-        self::CONTENT => 'CONTENT',
-        self::LOCALE => 'LOCALE',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Mail\Newsletter::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
-    {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
-    }
 }
 

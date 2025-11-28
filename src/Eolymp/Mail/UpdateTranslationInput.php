@@ -15,7 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch.Field patch = 1;</code>
      */
     private $patch;
     /**
@@ -49,7 +49,7 @@ class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch.Field patch = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPatch()
@@ -58,13 +58,13 @@ class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch.Field patch = 1;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\Newsletter\Patch::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\Newsletter\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;

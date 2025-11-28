@@ -19,7 +19,7 @@ class DescribeNewsletterInput extends \Google\Protobuf\Internal\Message
      */
     protected $newsletter_id = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
      */
     private $extra;
 
@@ -61,7 +61,7 @@ class DescribeNewsletterInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getExtra()
@@ -70,13 +70,13 @@ class DescribeNewsletterInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra extra = 1123;</code>
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
      * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setExtra($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\Newsletter\Extra::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\Newsletter\Extra\Field::class);
         $this->extra = $arr;
 
         return $this;

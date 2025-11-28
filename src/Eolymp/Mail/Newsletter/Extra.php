@@ -5,50 +5,28 @@
 
 namespace Eolymp\Mail\Newsletter;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.mail.Newsletter.Extra</code>
+ * Generated from protobuf message <code>eolymp.mail.Newsletter.Extra</code>
  */
-class Extra
+class Extra extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf enum <code>UNKNOWN_EXTRA = 0;</code>
-     */
-    const UNKNOWN_EXTRA = 0;
-    /**
-     * Generated from protobuf enum <code>CONTENT_VALUE = 1;</code>
-     */
-    const CONTENT_VALUE = 1;
-    /**
-     * Generated from protobuf enum <code>CONTENT_RENDER = 2;</code>
-     */
-    const CONTENT_RENDER = 2;
 
-    private static $valueToName = [
-        self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::CONTENT_VALUE => 'CONTENT_VALUE',
-        self::CONTENT_RENDER => 'CONTENT_RENDER',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Mail\Newsletter::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
-    {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
-    }
 }
 
