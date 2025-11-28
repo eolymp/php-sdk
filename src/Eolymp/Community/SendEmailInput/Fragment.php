@@ -19,9 +19,9 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
-     * Generated from protobuf field <code>map<string, string> parameters = 14;</code>
+     * Generated from protobuf field <code>.google.protobuf.Struct parameters = 14;</code>
      */
-    private $parameters;
+    protected $parameters = null;
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
-     *     @type array|\Google\Protobuf\Internal\MapField $parameters
+     *     @type \Google\Protobuf\Struct $parameters
      * }
      */
     public function __construct($data = NULL) {
@@ -61,23 +61,33 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> parameters = 14;</code>
-     * @return \Google\Protobuf\Internal\MapField
+     * Generated from protobuf field <code>.google.protobuf.Struct parameters = 14;</code>
+     * @return \Google\Protobuf\Struct|null
      */
     public function getParameters()
     {
         return $this->parameters;
     }
 
+    public function hasParameters()
+    {
+        return isset($this->parameters);
+    }
+
+    public function clearParameters()
+    {
+        unset($this->parameters);
+    }
+
     /**
-     * Generated from protobuf field <code>map<string, string> parameters = 14;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
+     * Generated from protobuf field <code>.google.protobuf.Struct parameters = 14;</code>
+     * @param \Google\Protobuf\Struct $var
      * @return $this
      */
     public function setParameters($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->parameters = $arr;
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        $this->parameters = $var;
 
         return $this;
     }
