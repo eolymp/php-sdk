@@ -92,7 +92,7 @@ class ProductServiceClient {
         $context['name'] = "eolymp.commerce.ProductService/DescribeProduct";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DescribeProductOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProductOutput::class, $context);
     }
 
     /**
