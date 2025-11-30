@@ -35,6 +35,18 @@ class Field
      */
     const UNOFFICIAL = 2;
     /**
+     * apply active period start/end dates
+     *
+     * Generated from protobuf enum <code>ACTIVE_PERIOD_START = 7;</code>
+     */
+    const ACTIVE_PERIOD_START = 7;
+    /**
+     * apply active period start/end dates
+     *
+     * Generated from protobuf enum <code>ACTIVE_PERIOD_END = 8;</code>
+     */
+    const ACTIVE_PERIOD_END = 8;
+    /**
      * change groups
      *
      * Generated from protobuf enum <code>GROUPS = 3;</code>
@@ -132,6 +144,8 @@ class Field
         self::EXTERNAL_REF => 'EXTERNAL_REF',
         self::INACTIVE => 'INACTIVE',
         self::UNOFFICIAL => 'UNOFFICIAL',
+        self::ACTIVE_PERIOD_START => 'ACTIVE_PERIOD_START',
+        self::ACTIVE_PERIOD_END => 'ACTIVE_PERIOD_END',
         self::GROUPS => 'GROUPS',
         self::GROUPS_ADD => 'GROUPS_ADD',
         self::GROUPS_REMOVE => 'GROUPS_REMOVE',

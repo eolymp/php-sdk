@@ -83,6 +83,18 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $secret = false;
     /**
+     * optional, time when member will become active
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_start = 12;</code>
+     */
+    protected $active_period_start = null;
+    /**
+     * optional, time when member will become inactive
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_end = 13;</code>
+     */
+    protected $active_period_end = null;
+    /**
      * Time when user account was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
@@ -164,6 +176,10 @@ class Member extends \Google\Protobuf\Internal\Message
      *           member participates in all competitions unofficially
      *     @type bool $secret
      *           member is secret and does not appear on anywhere (for example, an admin who performs testing)
+     *     @type \Google\Protobuf\Timestamp $active_period_start
+     *           optional, time when member will become active
+     *     @type \Google\Protobuf\Timestamp $active_period_end
+     *           optional, time when member will become inactive
      *     @type \Google\Protobuf\Timestamp $created_at
      *           Time when user account was created.
      *     @type \Google\Protobuf\Timestamp $seated_at
@@ -494,6 +510,78 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
+     * optional, time when member will become active
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_start = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getActivePeriodStart()
+    {
+        return $this->active_period_start;
+    }
+
+    public function hasActivePeriodStart()
+    {
+        return isset($this->active_period_start);
+    }
+
+    public function clearActivePeriodStart()
+    {
+        unset($this->active_period_start);
+    }
+
+    /**
+     * optional, time when member will become active
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_start = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setActivePeriodStart($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->active_period_start = $var;
+
+        return $this;
+    }
+
+    /**
+     * optional, time when member will become inactive
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_end = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getActivePeriodEnd()
+    {
+        return $this->active_period_end;
+    }
+
+    public function hasActivePeriodEnd()
+    {
+        return isset($this->active_period_end);
+    }
+
+    public function clearActivePeriodEnd()
+    {
+        unset($this->active_period_end);
+    }
+
+    /**
+     * optional, time when member will become inactive
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_end = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setActivePeriodEnd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->active_period_end = $var;
 
         return $this;
     }
