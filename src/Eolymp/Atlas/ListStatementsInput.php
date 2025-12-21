@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.ListStatementsInput</code>
@@ -48,7 +48,7 @@ class ListStatementsInput extends \Google\Protobuf\Internal\Message
      *     @type bool $render
      *     @type int $version
      *           request data for specific problem version
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type int[] $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -150,7 +150,7 @@ class ListStatementsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Extra.Field extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExtra()
     {
@@ -159,7 +159,7 @@ class ListStatementsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Extra.Field extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExtra($var)

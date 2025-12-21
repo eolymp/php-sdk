@@ -6,8 +6,8 @@
 namespace Eolymp\Executor;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.executor.GenerationTask</code>
@@ -77,9 +77,9 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      *           Interactor configuration
      *     @type \Eolymp\Executor\Script $validator
      *           Validator configuration
-     *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *     @type \Eolymp\Executor\Script[] $scripts
      *           Additional scripts
-     *     @type array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type \Eolymp\Executor\GenerationTask\Run[] $runs
      * }
      */
     public function __construct($data = NULL) {
@@ -295,7 +295,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      * Additional scripts
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\Script>
      */
     public function getScripts()
     {
@@ -306,7 +306,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
      * Additional scripts
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 22;</code>
-     * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\Script[] $var
      * @return $this
      */
     public function setScripts($var)
@@ -319,7 +319,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\GenerationTask\Run>
      */
     public function getRuns()
     {
@@ -328,7 +328,7 @@ class GenerationTask extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.GenerationTask.Run runs = 10;</code>
-     * @param array<\Eolymp\Executor\GenerationTask\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\GenerationTask\Run[] $var
      * @return $this
      */
     public function setRuns($var)

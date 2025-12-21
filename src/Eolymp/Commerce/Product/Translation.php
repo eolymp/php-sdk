@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce\Product;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.commerce.Product.Translation</code>
@@ -50,7 +50,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $summary
      *     @type \Eolymp\Ecm\Content $description
-     *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Eolymp\Commerce\Product\Attribute[] $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -190,7 +190,7 @@ class Translation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\Product\Attribute>
      */
     public function getAttributes()
     {
@@ -199,7 +199,7 @@ class Translation extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 20;</code>
-     * @param array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\Product\Attribute[] $var
      * @return $this
      */
     public function setAttributes($var)

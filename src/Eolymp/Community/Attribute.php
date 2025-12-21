@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.Attribute</code>
@@ -134,11 +134,11 @@ class Attribute extends \Google\Protobuf\Internal\Message
      *           min value validation (see field types for details)
      *     @type int $max
      *           max value validation (see field types for details)
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
+     *     @type string[] $choices
      *           possible choices validation (see field types for details)
      *     @type string $country
      *           restrict region selector to a specific country
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $constraints
+     *     @type string[] $constraints
      *           additional constraints
      * }
      */
@@ -477,7 +477,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * possible choices validation (see field types for details)
      *
      * Generated from protobuf field <code>repeated string choices = 103;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getChoices()
     {
@@ -488,7 +488,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * possible choices validation (see field types for details)
      *
      * Generated from protobuf field <code>repeated string choices = 103;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setChoices($var)
@@ -529,7 +529,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * additional constraints
      *
      * Generated from protobuf field <code>repeated string constraints = 105;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getConstraints()
     {
@@ -540,7 +540,7 @@ class Attribute extends \Google\Protobuf\Internal\Message
      * additional constraints
      *
      * Generated from protobuf field <code>repeated string constraints = 105;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setConstraints($var)

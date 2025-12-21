@@ -6,8 +6,8 @@
 namespace Eolymp\Wellknown;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * QuotaExceeded error details. This structure can be returned with an error to provide details about quota usage.

@@ -6,8 +6,8 @@
 namespace Eolymp\Course;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.course.ListMaterialsOutput</code>
@@ -30,7 +30,7 @@ class ListMaterialsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Course\Material>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Course\Material[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListMaterialsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Material items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Course\Material>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListMaterialsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Material items = 2;</code>
-     * @param array<\Eolymp\Course\Material>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Course\Material[] $var
      * @return $this
      */
     public function setItems($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.UpdateAttributeInput</code>
@@ -33,7 +33,7 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type int[] $patch
      *     @type string $attribute_key
      *     @type \Eolymp\Community\Attribute $attribute
      * }
@@ -45,7 +45,7 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Patch patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPatch()
     {
@@ -54,7 +54,7 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Patch patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPatch($var)

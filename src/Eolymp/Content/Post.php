@@ -6,8 +6,8 @@
 namespace Eolymp\Content;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.content.Post</code>
@@ -179,8 +179,8 @@ class Post extends \Google\Protobuf\Internal\Message
      *           total vote count
      *     @type int $reply_count
      *           total number of replies
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
-     *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type string[] $labels
+     *     @type \Eolymp\Wellknown\Link[] $links
      * }
      */
     public function __construct($data = NULL) {
@@ -812,7 +812,7 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 120;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -821,7 +821,7 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 120;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -834,7 +834,7 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\Link>
      */
     public function getLinks()
     {
@@ -843,7 +843,7 @@ class Post extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200 [(.eolymp.api.read_only) = true];</code>
-     * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\Link[] $var
      * @return $this
      */
     public function setLinks($var)

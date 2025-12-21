@@ -6,8 +6,8 @@
 namespace Eolymp\Judge\Score;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Score.Problem</code>
@@ -90,7 +90,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           amount of time it took user to get accepted
      *     @type bool $changed
      *           if true, means there is a newer value for this score
-     *     @type array<\Eolymp\Judge\Score\Testset>|\Google\Protobuf\Internal\RepeatedField $breakdown
+     *     @type \Eolymp\Judge\Score\Testset[] $breakdown
      *           breakdown of problem score by testset
      * }
      */
@@ -335,7 +335,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * breakdown of problem score by testset
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score.Testset breakdown = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Score\Testset>
      */
     public function getBreakdown()
     {
@@ -346,7 +346,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * breakdown of problem score by testset
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score.Testset breakdown = 20;</code>
-     * @param array<\Eolymp\Judge\Score\Testset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Score\Testset[] $var
      * @return $this
      */
     public function setBreakdown($var)

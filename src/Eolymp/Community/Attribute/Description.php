@@ -6,8 +6,8 @@
 namespace Eolymp\Community\Attribute;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Description provides localized information about field.
@@ -53,7 +53,7 @@ class Description extends \Google\Protobuf\Internal\Message
      *           label, normally displayed above the field
      *     @type string $help
      *           help message, normally displayed right below the field
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
+     *     @type string[] $choices
      *           translation for choices (must be in the same order)
      * }
      */
@@ -144,7 +144,7 @@ class Description extends \Google\Protobuf\Internal\Message
      * translation for choices (must be in the same order)
      *
      * Generated from protobuf field <code>repeated string choices = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getChoices()
     {
@@ -155,7 +155,7 @@ class Description extends \Google\Protobuf\Internal\Message
      * translation for choices (must be in the same order)
      *
      * Generated from protobuf field <code>repeated string choices = 5;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setChoices($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Helpdesk;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.helpdesk.ListCommentsOutput</code>
@@ -30,7 +30,7 @@ class ListCommentsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Helpdesk\Ticket\Comment>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Helpdesk\Ticket\Comment[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListCommentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.helpdesk.Ticket.Comment items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Helpdesk\Ticket\Comment>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListCommentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.helpdesk.Ticket.Comment items = 2;</code>
-     * @param array<\Eolymp\Helpdesk\Ticket\Comment>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Helpdesk\Ticket\Comment[] $var
      * @return $this
      */
     public function setItems($var)

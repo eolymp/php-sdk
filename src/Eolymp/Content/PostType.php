@@ -6,8 +6,8 @@
 namespace Eolymp\Content;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.content.PostType</code>
@@ -45,7 +45,7 @@ class PostType extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type bool $hidden
      *     @type int $order
-     *     @type array<\Eolymp\Content\PostType\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type \Eolymp\Content\PostType\Variant[] $variants
      * }
      */
     public function __construct($data = NULL) {
@@ -143,7 +143,7 @@ class PostType extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.content.PostType.Variant variants = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Content\PostType\Variant>
      */
     public function getVariants()
     {
@@ -152,7 +152,7 @@ class PostType extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.content.PostType.Variant variants = 100;</code>
-     * @param array<\Eolymp\Content\PostType\Variant>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Content\PostType\Variant[] $var
      * @return $this
      */
     public function setVariants($var)

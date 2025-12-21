@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.ListScriptsOutput</code>
@@ -30,7 +30,7 @@ class ListScriptsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Atlas\Script>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Atlas\Script[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListScriptsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Script items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Script>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListScriptsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Script items = 2;</code>
-     * @param array<\Eolymp\Atlas\Script>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Script[] $var
      * @return $this
      */
     public function setItems($var)

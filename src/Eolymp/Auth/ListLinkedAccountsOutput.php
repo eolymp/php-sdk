@@ -6,8 +6,8 @@
 namespace Eolymp\Auth;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.auth.ListLinkedAccountsOutput</code>
@@ -30,7 +30,7 @@ class ListLinkedAccountsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Auth\LinkedAccount>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Auth\LinkedAccount[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListLinkedAccountsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.auth.LinkedAccount items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Auth\LinkedAccount>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListLinkedAccountsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.auth.LinkedAccount items = 2;</code>
-     * @param array<\Eolymp\Auth\LinkedAccount>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Auth\LinkedAccount[] $var
      * @return $this
      */
     public function setItems($var)

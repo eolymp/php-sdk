@@ -6,8 +6,8 @@
 namespace Eolymp\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.api.Http</code>
@@ -29,7 +29,7 @@ class Http extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $rules
+     *     @type \Eolymp\Api\HttpRule[] $rules
      *     @type bool $fully_decode_reserved_expansion
      * }
      */
@@ -40,7 +40,7 @@ class Http extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule rules = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Api\HttpRule>
      */
     public function getRules()
     {
@@ -49,7 +49,7 @@ class Http extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule rules = 1;</code>
-     * @param array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Api\HttpRule[] $var
      * @return $this
      */
     public function setRules($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Judge\Scoreboard;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Scoreboard.Column</code>
@@ -48,7 +48,7 @@ class Column extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $type
      *     @type string $title
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
+     *     @type string[] $choices
      *     @type bool $sortable
      *     @type bool $filterable
      * }
@@ -126,7 +126,7 @@ class Column extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string choices = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getChoices()
     {
@@ -135,7 +135,7 @@ class Column extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string choices = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setChoices($var)

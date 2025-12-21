@@ -6,8 +6,8 @@
 namespace Eolymp\Executor;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Status represents results of the executing task.
@@ -106,7 +106,7 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
      *           Status of the evaluation
      *     @type string $error_message
      *           Error message
-     *     @type array<\Eolymp\Executor\EvaluationReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type \Eolymp\Executor\EvaluationReport\Run[] $runs
      * }
      */
     public function __construct($data = NULL) {
@@ -370,7 +370,7 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationReport.Run runs = 40;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\EvaluationReport\Run>
      */
     public function getRuns()
     {
@@ -379,7 +379,7 @@ class EvaluationReport extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationReport.Run runs = 40;</code>
-     * @param array<\Eolymp\Executor\EvaluationReport\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\EvaluationReport\Run[] $var
      * @return $this
      */
     public function setRuns($var)

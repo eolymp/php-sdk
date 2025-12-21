@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Editor</code>
@@ -45,11 +45,11 @@ class Editor extends \Google\Protobuf\Internal\Message
      *
      *     @type \Eolymp\Atlas\Editor\State $state
      *           current state of the editor
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
+     *     @type int[] $features
      *           list of enabled features
-     *     @type array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $runtimes
+     *     @type \Eolymp\Runtime\Runtime[] $runtimes
      *           list of available runtimes
-     *     @type array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $fields
+     *     @type \Eolymp\Atlas\Form\Field[] $fields
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +97,7 @@ class Editor extends \Google\Protobuf\Internal\Message
      * list of enabled features
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getFeatures()
     {
@@ -108,7 +108,7 @@ class Editor extends \Google\Protobuf\Internal\Message
      * list of enabled features
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setFeatures($var)
@@ -123,7 +123,7 @@ class Editor extends \Google\Protobuf\Internal\Message
      * list of available runtimes
      *
      * Generated from protobuf field <code>repeated .eolymp.runtime.Runtime runtimes = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Runtime\Runtime>
      */
     public function getRuntimes()
     {
@@ -134,7 +134,7 @@ class Editor extends \Google\Protobuf\Internal\Message
      * list of available runtimes
      *
      * Generated from protobuf field <code>repeated .eolymp.runtime.Runtime runtimes = 11;</code>
-     * @param array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Runtime\Runtime[] $var
      * @return $this
      */
     public function setRuntimes($var)
@@ -147,7 +147,7 @@ class Editor extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Form\Field>
      */
     public function getFields()
     {
@@ -156,7 +156,7 @@ class Editor extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
-     * @param array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Form\Field[] $var
      * @return $this
      */
     public function setFields($var)

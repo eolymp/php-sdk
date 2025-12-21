@@ -6,8 +6,8 @@
 namespace Eolymp\Executor\EvaluationTask;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Precondition defines criteria for a run to be executed. If this criteria does not meet, the run will be skipped.
@@ -59,10 +59,10 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $selector
+     *     @type string[] $selector
      *           Precondition will apply to all runs matching this label selector.
      *           Run must have all labels defined by selector. Empty selector will match all runs.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $depends_on
+     *     @type string[] $depends_on
      *           Defines label selector for runs which must be passing.
      *           Dependent runs will match if they have at least one of the labels defined in depends_on.
      *           To match dependent runs with by multiple labels, use two different preconditions.
@@ -87,7 +87,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Run must have all labels defined by selector. Empty selector will match all runs.
      *
      * Generated from protobuf field <code>repeated string selector = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getSelector()
     {
@@ -99,7 +99,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Run must have all labels defined by selector. Empty selector will match all runs.
      *
      * Generated from protobuf field <code>repeated string selector = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setSelector($var)
@@ -117,7 +117,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Empty depends_on means no dependencies.
      *
      * Generated from protobuf field <code>repeated string depends_on = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDependsOn()
     {
@@ -131,7 +131,7 @@ class Precondition extends \Google\Protobuf\Internal\Message
      * Empty depends_on means no dependencies.
      *
      * Generated from protobuf field <code>repeated string depends_on = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDependsOn($var)

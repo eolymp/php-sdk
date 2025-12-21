@@ -6,8 +6,8 @@
 namespace Eolymp\Auth;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.auth.RegisterClientOutput</code>
@@ -101,7 +101,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
      *     @type string $registration_client_uri
      *     @type string $token_endpoint_auth_method
      *     @type string $application_type
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $redirect_uris
+     *     @type string[] $redirect_uris
      *     @type string $client_name
      *     @type string $logo_uri
      *     @type string $subject_type
@@ -109,8 +109,8 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
      *     @type string $jwks_uri
      *     @type string $userinfo_encrypted_response_alg
      *     @type string $userinfo_encrypted_response_enc
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $contacts
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $request_uris
+     *     @type string[] $contacts
+     *     @type string[] $request_uris
      * }
      */
     public function __construct($data = NULL) {
@@ -316,7 +316,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string redirect_uris = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getRedirectUris()
     {
@@ -325,7 +325,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string redirect_uris = 9;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setRedirectUris($var)
@@ -492,7 +492,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string contacts = 17;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getContacts()
     {
@@ -501,7 +501,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string contacts = 17;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setContacts($var)
@@ -514,7 +514,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string request_uris = 18;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getRequestUris()
     {
@@ -523,7 +523,7 @@ class RegisterClientOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string request_uris = 18;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setRequestUris($var)

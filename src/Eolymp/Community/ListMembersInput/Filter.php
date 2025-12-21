@@ -6,8 +6,8 @@
 namespace Eolymp\Community\ListMembersInput;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.ListMembersInput.Filter</code>
@@ -103,28 +103,28 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $external_ref
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
+     *     @type \Eolymp\Wellknown\ExpressionID[] $id
+     *     @type \Eolymp\Wellknown\ExpressionID[] $external_ref
+     *     @type \Eolymp\Wellknown\ExpressionEnum[] $type
      *           user, team or ghost
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $display_name
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $inactive
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $incomplete
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $seated
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $team_id
+     *     @type \Eolymp\Wellknown\ExpressionString[] $display_name
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $inactive
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $incomplete
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $unofficial
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $seated
+     *     @type \Eolymp\Wellknown\ExpressionID[] $team_id
      *           find members of particular team
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $group_id
+     *     @type \Eolymp\Wellknown\ExpressionID[] $group_id
      *           find members of particular group
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_issuer
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_subject
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_email
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_name
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_nickname
-     *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $birthday
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $country
-     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $score
-     *     @type array<\Eolymp\Community\ListMembersInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $attribute
+     *     @type \Eolymp\Wellknown\ExpressionString[] $user_issuer
+     *     @type \Eolymp\Wellknown\ExpressionString[] $user_subject
+     *     @type \Eolymp\Wellknown\ExpressionString[] $user_email
+     *     @type \Eolymp\Wellknown\ExpressionString[] $user_name
+     *     @type \Eolymp\Wellknown\ExpressionString[] $user_nickname
+     *     @type \Eolymp\Wellknown\ExpressionTimestamp[] $birthday
+     *     @type \Eolymp\Wellknown\ExpressionID[] $country
+     *     @type \Eolymp\Wellknown\ExpressionInt[] $score
+     *     @type \Eolymp\Community\ListMembersInput\ExpressionAttribute[] $attribute
      * }
      */
     public function __construct($data = NULL) {
@@ -134,7 +134,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getId()
     {
@@ -143,7 +143,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setId($var)
@@ -156,7 +156,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getExternalRef()
     {
@@ -165,7 +165,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID external_ref = 10;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setExternalRef($var)
@@ -180,7 +180,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * user, team or ghost
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionEnum>
      */
     public function getType()
     {
@@ -191,7 +191,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * user, team or ghost
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 2;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionEnum[] $var
      * @return $this
      */
     public function setType($var)
@@ -204,7 +204,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString display_name = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getDisplayName()
     {
@@ -213,7 +213,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString display_name = 3;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setDisplayName($var)
@@ -226,7 +226,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getInactive()
     {
@@ -235,7 +235,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool inactive = 4;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setInactive($var)
@@ -248,7 +248,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool incomplete = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getIncomplete()
     {
@@ -257,7 +257,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool incomplete = 5;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setIncomplete($var)
@@ -270,7 +270,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool unofficial = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getUnofficial()
     {
@@ -279,7 +279,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool unofficial = 6;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setUnofficial($var)
@@ -292,7 +292,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool seated = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getSeated()
     {
@@ -301,7 +301,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool seated = 9;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setSeated($var)
@@ -316,7 +316,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * find members of particular team
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID team_id = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getTeamId()
     {
@@ -327,7 +327,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * find members of particular team
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID team_id = 7;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setTeamId($var)
@@ -342,7 +342,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * find members of particular group
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID group_id = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getGroupId()
     {
@@ -353,7 +353,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      * find members of particular group
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID group_id = 8;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setGroupId($var)
@@ -366,7 +366,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_issuer = 101;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getUserIssuer()
     {
@@ -375,7 +375,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_issuer = 101;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setUserIssuer($var)
@@ -388,7 +388,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_subject = 102;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getUserSubject()
     {
@@ -397,7 +397,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_subject = 102;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setUserSubject($var)
@@ -410,7 +410,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_email = 103;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getUserEmail()
     {
@@ -419,7 +419,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_email = 103;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setUserEmail($var)
@@ -432,7 +432,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_name = 104;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getUserName()
     {
@@ -441,7 +441,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_name = 104;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setUserName($var)
@@ -454,7 +454,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_nickname = 105;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getUserNickname()
     {
@@ -463,7 +463,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString user_nickname = 105;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setUserNickname($var)
@@ -476,7 +476,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp birthday = 108;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionTimestamp>
      */
     public function getBirthday()
     {
@@ -485,7 +485,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp birthday = 108;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionTimestamp[] $var
      * @return $this
      */
     public function setBirthday($var)
@@ -498,7 +498,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID country = 109;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getCountry()
     {
@@ -507,7 +507,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID country = 109;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setCountry($var)
@@ -520,7 +520,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionInt>
      */
     public function getScore()
     {
@@ -529,7 +529,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 106;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionInt[] $var
      * @return $this
      */
     public function setScore($var)
@@ -542,7 +542,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Community\ListMembersInput\ExpressionAttribute>
      */
     public function getAttribute()
     {
@@ -551,7 +551,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
-     * @param array<\Eolymp\Community\ListMembersInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Community\ListMembersInput\ExpressionAttribute[] $var
      * @return $this
      */
     public function setAttribute($var)

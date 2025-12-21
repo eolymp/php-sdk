@@ -6,8 +6,8 @@
 namespace Eolymp\Executor\EvaluationTask;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Run defines a single execution of the task.
@@ -77,7 +77,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *           A number of points awarded for passing this run.
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *           Additional environment variables used during run
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *           Labels used to match constraints and preconditions.
      *     @type string $input_url
      *           download input via URL
@@ -258,7 +258,7 @@ class Run extends \Google\Protobuf\Internal\Message
      * Labels used to match constraints and preconditions.
      *
      * Generated from protobuf field <code>repeated string labels = 30;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -269,7 +269,7 @@ class Run extends \Google\Protobuf\Internal\Message
      * Labels used to match constraints and preconditions.
      *
      * Generated from protobuf field <code>repeated string labels = 30;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)

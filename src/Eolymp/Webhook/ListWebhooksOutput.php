@@ -6,8 +6,8 @@
 namespace Eolymp\Webhook;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.webhook.ListWebhooksOutput</code>
@@ -30,7 +30,7 @@ class ListWebhooksOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Webhook\Webhook>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Webhook\Webhook[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListWebhooksOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Webhook\Webhook>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListWebhooksOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook items = 2;</code>
-     * @param array<\Eolymp\Webhook\Webhook>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Webhook\Webhook[] $var
      * @return $this
      */
     public function setItems($var)

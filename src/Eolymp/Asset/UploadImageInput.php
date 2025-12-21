@@ -6,8 +6,8 @@
 namespace Eolymp\Asset;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.asset.UploadImageInput</code>
@@ -49,7 +49,7 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type \Eolymp\Asset\UploadImageInput\Crop $crop
      *     @type \Eolymp\Asset\UploadImageInput\Size $size
-     *     @type array<\Eolymp\Asset\UploadImageInput\Size>|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type \Eolymp\Asset\UploadImageInput\Size[] $variants
      *     @type string $data
      * }
      */
@@ -168,7 +168,7 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size variants = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Asset\UploadImageInput\Size>
      */
     public function getVariants()
     {
@@ -177,7 +177,7 @@ class UploadImageInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.asset.UploadImageInput.Size variants = 20;</code>
-     * @param array<\Eolymp\Asset\UploadImageInput\Size>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Asset\UploadImageInput\Size[] $var
      * @return $this
      */
     public function setVariants($var)

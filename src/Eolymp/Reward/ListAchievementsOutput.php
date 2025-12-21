@@ -6,8 +6,8 @@
 namespace Eolymp\Reward;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.reward.ListAchievementsOutput</code>
@@ -35,7 +35,7 @@ class ListAchievementsOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $total
      *     @type string $next_page_cursor
-     *     @type array<\Eolymp\Reward\Achievement>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Reward\Achievement[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class ListAchievementsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Reward\Achievement>
      */
     public function getItems()
     {
@@ -98,7 +98,7 @@ class ListAchievementsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement items = 2;</code>
-     * @param array<\Eolymp\Reward\Achievement>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Reward\Achievement[] $var
      * @return $this
      */
     public function setItems($var)

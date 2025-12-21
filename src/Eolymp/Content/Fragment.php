@@ -6,8 +6,8 @@
 namespace Eolymp\Content;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.content.Fragment</code>
@@ -65,7 +65,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      * }
      */
     public function __construct($data = NULL) {
@@ -281,7 +281,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -290,7 +290,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)

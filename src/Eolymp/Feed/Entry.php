@@ -6,8 +6,8 @@
 namespace Eolymp\Feed;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.feed.Entry</code>
@@ -45,7 +45,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
-     *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Eolymp\Wellknown\Link[] $links
      * }
      */
     public function __construct($data = NULL) {
@@ -153,7 +153,7 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\Link>
      */
     public function getLinks()
     {
@@ -162,7 +162,7 @@ class Entry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 20;</code>
-     * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\Link[] $var
      * @return $this
      */
     public function setLinks($var)

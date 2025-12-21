@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Template</code>
@@ -58,7 +58,7 @@ class Template extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *     @type string $header
      *     @type string $footer
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type \Eolymp\Executor\File[] $files
      * }
      */
     public function __construct($data = NULL) {
@@ -204,7 +204,7 @@ class Template extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 30;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\File>
      */
     public function getFiles()
     {
@@ -213,7 +213,7 @@ class Template extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 30;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\File[] $var
      * @return $this
      */
     public function setFiles($var)

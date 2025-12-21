@@ -6,8 +6,8 @@
 namespace Eolymp\Judge\Contest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Contest.CertificationConfig</code>
@@ -43,7 +43,7 @@ class CertificationConfig extends \Google\Protobuf\Internal\Message
      *           Enable certificate generation, certificates are generated on contest finalization
      *     @type string $affiliation
      *           name of the organization organising the contest
-     *     @type array<\Eolymp\Judge\Contest\CertificationConfig\Signer>|\Google\Protobuf\Internal\RepeatedField $signers
+     *     @type \Eolymp\Judge\Contest\CertificationConfig\Signer[] $signers
      *           Signers of the certificate (max 3)
      * }
      */
@@ -108,7 +108,7 @@ class CertificationConfig extends \Google\Protobuf\Internal\Message
      * Signers of the certificate (max 3)
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Contest.CertificationConfig.Signer signers = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Contest\CertificationConfig\Signer>
      */
     public function getSigners()
     {
@@ -119,7 +119,7 @@ class CertificationConfig extends \Google\Protobuf\Internal\Message
      * Signers of the certificate (max 3)
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Contest.CertificationConfig.Signer signers = 3;</code>
-     * @param array<\Eolymp\Judge\Contest\CertificationConfig\Signer>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Contest\CertificationConfig\Signer[] $var
      * @return $this
      */
     public function setSigners($var)

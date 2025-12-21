@@ -6,8 +6,8 @@
 namespace Eolymp\Executor\EvaluationReport;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Run represents a single execution

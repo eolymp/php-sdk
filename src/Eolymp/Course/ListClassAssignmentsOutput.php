@@ -6,8 +6,8 @@
 namespace Eolymp\Course;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.course.ListClassAssignmentsOutput</code>
@@ -30,7 +30,7 @@ class ListClassAssignmentsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Course\Assignment>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Course\Assignment[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListClassAssignmentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Assignment items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Course\Assignment>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListClassAssignmentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Assignment items = 2;</code>
-     * @param array<\Eolymp\Course\Assignment>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Course\Assignment[] $var
      * @return $this
      */
     public function setItems($var)

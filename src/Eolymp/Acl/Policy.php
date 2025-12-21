@@ -6,8 +6,8 @@
 namespace Eolymp\Acl;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.acl.Policy</code>
@@ -61,7 +61,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      *           policy resource url, for example /contests/xyz, empty means policy applies globally
      *     @type bool $allow_all
      *           allow all actions
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $allows
+     *     @type int[] $allows
      *           list of allowed actions
      * }
      */
@@ -196,7 +196,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * list of allowed actions
      *
      * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getAllows()
     {
@@ -207,7 +207,7 @@ class Policy extends \Google\Protobuf\Internal\Message
      * list of allowed actions
      *
      * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setAllows($var)

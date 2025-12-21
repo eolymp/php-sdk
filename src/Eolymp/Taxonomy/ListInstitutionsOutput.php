@@ -6,8 +6,8 @@
 namespace Eolymp\Taxonomy;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.taxonomy.ListInstitutionsOutput</code>
@@ -30,7 +30,7 @@ class ListInstitutionsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Taxonomy\Institution>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Taxonomy\Institution[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListInstitutionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Institution items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Taxonomy\Institution>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListInstitutionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Institution items = 2;</code>
-     * @param array<\Eolymp\Taxonomy\Institution>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Taxonomy\Institution[] $var
      * @return $this
      */
     public function setItems($var)

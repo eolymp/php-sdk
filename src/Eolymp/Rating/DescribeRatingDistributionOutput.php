@@ -6,8 +6,8 @@
 namespace Eolymp\Rating;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.rating.DescribeRatingDistributionOutput</code>
@@ -25,7 +25,7 @@ class DescribeRatingDistributionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Rating\DescribeRatingDistributionOutput\Bucket>|\Google\Protobuf\Internal\RepeatedField $buckets
+     *     @type \Eolymp\Rating\DescribeRatingDistributionOutput\Bucket[] $buckets
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class DescribeRatingDistributionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.rating.DescribeRatingDistributionOutput.Bucket buckets = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Rating\DescribeRatingDistributionOutput\Bucket>
      */
     public function getBuckets()
     {
@@ -44,7 +44,7 @@ class DescribeRatingDistributionOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.rating.DescribeRatingDistributionOutput.Bucket buckets = 1;</code>
-     * @param array<\Eolymp\Rating\DescribeRatingDistributionOutput\Bucket>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Rating\DescribeRatingDistributionOutput\Bucket[] $var
      * @return $this
      */
     public function setBuckets($var)

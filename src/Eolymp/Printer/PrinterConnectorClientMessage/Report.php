@@ -6,8 +6,8 @@
 namespace Eolymp\Printer\PrinterConnectorClientMessage;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Report the status of a job back to server

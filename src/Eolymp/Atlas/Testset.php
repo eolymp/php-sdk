@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Testset</code>
@@ -96,7 +96,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      *           Memory limit in bytes for runs within this testset.
      *     @type int|string $file_size_limit
      *           File size limit in bytes for runs within this testset.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dependencies
+     *     @type int[] $dependencies
      *           List of other testset indices which must pass before this testset is executed.
      *     @type int $dependency_mode
      *     @type int $scoring_mode
@@ -292,7 +292,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      * List of other testset indices which must pass before this testset is executed.
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDependencies()
     {
@@ -303,7 +303,7 @@ class Testset extends \Google\Protobuf\Internal\Message
      * List of other testset indices which must pass before this testset is executed.
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 20;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDependencies($var)

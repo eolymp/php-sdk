@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.CreateSubmissionInput</code>
@@ -40,7 +40,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $lang
      *     @type string $source
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Atlas\Form\Value[] $values
      * }
      */
     public function __construct($data = NULL) {
@@ -116,7 +116,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Form\Value>
      */
     public function getValues()
     {
@@ -125,7 +125,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Form\Value[] $var
      * @return $this
      */
     public function setValues($var)

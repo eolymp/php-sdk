@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.User</code>
@@ -99,12 +99,12 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $subject
      *     @type string $nickname
      *     @type int $nickname_change_timeout
-     *     @type array<\Eolymp\Community\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
+     *     @type \Eolymp\Community\User\Alias[] $aliases
      *     @type string $email
      *     @type bool $email_verified
      *     @type bool $email_restricted
      *           true if email verification is required but not complete
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $email_subscriptions
+     *     @type int[] $email_subscriptions
      *     @type string $password
      *     @type int $password_age
      *     @type string $name
@@ -211,7 +211,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Community\User\Alias>
      */
     public function getAliases()
     {
@@ -220,7 +220,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.User.Alias aliases = 13 [(.eolymp.api.read_only) = true];</code>
-     * @param array<\Eolymp\Community\User\Alias>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Community\User\Alias[] $var
      * @return $this
      */
     public function setAliases($var)
@@ -303,7 +303,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mail.EmailType email_subscriptions = 22;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getEmailSubscriptions()
     {
@@ -312,7 +312,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mail.EmailType email_subscriptions = 22;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setEmailSubscriptions($var)

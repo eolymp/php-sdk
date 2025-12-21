@@ -6,8 +6,8 @@
 namespace Eolymp\Judge\ListViolationsInput;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.ListViolationsInput.Filter</code>
@@ -57,15 +57,15 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $type
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $summary
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $automatic
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $participant_id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $submission_id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $created_by
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $confirmed_by
+     *     @type \Eolymp\Wellknown\ExpressionID[] $id
+     *     @type \Eolymp\Wellknown\ExpressionEnum[] $status
+     *     @type \Eolymp\Wellknown\ExpressionEnum[] $type
+     *     @type \Eolymp\Wellknown\ExpressionString[] $summary
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $automatic
+     *     @type \Eolymp\Wellknown\ExpressionID[] $participant_id
+     *     @type \Eolymp\Wellknown\ExpressionID[] $submission_id
+     *     @type \Eolymp\Wellknown\ExpressionID[] $created_by
+     *     @type \Eolymp\Wellknown\ExpressionID[] $confirmed_by
      * }
      */
     public function __construct($data = NULL) {
@@ -75,7 +75,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getId()
     {
@@ -84,7 +84,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setId($var)
@@ -97,7 +97,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionEnum>
      */
     public function getStatus()
     {
@@ -106,7 +106,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 3 [(.eolymp.api.mcp_field_desc) = "valid values `PENDING` (pending review), `CONFIRMED`, `CANCELLED`"];</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionEnum[] $var
      * @return $this
      */
     public function setStatus($var)
@@ -119,7 +119,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5 [(.eolymp.api.mcp_field_desc) = "valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`"];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionEnum>
      */
     public function getType()
     {
@@ -128,7 +128,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum type = 5 [(.eolymp.api.mcp_field_desc) = "valid values `OTHER`, `PLAGIARISM`, `GEN_AI_USAGE`"];</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionEnum[] $var
      * @return $this
      */
     public function setType($var)
@@ -141,7 +141,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString summary = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getSummary()
     {
@@ -150,7 +150,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString summary = 4;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setSummary($var)
@@ -163,7 +163,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool automatic = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getAutomatic()
     {
@@ -172,7 +172,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool automatic = 10;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setAutomatic($var)
@@ -185,7 +185,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID participant_id = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getParticipantId()
     {
@@ -194,7 +194,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID participant_id = 6;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setParticipantId($var)
@@ -207,7 +207,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID submission_id = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getSubmissionId()
     {
@@ -216,7 +216,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID submission_id = 8;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setSubmissionId($var)
@@ -229,7 +229,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID created_by = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getCreatedBy()
     {
@@ -238,7 +238,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID created_by = 7;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setCreatedBy($var)
@@ -251,7 +251,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID confirmed_by = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getConfirmedBy()
     {
@@ -260,7 +260,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID confirmed_by = 9;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setConfirmedBy($var)

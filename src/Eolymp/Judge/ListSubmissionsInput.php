@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.ListSubmissionsInput</code>
@@ -56,7 +56,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type \Eolymp\Judge\ListSubmissionsInput\Filter $filters
      *           data filters
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type int[] $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -194,7 +194,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExtra()
     {
@@ -203,7 +203,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Submission.Extra extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExtra($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Taxonomy\ListValuesInput;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.taxonomy.ListValuesInput.Filter</code>
@@ -34,8 +34,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
+     *     @type \Eolymp\Wellknown\ExpressionID[] $id
+     *     @type \Eolymp\Wellknown\ExpressionString[] $name
      * }
      */
     public function __construct($data = NULL) {
@@ -67,7 +67,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getId()
     {
@@ -76,7 +76,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setId($var)
@@ -89,7 +89,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionString>
      */
     public function getName()
     {
@@ -98,7 +98,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString name = 3;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionString[] $var
      * @return $this
      */
     public function setName($var)

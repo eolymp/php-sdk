@@ -6,8 +6,8 @@
 namespace Eolymp\Judge\Scoreboard;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Scoreboard.Row</code>
@@ -80,7 +80,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type bool $unofficial
      *     @type bool $disqualified
      *     @type int $medal
-     *     @type array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Judge\Scoreboard\Row\Value[] $values
      * }
      */
     public function __construct($data = NULL) {
@@ -332,7 +332,7 @@ class Row extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Scoreboard\Row\Value>
      */
     public function getValues()
     {
@@ -341,7 +341,7 @@ class Row extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
-     * @param array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Scoreboard\Row\Value[] $var
      * @return $this
      */
     public function setValues($var)

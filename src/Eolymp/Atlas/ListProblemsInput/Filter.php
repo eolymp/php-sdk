@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas\ListProblemsInput;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.ListProblemsInput.Filter</code>
@@ -57,15 +57,15 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $topic_id
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $is_visible
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $is_private
-     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $number
-     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $difficulty
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $score
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $is_bookmarked
+     *     @type \Eolymp\Wellknown\ExpressionID[] $id
+     *     @type \Eolymp\Wellknown\ExpressionID[] $topic_id
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $is_visible
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $is_private
+     *     @type \Eolymp\Wellknown\ExpressionInt[] $number
+     *     @type \Eolymp\Wellknown\ExpressionInt[] $difficulty
+     *     @type \Eolymp\Wellknown\ExpressionEnum[] $status
+     *     @type \Eolymp\Wellknown\ExpressionFloat[] $score
+     *     @type \Eolymp\Wellknown\ExpressionBool[] $is_bookmarked
      * }
      */
     public function __construct($data = NULL) {
@@ -75,7 +75,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getId()
     {
@@ -84,7 +84,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 1;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setId($var)
@@ -97,7 +97,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getTopicId()
     {
@@ -106,7 +106,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setTopicId($var)
@@ -119,7 +119,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_visible = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getIsVisible()
     {
@@ -128,7 +128,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_visible = 3;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setIsVisible($var)
@@ -141,7 +141,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_private = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getIsPrivate()
     {
@@ -150,7 +150,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_private = 4;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setIsPrivate($var)
@@ -163,7 +163,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionInt>
      */
     public function getNumber()
     {
@@ -172,7 +172,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 5;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionInt[] $var
      * @return $this
      */
     public function setNumber($var)
@@ -185,7 +185,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionInt>
      */
     public function getDifficulty()
     {
@@ -194,7 +194,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt difficulty = 6;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionInt[] $var
      * @return $this
      */
     public function setDifficulty($var)
@@ -207,7 +207,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionEnum>
      */
     public function getStatus()
     {
@@ -216,7 +216,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionEnum[] $var
      * @return $this
      */
     public function setStatus($var)
@@ -229,7 +229,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionFloat>
      */
     public function getScore()
     {
@@ -238,7 +238,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 9;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionFloat[] $var
      * @return $this
      */
     public function setScore($var)
@@ -251,7 +251,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_bookmarked = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionBool>
      */
     public function getIsBookmarked()
     {
@@ -260,7 +260,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool is_bookmarked = 8;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionBool[] $var
      * @return $this
      */
     public function setIsBookmarked($var)

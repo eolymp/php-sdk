@@ -6,8 +6,8 @@
 namespace Eolymp\Asset;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.asset.UseAssetInput</code>
@@ -35,7 +35,7 @@ class UseAssetInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource
      *           unique resource reference
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $assets
+     *     @type string[] $assets
      *           list of asset links used by the resource
      * }
      */
@@ -74,7 +74,7 @@ class UseAssetInput extends \Google\Protobuf\Internal\Message
      * list of asset links used by the resource
      *
      * Generated from protobuf field <code>repeated string assets = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAssets()
     {
@@ -85,7 +85,7 @@ class UseAssetInput extends \Google\Protobuf\Internal\Message
      * list of asset links used by the resource
      *
      * Generated from protobuf field <code>repeated string assets = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAssets($var)

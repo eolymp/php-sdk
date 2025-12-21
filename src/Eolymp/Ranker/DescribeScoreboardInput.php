@@ -6,8 +6,8 @@
 namespace Eolymp\Ranker;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ranker.DescribeScoreboardInput</code>
@@ -35,7 +35,7 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $scoreboard_id
      *     @type string $scoreboard_key
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type int[] $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Extra extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExtra()
     {
@@ -98,7 +98,7 @@ class DescribeScoreboardInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Extra extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExtra($var)

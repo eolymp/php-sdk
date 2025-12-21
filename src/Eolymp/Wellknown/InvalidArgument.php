@@ -6,8 +6,8 @@
 namespace Eolymp\Wellknown;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * InvalidArgument error details. This structure can be returned with and error to provide name of the argument which
@@ -38,7 +38,7 @@ class InvalidArgument extends \Google\Protobuf\Internal\Message
      *
      *     @type string $argument_path
      *           deprecated: argument path, instead see validation errors with list of arguments
-     *     @type array<\Eolymp\Wellknown\Validation>|\Google\Protobuf\Internal\RepeatedField $validation
+     *     @type \Eolymp\Wellknown\Validation[] $validation
      *           validation errors
      * }
      */
@@ -77,7 +77,7 @@ class InvalidArgument extends \Google\Protobuf\Internal\Message
      * validation errors
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Validation validation = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\Validation>
      */
     public function getValidation()
     {
@@ -88,7 +88,7 @@ class InvalidArgument extends \Google\Protobuf\Internal\Message
      * validation errors
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Validation validation = 2;</code>
-     * @param array<\Eolymp\Wellknown\Validation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\Validation[] $var
      * @return $this
      */
     public function setValidation($var)

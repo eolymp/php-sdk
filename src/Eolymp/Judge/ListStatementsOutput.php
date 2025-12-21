@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.ListStatementsOutput</code>
@@ -30,7 +30,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Judge\Problem\Statement>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Judge\Problem\Statement[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Statement items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Problem\Statement>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListStatementsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Problem.Statement items = 2;</code>
-     * @param array<\Eolymp\Judge\Problem\Statement>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Problem\Statement[] $var
      * @return $this
      */
     public function setItems($var)

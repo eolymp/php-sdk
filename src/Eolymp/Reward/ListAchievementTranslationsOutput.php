@@ -6,8 +6,8 @@
 namespace Eolymp\Reward;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.reward.ListAchievementTranslationsOutput</code>
@@ -30,7 +30,7 @@ class ListAchievementTranslationsOutput extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Reward\Achievement\Translation>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Reward\Achievement\Translation[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListAchievementTranslationsOutput extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement.Translation items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Reward\Achievement\Translation>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListAchievementTranslationsOutput extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement.Translation items = 2;</code>
-     * @param array<\Eolymp\Reward\Achievement\Translation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Reward\Achievement\Translation[] $var
      * @return $this
      */
     public function setItems($var)

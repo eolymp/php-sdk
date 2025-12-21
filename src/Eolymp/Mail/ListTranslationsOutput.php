@@ -6,8 +6,8 @@
 namespace Eolymp\Mail;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.mail.ListTranslationsOutput</code>
@@ -30,7 +30,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Mail\Newsletter\Translation>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Mail\Newsletter\Translation[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Translation items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Mail\Newsletter\Translation>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Translation items = 2;</code>
-     * @param array<\Eolymp\Mail\Newsletter\Translation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Mail\Newsletter\Translation[] $var
      * @return $this
      */
     public function setItems($var)

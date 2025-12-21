@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce\Invoice;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.commerce.Invoice.Item</code>
@@ -69,8 +69,8 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type int $amount
      *     @type int $amount_excluding_tax
      *     @type int $unit_amount_excluding_tax
-     *     @type array<\Eolymp\Commerce\Invoice\DiscountAmount>|\Google\Protobuf\Internal\RepeatedField $discount_amounts
-     *     @type array<\Eolymp\Commerce\Invoice\TaxAmount>|\Google\Protobuf\Internal\RepeatedField $tax_amounts
+     *     @type \Eolymp\Commerce\Invoice\DiscountAmount[] $discount_amounts
+     *     @type \Eolymp\Commerce\Invoice\TaxAmount[] $tax_amounts
      * }
      */
     public function __construct($data = NULL) {
@@ -266,7 +266,7 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.DiscountAmount discount_amounts = 104;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\Invoice\DiscountAmount>
      */
     public function getDiscountAmounts()
     {
@@ -275,7 +275,7 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.DiscountAmount discount_amounts = 104;</code>
-     * @param array<\Eolymp\Commerce\Invoice\DiscountAmount>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\Invoice\DiscountAmount[] $var
      * @return $this
      */
     public function setDiscountAmounts($var)
@@ -288,7 +288,7 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.TaxAmount tax_amounts = 105;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\Invoice\TaxAmount>
      */
     public function getTaxAmounts()
     {
@@ -297,7 +297,7 @@ class Item extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Invoice.TaxAmount tax_amounts = 105;</code>
-     * @param array<\Eolymp\Commerce\Invoice\TaxAmount>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\Invoice\TaxAmount[] $var
      * @return $this
      */
     public function setTaxAmounts($var)

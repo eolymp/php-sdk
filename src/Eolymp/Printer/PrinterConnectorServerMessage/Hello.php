@@ -6,8 +6,8 @@
 namespace Eolymp\Printer\PrinterConnectorServerMessage;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Hello message confirms that the printer is authenticated and can start communicating with the server

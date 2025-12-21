@@ -6,8 +6,8 @@
 namespace Eolymp\Asset;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.asset.CompleteMultipartUploadInput</code>
@@ -30,7 +30,7 @@ class CompleteMultipartUploadInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $upload_id
-     *     @type array<\Eolymp\Asset\CompleteMultipartUploadInput\Part>|\Google\Protobuf\Internal\RepeatedField $parts
+     *     @type \Eolymp\Asset\CompleteMultipartUploadInput\Part[] $parts
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class CompleteMultipartUploadInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.asset.CompleteMultipartUploadInput.Part parts = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Asset\CompleteMultipartUploadInput\Part>
      */
     public function getParts()
     {
@@ -71,7 +71,7 @@ class CompleteMultipartUploadInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.asset.CompleteMultipartUploadInput.Part parts = 10;</code>
-     * @param array<\Eolymp\Asset\CompleteMultipartUploadInput\Part>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Asset\CompleteMultipartUploadInput\Part[] $var
      * @return $this
      */
     public function setParts($var)

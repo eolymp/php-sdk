@@ -6,8 +6,8 @@
 namespace Eolymp\Content;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.content.TranslatePostInput</code>
@@ -52,7 +52,7 @@ class TranslatePostInput extends \Google\Protobuf\Internal\Message
      *     @type string $post_id
      *     @type string $source
      *           source language (by default post content is used)
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $target
+     *     @type string[] $target
      *           list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
      *     @type bool $target_automatic
      *           add to targets all editorials with automatic=true
@@ -117,7 +117,7 @@ class TranslatePostInput extends \Google\Protobuf\Internal\Message
      * list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
      *
      * Generated from protobuf field <code>repeated string target = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTarget()
     {
@@ -128,7 +128,7 @@ class TranslatePostInput extends \Google\Protobuf\Internal\Message
      * list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
      *
      * Generated from protobuf field <code>repeated string target = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTarget($var)

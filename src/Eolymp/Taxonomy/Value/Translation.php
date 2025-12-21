@@ -6,8 +6,8 @@
 namespace Eolymp\Taxonomy\Value;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.taxonomy.Value.Translation</code>
@@ -56,7 +56,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *           abbreviation
      *     @type string $summary
      *           topic summary (short description)
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type string[] $keywords
      *           alternative names and keywords related to the entry (used for search)
      * }
      */
@@ -169,7 +169,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      * alternative names and keywords related to the entry (used for search)
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getKeywords()
     {
@@ -180,7 +180,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      * alternative names and keywords related to the entry (used for search)
      *
      * Generated from protobuf field <code>repeated string keywords = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setKeywords($var)

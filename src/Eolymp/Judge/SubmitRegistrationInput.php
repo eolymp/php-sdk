@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.SubmitRegistrationInput</code>
@@ -30,7 +30,7 @@ class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Community\Attribute\Value[] $values
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value values = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Community\Attribute\Value>
      */
     public function getValues()
     {
@@ -71,7 +71,7 @@ class SubmitRegistrationInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value values = 20;</code>
-     * @param array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Community\Attribute\Value[] $var
      * @return $this
      */
     public function setValues($var)

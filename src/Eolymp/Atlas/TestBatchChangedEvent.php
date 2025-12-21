@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.TestBatchChangedEvent</code>
@@ -34,8 +34,8 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
-     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $before
-     *     @type array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $after
+     *     @type \Eolymp\Atlas\Test[] $before
+     *     @type \Eolymp\Atlas\Test[] $after
      * }
      */
     public function __construct($data = NULL) {
@@ -67,7 +67,7 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test before = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Test>
      */
     public function getBefore()
     {
@@ -76,7 +76,7 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test before = 2;</code>
-     * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Test[] $var
      * @return $this
      */
     public function setBefore($var)
@@ -89,7 +89,7 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test after = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Test>
      */
     public function getAfter()
     {
@@ -98,7 +98,7 @@ class TestBatchChangedEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Test after = 3;</code>
-     * @param array<\Eolymp\Atlas\Test>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Test[] $var
      * @return $this
      */
     public function setAfter($var)

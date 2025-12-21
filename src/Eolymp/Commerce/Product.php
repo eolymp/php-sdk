@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.commerce.Product</code>
@@ -97,7 +97,7 @@ class Product extends \Google\Protobuf\Internal\Message
      *           short product specification
      *     @type \Eolymp\Ecm\Content $description
      *           longer product description
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type string[] $images
      *     @type bool $out_of_stock
      *           all variants are out of stock
      *     @type bool $featured
@@ -108,8 +108,8 @@ class Product extends \Google\Protobuf\Internal\Message
      *           current (sell) price
      *     @type int $regular_price
      *           optionally, regular product price (before discount)
-     *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
-     *     @type array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type \Eolymp\Commerce\Product\Attribute[] $attributes
+     *     @type \Eolymp\Commerce\Product\Variant[] $variants
      *     @type string $cursor
      * }
      */
@@ -236,7 +236,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string images = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getImages()
     {
@@ -245,7 +245,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string images = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setImages($var)
@@ -424,7 +424,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\Product\Attribute>
      */
     public function getAttributes()
     {
@@ -433,7 +433,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
-     * @param array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\Product\Attribute[] $var
      * @return $this
      */
     public function setAttributes($var)
@@ -446,7 +446,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Variant variants = 50;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\Product\Variant>
      */
     public function getVariants()
     {
@@ -455,7 +455,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Variant variants = 50;</code>
-     * @param array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\Product\Variant[] $var
      * @return $this
      */
     public function setVariants($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Universe;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.universe.Space</code>
@@ -126,14 +126,14 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type int $visibility
      *     @type int $status
      *           space status
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
+     *     @type int[] $features
      *     @type \Eolymp\Universe\Space\Subscription $subscription
      *           subscription details (private)
      *     @type string $affiliation
      *           space affiliation label
      *     @type string $discord_guild_id
      *           discord guild ID
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *     @type string[] $locales
      *           available locales
      * }
      */
@@ -400,7 +400,7 @@ class Space extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getFeatures()
     {
@@ -409,7 +409,7 @@ class Space extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Space.Feature features = 17 [(.eolymp.api.read_only) = true];</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setFeatures($var)
@@ -512,7 +512,7 @@ class Space extends \Google\Protobuf\Internal\Message
      * available locales
      *
      * Generated from protobuf field <code>repeated string locales = 19;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLocales()
     {
@@ -523,7 +523,7 @@ class Space extends \Google\Protobuf\Internal\Message
      * available locales
      *
      * Generated from protobuf field <code>repeated string locales = 19;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLocales($var)

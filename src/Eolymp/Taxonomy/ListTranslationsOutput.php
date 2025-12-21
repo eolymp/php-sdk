@@ -6,8 +6,8 @@
 namespace Eolymp\Taxonomy;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.taxonomy.ListTranslationsOutput</code>
@@ -30,7 +30,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Taxonomy\Value\Translation>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Taxonomy\Value\Translation[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Value.Translation items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Taxonomy\Value\Translation>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListTranslationsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Value.Translation items = 2;</code>
-     * @param array<\Eolymp\Taxonomy\Value\Translation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Taxonomy\Value\Translation[] $var
      * @return $this
      */
     public function setItems($var)

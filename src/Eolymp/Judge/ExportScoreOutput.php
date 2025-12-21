@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.ExportScoreOutput</code>
@@ -25,7 +25,7 @@ class ExportScoreOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Judge\Score>|\Google\Protobuf\Internal\RepeatedField $scores
+     *     @type \Eolymp\Judge\Score[] $scores
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class ExportScoreOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Score scores = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Score>
      */
     public function getScores()
     {
@@ -44,7 +44,7 @@ class ExportScoreOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Score scores = 10;</code>
-     * @param array<\Eolymp\Judge\Score>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Score[] $var
      * @return $this
      */
     public function setScores($var)

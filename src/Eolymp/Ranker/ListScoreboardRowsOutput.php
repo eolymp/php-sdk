@@ -6,8 +6,8 @@
 namespace Eolymp\Ranker;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ranker.ListScoreboardRowsOutput</code>
@@ -34,7 +34,7 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Ranker\Scoreboard\Row>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Ranker\Scoreboard\Row[] $items
      *     @type bool $frozen
      * }
      */
@@ -67,7 +67,7 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Ranker\Scoreboard\Row>
      */
     public function getItems()
     {
@@ -76,7 +76,7 @@ class ListScoreboardRowsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row items = 2;</code>
-     * @param array<\Eolymp\Ranker\Scoreboard\Row>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Ranker\Scoreboard\Row[] $var
      * @return $this
      */
     public function setItems($var)

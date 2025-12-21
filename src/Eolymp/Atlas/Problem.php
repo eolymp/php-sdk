@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Problem</code>
@@ -175,9 +175,9 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Problem author name.
      *     @type string $source
      *           Problem source, name of the contest or olympiad where this problem was initially published.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
+     *     @type string[] $languages
      *           list of languages the statement is available in
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type string[] $topics
      *           Problem topics (ID of topics from taxonomy.TopicService)
      *     @type float $score
      *           Total score
@@ -194,7 +194,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Difficulty from 0 (very easy) to 5 (very hard)
      *     @type \Eolymp\Atlas\Form $submission_form
      *           Submission form description
-     *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
+     *     @type \Eolymp\Atlas\Problem\Example[] $examples
      * }
      */
     public function __construct($data = NULL) {
@@ -520,7 +520,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * list of languages the statement is available in
      *
      * Generated from protobuf field <code>repeated string languages = 103;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLanguages()
     {
@@ -531,7 +531,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * list of languages the statement is available in
      *
      * Generated from protobuf field <code>repeated string languages = 103;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLanguages($var)
@@ -546,7 +546,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTopics()
     {
@@ -557,7 +557,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Problem topics (ID of topics from taxonomy.TopicService)
      *
      * Generated from protobuf field <code>repeated string topics = 20;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTopics($var)
@@ -812,7 +812,7 @@ class Problem extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Problem\Example>
      */
     public function getExamples()
     {
@@ -821,7 +821,7 @@ class Problem extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
-     * @param array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Problem\Example[] $var
      * @return $this
      */
     public function setExamples($var)

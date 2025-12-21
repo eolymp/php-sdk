@@ -6,8 +6,8 @@
 namespace Eolymp\Discussion;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.discussion.ListMessagesOutput</code>
@@ -30,7 +30,7 @@ class ListMessagesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Discussion\Message>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Discussion\Message[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListMessagesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Message items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Discussion\Message>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListMessagesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.discussion.Message items = 2;</code>
-     * @param array<\Eolymp\Discussion\Message>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Discussion\Message[] $var
      * @return $this
      */
     public function setItems($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.ImportScoreInput</code>
@@ -50,7 +50,7 @@ class ImportScoreInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $participant_id
-     *     @type array<\Eolymp\Judge\Score>|\Google\Protobuf\Internal\RepeatedField $scores
+     *     @type \Eolymp\Judge\Score[] $scores
      *           Scores is an array of score snapshots at different time relative to the starting time.
      *           Each entry defines a complete snapshot (they do not accumulate automatically).
      *           These fields can be populated:
@@ -133,7 +133,7 @@ class ImportScoreInput extends \Google\Protobuf\Internal\Message
      * The rest of the fields are automatically calculated and ignored during import.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score scores = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Score>
      */
     public function getScores()
     {
@@ -157,7 +157,7 @@ class ImportScoreInput extends \Google\Protobuf\Internal\Message
      * The rest of the fields are automatically calculated and ignored during import.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Score scores = 10;</code>
-     * @param array<\Eolymp\Judge\Score>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Score[] $var
      * @return $this
      */
     public function setScores($var)

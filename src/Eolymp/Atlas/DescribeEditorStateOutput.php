@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.DescribeEditorStateOutput</code>
@@ -44,8 +44,8 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type string $source_code
      *     @type string $input_data
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $features
+     *     @type \Eolymp\Atlas\Form\Value[] $values
+     *     @type int[] $features
      * }
      */
     public function __construct($data = NULL) {
@@ -121,7 +121,7 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Form\Value>
      */
     public function getValues()
     {
@@ -130,7 +130,7 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Form\Value[] $var
      * @return $this
      */
     public function setValues($var)
@@ -143,7 +143,7 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getFeatures()
     {
@@ -152,7 +152,7 @@ class DescribeEditorStateOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Editor.Feature features = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setFeatures($var)

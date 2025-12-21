@@ -6,8 +6,8 @@
 namespace Eolymp\L10n;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.l10n.ListTermsOutput</code>
@@ -30,7 +30,7 @@ class ListTermsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\L10n\Term>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\L10n\Term[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListTermsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.l10n.Term items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\L10n\Term>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListTermsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.l10n.Term items = 2;</code>
-     * @param array<\Eolymp\L10n\Term>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\L10n\Term[] $var
      * @return $this
      */
     public function setItems($var)

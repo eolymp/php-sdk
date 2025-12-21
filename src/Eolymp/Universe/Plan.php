@@ -6,8 +6,8 @@
 namespace Eolymp\Universe;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.universe.Plan</code>
@@ -63,12 +63,12 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Eolymp\Ecm\Content $description
      *     @type \Eolymp\Universe\Quota $quota
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type string[] $labels
      *     @type bool $requires_approval
      *           special plan which requires approval
      *     @type int $min_seats
      *     @type int $max_seats
-     *     @type array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type \Eolymp\Universe\Plan\Variant[] $variants
      * }
      */
     public function __construct($data = NULL) {
@@ -186,7 +186,7 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLabels()
     {
@@ -195,7 +195,7 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string labels = 5;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLabels($var)
@@ -278,7 +278,7 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Universe\Plan\Variant>
      */
     public function getVariants()
     {
@@ -287,7 +287,7 @@ class Plan extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Variant variants = 100;</code>
-     * @param array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Universe\Plan\Variant[] $var
      * @return $this
      */
     public function setVariants($var)

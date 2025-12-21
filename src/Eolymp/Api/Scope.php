@@ -6,8 +6,8 @@
 namespace Eolymp\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.api.Scope</code>
@@ -27,7 +27,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
+     *     @type string[] $scope
      *           required OAuth scopes
      * }
      */
@@ -40,7 +40,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * required OAuth scopes
      *
      * Generated from protobuf field <code>repeated string scope = 22065;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getScope()
     {
@@ -51,7 +51,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * required OAuth scopes
      *
      * Generated from protobuf field <code>repeated string scope = 22065;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setScope($var)

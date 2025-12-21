@@ -6,8 +6,8 @@
 namespace Eolymp\Asset;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.asset.UploadAssetInput</code>
@@ -53,7 +53,7 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      *           name might be used to infer file type and to set Content-Disposition header
      *     @type string $type
      *           mime type, if empty inferred from extension in the filename
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keys
+     *     @type string[] $keys
      *     @type int $ttl
      *           time to live in seconds, 0 - forever
      *     @type string $data
@@ -119,7 +119,7 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string keys = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getKeys()
     {
@@ -128,7 +128,7 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string keys = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setKeys($var)

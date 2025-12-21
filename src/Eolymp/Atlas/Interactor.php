@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Interactor provides configuration for program which would interact with task during execution
@@ -66,7 +66,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      *           Programming language in which interactor is written
      *     @type string $source
      *           Source code for interactor
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type \Eolymp\Executor\File[] $files
      *           Additional files placed into workdir during compilation and execution
      * }
      */
@@ -205,7 +205,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\File>
      */
     public function getFiles()
     {
@@ -216,7 +216,7 @@ class Interactor extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\File[] $var
      * @return $this
      */
     public function setFiles($var)

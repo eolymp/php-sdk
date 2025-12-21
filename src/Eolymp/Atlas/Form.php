@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Form</code>
@@ -25,7 +25,7 @@ class Form extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $fields
+     *     @type \Eolymp\Atlas\Form\Field[] $fields
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class Form extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Form\Field>
      */
     public function getFields()
     {
@@ -44,7 +44,7 @@ class Form extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 10;</code>
-     * @param array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Form\Field[] $var
      * @return $this
      */
     public function setFields($var)

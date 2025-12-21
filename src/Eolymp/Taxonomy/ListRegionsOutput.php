@@ -6,8 +6,8 @@
 namespace Eolymp\Taxonomy;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.taxonomy.ListRegionsOutput</code>
@@ -29,7 +29,7 @@ class ListRegionsOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Taxonomy\Region>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Taxonomy\Region[] $items
      *     @type int $total
      * }
      */
@@ -40,7 +40,7 @@ class ListRegionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Region items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Taxonomy\Region>
      */
     public function getItems()
     {
@@ -49,7 +49,7 @@ class ListRegionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.taxonomy.Region items = 1;</code>
-     * @param array<\Eolymp\Taxonomy\Region>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Taxonomy\Region[] $var
      * @return $this
      */
     public function setItems($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce\Product;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Attribute describe a configurable property of a product, e.g. color or size.

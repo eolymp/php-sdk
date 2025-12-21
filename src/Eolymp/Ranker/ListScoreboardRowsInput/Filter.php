@@ -6,8 +6,8 @@
 namespace Eolymp\Ranker\ListScoreboardRowsInput;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ranker.ListScoreboardRowsInput.Filter</code>
@@ -29,8 +29,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $member_id
-     *     @type array<\Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn>|\Google\Protobuf\Internal\RepeatedField $column
+     *     @type \Eolymp\Wellknown\ExpressionID[] $member_id
+     *     @type \Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn[] $column
      * }
      */
     public function __construct($data = NULL) {
@@ -40,7 +40,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID member_id = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\ExpressionID>
      */
     public function getMemberId()
     {
@@ -49,7 +49,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID member_id = 1;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\ExpressionID[] $var
      * @return $this
      */
     public function setMemberId($var)
@@ -62,7 +62,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ExpressionColumn column = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn>
      */
     public function getColumn()
     {
@@ -71,7 +71,7 @@ class Filter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.ListScoreboardRowsInput.ExpressionColumn column = 2;</code>
-     * @param array<\Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Ranker\ListScoreboardRowsInput\ExpressionColumn[] $var
      * @return $this
      */
     public function setColumn($var)

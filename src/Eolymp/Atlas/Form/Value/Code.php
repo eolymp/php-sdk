@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas\Form\Value;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Form.Value.Code</code>
@@ -35,7 +35,7 @@ class Code extends \Google\Protobuf\Internal\Message
      *
      *     @type string $runtime
      *     @type string $source_url
-     *     @type array<\Eolymp\Atlas\Form\Value\File>|\Google\Protobuf\Internal\RepeatedField $attachments
+     *     @type \Eolymp\Atlas\Form\Value\File[] $attachments
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class Code extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value.File attachments = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Form\Value\File>
      */
     public function getAttachments()
     {
@@ -98,7 +98,7 @@ class Code extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value.File attachments = 3;</code>
-     * @param array<\Eolymp\Atlas\Form\Value\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Form\Value\File[] $var
      * @return $this
      */
     public function setAttachments($var)

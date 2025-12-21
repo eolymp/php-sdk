@@ -6,8 +6,8 @@
 namespace Eolymp\Rating;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.rating.DescribeRatingBoundariesOutput</code>
@@ -25,7 +25,7 @@ class DescribeRatingBoundariesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Rating\DescribeRatingBoundariesOutput\Level>|\Google\Protobuf\Internal\RepeatedField $levels
+     *     @type \Eolymp\Rating\DescribeRatingBoundariesOutput\Level[] $levels
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class DescribeRatingBoundariesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.rating.DescribeRatingBoundariesOutput.Level levels = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Rating\DescribeRatingBoundariesOutput\Level>
      */
     public function getLevels()
     {
@@ -44,7 +44,7 @@ class DescribeRatingBoundariesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.rating.DescribeRatingBoundariesOutput.Level levels = 1;</code>
-     * @param array<\Eolymp\Rating\DescribeRatingBoundariesOutput\Level>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Rating\DescribeRatingBoundariesOutput\Level[] $var
      * @return $this
      */
     public function setLevels($var)

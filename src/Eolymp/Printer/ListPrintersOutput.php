@@ -6,8 +6,8 @@
 namespace Eolymp\Printer;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.printer.ListPrintersOutput</code>
@@ -30,7 +30,7 @@ class ListPrintersOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Printer\Printer>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Printer\Printer[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListPrintersOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.printer.Printer items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Printer\Printer>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListPrintersOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.printer.Printer items = 2;</code>
-     * @param array<\Eolymp\Printer\Printer>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Printer\Printer[] $var
      * @return $this
      */
     public function setItems($var)

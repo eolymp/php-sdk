@@ -6,8 +6,8 @@
 namespace Eolymp\Ranker;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ranker.ListScheduledActionsOutput</code>
@@ -30,7 +30,7 @@ class ListScheduledActionsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Ranker\Scoreboard\Action>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Ranker\Scoreboard\Action[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListScheduledActionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Action items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Ranker\Scoreboard\Action>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListScheduledActionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Action items = 2;</code>
-     * @param array<\Eolymp\Ranker\Scoreboard\Action>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Ranker\Scoreboard\Action[] $var
      * @return $this
      */
     public function setItems($var)

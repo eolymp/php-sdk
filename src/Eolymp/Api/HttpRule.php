@@ -6,8 +6,8 @@
 namespace Eolymp\Api;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.api.HttpRule</code>
@@ -47,7 +47,7 @@ class HttpRule extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Api\CustomHttpPattern $custom
      *     @type string $body
      *     @type string $response_body
-     *     @type array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $additional_bindings
+     *     @type \Eolymp\Api\HttpRule[] $additional_bindings
      * }
      */
     public function __construct($data = NULL) {
@@ -285,7 +285,7 @@ class HttpRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule additional_bindings = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Api\HttpRule>
      */
     public function getAdditionalBindings()
     {
@@ -294,7 +294,7 @@ class HttpRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule additional_bindings = 11;</code>
-     * @param array<\Eolymp\Api\HttpRule>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Api\HttpRule[] $var
      * @return $this
      */
     public function setAdditionalBindings($var)

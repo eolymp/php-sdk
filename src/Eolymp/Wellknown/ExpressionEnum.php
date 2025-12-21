@@ -6,8 +6,8 @@
 namespace Eolymp\Wellknown;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ExpressionEnum specifies match criteria for an enumeration (unlike string does not allow partial match)

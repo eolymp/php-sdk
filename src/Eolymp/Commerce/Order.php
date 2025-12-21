@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Order represents a finalized and submitted shopping cart.
@@ -114,7 +114,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type string $reference
      *     @type string $member_id
      *     @type int $status
-     *     @type array<\Eolymp\Commerce\Order\Item>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Commerce\Order\Item[] $items
      *     @type \Eolymp\Commerce\Address $billing_address
      *     @type \Eolymp\Commerce\Address $shipping_address
      *     @type bool $billing_same_as_shipping
@@ -229,7 +229,7 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Order.Item items = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\Order\Item>
      */
     public function getItems()
     {
@@ -238,7 +238,7 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Order.Item items = 10;</code>
-     * @param array<\Eolymp\Commerce\Order\Item>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\Order\Item[] $var
      * @return $this
      */
     public function setItems($var)

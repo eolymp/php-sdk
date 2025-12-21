@@ -6,8 +6,8 @@
 namespace Eolymp\Ranker;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ranker.Scoreboard</code>
@@ -103,7 +103,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           Sorting direction by default.
      *     @type int $format
      *           Scoreboard format (IOI, ICPC). Can not be modified.
-     *     @type array<\Eolymp\Ranker\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $contests
+     *     @type \Eolymp\Ranker\Scoreboard\Contest[] $contests
      *           List of associated contests
      * }
      */
@@ -390,7 +390,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * List of associated contests
      *
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 51;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Ranker\Scoreboard\Contest>
      */
     public function getContests()
     {
@@ -401,7 +401,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * List of associated contests
      *
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Contest contests = 51;</code>
-     * @param array<\Eolymp\Ranker\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Ranker\Scoreboard\Contest[] $var
      * @return $this
      */
     public function setContests($var)

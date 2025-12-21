@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas\Submission;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Submission.Group</code>
@@ -105,7 +105,7 @@ class Group extends \Google\Protobuf\Internal\Message
      *           status of the group
      *     @type int $verdict
      *           overall verdict based on verdicts in runs
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $dependencies
+     *     @type int[] $dependencies
      *           other group indices which need to pass for this group to run
      *     @type float $cost
      *           max possible score for passing all tests in the group
@@ -123,7 +123,7 @@ class Group extends \Google\Protobuf\Internal\Message
      *           provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
      *     @type float $resource_usage
      *           provides feedback on resource usage within the group, depending on feedback mode it might be resource usage peak in group or resource usage in the first non-accepted test
-     *     @type array<\Eolymp\Atlas\Submission\Run>|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type \Eolymp\Atlas\Submission\Run[] $runs
      *           runs of the group
      * }
      */
@@ -214,7 +214,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * other group indices which need to pass for this group to run
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getDependencies()
     {
@@ -225,7 +225,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * other group indices which need to pass for this group to run
      *
      * Generated from protobuf field <code>repeated uint32 dependencies = 11;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setDependencies($var)
@@ -448,7 +448,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * runs of the group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Run runs = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Submission\Run>
      */
     public function getRuns()
     {
@@ -459,7 +459,7 @@ class Group extends \Google\Protobuf\Internal\Message
      * runs of the group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Run runs = 100;</code>
-     * @param array<\Eolymp\Atlas\Submission\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Submission\Run[] $var
      * @return $this
      */
     public function setRuns($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas\Form\Field;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Form.Field.File</code>
@@ -39,9 +39,9 @@ class File extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $types
+     *     @type string[] $types
      *           allowed mime types, empty means all types are allowed
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $extensions
+     *     @type string[] $extensions
      *           allowed file extensions (with leading .), empty means all
      *     @type int $max_size
      *           max file size in bytes, 0 means no limit
@@ -56,7 +56,7 @@ class File extends \Google\Protobuf\Internal\Message
      * allowed mime types, empty means all types are allowed
      *
      * Generated from protobuf field <code>repeated string types = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTypes()
     {
@@ -67,7 +67,7 @@ class File extends \Google\Protobuf\Internal\Message
      * allowed mime types, empty means all types are allowed
      *
      * Generated from protobuf field <code>repeated string types = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTypes($var)
@@ -82,7 +82,7 @@ class File extends \Google\Protobuf\Internal\Message
      * allowed file extensions (with leading .), empty means all
      *
      * Generated from protobuf field <code>repeated string extensions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getExtensions()
     {
@@ -93,7 +93,7 @@ class File extends \Google\Protobuf\Internal\Message
      * allowed file extensions (with leading .), empty means all
      *
      * Generated from protobuf field <code>repeated string extensions = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setExtensions($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Universe;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.universe.DescribePlanInput</code>
@@ -46,7 +46,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
      *           optionally, request name and description in particular locale
      *     @type string $currency
      *           optionally, request variants in particular currency
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type int[] $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -130,7 +130,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Extra extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExtra()
     {
@@ -139,7 +139,7 @@ class DescribePlanInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Plan.Extra extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExtra($var)

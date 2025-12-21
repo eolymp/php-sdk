@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.Penalty</code>
@@ -57,7 +57,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
      *     @type string $summary
      *     @type \Eolymp\Ecm\Content $description
      *     @type bool $silent
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
+     *     @type string[] $scope
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $expires_at
      *     @type \Google\Protobuf\Timestamp $cancelled_at
@@ -168,7 +168,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string scope = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getScope()
     {
@@ -177,7 +177,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string scope = 20;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setScope($var)

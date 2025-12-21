@@ -6,8 +6,8 @@
 namespace Eolymp\Printer\PrinterConnectorServerMessage;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Print message instructs the printer to print a document

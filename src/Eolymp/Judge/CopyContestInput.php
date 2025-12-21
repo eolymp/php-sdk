@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.CopyContestInput</code>
@@ -38,7 +38,7 @@ class CopyContestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $copy_scope
+     *     @type int[] $copy_scope
      *     @type string $copy_name
      *     @type int $copy_visibility
      * }
@@ -72,7 +72,7 @@ class CopyContestInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.CopyContestInput.Scope copy_scope = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getCopyScope()
     {
@@ -81,7 +81,7 @@ class CopyContestInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.CopyContestInput.Scope copy_scope = 2;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setCopyScope($var)

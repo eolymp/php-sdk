@@ -6,8 +6,8 @@
 namespace Eolymp\Runtime;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.runtime.ListRuntimesOutput</code>
@@ -25,7 +25,7 @@ class ListRuntimesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Runtime\Runtime[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class ListRuntimesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.runtime.Runtime items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Runtime\Runtime>
      */
     public function getItems()
     {
@@ -44,7 +44,7 @@ class ListRuntimesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.runtime.Runtime items = 2;</code>
-     * @param array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Runtime\Runtime[] $var
      * @return $this
      */
     public function setItems($var)

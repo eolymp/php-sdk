@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.commerce.ListShippingMethodsOutput</code>
@@ -25,7 +25,7 @@ class ListShippingMethodsOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Commerce\ShippingMethod>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Commerce\ShippingMethod[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class ListShippingMethodsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.ShippingMethod items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Commerce\ShippingMethod>
      */
     public function getItems()
     {
@@ -44,7 +44,7 @@ class ListShippingMethodsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.ShippingMethod items = 1;</code>
-     * @param array<\Eolymp\Commerce\ShippingMethod>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Commerce\ShippingMethod[] $var
      * @return $this
      */
     public function setItems($var)

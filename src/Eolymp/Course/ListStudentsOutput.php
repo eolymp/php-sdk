@@ -6,8 +6,8 @@
 namespace Eolymp\Course;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.course.ListStudentsOutput</code>
@@ -34,7 +34,7 @@ class ListStudentsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Course\Student>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Course\Student[] $items
      *     @type string $next_page_cursor
      * }
      */
@@ -67,7 +67,7 @@ class ListStudentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Student items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Course\Student>
      */
     public function getItems()
     {
@@ -76,7 +76,7 @@ class ListStudentsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Student items = 2;</code>
-     * @param array<\Eolymp\Course\Student>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Course\Student[] $var
      * @return $this
      */
     public function setItems($var)

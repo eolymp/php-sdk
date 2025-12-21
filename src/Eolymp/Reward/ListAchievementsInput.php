@@ -6,8 +6,8 @@
 namespace Eolymp\Reward;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.reward.ListAchievementsInput</code>
@@ -45,7 +45,7 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type int $offset
      *     @type \Eolymp\Reward\ListAchievementsInput\Filter $filters
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type int[] $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -153,7 +153,7 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement.Extra extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getExtra()
     {
@@ -162,7 +162,7 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement.Extra extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setExtra($var)

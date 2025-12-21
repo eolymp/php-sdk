@@ -6,8 +6,8 @@
 namespace Eolymp\Ecm;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ecm.Node</code>
@@ -35,7 +35,7 @@ class Node extends \Google\Protobuf\Internal\Message
      *
      *     @type string $type
      *     @type array|\Google\Protobuf\Internal\MapField $attr
-     *     @type array<\Eolymp\Ecm\Node>|\Google\Protobuf\Internal\RepeatedField $children
+     *     @type \Eolymp\Ecm\Node[] $children
      * }
      */
     public function __construct($data = NULL) {
@@ -89,7 +89,7 @@ class Node extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ecm.Node children = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Ecm\Node>
      */
     public function getChildren()
     {
@@ -98,7 +98,7 @@ class Node extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.ecm.Node children = 3;</code>
-     * @param array<\Eolymp\Ecm\Node>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Ecm\Node[] $var
      * @return $this
      */
     public function setChildren($var)

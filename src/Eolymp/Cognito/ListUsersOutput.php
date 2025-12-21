@@ -6,8 +6,8 @@
 namespace Eolymp\Cognito;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.cognito.ListUsersOutput</code>
@@ -30,7 +30,7 @@ class ListUsersOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Cognito\User>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Cognito\User[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListUsersOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.cognito.User items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Cognito\User>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListUsersOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.cognito.User items = 2;</code>
-     * @param array<\Eolymp\Cognito\User>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Cognito\User[] $var
      * @return $this
      */
     public function setItems($var)

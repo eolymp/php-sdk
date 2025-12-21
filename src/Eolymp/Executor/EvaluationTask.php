@@ -6,8 +6,8 @@
 namespace Eolymp\Executor;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Task represents task to be executed by judge agent.
@@ -133,9 +133,9 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *     @type bool $interactive_followup
      *           Use interactor in the second and subsequent runs (when run_count > 1)
-     *     @type array<\Eolymp\Executor\EvaluationTask\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
+     *     @type \Eolymp\Executor\EvaluationTask\Precondition[] $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
-     *     @type array<\Eolymp\Executor\EvaluationTask\Constraint>|\Google\Protobuf\Internal\RepeatedField $constraints
+     *     @type \Eolymp\Executor\EvaluationTask\Constraint[] $constraints
      *           Execution constraints, define limits imposed on each run.
      *     @type \Eolymp\Executor\Script $submission
      *           Submission being evaluated.
@@ -143,9 +143,9 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Interactor configuration
      *     @type \Eolymp\Executor\Checker $checker
      *           Checker configuration.
-     *     @type array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $scripts
+     *     @type \Eolymp\Executor\Script[] $scripts
      *           Additional scripts
-     *     @type array<\Eolymp\Executor\EvaluationTask\Run>|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type \Eolymp\Executor\EvaluationTask\Run[] $runs
      *           Run configurations.
      * }
      */
@@ -384,7 +384,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Precondition preconditions = 40;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\EvaluationTask\Precondition>
      */
     public function getPreconditions()
     {
@@ -395,7 +395,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Precondition preconditions = 40;</code>
-     * @param array<\Eolymp\Executor\EvaluationTask\Precondition>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\EvaluationTask\Precondition[] $var
      * @return $this
      */
     public function setPreconditions($var)
@@ -410,7 +410,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Execution constraints, define limits imposed on each run.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Constraint constraints = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\EvaluationTask\Constraint>
      */
     public function getConstraints()
     {
@@ -421,7 +421,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Execution constraints, define limits imposed on each run.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Constraint constraints = 20;</code>
-     * @param array<\Eolymp\Executor\EvaluationTask\Constraint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\EvaluationTask\Constraint[] $var
      * @return $this
      */
     public function setConstraints($var)
@@ -544,7 +544,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Additional scripts
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\Script>
      */
     public function getScripts()
     {
@@ -555,7 +555,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Additional scripts
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.Script scripts = 60;</code>
-     * @param array<\Eolymp\Executor\Script>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\Script[] $var
      * @return $this
      */
     public function setScripts($var)
@@ -570,7 +570,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Run configurations.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Run runs = 30;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\EvaluationTask\Run>
      */
     public function getRuns()
     {
@@ -581,7 +581,7 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      * Run configurations.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Run runs = 30;</code>
-     * @param array<\Eolymp\Executor\EvaluationTask\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\EvaluationTask\Run[] $var
      * @return $this
      */
     public function setRuns($var)

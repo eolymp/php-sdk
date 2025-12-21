@@ -6,8 +6,8 @@
 namespace Eolymp\Commerce\Product;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Variant describe a specific combination of attribute values for a product.
@@ -60,7 +60,7 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type array|\Google\Protobuf\Internal\MapField $values
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type string[] $images
      *     @type bool $out_of_stock
      *           read-only, true if the variant is not available for order
      *     @type int $max_quantity
@@ -142,7 +142,7 @@ class Variant extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string images = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getImages()
     {
@@ -151,7 +151,7 @@ class Variant extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string images = 10;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setImages($var)

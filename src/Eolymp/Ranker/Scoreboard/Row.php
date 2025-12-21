@@ -6,8 +6,8 @@
 namespace Eolymp\Ranker\Scoreboard;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.ranker.Scoreboard.Row</code>
@@ -93,7 +93,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *           Rank in the scoreboard
      *     @type int $rank_lower
      *           Lower bound of the rank (when shared)
-     *     @type array<\Eolymp\Ranker\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Ranker\Scoreboard\Row\Value[] $values
      *           Score breakdown by contest and problem.
      * }
      */
@@ -332,7 +332,7 @@ class Row extends \Google\Protobuf\Internal\Message
      * Score breakdown by contest and problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Ranker\Scoreboard\Row\Value>
      */
     public function getValues()
     {
@@ -343,7 +343,7 @@ class Row extends \Google\Protobuf\Internal\Message
      * Score breakdown by contest and problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.ranker.Scoreboard.Row.Value values = 20;</code>
-     * @param array<\Eolymp\Ranker\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Ranker\Scoreboard\Row\Value[] $var
      * @return $this
      */
     public function setValues($var)

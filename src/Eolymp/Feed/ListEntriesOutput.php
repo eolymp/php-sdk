@@ -6,8 +6,8 @@
 namespace Eolymp\Feed;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.feed.ListEntriesOutput</code>
@@ -34,7 +34,7 @@ class ListEntriesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Feed\Entry>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Feed\Entry[] $items
      *     @type string $next_page_cursor
      * }
      */
@@ -67,7 +67,7 @@ class ListEntriesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.feed.Entry items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Feed\Entry>
      */
     public function getItems()
     {
@@ -76,7 +76,7 @@ class ListEntriesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.feed.Entry items = 2;</code>
-     * @param array<\Eolymp\Feed\Entry>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Feed\Entry[] $var
      * @return $this
      */
     public function setItems($var)

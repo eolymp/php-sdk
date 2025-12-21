@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Submission</code>
@@ -182,7 +182,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           deprecated: source code
      *     @type string $source_url
      *           source code URL
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Atlas\Form\Value[] $values
      *           submission values
      *     @type string $signature
      *           submission signature
@@ -207,7 +207,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           maximum memory usage
      *     @type float $resource_usage
      *           maximum resource usage
-     *     @type array<\Eolymp\Atlas\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $groups
+     *     @type \Eolymp\Atlas\Submission\Group[] $groups
      *           status for each run by group
      *     @type bool $assistant_available
      *           if true, submission can be debugged using submission assistant
@@ -506,7 +506,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      * submission values
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Form\Value>
      */
     public function getValues()
     {
@@ -517,7 +517,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      * submission values
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Form\Value[] $var
      * @return $this
      */
     public function setValues($var)
@@ -840,7 +840,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      * status for each run by group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Group groups = 50;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Submission\Group>
      */
     public function getGroups()
     {
@@ -851,7 +851,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      * status for each run by group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Group groups = 50;</code>
-     * @param array<\Eolymp\Atlas\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Submission\Group[] $var
      * @return $this
      */
     public function setGroups($var)

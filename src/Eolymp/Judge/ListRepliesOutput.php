@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.ListRepliesOutput</code>
@@ -30,7 +30,7 @@ class ListRepliesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Judge\Reply>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Judge\Reply[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListRepliesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Reply items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Reply>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListRepliesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Reply items = 2;</code>
-     * @param array<\Eolymp\Judge\Reply>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Reply[] $var
      * @return $this
      */
     public function setItems($var)

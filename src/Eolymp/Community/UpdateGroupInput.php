@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.UpdateGroupInput</code>
@@ -35,7 +35,7 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type int[] $patch
      *           defines group props to be updated, empty means update everything
      *     @type string $group_id
      *     @type \Eolymp\Community\Group $group
@@ -50,7 +50,7 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
      * defines group props to be updated, empty means update everything
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Group.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getPatch()
     {
@@ -61,7 +61,7 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
      * defines group props to be updated, empty means update everything
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Group.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setPatch($var)

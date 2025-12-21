@@ -6,8 +6,8 @@
 namespace Eolymp\Executor;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Checker provides configuration on how to verify answers
@@ -79,7 +79,7 @@ class Checker extends \Google\Protobuf\Internal\Message
      *     @type bool $order_sensitive
      *           Order sensitivity option for QUERY_RESULTS checker.
      *           If set to false the rows of output and answer will be sorted before comparison.
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type \Eolymp\Executor\File[] $files
      *           Additional files placed into workdir during compilation and execution
      * }
      */
@@ -250,7 +250,7 @@ class Checker extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\File>
      */
     public function getFiles()
     {
@@ -261,7 +261,7 @@ class Checker extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\File[] $var
      * @return $this
      */
     public function setFiles($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Participant</code>
@@ -167,7 +167,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           Passcode is read-only and should be set using ResetPasscode method.
      *     @type string $certificate_id
      *           Participation certificate ID.
-     *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
+     *     @type \Eolymp\Judge\Participant\Submit[] $submits
      *           Submit counter is used to count how many times user submitted the problem.
      * }
      */
@@ -650,7 +650,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Submit counter is used to count how many times user submitted the problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Participant\Submit>
      */
     public function getSubmits()
     {
@@ -661,7 +661,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Submit counter is used to count how many times user submitted the problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
-     * @param array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Participant\Submit[] $var
      * @return $this
      */
     public function setSubmits($var)

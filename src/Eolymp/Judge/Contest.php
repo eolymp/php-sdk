@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Contest</code>
@@ -275,7 +275,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Judge\Contest\RatingConfig $rating_config
      *           Rating configuration allows to provide parameters for EloMMR rating calculation.
      *           This feature requires space to support ratings.
-     *     @type array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $staff
+     *     @type \Eolymp\Judge\Contest\Staff[] $staff
      *           Staff members of the contest (coordinator, tester, problem setter etc)
      * }
      */
@@ -1180,7 +1180,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Judge\Contest\Staff>
      */
     public function getStaff()
     {
@@ -1191,7 +1191,7 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120 [(.eolymp.api.read_only) = true];</code>
-     * @param array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Judge\Contest\Staff[] $var
      * @return $this
      */
     public function setStaff($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Script</code>
@@ -61,7 +61,7 @@ class Script extends \Google\Protobuf\Internal\Message
      *           The runtime to execute the script
      *     @type string $source
      *           Source code for script
-     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type \Eolymp\Executor\File[] $files
      *           Additional files placed into workdir during compilation and execution
      * }
      */
@@ -196,7 +196,7 @@ class Script extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\File>
      */
     public function getFiles()
     {
@@ -207,7 +207,7 @@ class Script extends \Google\Protobuf\Internal\Message
      * Additional files placed into workdir during compilation and execution
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 20;</code>
-     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\File[] $var
      * @return $this
      */
     public function setFiles($var)

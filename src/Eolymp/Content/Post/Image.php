@@ -6,8 +6,8 @@
 namespace Eolymp\Content\Post;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.content.Post.Image</code>
@@ -40,7 +40,7 @@ class Image extends \Google\Protobuf\Internal\Message
      *     @type string $src
      *     @type int $width
      *     @type int $height
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $class
+     *     @type string[] $class
      * }
      */
     public function __construct($data = NULL) {
@@ -116,7 +116,7 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string class = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getClass()
     {
@@ -125,7 +125,7 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string class = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setClass($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas\Form\Field;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Form.Field.Code</code>
@@ -51,15 +51,15 @@ class Code extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $runtimes
+     *     @type string[] $runtimes
      *           allowed code execution runtimes
      *     @type int $max_attachments
      *           maximum number of attachments, 0 means no attachments are allowed
      *     @type int $attachment_max_size
      *           max attachment size in bytes, 0 means not limit
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attachment_types
+     *     @type string[] $attachment_types
      *           allowed mime types for attachments, empty means all allowed
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $attachment_extensions
+     *     @type string[] $attachment_extensions
      *           allowed file extensions for attachments (with leading .), empty means all
      * }
      */
@@ -72,7 +72,7 @@ class Code extends \Google\Protobuf\Internal\Message
      * allowed code execution runtimes
      *
      * Generated from protobuf field <code>repeated string runtimes = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getRuntimes()
     {
@@ -83,7 +83,7 @@ class Code extends \Google\Protobuf\Internal\Message
      * allowed code execution runtimes
      *
      * Generated from protobuf field <code>repeated string runtimes = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setRuntimes($var)
@@ -150,7 +150,7 @@ class Code extends \Google\Protobuf\Internal\Message
      * allowed mime types for attachments, empty means all allowed
      *
      * Generated from protobuf field <code>repeated string attachment_types = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAttachmentTypes()
     {
@@ -161,7 +161,7 @@ class Code extends \Google\Protobuf\Internal\Message
      * allowed mime types for attachments, empty means all allowed
      *
      * Generated from protobuf field <code>repeated string attachment_types = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAttachmentTypes($var)
@@ -176,7 +176,7 @@ class Code extends \Google\Protobuf\Internal\Message
      * allowed file extensions for attachments (with leading .), empty means all
      *
      * Generated from protobuf field <code>repeated string attachment_extensions = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAttachmentExtensions()
     {
@@ -187,7 +187,7 @@ class Code extends \Google\Protobuf\Internal\Message
      * allowed file extensions for attachments (with leading .), empty means all
      *
      * Generated from protobuf field <code>repeated string attachment_extensions = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAttachmentExtensions($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Judge;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.judge.Problem</code>
@@ -181,10 +181,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Statement content
      *     @type string $download_link
      *           Statement download link, allows to download statement in original format.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
+     *     @type string[] $languages
      *           list of languages the statement is available in
      *     @type \Eolymp\Atlas\Form $submission_form
-     *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
+     *     @type \Eolymp\Atlas\Problem\Example[] $examples
      * }
      */
     public function __construct($data = NULL) {
@@ -730,7 +730,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * list of languages the statement is available in
      *
      * Generated from protobuf field <code>repeated string languages = 25;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getLanguages()
     {
@@ -741,7 +741,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      * list of languages the statement is available in
      *
      * Generated from protobuf field <code>repeated string languages = 25;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setLanguages($var)
@@ -786,7 +786,7 @@ class Problem extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Problem\Example>
      */
     public function getExamples()
     {
@@ -795,7 +795,7 @@ class Problem extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
-     * @param array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Problem\Example[] $var
      * @return $this
      */
     public function setExamples($var)

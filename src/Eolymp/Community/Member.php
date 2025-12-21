@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.Member</code>
@@ -189,16 +189,16 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $restrictions
+     *     @type string[] $restrictions
      *           Restrictions applied to the member profile.
      *           Requires RESTRICTIONS extra.
      *     @type \Eolymp\Community\Member\Stats $stats
      *           Member statistics.
      *           Requires STATS extra.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
+     *     @type string[] $groups
      *           List of groups IDs assigned to the member.
      *           Requires GROUPS extra.
-     *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Eolymp\Community\Attribute\Value[] $attributes
      *           Additional profile attributes about the member.
      *           Requires ATTRIBUTES extra.
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
@@ -780,7 +780,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Requires RESTRICTIONS extra.
      *
      * Generated from protobuf field <code>repeated string restrictions = 10 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getRestrictions()
     {
@@ -792,7 +792,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Requires RESTRICTIONS extra.
      *
      * Generated from protobuf field <code>repeated string restrictions = 10 [(.eolymp.api.read_only) = true];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setRestrictions($var)
@@ -846,7 +846,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Requires GROUPS extra.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getGroups()
     {
@@ -858,7 +858,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Requires GROUPS extra.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setGroups($var)
@@ -874,7 +874,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Requires ATTRIBUTES extra.
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Community\Attribute\Value>
      */
     public function getAttributes()
     {
@@ -886,7 +886,7 @@ class Member extends \Google\Protobuf\Internal\Message
      * Requires ATTRIBUTES extra.
      *
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
-     * @param array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Community\Attribute\Value[] $var
      * @return $this
      */
     public function setAttributes($var)

@@ -6,8 +6,8 @@
 namespace Eolymp\Cognito;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.cognito.User</code>
@@ -181,7 +181,7 @@ class User extends \Google\Protobuf\Internal\Message
      *           Exact time when user has changed password last time
      *     @type string $locale
      *           Locale
-     *     @type array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
+     *     @type \Eolymp\Cognito\User\Alias[] $aliases
      *     @type string $discord_user_id
      * }
      */
@@ -726,7 +726,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Cognito\User\Alias>
      */
     public function getAliases()
     {
@@ -735,7 +735,7 @@ class User extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
-     * @param array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Cognito\User\Alias[] $var
      * @return $this
      */
     public function setAliases($var)

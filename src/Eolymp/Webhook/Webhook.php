@@ -6,8 +6,8 @@
 namespace Eolymp\Webhook;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.webhook.Webhook</code>
@@ -78,7 +78,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
      *     @type string $secret
      *     @type string $endpoint
      *     @type bool $inactive
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $events
+     *     @type int[] $events
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $last_failure_at
      *           time of the last failure
@@ -207,7 +207,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Event events = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getEvents()
     {
@@ -216,7 +216,7 @@ class Webhook extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Event events = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setEvents($var)

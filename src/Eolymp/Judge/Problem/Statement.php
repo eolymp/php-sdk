@@ -6,8 +6,8 @@
 namespace Eolymp\Judge\Problem;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Statement is localized problem statement

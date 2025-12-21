@@ -6,8 +6,8 @@
 namespace Eolymp\Atlas;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.atlas.Version</code>
@@ -54,7 +54,7 @@ class Version extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type string $created_by
      *     @type string $summary
-     *     @type array<\Eolymp\Atlas\Version\Change>|\Google\Protobuf\Internal\RepeatedField $changes
+     *     @type \Eolymp\Atlas\Version\Change[] $changes
      *     @type string $cursor
      * }
      */
@@ -185,7 +185,7 @@ class Version extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Version.Change changes = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Atlas\Version\Change>
      */
     public function getChanges()
     {
@@ -194,7 +194,7 @@ class Version extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Version.Change changes = 10;</code>
-     * @param array<\Eolymp\Atlas\Version\Change>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Atlas\Version\Change[] $var
      * @return $this
      */
     public function setChanges($var)

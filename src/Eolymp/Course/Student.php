@@ -6,8 +6,8 @@
 namespace Eolymp\Course;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.course.Student</code>
@@ -79,7 +79,7 @@ class Student extends \Google\Protobuf\Internal\Message
      *           assign all modules
      *     @type float $overall_progress
      *     @type int $overall_grade
-     *     @type array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $grades
+     *     @type \Eolymp\Course\Student\Grade[] $grades
      *     @type \Google\Protobuf\Timestamp $graded_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -251,7 +251,7 @@ class Student extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Course\Student\Grade>
      */
     public function getGrades()
     {
@@ -260,7 +260,7 @@ class Student extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.course.Student.Grade grades = 20;</code>
-     * @param array<\Eolymp\Course\Student\Grade>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Course\Student\Grade[] $var
      * @return $this
      */
     public function setGrades($var)

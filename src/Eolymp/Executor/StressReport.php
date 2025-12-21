@@ -6,8 +6,8 @@
 namespace Eolymp\Executor;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.executor.StressReport</code>
@@ -54,7 +54,7 @@ class StressReport extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $agent
-     *     @type array<\Eolymp\Executor\StressReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
+     *     @type \Eolymp\Executor\StressReport\Run[] $runs
      *     @type string $error_message
      * }
      */
@@ -175,7 +175,7 @@ class StressReport extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Executor\StressReport\Run>
      */
     public function getRuns()
     {
@@ -184,7 +184,7 @@ class StressReport extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
-     * @param array<\Eolymp\Executor\StressReport\Run>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Executor\StressReport\Run[] $var
      * @return $this
      */
     public function setRuns($var)

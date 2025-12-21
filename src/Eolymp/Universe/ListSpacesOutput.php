@@ -6,8 +6,8 @@
 namespace Eolymp\Universe;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.universe.ListSpacesOutput</code>
@@ -30,7 +30,7 @@ class ListSpacesOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Universe\Space>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Universe\Space[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListSpacesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Space items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Universe\Space>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListSpacesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.universe.Space items = 2;</code>
-     * @param array<\Eolymp\Universe\Space>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Universe\Space[] $var
      * @return $this
      */
     public function setItems($var)

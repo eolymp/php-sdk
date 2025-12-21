@@ -6,8 +6,8 @@
 namespace Eolymp\Discussion;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.discussion.Message</code>
@@ -99,7 +99,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $deleted_at
      *     @type int $revision
      *     @type \Eolymp\Ecm\Content $message
-     *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Eolymp\Wellknown\Link[] $links
      * }
      */
     public function __construct($data = NULL) {
@@ -447,7 +447,7 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Wellknown\Link>
      */
     public function getLinks()
     {
@@ -456,7 +456,7 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.Link links = 200;</code>
-     * @param array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Wellknown\Link[] $var
      * @return $this
      */
     public function setLinks($var)

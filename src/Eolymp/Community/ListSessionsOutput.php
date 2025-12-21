@@ -6,8 +6,8 @@
 namespace Eolymp\Community;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.community.ListSessionsOutput</code>
@@ -30,7 +30,7 @@ class ListSessionsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type array<\Eolymp\Community\Session>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Community\Session[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class ListSessionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Session items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Community\Session>
      */
     public function getItems()
     {
@@ -71,7 +71,7 @@ class ListSessionsOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Session items = 2;</code>
-     * @param array<\Eolymp\Community\Session>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Community\Session[] $var
      * @return $this
      */
     public function setItems($var)

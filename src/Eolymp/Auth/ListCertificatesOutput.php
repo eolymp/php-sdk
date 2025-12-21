@@ -6,8 +6,8 @@
 namespace Eolymp\Auth;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>eolymp.auth.ListCertificatesOutput</code>
@@ -25,7 +25,7 @@ class ListCertificatesOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Auth\Certificate>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Eolymp\Auth\Certificate[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class ListCertificatesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.auth.Certificate items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Eolymp\Auth\Certificate>
      */
     public function getItems()
     {
@@ -44,7 +44,7 @@ class ListCertificatesOutput extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .eolymp.auth.Certificate items = 1;</code>
-     * @param array<\Eolymp\Auth\Certificate>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Eolymp\Auth\Certificate[] $var
      * @return $this
      */
     public function setItems($var)
