@@ -15,6 +15,10 @@ use Google\Protobuf\RepeatedField;
 class UpdateProfileInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile.Patch.Field patch = 1;</code>
+     */
+    private $patch;
+    /**
      * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 2;</code>
      */
     protected $profile = null;
@@ -25,12 +29,35 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int[] $patch
      *     @type \Eolymp\Vendor\Profile $profile
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Vendor\ProfileService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile.Patch.Field patch = 1;</code>
+     * @return RepeatedField<int>
+     */
+    public function getPatch()
+    {
+        return $this->patch;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile.Patch.Field patch = 1;</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setPatch($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Vendor\Profile\Patch\Field::class);
+        $this->patch = $arr;
+
+        return $this;
     }
 
     /**

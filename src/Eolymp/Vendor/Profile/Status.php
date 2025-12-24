@@ -17,23 +17,36 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>PENDING = 1;</code>
+     * not submitted
+     *
+     * Generated from protobuf enum <code>DRAFT = 1;</code>
      */
-    const PENDING = 1;
+    const DRAFT = 1;
     /**
+     * submitted, not reviewed
+     *
      * Generated from protobuf enum <code>REVIEW = 2;</code>
      */
     const REVIEW = 2;
     /**
+     * submitted, approved
+     *
      * Generated from protobuf enum <code>APPROVED = 3;</code>
      */
     const APPROVED = 3;
+    /**
+     * submitted. rejected
+     *
+     * Generated from protobuf enum <code>REJECTED = 4;</code>
+     */
+    const REJECTED = 4;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::PENDING => 'PENDING',
+        self::DRAFT => 'DRAFT',
         self::REVIEW => 'REVIEW',
         self::APPROVED => 'APPROVED',
+        self::REJECTED => 'REJECTED',
     ];
 
     public static function name($value)

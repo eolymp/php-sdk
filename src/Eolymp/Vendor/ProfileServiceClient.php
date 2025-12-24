@@ -54,4 +54,20 @@ class ProfileServiceClient {
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateProfileOutput::class, $context);
     }
 
+    /**
+     * @param SubmitProfileInput $input message
+     * @param array $context request parameters
+     *
+     * @return SubmitProfileOutput output message
+     */
+    public function SubmitProfile(SubmitProfileInput $input, array $context = [])
+    {
+        $path = "/vendor/profiles:submit";
+
+        $context['name'] = "eolymp.vendor.ProfileService/SubmitProfile";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SubmitProfileOutput::class, $context);
+    }
+
 }

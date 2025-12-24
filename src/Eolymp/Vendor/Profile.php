@@ -35,6 +35,10 @@ class Profile extends \Google\Protobuf\Internal\Message
      */
     protected $last_name = '';
     /**
+     * Generated from protobuf field <code>string company_name = 16;</code>
+     */
+    protected $company_name = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 12;</code>
      */
     protected $birthday = null;
@@ -46,6 +50,10 @@ class Profile extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string phone = 14;</code>
      */
     protected $phone = '';
+    /**
+     * Generated from protobuf field <code>string tax_id = 15;</code>
+     */
+    protected $tax_id = '';
     /**
      * two letter code, lowercase
      *
@@ -92,9 +100,11 @@ class Profile extends \Google\Protobuf\Internal\Message
      *     @type string $status_reason
      *     @type string $first_name
      *     @type string $last_name
+     *     @type string $company_name
      *     @type \Google\Protobuf\Timestamp $birthday
      *     @type string $email
      *     @type string $phone
+     *     @type string $tax_id
      *     @type string $country
      *           two letter code, lowercase
      *     @type string $state
@@ -222,6 +232,28 @@ class Profile extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string company_name = 16;</code>
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return $this->company_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string company_name = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompanyName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company_name = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 12;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -293,6 +325,28 @@ class Profile extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->phone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_id = 15;</code>
+     * @return string
+     */
+    public function getTaxId()
+    {
+        return $this->tax_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string tax_id = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaxId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tax_id = $var;
 
         return $this;
     }
