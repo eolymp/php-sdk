@@ -36,6 +36,10 @@ class Field
      * Generated from protobuf enum <code>LOCALE = 4;</code>
      */
     const LOCALE = 4;
+    /**
+     * Generated from protobuf enum <code>SCHEDULED_AT = 6;</code>
+     */
+    const SCHEDULED_AT = 6;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -44,6 +48,7 @@ class Field
         self::SUBJECT => 'SUBJECT',
         self::CONTENT => 'CONTENT',
         self::LOCALE => 'LOCALE',
+        self::SCHEDULED_AT => 'SCHEDULED_AT',
     ];
 
     public static function name($value)
