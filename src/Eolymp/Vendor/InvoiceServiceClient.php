@@ -131,6 +131,25 @@ class InvoiceServiceClient {
     }
 
     /**
+     * @param SubmitInvoiceInput $input message
+     * @param array $context request parameters
+     *
+     * @return SubmitInvoiceOutput output message
+     */
+    public function SubmitInvoice(SubmitInvoiceInput $input, array $context = [])
+    {
+        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId())."/submit";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setInvoiceId("");
+
+        $context['name'] = "eolymp.vendor.InvoiceService/SubmitInvoice";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SubmitInvoiceOutput::class, $context);
+    }
+
+    /**
      * @param ApproveInvoiceInput $input message
      * @param array $context request parameters
      *
