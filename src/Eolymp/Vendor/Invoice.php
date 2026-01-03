@@ -39,6 +39,10 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     protected $vendor_id = '';
     /**
+     * Generated from protobuf field <code>string payment_method_id = 14;</code>
+     */
+    protected $payment_method_id = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp invoice_date = 3;</code>
      */
     protected $invoice_date = null;
@@ -87,6 +91,7 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *     @type string $status_reason
      *     @type string $vendor_id
+     *     @type string $payment_method_id
      *     @type \Google\Protobuf\Timestamp $invoice_date
      *     @type \Google\Protobuf\Timestamp $due_date
      *     @type \Eolymp\Vendor\Invoice\Line[] $lines
@@ -231,6 +236,28 @@ class Invoice extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->vendor_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string payment_method_id = 14;</code>
+     * @return string
+     */
+    public function getPaymentMethodId()
+    {
+        return $this->payment_method_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string payment_method_id = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPaymentMethodId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->payment_method_id = $var;
 
         return $this;
     }

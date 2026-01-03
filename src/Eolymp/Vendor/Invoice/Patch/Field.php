@@ -36,6 +36,10 @@ class Field
      * Generated from protobuf enum <code>LINES = 4;</code>
      */
     const LINES = 4;
+    /**
+     * Generated from protobuf enum <code>PAYMENT_METHOD = 6;</code>
+     */
+    const PAYMENT_METHOD = 6;
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
@@ -44,6 +48,7 @@ class Field
         self::INVOICE_DATE => 'INVOICE_DATE',
         self::DUE_DATE => 'DUE_DATE',
         self::LINES => 'LINES',
+        self::PAYMENT_METHOD => 'PAYMENT_METHOD',
     ];
 
     public static function name($value)
