@@ -95,6 +95,14 @@ class Field
      */
     const FEATURED_UNTIL = 9;
     /**
+     * Generated from protobuf enum <code>REMINDER_NOTIFICATION = 19;</code>
+     */
+    const REMINDER_NOTIFICATION = 19;
+    /**
+     * Generated from protobuf enum <code>RESULT_NOTIFICATION = 20;</code>
+     */
+    const RESULT_NOTIFICATION = 20;
+    /**
      * Generated from protobuf enum <code>PRINTER = 15;</code>
      */
     const PRINTER = 15;
@@ -144,6 +152,8 @@ class Field
         self::PROBLEM_COUNT_HIDDEN => 'PROBLEM_COUNT_HIDDEN',
         self::PARTICIPANT_COUNT_HIDDEN => 'PARTICIPANT_COUNT_HIDDEN',
         self::FEATURED_UNTIL => 'FEATURED_UNTIL',
+        self::REMINDER_NOTIFICATION => 'REMINDER_NOTIFICATION',
+        self::RESULT_NOTIFICATION => 'RESULT_NOTIFICATION',
         self::PRINTER => 'PRINTER',
         self::CLASSIFICATION => 'CLASSIFICATION',
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',

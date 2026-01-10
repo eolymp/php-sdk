@@ -161,6 +161,26 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $printer_id = '';
     /**
+     * sent a notification 1h before contest starts
+     *
+     * Generated from protobuf field <code>bool enable_reminder_notification = 13;</code>
+     */
+    protected $enable_reminder_notification = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.NotificationStatus reminder_notification_status = 14 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $reminder_notification_status = 0;
+    /**
+     * send a notification after contest is finalized
+     *
+     * Generated from protobuf field <code>bool enable_result_notification = 16;</code>
+     */
+    protected $enable_result_notification = false;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.NotificationStatus result_notification_status = 17 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $result_notification_status = 0;
+    /**
      * Classification information about the contest, such as contest series, year and location where contest was held etc.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Classification classification = 110;</code>
@@ -261,6 +281,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Date and time until contest is displayed in Featured contests
      *     @type string $printer_id
      *           Printer used to print submissions
+     *     @type bool $enable_reminder_notification
+     *           sent a notification 1h before contest starts
+     *     @type int $reminder_notification_status
+     *     @type bool $enable_result_notification
+     *           send a notification after contest is finalized
+     *     @type int $result_notification_status
      *     @type \Eolymp\Judge\Contest\Classification $classification
      *           Classification information about the contest, such as contest series, year and location where contest was held etc.
      *     @type \Eolymp\Judge\Contest\ScoreboardConfig $scoreboard_config
@@ -952,6 +978,102 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->printer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * sent a notification 1h before contest starts
+     *
+     * Generated from protobuf field <code>bool enable_reminder_notification = 13;</code>
+     * @return bool
+     */
+    public function getEnableReminderNotification()
+    {
+        return $this->enable_reminder_notification;
+    }
+
+    /**
+     * sent a notification 1h before contest starts
+     *
+     * Generated from protobuf field <code>bool enable_reminder_notification = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableReminderNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_reminder_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.NotificationStatus reminder_notification_status = 14 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getReminderNotificationStatus()
+    {
+        return $this->reminder_notification_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.NotificationStatus reminder_notification_status = 14 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setReminderNotificationStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\NotificationStatus::class);
+        $this->reminder_notification_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * send a notification after contest is finalized
+     *
+     * Generated from protobuf field <code>bool enable_result_notification = 16;</code>
+     * @return bool
+     */
+    public function getEnableResultNotification()
+    {
+        return $this->enable_result_notification;
+    }
+
+    /**
+     * send a notification after contest is finalized
+     *
+     * Generated from protobuf field <code>bool enable_result_notification = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableResultNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_result_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.NotificationStatus result_notification_status = 17 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getResultNotificationStatus()
+    {
+        return $this->result_notification_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.NotificationStatus result_notification_status = 17 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResultNotificationStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\NotificationStatus::class);
+        $this->result_notification_status = $var;
 
         return $this;
     }
