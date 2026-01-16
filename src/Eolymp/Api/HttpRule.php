@@ -30,6 +30,12 @@ class HttpRule extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.api.HttpRule additional_bindings = 11;</code>
      */
     private $additional_bindings;
+    /**
+     * max request body size in bytes
+     *
+     * Generated from protobuf field <code>int64 max_size = 22067;</code>
+     */
+    protected $max_size = 0;
     protected $pattern;
 
     /**
@@ -48,6 +54,8 @@ class HttpRule extends \Google\Protobuf\Internal\Message
      *     @type string $body
      *     @type string $response_body
      *     @type \Eolymp\Api\HttpRule[] $additional_bindings
+     *     @type int|string $max_size
+     *           max request body size in bytes
      * }
      */
     public function __construct($data = NULL) {
@@ -301,6 +309,32 @@ class HttpRule extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Api\HttpRule::class);
         $this->additional_bindings = $arr;
+
+        return $this;
+    }
+
+    /**
+     * max request body size in bytes
+     *
+     * Generated from protobuf field <code>int64 max_size = 22067;</code>
+     * @return int|string
+     */
+    public function getMaxSize()
+    {
+        return $this->max_size;
+    }
+
+    /**
+     * max request body size in bytes
+     *
+     * Generated from protobuf field <code>int64 max_size = 22067;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMaxSize($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->max_size = $var;
 
         return $this;
     }
