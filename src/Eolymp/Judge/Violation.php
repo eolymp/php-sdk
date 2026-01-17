@@ -29,9 +29,9 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * short summary of the violation
      *
-     * Generated from protobuf field <code>string summary = 3;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 14;</code>
      */
-    protected $summary = '';
+    protected $summary = null;
     /**
      * whether the violation was automatically detected by the system
      *
@@ -47,9 +47,23 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string submission_id = 6 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string submission_id = 6 [deprecated = true, (.eolymp.api.read_only) = true];</code>
+     * @deprecated
      */
     protected $submission_id = '';
+    /**
+     * submission IDs, if applicable
+     *
+     * Generated from protobuf field <code>repeated string submissions = 9 [(.eolymp.api.read_only) = true];</code>
+     */
+    private $submissions;
+    /**
+     * short summary of the violation
+     *
+     * Generated from protobuf field <code>string summary_text = 3 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $summary_text = '';
     /**
      * user ID of the person who created the violation
      *
@@ -80,7 +94,7 @@ class Violation extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $status
      *     @type int $type
-     *     @type string $summary
+     *     @type \Eolymp\Ecm\Content $summary
      *           short summary of the violation
      *     @type bool $automatic
      *           whether the violation was automatically detected by the system
@@ -88,6 +102,10 @@ class Violation extends \Google\Protobuf\Internal\Message
      *           participant who received the violation
      *     @type string $submission_id
      *           submission ID, if applicable
+     *     @type string[] $submissions
+     *           submission IDs, if applicable
+     *     @type string $summary_text
+     *           short summary of the violation
      *     @type string $created_by
      *           user ID of the person who created the violation
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -170,24 +188,34 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * short summary of the violation
      *
-     * Generated from protobuf field <code>string summary = 3;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 14;</code>
+     * @return \Eolymp\Ecm\Content|null
      */
     public function getSummary()
     {
         return $this->summary;
     }
 
+    public function hasSummary()
+    {
+        return isset($this->summary);
+    }
+
+    public function clearSummary()
+    {
+        unset($this->summary);
+    }
+
     /**
      * short summary of the violation
      *
-     * Generated from protobuf field <code>string summary = 3;</code>
-     * @param string $var
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 14;</code>
+     * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
     public function setSummary($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->summary = $var;
 
         return $this;
@@ -248,25 +276,89 @@ class Violation extends \Google\Protobuf\Internal\Message
     /**
      * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string submission_id = 6 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string submission_id = 6 [deprecated = true, (.eolymp.api.read_only) = true];</code>
      * @return string
+     * @deprecated
      */
     public function getSubmissionId()
     {
+        if ($this->submission_id !== '') {
+            @trigger_error('submission_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->submission_id;
     }
 
     /**
      * submission ID, if applicable
      *
-     * Generated from protobuf field <code>string submission_id = 6 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string submission_id = 6 [deprecated = true, (.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setSubmissionId($var)
     {
+        @trigger_error('submission_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->submission_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * submission IDs, if applicable
+     *
+     * Generated from protobuf field <code>repeated string submissions = 9 [(.eolymp.api.read_only) = true];</code>
+     * @return RepeatedField<string>
+     */
+    public function getSubmissions()
+    {
+        return $this->submissions;
+    }
+
+    /**
+     * submission IDs, if applicable
+     *
+     * Generated from protobuf field <code>repeated string submissions = 9 [(.eolymp.api.read_only) = true];</code>
+     * @param string[] $var
+     * @return $this
+     */
+    public function setSubmissions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->submissions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * short summary of the violation
+     *
+     * Generated from protobuf field <code>string summary_text = 3 [deprecated = true];</code>
+     * @return string
+     * @deprecated
+     */
+    public function getSummaryText()
+    {
+        if ($this->summary_text !== '') {
+            @trigger_error('summary_text is deprecated.', E_USER_DEPRECATED);
+        }
+        return $this->summary_text;
+    }
+
+    /**
+     * short summary of the violation
+     *
+     * Generated from protobuf field <code>string summary_text = 3 [deprecated = true];</code>
+     * @param string $var
+     * @return $this
+     * @deprecated
+     */
+    public function setSummaryText($var)
+    {
+        @trigger_error('summary_text is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, True);
+        $this->summary_text = $var;
 
         return $this;
     }
