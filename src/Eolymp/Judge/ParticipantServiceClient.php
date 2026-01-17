@@ -100,6 +100,25 @@ class ParticipantServiceClient {
     }
 
     /**
+     * @param AnalyzeParticipantInput $input message
+     * @param array $context request parameters
+     *
+     * @return AnalyzeParticipantOutput output message
+     */
+    public function AnalyzeParticipant(AnalyzeParticipantInput $input, array $context = [])
+    {
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/analyze";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/AnalyzeParticipant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AnalyzeParticipantOutput::class, $context);
+    }
+
+    /**
      * @param DisqualifyParticipantInput $input message
      * @param array $context request parameters
      *
