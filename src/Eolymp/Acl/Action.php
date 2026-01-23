@@ -200,6 +200,20 @@ class Action
      * Generated from protobuf enum <code>STORE_WRITE = 151;</code>
      */
     const STORE_WRITE = 151;
+    /**
+     * allows to list newsletters, automatically assigned if user has read access to any of the newsletters
+     *
+     * Generated from protobuf enum <code>NEWSLETTER_LIST = 162;</code>
+     */
+    const NEWSLETTER_LIST = 162;
+    /**
+     * Generated from protobuf enum <code>NEWSLETTER_READ = 160;</code>
+     */
+    const NEWSLETTER_READ = 160;
+    /**
+     * Generated from protobuf enum <code>NEWSLETTER_WRITE = 161;</code>
+     */
+    const NEWSLETTER_WRITE = 161;
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
@@ -241,6 +255,9 @@ class Action
         self::POST_WRITE => 'POST_WRITE',
         self::STORE_READ => 'STORE_READ',
         self::STORE_WRITE => 'STORE_WRITE',
+        self::NEWSLETTER_LIST => 'NEWSLETTER_LIST',
+        self::NEWSLETTER_READ => 'NEWSLETTER_READ',
+        self::NEWSLETTER_WRITE => 'NEWSLETTER_WRITE',
     ];
 
     public static function name($value)
