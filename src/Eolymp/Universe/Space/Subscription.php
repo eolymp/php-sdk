@@ -23,6 +23,10 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $seats = 0;
     /**
+     * Generated from protobuf field <code>bool usage_based = 3;</code>
+     */
+    protected $usage_based = false;
+    /**
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 10;</code>
      */
     protected $quota = null;
@@ -51,6 +55,7 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *
      *     @type string $plan
      *     @type int $seats
+     *     @type bool $usage_based
      *     @type \Eolymp\Universe\Quota $quota
      *     @type \Google\Protobuf\Timestamp $billing_period_start
      *     @type \Google\Protobuf\Timestamp $billing_period_end
@@ -103,6 +108,28 @@ class Subscription extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->seats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool usage_based = 3;</code>
+     * @return bool
+     */
+    public function getUsageBased()
+    {
+        return $this->usage_based;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool usage_based = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUsageBased($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->usage_based = $var;
 
         return $this;
     }
