@@ -28,12 +28,19 @@ class Recurrence
      * Generated from protobuf enum <code>YEARLY = 3;</code>
      */
     const YEARLY = 3;
+    /**
+     * usage based
+     *
+     * Generated from protobuf enum <code>USAGE_BASED = 10;</code>
+     */
+    const USAGE_BASED = 10;
 
     private static $valueToName = [
         self::UNKNOWN_RECURRENCE => 'UNKNOWN_RECURRENCE',
         self::ONETIME => 'ONETIME',
         self::MONTHLY => 'MONTHLY',
         self::YEARLY => 'YEARLY',
+        self::USAGE_BASED => 'USAGE_BASED',
     ];
 
     public static function name($value)

@@ -23,9 +23,13 @@ class Subscription extends \Google\Protobuf\Internal\Message
      */
     protected $seats = 0;
     /**
-     * Generated from protobuf field <code>bool usage_based = 3;</code>
+     * Generated from protobuf field <code>uint32 usage = 3;</code>
      */
-    protected $usage_based = false;
+    protected $usage = 0;
+    /**
+     * Generated from protobuf field <code>bool usage_based_billing = 5;</code>
+     */
+    protected $usage_based_billing = false;
     /**
      * Generated from protobuf field <code>.eolymp.universe.Quota quota = 10;</code>
      */
@@ -55,7 +59,8 @@ class Subscription extends \Google\Protobuf\Internal\Message
      *
      *     @type string $plan
      *     @type int $seats
-     *     @type bool $usage_based
+     *     @type int $usage
+     *     @type bool $usage_based_billing
      *     @type \Eolymp\Universe\Quota $quota
      *     @type \Google\Protobuf\Timestamp $billing_period_start
      *     @type \Google\Protobuf\Timestamp $billing_period_end
@@ -113,23 +118,45 @@ class Subscription extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool usage_based = 3;</code>
-     * @return bool
+     * Generated from protobuf field <code>uint32 usage = 3;</code>
+     * @return int
      */
-    public function getUsageBased()
+    public function getUsage()
     {
-        return $this->usage_based;
+        return $this->usage;
     }
 
     /**
-     * Generated from protobuf field <code>bool usage_based = 3;</code>
+     * Generated from protobuf field <code>uint32 usage = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool usage_based_billing = 5;</code>
+     * @return bool
+     */
+    public function getUsageBasedBilling()
+    {
+        return $this->usage_based_billing;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool usage_based_billing = 5;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUsageBased($var)
+    public function setUsageBasedBilling($var)
     {
         GPBUtil::checkBool($var);
-        $this->usage_based = $var;
+        $this->usage_based_billing = $var;
 
         return $this;
     }
