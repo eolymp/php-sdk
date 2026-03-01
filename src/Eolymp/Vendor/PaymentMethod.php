@@ -44,6 +44,7 @@ class PaymentMethod extends \Google\Protobuf\Internal\Message
      *     @type string $country
      *     @type \Eolymp\Vendor\PaymentMethod\TransferSEPA $sepa_transfer
      *     @type \Eolymp\Vendor\PaymentMethod\TransferSWIFT $swift_transfer
+     *     @type \Eolymp\Vendor\PaymentMethod\TransferCrypto $crypto_transfer
      * }
      */
     public function __construct($data = NULL) {
@@ -189,6 +190,33 @@ class PaymentMethod extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Vendor\PaymentMethod\TransferSWIFT::class);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.vendor.PaymentMethod.TransferCrypto crypto_transfer = 103;</code>
+     * @return \Eolymp\Vendor\PaymentMethod\TransferCrypto|null
+     */
+    public function getCryptoTransfer()
+    {
+        return $this->readOneof(103);
+    }
+
+    public function hasCryptoTransfer()
+    {
+        return $this->hasOneof(103);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.vendor.PaymentMethod.TransferCrypto crypto_transfer = 103;</code>
+     * @param \Eolymp\Vendor\PaymentMethod\TransferCrypto $var
+     * @return $this
+     */
+    public function setCryptoTransfer($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Vendor\PaymentMethod\TransferCrypto::class);
+        $this->writeOneof(103, $var);
 
         return $this;
     }
