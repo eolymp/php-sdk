@@ -46,6 +46,7 @@ class PaymentMethod extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Vendor\PaymentMethod\TransferSWIFT $swift_transfer
      *     @type \Eolymp\Vendor\PaymentMethod\TransferCrypto $crypto_transfer
      *     @type \Eolymp\Vendor\PaymentMethod\TransferNEFT $neft_transfer
+     *     @type \Eolymp\Vendor\PaymentMethod\TransferACH $ach_transfer
      * }
      */
     public function __construct($data = NULL) {
@@ -245,6 +246,33 @@ class PaymentMethod extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Vendor\PaymentMethod\TransferNEFT::class);
         $this->writeOneof(104, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.vendor.PaymentMethod.TransferACH ach_transfer = 105;</code>
+     * @return \Eolymp\Vendor\PaymentMethod\TransferACH|null
+     */
+    public function getAchTransfer()
+    {
+        return $this->readOneof(105);
+    }
+
+    public function hasAchTransfer()
+    {
+        return $this->hasOneof(105);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.vendor.PaymentMethod.TransferACH ach_transfer = 105;</code>
+     * @param \Eolymp\Vendor\PaymentMethod\TransferACH $var
+     * @return $this
+     */
+    public function setAchTransfer($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Vendor\PaymentMethod\TransferACH::class);
+        $this->writeOneof(105, $var);
 
         return $this;
     }
