@@ -29,23 +29,30 @@ class Status
      */
     const REVIEW = 2;
     /**
-     * submitted, approved
+     * submitted, approved (pending agreement signature)
      *
-     * Generated from protobuf enum <code>APPROVED = 3;</code>
+     * Generated from protobuf enum <code>APPROVED = 4;</code>
      */
-    const APPROVED = 3;
+    const APPROVED = 4;
+    /**
+     * submitted, approved and activated
+     *
+     * Generated from protobuf enum <code>ACTIVE = 6;</code>
+     */
+    const ACTIVE = 6;
     /**
      * submitted. rejected
      *
-     * Generated from protobuf enum <code>REJECTED = 4;</code>
+     * Generated from protobuf enum <code>REJECTED = 5;</code>
      */
-    const REJECTED = 4;
+    const REJECTED = 5;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
         self::DRAFT => 'DRAFT',
         self::REVIEW => 'REVIEW',
         self::APPROVED => 'APPROVED',
+        self::ACTIVE => 'ACTIVE',
         self::REJECTED => 'REJECTED',
     ];
 
