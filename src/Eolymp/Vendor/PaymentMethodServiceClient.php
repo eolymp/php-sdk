@@ -30,7 +30,10 @@ class PaymentMethodServiceClient {
      */
     public function CreatePaymentMethod(CreatePaymentMethodInput $input, array $context = [])
     {
-        $path = "/vendor/payment-methods";
+        $path = "/vendors/".rawurlencode($input->getVendorId())."/payment-methods";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setVendorId("");
 
         $context['name'] = "eolymp.vendor.PaymentMethodService/CreatePaymentMethod";
         $context['path'] = $path;
@@ -46,9 +49,10 @@ class PaymentMethodServiceClient {
      */
     public function UpdatePaymentMethod(UpdatePaymentMethodInput $input, array $context = [])
     {
-        $path = "/vendor/payment-methods/".rawurlencode($input->getMethodId());
+        $path = "/vendors/".rawurlencode($input->getVendorId())."/payment-methods/".rawurlencode($input->getMethodId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setVendorId("");
         $input->setMethodId("");
 
         $context['name'] = "eolymp.vendor.PaymentMethodService/UpdatePaymentMethod";
@@ -65,9 +69,10 @@ class PaymentMethodServiceClient {
      */
     public function DeletePaymentMethod(DeletePaymentMethodInput $input, array $context = [])
     {
-        $path = "/vendor/payment-methods/".rawurlencode($input->getMethodId());
+        $path = "/vendors/".rawurlencode($input->getVendorId())."/payment-methods/".rawurlencode($input->getMethodId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setVendorId("");
         $input->setMethodId("");
 
         $context['name'] = "eolymp.vendor.PaymentMethodService/DeletePaymentMethod";
@@ -84,9 +89,10 @@ class PaymentMethodServiceClient {
      */
     public function DescribePaymentMethod(DescribePaymentMethodInput $input, array $context = [])
     {
-        $path = "/vendor/payment-methods/".rawurlencode($input->getMethodId());
+        $path = "/vendors/".rawurlencode($input->getVendorId())."/payment-methods/".rawurlencode($input->getMethodId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setVendorId("");
         $input->setMethodId("");
 
         $context['name'] = "eolymp.vendor.PaymentMethodService/DescribePaymentMethod";
@@ -103,7 +109,10 @@ class PaymentMethodServiceClient {
      */
     public function ListPaymentMethods(ListPaymentMethodsInput $input, array $context = [])
     {
-        $path = "/vendor/payment-methods";
+        $path = "/vendors/".rawurlencode($input->getVendorId())."/payment-methods";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setVendorId("");
 
         $context['name'] = "eolymp.vendor.PaymentMethodService/ListPaymentMethods";
         $context['path'] = $path;

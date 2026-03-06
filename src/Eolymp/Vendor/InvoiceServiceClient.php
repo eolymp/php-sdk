@@ -30,7 +30,7 @@ class InvoiceServiceClient {
      */
     public function ListInvoices(ListInvoicesInput $input, array $context = [])
     {
-        $path = "/vendor/invoices";
+        $path = "/vendor-invoices";
 
         $context['name'] = "eolymp.vendor.InvoiceService/ListInvoices";
         $context['path'] = $path;
@@ -46,7 +46,7 @@ class InvoiceServiceClient {
      */
     public function DescribeInvoice(DescribeInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId());
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");
@@ -65,7 +65,7 @@ class InvoiceServiceClient {
      */
     public function CreateInvoice(CreateInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices";
+        $path = "/vendor-invoices";
 
         $context['name'] = "eolymp.vendor.InvoiceService/CreateInvoice";
         $context['path'] = $path;
@@ -81,7 +81,7 @@ class InvoiceServiceClient {
      */
     public function UpdateInvoice(UpdateInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId());
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");
@@ -100,7 +100,7 @@ class InvoiceServiceClient {
      */
     public function DeleteInvoice(DeleteInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId());
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId());
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");
@@ -119,7 +119,7 @@ class InvoiceServiceClient {
      */
     public function UploadInvoiceDocument(UploadInvoiceDocumentInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId())."/document";
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId())."/document";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");
@@ -138,7 +138,7 @@ class InvoiceServiceClient {
      */
     public function SubmitInvoice(SubmitInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId())."/submit";
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId())."/submit";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");
@@ -157,7 +157,7 @@ class InvoiceServiceClient {
      */
     public function ApproveInvoice(ApproveInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId())."/approve";
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId())."/approve";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");
@@ -176,7 +176,7 @@ class InvoiceServiceClient {
      */
     public function RejectInvoice(RejectInvoiceInput $input, array $context = [])
     {
-        $path = "/vendor/invoices/".rawurlencode($input->getInvoiceId())."/reject";
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId())."/reject";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setInvoiceId("");

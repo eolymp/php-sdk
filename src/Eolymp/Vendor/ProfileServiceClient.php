@@ -30,7 +30,7 @@ class ProfileServiceClient {
      */
     public function DescribeProfile(DescribeProfileInput $input, array $context = [])
     {
-        $path = "/vendor/profiles";
+        $path = "/vendor-profile";
 
         $context['name'] = "eolymp.vendor.ProfileService/DescribeProfile";
         $context['path'] = $path;
@@ -46,7 +46,7 @@ class ProfileServiceClient {
      */
     public function UpdateProfile(UpdateProfileInput $input, array $context = [])
     {
-        $path = "/vendor/profiles";
+        $path = "/vendor-profile";
 
         $context['name'] = "eolymp.vendor.ProfileService/UpdateProfile";
         $context['path'] = $path;
@@ -62,7 +62,7 @@ class ProfileServiceClient {
      */
     public function SubmitProfile(SubmitProfileInput $input, array $context = [])
     {
-        $path = "/vendor/profiles:submit";
+        $path = "/vendor-profile:submit";
 
         $context['name'] = "eolymp.vendor.ProfileService/SubmitProfile";
         $context['path'] = $path;
