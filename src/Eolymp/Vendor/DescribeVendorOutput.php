@@ -15,9 +15,9 @@ use Google\Protobuf\RepeatedField;
 class DescribeVendorOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 1;</code>
+     * Generated from protobuf field <code>.eolymp.vendor.Vendor vendor = 1;</code>
      */
-    protected $profile = null;
+    protected $vendor = null;
 
     /**
      * Constructor.
@@ -25,7 +25,7 @@ class DescribeVendorOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Vendor\Profile $profile
+     *     @type \Eolymp\Vendor\Vendor $vendor
      * }
      */
     public function __construct($data = NULL) {
@@ -34,33 +34,33 @@ class DescribeVendorOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 1;</code>
-     * @return \Eolymp\Vendor\Profile|null
+     * Generated from protobuf field <code>.eolymp.vendor.Vendor vendor = 1;</code>
+     * @return \Eolymp\Vendor\Vendor|null
      */
-    public function getProfile()
+    public function getVendor()
     {
-        return $this->profile;
+        return $this->vendor;
     }
 
-    public function hasProfile()
+    public function hasVendor()
     {
-        return isset($this->profile);
+        return isset($this->vendor);
     }
 
-    public function clearProfile()
+    public function clearVendor()
     {
-        unset($this->profile);
+        unset($this->vendor);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 1;</code>
-     * @param \Eolymp\Vendor\Profile $var
+     * Generated from protobuf field <code>.eolymp.vendor.Vendor vendor = 1;</code>
+     * @param \Eolymp\Vendor\Vendor $var
      * @return $this
      */
-    public function setProfile($var)
+    public function setVendor($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Vendor\Profile::class);
-        $this->profile = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Vendor\Vendor::class);
+        $this->vendor = $var;
 
         return $this;
     }

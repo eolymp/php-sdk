@@ -15,6 +15,10 @@ use Google\Protobuf\RepeatedField;
 class UpdatePaymentMethodInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string vendor_id = 3;</code>
+     */
+    protected $vendor_id = '';
+    /**
      * Generated from protobuf field <code>string method_id = 1;</code>
      */
     protected $method_id = '';
@@ -29,6 +33,7 @@ class UpdatePaymentMethodInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $vendor_id
      *     @type string $method_id
      *     @type \Eolymp\Vendor\PaymentMethod $method
      * }
@@ -36,6 +41,28 @@ class UpdatePaymentMethodInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Vendor\PaymentMethodService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string vendor_id = 3;</code>
+     * @return string
+     */
+    public function getVendorId()
+    {
+        return $this->vendor_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string vendor_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVendorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->vendor_id = $var;
+
+        return $this;
     }
 
     /**

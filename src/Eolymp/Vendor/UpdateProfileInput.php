@@ -15,11 +15,11 @@ use Google\Protobuf\RepeatedField;
 class UpdateProfileInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile.Patch.Field patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Vendor.Patch.Field patch = 1;</code>
      */
     private $patch;
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 2;</code>
+     * Generated from protobuf field <code>.eolymp.vendor.Vendor profile = 2;</code>
      */
     protected $profile = null;
 
@@ -30,7 +30,7 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int[] $patch
-     *     @type \Eolymp\Vendor\Profile $profile
+     *     @type \Eolymp\Vendor\Vendor $profile
      * }
      */
     public function __construct($data = NULL) {
@@ -39,7 +39,7 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile.Patch.Field patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Vendor.Patch.Field patch = 1;</code>
      * @return RepeatedField<int>
      */
     public function getPatch()
@@ -48,21 +48,21 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile.Patch.Field patch = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Vendor.Patch.Field patch = 1;</code>
      * @param int[] $var
      * @return $this
      */
     public function setPatch($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Vendor\Profile\Patch\Field::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Vendor\Vendor\Patch\Field::class);
         $this->patch = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 2;</code>
-     * @return \Eolymp\Vendor\Profile|null
+     * Generated from protobuf field <code>.eolymp.vendor.Vendor profile = 2;</code>
+     * @return \Eolymp\Vendor\Vendor|null
      */
     public function getProfile()
     {
@@ -80,13 +80,13 @@ class UpdateProfileInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Profile profile = 2;</code>
-     * @param \Eolymp\Vendor\Profile $var
+     * Generated from protobuf field <code>.eolymp.vendor.Vendor profile = 2;</code>
+     * @param \Eolymp\Vendor\Vendor $var
      * @return $this
      */
     public function setProfile($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Vendor\Profile::class);
+        GPBUtil::checkMessage($var, \Eolymp\Vendor\Vendor::class);
         $this->profile = $var;
 
         return $this;

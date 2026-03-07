@@ -19,7 +19,7 @@ class ListVendorsOutput extends \Google\Protobuf\Internal\Message
      */
     protected $total = 0;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile items = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Vendor items = 2;</code>
      */
     private $items;
 
@@ -30,7 +30,7 @@ class ListVendorsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $total
-     *     @type \Eolymp\Vendor\Profile[] $items
+     *     @type \Eolymp\Vendor\Vendor[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -61,8 +61,8 @@ class ListVendorsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile items = 2;</code>
-     * @return RepeatedField<\Eolymp\Vendor\Profile>
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Vendor items = 2;</code>
+     * @return RepeatedField<\Eolymp\Vendor\Vendor>
      */
     public function getItems()
     {
@@ -70,13 +70,13 @@ class ListVendorsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Profile items = 2;</code>
-     * @param \Eolymp\Vendor\Profile[] $var
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Vendor items = 2;</code>
+     * @param \Eolymp\Vendor\Vendor[] $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Vendor\Profile::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Vendor\Vendor::class);
         $this->items = $arr;
 
         return $this;
