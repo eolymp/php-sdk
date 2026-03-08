@@ -15,21 +15,33 @@ use Google\Protobuf\RepeatedField;
 class SignonRequestInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.auth.LinkedAccount.Type type = 1;</code>
+     * SSO provider
+     *
+     * Generated from protobuf field <code>string provider_id = 3;</code>
+     */
+    protected $provider_id = '';
+    /**
+     * oauth2 client id
+     *
+     * Generated from protobuf field <code>string client_id = 4;</code>
+     */
+    protected $client_id = '';
+    /**
+     * redirect uri
+     *
+     * Generated from protobuf field <code>string redirect_uri = 2;</code>
+     */
+    protected $redirect_uri = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.LinkedAccount.Type type = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $type = 0;
     /**
-     * Generated from protobuf field <code>string callback_uri = 2;</code>
+     * Generated from protobuf field <code>string callback_uri = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $callback_uri = '';
-    /**
-     * Generated from protobuf field <code>string code_challenge = 3;</code>
-     */
-    protected $code_challenge = '';
-    /**
-     * Generated from protobuf field <code>string code_challenge_method = 4;</code>
-     */
-    protected $code_challenge_method = '';
 
     /**
      * Constructor.
@@ -37,10 +49,14 @@ class SignonRequestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $provider_id
+     *           SSO provider
+     *     @type string $client_id
+     *           oauth2 client id
+     *     @type string $redirect_uri
+     *           redirect uri
      *     @type int $type
      *     @type string $callback_uri
-     *     @type string $code_challenge
-     *     @type string $code_challenge_method
      * }
      */
     public function __construct($data = NULL) {
@@ -49,21 +65,105 @@ class SignonRequestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.LinkedAccount.Type type = 1;</code>
+     * SSO provider
+     *
+     * Generated from protobuf field <code>string provider_id = 3;</code>
+     * @return string
+     */
+    public function getProviderId()
+    {
+        return $this->provider_id;
+    }
+
+    /**
+     * SSO provider
+     *
+     * Generated from protobuf field <code>string provider_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProviderId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->provider_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * oauth2 client id
+     *
+     * Generated from protobuf field <code>string client_id = 4;</code>
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->client_id;
+    }
+
+    /**
+     * oauth2 client id
+     *
+     * Generated from protobuf field <code>string client_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->client_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * redirect uri
+     *
+     * Generated from protobuf field <code>string redirect_uri = 2;</code>
+     * @return string
+     */
+    public function getRedirectUri()
+    {
+        return $this->redirect_uri;
+    }
+
+    /**
+     * redirect uri
+     *
+     * Generated from protobuf field <code>string redirect_uri = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRedirectUri($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->redirect_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.auth.LinkedAccount.Type type = 1 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getType()
     {
+        if ($this->type !== 0) {
+            @trigger_error('type is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->type;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.LinkedAccount.Type type = 1;</code>
+     * Generated from protobuf field <code>.eolymp.auth.LinkedAccount.Type type = 1 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setType($var)
     {
+        @trigger_error('type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Eolymp\Auth\LinkedAccount\Type::class);
         $this->type = $var;
 
@@ -71,67 +171,29 @@ class SignonRequestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string callback_uri = 2;</code>
+     * Generated from protobuf field <code>string callback_uri = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getCallbackUri()
     {
+        if ($this->callback_uri !== '') {
+            @trigger_error('callback_uri is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->callback_uri;
     }
 
     /**
-     * Generated from protobuf field <code>string callback_uri = 2;</code>
+     * Generated from protobuf field <code>string callback_uri = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setCallbackUri($var)
     {
+        @trigger_error('callback_uri is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->callback_uri = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code_challenge = 3;</code>
-     * @return string
-     */
-    public function getCodeChallenge()
-    {
-        return $this->code_challenge;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code_challenge = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCodeChallenge($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->code_challenge = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code_challenge_method = 4;</code>
-     * @return string
-     */
-    public function getCodeChallengeMethod()
-    {
-        return $this->code_challenge_method;
-    }
-
-    /**
-     * Generated from protobuf field <code>string code_challenge_method = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCodeChallengeMethod($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->code_challenge_method = $var;
 
         return $this;
     }

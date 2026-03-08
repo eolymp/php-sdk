@@ -15,17 +15,25 @@ use Google\Protobuf\RepeatedField;
 class SignonExchangeInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string state = 2;</code>
-     */
-    protected $state = '';
-    /**
      * Generated from protobuf field <code>string code = 1;</code>
      */
     protected $code = '';
     /**
-     * Generated from protobuf field <code>string code_verifier = 3;</code>
+     * Generated from protobuf field <code>string state = 2;</code>
      */
-    protected $code_verifier = '';
+    protected $state = '';
+    /**
+     * oauth2 client id
+     *
+     * Generated from protobuf field <code>string client_id = 3;</code>
+     */
+    protected $client_id = '';
+    /**
+     * oauth2 client secret
+     *
+     * Generated from protobuf field <code>string client_secret = 4;</code>
+     */
+    protected $client_secret = '';
 
     /**
      * Constructor.
@@ -33,36 +41,17 @@ class SignonExchangeInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $state
      *     @type string $code
-     *     @type string $code_verifier
+     *     @type string $state
+     *     @type string $client_id
+     *           oauth2 client id
+     *     @type string $client_secret
+     *           oauth2 client secret
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Auth\SsoService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string state = 2;</code>
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->state;
-    }
-
-    /**
-     * Generated from protobuf field <code>string state = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setState($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->state = $var;
-
-        return $this;
     }
 
     /**
@@ -88,23 +77,75 @@ class SignonExchangeInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string code_verifier = 3;</code>
+     * Generated from protobuf field <code>string state = 2;</code>
      * @return string
      */
-    public function getCodeVerifier()
+    public function getState()
     {
-        return $this->code_verifier;
+        return $this->state;
     }
 
     /**
-     * Generated from protobuf field <code>string code_verifier = 3;</code>
+     * Generated from protobuf field <code>string state = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setCodeVerifier($var)
+    public function setState($var)
     {
         GPBUtil::checkString($var, True);
-        $this->code_verifier = $var;
+        $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * oauth2 client id
+     *
+     * Generated from protobuf field <code>string client_id = 3;</code>
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->client_id;
+    }
+
+    /**
+     * oauth2 client id
+     *
+     * Generated from protobuf field <code>string client_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->client_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * oauth2 client secret
+     *
+     * Generated from protobuf field <code>string client_secret = 4;</code>
+     * @return string
+     */
+    public function getClientSecret()
+    {
+        return $this->client_secret;
+    }
+
+    /**
+     * oauth2 client secret
+     *
+     * Generated from protobuf field <code>string client_secret = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setClientSecret($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->client_secret = $var;
 
         return $this;
     }
