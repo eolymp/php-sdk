@@ -22,6 +22,14 @@ class SignonRequestInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string callback_uri = 2;</code>
      */
     protected $callback_uri = '';
+    /**
+     * Generated from protobuf field <code>string code_challenge = 3;</code>
+     */
+    protected $code_challenge = '';
+    /**
+     * Generated from protobuf field <code>string code_challenge_method = 4;</code>
+     */
+    protected $code_challenge_method = '';
 
     /**
      * Constructor.
@@ -31,6 +39,8 @@ class SignonRequestInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $type
      *     @type string $callback_uri
+     *     @type string $code_challenge
+     *     @type string $code_challenge_method
      * }
      */
     public function __construct($data = NULL) {
@@ -78,6 +88,50 @@ class SignonRequestInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->callback_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code_challenge = 3;</code>
+     * @return string
+     */
+    public function getCodeChallenge()
+    {
+        return $this->code_challenge;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code_challenge = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCodeChallenge($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code_challenge = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code_challenge_method = 4;</code>
+     * @return string
+     */
+    public function getCodeChallengeMethod()
+    {
+        return $this->code_challenge_method;
+    }
+
+    /**
+     * Generated from protobuf field <code>string code_challenge_method = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCodeChallengeMethod($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code_challenge_method = $var;
 
         return $this;
     }

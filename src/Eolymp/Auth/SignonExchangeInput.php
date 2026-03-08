@@ -15,13 +15,17 @@ use Google\Protobuf\RepeatedField;
 class SignonExchangeInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     */
+    protected $state = '';
+    /**
      * Generated from protobuf field <code>string code = 1;</code>
      */
     protected $code = '';
     /**
-     * Generated from protobuf field <code>string state = 2;</code>
+     * Generated from protobuf field <code>string code_verifier = 3;</code>
      */
-    protected $state = '';
+    protected $code_verifier = '';
 
     /**
      * Constructor.
@@ -29,13 +33,36 @@ class SignonExchangeInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $code
      *     @type string $state
+     *     @type string $code
+     *     @type string $code_verifier
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Auth\SsoService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
+
+        return $this;
     }
 
     /**
@@ -61,23 +88,23 @@ class SignonExchangeInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string state = 2;</code>
+     * Generated from protobuf field <code>string code_verifier = 3;</code>
      * @return string
      */
-    public function getState()
+    public function getCodeVerifier()
     {
-        return $this->state;
+        return $this->code_verifier;
     }
 
     /**
-     * Generated from protobuf field <code>string state = 2;</code>
+     * Generated from protobuf field <code>string code_verifier = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setState($var)
+    public function setCodeVerifier($var)
     {
         GPBUtil::checkString($var, True);
-        $this->state = $var;
+        $this->code_verifier = $var;
 
         return $this;
     }
