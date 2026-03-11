@@ -55,17 +55,17 @@ class Invoice extends \Google\Protobuf\Internal\Message
      */
     private $lines;
     /**
-     * Generated from protobuf field <code>int32 subtotal_amount = 6;</code>
+     * Generated from protobuf field <code>float subtotal_amount = 6;</code>
      */
-    protected $subtotal_amount = 0;
+    protected $subtotal_amount = 0.0;
     /**
-     * Generated from protobuf field <code>int32 tax_amount = 7;</code>
+     * Generated from protobuf field <code>float tax_amount = 7;</code>
      */
-    protected $tax_amount = 0;
+    protected $tax_amount = 0.0;
     /**
-     * Generated from protobuf field <code>int32 grand_total = 8;</code>
+     * Generated from protobuf field <code>float grand_total = 8;</code>
      */
-    protected $grand_total = 0;
+    protected $grand_total = 0.0;
     /**
      * Generated from protobuf field <code>string document_url = 9;</code>
      */
@@ -95,9 +95,9 @@ class Invoice extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $invoice_date
      *     @type \Google\Protobuf\Timestamp $due_date
      *     @type \Eolymp\Vendor\Invoice\Line[] $lines
-     *     @type int $subtotal_amount
-     *     @type int $tax_amount
-     *     @type int $grand_total
+     *     @type float $subtotal_amount
+     *     @type float $tax_amount
+     *     @type float $grand_total
      *     @type string $document_url
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
@@ -349,8 +349,8 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 subtotal_amount = 6;</code>
-     * @return int
+     * Generated from protobuf field <code>float subtotal_amount = 6;</code>
+     * @return float
      */
     public function getSubtotalAmount()
     {
@@ -358,21 +358,21 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 subtotal_amount = 6;</code>
-     * @param int $var
+     * Generated from protobuf field <code>float subtotal_amount = 6;</code>
+     * @param float $var
      * @return $this
      */
     public function setSubtotalAmount($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkFloat($var);
         $this->subtotal_amount = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 tax_amount = 7;</code>
-     * @return int
+     * Generated from protobuf field <code>float tax_amount = 7;</code>
+     * @return float
      */
     public function getTaxAmount()
     {
@@ -380,21 +380,21 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 tax_amount = 7;</code>
-     * @param int $var
+     * Generated from protobuf field <code>float tax_amount = 7;</code>
+     * @param float $var
      * @return $this
      */
     public function setTaxAmount($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkFloat($var);
         $this->tax_amount = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 grand_total = 8;</code>
-     * @return int
+     * Generated from protobuf field <code>float grand_total = 8;</code>
+     * @return float
      */
     public function getGrandTotal()
     {
@@ -402,13 +402,13 @@ class Invoice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 grand_total = 8;</code>
-     * @param int $var
+     * Generated from protobuf field <code>float grand_total = 8;</code>
+     * @param float $var
      * @return $this
      */
     public function setGrandTotal($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkFloat($var);
         $this->grand_total = $var;
 
         return $this;

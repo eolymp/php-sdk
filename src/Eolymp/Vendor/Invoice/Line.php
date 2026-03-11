@@ -27,9 +27,9 @@ class Line extends \Google\Protobuf\Internal\Message
      */
     protected $summary = '';
     /**
-     * Generated from protobuf field <code>int32 total_price = 4;</code>
+     * Generated from protobuf field <code>float total_price = 4;</code>
      */
-    protected $total_price = 0;
+    protected $total_price = 0.0;
 
     /**
      * Constructor.
@@ -40,7 +40,7 @@ class Line extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type string $name
      *     @type string $summary
-     *     @type int $total_price
+     *     @type float $total_price
      * }
      */
     public function __construct($data = NULL) {
@@ -115,8 +115,8 @@ class Line extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 total_price = 4;</code>
-     * @return int
+     * Generated from protobuf field <code>float total_price = 4;</code>
+     * @return float
      */
     public function getTotalPrice()
     {
@@ -124,13 +124,13 @@ class Line extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 total_price = 4;</code>
-     * @param int $var
+     * Generated from protobuf field <code>float total_price = 4;</code>
+     * @param float $var
      * @return $this
      */
     public function setTotalPrice($var)
     {
-        GPBUtil::checkInt32($var);
+        GPBUtil::checkFloat($var);
         $this->total_price = $var;
 
         return $this;
