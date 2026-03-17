@@ -47,6 +47,7 @@ class PaymentMethod extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Vendor\PaymentMethod\TransferCrypto $crypto_transfer
      *     @type \Eolymp\Vendor\PaymentMethod\TransferNEFT $neft_transfer
      *     @type \Eolymp\Vendor\PaymentMethod\TransferACH $ach_transfer
+     *     @type \Eolymp\Vendor\PaymentMethod\TransferPayPal $paypal_transfer
      * }
      */
     public function __construct($data = NULL) {
@@ -273,6 +274,33 @@ class PaymentMethod extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Vendor\PaymentMethod\TransferACH::class);
         $this->writeOneof(105, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.vendor.PaymentMethod.TransferPayPal paypal_transfer = 106;</code>
+     * @return \Eolymp\Vendor\PaymentMethod\TransferPayPal|null
+     */
+    public function getPaypalTransfer()
+    {
+        return $this->readOneof(106);
+    }
+
+    public function hasPaypalTransfer()
+    {
+        return $this->hasOneof(106);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.vendor.PaymentMethod.TransferPayPal paypal_transfer = 106;</code>
+     * @param \Eolymp\Vendor\PaymentMethod\TransferPayPal $var
+     * @return $this
+     */
+    public function setPaypalTransfer($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Vendor\PaymentMethod\TransferPayPal::class);
+        $this->writeOneof(106, $var);
 
         return $this;
     }
