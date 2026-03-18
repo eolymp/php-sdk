@@ -27,9 +27,9 @@ class Issue extends \Google\Protobuf\Internal\Message
      */
     protected $description = null;
     /**
-     * Generated from protobuf field <code>string member_id = 5;</code>
+     * Generated from protobuf field <code>string user_id = 5;</code>
      */
-    protected $member_id = '';
+    protected $user_id = '';
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
      */
@@ -48,7 +48,7 @@ class Issue extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $status
      *     @type \Eolymp\Ecm\Content $description
-     *     @type string $member_id
+     *     @type string $user_id
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      * }
@@ -135,23 +135,23 @@ class Issue extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 5;</code>
+     * Generated from protobuf field <code>string user_id = 5;</code>
      * @return string
      */
-    public function getMemberId()
+    public function getUserId()
     {
-        return $this->member_id;
+        return $this->user_id;
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 5;</code>
+     * Generated from protobuf field <code>string user_id = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setMemberId($var)
+    public function setUserId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->member_id = $var;
+        $this->user_id = $var;
 
         return $this;
     }

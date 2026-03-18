@@ -17,12 +17,17 @@ class Sortable
      */
     const PBDEFAULT = 0;
     /**
-     * Generated from protobuf enum <code>UPDATED_AT = 1;</code>
+     * Generated from protobuf enum <code>CREATED_AT = 1;</code>
      */
-    const UPDATED_AT = 1;
+    const CREATED_AT = 1;
+    /**
+     * Generated from protobuf enum <code>UPDATED_AT = 2;</code>
+     */
+    const UPDATED_AT = 2;
 
     private static $valueToName = [
         self::PBDEFAULT => 'DEFAULT',
+        self::CREATED_AT => 'CREATED_AT',
         self::UPDATED_AT => 'UPDATED_AT',
     ];
 
