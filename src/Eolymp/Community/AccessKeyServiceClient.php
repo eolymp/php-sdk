@@ -41,6 +41,27 @@ class AccessKeyServiceClient {
     }
 
     /**
+     * Update API key name and scopes.
+     *
+     * @param UpdateAccessKeyInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateAccessKeyOutput output message
+     */
+    public function UpdateAccessKey(UpdateAccessKeyInput $input, array $context = [])
+    {
+        $path = "/access-keys/".rawurlencode($input->getKeyId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setKeyId("");
+
+        $context['name'] = "eolymp.community.AccessKeyService/UpdateAccessKey";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateAccessKeyOutput::class, $context);
+    }
+
+    /**
      * Delete API key.
      *
      * @param DeleteAccessKeyInput $input message
