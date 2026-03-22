@@ -22,6 +22,10 @@ class DescribeTranslationInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string translation_id = 2;</code>
      */
     protected $translation_id = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
+     */
+    private $extra;
 
     /**
      * Constructor.
@@ -31,6 +35,7 @@ class DescribeTranslationInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $newsletter_id
      *     @type string $translation_id
+     *     @type int[] $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -78,6 +83,28 @@ class DescribeTranslationInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->translation_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
+     * @return RepeatedField<int>
+     */
+    public function getExtra()
+    {
+        return $this->extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\Newsletter\Extra\Field::class);
+        $this->extra = $arr;
 
         return $this;
     }
