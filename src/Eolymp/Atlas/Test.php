@@ -69,18 +69,6 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $score = 0.0;
     /**
-     * Optionally, override input data for example in statement
-     *
-     * Generated from protobuf field <code>string example_input_url = 40;</code>
-     */
-    protected $example_input_url = '';
-    /**
-     * Optionally, override answer data for example in statement
-     *
-     * Generated from protobuf field <code>string example_answer_url = 41;</code>
-     */
-    protected $example_answer_url = '';
-    /**
      * Generated input data
      *
      * Generated from protobuf field <code>string generated_input_url = 50;</code>
@@ -94,6 +82,8 @@ class Test extends \Google\Protobuf\Internal\Message
     protected $generated_answer_url = '';
     protected $input;
     protected $answer;
+    protected $example_input;
+    protected $example_answer;
 
     /**
      * Constructor.
@@ -118,18 +108,20 @@ class Test extends \Google\Protobuf\Internal\Message
      *           Secret test, input and answer are never populated
      *     @type float $score
      *           Score for passing this test
-     *     @type string $example_input_url
-     *           Optionally, override input data for example in statement
-     *     @type string $example_answer_url
-     *           Optionally, override answer data for example in statement
      *     @type string $generated_input_url
      *           Generated input data
      *     @type string $generated_answer_url
      *           Generated answer data
      *     @type string $input_url
+     *     @type string $input_content
      *     @type \Eolymp\Atlas\Test\Generator $input_generator
      *     @type string $answer_url
+     *     @type string $answer_content
      *     @type \Eolymp\Atlas\Test\Generator $answer_generator
+     *     @type string $example_input_url
+     *     @type string $example_input_content
+     *     @type string $example_answer_url
+     *     @type string $example_answer_content
      * }
      */
     public function __construct($data = NULL) {
@@ -386,58 +378,6 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optionally, override input data for example in statement
-     *
-     * Generated from protobuf field <code>string example_input_url = 40;</code>
-     * @return string
-     */
-    public function getExampleInputUrl()
-    {
-        return $this->example_input_url;
-    }
-
-    /**
-     * Optionally, override input data for example in statement
-     *
-     * Generated from protobuf field <code>string example_input_url = 40;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setExampleInputUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->example_input_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Optionally, override answer data for example in statement
-     *
-     * Generated from protobuf field <code>string example_answer_url = 41;</code>
-     * @return string
-     */
-    public function getExampleAnswerUrl()
-    {
-        return $this->example_answer_url;
-    }
-
-    /**
-     * Optionally, override answer data for example in statement
-     *
-     * Generated from protobuf field <code>string example_answer_url = 41;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setExampleAnswerUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->example_answer_url = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated input data
      *
      * Generated from protobuf field <code>string generated_input_url = 50;</code>
@@ -517,6 +457,33 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string input_content = 13;</code>
+     * @return string
+     */
+    public function getInputContent()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasInputContent()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_content = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Test.Generator input_generator = 12;</code>
      * @return \Eolymp\Atlas\Test\Generator|null
      */
@@ -571,6 +538,33 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string answer_content = 23;</code>
+     * @return string
+     */
+    public function getAnswerContent()
+    {
+        return $this->readOneof(23);
+    }
+
+    public function hasAnswerContent()
+    {
+        return $this->hasOneof(23);
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_content = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Test.Generator answer_generator = 22;</code>
      * @return \Eolymp\Atlas\Test\Generator|null
      */
@@ -598,6 +592,114 @@ class Test extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
+     * @return string
+     */
+    public function getExampleInputUrl()
+    {
+        return $this->readOneof(40);
+    }
+
+    public function hasExampleInputUrl()
+    {
+        return $this->hasOneof(40);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(40, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_content = 42;</code>
+     * @return string
+     */
+    public function getExampleInputContent()
+    {
+        return $this->readOneof(42);
+    }
+
+    public function hasExampleInputContent()
+    {
+        return $this->hasOneof(42);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_content = 42;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleInputContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
+     * @return string
+     */
+    public function getExampleAnswerUrl()
+    {
+        return $this->readOneof(41);
+    }
+
+    public function hasExampleAnswerUrl()
+    {
+        return $this->hasOneof(41);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_content = 43;</code>
+     * @return string
+     */
+    public function getExampleAnswerContent()
+    {
+        return $this->readOneof(43);
+    }
+
+    public function hasExampleAnswerContent()
+    {
+        return $this->hasOneof(43);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_content = 43;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleAnswerContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(43, $var);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getInput()
@@ -611,6 +713,22 @@ class Test extends \Google\Protobuf\Internal\Message
     public function getAnswer()
     {
         return $this->whichOneof("answer");
+    }
+
+    /**
+     * @return string
+     */
+    public function getExampleInput()
+    {
+        return $this->whichOneof("example_input");
+    }
+
+    /**
+     * @return string
+     */
+    public function getExampleAnswer()
+    {
+        return $this->whichOneof("example_answer");
     }
 
 }
