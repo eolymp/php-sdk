@@ -3,7 +3,7 @@
     "description": "PHP SDK for Eolymp API",
     "type": "library",
     "require": {
-        "google/protobuf": "^3.17"
+        "google/protobuf": "^3.17 || ^4.0"
     },
     "license": "MIT",
     "authors": [
