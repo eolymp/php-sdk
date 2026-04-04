@@ -187,4 +187,23 @@ class InvoiceServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RejectInvoiceOutput::class, $context);
     }
 
+    /**
+     * @param PayInvoiceInput $input message
+     * @param array $context request parameters
+     *
+     * @return PayInvoiceOutput output message
+     */
+    public function PayInvoice(PayInvoiceInput $input, array $context = [])
+    {
+        $path = "/vendor-invoices/".rawurlencode($input->getInvoiceId())."/pay";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setInvoiceId("");
+
+        $context['name'] = "eolymp.vendor.InvoiceService/PayInvoice";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PayInvoiceOutput::class, $context);
+    }
+
 }
