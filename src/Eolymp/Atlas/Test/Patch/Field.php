@@ -51,6 +51,10 @@ class Field
      * Generated from protobuf enum <code>EXAMPLE_ANSWER = 7;</code>
      */
     const EXAMPLE_ANSWER = 7;
+    /**
+     * Generated from protobuf enum <code>TESTSET = 10;</code>
+     */
+    const TESTSET = 10;
 
     private static $valueToName = [
         self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
@@ -63,6 +67,7 @@ class Field
         self::SECRET => 'SECRET',
         self::EXAMPLE_INPUT => 'EXAMPLE_INPUT',
         self::EXAMPLE_ANSWER => 'EXAMPLE_ANSWER',
+        self::TESTSET => 'TESTSET',
     ];
 
     public static function name($value)
