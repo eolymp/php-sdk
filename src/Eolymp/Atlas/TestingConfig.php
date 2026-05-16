@@ -25,6 +25,12 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool interactive_followup = 2;</code>
      */
     protected $interactive_followup = false;
+    /**
+     * problem type
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 3;</code>
+     */
+    protected $type = 0;
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      *           number of runs
      *     @type bool $interactive_followup
      *           use interactor in the second and subsequent runs
+     *     @type int $type
+     *           problem type
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->interactive_followup = $var;
+
+        return $this;
+    }
+
+    /**
+     * problem type
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 3;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * problem type
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
+        $this->type = $var;
 
         return $this;
     }
