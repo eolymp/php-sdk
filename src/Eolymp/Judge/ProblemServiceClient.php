@@ -272,4 +272,22 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRuntimesOutput::class, $context);
     }
 
+    /**
+     * ExportProblems generates a PDF bundle for the given problem IDs (or all problems if none specified)
+     *
+     * @param ExportProblemsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportProblemsOutput output message
+     */
+    public function ExportProblems(ExportProblemsInput $input, array $context = [])
+    {
+        $path = "/problems:export";
+
+        $context['name'] = "eolymp.judge.ProblemService/ExportProblems";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportProblemsOutput::class, $context);
+    }
+
 }
