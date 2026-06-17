@@ -31,6 +31,24 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 3;</code>
      */
     protected $type = 0;
+    /**
+     * Wall-clock time limit (ms), problem-level default
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 4;</code>
+     */
+    protected $time_limit = 0;
+    /**
+     * CPU time limit (ms), problem-level default
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 5;</code>
+     */
+    protected $cpu_limit = 0;
+    /**
+     * Memory limit (bytes), problem-level default
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 6;</code>
+     */
+    protected $memory_limit = 0;
 
     /**
      * Constructor.
@@ -44,6 +62,12 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      *           use interactor in the second and subsequent runs
      *     @type int $type
      *           problem type
+     *     @type int $time_limit
+     *           Wall-clock time limit (ms), problem-level default
+     *     @type int $cpu_limit
+     *           CPU time limit (ms), problem-level default
+     *     @type int|string $memory_limit
+     *           Memory limit (bytes), problem-level default
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +149,84 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Wall-clock time limit (ms), problem-level default
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 4;</code>
+     * @return int
+     */
+    public function getTimeLimit()
+    {
+        return $this->time_limit;
+    }
+
+    /**
+     * Wall-clock time limit (ms), problem-level default
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * CPU time limit (ms), problem-level default
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 5;</code>
+     * @return int
+     */
+    public function getCpuLimit()
+    {
+        return $this->cpu_limit;
+    }
+
+    /**
+     * CPU time limit (ms), problem-level default
+     *
+     * Generated from protobuf field <code>uint32 cpu_limit = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCpuLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->cpu_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Memory limit (bytes), problem-level default
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 6;</code>
+     * @return int|string
+     */
+    public function getMemoryLimit()
+    {
+        return $this->memory_limit;
+    }
+
+    /**
+     * Memory limit (bytes), problem-level default
+     *
+     * Generated from protobuf field <code>uint64 memory_limit = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setMemoryLimit($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->memory_limit = $var;
 
         return $this;
     }
