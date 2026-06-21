@@ -132,7 +132,7 @@ class CreditServiceClient {
      */
     public function ListCreditTransactions(ListCreditTransactionsInput $input, array $context = [])
     {
-        $path = "/credit/grants";
+        $path = "/credit/transactions";
 
         $context['name'] = "eolymp.community.CreditService/ListCreditTransactions";
         $context['path'] = $path;

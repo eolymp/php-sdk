@@ -26,7 +26,9 @@ class Transaction extends \Google\Protobuf\Internal\Message
      */
     protected $summary = '';
     /**
-     * Generated from protobuf field <code>uint32 amount = 4;</code>
+     * positive = credit/earn, negative = debit/spend/refund
+     *
+     * Generated from protobuf field <code>int32 amount = 4;</code>
      */
     protected $amount = 0;
 
@@ -40,6 +42,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type string $summary
      *     @type int $amount
+     *           positive = credit/earn, negative = debit/spend/refund
      * }
      */
     public function __construct($data = NULL) {
@@ -124,7 +127,9 @@ class Transaction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 4;</code>
+     * positive = credit/earn, negative = debit/spend/refund
+     *
+     * Generated from protobuf field <code>int32 amount = 4;</code>
      * @return int
      */
     public function getAmount()
@@ -133,13 +138,15 @@ class Transaction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 amount = 4;</code>
+     * positive = credit/earn, negative = debit/spend/refund
+     *
+     * Generated from protobuf field <code>int32 amount = 4;</code>
      * @param int $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkInt32($var);
         $this->amount = $var;
 
         return $this;
