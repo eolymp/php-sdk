@@ -120,4 +120,23 @@ class FulfillmentServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CompleteOrderOutput::class, $context);
     }
 
+    /**
+     * @param MarkReturnedOrderInput $input message
+     * @param array $context request parameters
+     *
+     * @return MarkReturnedOrderOutput output message
+     */
+    public function MarkReturnedOrder(MarkReturnedOrderInput $input, array $context = [])
+    {
+        $path = "/store/orders/".rawurlencode($input->getOrderId())."/return";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setOrderId("");
+
+        $context['name'] = "eolymp.commerce.FulfillmentService/MarkReturnedOrder";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, MarkReturnedOrderOutput::class, $context);
+    }
+
 }
