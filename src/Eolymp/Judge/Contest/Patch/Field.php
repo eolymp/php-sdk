@@ -102,6 +102,10 @@ class Field
      */
     const RESULT_NOTIFICATION = 20;
     /**
+     * Generated from protobuf enum <code>SLUG = 21;</code>
+     */
+    const SLUG = 21;
+    /**
      * Generated from protobuf enum <code>PRINTER = 15;</code>
      */
     const PRINTER = 15;
@@ -153,6 +157,7 @@ class Field
         self::FEATURED_UNTIL => 'FEATURED_UNTIL',
         self::REMINDER_NOTIFICATION => 'REMINDER_NOTIFICATION',
         self::RESULT_NOTIFICATION => 'RESULT_NOTIFICATION',
+        self::SLUG => 'SLUG',
         self::PRINTER => 'PRINTER',
         self::CLASSIFICATION => 'CLASSIFICATION',
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',

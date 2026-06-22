@@ -116,6 +116,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $display_editorials = false;
     /**
+     * URL-friendly slug for the contest. Must match [a-z][a-z0-9\-_]+. Unique within a space.
+     *
+     * Generated from protobuf field <code>string slug = 42;</code>
+     */
+    protected $slug = '';
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -266,6 +272,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Allow new participants to unofficially and virtually participate in contest after it's over
      *     @type bool $display_editorials
      *           Display problem editorials after contest ends
+     *     @type string $slug
+     *           URL-friendly slug for the contest. Must match [a-z][a-z0-9\-_]+. Unique within a space.
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
@@ -767,6 +775,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->display_editorials = $var;
+
+        return $this;
+    }
+
+    /**
+     * URL-friendly slug for the contest. Must match [a-z][a-z0-9\-_]+. Unique within a space.
+     *
+     * Generated from protobuf field <code>string slug = 42;</code>
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * URL-friendly slug for the contest. Must match [a-z][a-z0-9\-_]+. Unique within a space.
+     *
+     * Generated from protobuf field <code>string slug = 42;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSlug($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->slug = $var;
 
         return $this;
     }
