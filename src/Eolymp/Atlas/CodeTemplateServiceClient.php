@@ -127,4 +127,20 @@ class CodeTemplateServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, LookupCodeTemplateOutput::class, $context);
     }
 
+    /**
+     * @param GenerateCodeTemplatesInput $input message
+     * @param array $context request parameters
+     *
+     * @return GenerateCodeTemplatesOutput output message
+     */
+    public function GenerateCodeTemplates(GenerateCodeTemplatesInput $input, array $context = [])
+    {
+        $path = "/templates:generate";
+
+        $context['name'] = "eolymp.atlas.CodeTemplateService/GenerateCodeTemplates";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, GenerateCodeTemplatesOutput::class, $context);
+    }
+
 }
