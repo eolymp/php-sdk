@@ -39,6 +39,10 @@ class Feature
      * Generated from protobuf enum <code>TEMPLATE_GENERATOR = 6;</code>
      */
     const TEMPLATE_GENERATOR = 6;
+    /**
+     * Generated from protobuf enum <code>ACHIEVEMENTS = 7;</code>
+     */
+    const ACHIEVEMENTS = 7;
 
     private static $valueToName = [
         self::UNKNOWN_FEATURE => 'UNKNOWN_FEATURE',
@@ -48,6 +52,7 @@ class Feature
         self::MERCHANDISE_STORE => 'MERCHANDISE_STORE',
         self::RATING => 'RATING',
         self::TEMPLATE_GENERATOR => 'TEMPLATE_GENERATOR',
+        self::ACHIEVEMENTS => 'ACHIEVEMENTS',
     ];
 
     public static function name($value)
