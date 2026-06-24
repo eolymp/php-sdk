@@ -18,10 +18,15 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
      */
     protected $newsletter_id = '';
     /**
+     * Generated from protobuf field <code>.eolymp.mail.ImportRecipientInput.Filter filters = 40;</code>
+     */
+    protected $filters = null;
+    /**
+     * passed through as-is; not persisted
+     *
      * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
      */
     private $parameters;
-    protected $source;
 
     /**
      * Constructor.
@@ -30,10 +35,9 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $newsletter_id
-     *     @type bool $all_members
-     *     @type string $group_id
-     *     @type string $contest_id
+     *     @type \Eolymp\Mail\ImportRecipientInput\Filter $filters
      *     @type array|\Google\Protobuf\Internal\MapField $parameters
+     *           passed through as-is; not persisted
      * }
      */
     public function __construct($data = NULL) {
@@ -64,87 +68,40 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool all_members = 10;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.mail.ImportRecipientInput.Filter filters = 40;</code>
+     * @return \Eolymp\Mail\ImportRecipientInput\Filter|null
      */
-    public function getAllMembers()
+    public function getFilters()
     {
-        return $this->readOneof(10);
+        return $this->filters;
     }
 
-    public function hasAllMembers()
+    public function hasFilters()
     {
-        return $this->hasOneof(10);
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
     }
 
     /**
-     * Generated from protobuf field <code>bool all_members = 10;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.mail.ImportRecipientInput.Filter filters = 40;</code>
+     * @param \Eolymp\Mail\ImportRecipientInput\Filter $var
      * @return $this
      */
-    public function setAllMembers($var)
+    public function setFilters($var)
     {
-        GPBUtil::checkBool($var);
-        $this->writeOneof(10, $var);
+        GPBUtil::checkMessage($var, \Eolymp\Mail\ImportRecipientInput\Filter::class);
+        $this->filters = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string group_id = 11;</code>
-     * @return string
-     */
-    public function getGroupId()
-    {
-        return $this->readOneof(11);
-    }
-
-    public function hasGroupId()
-    {
-        return $this->hasOneof(11);
-    }
-
-    /**
-     * Generated from protobuf field <code>string group_id = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setGroupId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(11, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 12;</code>
-     * @return string
-     */
-    public function getContestId()
-    {
-        return $this->readOneof(12);
-    }
-
-    public function hasContestId()
-    {
-        return $this->hasOneof(12);
-    }
-
-    /**
-     * Generated from protobuf field <code>string contest_id = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(12, $var);
-
-        return $this;
-    }
-
-    /**
+     * passed through as-is; not persisted
+     *
      * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -154,6 +111,8 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * passed through as-is; not persisted
+     *
      * Generated from protobuf field <code>map<string, string> parameters = 20;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
@@ -164,14 +123,6 @@ class ImportRecipientInput extends \Google\Protobuf\Internal\Message
         $this->parameters = $arr;
 
         return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->whichOneof("source");
     }
 
 }
