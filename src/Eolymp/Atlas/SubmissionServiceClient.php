@@ -127,4 +127,20 @@ class SubmissionServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProblemTopOutput::class, $context);
     }
 
+    /**
+     * @param AggregateSubmissionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return AggregateSubmissionsOutput output message
+     */
+    public function AggregateSubmissions(AggregateSubmissionsInput $input, array $context = [])
+    {
+        $path = "/submissions:aggregate";
+
+        $context['name'] = "eolymp.atlas.SubmissionService/AggregateSubmissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, AggregateSubmissionsOutput::class, $context);
+    }
+
 }
