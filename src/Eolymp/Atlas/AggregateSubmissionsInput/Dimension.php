@@ -23,11 +23,16 @@ class Dimension
      * Generated from protobuf enum <code>VERDICT = 2;</code>
      */
     const VERDICT = 2;
+    /**
+     * Generated from protobuf enum <code>STATUS = 3;</code>
+     */
+    const STATUS = 3;
 
     private static $valueToName = [
         self::UNKNOWN_DIMENSION => 'UNKNOWN_DIMENSION',
         self::SUBMITTED_AT => 'SUBMITTED_AT',
         self::VERDICT => 'VERDICT',
+        self::STATUS => 'STATUS',
     ];
 
     public static function name($value)

@@ -14,9 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Bucket extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
+     * name = 1 retired
+     *
+     * Generated from protobuf field <code>repeated string dimensions = 2;</code>
      */
-    protected $name = '';
+    private $dimensions;
     /**
      * Generated from protobuf field <code>uint32 count = 10;</code>
      */
@@ -28,7 +30,8 @@ class Bucket extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $name
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $dimensions
+     *           name = 1 retired
      *     @type int $count
      * }
      */
@@ -38,23 +41,27 @@ class Bucket extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
-     * @return string
+     * name = 1 retired
+     *
+     * Generated from protobuf field <code>repeated string dimensions = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getName()
+    public function getDimensions()
     {
-        return $this->name;
+        return $this->dimensions;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
-     * @param string $var
+     * name = 1 retired
+     *
+     * Generated from protobuf field <code>repeated string dimensions = 2;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setName($var)
+    public function setDimensions($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->dimensions = $arr;
 
         return $this;
     }

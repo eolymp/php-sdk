@@ -18,13 +18,21 @@ class AggregateSubmissionsInput extends \Google\Protobuf\Internal\Message
      */
     protected $metric = 0;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.AggregateSubmissionsInput.Dimension group_by = 2;</code>
+     */
+    private $group_by;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp range_start = 3;</code>
+     */
+    protected $range_start = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp range_end = 4;</code>
+     */
+    protected $range_end = null;
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.AggregateSubmissionsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.AggregateSubmissionsInput.Dimension group_by = 2;</code>
-     */
-    protected $group_by = 0;
 
     /**
      * Constructor.
@@ -33,8 +41,10 @@ class AggregateSubmissionsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $metric
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $group_by
+     *     @type \Google\Protobuf\Timestamp $range_start
+     *     @type \Google\Protobuf\Timestamp $range_end
      *     @type \Eolymp\Atlas\AggregateSubmissionsInput\Filter $filters
-     *     @type int $group_by
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +70,92 @@ class AggregateSubmissionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\AggregateSubmissionsInput\Metric::class);
         $this->metric = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.AggregateSubmissionsInput.Dimension group_by = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGroupBy()
+    {
+        return $this->group_by;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.AggregateSubmissionsInput.Dimension group_by = 2;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGroupBy($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\AggregateSubmissionsInput\Dimension::class);
+        $this->group_by = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp range_start = 3;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getRangeStart()
+    {
+        return $this->range_start;
+    }
+
+    public function hasRangeStart()
+    {
+        return isset($this->range_start);
+    }
+
+    public function clearRangeStart()
+    {
+        unset($this->range_start);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp range_start = 3;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setRangeStart($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->range_start = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp range_end = 4;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getRangeEnd()
+    {
+        return $this->range_end;
+    }
+
+    public function hasRangeEnd()
+    {
+        return isset($this->range_end);
+    }
+
+    public function clearRangeEnd()
+    {
+        unset($this->range_end);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp range_end = 4;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setRangeEnd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->range_end = $var;
 
         return $this;
     }
@@ -92,28 +188,6 @@ class AggregateSubmissionsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\AggregateSubmissionsInput\Filter::class);
         $this->filters = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.AggregateSubmissionsInput.Dimension group_by = 2;</code>
-     * @return int
-     */
-    public function getGroupBy()
-    {
-        return $this->group_by;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.AggregateSubmissionsInput.Dimension group_by = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setGroupBy($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Atlas\AggregateSubmissionsInput\Dimension::class);
-        $this->group_by = $var;
 
         return $this;
     }

@@ -26,10 +26,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $user_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp submitted_at = 4;</code>
-     */
-    private $submitted_at;
-    /**
+     * submitted_at = 4 retired
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
      */
     private $verdict;
@@ -59,8 +57,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $problem_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $member_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $user_id
-     *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $submitted_at
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $verdict
+     *           submitted_at = 4 retired
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $runtime
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
      *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $score
@@ -139,28 +137,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp submitted_at = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getSubmittedAt()
-    {
-        return $this->submitted_at;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp submitted_at = 4;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setSubmittedAt($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
-        $this->submitted_at = $arr;
-
-        return $this;
-    }
-
-    /**
+     * submitted_at = 4 retired
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -170,6 +148,8 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * submitted_at = 4 retired
+     *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
