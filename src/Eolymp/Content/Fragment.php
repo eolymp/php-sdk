@@ -26,9 +26,23 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * list of alternative locales available for this fragment
+     *
+     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     */
+    private $alternative_locales;
+    /**
+     * content is only visible to admin
+     *
      * Generated from protobuf field <code>bool draft = 13;</code>
      */
     protected $draft = false;
+    /**
+     * content generated automatically
+     *
+     * Generated from protobuf field <code>bool automatic = 15;</code>
+     */
+    protected $automatic = false;
     /**
      * Generated from protobuf field <code>string title = 12;</code>
      */
@@ -59,7 +73,12 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $path
      *     @type string $locale
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $alternative_locales
+     *           list of alternative locales available for this fragment
      *     @type bool $draft
+     *           content is only visible to admin
+     *     @type bool $automatic
+     *           content generated automatically
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -139,6 +158,34 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * list of alternative locales available for this fragment
+     *
+     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAlternativeLocales()
+    {
+        return $this->alternative_locales;
+    }
+
+    /**
+     * list of alternative locales available for this fragment
+     *
+     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAlternativeLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->alternative_locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * content is only visible to admin
+     *
      * Generated from protobuf field <code>bool draft = 13;</code>
      * @return bool
      */
@@ -148,6 +195,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * content is only visible to admin
+     *
      * Generated from protobuf field <code>bool draft = 13;</code>
      * @param bool $var
      * @return $this
@@ -156,6 +205,32 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * content generated automatically
+     *
+     * Generated from protobuf field <code>bool automatic = 15;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * content generated automatically
+     *
+     * Generated from protobuf field <code>bool automatic = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
 
         return $this;
     }

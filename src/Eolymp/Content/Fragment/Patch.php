@@ -13,6 +13,38 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string path = 10;</code>
+     */
+    protected $path = null;
+    /**
+     * Generated from protobuf field <code>optional string locale = 11;</code>
+     */
+    protected $locale = null;
+    /**
+     * Generated from protobuf field <code>optional bool draft = 13;</code>
+     */
+    protected $draft = null;
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 15;</code>
+     */
+    protected $automatic = null;
+    /**
+     * Generated from protobuf field <code>optional string title = 12;</code>
+     */
+    protected $title = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
+     */
+    protected $content = null;
+    /**
+     * Generated from protobuf field <code>bool has_labels = 101;</code>
+     */
+    protected $has_labels = false;
+    /**
+     * Generated from protobuf field <code>repeated string labels = 100;</code>
+     */
+    private $labels;
 
     /**
      * Constructor.
@@ -20,11 +52,255 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $path
+     *     @type string $locale
+     *     @type bool $draft
+     *     @type bool $automatic
+     *     @type string $title
+     *     @type \Eolymp\Ecm\Content $content
+     *     @type bool $has_labels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Content\ContentFragment::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string path = 10;</code>
+     * @return string
+     */
+    public function getPath()
+    {
+        return isset($this->path) ? $this->path : '';
+    }
+
+    public function hasPath()
+    {
+        return isset($this->path);
+    }
+
+    public function clearPath()
+    {
+        unset($this->path);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string path = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPath($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->path = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string locale = 11;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return isset($this->locale) ? $this->locale : '';
+    }
+
+    public function hasLocale()
+    {
+        return isset($this->locale);
+    }
+
+    public function clearLocale()
+    {
+        unset($this->locale);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string locale = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool draft = 13;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return isset($this->draft) ? $this->draft : false;
+    }
+
+    public function hasDraft()
+    {
+        return isset($this->draft);
+    }
+
+    public function clearDraft()
+    {
+        unset($this->draft);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool draft = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 15;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return isset($this->automatic) ? $this->automatic : false;
+    }
+
+    public function hasAutomatic()
+    {
+        return isset($this->automatic);
+    }
+
+    public function clearAutomatic()
+    {
+        unset($this->automatic);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 15;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string title = 12;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return isset($this->title) ? $this->title : '';
+    }
+
+    public function hasTitle()
+    {
+        return isset($this->title);
+    }
+
+    public function clearTitle()
+    {
+        unset($this->title);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string title = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool has_labels = 101;</code>
+     * @return bool
+     */
+    public function getHasLabels()
+    {
+        return $this->has_labels;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool has_labels = 101;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHasLabels($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->has_labels = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 100;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 100;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->labels = $arr;
+
+        return $this;
     }
 
 }

@@ -18,13 +18,25 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
+     * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 2;</code>
+     */
+    protected $fragment = null;
+    /**
+     * update original when empty, update translation when set
+     *
+     * Generated from protobuf field <code>string locale = 5;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>string fragment_id = 1;</code>
      */
     protected $fragment_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.content.Fragment fragment = 2;</code>
+     * alternative to fragment+patch which uses optional fields
+     *
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Patch fragment_patch = 4;</code>
      */
-    protected $fragment = null;
+    protected $fragment_patch = null;
 
     /**
      * Constructor.
@@ -33,8 +45,12 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *     @type string $fragment_id
      *     @type \Eolymp\Content\Fragment $fragment
+     *     @type string $locale
+     *           update original when empty, update translation when set
+     *     @type string $fragment_id
+     *     @type \Eolymp\Content\Fragment\Patch $fragment_patch
+     *           alternative to fragment+patch which uses optional fields
      * }
      */
     public function __construct($data = NULL) {
@@ -60,28 +76,6 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\Fragment\Patch\Field::class);
         $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string fragment_id = 1;</code>
-     * @return string
-     */
-    public function getFragmentId()
-    {
-        return $this->fragment_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string fragment_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFragmentId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->fragment_id = $var;
 
         return $this;
     }
@@ -114,6 +108,90 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Content\Fragment::class);
         $this->fragment = $var;
+
+        return $this;
+    }
+
+    /**
+     * update original when empty, update translation when set
+     *
+     * Generated from protobuf field <code>string locale = 5;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * update original when empty, update translation when set
+     *
+     * Generated from protobuf field <code>string locale = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fragment_id = 1;</code>
+     * @return string
+     */
+    public function getFragmentId()
+    {
+        return $this->fragment_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string fragment_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFragmentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->fragment_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * alternative to fragment+patch which uses optional fields
+     *
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Patch fragment_patch = 4;</code>
+     * @return \Eolymp\Content\Fragment\Patch|null
+     */
+    public function getFragmentPatch()
+    {
+        return $this->fragment_patch;
+    }
+
+    public function hasFragmentPatch()
+    {
+        return isset($this->fragment_patch);
+    }
+
+    public function clearFragmentPatch()
+    {
+        unset($this->fragment_patch);
+    }
+
+    /**
+     * alternative to fragment+patch which uses optional fields
+     *
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Patch fragment_patch = 4;</code>
+     * @param \Eolymp\Content\Fragment\Patch $var
+     * @return $this
+     */
+    public function setFragmentPatch($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Content\Fragment\Patch::class);
+        $this->fragment_patch = $var;
 
         return $this;
     }

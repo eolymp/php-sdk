@@ -17,6 +17,12 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string fragment_id = 1;</code>
      */
     protected $fragment_id = '';
+    /**
+     * delete original when empty, delete translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $fragment_id
+     *     @type string $locale
+     *           delete original when empty, delete translation when set
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->fragment_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * delete original when empty, delete translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * delete original when empty, delete translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
