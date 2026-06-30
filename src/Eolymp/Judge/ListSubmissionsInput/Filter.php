@@ -32,9 +32,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $status;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum runtime = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
      */
-    private $lang;
+    private $runtime;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionFloat score = 6;</code>
      */
@@ -51,6 +51,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum signature = 9 [(.eolymp.api.mcp_field_desc) = "source code fingerprint"];</code>
      */
     private $signature;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
+     */
+    private $verdict;
 
     /**
      * Constructor.
@@ -62,11 +66,12 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $participant_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $problem_id
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $lang
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $runtime
      *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $score
      *     @type array<\Eolymp\Wellknown\ExpressionFloat>|\Google\Protobuf\Internal\RepeatedField $percentage
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $submitted_at
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $signature
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $verdict
      * }
      */
     public function __construct($data = NULL) {
@@ -163,23 +168,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum runtime = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getLang()
+    public function getRuntime()
     {
-        return $this->lang;
+        return $this->runtime;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum lang = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum runtime = 5 [(.eolymp.api.mcp_field_desc) = "runtime id"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setLang($var)
+    public function setRuntime($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->lang = $arr;
+        $this->runtime = $arr;
 
         return $this;
     }
@@ -268,6 +273,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->signature = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getVerdict()
+    {
+        return $this->verdict;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum verdict = 10;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setVerdict($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->verdict = $arr;
 
         return $this;
     }
