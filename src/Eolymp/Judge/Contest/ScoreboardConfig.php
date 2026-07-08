@@ -51,6 +51,12 @@ class ScoreboardConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string share_key = 7;</code>
      */
     protected $share_key = '';
+    /**
+     * When true, disqualified participants are excluded from scoreboard responses
+     *
+     * Generated from protobuf field <code>bool hide_disqualified = 8;</code>
+     */
+    protected $hide_disqualified = false;
 
     /**
      * Constructor.
@@ -70,6 +76,8 @@ class ScoreboardConfig extends \Google\Protobuf\Internal\Message
      *           hides results in participant UI, to prevent one participant seeing result of another during onsite competitions
      *     @type string $share_key
      *           key to share invisible and internal scoreboards with others
+     *     @type bool $hide_disqualified
+     *           When true, disqualified participants are excluded from scoreboard responses
      * }
      */
     public function __construct($data = NULL) {
@@ -247,6 +255,32 @@ class ScoreboardConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->share_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * When true, disqualified participants are excluded from scoreboard responses
+     *
+     * Generated from protobuf field <code>bool hide_disqualified = 8;</code>
+     * @return bool
+     */
+    public function getHideDisqualified()
+    {
+        return $this->hide_disqualified;
+    }
+
+    /**
+     * When true, disqualified participants are excluded from scoreboard responses
+     *
+     * Generated from protobuf field <code>bool hide_disqualified = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHideDisqualified($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->hide_disqualified = $var;
 
         return $this;
     }
