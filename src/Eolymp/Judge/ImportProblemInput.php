@@ -14,9 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportProblemInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string import_id = 2;</code>
+     * Generated from protobuf field <code>string import_id = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $import_id = '';
+    /**
+     * Generated from protobuf field <code>repeated string import_ids = 3;</code>
+     */
+    private $import_ids;
     /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      */
@@ -37,6 +42,7 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $import_id
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $import_ids
      *     @type int $index
      *     @type int $submit_limit
      *     @type bool $score_by_best_testset
@@ -48,23 +54,49 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string import_id = 2;</code>
+     * Generated from protobuf field <code>string import_id = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getImportId()
     {
+        @trigger_error('import_id is deprecated.', E_USER_DEPRECATED);
         return $this->import_id;
     }
 
     /**
-     * Generated from protobuf field <code>string import_id = 2;</code>
+     * Generated from protobuf field <code>string import_id = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setImportId($var)
     {
+        @trigger_error('import_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->import_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string import_ids = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getImportIds()
+    {
+        return $this->import_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string import_ids = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setImportIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->import_ids = $arr;
 
         return $this;
     }

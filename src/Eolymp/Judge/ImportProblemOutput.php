@@ -14,9 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportProblemOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * Generated from protobuf field <code>string problem_id = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>repeated string problem_ids = 3;</code>
+     */
+    private $problem_ids;
 
     /**
      * Constructor.
@@ -25,6 +30,7 @@ class ImportProblemOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $problem_ids
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +39,49 @@ class ImportProblemOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * Generated from protobuf field <code>string problem_id = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getProblemId()
     {
+        @trigger_error('problem_id is deprecated.', E_USER_DEPRECATED);
         return $this->problem_id;
     }
 
     /**
-     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * Generated from protobuf field <code>string problem_id = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setProblemId($var)
     {
+        @trigger_error('problem_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string problem_ids = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProblemIds()
+    {
+        return $this->problem_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string problem_ids = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProblemIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->problem_ids = $arr;
 
         return $this;
     }
