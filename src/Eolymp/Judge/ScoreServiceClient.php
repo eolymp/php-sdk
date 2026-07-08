@@ -58,6 +58,25 @@ class ScoreServiceClient {
     }
 
     /**
+     * @param ListScoreTimelineInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScoreTimelineOutput output message
+     */
+    public function ListScoreTimeline(ListScoreTimelineInput $input, array $context = [])
+    {
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/score-timeline";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.ScoreService/ListScoreTimeline";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreTimelineOutput::class, $context);
+    }
+
+    /**
      * ImportScore for ghost participants
      *
      * @param ImportScoreInput $input message
