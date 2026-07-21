@@ -34,9 +34,9 @@ class Log extends \Google\Protobuf\Internal\Message
      */
     private $context;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.automation.Log.Record records = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.automation.Log.Message messages = 100;</code>
      */
-    private $records;
+    private $messages;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 90;</code>
      */
@@ -53,7 +53,7 @@ class Log extends \Google\Protobuf\Internal\Message
      *     @type int $trigger
      *     @type bool $dry_run
      *     @type array|\Google\Protobuf\Internal\MapField $context
-     *     @type array<\Eolymp\Automation\Log\Record>|\Google\Protobuf\Internal\RepeatedField $records
+     *     @type array<\Eolymp\Automation\Log\Message>|\Google\Protobuf\Internal\RepeatedField $messages
      *     @type \Google\Protobuf\Timestamp $created_at
      * }
      */
@@ -173,23 +173,23 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.automation.Log.Record records = 100;</code>
+     * Generated from protobuf field <code>repeated .eolymp.automation.Log.Message messages = 100;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getRecords()
+    public function getMessages()
     {
-        return $this->records;
+        return $this->messages;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.automation.Log.Record records = 100;</code>
-     * @param array<\Eolymp\Automation\Log\Record>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.automation.Log.Message messages = 100;</code>
+     * @param array<\Eolymp\Automation\Log\Message>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setRecords($var)
+    public function setMessages($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Automation\Log\Record::class);
-        $this->records = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Automation\Log\Message::class);
+        $this->messages = $arr;
 
         return $this;
     }
