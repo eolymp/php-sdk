@@ -24,9 +24,9 @@ class Field
      */
     const TRIGGER = 3;
     /**
-     * Generated from protobuf enum <code>CONDITION = 4;</code>
+     * Generated from protobuf enum <code>CONDITIONS = 4;</code>
      */
-    const CONDITION = 4;
+    const CONDITIONS = 4;
     /**
      * Generated from protobuf enum <code>ACTIONS = 5;</code>
      */
@@ -48,7 +48,7 @@ class Field
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
         self::NAME => 'NAME',
         self::TRIGGER => 'TRIGGER',
-        self::CONDITION => 'CONDITION',
+        self::CONDITIONS => 'CONDITIONS',
         self::ACTIONS => 'ACTIONS',
         self::INACTIVE => 'INACTIVE',
         self::DRY_RUN => 'DRY_RUN',

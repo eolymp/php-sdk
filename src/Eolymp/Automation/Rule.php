@@ -26,9 +26,9 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     protected $trigger = 0;
     /**
-     * Generated from protobuf field <code>.eolymp.automation.Condition condition = 4;</code>
+     * Generated from protobuf field <code>repeated .eolymp.automation.Condition conditions = 4;</code>
      */
-    protected $condition = null;
+    private $conditions;
     /**
      * Generated from protobuf field <code>bool inactive = 5;</code>
      */
@@ -69,7 +69,7 @@ class Rule extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type int $trigger
-     *     @type \Eolymp\Automation\Condition $condition
+     *     @type array<\Eolymp\Automation\Condition>|\Google\Protobuf\Internal\RepeatedField $conditions
      *     @type bool $inactive
      *     @type bool $dry_run
      *     @type bool $debug
@@ -152,33 +152,23 @@ class Rule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.automation.Condition condition = 4;</code>
-     * @return \Eolymp\Automation\Condition|null
+     * Generated from protobuf field <code>repeated .eolymp.automation.Condition conditions = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getCondition()
+    public function getConditions()
     {
-        return $this->condition;
-    }
-
-    public function hasCondition()
-    {
-        return isset($this->condition);
-    }
-
-    public function clearCondition()
-    {
-        unset($this->condition);
+        return $this->conditions;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.automation.Condition condition = 4;</code>
-     * @param \Eolymp\Automation\Condition $var
+     * Generated from protobuf field <code>repeated .eolymp.automation.Condition conditions = 4;</code>
+     * @param array<\Eolymp\Automation\Condition>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setCondition($var)
+    public function setConditions($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Automation\Condition::class);
-        $this->condition = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Automation\Condition::class);
+        $this->conditions = $arr;
 
         return $this;
     }
