@@ -39,6 +39,10 @@ class Field
      * Generated from protobuf enum <code>DRY_RUN = 7;</code>
      */
     const DRY_RUN = 7;
+    /**
+     * Generated from protobuf enum <code>DEBUG = 8;</code>
+     */
+    const DEBUG = 8;
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
@@ -48,6 +52,7 @@ class Field
         self::ACTIONS => 'ACTIONS',
         self::INACTIVE => 'INACTIVE',
         self::DRY_RUN => 'DRY_RUN',
+        self::DEBUG => 'DEBUG',
     ];
 
     public static function name($value)

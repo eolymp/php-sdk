@@ -112,6 +112,18 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $emails_per_month = 0;
     /**
+     * automation quota and features
+     *
+     * Generated from protobuf field <code>uint32 automation_rules_per_space = 210;</code>
+     */
+    protected $automation_rules_per_space = 0;
+    /**
+     * max number of automation rule executions during current billing period
+     *
+     * Generated from protobuf field <code>uint32 automation_executions_per_month = 211;</code>
+     */
+    protected $automation_executions_per_month = 0;
+    /**
      * scoreboard quota and features
      *
      * Generated from protobuf field <code>uint32 scoreboards_per_space = 5;</code>
@@ -262,6 +274,10 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           newsletter quota
      *     @type int $emails_per_day
      *     @type int $emails_per_month
+     *     @type int $automation_rules_per_space
+     *           automation quota and features
+     *     @type int $automation_executions_per_month
+     *           max number of automation rule executions during current billing period
      *     @type int $scoreboards_per_space
      *           scoreboard quota and features
      *     @type int $courses_per_space
@@ -733,6 +749,58 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->emails_per_month = $var;
+
+        return $this;
+    }
+
+    /**
+     * automation quota and features
+     *
+     * Generated from protobuf field <code>uint32 automation_rules_per_space = 210;</code>
+     * @return int
+     */
+    public function getAutomationRulesPerSpace()
+    {
+        return $this->automation_rules_per_space;
+    }
+
+    /**
+     * automation quota and features
+     *
+     * Generated from protobuf field <code>uint32 automation_rules_per_space = 210;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAutomationRulesPerSpace($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->automation_rules_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * max number of automation rule executions during current billing period
+     *
+     * Generated from protobuf field <code>uint32 automation_executions_per_month = 211;</code>
+     * @return int
+     */
+    public function getAutomationExecutionsPerMonth()
+    {
+        return $this->automation_executions_per_month;
+    }
+
+    /**
+     * max number of automation rule executions during current billing period
+     *
+     * Generated from protobuf field <code>uint32 automation_executions_per_month = 211;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAutomationExecutionsPerMonth($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->automation_executions_per_month = $var;
 
         return $this;
     }

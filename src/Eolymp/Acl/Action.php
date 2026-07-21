@@ -213,6 +213,24 @@ class Action
      * Generated from protobuf enum <code>NEWSLETTER_WRITE = 161;</code>
      */
     const NEWSLETTER_WRITE = 161;
+    /**
+     * allows to list automation rules, automatically assigned if user has read access to automation
+     *
+     * Generated from protobuf enum <code>AUTOMATION_LIST = 172;</code>
+     */
+    const AUTOMATION_LIST = 172;
+    /**
+     * view automation rules and execution logs
+     *
+     * Generated from protobuf enum <code>AUTOMATION_READ = 170;</code>
+     */
+    const AUTOMATION_READ = 170;
+    /**
+     * create/update/delete automation rules
+     *
+     * Generated from protobuf enum <code>AUTOMATION_WRITE = 171;</code>
+     */
+    const AUTOMATION_WRITE = 171;
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
@@ -257,6 +275,9 @@ class Action
         self::NEWSLETTER_LIST => 'NEWSLETTER_LIST',
         self::NEWSLETTER_READ => 'NEWSLETTER_READ',
         self::NEWSLETTER_WRITE => 'NEWSLETTER_WRITE',
+        self::AUTOMATION_LIST => 'AUTOMATION_LIST',
+        self::AUTOMATION_READ => 'AUTOMATION_READ',
+        self::AUTOMATION_WRITE => 'AUTOMATION_WRITE',
     ];
 
     public static function name($value)

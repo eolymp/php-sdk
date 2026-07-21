@@ -38,6 +38,12 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     protected $dry_run = false;
     /**
+     * capture execution logs
+     *
+     * Generated from protobuf field <code>bool debug = 8;</code>
+     */
+    protected $debug = false;
+    /**
      * Generated from protobuf field <code>int32 trigger_count = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $trigger_count = 0;
@@ -66,6 +72,8 @@ class Rule extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Automation\Condition $condition
      *     @type bool $inactive
      *     @type bool $dry_run
+     *     @type bool $debug
+     *           capture execution logs
      *     @type int $trigger_count
      *     @type array<\Eolymp\Automation\Action>|\Google\Protobuf\Internal\RepeatedField $actions
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -215,6 +223,32 @@ class Rule extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->dry_run = $var;
+
+        return $this;
+    }
+
+    /**
+     * capture execution logs
+     *
+     * Generated from protobuf field <code>bool debug = 8;</code>
+     * @return bool
+     */
+    public function getDebug()
+    {
+        return $this->debug;
+    }
+
+    /**
+     * capture execution logs
+     *
+     * Generated from protobuf field <code>bool debug = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDebug($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->debug = $var;
 
         return $this;
     }
