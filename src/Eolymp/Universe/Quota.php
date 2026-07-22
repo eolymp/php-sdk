@@ -124,6 +124,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $automation_executions_per_month = 0;
     /**
+     * AI quota and features
+     *
+     * Generated from protobuf field <code>uint64 ai_tokens_per_month = 220;</code>
+     */
+    protected $ai_tokens_per_month = 0;
+    /**
      * scoreboard quota and features
      *
      * Generated from protobuf field <code>uint32 scoreboards_per_space = 5;</code>
@@ -278,6 +284,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           automation quota and features
      *     @type int $automation_executions_per_month
      *           max number of automation rule executions during current billing period
+     *     @type int|string $ai_tokens_per_month
+     *           AI quota and features
      *     @type int $scoreboards_per_space
      *           scoreboard quota and features
      *     @type int $courses_per_space
@@ -801,6 +809,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->automation_executions_per_month = $var;
+
+        return $this;
+    }
+
+    /**
+     * AI quota and features
+     *
+     * Generated from protobuf field <code>uint64 ai_tokens_per_month = 220;</code>
+     * @return int|string
+     */
+    public function getAiTokensPerMonth()
+    {
+        return $this->ai_tokens_per_month;
+    }
+
+    /**
+     * AI quota and features
+     *
+     * Generated from protobuf field <code>uint64 ai_tokens_per_month = 220;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setAiTokensPerMonth($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->ai_tokens_per_month = $var;
 
         return $this;
     }
