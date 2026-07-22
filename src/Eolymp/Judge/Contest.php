@@ -122,6 +122,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $slug = '';
     /**
+     * When true, jury member identity is hidden from participants in ticket replies
+     *
+     * Generated from protobuf field <code>bool hide_jury_identity = 43;</code>
+     */
+    protected $hide_jury_identity = false;
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -274,6 +280,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Display problem editorials after contest ends
      *     @type string $slug
      *           URL-friendly slug for the contest. Must match [a-z][a-z0-9\-_]+. Unique within a space.
+     *     @type bool $hide_jury_identity
+     *           When true, jury member identity is hidden from participants in ticket replies
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
@@ -801,6 +809,32 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->slug = $var;
+
+        return $this;
+    }
+
+    /**
+     * When true, jury member identity is hidden from participants in ticket replies
+     *
+     * Generated from protobuf field <code>bool hide_jury_identity = 43;</code>
+     * @return bool
+     */
+    public function getHideJuryIdentity()
+    {
+        return $this->hide_jury_identity;
+    }
+
+    /**
+     * When true, jury member identity is hidden from participants in ticket replies
+     *
+     * Generated from protobuf field <code>bool hide_jury_identity = 43;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHideJuryIdentity($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->hide_jury_identity = $var;
 
         return $this;
     }

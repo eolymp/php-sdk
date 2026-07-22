@@ -106,6 +106,10 @@ class Field
      */
     const SLUG = 21;
     /**
+     * Generated from protobuf enum <code>HIDE_JURY_IDENTITY = 22;</code>
+     */
+    const HIDE_JURY_IDENTITY = 22;
+    /**
      * Generated from protobuf enum <code>PRINTER = 15;</code>
      */
     const PRINTER = 15;
@@ -158,6 +162,7 @@ class Field
         self::REMINDER_NOTIFICATION => 'REMINDER_NOTIFICATION',
         self::RESULT_NOTIFICATION => 'RESULT_NOTIFICATION',
         self::SLUG => 'SLUG',
+        self::HIDE_JURY_IDENTITY => 'HIDE_JURY_IDENTITY',
         self::PRINTER => 'PRINTER',
         self::CLASSIFICATION => 'CLASSIFICATION',
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
