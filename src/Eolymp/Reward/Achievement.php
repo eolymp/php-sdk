@@ -26,6 +26,18 @@ class Achievement extends \Google\Protobuf\Internal\Message
      */
     protected $rarity = 0;
     /**
+     * score required to earn this achievement (defaults to 1)
+     *
+     * Generated from protobuf field <code>uint32 threshold = 4;</code>
+     */
+    protected $threshold = 0;
+    /**
+     * if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
+     *
+     * Generated from protobuf field <code>bool multi_award = 5;</code>
+     */
+    protected $multi_award = false;
+    /**
      * Generated from protobuf field <code>string name = 10;</code>
      */
     protected $name = '';
@@ -51,6 +63,10 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $value
      *     @type int $rarity
+     *     @type int $threshold
+     *           score required to earn this achievement (defaults to 1)
+     *     @type bool $multi_award
+     *           if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
@@ -124,6 +140,58 @@ class Achievement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->rarity = $var;
+
+        return $this;
+    }
+
+    /**
+     * score required to earn this achievement (defaults to 1)
+     *
+     * Generated from protobuf field <code>uint32 threshold = 4;</code>
+     * @return int
+     */
+    public function getThreshold()
+    {
+        return $this->threshold;
+    }
+
+    /**
+     * score required to earn this achievement (defaults to 1)
+     *
+     * Generated from protobuf field <code>uint32 threshold = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setThreshold($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->threshold = $var;
+
+        return $this;
+    }
+
+    /**
+     * if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
+     *
+     * Generated from protobuf field <code>bool multi_award = 5;</code>
+     * @return bool
+     */
+    public function getMultiAward()
+    {
+        return $this->multi_award;
+    }
+
+    /**
+     * if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
+     *
+     * Generated from protobuf field <code>bool multi_award = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMultiAward($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->multi_award = $var;
 
         return $this;
     }

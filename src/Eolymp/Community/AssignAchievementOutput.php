@@ -17,6 +17,12 @@ class AssignAchievementOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 quantity = 3;</code>
      */
     protected $quantity = 0;
+    /**
+     * current points toward the next award after this operation
+     *
+     * Generated from protobuf field <code>uint32 score = 4;</code>
+     */
+    protected $score = 0;
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class AssignAchievementOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $quantity
+     *     @type int $score
+     *           current points toward the next award after this operation
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class AssignAchievementOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->quantity = $var;
+
+        return $this;
+    }
+
+    /**
+     * current points toward the next award after this operation
+     *
+     * Generated from protobuf field <code>uint32 score = 4;</code>
+     * @return int
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * current points toward the next award after this operation
+     *
+     * Generated from protobuf field <code>uint32 score = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->score = $var;
 
         return $this;
     }

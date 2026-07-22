@@ -17,6 +17,12 @@ class AssignAchievementInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string achievement_id = 2;</code>
      */
     protected $achievement_id = '';
+    /**
+     * optional reference key; the set_to/inc_by operation applies to this bucket only; defaults to ""
+     *
+     * Generated from protobuf field <code>string reference = 5;</code>
+     */
+    protected $reference = '';
     protected $quantity;
 
     /**
@@ -28,6 +34,8 @@ class AssignAchievementInput extends \Google\Protobuf\Internal\Message
      *     @type string $achievement_id
      *     @type int $set_to
      *     @type int $inc_by
+     *     @type string $reference
+     *           optional reference key; the set_to/inc_by operation applies to this bucket only; defaults to ""
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +115,32 @@ class AssignAchievementInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * optional reference key; the set_to/inc_by operation applies to this bucket only; defaults to ""
+     *
+     * Generated from protobuf field <code>string reference = 5;</code>
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * optional reference key; the set_to/inc_by operation applies to this bucket only; defaults to ""
+     *
+     * Generated from protobuf field <code>string reference = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReference($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reference = $var;
 
         return $this;
     }

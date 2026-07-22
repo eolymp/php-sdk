@@ -30,9 +30,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
      */
     protected $rarity = 0;
     /**
-     * how many times achievement was received
+     * how many times the award has been earned
      *
-     * Generated from protobuf field <code>uint32 quantity = 4;</code>
+     * Generated from protobuf field <code>uint32 quantity = 4 [(.eolymp.api.read_only) = true];</code>
      */
     protected $quantity = 0;
     /**
@@ -41,6 +41,18 @@ class Achievement extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp awarded_at = 5 [(.eolymp.api.read_only) = true];</code>
      */
     protected $awarded_at = null;
+    /**
+     * number of points required to earn the award
+     *
+     * Generated from protobuf field <code>uint32 threshold = 6 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $threshold = 0;
+    /**
+     * current points toward the next award (total_points mod threshold)
+     *
+     * Generated from protobuf field <code>uint32 score = 7 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $score = 0;
     /**
      * Generated from protobuf field <code>string name = 10;</code>
      */
@@ -72,9 +84,13 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *     @type int $rarity
      *           a number from 0 to 10 reflecting how many users have achievement (0 common, 10 very rare)
      *     @type int $quantity
-     *           how many times achievement was received
+     *           how many times the award has been earned
      *     @type \Google\Protobuf\Timestamp $awarded_at
      *           when the achievement was awarded for the first time
+     *     @type int $threshold
+     *           number of points required to earn the award
+     *     @type int $score
+     *           current points toward the next award (total_points mod threshold)
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
@@ -162,9 +178,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many times achievement was received
+     * how many times the award has been earned
      *
-     * Generated from protobuf field <code>uint32 quantity = 4;</code>
+     * Generated from protobuf field <code>uint32 quantity = 4 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getQuantity()
@@ -173,9 +189,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * how many times achievement was received
+     * how many times the award has been earned
      *
-     * Generated from protobuf field <code>uint32 quantity = 4;</code>
+     * Generated from protobuf field <code>uint32 quantity = 4 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -219,6 +235,58 @@ class Achievement extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->awarded_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * number of points required to earn the award
+     *
+     * Generated from protobuf field <code>uint32 threshold = 6 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getThreshold()
+    {
+        return $this->threshold;
+    }
+
+    /**
+     * number of points required to earn the award
+     *
+     * Generated from protobuf field <code>uint32 threshold = 6 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setThreshold($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->threshold = $var;
+
+        return $this;
+    }
+
+    /**
+     * current points toward the next award (total_points mod threshold)
+     *
+     * Generated from protobuf field <code>uint32 score = 7 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * current points toward the next award (total_points mod threshold)
+     *
+     * Generated from protobuf field <code>uint32 score = 7 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->score = $var;
 
         return $this;
     }
