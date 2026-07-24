@@ -26,6 +26,10 @@ class Entry extends \Google\Protobuf\Internal\Message
      */
     protected $timestamp = null;
     /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>map<string, string> attributes = 10;</code>
      */
     private $attributes;
@@ -43,6 +47,7 @@ class Entry extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $type
      *     @type \Google\Protobuf\Timestamp $timestamp
+     *     @type string $member_id
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
      *     @type array<\Eolymp\Wellknown\Link>|\Google\Protobuf\Internal\RepeatedField $links
      * }
@@ -124,6 +129,28 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->timestamp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

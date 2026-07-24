@@ -21,6 +21,10 @@ class ListEntriesInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string after = 12;</code>
      */
     protected $after = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.feed.ListEntriesInput.Filter filters = 40;</code>
+     */
+    protected $filters = null;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class ListEntriesInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $size
      *     @type string $after
+     *     @type \Eolymp\Feed\ListEntriesInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,38 @@ class ListEntriesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->after = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.feed.ListEntriesInput.Filter filters = 40;</code>
+     * @return \Eolymp\Feed\ListEntriesInput\Filter|null
+     */
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    public function hasFilters()
+    {
+        return isset($this->filters);
+    }
+
+    public function clearFilters()
+    {
+        unset($this->filters);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.feed.ListEntriesInput.Filter filters = 40;</code>
+     * @param \Eolymp\Feed\ListEntriesInput\Filter $var
+     * @return $this
+     */
+    public function setFilters($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Feed\ListEntriesInput\Filter::class);
+        $this->filters = $var;
 
         return $this;
     }
