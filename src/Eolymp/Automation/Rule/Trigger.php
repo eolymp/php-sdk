@@ -55,6 +55,10 @@ class Trigger
      * Generated from protobuf enum <code>PARTICIPANT_FINALIZED = 10;</code>
      */
     const PARTICIPANT_FINALIZED = 10;
+    /**
+     * Generated from protobuf enum <code>CONTEST_FINALIZED = 11;</code>
+     */
+    const CONTEST_FINALIZED = 11;
 
     private static $valueToName = [
         self::UNKNOWN_TRIGGER => 'UNKNOWN_TRIGGER',
@@ -68,6 +72,7 @@ class Trigger
         self::STUDENT_CHANGED => 'STUDENT_CHANGED',
         self::ASSIGNMENT_CHANGED => 'ASSIGNMENT_CHANGED',
         self::PARTICIPANT_FINALIZED => 'PARTICIPANT_FINALIZED',
+        self::CONTEST_FINALIZED => 'CONTEST_FINALIZED',
     ];
 
     public static function name($value)
