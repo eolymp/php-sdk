@@ -111,4 +111,23 @@ class RuleServiceClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteRuleOutput::class, $context);
     }
 
+    /**
+     * @param TriggerRuleInput $input message
+     * @param array $context request parameters
+     *
+     * @return TriggerRuleOutput output message
+     */
+    public function TriggerRule(TriggerRuleInput $input, array $context = [])
+    {
+        $path = "/automation/rules/".rawurlencode($input->getRuleId())."/trigger";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setRuleId("");
+
+        $context['name'] = "eolymp.automation.RuleService/TriggerRule";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, TriggerRuleOutput::class, $context);
+    }
+
 }
