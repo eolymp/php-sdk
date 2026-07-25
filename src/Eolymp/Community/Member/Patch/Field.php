@@ -122,6 +122,10 @@ class Field
      */
     const USER_EMAIL_SUBSCRIPTIONS = 110;
     /**
+     * Generated from protobuf enum <code>USER_PRONOUN = 111;</code>
+     */
+    const USER_PRONOUN = 111;
+    /**
      * Generated from protobuf enum <code>TEAM_NAME = 200;</code>
      */
     const TEAM_NAME = 200;
@@ -162,6 +166,7 @@ class Field
         self::USER_PREFERENCES_TIMEZONE => 'USER_PREFERENCES_TIMEZONE',
         self::USER_PREFERENCES_RUNTIME => 'USER_PREFERENCES_RUNTIME',
         self::USER_EMAIL_SUBSCRIPTIONS => 'USER_EMAIL_SUBSCRIPTIONS',
+        self::USER_PRONOUN => 'USER_PRONOUN',
         self::TEAM_NAME => 'TEAM_NAME',
         self::GHOST_NAME => 'GHOST_NAME',
         self::ATTRIBUTES => 'ATTRIBUTES',

@@ -128,6 +128,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
+     * Pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 41;</code>
+     */
+    protected $pronoun = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.cognito.User.Alias aliases = 14;</code>
      */
     private $aliases;
@@ -180,6 +186,8 @@ class User extends \Google\Protobuf\Internal\Message
      *           Exact time when user has changed password last time
      *     @type string $locale
      *           Locale
+     *     @type string $pronoun
+     *           Pronoun: "he", "she", or "they" (default)
      *     @type array<\Eolymp\Cognito\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
      *     @type string $discord_user_id
      * }
@@ -719,6 +727,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 41;</code>
+     * @return string
+     */
+    public function getPronoun()
+    {
+        return $this->pronoun;
+    }
+
+    /**
+     * Pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 41;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPronoun($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pronoun = $var;
 
         return $this;
     }

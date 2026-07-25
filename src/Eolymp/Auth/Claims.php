@@ -104,6 +104,12 @@ class Claims extends \Google\Protobuf\Internal\Message
      */
     protected $country = '';
     /**
+     * user's pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 80;</code>
+     */
+    protected $pronoun = '';
+    /**
      * user's preferred runtime (programming language, compiler) at Eolymp
      *
      * Generated from protobuf field <code>string preferred_runtime = 90;</code>
@@ -152,6 +158,8 @@ class Claims extends \Google\Protobuf\Internal\Message
      *           true if user is a minor
      *     @type string $country
      *           country where the user is from
+     *     @type string $pronoun
+     *           user's pronoun: "he", "she", or "they" (default)
      *     @type string $preferred_runtime
      *           user's preferred runtime (programming language, compiler) at Eolymp
      *     @type string $restrictions
@@ -549,6 +557,32 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * user's pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 80;</code>
+     * @return string
+     */
+    public function getPronoun()
+    {
+        return $this->pronoun;
+    }
+
+    /**
+     * user's pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 80;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPronoun($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pronoun = $var;
 
         return $this;
     }

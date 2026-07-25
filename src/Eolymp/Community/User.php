@@ -80,6 +80,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $city = '';
     /**
+     * Pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 80;</code>
+     */
+    protected $pronoun = '';
+    /**
      * Generated from protobuf field <code>string team_id = 100;</code>
      */
     protected $team_id = '';
@@ -111,6 +117,8 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $birthday
      *     @type string $country
      *     @type string $city
+     *     @type string $pronoun
+     *           Pronoun: "he", "she", or "they" (default)
      *     @type string $team_id
      *     @type \Eolymp\Community\User\Preferences $preferences
      * }
@@ -482,6 +490,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 80;</code>
+     * @return string
+     */
+    public function getPronoun()
+    {
+        return $this->pronoun;
+    }
+
+    /**
+     * Pronoun: "he", "she", or "they" (default)
+     *
+     * Generated from protobuf field <code>string pronoun = 80;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPronoun($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->pronoun = $var;
 
         return $this;
     }

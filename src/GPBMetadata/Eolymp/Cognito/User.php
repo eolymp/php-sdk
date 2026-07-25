@@ -17,8 +17,8 @@ class User
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ø
-eolymp/cognito/user.protoeolymp.cognito"ï
+é
+eolymp/cognito/user.protoeolymp.cognito"€
 User
 
 id (	
@@ -41,7 +41,8 @@ occupation (	
 last_activity# (2.google.protobuf.Timestamp7
 username_changed_on$ (2.google.protobuf.Timestamp7
 password_changed_on% (2.google.protobuf.Timestamp
-locale( (	+
+locale( (	
+pronoun) (	+
 aliases (2.eolymp.cognito.User.Alias
 discord_user_idd (	I
 Alias

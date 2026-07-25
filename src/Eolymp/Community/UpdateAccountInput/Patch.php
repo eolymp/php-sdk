@@ -68,6 +68,10 @@ class Patch
      */
     const USER_EMAIL_SUBSCRIPTIONS = 110;
     /**
+     * Generated from protobuf enum <code>USER_PRONOUN = 111;</code>
+     */
+    const USER_PRONOUN = 111;
+    /**
      * Generated from protobuf enum <code>ATTRIBUTES = 900;</code>
      */
     const ATTRIBUTES = 900;
@@ -87,6 +91,7 @@ class Patch
         self::USER_PREFERENCES_TIMEZONE => 'USER_PREFERENCES_TIMEZONE',
         self::USER_PREFERENCES_RUNTIME => 'USER_PREFERENCES_RUNTIME',
         self::USER_EMAIL_SUBSCRIPTIONS => 'USER_EMAIL_SUBSCRIPTIONS',
+        self::USER_PRONOUN => 'USER_PRONOUN',
         self::ATTRIBUTES => 'ATTRIBUTES',
     ];
 

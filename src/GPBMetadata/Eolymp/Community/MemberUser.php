@@ -19,8 +19,8 @@ class MemberUser
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ê
-"eolymp/community/member_user.protoeolymp.communityeolymp/mail/email_type.protogoogle/protobuf/timestamp.proto"“
+Û
+"eolymp/community/member_user.protoeolymp.communityeolymp/mail/email_type.protogoogle/protobuf/timestamp.proto"¤
 User
 issuer (	
 subject (	
@@ -39,6 +39,7 @@ class MemberUser
 birthday< (2.google.protobuf.Timestamp
 countryF (	
 cityI (	
+pronounP (	
 team_idd (	8
 preferences  (2".eolymp.community.User.Preferences@
 Preferences
