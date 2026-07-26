@@ -59,6 +59,16 @@ class Trigger
      * Generated from protobuf enum <code>CONTEST_FINALIZED = 11;</code>
      */
     const CONTEST_FINALIZED = 11;
+    /**
+     * User-invoked actions (run manually via TriggerRule, not by an event).
+     *
+     * Generated from protobuf enum <code>CONTEST_ACTION = 12;</code>
+     */
+    const CONTEST_ACTION = 12;
+    /**
+     * Generated from protobuf enum <code>MEMBER_ACTION = 13;</code>
+     */
+    const MEMBER_ACTION = 13;
 
     private static $valueToName = [
         self::UNKNOWN_TRIGGER => 'UNKNOWN_TRIGGER',
@@ -73,6 +83,8 @@ class Trigger
         self::ASSIGNMENT_CHANGED => 'ASSIGNMENT_CHANGED',
         self::PARTICIPANT_FINALIZED => 'PARTICIPANT_FINALIZED',
         self::CONTEST_FINALIZED => 'CONTEST_FINALIZED',
+        self::CONTEST_ACTION => 'CONTEST_ACTION',
+        self::MEMBER_ACTION => 'MEMBER_ACTION',
     ];
 
     public static function name($value)
