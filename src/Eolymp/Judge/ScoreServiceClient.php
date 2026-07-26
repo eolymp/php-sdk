@@ -58,6 +58,27 @@ class ScoreServiceClient {
     }
 
     /**
+     * DescribeResult retrieves a single participant's scoreboard result, including its rank.
+     *
+     * @param DescribeResultInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeResultOutput output message
+     */
+    public function DescribeResult(DescribeResultInput $input, array $context = [])
+    {
+        $path = "/participants/".rawurlencode($input->getParticipantId())."/result";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.ScoreService/DescribeResult";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeResultOutput::class, $context);
+    }
+
+    /**
      * @param ListScoreTimelineInput $input message
      * @param array $context request parameters
      *
