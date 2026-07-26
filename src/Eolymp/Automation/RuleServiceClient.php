@@ -130,4 +130,23 @@ class RuleServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, TriggerRuleOutput::class, $context);
     }
 
+    /**
+     * ListActions returns active action rules (CONTEST_ACTION/MEMBER_ACTION) applicable to the given
+     * references, so a client can show them as user-invoked actions for the referenced entity.
+     *
+     * @param ListActionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListActionsOutput output message
+     */
+    public function ListActions(ListActionsInput $input, array $context = [])
+    {
+        $path = "/automation/actions";
+
+        $context['name'] = "eolymp.automation.RuleService/ListActions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListActionsOutput::class, $context);
+    }
+
 }
