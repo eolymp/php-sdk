@@ -28,6 +28,12 @@ class Policy extends \Google\Protobuf\Internal\Message
      */
     protected $principal = '';
     /**
+     * id of the principal (see Principal) the policy is attached to
+     *
+     * Generated from protobuf field <code>string principal_id = 4;</code>
+     */
+    protected $principal_id = '';
+    /**
      * policy resource url, for example /contests/xyz, empty means policy applies globally
      *
      * Generated from protobuf field <code>string resource = 10;</code>
@@ -56,6 +62,8 @@ class Policy extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $principal
      *           policy principal (user id)
+     *     @type string $principal_id
+     *           id of the principal (see Principal) the policy is attached to
      *     @type string $resource
      *           policy resource url, for example /contests/xyz, empty means policy applies globally
      *     @type bool $allow_all
@@ -135,6 +143,32 @@ class Policy extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->principal = $var;
+
+        return $this;
+    }
+
+    /**
+     * id of the principal (see Principal) the policy is attached to
+     *
+     * Generated from protobuf field <code>string principal_id = 4;</code>
+     * @return string
+     */
+    public function getPrincipalId()
+    {
+        return $this->principal_id;
+    }
+
+    /**
+     * id of the principal (see Principal) the policy is attached to
+     *
+     * Generated from protobuf field <code>string principal_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrincipalId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->principal_id = $var;
 
         return $this;
     }

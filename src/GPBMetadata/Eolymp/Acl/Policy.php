@@ -17,14 +17,15 @@ class Policy
         \GPBMetadata\Eolymp\Acl\Action::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ø
+ï
 eolymp/acl/policy.proto
-eolymp.acl"~
+eolymp.acl"”
 Policy
 
 id (	
 name (	
-	principal (	
+	principal (	
+principal_id (	
 resource
  (	
 	allow_all ("
