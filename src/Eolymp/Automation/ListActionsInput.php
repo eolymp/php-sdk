@@ -17,6 +17,10 @@ class ListActionsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> references = 1;</code>
      */
     private $references;
+    /**
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Trigger trigger = 2;</code>
+     */
+    protected $trigger = 0;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class ListActionsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array|\Google\Protobuf\Internal\MapField $references
+     *     @type int $trigger
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class ListActionsInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->references = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Trigger trigger = 2;</code>
+     * @return int
+     */
+    public function getTrigger()
+    {
+        return $this->trigger;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Trigger trigger = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTrigger($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Automation\Rule\Trigger::class);
+        $this->trigger = $var;
 
         return $this;
     }
