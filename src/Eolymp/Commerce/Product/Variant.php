@@ -20,6 +20,10 @@ class Variant extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string product_id = 4;</code>
+     */
+    protected $product_id = '';
+    /**
      * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
@@ -57,6 +61,7 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $product_id
      *     @type string $name
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
@@ -91,6 +96,28 @@ class Variant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string product_id = 4;</code>
+     * @return string
+     */
+    public function getProductId()
+    {
+        return $this->product_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string product_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProductId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->product_id = $var;
 
         return $this;
     }

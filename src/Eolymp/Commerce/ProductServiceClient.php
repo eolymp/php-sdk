@@ -111,4 +111,102 @@ class ProductServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProductsOutput::class, $context);
     }
 
+    /**
+     * @param CreateProductVariantInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateProductVariantOutput output message
+     */
+    public function CreateProductVariant(CreateProductVariantInput $input, array $context = [])
+    {
+        $path = "/store/products/".rawurlencode($input->getProductId())."/variants";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/CreateProductVariant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateProductVariantOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateProductVariantInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateProductVariantOutput output message
+     */
+    public function UpdateProductVariant(UpdateProductVariantInput $input, array $context = [])
+    {
+        $path = "/store/products/".rawurlencode($input->getProductId())."/variants/".rawurlencode($input->getVariantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+        $input->setVariantId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/UpdateProductVariant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateProductVariantOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteProductVariantInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteProductVariantOutput output message
+     */
+    public function DeleteProductVariant(DeleteProductVariantInput $input, array $context = [])
+    {
+        $path = "/store/products/".rawurlencode($input->getProductId())."/variants/".rawurlencode($input->getVariantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+        $input->setVariantId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/DeleteProductVariant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteProductVariantOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeProductVariantInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeProductVariantOutput output message
+     */
+    public function DescribeProductVariant(DescribeProductVariantInput $input, array $context = [])
+    {
+        $path = "/store/products/".rawurlencode($input->getProductId())."/variants/".rawurlencode($input->getVariantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+        $input->setVariantId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/DescribeProductVariant";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeProductVariantOutput::class, $context);
+    }
+
+    /**
+     * @param ListProductVariantsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListProductVariantsOutput output message
+     */
+    public function ListProductVariants(ListProductVariantsInput $input, array $context = [])
+    {
+        $path = "/store/products/".rawurlencode($input->getProductId())."/variants";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProductId("");
+
+        $context['name'] = "eolymp.commerce.ProductService/ListProductVariants";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListProductVariantsOutput::class, $context);
+    }
+
 }
