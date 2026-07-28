@@ -23,11 +23,26 @@ class Field
      * Generated from protobuf enum <code>DESCRIPTION = 2;</code>
      */
     const DESCRIPTION = 2;
+    /**
+     * Generated from protobuf enum <code>TITLE = 3;</code>
+     */
+    const TITLE = 3;
+    /**
+     * Generated from protobuf enum <code>ASSIGNEE = 4;</code>
+     */
+    const ASSIGNEE = 4;
+    /**
+     * Generated from protobuf enum <code>TAGS = 5;</code>
+     */
+    const TAGS = 5;
 
     private static $valueToName = [
         self::UNKNOWN_FIELD => 'UNKNOWN_FIELD',
         self::STATUS => 'STATUS',
         self::DESCRIPTION => 'DESCRIPTION',
+        self::TITLE => 'TITLE',
+        self::ASSIGNEE => 'ASSIGNEE',
+        self::TAGS => 'TAGS',
     ];
 
     public static function name($value)

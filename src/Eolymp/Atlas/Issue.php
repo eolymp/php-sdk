@@ -18,17 +18,35 @@ class Issue extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string problem_id = 12;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>int64 number = 4;</code>
+     */
+    protected $number = 0;
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Issue.Status status = 2;</code>
      */
     protected $status = 0;
+    /**
+     * Generated from protobuf field <code>string title = 6;</code>
+     */
+    protected $title = '';
     /**
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
      */
     protected $description = null;
     /**
-     * Generated from protobuf field <code>string user_id = 5;</code>
+     * cognito user_id the issue is assigned to
+     *
+     * Generated from protobuf field <code>string assignee = 7;</code>
      */
-    protected $user_id = '';
+    protected $assignee = '';
+    /**
+     * Generated from protobuf field <code>repeated string tags = 9;</code>
+     */
+    private $tags;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
      */
@@ -37,6 +55,7 @@ class Issue extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
      */
     protected $updated_at = null;
+    protected $reporter;
 
     /**
      * Constructor.
@@ -45,9 +64,18 @@ class Issue extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $problem_id
+     *     @type int|string $number
      *     @type int $status
+     *     @type string $title
      *     @type \Eolymp\Ecm\Content $description
-     *     @type string $user_id
+     *     @type string $assignee
+     *           cognito user_id the issue is assigned to
+     *     @type string $reporter_id
+     *           cognito user_id, issue reported by a user from console
+     *     @type string $tester_id
+     *           community member_id, issue reported from space by a member/tester
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      * }
@@ -80,6 +108,50 @@ class Issue extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string problem_id = 12;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 number = 4;</code>
+     * @return int|string
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 number = 4;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->number = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Issue.Status status = 2;</code>
      * @return int
      */
@@ -97,6 +169,28 @@ class Issue extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Issue\Status::class);
         $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string title = 6;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Generated from protobuf field <code>string title = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
 
         return $this;
     }
@@ -134,23 +228,111 @@ class Issue extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 5;</code>
+     * cognito user_id the issue is assigned to
+     *
+     * Generated from protobuf field <code>string assignee = 7;</code>
      * @return string
      */
-    public function getUserId()
+    public function getAssignee()
     {
-        return $this->user_id;
+        return $this->assignee;
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 5;</code>
+     * cognito user_id the issue is assigned to
+     *
+     * Generated from protobuf field <code>string assignee = 7;</code>
      * @param string $var
      * @return $this
      */
-    public function setUserId($var)
+    public function setAssignee($var)
     {
         GPBUtil::checkString($var, True);
-        $this->user_id = $var;
+        $this->assignee = $var;
+
+        return $this;
+    }
+
+    /**
+     * cognito user_id, issue reported by a user from console
+     *
+     * Generated from protobuf field <code>string reporter_id = 5;</code>
+     * @return string
+     */
+    public function getReporterId()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasReporterId()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * cognito user_id, issue reported by a user from console
+     *
+     * Generated from protobuf field <code>string reporter_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReporterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * community member_id, issue reported from space by a member/tester
+     *
+     * Generated from protobuf field <code>string tester_id = 8;</code>
+     * @return string
+     */
+    public function getTesterId()
+    {
+        return $this->readOneof(8);
+    }
+
+    public function hasTesterId()
+    {
+        return $this->hasOneof(8);
+    }
+
+    /**
+     * community member_id, issue reported from space by a member/tester
+     *
+     * Generated from protobuf field <code>string tester_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTesterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string tags = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string tags = 9;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
 
         return $this;
     }
@@ -217,6 +399,14 @@ class Issue extends \Google\Protobuf\Internal\Message
         $this->updated_at = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReporter()
+    {
+        return $this->whichOneof("reporter");
     }
 
 }
