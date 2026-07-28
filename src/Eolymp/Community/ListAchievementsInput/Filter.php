@@ -21,6 +21,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID id = 2;</code>
      */
     private $id;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt quantity = 3;</code>
+     */
+    private $quantity;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 4;</code>
+     */
+    private $score;
 
     /**
      * Constructor.
@@ -30,6 +38,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type string $query
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
+     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $quantity
+     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $score
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +87,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->id = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt quantity = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt quantity = 3;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setQuantity($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->quantity = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt score = 4;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->score = $arr;
 
         return $this;
     }
