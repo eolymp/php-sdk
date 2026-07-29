@@ -27,12 +27,26 @@ class Dimension
      * Generated from protobuf enum <code>STATUS = 3;</code>
      */
     const STATUS = 3;
+    /**
+     * language family, the runtime without its version (cpp:20-gnu14 groups under cpp)
+     *
+     * Generated from protobuf enum <code>LANGUAGE = 4;</code>
+     */
+    const LANGUAGE = 4;
+    /**
+     * the full runtime, version included (cpp:20-gnu14)
+     *
+     * Generated from protobuf enum <code>RUNTIME = 5;</code>
+     */
+    const RUNTIME = 5;
 
     private static $valueToName = [
         self::UNKNOWN_DIMENSION => 'UNKNOWN_DIMENSION',
         self::SUBMITTED_AT => 'SUBMITTED_AT',
         self::VERDICT => 'VERDICT',
         self::STATUS => 'STATUS',
+        self::LANGUAGE => 'LANGUAGE',
+        self::RUNTIME => 'RUNTIME',
     ];
 
     public static function name($value)
