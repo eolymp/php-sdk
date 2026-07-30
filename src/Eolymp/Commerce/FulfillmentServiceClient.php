@@ -139,4 +139,23 @@ class FulfillmentServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, MarkReturnedOrderOutput::class, $context);
     }
 
+    /**
+     * ExportOrderLabels renders a printable pick list of shipping labels for the given orders
+     * to a PDF, uploads it as an asset and returns a temporary download URL.
+     *
+     * @param ExportOrderLabelsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportOrderLabelsOutput output message
+     */
+    public function ExportOrderLabels(ExportOrderLabelsInput $input, array $context = [])
+    {
+        $path = "/store/orders:export-labels";
+
+        $context['name'] = "eolymp.commerce.FulfillmentService/ExportOrderLabels";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportOrderLabelsOutput::class, $context);
+    }
+
 }
