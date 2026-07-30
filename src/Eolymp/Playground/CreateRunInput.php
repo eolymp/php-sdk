@@ -18,6 +18,10 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      */
     protected $runtime = '';
     /**
+     * Generated from protobuf field <code>bool trace = 3;</code>
+     */
+    protected $trace = false;
+    /**
      * Generated from protobuf field <code>string source = 100;</code>
      */
     protected $source = '';
@@ -30,6 +34,7 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $runtime
+     *     @type bool $trace
      *     @type string $source
      *     @type string $input_data
      *     @type string $input_ref
@@ -58,6 +63,28 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool trace = 3;</code>
+     * @return bool
+     */
+    public function getTrace()
+    {
+        return $this->trace;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool trace = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTrace($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->trace = $var;
 
         return $this;
     }

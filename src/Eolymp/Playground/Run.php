@@ -91,6 +91,13 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string output_url = 42;</code>
      */
     protected $output_url = '';
+    /**
+     * Step by step execution trace (JSONL), set only when the run requested tracing
+     * and the runtime supports it.
+     *
+     * Generated from protobuf field <code>string trace_url = 43;</code>
+     */
+    protected $trace_url = '';
 
     /**
      * Constructor.
@@ -124,6 +131,9 @@ class Run extends \Google\Protobuf\Internal\Message
      *           Resource usage statistics as reported by getrusage
      *     @type string $output_url
      *           Combined output (data or blob)
+     *     @type string $trace_url
+     *           Step by step execution trace (JSONL), set only when the run requested tracing
+     *           and the runtime supports it.
      * }
      */
     public function __construct($data = NULL) {
@@ -475,6 +485,34 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->output_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Step by step execution trace (JSONL), set only when the run requested tracing
+     * and the runtime supports it.
+     *
+     * Generated from protobuf field <code>string trace_url = 43;</code>
+     * @return string
+     */
+    public function getTraceUrl()
+    {
+        return $this->trace_url;
+    }
+
+    /**
+     * Step by step execution trace (JSONL), set only when the run requested tracing
+     * and the runtime supports it.
+     *
+     * Generated from protobuf field <code>string trace_url = 43;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTraceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->trace_url = $var;
 
         return $this;
     }
