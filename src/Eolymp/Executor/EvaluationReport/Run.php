@@ -82,6 +82,12 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $answer_url = '';
     /**
+     * Execution trace (JSONL), set only when task requested tracing and the runtime supports it.
+     *
+     * Generated from protobuf field <code>string trace_url = 13;</code>
+     */
+    protected $trace_url = '';
+    /**
      * execution stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
@@ -125,6 +131,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $input_url
      *     @type string $output_url
      *     @type string $answer_url
+     *     @type string $trace_url
+     *           Execution trace (JSONL), set only when task requested tracing and the runtime supports it.
      *     @type \Eolymp\Executor\Stats $debug_stats
      *           execution stats
      *     @type \Eolymp\Executor\Stats $checker_stats
@@ -462,6 +470,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->answer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Execution trace (JSONL), set only when task requested tracing and the runtime supports it.
+     *
+     * Generated from protobuf field <code>string trace_url = 13;</code>
+     * @return string
+     */
+    public function getTraceUrl()
+    {
+        return $this->trace_url;
+    }
+
+    /**
+     * Execution trace (JSONL), set only when task requested tracing and the runtime supports it.
+     *
+     * Generated from protobuf field <code>string trace_url = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTraceUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->trace_url = $var;
 
         return $this;
     }

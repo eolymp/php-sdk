@@ -46,6 +46,15 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $redirect_stderr_to_stdout = false;
     /**
+     * Record an execution trace for each run and report it as trace_url.
+     * Tracing changes how the submission is built and executed (debug symbols, no optimization, runs under a debugger),
+     * so a traced run is a different binary than a judged one and is orders of magnitude slower. Not all runtimes
+     * support it; those that don't ignore the flag. This is a task-level flag, it applies to every run.
+     *
+     * Generated from protobuf field <code>bool trace = 18;</code>
+     */
+    protected $trace = false;
+    /**
      * The agent will normalize execution time of each run within deviation range.
      * Each agent calculates a time coefficient (a multiplier) based on the evaluation time of benchmark solution. This coefficient is used to normalize execution time of each run.
      * This parameter allows to limit the coefficient deviation, for example 0.5 means the coefficient will be limited to range of 0.5-1.5, 0 means the coefficient will be ignored and actual execution time will be used.
@@ -124,6 +133,11 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *     @type bool $redirect_stderr_to_stdout
      *           Combine stderr and stdout when capturing output. Checker will use combined output as answer. Status will capture
      *           both stderr and stdout in output field while stderr will be empty.
+     *     @type bool $trace
+     *           Record an execution trace for each run and report it as trace_url.
+     *           Tracing changes how the submission is built and executed (debug symbols, no optimization, runs under a debugger),
+     *           so a traced run is a different binary than a judged one and is orders of magnitude slower. Not all runtimes
+     *           support it; those that don't ignore the flag. This is a task-level flag, it applies to every run.
      *     @type float $time_coefficient_deviation
      *           The agent will normalize execution time of each run within deviation range.
      *           Each agent calculates a time coefficient (a multiplier) based on the evaluation time of benchmark solution. This coefficient is used to normalize execution time of each run.
@@ -293,6 +307,38 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->redirect_stderr_to_stdout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Record an execution trace for each run and report it as trace_url.
+     * Tracing changes how the submission is built and executed (debug symbols, no optimization, runs under a debugger),
+     * so a traced run is a different binary than a judged one and is orders of magnitude slower. Not all runtimes
+     * support it; those that don't ignore the flag. This is a task-level flag, it applies to every run.
+     *
+     * Generated from protobuf field <code>bool trace = 18;</code>
+     * @return bool
+     */
+    public function getTrace()
+    {
+        return $this->trace;
+    }
+
+    /**
+     * Record an execution trace for each run and report it as trace_url.
+     * Tracing changes how the submission is built and executed (debug symbols, no optimization, runs under a debugger),
+     * so a traced run is a different binary than a judged one and is orders of magnitude slower. Not all runtimes
+     * support it; those that don't ignore the flag. This is a task-level flag, it applies to every run.
+     *
+     * Generated from protobuf field <code>bool trace = 18;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTrace($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->trace = $var;
 
         return $this;
     }
