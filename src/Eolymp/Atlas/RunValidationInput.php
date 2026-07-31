@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class RunValidationInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * only runtime, source and files are read; unset means use the saved one
+     * required; only runtime, source and files are read
      *
      * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 1;</code>
      */
@@ -27,7 +27,7 @@ class RunValidationInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Atlas\Validator $validator
-     *           only runtime, source and files are read; unset means use the saved one
+     *           required; only runtime, source and files are read
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class RunValidationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * only runtime, source and files are read; unset means use the saved one
+     * required; only runtime, source and files are read
      *
      * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 1;</code>
      * @return \Eolymp\Atlas\Validator|null
@@ -57,7 +57,7 @@ class RunValidationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * only runtime, source and files are read; unset means use the saved one
+     * required; only runtime, source and files are read
      *
      * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 1;</code>
      * @param \Eolymp\Atlas\Validator $var

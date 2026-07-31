@@ -54,22 +54,6 @@ class Validation extends \Google\Protobuf\Internal\Message
      */
     protected $error_url = '';
     /**
-     * Generated from protobuf field <code>uint32 total = 30;</code>
-     */
-    protected $total = 0;
-    /**
-     * Generated from protobuf field <code>uint32 checked = 31;</code>
-     */
-    protected $checked = 0;
-    /**
-     * Generated from protobuf field <code>uint32 valid = 32;</code>
-     */
-    protected $valid = 0;
-    /**
-     * Generated from protobuf field <code>uint32 invalid = 33;</code>
-     */
-    protected $invalid = 0;
-    /**
      * status for each run by group
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Validation.Group groups = 50;</code>
@@ -95,10 +79,6 @@ class Validation extends \Google\Protobuf\Internal\Message
      *           error message in case status is ERROR
      *     @type string $error_url
      *           a URL with error output, eg. compiler log
-     *     @type int $total
-     *     @type int $checked
-     *     @type int $valid
-     *     @type int $invalid
      *     @type array<\Eolymp\Atlas\Validation\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
      * }
@@ -282,94 +262,6 @@ class Validation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 total = 30;</code>
-     * @return int
-     */
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 total = 30;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTotal($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->total = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 checked = 31;</code>
-     * @return int
-     */
-    public function getChecked()
-    {
-        return $this->checked;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 checked = 31;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setChecked($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->checked = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 valid = 32;</code>
-     * @return int
-     */
-    public function getValid()
-    {
-        return $this->valid;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 valid = 32;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setValid($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->valid = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 invalid = 33;</code>
-     * @return int
-     */
-    public function getInvalid()
-    {
-        return $this->invalid;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 invalid = 33;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setInvalid($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->invalid = $var;
 
         return $this;
     }
