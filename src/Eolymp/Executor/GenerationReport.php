@@ -34,6 +34,10 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
      */
     protected $agent = '';
     /**
+     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Status status = 11;</code>
+     */
+    protected $status = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.executor.GenerationReport.Run runs = 40;</code>
      */
     private $runs;
@@ -53,6 +57,7 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $agent
+     *     @type int $status
      *     @type array<\Eolymp\Executor\GenerationReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *     @type string $error_message
      * }
@@ -168,6 +173,28 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->agent = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Status status = 11;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Status status = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Executor\GenerationReport\Status::class);
+        $this->status = $var;
 
         return $this;
     }

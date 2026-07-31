@@ -20,7 +20,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $reference = '';
     /**
-     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Run.Status status = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Status status = 2;</code>
      */
     protected $status = 0;
     /**
@@ -97,7 +97,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Run.Status status = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Status status = 2;</code>
      * @return int
      */
     public function getStatus()
@@ -106,13 +106,13 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Run.Status status = 2;</code>
+     * Generated from protobuf field <code>.eolymp.executor.GenerationReport.Status status = 2;</code>
      * @param int $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Executor\GenerationReport\Run\Status::class);
+        GPBUtil::checkEnum($var, \Eolymp\Executor\GenerationReport\Status::class);
         $this->status = $var;
 
         return $this;
