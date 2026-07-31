@@ -44,6 +44,10 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $answer_generator_stats = null;
     /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats validator_stats = 35;</code>
+     */
+    protected $validator_stats = null;
+    /**
      * Generated from protobuf field <code>string error_message = 40;</code>
      */
     protected $error_message = '';
@@ -61,6 +65,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $answer_url
      *     @type \Eolymp\Executor\Stats $input_generator_stats
      *     @type \Eolymp\Executor\Stats $answer_generator_stats
+     *     @type \Eolymp\Executor\Stats $validator_stats
      *     @type string $error_message
      * }
      */
@@ -239,6 +244,38 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
         $this->answer_generator_stats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats validator_stats = 35;</code>
+     * @return \Eolymp\Executor\Stats|null
+     */
+    public function getValidatorStats()
+    {
+        return $this->validator_stats;
+    }
+
+    public function hasValidatorStats()
+    {
+        return isset($this->validator_stats);
+    }
+
+    public function clearValidatorStats()
+    {
+        unset($this->validator_stats);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Stats validator_stats = 35;</code>
+     * @param \Eolymp\Executor\Stats $var
+     * @return $this
+     */
+    public function setValidatorStats($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Stats::class);
+        $this->validator_stats = $var;
 
         return $this;
     }
