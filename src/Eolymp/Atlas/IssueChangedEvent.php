@@ -25,6 +25,12 @@ class IssueChangedEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Issue after = 3;</code>
      */
     protected $after = null;
+    /**
+     * Cognito user_id of the user who performed the change. Empty for member/tester callers or service (non-user) calls.
+     *
+     * Generated from protobuf field <code>string actor_id = 4;</code>
+     */
+    protected $actor_id = '';
 
     /**
      * Constructor.
@@ -35,6 +41,8 @@ class IssueChangedEvent extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type \Eolymp\Atlas\Issue $before
      *     @type \Eolymp\Atlas\Issue $after
+     *     @type string $actor_id
+     *           Cognito user_id of the user who performed the change. Empty for member/tester callers or service (non-user) calls.
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +132,32 @@ class IssueChangedEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Issue::class);
         $this->after = $var;
+
+        return $this;
+    }
+
+    /**
+     * Cognito user_id of the user who performed the change. Empty for member/tester callers or service (non-user) calls.
+     *
+     * Generated from protobuf field <code>string actor_id = 4;</code>
+     * @return string
+     */
+    public function getActorId()
+    {
+        return $this->actor_id;
+    }
+
+    /**
+     * Cognito user_id of the user who performed the change. Empty for member/tester callers or service (non-user) calls.
+     *
+     * Generated from protobuf field <code>string actor_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setActorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->actor_id = $var;
 
         return $this;
     }
