@@ -39,6 +39,12 @@ class Feature
      * Generated from protobuf enum <code>EDIT_CODE = 4;</code>
      */
     const EDIT_CODE = 4;
+    /**
+     * offer a traced run and show the execution trace
+     *
+     * Generated from protobuf enum <code>TRACE_CODE = 5;</code>
+     */
+    const TRACE_CODE = 5;
 
     private static $valueToName = [
         self::UNKNOWN_FEATURE => 'UNKNOWN_FEATURE',
@@ -46,6 +52,7 @@ class Feature
         self::RUN_CODE => 'RUN_CODE',
         self::UPLOAD_CODE => 'UPLOAD_CODE',
         self::EDIT_CODE => 'EDIT_CODE',
+        self::TRACE_CODE => 'TRACE_CODE',
     ];
 
     public static function name($value)
