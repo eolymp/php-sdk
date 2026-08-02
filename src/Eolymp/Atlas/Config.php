@@ -25,6 +25,13 @@ class Config extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 daily_ip_submission_limit = 2;</code>
      */
     protected $daily_ip_submission_limit = 0;
+    /**
+     * Offer traced runs in the editor. A traced run is built and executed differently and
+     * costs orders of magnitude more CPU, so it is opt-in per space.
+     *
+     * Generated from protobuf field <code>bool tracing_enabled = 3;</code>
+     */
+    protected $tracing_enabled = false;
 
     /**
      * Constructor.
@@ -36,6 +43,9 @@ class Config extends \Google\Protobuf\Internal\Message
      *           max submissions per IP per hour; 0 = unlimited
      *     @type int $daily_ip_submission_limit
      *           max submissions per IP per day; 0 = unlimited
+     *     @type bool $tracing_enabled
+     *           Offer traced runs in the editor. A traced run is built and executed differently and
+     *           costs orders of magnitude more CPU, so it is opt-in per space.
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +101,34 @@ class Config extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->daily_ip_submission_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Offer traced runs in the editor. A traced run is built and executed differently and
+     * costs orders of magnitude more CPU, so it is opt-in per space.
+     *
+     * Generated from protobuf field <code>bool tracing_enabled = 3;</code>
+     * @return bool
+     */
+    public function getTracingEnabled()
+    {
+        return $this->tracing_enabled;
+    }
+
+    /**
+     * Offer traced runs in the editor. A traced run is built and executed differently and
+     * costs orders of magnitude more CPU, so it is opt-in per space.
+     *
+     * Generated from protobuf field <code>bool tracing_enabled = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTracingEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->tracing_enabled = $var;
 
         return $this;
     }

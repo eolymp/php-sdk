@@ -27,11 +27,18 @@ class Field
      * Generated from protobuf enum <code>DAILY_IP_SUBMISSION_LIMIT = 2;</code>
      */
     const DAILY_IP_SUBMISSION_LIMIT = 2;
+    /**
+     * update whether traced runs are offered
+     *
+     * Generated from protobuf enum <code>TRACING_ENABLED = 3;</code>
+     */
+    const TRACING_ENABLED = 3;
 
     private static $valueToName = [
         self::UNKNOWN_PATCH => 'UNKNOWN_PATCH',
         self::HOURLY_IP_SUBMISSION_LIMIT => 'HOURLY_IP_SUBMISSION_LIMIT',
         self::DAILY_IP_SUBMISSION_LIMIT => 'DAILY_IP_SUBMISSION_LIMIT',
+        self::TRACING_ENABLED => 'TRACING_ENABLED',
     ];
 
     public static function name($value)
