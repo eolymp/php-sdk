@@ -111,4 +111,82 @@ class IssueServiceClient {
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteIssueOutput::class, $context);
     }
 
+    /**
+     * @param ListIssueActivitiesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListIssueActivitiesOutput output message
+     */
+    public function ListIssueActivities(ListIssueActivitiesInput $input, array $context = [])
+    {
+        $path = "/issues/".rawurlencode($input->getIssueId())."/activities";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setIssueId("");
+
+        $context['name'] = "eolymp.atlas.IssueService/ListIssueActivities";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListIssueActivitiesOutput::class, $context);
+    }
+
+    /**
+     * @param CreateIssueCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateIssueCommentOutput output message
+     */
+    public function CreateIssueComment(CreateIssueCommentInput $input, array $context = [])
+    {
+        $path = "/issues/".rawurlencode($input->getIssueId())."/comments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setIssueId("");
+
+        $context['name'] = "eolymp.atlas.IssueService/CreateIssueComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateIssueCommentOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateIssueCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateIssueCommentOutput output message
+     */
+    public function UpdateIssueComment(UpdateIssueCommentInput $input, array $context = [])
+    {
+        $path = "/issues/".rawurlencode($input->getIssueId())."/comments/".rawurlencode($input->getCommentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setIssueId("");
+        $input->setCommentId("");
+
+        $context['name'] = "eolymp.atlas.IssueService/UpdateIssueComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateIssueCommentOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteIssueCommentInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteIssueCommentOutput output message
+     */
+    public function DeleteIssueComment(DeleteIssueCommentInput $input, array $context = [])
+    {
+        $path = "/issues/".rawurlencode($input->getIssueId())."/comments/".rawurlencode($input->getCommentId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setIssueId("");
+        $input->setCommentId("");
+
+        $context['name'] = "eolymp.atlas.IssueService/DeleteIssueComment";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteIssueCommentOutput::class, $context);
+    }
+
 }
