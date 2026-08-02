@@ -9,10 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ScoreboardRowChangedEvent is published after a materialized scoreboard row is committed (and after rank
- * label changes), so consumers can re-read the row and are guaranteed to see at least this version.
- * It is a trigger, not a payload: consumers must pull the row via the API rather than apply event data.
- *
  * Generated from protobuf message <code>eolymp.judge.ScoreboardRowChangedEvent</code>
  */
 class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
@@ -22,7 +18,7 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode kind = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.ScoreboardRowChangedEvent.Kind kind = 2;</code>
      */
     protected $kind = 0;
     /**
@@ -36,7 +32,7 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
-     * scoreboard version after the committed write (board-global, monotonic)
+     * scoreboard board version after the committed write
      *
      * Generated from protobuf field <code>int64 version = 5;</code>
      */
@@ -54,7 +50,7 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *           empty for ghost participants
      *     @type int|string $version
-     *           scoreboard version after the committed write (board-global, monotonic)
+     *           scoreboard board version after the committed write
      * }
      */
     public function __construct($data = NULL) {
@@ -85,7 +81,7 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode kind = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.ScoreboardRowChangedEvent.Kind kind = 2;</code>
      * @return int
      */
     public function getKind()
@@ -94,13 +90,13 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode kind = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.ScoreboardRowChangedEvent.Kind kind = 2;</code>
      * @param int $var
      * @return $this
      */
     public function setKind($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Mode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\ScoreboardRowChangedEvent\Kind::class);
         $this->kind = $var;
 
         return $this;
@@ -155,7 +151,7 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * scoreboard version after the committed write (board-global, monotonic)
+     * scoreboard board version after the committed write
      *
      * Generated from protobuf field <code>int64 version = 5;</code>
      * @return int|string
@@ -166,7 +162,7 @@ class ScoreboardRowChangedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * scoreboard version after the committed write (board-global, monotonic)
+     * scoreboard board version after the committed write
      *
      * Generated from protobuf field <code>int64 version = 5;</code>
      * @param int|string $var
