@@ -26,13 +26,13 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $subject = null;
     /**
-     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
-     */
-    protected $content = null;
-    /**
      * Generated from protobuf field <code>optional bool automatic = 15;</code>
      */
     protected $automatic = null;
+    /**
+     * Generated from protobuf field <code>optional string content = 52;</code>
+     */
+    protected $content = null;
 
     /**
      * Constructor.
@@ -43,8 +43,8 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $key
      *     @type bool $draft
      *     @type string $subject
-     *     @type \Eolymp\Ecm\Content $content
      *     @type bool $automatic
+     *     @type string $content
      * }
      */
     public function __construct($data = NULL) {
@@ -149,38 +149,6 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
-     * @return \Eolymp\Ecm\Content|null
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    public function hasContent()
-    {
-        return isset($this->content);
-    }
-
-    public function clearContent()
-    {
-        unset($this->content);
-    }
-
-    /**
-     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
-     * @param \Eolymp\Ecm\Content $var
-     * @return $this
-     */
-    public function setContent($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->content = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>optional bool automatic = 15;</code>
      * @return bool
      */
@@ -208,6 +176,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string content = 52;</code>
+     * @return string
+     */
+    public function getContent()
+    {
+        return isset($this->content) ? $this->content : '';
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string content = 52;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->content = $var;
 
         return $this;
     }

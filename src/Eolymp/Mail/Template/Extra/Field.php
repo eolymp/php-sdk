@@ -16,18 +16,13 @@ class Field
      */
     const UNKNOWN_EXTRA = 0;
     /**
-     * Generated from protobuf enum <code>CONTENT_VALUE = 1;</code>
+     * Generated from protobuf enum <code>CONTENT = 1;</code>
      */
-    const CONTENT_VALUE = 1;
-    /**
-     * Generated from protobuf enum <code>CONTENT_RENDER = 2;</code>
-     */
-    const CONTENT_RENDER = 2;
+    const CONTENT = 1;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
-        self::CONTENT_VALUE => 'CONTENT_VALUE',
-        self::CONTENT_RENDER => 'CONTENT_RENDER',
+        self::CONTENT => 'CONTENT',
     ];
 
     public static function name($value)
