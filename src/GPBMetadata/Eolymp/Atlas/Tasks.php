@@ -16,7 +16,7 @@ class Tasks
         }
         $pool->internalAddGeneratedFile(
             '
-Œ
+ý
 eolymp/atlas/tasks.protoeolymp.atlas"=
 ImportProblemTask
 
@@ -33,7 +33,14 @@ problem_id (	
 problem_id (	
 source_locale (	
 target_locales (	
-override_manual (B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+override_manual ("o
+GenerateTestsTask
+
+problem_id (	
+test_references (	-
+
+Checkpoint
+pending_test_references (	B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;
