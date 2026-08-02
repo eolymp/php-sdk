@@ -15,11 +15,12 @@ class Events
           return;
         }
         \GPBMetadata\Eolymp\Judge\Score::initOnce();
+        \GPBMetadata\Eolymp\Judge\Scoreboard::initOnce();
         \GPBMetadata\Eolymp\Judge\Submission::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ç
-eolymp/judge/events.protoeolymp.judgeeolymp/judge/submission.proto"\\
+¡
+eolymp/judge/events.protoeolymp.judgeeolymp/judge/scoreboard.protoeolymp/judge/submission.proto"\\
 SubmissionCompletedEvent
 
 contest_id
@@ -36,7 +37,14 @@ contest_id (	
 participant_id (	
 
 unofficial ("
-score (2.eolymp.judge.Score"Q
+score (2.eolymp.judge.Score"˜
+ScoreboardRowChangedEvent
+
+contest_id (	+
+kind (2.eolymp.judge.Scoreboard.Mode
+participant_id (	
+	member_id (	
+version ("Q
 RetestProblemEvent
 
 contest_id (	
