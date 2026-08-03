@@ -13,8 +13,7 @@ namespace Eolymp\Judge;
      * one participant is a ticket instead (see TicketService). Besides creating, reading, updating and
      * deleting them, the service tracks which announcements the calling participant has already seen, which
      * exists so a client can badge the unread ones — the console does not use that part, the contest client
-     * does. Every call is addressed to one contest inside a space, and the streaming calls have no HTTP
-     * binding, so they exist only in the SDKs.
+     * does. Every call is addressed to one contest inside a space.
      */
 class AnnouncementServiceClient {
 

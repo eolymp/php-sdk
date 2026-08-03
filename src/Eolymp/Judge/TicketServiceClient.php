@@ -13,7 +13,7 @@ namespace Eolymp\Judge;
      * identity, in which case participants never learn which person answered them. A ticket also carries a
      * status saying whether the jury still owes an answer, and marking a question resolved, reopened or
      * closed is an update of that status rather than a dedicated call. Every call is addressed to one contest
-     * inside a space, and the streaming calls have no HTTP binding, so they exist only in the SDKs.
+     * inside a space.
      */
 class TicketServiceClient {
 
