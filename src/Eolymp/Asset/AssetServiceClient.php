@@ -23,7 +23,9 @@ class AssetServiceClient {
     }
 
     /**
-     * deprecated, use universal UploadAsset API instead
+     * deprecated
+     *
+     * Use universal UploadAsset API instead.
      *
      * @param UploadImageInput $input message
      * @param array $context request parameters
@@ -41,7 +43,9 @@ class AssetServiceClient {
     }
 
     /**
-     * deprecated, use universal UploadAsset API instead
+     * deprecated
+     *
+     * Use universal UploadAsset API instead.
      *
      * @param UploadFileInput $input message
      * @param array $context request parameters

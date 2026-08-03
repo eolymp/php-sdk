@@ -39,7 +39,9 @@ class ParticipantServiceClient {
     }
 
     /**
-     * deprecated, use UpdateParticipant instead
+     * deprecated
+     *
+     * Use UpdateParticipant instead.
      *
      * @param EnableParticipantInput $input message
      * @param array $context request parameters
@@ -60,7 +62,9 @@ class ParticipantServiceClient {
     }
 
     /**
-     * deprecated, use UpdateParticipant instead
+     * deprecated
+     *
+     * Use UpdateParticipant instead.
      *
      * @param DisableParticipantInput $input message
      * @param array $context request parameters
@@ -192,8 +196,10 @@ class ParticipantServiceClient {
     }
 
     /**
+     * deprecated
+     *
      * Allows a participant (currently authorized user) to join (add himself to) a public contest.
-     * deprecated: use registration service instead
+     * Use registration service instead.
      *
      * @param JoinContestInput $input message
      * @param array $context request parameters
