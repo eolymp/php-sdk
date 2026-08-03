@@ -4,6 +4,16 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * ValidationService runs a validator across the tests of a problem and reports the outcome test by test.
+     *
+     * A validator is a program which verifies that a test's input satisfies the constraints the statement
+     * promises; it never looks at the answer. This service does not store the validator — RunValidation reads it
+     * straight out of the request, so a validator can be tried before it is saved anywhere, and the validator kept
+     * with the problem is created and edited through TestingService, not here. Validation is asynchronous:
+     * RunValidation hands back an id, DescribeValidation polls it and WatchValidation streams updates until it
+     * settles.
+     */
 class ValidationServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,11 @@ class ValidationServiceClient {
     }
 
     /**
+     * RunValidation compiles the validator given in the request, starts checking every test of the problem with
+     * it, and returns the new validation id together with its initial state. The validator is not written to the
+     * problem — this is how a candidate is tried out before TestingService.UpdateValidator stores it. Starting a
+     * validation supersedes any earlier one still in flight, which ends up cancelled.
+     *
      * @param RunValidationInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +54,11 @@ class ValidationServiceClient {
     }
 
     /**
+     * DescribeValidation returns the current state of a validation, broken down test by test, each run pointing
+     * at the input it was fed and at the validator's own output with stderr merged in. Keep polling until the
+     * status settles. A per-test verdict distinguishes an input the validator rejected from one which could not
+     * be produced at all, because a generator or a download failed.
+     *
      * @param DescribeValidationInput $input message
      * @param array $context request parameters
      *

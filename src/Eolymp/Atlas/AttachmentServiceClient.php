@@ -4,6 +4,14 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * AttachmentService manages the extra files published with a problem, the console's "Additional files".
+     *
+     * Uploads happen outside this service: upload the file through eolymp.asset.AssetService first, then
+     * register the link it returns here. Every method works on the problem addressed by the request path,
+     * and attachments are never shared between problems. Read methods can also target an earlier problem
+     * version, which requires permission to read the problem history.
+     */
 class AttachmentServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,10 @@ class AttachmentServiceClient {
     }
 
     /**
+     * CreateAttachment registers an already uploaded file with the problem. It uploads nothing itself:
+     * upload the file through eolymp.asset.AssetService first, most conveniently with UploadAsset, and
+     * register the link it returns here.
+     *
      * @param CreateAttachmentInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +51,9 @@ class AttachmentServiceClient {
     }
 
     /**
+     * UpdateAttachment replaces an attachment; there is no field mask, so anything omitted from the request
+     * is cleared rather than kept.
+     *
      * @param UpdateAttachmentInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +73,9 @@ class AttachmentServiceClient {
     }
 
     /**
+     * DeleteAttachment detaches the file from the problem so it is no longer published with it. Only the
+     * problem's reference is removed; the linked file itself is left in storage untouched.
+     *
      * @param DeleteAttachmentInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +95,9 @@ class AttachmentServiceClient {
     }
 
     /**
+     * ListAttachments returns the problem's attachments sorted by name. Only the declared filter
+     * expressions are supported; there is no free-text search here.
+     *
      * @param ListAttachmentsInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +114,9 @@ class AttachmentServiceClient {
     }
 
     /**
+     * DescribeAttachment returns a single attachment of this problem, optionally as it looked in an earlier
+     * problem version.
+     *
      * @param DescribeAttachmentInput $input message
      * @param array $context request parameters
      *

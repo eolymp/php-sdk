@@ -4,6 +4,16 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * ProblemService manages problems in a space.
+     *
+     * A problem is a task participants solve by submitting a program which has to produce correct output for a
+     * set of tests. Beyond its own metadata a problem owns per-language statements, testsets with tests, a
+     * checker and optionally an interactor and a validator, generator scripts, code templates, reference
+     * solutions and editorials — each of those is managed by its own service (StatementService, TestingService,
+     * ScriptService, CodeTemplateService, SolutionService, ...). Every method here is scoped to one space, which
+     * is part of the request URL.
+     */
 class ProblemServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,11 @@ class ProblemServiceClient {
     }
 
     /**
+     * CreateProblem adds a new problem to the space and returns its ID. A first statement can be created along
+     * with it, otherwise statements are added later through StatementService. Giving the problem an origin
+     * imports it from Polygon, from Basecamp or from another space instead of creating an empty one; that copy
+     * is made asynchronously, so the imported content shows up some time after this call has returned.
+     *
      * @param CreateProblemInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +54,11 @@ class ProblemServiceClient {
     }
 
     /**
+     * UpdateProblem changes problem metadata, which is also how a problem is published or unpublished in the
+     * catalog. Only fields named in the patch mask are written, and an empty mask writes all of them, blanking
+     * whatever the request left empty. Problem content such as statements and testsets belongs to other
+     * services and is untouched.
+     *
      * @param UpdateProblemInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +78,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * DeleteProblem permanently removes the problem together with all content attached to it, and there is no
+     * restore. To take a problem out of the catalog while keeping it, make it invisible with UpdateProblem
+     * instead.
+     *
      * @param DeleteProblemInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +101,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * DescribeProblem returns one problem, along with the statistics the platform computes for it. Statement
+     * text comes back only when asked for, either as raw markup for editing or as a parsed tree for display,
+     * and the requested locale decides which statement supplies the title and content.
+     *
      * @param DescribeProblemInput $input message
      * @param array $context request parameters
      *
@@ -96,6 +124,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * ListProblems returns a page of the space's problems; page over the reported total rather than the number
+     * of items returned. Statement content is left out unless it is asked for, and the requested locale decides
+     * which statement supplies the title.
+     *
      * @param ListProblemsInput $input message
      * @param array $context request parameters
      *
@@ -112,6 +144,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * SyncProblem pulls an imported problem from its origin again, so it applies only to problems which were
+     * created with an origin. The pulled copy replaces the local one: modifications made to the problem in this
+     * space are overwritten and cannot be recovered afterwards.
+     *
      * @param SyncProblemInput $input message
      * @param array $context request parameters
      *
@@ -131,6 +167,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * VoteProblem records how the calling user rates the problem — the difficulty and quality signal shown next
+     * to the problem in the archive — and returns the resulting number of votes. The aggregate is also readable
+     * on the problem itself, where it is read-only.
+     *
      * @param VoteProblemInput $input message
      * @param array $context request parameters
      *
@@ -150,6 +190,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * ListVersions returns the changelog of edits made to the problem. It can be paged either by offset or by
+     * feeding the returned cursor back into the next request. The change history is editor-facing, so this read
+     * requires the write scope, and its version numbers are what ExportProblem takes.
+     *
      * @param ListVersionsInput $input message
      * @param array $context request parameters
      *
@@ -169,6 +213,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * ListRuntimes returns the runtimes enabled for this problem, that is the language and compiler versions a
+     * participant may pick when submitting — a subset of the platform's runtimes, not the full catalog.
+     * Runtimes marked deprecated are still offered.
+     *
      * @param ListRuntimesInput $input message
      * @param array $context request parameters
      *
@@ -188,6 +236,10 @@ class ProblemServiceClient {
     }
 
     /**
+     * ExportProblem produces a downloadable snapshot of the whole problem, content included, and returns a URL
+     * to download it from rather than the data itself. Given a version number from ListVersions it exports the
+     * problem as it was at that revision instead of its current state.
+     *
      * @param ExportProblemInput $input message
      * @param array $context request parameters
      *

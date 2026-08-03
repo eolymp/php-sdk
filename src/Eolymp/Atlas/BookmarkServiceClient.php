@@ -4,6 +4,14 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * BookmarkService tracks problems a member saved for later.
+     *
+     * A bookmark is a per-member flag on a single problem, which the public archive renders as a star on the
+     * problem and which ProblemService.ListProblems can filter on. Both methods are bound to the problem
+     * addressed in the request URL and to the member making the call, so neither takes a problem or a member in
+     * the request body and neither can read or change another member's bookmarks.
+     */
 class BookmarkServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,9 @@ class BookmarkServiceClient {
     }
 
     /**
+     * GetBookmark tells whether the calling member has this problem bookmarked. A problem never bookmarked and
+     * one whose bookmark was removed are indistinguishable.
+     *
      * @param GetBookmarkInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +50,9 @@ class BookmarkServiceClient {
     }
 
     /**
+     * SetBookmark both stars and unstars the problem for the calling member, depending on the value sent. It
+     * sets an absolute state, not a toggle, so repeating it with the same value has no further effect.
+     *
      * @param SetBookmarkInput $input message
      * @param array $context request parameters
      *

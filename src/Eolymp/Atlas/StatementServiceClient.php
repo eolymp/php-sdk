@@ -4,6 +4,17 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * StatementService manages problem statements.
+     *
+     * A statement is the problem text for one locale, and a problem normally has one statement per language so a
+     * participant can read it in their own. Content is Markdown or LaTeX, split into sections by markers placed on
+     * their own line (`\InputFile`, `\Interaction`, `\OutputFile`, `\Examples`, `\Note`, `\Scoring`), and the text
+     * before the first marker is the introduction. Never write the `\Examples` section by hand: it is generated
+     * from the tests marked as examples. Content is returned only when requested, either in its raw form for
+     * editing or as a parsed tree for display. Every method acts on the problem addressed by the request path,
+     * which is why no request carries a problem id.
+     */
 class StatementServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,9 @@ class StatementServiceClient {
     }
 
     /**
+     * CreateStatement adds the statement for one locale and returns its id. Publishing the same problem in
+     * another language means creating another statement, not editing this one.
+     *
      * @param CreateStatementInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +53,9 @@ class StatementServiceClient {
     }
 
     /**
+     * UpdateStatement writes new values into an existing statement. Fields outside the patch mask keep the
+     * values they already have, so a title fix does not require resending the content.
+     *
      * @param UpdateStatementInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +75,9 @@ class StatementServiceClient {
     }
 
     /**
+     * DeleteStatement permanently removes a single locale of the problem text. The problem itself and its
+     * statements in other locales are left untouched.
+     *
      * @param DeleteStatementInput $input message
      * @param array $context request parameters
      *
@@ -77,7 +97,8 @@ class StatementServiceClient {
     }
 
     /**
-     * DescribeStatement returns statement.
+     * DescribeStatement returns a single statement by id, for callers that already know which locale they want;
+     * its content is left out unless requested, in raw or rendered form.
      *
      * @param DescribeStatementInput $input message
      * @param array $context request parameters
@@ -98,7 +119,8 @@ class StatementServiceClient {
     }
 
     /**
-     * LookupStatement finds a statement in one of the requested languages.
+     * LookupStatement finds a statement by locale instead of by id, and the server falls back to another locale
+     * when the requested one does not exist — this is how a client renders a problem for a particular reader.
      *
      * @param LookupStatementInput $input message
      * @param array $context request parameters
@@ -116,9 +138,8 @@ class StatementServiceClient {
     }
 
     /**
-     * PreviewStatement renders unsaved statement.
-     *
-     * This method can be used to render statement before it has been saved.
+     * PreviewStatement renders a draft statement sent in the request, before it has been saved. Nothing is read
+     * from or written to stored data, which makes it suitable for a live preview pane next to the editor.
      *
      * @param PreviewStatementInput $input message
      * @param array $context request parameters
@@ -136,6 +157,9 @@ class StatementServiceClient {
     }
 
     /**
+     * ListStatements returns the problem's statements, one per locale, which is how to discover the languages a
+     * problem is available in. Their content is left out unless requested.
+     *
      * @param ListStatementsInput $input message
      * @param array $context request parameters
      *
@@ -152,6 +176,11 @@ class StatementServiceClient {
     }
 
     /**
+     * TranslateStatements starts automatic translation of a statement into other locales and returns a job id;
+     * the translation runs asynchronously, so the target statements appear some time after the call returns and
+     * are found by listing them again. Statements written by hand are not overwritten unless the request asks
+     * for it, and the produced statements are marked as automatic.
+     *
      * @param TranslateStatementsInput $input message
      * @param array $context request parameters
      *
@@ -168,6 +197,9 @@ class StatementServiceClient {
     }
 
     /**
+     * ExportStatement renders a saved statement into a downloadable document, offered in the console as
+     * "Export to PDF". The response carries a link to fetch the document, not the document itself.
+     *
      * @param ExportStatementInput $input message
      * @param array $context request parameters
      *
@@ -187,6 +219,10 @@ class StatementServiceClient {
     }
 
     /**
+     * ListStatementVersions returns earlier revisions of one statement, so a client can show a history or
+     * compare two revisions. Each revision comes back as a whole statement rather than as version metadata, with
+     * its content left out unless requested.
+     *
      * @param ListStatementVersionsInput $input message
      * @param array $context request parameters
      *

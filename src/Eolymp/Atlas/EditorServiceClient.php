@@ -4,6 +4,14 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * EditorService drives the participant-side code editor of a problem, not the authoring console.
+     *
+     * It answers two things for the caller's own account: how the editor should be set up on this problem, and
+     * what the participant was last working on. That work in progress is a private per-user, per-problem draft
+     * kept so it survives a reload or navigating away. Saving a draft is not a submission and is never
+     * compiled or graded; use SubmissionService to actually submit.
+     */
 class EditorServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,10 @@ class EditorServiceClient {
     }
 
     /**
+     * DescribeEditor returns everything needed to open the editor for the current user on this problem.
+     * Which features are enabled varies with problem type and space or contest setup, so drive the editor's
+     * controls off the response rather than assuming.
+     *
      * @param DescribeEditorInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +51,10 @@ class EditorServiceClient {
     }
 
     /**
+     * DescribeEditorState returns only the current user's saved draft for this problem, for restoring the
+     * editor without re-reading its whole configuration. A user who never worked on the problem simply gets
+     * an empty draft, not an error.
+     *
      * @param DescribeEditorStateInput $input message
      * @param array $context request parameters
      *
@@ -55,6 +71,10 @@ class EditorServiceClient {
     }
 
     /**
+     * UpdateEditorState replaces the current user's draft; there is no field mask, so anything omitted from
+     * the request is cleared rather than kept. Submitted values are only kept when they are file uploads
+     * naming a field the problem's submission form declares, the rest are silently dropped.
+     *
      * @param UpdateEditorStateInput $input message
      * @param array $context request parameters
      *
@@ -71,6 +91,11 @@ class EditorServiceClient {
     }
 
     /**
+     * PrintEditorCode queues the code passed in for printing on behalf of the current user, on the printer
+     * of the contest being solved; the code is printed as given and is not submitted or saved as a draft.
+     * Printing is only available where a printer is configured and fails as a precondition error otherwise,
+     * so only call it when DescribeEditor reports the printing feature.
+     *
      * @param PrintEditorCodeInput $input message
      * @param array $context request parameters
      *

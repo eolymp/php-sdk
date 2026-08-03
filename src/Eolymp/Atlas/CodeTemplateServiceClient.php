@@ -4,6 +4,16 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * CodeTemplateService manages a problem's code templates: the starting code a participant sees the first
+     * time they open the editor, usually the boilerplate for reading input and writing output.
+     *
+     * A problem holds at most one template per runtime. Besides the body the participant sees, a template can
+     * carry hidden parts: code wrapped around the participant's code before compilation, and extra files
+     * placed into the working directory at compile and run time (C++ headers, for example). In several
+     * languages a running program can still read those, so grading logic must never live in a template: it
+     * belongs in the checker or interactor.
+     */
 class CodeTemplateServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,8 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * CreateCodeTemplate adds the problem's template for one runtime.
+     *
      * @param CreateCodeTemplateInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +51,9 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * UpdateCodeTemplate replaces a template; there is no field mask, so anything omitted from the request
+     * is cleared rather than kept.
+     *
      * @param UpdateCodeTemplateInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +73,10 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * DeleteCodeTemplate drops the template together with its hidden parts, so submissions in that runtime
+     * are compiled from the participant's code alone. The editor then falls back to the platform's generic
+     * starter code for the runtime instead of showing an empty file.
+     *
      * @param DeleteCodeTemplateInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +96,10 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * ListCodeTemplates returns every template of the problem ordered by runtime. The hidden parts of a
+     * template are withheld unless the caller may read the problem's testing configuration, so a template
+     * that comes back without them does not necessarily have none.
+     *
      * @param ListCodeTemplatesInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +116,9 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * DescribeCodeTemplate returns one template, optionally as it was in an earlier problem version, which
+     * requires permission to read problem history. Hidden parts are withheld as in listing.
+     *
      * @param DescribeCodeTemplateInput $input message
      * @param array $context request parameters
      *
@@ -112,6 +138,11 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * LookupCodeTemplate fetches the starting code by runtime instead of by template id, which is how an
+     * editor loads it when the participant picks a language. It returns only the template body, never the
+     * hidden parts, and a runtime the problem has no template for falls back to the platform's generic
+     * starter code; an unknown runtime is reported as not found.
+     *
      * @param LookupCodeTemplateInput $input message
      * @param array $context request parameters
      *
@@ -128,6 +159,12 @@ class CodeTemplateServiceClient {
     }
 
     /**
+     * GenerateCodeTemplates writes missing templates automatically from the problem statement and, when one
+     * exists, the author's reference solution. It skips runtimes already covered, so existing templates are
+     * never overwritten, and the optional filter narrowing it down takes language names rather than runtime
+     * ids ("python", "java"). It needs a program problem with a statement and a space where the template
+     * generator is enabled.
+     *
      * @param GenerateCodeTemplatesInput $input message
      * @param array $context request parameters
      *

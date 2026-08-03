@@ -4,6 +4,14 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * ScoringService reports scoring data for the single problem addressed by the request path: how far a
+     * member has got on it, and how the problem turns a submission's resource usage into a grade.
+     *
+     * Both methods are read-only and report what has already been recorded — they never retest or recompute a
+     * score. A member score covers the problem as a whole rather than an individual submission; per-submission
+     * results come from SubmissionService instead.
+     */
 class ScoringServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,9 @@ class ScoringServiceClient {
     }
 
     /**
+     * DescribeScore returns the score recorded for one member on this problem. A member with nothing
+     * recorded is not an error: the response simply comes back empty.
+     *
      * @param DescribeScoreInput $input message
      * @param array $context request parameters
      *
@@ -42,6 +53,10 @@ class ScoringServiceClient {
     }
 
     /**
+     * DescribeProblemGrading returns the problem's grade ranges, so a caller can map a submission's resource
+     * usage onto a grade itself using the algorithm documented on the ranges field. It grades nothing on its
+     * own, and a problem with no grading configured returns an empty response rather than an error.
+     *
      * @param DescribeProblemGradingInput $input message
      * @param array $context request parameters
      *

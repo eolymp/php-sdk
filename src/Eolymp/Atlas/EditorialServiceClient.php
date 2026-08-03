@@ -4,6 +4,17 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * EditorialService manages problem editorials.
+     *
+     * An editorial is the write-up shown to users explaining how the problem is solved, stored per locale like a
+     * statement and using the same content, preview and translation model — its content is Markdown or LaTeX and
+     * comes back only when requested, in raw or rendered form. An editorial is not a solution: in this API a
+     * solution is the author's reference program together with its expected outcome, while an editorial is prose
+     * for readers. Unlike a statement an editorial has no title of its own, and there is no call to export one or
+     * to read its earlier revisions. Every method acts on the problem addressed by the request path, which is why
+     * no request carries a problem id.
+     */
 class EditorialServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,9 @@ class EditorialServiceClient {
     }
 
     /**
+     * CreateEditorial adds the editorial for one locale and returns its id. Other languages are separate
+     * editorials, created by calling this again.
+     *
      * @param CreateEditorialInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +53,10 @@ class EditorialServiceClient {
     }
 
     /**
+     * UpdateEditorial writes new values into an existing editorial. Fields outside the patch mask keep the
+     * values they already have, unless the mask selects them all, which also overwrites the ones left empty in
+     * the request.
+     *
      * @param UpdateEditorialInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +76,9 @@ class EditorialServiceClient {
     }
 
     /**
+     * DeleteEditorial permanently removes the write-up for a single locale. The problem, its statements, its
+     * solutions and the editorials in other locales are untouched.
+     *
      * @param DeleteEditorialInput $input message
      * @param array $context request parameters
      *
@@ -77,7 +98,8 @@ class EditorialServiceClient {
     }
 
     /**
-     * DescribeEditorial returns editorial.
+     * DescribeEditorial returns a single editorial by id, for callers that already know which locale they want;
+     * its content is left out unless requested, in raw or rendered form.
      *
      * @param DescribeEditorialInput $input message
      * @param array $context request parameters
@@ -98,7 +120,8 @@ class EditorialServiceClient {
     }
 
     /**
-     * LookupEditorial finds an editorial for the requested locale.
+     * LookupEditorial finds an editorial by locale instead of by id, which is what a client calls to show the
+     * write-up to a reader in their language.
      *
      * @param LookupEditorialInput $input message
      * @param array $context request parameters
@@ -116,9 +139,8 @@ class EditorialServiceClient {
     }
 
     /**
-     * PreviewEditorial renders unsaved editorial.
-     *
-     * This method can be used to render editorial before it has been saved.
+     * PreviewEditorial renders a draft editorial sent in the request, before it has been saved. Stored data is
+     * neither read nor modified, so this is what drives a live preview pane while the write-up is being edited.
      *
      * @param PreviewEditorialInput $input message
      * @param array $context request parameters
@@ -136,6 +158,9 @@ class EditorialServiceClient {
     }
 
     /**
+     * ListEditorials returns the problem's editorials, one per locale, which is how to discover the languages the
+     * write-up exists in. Their content is left out unless requested.
+     *
      * @param ListEditorialsInput $input message
      * @param array $context request parameters
      *
@@ -152,6 +177,11 @@ class EditorialServiceClient {
     }
 
     /**
+     * TranslateEditorials starts automatic translation of an editorial into other locales and returns a job id;
+     * the translation runs asynchronously, so the target editorials appear some time after the call returns and
+     * are found by listing them again. Editorials written by hand are not overwritten unless the request asks for
+     * it, and the produced editorials are marked as automatic.
+     *
      * @param TranslateEditorialsInput $input message
      * @param array $context request parameters
      *

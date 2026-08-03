@@ -4,6 +4,15 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * SubmissionService handles submissions: programs sent in by participants for a problem, then compiled and
+     * run against the problem's testset.
+     *
+     * Use it to submit a program, follow its evaluation, rejudge it, and list or aggregate the submissions of a
+     * space. Evaluation is asynchronous, so every method here can hand back a submission which is not judged
+     * yet: `status` says how far evaluation has got, while `verdict` is the outcome of an evaluation which ran
+     * to completion and is unset until then.
+     */
 class SubmissionServiceClient {
 
     /** @var string base URL */
@@ -23,6 +32,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * CreateSubmission queues a program for evaluation and returns its ID; follow it with DescribeSubmission
+     * or WatchSubmission. Submissions are rate limited per account and, when the space configures it through
+     * the atlas ConfigurationService, per client IP.
+     *
      * @param CreateSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +52,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * RetestSubmission re-runs the evaluation of an existing submission, which is what the console calls
+     * "rejudge": the result is recomputed in place, while the submission ID, its submission time and its
+     * position in listings stay the same. The call returns as soon as evaluation is queued.
+     *
      * @param RetestSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +75,11 @@ class SubmissionServiceClient {
     }
 
     /**
+     * DescribeSubmission returns one submission along with the breakdown of its test groups. How much
+     * per-test detail a group carries is decided by the testset's feedback policy and not by anything in the
+     * request: callers who may edit the problem always get every run, a participant may see much less. Source
+     * code and debug output are omitted for callers who are not allowed to see them.
+     *
      * @param DescribeSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +99,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * ListSubmissions returns submissions of the space, newest first. A caller without the space-wide
+     * permission to read submissions gets only their own, silently. Deep listings are best walked by feeding
+     * the previous page's cursor back into the next request, which skips counting the total.
+     *
      * @param ListSubmissionsInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +119,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * DescribeSubmissionUsage reports how much evaluation the space has consumed within a period, against the
+     * allowance its subscription grants. The period defaults to the subscription's current quota period, or
+     * the last 30 days if the space has no subscription; the lifetime submission counter ignores it.
+     *
      * @param DescribeSubmissionUsageInput $input message
      * @param array $context request parameters
      *
@@ -109,6 +139,11 @@ class SubmissionServiceClient {
     }
 
     /**
+     * ListProblemTop returns up to 25 submissions which scored the problem in full, most efficient first —
+     * ranked by resource usage, ties broken in favour of whoever solved it earlier. It backs "best solutions"
+     * boards; partially scored and unfinished submissions never appear, and the list can be neither filtered
+     * nor paged, so use ListSubmissions for anything else.
+     *
      * @param ListProblemTopInput $input message
      * @param array $context request parameters
      *
@@ -128,6 +163,11 @@ class SubmissionServiceClient {
     }
 
     /**
+     * AggregateSubmissions reports a metric per group over a time range and is what charts use instead of
+     * listing every submission. Up to two grouping dimensions are allowed, and time buckets with no
+     * submissions come back as zeroes rather than being skipped. Reading analytics needs its own permission,
+     * which is broader than being able to see the submissions themselves.
+     *
      * @param AggregateSubmissionsInput $input message
      * @param array $context request parameters
      *

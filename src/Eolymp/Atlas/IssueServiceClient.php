@@ -4,6 +4,16 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * IssueService tracks issues reported against the problems of a space.
+     *
+     * An issue is a defect somebody found in a problem — a mistake in the statement, a broken test, a wrong
+     * answer. It is raised either by a person, a user working in the console or a member reporting from within
+     * the space, or by the platform itself. Every issue owns a thread of activity: comments posted through the
+     * Create/Update/DeleteIssueComment rpcs, interleaved with entries the platform records whenever the issue
+     * changes, all read back through ListIssueActivities. The service is scoped to a space rather than to a
+     * single problem.
+     */
 class IssueServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,9 @@ class IssueServiceClient {
     }
 
     /**
+     * ListIssues returns issues across the whole space, so narrowing to a single problem is a matter of
+     * filtering. Issue descriptions are left out unless requested, in raw or rendered form.
+     *
      * @param ListIssuesInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +52,9 @@ class IssueServiceClient {
     }
 
     /**
+     * DescribeIssue returns a single issue. The description is left out unless requested, in raw or rendered
+     * form, and the comment thread is not part of the response — read it through ListIssueActivities.
+     *
      * @param DescribeIssueInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +74,9 @@ class IssueServiceClient {
     }
 
     /**
+     * CreateIssue reports a new issue and returns its id. The reporter is taken from the caller rather than from
+     * the request.
+     *
      * @param CreateIssueInput $input message
      * @param array $context request parameters
      *
@@ -74,6 +93,10 @@ class IssueServiceClient {
     }
 
     /**
+     * UpdateIssue writes the fields named in the patch, or all of them when the patch is empty, blanking
+     * whatever the request left out. There is no separate close or reopen rpc, both are status updates. Each
+     * change is appended to the issue's activity thread as a before/after snapshot of the fields which moved.
+     *
      * @param UpdateIssueInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +116,9 @@ class IssueServiceClient {
     }
 
     /**
+     * DeleteIssue removes the issue permanently, discarding its activity thread with it. When a report has simply
+     * been dealt with, close it instead: a closed issue keeps the discussion around.
+     *
      * @param DeleteIssueInput $input message
      * @param array $context request parameters
      *
@@ -112,6 +138,9 @@ class IssueServiceClient {
     }
 
     /**
+     * ListIssueActivities returns the issue's thread in creation order, mixing the comments people wrote with the
+     * changes the platform recorded. Comment bodies arrive only when requested, in raw or rendered form.
+     *
      * @param ListIssueActivitiesInput $input message
      * @param array $context request parameters
      *
@@ -131,6 +160,9 @@ class IssueServiceClient {
     }
 
     /**
+     * CreateIssueComment appends a comment to the issue's thread and returns the id of the activity entry it
+     * produced. Only comments can be created this way, change entries are written by the platform.
+     *
      * @param CreateIssueCommentInput $input message
      * @param array $context request parameters
      *
@@ -150,6 +182,9 @@ class IssueServiceClient {
     }
 
     /**
+     * UpdateIssueComment replaces the body of a comment already in the thread. Only comment entries can be
+     * edited, the change entries the platform records are not addressable here.
+     *
      * @param UpdateIssueCommentInput $input message
      * @param array $context request parameters
      *
@@ -170,6 +205,9 @@ class IssueServiceClient {
     }
 
     /**
+     * DeleteIssueComment drops a single comment from the thread, leaving the issue and the rest of the thread
+     * untouched. A comment is addressed by the id of the activity entry holding it.
+     *
      * @param DeleteIssueCommentInput $input message
      * @param array $context request parameters
      *

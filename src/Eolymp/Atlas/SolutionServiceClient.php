@@ -4,6 +4,16 @@
 
 namespace Eolymp\Atlas;
 
+    /**
+     * SolutionService manages the problem author's own reference programs, each stored together with the
+     * verdict the author expects it to receive.
+     *
+     * A solution here is neither a participant submission nor the editorial (the prose write-up explaining how
+     * to solve the problem, see EditorialService). It exists so the author can prove the problem grades as
+     * intended: CheckSolutions runs the solutions and compares the verdicts they actually get against the
+     * expected ones. Solutions marked secret hide their source, runtime and check status from callers who may
+     * not see problem secrets. Solutions belong to a problem version, so an older revision can be read back.
+     */
 class SolutionServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,9 @@ class SolutionServiceClient {
     }
 
     /**
+     * CreateSolution stores a new reference program for the problem and returns its ID. Nothing is executed
+     * at creation time, call CheckSolutions to run it.
+     *
      * @param CreateSolutionInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +52,11 @@ class SolutionServiceClient {
     }
 
     /**
+     * UpdateSolution rewrites only the patched fields and leaves the rest as they were. It never re-runs
+     * anything, so the recorded status keeps describing the previous check until CheckSolutions is called
+     * again. Beware of clearing the secret flag: unpublishing a secret solution erases its source and runtime
+     * rather than revealing them.
+     *
      * @param UpdateSolutionInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +76,10 @@ class SolutionServiceClient {
     }
 
     /**
+     * DeleteSolution drops the solution from the problem's current version, so it is no longer picked up by
+     * CheckSolutions. Submissions that earlier checks created for it are not removed and stay listed among the
+     * problem's submissions.
+     *
      * @param DeleteSolutionInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +99,10 @@ class SolutionServiceClient {
     }
 
     /**
+     * DescribeSolution returns one solution together with the outcome of its last check. It can also read the
+     * solution as it stood in an earlier problem version, which requires permission to browse problem
+     * history.
+     *
      * @param DescribeSolutionInput $input message
      * @param array $context request parameters
      *
@@ -96,6 +122,10 @@ class SolutionServiceClient {
     }
 
     /**
+     * ListSolutions returns the problem's solutions with the outcome of their last check. Since
+     * CheckSolutions reports nothing itself, this is also how its outcome is collected: poll until no
+     * solution is left pending.
+     *
      * @param ListSolutionsInput $input message
      * @param array $context request parameters
      *
@@ -112,6 +142,12 @@ class SolutionServiceClient {
     }
 
     /**
+     * CheckSolutions submits the matching solutions against the problem's tests and, as each submission
+     * finishes, records whether the verdict it got matched the expected one. It answers immediately with an
+     * empty body: checking is asynchronous, so poll ListSolutions until nothing is pending any more.
+     * Solutions of the do-not-run type are always skipped, and for output-only problems the call is a no-op
+     * because they cannot be executed.
+     *
      * @param CheckSolutionsInput $input message
      * @param array $context request parameters
      *
