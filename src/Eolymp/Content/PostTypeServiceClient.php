@@ -4,6 +4,14 @@
 
 namespace Eolymp\Content;
 
+    /**
+     * PostTypeService manages the categories a space files its posts under, news and articles for example.
+     *
+     * Types belong to the space instead of being platform-wide values, so each space defines the set it needs, and
+     * a post carries at most one of them — which is what lets its post listing be filtered or split by category. A
+     * type's display name can be given per locale, so the category still reads correctly in every language the
+     * space publishes in.
+     */
 class PostTypeServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,9 @@ class PostTypeServiceClient {
     }
 
     /**
+     * DescribePostType returns a single type, resolving its display name into a locale when the request asks for
+     * one instead of leaving the caller to pick from the per-locale names.
+     *
      * @param DescribePostTypeInput $input message
      * @param array $context request parameters
      *
@@ -42,6 +53,9 @@ class PostTypeServiceClient {
     }
 
     /**
+     * ListPostTypes returns the categories a space has defined, which is what fills a category selector while a
+     * post is being written and the category filter over its post listing.
+     *
      * @param ListPostTypesInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +72,8 @@ class PostTypeServiceClient {
     }
 
     /**
+     * CreatePostType defines one more category for the space and returns the id by which a post refers to it.
+     *
      * @param CreatePostTypeInput $input message
      * @param array $context request parameters
      *
@@ -74,6 +90,10 @@ class PostTypeServiceClient {
     }
 
     /**
+     * UpdatePostType changes a type; unlike most update calls in this API there is no patch mask, so the type is
+     * written as a whole rather than field by field. Posts stay filed under it either way, since they refer to its
+     * id and not to its name.
+     *
      * @param UpdatePostTypeInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +113,9 @@ class PostTypeServiceClient {
     }
 
     /**
+     * DeletePostType takes a category out of the space altogether. A category which should merely stop being
+     * offered can be hidden through UpdatePostType instead.
+     *
      * @param DeletePostTypeInput $input message
      * @param array $context request parameters
      *

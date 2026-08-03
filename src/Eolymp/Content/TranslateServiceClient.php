@@ -4,6 +4,15 @@
 
 namespace Eolymp\Content;
 
+    /**
+     * TranslateService translates a piece of rich content passed in the request.
+     *
+     * The content is not tied to any entity: nothing is read from or written to stored data, and the translated
+     * content comes straight back for the caller to keep or discard. The request carries the content and
+     * nothing else — neither a source nor a target locale — so the languages involved cannot be chosen through
+     * this call. Entities that keep translations of their own, such as pages or problem statements, are
+     * translated through their own services, which store what they produce.
+     */
 class TranslateServiceClient {
 
     /** @var string base URL */
@@ -23,6 +32,9 @@ class TranslateServiceClient {
     }
 
     /**
+     * TranslateContent returns a translated copy of the content it is given, in the same shape as the input.
+     * The result is not saved anywhere, so a caller that wants to keep it has to write it back itself.
+     *
      * @param TranslateContentInput $input message
      * @param array $context request parameters
      *

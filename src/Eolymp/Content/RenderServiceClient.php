@@ -4,6 +4,14 @@
 
 namespace Eolymp\Content;
 
+    /**
+     * RenderService parses rich content and hands back its tree without storing anything.
+     *
+     * It is the standalone form of the parser that sits behind every rich content field in this API, and it
+     * exists for content that has not been saved yet: the console calls it while an author types, debounced, to
+     * drive the preview pane next to the editor. Saved content never needs it, because a stored page or
+     * statement already carries its parsed tree and can simply ask for it when read.
+     */
 class RenderServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,9 @@ class RenderServiceClient {
     }
 
     /**
+     * RenderContent parses the content carried in the request and returns the tree it produces. Nothing is
+     * read from or written to stored data, so it is safe to call as often as an editor's keystrokes allow.
+     *
      * @param RenderContentInput $input message
      * @param array $context request parameters
      *

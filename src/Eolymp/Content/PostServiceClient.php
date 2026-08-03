@@ -4,6 +4,20 @@
 
 namespace Eolymp\Content;
 
+    /**
+     * PostService manages the posts of a space: dated, authored entries — news, articles, other information —
+     * which appear in the space's own post listing.
+     *
+     * A post is addressed by id and carries an author, a type, labels, an image and rich content, Markdown or
+     * LaTeX with a parsed tree alongside, which reads return only when asked for: as the raw value, as the tree,
+     * or as a short rendered excerpt meant for listings. It is not a page — a page (ContentService) is addressed
+     * by a path and takes its place in the site structure, while a post stands on its own in the listing — and it
+     * is not a contest announcement, which is a separate feature (eolymp.judge.AnnouncementService). Whether
+     * readers see a post depends on three independent things: whether the author still keeps it as a draft,
+     * whether it has been published, and how moderation ruled on it; the post's public flag reports the
+     * combination and cannot be written directly. Comments on a post belong to eolymp.discussion, which is also
+     * where the space-wide policy deciding when posts are moderated is configured.
+     */
 class PostServiceClient {
 
     /** @var string base URL */
@@ -23,6 +37,9 @@ class PostServiceClient {
     }
 
     /**
+     * DescribePost returns a single post by id. A locale can be given to read the post in that language rather
+     * than the one it was written in, and content is left out unless the request asks for it.
+     *
      * @param DescribePostInput $input message
      * @param array $context request parameters
      *
@@ -42,6 +59,9 @@ class PostServiceClient {
     }
 
     /**
+     * ListPosts returns the posts of a space, the call behind a feed page or the console's post table. Asking
+     * for the rendered excerpt here saves describing every post separately just to render the listing.
+     *
      * @param ListPostsInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +78,10 @@ class PostServiceClient {
     }
 
     /**
+     * CreatePost stores a new post and returns its id. There is no title to set: the title and the image shown
+     * for the post are derived from its content. Making the post visible is not part of this call, see
+     * PublishPost.
+     *
      * @param CreatePostInput $input message
      * @param array $context request parameters
      *
@@ -74,6 +98,10 @@ class PostServiceClient {
     }
 
     /**
+     * UpdatePost writes new values into a post, and is also how a post is kept as a draft, featured on the home
+     * page or pinned on top of the listing. Fields outside the patch mask keep the values they already have. The
+     * title and the image still cannot be set: they follow the content, so editing the content changes them.
+     *
      * @param UpdatePostInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +121,10 @@ class PostServiceClient {
     }
 
     /**
+     * PublishPost is the transition which sends a post out, recording when that happened, rather than a flag on
+     * the post that UpdatePost could write. Whether readers then see it still depends on the draft flag and on
+     * moderation.
+     *
      * @param PublishPostInput $input message
      * @param array $context request parameters
      *
@@ -112,6 +144,9 @@ class PostServiceClient {
     }
 
     /**
+     * UnpublishPost is the reverse transition: it takes a post back out without destroying it, so it can be
+     * corrected and sent out again. A reason for the withdrawal can be attached to the call.
+     *
      * @param UnpublishPostInput $input message
      * @param array $context request parameters
      *
@@ -131,6 +166,10 @@ class PostServiceClient {
     }
 
     /**
+     * ModeratePost records a moderator's outcome for a post, together with a reason when the post is turned down.
+     * Whether a post has to pass moderation before it appears, only afterwards, or not at all, is a space-wide
+     * setting of eolymp.discussion.ConfigurationService rather than anything carried by the post.
+     *
      * @param ModeratePostInput $input message
      * @param array $context request parameters
      *
@@ -150,6 +189,9 @@ class PostServiceClient {
     }
 
     /**
+     * DeletePost removes a post for good. Reach for UnpublishPost instead whenever the post only has to stop
+     * being shown, since that transition can be undone and this call cannot.
+     *
      * @param DeletePostInput $input message
      * @param array $context request parameters
      *
@@ -169,6 +211,10 @@ class PostServiceClient {
     }
 
     /**
+     * VotePost casts the calling user's own vote, up or down, on a post and returns the post's new total. This is
+     * a reader action rather than an editorial one: a caller votes only for themselves, reads back their own vote
+     * as an extra on the post, and sees everyone's votes summed into an ordinary field.
+     *
      * @param VotePostInput $input message
      * @param array $context request parameters
      *
@@ -188,6 +234,11 @@ class PostServiceClient {
     }
 
     /**
+     * TranslatePost hands a post to automatic translation for several locales at once and returns a job id: the
+     * work runs in the background, so the translations turn up some time after the call returns and are found by
+     * listing them again. It can additionally take in every translation an earlier automatic run produced, to
+     * refresh them, and can be told to overwrite translations a person wrote, which it otherwise leaves alone.
+     *
      * @param TranslatePostInput $input message
      * @param array $context request parameters
      *
@@ -207,6 +258,9 @@ class PostServiceClient {
     }
 
     /**
+     * DescribePostTranslation returns one translation addressed by its own id rather than by locale, and accepts
+     * the same content extras as reading the post itself.
+     *
      * @param DescribePostTranslationInput $input message
      * @param array $context request parameters
      *
@@ -227,6 +281,9 @@ class PostServiceClient {
     }
 
     /**
+     * ListPostTranslations reports which languages a post exists in besides the one it was written in, and is how
+     * to find a translation's id before updating or deleting it.
+     *
      * @param ListPostTranslationsInput $input message
      * @param array $context request parameters
      *
@@ -246,6 +303,11 @@ class PostServiceClient {
     }
 
     /**
+     * CreatePostTranslation adds the post's content in one further language and returns the translation's id;
+     * each locale is a translation of its own, added by calling this again, not by patching the post. A
+     * translation also carries the flag which separates machine output from human work, the one TranslatePost
+     * consults before refreshing or overwriting anything.
+     *
      * @param CreatePostTranslationInput $input message
      * @param array $context request parameters
      *
@@ -265,6 +327,9 @@ class PostServiceClient {
     }
 
     /**
+     * UpdatePostTranslation writes new values into one translation, leaving the post's own content and its other
+     * languages alone. Fields outside the patch mask keep the values they already have.
+     *
      * @param UpdatePostTranslationInput $input message
      * @param array $context request parameters
      *
@@ -285,6 +350,9 @@ class PostServiceClient {
     }
 
     /**
+     * DeletePostTranslation drops a single language while the post and its remaining languages stay as they are.
+     * Removing them all still leaves the post readable, in the language it was written in.
+     *
      * @param DeletePostTranslationInput $input message
      * @param array $context request parameters
      *
