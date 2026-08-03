@@ -4,6 +4,9 @@
 
 namespace Eolymp\Auth;
 
+    /**
+     * internal
+     */
 class SSOServiceClient {
 
     /** @var string base URL */

@@ -4,6 +4,9 @@
 
 namespace Eolymp\Worker;
 
+    /**
+     * internal
+     */
 class ExecutorServiceClient {
 
     /** @var string base URL */

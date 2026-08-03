@@ -4,6 +4,9 @@
 
 namespace Eolymp\L10N;
 
+    /**
+     * internal
+     */
 class ProjectServiceClient {
 
     /** @var string base URL */

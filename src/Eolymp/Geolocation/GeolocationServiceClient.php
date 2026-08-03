@@ -4,6 +4,9 @@
 
 namespace Eolymp\Geolocation;
 
+    /**
+     * internal
+     */
 class GeolocationServiceClient {
 
     /** @var string base URL */

@@ -4,6 +4,9 @@
 
 namespace Eolymp\L10N;
 
+    /**
+     * internal
+     */
 class LocalizationServiceClient {
 
     /** @var string base URL */

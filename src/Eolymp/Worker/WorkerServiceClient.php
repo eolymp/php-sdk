@@ -4,6 +4,9 @@
 
 namespace Eolymp\Worker;
 
+    /**
+     * internal
+     */
 class WorkerServiceClient {
 
     /** @var string base URL */

@@ -4,6 +4,9 @@
 
 namespace Eolymp\Resolver;
 
+    /**
+     * internal
+     */
 class ResolverClient {
 
     /** @var string base URL */

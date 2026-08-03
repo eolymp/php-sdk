@@ -4,6 +4,9 @@
 
 namespace Eolymp\Cognito;
 
+    /**
+     * internal
+     */
 class UserServiceClient {
 
     /** @var string base URL */

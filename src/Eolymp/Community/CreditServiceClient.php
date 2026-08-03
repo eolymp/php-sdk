@@ -5,6 +5,8 @@
 namespace Eolymp\Community;
 
     /**
+     * internal
+     *
      * CreditService provides methods to manage members "credits", a point based system of rewards.
      * Members can be rewarded credits for various actions, and these credits can be redeemed for rewards.
      */

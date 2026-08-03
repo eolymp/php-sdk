@@ -4,6 +4,9 @@
 
 namespace Eolymp\Universe;
 
+    /**
+     * internal
+     */
 class PlanServiceClient {
 
     /** @var string base URL */

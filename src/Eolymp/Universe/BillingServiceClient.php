@@ -4,6 +4,9 @@
 
 namespace Eolymp\Universe;
 
+    /**
+     * internal
+     */
 class BillingServiceClient {
 
     /** @var string base URL */

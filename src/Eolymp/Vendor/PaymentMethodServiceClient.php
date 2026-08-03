@@ -4,6 +4,9 @@
 
 namespace Eolymp\Vendor;
 
+    /**
+     * internal
+     */
 class PaymentMethodServiceClient {
 
     /** @var string base URL */

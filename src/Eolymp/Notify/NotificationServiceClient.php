@@ -4,6 +4,9 @@
 
 namespace Eolymp\Notify;
 
+    /**
+     * internal
+     */
 class NotificationServiceClient {
 
     /** @var string base URL */

@@ -5,6 +5,8 @@
 namespace Eolymp\Auth;
 
     /**
+     * internal
+     *
      * LinkedAccountService provides API to manage linked accounts.
      */
 class LinkedAccountServiceClient {

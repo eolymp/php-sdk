@@ -4,6 +4,9 @@
 
 namespace Eolymp\Commerce;
 
+    /**
+     * internal
+     */
 class OrderServiceClient {
 
     /** @var string base URL */

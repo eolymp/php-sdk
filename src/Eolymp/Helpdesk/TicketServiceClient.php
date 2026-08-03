@@ -4,6 +4,9 @@
 
 namespace Eolymp\Helpdesk;
 
+    /**
+     * internal
+     */
 class TicketServiceClient {
 
     /** @var string base URL */

@@ -4,6 +4,9 @@
 
 namespace Eolymp\Vendor;
 
+    /**
+     * internal
+     */
 class ProfileServiceClient {
 
     /** @var string base URL */

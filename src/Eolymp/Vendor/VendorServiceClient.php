@@ -4,6 +4,9 @@
 
 namespace Eolymp\Vendor;
 
+    /**
+     * internal
+     */
 class VendorServiceClient {
 
     /** @var string base URL */

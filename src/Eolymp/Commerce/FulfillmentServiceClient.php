@@ -4,6 +4,9 @@
 
 namespace Eolymp\Commerce;
 
+    /**
+     * internal
+     */
 class FulfillmentServiceClient {
 
     /** @var string base URL */

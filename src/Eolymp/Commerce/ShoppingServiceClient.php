@@ -4,6 +4,9 @@
 
 namespace Eolymp\Commerce;
 
+    /**
+     * internal
+     */
 class ShoppingServiceClient {
 
     /** @var string base URL */

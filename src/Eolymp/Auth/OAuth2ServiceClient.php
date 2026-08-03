@@ -4,6 +4,9 @@
 
 namespace Eolymp\Auth;
 
+    /**
+     * internal
+     */
 class OAuth2ServiceClient {
 
     /** @var string base URL */
