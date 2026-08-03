@@ -128,11 +128,10 @@ class AccountServiceClient {
     }
 
     /**
-     * DeleteAccount asks for the caller's own account to be closed, and what that achieves depends on which
-     * implementation answers: an Eolymp account is scheduled for deletion in seven days, is refused sign in
-     * from that moment, and is told so by email. A space member is only marked, and the mark currently has no
-     * further effect — the member keeps their access — so do not rely on this to remove someone from a space.
-     * An administrator clears the mark with MemberService.RestoreMember.
+     * DeleteAccount closes the caller's own account, and does so only for an Eolymp account: it is scheduled
+     * for deletion in seven days, refused sign in, and emailed a notice, and signing in again cancels it.
+     * Against a space it is refused — a space membership is ended by an administrator through
+     * MemberService.DeleteMember.
      *
      * @param DeleteAccountInput $input message
      * @param array $context request parameters

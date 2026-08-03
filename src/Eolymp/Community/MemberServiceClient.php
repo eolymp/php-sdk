@@ -110,10 +110,10 @@ class MemberServiceClient {
     }
 
     /**
-     * DeleteMember removes the record from the space's user database, ending the membership. Nothing happens
-     * to the person's Eolymp account or to their membership of other spaces; where identity comes from an
-     * external provider, only the membership in this space ends. Deleting a member that is not there succeeds
-     * quietly.
+     * DeleteMember removes the record from the space's user database, ending the membership; it cannot be
+     * undone. Nothing happens to the person's Eolymp account or to their membership of other spaces; where
+     * identity comes from an external provider, only the membership in this space ends. Deleting a member that
+     * is not there succeeds quietly.
      *
      * @param DeleteMemberInput $input message
      * @param array $context request parameters
@@ -131,30 +131,6 @@ class MemberServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteMemberOutput::class, $context);
-    }
-
-    /**
-     * RestoreMember clears the mark left when a member asked to close their own account through
-     * AccountService. Since that mark does not currently withdraw anything from the member, this restores
-     * nothing beyond their intent. A record removed by DeleteMember is gone for good and cannot be brought
-     * back this way.
-     *
-     * @param RestoreMemberInput $input message
-     * @param array $context request parameters
-     *
-     * @return RestoreMemberOutput output message
-     */
-    public function RestoreMember(RestoreMemberInput $input, array $context = [])
-    {
-        $path = "/members/".rawurlencode($input->getMemberId())."/restore";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setMemberId("");
-
-        $context['name'] = "eolymp.community.MemberService/RestoreMember";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RestoreMemberOutput::class, $context);
     }
 
     /**
