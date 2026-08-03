@@ -5,6 +5,8 @@
 namespace Eolymp\Taxonomy;
 
     /**
+     * internal
+     *
      * EnumService allows to manage taxonomy enums and values.
      */
 class EnumServiceClient {

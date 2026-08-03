@@ -4,6 +4,9 @@
 
 namespace Eolymp\Webhook;
 
+    /**
+     * internal
+     */
 class WebhookServiceClient {
 
     /** @var string base URL */

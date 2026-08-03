@@ -4,6 +4,9 @@
 
 namespace Eolymp\Taxonomy;
 
+    /**
+     * internal
+     */
 class GeographyServiceClient {
 
     /** @var string base URL */

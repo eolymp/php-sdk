@@ -5,6 +5,8 @@
 namespace Eolymp\Community;
 
     /**
+     * internal
+     *
      * AccountService lets a person manage their own account.
      *
      * The same contract is served by two implementations, and the base URL decides which one answers: addressed

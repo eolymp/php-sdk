@@ -5,6 +5,8 @@
 namespace Eolymp\Community;
 
     /**
+     * internal
+     *
      * SessionService lets a signed-in user review and end their own sign-ins.
      *
      * A session records one sign-in of the caller's own account, with the address, device and approximate

@@ -4,6 +4,9 @@
 
 namespace Eolymp\Taxonomy;
 
+    /**
+     * internal
+     */
 class InstitutionServiceClient {
 
     /** @var string base URL */
