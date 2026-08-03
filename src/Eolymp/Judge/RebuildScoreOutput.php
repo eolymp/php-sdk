@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class RebuildScoreOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string activity_id = 1;</code>
+     * Generated from protobuf field <code>string task_id = 1;</code>
      */
-    protected $activity_id = '';
+    protected $task_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class RebuildScoreOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $activity_id
+     *     @type string $task_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class RebuildScoreOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string activity_id = 1;</code>
+     * Generated from protobuf field <code>string task_id = 1;</code>
      * @return string
      */
-    public function getActivityId()
+    public function getTaskId()
     {
-        return $this->activity_id;
+        return $this->task_id;
     }
 
     /**
-     * Generated from protobuf field <code>string activity_id = 1;</code>
+     * Generated from protobuf field <code>string task_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setTaskId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->activity_id = $var;
+        $this->task_id = $var;
 
         return $this;
     }
