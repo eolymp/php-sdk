@@ -35,6 +35,10 @@ class Type
      * Generated from protobuf enum <code>ML = 5 [(.eolymp.api.mcp_value_desc) = "Machine learning problem"];</code>
      */
     const ML = 5;
+    /**
+     * Generated from protobuf enum <code>QUIZ = 6 [(.eolymp.api.mcp_value_desc) = "quiz problem, user should answer a set of questions to solve it"];</code>
+     */
+    const QUIZ = 6;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
@@ -43,6 +47,7 @@ class Type
         self::OUTPUT => 'OUTPUT',
         self::SQL => 'SQL',
         self::ML => 'ML',
+        self::QUIZ => 'QUIZ',
     ];
 
     public static function name($value)

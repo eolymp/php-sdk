@@ -156,6 +156,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $cursor = '';
     protected $submitter;
+    protected $payload;
 
     /**
      * Constructor.
@@ -183,6 +184,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           source code URL
      *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *           submission values
+     *     @type \Eolymp\Atlas\Submission\Quiz $quiz
      *     @type string $signature
      *           submission signature
      *     @type int $status
@@ -523,6 +525,33 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
         $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 15;</code>
+     * @return \Eolymp\Atlas\Submission\Quiz|null
+     */
+    public function getQuiz()
+    {
+        return $this->readOneof(15);
+    }
+
+    public function hasQuiz()
+    {
+        return $this->hasOneof(15);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 15;</code>
+     * @param \Eolymp\Atlas\Submission\Quiz $var
+     * @return $this
+     */
+    public function setQuiz($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
+        $this->writeOneof(15, $var);
 
         return $this;
     }
@@ -919,6 +948,14 @@ class Submission extends \Google\Protobuf\Internal\Message
     public function getSubmitter()
     {
         return $this->whichOneof("submitter");
+    }
+
+    /**
+     * @return string
+     */
+    public function getPayload()
+    {
+        return $this->whichOneof("payload");
     }
 
 }

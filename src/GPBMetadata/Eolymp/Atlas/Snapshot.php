@@ -18,6 +18,7 @@ class Snapshot
         \GPBMetadata\Eolymp\Atlas\CodeTemplate::initOnce();
         \GPBMetadata\Eolymp\Atlas\Editorial::initOnce();
         \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
+        \GPBMetadata\Eolymp\Atlas\Question::initOnce();
         \GPBMetadata\Eolymp\Atlas\Script::initOnce();
         \GPBMetadata\Eolymp\Atlas\Solution::initOnce();
         \GPBMetadata\Eolymp\Atlas\Statement::initOnce();
@@ -29,8 +30,8 @@ class Snapshot
         \GPBMetadata\Eolymp\Atlas\TestingValidator::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¤
-eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto$eolymp/atlas/testing_validator.proto"´
+ì
+eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/question.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto$eolymp/atlas/testing_validator.proto"ß
 Snapshot&
 problem (2.eolymp.atlas.Problem,
 testing
@@ -48,7 +49,8 @@ statements (2.eolymp.atlas.Statement)
 
 editorials	 (2.eolymp.atlas.Editorial)
 	solutions (2.eolymp.atlas.Solution%
-scripts (2.eolymp.atlas.ScriptB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+scripts (2.eolymp.atlas.Script)
+	questions (2.eolymp.atlas.QuestionB-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;

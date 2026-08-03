@@ -29,6 +29,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
      */
     private $values;
+    protected $payload;
 
     /**
      * Constructor.
@@ -40,6 +41,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $lang
      *     @type string $source
      *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Atlas\Submission\Quiz $quiz
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +135,41 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
         $this->values = $arr;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 5;</code>
+     * @return \Eolymp\Atlas\Submission\Quiz|null
+     */
+    public function getQuiz()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasQuiz()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 5;</code>
+     * @param \Eolymp\Atlas\Submission\Quiz $var
+     * @return $this
+     */
+    public function setQuiz($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPayload()
+    {
+        return $this->whichOneof("payload");
     }
 
 }

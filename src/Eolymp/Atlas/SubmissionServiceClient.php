@@ -33,8 +33,11 @@ class SubmissionServiceClient {
 
     /**
      * CreateSubmission queues a program for evaluation and returns its ID; follow it with DescribeSubmission
-     * or WatchSubmission. Submissions are rate limited per account and, when the space configures it through
-     * the atlas ConfigurationService, per client IP.
+     * or WatchSubmission. What travels in the request depends on the type of the problem: a program in `source`
+     * for the programming types, files in `values` for an output-only problem, and the answers in `quiz` for a
+     * quiz — a quiz is graded while the call is being served, so its submission comes back already judged.
+     * Submissions are rate limited per account and, when the space configures it through the atlas
+     * ConfigurationService, per client IP.
      *
      * @param CreateSubmissionInput $input message
      * @param array $context request parameters
