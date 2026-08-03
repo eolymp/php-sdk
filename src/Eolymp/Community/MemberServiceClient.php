@@ -65,7 +65,8 @@ class MemberServiceClient {
      * Disabling can be immediate or scheduled through separate fields — a scheduled deactivation never raises
      * the inactive flag, although a read still reports a member outside their active period as inactive.
      * Identity details of a member owned by an external identity provider cannot be changed here, and asking
-     * for them is ignored rather than refused.
+     * for them is ignored rather than refused. A member can belong to at most 10 groups, and a patch that
+     * would take them past that is rejected with InvalidArgument on the groups argument.
      *
      * @param UpdateMemberInput $input message
      * @param array $context request parameters

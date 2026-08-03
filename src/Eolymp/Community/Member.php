@@ -126,7 +126,8 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $stats = null;
     /**
-     * List of groups IDs assigned to the member.
+     * List of groups IDs assigned to the member. At most 10 group ids may be written; writing more fails
+     * validation with InvalidArgument on the "groups" argument. A group can hold any number of members.
      * Requires GROUPS extra.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
@@ -195,7 +196,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *           Member statistics.
      *           Requires STATS extra.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
-     *           List of groups IDs assigned to the member.
+     *           List of groups IDs assigned to the member. At most 10 group ids may be written; writing more fails
+     *           validation with InvalidArgument on the "groups" argument. A group can hold any number of members.
      *           Requires GROUPS extra.
      *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
      *           Additional profile attributes about the member.
@@ -841,7 +843,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of groups IDs assigned to the member.
+     * List of groups IDs assigned to the member. At most 10 group ids may be written; writing more fails
+     * validation with InvalidArgument on the "groups" argument. A group can hold any number of members.
      * Requires GROUPS extra.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
@@ -853,7 +856,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of groups IDs assigned to the member.
+     * List of groups IDs assigned to the member. At most 10 group ids may be written; writing more fails
+     * validation with InvalidArgument on the "groups" argument. A group can hold any number of members.
      * Requires GROUPS extra.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>

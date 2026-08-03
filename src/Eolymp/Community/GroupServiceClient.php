@@ -9,11 +9,12 @@ namespace Eolymp\Community;
      *
      * A group is a named label, optionally decorating its members with an icon, badge and colour, and it
      * carries no member list of its own: membership is a property of the member, written and filtered on
-     * through eolymp.community.MemberService. What a group is used for downstream behaves differently and
-     * catches people out — assigning contest participants from a group copies the members it holds at that
-     * moment and never updates them again, while a course class built on a group keeps enrolling members as
-     * they join it later. Groups grant no permissions, access is granted by eolymp.acl policies attached to
-     * users, and a group exists only in the space it was created in.
+     * through eolymp.community.MemberService. A member can belong to at most 10 groups, a fixed platform
+     * limit, while a group can hold any number of members — there is no members-per-group limit. What a group
+     * is used for downstream behaves differently and catches people out — assigning contest participants from
+     * a group copies the members it holds at that moment and never updates them again, while a course class
+     * built on a group keeps enrolling members as they join it later. Groups grant no permissions, access is
+     * granted by eolymp.acl policies attached to users, and a group exists only in the space it was created in.
      */
 class GroupServiceClient {
 
