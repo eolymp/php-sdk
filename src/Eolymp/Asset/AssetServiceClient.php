@@ -161,6 +161,8 @@ class AssetServiceClient {
     }
 
     /**
+     * internal
+     *
      * StartStream creates a data stream, which then can be used with AppendStream API to upload data
      *
      * @param StartStreamInput $input message
@@ -179,6 +181,8 @@ class AssetServiceClient {
     }
 
     /**
+     * internal
+     *
      * @param AppendStreamInput $input message
      * @param array $context request parameters
      *
@@ -198,6 +202,8 @@ class AssetServiceClient {
     }
 
     /**
+     * internal
+     *
      * @param CloseStreamInput $input message
      * @param array $context request parameters
      *

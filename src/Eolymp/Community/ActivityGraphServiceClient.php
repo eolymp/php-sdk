@@ -4,6 +4,14 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * ActivityGraphService reports how busy one member has been over a stretch of time.
+     *
+     * Its single method returns a bare series of counts, which clients draw as the contribution-style graph
+     * on a member's profile. The counter being measured is chosen per call and is a free-form string rather
+     * than an enum — the console offers variations around accepted, submitted and solved counts. Being
+     * member-scoped, the call is addressed through the base url a member carries in its read-only url field.
+     */
 class ActivityGraphServiceClient {
 
     /** @var string base URL */
@@ -23,6 +31,12 @@ class ActivityGraphServiceClient {
     }
 
     /**
+     * DescribeActivityGraph buckets one metric over the requested window and returns the counts as a flat
+     * array in chronological order, with no timestamps and no bucket size attached, so the caller maps
+     * positions back to dates from the window it asked for. The largest count in the series comes back
+     * alongside it, which is what a heat map needs to scale its shading without a second pass over the
+     * values.
+     *
      * @param DescribeActivityGraphInput $input message
      * @param array $context request parameters
      *

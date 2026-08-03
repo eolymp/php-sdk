@@ -4,6 +4,17 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * SubmissionService handles submissions made inside a contest: a participant's program, compiled and run
+     * against the tests of the contest problem it was sent to.
+     *
+     * This is not eolymp.atlas.SubmissionService, which covers submissions against problems in the archive:
+     * every submission here belongs to one contest and references the contest's own problem rather than the
+     * archive problem that problem was imported from. Evaluation is asynchronous, so any method can hand back
+     * a submission which is not judged yet: `status` says how far evaluation has got, while `verdict` is the
+     * outcome of an evaluation which ran to completion. Besides submitting and reading, the service
+     * re-evaluates submissions, takes them out of scoring and analyses them for misconduct.
+     */
 class SubmissionServiceClient {
 
     /** @var string base URL */
@@ -23,7 +34,11 @@ class SubmissionServiceClient {
     }
 
     /**
-     * Creates submissions and triggers test process.
+     * CreateSubmission sends a program in for one of the contest's problems on behalf of the calling
+     * participant and queues its evaluation, returning the new submission's ID; follow it with
+     * DescribeSubmission or WatchSubmission. It carries the participate scope rather than contest write,
+     * needs the participant to have started the contest (see ParticipantService.StartContest), and is
+     * restricted while the contest is frozen.
      *
      * @param CreateSubmissionInput $input message
      * @param array $context request parameters
@@ -44,6 +59,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * ListSubmissions returns the submissions of one contest, newest first, and is what a jury submission
+     * table or a participant's own submission history is built on. Deep listings are best walked by feeding
+     * the cursor of the previous page back into the next request instead of growing the offset.
+     *
      * @param ListSubmissionsInput $input message
      * @param array $context request parameters
      *
@@ -60,6 +79,11 @@ class SubmissionServiceClient {
     }
 
     /**
+     * DescribeSubmission returns one submission of the contest together with the breakdown of its test groups.
+     * How much per-test detail a group carries is decided by the feedback policy configured on the problem's
+     * testset and not by anything in the request, so for the same submission a participant may see considerably
+     * less than the jury does.
+     *
      * @param DescribeSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -79,6 +103,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * PrintSubmission queues the source code of a submission for printing on the printer the contest is
+     * configured with, and does nothing else to the submission. Contests without a printer cannot print; to
+     * print code a participant has not submitted, use atlas EditorService.PrintEditorCode instead.
+     *
      * @param PrintSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -98,7 +126,10 @@ class SubmissionServiceClient {
     }
 
     /**
-     * Resets submission results and triggers testing process.
+     * RetestSubmission re-evaluates an existing submission in place, which is what the console calls
+     * "rejudge": the previous results are discarded while the submission keeps its ID, its submission time
+     * and its position in listings. The score it contributes can come out different, so the participant's
+     * standing may move; the call returns as soon as evaluation is queued.
      *
      * @param RetestSubmissionInput $input message
      * @param array $context request parameters
@@ -119,6 +150,11 @@ class SubmissionServiceClient {
     }
 
     /**
+     * DeleteSubmission excludes a submission from score calculation without destroying it: the submission
+     * is flagged as deleted, keeps its ID and can be brought back by RestoreSubmission. It needs the
+     * contest write scope, so it is a jury tool for discarding a submission which should not count, not a
+     * way for participants to withdraw their own.
+     *
      * @param DeleteSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -138,6 +174,10 @@ class SubmissionServiceClient {
     }
 
     /**
+     * RestoreSubmission undoes DeleteSubmission, clearing the deleted flag so the submission counts towards the
+     * score again as it did before. Nothing about the submission itself was lost while it was deleted, so no
+     * re-evaluation is involved.
+     *
      * @param RestoreSubmissionInput $input message
      * @param array $context request parameters
      *
@@ -157,7 +197,10 @@ class SubmissionServiceClient {
     }
 
     /**
-     * RetestProblem resets existing submissions for the problem and triggers testing process again.
+     * RetestProblem re-evaluates every submission made for one problem of the contest, and is the bulk form
+     * of RetestSubmission — reach for it after correcting tests or limits while the contest is under way.
+     * The score of everyone who attempted the problem may change, and the work is queued in the background,
+     * so the call returns long before the last submission has been retested.
      *
      * @param RetestProblemInput $input message
      * @param array $context request parameters
@@ -178,6 +221,12 @@ class SubmissionServiceClient {
     }
 
     /**
+     * AnalyzeSubmission runs the contest's misconduct analysis over a single submission, looking for
+     * plagiarism and for signs the code was generated by an AI; it is the per-submission form of
+     * ContestService.AnalyzeContest. The response is empty and findings are reported elsewhere: an estimate
+     * of AI authorship lands on the submission itself, and anything worth acting on becomes a violation
+     * flagged as automatically detected, read through ViolationService.
+     *
      * @param AnalyzeSubmissionInput $input message
      * @param array $context request parameters
      *

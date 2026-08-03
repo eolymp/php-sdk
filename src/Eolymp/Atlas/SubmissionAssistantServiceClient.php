@@ -5,6 +5,8 @@
 namespace Eolymp\Atlas;
 
     /**
+     * internal
+     *
      * SubmissionAssistantService offers AI-assisted debugging help for a single submission.
      *
      * The flow is request, read, rate: RequestDebugAssistance produces the explanation of why a submission

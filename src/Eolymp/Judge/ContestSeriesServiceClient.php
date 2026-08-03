@@ -4,6 +4,15 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * ContestSeriesService keeps the named series a space groups related contests into — the yearly editions of
+     * the same olympiad, the stages of one championship, the contests of a training programme.
+     *
+     * A series belongs to the space rather than to a contest: it is defined once here, and any number of contests
+     * then point at it from their classification, which is what lets contests be listed and filtered by series
+     * and keeps every edition of an olympiad together. A series name is translatable, so the same grouping reads
+     * correctly in each language a space publishes in.
+     */
 class ContestSeriesServiceClient {
 
     /** @var string base URL */
@@ -23,6 +32,10 @@ class ContestSeriesServiceClient {
     }
 
     /**
+     * DescribeContestSeries returns one series, either resolved into a single language or carrying all of its
+     * translations — the first is what a page showing the series needs, the second what a form editing it
+     * needs.
+     *
      * @param DescribeContestSeriesInput $input message
      * @param array $context request parameters
      *
@@ -42,6 +55,10 @@ class ContestSeriesServiceClient {
     }
 
     /**
+     * ListContestSeries pages through the series a space has defined, which is what fills the series settings
+     * of a space and the choice of series offered when a contest is classified. Names can be resolved for a
+     * chosen language, so the list reads the way it will be shown.
+     *
      * @param ListContestSeriesInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +75,10 @@ class ContestSeriesServiceClient {
     }
 
     /**
+     * CreateContestSeries defines a new series in the space and returns its identifier. Creating it groups
+     * nothing by itself: the contests that belong to the series still have to be pointed at it through their
+     * classification.
+     *
      * @param CreateContestSeriesInput $input message
      * @param array $context request parameters
      *
@@ -74,6 +95,10 @@ class ContestSeriesServiceClient {
     }
 
     /**
+     * UpdateContestSeries rewrites a series in place, so the change surfaces on every contest already
+     * classified under it without any of them being touched. There is no field mask here, the series is written
+     * whole, so send the complete record even when only one language of the name changes.
+     *
      * @param UpdateContestSeriesInput $input message
      * @param array $context request parameters
      *
@@ -93,6 +118,10 @@ class ContestSeriesServiceClient {
     }
 
     /**
+     * DeleteContestSeries removes the series definition from the space, leaving the contests themselves in
+     * place. Whatever was grouped under the series stops being grouped, so it is worth checking which contests
+     * refer to it before retiring one.
+     *
      * @param DeleteContestSeriesInput $input message
      * @param array $context request parameters
      *

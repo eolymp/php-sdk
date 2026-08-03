@@ -5,6 +5,8 @@
 namespace Eolymp\Atlas;
 
     /**
+     * internal
+     *
      * SuggestionService collects community-proposed changes to a problem and drives their review.
      *
      * A suggestion is an edit proposed by a user of the public archive rather than by the problem's own owners: a

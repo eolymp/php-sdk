@@ -4,6 +4,16 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * ScoreboardService presents standings as a generic table: a description of how the board is built, then the
+     * ranked rows themselves, each cell tagged with the column it belongs to.
+     *
+     * Other things in eolymp are called a scoreboard too, so mind which one is wanted: a contest's own ranking is
+     * read from ScoreService, and the standalone boards that combine results across several contests belong to
+     * `eolymp.ranker.ScoreboardService`. What this service adds is the shape of its answer — because the columns
+     * are described rather than fixed, a client can render and sort the table without knowing what any particular
+     * column stands for.
+     */
 class ScoreboardServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,10 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * DescribeScoreboard returns the board's layout rather than any standings — what a row will be made of, and
+     * which of those parts may be sorted or filtered on. A client fetches it once and uses it to interpret and
+     * drive ListScoreboardRows.
+     *
      * @param DescribeScoreboardInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +53,10 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * ListScoreboardRows returns the ranked rows a page at a time, with each cell keyed by its column, so a
+     * response only makes sense alongside the layout from DescribeScoreboard. The requested mode decides which
+     * recorded scores the rows are built on, and a row's rank spans several positions when participants tie.
+     *
      * @param ListScoreboardRowsInput $input message
      * @param array $context request parameters
      *

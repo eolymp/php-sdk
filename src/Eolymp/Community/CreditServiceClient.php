@@ -7,8 +7,14 @@ namespace Eolymp\Community;
     /**
      * internal
      *
-     * CreditService provides methods to manage members "credits", a point based system of rewards.
-     * Members can be rewarded credits for various actions, and these credits can be redeemed for rewards.
+     * CreditService keeps one member's balance of credits, the points a space hands out as a reward and lets
+     * members spend on rewards in return.
+     *
+     * Credits come in as grants, each a separate lot with its own amount and expiry, and go out as
+     * redemptions. Every movement in either direction is also written as a transaction, so the two listings
+     * answer different questions: the grants say where a balance came from and how much of each lot is left,
+     * the transactions are the history a member sees. Being member-scoped, these calls are addressed through
+     * the base url a member carries in its read-only url field.
      */
 class CreditServiceClient {
 
@@ -29,7 +35,9 @@ class CreditServiceClient {
     }
 
     /**
-     * DescribeBalance returns the current balance of credits for a member.
+     * DescribeBalance reports what the member can still spend, as a single unsigned number. It is a
+     * consequence of the grants, redemptions and refunds recorded for the member rather than a figure that
+     * can be written directly, and it can never go negative.
      *
      * @param DescribeBalanceInput $input message
      * @param array $context request parameters
@@ -47,7 +55,9 @@ class CreditServiceClient {
     }
 
     /**
-     * GrantCredit grants new credits to a member.
+     * GrantCredit adds a new lot of credits to the member and returns both the grant it opened and the
+     * transaction that recorded the movement. A grant carries the reason it was made and a reference, which
+     * is what keeps the same reward from being paid twice when a caller retries.
      *
      * @param GrantCreditInput $input message
      * @param array $context request parameters
@@ -65,9 +75,9 @@ class CreditServiceClient {
     }
 
     /**
-     * DeleteCredit allows to "erase" credit record.
-     * This method should be used in rare cases, when it's necessary to leave no trace of a credit record.
-     * Generally and changes in user balance should be done by creating new credit records.
+     * CancelCredit revokes a grant that should never have been made, withdrawing whatever it still holds
+     * from the balance. Reserve it for mistakes: an ordinary correction belongs in the ledger as a
+     * redemption or a refund, where it stays visible.
      *
      * @param CancelCreditInput $input message
      * @param array $context request parameters
@@ -88,7 +98,9 @@ class CreditServiceClient {
     }
 
     /**
-     * ListCredits returns a list of credit records for a member.
+     * ListCreditGrants walks the lots the member's credits came from, spent and expired ones included, each
+     * showing how much of it has been drawn down. This is the accounting view behind a balance, and the
+     * place to check whether a grant made under a given reference already exists.
      *
      * @param ListCreditGrantsInput $input message
      * @param array $context request parameters
@@ -106,8 +118,9 @@ class CreditServiceClient {
     }
 
     /**
-     * RedeemCredit adds a new credit redeem for a member.
-     * This can be used to reward a member with credits for specific actions (amount > 0) or redeem credits (amount < 0).
+     * RedeemCredit spends credits on the member's behalf and returns the transaction that recorded it. The
+     * amount is unsigned, so this only ever takes credits away — putting them back is a grant or a refund —
+     * and it draws on the member's grants rather than naming one.
      *
      * @param RedeemCreditInput $input message
      * @param array $context request parameters
@@ -125,7 +138,9 @@ class CreditServiceClient {
     }
 
     /**
-     * ListCredits returns a list of credit records for a member.
+     * ListCreditTransactions walks every movement on the member's balance in either direction, each with a
+     * timestamp and a line of text describing it, which is what a member-facing credit history is built
+     * from. A refund appears as its own entry beside the movement it reverses, never in place of it.
      *
      * @param ListCreditTransactionsInput $input message
      * @param array $context request parameters
@@ -143,8 +158,9 @@ class CreditServiceClient {
     }
 
     /**
-     * RefundCredit refunds a specified amount from a credit record.
-     * This creates a new credit record with negative amount to reverse the original credit.
+     * RefundCredit reverses an earlier transaction by writing a compensating one against it, leaving the
+     * original untouched so the history stays append-only. Naming an amount smaller than the transaction's
+     * refunds part of it.
      *
      * @param RefundCreditInput $input message
      * @param array $context request parameters

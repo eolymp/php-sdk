@@ -4,6 +4,17 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * AchievementService awards achievements to one member and reports what that member has earned.
+     *
+     * Achievements are small rewards given for the things a space wants to encourage — solving a first
+     * problem, finishing a course, placing well in a contest, staying active over time — and every one a
+     * member earns shows on their public profile. This service only deals with the member's side of that. The
+     * achievements themselves, their name, image, summary, the points needed to earn them and whether they
+     * can be earned more than once, are owned by eolymp.reward.AchievementService, which is easy to mistake
+     * for this one. Being member-scoped, these calls are addressed through the base url a member carries in
+     * its read-only url field.
+     */
 class AchievementServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,13 @@ class AchievementServiceClient {
     }
 
     /**
+     * AssignAchievement moves a member's progress on one achievement, either setting it to a value or
+     * adding to it. Earning is scored rather than boolean: the number of times the achievement has been
+     * earned is the accumulated score divided by the points the achievement requires, rounded down, so a
+     * one-off badge needs a single point while a "solve 50 problems" award accrues progress. A reference
+     * confines the change to its own bucket and the total is summed across buckets, which is how a rule
+     * that re-runs counts each distinct item once.
+     *
      * @param AssignAchievementInput $input message
      * @param array $context request parameters
      *
@@ -42,6 +60,10 @@ class AchievementServiceClient {
     }
 
     /**
+     * UnassignAchievement takes an achievement off a member completely, together with the progress
+     * accumulated toward it, so it is not the inverse of a single assignment and cannot undo one bucket of
+     * a referenced count. The achievement stops appearing on the member's profile.
+     *
      * @param UnassignAchievementInput $input message
      * @param array $context request parameters
      *
@@ -61,6 +83,11 @@ class AchievementServiceClient {
     }
 
     /**
+     * ListAchievements returns the achievements this one member has a standing on, which includes progress
+     * toward an achievement not earned yet, so a row that has been awarded zero times is normal. It is not
+     * a way to browse what a space offers — eolymp.reward.AchievementService lists the definitions
+     * themselves.
+     *
      * @param ListAchievementsInput $input message
      * @param array $context request parameters
      *

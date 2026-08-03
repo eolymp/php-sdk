@@ -4,6 +4,17 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * ScoreService owns the ranking of a contest: for every participant a result carrying a score, a penalty, a
+     * breakdown by problem and the rank those earn.
+     *
+     * What the numbers mean follows the contest format — IOI adds up the points awarded per problem, partial
+     * credit included, while ICPC counts the problems fully solved and adds a penalty built from how long into
+     * the contest each was solved and how many attempts failed before it. Ranks come back as ranges when
+     * participants tie. Every read takes a fetching mode, which decides which of the recorded scores is reported:
+     * a contest can be frozen towards its end so that participants stop seeing the ranking move, and upsolve
+     * scores are recorded apart from the official ones and never affect the official ranking.
+     */
 class ScoreServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,10 @@ class ScoreServiceClient {
     }
 
     /**
+     * IntrospectScore returns the caller's own score in the contest. It names neither a participant nor a mode:
+     * the participation is resolved from the authenticated caller and the score comes back the way that
+     * participant is allowed to see it. Unlike the other reads here, it carries no scope requirement.
+     *
      * @param IntrospectScoreInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +54,11 @@ class ScoreServiceClient {
     }
 
     /**
+     * DescribeScore returns one participant's score and its breakdown by problem, but not the rank — reach for
+     * DescribeResult when the standing within the contest is what is wanted. One of the modes reads the score
+     * as it stood at a chosen point of the participation rather than now, which is how a historical snapshot is
+     * taken.
+     *
      * @param DescribeScoreInput $input message
      * @param array $context request parameters
      *
@@ -58,7 +78,9 @@ class ScoreServiceClient {
     }
 
     /**
-     * DescribeResult retrieves a single participant's scoreboard result, including its rank.
+     * DescribeResult returns one participant's row of the ranking: the score DescribeScore reports, plus the
+     * rank it earns among the others and the identity shown next to it on the board. It saves paging through
+     * ListResult to find a single participant.
      *
      * @param DescribeResultInput $input message
      * @param array $context request parameters
@@ -79,6 +101,10 @@ class ScoreServiceClient {
     }
 
     /**
+     * ListScoreTimeline returns how a participant's score built up during the contest, as points measured from
+     * the moment their participation started — enough to draw a progression chart. Only the modes that span a
+     * whole stretch of time are meaningful here, since a timeline is a history and not a snapshot.
+     *
      * @param ListScoreTimelineInput $input message
      * @param array $context request parameters
      *
@@ -98,7 +124,10 @@ class ScoreServiceClient {
     }
 
     /**
-     * ImportScore for ghost participants
+     * ImportScore loads the score of a ghost participant: a result taken from another system so that a
+     * contestant who is not a member of the space still shows up in the ranking. Snapshots are timed relative
+     * to the participant's start, so an imported result can carry a whole progression and not only a final
+     * score.
      *
      * @param ImportScoreInput $input message
      * @param array $context request parameters
@@ -119,7 +148,9 @@ class ScoreServiceClient {
     }
 
     /**
-     * ExportScore for ghost participants
+     * ExportScore reads back the snapshots imported for a ghost participant, in the same shape ImportScore
+     * accepts, so a load can be reviewed or replayed elsewhere. It is not a way to download the standings —
+     * that is ExportResult.
      *
      * @param ExportScoreInput $input message
      * @param array $context request parameters
@@ -140,7 +171,9 @@ class ScoreServiceClient {
     }
 
     /**
-     * ListResult retrieves scoreboard
+     * ListResult returns the ranking of the contest a page of participants at a time, which is what a
+     * scoreboard screen is built from. The mode decides which of the recorded scores the ranking is built on,
+     * and one of the modes reconstructs the ranking as it stood at a chosen point of the contest.
      *
      * @param ListResultInput $input message
      * @param array $context request parameters
@@ -158,6 +191,11 @@ class ScoreServiceClient {
     }
 
     /**
+     * ExportResult renders the ranking into a file and hands back a URL to download it, for the cases where the
+     * standings have to leave the platform. It is rate limited far more tightly than the reading methods, and
+     * it exports the ranking itself, unlike ExportScore which deals with the snapshots of one ghost
+     * participant.
+     *
      * @param ExportResultInput $input message
      * @param array $context request parameters
      *
@@ -174,7 +212,11 @@ class ScoreServiceClient {
     }
 
     /**
-     * Rebuild scoreboard
+     * RebuildScore recomputes the score of every participant from their submissions. It is the repair for a
+     * ranking that has drifted from the submissions behind it, after a problem was retested or its tests were
+     * edited — a full recomputation and not a cache refresh, so it takes time on a large contest. The work runs
+     * in the background: the call returns an activity, whose progress is followed with
+     * ContestService.ListActivities.
      *
      * @param RebuildScoreInput $input message
      * @param array $context request parameters

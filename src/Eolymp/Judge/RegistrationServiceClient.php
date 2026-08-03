@@ -5,7 +5,14 @@
 namespace Eolymp\Judge;
 
     /**
-     * RegistrationService provides interface to join contest by yourself.
+     * RegistrationService lets people sign themselves up for a contest instead of waiting for an organiser to
+     * assign them.
+     *
+     * A contest can ask its registrants for details about themselves, expressed as the same attributes the
+     * space keeps on its members, and this service both publishes that form and takes the answers back. It
+     * is called by the contest client; there is no organiser-facing screen behind it, and organisers add
+     * people through ParticipantService instead. Registering is not the same as being admitted: where a
+     * contest requires admission, a registrant still has to be admitted through AdmissionService.
      */
 class RegistrationServiceClient {
 
@@ -26,7 +33,9 @@ class RegistrationServiceClient {
     }
 
     /**
-     * DescribeRegistration returns list of required attributes and current (default) values.
+     * DescribeRegistration returns the form the contest asks its registrants to fill in, alongside the
+     * values already on record for the caller so the form can be shown pre-filled rather than empty.
+     * A contest that asks for nothing returns an empty form.
      *
      * @param DescribeRegistrationInput $input message
      * @param array $context request parameters
@@ -44,7 +53,9 @@ class RegistrationServiceClient {
     }
 
     /**
-     * SubmitRegistration allows to modify registration values.
+     * SubmitRegistration stores the caller's answers to the registration form and signs them up for the
+     * contest, replacing the deprecated JoinContest. It can be called again to correct answers that were
+     * already submitted.
      *
      * @param SubmitRegistrationInput $input message
      * @param array $context request parameters

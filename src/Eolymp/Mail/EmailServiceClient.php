@@ -26,6 +26,11 @@ class EmailServiceClient {
     }
 
     /**
+     * internal
+     *
+     * SendEmail sends an email to a member of the space on the space's behalf, counting against its email
+     * allowance.
+     *
      * @param SendEmailInput $input message
      * @param array $context request parameters
      *

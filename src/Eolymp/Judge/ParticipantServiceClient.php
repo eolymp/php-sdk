@@ -4,6 +4,15 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * ParticipantService manages the per-contest records of the people taking part in a contest.
+     *
+     * A participant is a contest-scoped record for a space member: it carries the role that member plays in
+     * the contest, their official standing, when they started and finished, and how much they submitted.
+     * Records come into existence either because an organiser assigned someone, or because a member added
+     * themselves where the contest visibility permits it. Most methods here are organiser-facing, but the
+     * ones acting on the caller's own participation are meant for the contest client instead.
+     */
 class ParticipantServiceClient {
 
     /** @var string base URL */
@@ -23,6 +32,11 @@ class ParticipantServiceClient {
     }
 
     /**
+     * AssignParticipant adds a member to the contest, and the same call adds an entire community group at once
+     * when given a group instead of a member. A group is expanded once, at the moment of the call: members who
+     * join or leave the group afterwards are not added to or removed from the contest. It can also create a
+     * ghost, a placeholder standing in for a result imported from elsewhere rather than for a real member.
+     *
      * @param AssignParticipantInput $input message
      * @param array $context request parameters
      *
@@ -41,7 +55,9 @@ class ParticipantServiceClient {
     /**
      * deprecated
      *
-     * Use UpdateParticipant instead.
+     * EnableParticipant gives a participant back the access to the contest that was previously
+     * withheld, leaving their score, start time and submissions as they were. Use UpdateParticipant
+     * instead, which reaches the same state through the patch mask.
      *
      * @param EnableParticipantInput $input message
      * @param array $context request parameters
@@ -64,7 +80,9 @@ class ParticipantServiceClient {
     /**
      * deprecated
      *
-     * Use UpdateParticipant instead.
+     * DisableParticipant withdraws a participant's access to the contest while keeping their record
+     * intact, which is neither a deletion nor a disqualification. Use UpdateParticipant instead, which
+     * reaches the same state through the patch mask.
      *
      * @param DisableParticipantInput $input message
      * @param array $context request parameters
@@ -85,6 +103,13 @@ class ParticipantServiceClient {
     }
 
     /**
+     * UpdateParticipant writes the fields selected by the patch mask, and is where most organiser
+     * actions on a participant live: there is no dedicated method for moving someone between official
+     * and unofficial ranking, for awarding a medal or for granting extra time on top of the contest
+     * duration. Extra time is counted in seconds, whereas organiser tooling normally asks for it in
+     * minutes. Once a contest is finalized the results of its official participants are final, and
+     * organiser tooling stops offering edits for them.
+     *
      * @param UpdateParticipantInput $input message
      * @param array $context request parameters
      *
@@ -104,6 +129,10 @@ class ParticipantServiceClient {
     }
 
     /**
+     * AnalyzeParticipant looks for plagiarism, cheating and other violations in this one participant's
+     * submissions, rather than across the whole contest as AnalyzeContest does. Whatever it finds is
+     * recorded as a violation against the participant instead of being returned in the response.
+     *
      * @param AnalyzeParticipantInput $input message
      * @param array $context request parameters
      *
@@ -123,6 +152,10 @@ class ParticipantServiceClient {
     }
 
     /**
+     * DisqualifyParticipant marks a participant as disqualified and records the reason behind the
+     * decision, which stays with the record. There is no separate method to reverse it: call this one
+     * again with disqualification turned off to reinstate the participant.
+     *
      * @param DisqualifyParticipantInput $input message
      * @param array $context request parameters
      *
@@ -142,6 +175,10 @@ class ParticipantServiceClient {
     }
 
     /**
+     * DeleteParticipant removes the contest record and with it the participant's standing in the
+     * contest; the space member behind it is left alone and can be assigned again later. Prefer
+     * disqualification or withdrawing access when the record itself should survive.
+     *
      * @param DeleteParticipantInput $input message
      * @param array $context request parameters
      *
@@ -161,6 +198,10 @@ class ParticipantServiceClient {
     }
 
     /**
+     * DescribeParticipant reads one contest record by its contest-scoped identifier, which is not the member
+     * identifier the rest of the space uses. Use DescribeViewer when the caller is the participant and no
+     * participant identifier is at hand.
+     *
      * @param DescribeParticipantInput $input message
      * @param array $context request parameters
      *
@@ -180,6 +221,11 @@ class ParticipantServiceClient {
     }
 
     /**
+     * ListParticipants pages through the whole contest roster, which mixes competitors with the
+     * organising roles that are also recorded as participants, so narrow it down by role when only
+     * competitors are wanted. Disqualified, inactive and unofficial records belong to the roster too
+     * and are returned by default.
+     *
      * @param ListParticipantsInput $input message
      * @param array $context request parameters
      *
@@ -198,8 +244,10 @@ class ParticipantServiceClient {
     /**
      * deprecated
      *
-     * Allows a participant (currently authorized user) to join (add himself to) a public contest.
-     * Use registration service instead.
+     * JoinContest creates a participant record for the calling user without an organiser being involved,
+     * and only in a contest whose visibility lets people in on their own. The contest decides whether
+     * such self-joined participants compete officially. Use RegistrationService instead, which also
+     * collects whatever details the contest asks of its registrants.
      *
      * @param JoinContestInput $input message
      * @param array $context request parameters
@@ -217,7 +265,9 @@ class ParticipantServiceClient {
     }
 
     /**
-     * DescribeViewer allows to fetch participant data for a currently authorized user.
+     * DescribeViewer returns the calling user's own record in the contest, which is how a contest client
+     * finds out whether the viewer may start, is competing, is paused or has already finished, without
+     * knowing any participant identifier. Organiser tooling reads other records via DescribeParticipant.
      *
      * @param DescribeViewerInput $input message
      * @param array $context request parameters
@@ -235,7 +285,9 @@ class ParticipantServiceClient {
     }
 
     /**
-     * Allows a participant (currently authorized user) to start participating in the contest, see problems and submit solutions.
+     * StartContest begins the calling participant's own participation, which is what makes the problems
+     * readable and submissions possible; in a contest where everyone runs on their own clock it also
+     * starts that clock. The same call resumes participation that the participant paused earlier.
      *
      * @param StartContestInput $input message
      * @param array $context request parameters
@@ -253,7 +305,9 @@ class ParticipantServiceClient {
     }
 
     /**
-     * Allows a participant to temporarily stop participating in the contest. Participation can be restarted using StartContest API.
+     * PauseContest lets the calling participant step out of the contest for a while, giving up access to
+     * the problems until they call StartContest again. It is a voluntary act by the participant and is
+     * distinct from being blocked by an organiser; participation is suspended rather than finished.
      *
      * @param PauseContestInput $input message
      * @param array $context request parameters
@@ -271,7 +325,9 @@ class ParticipantServiceClient {
     }
 
     /**
-     * FinishContest allows to finish contest before the end time.
+     * FinishContest ends the calling participant's own participation ahead of the scheduled end, instead
+     * of waiting for the clock to run out, and unlike a pause it is not meant to be resumed. Where the
+     * contest permits upsolving, the participant may go on solving problems after finishing.
      *
      * @param FinishContestInput $input message
      * @param array $context request parameters

@@ -4,6 +4,17 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * AdmissionService admits a participant into a contest in person, checked off by an organiser on site.
+     *
+     * It serves the contest setting which demands manual admission: while that is on, a registered
+     * participant is held out of the contest — no problems, no submissions — until someone entitled to admit
+     * has accepted them. Admission runs on a short-lived code the participant's client asks for and presents,
+     * which the organiser looks up to see who is behind it and then accepts; the console describes presenting
+     * it as scanning a QR code. What is admitted is one session rather than the participant, and only for a
+     * limited time, so the same person on a second device has to be admitted again. Joining the contest at
+     * all is a separate step and belongs to RegistrationService.
+     */
 class AdmissionServiceClient {
 
     /** @var string base URL */
@@ -23,7 +34,10 @@ class AdmissionServiceClient {
     }
 
     /**
-     * Request admission code, if necessary for the contest and if authenticated token has been admitted already.
+     * RequestAdmission is called by the participant's own client to obtain the code it then shows to an
+     * organiser, and it also answers whether admission is needed at all: a contest which does not demand
+     * it, or a session already admitted, comes back with no code. Asking again from the same session hands
+     * back the same code for as long as it lives.
      *
      * @param RequestAdmissionInput $input message
      * @param array $context request parameters
@@ -41,6 +55,10 @@ class AdmissionServiceClient {
     }
 
     /**
+     * DescribeAdmission resolves a code a participant is presenting into the participant behind it and their
+     * member profile, so an organiser can check the identity of the person in front of them before letting them
+     * in. It only reads the pending request and changes nothing; AcceptAdmission is what admits.
+     *
      * @param DescribeAdmissionInput $input message
      * @param array $context request parameters
      *
@@ -57,7 +75,10 @@ class AdmissionServiceClient {
     }
 
     /**
-     * Accept admission code
+     * AcceptAdmission is the organiser's side of the flow: it admits the session which requested the code,
+     * which is what unblocks the contest for that participant on that device. It succeeds without effect on
+     * a contest which does not demand admission, and it does not check who presented the code —
+     * DescribeAdmission is there for that.
      *
      * @param AcceptAdmissionInput $input message
      * @param array $context request parameters

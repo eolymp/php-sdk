@@ -4,6 +4,18 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * AnnouncementService handles announcements: messages an organiser publishes to everyone taking part in a
+     * contest while it is running.
+     *
+     * They are how the jury corrects a mistake in a statement or tells participants the contest has been
+     * extended; participants see them as soon as they are published and cannot reply, so a question raised by
+     * one participant is a ticket instead (see TicketService). Besides creating, reading, updating and
+     * deleting them, the service tracks which announcements the calling participant has already seen, which
+     * exists so a client can badge the unread ones — the console does not use that part, the contest client
+     * does. Every call is addressed to one contest inside a space, and the streaming calls have no HTTP
+     * binding, so they exist only in the SDKs.
+     */
 class AnnouncementServiceClient {
 
     /** @var string base URL */
@@ -23,7 +35,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * Create announcement for a contest
+     * CreateAnnouncement publishes a message to the participants of the contest. It takes effect
+     * immediately — there is no draft or scheduled state — and starts out unread for everyone. The body is
+     * rich content, so an announcement can carry the same formatting and formulas as a problem statement.
      *
      * @param CreateAnnouncementInput $input message
      * @param array $context request parameters
@@ -41,7 +55,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * Update existing announcement in a contest
+     * UpdateAnnouncement rewrites an announcement which is already published, which is how a typo or a
+     * wrong detail is fixed without sending a second message. The announcement keeps its identifier and the
+     * time it was originally created, so it stays where participants have already seen it.
      *
      * @param UpdateAnnouncementInput $input message
      * @param array $context request parameters
@@ -62,7 +78,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * Delete announcement
+     * DeleteAnnouncement withdraws an announcement from the contest for every participant, including those who
+     * have already read it. There is no restore, so an announcement which is merely worded badly is better
+     * corrected with UpdateAnnouncement than deleted and republished.
      *
      * @param DeleteAnnouncementInput $input message
      * @param array $context request parameters
@@ -83,7 +101,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * Mark announcement as read by authenticated participant
+     * ReadAnnouncement records that the calling participant has seen the announcement, and is what the read
+     * flag and the unread count reported by the other calls are built from. Read state is per participant
+     * and the client has to send this itself: fetching an announcement does not mark it read.
      *
      * @param ReadAnnouncementInput $input message
      * @param array $context request parameters
@@ -104,7 +124,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * Describe announcement
+     * DescribeAnnouncement returns one announcement of the contest. It neither reports nor changes whether the
+     * caller has read it — DescribeAnnouncementStatus and ReadAnnouncement do that — so showing an announcement
+     * and marking it seen are separate calls.
      *
      * @param DescribeAnnouncementInput $input message
      * @param array $context request parameters
@@ -125,7 +147,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * Describe announcement status
+     * DescribeAnnouncementStatus reports whether the calling participant has already read one announcement,
+     * for a client that wants the read flag without fetching the message again. It answers only for the
+     * caller: there is no way to ask whether some other participant has read an announcement.
      *
      * @param DescribeAnnouncementStatusInput $input message
      * @param array $context request parameters
@@ -146,7 +170,9 @@ class AnnouncementServiceClient {
     }
 
     /**
-     * List announcements of a contest
+     * ListAnnouncements returns the announcements of the contest, and backs both the participant's announcement
+     * panel and the organiser's list. The result can be narrowed to what the calling participant has not read
+     * yet, which is how a client shows only what is new to the person in front of it.
      *
      * @param ListAnnouncementsInput $input message
      * @param array $context request parameters

@@ -4,6 +4,17 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * TicketService handles the clarification requests participants raise while a contest is running.
+     *
+     * Participants and the console call these questions, while the API object is a ticket. A ticket belongs
+     * to the participant who opened it, starts from a subject and a message, and grows into a thread of
+     * replies written either by that participant or by the jury; a contest can be configured to hide jury
+     * identity, in which case participants never learn which person answered them. A ticket also carries a
+     * status saying whether the jury still owes an answer, and marking a question resolved, reopened or
+     * closed is an update of that status rather than a dedicated call. Every call is addressed to one contest
+     * inside a space, and the streaming calls have no HTTP binding, so they exist only in the SDKs.
+     */
 class TicketServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,10 @@ class TicketServiceClient {
     }
 
     /**
+     * CreateTicket opens a new question in the contest on behalf of the calling participant. The subject
+     * and message passed here become the head of the ticket's thread; everything said afterwards is a
+     * reply.
+     *
      * @param CreateTicketInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +54,11 @@ class TicketServiceClient {
     }
 
     /**
+     * UpdateTicket changes the editable attributes of a ticket, above all its status: resolving, reopening
+     * or closing a question all happen through this call, there is no separate rpc for them. Only the
+     * attributes named in the patch are written, so changing the status leaves the rest of the ticket
+     * untouched.
+     *
      * @param UpdateTicketInput $input message
      * @param array $context request parameters
      *
@@ -58,7 +78,10 @@ class TicketServiceClient {
     }
 
     /**
-     * ReadTicket marks ticket as read by participant (sets is_read flag to true).
+     * ReadTicket records that the caller has seen the ticket, which is what the per-viewer read state and
+     * the unread counters are built from — a ticket read by the jury stays unread for its participant. The
+     * console sends it when the message scrolls into view rather than on an explicit action, and the
+     * request may state the moment the ticket was seen.
      *
      * @param ReadTicketInput $input message
      * @param array $context request parameters
@@ -79,6 +102,10 @@ class TicketServiceClient {
     }
 
     /**
+     * DeleteTicket takes a question out of the contest for everyone, jury and participant alike. Unlike
+     * opening a ticket or replying to one it needs the contest write scope, so it is a moderation tool and
+     * not a way for a participant to retract a question they already asked.
+     *
      * @param DeleteTicketInput $input message
      * @param array $context request parameters
      *
@@ -98,6 +125,10 @@ class TicketServiceClient {
     }
 
     /**
+     * DescribeTicket returns a single question with its own attributes but without the conversation it
+     * started; the replies are fetched separately with ListReplies. The original message is rich content
+     * and can be asked for either rendered for display or in its raw form for editing.
+     *
      * @param DescribeTicketInput $input message
      * @param array $context request parameters
      *
@@ -117,7 +148,10 @@ class TicketServiceClient {
     }
 
     /**
-     * ListTickets fetches tickets matching criteria in the input parameter.
+     * ListTickets backs both the jury inbox and a participant's list of their own questions, the difference
+     * being the filters applied — by author, by state or by whether the caller owns the ticket. Results can
+     * be paged by offset or by cursor, the cursor being the safer choice for an inbox that keeps receiving
+     * new questions.
      *
      * @param ListTicketsInput $input message
      * @param array $context request parameters
@@ -135,8 +169,10 @@ class TicketServiceClient {
     }
 
     /**
-     * ReplyTicket allows to add reply to a ticket. If reply is added by participant it sets is_read and needs_reply to
-     * true, otherwise, if reply added by contest administrator, this method sets these flags to false.
+     * ReplyTicket appends a message to a ticket's thread, attributed to the participant or to the jury
+     * depending on who calls it. The same request may hand the ticket a new status, which is how the jury
+     * answers and resolves a question in one round trip; this is the only way to add a reply, replies have
+     * no create rpc.
      *
      * @param ReplyTicketInput $input message
      * @param array $context request parameters
@@ -157,7 +193,9 @@ class TicketServiceClient {
     }
 
     /**
-     * ListReplies fetches replies for a particular ticket.
+     * ListReplies returns the conversation held on one ticket, each message attributed either to the
+     * participant who asked or to the jury member who answered. In a contest configured to hide jury
+     * identity, participants see the jury side of the thread without the person behind it.
      *
      * @param ListRepliesInput $input message
      * @param array $context request parameters
@@ -178,7 +216,9 @@ class TicketServiceClient {
     }
 
     /**
-     * DeleteReply allows author to delete his own reply.
+     * DescribeReply picks one message out of a ticket's thread by its identifier, without pulling the rest
+     * of the conversation. Unlike the other read calls here it asks for the contest write scope, so it
+     * suits editing tools rather than the participant-facing view.
      *
      * @param DescribeReplyInput $input message
      * @param array $context request parameters
@@ -200,7 +240,9 @@ class TicketServiceClient {
     }
 
     /**
-     * DeleteReply allows author to delete his own reply.
+     * DeleteReply drops a single message from a thread, intended for an author retracting what they wrote,
+     * and leaves the ticket itself and the surrounding messages in place. Replies are managed on their own,
+     * so this is a separate call from deleting the question.
      *
      * @param DeleteReplyInput $input message
      * @param array $context request parameters
@@ -222,7 +264,9 @@ class TicketServiceClient {
     }
 
     /**
-     * UpdateReply allows author to update his own reply.
+     * UpdateReply rewrites the body of a message already in the thread, letting an author correct
+     * themselves instead of posting a follow-up. It replaces the message outright and does not touch the
+     * ticket around it.
      *
      * @param UpdateReplyInput $input message
      * @param array $context request parameters
@@ -244,6 +288,10 @@ class TicketServiceClient {
     }
 
     /**
+     * SuggestReply drafts an answer to a question and returns it in the response instead of adding it to
+     * the thread. The jury is expected to review or edit the suggestion and then post it with ReplyTicket,
+     * so nothing reaches the participant until that happens.
+     *
      * @param SuggestReplyInput $input message
      * @param array $context request parameters
      *

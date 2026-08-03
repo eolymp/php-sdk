@@ -4,6 +4,17 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * internal
+     *
+     * AccessKeyService manages the long-lived API keys belonging to one member.
+     *
+     * An access key is the alternative to OAuth 2.0 for server-to-server use: rather than running an
+     * authorization flow, a script presents the key and is authenticated as the member it was created under,
+     * allowed to do only what the key's scopes cover and only until the key expires. Keys are held by a
+     * member, so these calls are addressed through the base url a member carries in its read-only url field.
+     * The secret is handed out once, in the response to CreateAccessKey, and no method returns it afterwards.
+     */
 class AccessKeyServiceClient {
 
     /** @var string base URL */
@@ -23,7 +34,9 @@ class AccessKeyServiceClient {
     }
 
     /**
-     * Create API key.
+     * CreateAccessKey issues a key for the member it is called under and returns its secret. This is the
+     * only response that ever carries the secret, so it has to be kept at this point — a lost secret cannot
+     * be looked up. The lifetime is given as a duration counted from now rather than as an expiry date.
      *
      * @param CreateAccessKeyInput $input message
      * @param array $context request parameters
@@ -41,7 +54,9 @@ class AccessKeyServiceClient {
     }
 
     /**
-     * Update API key name and scopes.
+     * UpdateAccessKey re-labels a key and widens or narrows what it may do. There is no patch here, the key
+     * in the request is taken as a whole. It cannot rotate the secret, so a leaked key is replaced rather
+     * than updated.
      *
      * @param UpdateAccessKeyInput $input message
      * @param array $context request parameters
@@ -62,7 +77,9 @@ class AccessKeyServiceClient {
     }
 
     /**
-     * Delete API key.
+     * DeleteAccessKey revokes a key for good, and everything still authenticating with its secret stops
+     * working. Since a secret can be neither recovered nor rotated, this is also the answer to a
+     * compromised key: delete it, then create a fresh one.
      *
      * @param DeleteAccessKeyInput $input message
      * @param array $context request parameters
@@ -83,6 +100,10 @@ class AccessKeyServiceClient {
     }
 
     /**
+     * ListAccessKeys enumerates the keys the member holds without their secrets, which makes it the audit
+     * view: it shows which keys exist, what they are allowed to do and when they lapse, never how to use
+     * them.
+     *
      * @param ListAccessKeysInput $input message
      * @param array $context request parameters
      *

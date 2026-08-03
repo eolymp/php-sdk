@@ -4,6 +4,17 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * PenaltyService restricts what a single member is allowed to do in a space, for a period of time.
+     *
+     * A penalty is a list of scopes, each naming one thing the member loses — from signing in at all down to
+     * individual actions such as commenting or submitting — with a summary and a description explaining it,
+     * and a time at which it stops applying. Several can be in force at once and they add up rather than
+     * replace each other. In practice penalties are add-only and lapse on their own: the console only lists
+     * and creates them, and the methods that revise or remove one are rarely reached for. Being
+     * member-scoped, these calls are addressed through the base url a member carries in its read-only url
+     * field.
+     */
 class PenaltyServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,10 @@ class PenaltyServiceClient {
     }
 
     /**
+     * CreatePenalty puts a restriction in force and returns its id. It takes effect without any separate
+     * activation step, and leaves penalties already on the member alone, so restricting two things on
+     * different timelines means two penalties rather than one.
+     *
      * @param CreatePenaltyInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +54,9 @@ class PenaltyServiceClient {
     }
 
     /**
+     * UpdatePenalty revises a penalty that is already in force instead of cancelling it and issuing a
+     * replacement, and is the only way to re-time one after the fact. Only what the patch names is touched.
+     *
      * @param UpdatePenaltyInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +76,9 @@ class PenaltyServiceClient {
     }
 
     /**
+     * DeletePenalty lifts a penalty ahead of its time, restoring whatever it withheld. Seldom needed, since a
+     * penalty carries its own end and is normally left to run out.
+     *
      * @param DeletePenaltyInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +98,9 @@ class PenaltyServiceClient {
     }
 
     /**
+     * DescribePenalty reads one penalty by id, which is mostly how a restricted member is shown the reason
+     * for it: the explanation is rich content and comes back only when asked for as an extra.
+     *
      * @param DescribePenaltyInput $input message
      * @param array $context request parameters
      *
@@ -96,6 +120,10 @@ class PenaltyServiceClient {
     }
 
     /**
+     * ListPenalties walks everything ever recorded against the member, so it reads as a disciplinary
+     * history rather than a view of what applies right now. There is nothing to filter on, and a caller
+     * that only cares about live restrictions compares each penalty's end itself.
+     *
      * @param ListPenaltiesInput $input message
      * @param array $context request parameters
      *

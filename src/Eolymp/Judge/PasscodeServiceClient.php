@@ -4,6 +4,17 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * PasscodeService guards a contest with a secret given to one participant.
+     *
+     * A passcode is set per participant, not per contest: while a participant has one, their client can see
+     * the contest but neither its problems nor anything to submit until the passcode has been entered, and
+     * participants without a passcode are unaffected. The three write methods are the organiser's, and a
+     * single passcode field in the console maps onto two of them — SetPasscode when a value is typed in,
+     * RemovePasscode when the field is cleared. VerifyPasscode and EnterPasscode belong to the participant's
+     * client instead. Passcodes and manual admission (see AdmissionService) are independent gates, and a
+     * contest can use either, both or neither.
+     */
 class PasscodeServiceClient {
 
     /** @var string base URL */
@@ -23,7 +34,10 @@ class PasscodeServiceClient {
     }
 
     /**
-     * Verify if passcode is required for the contest and if authenticated token has entered the passcode.
+     * VerifyPasscode tells the caller's own client whether a passcode stands between it and the contest:
+     * whether one is set for this participant at all, and whether the caller has already entered it.
+     * Entering is remembered against the credentials which did it and only for a number of hours, so ask
+     * here before prompting for a passcode again.
      *
      * @param VerifyPasscodeInput $input message
      * @param array $context request parameters
@@ -41,7 +55,9 @@ class PasscodeServiceClient {
     }
 
     /**
-     * Enter passcode marks current session as one authenticated by passcode.
+     * EnterPasscode is how a participant presents the passcode an organiser gave them and lifts the gate
+     * for the credentials making the call, until they expire. A wrong value is refused as an invalid
+     * parameter, while a participant who has no passcode set is accepted without anything happening.
      *
      * @param EnterPasscodeInput $input message
      * @param array $context request parameters
@@ -59,7 +75,10 @@ class PasscodeServiceClient {
     }
 
     /**
-     * Set a new passcode to the participant, if passcode was not set it will be now required
+     * ResetPasscode has the platform generate a short numeric passcode for the participant and returns it,
+     * which is the way to get hold of a value to hand out, as the console shows an existing passcode
+     * masked. It replaces whatever was set before, so clients which had entered the previous value are shut
+     * out until they enter the new one.
      *
      * @param ResetPasscodeInput $input message
      * @param array $context request parameters
@@ -80,7 +99,9 @@ class PasscodeServiceClient {
     }
 
     /**
-     * Set a new passcode to the participant, if passcode was not set it will be now required
+     * SetPasscode stores a passcode chosen by the organiser, which is what the console does when its passcode
+     * field is filled in; a participant who had none now needs one to get in. Use ResetPasscode when the value
+     * itself does not matter and the platform may pick it.
      *
      * @param SetPasscodeInput $input message
      * @param array $context request parameters
@@ -101,7 +122,9 @@ class PasscodeServiceClient {
     }
 
     /**
-     * Remove passcode from participant and allow her to enter contest without passcode.
+     * RemovePasscode drops the participant's passcode so nothing is asked of them any more, and is what the
+     * console calls when its passcode field is cleared. Removing a passcode lets in clients which never
+     * entered it, so it widens access rather than merely tidying up.
      *
      * @param RemovePasscodeInput $input message
      * @param array $context request parameters

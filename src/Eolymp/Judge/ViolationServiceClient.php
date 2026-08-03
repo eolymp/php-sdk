@@ -4,6 +4,17 @@
 
 namespace Eolymp\Judge;
 
+    /**
+     * ViolationService records misconduct during a contest: each violation names the participant it is about,
+     * what kind of misconduct it was, and carries a short written summary of the case.
+     *
+     * A violation is either raised by the jury or detected automatically by the platform's analysis (see
+     * ContestService.AnalyzeContest), which flags it as automatic and can link the submissions it was found
+     * in. Its status tracks the review — pending until somebody confirms or cancels it — and the record keeps
+     * who created it and who confirmed it, with a timestamp for each. Recording a violation does not by
+     * itself remove anyone from the contest: disqualification is a separate flag on the participant, managed
+     * through ParticipantService, which can also filter participants by whether they have violations at all.
+     */
 class ViolationServiceClient {
 
     /** @var string base URL */
@@ -23,6 +34,10 @@ class ViolationServiceClient {
     }
 
     /**
+     * CreateViolation records a violation against a participant of the contest, which is how the jury logs
+     * misconduct the automated analysis did not raise by itself. The new record is pending review rather than
+     * confirmed, and the participant is notified unless the request asks for it to be recorded quietly.
+     *
      * @param CreateViolationInput $input message
      * @param array $context request parameters
      *
@@ -39,6 +54,11 @@ class ViolationServiceClient {
     }
 
     /**
+     * UpdateViolation is how a violation is reviewed: confirming or cancelling one is a status change made
+     * here and not a call of its own. Only the attributes named in the patch are written, and the
+     * participant, the submissions the violation refers to and the record of who raised or confirmed it
+     * cannot be changed at all.
+     *
      * @param UpdateViolationInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +78,10 @@ class ViolationServiceClient {
     }
 
     /**
+     * DeleteViolation drops the record for good: there is no deleted flag and no restore, unlike a deleted
+     * submission. A violation which was looked at and found groundless is therefore better cancelled through
+     * UpdateViolation, which keeps the case on file while taking it out of the participant's violation count.
+     *
      * @param DeleteViolationInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +101,10 @@ class ViolationServiceClient {
     }
 
     /**
+     * DescribeViolation returns one violation, addressed by its own identifier alone, so the participant it
+     * concerns does not have to be known. The summary explaining the case comes back as rich content rather
+     * than plain text, which is what lets it hold a formatted explanation of what was detected.
+     *
      * @param DescribeViolationInput $input message
      * @param array $context request parameters
      *
@@ -96,6 +124,12 @@ class ViolationServiceClient {
     }
 
     /**
+     * ListViolations returns the violations recorded in one contest and backs the jury's review queue:
+     * narrowing by review status, or by whether the platform raised the violation on its own, is what
+     * separates cases still waiting for a decision from cases already dealt with. To find the participants
+     * concerned rather than the violations themselves, ParticipantService lists participants and can filter
+     * them by having violations.
+     *
      * @param ListViolationsInput $input message
      * @param array $context request parameters
      *

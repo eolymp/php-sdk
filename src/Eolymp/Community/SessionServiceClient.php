@@ -4,6 +4,16 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * SessionService lets a signed-in user review and end their own sign-ins.
+     *
+     * A session records one sign-in of the caller's own account, with the address, device and approximate
+     * location it was seen from and when it was first and last seen; the device and the location are derived
+     * from the address and the user agent rather than reported by the client. Every method is self-service and
+     * takes the account from the request's credentials: there is no administrative form of these calls, and a
+     * session belonging to someone else is refused even when its id is known. Sessions belong to the account
+     * rather than to a space, so the same sessions come back whichever space the request is addressed to.
+     */
 class SessionServiceClient {
 
     /** @var string base URL */
@@ -23,6 +33,9 @@ class SessionServiceClient {
     }
 
     /**
+     * DescribeSession returns one of the caller's own sessions. A session which belongs to another account is
+     * refused rather than reported as missing.
+     *
      * @param DescribeSessionInput $input message
      * @param array $context request parameters
      *
@@ -42,6 +55,9 @@ class SessionServiceClient {
     }
 
     /**
+     * ListSessions returns the caller's own sessions, most recently seen first. It cannot be pointed at
+     * another account, which is why it takes no member in the request.
+     *
      * @param ListSessionsInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +74,10 @@ class SessionServiceClient {
     }
 
     /**
+     * TerminateSession ends one of the caller's own sessions and revokes the access granted through it,
+     * signing that device out. The session is deleted rather than marked as ended, so it stops appearing in
+     * ListSessions.
+     *
      * @param TerminateSessionInput $input message
      * @param array $context request parameters
      *
@@ -77,6 +97,10 @@ class SessionServiceClient {
     }
 
     /**
+     * TerminateAllSessions ends every session of the caller except the one the request itself is made from,
+     * which it takes from the request's credentials rather than from the request body. The caller stays
+     * signed in where they are while every other device is signed out.
+     *
      * @param TerminateAllSessionsInput $input message
      * @param array $context request parameters
      *

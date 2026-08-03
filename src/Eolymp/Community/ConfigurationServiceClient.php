@@ -4,6 +4,19 @@
 
 namespace Eolymp\Community;
 
+    /**
+     * ConfigurationService reads and writes the identity and membership configuration of a space.
+     *
+     * Several namespaces define a ConfigurationService; this one covers identity and membership only — the
+     * space's identity provider, whether people may sign themselves up and join (with that off, only members an
+     * administrator added can sign in), and the rule which turns a member into a display name. The provider
+     * decides who owns the account: with the Eolymp provider members sign in with the Eolymp accounts they
+     * already have and their profile is synced from there, so the space cannot edit their basic information,
+     * while with its own provider the space keeps usernames, passwords and profiles itself and additionally
+     * chooses what members may change about themselves; Google Workspace and OpenID Connect are the remaining
+     * options. Every space has a configuration, so there is nothing to create or delete — a space which never
+     * configured one reads back as the Eolymp provider with members shown by nickname.
+     */
 class ConfigurationServiceClient {
 
     /** @var string base URL */
@@ -23,7 +36,10 @@ class ConfigurationServiceClient {
     }
 
     /**
-     * Describe identity provider configuration
+     * DescribeIdentityConfig returns the identity configuration of the space, answering even for a space
+     * which never configured one. Secrets are withheld: the provider's client secret is never returned, and
+     * some OpenID Connect details only to administrators. Unlike ConfigureIdentityConfig, this method
+     * requires no scope.
      *
      * @param DescribeIdentityConfigInput $input message
      * @param array $context request parameters
@@ -41,7 +57,10 @@ class ConfigurationServiceClient {
     }
 
     /**
-     * Update identity provider configuration
+     * ConfigureIdentityConfig replaces the whole configuration instead of patching it, so a setting left out
+     * of the request is reset rather than kept. That includes the client secret, which DescribeIdentityConfig
+     * never returns and which therefore has to be sent again on every write. The provider is a oneof: naming
+     * one provider discards the settings of the others, and naming none falls back to the Eolymp provider.
      *
      * @param ConfigureIdentityConfigInput $input message
      * @param array $context request parameters
