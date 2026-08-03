@@ -56,29 +56,6 @@ class ProblemServiceClient {
     }
 
     /**
-     * SyncProblem is kept for backwards compatibility and does nothing. A contest problem holds no copy of
-     * the archive problem's statements, tests, attachments or templates, nor of its limits and score — all
-     * of that is read from the archive problem on every request, so there is never anything to pull in.
-     *
-     * @param SyncProblemInput $input message
-     * @param array $context request parameters
-     *
-     * @return SyncProblemOutput output message
-     */
-    public function SyncProblem(SyncProblemInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/sync";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.judge.ProblemService/SyncProblem";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SyncProblemOutput::class, $context);
-    }
-
-    /**
      * UpdateProblem writes the few settings the contest keeps for a problem of its own; anything else about
      * the problem is edited in the archive instead. Reordering happens here too and there is no separate
      * move method: writing an index moves the problem to that position and the problems it passes shift to
