@@ -94,7 +94,7 @@ class Event
      */
     const POST_CHANGED = 600;
     /**
-     * post translation properties changed (content.PostTranslationChangedEvent)
+     * no longer emitted, a translation is part of the post and raises POST_CHANGED
      *
      * Generated from protobuf enum <code>POST_TRANSLATION_CHANGED = 601;</code>
      */

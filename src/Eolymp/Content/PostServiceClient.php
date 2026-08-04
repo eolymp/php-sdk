@@ -17,6 +17,11 @@ namespace Eolymp\Content;
      * whether it has been published, and how moderation ruled on it; the post's public flag reports the
      * combination and cannot be written directly. Comments on a post belong to eolymp.discussion, which is also
      * where the space-wide policy deciding when posts are moderated is configured.
+     *
+     * A post has no locale of its own. It holds the source content and labels plus a complete translation of
+     * them per locale, and the locale on a request picks between them: reading falls back to the post when the
+     * translation does not exist, writing creates it from the post. The type and the editorial flags are not
+     * translatable and always belong to the post.
      */
 class PostServiceClient {
 
@@ -37,8 +42,8 @@ class PostServiceClient {
     }
 
     /**
-     * DescribePost returns a single post by id. A locale can be given to read the post in that language rather
-     * than the one it was written in, and content is left out unless the request asks for it.
+     * DescribePost returns a single post by id. The requested locale selects a translation and falls back to
+     * the post itself when that translation does not exist, and content is left out unless asked for.
      *
      * @param DescribePostInput $input message
      * @param array $context request parameters
@@ -98,9 +103,10 @@ class PostServiceClient {
     }
 
     /**
-     * UpdatePost writes new values into a post, and is also how a post is kept as a draft, featured on the home
-     * page or pinned on top of the listing. Fields outside the patch mask keep the values they already have. The
-     * title and the image still cannot be set: they follow the content, so editing the content changes them.
+     * UpdatePost writes new values into a post, and is also how a post is featured on the home page or pinned on
+     * top of the listing. Fields left out of the patch keep the values they already have. The title and the image
+     * still cannot be set: they follow the content, so editing the content changes them. Given a locale, the
+     * content is written to that translation instead, which is created from the post if it does not exist yet.
      *
      * @param UpdatePostInput $input message
      * @param array $context request parameters
@@ -189,8 +195,9 @@ class PostServiceClient {
     }
 
     /**
-     * DeletePost removes a post for good. Reach for UnpublishPost instead whenever the post only has to stop
-     * being shown, since that transition can be undone and this call cannot.
+     * DeletePost removes a post for good, or only its translation for one locale when a locale is given. Reach
+     * for UnpublishPost instead whenever the post only has to stop being shown, since that transition can be
+     * undone and this call cannot.
      *
      * @param DeletePostInput $input message
      * @param array $context request parameters
@@ -236,8 +243,9 @@ class PostServiceClient {
     /**
      * TranslatePost hands a post to automatic translation for several locales at once and returns a task id: the
      * work runs in the background, so the translations turn up some time after the call returns and are found by
-     * listing them again. It can additionally take in every translation an earlier automatic run produced, to
-     * refresh them, and can be told to overwrite translations a person wrote, which it otherwise leaves alone.
+     * reading the post in those locales. It can additionally take in every translation an earlier automatic run
+     * produced, to refresh them, and can be told to overwrite translations a person wrote, which it otherwise
+     * leaves alone.
      *
      * @param TranslatePostInput $input message
      * @param array $context request parameters
@@ -255,121 +263,6 @@ class PostServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslatePostOutput::class, $context);
-    }
-
-    /**
-     * DescribePostTranslation returns one translation addressed by its own id rather than by locale, and accepts
-     * the same content extras as reading the post itself.
-     *
-     * @param DescribePostTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribePostTranslationOutput output message
-     */
-    public function DescribePostTranslation(DescribePostTranslationInput $input, array $context = [])
-    {
-        $path = "/posts/".rawurlencode($input->getPostId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPostId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.content.PostService/DescribePostTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribePostTranslationOutput::class, $context);
-    }
-
-    /**
-     * ListPostTranslations reports which languages a post exists in besides the one it was written in, and is how
-     * to find a translation's id before updating or deleting it.
-     *
-     * @param ListPostTranslationsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListPostTranslationsOutput output message
-     */
-    public function ListPostTranslations(ListPostTranslationsInput $input, array $context = [])
-    {
-        $path = "/posts/".rawurlencode($input->getPostId())."/translations";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPostId("");
-
-        $context['name'] = "eolymp.content.PostService/ListPostTranslations";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPostTranslationsOutput::class, $context);
-    }
-
-    /**
-     * CreatePostTranslation adds the post's content in one further language and returns the translation's id;
-     * each locale is a translation of its own, added by calling this again, not by patching the post. A
-     * translation also carries the flag which separates machine output from human work, the one TranslatePost
-     * consults before refreshing or overwriting anything.
-     *
-     * @param CreatePostTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreatePostTranslationOutput output message
-     */
-    public function CreatePostTranslation(CreatePostTranslationInput $input, array $context = [])
-    {
-        $path = "/posts/".rawurlencode($input->getPostId())."/translations";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPostId("");
-
-        $context['name'] = "eolymp.content.PostService/CreatePostTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreatePostTranslationOutput::class, $context);
-    }
-
-    /**
-     * UpdatePostTranslation writes new values into one translation, leaving the post's own content and its other
-     * languages alone. Fields outside the patch mask keep the values they already have.
-     *
-     * @param UpdatePostTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdatePostTranslationOutput output message
-     */
-    public function UpdatePostTranslation(UpdatePostTranslationInput $input, array $context = [])
-    {
-        $path = "/posts/".rawurlencode($input->getPostId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPostId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.content.PostService/UpdatePostTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdatePostTranslationOutput::class, $context);
-    }
-
-    /**
-     * DeletePostTranslation drops a single language while the post and its remaining languages stay as they are.
-     * Removing them all still leaves the post readable, in the language it was written in.
-     *
-     * @param DeletePostTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeletePostTranslationOutput output message
-     */
-    public function DeletePostTranslation(DeletePostTranslationInput $input, array $context = [])
-    {
-        $path = "/posts/".rawurlencode($input->getPostId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPostId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.content.PostService/DeletePostTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeletePostTranslationOutput::class, $context);
     }
 
 }

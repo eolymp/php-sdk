@@ -82,9 +82,23 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $type_id = '';
     /**
+     * locale of the translation being read, empty when reading the post itself
+     *
      * Generated from protobuf field <code>string locale = 102;</code>
      */
     protected $locale = '';
+    /**
+     * locales this post has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 15;</code>
+     */
+    private $locales;
+    /**
+     * content generated automatically
+     *
+     * Generated from protobuf field <code>bool automatic = 14;</code>
+     */
+    protected $automatic = false;
     /**
      * automatically populated from content
      *
@@ -165,6 +179,11 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $type_id
      *           optionally, post type from PostTypeService
      *     @type string $locale
+     *           locale of the translation being read, empty when reading the post itself
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *           locales this post has translations for
+     *     @type bool $automatic
+     *           content generated automatically
      *     @type string $title
      *           automatically populated from content
      *     @type string $image_url
@@ -590,6 +609,8 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * locale of the translation being read, empty when reading the post itself
+     *
      * Generated from protobuf field <code>string locale = 102;</code>
      * @return string
      */
@@ -599,6 +620,8 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * locale of the translation being read, empty when reading the post itself
+     *
      * Generated from protobuf field <code>string locale = 102;</code>
      * @param string $var
      * @return $this
@@ -607,6 +630,58 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * locales this post has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * locales this post has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 15;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * content generated automatically
+     *
+     * Generated from protobuf field <code>bool automatic = 14;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * content generated automatically
+     *
+     * Generated from protobuf field <code>bool automatic = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
 
         return $this;
     }

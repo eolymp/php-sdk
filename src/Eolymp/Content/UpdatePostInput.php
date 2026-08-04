@@ -14,15 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePostInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.content.UpdatePostInput.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string post_id = 2;</code>
      */
     protected $post_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.content.Post post = 3;</code>
+     * update the post when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 4;</code>
+     */
+    protected $locale = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Post.Patch post = 5;</code>
      */
     protected $post = null;
 
@@ -32,36 +34,15 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $post_id
-     *     @type \Eolymp\Content\Post $post
+     *     @type string $locale
+     *           update the post when empty, update its translation when set
+     *     @type \Eolymp\Content\Post\Patch $post
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Content\PostService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.content.UpdatePostInput.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.content.UpdatePostInput.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Content\UpdatePostInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +68,34 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Post post = 3;</code>
-     * @return \Eolymp\Content\Post|null
+     * update the post when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 4;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * update the post when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Post.Patch post = 5;</code>
+     * @return \Eolymp\Content\Post\Patch|null
      */
     public function getPost()
     {
@@ -106,13 +113,13 @@ class UpdatePostInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.content.Post post = 3;</code>
-     * @param \Eolymp\Content\Post $var
+     * Generated from protobuf field <code>.eolymp.content.Post.Patch post = 5;</code>
+     * @param \Eolymp\Content\Post\Patch $var
      * @return $this
      */
     public function setPost($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Content\Post::class);
+        GPBUtil::checkMessage($var, \Eolymp\Content\Post\Patch::class);
         $this->post = $var;
 
         return $this;

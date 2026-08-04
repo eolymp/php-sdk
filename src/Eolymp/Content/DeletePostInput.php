@@ -17,6 +17,12 @@ class DeletePostInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string post_id = 1;</code>
      */
     protected $post_id = '';
+    /**
+     * delete the post when empty, delete only its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class DeletePostInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $post_id
+     *     @type string $locale
+     *           delete the post when empty, delete only its translation when set
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class DeletePostInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->post_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * delete the post when empty, delete only its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * delete the post when empty, delete only its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }
