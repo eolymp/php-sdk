@@ -46,9 +46,11 @@ class Template extends \Google\Protobuf\Internal\Message
      */
     protected $locale = '';
     /**
-     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * alternative locales
+     *
+     * Generated from protobuf field <code>repeated string locales = 14;</code>
      */
-    private $alternative_locales;
+    private $locales;
     /**
      * Generated from protobuf field <code>string content = 52;</code>
      */
@@ -68,7 +70,8 @@ class Template extends \Google\Protobuf\Internal\Message
      *     @type string $subject
      *     @type bool $automatic
      *     @type string $locale
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $alternative_locales
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *           alternative locales
      *     @type string $content
      * }
      */
@@ -274,23 +277,27 @@ class Template extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * alternative locales
+     *
+     * Generated from protobuf field <code>repeated string locales = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAlternativeLocales()
+    public function getLocales()
     {
-        return $this->alternative_locales;
+        return $this->locales;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * alternative locales
+     *
+     * Generated from protobuf field <code>repeated string locales = 14;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAlternativeLocales($var)
+    public function setLocales($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->alternative_locales = $arr;
+        $this->locales = $arr;
 
         return $this;
     }
