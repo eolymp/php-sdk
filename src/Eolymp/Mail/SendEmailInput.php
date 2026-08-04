@@ -24,6 +24,12 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      */
     protected $email_ref = '';
     /**
+     * files to attach to the email, applies to both message and template content
+     *
+     * Generated from protobuf field <code>repeated .eolymp.mail.SendEmailInput.Attachment attachments = 3;</code>
+     */
+    private $attachments;
+    /**
      * send a test email to the current user instead of the member
      *
      * Generated from protobuf field <code>bool dry_run = 20;</code>
@@ -56,6 +62,8 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type string $email_ref
      *           a key uniquely identifies the message, it is used to ensure same email is not sent twice
+     *     @type array<\Eolymp\Mail\SendEmailInput\Attachment>|\Google\Protobuf\Internal\RepeatedField $attachments
+     *           files to attach to the email, applies to both message and template content
      *     @type bool $dry_run
      *           send a test email to the current user instead of the member
      *     @type bool $bcc_me
@@ -118,6 +126,32 @@ class SendEmailInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->email_ref = $var;
+
+        return $this;
+    }
+
+    /**
+     * files to attach to the email, applies to both message and template content
+     *
+     * Generated from protobuf field <code>repeated .eolymp.mail.SendEmailInput.Attachment attachments = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttachments()
+    {
+        return $this->attachments;
+    }
+
+    /**
+     * files to attach to the email, applies to both message and template content
+     *
+     * Generated from protobuf field <code>repeated .eolymp.mail.SendEmailInput.Attachment attachments = 3;</code>
+     * @param array<\Eolymp\Mail\SendEmailInput\Attachment>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttachments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Mail\SendEmailInput\Attachment::class);
+        $this->attachments = $arr;
 
         return $this;
     }
