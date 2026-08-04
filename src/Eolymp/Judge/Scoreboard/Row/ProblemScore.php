@@ -33,6 +33,22 @@ class ProblemScore extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 time = 5;</code>
      */
     protected $time = 0;
+    /**
+     * Attempts made after the scoreboard was frozen and therefore not reflected in score. Highlight a cell
+     * as stale when pending is above zero OR changed is set: a problem solved after the freeze reports no
+     * pending attempts, because attempts stop counting once a problem is solved.
+     *
+     * Generated from protobuf field <code>uint32 pending = 6;</code>
+     */
+    protected $pending = 0;
+    /**
+     * Generated from protobuf field <code>bool changed = 7;</code>
+     */
+    protected $changed = false;
+    /**
+     * Generated from protobuf field <code>bool first_to_solve = 8;</code>
+     */
+    protected $first_to_solve = false;
 
     /**
      * Constructor.
@@ -45,6 +61,12 @@ class ProblemScore extends \Google\Protobuf\Internal\Message
      *     @type int $attempts
      *     @type float $percentage
      *     @type int $time
+     *     @type int $pending
+     *           Attempts made after the scoreboard was frozen and therefore not reflected in score. Highlight a cell
+     *           as stale when pending is above zero OR changed is set: a problem solved after the freeze reports no
+     *           pending attempts, because attempts stop counting once a problem is solved.
+     *     @type bool $changed
+     *     @type bool $first_to_solve
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +180,80 @@ class ProblemScore extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Attempts made after the scoreboard was frozen and therefore not reflected in score. Highlight a cell
+     * as stale when pending is above zero OR changed is set: a problem solved after the freeze reports no
+     * pending attempts, because attempts stop counting once a problem is solved.
+     *
+     * Generated from protobuf field <code>uint32 pending = 6;</code>
+     * @return int
+     */
+    public function getPending()
+    {
+        return $this->pending;
+    }
+
+    /**
+     * Attempts made after the scoreboard was frozen and therefore not reflected in score. Highlight a cell
+     * as stale when pending is above zero OR changed is set: a problem solved after the freeze reports no
+     * pending attempts, because attempts stop counting once a problem is solved.
+     *
+     * Generated from protobuf field <code>uint32 pending = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPending($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->pending = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool changed = 7;</code>
+     * @return bool
+     */
+    public function getChanged()
+    {
+        return $this->changed;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool changed = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setChanged($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->changed = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool first_to_solve = 8;</code>
+     * @return bool
+     */
+    public function getFirstToSolve()
+    {
+        return $this->first_to_solve;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool first_to_solve = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFirstToSolve($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->first_to_solve = $var;
 
         return $this;
     }

@@ -26,6 +26,8 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
+     *
      * Generated from protobuf field <code>uint32 rank = 11;</code>
      */
     protected $rank = 0;
@@ -33,6 +35,16 @@ class Row extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 rank_length = 12;</code>
      */
     protected $rank_length = 0;
+    /**
+     * Rank among every participant, including unofficial and disqualified ones. Always set.
+     *
+     * Generated from protobuf field <code>uint32 rank_all = 13;</code>
+     */
+    protected $rank_all = 0;
+    /**
+     * Generated from protobuf field <code>uint32 rank_all_length = 14;</code>
+     */
+    protected $rank_all_length = 0;
     /**
      * Generated from protobuf field <code>float score = 20;</code>
      */
@@ -72,7 +84,11 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type int $index
      *     @type int $rank
+     *           Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
      *     @type int $rank_length
+     *     @type int $rank_all
+     *           Rank among every participant, including unofficial and disqualified ones. Always set.
+     *     @type int $rank_all_length
      *     @type float $score
      *     @type float $penalty
      *     @type int $tie_breaker
@@ -154,6 +170,8 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
+     *
      * Generated from protobuf field <code>uint32 rank = 11;</code>
      * @return int
      */
@@ -163,6 +181,8 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
+     *
      * Generated from protobuf field <code>uint32 rank = 11;</code>
      * @param int $var
      * @return $this
@@ -193,6 +213,54 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->rank_length = $var;
+
+        return $this;
+    }
+
+    /**
+     * Rank among every participant, including unofficial and disqualified ones. Always set.
+     *
+     * Generated from protobuf field <code>uint32 rank_all = 13;</code>
+     * @return int
+     */
+    public function getRankAll()
+    {
+        return $this->rank_all;
+    }
+
+    /**
+     * Rank among every participant, including unofficial and disqualified ones. Always set.
+     *
+     * Generated from protobuf field <code>uint32 rank_all = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRankAll($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank_all = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 rank_all_length = 14;</code>
+     * @return int
+     */
+    public function getRankAllLength()
+    {
+        return $this->rank_all_length;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 rank_all_length = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRankAllLength($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->rank_all_length = $var;
 
         return $this;
     }
