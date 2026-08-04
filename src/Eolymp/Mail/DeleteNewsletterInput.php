@@ -17,6 +17,10 @@ class DeleteNewsletterInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string newsletter_id = 1;</code>
      */
     protected $newsletter_id = '';
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class DeleteNewsletterInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $newsletter_id
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class DeleteNewsletterInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->newsletter_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

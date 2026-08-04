@@ -18,6 +18,10 @@ class DescribeNewsletterInput extends \Google\Protobuf\Internal\Message
      */
     protected $newsletter_id = '';
     /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Extra.Field extra = 1123;</code>
      */
     private $extra;
@@ -29,6 +33,7 @@ class DescribeNewsletterInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $newsletter_id
+     *     @type string $locale
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -55,6 +60,28 @@ class DescribeNewsletterInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->newsletter_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

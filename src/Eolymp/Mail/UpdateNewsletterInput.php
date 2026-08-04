@@ -14,17 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string newsletter_id = 2;</code>
      */
     protected $newsletter_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.mail.Newsletter newsletter = 3;</code>
+     * Generated from protobuf field <code>.eolymp.mail.Newsletter.Patch newsletter = 4;</code>
      */
     protected $newsletter = null;
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -32,36 +32,14 @@ class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $newsletter_id
-     *     @type \Eolymp\Mail\Newsletter $newsletter
+     *     @type \Eolymp\Mail\Newsletter\Patch $newsletter
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Mail\NewsletterService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.mail.Newsletter.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Mail\Newsletter\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +65,8 @@ class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.mail.Newsletter newsletter = 3;</code>
-     * @return \Eolymp\Mail\Newsletter|null
+     * Generated from protobuf field <code>.eolymp.mail.Newsletter.Patch newsletter = 4;</code>
+     * @return \Eolymp\Mail\Newsletter\Patch|null
      */
     public function getNewsletter()
     {
@@ -106,14 +84,36 @@ class UpdateNewsletterInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.mail.Newsletter newsletter = 3;</code>
-     * @param \Eolymp\Mail\Newsletter $var
+     * Generated from protobuf field <code>.eolymp.mail.Newsletter.Patch newsletter = 4;</code>
+     * @param \Eolymp\Mail\Newsletter\Patch $var
      * @return $this
      */
     public function setNewsletter($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Mail\Newsletter::class);
+        GPBUtil::checkMessage($var, \Eolymp\Mail\Newsletter\Patch::class);
         $this->newsletter = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

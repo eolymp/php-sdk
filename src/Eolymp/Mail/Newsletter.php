@@ -42,6 +42,18 @@ class Newsletter extends \Google\Protobuf\Internal\Message
      */
     protected $content = null;
     /**
+     * Generated from protobuf field <code>bool automatic = 13;</code>
+     */
+    protected $automatic = false;
+    /**
+     * Generated from protobuf field <code>string locale = 14;</code>
+     */
+    protected $locale = '';
+    /**
+     * Generated from protobuf field <code>repeated string locales = 15;</code>
+     */
+    private $locales;
+    /**
      * Generated from protobuf field <code>uint32 recipients_count = 30;</code>
      */
     protected $recipients_count = 0;
@@ -71,6 +83,9 @@ class Newsletter extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $subject
      *     @type \Eolymp\Ecm\Content $content
+     *     @type bool $automatic
+     *     @type string $locale
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
      *     @type int $recipients_count
      *     @type int $pending_count
      *     @type int $sent_count
@@ -262,6 +277,72 @@ class Newsletter extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool automatic = 13;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->automatic;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool automatic = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 14;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string locales = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string locales = 15;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->locales = $arr;
 
         return $this;
     }

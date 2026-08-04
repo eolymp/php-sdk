@@ -13,6 +13,36 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional .eolymp.mail.EmailType type = 2;</code>
+     */
+    protected $type = null;
+    /**
+     * Generated from protobuf field <code>optional string name = 10;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional string subject = 11;</code>
+     */
+    protected $subject = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 12;</code>
+     */
+    protected $content = null;
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 13;</code>
+     */
+    protected $automatic = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_at = 21;</code>
+     */
+    protected $scheduled_at = null;
+    /**
+     * clears scheduled_at, which a nil timestamp cannot express
+     *
+     * Generated from protobuf field <code>optional bool unschedule = 22;</code>
+     */
+    protected $unschedule = null;
 
     /**
      * Constructor.
@@ -20,11 +50,247 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $type
+     *     @type string $name
+     *     @type string $subject
+     *     @type \Eolymp\Ecm\Content $content
+     *     @type bool $automatic
+     *     @type \Google\Protobuf\Timestamp $scheduled_at
+     *     @type bool $unschedule
+     *           clears scheduled_at, which a nil timestamp cannot express
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Mail\Newsletter::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.mail.EmailType type = 2;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return isset($this->type) ? $this->type : 0;
+    }
+
+    public function hasType()
+    {
+        return isset($this->type);
+    }
+
+    public function clearType()
+    {
+        unset($this->type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.mail.EmailType type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Mail\EmailType::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 10;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string subject = 11;</code>
+     * @return string
+     */
+    public function getSubject()
+    {
+        return isset($this->subject) ? $this->subject : '';
+    }
+
+    public function hasSubject()
+    {
+        return isset($this->subject);
+    }
+
+    public function clearSubject()
+    {
+        unset($this->subject);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string subject = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubject($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->subject = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 12;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 12;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 13;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return isset($this->automatic) ? $this->automatic : false;
+    }
+
+    public function hasAutomatic()
+    {
+        return isset($this->automatic);
+    }
+
+    public function clearAutomatic()
+    {
+        unset($this->automatic);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_at = 21;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getScheduledAt()
+    {
+        return $this->scheduled_at;
+    }
+
+    public function hasScheduledAt()
+    {
+        return isset($this->scheduled_at);
+    }
+
+    public function clearScheduledAt()
+    {
+        unset($this->scheduled_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_at = 21;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setScheduledAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->scheduled_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * clears scheduled_at, which a nil timestamp cannot express
+     *
+     * Generated from protobuf field <code>optional bool unschedule = 22;</code>
+     * @return bool
+     */
+    public function getUnschedule()
+    {
+        return isset($this->unschedule) ? $this->unschedule : false;
+    }
+
+    public function hasUnschedule()
+    {
+        return isset($this->unschedule);
+    }
+
+    public function clearUnschedule()
+    {
+        unset($this->unschedule);
+    }
+
+    /**
+     * clears scheduled_at, which a nil timestamp cannot express
+     *
+     * Generated from protobuf field <code>optional bool unschedule = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnschedule($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unschedule = $var;
+
+        return $this;
     }
 
 }
