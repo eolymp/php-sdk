@@ -151,7 +151,7 @@ class ContentServiceClient {
     }
 
     /**
-     * TranslateFragment starts automatic translation of a page into other locales and returns a job id; the
+     * TranslateFragment starts automatic translation of a page into other locales and returns a task id; the
      * work runs asynchronously, so the translations appear some time after the call returns and are found by
      * listing them again. Translations written by hand are left alone unless the request asks for them to be
      * overwritten, and whatever this produces is marked as automatic.

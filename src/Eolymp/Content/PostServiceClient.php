@@ -234,7 +234,7 @@ class PostServiceClient {
     }
 
     /**
-     * TranslatePost hands a post to automatic translation for several locales at once and returns a job id: the
+     * TranslatePost hands a post to automatic translation for several locales at once and returns a task id: the
      * work runs in the background, so the translations turn up some time after the call returns and are found by
      * listing them again. It can additionally take in every translation an earlier automatic run produced, to
      * refresh them, and can be told to overwrite translations a person wrote, which it otherwise leaves alone.

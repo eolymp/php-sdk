@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class TranslateFragmentOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string job_id = 1;</code>
+     * Generated from protobuf field <code>string task_id = 1;</code>
      */
-    protected $job_id = '';
+    protected $task_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class TranslateFragmentOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $job_id
+     *     @type string $task_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class TranslateFragmentOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string job_id = 1;</code>
+     * Generated from protobuf field <code>string task_id = 1;</code>
      * @return string
      */
-    public function getJobId()
+    public function getTaskId()
     {
-        return $this->job_id;
+        return $this->task_id;
     }
 
     /**
-     * Generated from protobuf field <code>string job_id = 1;</code>
+     * Generated from protobuf field <code>string task_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setJobId($var)
+    public function setTaskId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->job_id = $var;
+        $this->task_id = $var;
 
         return $this;
     }
