@@ -18,25 +18,25 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
      */
     protected $fragment_id = '';
     /**
-     * source language (by default fragment content is used)
+     * source locale, the fragment's own content is translated when empty
      *
      * Generated from protobuf field <code>string source = 2;</code>
      */
     protected $source = '';
     /**
-     * list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
+     * target locales, existing translations are only replaced when automatic (or override_manual is set)
      *
      * Generated from protobuf field <code>repeated string target = 3;</code>
      */
     private $target;
     /**
-     * add to targets all editorials with automatic=true
+     * add every automatic translation to the targets
      *
      * Generated from protobuf field <code>bool target_automatic = 4;</code>
      */
     protected $target_automatic = false;
     /**
-     * update editorials even if automatic=false
+     * translate into a locale even when its translation was written by hand
      *
      * Generated from protobuf field <code>bool override_manual = 5;</code>
      */
@@ -50,13 +50,13 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $fragment_id
      *     @type string $source
-     *           source language (by default fragment content is used)
+     *           source locale, the fragment's own content is translated when empty
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $target
-     *           list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
+     *           target locales, existing translations are only replaced when automatic (or override_manual is set)
      *     @type bool $target_automatic
-     *           add to targets all editorials with automatic=true
+     *           add every automatic translation to the targets
      *     @type bool $override_manual
-     *           update editorials even if automatic=false
+     *           translate into a locale even when its translation was written by hand
      * }
      */
     public function __construct($data = NULL) {
@@ -87,7 +87,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source language (by default fragment content is used)
+     * source locale, the fragment's own content is translated when empty
      *
      * Generated from protobuf field <code>string source = 2;</code>
      * @return string
@@ -98,7 +98,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * source language (by default fragment content is used)
+     * source locale, the fragment's own content is translated when empty
      *
      * Generated from protobuf field <code>string source = 2;</code>
      * @param string $var
@@ -113,7 +113,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
+     * target locales, existing translations are only replaced when automatic (or override_manual is set)
      *
      * Generated from protobuf field <code>repeated string target = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -124,7 +124,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * list of target languages, if statement exists and it has automatic=true (or override_manual=true) it will be updated
+     * target locales, existing translations are only replaced when automatic (or override_manual is set)
      *
      * Generated from protobuf field <code>repeated string target = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -139,7 +139,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * add to targets all editorials with automatic=true
+     * add every automatic translation to the targets
      *
      * Generated from protobuf field <code>bool target_automatic = 4;</code>
      * @return bool
@@ -150,7 +150,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * add to targets all editorials with automatic=true
+     * add every automatic translation to the targets
      *
      * Generated from protobuf field <code>bool target_automatic = 4;</code>
      * @param bool $var
@@ -165,7 +165,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * update editorials even if automatic=false
+     * translate into a locale even when its translation was written by hand
      *
      * Generated from protobuf field <code>bool override_manual = 5;</code>
      * @return bool
@@ -176,7 +176,7 @@ class TranslateFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * update editorials even if automatic=false
+     * translate into a locale even when its translation was written by hand
      *
      * Generated from protobuf field <code>bool override_manual = 5;</code>
      * @param bool $var

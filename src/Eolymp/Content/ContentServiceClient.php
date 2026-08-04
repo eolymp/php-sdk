@@ -8,19 +8,19 @@ namespace Eolymp\Content;
      * ContentService manages the pages of a space or of a contest.
      *
      * A page — a fragment on the wire — is content an admin writes for members: space information, rules,
-     * contact details, a schedule. What places a page on the site is its path rather than its title: a path
-     * under `/pages/` is published on the space site with that prefix stripped, so `/pages/rules` is served at
-     * `<space>.eolymp.space/rules`; `/index` replaces the site home page and `/nav` replaces the navigation
-     * menu, whose Markdown body is read as link lists rather than as prose. Crucially, the same service works
-     * at two scopes and the base URL decides which: addressed to a space it manages that space's site pages,
-     * addressed to a contest it manages that contest's own pages, where `/overview` is the contest home page,
-     * anything below `/overview/...` becomes an extra tab, and both remain reachable before the contest starts
-     * and after it ends — a space and a contest each keep their own independent set of pages, so aiming a
-     * client at the wrong base URL quietly reads and writes the wrong ones. A page has a base locale plus
-     * translations, managed by their own methods here instead of by patching the page, and reading a locale
-     * that has no translation returns the base-locale page rather than an error or an empty result. Page
-     * content is rich content — Markdown or LaTeX with a parsed tree alongside it — and reads leave it out
-     * unless it is asked for, as the raw value, as the tree, or as both.
+     * contact details, a schedule. Its path, not its title, is what places it on the site: `/pages/rules` is
+     * served at `<space>.eolymp.space/rules`, `/index` replaces the home page and `/nav` the navigation menu.
+     *
+     * The base URL decides which set of pages is addressed. Aimed at a space it manages that space's site
+     * pages, aimed at a contest that contest's own pages, where `/overview` is the contest home page and
+     * anything below it becomes a tab. The two sets are independent, so the wrong base URL quietly reads and
+     * writes the wrong pages.
+     *
+     * A page has no locale of its own. It holds the source title and content plus a complete translation of
+     * them per locale, and the locale on a request picks between them: reading falls back to the page when the
+     * translation does not exist, writing creates it from the page. The path, the draft flag and the labels are
+     * not translatable and always belong to the page. Content is Markdown or LaTeX with a parsed tree
+     * alongside it, and reads leave it out unless asked for it.
      */
 class ContentServiceClient {
 
@@ -42,7 +42,7 @@ class ContentServiceClient {
 
     /**
      * DescribeFragment returns a single page by id, for callers that already hold an id rather than only a
-     * path. The requested locale selects a translation and falls back to the base-locale page when that
+     * path. The requested locale selects a translation and falls back to the page itself when that
      * translation does not exist, so this is also the read to use when rendering a page for a particular
      * reader.
      *
@@ -106,9 +106,11 @@ class ContentServiceClient {
     }
 
     /**
-     * UpdateFragment writes new values into an existing page. Fields outside the patch mask keep the values
-     * they already have, so moving a page to another path does not mean resending its content. The same call
-     * can be aimed at one locale of the page instead of its base locale, which edits that translation.
+     * UpdateFragment writes new values into an existing page. Only the fields the request carries are
+     * written, so moving a page to another path does not mean resending its content. Aimed at a locale it
+     * writes that page's translation instead, creating it from the page when the translation does not exist
+     * yet; the path, the draft flag and the labels are not translatable, so they still land on the page
+     * itself rather than being dropped.
      *
      * @param UpdateFragmentInput $input message
      * @param array $context request parameters
@@ -129,8 +131,9 @@ class ContentServiceClient {
     }
 
     /**
-     * DeleteFragment permanently removes a page, freeing its path and with it the URL the page was served at.
-     * Aimed at a single locale it removes only that translation and leaves the page itself in place.
+     * DeleteFragment permanently removes a page, freeing its path and with it the URL the page was served at,
+     * and takes the page's translations with it. Aimed at a single locale it removes only that translation
+     * and leaves the page itself in place.
      *
      * @param DeleteFragmentInput $input message
      * @param array $context request parameters
@@ -153,8 +156,8 @@ class ContentServiceClient {
     /**
      * TranslateFragment starts automatic translation of a page into other locales and returns a task id; the
      * work runs asynchronously, so the translations appear some time after the call returns and are found by
-     * listing them again. Translations written by hand are left alone unless the request asks for them to be
-     * overwritten, and whatever this produces is marked as automatic.
+     * reading the page in those locales. Translations written by hand are left alone unless the request asks
+     * for them to be overwritten, and whatever this produces is marked as automatic.
      *
      * @param TranslateFragmentInput $input message
      * @param array $context request parameters
@@ -172,123 +175,6 @@ class ContentServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, TranslateFragmentOutput::class, $context);
-    }
-
-    /**
-     * DescribeFragmentTranslation returns one translation by its own id. It addresses that translation
-     * directly, so unlike asking a page for a locale there is nothing here to fall back to when it is absent.
-     *
-     * @param DescribeFragmentTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeFragmentTranslationOutput output message
-     */
-    public function DescribeFragmentTranslation(DescribeFragmentTranslationInput $input, array $context = [])
-    {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setFragmentId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.content.ContentService/DescribeFragmentTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeFragmentTranslationOutput::class, $context);
-    }
-
-    /**
-     * ListFragmentTranslations returns the translations of one page, which is how to discover the locales it
-     * is available in besides its base one, and which of them were produced automatically.
-     *
-     * @param ListFragmentTranslationsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListFragmentTranslationsOutput output message
-     */
-    public function ListFragmentTranslations(ListFragmentTranslationsInput $input, array $context = [])
-    {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setFragmentId("");
-
-        $context['name'] = "eolymp.content.ContentService/ListFragmentTranslations";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListFragmentTranslationsOutput::class, $context);
-    }
-
-    /**
-     * CreateFragmentTranslation adds one locale of a page and returns its id. A translation carries its own
-     * title and content but no path of its own, so it is served at the page's path and reached by readers of
-     * that locale.
-     *
-     * @param CreateFragmentTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateFragmentTranslationOutput output message
-     */
-    public function CreateFragmentTranslation(CreateFragmentTranslationInput $input, array $context = [])
-    {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setFragmentId("");
-
-        $context['name'] = "eolymp.content.ContentService/CreateFragmentTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateFragmentTranslationOutput::class, $context);
-    }
-
-    /**
-     * UpdateFragmentTranslation replaces an existing translation; there is no patch mask here, so the request
-     * has to carry the whole translation rather than the fields that changed. Whether a translation counts as
-     * automatic is part of what is written, and a translation that is not automatic survives a later
-     * translation run unless that run is told to override manual work.
-     *
-     * @param UpdateFragmentTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateFragmentTranslationOutput output message
-     */
-    public function UpdateFragmentTranslation(UpdateFragmentTranslationInput $input, array $context = [])
-    {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setFragmentId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.content.ContentService/UpdateFragmentTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateFragmentTranslationOutput::class, $context);
-    }
-
-    /**
-     * DeleteFragmentTranslation drops one locale of a page, leaving the page and its other locales untouched.
-     * Readers of that locale are served the base-locale page afterwards, since a missing translation falls
-     * back instead of failing.
-     *
-     * @param DeleteFragmentTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteFragmentTranslationOutput output message
-     */
-    public function DeleteFragmentTranslation(DeleteFragmentTranslationInput $input, array $context = [])
-    {
-        $path = "/content/fragments/".rawurlencode($input->getFragmentId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setFragmentId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.content.ContentService/DeleteFragmentTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteFragmentTranslationOutput::class, $context);
     }
 
     /**

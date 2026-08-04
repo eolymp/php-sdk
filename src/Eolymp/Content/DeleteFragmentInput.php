@@ -18,7 +18,7 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
      */
     protected $fragment_id = '';
     /**
-     * delete original when empty, delete translation when set
+     * delete the fragment when empty, delete only its translation when set
      *
      * Generated from protobuf field <code>string locale = 2;</code>
      */
@@ -32,7 +32,7 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $fragment_id
      *     @type string $locale
-     *           delete original when empty, delete translation when set
+     *           delete the fragment when empty, delete only its translation when set
      * }
      */
     public function __construct($data = NULL) {
@@ -63,7 +63,7 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * delete original when empty, delete translation when set
+     * delete the fragment when empty, delete only its translation when set
      *
      * Generated from protobuf field <code>string locale = 2;</code>
      * @return string
@@ -74,7 +74,7 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * delete original when empty, delete translation when set
+     * delete the fragment when empty, delete only its translation when set
      *
      * Generated from protobuf field <code>string locale = 2;</code>
      * @param string $var

@@ -18,10 +18,6 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $path = null;
     /**
-     * Generated from protobuf field <code>optional string locale = 11;</code>
-     */
-    protected $locale = null;
-    /**
      * Generated from protobuf field <code>optional bool draft = 13;</code>
      */
     protected $draft = null;
@@ -34,17 +30,19 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $title = null;
     /**
-     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
     protected $content = null;
-    /**
-     * Generated from protobuf field <code>bool has_labels = 101;</code>
-     */
-    protected $has_labels = false;
     /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
     private $labels;
+    /**
+     * clears the labels, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unlabel = 101;</code>
+     */
+    protected $unlabel = null;
 
     /**
      * Constructor.
@@ -53,13 +51,13 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
-     *     @type string $locale
      *     @type bool $draft
      *     @type bool $automatic
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
-     *     @type bool $has_labels
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type bool $unlabel
+     *           clears the labels, which an empty list cannot express
      * }
      */
     public function __construct($data = NULL) {
@@ -95,38 +93,6 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->path = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional string locale = 11;</code>
-     * @return string
-     */
-    public function getLocale()
-    {
-        return isset($this->locale) ? $this->locale : '';
-    }
-
-    public function hasLocale()
-    {
-        return isset($this->locale);
-    }
-
-    public function clearLocale()
-    {
-        unset($this->locale);
-    }
-
-    /**
-     * Generated from protobuf field <code>optional string locale = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLocale($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->locale = $var;
 
         return $this;
     }
@@ -228,7 +194,7 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      * @return \Eolymp\Ecm\Content|null
      */
     public function getContent()
@@ -247,7 +213,7 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .eolymp.ecm.Content content = 51;</code>
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this
      */
@@ -255,28 +221,6 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->content = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool has_labels = 101;</code>
-     * @return bool
-     */
-    public function getHasLabels()
-    {
-        return $this->has_labels;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool has_labels = 101;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setHasLabels($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->has_labels = $var;
 
         return $this;
     }
@@ -299,6 +243,42 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the labels, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unlabel = 101;</code>
+     * @return bool
+     */
+    public function getUnlabel()
+    {
+        return isset($this->unlabel) ? $this->unlabel : false;
+    }
+
+    public function hasUnlabel()
+    {
+        return isset($this->unlabel);
+    }
+
+    public function clearUnlabel()
+    {
+        unset($this->unlabel);
+    }
+
+    /**
+     * clears the labels, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unlabel = 101;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnlabel($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unlabel = $var;
 
         return $this;
     }

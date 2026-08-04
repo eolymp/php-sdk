@@ -22,15 +22,17 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $path = '';
     /**
+     * locale of the translation being read, empty when reading the fragment itself
+     *
      * Generated from protobuf field <code>string locale = 11;</code>
      */
     protected $locale = '';
     /**
-     * list of alternative locales available for this fragment
+     * locales this fragment has translations for
      *
-     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * Generated from protobuf field <code>repeated string locales = 14;</code>
      */
-    private $alternative_locales;
+    private $locales;
     /**
      * content is only visible to admin
      *
@@ -73,8 +75,9 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $path
      *     @type string $locale
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $alternative_locales
-     *           list of alternative locales available for this fragment
+     *           locale of the translation being read, empty when reading the fragment itself
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *           locales this fragment has translations for
      *     @type bool $draft
      *           content is only visible to admin
      *     @type bool $automatic
@@ -136,6 +139,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * locale of the translation being read, empty when reading the fragment itself
+     *
      * Generated from protobuf field <code>string locale = 11;</code>
      * @return string
      */
@@ -145,6 +150,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * locale of the translation being read, empty when reading the fragment itself
+     *
      * Generated from protobuf field <code>string locale = 11;</code>
      * @param string $var
      * @return $this
@@ -158,27 +165,27 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * list of alternative locales available for this fragment
+     * locales this fragment has translations for
      *
-     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * Generated from protobuf field <code>repeated string locales = 14;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAlternativeLocales()
+    public function getLocales()
     {
-        return $this->alternative_locales;
+        return $this->locales;
     }
 
     /**
-     * list of alternative locales available for this fragment
+     * locales this fragment has translations for
      *
-     * Generated from protobuf field <code>repeated string alternative_locales = 14;</code>
+     * Generated from protobuf field <code>repeated string locales = 14;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAlternativeLocales($var)
+    public function setLocales($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->alternative_locales = $arr;
+        $this->locales = $arr;
 
         return $this;
     }
