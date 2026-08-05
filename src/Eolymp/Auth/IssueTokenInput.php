@@ -38,7 +38,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      */
     protected $client_secret = '';
     /**
-     * code for authorization_code grant type
+     * code for the authorization_code grant, or the login token for the login_token grant
      *
      * Generated from protobuf field <code>string code = 6;</code>
      */
@@ -78,7 +78,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      *     @type string $client_id
      *     @type string $client_secret
      *     @type string $code
-     *           code for authorization_code grant type
+     *           code for the authorization_code grant, or the login token for the login_token grant
      *     @type string $code_verifier
      *           code verifier for authorization_code grant type
      *     @type string $scope
@@ -211,7 +211,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * code for authorization_code grant type
+     * code for the authorization_code grant, or the login token for the login_token grant
      *
      * Generated from protobuf field <code>string code = 6;</code>
      * @return string
@@ -222,7 +222,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * code for authorization_code grant type
+     * code for the authorization_code grant, or the login token for the login_token grant
      *
      * Generated from protobuf field <code>string code = 6;</code>
      * @param string $var

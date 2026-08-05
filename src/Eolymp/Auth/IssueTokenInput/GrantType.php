@@ -27,12 +27,17 @@ class GrantType
      * Generated from protobuf enum <code>REFRESH_TOKEN = 3;</code>
      */
     const REFRESH_TOKEN = 3;
+    /**
+     * Generated from protobuf enum <code>LOGIN_TOKEN = 4;</code>
+     */
+    const LOGIN_TOKEN = 4;
 
     private static $valueToName = [
         self::NONE => 'NONE',
         self::PASSWORD => 'PASSWORD',
         self::AUTHORIZATION_CODE => 'AUTHORIZATION_CODE',
         self::REFRESH_TOKEN => 'REFRESH_TOKEN',
+        self::LOGIN_TOKEN => 'LOGIN_TOKEN',
     ];
 
     public static function name($value)

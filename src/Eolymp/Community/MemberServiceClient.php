@@ -229,6 +229,31 @@ class MemberServiceClient {
     }
 
     /**
+     * CreateMemberLoginLink mints a single-use link that signs the member in without a password, for handing
+     * to someone who cannot sign in the usual way. The link is valid for fifteen minutes and may be used once,
+     * and issuing a new one invalidates the member's previous link. It works only where the space keeps its
+     * own identities; a member owned by an external identity provider signs in through that provider and the
+     * call is refused.
+     *
+     * @param CreateMemberLoginLinkInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateMemberLoginLinkOutput output message
+     */
+    public function CreateMemberLoginLink(CreateMemberLoginLinkInput $input, array $context = [])
+    {
+        $path = "/members/".rawurlencode($input->getMemberId())."/login-link";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
+
+        $context['name'] = "eolymp.community.MemberService/CreateMemberLoginLink";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateMemberLoginLinkOutput::class, $context);
+    }
+
+    /**
      * DescribeMemberUsage reports how many seats the space consumes, for billing and quota screens rather
      * than for looking members up; only users are counted, so teams and ghosts are free. The active count
      * covers the members seated during a period, which defaults to the space's current quota period, or to
