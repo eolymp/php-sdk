@@ -65,6 +65,14 @@ class CompleteInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Reasoning reasoning = 13;</code>
      */
     protected $reasoning = null;
+    /**
+     * Kept out of Reasoning so that setting an effort does not also decide whether
+     * thinking is enabled — Reasoning.enabled cannot tell "off" apart from
+     * "unset", so an effort sent there disables thinking.
+     *
+     * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Effort effort = 14;</code>
+     */
+    protected $effort = 0;
 
     /**
      * Constructor.
@@ -85,6 +93,10 @@ class CompleteInput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ai\CompleteInput\Container $container
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $betas
      *     @type \Eolymp\Ai\CompleteInput\Reasoning $reasoning
+     *     @type int $effort
+     *           Kept out of Reasoning so that setting an effort does not also decide whether
+     *           thinking is enabled — Reasoning.enabled cannot tell "off" apart from
+     *           "unset", so an effort sent there disables thinking.
      * }
      */
     public function __construct($data = NULL) {
@@ -444,6 +456,36 @@ class CompleteInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ai\CompleteInput\Reasoning::class);
         $this->reasoning = $var;
+
+        return $this;
+    }
+
+    /**
+     * Kept out of Reasoning so that setting an effort does not also decide whether
+     * thinking is enabled — Reasoning.enabled cannot tell "off" apart from
+     * "unset", so an effort sent there disables thinking.
+     *
+     * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Effort effort = 14;</code>
+     * @return int
+     */
+    public function getEffort()
+    {
+        return $this->effort;
+    }
+
+    /**
+     * Kept out of Reasoning so that setting an effort does not also decide whether
+     * thinking is enabled — Reasoning.enabled cannot tell "off" apart from
+     * "unset", so an effort sent there disables thinking.
+     *
+     * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Effort effort = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEffort($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Ai\CompleteInput\Effort::class);
+        $this->effort = $var;
 
         return $this;
     }

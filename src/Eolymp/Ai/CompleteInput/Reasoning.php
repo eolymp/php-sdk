@@ -22,6 +22,8 @@ class Reasoning extends \Google\Protobuf\Internal\Message
      */
     protected $budget = 0;
     /**
+     * deprecated: use CompleteInput.effort
+     *
      * Generated from protobuf field <code>string effort = 3;</code>
      */
     protected $effort = '';
@@ -35,6 +37,7 @@ class Reasoning extends \Google\Protobuf\Internal\Message
      *     @type bool $enabled
      *     @type int $budget
      *     @type string $effort
+     *           deprecated: use CompleteInput.effort
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +90,8 @@ class Reasoning extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use CompleteInput.effort
+     *
      * Generated from protobuf field <code>string effort = 3;</code>
      * @return string
      */
@@ -96,6 +101,8 @@ class Reasoning extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated: use CompleteInput.effort
+     *
      * Generated from protobuf field <code>string effort = 3;</code>
      * @param string $var
      * @return $this
