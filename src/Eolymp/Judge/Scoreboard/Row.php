@@ -22,6 +22,10 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * Generated from protobuf field <code>string participant_id = 3;</code>
+     */
+    protected $participant_id = '';
+    /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      */
     protected $index = 0;
@@ -82,6 +86,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $member_id
+     *     @type string $participant_id
      *     @type int $index
      *     @type int $rank
      *           Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
@@ -143,6 +148,28 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string participant_id = 3;</code>
+     * @return string
+     */
+    public function getParticipantId()
+    {
+        return $this->participant_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string participant_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParticipantId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->participant_id = $var;
 
         return $this;
     }
