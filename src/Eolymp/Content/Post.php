@@ -22,9 +22,9 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $url = '';
     /**
-     * if set, marks this post as translation for a post specified in this field
+     * if set when creating the post, marks it as a translation of the post specified here
      *
-     * Generated from protobuf field <code>string source_id = 7 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string source_id = 7;</code>
      */
     protected $source_id = '';
     /**
@@ -158,7 +158,7 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $url
      *     @type string $source_id
-     *           if set, marks this post as translation for a post specified in this field
+     *           if set when creating the post, marks it as a translation of the post specified here
      *     @type string $source_url
      *           populated if source_id is set
      *     @type bool $draft
@@ -172,7 +172,9 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type int $moderation
      *           moderation status
      *     @type string $user_id
+     *           author by user
      *     @type string $member_id
+     *           author by member
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $published_at
      *     @type \Google\Protobuf\Timestamp $updated_at
@@ -251,9 +253,9 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if set, marks this post as translation for a post specified in this field
+     * if set when creating the post, marks it as a translation of the post specified here
      *
-     * Generated from protobuf field <code>string source_id = 7 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string source_id = 7;</code>
      * @return string
      */
     public function getSourceId()
@@ -262,9 +264,9 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if set, marks this post as translation for a post specified in this field
+     * if set when creating the post, marks it as a translation of the post specified here
      *
-     * Generated from protobuf field <code>string source_id = 7 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string source_id = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -433,7 +435,9 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 10 [(.eolymp.api.read_only) = true];</code>
+     * author by user
+     *
+     * Generated from protobuf field <code>string user_id = 10;</code>
      * @return string
      */
     public function getUserId()
@@ -447,7 +451,9 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string user_id = 10 [(.eolymp.api.read_only) = true];</code>
+     * author by user
+     *
+     * Generated from protobuf field <code>string user_id = 10;</code>
      * @param string $var
      * @return $this
      */
@@ -460,7 +466,9 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11 [(.eolymp.api.read_only) = true];</code>
+     * author by member
+     *
+     * Generated from protobuf field <code>string member_id = 11;</code>
      * @return string
      */
     public function getMemberId()
@@ -474,7 +482,9 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string member_id = 11 [(.eolymp.api.read_only) = true];</code>
+     * author by member
+     *
+     * Generated from protobuf field <code>string member_id = 11;</code>
      * @param string $var
      * @return $this
      */

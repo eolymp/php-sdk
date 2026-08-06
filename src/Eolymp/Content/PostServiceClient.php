@@ -84,8 +84,10 @@ class PostServiceClient {
 
     /**
      * CreatePost stores a new post and returns its id. There is no title to set: the title and the image shown
-     * for the post are derived from its content. Making the post visible is not part of this call, see
-     * PublishPost.
+     * for the post are derived from its content. A user or member caller authors the post as themselves and
+     * cannot set another author; a service caller may set the author to any user or member, or leave it unset
+     * for a system post, and may mark the post as a translation of another through its source. Making the post
+     * visible is not part of this call, see PublishPost.
      *
      * @param CreatePostInput $input message
      * @param array $context request parameters
