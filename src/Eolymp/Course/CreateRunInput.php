@@ -33,6 +33,8 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *     @type string $input_data
      *     @type string $input_ref
+     *     @type string $example_id
+     *           run against this example test of the problem; for interactive problems this is the only accepted input and the problem's interactor is attached
      * }
      */
     public function __construct($data = NULL) {
@@ -134,6 +136,37 @@ class CreateRunInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * run against this example test of the problem; for interactive problems this is the only accepted input and the problem's interactor is attached
+     *
+     * Generated from protobuf field <code>string example_id = 103;</code>
+     * @return string
+     */
+    public function getExampleId()
+    {
+        return $this->readOneof(103);
+    }
+
+    public function hasExampleId()
+    {
+        return $this->hasOneof(103);
+    }
+
+    /**
+     * run against this example test of the problem; for interactive problems this is the only accepted input and the problem's interactor is attached
+     *
+     * Generated from protobuf field <code>string example_id = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(103, $var);
 
         return $this;
     }

@@ -24,6 +24,12 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $example = false;
     /**
+     * test unique identifier, lets contest examples be referenced by id like archive and course examples
+     *
+     * Generated from protobuf field <code>string id = 3;</code>
+     */
+    protected $id = '';
+    /**
      * Generated from protobuf field <code>string input_url = 13;</code>
      */
     protected $input_url = '';
@@ -44,6 +50,8 @@ class Test extends \Google\Protobuf\Internal\Message
      *
      *     @type int $index
      *     @type bool $example
+     *     @type string $id
+     *           test unique identifier, lets contest examples be referenced by id like archive and course examples
      *     @type string $input_url
      *     @type string $answer_url
      *     @type float $score
@@ -94,6 +102,32 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->example = $var;
+
+        return $this;
+    }
+
+    /**
+     * test unique identifier, lets contest examples be referenced by id like archive and course examples
+     *
+     * Generated from protobuf field <code>string id = 3;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * test unique identifier, lets contest examples be referenced by id like archive and course examples
+     *
+     * Generated from protobuf field <code>string id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

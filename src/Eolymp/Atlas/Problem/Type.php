@@ -39,6 +39,10 @@ class Type
      * Generated from protobuf enum <code>QUIZ = 6 [(.eolymp.api.mcp_value_desc) = "quiz problem, user should answer a set of questions to solve it"];</code>
      */
     const QUIZ = 6;
+    /**
+     * Generated from protobuf enum <code>INTERACTIVE = 7 [(.eolymp.api.mcp_value_desc) = "interactive problem, user\'s program communicates with an interactor instead of reading a static input file"];</code>
+     */
+    const INTERACTIVE = 7;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
@@ -48,6 +52,7 @@ class Type
         self::SQL => 'SQL',
         self::ML => 'ML',
         self::QUIZ => 'QUIZ',
+        self::INTERACTIVE => 'INTERACTIVE',
     ];
 
     public static function name($value)

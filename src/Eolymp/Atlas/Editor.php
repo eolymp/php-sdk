@@ -35,6 +35,12 @@ class Editor extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
      */
     private $fields;
+    /**
+     * type of the problem the editor is opened on, a general signal for editor UI decisions
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 13;</code>
+     */
+    protected $type = 0;
 
     /**
      * Constructor.
@@ -49,6 +55,8 @@ class Editor extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $runtimes
      *           list of available runtimes
      *     @type array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $fields
+     *     @type int $type
+     *           type of the problem the editor is opened on, a general signal for editor UI decisions
      * }
      */
     public function __construct($data = NULL) {
@@ -162,6 +170,32 @@ class Editor extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Field::class);
         $this->fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     * type of the problem the editor is opened on, a general signal for editor UI decisions
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 13;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * type of the problem the editor is opened on, a general signal for editor UI decisions
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 13;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
+        $this->type = $var;
 
         return $this;
     }

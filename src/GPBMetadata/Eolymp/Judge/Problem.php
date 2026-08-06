@@ -22,8 +22,8 @@ class Problem
         \GPBMetadata\Eolymp\Ecm\Node::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¦
-eolymp/judge/problem.protoeolymp.judgeeolymp/atlas/form.protoeolymp/atlas/problem.proto#eolymp/atlas/testing_feedback.protoeolymp/ecm/content.protoeolymp/ecm/node.proto"·
+²
+eolymp/judge/problem.protoeolymp.judgeeolymp/atlas/form.protoeolymp/atlas/problem.proto#eolymp/atlas/testing_feedback.protoeolymp/ecm/content.protoeolymp/ecm/node.proto"Ã
 
 Problem
 
@@ -56,10 +56,12 @@ time_limitÈ (B\'¢ððäwall-time limit in milliseconds@
 locale (	
 title (	!
 content (2.eolymp.ecm.Node
-download_link (	\\
+download_link (	h
 Test
 index (
-example (
+example (
+
+id (	
 	input_url (	
 
 answer_url (	
