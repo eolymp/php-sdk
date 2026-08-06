@@ -12,22 +12,43 @@ use UnexpectedValueException;
 class Mode
 {
     /**
-     * Generated from protobuf enum <code>RESULT = 0;</code>
+     * Mode is not set, the main scoreboard available to the caller is served.
+     *
+     * Generated from protobuf enum <code>UNKNOWN_MODE = 0;</code>
      */
-    const RESULT = 0;
+    const UNKNOWN_MODE = 0;
     /**
+     * Standing as it stood at the freezing time, available when the contest configures a freezing time.
+     *
      * Generated from protobuf enum <code>FROZEN = 1;</code>
      */
     const FROZEN = 1;
     /**
+     * Standing counting upsolve submissions, available when the contest allows upsolving.
+     *
      * Generated from protobuf enum <code>UPSOLVE = 2;</code>
      */
     const UPSOLVE = 2;
+    /**
+     * Standing on the participant's own clock, available while competing on an individual start time.
+     * Sorting, first-to-solve marks, pending/changed marks and the second rank space are not available.
+     *
+     * Generated from protobuf enum <code>VIRTUAL = 3;</code>
+     */
+    const VIRTUAL = 3;
+    /**
+     * Standing scored during the main contest time.
+     *
+     * Generated from protobuf enum <code>MAIN = 4;</code>
+     */
+    const MAIN = 4;
 
     private static $valueToName = [
-        self::RESULT => 'RESULT',
+        self::UNKNOWN_MODE => 'UNKNOWN_MODE',
         self::FROZEN => 'FROZEN',
         self::UPSOLVE => 'UPSOLVE',
+        self::VIRTUAL => 'VIRTUAL',
+        self::MAIN => 'MAIN',
     ];
 
     public static function name($value)
