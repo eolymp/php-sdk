@@ -33,6 +33,10 @@ class ContentBlock extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ai.Message.ToolResult tool_result = 5;</code>
      */
     protected $tool_result = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.Image image = 6;</code>
+     */
+    protected $image = null;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class ContentBlock extends \Google\Protobuf\Internal\Message
      *     @type string $signature
      *     @type \Eolymp\Ai\Message\ToolCall $tool_call
      *     @type \Eolymp\Ai\Message\ToolResult $tool_result
+     *     @type \Eolymp\Ai\Message\Image $image
      * }
      */
     public function __construct($data = NULL) {
@@ -178,6 +183,38 @@ class ContentBlock extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ai\Message\ToolResult::class);
         $this->tool_result = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.Image image = 6;</code>
+     * @return \Eolymp\Ai\Message\Image|null
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.Image image = 6;</code>
+     * @param \Eolymp\Ai\Message\Image $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ai\Message\Image::class);
+        $this->image = $var;
 
         return $this;
     }

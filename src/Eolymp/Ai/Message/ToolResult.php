@@ -29,6 +29,10 @@ class ToolResult extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error = 4;</code>
      */
     protected $error = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ai.Message.Image images = 5;</code>
+     */
+    private $images;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class ToolResult extends \Google\Protobuf\Internal\Message
      *     @type string $result
      *     @type bool $is_error
      *     @type string $error
+     *     @type array<\Eolymp\Ai\Message\Image>|\Google\Protobuf\Internal\RepeatedField $images
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class ToolResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ai.Message.Image images = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.ai.Message.Image images = 5;</code>
+     * @param array<\Eolymp\Ai\Message\Image>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setImages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Ai\Message\Image::class);
+        $this->images = $arr;
 
         return $this;
     }

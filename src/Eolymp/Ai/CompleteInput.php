@@ -73,6 +73,16 @@ class CompleteInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Effort effort = 14;</code>
      */
     protected $effort = 0;
+    /**
+     * JSON schema the answer ending a run has to conform to, empty leaves the answer unconstrained
+     *
+     * Generated from protobuf field <code>string output_schema = 15;</code>
+     */
+    protected $output_schema = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Compaction compaction = 16;</code>
+     */
+    protected $compaction = null;
 
     /**
      * Constructor.
@@ -97,6 +107,9 @@ class CompleteInput extends \Google\Protobuf\Internal\Message
      *           Kept out of Reasoning so that setting an effort does not also decide whether
      *           thinking is enabled — Reasoning.enabled cannot tell "off" apart from
      *           "unset", so an effort sent there disables thinking.
+     *     @type string $output_schema
+     *           JSON schema the answer ending a run has to conform to, empty leaves the answer unconstrained
+     *     @type \Eolymp\Ai\CompleteInput\Compaction $compaction
      * }
      */
     public function __construct($data = NULL) {
@@ -486,6 +499,64 @@ class CompleteInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Ai\CompleteInput\Effort::class);
         $this->effort = $var;
+
+        return $this;
+    }
+
+    /**
+     * JSON schema the answer ending a run has to conform to, empty leaves the answer unconstrained
+     *
+     * Generated from protobuf field <code>string output_schema = 15;</code>
+     * @return string
+     */
+    public function getOutputSchema()
+    {
+        return $this->output_schema;
+    }
+
+    /**
+     * JSON schema the answer ending a run has to conform to, empty leaves the answer unconstrained
+     *
+     * Generated from protobuf field <code>string output_schema = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputSchema($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->output_schema = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Compaction compaction = 16;</code>
+     * @return \Eolymp\Ai\CompleteInput\Compaction|null
+     */
+    public function getCompaction()
+    {
+        return $this->compaction;
+    }
+
+    public function hasCompaction()
+    {
+        return isset($this->compaction);
+    }
+
+    public function clearCompaction()
+    {
+        unset($this->compaction);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.CompleteInput.Compaction compaction = 16;</code>
+     * @param \Eolymp\Ai\CompleteInput\Compaction $var
+     * @return $this
+     */
+    public function setCompaction($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ai\CompleteInput\Compaction::class);
+        $this->compaction = $var;
 
         return $this;
     }

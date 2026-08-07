@@ -22,9 +22,16 @@ class WatchScoreInput extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
-     * Mode for fetching score value (see enum description).
+     * Deprecated: use mode.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 3 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $fetching_mode = 0;
+    /**
+     * Scoreboard to read. When unset the caller is served the main scoreboard available to them.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 4;</code>
      */
     protected $mode = 0;
 
@@ -36,8 +43,10 @@ class WatchScoreInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $participant_id
+     *     @type int $fetching_mode
+     *           Deprecated: use mode.
      *     @type int $mode
-     *           Mode for fetching score value (see enum description).
+     *           Scoreboard to read. When unset the caller is served the main scoreboard available to them.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,9 +99,39 @@ class WatchScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mode for fetching score value (see enum description).
+     * Deprecated: use mode.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 3 [deprecated = true];</code>
+     * @return int
+     * @deprecated
+     */
+    public function getFetchingMode()
+    {
+        @trigger_error('fetching_mode is deprecated.', E_USER_DEPRECATED);
+        return $this->fetching_mode;
+    }
+
+    /**
+     * Deprecated: use mode.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 3 [deprecated = true];</code>
+     * @param int $var
+     * @return $this
+     * @deprecated
+     */
+    public function setFetchingMode($var)
+    {
+        @trigger_error('fetching_mode is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Score\FetchingMode::class);
+        $this->fetching_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Scoreboard to read. When unset the caller is served the main scoreboard available to them.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 4;</code>
      * @return int
      */
     public function getMode()
@@ -101,15 +140,15 @@ class WatchScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mode for fetching score value (see enum description).
+     * Scoreboard to read. When unset the caller is served the main scoreboard available to them.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 4;</code>
      * @param int $var
      * @return $this
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Score\FetchingMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Mode::class);
         $this->mode = $var;
 
         return $this;

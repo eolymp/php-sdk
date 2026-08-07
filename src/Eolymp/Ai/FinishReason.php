@@ -31,6 +31,10 @@ class FinishReason
      * Generated from protobuf enum <code>CONTENT_FILTER = 4;</code>
      */
     const CONTENT_FILTER = 4;
+    /**
+     * Generated from protobuf enum <code>REFUSAL = 5;</code>
+     */
+    const REFUSAL = 5;
 
     private static $valueToName = [
         self::UNKNOWN_FINISH_REASON => 'UNKNOWN_FINISH_REASON',
@@ -38,6 +42,7 @@ class FinishReason
         self::LENGTH => 'LENGTH',
         self::TOOL_CALLS => 'TOOL_CALLS',
         self::CONTENT_FILTER => 'CONTENT_FILTER',
+        self::REFUSAL => 'REFUSAL',
     ];
 
     public static function name($value)

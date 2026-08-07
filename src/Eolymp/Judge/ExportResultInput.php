@@ -18,19 +18,25 @@ class ExportResultInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Mode for fetching score value (see enum description).
+     * Deprecated: use mode.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 2 [deprecated = true];</code>
+     * @deprecated
      */
-    protected $mode = 0;
+    protected $fetching_mode = 0;
     /**
-     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     * This value is ignored if mode is not PUNCTUAL.
+     * Deprecated: replaying a scoreboard is not part of this API.
      *
-     * Generated from protobuf field <code>int32 time_offset = 3;</code>
+     * Generated from protobuf field <code>int32 time_offset = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $time_offset = 0;
+    /**
+     * Scoreboard to export. When unset the caller is served the main scoreboard available to them.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 4;</code>
+     */
+    protected $mode = 0;
 
     /**
      * Constructor.
@@ -39,12 +45,12 @@ class ExportResultInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type int $mode
-     *           Mode for fetching score value (see enum description).
+     *     @type int $fetching_mode
+     *           Deprecated: use mode.
      *     @type int $time_offset
-     *           Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     *           seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     *           This value is ignored if mode is not PUNCTUAL.
+     *           Deprecated: replaying a scoreboard is not part of this API.
+     *     @type int $mode
+     *           Scoreboard to export. When unset the caller is served the main scoreboard available to them.
      * }
      */
     public function __construct($data = NULL) {
@@ -75,9 +81,69 @@ class ExportResultInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mode for fetching score value (see enum description).
+     * Deprecated: use mode.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 2 [deprecated = true];</code>
+     * @return int
+     * @deprecated
+     */
+    public function getFetchingMode()
+    {
+        @trigger_error('fetching_mode is deprecated.', E_USER_DEPRECATED);
+        return $this->fetching_mode;
+    }
+
+    /**
+     * Deprecated: use mode.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 2 [deprecated = true];</code>
+     * @param int $var
+     * @return $this
+     * @deprecated
+     */
+    public function setFetchingMode($var)
+    {
+        @trigger_error('fetching_mode is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Score\FetchingMode::class);
+        $this->fetching_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated: replaying a scoreboard is not part of this API.
+     *
+     * Generated from protobuf field <code>int32 time_offset = 3 [deprecated = true];</code>
+     * @return int
+     * @deprecated
+     */
+    public function getTimeOffset()
+    {
+        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
+        return $this->time_offset;
+    }
+
+    /**
+     * Deprecated: replaying a scoreboard is not part of this API.
+     *
+     * Generated from protobuf field <code>int32 time_offset = 3 [deprecated = true];</code>
+     * @param int $var
+     * @return $this
+     * @deprecated
+     */
+    public function setTimeOffset($var)
+    {
+        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkInt32($var);
+        $this->time_offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Scoreboard to export. When unset the caller is served the main scoreboard available to them.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 4;</code>
      * @return int
      */
     public function getMode()
@@ -86,46 +152,16 @@ class ExportResultInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mode for fetching score value (see enum description).
+     * Scoreboard to export. When unset the caller is served the main scoreboard available to them.
      *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode mode = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 4;</code>
      * @param int $var
      * @return $this
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Score\FetchingMode::class);
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Mode::class);
         $this->mode = $var;
-
-        return $this;
-    }
-
-    /**
-     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     * This value is ignored if mode is not PUNCTUAL.
-     *
-     * Generated from protobuf field <code>int32 time_offset = 3;</code>
-     * @return int
-     */
-    public function getTimeOffset()
-    {
-        return $this->time_offset;
-    }
-
-    /**
-     * Time offset allows to fetch score at particular moment in the competition. Time offset is specified as number of
-     * seconds since the participant has started the competition. When time offset is 0, the latest score is returned.
-     * This value is ignored if mode is not PUNCTUAL.
-     *
-     * Generated from protobuf field <code>int32 time_offset = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setTimeOffset($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->time_offset = $var;
 
         return $this;
     }

@@ -39,6 +39,14 @@ class BlockType
      * Generated from protobuf enum <code>SERVER_TOOL_CALL = 6;</code>
      */
     const SERVER_TOOL_CALL = 6;
+    /**
+     * Generated from protobuf enum <code>COMPACTION = 7;</code>
+     */
+    const COMPACTION = 7;
+    /**
+     * Generated from protobuf enum <code>IMAGE = 8;</code>
+     */
+    const IMAGE = 8;
 
     private static $valueToName = [
         self::UNKNOWN_BLOCK_TYPE => 'UNKNOWN_BLOCK_TYPE',
@@ -48,6 +56,8 @@ class BlockType
         self::TOOL_CALL => 'TOOL_CALL',
         self::TOOL_RESULT => 'TOOL_RESULT',
         self::SERVER_TOOL_CALL => 'SERVER_TOOL_CALL',
+        self::COMPACTION => 'COMPACTION',
+        self::IMAGE => 'IMAGE',
     ];
 
     public static function name($value)
