@@ -22,9 +22,13 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
      */
     protected $participant = null;
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Result result = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Row row = 4;</code>
      */
-    protected $result = null;
+    protected $row = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Score score = 5;</code>
+     */
+    protected $score = null;
 
     /**
      * Constructor.
@@ -34,7 +38,8 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type \Eolymp\Judge\Participant $participant
-     *     @type \Eolymp\Judge\Result $result
+     *     @type \Eolymp\Judge\Scoreboard\Row $row
+     *     @type \Eolymp\Judge\Score $score
      * }
      */
     public function __construct($data = NULL) {
@@ -97,33 +102,65 @@ class ParticipantFinalizedEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Result result = 3;</code>
-     * @return \Eolymp\Judge\Result|null
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Row row = 4;</code>
+     * @return \Eolymp\Judge\Scoreboard\Row|null
      */
-    public function getResult()
+    public function getRow()
     {
-        return $this->result;
+        return $this->row;
     }
 
-    public function hasResult()
+    public function hasRow()
     {
-        return isset($this->result);
+        return isset($this->row);
     }
 
-    public function clearResult()
+    public function clearRow()
     {
-        unset($this->result);
+        unset($this->row);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Result result = 3;</code>
-     * @param \Eolymp\Judge\Result $var
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Row row = 4;</code>
+     * @param \Eolymp\Judge\Scoreboard\Row $var
      * @return $this
      */
-    public function setResult($var)
+    public function setRow($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Result::class);
-        $this->result = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\Row::class);
+        $this->row = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Score score = 5;</code>
+     * @return \Eolymp\Judge\Score|null
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    public function hasScore()
+    {
+        return isset($this->score);
+    }
+
+    public function clearScore()
+    {
+        unset($this->score);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Score score = 5;</code>
+     * @param \Eolymp\Judge\Score $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Score::class);
+        $this->score = $var;
 
         return $this;
     }
