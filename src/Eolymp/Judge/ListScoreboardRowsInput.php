@@ -14,15 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Mode for fetching score value (see enum description).
-     *
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 1;</code>
      */
     protected $mode = 0;
-    /**
-     * Generated from protobuf field <code>string round_id = 2;</code>
-     */
-    protected $round_id = '';
     /**
      * Number of results per page, (max. 100, default 100)
      *
@@ -53,8 +47,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $mode
-     *           Mode for fetching score value (see enum description).
-     *     @type string $round_id
      *     @type int $size
      *           Number of results per page, (max. 100, default 100)
      *     @type int $offset
@@ -69,8 +61,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mode for fetching score value (see enum description).
-     *
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 1;</code>
      * @return int
      */
@@ -80,8 +70,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mode for fetching score value (see enum description).
-     *
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 1;</code>
      * @param int $var
      * @return $this
@@ -90,28 +78,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Mode::class);
         $this->mode = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string round_id = 2;</code>
-     * @return string
-     */
-    public function getRoundId()
-    {
-        return $this->round_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string round_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRoundId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->round_id = $var;
 
         return $this;
     }

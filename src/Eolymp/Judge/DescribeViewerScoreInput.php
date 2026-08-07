@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.ExportResultOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.DescribeViewerScoreInput</code>
  */
-class ExportResultOutput extends \Google\Protobuf\Internal\Message
+class DescribeViewerScoreInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string export_url = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
      */
-    protected $export_url = '';
+    protected $contest_id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class ExportResultOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $export_url
+     *     @type string $contest_id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +33,23 @@ class ExportResultOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string export_url = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
      * @return string
      */
-    public function getExportUrl()
+    public function getContestId()
     {
-        return $this->export_url;
+        return $this->contest_id;
     }
 
     /**
-     * Generated from protobuf field <code>string export_url = 1;</code>
+     * Generated from protobuf field <code>string contest_id = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setExportUrl($var)
+    public function setContestId($var)
     {
         GPBUtil::checkString($var, True);
-        $this->export_url = $var;
+        $this->contest_id = $var;
 
         return $this;
     }

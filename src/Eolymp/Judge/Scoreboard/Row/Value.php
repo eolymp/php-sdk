@@ -26,7 +26,6 @@ class Value extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $column_id
-     *     @type \Eolymp\Judge\Scoreboard\Row\RoundScore $round_score
      *     @type \Eolymp\Judge\Scoreboard\Row\ProblemScore $problem_score
      *     @type string $string
      *     @type string $number
@@ -55,33 +54,6 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->column_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Row.RoundScore round_score = 11;</code>
-     * @return \Eolymp\Judge\Scoreboard\Row\RoundScore|null
-     */
-    public function getRoundScore()
-    {
-        return $this->readOneof(11);
-    }
-
-    public function hasRoundScore()
-    {
-        return $this->hasOneof(11);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Row.RoundScore round_score = 11;</code>
-     * @param \Eolymp\Judge\Scoreboard\Row\RoundScore $var
-     * @return $this
-     */
-    public function setRoundScore($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Scoreboard\Row\RoundScore::class);
-        $this->writeOneof(11, $var);
 
         return $this;
     }

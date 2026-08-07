@@ -34,30 +34,27 @@ class ScoreServiceClient {
     }
 
     /**
-     * IntrospectScore returns the caller's own score in the contest. It names neither a participant nor a mode:
+     * DescribeViewerScore returns the caller's own score in the contest. It names neither a participant nor a mode:
      * the participation is resolved from the authenticated caller and the score comes back the way that
      * participant is allowed to see it. Unlike the other reads here, it carries no scope requirement.
      *
-     * @param IntrospectScoreInput $input message
+     * @param DescribeViewerScoreInput $input message
      * @param array $context request parameters
      *
-     * @return IntrospectScoreOutput output message
+     * @return DescribeViewerScoreOutput output message
      */
-    public function IntrospectScore(IntrospectScoreInput $input, array $context = [])
+    public function DescribeViewerScore(DescribeViewerScoreInput $input, array $context = [])
     {
         $path = "/introspect/score";
 
-        $context['name'] = "eolymp.judge.ScoreService/IntrospectScore";
+        $context['name'] = "eolymp.judge.ScoreService/DescribeViewerScore";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, IntrospectScoreOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeViewerScoreOutput::class, $context);
     }
 
     /**
-     * DescribeScore returns one participant's score and its breakdown by problem, but not the rank — reach for
-     * DescribeResult when the standing within the contest is what is wanted. One of the modes reads the score
-     * as it stood at a chosen point of the participation rather than now, which is how a historical snapshot is
-     * taken.
+     * DescribeScore returns one participant's score and its breakdown by problem, but not the rank.
      *
      * @param DescribeScoreInput $input message
      * @param array $context request parameters
@@ -78,32 +75,8 @@ class ScoreServiceClient {
     }
 
     /**
-     * DescribeResult returns one participant's row of the ranking: the score DescribeScore reports, plus the
-     * rank it earns among the others and the identity shown next to it on the board. It saves paging through
-     * ListResult to find a single participant.
-     *
-     * @param DescribeResultInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeResultOutput output message
-     */
-    public function DescribeResult(DescribeResultInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/result";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ScoreService/DescribeResult";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeResultOutput::class, $context);
-    }
-
-    /**
      * ListScoreTimeline returns how a participant's score built up during the contest, as points measured from
-     * the moment their participation started — enough to draw a progression chart. Only the modes that span a
-     * whole stretch of time are meaningful here, since a timeline is a history and not a snapshot.
+     * the moment their participation started — enough to draw a progression chart.
      *
      * @param ListScoreTimelineInput $input message
      * @param array $context request parameters
@@ -149,8 +122,7 @@ class ScoreServiceClient {
 
     /**
      * ExportScore reads back the snapshots imported for a ghost participant, in the same shape ImportScore
-     * accepts, so a load can be reviewed or replayed elsewhere. It is not a way to download the standings —
-     * that is ExportResult.
+     * accepts, so a load can be reviewed or replayed elsewhere.
      *
      * @param ExportScoreInput $input message
      * @param array $context request parameters
@@ -168,47 +140,6 @@ class ScoreServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ExportScoreOutput::class, $context);
-    }
-
-    /**
-     * ListResult returns the ranking of the contest a page of participants at a time, which is what a
-     * scoreboard screen is built from. The mode decides which of the recorded scores the ranking is built on,
-     * and one of the modes reconstructs the ranking as it stood at a chosen point of the contest.
-     *
-     * @param ListResultInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListResultOutput output message
-     */
-    public function ListResult(ListResultInput $input, array $context = [])
-    {
-        $path = "/results";
-
-        $context['name'] = "eolymp.judge.ScoreService/ListResult";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListResultOutput::class, $context);
-    }
-
-    /**
-     * ExportResult renders the ranking into a file and hands back a URL to download it, for the cases where the
-     * standings have to leave the platform. It is rate limited far more tightly than the reading methods, and
-     * it exports the ranking itself, unlike ExportScore which deals with the snapshots of one ghost
-     * participant.
-     *
-     * @param ExportResultInput $input message
-     * @param array $context request parameters
-     *
-     * @return ExportResultOutput output message
-     */
-    public function ExportResult(ExportResultInput $input, array $context = [])
-    {
-        $path = "/results-export";
-
-        $context['name'] = "eolymp.judge.ScoreService/ExportResult";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportResultOutput::class, $context);
     }
 
     /**

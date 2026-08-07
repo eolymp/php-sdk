@@ -16,10 +16,6 @@ class Type
      */
     const UNKNOWN_TYPE = 0;
     /**
-     * Generated from protobuf enum <code>ROUND_SCORE = 2;</code>
-     */
-    const ROUND_SCORE = 2;
-    /**
      * Generated from protobuf enum <code>PROBLEM_SCORE = 3;</code>
      */
     const PROBLEM_SCORE = 3;
@@ -62,7 +58,6 @@ class Type
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
-        self::ROUND_SCORE => 'ROUND_SCORE',
         self::PROBLEM_SCORE => 'PROBLEM_SCORE',
         self::STRING => 'STRING',
         self::NUMBER => 'NUMBER',

@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.IntrospectScoreOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.DescribeViewerScoreOutput</code>
  */
-class IntrospectScoreOutput extends \Google\Protobuf\Internal\Message
+class DescribeViewerScoreOutput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.eolymp.judge.Score score = 1;</code>

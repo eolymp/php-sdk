@@ -22,22 +22,6 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
-     * Deprecated: use mode.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 3 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $fetching_mode = 0;
-    /**
-     * Deprecated: replaying a scoreboard is not part of this API.
-     *
-     * Generated from protobuf field <code>int32 time_offset = 4 [deprecated = true, (.eolymp.api.mcp_field_ignore) = true];</code>
-     * @deprecated
-     */
-    protected $time_offset = 0;
-    /**
-     * Scoreboard to read. When unset the caller is served the main scoreboard available to them.
-     *
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 5;</code>
      */
     protected $mode = 0;
@@ -50,12 +34,7 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type string $participant_id
-     *     @type int $fetching_mode
-     *           Deprecated: use mode.
-     *     @type int $time_offset
-     *           Deprecated: replaying a scoreboard is not part of this API.
      *     @type int $mode
-     *           Scoreboard to read. When unset the caller is served the main scoreboard available to them.
      * }
      */
     public function __construct($data = NULL) {
@@ -108,68 +87,6 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated: use mode.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 3 [deprecated = true];</code>
-     * @return int
-     * @deprecated
-     */
-    public function getFetchingMode()
-    {
-        @trigger_error('fetching_mode is deprecated.', E_USER_DEPRECATED);
-        return $this->fetching_mode;
-    }
-
-    /**
-     * Deprecated: use mode.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Score.FetchingMode fetching_mode = 3 [deprecated = true];</code>
-     * @param int $var
-     * @return $this
-     * @deprecated
-     */
-    public function setFetchingMode($var)
-    {
-        @trigger_error('fetching_mode is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkEnum($var, \Eolymp\Judge\Score\FetchingMode::class);
-        $this->fetching_mode = $var;
-
-        return $this;
-    }
-
-    /**
-     * Deprecated: replaying a scoreboard is not part of this API.
-     *
-     * Generated from protobuf field <code>int32 time_offset = 4 [deprecated = true, (.eolymp.api.mcp_field_ignore) = true];</code>
-     * @return int
-     * @deprecated
-     */
-    public function getTimeOffset()
-    {
-        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
-        return $this->time_offset;
-    }
-
-    /**
-     * Deprecated: replaying a scoreboard is not part of this API.
-     *
-     * Generated from protobuf field <code>int32 time_offset = 4 [deprecated = true, (.eolymp.api.mcp_field_ignore) = true];</code>
-     * @param int $var
-     * @return $this
-     * @deprecated
-     */
-    public function setTimeOffset($var)
-    {
-        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkInt32($var);
-        $this->time_offset = $var;
-
-        return $this;
-    }
-
-    /**
-     * Scoreboard to read. When unset the caller is served the main scoreboard available to them.
-     *
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 5;</code>
      * @return int
      */
@@ -179,8 +96,6 @@ class DescribeScoreInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Scoreboard to read. When unset the caller is served the main scoreboard available to them.
-     *
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 5;</code>
      * @param int $var
      * @return $this

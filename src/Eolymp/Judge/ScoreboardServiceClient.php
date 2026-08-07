@@ -72,4 +72,39 @@ class ScoreboardServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreboardRowsOutput::class, $context);
     }
 
+    /**
+     * @param DescribeScoreboardRowInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardRowOutput output message
+     */
+    public function DescribeScoreboardRow(DescribeScoreboardRowInput $input, array $context = [])
+    {
+        $path = "/scoreboard/rows/".rawurlencode($input->getParticipantId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.ScoreboardService/DescribeScoreboardRow";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreboardRowOutput::class, $context);
+    }
+
+    /**
+     * @param ExportScoreboardInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportScoreboardOutput output message
+     */
+    public function ExportScoreboard(ExportScoreboardInput $input, array $context = [])
+    {
+        $path = "/scoreboard/export";
+
+        $context['name'] = "eolymp.judge.ScoreboardService/ExportScoreboard";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportScoreboardOutput::class, $context);
+    }
+
 }
