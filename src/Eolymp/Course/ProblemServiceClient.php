@@ -173,25 +173,6 @@ class ProblemServiceClient {
     }
 
     /**
-     * @param WatchRunInput $input message
-     * @param array $context request parameters
-     *
-     * @return WatchRunOutput output message
-     */
-    public function WatchRun(WatchRunInput $input, array $context = [])
-    {
-        $path = "/runs/".rawurlencode($input->getRunId())."/watch";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setRunId("");
-
-        $context['name'] = "eolymp.course.ProblemService/WatchRun";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, WatchRunOutput::class, $context);
-    }
-
-    /**
      * @param ListRuntimesInput $input message
      * @param array $context request parameters
      *

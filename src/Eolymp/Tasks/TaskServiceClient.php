@@ -62,25 +62,6 @@ class TaskServiceClient {
     }
 
     /**
-     * @param WatchTaskInput $input message
-     * @param array $context request parameters
-     *
-     * @return WatchTaskOutput output message
-     */
-    public function WatchTask(WatchTaskInput $input, array $context = [])
-    {
-        $path = "/tasks/".rawurlencode($input->getTaskId())."/watch";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setTaskId("");
-
-        $context['name'] = "eolymp.tasks.TaskService/WatchTask";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, WatchTaskOutput::class, $context);
-    }
-
-    /**
      * @param CancelTaskInput $input message
      * @param array $context request parameters
      *
