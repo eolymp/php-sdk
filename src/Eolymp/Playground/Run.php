@@ -98,6 +98,10 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string trace_url = 43;</code>
      */
     protected $trace_url = '';
+    /**
+     * Generated from protobuf field <code>string interaction_url = 44;</code>
+     */
+    protected $interaction_url = '';
 
     /**
      * Constructor.
@@ -134,6 +138,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $trace_url
      *           Step by step execution trace (JSONL), set only when the run requested tracing
      *           and the runtime supports it.
+     *     @type string $interaction_url
      * }
      */
     public function __construct($data = NULL) {
@@ -513,6 +518,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->trace_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interaction_url = 44;</code>
+     * @return string
+     */
+    public function getInteractionUrl()
+    {
+        return $this->interaction_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interaction_url = 44;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInteractionUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->interaction_url = $var;
 
         return $this;
     }

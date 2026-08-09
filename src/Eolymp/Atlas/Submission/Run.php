@@ -54,6 +54,10 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $answer_url = '';
     /**
+     * Generated from protobuf field <code>string interaction_url = 15;</code>
+     */
+    protected $interaction_url = '';
+    /**
      * Generated from protobuf field <code>float cost = 12;</code>
      */
     protected $cost = 0.0;
@@ -99,6 +103,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $input_url
      *     @type string $output_url
      *     @type string $answer_url
+     *     @type string $interaction_url
      *     @type float $cost
      *     @type float $score
      *     @type int $status
@@ -315,6 +320,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->answer_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interaction_url = 15;</code>
+     * @return string
+     */
+    public function getInteractionUrl()
+    {
+        return $this->interaction_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interaction_url = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInteractionUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->interaction_url = $var;
 
         return $this;
     }

@@ -88,6 +88,10 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $trace_url = '';
     /**
+     * Generated from protobuf field <code>string interaction_url = 15;</code>
+     */
+    protected $interaction_url = '';
+    /**
      * execution stats
      *
      * Generated from protobuf field <code>.eolymp.executor.Stats debug_stats = 90;</code>
@@ -133,6 +137,7 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $answer_url
      *     @type string $trace_url
      *           Execution trace (JSONL), set only when task requested tracing and the runtime supports it.
+     *     @type string $interaction_url
      *     @type \Eolymp\Executor\Stats $debug_stats
      *           execution stats
      *     @type \Eolymp\Executor\Stats $checker_stats
@@ -496,6 +501,28 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->trace_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interaction_url = 15;</code>
+     * @return string
+     */
+    public function getInteractionUrl()
+    {
+        return $this->interaction_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string interaction_url = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInteractionUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->interaction_url = $var;
 
         return $this;
     }
