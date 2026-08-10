@@ -17,6 +17,10 @@ class WatchTaskOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.tasks.Task task = 1;</code>
      */
     protected $task = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     */
+    protected $event = 0;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class WatchTaskOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Tasks\Task $task
+     *     @type int $event
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class WatchTaskOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Tasks\Task::class);
         $this->task = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @return int
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEvent($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\WatchEventType::class);
+        $this->event = $var;
 
         return $this;
     }

@@ -17,6 +17,10 @@ class WatchStudentOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.course.Student student = 1;</code>
      */
     protected $student = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     */
+    protected $event = 0;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class WatchStudentOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Course\Student $student
+     *     @type int $event
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,28 @@ class WatchStudentOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Course\Student::class);
         $this->student = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @return int
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEvent($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\WatchEventType::class);
+        $this->event = $var;
 
         return $this;
     }

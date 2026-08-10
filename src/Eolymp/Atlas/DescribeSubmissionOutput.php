@@ -17,10 +17,6 @@ class DescribeSubmissionOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Submission submission = 1;</code>
      */
     protected $submission = null;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>
-     */
-    private $extra;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class DescribeSubmissionOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Atlas\Submission $submission
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
     public function __construct($data = NULL) {
@@ -65,28 +60,6 @@ class DescribeSubmissionOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission::class);
         $this->submission = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getExtra()
-    {
-        return $this->extra;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setExtra($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Submission\Extra\Field::class);
-        $this->extra = $arr;
 
         return $this;
     }

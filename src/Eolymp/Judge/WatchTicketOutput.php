@@ -14,9 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class WatchTicketOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 1;</code>
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
      */
-    protected $ticket = null;
+    protected $event = 0;
+    protected $value;
 
     /**
      * Constructor.
@@ -24,7 +25,9 @@ class WatchTicketOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $event
      *     @type \Eolymp\Judge\Ticket $ticket
+     *     @type \Eolymp\Judge\Reply $reply
      * }
      */
     public function __construct($data = NULL) {
@@ -33,22 +36,39 @@ class WatchTicketOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @return int
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setEvent($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\WatchEventType::class);
+        $this->event = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 1;</code>
      * @return \Eolymp\Judge\Ticket|null
      */
     public function getTicket()
     {
-        return $this->ticket;
+        return $this->readOneof(1);
     }
 
     public function hasTicket()
     {
-        return isset($this->ticket);
-    }
-
-    public function clearTicket()
-    {
-        unset($this->ticket);
+        return $this->hasOneof(1);
     }
 
     /**
@@ -59,9 +79,44 @@ class WatchTicketOutput extends \Google\Protobuf\Internal\Message
     public function setTicket($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Ticket::class);
-        $this->ticket = $var;
+        $this->writeOneof(1, $var);
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Reply reply = 3;</code>
+     * @return \Eolymp\Judge\Reply|null
+     */
+    public function getReply()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasReply()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Reply reply = 3;</code>
+     * @param \Eolymp\Judge\Reply $var
+     * @return $this
+     */
+    public function setReply($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Reply::class);
+        $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->whichOneof("value");
     }
 
 }

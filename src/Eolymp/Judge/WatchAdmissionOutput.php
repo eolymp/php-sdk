@@ -14,9 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class WatchAdmissionOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.WatchAdmissionOutput.Status status = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Admission admission = 3;</code>
      */
-    protected $status = 0;
+    protected $admission = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     */
+    protected $event = 0;
 
     /**
      * Constructor.
@@ -24,7 +28,8 @@ class WatchAdmissionOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $status
+     *     @type \Eolymp\Judge\Admission $admission
+     *     @type int $event
      * }
      */
     public function __construct($data = NULL) {
@@ -33,23 +38,55 @@ class WatchAdmissionOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.WatchAdmissionOutput.Status status = 1;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.judge.Admission admission = 3;</code>
+     * @return \Eolymp\Judge\Admission|null
      */
-    public function getStatus()
+    public function getAdmission()
     {
-        return $this->status;
+        return $this->admission;
+    }
+
+    public function hasAdmission()
+    {
+        return isset($this->admission);
+    }
+
+    public function clearAdmission()
+    {
+        unset($this->admission);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.WatchAdmissionOutput.Status status = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Admission admission = 3;</code>
+     * @param \Eolymp\Judge\Admission $var
+     * @return $this
+     */
+    public function setAdmission($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Admission::class);
+        $this->admission = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
+     * @return int
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
      * @param int $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setEvent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchAdmissionOutput\Status::class);
-        $this->status = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\WatchEventType::class);
+        $this->event = $var;
 
         return $this;
     }

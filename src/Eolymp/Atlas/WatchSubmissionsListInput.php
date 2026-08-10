@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.atlas.WatchSubmissionListInput</code>
+ * Generated from protobuf message <code>eolymp.atlas.WatchSubmissionsListInput</code>
  */
-class WatchSubmissionListInput extends \Google\Protobuf\Internal\Message
+class WatchSubmissionsListInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Submission.Extra.Field extra = 1123;</code>

@@ -21,6 +21,10 @@ class WatchTicketInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.judge.Ticket.Extra extra = 1123;</code>
      */
     private $extra;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra reply_extra = 1124;</code>
+     */
+    private $reply_extra;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class WatchTicketInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $ticket_id
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $reply_extra
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class WatchTicketInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Ticket\Extra::class);
         $this->extra = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra reply_extra = 1124;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getReplyExtra()
+    {
+        return $this->reply_extra;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.Reply.Extra reply_extra = 1124;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setReplyExtra($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Reply\Extra::class);
+        $this->reply_extra = $arr;
 
         return $this;
     }

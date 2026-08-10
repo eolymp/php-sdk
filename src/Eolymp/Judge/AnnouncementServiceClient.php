@@ -188,4 +188,23 @@ class AnnouncementServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAnnouncementsOutput::class, $context);
     }
 
+    /**
+     * DescribeAnnouncementSummary returns how many announcements the caller has not read yet, which is enough
+     * to draw a badge without listing anything.
+     *
+     * @param DescribeAnnouncementSummaryInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeAnnouncementSummaryOutput output message
+     */
+    public function DescribeAnnouncementSummary(DescribeAnnouncementSummaryInput $input, array $context = [])
+    {
+        $path = "/summary/announcements";
+
+        $context['name'] = "eolymp.judge.AnnouncementService/DescribeAnnouncementSummary";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAnnouncementSummaryOutput::class, $context);
+    }
+
 }

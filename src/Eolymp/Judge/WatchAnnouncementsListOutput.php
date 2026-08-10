@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.WatchAnnouncementsOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.WatchAnnouncementsListOutput</code>
  */
-class WatchAnnouncementsOutput extends \Google\Protobuf\Internal\Message
+class WatchAnnouncementsListOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.WatchAnnouncementsOutput.Event event = 1;</code>
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 1;</code>
      */
     protected $event = 0;
     /**
@@ -38,7 +38,7 @@ class WatchAnnouncementsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.WatchAnnouncementsOutput.Event event = 1;</code>
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 1;</code>
      * @return int
      */
     public function getEvent()
@@ -47,13 +47,13 @@ class WatchAnnouncementsOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.WatchAnnouncementsOutput.Event event = 1;</code>
+     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 1;</code>
      * @param int $var
      * @return $this
      */
     public function setEvent($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Judge\WatchAnnouncementsOutput\Event::class);
+        GPBUtil::checkEnum($var, \Eolymp\Wellknown\WatchEventType::class);
         $this->event = $var;
 
         return $this;

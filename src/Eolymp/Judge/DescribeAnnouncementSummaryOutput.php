@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.WatchAnnouncementSummaryOutput</code>
+ * Generated from protobuf message <code>eolymp.judge.DescribeAnnouncementSummaryOutput</code>
  */
-class WatchAnnouncementSummaryOutput extends \Google\Protobuf\Internal\Message
+class DescribeAnnouncementSummaryOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.judge.AnnouncementSummary summary = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.AnnouncementSummary summary = 1;</code>
      */
     protected $summary = null;
-    /**
-     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
-     */
-    protected $event = 0;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class WatchAnnouncementSummaryOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Judge\AnnouncementSummary $summary
-     *     @type int $event
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +33,7 @@ class WatchAnnouncementSummaryOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.AnnouncementSummary summary = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.AnnouncementSummary summary = 1;</code>
      * @return \Eolymp\Judge\AnnouncementSummary|null
      */
     public function getSummary()
@@ -57,7 +52,7 @@ class WatchAnnouncementSummaryOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.AnnouncementSummary summary = 3;</code>
+     * Generated from protobuf field <code>.eolymp.judge.AnnouncementSummary summary = 1;</code>
      * @param \Eolymp\Judge\AnnouncementSummary $var
      * @return $this
      */
@@ -65,28 +60,6 @@ class WatchAnnouncementSummaryOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\AnnouncementSummary::class);
         $this->summary = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
-     * @return int
-     */
-    public function getEvent()
-    {
-        return $this->event;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.wellknown.WatchEventType event = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setEvent($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Wellknown\WatchEventType::class);
-        $this->event = $var;
 
         return $this;
     }

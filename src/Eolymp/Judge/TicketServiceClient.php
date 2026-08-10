@@ -193,6 +193,25 @@ class TicketServiceClient {
     }
 
     /**
+     * DescribeTicketSummary returns how much of the inbox is unread and how much still waits for an answer,
+     * which is enough to draw a badge without listing any tickets.
+     *
+     * @param DescribeTicketSummaryInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeTicketSummaryOutput output message
+     */
+    public function DescribeTicketSummary(DescribeTicketSummaryInput $input, array $context = [])
+    {
+        $path = "/summary/tickets";
+
+        $context['name'] = "eolymp.judge.TicketService/DescribeTicketSummary";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTicketSummaryOutput::class, $context);
+    }
+
+    /**
      * ListReplies returns the conversation held on one ticket, each message attributed either to the
      * participant who asked or to the jury member who answered. In a contest configured to hide jury
      * identity, participants see the jury side of the thread without the person behind it.

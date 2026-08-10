@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.judge.WatchAnnouncementsInput</code>
+ * Generated from protobuf message <code>eolymp.judge.WatchAnnouncementsListInput</code>
  */
-class WatchAnnouncementsInput extends \Google\Protobuf\Internal\Message
+class WatchAnnouncementsListInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Announcement.Extra extra = 1123;</code>
