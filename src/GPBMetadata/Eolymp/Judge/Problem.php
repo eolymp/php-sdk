@@ -15,15 +15,14 @@ class Problem
           return;
         }
         \GPBMetadata\Eolymp\Annotations\Mcp::initOnce();
-        \GPBMetadata\Eolymp\Atlas\Form::initOnce();
         \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         \GPBMetadata\Eolymp\Atlas\TestingFeedback::initOnce();
         \GPBMetadata\Eolymp\Ecm\Content::initOnce();
         \GPBMetadata\Eolymp\Ecm\Node::initOnce();
         $pool->internalAddGeneratedFile(
             '
-²
-eolymp/judge/problem.protoeolymp.judgeeolymp/atlas/form.protoeolymp/atlas/problem.proto#eolymp/atlas/testing_feedback.protoeolymp/ecm/content.protoeolymp/ecm/node.proto"Ã
+ì
+eolymp/judge/problem.protoeolymp.judgeeolymp/atlas/problem.proto#eolymp/atlas/testing_feedback.protoeolymp/ecm/content.protoeolymp/ecm/node.proto"–
 
 Problem
 
@@ -49,8 +48,7 @@ time_limitÈ (B\'¢ððäwall-time limit in milliseconds@
 title (	S
 content (2.eolymp.ecm.ContentB-¢ððä\'problem statement in requested languageG
 download_link (	B0¢ððä*a link to download statement in PDF format
-	languages (	+
-submission_form= (2.eolymp.atlas.Form/
+	languages (	/
 examples< (2.eolymp.atlas.Problem.Exampled
 	Statement
 locale (	

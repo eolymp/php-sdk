@@ -72,10 +72,6 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source_url = '';
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 111;</code>
-     */
-    private $values;
-    /**
      * source code
      *
      * Generated from protobuf field <code>string signature = 12;</code>
@@ -189,7 +185,6 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           source code
      *     @type string $source_url
      *           source code URL (overrides source)
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type string $signature
      *           source code
      *     @type int $status
@@ -488,28 +483,6 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 111;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getValues()
-    {
-        return $this->values;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 111;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setValues($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
-        $this->values = $arr;
 
         return $this;
     }

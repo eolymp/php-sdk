@@ -25,10 +25,6 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string source = 3;</code>
      */
     protected $source = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     */
-    private $values;
     protected $payload;
 
     /**
@@ -40,8 +36,8 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $lang
      *     @type string $source
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type \Eolymp\Atlas\Submission\Quiz $quiz
+     *     @type \Eolymp\Atlas\Submission\Output $output
      * }
      */
     public function __construct($data = NULL) {
@@ -116,28 +112,6 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getValues()
-    {
-        return $this->values;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 4;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setValues($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
-        $this->values = $arr;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 5;</code>
      * @return \Eolymp\Atlas\Submission\Quiz|null
      */
@@ -160,6 +134,33 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 6;</code>
+     * @return \Eolymp\Atlas\Submission\Output|null
+     */
+    public function getOutput()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasOutput()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 6;</code>
+     * @param \Eolymp\Atlas\Submission\Output $var
+     * @return $this
+     */
+    public function setOutput($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
+        $this->writeOneof(6, $var);
 
         return $this;
     }

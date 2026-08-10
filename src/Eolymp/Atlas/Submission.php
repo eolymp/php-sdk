@@ -62,12 +62,6 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source_url = '';
     /**
-     * submission values
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
-     */
-    private $values;
-    /**
      * submission signature
      *
      * Generated from protobuf field <code>string signature = 12;</code>
@@ -188,9 +182,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           deprecated: source code
      *     @type string $source_url
      *           source code URL
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
-     *           submission values
      *     @type \Eolymp\Atlas\Submission\Quiz $quiz
+     *     @type \Eolymp\Atlas\Submission\Output $output
      *     @type string $signature
      *           submission signature
      *     @type int $status
@@ -512,32 +505,6 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * submission values
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getValues()
-    {
-        return $this->values;
-    }
-
-    /**
-     * submission values
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 14;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setValues($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
-        $this->values = $arr;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 15;</code>
      * @return \Eolymp\Atlas\Submission\Quiz|null
      */
@@ -560,6 +527,33 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
         $this->writeOneof(15, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 16;</code>
+     * @return \Eolymp\Atlas\Submission\Output|null
+     */
+    public function getOutput()
+    {
+        return $this->readOneof(16);
+    }
+
+    public function hasOutput()
+    {
+        return $this->hasOneof(16);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 16;</code>
+     * @param \Eolymp\Atlas\Submission\Output $var
+     * @return $this
+     */
+    public function setOutput($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
+        $this->writeOneof(16, $var);
 
         return $this;
     }

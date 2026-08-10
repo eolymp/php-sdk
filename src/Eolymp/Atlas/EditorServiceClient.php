@@ -72,8 +72,8 @@ class EditorServiceClient {
 
     /**
      * UpdateEditorState replaces the current user's draft; there is no field mask, so anything omitted from
-     * the request is cleared rather than kept. Submitted values are only kept when they are file uploads
-     * naming a field the problem's submission form declares, the rest are silently dropped.
+     * the request is cleared rather than kept. An answer in the output payload is only kept when it names a
+     * test the problem actually has, the rest are silently dropped.
      *
      * @param UpdateEditorStateInput $input message
      * @param array $context request parameters
@@ -88,6 +88,27 @@ class EditorServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, UpdateEditorStateOutput::class, $context);
+    }
+
+    /**
+     * ListInputs returns the inputs of an output-only problem, one per test, and nothing at all for any other
+     * problem type. It is the one way to read a test which is not an example; the answer a test is checked
+     * against is never filled in for a caller who may not edit the problem, since that is what the participant
+     * is being asked to compute.
+     *
+     * @param ListInputsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListInputsOutput output message
+     */
+    public function ListInputs(ListInputsInput $input, array $context = [])
+    {
+        $path = "/inputs";
+
+        $context['name'] = "eolymp.atlas.EditorService/ListInputs";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListInputsOutput::class, $context);
     }
 
     /**

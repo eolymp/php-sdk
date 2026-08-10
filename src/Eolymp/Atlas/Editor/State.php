@@ -25,10 +25,7 @@ class State extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string input_data = 3;</code>
      */
     protected $input_data = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 10;</code>
-     */
-    private $values;
+    protected $payload;
 
     /**
      * Constructor.
@@ -39,7 +36,8 @@ class State extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type string $source_code
      *     @type string $input_data
-     *     @type array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type \Eolymp\Atlas\Submission\Output $output
+     *           OUTPUT: the files uploaded so far
      * }
      */
     public function __construct($data = NULL) {
@@ -114,25 +112,42 @@ class State extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * OUTPUT: the files uploaded so far
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 11;</code>
+     * @return \Eolymp\Atlas\Submission\Output|null
      */
-    public function getValues()
+    public function getOutput()
     {
-        return $this->values;
+        return $this->readOneof(11);
+    }
+
+    public function hasOutput()
+    {
+        return $this->hasOneof(11);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Value values = 10;</code>
-     * @param array<\Eolymp\Atlas\Form\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * OUTPUT: the files uploaded so far
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 11;</code>
+     * @param \Eolymp\Atlas\Submission\Output $var
      * @return $this
      */
-    public function setValues($var)
+    public function setOutput($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Value::class);
-        $this->values = $arr;
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
+        $this->writeOneof(11, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPayload()
+    {
+        return $this->whichOneof("payload");
     }
 
 }

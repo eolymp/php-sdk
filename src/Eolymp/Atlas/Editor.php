@@ -32,10 +32,6 @@ class Editor extends \Google\Protobuf\Internal\Message
      */
     private $runtimes;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
-     */
-    private $fields;
-    /**
      * type of the problem the editor is opened on, a general signal for editor UI decisions
      *
      * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 13;</code>
@@ -54,7 +50,6 @@ class Editor extends \Google\Protobuf\Internal\Message
      *           list of enabled features
      *     @type array<\Eolymp\Runtime\Runtime>|\Google\Protobuf\Internal\RepeatedField $runtimes
      *           list of available runtimes
-     *     @type array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $fields
      *     @type int $type
      *           type of the problem the editor is opened on, a general signal for editor UI decisions
      * }
@@ -148,28 +143,6 @@ class Editor extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Runtime\Runtime::class);
         $this->runtimes = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFields()
-    {
-        return $this->fields;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Form.Field fields = 12;</code>
-     * @param array<\Eolymp\Atlas\Form\Field>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFields($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Form\Field::class);
-        $this->fields = $arr;
 
         return $this;
     }

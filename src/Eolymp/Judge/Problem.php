@@ -132,10 +132,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     private $languages;
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
-     */
-    protected $submission_form = null;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
      */
     private $examples;
@@ -182,7 +178,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Statement download link, allows to download statement in original format.
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           list of languages the statement is available in
-     *     @type \Eolymp\Atlas\Form $submission_form
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
      * }
      */
@@ -735,38 +730,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->languages = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
-     * @return \Eolymp\Atlas\Form|null
-     */
-    public function getSubmissionForm()
-    {
-        return $this->submission_form;
-    }
-
-    public function hasSubmissionForm()
-    {
-        return isset($this->submission_form);
-    }
-
-    public function clearSubmissionForm()
-    {
-        unset($this->submission_form);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 61;</code>
-     * @param \Eolymp\Atlas\Form $var
-     * @return $this
-     */
-    public function setSubmissionForm($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form::class);
-        $this->submission_form = $var;
 
         return $this;
     }

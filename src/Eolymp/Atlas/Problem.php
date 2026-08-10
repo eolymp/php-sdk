@@ -136,12 +136,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $difficulty = 0;
     /**
-     * Submission form description
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.read_only) = true];</code>
-     */
-    protected $submission_form = null;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60 [(.eolymp.api.read_only) = true];</code>
      */
     private $examples;
@@ -191,8 +185,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int $vote_count
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
-     *     @type \Eolymp\Atlas\Form $submission_form
-     *           Submission form description
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
      * }
      */
@@ -769,42 +761,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->difficulty = $var;
-
-        return $this;
-    }
-
-    /**
-     * Submission form description
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.read_only) = true];</code>
-     * @return \Eolymp\Atlas\Form|null
-     */
-    public function getSubmissionForm()
-    {
-        return $this->submission_form;
-    }
-
-    public function hasSubmissionForm()
-    {
-        return isset($this->submission_form);
-    }
-
-    public function clearSubmissionForm()
-    {
-        unset($this->submission_form);
-    }
-
-    /**
-     * Submission form description
-     *
-     * Generated from protobuf field <code>.eolymp.atlas.Form submission_form = 22 [(.eolymp.api.read_only) = true];</code>
-     * @param \Eolymp\Atlas\Form $var
-     * @return $this
-     */
-    public function setSubmissionForm($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Form::class);
-        $this->submission_form = $var;
 
         return $this;
     }
