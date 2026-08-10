@@ -23,11 +23,16 @@ class Field
      * Generated from protobuf enum <code>RUNS = 4;</code>
      */
     const RUNS = 4;
+    /**
+     * Generated from protobuf enum <code>FINGERPRINT = 5;</code>
+     */
+    const FINGERPRINT = 5;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::GROUPS => 'GROUPS',
         self::RUNS => 'RUNS',
+        self::FINGERPRINT => 'FINGERPRINT',
     ];
 
     public static function name($value)

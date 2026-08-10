@@ -144,6 +144,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     private $groups;
     /**
+     * normalised shape of the source, requested through the FINGERPRINT extra
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Fingerprint fingerprint = 51;</code>
+     */
+    protected $fingerprint = null;
+    /**
      * if true, submission can be debugged using submission assistant
      *
      * Generated from protobuf field <code>bool assistant_available = 60;</code>
@@ -210,6 +216,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           maximum resource usage
      *     @type array<\Eolymp\Atlas\Submission\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
+     *     @type \Eolymp\Atlas\Submission\Fingerprint $fingerprint
+     *           normalised shape of the source, requested through the FINGERPRINT extra
      *     @type bool $assistant_available
      *           if true, submission can be debugged using submission assistant
      *     @type string $cursor
@@ -886,6 +894,42 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Submission\Group::class);
         $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * normalised shape of the source, requested through the FINGERPRINT extra
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Fingerprint fingerprint = 51;</code>
+     * @return \Eolymp\Atlas\Submission\Fingerprint|null
+     */
+    public function getFingerprint()
+    {
+        return $this->fingerprint;
+    }
+
+    public function hasFingerprint()
+    {
+        return isset($this->fingerprint);
+    }
+
+    public function clearFingerprint()
+    {
+        unset($this->fingerprint);
+    }
+
+    /**
+     * normalised shape of the source, requested through the FINGERPRINT extra
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Fingerprint fingerprint = 51;</code>
+     * @param \Eolymp\Atlas\Submission\Fingerprint $var
+     * @return $this
+     */
+    public function setFingerprint($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Fingerprint::class);
+        $this->fingerprint = $var;
 
         return $this;
     }
