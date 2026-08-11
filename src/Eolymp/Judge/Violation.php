@@ -26,6 +26,12 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
+     * how sure detection is, unset when a jury filed it
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Confidence confidence = 15 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $confidence = 0;
+    /**
      * short summary of the violation
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content summary = 14;</code>
@@ -93,6 +99,8 @@ class Violation extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $status
      *     @type int $type
+     *     @type int $confidence
+     *           how sure detection is, unset when a jury filed it
      *     @type \Eolymp\Ecm\Content $summary
      *           short summary of the violation
      *     @type bool $automatic
@@ -180,6 +188,32 @@ class Violation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Violation\Type::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * how sure detection is, unset when a jury filed it
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Confidence confidence = 15 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getConfidence()
+    {
+        return $this->confidence;
+    }
+
+    /**
+     * how sure detection is, unset when a jury filed it
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Confidence confidence = 15 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setConfidence($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Violation\Confidence::class);
+        $this->confidence = $var;
 
         return $this;
     }
