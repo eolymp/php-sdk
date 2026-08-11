@@ -13,6 +13,12 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class AnalyzeContestOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * analysis runs in the background, follow it by this task
+     *
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     */
+    protected $task_id = '';
 
     /**
      * Constructor.
@@ -20,11 +26,39 @@ class AnalyzeContestOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $task_id
+     *           analysis runs in the background, follow it by this task
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ContestService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * analysis runs in the background, follow it by this task
+     *
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     * @return string
+     */
+    public function getTaskId()
+    {
+        return $this->task_id;
+    }
+
+    /**
+     * analysis runs in the background, follow it by this task
+     *
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_id = $var;
+
+        return $this;
     }
 
 }

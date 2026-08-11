@@ -17,7 +17,7 @@ class Tasks
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-›
+Å
 eolymp/judge/tasks.protoeolymp.judge"‘
 RetestProblemTask
 
@@ -29,6 +29,9 @@ Checkpoint4
 submitted_before (2.google.protobuf.Timestamp
 retested ("&
 RebuildScoreTask
+
+contest_id (	"(
+AnalyzeContestTask
 
 contest_id (	B-Z+github.com/eolymp/go-sdk/eolymp/judge;judgebproto3'
         , true);
