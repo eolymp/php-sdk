@@ -12,15 +12,20 @@ use UnexpectedValueException;
 class Sort
 {
     /**
-     * Generated from protobuf enum <code>CREATED_AT = 0;</code>
+     * Generated from protobuf enum <code>DEFAULT = 0;</code>
      */
-    const CREATED_AT = 0;
+    const PBDEFAULT = 0;
     /**
-     * Generated from protobuf enum <code>CONFIDENCE = 1;</code>
+     * Generated from protobuf enum <code>CREATED_AT = 1;</code>
      */
-    const CONFIDENCE = 1;
+    const CREATED_AT = 1;
+    /**
+     * Generated from protobuf enum <code>CONFIDENCE = 2;</code>
+     */
+    const CONFIDENCE = 2;
 
     private static $valueToName = [
+        self::PBDEFAULT => 'DEFAULT',
         self::CREATED_AT => 'CREATED_AT',
         self::CONFIDENCE => 'CONFIDENCE',
     ];
@@ -39,8 +44,12 @@ class Sort
     {
         $const = __CLASS__ . '::' . strtoupper($name);
         if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+            $pbconst =  __CLASS__. '::PB' . strtoupper($name);
+            if (!defined($pbconst)) {
+                throw new UnexpectedValueException(sprintf(
+                        'Enum %s has no value defined for name %s', __CLASS__, $name));
+            }
+            return constant($pbconst);
         }
         return constant($const);
     }
