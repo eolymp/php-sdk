@@ -44,6 +44,13 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     protected $debug = false;
     /**
+     * Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
+     * Clients fall back to name when empty.
+     *
+     * Generated from protobuf field <code>string label = 9;</code>
+     */
+    protected $label = '';
+    /**
      * Generated from protobuf field <code>int32 trigger_count = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $trigger_count = 0;
@@ -74,6 +81,9 @@ class Rule extends \Google\Protobuf\Internal\Message
      *     @type bool $dry_run
      *     @type bool $debug
      *           capture execution logs
+     *     @type string $label
+     *           Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
+     *           Clients fall back to name when empty.
      *     @type int $trigger_count
      *     @type array<\Eolymp\Automation\Action>|\Google\Protobuf\Internal\RepeatedField $actions
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -239,6 +249,34 @@ class Rule extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->debug = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
+     * Clients fall back to name when empty.
+     *
+     * Generated from protobuf field <code>string label = 9;</code>
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
+     * Clients fall back to name when empty.
+     *
+     * Generated from protobuf field <code>string label = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
 
         return $this;
     }
