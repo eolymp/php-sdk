@@ -28,6 +28,7 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type string $html
      *     @type string $latex
      *     @type string $markdown
+     *     @type \Eolymp\Ecm\Node $ecm
      *     @type \Eolymp\Ecm\Node $render
      * }
      */
@@ -113,6 +114,33 @@ class Content extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node ecm = 4 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @return \Eolymp\Ecm\Node|null
+     */
+    public function getEcm()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasEcm()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Node ecm = 4 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @param \Eolymp\Ecm\Node $var
+     * @return $this
+     */
+    public function setEcm($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
+        $this->writeOneof(4, $var);
 
         return $this;
     }
