@@ -72,6 +72,14 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $source_url = '';
     /**
+     * Body of the submission for an output-only problem, where there is no source. A contest relays the
+     * uploaded files to atlas, which resolves them against the problem's tests, and keeps a projection of the
+     * result; this is that projection, so it reads the same as atlas.Submission.output.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 15;</code>
+     */
+    protected $output = null;
+    /**
      * source code
      *
      * Generated from protobuf field <code>string signature = 12;</code>
@@ -185,6 +193,10 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           source code
      *     @type string $source_url
      *           source code URL (overrides source)
+     *     @type \Eolymp\Atlas\Submission\Output $output
+     *           Body of the submission for an output-only problem, where there is no source. A contest relays the
+     *           uploaded files to atlas, which resolves them against the problem's tests, and keeps a projection of the
+     *           result; this is that projection, so it reads the same as atlas.Submission.output.
      *     @type string $signature
      *           source code
      *     @type int $status
@@ -483,6 +495,46 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->source_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Body of the submission for an output-only problem, where there is no source. A contest relays the
+     * uploaded files to atlas, which resolves them against the problem's tests, and keeps a projection of the
+     * result; this is that projection, so it reads the same as atlas.Submission.output.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 15;</code>
+     * @return \Eolymp\Atlas\Submission\Output|null
+     */
+    public function getOutput()
+    {
+        return $this->output;
+    }
+
+    public function hasOutput()
+    {
+        return isset($this->output);
+    }
+
+    public function clearOutput()
+    {
+        unset($this->output);
+    }
+
+    /**
+     * Body of the submission for an output-only problem, where there is no source. A contest relays the
+     * uploaded files to atlas, which resolves them against the problem's tests, and keeps a projection of the
+     * result; this is that projection, so it reads the same as atlas.Submission.output.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 15;</code>
+     * @param \Eolymp\Atlas\Submission\Output $var
+     * @return $this
+     */
+    public function setOutput($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
+        $this->output = $var;
 
         return $this;
     }
