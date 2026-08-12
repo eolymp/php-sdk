@@ -23,16 +23,11 @@ class Field
      * Generated from protobuf enum <code>STATUS = 2;</code>
      */
     const STATUS = 2;
-    /**
-     * Generated from protobuf enum <code>AUTOMATIC = 3;</code>
-     */
-    const AUTOMATIC = 3;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
         self::SUMMARY => 'SUMMARY',
         self::STATUS => 'STATUS',
-        self::AUTOMATIC => 'AUTOMATIC',
     ];
 
     public static function name($value)

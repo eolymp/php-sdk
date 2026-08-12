@@ -50,10 +50,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $participant_id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID submission_id = 8;</code>
-     */
-    private $submission_id;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID created_by = 7;</code>
      */
     private $created_by;
@@ -77,7 +73,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $case_ref
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $problem_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $participant_id
-     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $submission_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $created_by
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $confirmed_by
      * }
@@ -281,28 +276,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
         $this->participant_id = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID submission_id = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getSubmissionId()
-    {
-        return $this->submission_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID submission_id = 8;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setSubmissionId($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
-        $this->submission_id = $arr;
 
         return $this;
     }
