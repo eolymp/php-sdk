@@ -216,13 +216,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $certification_config = null;
     /**
-     * Plagiarism configuration allows to configure plagiarism detection features for the contest.
-     * This feature requires space to support plagiarism.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.PlagiarismConfig plagiarism_config = 113;</code>
-     */
-    protected $plagiarism_config = null;
-    /**
      * Rating configuration allows to provide parameters for EloMMR rating calculation.
      * This feature requires space to support ratings.
      *
@@ -310,9 +303,6 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           Environment configuration allows to describe the environment in which the submissions are run.
      *     @type \Eolymp\Judge\Contest\CertificationConfig $certification_config
      *           Certification configuration allows to automatically issue participant certificates after finalization of the contest.
-     *     @type \Eolymp\Judge\Contest\PlagiarismConfig $plagiarism_config
-     *           Plagiarism configuration allows to configure plagiarism detection features for the contest.
-     *           This feature requires space to support plagiarism.
      *     @type \Eolymp\Judge\Contest\RatingConfig $rating_config
      *           Rating configuration allows to provide parameters for EloMMR rating calculation.
      *           This feature requires space to support ratings.
@@ -1285,44 +1275,6 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\CertificationConfig::class);
         $this->certification_config = $var;
-
-        return $this;
-    }
-
-    /**
-     * Plagiarism configuration allows to configure plagiarism detection features for the contest.
-     * This feature requires space to support plagiarism.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.PlagiarismConfig plagiarism_config = 113;</code>
-     * @return \Eolymp\Judge\Contest\PlagiarismConfig|null
-     */
-    public function getPlagiarismConfig()
-    {
-        return $this->plagiarism_config;
-    }
-
-    public function hasPlagiarismConfig()
-    {
-        return isset($this->plagiarism_config);
-    }
-
-    public function clearPlagiarismConfig()
-    {
-        unset($this->plagiarism_config);
-    }
-
-    /**
-     * Plagiarism configuration allows to configure plagiarism detection features for the contest.
-     * This feature requires space to support plagiarism.
-     *
-     * Generated from protobuf field <code>.eolymp.judge.Contest.PlagiarismConfig plagiarism_config = 113;</code>
-     * @param \Eolymp\Judge\Contest\PlagiarismConfig $var
-     * @return $this
-     */
-    public function setPlagiarismConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\PlagiarismConfig::class);
-        $this->plagiarism_config = $var;
 
         return $this;
     }

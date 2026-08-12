@@ -320,10 +320,9 @@ class ContestServiceClient {
     }
 
     /**
-     * AnalyzeContest examines the contest's submissions for plagiarism and, when the contest's plagiarism
-     * configuration asks for it, for signs that code was produced by generative AI; it requires a space which
-     * supports plagiarism detection. The work is asynchronous, so this call only starts it: follow the progress
-     * as an activity, and read what was found as automatically detected violations through ViolationService.
+     * AnalyzeContest examines the contest's submissions for plagiarism; it requires a space which supports
+     * plagiarism detection. The work is asynchronous, so this call only starts it: follow the progress as an
+     * activity, and read what was found as automatically detected violations through ViolationService.
      *
      * @param AnalyzeContestInput $input message
      * @param array $context request parameters
