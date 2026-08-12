@@ -7,11 +7,6 @@ namespace Eolymp\Judge\Violation;
 use UnexpectedValueException;
 
 /**
- * Confidence is how sure detection is, so that a review queue sorts a near-certainty above a hint. The
- * house position is that a dismissed case costs less than a case never raised, which only works if the
- * jury can tell the two apart. It is unset on a violation a jury filed: reporting one is not a
- * probabilistic claim.
- *
  * Protobuf type <code>eolymp.judge.Violation.Confidence</code>
  */
 class Confidence

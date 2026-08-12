@@ -130,6 +130,25 @@ class ViolationServiceClient {
      * concerned rather than the violations themselves, ParticipantService lists participants and can filter
      * them by having violations.
      *
+     * @param ListViolationEvidenceInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListViolationEvidenceOutput output message
+     */
+    public function ListViolationEvidence(ListViolationEvidenceInput $input, array $context = [])
+    {
+        $path = "/violations/".rawurlencode($input->getViolationId())."/evidence";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setViolationId("");
+
+        $context['name'] = "eolymp.judge.ViolationService/ListViolationEvidence";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListViolationEvidenceOutput::class, $context);
+    }
+
+    /**
      * @param ListViolationsInput $input message
      * @param array $context request parameters
      *

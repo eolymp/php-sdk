@@ -38,6 +38,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $confidence;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID case_ref = 12;</code>
+     */
+    private $case_ref;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID problem_id = 13;</code>
+     */
+    private $problem_id;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID participant_id = 6;</code>
      */
     private $participant_id;
@@ -66,6 +74,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $summary
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $automatic
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $confidence
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $case_ref
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $problem_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $participant_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $submission_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $created_by
@@ -205,6 +215,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->confidence = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID case_ref = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCaseRef()
+    {
+        return $this->case_ref;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID case_ref = 12;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCaseRef($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->case_ref = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID problem_id = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID problem_id = 13;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->problem_id = $arr;
 
         return $this;
     }

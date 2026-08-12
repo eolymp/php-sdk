@@ -18,6 +18,12 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * participant who received the violation
+     *
+     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $participant_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Violation.Status status = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $status = 0;
@@ -32,43 +38,19 @@ class Violation extends \Google\Protobuf\Internal\Message
      */
     protected $confidence = 0;
     /**
+     * Generated from protobuf field <code>string problem_id = 17;</code>
+     */
+    protected $problem_id = '';
+    /**
+     * Generated from protobuf field <code>string case_ref = 16 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $case_ref = '';
+    /**
      * short summary of the violation
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content summary = 14;</code>
      */
     protected $summary = null;
-    /**
-     * whether the violation was automatically detected by the system
-     *
-     * Generated from protobuf field <code>bool automatic = 4;</code>
-     */
-    protected $automatic = false;
-    /**
-     * participant who received the violation
-     *
-     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
-     */
-    protected $participant_id = '';
-    /**
-     * submission ID, if applicable
-     *
-     * Generated from protobuf field <code>string submission_id = 6 [deprecated = true, (.eolymp.api.read_only) = true];</code>
-     * @deprecated
-     */
-    protected $submission_id = '';
-    /**
-     * submission IDs, if applicable
-     *
-     * Generated from protobuf field <code>repeated string submissions = 9 [(.eolymp.api.read_only) = true];</code>
-     */
-    private $submissions;
-    /**
-     * short summary of the violation
-     *
-     * Generated from protobuf field <code>string summary_text = 3 [deprecated = true];</code>
-     * @deprecated
-     */
-    protected $summary_text = '';
     /**
      * user ID of the person who created the violation
      *
@@ -97,21 +79,15 @@ class Violation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $participant_id
+     *           participant who received the violation
      *     @type int $status
      *     @type int $type
      *     @type int $confidence
      *           how sure detection is, unset when a jury filed it
+     *     @type string $problem_id
+     *     @type string $case_ref
      *     @type \Eolymp\Ecm\Content $summary
-     *           short summary of the violation
-     *     @type bool $automatic
-     *           whether the violation was automatically detected by the system
-     *     @type string $participant_id
-     *           participant who received the violation
-     *     @type string $submission_id
-     *           submission ID, if applicable
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $submissions
-     *           submission IDs, if applicable
-     *     @type string $summary_text
      *           short summary of the violation
      *     @type string $created_by
      *           user ID of the person who created the violation
@@ -144,6 +120,32 @@ class Violation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * participant who received the violation
+     *
+     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getParticipantId()
+    {
+        return $this->participant_id;
+    }
+
+    /**
+     * participant who received the violation
+     *
+     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParticipantId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->participant_id = $var;
 
         return $this;
     }
@@ -219,6 +221,50 @@ class Violation extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string problem_id = 17;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string case_ref = 16 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getCaseRef()
+    {
+        return $this->case_ref;
+    }
+
+    /**
+     * Generated from protobuf field <code>string case_ref = 16 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCaseRef($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->case_ref = $var;
+
+        return $this;
+    }
+
+    /**
      * short summary of the violation
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content summary = 14;</code>
@@ -250,144 +296,6 @@ class Violation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->summary = $var;
-
-        return $this;
-    }
-
-    /**
-     * whether the violation was automatically detected by the system
-     *
-     * Generated from protobuf field <code>bool automatic = 4;</code>
-     * @return bool
-     */
-    public function getAutomatic()
-    {
-        return $this->automatic;
-    }
-
-    /**
-     * whether the violation was automatically detected by the system
-     *
-     * Generated from protobuf field <code>bool automatic = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAutomatic($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->automatic = $var;
-
-        return $this;
-    }
-
-    /**
-     * participant who received the violation
-     *
-     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
-     * @return string
-     */
-    public function getParticipantId()
-    {
-        return $this->participant_id;
-    }
-
-    /**
-     * participant who received the violation
-     *
-     * Generated from protobuf field <code>string participant_id = 5 [(.eolymp.api.read_only) = true];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setParticipantId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->participant_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * submission ID, if applicable
-     *
-     * Generated from protobuf field <code>string submission_id = 6 [deprecated = true, (.eolymp.api.read_only) = true];</code>
-     * @return string
-     * @deprecated
-     */
-    public function getSubmissionId()
-    {
-        @trigger_error('submission_id is deprecated.', E_USER_DEPRECATED);
-        return $this->submission_id;
-    }
-
-    /**
-     * submission ID, if applicable
-     *
-     * Generated from protobuf field <code>string submission_id = 6 [deprecated = true, (.eolymp.api.read_only) = true];</code>
-     * @param string $var
-     * @return $this
-     * @deprecated
-     */
-    public function setSubmissionId($var)
-    {
-        @trigger_error('submission_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
-        $this->submission_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * submission IDs, if applicable
-     *
-     * Generated from protobuf field <code>repeated string submissions = 9 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getSubmissions()
-    {
-        return $this->submissions;
-    }
-
-    /**
-     * submission IDs, if applicable
-     *
-     * Generated from protobuf field <code>repeated string submissions = 9 [(.eolymp.api.read_only) = true];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setSubmissions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->submissions = $arr;
-
-        return $this;
-    }
-
-    /**
-     * short summary of the violation
-     *
-     * Generated from protobuf field <code>string summary_text = 3 [deprecated = true];</code>
-     * @return string
-     * @deprecated
-     */
-    public function getSummaryText()
-    {
-        @trigger_error('summary_text is deprecated.', E_USER_DEPRECATED);
-        return $this->summary_text;
-    }
-
-    /**
-     * short summary of the violation
-     *
-     * Generated from protobuf field <code>string summary_text = 3 [deprecated = true];</code>
-     * @param string $var
-     * @return $this
-     * @deprecated
-     */
-    public function setSummaryText($var)
-    {
-        @trigger_error('summary_text is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
-        $this->summary_text = $var;
 
         return $this;
     }

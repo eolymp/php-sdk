@@ -26,7 +26,7 @@ class Type
      */
     const PLAGIARISM = 2;
     /**
-     * usage of generative AI tools, e.g. ChatGPT, Copilot, etc.
+     * usage of generative AI tools, e.g. ChatGPT, Claude, etc.
      *
      * Generated from protobuf enum <code>GEN_AI_USAGE = 3;</code>
      */
