@@ -40,10 +40,6 @@ class Field
      */
     const ENVIRONMENT_CONFIG = 4;
     /**
-     * Generated from protobuf enum <code>PLAGIARISM_CONFIG = 6;</code>
-     */
-    const PLAGIARISM_CONFIG = 6;
-    /**
      * Generated from protobuf enum <code>RATING_CONFIG = 7;</code>
      */
     const RATING_CONFIG = 7;
@@ -55,7 +51,6 @@ class Field
         self::SCOREBOARD_CONFIG => 'SCOREBOARD_CONFIG',
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
         self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
-        self::PLAGIARISM_CONFIG => 'PLAGIARISM_CONFIG',
         self::RATING_CONFIG => 'RATING_CONFIG',
     ];
 
