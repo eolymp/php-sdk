@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class RebuildScoreboardOutput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     */
+    protected $task_id = '';
 
     /**
      * Constructor.
@@ -20,11 +24,34 @@ class RebuildScoreboardOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $task_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Scoreboard\ScoreboardService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     * @return string
+     */
+    public function getTaskId()
+    {
+        return $this->task_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string task_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_id = $var;
+
+        return $this;
     }
 
 }
