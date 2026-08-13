@@ -18,9 +18,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString reference = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString resource = 2;</code>
      */
-    private $reference;
+    private $resource;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString type = 3;</code>
      */
@@ -37,7 +37,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $reference
+     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $resource
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $type
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
      * }
@@ -70,23 +70,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString reference = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString resource = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getReference()
+    public function getResource()
     {
-        return $this->reference;
+        return $this->resource;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString reference = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString resource = 2;</code>
      * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setReference($var)
+    public function setResource($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
-        $this->reference = $arr;
+        $this->resource = $arr;
 
         return $this;
     }

@@ -10,9 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Task represents a unit of background work executed by a service.
- * Tasks are created and executed internally by the owning service; this API exposes them as a
- * read-only projection for monitoring, cancellation and retries. Each service serves the shared
- * TaskService via the tasks library and the gateway proxies it under a per-resource path.
+ * Tasks are created and executed by the service which owns the work; this API exposes them for
+ * monitoring, cancellation and retries.
  *
  * Generated from protobuf message <code>eolymp.tasks.Task</code>
  */
@@ -29,11 +28,11 @@ class Task extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * Reference to the resource the task belongs to, e.g. "problem/42"; used for per-resource listing.
+     * Resource the task belongs to, e.g. "/problems/42". "/" means the space itself.
      *
-     * Generated from protobuf field <code>string reference = 3;</code>
+     * Generated from protobuf field <code>string resource = 3;</code>
      */
-    protected $reference = '';
+    protected $resource = '';
     /**
      * Generated from protobuf field <code>.eolymp.tasks.Task.Status status = 4;</code>
      */
@@ -115,8 +114,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $type
      *           Full proto message name of the payload; used as the task type for dispatch.
-     *     @type string $reference
-     *           Reference to the resource the task belongs to, e.g. "problem/42"; used for per-resource listing.
+     *     @type string $resource
+     *           Resource the task belongs to, e.g. "/problems/42". "/" means the space itself.
      *     @type int $status
      *     @type \Google\Protobuf\Struct $payload
      *           Display-only representation of the typed payload. The payload is a typed proto message internally;
@@ -197,27 +196,27 @@ class Task extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reference to the resource the task belongs to, e.g. "problem/42"; used for per-resource listing.
+     * Resource the task belongs to, e.g. "/problems/42". "/" means the space itself.
      *
-     * Generated from protobuf field <code>string reference = 3;</code>
+     * Generated from protobuf field <code>string resource = 3;</code>
      * @return string
      */
-    public function getReference()
+    public function getResource()
     {
-        return $this->reference;
+        return $this->resource;
     }
 
     /**
-     * Reference to the resource the task belongs to, e.g. "problem/42"; used for per-resource listing.
+     * Resource the task belongs to, e.g. "/problems/42". "/" means the space itself.
      *
-     * Generated from protobuf field <code>string reference = 3;</code>
+     * Generated from protobuf field <code>string resource = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setReference($var)
+    public function setResource($var)
     {
         GPBUtil::checkString($var, True);
-        $this->reference = $var;
+        $this->resource = $var;
 
         return $this;
     }

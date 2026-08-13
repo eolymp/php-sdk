@@ -5,8 +5,8 @@
 namespace Eolymp\Tasks;
 
     /**
-     * TaskService is the shared API for background tasks. It is served by each service via the tasks
-     * library and proxied by the gateway under a per-resource path (e.g. /contests/{contest_id}/tasks).
+     * TaskService lists background tasks in a space. Narrowing to a single entity is a filter, e.g.
+     * filters.resource=/problems/42.
      */
 class TaskServiceClient {
 
