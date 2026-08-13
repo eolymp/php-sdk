@@ -21,10 +21,6 @@ class Submission extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp submitted_at = 2;</code>
      */
     protected $submitted_at = null;
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Evidence.Span spans = 3;</code>
-     */
-    private $spans;
 
     /**
      * Constructor.
@@ -34,7 +30,6 @@ class Submission extends \Google\Protobuf\Internal\Message
      *
      *     @type string $submission_id
      *     @type \Google\Protobuf\Timestamp $submitted_at
-     *     @type array<\Eolymp\Judge\Evidence\Span>|\Google\Protobuf\Internal\RepeatedField $spans
      * }
      */
     public function __construct($data = NULL) {
@@ -92,28 +87,6 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->submitted_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Evidence.Span spans = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getSpans()
-    {
-        return $this->spans;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Evidence.Span spans = 3;</code>
-     * @param array<\Eolymp\Judge\Evidence\Span>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setSpans($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Evidence\Span::class);
-        $this->spans = $arr;
 
         return $this;
     }

@@ -167,6 +167,38 @@ class SubmissionServiceClient {
     }
 
     /**
+     * CompareSubmissions returns two programs and where they say the same thing: both sources, and the runs
+     * their normalised token streams share as line ranges on each side, longest first.
+     *
+     * The sources come back with the ranges because the ranges are useless without them, and because line
+     * numbers only mean something against the exact text they were measured on. It answers "where do these two
+     * match", which is what somebody reading a copying case needs, and it is computed on request rather than
+     * stored: a match follows from two sources which never change. The comparison is lexical rather than
+     * textual — identifiers and literals have already collapsed by the time it runs, so a passage that was
+     * renamed and reformatted still lines up, which a line diff cannot do.
+     *
+     * The sources are returned whatever the languages are; matches are not, for submissions in different
+     * language families or in a language with no tokeniser spec, since neither can be compared at all.
+     *
+     * @param CompareSubmissionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return CompareSubmissionsOutput output message
+     */
+    public function CompareSubmissions(CompareSubmissionsInput $input, array $context = [])
+    {
+        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/compare";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.atlas.SubmissionService/CompareSubmissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, CompareSubmissionsOutput::class, $context);
+    }
+
+    /**
      * AggregateSubmissions reports a metric per group over a time range and is what charts use instead of
      * listing every submission. Up to two grouping dimensions are allowed, and time buckets with no
      * submissions come back as zeroes rather than being skipped. Reading analytics needs its own permission,

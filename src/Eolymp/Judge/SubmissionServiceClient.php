@@ -126,6 +126,35 @@ class SubmissionServiceClient {
     }
 
     /**
+     * CompareSubmissions returns two of the contest's submissions and where they say the same thing: both
+     * sources, and the runs their normalised token streams share as line ranges on each side, longest first.
+     *
+     * It is what a copying case is read with. The case names two submissions and how much of the shorter one
+     * they share; this says which part, without a reviewer hunting for it in two files.
+     *
+     * Both submissions must belong to the contest, and the permission asked for is the contest's: whoever may
+     * review its submissions may compare them. Nobody needs rights over the submissions anywhere else, which
+     * is the point of asking judge rather than atlas.
+     *
+     * @param CompareSubmissionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return CompareSubmissionsOutput output message
+     */
+    public function CompareSubmissions(CompareSubmissionsInput $input, array $context = [])
+    {
+        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/compare";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSubmissionId("");
+
+        $context['name'] = "eolymp.judge.SubmissionService/CompareSubmissions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, CompareSubmissionsOutput::class, $context);
+    }
+
+    /**
      * RetestSubmission re-evaluates an existing submission in place, which is what the console calls
      * "rejudge": the previous results are discarded while the submission keeps its ID, its submission time
      * and its position in listings. The score it contributes can come out different, so the participant's
