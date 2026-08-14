@@ -26,6 +26,14 @@ class ImportProblemTask extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string problem_link = 2;</code>
      */
     protected $problem_link = '';
+    /**
+     * Whether everything the origin keeps behind PROBLEM_TESTING — tests, checker, validator,
+     * interactor, templates — is imported as secret. Decided from what the person asking for the import
+     * may see of the origin, so that importing cannot be used to read what they could not read directly.
+     *
+     * Generated from protobuf field <code>bool secret = 3;</code>
+     */
+    protected $secret = false;
 
     /**
      * Constructor.
@@ -36,6 +44,10 @@ class ImportProblemTask extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $problem_link
      *           origin link the problem is imported from
+     *     @type bool $secret
+     *           Whether everything the origin keeps behind PROBLEM_TESTING — tests, checker, validator,
+     *           interactor, templates — is imported as secret. Decided from what the person asking for the import
+     *           may see of the origin, so that importing cannot be used to read what they could not read directly.
      * }
      */
     public function __construct($data = NULL) {
@@ -87,6 +99,36 @@ class ImportProblemTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Whether everything the origin keeps behind PROBLEM_TESTING — tests, checker, validator,
+     * interactor, templates — is imported as secret. Decided from what the person asking for the import
+     * may see of the origin, so that importing cannot be used to read what they could not read directly.
+     *
+     * Generated from protobuf field <code>bool secret = 3;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return $this->secret;
+    }
+
+    /**
+     * Whether everything the origin keeps behind PROBLEM_TESTING — tests, checker, validator,
+     * interactor, templates — is imported as secret. Decided from what the person asking for the import
+     * may see of the origin, so that importing cannot be used to read what they could not read directly.
+     *
+     * Generated from protobuf field <code>bool secret = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
 
         return $this;
     }

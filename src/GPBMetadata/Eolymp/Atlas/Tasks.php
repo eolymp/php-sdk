@@ -16,12 +16,13 @@ class Tasks
         }
         $pool->internalAddGeneratedFile(
             '
-ı
-eolymp/atlas/tasks.protoeolymp.atlas"=
+
+eolymp/atlas/tasks.protoeolymp.atlas"M
 ImportProblemTask
 
 problem_id (	
-problem_link (	"u
+problem_link (	
+secret ("u
 TranslateStatementsTask
 
 problem_id (	
