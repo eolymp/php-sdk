@@ -28,6 +28,7 @@ class Evidence extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type \Eolymp\Judge\Evidence\Submission $submission
      *     @type \Eolymp\Judge\Evidence\Pair $pair
+     *     @type \Eolymp\Judge\Evidence\Session $session
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +108,33 @@ class Evidence extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Evidence\Pair::class);
         $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Evidence.Session session = 12;</code>
+     * @return \Eolymp\Judge\Evidence\Session|null
+     */
+    public function getSession()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasSession()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Evidence.Session session = 12;</code>
+     * @param \Eolymp\Judge\Evidence\Session $var
+     * @return $this
+     */
+    public function setSession($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Evidence\Session::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }
