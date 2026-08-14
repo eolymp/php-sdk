@@ -43,6 +43,12 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
      */
     protected $order = 0;
+    /**
+     * Order by this attribute's value. Mutually exclusive with sort_contest_id.
+     *
+     * Generated from protobuf field <code>string sort_attribute_key = 52;</code>
+     */
+    protected $sort_attribute_key = '';
 
     /**
      * Constructor.
@@ -58,6 +64,8 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *     @type string $sort_contest_id
      *           Order by this contest's score rather than by the total.
      *     @type int $order
+     *     @type string $sort_attribute_key
+     *           Order by this attribute's value. Mutually exclusive with sort_contest_id.
      * }
      */
     public function __construct($data = NULL) {
@@ -229,6 +237,32 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Wellknown\Direction::class);
         $this->order = $var;
+
+        return $this;
+    }
+
+    /**
+     * Order by this attribute's value. Mutually exclusive with sort_contest_id.
+     *
+     * Generated from protobuf field <code>string sort_attribute_key = 52;</code>
+     * @return string
+     */
+    public function getSortAttributeKey()
+    {
+        return $this->sort_attribute_key;
+    }
+
+    /**
+     * Order by this attribute's value. Mutually exclusive with sort_contest_id.
+     *
+     * Generated from protobuf field <code>string sort_attribute_key = 52;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSortAttributeKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sort_attribute_key = $var;
 
         return $this;
     }

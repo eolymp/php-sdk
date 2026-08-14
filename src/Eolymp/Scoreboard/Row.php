@@ -65,6 +65,10 @@ class Row extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.scoreboard.Row.ContestScore contests = 50;</code>
      */
     private $contests;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Row.AttributeValue attributes = 51;</code>
+     */
+    private $attributes;
 
     /**
      * Constructor.
@@ -86,6 +90,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type bool $unofficial
      *     @type bool $disqualified
      *     @type array<\Eolymp\Scoreboard\Row\ContestScore>|\Google\Protobuf\Internal\RepeatedField $contests
+     *     @type array<\Eolymp\Scoreboard\Row\AttributeValue>|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -361,6 +366,28 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\Row\ContestScore::class);
         $this->contests = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Row.AttributeValue attributes = 51;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Row.AttributeValue attributes = 51;</code>
+     * @param array<\Eolymp\Scoreboard\Row\AttributeValue>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\Row\AttributeValue::class);
+        $this->attributes = $arr;
 
         return $this;
     }

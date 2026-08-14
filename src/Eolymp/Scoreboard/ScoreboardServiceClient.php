@@ -160,6 +160,47 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * Adding a key the scoreboard already shows updates its index and label, so there is no separate update.
+     *
+     * @param AddScoreboardAttributeInput $input message
+     * @param array $context request parameters
+     *
+     * @return AddScoreboardAttributeOutput output message
+     */
+    public function AddScoreboardAttribute(AddScoreboardAttributeInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/attributes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/AddScoreboardAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddScoreboardAttributeOutput::class, $context);
+    }
+
+    /**
+     * @param RemoveScoreboardAttributeInput $input message
+     * @param array $context request parameters
+     *
+     * @return RemoveScoreboardAttributeOutput output message
+     */
+    public function RemoveScoreboardAttribute(RemoveScoreboardAttributeInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/RemoveScoreboardAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveScoreboardAttributeOutput::class, $context);
+    }
+
+    /**
      * @param ListScoreboardRowsInput $input message
      * @param array $context request parameters
      *

@@ -21,6 +21,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool disqualified = 11;</code>
      */
     private $disqualified;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.ListScoreboardRowsInput.ExpressionAttribute attributes = 12;</code>
+     */
+    private $attributes;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $unofficial
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $disqualified
+     *     @type array<\Eolymp\Scoreboard\ListScoreboardRowsInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->disqualified = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.ListScoreboardRowsInput.ExpressionAttribute attributes = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.ListScoreboardRowsInput.ExpressionAttribute attributes = 12;</code>
+     * @param array<\Eolymp\Scoreboard\ListScoreboardRowsInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\ListScoreboardRowsInput\ExpressionAttribute::class);
+        $this->attributes = $arr;
 
         return $this;
     }

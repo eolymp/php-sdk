@@ -41,6 +41,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Contest contests = 10;</code>
      */
     private $contests;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Attribute attributes = 11;</code>
+     */
+    private $attributes;
 
     /**
      * Constructor.
@@ -56,6 +60,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *           Count only this many best contests per member towards the total; zero counts all of them.
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $modes
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $contests
+     *     @type array<\Eolymp\Scoreboard\Scoreboard\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -199,6 +204,28 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\Scoreboard\Contest::class);
         $this->contests = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Attribute attributes = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Attribute attributes = 11;</code>
+     * @param array<\Eolymp\Scoreboard\Scoreboard\Attribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\Scoreboard\Attribute::class);
+        $this->attributes = $arr;
 
         return $this;
     }
