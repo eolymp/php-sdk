@@ -18,13 +18,13 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
      */
     protected $attribute_key = '';
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt number = 10;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 10;</code>
      */
-    protected $number = null;
+    private $number;
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 11;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString string = 11;</code>
      */
-    protected $string = null;
+    private $string;
 
     /**
      * Constructor.
@@ -33,8 +33,8 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $attribute_key
-     *     @type \Eolymp\Wellknown\ExpressionInt $number
-     *     @type \Eolymp\Wellknown\ExpressionString $string
+     *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $number
+     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $string
      * }
      */
     public function __construct($data = NULL) {
@@ -65,65 +65,45 @@ class ExpressionAttribute extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt number = 10;</code>
-     * @return \Eolymp\Wellknown\ExpressionInt|null
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getNumber()
     {
         return $this->number;
     }
 
-    public function hasNumber()
-    {
-        return isset($this->number);
-    }
-
-    public function clearNumber()
-    {
-        unset($this->number);
-    }
-
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionInt number = 10;</code>
-     * @param \Eolymp\Wellknown\ExpressionInt $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionInt number = 10;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setNumber($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Wellknown\ExpressionInt::class);
-        $this->number = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
+        $this->number = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 11;</code>
-     * @return \Eolymp\Wellknown\ExpressionString|null
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString string = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getString()
     {
         return $this->string;
     }
 
-    public function hasString()
-    {
-        return isset($this->string);
-    }
-
-    public function clearString()
-    {
-        unset($this->string);
-    }
-
     /**
-     * Generated from protobuf field <code>.eolymp.wellknown.ExpressionString string = 11;</code>
-     * @param \Eolymp\Wellknown\ExpressionString $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString string = 11;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setString($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Wellknown\ExpressionString::class);
-        $this->string = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $this->string = $arr;
 
         return $this;
     }
