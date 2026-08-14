@@ -17,6 +17,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class Session extends \Google\Protobuf\Internal\Message
 {
     /**
+     * which finding this is the evidence for, e.g. solved_in_burst
+     *
+     * Generated from protobuf field <code>string rule = 6;</code>
+     */
+    protected $rule = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp from = 1;</code>
      */
     protected $from = null;
@@ -47,6 +53,8 @@ class Session extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $rule
+     *           which finding this is the evidence for, e.g. solved_in_burst
      *     @type \Google\Protobuf\Timestamp $from
      *     @type \Google\Protobuf\Timestamp $to
      *     @type float $value
@@ -59,6 +67,32 @@ class Session extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Evidence::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * which finding this is the evidence for, e.g. solved_in_burst
+     *
+     * Generated from protobuf field <code>string rule = 6;</code>
+     * @return string
+     */
+    public function getRule()
+    {
+        return $this->rule;
+    }
+
+    /**
+     * which finding this is the evidence for, e.g. solved_in_burst
+     *
+     * Generated from protobuf field <code>string rule = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRule($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->rule = $var;
+
+        return $this;
     }
 
     /**
