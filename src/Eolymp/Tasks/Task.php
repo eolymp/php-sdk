@@ -104,6 +104,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string created_by = 15;</code>
      */
     protected $created_by = '';
+    /**
+     * canonical URL of the resource, e.g. "https://api.eolymp.com/spaces/abc/problems/42"
+     *
+     * Generated from protobuf field <code>string resource_link = 16;</code>
+     */
+    protected $resource_link = '';
 
     /**
      * Constructor.
@@ -140,6 +146,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           time the task reached a terminal state
      *     @type string $created_by
      *           user ID of the task creator, if created by a user
+     *     @type string $resource_link
+     *           canonical URL of the resource, e.g. "https://api.eolymp.com/spaces/abc/problems/42"
      * }
      */
     public function __construct($data = NULL) {
@@ -567,6 +575,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->created_by = $var;
+
+        return $this;
+    }
+
+    /**
+     * canonical URL of the resource, e.g. "https://api.eolymp.com/spaces/abc/problems/42"
+     *
+     * Generated from protobuf field <code>string resource_link = 16;</code>
+     * @return string
+     */
+    public function getResourceLink()
+    {
+        return $this->resource_link;
+    }
+
+    /**
+     * canonical URL of the resource, e.g. "https://api.eolymp.com/spaces/abc/problems/42"
+     *
+     * Generated from protobuf field <code>string resource_link = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_link = $var;
 
         return $this;
     }
