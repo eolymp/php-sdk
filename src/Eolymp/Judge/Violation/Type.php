@@ -31,12 +31,19 @@ class Type
      * Generated from protobuf enum <code>GEN_AI_USAGE = 3;</code>
      */
     const GEN_AI_USAGE = 3;
+    /**
+     * how the contest was worked through, e.g. a hard problem solved first try minutes after starting
+     *
+     * Generated from protobuf enum <code>BEHAVIOUR = 4;</code>
+     */
+    const BEHAVIOUR = 4;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::OTHER => 'OTHER',
         self::PLAGIARISM => 'PLAGIARISM',
         self::GEN_AI_USAGE => 'GEN_AI_USAGE',
+        self::BEHAVIOUR => 'BEHAVIOUR',
     ];
 
     public static function name($value)
