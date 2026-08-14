@@ -99,6 +99,31 @@ class AssetServiceClient {
     }
 
     /**
+     * DeleteAsset removes an asset and the object behind it, after which the asset URL stops resolving. Copies already
+     * cached by the CDN are still served until they expire.
+     *
+     * An asset in use, that is one some resource has been tagged with using UseAsset API, can not be deleted. Update or
+     * delete the resource referencing it first.
+     *
+     * @param DeleteAssetInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteAssetOutput output message
+     */
+    public function DeleteAsset(DeleteAssetInput $input, array $context = [])
+    {
+        $path = "/assets/".rawurlencode($input->getAssetId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setAssetId("");
+
+        $context['name'] = "eolymp.asset.AssetService/DeleteAsset";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAssetOutput::class, $context);
+    }
+
+    /**
      * StartMultipartUpload creates an upload_id, which then can be used with UploadPart API to upload file in parts of 5MB
      *
      * @param StartMultipartUploadInput $input message
