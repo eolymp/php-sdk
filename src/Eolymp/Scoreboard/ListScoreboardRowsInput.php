@@ -34,21 +34,10 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
-     * Order by this contest's score rather than by the total.
-     *
-     * Generated from protobuf field <code>string sort_contest_id = 50;</code>
-     */
-    protected $sort_contest_id = '';
-    /**
      * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
      */
     protected $order = 0;
-    /**
-     * Order by this attribute's value. Mutually exclusive with sort_contest_id.
-     *
-     * Generated from protobuf field <code>string sort_attribute_key = 52;</code>
-     */
-    protected $sort_attribute_key = '';
+    protected $sort;
 
     /**
      * Constructor.
@@ -61,11 +50,11 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Scoreboard\ListScoreboardRowsInput\Filter $filters
-     *     @type string $sort_contest_id
-     *           Order by this contest's score rather than by the total.
      *     @type int $order
+     *     @type string $sort_contest_id
+     *           Order by this contest's score.
      *     @type string $sort_attribute_key
-     *           Order by this attribute's value. Mutually exclusive with sort_contest_id.
+     *           Order by this attribute's value.
      * }
      */
     public function __construct($data = NULL) {
@@ -194,32 +183,6 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Order by this contest's score rather than by the total.
-     *
-     * Generated from protobuf field <code>string sort_contest_id = 50;</code>
-     * @return string
-     */
-    public function getSortContestId()
-    {
-        return $this->sort_contest_id;
-    }
-
-    /**
-     * Order by this contest's score rather than by the total.
-     *
-     * Generated from protobuf field <code>string sort_contest_id = 50;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSortContestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->sort_contest_id = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.eolymp.wellknown.Direction order = 51;</code>
      * @return int
      */
@@ -242,18 +205,54 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Order by this attribute's value. Mutually exclusive with sort_contest_id.
+     * Order by this contest's score.
+     *
+     * Generated from protobuf field <code>string sort_contest_id = 50;</code>
+     * @return string
+     */
+    public function getSortContestId()
+    {
+        return $this->readOneof(50);
+    }
+
+    public function hasSortContestId()
+    {
+        return $this->hasOneof(50);
+    }
+
+    /**
+     * Order by this contest's score.
+     *
+     * Generated from protobuf field <code>string sort_contest_id = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSortContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(50, $var);
+
+        return $this;
+    }
+
+    /**
+     * Order by this attribute's value.
      *
      * Generated from protobuf field <code>string sort_attribute_key = 52;</code>
      * @return string
      */
     public function getSortAttributeKey()
     {
-        return $this->sort_attribute_key;
+        return $this->readOneof(52);
+    }
+
+    public function hasSortAttributeKey()
+    {
+        return $this->hasOneof(52);
     }
 
     /**
-     * Order by this attribute's value. Mutually exclusive with sort_contest_id.
+     * Order by this attribute's value.
      *
      * Generated from protobuf field <code>string sort_attribute_key = 52;</code>
      * @param string $var
@@ -262,9 +261,17 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     public function setSortAttributeKey($var)
     {
         GPBUtil::checkString($var, True);
-        $this->sort_attribute_key = $var;
+        $this->writeOneof(52, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->whichOneof("sort");
     }
 
 }
