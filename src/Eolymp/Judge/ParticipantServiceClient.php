@@ -129,29 +129,6 @@ class ParticipantServiceClient {
     }
 
     /**
-     * AnalyzeParticipant looks for plagiarism, cheating and other violations in this one participant's
-     * submissions, rather than across the whole contest as AnalyzeContest does. Whatever it finds is
-     * recorded as a violation against the participant instead of being returned in the response.
-     *
-     * @param AnalyzeParticipantInput $input message
-     * @param array $context request parameters
-     *
-     * @return AnalyzeParticipantOutput output message
-     */
-    public function AnalyzeParticipant(AnalyzeParticipantInput $input, array $context = [])
-    {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/analyze";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setParticipantId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/AnalyzeParticipant";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AnalyzeParticipantOutput::class, $context);
-    }
-
-    /**
      * DisqualifyParticipant marks a participant as disqualified and records the reason behind the
      * decision, which stays with the record. There is no separate method to reverse it: call this one
      * again with disqualification turned off to reinstate the participant.
