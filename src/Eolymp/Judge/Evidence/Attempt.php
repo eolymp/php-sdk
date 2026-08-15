@@ -29,6 +29,12 @@ class Attempt extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Submission.Verdict verdict = 4;</code>
      */
     protected $verdict = 0;
+    /**
+     * how much of the previous attempt at this problem this one replaced, in [0, 1]
+     *
+     * Generated from protobuf field <code>optional float changed = 5;</code>
+     */
+    protected $changed = null;
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class Attempt extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type \Google\Protobuf\Timestamp $submitted_at
      *     @type int $verdict
+     *     @type float $changed
+     *           how much of the previous attempt at this problem this one replaced, in [0, 1]
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +149,42 @@ class Attempt extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Submission\Verdict::class);
         $this->verdict = $var;
+
+        return $this;
+    }
+
+    /**
+     * how much of the previous attempt at this problem this one replaced, in [0, 1]
+     *
+     * Generated from protobuf field <code>optional float changed = 5;</code>
+     * @return float
+     */
+    public function getChanged()
+    {
+        return isset($this->changed) ? $this->changed : 0.0;
+    }
+
+    public function hasChanged()
+    {
+        return isset($this->changed);
+    }
+
+    public function clearChanged()
+    {
+        unset($this->changed);
+    }
+
+    /**
+     * how much of the previous attempt at this problem this one replaced, in [0, 1]
+     *
+     * Generated from protobuf field <code>optional float changed = 5;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setChanged($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->changed = $var;
 
         return $this;
     }
