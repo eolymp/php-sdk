@@ -34,6 +34,10 @@ class Log extends \Google\Protobuf\Internal\Message
      */
     private $context;
     /**
+     * Generated from protobuf field <code>.eolymp.automation.Log.Status status = 7;</code>
+     */
+    protected $status = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.automation.Log.Message messages = 100;</code>
      */
     private $messages;
@@ -53,6 +57,7 @@ class Log extends \Google\Protobuf\Internal\Message
      *     @type int $trigger
      *     @type bool $dry_run
      *     @type array|\Google\Protobuf\Internal\MapField $context
+     *     @type int $status
      *     @type array<\Eolymp\Automation\Log\Message>|\Google\Protobuf\Internal\RepeatedField $messages
      *     @type \Google\Protobuf\Timestamp $created_at
      * }
@@ -168,6 +173,28 @@ class Log extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->context = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.automation.Log.Status status = 7;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.automation.Log.Status status = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Automation\Log\Status::class);
+        $this->status = $var;
 
         return $this;
     }

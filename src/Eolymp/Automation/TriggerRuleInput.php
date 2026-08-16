@@ -25,6 +25,10 @@ class TriggerRuleInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool dry_run = 3;</code>
      */
     protected $dry_run = false;
+    /**
+     * Generated from protobuf field <code>string log_id = 4;</code>
+     */
+    protected $log_id = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class TriggerRuleInput extends \Google\Protobuf\Internal\Message
      *     @type string $rule_id
      *     @type array|\Google\Protobuf\Internal\MapField $references
      *     @type bool $dry_run
+     *     @type string $log_id
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class TriggerRuleInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->dry_run = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string log_id = 4;</code>
+     * @return string
+     */
+    public function getLogId()
+    {
+        return $this->log_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string log_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLogId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->log_id = $var;
 
         return $this;
     }
