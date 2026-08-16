@@ -28,15 +28,17 @@ class ToolCall extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct arguments = 4;</code>
-     */
-    protected $arguments = null;
-    /**
-     * returned by the tool when status is SUCCESS
+     * JSON object, incomplete until the call is made
      *
-     * Generated from protobuf field <code>.google.protobuf.Value result = 5;</code>
+     * Generated from protobuf field <code>string arguments = 4;</code>
      */
-    protected $result = null;
+    protected $arguments = '';
+    /**
+     * JSON returned by the tool when status is SUCCESS
+     *
+     * Generated from protobuf field <code>string result = 5;</code>
+     */
+    protected $result = '';
     /**
      * set when status is ERROR
      *
@@ -54,9 +56,10 @@ class ToolCall extends \Google\Protobuf\Internal\Message
      *           unique tool call ID, used to approve or reject the call
      *     @type string $name
      *     @type int $status
-     *     @type \Google\Protobuf\Struct $arguments
-     *     @type \Google\Protobuf\Value $result
-     *           returned by the tool when status is SUCCESS
+     *     @type string $arguments
+     *           JSON object, incomplete until the call is made
+     *     @type string $result
+     *           JSON returned by the tool when status is SUCCESS
      *     @type string $error
      *           set when status is ERROR
      * }
@@ -137,68 +140,52 @@ class ToolCall extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct arguments = 4;</code>
-     * @return \Google\Protobuf\Struct|null
+     * JSON object, incomplete until the call is made
+     *
+     * Generated from protobuf field <code>string arguments = 4;</code>
+     * @return string
      */
     public function getArguments()
     {
         return $this->arguments;
     }
 
-    public function hasArguments()
-    {
-        return isset($this->arguments);
-    }
-
-    public function clearArguments()
-    {
-        unset($this->arguments);
-    }
-
     /**
-     * Generated from protobuf field <code>.google.protobuf.Struct arguments = 4;</code>
-     * @param \Google\Protobuf\Struct $var
+     * JSON object, incomplete until the call is made
+     *
+     * Generated from protobuf field <code>string arguments = 4;</code>
+     * @param string $var
      * @return $this
      */
     public function setArguments($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
+        GPBUtil::checkString($var, True);
         $this->arguments = $var;
 
         return $this;
     }
 
     /**
-     * returned by the tool when status is SUCCESS
+     * JSON returned by the tool when status is SUCCESS
      *
-     * Generated from protobuf field <code>.google.protobuf.Value result = 5;</code>
-     * @return \Google\Protobuf\Value|null
+     * Generated from protobuf field <code>string result = 5;</code>
+     * @return string
      */
     public function getResult()
     {
         return $this->result;
     }
 
-    public function hasResult()
-    {
-        return isset($this->result);
-    }
-
-    public function clearResult()
-    {
-        unset($this->result);
-    }
-
     /**
-     * returned by the tool when status is SUCCESS
+     * JSON returned by the tool when status is SUCCESS
      *
-     * Generated from protobuf field <code>.google.protobuf.Value result = 5;</code>
-     * @param \Google\Protobuf\Value $var
+     * Generated from protobuf field <code>string result = 5;</code>
+     * @param string $var
      * @return $this
      */
     public function setResult($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Value::class);
+        GPBUtil::checkString($var, True);
         $this->result = $var;
 
         return $this;
