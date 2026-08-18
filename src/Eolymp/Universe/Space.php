@@ -20,13 +20,13 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * space url
+     * deprecated: use resource_link
      *
      * Generated from protobuf field <code>string url = 3;</code>
      */
     protected $url = '';
     /**
-     * space home page URL
+     * deprecated: use space_link
      *
      * Generated from protobuf field <code>string home_url = 50;</code>
      */
@@ -38,11 +38,35 @@ class Space extends \Google\Protobuf\Internal\Message
      */
     protected $issuer_url = '';
     /**
-     * space graphql endpoint
+     * deprecated: use graphql_link
      *
      * Generated from protobuf field <code>string graphql_url = 52;</code>
      */
     protected $graphql_url = '';
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $resource_link = '';
+    /**
+     * the space's own site, where its content is read
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $space_link = '';
+    /**
+     * where the space is administered in the console
+     *
+     * Generated from protobuf field <code>string console_link = 1003 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $console_link = '';
+    /**
+     * the space's GraphQL endpoint
+     *
+     * Generated from protobuf field <code>string graphql_link = 1004 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $graphql_link = '';
     /**
      * space key used to build URLs
      *
@@ -109,13 +133,21 @@ class Space extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *           space unique identifier
      *     @type string $url
-     *           space url
+     *           deprecated: use resource_link
      *     @type string $home_url
-     *           space home page URL
+     *           deprecated: use space_link
      *     @type string $issuer_url
      *           space issuer URL (used for issuing tokens)
      *     @type string $graphql_url
-     *           space graphql endpoint
+     *           deprecated: use graphql_link
+     *     @type string $resource_link
+     *           canonical URL of this resource in the API
+     *     @type string $space_link
+     *           the space's own site, where its content is read
+     *     @type string $console_link
+     *           where the space is administered in the console
+     *     @type string $graphql_link
+     *           the space's GraphQL endpoint
      *     @type string $key
      *           space key used to build URLs
      *     @type string $name
@@ -168,7 +200,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space url
+     * deprecated: use resource_link
      *
      * Generated from protobuf field <code>string url = 3;</code>
      * @return string
@@ -179,7 +211,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space url
+     * deprecated: use resource_link
      *
      * Generated from protobuf field <code>string url = 3;</code>
      * @param string $var
@@ -194,7 +226,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space home page URL
+     * deprecated: use space_link
      *
      * Generated from protobuf field <code>string home_url = 50;</code>
      * @return string
@@ -205,7 +237,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space home page URL
+     * deprecated: use space_link
      *
      * Generated from protobuf field <code>string home_url = 50;</code>
      * @param string $var
@@ -246,7 +278,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space graphql endpoint
+     * deprecated: use graphql_link
      *
      * Generated from protobuf field <code>string graphql_url = 52;</code>
      * @return string
@@ -257,7 +289,7 @@ class Space extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * space graphql endpoint
+     * deprecated: use graphql_link
      *
      * Generated from protobuf field <code>string graphql_url = 52;</code>
      * @param string $var
@@ -267,6 +299,110 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->graphql_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getResourceLink()
+    {
+        return $this->resource_link;
+    }
+
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * the space's own site, where its content is read
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getSpaceLink()
+    {
+        return $this->space_link;
+    }
+
+    /**
+     * the space's own site, where its content is read
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * where the space is administered in the console
+     *
+     * Generated from protobuf field <code>string console_link = 1003 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getConsoleLink()
+    {
+        return $this->console_link;
+    }
+
+    /**
+     * where the space is administered in the console
+     *
+     * Generated from protobuf field <code>string console_link = 1003 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setConsoleLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->console_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * the space's GraphQL endpoint
+     *
+     * Generated from protobuf field <code>string graphql_link = 1004 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getGraphqlLink()
+    {
+        return $this->graphql_link;
+    }
+
+    /**
+     * the space's GraphQL endpoint
+     *
+     * Generated from protobuf field <code>string graphql_link = 1004 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGraphqlLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->graphql_link = $var;
 
         return $this;
     }
