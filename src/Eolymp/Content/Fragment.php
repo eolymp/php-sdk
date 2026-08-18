@@ -18,6 +18,24 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $resource_link = '';
+    /**
+     * page on the space's own site, empty when it has none
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $space_link = '';
+    /**
+     * page in the console
+     *
+     * Generated from protobuf field <code>string console_link = 1003 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $console_link = '';
+    /**
      * Generated from protobuf field <code>string path = 10;</code>
      */
     protected $path = '';
@@ -73,6 +91,12 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $resource_link
+     *           canonical URL of this resource in the API
+     *     @type string $space_link
+     *           page on the space's own site, empty when it has none
+     *     @type string $console_link
+     *           page in the console
      *     @type string $path
      *     @type string $locale
      *           locale of the translation being read, empty when reading the fragment itself
@@ -112,6 +136,84 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getResourceLink()
+    {
+        return $this->resource_link;
+    }
+
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * page on the space's own site, empty when it has none
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getSpaceLink()
+    {
+        return $this->space_link;
+    }
+
+    /**
+     * page on the space's own site, empty when it has none
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * page in the console
+     *
+     * Generated from protobuf field <code>string console_link = 1003 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getConsoleLink()
+    {
+        return $this->console_link;
+    }
+
+    /**
+     * page in the console
+     *
+     * Generated from protobuf field <code>string console_link = 1003 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setConsoleLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->console_link = $var;
 
         return $this;
     }
