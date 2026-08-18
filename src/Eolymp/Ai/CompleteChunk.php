@@ -45,6 +45,10 @@ class CompleteChunk extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ai.FinishReason finish_reason = 8;</code>
      */
     protected $finish_reason = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.ServerToolResult server_tool_result = 9;</code>
+     */
+    protected $server_tool_result = null;
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class CompleteChunk extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ai\Message\ToolResult $result
      *     @type \Eolymp\Ai\Usage $usage
      *     @type int $finish_reason
+     *     @type \Eolymp\Ai\Message\ServerToolResult $server_tool_result
      * }
      */
     public function __construct($data = NULL) {
@@ -269,6 +274,38 @@ class CompleteChunk extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Ai\FinishReason::class);
         $this->finish_reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.ServerToolResult server_tool_result = 9;</code>
+     * @return \Eolymp\Ai\Message\ServerToolResult|null
+     */
+    public function getServerToolResult()
+    {
+        return $this->server_tool_result;
+    }
+
+    public function hasServerToolResult()
+    {
+        return isset($this->server_tool_result);
+    }
+
+    public function clearServerToolResult()
+    {
+        unset($this->server_tool_result);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.ServerToolResult server_tool_result = 9;</code>
+     * @param \Eolymp\Ai\Message\ServerToolResult $var
+     * @return $this
+     */
+    public function setServerToolResult($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ai\Message\ServerToolResult::class);
+        $this->server_tool_result = $var;
 
         return $this;
     }

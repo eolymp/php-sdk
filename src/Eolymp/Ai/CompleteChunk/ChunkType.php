@@ -55,6 +55,10 @@ class ChunkType
      * Generated from protobuf enum <code>FINISH = 10;</code>
      */
     const FINISH = 10;
+    /**
+     * Generated from protobuf enum <code>SERVER_TOOL_RESULT = 11;</code>
+     */
+    const SERVER_TOOL_RESULT = 11;
 
     private static $valueToName = [
         self::UNKNOWN_CHUNK_TYPE => 'UNKNOWN_CHUNK_TYPE',
@@ -68,6 +72,7 @@ class ChunkType
         self::TOOL_RESULT => 'TOOL_RESULT',
         self::USAGE => 'USAGE',
         self::FINISH => 'FINISH',
+        self::SERVER_TOOL_RESULT => 'SERVER_TOOL_RESULT',
     ];
 
     public static function name($value)

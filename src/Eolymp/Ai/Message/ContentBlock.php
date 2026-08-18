@@ -37,6 +37,10 @@ class ContentBlock extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ai.Message.Image image = 6;</code>
      */
     protected $image = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.ServerToolResult server_tool_result = 7;</code>
+     */
+    protected $server_tool_result = null;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class ContentBlock extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ai\Message\ToolCall $tool_call
      *     @type \Eolymp\Ai\Message\ToolResult $tool_result
      *     @type \Eolymp\Ai\Message\Image $image
+     *     @type \Eolymp\Ai\Message\ServerToolResult $server_tool_result
      * }
      */
     public function __construct($data = NULL) {
@@ -215,6 +220,38 @@ class ContentBlock extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ai\Message\Image::class);
         $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.ServerToolResult server_tool_result = 7;</code>
+     * @return \Eolymp\Ai\Message\ServerToolResult|null
+     */
+    public function getServerToolResult()
+    {
+        return $this->server_tool_result;
+    }
+
+    public function hasServerToolResult()
+    {
+        return isset($this->server_tool_result);
+    }
+
+    public function clearServerToolResult()
+    {
+        unset($this->server_tool_result);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ai.Message.ServerToolResult server_tool_result = 7;</code>
+     * @param \Eolymp\Ai\Message\ServerToolResult $var
+     * @return $this
+     */
+    public function setServerToolResult($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ai\Message\ServerToolResult::class);
+        $this->server_tool_result = $var;
 
         return $this;
     }
