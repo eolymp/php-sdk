@@ -17,6 +17,10 @@ class UserContent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string text = 1;</code>
      */
     protected $text = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.copilot.Context context = 2;</code>
+     */
+    protected $context = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class UserContent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $text
+     *     @type \Eolymp\Copilot\Context $context
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,38 @@ class UserContent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->text = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.copilot.Context context = 2;</code>
+     * @return \Eolymp\Copilot\Context|null
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
+
+    public function hasContext()
+    {
+        return isset($this->context);
+    }
+
+    public function clearContext()
+    {
+        unset($this->context);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.copilot.Context context = 2;</code>
+     * @param \Eolymp\Copilot\Context $var
+     * @return $this
+     */
+    public function setContext($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Copilot\Context::class);
+        $this->context = $var;
 
         return $this;
     }
