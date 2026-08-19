@@ -38,12 +38,6 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     protected $dry_run = false;
     /**
-     * capture execution logs
-     *
-     * Generated from protobuf field <code>bool debug = 8;</code>
-     */
-    protected $debug = false;
-    /**
      * Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
      * Clients fall back to name when empty.
      *
@@ -79,8 +73,6 @@ class Rule extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Automation\Condition>|\Google\Protobuf\Internal\RepeatedField $conditions
      *     @type bool $inactive
      *     @type bool $dry_run
-     *     @type bool $debug
-     *           capture execution logs
      *     @type string $label
      *           Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
      *           Clients fall back to name when empty.
@@ -223,32 +215,6 @@ class Rule extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->dry_run = $var;
-
-        return $this;
-    }
-
-    /**
-     * capture execution logs
-     *
-     * Generated from protobuf field <code>bool debug = 8;</code>
-     * @return bool
-     */
-    public function getDebug()
-    {
-        return $this->debug;
-    }
-
-    /**
-     * capture execution logs
-     *
-     * Generated from protobuf field <code>bool debug = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setDebug($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->debug = $var;
 
         return $this;
     }

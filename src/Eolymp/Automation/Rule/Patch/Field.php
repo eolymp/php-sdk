@@ -40,10 +40,6 @@ class Field
      */
     const DRY_RUN = 7;
     /**
-     * Generated from protobuf enum <code>DEBUG = 8;</code>
-     */
-    const DEBUG = 8;
-    /**
      * Generated from protobuf enum <code>LABEL = 9;</code>
      */
     const LABEL = 9;
@@ -56,7 +52,6 @@ class Field
         self::ACTIONS => 'ACTIONS',
         self::INACTIVE => 'INACTIVE',
         self::DRY_RUN => 'DRY_RUN',
-        self::DEBUG => 'DEBUG',
         self::LABEL => 'LABEL',
     ];
 
