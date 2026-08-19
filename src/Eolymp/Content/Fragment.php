@@ -64,6 +64,12 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $automatic = false;
     /**
+     * treated as PUBLIC unless explicitly PRIVATE
+     *
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Visibility visibility = 16;</code>
+     */
+    protected $visibility = 0;
+    /**
      * Generated from protobuf field <code>string title = 12;</code>
      */
     protected $title = '';
@@ -106,6 +112,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *           content is only visible to admin
      *     @type bool $automatic
      *           content generated automatically
+     *     @type int $visibility
+     *           treated as PUBLIC unless explicitly PRIVATE
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -340,6 +348,32 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * treated as PUBLIC unless explicitly PRIVATE
+     *
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Visibility visibility = 16;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * treated as PUBLIC unless explicitly PRIVATE
+     *
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Visibility visibility = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Content\Fragment\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

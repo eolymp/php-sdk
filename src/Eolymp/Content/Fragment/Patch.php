@@ -30,6 +30,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $title = null;
     /**
+     * Generated from protobuf field <code>optional .eolymp.content.Fragment.Visibility visibility = 16;</code>
+     */
+    protected $visibility = null;
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
      */
     protected $content = null;
@@ -54,6 +58,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type bool $draft
      *     @type bool $automatic
      *     @type string $title
+     *     @type int $visibility
      *     @type \Eolymp\Ecm\Content $content
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *     @type bool $unlabel
@@ -189,6 +194,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.content.Fragment.Visibility visibility = 16;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return isset($this->visibility) ? $this->visibility : 0;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.content.Fragment.Visibility visibility = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Content\Fragment\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }
