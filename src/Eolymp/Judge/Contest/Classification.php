@@ -22,7 +22,7 @@ class Classification extends \Google\Protobuf\Internal\Message
     /**
      * Contest series: Official ICPC, Official IOI, Training Contest etc
      *
-     * Generated from protobuf field <code>string series = 2;</code>
+     * Generated from protobuf field <code>string series = 2 [(.eolymp.api.mcp_field_desc) = "contest series ID, obtained from `list_contest_series`"];</code>
      */
     protected $series = '';
     /**
@@ -112,7 +112,7 @@ class Classification extends \Google\Protobuf\Internal\Message
     /**
      * Contest series: Official ICPC, Official IOI, Training Contest etc
      *
-     * Generated from protobuf field <code>string series = 2;</code>
+     * Generated from protobuf field <code>string series = 2 [(.eolymp.api.mcp_field_desc) = "contest series ID, obtained from `list_contest_series`"];</code>
      * @return string
      */
     public function getSeries()
@@ -123,7 +123,7 @@ class Classification extends \Google\Protobuf\Internal\Message
     /**
      * Contest series: Official ICPC, Official IOI, Training Contest etc
      *
-     * Generated from protobuf field <code>string series = 2;</code>
+     * Generated from protobuf field <code>string series = 2 [(.eolymp.api.mcp_field_desc) = "contest series ID, obtained from `list_contest_series`"];</code>
      * @param string $var
      * @return $this
      */

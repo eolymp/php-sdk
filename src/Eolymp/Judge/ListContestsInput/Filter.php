@@ -67,7 +67,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $scale;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102 [(.eolymp.api.mcp_field_desc) = "contest series IDs, obtained from `list_contest_series`"];</code>
      */
     private $series;
     /**
@@ -391,7 +391,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102 [(.eolymp.api.mcp_field_desc) = "contest series IDs, obtained from `list_contest_series`"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getSeries()
@@ -400,7 +400,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum series = 102 [(.eolymp.api.mcp_field_desc) = "contest series IDs, obtained from `list_contest_series`"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

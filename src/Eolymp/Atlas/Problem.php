@@ -108,9 +108,9 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     private $languages;
     /**
-     * Problem topics (ID of topics from taxonomy.TopicService)
+     * Problem topics (IDs of values in the "cs-topics" taxonomy enum)
      *
-     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * Generated from protobuf field <code>repeated string topics = 20 [(.eolymp.api.mcp_field_desc) = "topic IDs, obtained from `list_topics`; a topic ID is opaque, do not guess one"];</code>
      */
     private $topics;
     /**
@@ -198,7 +198,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           list of languages the statement is available in
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
-     *           Problem topics (ID of topics from taxonomy.TopicService)
+     *           Problem topics (IDs of values in the "cs-topics" taxonomy enum)
      *     @type float $score
      *           Total score
      *     @type \Eolymp\Atlas\Problem\Constraints $constraints
@@ -643,9 +643,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem topics (ID of topics from taxonomy.TopicService)
+     * Problem topics (IDs of values in the "cs-topics" taxonomy enum)
      *
-     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * Generated from protobuf field <code>repeated string topics = 20 [(.eolymp.api.mcp_field_desc) = "topic IDs, obtained from `list_topics`; a topic ID is opaque, do not guess one"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTopics()
@@ -654,9 +654,9 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Problem topics (ID of topics from taxonomy.TopicService)
+     * Problem topics (IDs of values in the "cs-topics" taxonomy enum)
      *
-     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * Generated from protobuf field <code>repeated string topics = 20 [(.eolymp.api.mcp_field_desc) = "topic IDs, obtained from `list_topics`; a topic ID is opaque, do not guess one"];</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

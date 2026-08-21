@@ -18,7 +18,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $id;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2 [(.eolymp.api.mcp_field_desc) = "topic IDs, obtained from `list_topics`; a topic ID is opaque and a guessed one usually names a real topic of an unrelated subject, which answers with plausible but wrong problems instead of an error"];</code>
      */
     private $topic_id;
     /**
@@ -95,7 +95,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2 [(.eolymp.api.mcp_field_desc) = "topic IDs, obtained from `list_topics`; a topic ID is opaque and a guessed one usually names a real topic of an unrelated subject, which answers with plausible but wrong problems instead of an error"];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getTopicId()
@@ -104,7 +104,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID topic_id = 2 [(.eolymp.api.mcp_field_desc) = "topic IDs, obtained from `list_topics`; a topic ID is opaque and a guessed one usually names a real topic of an unrelated subject, which answers with plausible but wrong problems instead of an error"];</code>
      * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
