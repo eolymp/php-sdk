@@ -25,31 +25,23 @@ class Generation extends \Google\Protobuf\Internal\Message
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Generation.Status status = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Generation.Status status = 3 [(.eolymp.api.mcp_field_desc) = "PENDING and RUNNING mean the run is still going and this should be read again; COMPLETE means every test was produced, valid or not; FAILURE means the run itself broke and the rest of its tests will never be produced, see error"];</code>
      */
     protected $status = 0;
     /**
-     * tests this run generates
-     *
-     * Generated from protobuf field <code>uint32 total = 4;</code>
+     * Generated from protobuf field <code>uint32 total = 4 [(.eolymp.api.mcp_field_desc) = "tests this run generates"];</code>
      */
     protected $total = 0;
     /**
-     * tests it has generated so far, whether they came out valid or not
-     *
-     * Generated from protobuf field <code>uint32 ready = 5;</code>
+     * Generated from protobuf field <code>uint32 ready = 5 [(.eolymp.api.mcp_field_desc) = "tests it has generated so far, whether they came out valid or not"];</code>
      */
     protected $ready = 0;
     /**
-     * tests which failed to generate
-     *
-     * Generated from protobuf field <code>uint32 invalid = 6;</code>
+     * Generated from protobuf field <code>uint32 invalid = 6 [(.eolymp.api.mcp_field_desc) = "tests which failed to generate; read the test\'s own statusMessage for why"];</code>
      */
     protected $invalid = 0;
     /**
-     * set when the run itself failed
-     *
-     * Generated from protobuf field <code>string error = 7;</code>
+     * Generated from protobuf field <code>string error = 7 [(.eolymp.api.mcp_field_desc) = "why the run itself failed, set only when status is FAILURE; usually a compile error in the validator or a generator, in which case none of its tests were produced"];</code>
      */
     protected $error = '';
     /**
@@ -71,13 +63,9 @@ class Generation extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type int $status
      *     @type int $total
-     *           tests this run generates
      *     @type int $ready
-     *           tests it has generated so far, whether they came out valid or not
      *     @type int $invalid
-     *           tests which failed to generate
      *     @type string $error
-     *           set when the run itself failed
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $finished_at
      * }
@@ -132,7 +120,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Generation.Status status = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Generation.Status status = 3 [(.eolymp.api.mcp_field_desc) = "PENDING and RUNNING mean the run is still going and this should be read again; COMPLETE means every test was produced, valid or not; FAILURE means the run itself broke and the rest of its tests will never be produced, see error"];</code>
      * @return int
      */
     public function getStatus()
@@ -141,7 +129,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Generation.Status status = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Generation.Status status = 3 [(.eolymp.api.mcp_field_desc) = "PENDING and RUNNING mean the run is still going and this should be read again; COMPLETE means every test was produced, valid or not; FAILURE means the run itself broke and the rest of its tests will never be produced, see error"];</code>
      * @param int $var
      * @return $this
      */
@@ -154,9 +142,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * tests this run generates
-     *
-     * Generated from protobuf field <code>uint32 total = 4;</code>
+     * Generated from protobuf field <code>uint32 total = 4 [(.eolymp.api.mcp_field_desc) = "tests this run generates"];</code>
      * @return int
      */
     public function getTotal()
@@ -165,9 +151,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * tests this run generates
-     *
-     * Generated from protobuf field <code>uint32 total = 4;</code>
+     * Generated from protobuf field <code>uint32 total = 4 [(.eolymp.api.mcp_field_desc) = "tests this run generates"];</code>
      * @param int $var
      * @return $this
      */
@@ -180,9 +164,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * tests it has generated so far, whether they came out valid or not
-     *
-     * Generated from protobuf field <code>uint32 ready = 5;</code>
+     * Generated from protobuf field <code>uint32 ready = 5 [(.eolymp.api.mcp_field_desc) = "tests it has generated so far, whether they came out valid or not"];</code>
      * @return int
      */
     public function getReady()
@@ -191,9 +173,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * tests it has generated so far, whether they came out valid or not
-     *
-     * Generated from protobuf field <code>uint32 ready = 5;</code>
+     * Generated from protobuf field <code>uint32 ready = 5 [(.eolymp.api.mcp_field_desc) = "tests it has generated so far, whether they came out valid or not"];</code>
      * @param int $var
      * @return $this
      */
@@ -206,9 +186,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * tests which failed to generate
-     *
-     * Generated from protobuf field <code>uint32 invalid = 6;</code>
+     * Generated from protobuf field <code>uint32 invalid = 6 [(.eolymp.api.mcp_field_desc) = "tests which failed to generate; read the test\'s own statusMessage for why"];</code>
      * @return int
      */
     public function getInvalid()
@@ -217,9 +195,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * tests which failed to generate
-     *
-     * Generated from protobuf field <code>uint32 invalid = 6;</code>
+     * Generated from protobuf field <code>uint32 invalid = 6 [(.eolymp.api.mcp_field_desc) = "tests which failed to generate; read the test\'s own statusMessage for why"];</code>
      * @param int $var
      * @return $this
      */
@@ -232,9 +208,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * set when the run itself failed
-     *
-     * Generated from protobuf field <code>string error = 7;</code>
+     * Generated from protobuf field <code>string error = 7 [(.eolymp.api.mcp_field_desc) = "why the run itself failed, set only when status is FAILURE; usually a compile error in the validator or a generator, in which case none of its tests were produced"];</code>
      * @return string
      */
     public function getError()
@@ -243,9 +217,7 @@ class Generation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * set when the run itself failed
-     *
-     * Generated from protobuf field <code>string error = 7;</code>
+     * Generated from protobuf field <code>string error = 7 [(.eolymp.api.mcp_field_desc) = "why the run itself failed, set only when status is FAILURE; usually a compile error in the validator or a generator, in which case none of its tests were produced"];</code>
      * @param string $var
      * @return $this
      */
