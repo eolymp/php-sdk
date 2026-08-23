@@ -18,11 +18,12 @@ class Credit
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-–
-eolymp/community/credit.protoeolymp.communitygoogle/protobuf/timestamp.proto"‚
-CreditŒ
+Í
+eolymp/community/credit.protoeolymp.communitygoogle/protobuf/timestamp.proto"¹
+Credit§
 Grant
-id (	B¨ððä
+id (	B¨ððä
+	member_id (	B¨ððä
 	reference (	
 note (	
 active (B¨ððä
@@ -33,10 +34,11 @@ class Credit
 granted_at
  (2.google.protobuf.TimestampB¨ððä.
 
-expires_at (2.google.protobuf.Timestampi
+expires_at (2.google.protobuf.Timestamp„
 Transaction
 
-id (	-
+id (	
+	member_id (	B¨ððä-
 	timestamp (2.google.protobuf.Timestamp
 summary (	
 amount (B5Z3github.com/eolymp/go-sdk/eolymp/community;communitybproto3'

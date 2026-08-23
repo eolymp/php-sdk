@@ -18,6 +18,10 @@ class Transaction extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string member_id = 5 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code>
      */
     protected $timestamp = null;
@@ -39,6 +43,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $member_id
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type string $summary
      *     @type int $amount
@@ -68,6 +73,28 @@ class Transaction extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 5 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 5 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

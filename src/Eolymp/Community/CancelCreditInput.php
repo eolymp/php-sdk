@@ -17,6 +17,10 @@ class CancelCreditInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string grant_id = 1;</code>
      */
     protected $grant_id = '';
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     */
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class CancelCreditInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $grant_id
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class CancelCreditInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->grant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

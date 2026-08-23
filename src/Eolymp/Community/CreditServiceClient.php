@@ -7,14 +7,16 @@ namespace Eolymp\Community;
     /**
      * internal
      *
-     * CreditService keeps one member's balance of credits, the points a space hands out as a reward and lets
-     * members spend on rewards in return.
+     * CreditService keeps the balances of credits a space hands out as a reward and lets members spend on
+     * rewards in return.
      *
      * Credits come in as grants, each a separate lot with its own amount and expiry, and go out as
      * redemptions. Every movement in either direction is also written as a transaction, so the two listings
      * answer different questions: the grants say where a balance came from and how much of each lot is left,
-     * the transactions are the history a member sees. Being member-scoped, these calls are addressed through
-     * the base url a member carries in its read-only url field.
+     * the transactions are the history a member sees.
+     *
+     * A call takes its member from the member url or from member_id, url first; a listing with neither spans
+     * the space.
      */
 class CreditServiceClient {
 
@@ -98,9 +100,9 @@ class CreditServiceClient {
     }
 
     /**
-     * ListCreditGrants walks the lots the member's credits came from, spent and expired ones included, each
-     * showing how much of it has been drawn down. This is the accounting view behind a balance, and the
-     * place to check whether a grant made under a given reference already exists.
+     * ListCreditGrants walks the lots the credits came from, spent and expired ones included, each showing
+     * how much of it has been drawn down. This is the accounting view behind a balance, and the place to
+     * check whether a grant made under a given reference already exists.
      *
      * @param ListCreditGrantsInput $input message
      * @param array $context request parameters
@@ -138,9 +140,9 @@ class CreditServiceClient {
     }
 
     /**
-     * ListCreditTransactions walks every movement on the member's balance in either direction, each with a
-     * timestamp and a line of text describing it, which is what a member-facing credit history is built
-     * from. A refund appears as its own entry beside the movement it reverses, never in place of it.
+     * ListCreditTransactions walks every movement on a balance in either direction, each with a timestamp
+     * and a line of text describing it, which is what a member-facing credit history is built from. A
+     * refund appears as its own entry beside the movement it reverses, never in place of it.
      *
      * @param ListCreditTransactionsInput $input message
      * @param array $context request parameters

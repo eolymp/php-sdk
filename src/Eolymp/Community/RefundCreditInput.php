@@ -21,6 +21,10 @@ class RefundCreditInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 amount = 2;</code>
      */
     protected $amount = 0;
+    /**
+     * Generated from protobuf field <code>string member_id = 3;</code>
+     */
+    protected $member_id = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class RefundCreditInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $transaction_id
      *     @type int $amount
+     *     @type string $member_id
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class RefundCreditInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 3;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

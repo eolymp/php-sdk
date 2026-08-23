@@ -20,6 +20,10 @@ class Grant extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * Generated from protobuf field <code>string member_id = 6 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $member_id = '';
+    /**
      * a unique grant reference, ensures the same grant is not granted twice
      *
      * Generated from protobuf field <code>string reference = 2;</code>
@@ -72,6 +76,7 @@ class Grant extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique grant ID (assigned by the system)
+     *     @type string $member_id
      *     @type string $reference
      *           a unique grant reference, ensures the same grant is not granted twice
      *     @type string $note
@@ -115,6 +120,28 @@ class Grant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 6 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 6 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
