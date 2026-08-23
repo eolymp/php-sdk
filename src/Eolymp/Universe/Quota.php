@@ -50,6 +50,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $allow_discussions = false;
     /**
+     * allow space administrators to query and export the space audit log
+     *
+     * Generated from protobuf field <code>bool audit_log = 32;</code>
+     */
+    protected $audit_log = false;
+    /**
      * max number of achievements
      *
      * Generated from protobuf field <code>uint32 achievements_per_space = 15;</code>
@@ -260,6 +266,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           customer support reply time in hours
      *     @type bool $allow_discussions
      *           enable discussion post and comment features
+     *     @type bool $audit_log
+     *           allow space administrators to query and export the space audit log
      *     @type int $achievements_per_space
      *           max number of achievements
      *     @type int $printers_per_space
@@ -479,6 +487,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->allow_discussions = $var;
+
+        return $this;
+    }
+
+    /**
+     * allow space administrators to query and export the space audit log
+     *
+     * Generated from protobuf field <code>bool audit_log = 32;</code>
+     * @return bool
+     */
+    public function getAuditLog()
+    {
+        return $this->audit_log;
+    }
+
+    /**
+     * allow space administrators to query and export the space audit log
+     *
+     * Generated from protobuf field <code>bool audit_log = 32;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAuditLog($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->audit_log = $var;
 
         return $this;
     }
