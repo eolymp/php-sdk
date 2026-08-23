@@ -39,25 +39,6 @@ class LogServiceClient {
     }
 
     /**
-     * @param DescribeLogInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeLogOutput output message
-     */
-    public function DescribeLog(DescribeLogInput $input, array $context = [])
-    {
-        $path = "/audit/logs/".rawurlencode($input->getLogId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setLogId("");
-
-        $context['name'] = "eolymp.audit.LogService/DescribeLog";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeLogOutput::class, $context);
-    }
-
-    /**
      * ExportLogs writes the records matching the filters into a CSV file and returns a link to download it. The link
      * expires shortly after it is issued, and the export is limited to 10000 records.
      *

@@ -16,10 +16,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Log extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
-     */
-    protected $id = '';
-    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code>
      */
     protected $timestamp = null;
@@ -68,7 +64,6 @@ class Log extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
      *     @type \Google\Protobuf\Timestamp $timestamp
      *     @type \Eolymp\Audit\Log\Actor $actor
      *           unset when the call was made anonymously
@@ -87,28 +82,6 @@ class Log extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Audit\Log::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>string id = 1;</code>
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
     }
 
     /**
