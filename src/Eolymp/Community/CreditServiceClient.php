@@ -14,9 +14,6 @@ namespace Eolymp\Community;
      * redemptions. Every movement in either direction is also written as a transaction, so the two listings
      * answer different questions: the grants say where a balance came from and how much of each lot is left,
      * the transactions are the history a member sees.
-     *
-     * A call takes its member from the member url or from member_id, url first; a listing with neither spans
-     * the space.
      */
 class CreditServiceClient {
 
