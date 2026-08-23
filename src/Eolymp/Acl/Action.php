@@ -231,6 +231,12 @@ class Action
      * Generated from protobuf enum <code>AUTOMATION_WRITE = 171;</code>
      */
     const AUTOMATION_WRITE = 171;
+    /**
+     * read the space audit log: who called what, from where, with which payload
+     *
+     * Generated from protobuf enum <code>AUDIT_READ = 180;</code>
+     */
+    const AUDIT_READ = 180;
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
@@ -278,6 +284,7 @@ class Action
         self::AUTOMATION_LIST => 'AUTOMATION_LIST',
         self::AUTOMATION_READ => 'AUTOMATION_READ',
         self::AUTOMATION_WRITE => 'AUTOMATION_WRITE',
+        self::AUDIT_READ => 'AUDIT_READ',
     ];
 
     public static function name($value)
