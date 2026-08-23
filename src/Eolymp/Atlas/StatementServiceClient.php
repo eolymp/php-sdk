@@ -12,8 +12,7 @@ namespace Eolymp\Atlas;
      * their own line (`\InputFile`, `\Interaction`, `\OutputFile`, `\Examples`, `\Note`, `\Scoring`), and the text
      * before the first marker is the introduction. Never write the `\Examples` section by hand: it is generated
      * from the tests marked as examples. Content is returned only when requested, either in its raw form for
-     * editing or as a parsed tree for display. Every method acts on the problem addressed by the request path,
-     * which is why no request carries a problem id.
+     * editing or as a parsed tree for display. A call takes its problem from `problem_id`, or from the problem url when the field is empty.
      */
 class StatementServiceClient {
 

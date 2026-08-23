@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeAttachmentInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     */
+    protected $problem_id = '';
+    /**
      * Generated from protobuf field <code>string attachment_id = 2;</code>
      */
     protected $attachment_id = '';
@@ -30,6 +34,7 @@ class DescribeAttachmentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
      *     @type string $attachment_id
      *     @type int $version
      *           request data for specific problem version
@@ -38,6 +43,28 @@ class DescribeAttachmentInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\AttachmentService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
     }
 
     /**

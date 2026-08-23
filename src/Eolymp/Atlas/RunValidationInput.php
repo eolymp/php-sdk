@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class RunValidationInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
+     */
+    protected $problem_id = '';
+    /**
      * required; only runtime, source and files are read
      *
      * Generated from protobuf field <code>.eolymp.atlas.Validator validator = 1;</code>
@@ -26,6 +30,7 @@ class RunValidationInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
      *     @type \Eolymp\Atlas\Validator $validator
      *           required; only runtime, source and files are read
      * }
@@ -33,6 +38,28 @@ class RunValidationInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\ValidationService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
     }
 
     /**

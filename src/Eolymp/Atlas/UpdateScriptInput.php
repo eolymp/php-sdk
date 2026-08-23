@@ -18,6 +18,10 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
+     * Generated from protobuf field <code>string problem_id = 4;</code>
+     */
+    protected $problem_id = '';
+    /**
      * Generated from protobuf field <code>string script_id = 2;</code>
      */
     protected $script_id = '';
@@ -33,6 +37,7 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type string $problem_id
      *     @type string $script_id
      *     @type \Eolymp\Atlas\Script $script
      * }
@@ -60,6 +65,28 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Script\Patch\Field::class);
         $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 4;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
 
         return $this;
     }
