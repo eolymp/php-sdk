@@ -138,6 +138,8 @@ class ProblemServiceClient {
     }
 
     /**
+     * deprecated: use eolymp.course.RunService
+     *
      * @param CreateRunInput $input message
      * @param array $context request parameters
      *
@@ -154,6 +156,8 @@ class ProblemServiceClient {
     }
 
     /**
+     * deprecated: use eolymp.course.RunService
+     *
      * @param DescribeRunInput $input message
      * @param array $context request parameters
      *

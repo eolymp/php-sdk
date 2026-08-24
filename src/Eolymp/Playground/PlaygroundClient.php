@@ -4,6 +4,11 @@
 
 namespace Eolymp\Playground;
 
+    /**
+     * deprecated: use eolymp.atlas.RunService for a problem, eolymp.judge.RunService inside a contest and
+     * eolymp.course.RunService for a course material. Those serve the same urls this does and take the problem,
+     * contest or material in the request rather than through the namespace.
+     */
 class PlaygroundClient {
 
     /** @var string base URL */
