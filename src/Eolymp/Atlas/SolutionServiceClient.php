@@ -43,7 +43,10 @@ class SolutionServiceClient {
      */
     public function CreateSolution(CreateSolutionInput $input, array $context = [])
     {
-        $path = "/solutions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.SolutionService/CreateSolution";
         $context['path'] = $path;
@@ -64,9 +67,10 @@ class SolutionServiceClient {
      */
     public function UpdateSolution(UpdateSolutionInput $input, array $context = [])
     {
-        $path = "/solutions/".rawurlencode($input->getSolutionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSolutionId("");
 
         $context['name'] = "eolymp.atlas.SolutionService/UpdateSolution";
@@ -87,9 +91,10 @@ class SolutionServiceClient {
      */
     public function DeleteSolution(DeleteSolutionInput $input, array $context = [])
     {
-        $path = "/solutions/".rawurlencode($input->getSolutionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSolutionId("");
 
         $context['name'] = "eolymp.atlas.SolutionService/DeleteSolution";
@@ -110,9 +115,10 @@ class SolutionServiceClient {
      */
     public function DescribeSolution(DescribeSolutionInput $input, array $context = [])
     {
-        $path = "/solutions/".rawurlencode($input->getSolutionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions/".rawurlencode($input->getSolutionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSolutionId("");
 
         $context['name'] = "eolymp.atlas.SolutionService/DescribeSolution";
@@ -133,7 +139,10 @@ class SolutionServiceClient {
      */
     public function ListSolutions(ListSolutionsInput $input, array $context = [])
     {
-        $path = "/solutions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.SolutionService/ListSolutions";
         $context['path'] = $path;
@@ -155,7 +164,10 @@ class SolutionServiceClient {
      */
     public function CheckSolutions(CheckSolutionsInput $input, array $context = [])
     {
-        $path = "/solutions:check";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/solutions:check";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.SolutionService/CheckSolutions";
         $context['path'] = $path;

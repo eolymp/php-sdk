@@ -46,7 +46,10 @@ class SuggestionServiceClient {
      */
     public function CreateSuggestion(CreateSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/CreateSuggestion";
         $context['path'] = $path;
@@ -65,9 +68,10 @@ class SuggestionServiceClient {
      */
     public function UpdateSuggestion(UpdateSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions/".rawurlencode($input->getSuggestionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions/".rawurlencode($input->getSuggestionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSuggestionId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/UpdateSuggestion";
@@ -89,9 +93,10 @@ class SuggestionServiceClient {
      */
     public function ReviewSuggestion(ReviewSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions/".rawurlencode($input->getSuggestionId())."/review";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions/".rawurlencode($input->getSuggestionId())."/review";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSuggestionId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/ReviewSuggestion";
@@ -111,9 +116,10 @@ class SuggestionServiceClient {
      */
     public function ResubmitSuggestion(ResubmitSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions/".rawurlencode($input->getSuggestionId())."/resubmit";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions/".rawurlencode($input->getSuggestionId())."/resubmit";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSuggestionId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/ResubmitSuggestion";
@@ -134,9 +140,10 @@ class SuggestionServiceClient {
      */
     public function DeleteSuggestion(DeleteSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions/".rawurlencode($input->getSuggestionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions/".rawurlencode($input->getSuggestionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSuggestionId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/DeleteSuggestion";
@@ -156,7 +163,10 @@ class SuggestionServiceClient {
      */
     public function ListSuggestions(ListSuggestionsInput $input, array $context = [])
     {
-        $path = "/suggestions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/ListSuggestions";
         $context['path'] = $path;
@@ -175,9 +185,10 @@ class SuggestionServiceClient {
      */
     public function DescribeSuggestion(DescribeSuggestionInput $input, array $context = [])
     {
-        $path = "/suggestions/".rawurlencode($input->getSuggestionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/suggestions/".rawurlencode($input->getSuggestionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setSuggestionId("");
 
         $context['name'] = "eolymp.atlas.SuggestionService/DescribeSuggestion";

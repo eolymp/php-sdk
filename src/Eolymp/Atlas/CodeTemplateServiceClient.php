@@ -42,7 +42,10 @@ class CodeTemplateServiceClient {
      */
     public function CreateCodeTemplate(CreateCodeTemplateInput $input, array $context = [])
     {
-        $path = "/templates";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/CreateCodeTemplate";
         $context['path'] = $path;
@@ -61,9 +64,10 @@ class CodeTemplateServiceClient {
      */
     public function UpdateCodeTemplate(UpdateCodeTemplateInput $input, array $context = [])
     {
-        $path = "/templates/".rawurlencode($input->getTemplateId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTemplateId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/UpdateCodeTemplate";
@@ -84,9 +88,10 @@ class CodeTemplateServiceClient {
      */
     public function DeleteCodeTemplate(DeleteCodeTemplateInput $input, array $context = [])
     {
-        $path = "/templates/".rawurlencode($input->getTemplateId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTemplateId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/DeleteCodeTemplate";
@@ -107,7 +112,10 @@ class CodeTemplateServiceClient {
      */
     public function ListCodeTemplates(ListCodeTemplatesInput $input, array $context = [])
     {
-        $path = "/templates";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/ListCodeTemplates";
         $context['path'] = $path;
@@ -126,9 +134,10 @@ class CodeTemplateServiceClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        $path = "/templates/".rawurlencode($input->getTemplateId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTemplateId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/DescribeCodeTemplate";
@@ -150,7 +159,10 @@ class CodeTemplateServiceClient {
      */
     public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
     {
-        $path = "/template";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/template";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/LookupCodeTemplate";
         $context['path'] = $path;
@@ -172,7 +184,10 @@ class CodeTemplateServiceClient {
      */
     public function GenerateCodeTemplates(GenerateCodeTemplatesInput $input, array $context = [])
     {
-        $path = "/templates:generate";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/templates:generate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.CodeTemplateService/GenerateCodeTemplates";
         $context['path'] = $path;

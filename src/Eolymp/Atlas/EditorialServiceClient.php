@@ -43,7 +43,10 @@ class EditorialServiceClient {
      */
     public function CreateEditorial(CreateEditorialInput $input, array $context = [])
     {
-        $path = "/editorials";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorials";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/CreateEditorial";
         $context['path'] = $path;
@@ -63,9 +66,10 @@ class EditorialServiceClient {
      */
     public function UpdateEditorial(UpdateEditorialInput $input, array $context = [])
     {
-        $path = "/editorials/".rawurlencode($input->getEditorialId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorials/".rawurlencode($input->getEditorialId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setEditorialId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/UpdateEditorial";
@@ -85,9 +89,10 @@ class EditorialServiceClient {
      */
     public function DeleteEditorial(DeleteEditorialInput $input, array $context = [])
     {
-        $path = "/editorials/".rawurlencode($input->getEditorialId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorials/".rawurlencode($input->getEditorialId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setEditorialId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/DeleteEditorial";
@@ -107,9 +112,10 @@ class EditorialServiceClient {
      */
     public function DescribeEditorial(DescribeEditorialInput $input, array $context = [])
     {
-        $path = "/editorials/".rawurlencode($input->getEditorialId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorials/".rawurlencode($input->getEditorialId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setEditorialId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/DescribeEditorial";
@@ -129,7 +135,10 @@ class EditorialServiceClient {
      */
     public function LookupEditorial(LookupEditorialInput $input, array $context = [])
     {
-        $path = "/editorial";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorial";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/LookupEditorial";
         $context['path'] = $path;
@@ -148,7 +157,10 @@ class EditorialServiceClient {
      */
     public function PreviewEditorial(PreviewEditorialInput $input, array $context = [])
     {
-        $path = "/editorial/preview";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorial/preview";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/PreviewEditorial";
         $context['path'] = $path;
@@ -167,7 +179,10 @@ class EditorialServiceClient {
      */
     public function ListEditorials(ListEditorialsInput $input, array $context = [])
     {
-        $path = "/editorials";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorials";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/ListEditorials";
         $context['path'] = $path;
@@ -188,7 +203,10 @@ class EditorialServiceClient {
      */
     public function TranslateEditorials(TranslateEditorialsInput $input, array $context = [])
     {
-        $path = "/editorials:translate";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/editorials:translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.EditorialService/TranslateEditorials";
         $context['path'] = $path;

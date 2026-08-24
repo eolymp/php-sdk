@@ -42,7 +42,10 @@ class AttachmentServiceClient {
      */
     public function CreateAttachment(CreateAttachmentInput $input, array $context = [])
     {
-        $path = "/attachments";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.AttachmentService/CreateAttachment";
         $context['path'] = $path;
@@ -61,9 +64,10 @@ class AttachmentServiceClient {
      */
     public function UpdateAttachment(UpdateAttachmentInput $input, array $context = [])
     {
-        $path = "/attachments/".rawurlencode($input->getAttachmentId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments/".rawurlencode($input->getAttachmentId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setAttachmentId("");
 
         $context['name'] = "eolymp.atlas.AttachmentService/UpdateAttachment";
@@ -83,9 +87,10 @@ class AttachmentServiceClient {
      */
     public function DeleteAttachment(DeleteAttachmentInput $input, array $context = [])
     {
-        $path = "/attachments/".rawurlencode($input->getAttachmentId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments/".rawurlencode($input->getAttachmentId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setAttachmentId("");
 
         $context['name'] = "eolymp.atlas.AttachmentService/DeleteAttachment";
@@ -105,7 +110,10 @@ class AttachmentServiceClient {
      */
     public function ListAttachments(ListAttachmentsInput $input, array $context = [])
     {
-        $path = "/attachments";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.AttachmentService/ListAttachments";
         $context['path'] = $path;
@@ -124,9 +132,10 @@ class AttachmentServiceClient {
      */
     public function DescribeAttachment(DescribeAttachmentInput $input, array $context = [])
     {
-        $path = "/attachments/".rawurlencode($input->getAttachmentId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments/".rawurlencode($input->getAttachmentId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setAttachmentId("");
 
         $context['name'] = "eolymp.atlas.AttachmentService/DescribeAttachment";

@@ -43,7 +43,10 @@ class StatementServiceClient {
      */
     public function CreateStatement(CreateStatementInput $input, array $context = [])
     {
-        $path = "/statements";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.StatementService/CreateStatement";
         $context['path'] = $path;
@@ -62,9 +65,10 @@ class StatementServiceClient {
      */
     public function UpdateStatement(UpdateStatementInput $input, array $context = [])
     {
-        $path = "/statements/".rawurlencode($input->getStatementId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setStatementId("");
 
         $context['name'] = "eolymp.atlas.StatementService/UpdateStatement";
@@ -84,9 +88,10 @@ class StatementServiceClient {
      */
     public function DeleteStatement(DeleteStatementInput $input, array $context = [])
     {
-        $path = "/statements/".rawurlencode($input->getStatementId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setStatementId("");
 
         $context['name'] = "eolymp.atlas.StatementService/DeleteStatement";
@@ -106,9 +111,10 @@ class StatementServiceClient {
      */
     public function DescribeStatement(DescribeStatementInput $input, array $context = [])
     {
-        $path = "/statements/".rawurlencode($input->getStatementId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setStatementId("");
 
         $context['name'] = "eolymp.atlas.StatementService/DescribeStatement";
@@ -128,7 +134,10 @@ class StatementServiceClient {
      */
     public function LookupStatement(LookupStatementInput $input, array $context = [])
     {
-        $path = "/translate";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.StatementService/LookupStatement";
         $context['path'] = $path;
@@ -147,7 +156,10 @@ class StatementServiceClient {
      */
     public function PreviewStatement(PreviewStatementInput $input, array $context = [])
     {
-        $path = "/renders";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/renders";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.StatementService/PreviewStatement";
         $context['path'] = $path;
@@ -166,7 +178,10 @@ class StatementServiceClient {
      */
     public function ListStatements(ListStatementsInput $input, array $context = [])
     {
-        $path = "/statements";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.StatementService/ListStatements";
         $context['path'] = $path;
@@ -187,7 +202,10 @@ class StatementServiceClient {
      */
     public function TranslateStatements(TranslateStatementsInput $input, array $context = [])
     {
-        $path = "/statements:translate";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements:translate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.StatementService/TranslateStatements";
         $context['path'] = $path;
@@ -206,9 +224,10 @@ class StatementServiceClient {
      */
     public function ExportStatement(ExportStatementInput $input, array $context = [])
     {
-        $path = "/statements/".rawurlencode($input->getStatementId())."/export";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId())."/export";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setStatementId("");
 
         $context['name'] = "eolymp.atlas.StatementService/ExportStatement";
@@ -229,9 +248,10 @@ class StatementServiceClient {
      */
     public function ListStatementVersions(ListStatementVersionsInput $input, array $context = [])
     {
-        $path = "/statements/".rawurlencode($input->getStatementId())."/versions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/statements/".rawurlencode($input->getStatementId())."/versions";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setStatementId("");
 
         $context['name'] = "eolymp.atlas.StatementService/ListStatementVersions";

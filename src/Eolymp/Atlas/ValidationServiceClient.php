@@ -45,7 +45,10 @@ class ValidationServiceClient {
      */
     public function RunValidation(RunValidationInput $input, array $context = [])
     {
-        $path = "/validations";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/validations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.ValidationService/RunValidation";
         $context['path'] = $path;
@@ -66,9 +69,10 @@ class ValidationServiceClient {
      */
     public function DescribeValidation(DescribeValidationInput $input, array $context = [])
     {
-        $path = "/validations/".rawurlencode($input->getValidationId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/validations/".rawurlencode($input->getValidationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setValidationId("");
 
         $context['name'] = "eolymp.atlas.ValidationService/DescribeValidation";

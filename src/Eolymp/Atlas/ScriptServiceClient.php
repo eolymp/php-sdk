@@ -44,7 +44,10 @@ class ScriptServiceClient {
      */
     public function CreateScript(CreateScriptInput $input, array $context = [])
     {
-        $path = "/scripts";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.ScriptService/CreateScript";
         $context['path'] = $path;
@@ -65,9 +68,10 @@ class ScriptServiceClient {
      */
     public function UpdateScript(UpdateScriptInput $input, array $context = [])
     {
-        $path = "/scripts/".rawurlencode($input->getScriptId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts/".rawurlencode($input->getScriptId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setScriptId("");
 
         $context['name'] = "eolymp.atlas.ScriptService/UpdateScript";
@@ -88,9 +92,10 @@ class ScriptServiceClient {
      */
     public function DeleteScript(DeleteScriptInput $input, array $context = [])
     {
-        $path = "/scripts/".rawurlencode($input->getScriptId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts/".rawurlencode($input->getScriptId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setScriptId("");
 
         $context['name'] = "eolymp.atlas.ScriptService/DeleteScript";
@@ -110,9 +115,10 @@ class ScriptServiceClient {
      */
     public function DescribeScript(DescribeScriptInput $input, array $context = [])
     {
-        $path = "/scripts/".rawurlencode($input->getScriptId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts/".rawurlencode($input->getScriptId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setScriptId("");
 
         $context['name'] = "eolymp.atlas.ScriptService/DescribeScript";
@@ -132,7 +138,10 @@ class ScriptServiceClient {
      */
     public function ListScripts(ListScriptsInput $input, array $context = [])
     {
-        $path = "/scripts";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.ScriptService/ListScripts";
         $context['path'] = $path;
@@ -152,7 +161,10 @@ class ScriptServiceClient {
      */
     public function ExecuteStressCheck(ExecuteStressCheckInput $input, array $context = [])
     {
-        $path = "/scripts:stress-check";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts:stress-check";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.ScriptService/ExecuteStressCheck";
         $context['path'] = $path;

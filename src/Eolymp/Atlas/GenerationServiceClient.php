@@ -43,9 +43,10 @@ class GenerationServiceClient {
      */
     public function DescribeGeneration(DescribeGenerationInput $input, array $context = [])
     {
-        $path = "/generations/".rawurlencode($input->getGenerationId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/generations/".rawurlencode($input->getGenerationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setGenerationId("");
 
         $context['name'] = "eolymp.atlas.GenerationService/DescribeGeneration";
@@ -65,7 +66,10 @@ class GenerationServiceClient {
      */
     public function ListGenerations(ListGenerationsInput $input, array $context = [])
     {
-        $path = "/generations";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/generations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.GenerationService/ListGenerations";
         $context['path'] = $path;

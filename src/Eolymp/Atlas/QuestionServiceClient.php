@@ -53,7 +53,10 @@ class QuestionServiceClient {
      */
     public function CreateQuestion(CreateQuestionInput $input, array $context = [])
     {
-        $path = "/questions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/questions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.QuestionService/CreateQuestion";
         $context['path'] = $path;
@@ -75,9 +78,10 @@ class QuestionServiceClient {
      */
     public function UpdateQuestion(UpdateQuestionInput $input, array $context = [])
     {
-        $path = "/questions/".rawurlencode($input->getQuestionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/questions/".rawurlencode($input->getQuestionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setQuestionId("");
 
         $context['name'] = "eolymp.atlas.QuestionService/UpdateQuestion";
@@ -98,9 +102,10 @@ class QuestionServiceClient {
      */
     public function DeleteQuestion(DeleteQuestionInput $input, array $context = [])
     {
-        $path = "/questions/".rawurlencode($input->getQuestionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/questions/".rawurlencode($input->getQuestionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setQuestionId("");
 
         $context['name'] = "eolymp.atlas.QuestionService/DeleteQuestion";
@@ -121,9 +126,10 @@ class QuestionServiceClient {
      */
     public function DescribeQuestion(DescribeQuestionInput $input, array $context = [])
     {
-        $path = "/questions/".rawurlencode($input->getQuestionId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/questions/".rawurlencode($input->getQuestionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setQuestionId("");
 
         $context['name'] = "eolymp.atlas.QuestionService/DescribeQuestion";
@@ -145,7 +151,10 @@ class QuestionServiceClient {
      */
     public function ListQuestions(ListQuestionsInput $input, array $context = [])
     {
-        $path = "/questions";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/questions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.QuestionService/ListQuestions";
         $context['path'] = $path;

@@ -43,9 +43,10 @@ class ScoringServiceClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        $path = "/scores/".rawurlencode($input->getMemberId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/scores/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.atlas.ScoringService/DescribeScore";
@@ -66,7 +67,10 @@ class ScoringServiceClient {
      */
     public function DescribeProblemGrading(DescribeProblemGradingInput $input, array $context = [])
     {
-        $path = "/grading";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/grading";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.ScoringService/DescribeProblemGrading";
         $context['path'] = $path;

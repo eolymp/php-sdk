@@ -41,7 +41,10 @@ class BookmarkServiceClient {
      */
     public function GetBookmark(GetBookmarkInput $input, array $context = [])
     {
-        $path = "/bookmark";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/bookmark";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.BookmarkService/GetBookmark";
         $context['path'] = $path;
@@ -60,7 +63,10 @@ class BookmarkServiceClient {
      */
     public function SetBookmark(SetBookmarkInput $input, array $context = [])
     {
-        $path = "/bookmark";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/bookmark";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.BookmarkService/SetBookmark";
         $context['path'] = $path;

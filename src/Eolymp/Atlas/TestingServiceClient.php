@@ -46,7 +46,10 @@ class TestingServiceClient {
      */
     public function UpdateTestingConfig(UpdateTestingConfigInput $input, array $context = [])
     {
-        $path = "/testing";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testing";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateTestingConfig";
         $context['path'] = $path;
@@ -65,7 +68,10 @@ class TestingServiceClient {
      */
     public function DescribeTestingConfig(DescribeTestingConfigInput $input, array $context = [])
     {
-        $path = "/testing";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testing";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeTestingConfig";
         $context['path'] = $path;
@@ -86,7 +92,10 @@ class TestingServiceClient {
      */
     public function UpdateChecker(UpdateCheckerInput $input, array $context = [])
     {
-        $path = "/checker";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/checker";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateChecker";
         $context['path'] = $path;
@@ -105,7 +114,10 @@ class TestingServiceClient {
      */
     public function DescribeChecker(DescribeCheckerInput $input, array $context = [])
     {
-        $path = "/checker";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/checker";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeChecker";
         $context['path'] = $path;
@@ -127,7 +139,10 @@ class TestingServiceClient {
      */
     public function UpdateInteractor(UpdateInteractorInput $input, array $context = [])
     {
-        $path = "/interactor";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/interactor";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateInteractor";
         $context['path'] = $path;
@@ -146,7 +161,10 @@ class TestingServiceClient {
      */
     public function DescribeInteractor(DescribeInteractorInput $input, array $context = [])
     {
-        $path = "/interactor";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/interactor";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeInteractor";
         $context['path'] = $path;
@@ -166,7 +184,10 @@ class TestingServiceClient {
      */
     public function UpdateValidator(UpdateValidatorInput $input, array $context = [])
     {
-        $path = "/validator";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/validator";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateValidator";
         $context['path'] = $path;
@@ -185,7 +206,10 @@ class TestingServiceClient {
      */
     public function DescribeValidator(DescribeValidatorInput $input, array $context = [])
     {
-        $path = "/validator";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/validator";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeValidator";
         $context['path'] = $path;
@@ -205,7 +229,10 @@ class TestingServiceClient {
      */
     public function CreateTestset(CreateTestsetInput $input, array $context = [])
     {
-        $path = "/testsets";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/CreateTestset";
         $context['path'] = $path;
@@ -224,9 +251,10 @@ class TestingServiceClient {
      */
     public function UpdateTestset(UpdateTestsetInput $input, array $context = [])
     {
-        $path = "/testsets/".rawurlencode($input->getTestsetId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestsetId("");
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateTestset";
@@ -248,9 +276,10 @@ class TestingServiceClient {
      */
     public function DeleteTestset(DeleteTestsetInput $input, array $context = [])
     {
-        $path = "/testsets/".rawurlencode($input->getTestsetId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestsetId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DeleteTestset";
@@ -270,9 +299,10 @@ class TestingServiceClient {
      */
     public function DescribeTestset(DescribeTestsetInput $input, array $context = [])
     {
-        $path = "/testsets/".rawurlencode($input->getTestsetId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestsetId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeTestset";
@@ -292,7 +322,10 @@ class TestingServiceClient {
      */
     public function ListTestsets(ListTestsetsInput $input, array $context = [])
     {
-        $path = "/testsets";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/ListTestsets";
         $context['path'] = $path;
@@ -314,9 +347,10 @@ class TestingServiceClient {
      */
     public function CreateTest(CreateTestInput $input, array $context = [])
     {
-        $path = "/testsets/".rawurlencode($input->getTestsetId())."/tests";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestsetId("");
 
         $context['name'] = "eolymp.atlas.TestingService/CreateTest";
@@ -339,9 +373,10 @@ class TestingServiceClient {
      */
     public function UpdateTest(UpdateTestInput $input, array $context = [])
     {
-        $path = "/tests/".rawurlencode($input->getTestId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/tests/".rawurlencode($input->getTestId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestId("");
 
         $context['name'] = "eolymp.atlas.TestingService/UpdateTest";
@@ -362,9 +397,10 @@ class TestingServiceClient {
      */
     public function DeleteTest(DeleteTestInput $input, array $context = [])
     {
-        $path = "/tests/".rawurlencode($input->getTestId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/tests/".rawurlencode($input->getTestId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DeleteTest";
@@ -384,9 +420,10 @@ class TestingServiceClient {
      */
     public function DescribeTest(DescribeTestInput $input, array $context = [])
     {
-        $path = "/tests/".rawurlencode($input->getTestId());
+        $path = "/problems/".rawurlencode($input->getProblemId())."/tests/".rawurlencode($input->getTestId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
         $input->setTestId("");
 
         $context['name'] = "eolymp.atlas.TestingService/DescribeTest";
@@ -407,7 +444,10 @@ class TestingServiceClient {
      */
     public function ListTests(ListTestsInput $input, array $context = [])
     {
-        $path = "/tests";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/tests";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/ListTests";
         $context['path'] = $path;
@@ -428,7 +468,10 @@ class TestingServiceClient {
      */
     public function ListExamples(ListExamplesInput $input, array $context = [])
     {
-        $path = "/examples";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/examples";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
 
         $context['name'] = "eolymp.atlas.TestingService/ListExamples";
         $context['path'] = $path;
