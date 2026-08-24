@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExportLogsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Required, as for ListLogs.
+     *
+     * Generated from protobuf field <code>string date = 1;</code>
+     */
+    protected $date = '';
+    /**
      * Generated from protobuf field <code>.eolymp.audit.ExportLogsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -36,6 +42,8 @@ class ExportLogsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $date
+     *           Required, as for ListLogs.
      *     @type \Eolymp\Audit\ExportLogsInput\Filter $filters
      *     @type int $sort
      *     @type int $order
@@ -45,6 +53,32 @@ class ExportLogsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Audit\LogService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Required, as for ListLogs.
+     *
+     * Generated from protobuf field <code>string date = 1;</code>
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Required, as for ListLogs.
+     *
+     * Generated from protobuf field <code>string date = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->date = $var;
+
+        return $this;
     }
 
     /**

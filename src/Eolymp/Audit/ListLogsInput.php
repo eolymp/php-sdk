@@ -14,6 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListLogsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Required. The day to read, as YYYY-MM-DD. The log is stored a day at a time and a query reads exactly one of
+     * them, which is what keeps a single call bounded no matter how busy the space is.
+     *
+     * Generated from protobuf field <code>string date = 1;</code>
+     */
+    protected $date = '';
+    /**
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -44,6 +51,9 @@ class ListLogsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $date
+     *           Required. The day to read, as YYYY-MM-DD. The log is stored a day at a time and a query reads exactly one of
+     *           them, which is what keeps a single call bounded no matter how busy the space is.
      *     @type int $offset
      *     @type int $size
      *     @type \Eolymp\Audit\ListLogsInput\Filter $filters
@@ -55,6 +65,34 @@ class ListLogsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Audit\LogService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Required. The day to read, as YYYY-MM-DD. The log is stored a day at a time and a query reads exactly one of
+     * them, which is what keeps a single call bounded no matter how busy the space is.
+     *
+     * Generated from protobuf field <code>string date = 1;</code>
+     * @return string
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Required. The day to read, as YYYY-MM-DD. The log is stored a day at a time and a query reads exactly one of
+     * them, which is what keeps a single call bounded no matter how busy the space is.
+     *
+     * Generated from protobuf field <code>string date = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->date = $var;
+
+        return $this;
     }
 
     /**

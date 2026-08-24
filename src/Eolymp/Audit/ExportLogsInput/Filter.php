@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * when unset, only the last 24 hours are searched
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp timestamp = 1;</code>
-     */
-    private $timestamp;
-    /**
      * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
      *
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString actor = 2;</code>
@@ -52,8 +46,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $timestamp
-     *           when unset, only the last 24 hours are searched
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $actor
      *           matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $method
@@ -66,32 +58,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Audit\LogService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * when unset, only the last 24 hours are searched
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp timestamp = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
-
-    /**
-     * when unset, only the last 24 hours are searched
-     *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp timestamp = 1;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setTimestamp($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
-        $this->timestamp = $arr;
-
-        return $this;
     }
 
     /**
