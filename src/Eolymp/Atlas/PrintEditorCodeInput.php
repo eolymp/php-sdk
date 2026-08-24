@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class PrintEditorCodeInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string problem_id = 3;</code>
+     */
+    protected $problem_id = '';
+    /**
      * Generated from protobuf field <code>string runtime = 1;</code>
      */
     protected $runtime = '';
@@ -28,6 +32,7 @@ class PrintEditorCodeInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
      *     @type string $runtime
      *     @type string $source_code
      * }
@@ -35,6 +40,28 @@ class PrintEditorCodeInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\EditorService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 3;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
     }
 
     /**

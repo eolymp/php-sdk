@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateEditorStateInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string problem_id = 4;</code>
+     */
+    protected $problem_id = '';
+    /**
      * Generated from protobuf field <code>string runtime = 1;</code>
      */
     protected $runtime = '';
@@ -33,6 +37,7 @@ class UpdateEditorStateInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $problem_id
      *     @type string $runtime
      *     @type string $source_code
      *     @type string $input_data
@@ -42,6 +47,28 @@ class UpdateEditorStateInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\EditorService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 4;</code>
+     * @return string
+     */
+    public function getProblemId()
+    {
+        return $this->problem_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string problem_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProblemId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->problem_id = $var;
+
+        return $this;
     }
 
     /**
