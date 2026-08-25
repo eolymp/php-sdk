@@ -75,6 +75,13 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $interactive_followup = false;
     /**
+     * Most instances of the submission the interactor may ask for over its control connection.
+     * Zero means the interactor talks to a single instance, as an interactive problem does.
+     *
+     * Generated from protobuf field <code>uint32 instance_limit = 19;</code>
+     */
+    protected $instance_limit = 0;
+    /**
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Precondition preconditions = 40;</code>
@@ -146,6 +153,9 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *           Number of times solution will be executed, after each run (except last) output.txt will be renamed to input.txt.
      *     @type bool $interactive_followup
      *           Use interactor in the second and subsequent runs (when run_count > 1)
+     *     @type int $instance_limit
+     *           Most instances of the submission the interactor may ask for over its control connection.
+     *           Zero means the interactor talks to a single instance, as an interactive problem does.
      *     @type array<\Eolymp\Executor\EvaluationTask\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type array<\Eolymp\Executor\EvaluationTask\Constraint>|\Google\Protobuf\Internal\RepeatedField $constraints
@@ -421,6 +431,34 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->interactive_followup = $var;
+
+        return $this;
+    }
+
+    /**
+     * Most instances of the submission the interactor may ask for over its control connection.
+     * Zero means the interactor talks to a single instance, as an interactive problem does.
+     *
+     * Generated from protobuf field <code>uint32 instance_limit = 19;</code>
+     * @return int
+     */
+    public function getInstanceLimit()
+    {
+        return $this->instance_limit;
+    }
+
+    /**
+     * Most instances of the submission the interactor may ask for over its control connection.
+     * Zero means the interactor talks to a single instance, as an interactive problem does.
+     *
+     * Generated from protobuf field <code>uint32 instance_limit = 19;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInstanceLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->instance_limit = $var;
 
         return $this;
     }

@@ -49,6 +49,12 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint64 memory_limit = 6;</code>
      */
     protected $memory_limit = 0;
+    /**
+     * Most instances of the submission an interactor may ask for, communication problems only
+     *
+     * Generated from protobuf field <code>uint32 instance_limit = 7;</code>
+     */
+    protected $instance_limit = 0;
 
     /**
      * Constructor.
@@ -68,6 +74,8 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      *           CPU time limit (ms), problem-level default
      *     @type int|string $memory_limit
      *           Memory limit (bytes), problem-level default
+     *     @type int $instance_limit
+     *           Most instances of the submission an interactor may ask for, communication problems only
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +235,32 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->memory_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Most instances of the submission an interactor may ask for, communication problems only
+     *
+     * Generated from protobuf field <code>uint32 instance_limit = 7;</code>
+     * @return int
+     */
+    public function getInstanceLimit()
+    {
+        return $this->instance_limit;
+    }
+
+    /**
+     * Most instances of the submission an interactor may ask for, communication problems only
+     *
+     * Generated from protobuf field <code>uint32 instance_limit = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInstanceLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->instance_limit = $var;
 
         return $this;
     }
