@@ -40,17 +40,23 @@ class Log extends \Google\Protobuf\Internal\Message
      */
     protected $method = '';
     /**
-     * namespace the call was made in, eg. "spaces/<space_id>/contests/<contest_id>"
+     * the object the call is about, eg. "contests/<contest_id>", empty when it names none
      *
      * Generated from protobuf field <code>string scope = 7;</code>
      */
     protected $scope = '';
     /**
-     * the call changes state, derived from the method name
+     * derived from the method name, and the only answer for a record written before operation
      *
      * Generated from protobuf field <code>bool mutation = 8;</code>
      */
     protected $mutation = false;
+    /**
+     * what the call does, as the method declares; unset before 2026-08-25
+     *
+     * Generated from protobuf field <code>.eolymp.audit.Log.Operation operation = 11;</code>
+     */
+    protected $operation = 0;
     /**
      * request as JSON, empty when the method is excluded from payload capture or the request was too large
      *
@@ -72,9 +78,11 @@ class Log extends \Google\Protobuf\Internal\Message
      *     @type string $method
      *           called method, eg. "/eolymp.judge.ContestService/CreateContest"
      *     @type string $scope
-     *           namespace the call was made in, eg. "spaces/<space_id>/contests/<contest_id>"
+     *           the object the call is about, eg. "contests/<contest_id>", empty when it names none
      *     @type bool $mutation
-     *           the call changes state, derived from the method name
+     *           derived from the method name, and the only answer for a record written before operation
+     *     @type int $operation
+     *           what the call does, as the method declares; unset before 2026-08-25
      *     @type string $payload
      *           request as JSON, empty when the method is excluded from payload capture or the request was too large
      * }
@@ -223,7 +231,7 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * namespace the call was made in, eg. "spaces/<space_id>/contests/<contest_id>"
+     * the object the call is about, eg. "contests/<contest_id>", empty when it names none
      *
      * Generated from protobuf field <code>string scope = 7;</code>
      * @return string
@@ -234,7 +242,7 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * namespace the call was made in, eg. "spaces/<space_id>/contests/<contest_id>"
+     * the object the call is about, eg. "contests/<contest_id>", empty when it names none
      *
      * Generated from protobuf field <code>string scope = 7;</code>
      * @param string $var
@@ -249,7 +257,7 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the call changes state, derived from the method name
+     * derived from the method name, and the only answer for a record written before operation
      *
      * Generated from protobuf field <code>bool mutation = 8;</code>
      * @return bool
@@ -260,7 +268,7 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the call changes state, derived from the method name
+     * derived from the method name, and the only answer for a record written before operation
      *
      * Generated from protobuf field <code>bool mutation = 8;</code>
      * @param bool $var
@@ -270,6 +278,32 @@ class Log extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->mutation = $var;
+
+        return $this;
+    }
+
+    /**
+     * what the call does, as the method declares; unset before 2026-08-25
+     *
+     * Generated from protobuf field <code>.eolymp.audit.Log.Operation operation = 11;</code>
+     * @return int
+     */
+    public function getOperation()
+    {
+        return $this->operation;
+    }
+
+    /**
+     * what the call does, as the method declares; unset before 2026-08-25
+     *
+     * Generated from protobuf field <code>.eolymp.audit.Log.Operation operation = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOperation($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Audit\Log\Operation::class);
+        $this->operation = $var;
 
         return $this;
     }

@@ -16,7 +16,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString actor = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum actor = 2;</code>
      */
     private $actor;
     /**
@@ -36,9 +36,9 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $user_agent;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool mutation = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum operation = 8;</code>
      */
-    private $mutation;
+    private $operation;
 
     /**
      * Constructor.
@@ -46,13 +46,13 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $actor
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $actor
      *           matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $method
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $scope
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $ip_address
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $user_agent
-     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $mutation
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $operation
      * }
      */
     public function __construct($data = NULL) {
@@ -63,7 +63,7 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString actor = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum actor = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getActor()
@@ -74,13 +74,13 @@ class Filter extends \Google\Protobuf\Internal\Message
     /**
      * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString actor = 2;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum actor = 2;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setActor($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionString::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->actor = $arr;
 
         return $this;
@@ -175,23 +175,23 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool mutation = 7;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum operation = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getMutation()
+    public function getOperation()
     {
-        return $this->mutation;
+        return $this->operation;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool mutation = 7;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum operation = 8;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setMutation($var)
+    public function setOperation($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
-        $this->mutation = $arr;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->operation = $arr;
 
         return $this;
     }
