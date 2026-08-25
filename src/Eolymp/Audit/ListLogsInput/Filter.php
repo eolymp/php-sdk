@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
+     * use NOT_EQUAL with an empty value to exclude anonymous calls
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum actor = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum subject = 2;</code>
      */
-    private $actor;
+    private $subject;
     /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionString method = 3;</code>
      */
@@ -46,8 +46,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $actor
-     *           matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $subject
+     *           use NOT_EQUAL with an empty value to exclude anonymous calls
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $method
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $scope
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $ip_address
@@ -61,27 +61,27 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
+     * use NOT_EQUAL with an empty value to exclude anonymous calls
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum actor = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum subject = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getActor()
+    public function getSubject()
     {
-        return $this->actor;
+        return $this->subject;
     }
 
     /**
-     * matches the subject, use NOT_EQUAL with an empty value to exclude anonymous calls
+     * use NOT_EQUAL with an empty value to exclude anonymous calls
      *
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum actor = 2;</code>
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum subject = 2;</code>
      * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setActor($var)
+    public function setSubject($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->actor = $arr;
+        $this->subject = $arr;
 
         return $this;
     }

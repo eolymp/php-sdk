@@ -20,11 +20,11 @@ class Log extends \Google\Protobuf\Internal\Message
      */
     protected $timestamp = null;
     /**
-     * unset when the call was made anonymously
+     * who made the call, eg. "member:<space_id>:<member_id>", empty for an anonymous call
      *
-     * Generated from protobuf field <code>.eolymp.audit.Log.Actor actor = 3;</code>
+     * Generated from protobuf field <code>string subject = 12;</code>
      */
-    protected $actor = null;
+    protected $subject = '';
     /**
      * Generated from protobuf field <code>string ip_address = 4;</code>
      */
@@ -71,8 +71,8 @@ class Log extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Timestamp $timestamp
-     *     @type \Eolymp\Audit\Log\Actor $actor
-     *           unset when the call was made anonymously
+     *     @type string $subject
+     *           who made the call, eg. "member:<space_id>:<member_id>", empty for an anonymous call
      *     @type string $ip_address
      *     @type string $user_agent
      *     @type string $method
@@ -125,37 +125,27 @@ class Log extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * unset when the call was made anonymously
+     * who made the call, eg. "member:<space_id>:<member_id>", empty for an anonymous call
      *
-     * Generated from protobuf field <code>.eolymp.audit.Log.Actor actor = 3;</code>
-     * @return \Eolymp\Audit\Log\Actor|null
+     * Generated from protobuf field <code>string subject = 12;</code>
+     * @return string
      */
-    public function getActor()
+    public function getSubject()
     {
-        return $this->actor;
-    }
-
-    public function hasActor()
-    {
-        return isset($this->actor);
-    }
-
-    public function clearActor()
-    {
-        unset($this->actor);
+        return $this->subject;
     }
 
     /**
-     * unset when the call was made anonymously
+     * who made the call, eg. "member:<space_id>:<member_id>", empty for an anonymous call
      *
-     * Generated from protobuf field <code>.eolymp.audit.Log.Actor actor = 3;</code>
-     * @param \Eolymp\Audit\Log\Actor $var
+     * Generated from protobuf field <code>string subject = 12;</code>
+     * @param string $var
      * @return $this
      */
-    public function setActor($var)
+    public function setSubject($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Audit\Log\Actor::class);
-        $this->actor = $var;
+        GPBUtil::checkString($var, True);
+        $this->subject = $var;
 
         return $this;
     }
