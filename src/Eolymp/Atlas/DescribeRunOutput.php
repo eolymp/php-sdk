@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeRunOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.eolymp.playground.Run run = 1;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Run run = 1;</code>
      */
     protected $run = null;
 
@@ -24,7 +24,7 @@ class DescribeRunOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Eolymp\Playground\Run $run
+     *     @type \Eolymp\Atlas\Run $run
      * }
      */
     public function __construct($data = NULL) {
@@ -33,8 +33,8 @@ class DescribeRunOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.playground.Run run = 1;</code>
-     * @return \Eolymp\Playground\Run|null
+     * Generated from protobuf field <code>.eolymp.atlas.Run run = 1;</code>
+     * @return \Eolymp\Atlas\Run|null
      */
     public function getRun()
     {
@@ -52,13 +52,13 @@ class DescribeRunOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.playground.Run run = 1;</code>
-     * @param \Eolymp\Playground\Run $var
+     * Generated from protobuf field <code>.eolymp.atlas.Run run = 1;</code>
+     * @param \Eolymp\Atlas\Run $var
      * @return $this
      */
     public function setRun($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Playground\Run::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Run::class);
         $this->run = $var;
 
         return $this;
