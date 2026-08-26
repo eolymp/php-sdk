@@ -30,7 +30,10 @@ class ClassServiceClient {
      */
     public function CreateClass(CreateClassInput $input, array $context = [])
     {
-        $path = "/classes";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.ClassService/CreateClass";
         $context['path'] = $path;
@@ -46,9 +49,10 @@ class ClassServiceClient {
      */
     public function UpdateClass(UpdateClassInput $input, array $context = [])
     {
-        $path = "/classes/".rawurlencode($input->getGroupId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes/".rawurlencode($input->getGroupId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setGroupId("");
 
         $context['name'] = "eolymp.course.ClassService/UpdateClass";
@@ -65,9 +69,10 @@ class ClassServiceClient {
      */
     public function DeleteClass(DeleteClassInput $input, array $context = [])
     {
-        $path = "/classes/".rawurlencode($input->getGroupId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes/".rawurlencode($input->getGroupId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setGroupId("");
 
         $context['name'] = "eolymp.course.ClassService/DeleteClass";
@@ -84,9 +89,10 @@ class ClassServiceClient {
      */
     public function DescribeClass(DescribeClassInput $input, array $context = [])
     {
-        $path = "/classes/".rawurlencode($input->getGroupId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes/".rawurlencode($input->getGroupId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setGroupId("");
 
         $context['name'] = "eolymp.course.ClassService/DescribeClass";
@@ -103,7 +109,10 @@ class ClassServiceClient {
      */
     public function ListClasses(ListClassesInput $input, array $context = [])
     {
-        $path = "/classes";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.ClassService/ListClasses";
         $context['path'] = $path;
@@ -119,9 +128,10 @@ class ClassServiceClient {
      */
     public function ListClassAssignments(ListClassAssignmentsInput $input, array $context = [])
     {
-        $path = "/classes/".rawurlencode($input->getGroupId())."/assignments";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes/".rawurlencode($input->getGroupId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setGroupId("");
 
         $context['name'] = "eolymp.course.ClassService/ListClassAssignments";
@@ -138,9 +148,10 @@ class ClassServiceClient {
      */
     public function UpdateClassAssignment(UpdateClassAssignmentInput $input, array $context = [])
     {
-        $path = "/classes/".rawurlencode($input->getGroupId())."/assignments";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes/".rawurlencode($input->getGroupId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setGroupId("");
 
         $context['name'] = "eolymp.course.ClassService/UpdateClassAssignment";
@@ -157,9 +168,10 @@ class ClassServiceClient {
      */
     public function DeleteClassAssignment(DeleteClassAssignmentInput $input, array $context = [])
     {
-        $path = "/classes/".rawurlencode($input->getGroupId())."/assignments";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/classes/".rawurlencode($input->getGroupId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setGroupId("");
 
         $context['name'] = "eolymp.course.ClassService/DeleteClassAssignment";

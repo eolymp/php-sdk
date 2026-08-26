@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeleteClassAssignmentInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string course_id = 3;</code>
+     */
+    protected $course_id = '';
+    /**
      * Generated from protobuf field <code>string group_id = 1;</code>
      */
     protected $group_id = '';
@@ -28,6 +32,7 @@ class DeleteClassAssignmentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $course_id
      *     @type string $group_id
      *     @type string $module_id
      * }
@@ -35,6 +40,28 @@ class DeleteClassAssignmentInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\ClassService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 3;</code>
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->course_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCourseId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->course_id = $var;
+
+        return $this;
     }
 
     /**

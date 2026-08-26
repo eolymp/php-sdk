@@ -30,7 +30,10 @@ class ModuleServiceClient {
      */
     public function CreateModule(CreateModuleInput $input, array $context = [])
     {
-        $path = "/modules";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.ModuleService/CreateModule";
         $context['path'] = $path;
@@ -46,9 +49,10 @@ class ModuleServiceClient {
      */
     public function UpdateModule(UpdateModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules/".rawurlencode($input->getModuleId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setModuleId("");
 
         $context['name'] = "eolymp.course.ModuleService/UpdateModule";
@@ -65,9 +69,10 @@ class ModuleServiceClient {
      */
     public function DeleteModule(DeleteModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules/".rawurlencode($input->getModuleId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setModuleId("");
 
         $context['name'] = "eolymp.course.ModuleService/DeleteModule";
@@ -84,9 +89,10 @@ class ModuleServiceClient {
      */
     public function DescribeModule(DescribeModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules/".rawurlencode($input->getModuleId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setModuleId("");
 
         $context['name'] = "eolymp.course.ModuleService/DescribeModule";
@@ -103,7 +109,10 @@ class ModuleServiceClient {
      */
     public function ListModules(ListModulesInput $input, array $context = [])
     {
-        $path = "/modules";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.ModuleService/ListModules";
         $context['path'] = $path;
@@ -119,9 +128,10 @@ class ModuleServiceClient {
      */
     public function StartModule(StartModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId())."/start";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules/".rawurlencode($input->getModuleId())."/start";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setModuleId("");
 
         $context['name'] = "eolymp.course.ModuleService/StartModule";
@@ -138,9 +148,10 @@ class ModuleServiceClient {
      */
     public function GradeModule(GradeModuleInput $input, array $context = [])
     {
-        $path = "/modules/".rawurlencode($input->getModuleId())."/grade";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/modules/".rawurlencode($input->getModuleId())."/grade";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setModuleId("");
 
         $context['name'] = "eolymp.course.ModuleService/GradeModule";

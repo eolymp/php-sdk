@@ -30,7 +30,10 @@ class MaterialServiceClient {
      */
     public function CreateMaterial(CreateMaterialInput $input, array $context = [])
     {
-        $path = "/materials";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.MaterialService/CreateMaterial";
         $context['path'] = $path;
@@ -46,9 +49,10 @@ class MaterialServiceClient {
      */
     public function UpdateMaterial(UpdateMaterialInput $input, array $context = [])
     {
-        $path = "/materials/".rawurlencode($input->getMaterialId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.MaterialService/UpdateMaterial";
@@ -65,9 +69,10 @@ class MaterialServiceClient {
      */
     public function MoveMaterial(MoveMaterialInput $input, array $context = [])
     {
-        $path = "/materials/".rawurlencode($input->getMaterialId())."/move";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/move";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.MaterialService/MoveMaterial";
@@ -84,9 +89,10 @@ class MaterialServiceClient {
      */
     public function DeleteMaterial(DeleteMaterialInput $input, array $context = [])
     {
-        $path = "/materials/".rawurlencode($input->getMaterialId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.MaterialService/DeleteMaterial";
@@ -103,9 +109,10 @@ class MaterialServiceClient {
      */
     public function DescribeMaterial(DescribeMaterialInput $input, array $context = [])
     {
-        $path = "/materials/".rawurlencode($input->getMaterialId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.MaterialService/DescribeMaterial";
@@ -122,7 +129,10 @@ class MaterialServiceClient {
      */
     public function ListMaterials(ListMaterialsInput $input, array $context = [])
     {
-        $path = "/materials";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.MaterialService/ListMaterials";
         $context['path'] = $path;
@@ -138,9 +148,10 @@ class MaterialServiceClient {
      */
     public function ReportProgress(ReportProgressInput $input, array $context = [])
     {
-        $path = "/materials/".rawurlencode($input->getMaterialId())."/progress";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/progress";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.MaterialService/ReportProgress";
@@ -157,9 +168,10 @@ class MaterialServiceClient {
      */
     public function GradeMaterial(GradeMaterialInput $input, array $context = [])
     {
-        $path = "/materials/".rawurlencode($input->getMaterialId())."/grade";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/grade";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.MaterialService/GradeMaterial";

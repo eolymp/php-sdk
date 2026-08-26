@@ -20,6 +20,10 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
+     * Generated from protobuf field <code>string course_id = 4;</code>
+     */
+    protected $course_id = '';
+    /**
      * Generated from protobuf field <code>string material_id = 2;</code>
      */
     protected $material_id = '';
@@ -36,6 +40,7 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *           specify list of fields to update, if empty all fields are updated
+     *     @type string $course_id
      *     @type string $material_id
      *     @type \Eolymp\Course\Material $material
      * }
@@ -67,6 +72,28 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\UpdateMaterialInput\Patch::class);
         $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 4;</code>
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->course_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCourseId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->course_id = $var;
 
         return $this;
     }
