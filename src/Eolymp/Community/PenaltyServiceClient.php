@@ -11,9 +11,8 @@ namespace Eolymp\Community;
      * individual actions such as commenting or submitting — with a summary and a description explaining it,
      * and a time at which it stops applying. Several can be in force at once and they add up rather than
      * replace each other. In practice penalties are add-only and lapse on their own: the console only lists
-     * and creates them, and the methods that revise or remove one are rarely reached for. Being
-     * member-scoped, these calls are addressed through the base url a member carries in its read-only url
-     * field.
+     * and creates them, and the methods that revise or remove one are rarely reached for. Every method acts
+     * on the member named by `member_id` in the request.
      */
 class PenaltyServiceClient {
 
@@ -45,7 +44,10 @@ class PenaltyServiceClient {
      */
     public function CreatePenalty(CreatePenaltyInput $input, array $context = [])
     {
-        $path = "/penalties";
+        $path = "/members/".rawurlencode($input->getMemberId())."/penalties";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.community.PenaltyService/CreatePenalty";
         $context['path'] = $path;
@@ -64,9 +66,10 @@ class PenaltyServiceClient {
      */
     public function UpdatePenalty(UpdatePenaltyInput $input, array $context = [])
     {
-        $path = "/penalties/".rawurlencode($input->getPenaltyId());
+        $path = "/members/".rawurlencode($input->getMemberId())."/penalties/".rawurlencode($input->getPenaltyId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
         $input->setPenaltyId("");
 
         $context['name'] = "eolymp.community.PenaltyService/UpdatePenalty";
@@ -86,9 +89,10 @@ class PenaltyServiceClient {
      */
     public function DeletePenalty(DeletePenaltyInput $input, array $context = [])
     {
-        $path = "/penalties/".rawurlencode($input->getPenaltyId());
+        $path = "/members/".rawurlencode($input->getMemberId())."/penalties/".rawurlencode($input->getPenaltyId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
         $input->setPenaltyId("");
 
         $context['name'] = "eolymp.community.PenaltyService/DeletePenalty";
@@ -108,9 +112,10 @@ class PenaltyServiceClient {
      */
     public function DescribePenalty(DescribePenaltyInput $input, array $context = [])
     {
-        $path = "/penalties/".rawurlencode($input->getPenaltyId());
+        $path = "/members/".rawurlencode($input->getMemberId())."/penalties/".rawurlencode($input->getPenaltyId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
         $input->setPenaltyId("");
 
         $context['name'] = "eolymp.community.PenaltyService/DescribePenalty";
@@ -131,7 +136,10 @@ class PenaltyServiceClient {
      */
     public function ListPenalties(ListPenaltiesInput $input, array $context = [])
     {
-        $path = "/penalties";
+        $path = "/members/".rawurlencode($input->getMemberId())."/penalties";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.community.PenaltyService/ListPenalties";
         $context['path'] = $path;

@@ -9,8 +9,8 @@ namespace Eolymp\Community;
      *
      * Its single method returns a bare series of counts, which clients draw as the contribution-style graph
      * on a member's profile. The counter being measured is chosen per call and is a free-form string rather
-     * than an enum — the console offers variations around accepted, submitted and solved counts. Being
-     * member-scoped, the call is addressed through the base url a member carries in its read-only url field.
+     * than an enum — the console offers variations around accepted, submitted and solved counts. The call
+     * acts on the member named by `member_id` in the request.
      */
 class ActivityGraphServiceClient {
 
@@ -44,7 +44,10 @@ class ActivityGraphServiceClient {
      */
     public function DescribeActivityGraph(DescribeActivityGraphInput $input, array $context = [])
     {
-        $path = "/activity-graph";
+        $path = "/members/".rawurlencode($input->getMemberId())."/activity-graph";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.community.ActivityGraphService/DescribeActivityGraph";
         $context['path'] = $path;

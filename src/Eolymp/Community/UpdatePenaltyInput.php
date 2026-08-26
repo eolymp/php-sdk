@@ -18,6 +18,10 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>string penalty_id = 1;</code>
      */
     protected $penalty_id = '';
@@ -33,6 +37,7 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type string $member_id
      *     @type string $penalty_id
      *     @type \Eolymp\Community\Penalty $penalty
      * }
@@ -60,6 +65,28 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdatePenaltyInput\Patch::class);
         $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }
