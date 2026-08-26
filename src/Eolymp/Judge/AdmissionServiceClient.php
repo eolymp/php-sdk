@@ -46,7 +46,10 @@ class AdmissionServiceClient {
      */
     public function RequestAdmission(RequestAdmissionInput $input, array $context = [])
     {
-        $path = "/admission:request";
+        $path = "/contests/".rawurlencode($input->getContestId())."/admission:request";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.AdmissionService/RequestAdmission";
         $context['path'] = $path;
@@ -66,7 +69,10 @@ class AdmissionServiceClient {
      */
     public function DescribeAdmission(DescribeAdmissionInput $input, array $context = [])
     {
-        $path = "/admission:request";
+        $path = "/contests/".rawurlencode($input->getContestId())."/admission:request";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.AdmissionService/DescribeAdmission";
         $context['path'] = $path;
@@ -87,7 +93,10 @@ class AdmissionServiceClient {
      */
     public function AcceptAdmission(AcceptAdmissionInput $input, array $context = [])
     {
-        $path = "/admission:accept";
+        $path = "/contests/".rawurlencode($input->getContestId())."/admission:accept";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.AdmissionService/AcceptAdmission";
         $context['path'] = $path;

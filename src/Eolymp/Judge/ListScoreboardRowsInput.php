@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string contest_id = 2;</code>
+     */
+    protected $contest_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Mode mode = 1;</code>
      */
     protected $mode = 0;
@@ -46,6 +50,7 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type int $mode
      *     @type int $size
      *           Number of results per page, (max. 100, default 100)
@@ -58,6 +63,28 @@ class ListScoreboardRowsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ScoreboardService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
     }
 
     /**

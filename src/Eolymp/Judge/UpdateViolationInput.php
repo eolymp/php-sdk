@@ -18,6 +18,10 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
      */
     private $patch;
     /**
+     * Generated from protobuf field <code>string contest_id = 4;</code>
+     */
+    protected $contest_id = '';
+    /**
      * Generated from protobuf field <code>string violation_id = 1;</code>
      */
     protected $violation_id = '';
@@ -33,6 +37,7 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
+     *     @type string $contest_id
      *     @type string $violation_id
      *     @type \Eolymp\Judge\Violation $violation
      * }
@@ -60,6 +65,28 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Violation\Patch\Field::class);
         $this->patch = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 4;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
 
         return $this;
     }

@@ -45,7 +45,10 @@ class ViolationServiceClient {
      */
     public function CreateViolation(CreateViolationInput $input, array $context = [])
     {
-        $path = "/violations";
+        $path = "/contests/".rawurlencode($input->getContestId())."/violations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ViolationService/CreateViolation";
         $context['path'] = $path;
@@ -66,9 +69,10 @@ class ViolationServiceClient {
      */
     public function UpdateViolation(UpdateViolationInput $input, array $context = [])
     {
-        $path = "/violations/".rawurlencode($input->getViolationId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/violations/".rawurlencode($input->getViolationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setViolationId("");
 
         $context['name'] = "eolymp.judge.ViolationService/UpdateViolation";
@@ -89,9 +93,10 @@ class ViolationServiceClient {
      */
     public function DeleteViolation(DeleteViolationInput $input, array $context = [])
     {
-        $path = "/violations/".rawurlencode($input->getViolationId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/violations/".rawurlencode($input->getViolationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setViolationId("");
 
         $context['name'] = "eolymp.judge.ViolationService/DeleteViolation";
@@ -112,9 +117,10 @@ class ViolationServiceClient {
      */
     public function DescribeViolation(DescribeViolationInput $input, array $context = [])
     {
-        $path = "/violations/".rawurlencode($input->getViolationId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/violations/".rawurlencode($input->getViolationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setViolationId("");
 
         $context['name'] = "eolymp.judge.ViolationService/DescribeViolation";
@@ -137,9 +143,10 @@ class ViolationServiceClient {
      */
     public function ListViolationEvidence(ListViolationEvidenceInput $input, array $context = [])
     {
-        $path = "/violations/".rawurlencode($input->getViolationId())."/evidence";
+        $path = "/contests/".rawurlencode($input->getContestId())."/violations/".rawurlencode($input->getViolationId())."/evidence";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setViolationId("");
 
         $context['name'] = "eolymp.judge.ViolationService/ListViolationEvidence";
@@ -156,7 +163,10 @@ class ViolationServiceClient {
      */
     public function ListViolations(ListViolationsInput $input, array $context = [])
     {
-        $path = "/violations";
+        $path = "/contests/".rawurlencode($input->getContestId())."/violations";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ViolationService/ListViolations";
         $context['path'] = $path;

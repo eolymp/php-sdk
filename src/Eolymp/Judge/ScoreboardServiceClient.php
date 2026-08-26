@@ -44,7 +44,10 @@ class ScoreboardServiceClient {
      */
     public function DescribeScoreboard(DescribeScoreboardInput $input, array $context = [])
     {
-        $path = "/scoreboard";
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ScoreboardService/DescribeScoreboard";
         $context['path'] = $path;
@@ -64,7 +67,10 @@ class ScoreboardServiceClient {
      */
     public function ListScoreboardRows(ListScoreboardRowsInput $input, array $context = [])
     {
-        $path = "/scoreboard/rows";
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/rows";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ScoreboardService/ListScoreboardRows";
         $context['path'] = $path;
@@ -80,9 +86,10 @@ class ScoreboardServiceClient {
      */
     public function DescribeScoreboardRow(DescribeScoreboardRowInput $input, array $context = [])
     {
-        $path = "/scoreboard/rows/".rawurlencode($input->getParticipantId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/rows/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreboardService/DescribeScoreboardRow";
@@ -99,7 +106,10 @@ class ScoreboardServiceClient {
      */
     public function ExportScoreboard(ExportScoreboardInput $input, array $context = [])
     {
-        $path = "/scoreboard/export";
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/export";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ScoreboardService/ExportScoreboard";
         $context['path'] = $path;

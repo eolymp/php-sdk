@@ -44,7 +44,10 @@ class RegistrationServiceClient {
      */
     public function DescribeRegistration(DescribeRegistrationInput $input, array $context = [])
     {
-        $path = "/registration";
+        $path = "/contests/".rawurlencode($input->getContestId())."/registration";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.RegistrationService/DescribeRegistration";
         $context['path'] = $path;
@@ -64,7 +67,10 @@ class RegistrationServiceClient {
      */
     public function SubmitRegistration(SubmitRegistrationInput $input, array $context = [])
     {
-        $path = "/registration";
+        $path = "/contests/".rawurlencode($input->getContestId())."/registration";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.RegistrationService/SubmitRegistration";
         $context['path'] = $path;
