@@ -30,7 +30,10 @@ class SubmissionServiceClient {
      */
     public function CreateSubmission(CreateSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.SubmissionService/CreateSubmission";
         $context['path'] = $path;
@@ -46,7 +49,10 @@ class SubmissionServiceClient {
      */
     public function ListSubmissions(ListSubmissionsInput $input, array $context = [])
     {
-        $path = "/submissions";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.SubmissionService/ListSubmissions";
         $context['path'] = $path;
@@ -62,9 +68,10 @@ class SubmissionServiceClient {
      */
     public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/submissions/".rawurlencode($input->getSubmissionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.course.SubmissionService/DescribeSubmission";

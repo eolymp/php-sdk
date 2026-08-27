@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     */
+    protected $course_id = '';
+    /**
      * pagination
      *
      * Generated from protobuf field <code>string after = 12;</code>
@@ -36,6 +40,7 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $course_id
      *     @type string $after
      *           pagination
      *     @type int $size
@@ -46,6 +51,28 @@ class ListSubmissionsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\SubmissionService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->course_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string course_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCourseId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->course_id = $var;
+
+        return $this;
     }
 
     /**
