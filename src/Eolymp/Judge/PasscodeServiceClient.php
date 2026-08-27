@@ -46,7 +46,10 @@ class PasscodeServiceClient {
      */
     public function VerifyPasscode(VerifyPasscodeInput $input, array $context = [])
     {
-        $path = "/verify-passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/verify-passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.PasscodeService/VerifyPasscode";
         $context['path'] = $path;
@@ -66,7 +69,10 @@ class PasscodeServiceClient {
      */
     public function EnterPasscode(EnterPasscodeInput $input, array $context = [])
     {
-        $path = "/enter-passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/enter-passcode";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.PasscodeService/EnterPasscode";
         $context['path'] = $path;
@@ -87,9 +93,10 @@ class PasscodeServiceClient {
      */
     public function ResetPasscode(ResetPasscodeInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.PasscodeService/ResetPasscode";
@@ -110,9 +117,10 @@ class PasscodeServiceClient {
      */
     public function SetPasscode(SetPasscodeInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.PasscodeService/SetPasscode";
@@ -133,9 +141,10 @@ class PasscodeServiceClient {
      */
     public function RemovePasscode(RemovePasscodeInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/passcode";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/passcode";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.PasscodeService/RemovePasscode";
