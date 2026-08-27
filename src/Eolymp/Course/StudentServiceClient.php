@@ -30,7 +30,10 @@ class StudentServiceClient {
      */
     public function CreateStudent(CreateStudentInput $input, array $context = [])
     {
-        $path = "/students";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.StudentService/CreateStudent";
         $context['path'] = $path;
@@ -46,9 +49,10 @@ class StudentServiceClient {
      */
     public function UpdateStudent(UpdateStudentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/UpdateStudent";
@@ -65,9 +69,10 @@ class StudentServiceClient {
      */
     public function DeleteStudent(DeleteStudentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/DeleteStudent";
@@ -84,9 +89,10 @@ class StudentServiceClient {
      */
     public function DescribeStudent(DescribeStudentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/DescribeStudent";
@@ -103,7 +109,10 @@ class StudentServiceClient {
      */
     public function ListStudents(ListStudentsInput $input, array $context = [])
     {
-        $path = "/students";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.StudentService/ListStudents";
         $context['path'] = $path;
@@ -119,7 +128,10 @@ class StudentServiceClient {
      */
     public function JoinCourse(JoinCourseInput $input, array $context = [])
     {
-        $path = "/join";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/join";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.StudentService/JoinCourse";
         $context['path'] = $path;
@@ -135,7 +147,10 @@ class StudentServiceClient {
      */
     public function DescribeViewer(DescribeViewerInput $input, array $context = [])
     {
-        $path = "/viewer/student";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/viewer/student";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
 
         $context['name'] = "eolymp.course.StudentService/DescribeViewer";
         $context['path'] = $path;
@@ -151,9 +166,10 @@ class StudentServiceClient {
      */
     public function ListStudentAssignments(ListStudentAssignmentsInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/ListStudentAssignments";
@@ -170,9 +186,10 @@ class StudentServiceClient {
      */
     public function UpdateStudentAssignment(UpdateStudentAssignmentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/UpdateStudentAssignment";
@@ -189,9 +206,10 @@ class StudentServiceClient {
      */
     public function DeleteStudentAssignment(DeleteStudentAssignmentInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId())."/assignments";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId())."/assignments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/DeleteStudentAssignment";
@@ -208,9 +226,10 @@ class StudentServiceClient {
      */
     public function ListStudentGrades(ListStudentGradesInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId())."/grades";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId())."/grades";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
 
         $context['name'] = "eolymp.course.StudentService/ListStudentGrades";
@@ -227,9 +246,10 @@ class StudentServiceClient {
      */
     public function ListModuleGrades(ListModuleGradesInput $input, array $context = [])
     {
-        $path = "/students/".rawurlencode($input->getMemberId())."/grades/".rawurlencode($input->getModuleId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/students/".rawurlencode($input->getMemberId())."/grades/".rawurlencode($input->getModuleId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
         $input->setMemberId("");
         $input->setModuleId("");
 
