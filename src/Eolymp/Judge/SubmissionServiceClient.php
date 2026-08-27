@@ -47,9 +47,10 @@ class SubmissionServiceClient {
      */
     public function CreateSubmission(CreateSubmissionInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/submissions";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/submissions";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/CreateSubmission";
@@ -70,7 +71,10 @@ class SubmissionServiceClient {
      */
     public function ListSubmissions(ListSubmissionsInput $input, array $context = [])
     {
-        $path = "/submissions";
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/ListSubmissions";
         $context['path'] = $path;
@@ -91,9 +95,10 @@ class SubmissionServiceClient {
      */
     public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/DescribeSubmission";
@@ -114,9 +119,10 @@ class SubmissionServiceClient {
      */
     public function PrintSubmission(PrintSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/print";
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId())."/print";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/PrintSubmission";
@@ -143,9 +149,10 @@ class SubmissionServiceClient {
      */
     public function CompareSubmissions(CompareSubmissionsInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/compare";
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId())."/compare";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/CompareSubmissions";
@@ -167,9 +174,10 @@ class SubmissionServiceClient {
      */
     public function RetestSubmission(RetestSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/retest";
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId())."/retest";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/RetestSubmission";
@@ -191,9 +199,10 @@ class SubmissionServiceClient {
      */
     public function DeleteSubmission(DeleteSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/DeleteSubmission";
@@ -214,9 +223,10 @@ class SubmissionServiceClient {
      */
     public function RestoreSubmission(RestoreSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId())."/restore";
+        $path = "/contests/".rawurlencode($input->getContestId())."/submissions/".rawurlencode($input->getSubmissionId())."/restore";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/RestoreSubmission";
@@ -238,9 +248,10 @@ class SubmissionServiceClient {
      */
     public function RetestProblem(RetestProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/retest";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/retest";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.SubmissionService/RetestProblem";
