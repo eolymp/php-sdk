@@ -45,7 +45,10 @@ class ScoreServiceClient {
      */
     public function DescribeViewerScore(DescribeViewerScoreInput $input, array $context = [])
     {
-        $path = "/introspect/score";
+        $path = "/contests/".rawurlencode($input->getContestId())."/introspect/score";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ScoreService/DescribeViewerScore";
         $context['path'] = $path;
@@ -63,9 +66,10 @@ class ScoreServiceClient {
      */
     public function DescribeScore(DescribeScoreInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/score";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/score";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/DescribeScore";
@@ -85,9 +89,10 @@ class ScoreServiceClient {
      */
     public function ListScoreTimeline(ListScoreTimelineInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/score-timeline";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/score-timeline";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/ListScoreTimeline";
@@ -109,9 +114,10 @@ class ScoreServiceClient {
      */
     public function ImportScore(ImportScoreInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/scores";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/scores";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/ImportScore";
@@ -131,9 +137,10 @@ class ScoreServiceClient {
      */
     public function ExportScore(ExportScoreInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/scores";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/scores";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ScoreService/ExportScore";
@@ -156,7 +163,10 @@ class ScoreServiceClient {
      */
     public function RebuildScore(RebuildScoreInput $input, array $context = [])
     {
-        $path = "/rebuild";
+        $path = "/contests/".rawurlencode($input->getContestId())."/rebuild";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ScoreService/RebuildScore";
         $context['path'] = $path;
