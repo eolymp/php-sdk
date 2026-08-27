@@ -45,7 +45,10 @@ class AnnouncementServiceClient {
      */
     public function CreateAnnouncement(CreateAnnouncementInput $input, array $context = [])
     {
-        $path = "/announcements";
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/CreateAnnouncement";
         $context['path'] = $path;
@@ -65,9 +68,10 @@ class AnnouncementServiceClient {
      */
     public function UpdateAnnouncement(UpdateAnnouncementInput $input, array $context = [])
     {
-        $path = "/announcements/".rawurlencode($input->getAnnouncementId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setAnnouncementId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/UpdateAnnouncement";
@@ -88,9 +92,10 @@ class AnnouncementServiceClient {
      */
     public function DeleteAnnouncement(DeleteAnnouncementInput $input, array $context = [])
     {
-        $path = "/announcements/".rawurlencode($input->getAnnouncementId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setAnnouncementId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/DeleteAnnouncement";
@@ -111,9 +116,10 @@ class AnnouncementServiceClient {
      */
     public function ReadAnnouncement(ReadAnnouncementInput $input, array $context = [])
     {
-        $path = "/announcements/".rawurlencode($input->getAnnouncementId())."/read";
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId())."/read";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setAnnouncementId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/ReadAnnouncement";
@@ -134,9 +140,10 @@ class AnnouncementServiceClient {
      */
     public function DescribeAnnouncement(DescribeAnnouncementInput $input, array $context = [])
     {
-        $path = "/announcements/".rawurlencode($input->getAnnouncementId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setAnnouncementId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/DescribeAnnouncement";
@@ -157,9 +164,10 @@ class AnnouncementServiceClient {
      */
     public function DescribeAnnouncementStatus(DescribeAnnouncementStatusInput $input, array $context = [])
     {
-        $path = "/announcements/".rawurlencode($input->getAnnouncementId())."/status";
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements/".rawurlencode($input->getAnnouncementId())."/status";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setAnnouncementId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/DescribeAnnouncementStatus";
@@ -180,7 +188,10 @@ class AnnouncementServiceClient {
      */
     public function ListAnnouncements(ListAnnouncementsInput $input, array $context = [])
     {
-        $path = "/announcements";
+        $path = "/contests/".rawurlencode($input->getContestId())."/announcements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/ListAnnouncements";
         $context['path'] = $path;
@@ -199,7 +210,10 @@ class AnnouncementServiceClient {
      */
     public function DescribeAnnouncementSummary(DescribeAnnouncementSummaryInput $input, array $context = [])
     {
-        $path = "/summary/announcements";
+        $path = "/contests/".rawurlencode($input->getContestId())."/summary/announcements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.AnnouncementService/DescribeAnnouncementSummary";
         $context['path'] = $path;
