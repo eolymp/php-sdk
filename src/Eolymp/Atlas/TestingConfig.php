@@ -55,6 +55,13 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 instance_limit = 7;</code>
      */
     protected $instance_limit = 0;
+    /**
+     * Wall-clock time limit (ms) for the interactor. Zero gives it a run's wall
+     * time limit plus a second, which is what an interactive problem needs.
+     *
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 8;</code>
+     */
+    protected $interactor_time_limit = 0;
 
     /**
      * Constructor.
@@ -76,6 +83,9 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
      *           Memory limit (bytes), problem-level default
      *     @type int $instance_limit
      *           Most instances of the submission an interactor may ask for, communication problems only
+     *     @type int $interactor_time_limit
+     *           Wall-clock time limit (ms) for the interactor. Zero gives it a run's wall
+     *           time limit plus a second, which is what an interactive problem needs.
      * }
      */
     public function __construct($data = NULL) {
@@ -261,6 +271,34 @@ class TestingConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->instance_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Wall-clock time limit (ms) for the interactor. Zero gives it a run's wall
+     * time limit plus a second, which is what an interactive problem needs.
+     *
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 8;</code>
+     * @return int
+     */
+    public function getInteractorTimeLimit()
+    {
+        return $this->interactor_time_limit;
+    }
+
+    /**
+     * Wall-clock time limit (ms) for the interactor. Zero gives it a run's wall
+     * time limit plus a second, which is what an interactive problem needs.
+     *
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInteractorTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->interactor_time_limit = $var;
 
         return $this;
     }

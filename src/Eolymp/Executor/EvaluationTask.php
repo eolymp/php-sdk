@@ -82,6 +82,14 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      */
     protected $instance_limit = 0;
     /**
+     * Wall-clock time limit (ms) for the interactor. An interactive problem's interactor only has
+     * to outlive one guest, but a communication problem's has to outlive the whole dialogue with
+     * all of them. Zero keeps the old behaviour: a run's wall time limit plus a second.
+     *
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 15;</code>
+     */
+    protected $interactor_time_limit = 0;
+    /**
      * Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *
      * Generated from protobuf field <code>repeated .eolymp.executor.EvaluationTask.Precondition preconditions = 40;</code>
@@ -156,6 +164,10 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
      *     @type int $instance_limit
      *           Most instances of the submission the interactor may ask for over its control connection.
      *           Zero means the interactor talks to a single instance, as an interactive problem does.
+     *     @type int $interactor_time_limit
+     *           Wall-clock time limit (ms) for the interactor. An interactive problem's interactor only has
+     *           to outlive one guest, but a communication problem's has to outlive the whole dialogue with
+     *           all of them. Zero keeps the old behaviour: a run's wall time limit plus a second.
      *     @type array<\Eolymp\Executor\EvaluationTask\Precondition>|\Google\Protobuf\Internal\RepeatedField $preconditions
      *           Precondition define conditions when each run should be executed, if runs does not satisfy preconditions it will be skipped.
      *     @type array<\Eolymp\Executor\EvaluationTask\Constraint>|\Google\Protobuf\Internal\RepeatedField $constraints
@@ -459,6 +471,36 @@ class EvaluationTask extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->instance_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Wall-clock time limit (ms) for the interactor. An interactive problem's interactor only has
+     * to outlive one guest, but a communication problem's has to outlive the whole dialogue with
+     * all of them. Zero keeps the old behaviour: a run's wall time limit plus a second.
+     *
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 15;</code>
+     * @return int
+     */
+    public function getInteractorTimeLimit()
+    {
+        return $this->interactor_time_limit;
+    }
+
+    /**
+     * Wall-clock time limit (ms) for the interactor. An interactive problem's interactor only has
+     * to outlive one guest, but a communication problem's has to outlive the whole dialogue with
+     * all of them. Zero keeps the old behaviour: a run's wall time limit plus a second.
+     *
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInteractorTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->interactor_time_limit = $var;
 
         return $this;
     }

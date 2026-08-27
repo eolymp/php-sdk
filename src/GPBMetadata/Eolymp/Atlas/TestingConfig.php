@@ -17,8 +17,8 @@ class TestingConfig
         \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ª
-!eolymp/atlas/testing_config.protoeolymp.atlas"¿
+É
+!eolymp/atlas/testing_config.protoeolymp.atlas"Þ
 TestingConfig
 	run_count (
 interactive_followup ((
@@ -27,7 +27,8 @@ class TestingConfig
 time_limit (
 	cpu_limit (
 memory_limit (
-instance_limit (B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
+instance_limit (
+interactor_time_limit (B-Z+github.com/eolymp/go-sdk/eolymp/atlas;atlasbproto3'
         , true);
 
         static::$is_initialized = true;
