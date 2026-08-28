@@ -44,7 +44,10 @@ class ParticipantServiceClient {
      */
     public function AssignParticipant(AssignParticipantInput $input, array $context = [])
     {
-        $path = "/participants";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/AssignParticipant";
         $context['path'] = $path;
@@ -66,9 +69,10 @@ class ParticipantServiceClient {
      */
     public function EnableParticipant(EnableParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/enable";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/enable";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/EnableParticipant";
@@ -91,9 +95,10 @@ class ParticipantServiceClient {
      */
     public function DisableParticipant(DisableParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/disable";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/disable";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DisableParticipant";
@@ -117,9 +122,10 @@ class ParticipantServiceClient {
      */
     public function UpdateParticipant(UpdateParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/UpdateParticipant";
@@ -140,9 +146,10 @@ class ParticipantServiceClient {
      */
     public function DisqualifyParticipant(DisqualifyParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId())."/disqualify";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/disqualify";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DisqualifyParticipant";
@@ -163,9 +170,10 @@ class ParticipantServiceClient {
      */
     public function DeleteParticipant(DeleteParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DeleteParticipant";
@@ -186,9 +194,10 @@ class ParticipantServiceClient {
      */
     public function DescribeParticipant(DescribeParticipantInput $input, array $context = [])
     {
-        $path = "/participants/".rawurlencode($input->getParticipantId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setParticipantId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DescribeParticipant";
@@ -210,7 +219,10 @@ class ParticipantServiceClient {
      */
     public function ListParticipants(ListParticipantsInput $input, array $context = [])
     {
-        $path = "/participants";
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/ListParticipants";
         $context['path'] = $path;
@@ -233,7 +245,10 @@ class ParticipantServiceClient {
      */
     public function JoinContest(JoinContestInput $input, array $context = [])
     {
-        $path = "/join";
+        $path = "/contests/".rawurlencode($input->getContestId())."/join";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/JoinContest";
         $context['path'] = $path;
@@ -253,7 +268,10 @@ class ParticipantServiceClient {
      */
     public function DescribeViewer(DescribeViewerInput $input, array $context = [])
     {
-        $path = "/introspect";
+        $path = "/contests/".rawurlencode($input->getContestId())."/introspect";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/DescribeViewer";
         $context['path'] = $path;
@@ -273,7 +291,10 @@ class ParticipantServiceClient {
      */
     public function StartContest(StartContestInput $input, array $context = [])
     {
-        $path = "/start";
+        $path = "/contests/".rawurlencode($input->getContestId())."/start";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/StartContest";
         $context['path'] = $path;
@@ -293,7 +314,10 @@ class ParticipantServiceClient {
      */
     public function PauseContest(PauseContestInput $input, array $context = [])
     {
-        $path = "/pause";
+        $path = "/contests/".rawurlencode($input->getContestId())."/pause";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/PauseContest";
         $context['path'] = $path;
@@ -313,7 +337,10 @@ class ParticipantServiceClient {
      */
     public function FinishContest(FinishContestInput $input, array $context = [])
     {
-        $path = "/finish";
+        $path = "/contests/".rawurlencode($input->getContestId())."/finish";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ParticipantService/FinishContest";
         $context['path'] = $path;
