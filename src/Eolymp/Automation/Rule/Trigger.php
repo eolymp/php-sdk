@@ -66,6 +66,12 @@ class Trigger
      */
     const CONTEST_SUBMISSION_COMPLETED = 14;
     /**
+     * a suggested change to a problem has been reviewed
+     *
+     * Generated from protobuf enum <code>SUGGESTION_CHANGED = 15;</code>
+     */
+    const SUGGESTION_CHANGED = 15;
+    /**
      * User-invoked actions (run manually via TriggerRule, not by an event).
      *
      * Generated from protobuf enum <code>CONTEST_ACTION = 12;</code>
@@ -90,6 +96,7 @@ class Trigger
         self::PARTICIPANT_FINALIZED => 'PARTICIPANT_FINALIZED',
         self::CONTEST_FINALIZED => 'CONTEST_FINALIZED',
         self::CONTEST_SUBMISSION_COMPLETED => 'CONTEST_SUBMISSION_COMPLETED',
+        self::SUGGESTION_CHANGED => 'SUGGESTION_CHANGED',
         self::CONTEST_ACTION => 'CONTEST_ACTION',
         self::MEMBER_ACTION => 'MEMBER_ACTION',
     ];
