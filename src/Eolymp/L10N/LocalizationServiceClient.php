@@ -33,7 +33,10 @@ class LocalizationServiceClient {
      */
     public function CreateTerm(CreateTermInput $input, array $context = [])
     {
-        $path = "/terms";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/CreateTerm";
         $context['path'] = $path;
@@ -49,7 +52,10 @@ class LocalizationServiceClient {
      */
     public function ListTerms(ListTermsInput $input, array $context = [])
     {
-        $path = "/terms";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ListTerms";
         $context['path'] = $path;
@@ -65,9 +71,10 @@ class LocalizationServiceClient {
      */
     public function UpdateTerm(UpdateTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/UpdateTerm";
@@ -84,9 +91,10 @@ class LocalizationServiceClient {
      */
     public function RestoreTerm(RestoreTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/restore";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/restore";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/RestoreTerm";
@@ -103,9 +111,10 @@ class LocalizationServiceClient {
      */
     public function DeprecateTerm(DeprecateTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/deprecate";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/deprecate";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/DeprecateTerm";
@@ -122,9 +131,10 @@ class LocalizationServiceClient {
      */
     public function DeleteTerm(DeleteTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/DeleteTerm";
@@ -141,9 +151,10 @@ class LocalizationServiceClient {
      */
     public function DescribeTerm(DescribeTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/DescribeTerm";
@@ -160,7 +171,10 @@ class LocalizationServiceClient {
      */
     public function ImportTerms(ImportTermsInput $input, array $context = [])
     {
-        $path = "/terms";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ImportTerms";
         $context['path'] = $path;
@@ -176,9 +190,10 @@ class LocalizationServiceClient {
      */
     public function AddLocale(AddLocaleInput $input, array $context = [])
     {
-        $path = "/locales/".rawurlencode($input->getLocaleCode());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/locales/".rawurlencode($input->getLocaleCode());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setLocaleCode("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/AddLocale";
@@ -195,9 +210,10 @@ class LocalizationServiceClient {
      */
     public function RemoveLocale(RemoveLocaleInput $input, array $context = [])
     {
-        $path = "/locales/".rawurlencode($input->getLocaleCode());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/locales/".rawurlencode($input->getLocaleCode());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setLocaleCode("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/RemoveLocale";
@@ -214,7 +230,10 @@ class LocalizationServiceClient {
      */
     public function ListLocales(ListLocalesInput $input, array $context = [])
     {
-        $path = "/locales";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/locales";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ListLocales";
         $context['path'] = $path;
@@ -230,9 +249,10 @@ class LocalizationServiceClient {
      */
     public function TranslateTerm(TranslateTermInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/translations";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/translations";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/TranslateTerm";
@@ -249,9 +269,10 @@ class LocalizationServiceClient {
      */
     public function ListTranslations(ListTranslationsInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/translations";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/translations";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ListTranslations";
@@ -268,9 +289,10 @@ class LocalizationServiceClient {
      */
     public function DeleteTranslation(DeleteTranslationInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
         $input->setTranslationId("");
 
@@ -288,9 +310,10 @@ class LocalizationServiceClient {
      */
     public function SuggestTranslation(SuggestTranslationInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/suggestions/".rawurlencode($input->getLocale());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/suggestions/".rawurlencode($input->getLocale());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
         $input->setLocale("");
 
@@ -308,9 +331,10 @@ class LocalizationServiceClient {
      */
     public function UpdateTranslation(UpdateTranslationInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
         $input->setTranslationId("");
 
@@ -328,9 +352,10 @@ class LocalizationServiceClient {
      */
     public function ApproveTranslation(ApproveTranslationInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId())."/approve";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId())."/approve";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
         $input->setTranslationId("");
 
@@ -348,9 +373,10 @@ class LocalizationServiceClient {
      */
     public function RejectTranslation(RejectTranslationInput $input, array $context = [])
     {
-        $path = "/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId())."/reject";
+        $path = "/projects/".rawurlencode($input->getProjectId())."/terms/".rawurlencode($input->getTermId())."/translations/".rawurlencode($input->getTranslationId())."/reject";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setTermId("");
         $input->setTranslationId("");
 
@@ -368,9 +394,10 @@ class LocalizationServiceClient {
      */
     public function ImportTranslations(ImportTranslationsInput $input, array $context = [])
     {
-        $path = "/translations/".rawurlencode($input->getLocale());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/translations/".rawurlencode($input->getLocale());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setLocale("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ImportTranslations";
@@ -387,9 +414,10 @@ class LocalizationServiceClient {
      */
     public function ExportTranslations(ExportTranslationsInput $input, array $context = [])
     {
-        $path = "/translations/".rawurlencode($input->getLocale());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/translations/".rawurlencode($input->getLocale());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setLocale("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ExportTranslations";
@@ -406,9 +434,10 @@ class LocalizationServiceClient {
      */
     public function ListTranslationPairs(ListTranslationPairsInput $input, array $context = [])
     {
-        $path = "/translate/".rawurlencode($input->getLocale());
+        $path = "/projects/".rawurlencode($input->getProjectId())."/translate/".rawurlencode($input->getLocale());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
         $input->setLocale("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/ListTranslationPairs";

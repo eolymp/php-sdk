@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string project_id = 3;</code>
+     */
+    protected $project_id = '';
+    /**
      * translation locale
      *
      * Generated from protobuf field <code>string locale = 1;</code>
@@ -45,6 +49,7 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $project_id
      *     @type string $locale
      *           translation locale
      *     @type string $source
@@ -64,6 +69,28 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\L10N\LocalizationService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 3;</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
     }
 
     /**

@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string project_id = 4;</code>
+     */
+    protected $project_id = '';
+    /**
      * Generated from protobuf field <code>string term_id = 1;</code>
      */
     protected $term_id = '';
@@ -32,6 +36,7 @@ class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $project_id
      *     @type string $term_id
      *     @type string $translation_id
      *     @type \Eolymp\L10n\Translation $translation
@@ -40,6 +45,28 @@ class UpdateTranslationInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\L10N\LocalizationService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 4;</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
     }
 
     /**

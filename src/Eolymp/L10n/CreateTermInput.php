@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateTermInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string project_id = 2;</code>
+     */
+    protected $project_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.l10n.Term term = 1;</code>
      */
     protected $term = null;
@@ -24,12 +28,35 @@ class CreateTermInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $project_id
      *     @type \Eolymp\L10n\Term $term
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\L10N\LocalizationService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2;</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string project_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
     }
 
     /**
