@@ -39,6 +39,25 @@ class ProblemServiceClient {
     }
 
     /**
+     * ListQuestions returns the questions of a quiz material, in the order they are asked. What gives the
+     * answer away is left out by atlas, which is where questions are sanitized; a course only relays them.
+     *
+     * @param ListQuestionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListQuestionsOutput output message
+     */
+    public function ListQuestions(ListQuestionsInput $input, array $context = [])
+    {
+        $path = "/questions";
+
+        $context['name'] = "eolymp.course.ProblemService/ListQuestions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListQuestionsOutput::class, $context);
+    }
+
+    /**
      * @param LookupStatementInput $input message
      * @param array $context request parameters
      *

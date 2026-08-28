@@ -100,6 +100,14 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $output = null;
     /**
+     * Body of the submission for a quiz problem: the answers given to its questions. A contest relays them to
+     * atlas, which grades them while the call is being served and keeps a projection of the result; this is
+     * that projection, so it reads the same as atlas.Submission.quiz.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 16;</code>
+     */
+    protected $quiz = null;
+    /**
      * source code
      *
      * Generated from protobuf field <code>string signature = 12;</code>
@@ -218,6 +226,10 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           Body of the submission for an output-only problem, where there is no source. A contest relays the
      *           uploaded files to atlas, which resolves them against the problem's tests, and keeps a projection of the
      *           result; this is that projection, so it reads the same as atlas.Submission.output.
+     *     @type \Eolymp\Atlas\Submission\Quiz $quiz
+     *           Body of the submission for a quiz problem: the answers given to its questions. A contest relays them to
+     *           atlas, which grades them while the call is being served and keeps a projection of the result; this is
+     *           that projection, so it reads the same as atlas.Submission.quiz.
      *     @type string $signature
      *           source code
      *     @type int $status
@@ -636,6 +648,46 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
         $this->output = $var;
+
+        return $this;
+    }
+
+    /**
+     * Body of the submission for a quiz problem: the answers given to its questions. A contest relays them to
+     * atlas, which grades them while the call is being served and keeps a projection of the result; this is
+     * that projection, so it reads the same as atlas.Submission.quiz.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 16;</code>
+     * @return \Eolymp\Atlas\Submission\Quiz|null
+     */
+    public function getQuiz()
+    {
+        return $this->quiz;
+    }
+
+    public function hasQuiz()
+    {
+        return isset($this->quiz);
+    }
+
+    public function clearQuiz()
+    {
+        unset($this->quiz);
+    }
+
+    /**
+     * Body of the submission for a quiz problem: the answers given to its questions. A contest relays them to
+     * atlas, which grades them while the call is being served and keeps a projection of the result; this is
+     * that projection, so it reads the same as atlas.Submission.quiz.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 16;</code>
+     * @param \Eolymp\Atlas\Submission\Quiz $var
+     * @return $this
+     */
+    public function setQuiz($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
+        $this->quiz = $var;
 
         return $this;
     }

@@ -33,6 +33,10 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Submission.Output output = 6;</code>
      */
     protected $output = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 7;</code>
+     */
+    protected $quiz = null;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $lang
      *     @type string $source
      *     @type \Eolymp\Atlas\Submission\Output $output
+     *     @type \Eolymp\Atlas\Submission\Quiz $quiz
      * }
      */
     public function __construct($data = NULL) {
@@ -168,6 +173,38 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
         $this->output = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 7;</code>
+     * @return \Eolymp\Atlas\Submission\Quiz|null
+     */
+    public function getQuiz()
+    {
+        return $this->quiz;
+    }
+
+    public function hasQuiz()
+    {
+        return isset($this->quiz);
+    }
+
+    public function clearQuiz()
+    {
+        unset($this->quiz);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 7;</code>
+     * @param \Eolymp\Atlas\Submission\Quiz $var
+     * @return $this
+     */
+    public function setQuiz($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
+        $this->quiz = $var;
 
         return $this;
     }
