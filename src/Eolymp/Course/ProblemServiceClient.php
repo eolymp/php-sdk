@@ -30,7 +30,11 @@ class ProblemServiceClient {
      */
     public function ListStatements(ListStatementsInput $input, array $context = [])
     {
-        $path = "/statements";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/statements";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/ListStatements";
         $context['path'] = $path;
@@ -49,7 +53,11 @@ class ProblemServiceClient {
      */
     public function ListQuestions(ListQuestionsInput $input, array $context = [])
     {
-        $path = "/questions";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/questions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/ListQuestions";
         $context['path'] = $path;
@@ -65,7 +73,11 @@ class ProblemServiceClient {
      */
     public function LookupStatement(LookupStatementInput $input, array $context = [])
     {
-        $path = "/statements:lookup";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/statements:lookup";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/LookupStatement";
         $context['path'] = $path;
@@ -81,7 +93,11 @@ class ProblemServiceClient {
      */
     public function ListExamples(ListExamplesInput $input, array $context = [])
     {
-        $path = "/examples";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/examples";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/ListExamples";
         $context['path'] = $path;
@@ -97,7 +113,11 @@ class ProblemServiceClient {
      */
     public function CreateSubmission(CreateSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/CreateSubmission";
         $context['path'] = $path;
@@ -113,7 +133,11 @@ class ProblemServiceClient {
      */
     public function ListSubmissions(ListSubmissionsInput $input, array $context = [])
     {
-        $path = "/submissions";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/submissions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/ListSubmissions";
         $context['path'] = $path;
@@ -129,9 +153,11 @@ class ProblemServiceClient {
      */
     public function DescribeSubmission(DescribeSubmissionInput $input, array $context = [])
     {
-        $path = "/submissions/".rawurlencode($input->getSubmissionId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/submissions/".rawurlencode($input->getSubmissionId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
         $input->setSubmissionId("");
 
         $context['name'] = "eolymp.course.ProblemService/DescribeSubmission";
@@ -148,7 +174,11 @@ class ProblemServiceClient {
      */
     public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
     {
-        $path = "/template";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/template";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/LookupCodeTemplate";
         $context['path'] = $path;
@@ -166,7 +196,11 @@ class ProblemServiceClient {
      */
     public function CreateRun(CreateRunInput $input, array $context = [])
     {
-        $path = "/runs";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/runs";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/CreateRun";
         $context['path'] = $path;
@@ -184,9 +218,11 @@ class ProblemServiceClient {
      */
     public function DescribeRun(DescribeRunInput $input, array $context = [])
     {
-        $path = "/runs/".rawurlencode($input->getRunId());
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/runs/".rawurlencode($input->getRunId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
         $input->setRunId("");
 
         $context['name'] = "eolymp.course.ProblemService/DescribeRun";
@@ -203,7 +239,11 @@ class ProblemServiceClient {
      */
     public function ListRuntimes(ListRuntimesInput $input, array $context = [])
     {
-        $path = "/runtime";
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/runtime";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
 
         $context['name'] = "eolymp.course.ProblemService/ListRuntimes";
         $context['path'] = $path;

@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeSubmissionInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string material_id = 3;</code>
+     */
+    protected $material_id = '';
+    /**
      * Generated from protobuf field <code>string course_id = 2;</code>
      */
     protected $course_id = '';
@@ -28,6 +32,7 @@ class DescribeSubmissionInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $material_id
      *     @type string $course_id
      *     @type string $submission_id
      * }
@@ -35,6 +40,28 @@ class DescribeSubmissionInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\SubmissionService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string material_id = 3;</code>
+     * @return string
+     */
+    public function getMaterialId()
+    {
+        return $this->material_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string material_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMaterialId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->material_id = $var;
+
+        return $this;
     }
 
     /**
