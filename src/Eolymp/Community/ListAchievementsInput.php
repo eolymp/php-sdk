@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListAchievementsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     */
+    protected $member_id = '';
+    /**
      * Generated from protobuf field <code>string locale = 1;</code>
      */
     protected $locale = '';
@@ -44,6 +48,7 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $member_id
      *     @type string $locale
      *     @type string $after
      *     @type int $size
@@ -55,6 +60,28 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\AchievementService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string member_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
+
+        return $this;
     }
 
     /**
