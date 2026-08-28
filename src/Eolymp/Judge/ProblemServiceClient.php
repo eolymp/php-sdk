@@ -47,7 +47,10 @@ class ProblemServiceClient {
      */
     public function ImportProblem(ImportProblemInput $input, array $context = [])
     {
-        $path = "/problems";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ImportProblem";
         $context['path'] = $path;
@@ -70,9 +73,10 @@ class ProblemServiceClient {
      */
     public function UpdateProblem(UpdateProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/UpdateProblem";
@@ -93,7 +97,10 @@ class ProblemServiceClient {
      */
     public function ListProblems(ListProblemsInput $input, array $context = [])
     {
-        $path = "/problems";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ListProblems";
         $context['path'] = $path;
@@ -114,9 +121,10 @@ class ProblemServiceClient {
      */
     public function DescribeProblem(DescribeProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/DescribeProblem";
@@ -138,9 +146,10 @@ class ProblemServiceClient {
      */
     public function DeleteProblem(DeleteProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/DeleteProblem";
@@ -161,9 +170,10 @@ class ProblemServiceClient {
      */
     public function LookupCodeTemplate(LookupCodeTemplateInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/lookup-template";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/lookup-template";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/LookupCodeTemplate";
@@ -184,9 +194,10 @@ class ProblemServiceClient {
      */
     public function DescribeCodeTemplate(DescribeCodeTemplateInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/templates/".rawurlencode($input->getTemplateId());
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
         $input->setTemplateId("");
 
@@ -208,9 +219,10 @@ class ProblemServiceClient {
      */
     public function ListStatements(ListStatementsInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/statements";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/statements";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ListStatements";
@@ -231,9 +243,10 @@ class ProblemServiceClient {
      */
     public function DescribeEditorial(DescribeEditorialInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/editorial";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/editorial";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/DescribeEditorial";
@@ -254,9 +267,10 @@ class ProblemServiceClient {
      */
     public function ListAttachments(ListAttachmentsInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/attachments";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/attachments";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ListAttachments";
@@ -277,9 +291,10 @@ class ProblemServiceClient {
      */
     public function ListExamples(ListExamplesInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/examples";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/examples";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ListExamples";
@@ -301,9 +316,10 @@ class ProblemServiceClient {
      */
     public function ListRuntimes(ListRuntimesInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/runtime";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/runtime";
 
         // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
         $input->setProblemId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ListRuntimes";
@@ -326,7 +342,10 @@ class ProblemServiceClient {
      */
     public function ExportProblems(ExportProblemsInput $input, array $context = [])
     {
-        $path = "/problems:export";
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems:export";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
 
         $context['name'] = "eolymp.judge.ProblemService/ExportProblems";
         $context['path'] = $path;

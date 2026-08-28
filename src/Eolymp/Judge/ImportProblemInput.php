@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportProblemInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     */
+    protected $contest_id = '';
+    /**
      * Generated from protobuf field <code>string import_id = 2 [deprecated = true];</code>
      * @deprecated
      */
@@ -41,6 +45,7 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type string $import_id
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $import_ids
      *     @type int $index
@@ -51,6 +56,28 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ProblemService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
     }
 
     /**

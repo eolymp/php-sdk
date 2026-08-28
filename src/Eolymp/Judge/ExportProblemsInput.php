@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExportProblemsInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string contest_id = 3;</code>
+     */
+    protected $contest_id = '';
+    /**
      * problem IDs to export; if empty, all problems are exported
      *
      * Generated from protobuf field <code>repeated string problems = 1;</code>
@@ -30,6 +34,7 @@ class ExportProblemsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $contest_id
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $problems
      *           problem IDs to export; if empty, all problems are exported
      *     @type string $locale
@@ -38,6 +43,28 @@ class ExportProblemsInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ProblemService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 3;</code>
+     * @return string
+     */
+    public function getContestId()
+    {
+        return $this->contest_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string contest_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->contest_id = $var;
+
+        return $this;
     }
 
     /**
