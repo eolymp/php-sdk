@@ -30,7 +30,10 @@ class FeedServiceClient {
      */
     public function ListEntries(ListEntriesInput $input, array $context = [])
     {
-        $path = "/feed";
+        $path = "/members/".rawurlencode($input->getMemberId())."/feed";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setMemberId("");
 
         $context['name'] = "eolymp.feed.FeedService/ListEntries";
         $context['path'] = $path;
