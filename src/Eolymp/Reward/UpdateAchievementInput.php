@@ -18,7 +18,13 @@ class UpdateAchievementInput extends \Google\Protobuf\Internal\Message
      */
     protected $achievement_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 2;</code>
+     * update the achievement when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     */
+    protected $locale = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.reward.Achievement.Patch achievement = 4;</code>
      */
     protected $achievement = null;
 
@@ -29,7 +35,9 @@ class UpdateAchievementInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $achievement_id
-     *     @type \Eolymp\Reward\Achievement $achievement
+     *     @type string $locale
+     *           update the achievement when empty, update its translation when set
+     *     @type \Eolymp\Reward\Achievement\Patch $achievement
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +68,34 @@ class UpdateAchievementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 2;</code>
-     * @return \Eolymp\Reward\Achievement|null
+     * update the achievement when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * update the achievement when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.reward.Achievement.Patch achievement = 4;</code>
+     * @return \Eolymp\Reward\Achievement\Patch|null
      */
     public function getAchievement()
     {
@@ -79,13 +113,13 @@ class UpdateAchievementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.reward.Achievement achievement = 2;</code>
-     * @param \Eolymp\Reward\Achievement $var
+     * Generated from protobuf field <code>.eolymp.reward.Achievement.Patch achievement = 4;</code>
+     * @param \Eolymp\Reward\Achievement\Patch $var
      * @return $this
      */
     public function setAchievement($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Reward\Achievement::class);
+        GPBUtil::checkMessage($var, \Eolymp\Reward\Achievement\Patch::class);
         $this->achievement = $var;
 
         return $this;

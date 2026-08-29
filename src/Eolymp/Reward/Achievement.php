@@ -14,27 +14,31 @@ use Google\Protobuf\Internal\GPBUtil;
 class Achievement extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * the estimated value of the achievement (the higher the more "prestigious")
+     *
+     * Generated from protobuf field <code>uint32 value = 2 [(.eolymp.api.mcp_field_desc) = "how prestigious the achievement is; the list is ordered by it, most valuable first"];</code>
      */
     protected $value = 0;
     /**
-     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * a number from 0 to 10 reflecting how many members have the achievement (0 common, 10 very rare)
+     *
+     * Generated from protobuf field <code>uint32 rarity = 3 [(.eolymp.api.read_only) = true];</code>
      */
     protected $rarity = 0;
     /**
      * score required to earn this achievement (defaults to 1)
      *
-     * Generated from protobuf field <code>uint32 threshold = 4;</code>
+     * Generated from protobuf field <code>uint32 threshold = 4 [(.eolymp.api.mcp_field_desc) = "score a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" award (defaults to 1)"];</code>
      */
     protected $threshold = 0;
     /**
      * if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
      *
-     * Generated from protobuf field <code>bool multi_award = 5;</code>
+     * Generated from protobuf field <code>bool multi_award = 5 [(.eolymp.api.mcp_field_desc) = "whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulates"];</code>
      */
     protected $multi_award = false;
     /**
@@ -50,7 +54,21 @@ class Achievement extends \Google\Protobuf\Internal\Message
      */
     protected $summary = null;
     /**
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * locale of the translation being read, empty when reading the achievement itself
+     *
+     * Generated from protobuf field <code>string locale = 13;</code>
+     */
+    protected $locale = '';
+    /**
+     * locales this achievement has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 14 [(.eolymp.api.read_only) = true];</code>
+     */
+    private $locales;
+    /**
+     * cursor in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      */
     protected $cursor = '';
 
@@ -62,7 +80,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type int $value
+     *           the estimated value of the achievement (the higher the more "prestigious")
      *     @type int $rarity
+     *           a number from 0 to 10 reflecting how many members have the achievement (0 common, 10 very rare)
      *     @type int $threshold
      *           score required to earn this achievement (defaults to 1)
      *     @type bool $multi_award
@@ -70,7 +90,12 @@ class Achievement extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $image_url
      *     @type \Eolymp\Ecm\Content $summary
+     *     @type string $locale
+     *           locale of the translation being read, empty when reading the achievement itself
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *           locales this achievement has translations for
      *     @type string $cursor
+     *           cursor in the list
      * }
      */
     public function __construct($data = NULL) {
@@ -79,7 +104,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getId()
@@ -88,7 +113,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */
@@ -101,7 +126,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * the estimated value of the achievement (the higher the more "prestigious")
+     *
+     * Generated from protobuf field <code>uint32 value = 2 [(.eolymp.api.mcp_field_desc) = "how prestigious the achievement is; the list is ordered by it, most valuable first"];</code>
      * @return int
      */
     public function getValue()
@@ -110,7 +137,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 value = 2;</code>
+     * the estimated value of the achievement (the higher the more "prestigious")
+     *
+     * Generated from protobuf field <code>uint32 value = 2 [(.eolymp.api.mcp_field_desc) = "how prestigious the achievement is; the list is ordered by it, most valuable first"];</code>
      * @param int $var
      * @return $this
      */
@@ -123,7 +152,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * a number from 0 to 10 reflecting how many members have the achievement (0 common, 10 very rare)
+     *
+     * Generated from protobuf field <code>uint32 rarity = 3 [(.eolymp.api.read_only) = true];</code>
      * @return int
      */
     public function getRarity()
@@ -132,7 +163,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 rarity = 3;</code>
+     * a number from 0 to 10 reflecting how many members have the achievement (0 common, 10 very rare)
+     *
+     * Generated from protobuf field <code>uint32 rarity = 3 [(.eolymp.api.read_only) = true];</code>
      * @param int $var
      * @return $this
      */
@@ -147,7 +180,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * score required to earn this achievement (defaults to 1)
      *
-     * Generated from protobuf field <code>uint32 threshold = 4;</code>
+     * Generated from protobuf field <code>uint32 threshold = 4 [(.eolymp.api.mcp_field_desc) = "score a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" award (defaults to 1)"];</code>
      * @return int
      */
     public function getThreshold()
@@ -158,7 +191,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * score required to earn this achievement (defaults to 1)
      *
-     * Generated from protobuf field <code>uint32 threshold = 4;</code>
+     * Generated from protobuf field <code>uint32 threshold = 4 [(.eolymp.api.mcp_field_desc) = "score a member must accumulate to earn the achievement once: 1 for a one-off badge, 50 for a \"solve 50 problems\" award (defaults to 1)"];</code>
      * @param int $var
      * @return $this
      */
@@ -173,7 +206,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
      *
-     * Generated from protobuf field <code>bool multi_award = 5;</code>
+     * Generated from protobuf field <code>bool multi_award = 5 [(.eolymp.api.mcp_field_desc) = "whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulates"];</code>
      * @return bool
      */
     public function getMultiAward()
@@ -184,7 +217,7 @@ class Achievement extends \Google\Protobuf\Internal\Message
     /**
      * if true, awards = floor(quantity/threshold); if false, awards = min(1, floor(quantity/threshold))
      *
-     * Generated from protobuf field <code>bool multi_award = 5;</code>
+     * Generated from protobuf field <code>bool multi_award = 5 [(.eolymp.api.mcp_field_desc) = "whether the achievement can be earned more than once: true awards it once per threshold reached, false caps it at a single award however much score accumulates"];</code>
      * @param bool $var
      * @return $this
      */
@@ -273,7 +306,61 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * locale of the translation being read, empty when reading the achievement itself
+     *
+     * Generated from protobuf field <code>string locale = 13;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * locale of the translation being read, empty when reading the achievement itself
+     *
+     * Generated from protobuf field <code>string locale = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * locales this achievement has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 14 [(.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * locales this achievement has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 14 [(.eolymp.api.read_only) = true];</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * cursor in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      * @return string
      */
     public function getCursor()
@@ -282,7 +369,9 @@ class Achievement extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string cursor = 100;</code>
+     * cursor in the list
+     *
+     * Generated from protobuf field <code>string cursor = 100 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
      * @return $this
      */

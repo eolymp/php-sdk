@@ -30,6 +30,10 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      */
     protected $filters = null;
     /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>repeated .eolymp.reward.Achievement.Extra extra = 1123;</code>
      */
     private $extra;
@@ -44,6 +48,7 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type int $offset
      *     @type \Eolymp\Reward\ListAchievementsInput\Filter $filters
+     *     @type string $locale
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -146,6 +151,28 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Reward\ListAchievementsInput\Filter::class);
         $this->filters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 1122;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

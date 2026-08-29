@@ -4,6 +4,16 @@
 
 namespace Eolymp\Reward;
 
+    /**
+     * AchievementService owns the achievement definitions of a space. What a member has earned belongs to
+     * eolymp.community.AchievementService, which carries the same name.
+     *
+     * An achievement has no locale of its own. It holds the source name and summary plus a translation of
+     * them per locale, and the locale on a request picks between them: reading falls back to the achievement
+     * when the translation does not exist, writing creates it from the achievement. The image, the score it
+     * takes to earn and whether it can be earned more than once are not translatable and always belong to the
+     * achievement.
+     */
 class AchievementServiceClient {
 
     /** @var string base URL */
@@ -39,6 +49,11 @@ class AchievementServiceClient {
     }
 
     /**
+     * Only the fields the request carries are written. Aimed at a locale it writes that achievement's
+     * translation instead, creating it from the achievement when the translation does not exist yet; the
+     * untranslatable fields still land on the achievement itself rather than being dropped. A changed
+     * threshold or multi_award reaches a member's standing only when something next assigns to them.
+     *
      * @param UpdateAchievementInput $input message
      * @param array $context request parameters
      *
@@ -58,6 +73,9 @@ class AchievementServiceClient {
     }
 
     /**
+     * Deletes every member's standing on the achievement along with it. Aimed at a single locale it removes
+     * only that translation and leaves the achievement itself in place.
+     *
      * @param DeleteAchievementInput $input message
      * @param array $context request parameters
      *
@@ -109,104 +127,6 @@ class AchievementServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAchievementsOutput::class, $context);
-    }
-
-    /**
-     * @param DescribeAchievementTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeAchievementTranslationOutput output message
-     */
-    public function DescribeAchievementTranslation(DescribeAchievementTranslationInput $input, array $context = [])
-    {
-        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setAchievementId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.reward.AchievementService/DescribeAchievementTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeAchievementTranslationOutput::class, $context);
-    }
-
-    /**
-     * @param ListAchievementTranslationsInput $input message
-     * @param array $context request parameters
-     *
-     * @return ListAchievementTranslationsOutput output message
-     */
-    public function ListAchievementTranslations(ListAchievementTranslationsInput $input, array $context = [])
-    {
-        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setAchievementId("");
-
-        $context['name'] = "eolymp.reward.AchievementService/ListAchievementTranslations";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListAchievementTranslationsOutput::class, $context);
-    }
-
-    /**
-     * @param CreateAchievementTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return CreateAchievementTranslationOutput output message
-     */
-    public function CreateAchievementTranslation(CreateAchievementTranslationInput $input, array $context = [])
-    {
-        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setAchievementId("");
-
-        $context['name'] = "eolymp.reward.AchievementService/CreateAchievementTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateAchievementTranslationOutput::class, $context);
-    }
-
-    /**
-     * @param UpdateAchievementTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return UpdateAchievementTranslationOutput output message
-     */
-    public function UpdateAchievementTranslation(UpdateAchievementTranslationInput $input, array $context = [])
-    {
-        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setAchievementId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.reward.AchievementService/UpdateAchievementTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateAchievementTranslationOutput::class, $context);
-    }
-
-    /**
-     * @param DeleteAchievementTranslationInput $input message
-     * @param array $context request parameters
-     *
-     * @return DeleteAchievementTranslationOutput output message
-     */
-    public function DeleteAchievementTranslation(DeleteAchievementTranslationInput $input, array $context = [])
-    {
-        $path = "/achievements/".rawurlencode($input->getAchievementId())."/translations/".rawurlencode($input->getTranslationId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setAchievementId("");
-        $input->setTranslationId("");
-
-        $context['name'] = "eolymp.reward.AchievementService/DeleteAchievementTranslation";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteAchievementTranslationOutput::class, $context);
     }
 
 }
