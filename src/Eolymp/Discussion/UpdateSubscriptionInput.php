@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string thread_id = 2;</code>
+     */
+    protected $thread_id = '';
+    /**
      * Generated from protobuf field <code>.eolymp.discussion.Subscription subscription = 1;</code>
      */
     protected $subscription = null;
@@ -24,12 +28,35 @@ class UpdateSubscriptionInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $thread_id
      *     @type \Eolymp\Discussion\Subscription $subscription
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Discussion\SubscriptionService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * @return string
+     */
+    public function getThreadId()
+    {
+        return $this->thread_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setThreadId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->thread_id = $var;
+
+        return $this;
     }
 
     /**

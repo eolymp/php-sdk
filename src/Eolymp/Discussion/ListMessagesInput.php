@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListMessagesInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string thread_id = 2;</code>
+     */
+    protected $thread_id = '';
+    /**
      * Generated from protobuf field <code>bool render = 1;</code>
      */
     protected $render = false;
@@ -52,6 +56,7 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $thread_id
      *     @type bool $render
      *     @type string $after
      *           pagination
@@ -66,6 +71,28 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Discussion\MessageService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * @return string
+     */
+    public function getThreadId()
+    {
+        return $this->thread_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string thread_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setThreadId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->thread_id = $var;
+
+        return $this;
     }
 
     /**
