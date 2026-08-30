@@ -38,12 +38,6 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $attributes_per_space = 0;
     /**
-     * customer support reply time in hours
-     *
-     * Generated from protobuf field <code>uint32 customer_support_reply_time = 24;</code>
-     */
-    protected $customer_support_reply_time = 0;
-    /**
      * enable discussion post and comment features
      *
      * Generated from protobuf field <code>bool allow_discussions = 31;</code>
@@ -73,12 +67,6 @@ class Quota extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 evaluations_by_seat_per_month = 13;</code>
      */
     protected $evaluations_by_seat_per_month = 0;
-    /**
-     * space uses priority testing queue
-     *
-     * Generated from protobuf field <code>bool priority_evaluation_queue = 25;</code>
-     */
-    protected $priority_evaluation_queue = false;
     /**
      * analyse submission code to see similarities and generate a report
      *
@@ -262,8 +250,6 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           allow to configure local user database for the space
      *     @type int $attributes_per_space
      *           max number of custom profile fields for members
-     *     @type int $customer_support_reply_time
-     *           customer support reply time in hours
      *     @type bool $allow_discussions
      *           enable discussion post and comment features
      *     @type bool $audit_log
@@ -274,8 +260,6 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           max number of printers (0 - printers are disabled)
      *     @type int $evaluations_by_seat_per_month
      *           submission evaluation quota and features
-     *     @type bool $priority_evaluation_queue
-     *           space uses priority testing queue
      *     @type bool $plagiarism_analysis
      *           analyse submission code to see similarities and generate a report
      *     @type int $submission_evaluation_limit
@@ -440,32 +424,6 @@ class Quota extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * customer support reply time in hours
-     *
-     * Generated from protobuf field <code>uint32 customer_support_reply_time = 24;</code>
-     * @return int
-     */
-    public function getCustomerSupportReplyTime()
-    {
-        return $this->customer_support_reply_time;
-    }
-
-    /**
-     * customer support reply time in hours
-     *
-     * Generated from protobuf field <code>uint32 customer_support_reply_time = 24;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCustomerSupportReplyTime($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->customer_support_reply_time = $var;
-
-        return $this;
-    }
-
-    /**
      * enable discussion post and comment features
      *
      * Generated from protobuf field <code>bool allow_discussions = 31;</code>
@@ -591,32 +549,6 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->evaluations_by_seat_per_month = $var;
-
-        return $this;
-    }
-
-    /**
-     * space uses priority testing queue
-     *
-     * Generated from protobuf field <code>bool priority_evaluation_queue = 25;</code>
-     * @return bool
-     */
-    public function getPriorityEvaluationQueue()
-    {
-        return $this->priority_evaluation_queue;
-    }
-
-    /**
-     * space uses priority testing queue
-     *
-     * Generated from protobuf field <code>bool priority_evaluation_queue = 25;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setPriorityEvaluationQueue($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->priority_evaluation_queue = $var;
 
         return $this;
     }

@@ -16,21 +16,19 @@ class Quota
         }
         $pool->internalAddGeneratedFile(
             '
-–
-eolymp/universe/quota.protoeolymp.universe"¨
+Ú
 
+eolymp/universe/quota.protoeolymp.universe"ì	
 Quota
 permissions_per_space (
 single_sing_on (
 dedicated_user_database (
-attributes_per_space (#
-customer_support_reply_time (
+attributes_per_space (
 allow_discussions (
 	audit_log  (
 achievements_per_space (
 printers_per_space (%
-evaluations_by_seat_per_month (!
-priority_evaluation_queue (
+evaluations_by_seat_per_month (
 plagiarism_analysis (#
 submission_evaluation_limit (
 members_per_space (
@@ -63,7 +61,7 @@ class Quota
 max_contest_duration (
 team_contests (
 ghost_participants (
-unofficial_participants (B3Z1github.com/eolymp/go-sdk/eolymp/universe;universebproto3'
+unofficial_participants (JJB3Z1github.com/eolymp/go-sdk/eolymp/universe;universebproto3'
         , true);
 
         static::$is_initialized = true;
