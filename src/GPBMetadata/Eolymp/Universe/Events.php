@@ -14,14 +14,19 @@ class Events
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Universe\Quota::initOnce();
         \GPBMetadata\Eolymp\Universe\Space::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ð
-eolymp/universe/events.protoeolymp.universe"b
+ã
+eolymp/universe/events.protoeolymp.universeeolymp/universe/space.proto"b
 SpaceChangedEvent&
 before (2.eolymp.universe.Space%
-after (2.eolymp.universe.SpaceB3Z1github.com/eolymp/go-sdk/eolymp/universe;universebproto3'
+after (2.eolymp.universe.Space"t
+QuotaChangedEvent
+space_id (	&
+before (2.eolymp.universe.Quota%
+after (2.eolymp.universe.QuotaB3Z1github.com/eolymp/go-sdk/eolymp/universe;universebproto3'
         , true);
 
         static::$is_initialized = true;
