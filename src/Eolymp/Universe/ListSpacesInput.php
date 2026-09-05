@@ -22,6 +22,10 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.universe.ListSpacesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -38,6 +42,7 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $offset
      *     @type int $size
+     *     @type string $search
      *     @type \Eolymp\Universe\ListSpacesInput\Filter $filters
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
@@ -87,6 +92,28 @@ class ListSpacesInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
 
         return $this;
     }

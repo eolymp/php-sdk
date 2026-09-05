@@ -34,6 +34,10 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      */
     protected $offset = 0;
     /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.community.ListAchievementsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -53,6 +57,7 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
      *     @type string $after
      *     @type int $size
      *     @type int $offset
+     *     @type string $search
      *     @type \Eolymp\Community\ListAchievementsInput\Filter $filters
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
@@ -168,6 +173,28 @@ class ListAchievementsInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
 
         return $this;
     }

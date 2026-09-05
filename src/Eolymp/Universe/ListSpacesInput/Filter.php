@@ -14,9 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * free text search
+     * deprecated, use top-level `search` instead
      *
-     * Generated from protobuf field <code>string query = 100;</code>
+     * Generated from protobuf field <code>string query = 100 [deprecated = true];</code>
+     * @deprecated
      */
     protected $query = '';
     /**
@@ -43,7 +44,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
-     *           free text search
+     *           deprecated, use top-level `search` instead
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $key
      *     @type array<\Eolymp\Wellknown\ExpressionString>|\Google\Protobuf\Internal\RepeatedField $name
@@ -56,25 +57,29 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * free text search
+     * deprecated, use top-level `search` instead
      *
-     * Generated from protobuf field <code>string query = 100;</code>
+     * Generated from protobuf field <code>string query = 100 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getQuery()
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         return $this->query;
     }
 
     /**
-     * free text search
+     * deprecated, use top-level `search` instead
      *
-     * Generated from protobuf field <code>string query = 100;</code>
+     * Generated from protobuf field <code>string query = 100 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setQuery($var)
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->query = $var;
 

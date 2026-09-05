@@ -38,6 +38,10 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.l10n.ListTranslationPairsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -62,8 +66,9 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
      *           starting record
      *     @type string $before
      *           ending record
-     *     @type \Eolymp\L10n\ListTranslationPairsInput\Filter $filters
+     *     @type string $search
      *           data filters
+     *     @type \Eolymp\L10n\ListTranslationPairsInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
@@ -267,6 +272,30 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.l10n.ListTranslationPairsInput.Filter filters = 40;</code>
      * @return \Eolymp\L10n\ListTranslationPairsInput\Filter|null
      */
@@ -286,8 +315,6 @@ class ListTranslationPairsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * data filters
-     *
      * Generated from protobuf field <code>.eolymp.l10n.ListTranslationPairsInput.Filter filters = 40;</code>
      * @param \Eolymp\L10n\ListTranslationPairsInput\Filter $var
      * @return $this

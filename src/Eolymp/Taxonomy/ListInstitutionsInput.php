@@ -26,6 +26,10 @@ class ListInstitutionsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.taxonomy.ListInstitutionsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -39,8 +43,9 @@ class ListInstitutionsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Taxonomy\ListInstitutionsInput\Filter $filters
+     *     @type string $search
      *           data filters
+     *     @type \Eolymp\Taxonomy\ListInstitutionsInput\Filter $filters
      * }
      */
     public function __construct($data = NULL) {
@@ -99,6 +104,30 @@ class ListInstitutionsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.taxonomy.ListInstitutionsInput.Filter filters = 40;</code>
      * @return \Eolymp\Taxonomy\ListInstitutionsInput\Filter|null
      */
@@ -118,8 +147,6 @@ class ListInstitutionsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * data filters
-     *
      * Generated from protobuf field <code>.eolymp.taxonomy.ListInstitutionsInput.Filter filters = 40;</code>
      * @param \Eolymp\Taxonomy\ListInstitutionsInput\Filter $var
      * @return $this

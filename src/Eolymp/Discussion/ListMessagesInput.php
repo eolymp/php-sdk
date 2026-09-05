@@ -42,6 +42,10 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -63,8 +67,9 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
      *     @type int $size
      *     @type int $sort
      *     @type int $order
-     *     @type \Eolymp\Discussion\ListMessagesInput\Filter $filters
+     *     @type string $search
      *           data filters
+     *     @type \Eolymp\Discussion\ListMessagesInput\Filter $filters
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $extra
      * }
      */
@@ -212,6 +217,30 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Filter filters = 40;</code>
      * @return \Eolymp\Discussion\ListMessagesInput\Filter|null
      */
@@ -231,8 +260,6 @@ class ListMessagesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * data filters
-     *
      * Generated from protobuf field <code>.eolymp.discussion.ListMessagesInput.Filter filters = 40;</code>
      * @param \Eolymp\Discussion\ListMessagesInput\Filter $var
      * @return $this

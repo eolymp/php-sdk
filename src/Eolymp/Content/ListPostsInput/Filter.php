@@ -14,7 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Filter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
+     * deprecated, use top-level `search` instead
+     *
+     * Generated from protobuf field <code>string query = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $query = '';
     /**
@@ -73,6 +76,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query
+     *           deprecated, use top-level `search` instead
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $source_id
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $user_id
@@ -93,21 +97,29 @@ class Filter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
+     * deprecated, use top-level `search` instead
+     *
+     * Generated from protobuf field <code>string query = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getQuery()
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         return $this->query;
     }
 
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
+     * deprecated, use top-level `search` instead
+     *
+     * Generated from protobuf field <code>string query = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setQuery($var)
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->query = $var;
 

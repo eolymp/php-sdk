@@ -22,7 +22,14 @@ class ListChatsInput extends \Google\Protobuf\Internal\Message
      */
     protected $size = 0;
     /**
-     * Generated from protobuf field <code>string query = 30;</code>
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
+     * deprecated, use `search` instead
+     *
+     * Generated from protobuf field <code>string query = 30 [deprecated = true];</code>
+     * @deprecated
      */
     protected $query = '';
     /**
@@ -46,7 +53,9 @@ class ListChatsInput extends \Google\Protobuf\Internal\Message
      *
      *     @type int $offset
      *     @type int $size
+     *     @type string $search
      *     @type string $query
+     *           deprecated, use `search` instead
      *     @type \Eolymp\Copilot\ListChatsInput\Filter $filters
      *     @type int $sort
      *     @type int $order
@@ -102,21 +111,51 @@ class ListChatsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string query = 30;</code>
+     * Generated from protobuf field <code>string search = 20;</code>
      * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, use `search` instead
+     *
+     * Generated from protobuf field <code>string query = 30 [deprecated = true];</code>
+     * @return string
+     * @deprecated
      */
     public function getQuery()
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         return $this->query;
     }
 
     /**
-     * Generated from protobuf field <code>string query = 30;</code>
+     * deprecated, use `search` instead
+     *
+     * Generated from protobuf field <code>string query = 30 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setQuery($var)
     {
+        @trigger_error('query is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->query = $var;
 

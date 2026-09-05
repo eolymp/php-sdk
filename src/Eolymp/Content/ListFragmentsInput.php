@@ -26,6 +26,10 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     */
+    protected $search = '';
+    /**
      * Generated from protobuf field <code>.eolymp.content.ListFragmentsInput.Filter filters = 40;</code>
      */
     protected $filters = null;
@@ -55,8 +59,9 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
      *     @type int $offset
      *           pagination
      *     @type int $size
-     *     @type \Eolymp\Content\ListFragmentsInput\Filter $filters
+     *     @type string $search
      *           data filters
+     *     @type \Eolymp\Content\ListFragmentsInput\Filter $filters
      *     @type int $sort
      *     @type int $order
      *     @type string $locale
@@ -119,6 +124,30 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     /**
      * data filters
      *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     * data filters
+     *
+     * Generated from protobuf field <code>string search = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSearch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->search = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.content.ListFragmentsInput.Filter filters = 40;</code>
      * @return \Eolymp\Content\ListFragmentsInput\Filter|null
      */
@@ -138,8 +167,6 @@ class ListFragmentsInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * data filters
-     *
      * Generated from protobuf field <code>.eolymp.content.ListFragmentsInput.Filter filters = 40;</code>
      * @param \Eolymp\Content\ListFragmentsInput\Filter $var
      * @return $this
