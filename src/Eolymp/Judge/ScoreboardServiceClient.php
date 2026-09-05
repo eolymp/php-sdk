@@ -117,4 +117,45 @@ class ScoreboardServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportScoreboardOutput::class, $context);
     }
 
+    /**
+     * Adding a key the board already shows updates its index and label, so there is no separate update.
+     *
+     * @param AddContestAttributeInput $input message
+     * @param array $context request parameters
+     *
+     * @return AddContestAttributeOutput output message
+     */
+    public function AddContestAttribute(AddContestAttributeInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/attributes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ScoreboardService/AddContestAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddContestAttributeOutput::class, $context);
+    }
+
+    /**
+     * @param RemoveContestAttributeInput $input message
+     * @param array $context request parameters
+     *
+     * @return RemoveContestAttributeOutput output message
+     */
+    public function RemoveContestAttribute(RemoveContestAttributeInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.judge.ScoreboardService/RemoveContestAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveContestAttributeOutput::class, $context);
+    }
+
 }
