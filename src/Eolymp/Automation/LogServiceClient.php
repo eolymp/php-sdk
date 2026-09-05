@@ -57,4 +57,29 @@ class LogServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeLogOutput::class, $context);
     }
 
+    /**
+     * InterruptLog stops a run in flight. A log still PENDING is settled as INTERRUPTED immediately, which
+     * keeps it from ever starting. A log already EXECUTING is signalled to stop and settles as INTERRUPTED
+     * once the running action loop observes it; actions it already completed are not rolled back. Calling it
+     * on a log that already reached a terminal state fails. This is a signal, not a guarantee: if nothing is
+     * left running to receive it, the log is later swept to ERROR like any other abandoned run.
+     *
+     * @param InterruptLogInput $input message
+     * @param array $context request parameters
+     *
+     * @return InterruptLogOutput output message
+     */
+    public function InterruptLog(InterruptLogInput $input, array $context = [])
+    {
+        $path = "/automation/logs/".rawurlencode($input->getLogId())."/interrupt";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setLogId("");
+
+        $context['name'] = "eolymp.automation.LogService/InterruptLog";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, InterruptLogOutput::class, $context);
+    }
+
 }

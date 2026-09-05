@@ -7,8 +7,8 @@ namespace Eolymp\Automation\Log;
 use UnexpectedValueException;
 
 /**
- * Status is the log's lifecycle. A run that never reaches a terminal state (COMPLETE or ERROR) is swept
- * to ERROR after 15 minutes without progress.
+ * Status is the log's lifecycle. A run that never reaches a terminal state (COMPLETE, ERROR or
+ * INTERRUPTED) is swept to ERROR after 15 minutes without progress.
  *
  * Protobuf type <code>eolymp.automation.Log.Status</code>
  */
@@ -42,6 +42,12 @@ class Status
      * Generated from protobuf enum <code>ERROR = 4;</code>
      */
     const ERROR = 4;
+    /**
+     * execution stopped by an explicit interrupt request
+     *
+     * Generated from protobuf enum <code>INTERRUPTED = 5;</code>
+     */
+    const INTERRUPTED = 5;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
@@ -49,6 +55,7 @@ class Status
         self::EXECUTING => 'EXECUTING',
         self::COMPLETE => 'COMPLETE',
         self::ERROR => 'ERROR',
+        self::INTERRUPTED => 'INTERRUPTED',
     ];
 
     public static function name($value)
