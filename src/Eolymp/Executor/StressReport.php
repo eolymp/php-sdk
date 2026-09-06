@@ -34,10 +34,16 @@ class StressReport extends \Google\Protobuf\Internal\Message
      */
     protected $agent = '';
     /**
+     * Generated from protobuf field <code>.eolymp.executor.StressReport.Status status = 11;</code>
+     */
+    protected $status = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
      */
     private $runs;
     /**
+     * compiler output when status is ERROR
+     *
      * Generated from protobuf field <code>string error_message = 50;</code>
      */
     protected $error_message = '';
@@ -53,8 +59,10 @@ class StressReport extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $agent
+     *     @type int $status
      *     @type array<\Eolymp\Executor\StressReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *     @type string $error_message
+     *           compiler output when status is ERROR
      * }
      */
     public function __construct($data = NULL) {
@@ -173,6 +181,28 @@ class StressReport extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.eolymp.executor.StressReport.Status status = 11;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.StressReport.Status status = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Executor\StressReport\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>repeated .eolymp.executor.StressReport.Run runs = 40;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -195,6 +225,8 @@ class StressReport extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * compiler output when status is ERROR
+     *
      * Generated from protobuf field <code>string error_message = 50;</code>
      * @return string
      */
@@ -204,6 +236,8 @@ class StressReport extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * compiler output when status is ERROR
+     *
      * Generated from protobuf field <code>string error_message = 50;</code>
      * @param string $var
      * @return $this

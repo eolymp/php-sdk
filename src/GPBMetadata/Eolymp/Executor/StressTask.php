@@ -14,11 +14,13 @@ class StressTask
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Eolymp\Executor\Checker::initOnce();
+        \GPBMetadata\Eolymp\Executor\EvaluationReport::initOnce();
         \GPBMetadata\Eolymp\Executor\Script::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ã
-!eolymp/executor/stress_task.protoeolymp.executor"ï
+ò
+!eolymp/executor/stress_task.protoeolymp.executor\'eolymp/executor/evaluation_report.protoeolymp/executor/script.proto"·
 
 StressTask
 task_id (	
@@ -28,15 +30,25 @@ StressTask
 wall_time_limit
  (
 cpu_time_limit (
-memory_limit (
-iteration_count (
-	run_count (
-interactive_followup (+
+memory_limit (
+interactor_time_limit (
+
+iterations (
+deadline (
+continue_on_failure (
+	run_count (
+interactive_followup ()
+checker (2.eolymp.executor.Checker+
 
 interactor (2.eolymp.executor.Script*
 	validator (2.eolymp.executor.Script*
-	generator (2.eolymp.executor.Script)
-solution (2.eolymp.executor.Script/
+	generator (2.eolymp.executor.Script
+	arguments (	3
+reference_solution (2.eolymp.executor.Script@
+compared_solutions (2$.eolymp.executor.StressTask.Solutions
+Solution\'
+script (2.eolymp.executor.Script>
+expected (2,.eolymp.executor.EvaluationReport.Run.Status/
 MetadataEntry
 key (	
 value (	:8B3Z1github.com/eolymp/go-sdk/eolymp/executor;executorbproto3'

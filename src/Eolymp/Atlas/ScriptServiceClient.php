@@ -149,27 +149,4 @@ class ScriptServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScriptsOutput::class, $context);
     }
 
-    /**
-     * ExecuteStressCheck invokes a generator repeatedly and runs the data it produces against the problem's
-     * solutions. The generator is addressed by name rather than by id, and the check runs in the background, so
-     * its progress and findings have to be followed through the problem's activity feed.
-     *
-     * @param ExecuteStressCheckInput $input message
-     * @param array $context request parameters
-     *
-     * @return ExecuteStressCheckOutput output message
-     */
-    public function ExecuteStressCheck(ExecuteStressCheckInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/scripts:stress-check";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.ScriptService/ExecuteStressCheck";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExecuteStressCheckOutput::class, $context);
-    }
-
 }

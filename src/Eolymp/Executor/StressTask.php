@@ -9,6 +9,13 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * StressTask runs a generator repeatedly and compares solutions on the inputs it produces.
+ * Every iteration resolves the argument pattern, appends a random seed argument and runs the generator; the
+ * input goes through the validator, then to the reference for the answer, then to every solution whose output
+ * the checker compares against that answer. The task ends when iterations or the deadline run out, when the
+ * validator rejects an input, when the reference fails, or at the first unexpected verdict unless
+ * continue_on_failure is set.
+ *
  * Generated from protobuf message <code>eolymp.executor.StressTask</code>
  */
 class StressTask extends \Google\Protobuf\Internal\Message
@@ -30,46 +37,64 @@ class StressTask extends \Google\Protobuf\Internal\Message
      */
     private $metadata;
     /**
-     * Real-world time limit in milliseconds.
+     * wall-clock time limit (ms) for solutions
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
      */
     protected $wall_time_limit = 0;
     /**
-     * CPU time limit in milliseconds.
+     * CPU time limit (ms) for solutions
      *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 11;</code>
      */
     protected $cpu_time_limit = 0;
     /**
-     * Memory limit in bytes.
+     * memory limit (bytes) for solutions
      *
      * Generated from protobuf field <code>uint64 memory_limit = 12;</code>
      */
     protected $memory_limit = 0;
     /**
-     * Number of iterations for stress test
+     * wall-clock time limit (ms) for the interactor
      *
-     * Generated from protobuf field <code>uint32 iteration_count = 15;</code>
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 13;</code>
      */
-    protected $iteration_count = 0;
+    protected $interactor_time_limit = 0;
     /**
-     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * at most this many inputs
+     *
+     * Generated from protobuf field <code>uint32 iterations = 15;</code>
+     */
+    protected $iterations = 0;
+    /**
+     * at most this many seconds of wall time for the whole task
+     *
+     * Generated from protobuf field <code>uint32 deadline = 16;</code>
+     */
+    protected $deadline = 0;
+    /**
+     * keep running after an unexpected verdict instead of stopping
+     *
+     * Generated from protobuf field <code>bool continue_on_failure = 17;</code>
+     */
+    protected $continue_on_failure = false;
+    /**
+     * Generated from protobuf field <code>uint32 run_count = 20;</code>
      */
     protected $run_count = 0;
     /**
-     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * Generated from protobuf field <code>bool interactive_followup = 21;</code>
      */
     protected $interactive_followup = false;
     /**
-     * Interactor configuration
-     *
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     */
+    protected $checker = null;
+    /**
      * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
      */
     protected $interactor = null;
     /**
-     * Validator configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Script validator = 26;</code>
      */
     protected $validator = null;
@@ -78,9 +103,21 @@ class StressTask extends \Google\Protobuf\Internal\Message
      */
     protected $generator = null;
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 28;</code>
+     * generator argument pattern, a [a..b] token becomes a random integer in the range
+     *
+     * Generated from protobuf field <code>repeated string arguments = 28;</code>
      */
-    protected $solution = null;
+    private $arguments;
+    /**
+     * its output is the answer
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script reference_solution = 29;</code>
+     */
+    protected $reference_solution = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.StressTask.Solution compared_solutions = 30;</code>
+     */
+    private $compared_solutions;
 
     /**
      * Constructor.
@@ -93,21 +130,30 @@ class StressTask extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type int $wall_time_limit
-     *           Real-world time limit in milliseconds.
+     *           wall-clock time limit (ms) for solutions
      *     @type int $cpu_time_limit
-     *           CPU time limit in milliseconds.
+     *           CPU time limit (ms) for solutions
      *     @type int|string $memory_limit
-     *           Memory limit in bytes.
-     *     @type int $iteration_count
-     *           Number of iterations for stress test
+     *           memory limit (bytes) for solutions
+     *     @type int $interactor_time_limit
+     *           wall-clock time limit (ms) for the interactor
+     *     @type int $iterations
+     *           at most this many inputs
+     *     @type int $deadline
+     *           at most this many seconds of wall time for the whole task
+     *     @type bool $continue_on_failure
+     *           keep running after an unexpected verdict instead of stopping
      *     @type int $run_count
      *     @type bool $interactive_followup
+     *     @type \Eolymp\Executor\Checker $checker
      *     @type \Eolymp\Executor\Script $interactor
-     *           Interactor configuration
      *     @type \Eolymp\Executor\Script $validator
-     *           Validator configuration
      *     @type \Eolymp\Executor\Script $generator
-     *     @type \Eolymp\Executor\Script $solution
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $arguments
+     *           generator argument pattern, a [a..b] token becomes a random integer in the range
+     *     @type \Eolymp\Executor\Script $reference_solution
+     *           its output is the answer
+     *     @type array<\Eolymp\Executor\StressTask\Solution>|\Google\Protobuf\Internal\RepeatedField $compared_solutions
      * }
      */
     public function __construct($data = NULL) {
@@ -204,7 +250,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Real-world time limit in milliseconds.
+     * wall-clock time limit (ms) for solutions
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
      * @return int
@@ -215,7 +261,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Real-world time limit in milliseconds.
+     * wall-clock time limit (ms) for solutions
      *
      * Generated from protobuf field <code>uint32 wall_time_limit = 10;</code>
      * @param int $var
@@ -230,7 +276,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * CPU time limit in milliseconds.
+     * CPU time limit (ms) for solutions
      *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 11;</code>
      * @return int
@@ -241,7 +287,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * CPU time limit in milliseconds.
+     * CPU time limit (ms) for solutions
      *
      * Generated from protobuf field <code>uint32 cpu_time_limit = 11;</code>
      * @param int $var
@@ -256,7 +302,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Memory limit in bytes.
+     * memory limit (bytes) for solutions
      *
      * Generated from protobuf field <code>uint64 memory_limit = 12;</code>
      * @return int|string
@@ -267,7 +313,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Memory limit in bytes.
+     * memory limit (bytes) for solutions
      *
      * Generated from protobuf field <code>uint64 memory_limit = 12;</code>
      * @param int|string $var
@@ -282,33 +328,111 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of iterations for stress test
+     * wall-clock time limit (ms) for the interactor
      *
-     * Generated from protobuf field <code>uint32 iteration_count = 15;</code>
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 13;</code>
      * @return int
      */
-    public function getIterationCount()
+    public function getInteractorTimeLimit()
     {
-        return $this->iteration_count;
+        return $this->interactor_time_limit;
     }
 
     /**
-     * Number of iterations for stress test
+     * wall-clock time limit (ms) for the interactor
      *
-     * Generated from protobuf field <code>uint32 iteration_count = 15;</code>
+     * Generated from protobuf field <code>uint32 interactor_time_limit = 13;</code>
      * @param int $var
      * @return $this
      */
-    public function setIterationCount($var)
+    public function setInteractorTimeLimit($var)
     {
         GPBUtil::checkUint32($var);
-        $this->iteration_count = $var;
+        $this->interactor_time_limit = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * at most this many inputs
+     *
+     * Generated from protobuf field <code>uint32 iterations = 15;</code>
+     * @return int
+     */
+    public function getIterations()
+    {
+        return $this->iterations;
+    }
+
+    /**
+     * at most this many inputs
+     *
+     * Generated from protobuf field <code>uint32 iterations = 15;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIterations($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->iterations = $var;
+
+        return $this;
+    }
+
+    /**
+     * at most this many seconds of wall time for the whole task
+     *
+     * Generated from protobuf field <code>uint32 deadline = 16;</code>
+     * @return int
+     */
+    public function getDeadline()
+    {
+        return $this->deadline;
+    }
+
+    /**
+     * at most this many seconds of wall time for the whole task
+     *
+     * Generated from protobuf field <code>uint32 deadline = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDeadline($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->deadline = $var;
+
+        return $this;
+    }
+
+    /**
+     * keep running after an unexpected verdict instead of stopping
+     *
+     * Generated from protobuf field <code>bool continue_on_failure = 17;</code>
+     * @return bool
+     */
+    public function getContinueOnFailure()
+    {
+        return $this->continue_on_failure;
+    }
+
+    /**
+     * keep running after an unexpected verdict instead of stopping
+     *
+     * Generated from protobuf field <code>bool continue_on_failure = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setContinueOnFailure($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->continue_on_failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 run_count = 20;</code>
      * @return int
      */
     public function getRunCount()
@@ -317,7 +441,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 run_count = 16;</code>
+     * Generated from protobuf field <code>uint32 run_count = 20;</code>
      * @param int $var
      * @return $this
      */
@@ -330,7 +454,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * Generated from protobuf field <code>bool interactive_followup = 21;</code>
      * @return bool
      */
     public function getInteractiveFollowup()
@@ -339,7 +463,7 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool interactive_followup = 17;</code>
+     * Generated from protobuf field <code>bool interactive_followup = 21;</code>
      * @param bool $var
      * @return $this
      */
@@ -352,8 +476,38 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Interactor configuration
-     *
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     * @return \Eolymp\Executor\Checker|null
+     */
+    public function getChecker()
+    {
+        return $this->checker;
+    }
+
+    public function hasChecker()
+    {
+        return isset($this->checker);
+    }
+
+    public function clearChecker()
+    {
+        unset($this->checker);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker checker = 24;</code>
+     * @param \Eolymp\Executor\Checker $var
+     * @return $this
+     */
+    public function setChecker($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker::class);
+        $this->checker = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
      * @return \Eolymp\Executor\Script|null
      */
@@ -373,8 +527,6 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Interactor configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Script interactor = 25;</code>
      * @param \Eolymp\Executor\Script $var
      * @return $this
@@ -388,8 +540,6 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Validator configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Script validator = 26;</code>
      * @return \Eolymp\Executor\Script|null
      */
@@ -409,8 +559,6 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Validator configuration
-     *
      * Generated from protobuf field <code>.eolymp.executor.Script validator = 26;</code>
      * @param \Eolymp\Executor\Script $var
      * @return $this
@@ -456,33 +604,85 @@ class StressTask extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 28;</code>
-     * @return \Eolymp\Executor\Script|null
+     * generator argument pattern, a [a..b] token becomes a random integer in the range
+     *
+     * Generated from protobuf field <code>repeated string arguments = 28;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getSolution()
+    public function getArguments()
     {
-        return $this->solution;
-    }
-
-    public function hasSolution()
-    {
-        return isset($this->solution);
-    }
-
-    public function clearSolution()
-    {
-        unset($this->solution);
+        return $this->arguments;
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.executor.Script solution = 28;</code>
+     * generator argument pattern, a [a..b] token becomes a random integer in the range
+     *
+     * Generated from protobuf field <code>repeated string arguments = 28;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setArguments($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->arguments = $arr;
+
+        return $this;
+    }
+
+    /**
+     * its output is the answer
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script reference_solution = 29;</code>
+     * @return \Eolymp\Executor\Script|null
+     */
+    public function getReferenceSolution()
+    {
+        return $this->reference_solution;
+    }
+
+    public function hasReferenceSolution()
+    {
+        return isset($this->reference_solution);
+    }
+
+    public function clearReferenceSolution()
+    {
+        unset($this->reference_solution);
+    }
+
+    /**
+     * its output is the answer
+     *
+     * Generated from protobuf field <code>.eolymp.executor.Script reference_solution = 29;</code>
      * @param \Eolymp\Executor\Script $var
      * @return $this
      */
-    public function setSolution($var)
+    public function setReferenceSolution($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\Script::class);
-        $this->solution = $var;
+        $this->reference_solution = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.StressTask.Solution compared_solutions = 30;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getComparedSolutions()
+    {
+        return $this->compared_solutions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.StressTask.Solution compared_solutions = 30;</code>
+     * @param array<\Eolymp\Executor\StressTask\Solution>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setComparedSolutions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\StressTask\Solution::class);
+        $this->compared_solutions = $arr;
 
         return $this;
     }
