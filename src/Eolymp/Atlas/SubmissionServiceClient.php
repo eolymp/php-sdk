@@ -36,7 +36,7 @@ class SubmissionServiceClient {
      * or WatchSubmission. What travels in the request depends on the type of the problem: a program in `source`
      * for the programming types, a file per test in `output` for an output-only problem, and the answers in
      * `quiz` for a quiz — a quiz is graded while the call is being served, so its submission comes back already
-     * judged.
+     * judged — and the answer composed in the problem's widget in `widget` for a widget problem.
      * Submissions are rate limited per account and, when the space configures it through the atlas
      * ConfigurationService, per client IP.
      *

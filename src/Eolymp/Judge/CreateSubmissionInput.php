@@ -37,6 +37,10 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.atlas.Submission.Quiz quiz = 7;</code>
      */
     protected $quiz = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 8;</code>
+     */
+    protected $widget = null;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *     @type \Eolymp\Atlas\Submission\Output $output
      *     @type \Eolymp\Atlas\Submission\Quiz $quiz
+     *     @type \Eolymp\Atlas\Submission\Widget $widget
      * }
      */
     public function __construct($data = NULL) {
@@ -205,6 +210,38 @@ class CreateSubmissionInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
         $this->quiz = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 8;</code>
+     * @return \Eolymp\Atlas\Submission\Widget|null
+     */
+    public function getWidget()
+    {
+        return $this->widget;
+    }
+
+    public function hasWidget()
+    {
+        return isset($this->widget);
+    }
+
+    public function clearWidget()
+    {
+        unset($this->widget);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 8;</code>
+     * @param \Eolymp\Atlas\Submission\Widget $var
+     * @return $this
+     */
+    public function setWidget($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Widget::class);
+        $this->widget = $var;
 
         return $this;
     }

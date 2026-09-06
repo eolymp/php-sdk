@@ -66,6 +66,28 @@ class ProblemServiceClient {
     }
 
     /**
+     * DescribeWidget returns the widget of a widget material; a course only relays it from atlas.
+     *
+     * @param DescribeWidgetInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeWidgetOutput output message
+     */
+    public function DescribeWidget(DescribeWidgetInput $input, array $context = [])
+    {
+        $path = "/courses/".rawurlencode($input->getCourseId())."/materials/".rawurlencode($input->getMaterialId())."/widget";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setCourseId("");
+        $input->setMaterialId("");
+
+        $context['name'] = "eolymp.course.ProblemService/DescribeWidget";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeWidgetOutput::class, $context);
+    }
+
+    /**
      * @param LookupStatementInput $input message
      * @param array $context request parameters
      *

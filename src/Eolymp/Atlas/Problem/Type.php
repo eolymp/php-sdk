@@ -47,6 +47,10 @@ class Type
      * Generated from protobuf enum <code>COMMUNICATION = 8 [(.eolymp.api.mcp_value_desc) = "communication problem, an interactor runs several instances of the user\'s program at once and mediates everything they share"];</code>
      */
     const COMMUNICATION = 8;
+    /**
+     * Generated from protobuf enum <code>WIDGET = 9 [(.eolymp.api.mcp_value_desc) = "widget problem, user composes the answer inside an interactive widget embedded in the problem page"];</code>
+     */
+    const WIDGET = 9;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
@@ -58,6 +62,7 @@ class Type
         self::QUIZ => 'QUIZ',
         self::INTERACTIVE => 'INTERACTIVE',
         self::COMMUNICATION => 'COMMUNICATION',
+        self::WIDGET => 'WIDGET',
     ];
 
     public static function name($value)

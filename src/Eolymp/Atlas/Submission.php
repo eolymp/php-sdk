@@ -208,6 +208,7 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           source code URL
      *     @type \Eolymp\Atlas\Submission\Quiz $quiz
      *     @type \Eolymp\Atlas\Submission\Output $output
+     *     @type \Eolymp\Atlas\Submission\Widget $widget
      *     @type string $signature
      *           submission signature
      *     @type int $status
@@ -656,6 +657,33 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Output::class);
         $this->writeOneof(16, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 17;</code>
+     * @return \Eolymp\Atlas\Submission\Widget|null
+     */
+    public function getWidget()
+    {
+        return $this->readOneof(17);
+    }
+
+    public function hasWidget()
+    {
+        return $this->hasOneof(17);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 17;</code>
+     * @param \Eolymp\Atlas\Submission\Widget $var
+     * @return $this
+     */
+    public function setWidget($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Widget::class);
+        $this->writeOneof(17, $var);
 
         return $this;
     }

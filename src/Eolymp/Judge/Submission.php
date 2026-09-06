@@ -108,6 +108,14 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $quiz = null;
     /**
+     * Body of the submission for a widget problem: the answer composed in the problem's widget. A contest
+     * relays it to atlas and keeps a projection of the result; this is that projection, so it reads the same as
+     * atlas.Submission.widget.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 17;</code>
+     */
+    protected $widget = null;
+    /**
      * source code
      *
      * Generated from protobuf field <code>string signature = 12;</code>
@@ -230,6 +238,10 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           Body of the submission for a quiz problem: the answers given to its questions. A contest relays them to
      *           atlas, which grades them while the call is being served and keeps a projection of the result; this is
      *           that projection, so it reads the same as atlas.Submission.quiz.
+     *     @type \Eolymp\Atlas\Submission\Widget $widget
+     *           Body of the submission for a widget problem: the answer composed in the problem's widget. A contest
+     *           relays it to atlas and keeps a projection of the result; this is that projection, so it reads the same as
+     *           atlas.Submission.widget.
      *     @type string $signature
      *           source code
      *     @type int $status
@@ -688,6 +700,46 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Quiz::class);
         $this->quiz = $var;
+
+        return $this;
+    }
+
+    /**
+     * Body of the submission for a widget problem: the answer composed in the problem's widget. A contest
+     * relays it to atlas and keeps a projection of the result; this is that projection, so it reads the same as
+     * atlas.Submission.widget.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 17;</code>
+     * @return \Eolymp\Atlas\Submission\Widget|null
+     */
+    public function getWidget()
+    {
+        return $this->widget;
+    }
+
+    public function hasWidget()
+    {
+        return isset($this->widget);
+    }
+
+    public function clearWidget()
+    {
+        unset($this->widget);
+    }
+
+    /**
+     * Body of the submission for a widget problem: the answer composed in the problem's widget. A contest
+     * relays it to atlas and keeps a projection of the result; this is that projection, so it reads the same as
+     * atlas.Submission.widget.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Submission.Widget widget = 17;</code>
+     * @param \Eolymp\Atlas\Submission\Widget $var
+     * @return $this
+     */
+    public function setWidget($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Submission\Widget::class);
+        $this->widget = $var;
 
         return $this;
     }

@@ -124,6 +124,32 @@ class AssetServiceClient {
     }
 
     /**
+     * UploadBundle unpacks a zip archive into a bundle: a tree of files served inline under one url, each with
+     * the content type its extension implies, so a page inside it can be shown in a frame and reach its own
+     * scripts, styles and images by relative path. The url comes back to be attached to whatever the bundle is
+     * for, such as a problem's widget (see atlas.WidgetService).
+     *
+     * The archive is checked before anything is written: the entrypoint must exist, every file must have an
+     * allowed extension, and the unpacked size, the number of files and the size of any one file are capped.
+     * Entries with a path leaving the archive and symbolic links are rejected. Every page of a bundle is served
+     * sandboxed and may load nothing from outside the bundle.
+     *
+     * @param UploadBundleInput $input message
+     * @param array $context request parameters
+     *
+     * @return UploadBundleOutput output message
+     */
+    public function UploadBundle(UploadBundleInput $input, array $context = [])
+    {
+        $path = "/assets/bundles";
+
+        $context['name'] = "eolymp.asset.AssetService/UploadBundle";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, UploadBundleOutput::class, $context);
+    }
+
+    /**
      * StartMultipartUpload creates an upload_id, which then can be used with UploadPart API to upload file in parts of 5MB
      *
      * @param StartMultipartUploadInput $input message

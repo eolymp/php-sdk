@@ -255,6 +255,29 @@ class ProblemServiceClient {
     }
 
     /**
+     * DescribeWidget returns the widget of a widget problem, pinned to the version the contest uses; a contest
+     * only relays it from atlas.
+     *
+     * @param DescribeWidgetInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeWidgetOutput output message
+     */
+    public function DescribeWidget(DescribeWidgetInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/widget";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.ProblemService/DescribeWidget";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeWidgetOutput::class, $context);
+    }
+
+    /**
      * DescribeEditorial returns the author's write-up of how the problem is solved, in the requested locale
      * when the archive has one. Because it gives the solution away, a participant may read it only after
      * their participation is over and only while the contest is configured to display editorials.
