@@ -14,6 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class Column extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Identifies the column, and says what it is about: a problem column is "p_" followed by the problem id,
+     * an attribute column "a_" followed by the community attribute key. The prefix is part of the contract
+     * rather than an implementation detail, because sorting already requires a caller to compose it —
+     * ListScoreboardRows takes the same "p_<problem id>" in its sort field — and a caller reading a row's
+     * values has no other way to say which problem or attribute a cell belongs to.
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
@@ -45,6 +51,11 @@ class Column extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *           Identifies the column, and says what it is about: a problem column is "p_" followed by the problem id,
+     *           an attribute column "a_" followed by the community attribute key. The prefix is part of the contract
+     *           rather than an implementation detail, because sorting already requires a caller to compose it —
+     *           ListScoreboardRows takes the same "p_<problem id>" in its sort field — and a caller reading a row's
+     *           values has no other way to say which problem or attribute a cell belongs to.
      *     @type int $type
      *     @type string $title
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
@@ -58,6 +69,12 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Identifies the column, and says what it is about: a problem column is "p_" followed by the problem id,
+     * an attribute column "a_" followed by the community attribute key. The prefix is part of the contract
+     * rather than an implementation detail, because sorting already requires a caller to compose it —
+     * ListScoreboardRows takes the same "p_<problem id>" in its sort field — and a caller reading a row's
+     * values has no other way to say which problem or attribute a cell belongs to.
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
@@ -67,6 +84,12 @@ class Column extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Identifies the column, and says what it is about: a problem column is "p_" followed by the problem id,
+     * an attribute column "a_" followed by the community attribute key. The prefix is part of the contract
+     * rather than an implementation detail, because sorting already requires a caller to compose it —
+     * ListScoreboardRows takes the same "p_<problem id>" in its sort field — and a caller reading a row's
+     * values has no other way to say which problem or attribute a cell belongs to.
+     *
      * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
