@@ -45,6 +45,12 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Attribute attributes = 11;</code>
      */
     private $attributes;
+    /**
+     * Read-only, resolved from the attributes the board shows.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Filter filters = 12;</code>
+     */
+    private $filters;
 
     /**
      * Constructor.
@@ -61,6 +67,8 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $modes
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $contests
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type array<\Eolymp\Scoreboard\Scoreboard\Filter>|\Google\Protobuf\Internal\RepeatedField $filters
+     *           Read-only, resolved from the attributes the board shows.
      * }
      */
     public function __construct($data = NULL) {
@@ -226,6 +234,32 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\Scoreboard\Attribute::class);
         $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Read-only, resolved from the attributes the board shows.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Filter filters = 12;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    /**
+     * Read-only, resolved from the attributes the board shows.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Filter filters = 12;</code>
+     * @param array<\Eolymp\Scoreboard\Scoreboard\Filter>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFilters($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Scoreboard\Scoreboard\Filter::class);
+        $this->filters = $arr;
 
         return $this;
     }
