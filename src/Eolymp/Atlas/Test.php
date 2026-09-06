@@ -68,6 +68,10 @@ class Test extends \Google\Protobuf\Internal\Message
      */
     protected $score = 0.0;
     /**
+     * Generated from protobuf field <code>bool scripted = 70 [(.eolymp.api.mcp_field_desc) = "produced by the problem\'s test script, which owns it: change the script and run it again instead of editing the test", (.eolymp.api.read_only) = true];</code>
+     */
+    protected $scripted = false;
+    /**
      * Generated input data
      *
      * Generated from protobuf field <code>string generated_input_url = 50;</code>
@@ -107,6 +111,7 @@ class Test extends \Google\Protobuf\Internal\Message
      *           Secret test, input and answer are never populated
      *     @type float $score
      *           Score for passing this test
+     *     @type bool $scripted
      *     @type string $generated_input_url
      *           Generated input data
      *     @type string $generated_answer_url
@@ -372,6 +377,28 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool scripted = 70 [(.eolymp.api.mcp_field_desc) = "produced by the problem\'s test script, which owns it: change the script and run it again instead of editing the test", (.eolymp.api.read_only) = true];</code>
+     * @return bool
+     */
+    public function getScripted()
+    {
+        return $this->scripted;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool scripted = 70 [(.eolymp.api.mcp_field_desc) = "produced by the problem\'s test script, which owns it: change the script and run it again instead of editing the test", (.eolymp.api.read_only) = true];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setScripted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->scripted = $var;
 
         return $this;
     }

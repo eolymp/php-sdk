@@ -218,6 +218,55 @@ class TestingServiceClient {
     }
 
     /**
+     * DescribeTestScript returns the source of the test script, empty when the problem has none.
+     *
+     * @param DescribeTestScriptInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeTestScriptOutput output message
+     */
+    public function DescribeTestScript(DescribeTestScriptInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/test-script";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.TestingService/DescribeTestScript";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeTestScriptOutput::class, $context);
+    }
+
+    /**
+     * RunTestScript saves the test script and executes it. The script is a Starlark program which calls
+     * `add_test(...)` once per test; its result replaces the tests the script produced last time: a test at the
+     * same testset and index is updated in place and keeps its id, a new one is created, one no longer produced
+     * is deleted. Tests created by hand are never touched, and an index they occupy is an error for the script.
+     * Everything is written as one problem version, so one generation run follows, as after any test change.
+     * An empty source is how the script is removed, and takes its tests with it. Pass `dry_run` to get the
+     * changes the run would make without saving or writing anything, which is how a script is previewed. A
+     * script error fails the call with its line and nothing is written.
+     *
+     * @param RunTestScriptInput $input message
+     * @param array $context request parameters
+     *
+     * @return RunTestScriptOutput output message
+     */
+    public function RunTestScript(RunTestScriptInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/test-script";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.TestingService/RunTestScript";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RunTestScriptOutput::class, $context);
+    }
+
+    /**
      * CreateTestset adds an empty testset and returns its generated id; add tests to it with CreateTest. Its
      * index both orders the testset within the problem and is how other testsets reference it as a
      * dependency.
