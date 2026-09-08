@@ -17,6 +17,10 @@ class AttributeValue extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string attribute_key = 1;</code>
      */
     protected $attribute_key = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Type type = 2;</code>
+     */
+    protected $type = 0;
     protected $value;
 
     /**
@@ -26,6 +30,7 @@ class AttributeValue extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $attribute_key
+     *     @type int $type
      *     @type string $string
      *     @type int $number
      * }
@@ -53,6 +58,28 @@ class AttributeValue extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->attribute_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Type type = 2;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Type type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute\Type::class);
+        $this->type = $var;
 
         return $this;
     }
