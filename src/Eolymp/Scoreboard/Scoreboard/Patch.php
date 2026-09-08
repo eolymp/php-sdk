@@ -25,6 +25,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional uint32 best_of = 4;</code>
      */
     protected $best_of = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.scoreboard.Scoreboard.Visibility visibility = 5;</code>
+     */
+    protected $visibility = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $slug
      *     @type string $name
      *     @type int $best_of
+     *     @type int $visibility
      * }
      */
     public function __construct($data = NULL) {
@@ -134,6 +139,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->best_of = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.scoreboard.Scoreboard.Visibility visibility = 5;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return isset($this->visibility) ? $this->visibility : 0;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.scoreboard.Scoreboard.Visibility visibility = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Scoreboard\Scoreboard\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }

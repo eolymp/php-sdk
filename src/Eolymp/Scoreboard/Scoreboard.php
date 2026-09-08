@@ -34,6 +34,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $best_of = 0;
     /**
+     * Generated from protobuf field <code>.eolymp.scoreboard.Scoreboard.Visibility visibility = 5;</code>
+     */
+    protected $visibility = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Mode modes = 7;</code>
      */
     private $modes;
@@ -64,6 +68,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type int $best_of
      *           Count only this many best contests per member towards the total; zero counts all of them.
+     *     @type int $visibility
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $modes
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $contests
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
@@ -168,6 +173,28 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->best_of = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.scoreboard.Scoreboard.Visibility visibility = 5;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return $this->visibility;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.scoreboard.Scoreboard.Visibility visibility = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Scoreboard\Scoreboard\Visibility::class);
+        $this->visibility = $var;
 
         return $this;
     }
