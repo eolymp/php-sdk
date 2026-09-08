@@ -22,7 +22,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * Read-only, resolved from the contest.
+     * Read-only, resolved from the contest. Carried by the board because a shared scoreboard is read by
+     * people who may not read the contest itself.
      *
      * Generated from protobuf field <code>string name = 10;</code>
      */
@@ -31,6 +32,18 @@ class Contest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string image_url = 11;</code>
      */
     protected $image_url = '';
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 12;</code>
+     */
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 13;</code>
+     */
+    protected $starts_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 14;</code>
+     */
+    protected $ends_at = null;
     /**
      * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Problem problems = 20;</code>
      */
@@ -45,8 +58,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type int $index
      *     @type string $name
-     *           Read-only, resolved from the contest.
+     *           Read-only, resolved from the contest. Carried by the board because a shared scoreboard is read by
+     *           people who may not read the contest itself.
      *     @type string $image_url
+     *     @type int $status
+     *     @type \Google\Protobuf\Timestamp $starts_at
+     *     @type \Google\Protobuf\Timestamp $ends_at
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Problem>|\Google\Protobuf\Internal\RepeatedField $problems
      * }
      */
@@ -100,7 +117,8 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Read-only, resolved from the contest.
+     * Read-only, resolved from the contest. Carried by the board because a shared scoreboard is read by
+     * people who may not read the contest itself.
      *
      * Generated from protobuf field <code>string name = 10;</code>
      * @return string
@@ -111,7 +129,8 @@ class Contest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Read-only, resolved from the contest.
+     * Read-only, resolved from the contest. Carried by the board because a shared scoreboard is read by
+     * people who may not read the contest itself.
      *
      * Generated from protobuf field <code>string name = 10;</code>
      * @param string $var
@@ -143,6 +162,92 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 12;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Status status = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getStartsAt()
+    {
+        return $this->starts_at;
+    }
+
+    public function hasStartsAt()
+    {
+        return isset($this->starts_at);
+    }
+
+    public function clearStartsAt()
+    {
+        unset($this->starts_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartsAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->starts_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 14;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getEndsAt()
+    {
+        return $this->ends_at;
+    }
+
+    public function hasEndsAt()
+    {
+        return isset($this->ends_at);
+    }
+
+    public function clearEndsAt()
+    {
+        unset($this->ends_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 14;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setEndsAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->ends_at = $var;
 
         return $this;
     }
