@@ -138,6 +138,30 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * UpdateScoreboardContest writes the settings the scoreboard keeps for a contest it holds. Reordering
+     * happens here: writing an index moves the contest to that position and the contests it passes shift to
+     * keep the numbering contiguous, while an index beyond the last position puts the contest at the end.
+     *
+     * @param UpdateScoreboardContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateScoreboardContestOutput output message
+     */
+    public function UpdateScoreboardContest(UpdateScoreboardContestInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/contests/".rawurlencode($input->getContestId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/UpdateScoreboardContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateScoreboardContestOutput::class, $context);
+    }
+
+    /**
      * A member who was on the scoreboard only through this contest leaves with it.
      *
      * @param RemoveScoreboardContestInput $input message
@@ -160,7 +184,7 @@ class ScoreboardServiceClient {
     }
 
     /**
-     * Adding a key the scoreboard already shows updates its index and label, so there is no separate update.
+     * Adding a key the scoreboard already shows rewrites its index and label.
      *
      * @param AddScoreboardAttributeInput $input message
      * @param array $context request parameters
@@ -178,6 +202,28 @@ class ScoreboardServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddScoreboardAttributeOutput::class, $context);
+    }
+
+    /**
+     * The column header is rewritten here, and an index moves the column the way it moves a contest.
+     *
+     * @param UpdateScoreboardAttributeInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateScoreboardAttributeOutput output message
+     */
+    public function UpdateScoreboardAttribute(UpdateScoreboardAttributeInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/UpdateScoreboardAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateScoreboardAttributeOutput::class, $context);
     }
 
     /**
