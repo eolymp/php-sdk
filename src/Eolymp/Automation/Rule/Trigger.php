@@ -81,6 +81,12 @@ class Trigger
      * Generated from protobuf enum <code>MEMBER_ACTION = 13;</code>
      */
     const MEMBER_ACTION = 13;
+    /**
+     * Runs on the rule's schedule rather than in response to anything.
+     *
+     * Generated from protobuf enum <code>SCHEDULED = 16;</code>
+     */
+    const SCHEDULED = 16;
 
     private static $valueToName = [
         self::UNKNOWN_TRIGGER => 'UNKNOWN_TRIGGER',
@@ -99,6 +105,7 @@ class Trigger
         self::SUGGESTION_CHANGED => 'SUGGESTION_CHANGED',
         self::CONTEST_ACTION => 'CONTEST_ACTION',
         self::MEMBER_ACTION => 'MEMBER_ACTION',
+        self::SCHEDULED => 'SCHEDULED',
     ];
 
     public static function name($value)

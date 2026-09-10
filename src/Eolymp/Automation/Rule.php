@@ -45,6 +45,12 @@ class Rule extends \Google\Protobuf\Internal\Message
      */
     protected $label = '';
     /**
+     * How often a SCHEDULED rule runs, ignored for every other trigger.
+     *
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Schedule schedule = 10 [(.eolymp.api.mcp_field_desc) = "how often a `SCHEDULED` rule runs: `HOURLY` or `DAILY`; the hour a daily rule runs at is picked by the platform and cannot be chosen"];</code>
+     */
+    protected $schedule = 0;
+    /**
      * Generated from protobuf field <code>int32 trigger_count = 7 [(.eolymp.api.read_only) = true];</code>
      */
     protected $trigger_count = 0;
@@ -76,6 +82,8 @@ class Rule extends \Google\Protobuf\Internal\Message
      *     @type string $label
      *           Optional caption shown on the button/menu item that triggers a CONTEST_ACTION or MEMBER_ACTION rule.
      *           Clients fall back to name when empty.
+     *     @type int $schedule
+     *           How often a SCHEDULED rule runs, ignored for every other trigger.
      *     @type int $trigger_count
      *     @type array<\Eolymp\Automation\Action>|\Google\Protobuf\Internal\RepeatedField $actions
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -243,6 +251,32 @@ class Rule extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->label = $var;
+
+        return $this;
+    }
+
+    /**
+     * How often a SCHEDULED rule runs, ignored for every other trigger.
+     *
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Schedule schedule = 10 [(.eolymp.api.mcp_field_desc) = "how often a `SCHEDULED` rule runs: `HOURLY` or `DAILY`; the hour a daily rule runs at is picked by the platform and cannot be chosen"];</code>
+     * @return int
+     */
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
+
+    /**
+     * How often a SCHEDULED rule runs, ignored for every other trigger.
+     *
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Schedule schedule = 10 [(.eolymp.api.mcp_field_desc) = "how often a `SCHEDULED` rule runs: `HOURLY` or `DAILY`; the hour a daily rule runs at is picked by the platform and cannot be chosen"];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSchedule($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Automation\Rule\Schedule::class);
+        $this->schedule = $var;
 
         return $this;
     }
