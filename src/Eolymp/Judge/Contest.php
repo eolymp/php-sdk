@@ -54,6 +54,12 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $image_url = '';
     /**
+     * Date and time when the contest was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $created_at = null;
+    /**
      * Contest starting time, after this time users will be able to see problems and make submissions.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
@@ -268,6 +274,8 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Contest name.
      *     @type string $image_url
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *           Date and time when the contest was created.
      *     @type \Google\Protobuf\Timestamp $starts_at
      *           Contest starting time, after this time users will be able to see problems and make submissions.
      *     @type \Google\Protobuf\Timestamp $ends_at
@@ -516,6 +524,42 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->image_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Date and time when the contest was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5 [(.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * Date and time when the contest was created.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5 [(.eolymp.api.read_only) = true];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
 
         return $this;
     }
