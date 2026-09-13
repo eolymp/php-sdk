@@ -162,6 +162,25 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * @param ListScoreboardContestsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScoreboardContestsOutput output message
+     */
+    public function ListScoreboardContests(ListScoreboardContestsInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/contests";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/ListScoreboardContests";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreboardContestsOutput::class, $context);
+    }
+
+    /**
      * A member who was on the scoreboard only through this contest leaves with it.
      *
      * @param RemoveScoreboardContestInput $input message
@@ -224,6 +243,25 @@ class ScoreboardServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateScoreboardAttributeOutput::class, $context);
+    }
+
+    /**
+     * @param ListScoreboardAttributesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListScoreboardAttributesOutput output message
+     */
+    public function ListScoreboardAttributes(ListScoreboardAttributesInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/attributes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/ListScoreboardAttributes";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListScoreboardAttributesOutput::class, $context);
     }
 
     /**
