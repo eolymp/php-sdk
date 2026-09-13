@@ -38,6 +38,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 6;</code>
+     */
+    protected $format = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.scoreboard.Scoreboard.Mode modes = 7;</code>
      */
     private $modes;
@@ -69,6 +73,7 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     @type int $best_of
      *           Count only this many best contests per member towards the total; zero counts all of them.
      *     @type int $visibility
+     *     @type int $format
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $modes
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Contest>|\Google\Protobuf\Internal\RepeatedField $contests
      *     @type array<\Eolymp\Scoreboard\Scoreboard\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
@@ -195,6 +200,28 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Scoreboard\Scoreboard\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 6;</code>
+     * @return int
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFormat($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Format::class);
+        $this->format = $var;
 
         return $this;
     }
