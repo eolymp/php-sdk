@@ -29,7 +29,6 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Resolver\Record\Target $target
      *     @type \Eolymp\Universe\Space $space
      *     @type \Eolymp\Judge\Contest $contest
-     *     @type \Eolymp\Ranker\Scoreboard $scoreboard
      *     @type \Eolymp\Resolver\Authorization\OAuth2 $oauth2
      * }
      */
@@ -120,33 +119,6 @@ class ResolveNameOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest::class);
         $this->writeOneof(11, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 12;</code>
-     * @return \Eolymp\Ranker\Scoreboard|null
-     */
-    public function getScoreboard()
-    {
-        return $this->readOneof(12);
-    }
-
-    public function hasScoreboard()
-    {
-        return $this->hasOneof(12);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.ranker.Scoreboard scoreboard = 12;</code>
-     * @param \Eolymp\Ranker\Scoreboard $var
-     * @return $this
-     */
-    public function setScoreboard($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Ranker\Scoreboard::class);
-        $this->writeOneof(12, $var);
 
         return $this;
     }

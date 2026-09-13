@@ -10,7 +10,7 @@ namespace Eolymp\Judge;
      *
      * Other things in eolymp are called a scoreboard too, so mind which one is wanted: a contest's own ranking is
      * read from ScoreService, and the standalone boards that combine results across several contests belong to
-     * `eolymp.ranker.ScoreboardService`. What this service adds is the shape of its answer — because the columns
+     * `eolymp.scoreboard.ScoreboardService`. What this service adds is the shape of its answer — because the columns
      * are described rather than fixed, a client can render and sort the table without knowing what any particular
      * column stands for.
      */
