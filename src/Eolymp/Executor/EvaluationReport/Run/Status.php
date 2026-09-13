@@ -30,15 +30,15 @@ class Status
      */
     const EXECUTING = 2;
     /**
-     * timeout reached (wall time usage reached)
+     * time limit exceeded: cpu time over cpu_limit when the run has one, wall time over time_limit otherwise
      *
      * Generated from protobuf enum <code>TIMEOUT = 3;</code>
      */
     const TIMEOUT = 3;
     /**
-     * cpu exhausted (cpu time usage reached)
+     * superseded by TIMEOUT, no longer emitted
      *
-     * Generated from protobuf enum <code>CPU_EXHAUSTED = 4;</code>
+     * Generated from protobuf enum <code>CPU_EXHAUSTED = 4 [deprecated = true];</code>
      */
     const CPU_EXHAUSTED = 4;
     /**
@@ -95,6 +95,12 @@ class Status
      * Generated from protobuf enum <code>BLOCKED = 13;</code>
      */
     const BLOCKED = 13;
+    /**
+     * wall time over time_limit while cpu time stayed within cpu_limit, only on runs with a cpu_limit
+     *
+     * Generated from protobuf enum <code>IDLENESS_LIMIT_EXCEEDED = 14;</code>
+     */
+    const IDLENESS_LIMIT_EXCEEDED = 14;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -111,6 +117,7 @@ class Status
         self::SKIPPED => 'SKIPPED',
         self::INTERACTION_FAILURE => 'INTERACTION_FAILURE',
         self::BLOCKED => 'BLOCKED',
+        self::IDLENESS_LIMIT_EXCEEDED => 'IDLENESS_LIMIT_EXCEEDED',
     ];
 
     public static function name($value)

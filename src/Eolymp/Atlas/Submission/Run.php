@@ -22,7 +22,7 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
-     * wall time (real-world time) usage
+     * time usage measured against time_limit: cpu time when the run had a cpu limit, wall time otherwise
      *
      * Generated from protobuf field <code>uint32 time_usage = 2;</code>
      */
@@ -33,6 +33,12 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 cpu_usage = 3;</code>
      */
     protected $cpu_usage = 0;
+    /**
+     * time limit the run was judged against: cpu limit when set, wall time limit otherwise
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 7;</code>
+     */
+    protected $time_limit = 0;
     /**
      * Generated from protobuf field <code>uint64 memory_usage = 4;</code>
      */
@@ -95,9 +101,11 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type int $index
      *     @type int $time_usage
-     *           wall time (real-world time) usage
+     *           time usage measured against time_limit: cpu time when the run had a cpu limit, wall time otherwise
      *     @type int $cpu_usage
      *           cpu time (time cpu was active)
+     *     @type int $time_limit
+     *           time limit the run was judged against: cpu limit when set, wall time limit otherwise
      *     @type int|string $memory_usage
      *     @type float $resource_usage
      *     @type string $input_url
@@ -163,7 +171,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * wall time (real-world time) usage
+     * time usage measured against time_limit: cpu time when the run had a cpu limit, wall time otherwise
      *
      * Generated from protobuf field <code>uint32 time_usage = 2;</code>
      * @return int
@@ -174,7 +182,7 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * wall time (real-world time) usage
+     * time usage measured against time_limit: cpu time when the run had a cpu limit, wall time otherwise
      *
      * Generated from protobuf field <code>uint32 time_usage = 2;</code>
      * @param int $var
@@ -210,6 +218,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->cpu_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * time limit the run was judged against: cpu limit when set, wall time limit otherwise
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 7;</code>
+     * @return int
+     */
+    public function getTimeLimit()
+    {
+        return $this->time_limit;
+    }
+
+    /**
+     * time limit the run was judged against: cpu limit when set, wall time limit otherwise
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_limit = $var;
 
         return $this;
     }

@@ -30,15 +30,15 @@ class Verdict
      */
     const WRONG_ANSWER = 2;
     /**
-     * Time limit exceeded
+     * Time limit exceeded (see time_usage and time_limit)
      *
      * Generated from protobuf enum <code>TIME_LIMIT_EXCEEDED = 3;</code>
      */
     const TIME_LIMIT_EXCEEDED = 3;
     /**
-     * CPU usage limit exceeded
+     * Superseded by TIME_LIMIT_EXCEEDED, no longer produced
      *
-     * Generated from protobuf enum <code>CPU_EXHAUSTED = 4;</code>
+     * Generated from protobuf enum <code>CPU_EXHAUSTED = 4 [deprecated = true];</code>
      */
     const CPU_EXHAUSTED = 4;
     /**
@@ -53,6 +53,12 @@ class Verdict
      * Generated from protobuf enum <code>RUNTIME_ERROR = 6;</code>
      */
     const RUNTIME_ERROR = 6;
+    /**
+     * Wall time limit exceeded while cpu time stayed within the time limit, only on problems with a cpu limit
+     *
+     * Generated from protobuf enum <code>IDLENESS_LIMIT_EXCEEDED = 7;</code>
+     */
+    const IDLENESS_LIMIT_EXCEEDED = 7;
 
     private static $valueToName = [
         self::NO_VERDICT => 'NO_VERDICT',
@@ -62,6 +68,7 @@ class Verdict
         self::CPU_EXHAUSTED => 'CPU_EXHAUSTED',
         self::MEMORY_OVERFLOW => 'MEMORY_OVERFLOW',
         self::RUNTIME_ERROR => 'RUNTIME_ERROR',
+        self::IDLENESS_LIMIT_EXCEEDED => 'IDLENESS_LIMIT_EXCEEDED',
     ];
 
     public static function name($value)

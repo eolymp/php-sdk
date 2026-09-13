@@ -62,7 +62,7 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $feedback_policy = 0;
     /**
-     * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     * provides feedback on time usage within the group (see Run.time_usage), depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
      * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      */
@@ -73,6 +73,12 @@ class Group extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 cpu_usage = 42;</code>
      */
     protected $cpu_usage = 0;
+    /**
+     * time limit the runs of the group were judged against (see Run.time_limit)
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 43;</code>
+     */
+    protected $time_limit = 0;
     /**
      * provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
      *
@@ -115,9 +121,11 @@ class Group extends \Google\Protobuf\Internal\Message
      *     @type int $feedback_policy
      *           how tests are shown to the user
      *     @type int $time_usage
-     *           provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     *           provides feedback on time usage within the group (see Run.time_usage), depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *     @type int $cpu_usage
      *           provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     *     @type int $time_limit
+     *           time limit the runs of the group were judged against (see Run.time_limit)
      *     @type int|string $memory_usage
      *           provides feedback on memory usage within the group, depending on feedback mode it might be memory usage peak in group or memory usage in the first non-accepted test
      *     @type float $resource_usage
@@ -340,7 +348,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     * provides feedback on time usage within the group (see Run.time_usage), depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
      * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @return int
@@ -351,7 +359,7 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     * provides feedback on time usage within the group (see Run.time_usage), depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *
      * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @param int $var
@@ -387,6 +395,32 @@ class Group extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->cpu_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * time limit the runs of the group were judged against (see Run.time_limit)
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 43;</code>
+     * @return int
+     */
+    public function getTimeLimit()
+    {
+        return $this->time_limit;
+    }
+
+    /**
+     * time limit the runs of the group were judged against (see Run.time_limit)
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_limit = $var;
 
         return $this;
     }
