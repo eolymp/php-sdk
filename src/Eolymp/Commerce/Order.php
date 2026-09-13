@@ -87,6 +87,30 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $grand_total = 0;
     /**
+     * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
+     */
+    protected $credit_amount = 0;
+    /**
+     * Generated from protobuf field <code>uint32 credit_discount = 61;</code>
+     */
+    protected $credit_discount = 0;
+    /**
+     * Generated from protobuf field <code>uint32 payable_amount = 62;</code>
+     */
+    protected $payable_amount = 0;
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Order.Payment.Status payment_status = 63;</code>
+     */
+    protected $payment_status = 0;
+    /**
+     * Generated from protobuf field <code>string checkout_url = 64;</code>
+     */
+    protected $checkout_url = '';
+    /**
+     * Generated from protobuf field <code>string payment_id = 65;</code>
+     */
+    protected $payment_id = '';
+    /**
      * Generated from protobuf field <code>string tracking_link = 50;</code>
      */
     protected $tracking_link = '';
@@ -127,6 +151,12 @@ class Order extends \Google\Protobuf\Internal\Message
      *           in hundredth of percent, e.g. 755 means 7.55%
      *     @type string $tax_note
      *     @type int $grand_total
+     *     @type int $credit_amount
+     *     @type int $credit_discount
+     *     @type int $payable_amount
+     *     @type int $payment_status
+     *     @type string $checkout_url
+     *     @type string $payment_id
      *     @type string $tracking_link
      *     @type string $tracking_number
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -542,6 +572,138 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->grand_total = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
+     * @return int
+     */
+    public function getCreditAmount()
+    {
+        return $this->credit_amount;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditAmount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_discount = 61;</code>
+     * @return int
+     */
+    public function getCreditDiscount()
+    {
+        return $this->credit_discount;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_discount = 61;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditDiscount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_discount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 payable_amount = 62;</code>
+     * @return int
+     */
+    public function getPayableAmount()
+    {
+        return $this->payable_amount;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 payable_amount = 62;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPayableAmount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->payable_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Order.Payment.Status payment_status = 63;</code>
+     * @return int
+     */
+    public function getPaymentStatus()
+    {
+        return $this->payment_status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Order.Payment.Status payment_status = 63;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPaymentStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Commerce\Order\Payment\Status::class);
+        $this->payment_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string checkout_url = 64;</code>
+     * @return string
+     */
+    public function getCheckoutUrl()
+    {
+        return $this->checkout_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string checkout_url = 64;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCheckoutUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->checkout_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string payment_id = 65;</code>
+     * @return string
+     */
+    public function getPaymentId()
+    {
+        return $this->payment_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string payment_id = 65;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPaymentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->payment_id = $var;
 
         return $this;
     }

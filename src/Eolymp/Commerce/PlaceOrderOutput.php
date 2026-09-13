@@ -21,6 +21,10 @@ class PlaceOrderOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string order_number = 2;</code>
      */
     protected $order_number = '';
+    /**
+     * Generated from protobuf field <code>string checkout_url = 3;</code>
+     */
+    protected $checkout_url = '';
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class PlaceOrderOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $order_id
      *     @type string $order_number
+     *     @type string $checkout_url
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class PlaceOrderOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->order_number = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string checkout_url = 3;</code>
+     * @return string
+     */
+    public function getCheckoutUrl()
+    {
+        return $this->checkout_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string checkout_url = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCheckoutUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->checkout_url = $var;
 
         return $this;
     }
