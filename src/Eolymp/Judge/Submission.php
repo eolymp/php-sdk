@@ -162,11 +162,17 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $percentage = 0.0;
     /**
-     * maximum wall time
+     * maximum time usage across runs, see atlas.Submission.time_usage
      *
      * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      */
     protected $time_usage = 0;
+    /**
+     * maximum time limit across runs, see atlas.Submission.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 43;</code>
+     */
+    protected $time_limit = 0;
     /**
      * maximum cpu time
      *
@@ -258,7 +264,9 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           sum of earned points
      *     @type float $percentage
      *     @type int $time_usage
-     *           maximum wall time
+     *           maximum time usage across runs, see atlas.Submission.time_usage
+     *     @type int $time_limit
+     *           maximum time limit across runs, see atlas.Submission.time_limit
      *     @type int $cpu_usage
      *           maximum cpu time
      *     @type int|string $memory_usage
@@ -949,7 +957,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * maximum wall time
+     * maximum time usage across runs, see atlas.Submission.time_usage
      *
      * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @return int
@@ -960,7 +968,7 @@ class Submission extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * maximum wall time
+     * maximum time usage across runs, see atlas.Submission.time_usage
      *
      * Generated from protobuf field <code>uint32 time_usage = 41;</code>
      * @param int $var
@@ -970,6 +978,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * maximum time limit across runs, see atlas.Submission.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 43;</code>
+     * @return int
+     */
+    public function getTimeLimit()
+    {
+        return $this->time_limit;
+    }
+
+    /**
+     * maximum time limit across runs, see atlas.Submission.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_limit = $var;
 
         return $this;
     }

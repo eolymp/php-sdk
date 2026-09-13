@@ -34,9 +34,22 @@ class Run extends \Google\Protobuf\Internal\Message
      */
     protected $score = 0.0;
     /**
-     * wall time (real-world time) usage
+     * time usage measured against time_limit, see atlas.Submission.Run.time_usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 5;</code>
+     */
+    protected $time_usage = 0;
+    /**
+     * time limit the run was judged against, see atlas.Submission.Run.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 6;</code>
+     */
+    protected $time_limit = 0;
+    /**
+     * same as time_usage
+     *
+     * Generated from protobuf field <code>uint32 wall_time_usage = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $wall_time_usage = 0;
     /**
@@ -71,8 +84,12 @@ class Run extends \Google\Protobuf\Internal\Message
      *     @type string $test_id
      *     @type float $cost
      *     @type float $score
+     *     @type int $time_usage
+     *           time usage measured against time_limit, see atlas.Submission.Run.time_usage
+     *     @type int $time_limit
+     *           time limit the run was judged against, see atlas.Submission.Run.time_limit
      *     @type int $wall_time_usage
-     *           wall time (real-world time) usage
+     *           same as time_usage
      *     @type int $cpu_time_usage
      *           cpu time (time cpu was active)
      *     @type int|string $memory_usage
@@ -197,25 +214,81 @@ class Run extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * wall time (real-world time) usage
+     * time usage measured against time_limit, see atlas.Submission.Run.time_usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 5;</code>
      * @return int
+     */
+    public function getTimeUsage()
+    {
+        return $this->time_usage;
+    }
+
+    /**
+     * time usage measured against time_limit, see atlas.Submission.Run.time_usage
+     *
+     * Generated from protobuf field <code>uint32 time_usage = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * time limit the run was judged against, see atlas.Submission.Run.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 6;</code>
+     * @return int
+     */
+    public function getTimeLimit()
+    {
+        return $this->time_limit;
+    }
+
+    /**
+     * time limit the run was judged against, see atlas.Submission.Run.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * same as time_usage
+     *
+     * Generated from protobuf field <code>uint32 wall_time_usage = 2 [deprecated = true];</code>
+     * @return int
+     * @deprecated
      */
     public function getWallTimeUsage()
     {
+        @trigger_error('wall_time_usage is deprecated.', E_USER_DEPRECATED);
         return $this->wall_time_usage;
     }
 
     /**
-     * wall time (real-world time) usage
+     * same as time_usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 2;</code>
+     * Generated from protobuf field <code>uint32 wall_time_usage = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setWallTimeUsage($var)
     {
+        @trigger_error('wall_time_usage is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->wall_time_usage = $var;
 

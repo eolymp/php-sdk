@@ -68,9 +68,22 @@ class Group extends \Google\Protobuf\Internal\Message
      */
     protected $feedback_policy = 0;
     /**
-     * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     * provides feedback on time usage within the group, see atlas.Submission.Group.time_usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 43;</code>
+     */
+    protected $time_usage = 0;
+    /**
+     * time limit the runs of the group were judged against, see atlas.Submission.Group.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 44;</code>
+     */
+    protected $time_limit = 0;
+    /**
+     * same as time_usage
+     *
+     * Generated from protobuf field <code>uint32 wall_time_usage = 41 [deprecated = true];</code>
+     * @deprecated
      */
     protected $wall_time_usage = 0;
     /**
@@ -116,8 +129,12 @@ class Group extends \Google\Protobuf\Internal\Message
      *           how group is scored
      *     @type int $feedback_policy
      *           how tests are shown to the user
+     *     @type int $time_usage
+     *           provides feedback on time usage within the group, see atlas.Submission.Group.time_usage
+     *     @type int $time_limit
+     *           time limit the runs of the group were judged against, see atlas.Submission.Group.time_limit
      *     @type int $wall_time_usage
-     *           provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     *           same as time_usage
      *     @type int $cpu_time_usage
      *           provides feedback on CPU time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
      *     @type int|string $memory_usage
@@ -366,25 +383,81 @@ class Group extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     * provides feedback on time usage within the group, see atlas.Submission.Group.time_usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 time_usage = 43;</code>
      * @return int
+     */
+    public function getTimeUsage()
+    {
+        return $this->time_usage;
+    }
+
+    /**
+     * provides feedback on time usage within the group, see atlas.Submission.Group.time_usage
+     *
+     * Generated from protobuf field <code>uint32 time_usage = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeUsage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * time limit the runs of the group were judged against, see atlas.Submission.Group.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 44;</code>
+     * @return int
+     */
+    public function getTimeLimit()
+    {
+        return $this->time_limit;
+    }
+
+    /**
+     * time limit the runs of the group were judged against, see atlas.Submission.Group.time_limit
+     *
+     * Generated from protobuf field <code>uint32 time_limit = 44;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTimeLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->time_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * same as time_usage
+     *
+     * Generated from protobuf field <code>uint32 wall_time_usage = 41 [deprecated = true];</code>
+     * @return int
+     * @deprecated
      */
     public function getWallTimeUsage()
     {
+        @trigger_error('wall_time_usage is deprecated.', E_USER_DEPRECATED);
         return $this->wall_time_usage;
     }
 
     /**
-     * provides feedback on wall time usage within the group, depending on feedback mode it might be max execution time in group or time usage in the first non-accepted test
+     * same as time_usage
      *
-     * Generated from protobuf field <code>uint32 wall_time_usage = 41;</code>
+     * Generated from protobuf field <code>uint32 wall_time_usage = 41 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setWallTimeUsage($var)
     {
+        @trigger_error('wall_time_usage is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkUint32($var);
         $this->wall_time_usage = $var;
 
