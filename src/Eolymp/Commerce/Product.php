@@ -80,6 +80,14 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     private $variants;
     /**
+     * Generated from protobuf field <code>string stripe_product_id = 60 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $stripe_product_id = '';
+    /**
+     * Generated from protobuf field <code>string stripe_price_id = 61 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $stripe_price_id = '';
+    /**
      * Generated from protobuf field <code>string cursor = 100;</code>
      */
     protected $cursor = '';
@@ -109,6 +117,8 @@ class Product extends \Google\Protobuf\Internal\Message
      *           optionally, regular product price (before discount)
      *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
+     *     @type string $stripe_product_id
+     *     @type string $stripe_price_id
      *     @type string $cursor
      * }
      */
@@ -461,6 +471,50 @@ class Product extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Product\Variant::class);
         $this->variants = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stripe_product_id = 60 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getStripeProductId()
+    {
+        return $this->stripe_product_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stripe_product_id = 60 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStripeProductId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stripe_product_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stripe_price_id = 61 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getStripePriceId()
+    {
+        return $this->stripe_price_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stripe_price_id = 61 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStripePriceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stripe_price_id = $var;
 
         return $this;
     }

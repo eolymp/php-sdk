@@ -21,6 +21,18 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional uint32 credit_value = 2;</code>
      */
     protected $credit_value = null;
+    /**
+     * Generated from protobuf field <code>optional bool stripe_live_mode = 10;</code>
+     */
+    protected $stripe_live_mode = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Store.Stripe stripe_live = 11;</code>
+     */
+    protected $stripe_live = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Store.Stripe stripe_test = 12;</code>
+     */
+    protected $stripe_test = null;
 
     /**
      * Constructor.
@@ -30,6 +42,9 @@ class Patch extends \Google\Protobuf\Internal\Message
      *
      *     @type string $currency
      *     @type int $credit_value
+     *     @type bool $stripe_live_mode
+     *     @type \Eolymp\Commerce\Store\Stripe $stripe_live
+     *     @type \Eolymp\Commerce\Store\Stripe $stripe_test
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +112,102 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->credit_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool stripe_live_mode = 10;</code>
+     * @return bool
+     */
+    public function getStripeLiveMode()
+    {
+        return isset($this->stripe_live_mode) ? $this->stripe_live_mode : false;
+    }
+
+    public function hasStripeLiveMode()
+    {
+        return isset($this->stripe_live_mode);
+    }
+
+    public function clearStripeLiveMode()
+    {
+        unset($this->stripe_live_mode);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool stripe_live_mode = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStripeLiveMode($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->stripe_live_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Store.Stripe stripe_live = 11;</code>
+     * @return \Eolymp\Commerce\Store\Stripe|null
+     */
+    public function getStripeLive()
+    {
+        return $this->stripe_live;
+    }
+
+    public function hasStripeLive()
+    {
+        return isset($this->stripe_live);
+    }
+
+    public function clearStripeLive()
+    {
+        unset($this->stripe_live);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Store.Stripe stripe_live = 11;</code>
+     * @param \Eolymp\Commerce\Store\Stripe $var
+     * @return $this
+     */
+    public function setStripeLive($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Store\Stripe::class);
+        $this->stripe_live = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Store.Stripe stripe_test = 12;</code>
+     * @return \Eolymp\Commerce\Store\Stripe|null
+     */
+    public function getStripeTest()
+    {
+        return $this->stripe_test;
+    }
+
+    public function hasStripeTest()
+    {
+        return isset($this->stripe_test);
+    }
+
+    public function clearStripeTest()
+    {
+        unset($this->stripe_test);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.commerce.Store.Stripe stripe_test = 12;</code>
+     * @param \Eolymp\Commerce\Store\Stripe $var
+     * @return $this
+     */
+    public function setStripeTest($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Store\Stripe::class);
+        $this->stripe_test = $var;
 
         return $this;
     }

@@ -57,4 +57,20 @@ class StoreServiceClient {
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateStoreOutput::class, $context);
     }
 
+    /**
+     * @param SyncCatalogInput $input message
+     * @param array $context request parameters
+     *
+     * @return SyncCatalogOutput output message
+     */
+    public function SyncCatalog(SyncCatalogInput $input, array $context = [])
+    {
+        $path = "/store/catalog:sync";
+
+        $context['name'] = "eolymp.commerce.StoreService/SyncCatalog";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, SyncCatalogOutput::class, $context);
+    }
+
 }
