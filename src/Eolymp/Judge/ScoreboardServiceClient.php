@@ -118,7 +118,7 @@ class ScoreboardServiceClient {
     }
 
     /**
-     * Adding a key the board already shows updates its index and label, so there is no separate update.
+     * Adding a key the board already shows rewrites its index and label.
      *
      * @param AddContestAttributeInput $input message
      * @param array $context request parameters
@@ -136,6 +136,48 @@ class ScoreboardServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, AddContestAttributeOutput::class, $context);
+    }
+
+    /**
+     * The column header is rewritten here, and an index moves the column: the columns it passes shift to keep
+     * the numbering contiguous, and an index beyond the last position puts it at the end.
+     *
+     * @param UpdateContestAttributeInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateContestAttributeOutput output message
+     */
+    public function UpdateContestAttribute(UpdateContestAttributeInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/attributes/".rawurlencode($input->getAttributeKey());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setAttributeKey("");
+
+        $context['name'] = "eolymp.judge.ScoreboardService/UpdateContestAttribute";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateContestAttributeOutput::class, $context);
+    }
+
+    /**
+     * @param ListContestAttributesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListContestAttributesOutput output message
+     */
+    public function ListContestAttributes(ListContestAttributesInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/attributes";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ScoreboardService/ListContestAttributes";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListContestAttributesOutput::class, $context);
     }
 
     /**
