@@ -27,6 +27,10 @@ class AddScoreboardContestInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional uint32 index = 3;</code>
      */
     protected $index = null;
+    /**
+     * Generated from protobuf field <code>string label = 4;</code>
+     */
+    protected $label = '';
 
     /**
      * Constructor.
@@ -38,6 +42,7 @@ class AddScoreboardContestInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type int $index
      *           Position to insert at; appended when unset.
+     *     @type string $label
      * }
      */
     public function __construct($data = NULL) {
@@ -121,6 +126,28 @@ class AddScoreboardContestInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string label = 4;</code>
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Generated from protobuf field <code>string label = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
 
         return $this;
     }

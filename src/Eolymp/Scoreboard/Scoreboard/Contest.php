@@ -22,6 +22,13 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $index = 0;
     /**
+     * Short name the board gives the contest, such as "Day 1" or "Practice". A contest's own name is written for
+     * the contest page and is usually too long for a column, so a board carries its own. Empty when not set.
+     *
+     * Generated from protobuf field <code>string label = 3;</code>
+     */
+    protected $label = '';
+    /**
      * Read-only, resolved from the contest. Carried by the board because a shared scoreboard is read by
      * people who may not read the contest itself.
      *
@@ -57,6 +64,9 @@ class Contest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $contest_id
      *     @type int $index
+     *     @type string $label
+     *           Short name the board gives the contest, such as "Day 1" or "Practice". A contest's own name is written for
+     *           the contest page and is usually too long for a column, so a board carries its own. Empty when not set.
      *     @type string $name
      *           Read-only, resolved from the contest. Carried by the board because a shared scoreboard is read by
      *           people who may not read the contest itself.
@@ -112,6 +122,34 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Short name the board gives the contest, such as "Day 1" or "Practice". A contest's own name is written for
+     * the contest page and is usually too long for a column, so a board carries its own. Empty when not set.
+     *
+     * Generated from protobuf field <code>string label = 3;</code>
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Short name the board gives the contest, such as "Day 1" or "Practice". A contest's own name is written for
+     * the contest page and is usually too long for a column, so a board carries its own. Empty when not set.
+     *
+     * Generated from protobuf field <code>string label = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
 
         return $this;
     }

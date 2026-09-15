@@ -17,6 +17,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional uint32 index = 2;</code>
      */
     protected $index = null;
+    /**
+     * Generated from protobuf field <code>optional string label = 3;</code>
+     */
+    protected $label = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $index
+     *     @type string $label
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string label = 3;</code>
+     * @return string
+     */
+    public function getLabel()
+    {
+        return isset($this->label) ? $this->label : '';
+    }
+
+    public function hasLabel()
+    {
+        return isset($this->label);
+    }
+
+    public function clearLabel()
+    {
+        unset($this->label);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string label = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
 
         return $this;
     }
