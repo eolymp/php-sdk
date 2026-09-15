@@ -27,10 +27,7 @@ class Attachment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 3;</code>
      */
     protected $name = '';
-    /**
-     * Generated from protobuf field <code>string link = 4;</code>
-     */
-    protected $link = '';
+    protected $file;
 
     /**
      * Constructor.
@@ -43,6 +40,7 @@ class Attachment extends \Google\Protobuf\Internal\Message
      *           deprecate
      *     @type string $name
      *     @type string $link
+     *     @type string $content
      * }
      */
     public function __construct($data = NULL) {
@@ -126,7 +124,12 @@ class Attachment extends \Google\Protobuf\Internal\Message
      */
     public function getLink()
     {
-        return $this->link;
+        return $this->readOneof(4);
+    }
+
+    public function hasLink()
+    {
+        return $this->hasOneof(4);
     }
 
     /**
@@ -137,9 +140,44 @@ class Attachment extends \Google\Protobuf\Internal\Message
     public function setLink($var)
     {
         GPBUtil::checkString($var, True);
-        $this->link = $var;
+        $this->writeOneof(4, $var);
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string content = 5;</code>
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasContent()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Generated from protobuf field <code>string content = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->whichOneof("file");
     }
 
 }
