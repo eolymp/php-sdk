@@ -23,6 +23,12 @@ class SendMessageInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string model = 2;</code>
      */
     protected $model = '';
+    /**
+     * approve every tool call in this run without asking
+     *
+     * Generated from protobuf field <code>bool approve_all = 3;</code>
+     */
+    protected $approve_all = false;
     protected $content;
 
     /**
@@ -34,6 +40,8 @@ class SendMessageInput extends \Google\Protobuf\Internal\Message
      *     @type string $chat_id
      *     @type string $model
      *           agent to answer with, see DescribeChatOptions
+     *     @type bool $approve_all
+     *           approve every tool call in this run without asking
      *     @type \Eolymp\Copilot\SendMessageInput\Message $message
      *     @type \Eolymp\Copilot\SendMessageInput\Approval $approval
      * }
@@ -87,6 +95,32 @@ class SendMessageInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * approve every tool call in this run without asking
+     *
+     * Generated from protobuf field <code>bool approve_all = 3;</code>
+     * @return bool
+     */
+    public function getApproveAll()
+    {
+        return $this->approve_all;
+    }
+
+    /**
+     * approve every tool call in this run without asking
+     *
+     * Generated from protobuf field <code>bool approve_all = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setApproveAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->approve_all = $var;
 
         return $this;
     }
