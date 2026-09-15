@@ -17,6 +17,13 @@ class Value extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string column_id = 1;</code>
      */
     protected $column_id = '';
+    /**
+     * Type of the column the value belongs to. Carried on the value so a reader can tell a country or region
+     * id from any other string without matching it against the board's columns.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Column.Type type = 2;</code>
+     */
+    protected $type = 0;
     protected $value;
 
     /**
@@ -26,6 +33,9 @@ class Value extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $column_id
+     *     @type int $type
+     *           Type of the column the value belongs to. Carried on the value so a reader can tell a country or region
+     *           id from any other string without matching it against the board's columns.
      *     @type \Eolymp\Judge\Scoreboard\Row\ProblemScore $problem_score
      *     @type string $string
      *     @type string $number
@@ -54,6 +64,34 @@ class Value extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->column_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Type of the column the value belongs to. Carried on the value so a reader can tell a country or region
+     * id from any other string without matching it against the board's columns.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Column.Type type = 2;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Type of the column the value belongs to. Carried on the value so a reader can tell a country or region
+     * id from any other string without matching it against the board's columns.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Scoreboard.Column.Type type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Scoreboard\Column\Type::class);
+        $this->type = $var;
 
         return $this;
     }
