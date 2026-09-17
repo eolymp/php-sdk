@@ -383,11 +383,11 @@ class TestingServiceClient {
     }
 
     /**
-     * CreateTest adds a test to a testset and returns the new test id; on the /tests binding the testset
-     * comes from the payload instead of the path. Input and answer are each supplied as a URL, as inline
-     * content, or as a generator invocation; generated data is produced asynchronously, so such a test stays
-     * pending until generation and validation succeed, and a submission arriving earlier triggers the
-     * generation inline.
+     * CreateTest adds a test to a testset and returns the new test id; the testset is given in the payload
+     * like any other field, and the path carrying it is kept only for callers written against it. Input and
+     * answer are each supplied as a URL, as inline content, or as a generator invocation; generated data is
+     * produced asynchronously, so such a test stays pending until generation and validation succeed, and a
+     * submission arriving earlier triggers the generation inline.
      *
      * @param CreateTestInput $input message
      * @param array $context request parameters
@@ -396,11 +396,10 @@ class TestingServiceClient {
      */
     public function CreateTest(CreateTestInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/testsets/".rawurlencode($input->getTestsetId())."/tests";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/tests";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
-        $input->setTestsetId("");
 
         $context['name'] = "eolymp.atlas.TestingService/CreateTest";
         $context['path'] = $path;
@@ -409,11 +408,12 @@ class TestingServiceClient {
     }
 
     /**
-     * UpdateTest is the only method in this service with a patch mask: only the fields it lists are written,
-     * and patching the testset moves the test into another one. Pointing the input or answer at a generator
-     * makes the data regenerate asynchronously, putting the test back into pending status. The example
-     * overrides change only what the statement displays, which is what interactive problems need when the
-     * stored input and answer are instructions for the interactor rather than real data.
+     * UpdateTest is the only method in this service with a patch mask: only the fields it lists are written.
+     * The testset is one of those fields, so writing another one moves the test; leaving it empty keeps the
+     * test where it is, and the testset in the alternative path is not read. Pointing the input or answer
+     * at a generator makes the data regenerate asynchronously, putting the test back into pending status.
+     * The example overrides change only what the statement displays, which is what interactive problems
+     * need when the stored input and answer are instructions for the interactor rather than real data.
      *
      * @param UpdateTestInput $input message
      * @param array $context request parameters
