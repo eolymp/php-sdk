@@ -26,6 +26,13 @@ class Reply extends \Google\Protobuf\Internal\Message
      */
     protected $ticket_id = '';
     /**
+     * Which stock answer this reply is, unset for a reply that was typed rather than picked from the quick
+     * reply buttons; message still carries the English wording of it.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Reply.Canned canned = 5;</code>
+     */
+    protected $canned = 0;
+    /**
      * Message of the reply.
      *
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
@@ -51,6 +58,9 @@ class Reply extends \Google\Protobuf\Internal\Message
      *           Ticket this reply belongs to.
      *     @type string $user_id
      *     @type string $member_id
+     *     @type int $canned
+     *           Which stock answer this reply is, unset for a reply that was typed rather than picked from the quick
+     *           reply buttons; message still carries the English wording of it.
      *     @type \Eolymp\Ecm\Content $message
      *           Message of the reply.
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -164,6 +174,34 @@ class Reply extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Which stock answer this reply is, unset for a reply that was typed rather than picked from the quick
+     * reply buttons; message still carries the English wording of it.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Reply.Canned canned = 5;</code>
+     * @return int
+     */
+    public function getCanned()
+    {
+        return $this->canned;
+    }
+
+    /**
+     * Which stock answer this reply is, unset for a reply that was typed rather than picked from the quick
+     * reply buttons; message still carries the English wording of it.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Reply.Canned canned = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCanned($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Reply\Canned::class);
+        $this->canned = $var;
 
         return $this;
     }

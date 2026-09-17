@@ -18,13 +18,10 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      */
     protected $ticket_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
-     */
-    protected $message = null;
-    /**
      * Generated from protobuf field <code>.eolymp.judge.Ticket.Status change_status_to = 20;</code>
      */
     protected $change_status_to = 0;
+    protected $content;
 
     /**
      * Constructor.
@@ -34,6 +31,9 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $ticket_id
      *     @type \Eolymp\Ecm\Content $message
+     *           typed reply
+     *     @type int $canned
+     *           one of the four stock answers; server fills message with its English wording
      *     @type int $change_status_to
      * }
      */
@@ -65,25 +65,24 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * typed reply
+     *
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
      * @return \Eolymp\Ecm\Content|null
      */
     public function getMessage()
     {
-        return $this->message;
+        return $this->readOneof(10);
     }
 
     public function hasMessage()
     {
-        return isset($this->message);
-    }
-
-    public function clearMessage()
-    {
-        unset($this->message);
+        return $this->hasOneof(10);
     }
 
     /**
+     * typed reply
+     *
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 10;</code>
      * @param \Eolymp\Ecm\Content $var
      * @return $this
@@ -91,7 +90,38 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
     public function setMessage($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->message = $var;
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * one of the four stock answers; server fills message with its English wording
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Reply.Canned canned = 11;</code>
+     * @return int
+     */
+    public function getCanned()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasCanned()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * one of the four stock answers; server fills message with its English wording
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Reply.Canned canned = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCanned($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Reply\Canned::class);
+        $this->writeOneof(11, $var);
 
         return $this;
     }
@@ -116,6 +146,14 @@ class ReplyTicketInput extends \Google\Protobuf\Internal\Message
         $this->change_status_to = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->whichOneof("content");
     }
 
 }
