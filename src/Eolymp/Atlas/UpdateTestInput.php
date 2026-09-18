@@ -14,14 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTestInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test.Patch.Field patch = 5;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
     /**
+     * only names the test in the alternative path, never read as a value
+     *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      */
     protected $testset_id = '';
@@ -30,7 +28,7 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
      */
     protected $test_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Test test = 4;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Patch test = 6;</code>
      */
     protected $test = null;
 
@@ -40,38 +38,16 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $problem_id
      *     @type string $testset_id
+     *           only names the test in the alternative path, never read as a value
      *     @type string $test_id
-     *     @type \Eolymp\Atlas\Test $test
+     *     @type \Eolymp\Atlas\Test\Patch $test
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\TestingService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test.Patch.Field patch = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Test.Patch.Field patch = 5;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Test\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -97,6 +73,8 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * only names the test in the alternative path, never read as a value
+     *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      * @return string
      */
@@ -106,6 +84,8 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * only names the test in the alternative path, never read as a value
+     *
      * Generated from protobuf field <code>string testset_id = 2;</code>
      * @param string $var
      * @return $this
@@ -141,8 +121,8 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Test test = 4;</code>
-     * @return \Eolymp\Atlas\Test|null
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Patch test = 6;</code>
+     * @return \Eolymp\Atlas\Test\Patch|null
      */
     public function getTest()
     {
@@ -160,13 +140,13 @@ class UpdateTestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Test test = 4;</code>
-     * @param \Eolymp\Atlas\Test $var
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Patch test = 6;</code>
+     * @param \Eolymp\Atlas\Test\Patch $var
      * @return $this
      */
     public function setTest($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Test::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Test\Patch::class);
         $this->test = $var;
 
         return $this;

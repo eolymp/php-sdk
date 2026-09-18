@@ -9,10 +9,49 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Fields an update may write; presence is what says a field was carried. Numbered to match the test's own
+ * fields, so the two read side by side.
+ *
  * Generated from protobuf message <code>eolymp.atlas.Test.Patch</code>
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * moves the test into another testset of the same problem
+     *
+     * Generated from protobuf field <code>optional string testset_id = 2;</code>
+     */
+    protected $testset_id = null;
+    /**
+     * Generated from protobuf field <code>optional int32 index = 3;</code>
+     */
+    protected $index = null;
+    /**
+     * Generated from protobuf field <code>optional bool example = 4;</code>
+     */
+    protected $example = null;
+    /**
+     * Generated from protobuf field <code>optional float score = 5;</code>
+     */
+    protected $score = null;
+    /**
+     * Generated from protobuf field <code>optional bool secret = 6;</code>
+     */
+    protected $secret = null;
+    /**
+     * drops the statement override, which an empty oneof cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_example_input = 44;</code>
+     */
+    protected $unset_example_input = null;
+    /**
+     * Generated from protobuf field <code>optional bool unset_example_answer = 45;</code>
+     */
+    protected $unset_example_answer = null;
+    protected $input;
+    protected $answer;
+    protected $example_input;
+    protected $example_answer;
 
     /**
      * Constructor.
@@ -20,11 +59,564 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $testset_id
+     *           moves the test into another testset of the same problem
+     *     @type int $index
+     *     @type bool $example
+     *     @type float $score
+     *     @type bool $secret
+     *     @type string $input_url
+     *     @type \Eolymp\Atlas\Test\Generator $input_generator
+     *     @type string $input_content
+     *     @type string $answer_url
+     *     @type \Eolymp\Atlas\Test\Generator $answer_generator
+     *     @type string $answer_content
+     *     @type string $example_input_url
+     *     @type string $example_input_content
+     *     @type string $example_answer_url
+     *     @type string $example_answer_content
+     *     @type bool $unset_example_input
+     *           drops the statement override, which an empty oneof cannot express
+     *     @type bool $unset_example_answer
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\TestingTest::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * moves the test into another testset of the same problem
+     *
+     * Generated from protobuf field <code>optional string testset_id = 2;</code>
+     * @return string
+     */
+    public function getTestsetId()
+    {
+        return isset($this->testset_id) ? $this->testset_id : '';
+    }
+
+    public function hasTestsetId()
+    {
+        return isset($this->testset_id);
+    }
+
+    public function clearTestsetId()
+    {
+        unset($this->testset_id);
+    }
+
+    /**
+     * moves the test into another testset of the same problem
+     *
+     * Generated from protobuf field <code>optional string testset_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTestsetId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->testset_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 index = 3;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return isset($this->index) ? $this->index : 0;
+    }
+
+    public function hasIndex()
+    {
+        return isset($this->index);
+    }
+
+    public function clearIndex()
+    {
+        unset($this->index);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 index = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool example = 4;</code>
+     * @return bool
+     */
+    public function getExample()
+    {
+        return isset($this->example) ? $this->example : false;
+    }
+
+    public function hasExample()
+    {
+        return isset($this->example);
+    }
+
+    public function clearExample()
+    {
+        unset($this->example);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool example = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setExample($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->example = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float score = 5;</code>
+     * @return float
+     */
+    public function getScore()
+    {
+        return isset($this->score) ? $this->score : 0.0;
+    }
+
+    public function hasScore()
+    {
+        return isset($this->score);
+    }
+
+    public function clearScore()
+    {
+        unset($this->score);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float score = 5;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool secret = 6;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return isset($this->secret) ? $this->secret : false;
+    }
+
+    public function hasSecret()
+    {
+        return isset($this->secret);
+    }
+
+    public function clearSecret()
+    {
+        unset($this->secret);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool secret = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 11;</code>
+     * @return string
+     */
+    public function getInputUrl()
+    {
+        return $this->readOneof(11);
+    }
+
+    public function hasInputUrl()
+    {
+        return $this->hasOneof(11);
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_url = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(11, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator input_generator = 12;</code>
+     * @return \Eolymp\Atlas\Test\Generator|null
+     */
+    public function getInputGenerator()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasInputGenerator()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator input_generator = 12;</code>
+     * @param \Eolymp\Atlas\Test\Generator $var
+     * @return $this
+     */
+    public function setInputGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Test\Generator::class);
+        $this->writeOneof(12, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_content = 13;</code>
+     * @return string
+     */
+    public function getInputContent()
+    {
+        return $this->readOneof(13);
+    }
+
+    public function hasInputContent()
+    {
+        return $this->hasOneof(13);
+    }
+
+    /**
+     * Generated from protobuf field <code>string input_content = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInputContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(13, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 21;</code>
+     * @return string
+     */
+    public function getAnswerUrl()
+    {
+        return $this->readOneof(21);
+    }
+
+    public function hasAnswerUrl()
+    {
+        return $this->hasOneof(21);
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_url = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator answer_generator = 22;</code>
+     * @return \Eolymp\Atlas\Test\Generator|null
+     */
+    public function getAnswerGenerator()
+    {
+        return $this->readOneof(22);
+    }
+
+    public function hasAnswerGenerator()
+    {
+        return $this->hasOneof(22);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Test.Generator answer_generator = 22;</code>
+     * @param \Eolymp\Atlas\Test\Generator $var
+     * @return $this
+     */
+    public function setAnswerGenerator($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Test\Generator::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_content = 23;</code>
+     * @return string
+     */
+    public function getAnswerContent()
+    {
+        return $this->readOneof(23);
+    }
+
+    public function hasAnswerContent()
+    {
+        return $this->hasOneof(23);
+    }
+
+    /**
+     * Generated from protobuf field <code>string answer_content = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnswerContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
+     * @return string
+     */
+    public function getExampleInputUrl()
+    {
+        return $this->readOneof(40);
+    }
+
+    public function hasExampleInputUrl()
+    {
+        return $this->hasOneof(40);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_url = 40;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(40, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_content = 42;</code>
+     * @return string
+     */
+    public function getExampleInputContent()
+    {
+        return $this->readOneof(42);
+    }
+
+    public function hasExampleInputContent()
+    {
+        return $this->hasOneof(42);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_input_content = 42;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleInputContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
+     * @return string
+     */
+    public function getExampleAnswerUrl()
+    {
+        return $this->readOneof(41);
+    }
+
+    public function hasExampleAnswerUrl()
+    {
+        return $this->hasOneof(41);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_url = 41;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_content = 43;</code>
+     * @return string
+     */
+    public function getExampleAnswerContent()
+    {
+        return $this->readOneof(43);
+    }
+
+    public function hasExampleAnswerContent()
+    {
+        return $this->hasOneof(43);
+    }
+
+    /**
+     * Generated from protobuf field <code>string example_answer_content = 43;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExampleAnswerContent($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(43, $var);
+
+        return $this;
+    }
+
+    /**
+     * drops the statement override, which an empty oneof cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_example_input = 44;</code>
+     * @return bool
+     */
+    public function getUnsetExampleInput()
+    {
+        return isset($this->unset_example_input) ? $this->unset_example_input : false;
+    }
+
+    public function hasUnsetExampleInput()
+    {
+        return isset($this->unset_example_input);
+    }
+
+    public function clearUnsetExampleInput()
+    {
+        unset($this->unset_example_input);
+    }
+
+    /**
+     * drops the statement override, which an empty oneof cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_example_input = 44;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetExampleInput($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_example_input = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool unset_example_answer = 45;</code>
+     * @return bool
+     */
+    public function getUnsetExampleAnswer()
+    {
+        return isset($this->unset_example_answer) ? $this->unset_example_answer : false;
+    }
+
+    public function hasUnsetExampleAnswer()
+    {
+        return isset($this->unset_example_answer);
+    }
+
+    public function clearUnsetExampleAnswer()
+    {
+        unset($this->unset_example_answer);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool unset_example_answer = 45;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetExampleAnswer($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_example_answer = $var;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInput()
+    {
+        return $this->whichOneof("input");
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnswer()
+    {
+        return $this->whichOneof("answer");
+    }
+
+    /**
+     * @return string
+     */
+    public function getExampleInput()
+    {
+        return $this->whichOneof("example_input");
+    }
+
+    /**
+     * @return string
+     */
+    public function getExampleAnswer()
+    {
+        return $this->whichOneof("example_answer");
     }
 
 }

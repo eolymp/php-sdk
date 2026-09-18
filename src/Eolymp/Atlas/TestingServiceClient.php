@@ -408,12 +408,13 @@ class TestingServiceClient {
     }
 
     /**
-     * UpdateTest is the only method in this service with a patch mask: only the fields it lists are written.
-     * The testset is one of those fields, so writing another one moves the test; leaving it empty keeps the
-     * test where it is, and the testset in the alternative path is not read. Pointing the input or answer
-     * at a generator makes the data regenerate asynchronously, putting the test back into pending status.
-     * The example overrides change only what the statement displays, which is what interactive problems
-     * need when the stored input and answer are instructions for the interactor rather than real data.
+     * UpdateTest writes the fields the patch carries and leaves the rest alone. The testset is one of them,
+     * so carrying another one moves the test; the testset in the alternative path is not read. Pointing the
+     * input or answer at a generator makes the data regenerate asynchronously, putting the test back into
+     * pending status. The example overrides change only what the statement displays, which is what
+     * interactive problems need when the stored input and answer are instructions for the interactor rather
+     * than real data; `unset_example_input` and `unset_example_answer` drop them, since an absent oneof
+     * means the field was not carried.
      *
      * @param UpdateTestInput $input message
      * @param array $context request parameters
