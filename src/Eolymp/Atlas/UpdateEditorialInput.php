@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch.Field patch = 10;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
@@ -26,7 +22,7 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
      */
     protected $editorial_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Editorial editorial = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Editorial.Patch editorial = 4;</code>
      */
     protected $editorial = null;
 
@@ -36,37 +32,14 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $problem_id
      *     @type string $editorial_id
-     *     @type \Eolymp\Atlas\Editorial $editorial
+     *     @type \Eolymp\Atlas\Editorial\Patch $editorial
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\EditorialService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch.Field patch = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Editorial.Patch.Field patch = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Editorial\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -114,8 +87,8 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Editorial editorial = 3;</code>
-     * @return \Eolymp\Atlas\Editorial|null
+     * Generated from protobuf field <code>.eolymp.atlas.Editorial.Patch editorial = 4;</code>
+     * @return \Eolymp\Atlas\Editorial\Patch|null
      */
     public function getEditorial()
     {
@@ -133,13 +106,13 @@ class UpdateEditorialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Editorial editorial = 3;</code>
-     * @param \Eolymp\Atlas\Editorial $var
+     * Generated from protobuf field <code>.eolymp.atlas.Editorial.Patch editorial = 4;</code>
+     * @param \Eolymp\Atlas\Editorial\Patch $var
      * @return $this
      */
     public function setEditorial($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Editorial::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Editorial\Patch::class);
         $this->editorial = $var;
 
         return $this;

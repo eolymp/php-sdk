@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateIssueCommentInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.IssueActivity.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string issue_id = 2;</code>
      */
     protected $issue_id = '';
@@ -26,7 +22,7 @@ class UpdateIssueCommentInput extends \Google\Protobuf\Internal\Message
      */
     protected $comment_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.IssueActivity.Comment comment = 4;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.IssueActivity.Patch comment = 5;</code>
      */
     protected $comment = null;
 
@@ -36,37 +32,14 @@ class UpdateIssueCommentInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $issue_id
      *     @type string $comment_id
-     *     @type \Eolymp\Atlas\IssueActivity\Comment $comment
+     *     @type \Eolymp\Atlas\IssueActivity\Patch $comment
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\IssueService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.IssueActivity.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.IssueActivity.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\IssueActivity\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -114,8 +87,8 @@ class UpdateIssueCommentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.IssueActivity.Comment comment = 4;</code>
-     * @return \Eolymp\Atlas\IssueActivity\Comment|null
+     * Generated from protobuf field <code>.eolymp.atlas.IssueActivity.Patch comment = 5;</code>
+     * @return \Eolymp\Atlas\IssueActivity\Patch|null
      */
     public function getComment()
     {
@@ -133,13 +106,13 @@ class UpdateIssueCommentInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.IssueActivity.Comment comment = 4;</code>
-     * @param \Eolymp\Atlas\IssueActivity\Comment $var
+     * Generated from protobuf field <code>.eolymp.atlas.IssueActivity.Patch comment = 5;</code>
+     * @param \Eolymp\Atlas\IssueActivity\Patch $var
      * @return $this
      */
     public function setComment($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\IssueActivity\Comment::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\IssueActivity\Patch::class);
         $this->comment = $var;
 
         return $this;

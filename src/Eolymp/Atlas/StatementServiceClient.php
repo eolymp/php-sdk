@@ -55,8 +55,8 @@ class StatementServiceClient {
     }
 
     /**
-     * UpdateStatement writes new values into an existing statement. Fields outside the patch mask keep the
-     * values they already have, so a title fix does not require resending the content.
+     * UpdateStatement writes new values into an existing statement. Only the fields the patch carries are
+     * written, so a title fix does not require resending the content.
      *
      * @param UpdateStatementInput $input message
      * @param array $context request parameters

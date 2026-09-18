@@ -55,9 +55,9 @@ class ProblemServiceClient {
 
     /**
      * UpdateProblem changes problem metadata, which is also how a problem is published or unpublished in the
-     * catalog. Only fields named in the patch mask are written, and an empty mask writes all of them, blanking
-     * whatever the request left empty. Problem content such as statements and testsets belongs to other
-     * services and is untouched.
+     * catalog. Only the fields the patch carries are written; the rest keep the values they already have, and
+     * `untopic` clears the topics, which an empty list cannot express. Problem content such as statements and
+     * testsets belongs to other services and is untouched.
      *
      * @param UpdateProblemInput $input message
      * @param array $context request parameters

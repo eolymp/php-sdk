@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateStatementInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Patch.Field patch = 10;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
@@ -26,7 +22,7 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
      */
     protected $statement_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Statement.Patch statement = 4;</code>
      */
     protected $statement = null;
 
@@ -36,37 +32,14 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $problem_id
      *     @type string $statement_id
-     *     @type \Eolymp\Atlas\Statement $statement
+     *     @type \Eolymp\Atlas\Statement\Patch $statement
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\StatementService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Patch.Field patch = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Statement.Patch.Field patch = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Statement\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -114,8 +87,8 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 3;</code>
-     * @return \Eolymp\Atlas\Statement|null
+     * Generated from protobuf field <code>.eolymp.atlas.Statement.Patch statement = 4;</code>
+     * @return \Eolymp\Atlas\Statement\Patch|null
      */
     public function getStatement()
     {
@@ -133,13 +106,13 @@ class UpdateStatementInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Statement statement = 3;</code>
-     * @param \Eolymp\Atlas\Statement $var
+     * Generated from protobuf field <code>.eolymp.atlas.Statement.Patch statement = 4;</code>
+     * @param \Eolymp\Atlas\Statement\Patch $var
      * @return $this
      */
     public function setStatement($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Statement::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Statement\Patch::class);
         $this->statement = $var;
 
         return $this;

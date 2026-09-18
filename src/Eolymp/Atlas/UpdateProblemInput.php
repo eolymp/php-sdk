@@ -14,17 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateProblemInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Patch problem = 4;</code>
      */
     protected $problem = null;
 
@@ -34,41 +28,13 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           specify list of fields to update, if empty all fields are updated
      *     @type string $problem_id
-     *     @type \Eolymp\Atlas\Problem $problem
+     *     @type \Eolymp\Atlas\Problem\Patch $problem
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\ProblemService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Problem\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -94,8 +60,8 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 3;</code>
-     * @return \Eolymp\Atlas\Problem|null
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Patch problem = 4;</code>
+     * @return \Eolymp\Atlas\Problem\Patch|null
      */
     public function getProblem()
     {
@@ -113,13 +79,13 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 3;</code>
-     * @param \Eolymp\Atlas\Problem $var
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Patch problem = 4;</code>
+     * @param \Eolymp\Atlas\Problem\Patch $var
      * @return $this
      */
     public function setProblem($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem\Patch::class);
         $this->problem = $var;
 
         return $this;

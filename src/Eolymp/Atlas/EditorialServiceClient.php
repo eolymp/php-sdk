@@ -55,9 +55,8 @@ class EditorialServiceClient {
     }
 
     /**
-     * UpdateEditorial writes new values into an existing editorial. Fields outside the patch mask keep the
-     * values they already have, unless the mask selects them all, which also overwrites the ones left empty in
-     * the request.
+     * UpdateEditorial writes new values into an existing editorial. Only the fields the patch carries are
+     * written; the rest keep the values they already have.
      *
      * @param UpdateEditorialInput $input message
      * @param array $context request parameters

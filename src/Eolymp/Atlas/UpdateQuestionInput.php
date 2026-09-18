@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateQuestionInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Patch.Field patch = 10;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
@@ -26,7 +22,7 @@ class UpdateQuestionInput extends \Google\Protobuf\Internal\Message
      */
     protected $question_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Question question = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Question.Patch question = 4;</code>
      */
     protected $question = null;
 
@@ -36,37 +32,14 @@ class UpdateQuestionInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $problem_id
      *     @type string $question_id
-     *     @type \Eolymp\Atlas\Question $question
+     *     @type \Eolymp\Atlas\Question\Patch $question
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\QuestionService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Patch.Field patch = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Patch.Field patch = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Question\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -114,8 +87,8 @@ class UpdateQuestionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Question question = 3;</code>
-     * @return \Eolymp\Atlas\Question|null
+     * Generated from protobuf field <code>.eolymp.atlas.Question.Patch question = 4;</code>
+     * @return \Eolymp\Atlas\Question\Patch|null
      */
     public function getQuestion()
     {
@@ -133,13 +106,13 @@ class UpdateQuestionInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Question question = 3;</code>
-     * @param \Eolymp\Atlas\Question $var
+     * Generated from protobuf field <code>.eolymp.atlas.Question.Patch question = 4;</code>
+     * @param \Eolymp\Atlas\Question\Patch $var
      * @return $this
      */
     public function setQuestion($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Question::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Question\Patch::class);
         $this->question = $var;
 
         return $this;

@@ -13,6 +13,30 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string locale = 3;</code>
+     */
+    protected $locale = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     */
+    protected $content = null;
+    /**
+     * Generated from protobuf field <code>optional string download_link = 7;</code>
+     */
+    protected $download_link = null;
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 8;</code>
+     */
+    protected $automatic = null;
+    /**
+     * Generated from protobuf field <code>optional bool draft = 10;</code>
+     */
+    protected $draft = null;
+    /**
+     * Generated from protobuf field <code>optional string author_id = 103;</code>
+     */
+    protected $author_id = null;
 
     /**
      * Constructor.
@@ -20,11 +44,209 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $locale
+     *     @type \Eolymp\Ecm\Content $content
+     *     @type string $download_link
+     *     @type bool $automatic
+     *     @type bool $draft
+     *     @type string $author_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Editorial::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string locale = 3;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return isset($this->locale) ? $this->locale : '';
+    }
+
+    public function hasLocale()
+    {
+        return isset($this->locale);
+    }
+
+    public function clearLocale()
+    {
+        unset($this->locale);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string locale = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string download_link = 7;</code>
+     * @return string
+     */
+    public function getDownloadLink()
+    {
+        return isset($this->download_link) ? $this->download_link : '';
+    }
+
+    public function hasDownloadLink()
+    {
+        return isset($this->download_link);
+    }
+
+    public function clearDownloadLink()
+    {
+        unset($this->download_link);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string download_link = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 8;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return isset($this->automatic) ? $this->automatic : false;
+    }
+
+    public function hasAutomatic()
+    {
+        return isset($this->automatic);
+    }
+
+    public function clearAutomatic()
+    {
+        unset($this->automatic);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool draft = 10;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return isset($this->draft) ? $this->draft : false;
+    }
+
+    public function hasDraft()
+    {
+        return isset($this->draft);
+    }
+
+    public function clearDraft()
+    {
+        unset($this->draft);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool draft = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string author_id = 103;</code>
+     * @return string
+     */
+    public function getAuthorId()
+    {
+        return isset($this->author_id) ? $this->author_id : '';
+    }
+
+    public function hasAuthorId()
+    {
+        return isset($this->author_id);
+    }
+
+    public function clearAuthorId()
+    {
+        unset($this->author_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string author_id = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author_id = $var;
+
+        return $this;
     }
 
 }

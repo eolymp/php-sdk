@@ -14,13 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateConfigInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * fields to update; empty or UNKNOWN_PATCH means update all fields
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Config.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Config config = 2;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Config.Patch config = 3;</code>
      */
     protected $config = null;
 
@@ -30,9 +24,7 @@ class UpdateConfigInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           fields to update; empty or UNKNOWN_PATCH means update all fields
-     *     @type \Eolymp\Atlas\Config $config
+     *     @type \Eolymp\Atlas\Config\Patch $config
      * }
      */
     public function __construct($data = NULL) {
@@ -41,34 +33,8 @@ class UpdateConfigInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * fields to update; empty or UNKNOWN_PATCH means update all fields
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Config.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * fields to update; empty or UNKNOWN_PATCH means update all fields
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Config.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Config\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.atlas.Config config = 2;</code>
-     * @return \Eolymp\Atlas\Config|null
+     * Generated from protobuf field <code>.eolymp.atlas.Config.Patch config = 3;</code>
+     * @return \Eolymp\Atlas\Config\Patch|null
      */
     public function getConfig()
     {
@@ -86,13 +52,13 @@ class UpdateConfigInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Config config = 2;</code>
-     * @param \Eolymp\Atlas\Config $var
+     * Generated from protobuf field <code>.eolymp.atlas.Config.Patch config = 3;</code>
+     * @param \Eolymp\Atlas\Config\Patch $var
      * @return $this
      */
     public function setConfig($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Config::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Config\Patch::class);
         $this->config = $var;
 
         return $this;

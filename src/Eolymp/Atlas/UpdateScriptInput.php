@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateScriptInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Script.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 4;</code>
      */
     protected $problem_id = '';
@@ -26,7 +22,7 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
      */
     protected $script_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Script script = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Script.Patch script = 5;</code>
      */
     protected $script = null;
 
@@ -36,37 +32,14 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $problem_id
      *     @type string $script_id
-     *     @type \Eolymp\Atlas\Script $script
+     *     @type \Eolymp\Atlas\Script\Patch $script
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\ScriptService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Script.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Script.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Script\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -114,8 +87,8 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Script script = 3;</code>
-     * @return \Eolymp\Atlas\Script|null
+     * Generated from protobuf field <code>.eolymp.atlas.Script.Patch script = 5;</code>
+     * @return \Eolymp\Atlas\Script\Patch|null
      */
     public function getScript()
     {
@@ -133,13 +106,13 @@ class UpdateScriptInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Script script = 3;</code>
-     * @param \Eolymp\Atlas\Script $var
+     * Generated from protobuf field <code>.eolymp.atlas.Script.Patch script = 5;</code>
+     * @param \Eolymp\Atlas\Script\Patch $var
      * @return $this
      */
     public function setScript($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Script::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Script\Patch::class);
         $this->script = $var;
 
         return $this;

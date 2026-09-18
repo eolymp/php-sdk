@@ -13,6 +13,18 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional uint32 hourly_ip_submission_limit = 1;</code>
+     */
+    protected $hourly_ip_submission_limit = null;
+    /**
+     * Generated from protobuf field <code>optional uint32 daily_ip_submission_limit = 2;</code>
+     */
+    protected $daily_ip_submission_limit = null;
+    /**
+     * Generated from protobuf field <code>optional bool tracing_enabled = 3;</code>
+     */
+    protected $tracing_enabled = null;
 
     /**
      * Constructor.
@@ -20,11 +32,110 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $hourly_ip_submission_limit
+     *     @type int $daily_ip_submission_limit
+     *     @type bool $tracing_enabled
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Configuration::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 hourly_ip_submission_limit = 1;</code>
+     * @return int
+     */
+    public function getHourlyIpSubmissionLimit()
+    {
+        return isset($this->hourly_ip_submission_limit) ? $this->hourly_ip_submission_limit : 0;
+    }
+
+    public function hasHourlyIpSubmissionLimit()
+    {
+        return isset($this->hourly_ip_submission_limit);
+    }
+
+    public function clearHourlyIpSubmissionLimit()
+    {
+        unset($this->hourly_ip_submission_limit);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 hourly_ip_submission_limit = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHourlyIpSubmissionLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->hourly_ip_submission_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 daily_ip_submission_limit = 2;</code>
+     * @return int
+     */
+    public function getDailyIpSubmissionLimit()
+    {
+        return isset($this->daily_ip_submission_limit) ? $this->daily_ip_submission_limit : 0;
+    }
+
+    public function hasDailyIpSubmissionLimit()
+    {
+        return isset($this->daily_ip_submission_limit);
+    }
+
+    public function clearDailyIpSubmissionLimit()
+    {
+        unset($this->daily_ip_submission_limit);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 daily_ip_submission_limit = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDailyIpSubmissionLimit($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->daily_ip_submission_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool tracing_enabled = 3;</code>
+     * @return bool
+     */
+    public function getTracingEnabled()
+    {
+        return isset($this->tracing_enabled) ? $this->tracing_enabled : false;
+    }
+
+    public function hasTracingEnabled()
+    {
+        return isset($this->tracing_enabled);
+    }
+
+    public function clearTracingEnabled()
+    {
+        unset($this->tracing_enabled);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool tracing_enabled = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTracingEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->tracing_enabled = $var;
+
+        return $this;
     }
 
 }

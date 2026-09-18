@@ -13,6 +13,32 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Issue.Status status = 2;</code>
+     */
+    protected $status = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     */
+    protected $description = null;
+    /**
+     * Generated from protobuf field <code>optional string title = 6;</code>
+     */
+    protected $title = null;
+    /**
+     * Generated from protobuf field <code>optional string assignee = 7;</code>
+     */
+    protected $assignee = null;
+    /**
+     * Generated from protobuf field <code>repeated string tags = 9;</code>
+     */
+    private $tags;
+    /**
+     * clears the tags, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool untag = 14;</code>
+     */
+    protected $untag = null;
 
     /**
      * Constructor.
@@ -20,11 +46,204 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $status
+     *     @type \Eolymp\Ecm\Content $description
+     *     @type string $title
+     *     @type string $assignee
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
+     *     @type bool $untag
+     *           clears the tags, which an empty list cannot express
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Issue::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Issue.Status status = 2;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return isset($this->status) ? $this->status : 0;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Issue.Status status = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Issue\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string title = 6;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return isset($this->title) ? $this->title : '';
+    }
+
+    public function hasTitle()
+    {
+        return isset($this->title);
+    }
+
+    public function clearTitle()
+    {
+        unset($this->title);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string title = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string assignee = 7;</code>
+     * @return string
+     */
+    public function getAssignee()
+    {
+        return isset($this->assignee) ? $this->assignee : '';
+    }
+
+    public function hasAssignee()
+    {
+        return isset($this->assignee);
+    }
+
+    public function clearAssignee()
+    {
+        unset($this->assignee);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string assignee = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAssignee($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->assignee = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string tags = 9;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string tags = 9;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the tags, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool untag = 14;</code>
+     * @return bool
+     */
+    public function getUntag()
+    {
+        return isset($this->untag) ? $this->untag : false;
+    }
+
+    public function hasUntag()
+    {
+        return isset($this->untag);
+    }
+
+    public function clearUntag()
+    {
+        unset($this->untag);
+    }
+
+    /**
+     * clears the tags, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool untag = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUntag($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->untag = $var;
+
+        return $this;
     }
 
 }

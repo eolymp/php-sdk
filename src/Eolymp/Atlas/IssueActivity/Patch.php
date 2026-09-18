@@ -13,6 +13,10 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 1;</code>
+     */
+    protected $message = null;
 
     /**
      * Constructor.
@@ -20,11 +24,44 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Eolymp\Ecm\Content $message
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\IssueActivity::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 1;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    public function hasMessage()
+    {
+        return isset($this->message);
+    }
+
+    public function clearMessage()
+    {
+        unset($this->message);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content message = 1;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setMessage($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->message = $var;
+
+        return $this;
     }
 
 }

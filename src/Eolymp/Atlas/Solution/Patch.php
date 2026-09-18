@@ -13,6 +13,26 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional bool secret = 4;</code>
+     */
+    protected $secret = null;
+    /**
+     * Generated from protobuf field <code>optional string runtime = 10;</code>
+     */
+    protected $runtime = null;
+    /**
+     * Generated from protobuf field <code>optional string source = 11;</code>
+     */
+    protected $source = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Solution.Type type = 20;</code>
+     */
+    protected $type = null;
 
     /**
      * Constructor.
@@ -20,11 +40,176 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type bool $secret
+     *     @type string $runtime
+     *     @type string $source
+     *     @type int $type
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Solution::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool secret = 4;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return isset($this->secret) ? $this->secret : false;
+    }
+
+    public function hasSecret()
+    {
+        return isset($this->secret);
+    }
+
+    public function clearSecret()
+    {
+        unset($this->secret);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool secret = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string runtime = 10;</code>
+     * @return string
+     */
+    public function getRuntime()
+    {
+        return isset($this->runtime) ? $this->runtime : '';
+    }
+
+    public function hasRuntime()
+    {
+        return isset($this->runtime);
+    }
+
+    public function clearRuntime()
+    {
+        unset($this->runtime);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string runtime = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string source = 11;</code>
+     * @return string
+     */
+    public function getSource()
+    {
+        return isset($this->source) ? $this->source : '';
+    }
+
+    public function hasSource()
+    {
+        return isset($this->source);
+    }
+
+    public function clearSource()
+    {
+        unset($this->source);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string source = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Solution.Type type = 20;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return isset($this->type) ? $this->type : 0;
+    }
+
+    public function hasType()
+    {
+        return isset($this->type);
+    }
+
+    public function clearType()
+    {
+        unset($this->type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Solution.Type type = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution\Type::class);
+        $this->type = $var;
+
+        return $this;
     }
 
 }

@@ -13,6 +13,32 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional bool secret = 7;</code>
+     */
+    protected $secret = null;
+    /**
+     * Generated from protobuf field <code>optional string runtime = 10;</code>
+     */
+    protected $runtime = null;
+    /**
+     * Generated from protobuf field <code>optional string source = 11;</code>
+     */
+    protected $source = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 20;</code>
+     */
+    private $files;
+    /**
+     * clears the files, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_files = 21;</code>
+     */
+    protected $unset_files = null;
 
     /**
      * Constructor.
@@ -20,11 +46,204 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type bool $secret
+     *     @type string $runtime
+     *     @type string $source
+     *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type bool $unset_files
+     *           clears the files, which an empty list cannot express
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Script::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool secret = 7;</code>
+     * @return bool
+     */
+    public function getSecret()
+    {
+        return isset($this->secret) ? $this->secret : false;
+    }
+
+    public function hasSecret()
+    {
+        return isset($this->secret);
+    }
+
+    public function clearSecret()
+    {
+        unset($this->secret);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool secret = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSecret($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->secret = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string runtime = 10;</code>
+     * @return string
+     */
+    public function getRuntime()
+    {
+        return isset($this->runtime) ? $this->runtime : '';
+    }
+
+    public function hasRuntime()
+    {
+        return isset($this->runtime);
+    }
+
+    public function clearRuntime()
+    {
+        unset($this->runtime);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string runtime = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRuntime($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->runtime = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string source = 11;</code>
+     * @return string
+     */
+    public function getSource()
+    {
+        return isset($this->source) ? $this->source : '';
+    }
+
+    public function hasSource()
+    {
+        return isset($this->source);
+    }
+
+    public function clearSource()
+    {
+        unset($this->source);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string source = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.executor.File files = 20;</code>
+     * @param array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFiles($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\File::class);
+        $this->files = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the files, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_files = 21;</code>
+     * @return bool
+     */
+    public function getUnsetFiles()
+    {
+        return isset($this->unset_files) ? $this->unset_files : false;
+    }
+
+    public function hasUnsetFiles()
+    {
+        return isset($this->unset_files);
+    }
+
+    public function clearUnsetFiles()
+    {
+        unset($this->unset_files);
+    }
+
+    /**
+     * clears the files, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_files = 21;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetFiles($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_files = $var;
+
+        return $this;
     }
 
 }

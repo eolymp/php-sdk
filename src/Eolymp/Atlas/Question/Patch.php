@@ -13,6 +13,34 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional uint32 index = 2;</code>
+     */
+    protected $index = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Question.Type type = 3;</code>
+     */
+    protected $type = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 4;</code>
+     */
+    protected $content = null;
+    /**
+     * Generated from protobuf field <code>optional float score = 5;</code>
+     */
+    protected $score = null;
+    /**
+     * Generated from protobuf field <code>optional bool multiple = 6;</code>
+     */
+    protected $multiple = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Option options = 10;</code>
+     */
+    private $options;
+    /**
+     * Generated from protobuf field <code>repeated string answers = 11;</code>
+     */
+    private $answers;
 
     /**
      * Constructor.
@@ -20,11 +48,222 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $index
+     *     @type int $type
+     *     @type \Eolymp\Ecm\Content $content
+     *     @type float $score
+     *     @type bool $multiple
+     *     @type array<\Eolymp\Atlas\Question\Option>|\Google\Protobuf\Internal\RepeatedField $options
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $answers
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Question::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 index = 2;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return isset($this->index) ? $this->index : 0;
+    }
+
+    public function hasIndex()
+    {
+        return isset($this->index);
+    }
+
+    public function clearIndex()
+    {
+        unset($this->index);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 index = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Question.Type type = 3;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return isset($this->type) ? $this->type : 0;
+    }
+
+    public function hasType()
+    {
+        return isset($this->type);
+    }
+
+    public function clearType()
+    {
+        unset($this->type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Question.Type type = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Question\Type::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 4;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 4;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float score = 5;</code>
+     * @return float
+     */
+    public function getScore()
+    {
+        return isset($this->score) ? $this->score : 0.0;
+    }
+
+    public function hasScore()
+    {
+        return isset($this->score);
+    }
+
+    public function clearScore()
+    {
+        unset($this->score);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float score = 5;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setScore($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->score = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool multiple = 6;</code>
+     * @return bool
+     */
+    public function getMultiple()
+    {
+        return isset($this->multiple) ? $this->multiple : false;
+    }
+
+    public function hasMultiple()
+    {
+        return isset($this->multiple);
+    }
+
+    public function clearMultiple()
+    {
+        unset($this->multiple);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool multiple = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMultiple($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->multiple = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Option options = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Option options = 10;</code>
+     * @param array<\Eolymp\Atlas\Question\Option>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOptions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Question\Option::class);
+        $this->options = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string answers = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAnswers()
+    {
+        return $this->answers;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string answers = 11;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAnswers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->answers = $arr;
+
+        return $this;
     }
 
 }

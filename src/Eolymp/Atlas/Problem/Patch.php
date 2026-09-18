@@ -13,6 +13,36 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional int32 number = 10;</code>
+     */
+    protected $number = null;
+    /**
+     * Generated from protobuf field <code>optional bool visible = 11;</code>
+     */
+    protected $visible = null;
+    /**
+     * Generated from protobuf field <code>optional string origin = 13;</code>
+     */
+    protected $origin = null;
+    /**
+     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     */
+    private $topics;
+    /**
+     * Generated from protobuf field <code>optional uint32 difficulty = 21;</code>
+     */
+    protected $difficulty = null;
+    /**
+     * clears the topics, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool untopic = 22;</code>
+     */
+    protected $untopic = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Problem.Type type = 23;</code>
+     */
+    protected $type = null;
 
     /**
      * Constructor.
@@ -20,11 +50,237 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $number
+     *     @type bool $visible
+     *     @type string $origin
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type int $difficulty
+     *     @type bool $untopic
+     *           clears the topics, which an empty list cannot express
+     *     @type int $type
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Problem::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 number = 10;</code>
+     * @return int
+     */
+    public function getNumber()
+    {
+        return isset($this->number) ? $this->number : 0;
+    }
+
+    public function hasNumber()
+    {
+        return isset($this->number);
+    }
+
+    public function clearNumber()
+    {
+        unset($this->number);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 number = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->number = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool visible = 11;</code>
+     * @return bool
+     */
+    public function getVisible()
+    {
+        return isset($this->visible) ? $this->visible : false;
+    }
+
+    public function hasVisible()
+    {
+        return isset($this->visible);
+    }
+
+    public function clearVisible()
+    {
+        unset($this->visible);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool visible = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setVisible($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->visible = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string origin = 13;</code>
+     * @return string
+     */
+    public function getOrigin()
+    {
+        return isset($this->origin) ? $this->origin : '';
+    }
+
+    public function hasOrigin()
+    {
+        return isset($this->origin);
+    }
+
+    public function clearOrigin()
+    {
+        unset($this->origin);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string origin = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOrigin($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->origin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTopics()
+    {
+        return $this->topics;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string topics = 20;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTopics($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->topics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 difficulty = 21;</code>
+     * @return int
+     */
+    public function getDifficulty()
+    {
+        return isset($this->difficulty) ? $this->difficulty : 0;
+    }
+
+    public function hasDifficulty()
+    {
+        return isset($this->difficulty);
+    }
+
+    public function clearDifficulty()
+    {
+        unset($this->difficulty);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 difficulty = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDifficulty($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->difficulty = $var;
+
+        return $this;
+    }
+
+    /**
+     * clears the topics, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool untopic = 22;</code>
+     * @return bool
+     */
+    public function getUntopic()
+    {
+        return isset($this->untopic) ? $this->untopic : false;
+    }
+
+    public function hasUntopic()
+    {
+        return isset($this->untopic);
+    }
+
+    public function clearUntopic()
+    {
+        unset($this->untopic);
+    }
+
+    /**
+     * clears the topics, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool untopic = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUntopic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->untopic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Problem.Type type = 23;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return isset($this->type) ? $this->type : 0;
+    }
+
+    public function hasType()
+    {
+        return isset($this->type);
+    }
+
+    public function clearType()
+    {
+        unset($this->type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.atlas.Problem.Type type = 23;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
+        $this->type = $var;
+
+        return $this;
     }
 
 }

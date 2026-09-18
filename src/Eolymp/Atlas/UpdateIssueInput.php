@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateIssueInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Issue.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string issue_id = 2;</code>
      */
     protected $issue_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Issue issue = 3;</code>
+     * Generated from protobuf field <code>.eolymp.atlas.Issue.Patch issue = 4;</code>
      */
     protected $issue = null;
 
@@ -32,36 +28,13 @@ class UpdateIssueInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $issue_id
-     *     @type \Eolymp\Atlas\Issue $issue
+     *     @type \Eolymp\Atlas\Issue\Patch $issue
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\IssueService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Issue.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Issue.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Atlas\Issue\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateIssueInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Issue issue = 3;</code>
-     * @return \Eolymp\Atlas\Issue|null
+     * Generated from protobuf field <code>.eolymp.atlas.Issue.Patch issue = 4;</code>
+     * @return \Eolymp\Atlas\Issue\Patch|null
      */
     public function getIssue()
     {
@@ -106,13 +79,13 @@ class UpdateIssueInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.atlas.Issue issue = 3;</code>
-     * @param \Eolymp\Atlas\Issue $var
+     * Generated from protobuf field <code>.eolymp.atlas.Issue.Patch issue = 4;</code>
+     * @param \Eolymp\Atlas\Issue\Patch $var
      * @return $this
      */
     public function setIssue($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Atlas\Issue::class);
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Issue\Patch::class);
         $this->issue = $var;
 
         return $this;

@@ -13,6 +13,42 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string locale = 3;</code>
+     */
+    protected $locale = null;
+    /**
+     * Generated from protobuf field <code>optional string title = 4;</code>
+     */
+    protected $title = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     */
+    protected $content = null;
+    /**
+     * Generated from protobuf field <code>optional string download_link = 7;</code>
+     */
+    protected $download_link = null;
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 8;</code>
+     */
+    protected $automatic = null;
+    /**
+     * Generated from protobuf field <code>optional bool draft = 9;</code>
+     */
+    protected $draft = null;
+    /**
+     * Generated from protobuf field <code>optional string author = 101;</code>
+     */
+    protected $author = null;
+    /**
+     * Generated from protobuf field <code>optional string source = 102;</code>
+     */
+    protected $source = null;
+    /**
+     * Generated from protobuf field <code>optional string author_id = 103;</code>
+     */
+    protected $author_id = null;
 
     /**
      * Constructor.
@@ -20,11 +56,308 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $locale
+     *     @type string $title
+     *     @type \Eolymp\Ecm\Content $content
+     *     @type string $download_link
+     *     @type bool $automatic
+     *     @type bool $draft
+     *     @type string $author
+     *     @type string $source
+     *     @type string $author_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Statement::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string locale = 3;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return isset($this->locale) ? $this->locale : '';
+    }
+
+    public function hasLocale()
+    {
+        return isset($this->locale);
+    }
+
+    public function clearLocale()
+    {
+        unset($this->locale);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string locale = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string title = 4;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return isset($this->title) ? $this->title : '';
+    }
+
+    public function hasTitle()
+    {
+        return isset($this->title);
+    }
+
+    public function clearTitle()
+    {
+        unset($this->title);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string title = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function hasContent()
+    {
+        return isset($this->content);
+    }
+
+    public function clearContent()
+    {
+        unset($this->content);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content content = 6;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setContent($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string download_link = 7;</code>
+     * @return string
+     */
+    public function getDownloadLink()
+    {
+        return isset($this->download_link) ? $this->download_link : '';
+    }
+
+    public function hasDownloadLink()
+    {
+        return isset($this->download_link);
+    }
+
+    public function clearDownloadLink()
+    {
+        unset($this->download_link);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string download_link = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDownloadLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->download_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 8;</code>
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return isset($this->automatic) ? $this->automatic : false;
+    }
+
+    public function hasAutomatic()
+    {
+        return isset($this->automatic);
+    }
+
+    public function clearAutomatic()
+    {
+        unset($this->automatic);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool automatic = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutomatic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->automatic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool draft = 9;</code>
+     * @return bool
+     */
+    public function getDraft()
+    {
+        return isset($this->draft) ? $this->draft : false;
+    }
+
+    public function hasDraft()
+    {
+        return isset($this->draft);
+    }
+
+    public function clearDraft()
+    {
+        unset($this->draft);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool draft = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDraft($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->draft = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string author = 101;</code>
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return isset($this->author) ? $this->author : '';
+    }
+
+    public function hasAuthor()
+    {
+        return isset($this->author);
+    }
+
+    public function clearAuthor()
+    {
+        unset($this->author);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string author = 101;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string source = 102;</code>
+     * @return string
+     */
+    public function getSource()
+    {
+        return isset($this->source) ? $this->source : '';
+    }
+
+    public function hasSource()
+    {
+        return isset($this->source);
+    }
+
+    public function clearSource()
+    {
+        unset($this->source);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string source = 102;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSource($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->source = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string author_id = 103;</code>
+     * @return string
+     */
+    public function getAuthorId()
+    {
+        return isset($this->author_id) ? $this->author_id : '';
+    }
+
+    public function hasAuthorId()
+    {
+        return isset($this->author_id);
+    }
+
+    public function clearAuthorId()
+    {
+        unset($this->author_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string author_id = 103;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthorId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->author_id = $var;
+
+        return $this;
     }
 
 }
