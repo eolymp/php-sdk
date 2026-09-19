@@ -14,17 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateMemberInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * defines member props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string member_id = 2;</code>
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member.Patch member = 4;</code>
      */
     protected $member = null;
 
@@ -34,41 +28,13 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           defines member props to be updated, empty means update everything
      *     @type string $member_id
-     *     @type \Eolymp\Community\Member $member
+     *     @type \Eolymp\Community\Member\Patch $member
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\MemberService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * defines member props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * defines member props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Member.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Member\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -94,8 +60,8 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
-     * @return \Eolymp\Community\Member|null
+     * Generated from protobuf field <code>.eolymp.community.Member.Patch member = 4;</code>
+     * @return \Eolymp\Community\Member\Patch|null
      */
     public function getMember()
     {
@@ -113,13 +79,13 @@ class UpdateMemberInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 3;</code>
-     * @param \Eolymp\Community\Member $var
+     * Generated from protobuf field <code>.eolymp.community.Member.Patch member = 4;</code>
+     * @param \Eolymp\Community\Member\Patch $var
      * @return $this
      */
     public function setMember($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member\Patch::class);
         $this->member = $var;
 
         return $this;

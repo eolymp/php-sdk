@@ -15,7 +15,7 @@ namespace Eolymp\Community;
      * Each record carries identity details, the space's own profile fields and the person's preferences, though
      * whether the space may edit the identity details at all depends on the identity provider it runs, which is
      * configured through ConfigurationService. Turning a member on or off and moving them between official and
-     * unofficial standing have no methods of their own and are reached through UpdateMember's patch mask. What
+     * unofficial standing have no methods of their own and are reached through UpdateMember's patch. What
      * someone is allowed to administer is not part of their member record: administrators are Eolymp identities
      * governed by eolymp.acl policies.
      */
@@ -59,14 +59,15 @@ class MemberServiceClient {
     }
 
     /**
-     * UpdateMember writes the values selected by the patch mask, and this is where most administration of a
-     * member happens: disabling a member so they can no longer sign in or reach the space, and marking them
-     * unofficial so they are left out of official rankings, are patches rather than methods of their own.
+     * UpdateMember writes the fields the patch carries and no others, and this is where most administration
+     * of a member happens: disabling a member so they can no longer sign in or reach the space, and marking
+     * them unofficial so they are left out of official rankings, are patches rather than methods of their own.
      * Disabling can be immediate or scheduled through separate fields — a scheduled deactivation never raises
      * the inactive flag, although a read still reports a member outside their active period as inactive.
-     * Identity details of a member owned by an external identity provider cannot be changed here, and asking
-     * for them is ignored rather than refused. A member can belong to at most 10 groups, and a patch that
-     * would take them past that is rejected with InvalidArgument on the groups argument.
+     * Identity details of a member owned by an external identity provider cannot be changed here: carrying one
+     * is refused rather than ignored, so a caller is never told a write succeeded when nothing was written. A
+     * member can belong to at most 10 groups, and a patch that would take them past that is rejected with
+     * InvalidArgument on the groups argument.
      *
      * @param UpdateMemberInput $input message
      * @param array $context request parameters

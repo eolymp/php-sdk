@@ -14,17 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateGroupInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * defines group props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Group.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string group_id = 2;</code>
      */
     protected $group_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.community.Group group = 3;</code>
+     * Generated from protobuf field <code>.eolymp.community.Group.Patch group = 4;</code>
      */
     protected $group = null;
 
@@ -34,41 +28,13 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           defines group props to be updated, empty means update everything
      *     @type string $group_id
-     *     @type \Eolymp\Community\Group $group
+     *     @type \Eolymp\Community\Group\Patch $group
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\GroupService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * defines group props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Group.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * defines group props to be updated, empty means update everything
-     *
-     * Generated from protobuf field <code>repeated .eolymp.community.Group.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Group\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -94,8 +60,8 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Group group = 3;</code>
-     * @return \Eolymp\Community\Group|null
+     * Generated from protobuf field <code>.eolymp.community.Group.Patch group = 4;</code>
+     * @return \Eolymp\Community\Group\Patch|null
      */
     public function getGroup()
     {
@@ -113,13 +79,13 @@ class UpdateGroupInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Group group = 3;</code>
-     * @param \Eolymp\Community\Group $var
+     * Generated from protobuf field <code>.eolymp.community.Group.Patch group = 4;</code>
+     * @param \Eolymp\Community\Group\Patch $var
      * @return $this
      */
     public function setGroup($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Group::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Group\Patch::class);
         $this->group = $var;
 
         return $this;

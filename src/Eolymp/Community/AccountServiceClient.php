@@ -86,7 +86,7 @@ class AccountServiceClient {
     }
 
     /**
-     * UpdateAccount writes the caller's own details as selected by the patch mask. Changing the nickname, the
+     * UpdateAccount writes the caller's own details, the fields the patch carries and no others. Changing the nickname, the
      * email address or the password requires the current password in the same request, and a nickname may
      * only be changed once a year. A new email address leaves the account unverified again and sends a fresh
      * code, so the change is complete only once CompleteVerification has run.

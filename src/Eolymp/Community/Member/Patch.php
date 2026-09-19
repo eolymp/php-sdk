@@ -13,6 +13,48 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 11;</code>
+     */
+    protected $inactive = null;
+    /**
+     * Generated from protobuf field <code>optional bool unofficial = 30;</code>
+     */
+    protected $unofficial = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_start = 12;</code>
+     */
+    protected $active_period_start = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_end = 13;</code>
+     */
+    protected $active_period_end = null;
+    /**
+     * Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
+     * change it in place, and ungroup empties it. Carrying more than one is rejected.
+     *
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     */
+    private $groups;
+    /**
+     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
+     */
+    private $add_groups;
+    /**
+     * Generated from protobuf field <code>repeated string remove_groups = 202;</code>
+     */
+    private $remove_groups;
+    /**
+     * clears the groups, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool ungroup = 203;</code>
+     */
+    protected $ungroup = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
+     */
+    private $attributes;
+    protected $account;
 
     /**
      * Constructor.
@@ -20,11 +62,373 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type bool $inactive
+     *     @type bool $unofficial
+     *     @type \Google\Protobuf\Timestamp $active_period_start
+     *     @type \Google\Protobuf\Timestamp $active_period_end
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
+     *           Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
+     *           change it in place, and ungroup empties it. Carrying more than one is rejected.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $add_groups
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $remove_groups
+     *     @type bool $ungroup
+     *           clears the groups, which an empty list cannot express
+     *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
+     *     @type \Eolymp\Community\User\Patch $user
+     *     @type \Eolymp\Community\Team\Patch $team
+     *     @type \Eolymp\Community\Ghost\Patch $ghost
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Member::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 11;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return isset($this->inactive) ? $this->inactive : false;
+    }
+
+    public function hasInactive()
+    {
+        return isset($this->inactive);
+    }
+
+    public function clearInactive()
+    {
+        unset($this->inactive);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool unofficial = 30;</code>
+     * @return bool
+     */
+    public function getUnofficial()
+    {
+        return isset($this->unofficial) ? $this->unofficial : false;
+    }
+
+    public function hasUnofficial()
+    {
+        return isset($this->unofficial);
+    }
+
+    public function clearUnofficial()
+    {
+        unset($this->unofficial);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool unofficial = 30;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnofficial($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_start = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getActivePeriodStart()
+    {
+        return $this->active_period_start;
+    }
+
+    public function hasActivePeriodStart()
+    {
+        return isset($this->active_period_start);
+    }
+
+    public function clearActivePeriodStart()
+    {
+        unset($this->active_period_start);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_start = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setActivePeriodStart($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->active_period_start = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_end = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getActivePeriodEnd()
+    {
+        return $this->active_period_end;
+    }
+
+    public function hasActivePeriodEnd()
+    {
+        return isset($this->active_period_end);
+    }
+
+    public function clearActivePeriodEnd()
+    {
+        unset($this->active_period_end);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp active_period_end = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setActivePeriodEnd($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->active_period_end = $var;
+
+        return $this;
+    }
+
+    /**
+     * Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
+     * change it in place, and ungroup empties it. Carrying more than one is rejected.
+     *
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
+     * change it in place, and ungroup empties it. Carrying more than one is rejected.
+     *
+     * Generated from protobuf field <code>repeated string groups = 200;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAddGroups()
+    {
+        return $this->add_groups;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAddGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->add_groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string remove_groups = 202;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRemoveGroups()
+    {
+        return $this->remove_groups;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string remove_groups = 202;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRemoveGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->remove_groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the groups, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool ungroup = 203;</code>
+     * @return bool
+     */
+    public function getUngroup()
+    {
+        return isset($this->ungroup) ? $this->ungroup : false;
+    }
+
+    public function hasUngroup()
+    {
+        return isset($this->ungroup);
+    }
+
+    public function clearUngroup()
+    {
+        unset($this->ungroup);
+    }
+
+    /**
+     * clears the groups, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool ungroup = 203;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUngroup($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->ungroup = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
+     * @param array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Community\Attribute\Value::class);
+        $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User.Patch user = 100;</code>
+     * @return \Eolymp\Community\User\Patch|null
+     */
+    public function getUser()
+    {
+        return $this->readOneof(100);
+    }
+
+    public function hasUser()
+    {
+        return $this->hasOneof(100);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.User.Patch user = 100;</code>
+     * @param \Eolymp\Community\User\Patch $var
+     * @return $this
+     */
+    public function setUser($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\User\Patch::class);
+        $this->writeOneof(100, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Team.Patch team = 101;</code>
+     * @return \Eolymp\Community\Team\Patch|null
+     */
+    public function getTeam()
+    {
+        return $this->readOneof(101);
+    }
+
+    public function hasTeam()
+    {
+        return $this->hasOneof(101);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Team.Patch team = 101;</code>
+     * @param \Eolymp\Community\Team\Patch $var
+     * @return $this
+     */
+    public function setTeam($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\Team\Patch::class);
+        $this->writeOneof(101, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Ghost.Patch ghost = 102;</code>
+     * @return \Eolymp\Community\Ghost\Patch|null
+     */
+    public function getGhost()
+    {
+        return $this->readOneof(102);
+    }
+
+    public function hasGhost()
+    {
+        return $this->hasOneof(102);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.community.Ghost.Patch ghost = 102;</code>
+     * @param \Eolymp\Community\Ghost\Patch $var
+     * @return $this
+     */
+    public function setGhost($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Community\Ghost\Patch::class);
+        $this->writeOneof(102, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccount()
+    {
+        return $this->whichOneof("account");
     }
 
 }

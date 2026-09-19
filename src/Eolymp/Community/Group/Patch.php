@@ -13,6 +13,30 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional string description = 3;</code>
+     */
+    protected $description = null;
+    /**
+     * Generated from protobuf field <code>optional string external_ref = 4;</code>
+     */
+    protected $external_ref = null;
+    /**
+     * Generated from protobuf field <code>optional string icon = 10;</code>
+     */
+    protected $icon = null;
+    /**
+     * Generated from protobuf field <code>optional string badge = 11;</code>
+     */
+    protected $badge = null;
+    /**
+     * Generated from protobuf field <code>optional string color = 12;</code>
+     */
+    protected $color = null;
 
     /**
      * Constructor.
@@ -20,11 +44,209 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type string $description
+     *     @type string $external_ref
+     *     @type string $icon
+     *     @type string $badge
+     *     @type string $color
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\Group::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string description = 3;</code>
+     * @return string
+     */
+    public function getDescription()
+    {
+        return isset($this->description) ? $this->description : '';
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string description = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string external_ref = 4;</code>
+     * @return string
+     */
+    public function getExternalRef()
+    {
+        return isset($this->external_ref) ? $this->external_ref : '';
+    }
+
+    public function hasExternalRef()
+    {
+        return isset($this->external_ref);
+    }
+
+    public function clearExternalRef()
+    {
+        unset($this->external_ref);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string external_ref = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setExternalRef($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->external_ref = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string icon = 10;</code>
+     * @return string
+     */
+    public function getIcon()
+    {
+        return isset($this->icon) ? $this->icon : '';
+    }
+
+    public function hasIcon()
+    {
+        return isset($this->icon);
+    }
+
+    public function clearIcon()
+    {
+        unset($this->icon);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string icon = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIcon($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->icon = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string badge = 11;</code>
+     * @return string
+     */
+    public function getBadge()
+    {
+        return isset($this->badge) ? $this->badge : '';
+    }
+
+    public function hasBadge()
+    {
+        return isset($this->badge);
+    }
+
+    public function clearBadge()
+    {
+        unset($this->badge);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string badge = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBadge($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->badge = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string color = 12;</code>
+     * @return string
+     */
+    public function getColor()
+    {
+        return isset($this->color) ? $this->color : '';
+    }
+
+    public function hasColor()
+    {
+        return isset($this->color);
+    }
+
+    public function clearColor()
+    {
+        unset($this->color);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string color = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setColor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->color = $var;
+
+        return $this;
     }
 
 }

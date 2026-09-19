@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAccountInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string current_password = 2;</code>
      */
     protected $current_password = '';
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 10;</code>
+     * Generated from protobuf field <code>.eolymp.community.Member.Patch member = 11;</code>
      */
     protected $member = null;
 
@@ -32,36 +28,13 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $current_password
-     *     @type \Eolymp\Community\Member $member
+     *     @type \Eolymp\Community\Member\Patch $member
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\AccountService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.UpdateAccountInput.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdateAccountInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 10;</code>
-     * @return \Eolymp\Community\Member|null
+     * Generated from protobuf field <code>.eolymp.community.Member.Patch member = 11;</code>
+     * @return \Eolymp\Community\Member\Patch|null
      */
     public function getMember()
     {
@@ -106,13 +79,13 @@ class UpdateAccountInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Member member = 10;</code>
-     * @param \Eolymp\Community\Member $var
+     * Generated from protobuf field <code>.eolymp.community.Member.Patch member = 11;</code>
+     * @param \Eolymp\Community\Member\Patch $var
      * @return $this
      */
     public function setMember($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Member::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Member\Patch::class);
         $this->member = $var;
 
         return $this;
