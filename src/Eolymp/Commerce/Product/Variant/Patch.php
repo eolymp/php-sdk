@@ -13,6 +13,28 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>map<string, string> values = 2;</code>
+     */
+    private $values;
+    /**
+     * Generated from protobuf field <code>repeated string images = 10;</code>
+     */
+    private $images;
+    /**
+     * clears the images, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     */
+    protected $unimage = null;
+    /**
+     * Generated from protobuf field <code>optional int32 available_quantity = 33;</code>
+     */
+    protected $available_quantity = null;
 
     /**
      * Constructor.
@@ -20,11 +42,161 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type array|\Google\Protobuf\Internal\MapField $values
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type bool $unimage
+     *           clears the images, which an empty list cannot express
+     *     @type int $available_quantity
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\Product::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> values = 2;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getValues()
+    {
+        return $this->values;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> values = 2;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setValues($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string images = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string images = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setImages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->images = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the images, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * @return bool
+     */
+    public function getUnimage()
+    {
+        return isset($this->unimage) ? $this->unimage : false;
+    }
+
+    public function hasUnimage()
+    {
+        return isset($this->unimage);
+    }
+
+    public function clearUnimage()
+    {
+        unset($this->unimage);
+    }
+
+    /**
+     * clears the images, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnimage($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unimage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 available_quantity = 33;</code>
+     * @return int
+     */
+    public function getAvailableQuantity()
+    {
+        return isset($this->available_quantity) ? $this->available_quantity : 0;
+    }
+
+    public function hasAvailableQuantity()
+    {
+        return isset($this->available_quantity);
+    }
+
+    public function clearAvailableQuantity()
+    {
+        unset($this->available_quantity);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 available_quantity = 33;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setAvailableQuantity($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->available_quantity = $var;
+
+        return $this;
     }
 
 }

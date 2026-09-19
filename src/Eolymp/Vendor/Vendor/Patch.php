@@ -13,6 +13,60 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string first_name = 10;</code>
+     */
+    protected $first_name = null;
+    /**
+     * Generated from protobuf field <code>optional string last_name = 11;</code>
+     */
+    protected $last_name = null;
+    /**
+     * a message field already carries presence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 12;</code>
+     */
+    protected $birthday = null;
+    /**
+     * Generated from protobuf field <code>optional string email = 13;</code>
+     */
+    protected $email = null;
+    /**
+     * Generated from protobuf field <code>optional string phone = 14;</code>
+     */
+    protected $phone = null;
+    /**
+     * Generated from protobuf field <code>optional string tax_id = 15;</code>
+     */
+    protected $tax_id = null;
+    /**
+     * Generated from protobuf field <code>optional string company_name = 16;</code>
+     */
+    protected $company_name = null;
+    /**
+     * Generated from protobuf field <code>optional string country = 200;</code>
+     */
+    protected $country = null;
+    /**
+     * Generated from protobuf field <code>optional string state = 201;</code>
+     */
+    protected $state = null;
+    /**
+     * Generated from protobuf field <code>optional string postal_code = 202;</code>
+     */
+    protected $postal_code = null;
+    /**
+     * Generated from protobuf field <code>optional string city = 203;</code>
+     */
+    protected $city = null;
+    /**
+     * Generated from protobuf field <code>optional string line1 = 210;</code>
+     */
+    protected $line1 = null;
+    /**
+     * Generated from protobuf field <code>optional string line2 = 211;</code>
+     */
+    protected $line2 = null;
 
     /**
      * Constructor.
@@ -20,11 +74,445 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $first_name
+     *     @type string $last_name
+     *     @type \Google\Protobuf\Timestamp $birthday
+     *           a message field already carries presence
+     *     @type string $email
+     *     @type string $phone
+     *     @type string $tax_id
+     *     @type string $company_name
+     *     @type string $country
+     *     @type string $state
+     *     @type string $postal_code
+     *     @type string $city
+     *     @type string $line1
+     *     @type string $line2
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Vendor\Vendor::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string first_name = 10;</code>
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return isset($this->first_name) ? $this->first_name : '';
+    }
+
+    public function hasFirstName()
+    {
+        return isset($this->first_name);
+    }
+
+    public function clearFirstName()
+    {
+        unset($this->first_name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string first_name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string last_name = 11;</code>
+     * @return string
+     */
+    public function getLastName()
+    {
+        return isset($this->last_name) ? $this->last_name : '';
+    }
+
+    public function hasLastName()
+    {
+        return isset($this->last_name);
+    }
+
+    public function clearLastName()
+    {
+        unset($this->last_name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string last_name = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLastName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->last_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * a message field already carries presence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    public function hasBirthday()
+    {
+        return isset($this->birthday);
+    }
+
+    public function clearBirthday()
+    {
+        unset($this->birthday);
+    }
+
+    /**
+     * a message field already carries presence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp birthday = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setBirthday($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->birthday = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string email = 13;</code>
+     * @return string
+     */
+    public function getEmail()
+    {
+        return isset($this->email) ? $this->email : '';
+    }
+
+    public function hasEmail()
+    {
+        return isset($this->email);
+    }
+
+    public function clearEmail()
+    {
+        unset($this->email);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string email = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEmail($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->email = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string phone = 14;</code>
+     * @return string
+     */
+    public function getPhone()
+    {
+        return isset($this->phone) ? $this->phone : '';
+    }
+
+    public function hasPhone()
+    {
+        return isset($this->phone);
+    }
+
+    public function clearPhone()
+    {
+        unset($this->phone);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string phone = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPhone($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->phone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string tax_id = 15;</code>
+     * @return string
+     */
+    public function getTaxId()
+    {
+        return isset($this->tax_id) ? $this->tax_id : '';
+    }
+
+    public function hasTaxId()
+    {
+        return isset($this->tax_id);
+    }
+
+    public function clearTaxId()
+    {
+        unset($this->tax_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string tax_id = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaxId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tax_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string company_name = 16;</code>
+     * @return string
+     */
+    public function getCompanyName()
+    {
+        return isset($this->company_name) ? $this->company_name : '';
+    }
+
+    public function hasCompanyName()
+    {
+        return isset($this->company_name);
+    }
+
+    public function clearCompanyName()
+    {
+        unset($this->company_name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string company_name = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCompanyName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->company_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string country = 200;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return isset($this->country) ? $this->country : '';
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string country = 200;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string state = 201;</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return isset($this->state) ? $this->state : '';
+    }
+
+    public function hasState()
+    {
+        return isset($this->state);
+    }
+
+    public function clearState()
+    {
+        unset($this->state);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string state = 201;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string postal_code = 202;</code>
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return isset($this->postal_code) ? $this->postal_code : '';
+    }
+
+    public function hasPostalCode()
+    {
+        return isset($this->postal_code);
+    }
+
+    public function clearPostalCode()
+    {
+        unset($this->postal_code);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string postal_code = 202;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPostalCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->postal_code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string city = 203;</code>
+     * @return string
+     */
+    public function getCity()
+    {
+        return isset($this->city) ? $this->city : '';
+    }
+
+    public function hasCity()
+    {
+        return isset($this->city);
+    }
+
+    public function clearCity()
+    {
+        unset($this->city);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string city = 203;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->city = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string line1 = 210;</code>
+     * @return string
+     */
+    public function getLine1()
+    {
+        return isset($this->line1) ? $this->line1 : '';
+    }
+
+    public function hasLine1()
+    {
+        return isset($this->line1);
+    }
+
+    public function clearLine1()
+    {
+        unset($this->line1);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string line1 = 210;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLine1($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->line1 = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string line2 = 211;</code>
+     * @return string
+     */
+    public function getLine2()
+    {
+        return isset($this->line2) ? $this->line2 : '';
+    }
+
+    public function hasLine2()
+    {
+        return isset($this->line2);
+    }
+
+    public function clearLine2()
+    {
+        unset($this->line2);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string line2 = 211;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLine2($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->line2 = $var;
+
+        return $this;
     }
 
 }

@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateInvoiceInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Invoice.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string invoice_id = 2;</code>
      */
     protected $invoice_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Invoice invoice = 3;</code>
+     * Generated from protobuf field <code>.eolymp.vendor.Invoice.Patch invoice = 4;</code>
      */
     protected $invoice = null;
 
@@ -32,36 +28,13 @@ class UpdateInvoiceInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $invoice_id
-     *     @type \Eolymp\Vendor\Invoice $invoice
+     *     @type \Eolymp\Vendor\Invoice\Patch $invoice
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Vendor\InvoiceService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Invoice.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.vendor.Invoice.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Vendor\Invoice\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateInvoiceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Invoice invoice = 3;</code>
-     * @return \Eolymp\Vendor\Invoice|null
+     * Generated from protobuf field <code>.eolymp.vendor.Invoice.Patch invoice = 4;</code>
+     * @return \Eolymp\Vendor\Invoice\Patch|null
      */
     public function getInvoice()
     {
@@ -106,13 +79,13 @@ class UpdateInvoiceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.vendor.Invoice invoice = 3;</code>
-     * @param \Eolymp\Vendor\Invoice $var
+     * Generated from protobuf field <code>.eolymp.vendor.Invoice.Patch invoice = 4;</code>
+     * @param \Eolymp\Vendor\Invoice\Patch $var
      * @return $this
      */
     public function setInvoice($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Vendor\Invoice::class);
+        GPBUtil::checkMessage($var, \Eolymp\Vendor\Invoice\Patch::class);
         $this->invoice = $var;
 
         return $this;

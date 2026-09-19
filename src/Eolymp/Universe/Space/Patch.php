@@ -13,6 +13,32 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string key = 2;</code>
+     */
+    protected $key = null;
+    /**
+     * Generated from protobuf field <code>optional string name = 10;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional string image = 11;</code>
+     */
+    protected $image = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.universe.Space.Visibility visibility = 14;</code>
+     */
+    protected $visibility = null;
+    /**
+     * Generated from protobuf field <code>repeated string locales = 19;</code>
+     */
+    private $locales;
+    /**
+     * clears the locales, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unlocalise = 20;</code>
+     */
+    protected $unlocalise = null;
 
     /**
      * Constructor.
@@ -20,11 +46,204 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $key
+     *     @type string $name
+     *     @type string $image
+     *     @type int $visibility
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *     @type bool $unlocalise
+     *           clears the locales, which an empty list cannot express
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Universe\Space::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string key = 2;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return isset($this->key) ? $this->key : '';
+    }
+
+    public function hasKey()
+    {
+        return isset($this->key);
+    }
+
+    public function clearKey()
+    {
+        unset($this->key);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string key = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 10;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string image = 11;</code>
+     * @return string
+     */
+    public function getImage()
+    {
+        return isset($this->image) ? $this->image : '';
+    }
+
+    public function hasImage()
+    {
+        return isset($this->image);
+    }
+
+    public function clearImage()
+    {
+        unset($this->image);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string image = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImage($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.universe.Space.Visibility visibility = 14;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return isset($this->visibility) ? $this->visibility : 0;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.universe.Space.Visibility visibility = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Universe\Space\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string locales = 19;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string locales = 19;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the locales, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unlocalise = 20;</code>
+     * @return bool
+     */
+    public function getUnlocalise()
+    {
+        return isset($this->unlocalise) ? $this->unlocalise : false;
+    }
+
+    public function hasUnlocalise()
+    {
+        return isset($this->unlocalise);
+    }
+
+    public function clearUnlocalise()
+    {
+        unset($this->unlocalise);
+    }
+
+    /**
+     * clears the locales, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unlocalise = 20;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnlocalise($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unlocalise = $var;
+
+        return $this;
     }
 
 }

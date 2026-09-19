@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Patch.Field patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space space = 2;</code>
+     * Generated from protobuf field <code>.eolymp.universe.Space.Patch space = 4;</code>
      */
     protected $space = null;
 
@@ -32,36 +28,13 @@ class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $space_id
-     *     @type \Eolymp\Universe\Space $space
+     *     @type \Eolymp\Universe\Space\Patch $space
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Universe\SpaceService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Patch.Field patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.universe.Space.Patch.Field patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Universe\Space\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space space = 2;</code>
-     * @return \Eolymp\Universe\Space|null
+     * Generated from protobuf field <code>.eolymp.universe.Space.Patch space = 4;</code>
+     * @return \Eolymp\Universe\Space\Patch|null
      */
     public function getSpace()
     {
@@ -106,13 +79,13 @@ class UpdateSpaceInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.universe.Space space = 2;</code>
-     * @param \Eolymp\Universe\Space $var
+     * Generated from protobuf field <code>.eolymp.universe.Space.Patch space = 4;</code>
+     * @param \Eolymp\Universe\Space\Patch $var
      * @return $this
      */
     public function setSpace($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Universe\Space::class);
+        GPBUtil::checkMessage($var, \Eolymp\Universe\Space\Patch::class);
         $this->space = $var;
 
         return $this;

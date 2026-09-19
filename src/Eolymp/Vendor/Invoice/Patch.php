@@ -13,6 +13,40 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string number = 2;</code>
+     */
+    protected $number = null;
+    /**
+     * a message field already carries presence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp invoice_date = 3;</code>
+     */
+    protected $invoice_date = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp due_date = 4;</code>
+     */
+    protected $due_date = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Invoice.Line lines = 5;</code>
+     */
+    private $lines;
+    /**
+     * Generated from protobuf field <code>optional float tax_amount = 7;</code>
+     */
+    protected $tax_amount = null;
+    /**
+     * Generated from protobuf field <code>optional string currency = 10;</code>
+     */
+    protected $currency = null;
+    /**
+     * Generated from protobuf field <code>optional string status_reason = 12;</code>
+     */
+    protected $status_reason = null;
+    /**
+     * Generated from protobuf field <code>optional string payment_method_id = 14;</code>
+     */
+    protected $payment_method_id = null;
 
     /**
      * Constructor.
@@ -20,11 +54,270 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $number
+     *     @type \Google\Protobuf\Timestamp $invoice_date
+     *           a message field already carries presence
+     *     @type \Google\Protobuf\Timestamp $due_date
+     *     @type array<\Eolymp\Vendor\Invoice\Line>|\Google\Protobuf\Internal\RepeatedField $lines
+     *     @type float $tax_amount
+     *     @type string $currency
+     *     @type string $status_reason
+     *     @type string $payment_method_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Vendor\Invoice::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string number = 2;</code>
+     * @return string
+     */
+    public function getNumber()
+    {
+        return isset($this->number) ? $this->number : '';
+    }
+
+    public function hasNumber()
+    {
+        return isset($this->number);
+    }
+
+    public function clearNumber()
+    {
+        unset($this->number);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string number = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->number = $var;
+
+        return $this;
+    }
+
+    /**
+     * a message field already carries presence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp invoice_date = 3;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getInvoiceDate()
+    {
+        return $this->invoice_date;
+    }
+
+    public function hasInvoiceDate()
+    {
+        return isset($this->invoice_date);
+    }
+
+    public function clearInvoiceDate()
+    {
+        unset($this->invoice_date);
+    }
+
+    /**
+     * a message field already carries presence
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp invoice_date = 3;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setInvoiceDate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->invoice_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp due_date = 4;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getDueDate()
+    {
+        return $this->due_date;
+    }
+
+    public function hasDueDate()
+    {
+        return isset($this->due_date);
+    }
+
+    public function clearDueDate()
+    {
+        unset($this->due_date);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp due_date = 4;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setDueDate($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->due_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Invoice.Line lines = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLines()
+    {
+        return $this->lines;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.vendor.Invoice.Line lines = 5;</code>
+     * @param array<\Eolymp\Vendor\Invoice\Line>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLines($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Vendor\Invoice\Line::class);
+        $this->lines = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float tax_amount = 7;</code>
+     * @return float
+     */
+    public function getTaxAmount()
+    {
+        return isset($this->tax_amount) ? $this->tax_amount : 0.0;
+    }
+
+    public function hasTaxAmount()
+    {
+        return isset($this->tax_amount);
+    }
+
+    public function clearTaxAmount()
+    {
+        unset($this->tax_amount);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float tax_amount = 7;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setTaxAmount($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->tax_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string currency = 10;</code>
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return isset($this->currency) ? $this->currency : '';
+    }
+
+    public function hasCurrency()
+    {
+        return isset($this->currency);
+    }
+
+    public function clearCurrency()
+    {
+        unset($this->currency);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string currency = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCurrency($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->currency = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string status_reason = 12;</code>
+     * @return string
+     */
+    public function getStatusReason()
+    {
+        return isset($this->status_reason) ? $this->status_reason : '';
+    }
+
+    public function hasStatusReason()
+    {
+        return isset($this->status_reason);
+    }
+
+    public function clearStatusReason()
+    {
+        unset($this->status_reason);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string status_reason = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStatusReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->status_reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string payment_method_id = 14;</code>
+     * @return string
+     */
+    public function getPaymentMethodId()
+    {
+        return isset($this->payment_method_id) ? $this->payment_method_id : '';
+    }
+
+    public function hasPaymentMethodId()
+    {
+        return isset($this->payment_method_id);
+    }
+
+    public function clearPaymentMethodId()
+    {
+        unset($this->payment_method_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string payment_method_id = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPaymentMethodId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->payment_method_id = $var;
+
+        return $this;
     }
 
 }

@@ -13,6 +13,52 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 3;</code>
+     */
+    protected $summary = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
+     */
+    protected $description = null;
+    /**
+     * Generated from protobuf field <code>repeated string images = 10;</code>
+     */
+    private $images;
+    /**
+     * clears the images, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     */
+    protected $unimage = null;
+    /**
+     * Generated from protobuf field <code>optional uint32 price = 21;</code>
+     */
+    protected $price = null;
+    /**
+     * Generated from protobuf field <code>optional uint32 regular_price = 22;</code>
+     */
+    protected $regular_price = null;
+    /**
+     * Generated from protobuf field <code>optional bool featured = 31;</code>
+     */
+    protected $featured = null;
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 32;</code>
+     */
+    protected $inactive = null;
+    /**
+     * Generated from protobuf field <code>optional bool backorder = 33;</code>
+     */
+    protected $backorder = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
+     */
+    private $attributes;
 
     /**
      * Constructor.
@@ -20,11 +66,359 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type \Eolymp\Ecm\Content $summary
+     *     @type \Eolymp\Ecm\Content $description
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
+     *     @type bool $unimage
+     *           clears the images, which an empty list cannot express
+     *     @type int $price
+     *     @type int $regular_price
+     *     @type bool $featured
+     *     @type bool $inactive
+     *     @type bool $backorder
+     *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\Product::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 3;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    public function hasSummary()
+    {
+        return isset($this->summary);
+    }
+
+    public function clearSummary()
+    {
+        unset($this->summary);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 3;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string images = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string images = 10;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setImages($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->images = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the images, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * @return bool
+     */
+    public function getUnimage()
+    {
+        return isset($this->unimage) ? $this->unimage : false;
+    }
+
+    public function hasUnimage()
+    {
+        return isset($this->unimage);
+    }
+
+    public function clearUnimage()
+    {
+        unset($this->unimage);
+    }
+
+    /**
+     * clears the images, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnimage($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unimage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 price = 21;</code>
+     * @return int
+     */
+    public function getPrice()
+    {
+        return isset($this->price) ? $this->price : 0;
+    }
+
+    public function hasPrice()
+    {
+        return isset($this->price);
+    }
+
+    public function clearPrice()
+    {
+        unset($this->price);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 price = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPrice($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->price = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 regular_price = 22;</code>
+     * @return int
+     */
+    public function getRegularPrice()
+    {
+        return isset($this->regular_price) ? $this->regular_price : 0;
+    }
+
+    public function hasRegularPrice()
+    {
+        return isset($this->regular_price);
+    }
+
+    public function clearRegularPrice()
+    {
+        unset($this->regular_price);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 regular_price = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRegularPrice($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->regular_price = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool featured = 31;</code>
+     * @return bool
+     */
+    public function getFeatured()
+    {
+        return isset($this->featured) ? $this->featured : false;
+    }
+
+    public function hasFeatured()
+    {
+        return isset($this->featured);
+    }
+
+    public function clearFeatured()
+    {
+        unset($this->featured);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool featured = 31;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setFeatured($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->featured = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 32;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return isset($this->inactive) ? $this->inactive : false;
+    }
+
+    public function hasInactive()
+    {
+        return isset($this->inactive);
+    }
+
+    public function clearInactive()
+    {
+        unset($this->inactive);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 32;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool backorder = 33;</code>
+     * @return bool
+     */
+    public function getBackorder()
+    {
+        return isset($this->backorder) ? $this->backorder : false;
+    }
+
+    public function hasBackorder()
+    {
+        return isset($this->backorder);
+    }
+
+    public function clearBackorder()
+    {
+        unset($this->backorder);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool backorder = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBackorder($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->backorder = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
+     * @param array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Commerce\Product\Attribute::class);
+        $this->attributes = $arr;
+
+        return $this;
     }
 
 }

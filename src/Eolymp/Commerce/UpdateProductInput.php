@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateProductInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Patch.Field patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string product_id = 1;</code>
      */
     protected $product_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product product = 2;</code>
+     * Generated from protobuf field <code>.eolymp.commerce.Product.Patch product = 4;</code>
      */
     protected $product = null;
 
@@ -32,36 +28,13 @@ class UpdateProductInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $product_id
-     *     @type \Eolymp\Commerce\Product $product
+     *     @type \Eolymp\Commerce\Product\Patch $product
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\ProductService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Patch.Field patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Patch.Field patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Commerce\Product\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateProductInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product product = 2;</code>
-     * @return \Eolymp\Commerce\Product|null
+     * Generated from protobuf field <code>.eolymp.commerce.Product.Patch product = 4;</code>
+     * @return \Eolymp\Commerce\Product\Patch|null
      */
     public function getProduct()
     {
@@ -106,13 +79,13 @@ class UpdateProductInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.commerce.Product product = 2;</code>
-     * @param \Eolymp\Commerce\Product $var
+     * Generated from protobuf field <code>.eolymp.commerce.Product.Patch product = 4;</code>
+     * @param \Eolymp\Commerce\Product\Patch $var
      * @return $this
      */
     public function setProduct($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Commerce\Product::class);
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Product\Patch::class);
         $this->product = $var;
 
         return $this;
