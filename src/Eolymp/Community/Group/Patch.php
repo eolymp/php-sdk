@@ -37,6 +37,16 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional string color = 12;</code>
      */
     protected $color = null;
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     */
+    private $metadata;
+    /**
+     * clears the metadata, which an empty map cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_metadata = 1025;</code>
+     */
+    protected $unset_metadata = null;
 
     /**
      * Constructor.
@@ -50,6 +60,9 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $icon
      *     @type string $badge
      *     @type string $color
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *     @type bool $unset_metadata
+     *           clears the metadata, which an empty map cannot express
      * }
      */
     public function __construct($data = NULL) {
@@ -245,6 +258,64 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->color = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> metadata = 1024;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->metadata = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the metadata, which an empty map cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_metadata = 1025;</code>
+     * @return bool
+     */
+    public function getUnsetMetadata()
+    {
+        return isset($this->unset_metadata) ? $this->unset_metadata : false;
+    }
+
+    public function hasUnsetMetadata()
+    {
+        return isset($this->unset_metadata);
+    }
+
+    public function clearUnsetMetadata()
+    {
+        unset($this->unset_metadata);
+    }
+
+    /**
+     * clears the metadata, which an empty map cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_metadata = 1025;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetMetadata($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_metadata = $var;
 
         return $this;
     }
