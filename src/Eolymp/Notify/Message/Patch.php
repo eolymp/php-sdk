@@ -26,11 +26,11 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     private $channel_ids;
     /**
-     * clears the channels, which an empty list cannot express
+     * clears channel_ids, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool clear_channel_ids = 8;</code>
+     * Generated from protobuf field <code>optional bool unset_channel_ids = 8;</code>
      */
-    protected $clear_channel_ids = null;
+    protected $unset_channel_ids = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_at = 5;</code>
      */
@@ -55,8 +55,8 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channel_ids
-     *     @type bool $clear_channel_ids
-     *           clears the channels, which an empty list cannot express
+     *     @type bool $unset_channel_ids
+     *           clears channel_ids, which an empty list cannot express
      *     @type \Google\Protobuf\Timestamp $scheduled_at
      *     @type bool $unschedule
      *           clears scheduled_at, which a nil timestamp cannot express
@@ -155,37 +155,37 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * clears the channels, which an empty list cannot express
+     * clears channel_ids, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool clear_channel_ids = 8;</code>
+     * Generated from protobuf field <code>optional bool unset_channel_ids = 8;</code>
      * @return bool
      */
-    public function getClearChannelIds()
+    public function getUnsetChannelIds()
     {
-        return isset($this->clear_channel_ids) ? $this->clear_channel_ids : false;
+        return isset($this->unset_channel_ids) ? $this->unset_channel_ids : false;
     }
 
-    public function hasClearChannelIds()
+    public function hasUnsetChannelIds()
     {
-        return isset($this->clear_channel_ids);
+        return isset($this->unset_channel_ids);
     }
 
-    public function clearClearChannelIds()
+    public function clearUnsetChannelIds()
     {
-        unset($this->clear_channel_ids);
+        unset($this->unset_channel_ids);
     }
 
     /**
-     * clears the channels, which an empty list cannot express
+     * clears channel_ids, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool clear_channel_ids = 8;</code>
+     * Generated from protobuf field <code>optional bool unset_channel_ids = 8;</code>
      * @param bool $var
      * @return $this
      */
-    public function setClearChannelIds($var)
+    public function setUnsetChannelIds($var)
     {
         GPBUtil::checkBool($var);
-        $this->clear_channel_ids = $var;
+        $this->unset_channel_ids = $var;
 
         return $this;
     }
