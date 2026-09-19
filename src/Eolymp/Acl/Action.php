@@ -237,6 +237,30 @@ class Action
      * Generated from protobuf enum <code>AUDIT_READ = 180;</code>
      */
     const AUDIT_READ = 180;
+    /**
+     * view connections to external platforms, e.g. Discord
+     *
+     * Generated from protobuf enum <code>INTEGRATION_READ = 190;</code>
+     */
+    const INTEGRATION_READ = 190;
+    /**
+     * connect and disconnect external platforms, e.g. Discord
+     *
+     * Generated from protobuf enum <code>INTEGRATION_WRITE = 191;</code>
+     */
+    const INTEGRATION_WRITE = 191;
+    /**
+     * view notification channels and messages
+     *
+     * Generated from protobuf enum <code>NOTIFICATION_READ = 200;</code>
+     */
+    const NOTIFICATION_READ = 200;
+    /**
+     * manage notification channels, write and publish messages
+     *
+     * Generated from protobuf enum <code>NOTIFICATION_WRITE = 201;</code>
+     */
+    const NOTIFICATION_WRITE = 201;
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
@@ -285,6 +309,10 @@ class Action
         self::AUTOMATION_READ => 'AUTOMATION_READ',
         self::AUTOMATION_WRITE => 'AUTOMATION_WRITE',
         self::AUDIT_READ => 'AUDIT_READ',
+        self::INTEGRATION_READ => 'INTEGRATION_READ',
+        self::INTEGRATION_WRITE => 'INTEGRATION_WRITE',
+        self::NOTIFICATION_READ => 'NOTIFICATION_READ',
+        self::NOTIFICATION_WRITE => 'NOTIFICATION_WRITE',
     ];
 
     public static function name($value)
