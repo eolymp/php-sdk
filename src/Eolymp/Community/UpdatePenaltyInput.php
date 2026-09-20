@@ -14,19 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.UpdatePenaltyInput.Patch patch = 3;</code>
+     * Generated from protobuf field <code>string penalty_id = 1;</code>
      */
-    private $patch;
+    protected $penalty_id = '';
     /**
      * Generated from protobuf field <code>string member_id = 4;</code>
      */
     protected $member_id = '';
     /**
-     * Generated from protobuf field <code>string penalty_id = 1;</code>
-     */
-    protected $penalty_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Penalty.Patch penalty = 5;</code>
      */
     protected $penalty = null;
 
@@ -36,10 +32,9 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *     @type string $member_id
      *     @type string $penalty_id
-     *     @type \Eolymp\Community\Penalty $penalty
+     *     @type string $member_id
+     *     @type \Eolymp\Community\Penalty\Patch $penalty
      * }
      */
     public function __construct($data = NULL) {
@@ -48,23 +43,23 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.UpdatePenaltyInput.Patch patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string penalty_id = 1;</code>
+     * @return string
      */
-    public function getPatch()
+    public function getPenaltyId()
     {
-        return $this->patch;
+        return $this->penalty_id;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.UpdatePenaltyInput.Patch patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string penalty_id = 1;</code>
+     * @param string $var
      * @return $this
      */
-    public function setPatch($var)
+    public function setPenaltyId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\UpdatePenaltyInput\Patch::class);
-        $this->patch = $arr;
+        GPBUtil::checkString($var, True);
+        $this->penalty_id = $var;
 
         return $this;
     }
@@ -92,30 +87,8 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string penalty_id = 1;</code>
-     * @return string
-     */
-    public function getPenaltyId()
-    {
-        return $this->penalty_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string penalty_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPenaltyId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->penalty_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 2;</code>
-     * @return \Eolymp\Community\Penalty|null
+     * Generated from protobuf field <code>.eolymp.community.Penalty.Patch penalty = 5;</code>
+     * @return \Eolymp\Community\Penalty\Patch|null
      */
     public function getPenalty()
     {
@@ -133,13 +106,13 @@ class UpdatePenaltyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Penalty penalty = 2;</code>
-     * @param \Eolymp\Community\Penalty $var
+     * Generated from protobuf field <code>.eolymp.community.Penalty.Patch penalty = 5;</code>
+     * @param \Eolymp\Community\Penalty\Patch $var
      * @return $this
      */
     public function setPenalty($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Penalty::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Penalty\Patch::class);
         $this->penalty = $var;
 
         return $this;
