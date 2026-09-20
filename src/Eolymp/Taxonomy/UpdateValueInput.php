@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateValueInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * patch defines which fields should be set, if empty ALL fields are set
-     *
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateValueInput.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string enum_id = 2;</code>
      */
     protected $enum_id = '';
@@ -30,9 +24,9 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
      */
     protected $value_id = '';
     /**
-     * value to set (id field is ignored during update)
+     * fields to write
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.Value value = 4;</code>
+     * Generated from protobuf field <code>.eolymp.taxonomy.Value.Patch value = 5;</code>
      */
     protected $value = null;
 
@@ -42,44 +36,16 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           patch defines which fields should be set, if empty ALL fields are set
      *     @type string $enum_id
      *     @type string $value_id
      *           value to update
-     *     @type \Eolymp\Taxonomy\Value $value
-     *           value to set (id field is ignored during update)
+     *     @type \Eolymp\Taxonomy\Value\Patch $value
+     *           fields to write
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Taxonomy\EnumService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * patch defines which fields should be set, if empty ALL fields are set
-     *
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateValueInput.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * patch defines which fields should be set, if empty ALL fields are set
-     *
-     * Generated from protobuf field <code>repeated .eolymp.taxonomy.UpdateValueInput.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Taxonomy\UpdateValueInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -131,10 +97,10 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * value to set (id field is ignored during update)
+     * fields to write
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.Value value = 4;</code>
-     * @return \Eolymp\Taxonomy\Value|null
+     * Generated from protobuf field <code>.eolymp.taxonomy.Value.Patch value = 5;</code>
+     * @return \Eolymp\Taxonomy\Value\Patch|null
      */
     public function getValue()
     {
@@ -152,15 +118,15 @@ class UpdateValueInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * value to set (id field is ignored during update)
+     * fields to write
      *
-     * Generated from protobuf field <code>.eolymp.taxonomy.Value value = 4;</code>
-     * @param \Eolymp\Taxonomy\Value $var
+     * Generated from protobuf field <code>.eolymp.taxonomy.Value.Patch value = 5;</code>
+     * @param \Eolymp\Taxonomy\Value\Patch $var
      * @return $this
      */
     public function setValue($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\Value::class);
+        GPBUtil::checkMessage($var, \Eolymp\Taxonomy\Value\Patch::class);
         $this->value = $var;
 
         return $this;
