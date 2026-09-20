@@ -13,6 +13,24 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.acl.Principal.Role role = 10;</code>
+     */
+    protected $role = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
+     */
+    private $allows;
+    /**
+     * clears the permissions, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool disallow = 12;</code>
+     */
+    protected $disallow = null;
 
     /**
      * Constructor.
@@ -20,11 +38,138 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type int $role
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $allows
+     *     @type bool $disallow
+     *           clears the permissions, which an empty list cannot express
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Acl\Principal::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.acl.Principal.Role role = 10;</code>
+     * @return int
+     */
+    public function getRole()
+    {
+        return isset($this->role) ? $this->role : 0;
+    }
+
+    public function hasRole()
+    {
+        return isset($this->role);
+    }
+
+    public function clearRole()
+    {
+        unset($this->role);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.acl.Principal.Role role = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Acl\Principal\Role::class);
+        $this->role = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAllows()
+    {
+        return $this->allows;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.acl.Action allows = 11;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAllows($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Action::class);
+        $this->allows = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the permissions, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool disallow = 12;</code>
+     * @return bool
+     */
+    public function getDisallow()
+    {
+        return isset($this->disallow) ? $this->disallow : false;
+    }
+
+    public function hasDisallow()
+    {
+        return isset($this->disallow);
+    }
+
+    public function clearDisallow()
+    {
+        unset($this->disallow);
+    }
+
+    /**
+     * clears the permissions, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool disallow = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisallow($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->disallow = $var;
+
+        return $this;
     }
 
 }

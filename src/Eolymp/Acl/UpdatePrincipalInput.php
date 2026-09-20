@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePrincipalInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Principal.Patch.Field patch = 10;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string principal_id = 1;</code>
      */
     protected $principal_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Principal principal = 2;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Principal.Patch principal = 3;</code>
      */
     protected $principal = null;
 
@@ -32,36 +28,13 @@ class UpdatePrincipalInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $principal_id
-     *     @type \Eolymp\Acl\Principal $principal
+     *     @type \Eolymp\Acl\Principal\Patch $principal
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Acl\PrincipalService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Principal.Patch.Field patch = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.Principal.Patch.Field patch = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\Principal\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdatePrincipalInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Principal principal = 2;</code>
-     * @return \Eolymp\Acl\Principal|null
+     * Generated from protobuf field <code>.eolymp.acl.Principal.Patch principal = 3;</code>
+     * @return \Eolymp\Acl\Principal\Patch|null
      */
     public function getPrincipal()
     {
@@ -106,13 +79,13 @@ class UpdatePrincipalInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Principal principal = 2;</code>
-     * @param \Eolymp\Acl\Principal $var
+     * Generated from protobuf field <code>.eolymp.acl.Principal.Patch principal = 3;</code>
+     * @param \Eolymp\Acl\Principal\Patch $var
      * @return $this
      */
     public function setPrincipal($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Acl\Principal::class);
+        GPBUtil::checkMessage($var, \Eolymp\Acl\Principal\Patch::class);
         $this->principal = $var;
 
         return $this;
