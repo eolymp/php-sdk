@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTicketInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateTicketInput.Patch patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string ticket_id = 1;</code>
      */
     protected $ticket_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Patch ticket = 4;</code>
      */
     protected $ticket = null;
 
@@ -32,36 +28,13 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $ticket_id
-     *     @type \Eolymp\Judge\Ticket $ticket
+     *     @type \Eolymp\Judge\Ticket\Patch $ticket
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\TicketService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateTicketInput.Patch patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateTicketInput.Patch patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateTicketInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 2;</code>
-     * @return \Eolymp\Judge\Ticket|null
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Patch ticket = 4;</code>
+     * @return \Eolymp\Judge\Ticket\Patch|null
      */
     public function getTicket()
     {
@@ -106,13 +79,13 @@ class UpdateTicketInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Ticket ticket = 2;</code>
-     * @param \Eolymp\Judge\Ticket $var
+     * Generated from protobuf field <code>.eolymp.judge.Ticket.Patch ticket = 4;</code>
+     * @param \Eolymp\Judge\Ticket\Patch $var
      * @return $this
      */
     public function setTicket($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Ticket::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Ticket\Patch::class);
         $this->ticket = $var;
 
         return $this;

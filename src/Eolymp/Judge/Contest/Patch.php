@@ -26,9 +26,9 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $starts_at = null;
     /**
-     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * Generated from protobuf field <code>optional uint32 duration = 12;</code>
      */
-    protected $duration = 0;
+    protected $duration = null;
     /**
      * Generated from protobuf field <code>optional bool enable_reminder_notification = 13;</code>
      */
@@ -249,16 +249,26 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * Generated from protobuf field <code>optional uint32 duration = 12;</code>
      * @return int
      */
     public function getDuration()
     {
-        return $this->duration;
+        return isset($this->duration) ? $this->duration : 0;
+    }
+
+    public function hasDuration()
+    {
+        return isset($this->duration);
+    }
+
+    public function clearDuration()
+    {
+        unset($this->duration);
     }
 
     /**
-     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * Generated from protobuf field <code>optional uint32 duration = 12;</code>
      * @param int $var
      * @return $this
      */

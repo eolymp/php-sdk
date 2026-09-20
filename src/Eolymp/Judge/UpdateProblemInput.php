@@ -18,17 +18,11 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      */
     protected $contest_id = '';
     /**
-     * Patch request to update participant partially (all fields are updated if not specified)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateProblemInput.Patch patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      */
     protected $problem_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Problem problem = 4;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Problem.Patch problem = 5;</code>
      */
     protected $problem = null;
 
@@ -39,10 +33,8 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $problem_id
-     *     @type \Eolymp\Judge\Problem $problem
+     *     @type \Eolymp\Judge\Problem\Patch $problem
      * }
      */
     public function __construct($data = NULL) {
@@ -73,32 +65,6 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Patch request to update participant partially (all fields are updated if not specified)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateProblemInput.Patch patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Patch request to update participant partially (all fields are updated if not specified)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.UpdateProblemInput.Patch patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\UpdateProblemInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>string problem_id = 2;</code>
      * @return string
      */
@@ -121,8 +87,8 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Problem problem = 4;</code>
-     * @return \Eolymp\Judge\Problem|null
+     * Generated from protobuf field <code>.eolymp.judge.Problem.Patch problem = 5;</code>
+     * @return \Eolymp\Judge\Problem\Patch|null
      */
     public function getProblem()
     {
@@ -140,13 +106,13 @@ class UpdateProblemInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Problem problem = 4;</code>
-     * @param \Eolymp\Judge\Problem $var
+     * Generated from protobuf field <code>.eolymp.judge.Problem.Patch problem = 5;</code>
+     * @param \Eolymp\Judge\Problem\Patch $var
      * @return $this
      */
     public function setProblem($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Problem::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Problem\Patch::class);
         $this->problem = $var;
 
         return $this;
