@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.UpdatePreferencesInput.Patch patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string space_id = 1;</code>
      */
     protected $space_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.notify.Preferences preferences = 2;</code>
+     * Generated from protobuf field <code>.eolymp.notify.Preferences.Patch preferences = 4;</code>
      */
     protected $preferences = null;
 
@@ -32,36 +28,13 @@ class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $space_id
-     *     @type \Eolymp\Notify\Preferences $preferences
+     *     @type \Eolymp\Notify\Preferences\Patch $preferences
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Notify\NotificationService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.UpdatePreferencesInput.Patch patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.UpdatePreferencesInput.Patch patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Notify\UpdatePreferencesInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.notify.Preferences preferences = 2;</code>
-     * @return \Eolymp\Notify\Preferences|null
+     * Generated from protobuf field <code>.eolymp.notify.Preferences.Patch preferences = 4;</code>
+     * @return \Eolymp\Notify\Preferences\Patch|null
      */
     public function getPreferences()
     {
@@ -106,13 +79,13 @@ class UpdatePreferencesInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.notify.Preferences preferences = 2;</code>
-     * @param \Eolymp\Notify\Preferences $var
+     * Generated from protobuf field <code>.eolymp.notify.Preferences.Patch preferences = 4;</code>
+     * @param \Eolymp\Notify\Preferences\Patch $var
      * @return $this
      */
     public function setPreferences($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Notify\Preferences::class);
+        GPBUtil::checkMessage($var, \Eolymp\Notify\Preferences\Patch::class);
         $this->preferences = $var;
 
         return $this;

@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.UpdatePolicyInput.Patch patch = 10;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string policy_id = 1;</code>
      */
     protected $policy_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Policy policy = 2;</code>
+     * Generated from protobuf field <code>.eolymp.acl.Policy.Patch policy = 3;</code>
      */
     protected $policy = null;
 
@@ -32,36 +28,13 @@ class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $policy_id
-     *     @type \Eolymp\Acl\Policy $policy
+     *     @type \Eolymp\Acl\Policy\Patch $policy
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Acl\PolicyService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.UpdatePolicyInput.Patch patch = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.acl.UpdatePolicyInput.Patch patch = 10;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Acl\UpdatePolicyInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Policy policy = 2;</code>
-     * @return \Eolymp\Acl\Policy|null
+     * Generated from protobuf field <code>.eolymp.acl.Policy.Patch policy = 3;</code>
+     * @return \Eolymp\Acl\Policy\Patch|null
      */
     public function getPolicy()
     {
@@ -106,13 +79,13 @@ class UpdatePolicyInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.acl.Policy policy = 2;</code>
-     * @param \Eolymp\Acl\Policy $var
+     * Generated from protobuf field <code>.eolymp.acl.Policy.Patch policy = 3;</code>
+     * @param \Eolymp\Acl\Policy\Patch $var
      * @return $this
      */
     public function setPolicy($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Acl\Policy::class);
+        GPBUtil::checkMessage($var, \Eolymp\Acl\Policy\Patch::class);
         $this->policy = $var;
 
         return $this;
