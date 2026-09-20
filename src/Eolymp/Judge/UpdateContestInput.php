@@ -14,17 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateContestInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch.Field patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Patch contest = 4;</code>
      */
     protected $contest = null;
 
@@ -34,41 +28,13 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           specify list of fields to update, if empty all fields are updated
      *     @type string $contest_id
-     *     @type \Eolymp\Judge\Contest $contest
+     *     @type \Eolymp\Judge\Contest\Patch $contest
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\ContestService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch.Field patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Patch.Field patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Contest\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -94,8 +60,8 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 2;</code>
-     * @return \Eolymp\Judge\Contest|null
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Patch contest = 4;</code>
+     * @return \Eolymp\Judge\Contest\Patch|null
      */
     public function getContest()
     {
@@ -113,13 +79,13 @@ class UpdateContestInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Contest contest = 2;</code>
-     * @param \Eolymp\Judge\Contest $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.Patch contest = 4;</code>
+     * @param \Eolymp\Judge\Contest\Patch $var
      * @return $this
      */
     public function setContest($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Patch::class);
         $this->contest = $var;
 
         return $this;

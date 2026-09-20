@@ -13,6 +13,106 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional string image_url = 4;</code>
+     */
+    protected $image_url = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
+     */
+    protected $starts_at = null;
+    /**
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     */
+    protected $duration = 0;
+    /**
+     * Generated from protobuf field <code>optional bool enable_reminder_notification = 13;</code>
+     */
+    protected $enable_reminder_notification = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 15;</code>
+     */
+    protected $ends_at = null;
+    /**
+     * Generated from protobuf field <code>optional bool enable_result_notification = 16;</code>
+     */
+    protected $enable_result_notification = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.Visibility visibility = 30;</code>
+     */
+    protected $visibility = null;
+    /**
+     * Generated from protobuf field <code>optional bool join_unofficially = 33;</code>
+     */
+    protected $join_unofficially = null;
+    /**
+     * Generated from protobuf field <code>optional bool require_admission = 35;</code>
+     */
+    protected $require_admission = null;
+    /**
+     * Generated from protobuf field <code>optional bool allow_pause = 36;</code>
+     */
+    protected $allow_pause = null;
+    /**
+     * Generated from protobuf field <code>optional bool allow_finish_early = 37;</code>
+     */
+    protected $allow_finish_early = null;
+    /**
+     * Generated from protobuf field <code>optional bool allow_upsolve = 38;</code>
+     */
+    protected $allow_upsolve = null;
+    /**
+     * Generated from protobuf field <code>optional bool allow_followup = 39;</code>
+     */
+    protected $allow_followup = null;
+    /**
+     * Generated from protobuf field <code>optional string key = 40;</code>
+     */
+    protected $key = null;
+    /**
+     * Generated from protobuf field <code>optional bool display_editorials = 41;</code>
+     */
+    protected $display_editorials = null;
+    /**
+     * Generated from protobuf field <code>optional string slug = 42;</code>
+     */
+    protected $slug = null;
+    /**
+     * Generated from protobuf field <code>optional bool hide_jury_identity = 43;</code>
+     */
+    protected $hide_jury_identity = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
+     */
+    protected $featured_until = null;
+    /**
+     * Generated from protobuf field <code>optional string printer_id = 71;</code>
+     */
+    protected $printer_id = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig scoreboard_config = 105;</code>
+     */
+    protected $scoreboard_config = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.Classification classification = 110;</code>
+     */
+    protected $classification = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.EnvironmentConfig environment_config = 111;</code>
+     */
+    protected $environment_config = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
+     */
+    protected $certification_config = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
+     */
+    protected $rating_config = null;
 
     /**
      * Constructor.
@@ -20,11 +120,826 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type string $image_url
+     *     @type \Google\Protobuf\Timestamp $starts_at
+     *     @type int $duration
+     *     @type bool $enable_reminder_notification
+     *     @type \Google\Protobuf\Timestamp $ends_at
+     *     @type bool $enable_result_notification
+     *     @type int $visibility
+     *     @type bool $join_unofficially
+     *     @type bool $require_admission
+     *     @type bool $allow_pause
+     *     @type bool $allow_finish_early
+     *     @type bool $allow_upsolve
+     *     @type bool $allow_followup
+     *     @type string $key
+     *     @type bool $display_editorials
+     *     @type string $slug
+     *     @type bool $hide_jury_identity
+     *     @type \Google\Protobuf\Timestamp $featured_until
+     *     @type string $printer_id
+     *     @type \Eolymp\Judge\Contest\ScoreboardConfig $scoreboard_config
+     *     @type \Eolymp\Judge\Contest\Classification $classification
+     *     @type \Eolymp\Judge\Contest\EnvironmentConfig $environment_config
+     *     @type \Eolymp\Judge\Contest\CertificationConfig $certification_config
+     *     @type \Eolymp\Judge\Contest\RatingConfig $rating_config
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Contest::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string image_url = 4;</code>
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return isset($this->image_url) ? $this->image_url : '';
+    }
+
+    public function hasImageUrl()
+    {
+        return isset($this->image_url);
+    }
+
+    public function clearImageUrl()
+    {
+        unset($this->image_url);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string image_url = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImageUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getStartsAt()
+    {
+        return $this->starts_at;
+    }
+
+    public function hasStartsAt()
+    {
+        return isset($this->starts_at);
+    }
+
+    public function clearStartsAt()
+    {
+        unset($this->starts_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartsAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->starts_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * @return int
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 duration = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setDuration($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->duration = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool enable_reminder_notification = 13;</code>
+     * @return bool
+     */
+    public function getEnableReminderNotification()
+    {
+        return isset($this->enable_reminder_notification) ? $this->enable_reminder_notification : false;
+    }
+
+    public function hasEnableReminderNotification()
+    {
+        return isset($this->enable_reminder_notification);
+    }
+
+    public function clearEnableReminderNotification()
+    {
+        unset($this->enable_reminder_notification);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool enable_reminder_notification = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableReminderNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_reminder_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 15;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getEndsAt()
+    {
+        return $this->ends_at;
+    }
+
+    public function hasEndsAt()
+    {
+        return isset($this->ends_at);
+    }
+
+    public function clearEndsAt()
+    {
+        unset($this->ends_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 15;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setEndsAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->ends_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool enable_result_notification = 16;</code>
+     * @return bool
+     */
+    public function getEnableResultNotification()
+    {
+        return isset($this->enable_result_notification) ? $this->enable_result_notification : false;
+    }
+
+    public function hasEnableResultNotification()
+    {
+        return isset($this->enable_result_notification);
+    }
+
+    public function clearEnableResultNotification()
+    {
+        unset($this->enable_result_notification);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool enable_result_notification = 16;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableResultNotification($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_result_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.Visibility visibility = 30;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return isset($this->visibility) ? $this->visibility : 0;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.Visibility visibility = 30;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool join_unofficially = 33;</code>
+     * @return bool
+     */
+    public function getJoinUnofficially()
+    {
+        return isset($this->join_unofficially) ? $this->join_unofficially : false;
+    }
+
+    public function hasJoinUnofficially()
+    {
+        return isset($this->join_unofficially);
+    }
+
+    public function clearJoinUnofficially()
+    {
+        unset($this->join_unofficially);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool join_unofficially = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setJoinUnofficially($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->join_unofficially = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool require_admission = 35;</code>
+     * @return bool
+     */
+    public function getRequireAdmission()
+    {
+        return isset($this->require_admission) ? $this->require_admission : false;
+    }
+
+    public function hasRequireAdmission()
+    {
+        return isset($this->require_admission);
+    }
+
+    public function clearRequireAdmission()
+    {
+        unset($this->require_admission);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool require_admission = 35;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequireAdmission($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->require_admission = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_pause = 36;</code>
+     * @return bool
+     */
+    public function getAllowPause()
+    {
+        return isset($this->allow_pause) ? $this->allow_pause : false;
+    }
+
+    public function hasAllowPause()
+    {
+        return isset($this->allow_pause);
+    }
+
+    public function clearAllowPause()
+    {
+        unset($this->allow_pause);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_pause = 36;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowPause($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_pause = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_finish_early = 37;</code>
+     * @return bool
+     */
+    public function getAllowFinishEarly()
+    {
+        return isset($this->allow_finish_early) ? $this->allow_finish_early : false;
+    }
+
+    public function hasAllowFinishEarly()
+    {
+        return isset($this->allow_finish_early);
+    }
+
+    public function clearAllowFinishEarly()
+    {
+        unset($this->allow_finish_early);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_finish_early = 37;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowFinishEarly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_finish_early = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_upsolve = 38;</code>
+     * @return bool
+     */
+    public function getAllowUpsolve()
+    {
+        return isset($this->allow_upsolve) ? $this->allow_upsolve : false;
+    }
+
+    public function hasAllowUpsolve()
+    {
+        return isset($this->allow_upsolve);
+    }
+
+    public function clearAllowUpsolve()
+    {
+        unset($this->allow_upsolve);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_upsolve = 38;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowUpsolve($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_upsolve = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_followup = 39;</code>
+     * @return bool
+     */
+    public function getAllowFollowup()
+    {
+        return isset($this->allow_followup) ? $this->allow_followup : false;
+    }
+
+    public function hasAllowFollowup()
+    {
+        return isset($this->allow_followup);
+    }
+
+    public function clearAllowFollowup()
+    {
+        unset($this->allow_followup);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_followup = 39;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowFollowup($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_followup = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string key = 40;</code>
+     * @return string
+     */
+    public function getKey()
+    {
+        return isset($this->key) ? $this->key : '';
+    }
+
+    public function hasKey()
+    {
+        return isset($this->key);
+    }
+
+    public function clearKey()
+    {
+        unset($this->key);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string key = 40;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool display_editorials = 41;</code>
+     * @return bool
+     */
+    public function getDisplayEditorials()
+    {
+        return isset($this->display_editorials) ? $this->display_editorials : false;
+    }
+
+    public function hasDisplayEditorials()
+    {
+        return isset($this->display_editorials);
+    }
+
+    public function clearDisplayEditorials()
+    {
+        unset($this->display_editorials);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool display_editorials = 41;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisplayEditorials($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->display_editorials = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string slug = 42;</code>
+     * @return string
+     */
+    public function getSlug()
+    {
+        return isset($this->slug) ? $this->slug : '';
+    }
+
+    public function hasSlug()
+    {
+        return isset($this->slug);
+    }
+
+    public function clearSlug()
+    {
+        unset($this->slug);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string slug = 42;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSlug($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->slug = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool hide_jury_identity = 43;</code>
+     * @return bool
+     */
+    public function getHideJuryIdentity()
+    {
+        return isset($this->hide_jury_identity) ? $this->hide_jury_identity : false;
+    }
+
+    public function hasHideJuryIdentity()
+    {
+        return isset($this->hide_jury_identity);
+    }
+
+    public function clearHideJuryIdentity()
+    {
+        unset($this->hide_jury_identity);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool hide_jury_identity = 43;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setHideJuryIdentity($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->hide_jury_identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getFeaturedUntil()
+    {
+        return $this->featured_until;
+    }
+
+    public function hasFeaturedUntil()
+    {
+        return isset($this->featured_until);
+    }
+
+    public function clearFeaturedUntil()
+    {
+        unset($this->featured_until);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setFeaturedUntil($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->featured_until = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string printer_id = 71;</code>
+     * @return string
+     */
+    public function getPrinterId()
+    {
+        return isset($this->printer_id) ? $this->printer_id : '';
+    }
+
+    public function hasPrinterId()
+    {
+        return isset($this->printer_id);
+    }
+
+    public function clearPrinterId()
+    {
+        unset($this->printer_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string printer_id = 71;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrinterId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->printer_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig scoreboard_config = 105;</code>
+     * @return \Eolymp\Judge\Contest\ScoreboardConfig|null
+     */
+    public function getScoreboardConfig()
+    {
+        return $this->scoreboard_config;
+    }
+
+    public function hasScoreboardConfig()
+    {
+        return isset($this->scoreboard_config);
+    }
+
+    public function clearScoreboardConfig()
+    {
+        unset($this->scoreboard_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ScoreboardConfig scoreboard_config = 105;</code>
+     * @param \Eolymp\Judge\Contest\ScoreboardConfig $var
+     * @return $this
+     */
+    public function setScoreboardConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\ScoreboardConfig::class);
+        $this->scoreboard_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.Classification classification = 110;</code>
+     * @return \Eolymp\Judge\Contest\Classification|null
+     */
+    public function getClassification()
+    {
+        return $this->classification;
+    }
+
+    public function hasClassification()
+    {
+        return isset($this->classification);
+    }
+
+    public function clearClassification()
+    {
+        unset($this->classification);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.Classification classification = 110;</code>
+     * @param \Eolymp\Judge\Contest\Classification $var
+     * @return $this
+     */
+    public function setClassification($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\Classification::class);
+        $this->classification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.EnvironmentConfig environment_config = 111;</code>
+     * @return \Eolymp\Judge\Contest\EnvironmentConfig|null
+     */
+    public function getEnvironmentConfig()
+    {
+        return $this->environment_config;
+    }
+
+    public function hasEnvironmentConfig()
+    {
+        return isset($this->environment_config);
+    }
+
+    public function clearEnvironmentConfig()
+    {
+        unset($this->environment_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.EnvironmentConfig environment_config = 111;</code>
+     * @param \Eolymp\Judge\Contest\EnvironmentConfig $var
+     * @return $this
+     */
+    public function setEnvironmentConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\EnvironmentConfig::class);
+        $this->environment_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
+     * @return \Eolymp\Judge\Contest\CertificationConfig|null
+     */
+    public function getCertificationConfig()
+    {
+        return $this->certification_config;
+    }
+
+    public function hasCertificationConfig()
+    {
+        return isset($this->certification_config);
+    }
+
+    public function clearCertificationConfig()
+    {
+        unset($this->certification_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.CertificationConfig certification_config = 112;</code>
+     * @param \Eolymp\Judge\Contest\CertificationConfig $var
+     * @return $this
+     */
+    public function setCertificationConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\CertificationConfig::class);
+        $this->certification_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
+     * @return \Eolymp\Judge\Contest\RatingConfig|null
+     */
+    public function getRatingConfig()
+    {
+        return $this->rating_config;
+    }
+
+    public function hasRatingConfig()
+    {
+        return isset($this->rating_config);
+    }
+
+    public function clearRatingConfig()
+    {
+        unset($this->rating_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
+     * @param \Eolymp\Judge\Contest\RatingConfig $var
+     * @return $this
+     */
+    public function setRatingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\RatingConfig::class);
+        $this->rating_config = $var;
+
+        return $this;
     }
 
 }

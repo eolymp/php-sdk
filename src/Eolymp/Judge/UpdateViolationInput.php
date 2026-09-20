@@ -14,19 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateViolationInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Violation.Patch.Field patch = 3;</code>
+     * Generated from protobuf field <code>string violation_id = 1;</code>
      */
-    private $patch;
+    protected $violation_id = '';
     /**
      * Generated from protobuf field <code>string contest_id = 4;</code>
      */
     protected $contest_id = '';
     /**
-     * Generated from protobuf field <code>string violation_id = 1;</code>
-     */
-    protected $violation_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Violation violation = 2;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Patch violation = 5;</code>
      */
     protected $violation = null;
 
@@ -36,10 +32,9 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *     @type string $contest_id
      *     @type string $violation_id
-     *     @type \Eolymp\Judge\Violation $violation
+     *     @type string $contest_id
+     *     @type \Eolymp\Judge\Violation\Patch $violation
      * }
      */
     public function __construct($data = NULL) {
@@ -48,23 +43,23 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Violation.Patch.Field patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>string violation_id = 1;</code>
+     * @return string
      */
-    public function getPatch()
+    public function getViolationId()
     {
-        return $this->patch;
+        return $this->violation_id;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.judge.Violation.Patch.Field patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>string violation_id = 1;</code>
+     * @param string $var
      * @return $this
      */
-    public function setPatch($var)
+    public function setViolationId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Violation\Patch\Field::class);
-        $this->patch = $arr;
+        GPBUtil::checkString($var, True);
+        $this->violation_id = $var;
 
         return $this;
     }
@@ -92,30 +87,8 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string violation_id = 1;</code>
-     * @return string
-     */
-    public function getViolationId()
-    {
-        return $this->violation_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string violation_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setViolationId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->violation_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.judge.Violation violation = 2;</code>
-     * @return \Eolymp\Judge\Violation|null
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Patch violation = 5;</code>
+     * @return \Eolymp\Judge\Violation\Patch|null
      */
     public function getViolation()
     {
@@ -133,13 +106,13 @@ class UpdateViolationInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Violation violation = 2;</code>
-     * @param \Eolymp\Judge\Violation $var
+     * Generated from protobuf field <code>.eolymp.judge.Violation.Patch violation = 5;</code>
+     * @param \Eolymp\Judge\Violation\Patch $var
      * @return $this
      */
     public function setViolation($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Violation::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Violation\Patch::class);
         $this->violation = $var;
 
         return $this;

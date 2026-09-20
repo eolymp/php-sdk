@@ -13,6 +13,34 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string display_name = 1;</code>
+     */
+    protected $display_name = null;
+    /**
+     * Generated from protobuf field <code>optional uint32 bonus_time = 3;</code>
+     */
+    protected $bonus_time = null;
+    /**
+     * Generated from protobuf field <code>optional bool unofficial = 4;</code>
+     */
+    protected $unofficial = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Medal medal = 5;</code>
+     */
+    protected $medal = null;
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 6;</code>
+     */
+    protected $inactive = null;
+    /**
+     * Generated from protobuf field <code>optional string passcode = 7;</code>
+     */
+    protected $passcode = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Participant.Role role = 8;</code>
+     */
+    protected $role = null;
 
     /**
      * Constructor.
@@ -20,11 +48,242 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $display_name
+     *     @type int $bonus_time
+     *     @type bool $unofficial
+     *     @type int $medal
+     *     @type bool $inactive
+     *     @type string $passcode
+     *     @type int $role
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Participant::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string display_name = 1;</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return isset($this->display_name) ? $this->display_name : '';
+    }
+
+    public function hasDisplayName()
+    {
+        return isset($this->display_name);
+    }
+
+    public function clearDisplayName()
+    {
+        unset($this->display_name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string display_name = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 bonus_time = 3;</code>
+     * @return int
+     */
+    public function getBonusTime()
+    {
+        return isset($this->bonus_time) ? $this->bonus_time : 0;
+    }
+
+    public function hasBonusTime()
+    {
+        return isset($this->bonus_time);
+    }
+
+    public function clearBonusTime()
+    {
+        unset($this->bonus_time);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 bonus_time = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setBonusTime($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->bonus_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool unofficial = 4;</code>
+     * @return bool
+     */
+    public function getUnofficial()
+    {
+        return isset($this->unofficial) ? $this->unofficial : false;
+    }
+
+    public function hasUnofficial()
+    {
+        return isset($this->unofficial);
+    }
+
+    public function clearUnofficial()
+    {
+        unset($this->unofficial);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool unofficial = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnofficial($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unofficial = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Medal medal = 5;</code>
+     * @return int
+     */
+    public function getMedal()
+    {
+        return isset($this->medal) ? $this->medal : 0;
+    }
+
+    public function hasMedal()
+    {
+        return isset($this->medal);
+    }
+
+    public function clearMedal()
+    {
+        unset($this->medal);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Medal medal = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMedal($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Medal::class);
+        $this->medal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 6;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return isset($this->inactive) ? $this->inactive : false;
+    }
+
+    public function hasInactive()
+    {
+        return isset($this->inactive);
+    }
+
+    public function clearInactive()
+    {
+        unset($this->inactive);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string passcode = 7;</code>
+     * @return string
+     */
+    public function getPasscode()
+    {
+        return isset($this->passcode) ? $this->passcode : '';
+    }
+
+    public function hasPasscode()
+    {
+        return isset($this->passcode);
+    }
+
+    public function clearPasscode()
+    {
+        unset($this->passcode);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string passcode = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPasscode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->passcode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Participant.Role role = 8;</code>
+     * @return int
+     */
+    public function getRole()
+    {
+        return isset($this->role) ? $this->role : 0;
+    }
+
+    public function hasRole()
+    {
+        return isset($this->role);
+    }
+
+    public function clearRole()
+    {
+        unset($this->role);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Participant.Role role = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRole($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Participant\Role::class);
+        $this->role = $var;
+
+        return $this;
     }
 
 }

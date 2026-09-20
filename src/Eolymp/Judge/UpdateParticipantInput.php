@@ -14,14 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Patch request to update participant partially (all fields are updated if not specified)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Patch.Field patch = 3;</code>
-     */
-    private $patch;
-    /**
-     * Participant identifier to update
-     *
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
@@ -30,7 +22,7 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 4;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Patch participant = 5;</code>
      */
     protected $participant = null;
 
@@ -40,12 +32,9 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           Patch request to update participant partially (all fields are updated if not specified)
      *     @type string $contest_id
-     *           Participant identifier to update
      *     @type string $participant_id
-     *     @type \Eolymp\Judge\Participant $participant
+     *     @type \Eolymp\Judge\Participant\Patch $participant
      * }
      */
     public function __construct($data = NULL) {
@@ -54,34 +43,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Patch request to update participant partially (all fields are updated if not specified)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Patch.Field patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Patch request to update participant partially (all fields are updated if not specified)
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Patch.Field patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Judge\Participant\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Participant identifier to update
-     *
      * Generated from protobuf field <code>string contest_id = 1;</code>
      * @return string
      */
@@ -91,8 +52,6 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Participant identifier to update
-     *
      * Generated from protobuf field <code>string contest_id = 1;</code>
      * @param string $var
      * @return $this
@@ -128,8 +87,8 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 4;</code>
-     * @return \Eolymp\Judge\Participant|null
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Patch participant = 5;</code>
+     * @return \Eolymp\Judge\Participant\Patch|null
      */
     public function getParticipant()
     {
@@ -147,13 +106,13 @@ class UpdateParticipantInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.judge.Participant participant = 4;</code>
-     * @param \Eolymp\Judge\Participant $var
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Patch participant = 5;</code>
+     * @param \Eolymp\Judge\Participant\Patch $var
      * @return $this
      */
     public function setParticipant($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant::class);
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant\Patch::class);
         $this->participant = $var;
 
         return $this;

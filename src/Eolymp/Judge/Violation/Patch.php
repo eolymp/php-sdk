@@ -13,6 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 1;</code>
+     */
+    protected $summary = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Violation.Status status = 2;</code>
+     */
+    protected $status = null;
 
     /**
      * Constructor.
@@ -20,11 +28,77 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Eolymp\Ecm\Content $summary
+     *     @type int $status
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Judge\Violation::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 1;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    public function hasSummary()
+    {
+        return isset($this->summary);
+    }
+
+    public function clearSummary()
+    {
+        unset($this->summary);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.ecm.Content summary = 1;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Violation.Status status = 2;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return isset($this->status) ? $this->status : 0;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Violation.Status status = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Violation\Status::class);
+        $this->status = $var;
+
+        return $this;
     }
 
 }
