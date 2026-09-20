@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateWebhookInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string webhook_id = 2;</code>
      */
     protected $webhook_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.webhook.Webhook webhook = 3;</code>
+     * Generated from protobuf field <code>.eolymp.webhook.Webhook.Patch webhook = 4;</code>
      */
     protected $webhook = null;
 
@@ -32,36 +28,13 @@ class UpdateWebhookInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $webhook_id
-     *     @type \Eolymp\Webhook\Webhook $webhook
+     *     @type \Eolymp\Webhook\Webhook\Patch $webhook
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Webhook\WebhookService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Webhook\Webhook\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateWebhookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.webhook.Webhook webhook = 3;</code>
-     * @return \Eolymp\Webhook\Webhook|null
+     * Generated from protobuf field <code>.eolymp.webhook.Webhook.Patch webhook = 4;</code>
+     * @return \Eolymp\Webhook\Webhook\Patch|null
      */
     public function getWebhook()
     {
@@ -106,13 +79,13 @@ class UpdateWebhookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.webhook.Webhook webhook = 3;</code>
-     * @param \Eolymp\Webhook\Webhook $var
+     * Generated from protobuf field <code>.eolymp.webhook.Webhook.Patch webhook = 4;</code>
+     * @param \Eolymp\Webhook\Webhook\Patch $var
      * @return $this
      */
     public function setWebhook($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Webhook\Webhook::class);
+        GPBUtil::checkMessage($var, \Eolymp\Webhook\Webhook\Patch::class);
         $this->webhook = $var;
 
         return $this;

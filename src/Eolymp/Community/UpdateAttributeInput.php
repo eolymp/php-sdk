@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Patch patch = 3;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string attribute_key = 1;</code>
      */
     protected $attribute_key = '';
     /**
-     * Generated from protobuf field <code>.eolymp.community.Attribute attribute = 2;</code>
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Patch attribute = 4;</code>
      */
     protected $attribute = null;
 
@@ -32,36 +28,13 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $attribute_key
-     *     @type \Eolymp\Community\Attribute $attribute
+     *     @type \Eolymp\Community\Attribute\Patch $attribute
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Community\AttributeService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Patch patch = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Patch patch = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Community\Attribute\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Attribute attribute = 2;</code>
-     * @return \Eolymp\Community\Attribute|null
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Patch attribute = 4;</code>
+     * @return \Eolymp\Community\Attribute\Patch|null
      */
     public function getAttribute()
     {
@@ -106,13 +79,13 @@ class UpdateAttributeInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.community.Attribute attribute = 2;</code>
-     * @param \Eolymp\Community\Attribute $var
+     * Generated from protobuf field <code>.eolymp.community.Attribute.Patch attribute = 4;</code>
+     * @param \Eolymp\Community\Attribute\Patch $var
      * @return $this
      */
     public function setAttribute($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Community\Attribute::class);
+        GPBUtil::checkMessage($var, \Eolymp\Community\Attribute\Patch::class);
         $this->attribute = $var;
 
         return $this;

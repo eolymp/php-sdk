@@ -4,66 +4,213 @@
 
 namespace Eolymp\Webhook\Webhook;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.webhook.Webhook.Patch</code>
+ * Patch describes the fields UpdateWebhook can change, a field is written only if it is set.
+ *
+ * Generated from protobuf message <code>eolymp.webhook.Webhook.Patch</code>
  */
-class Patch
+class Patch extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf enum <code>PATCH_UNKNOWN = 0;</code>
+     * Generated from protobuf field <code>optional string name = 2;</code>
      */
-    const PATCH_UNKNOWN = 0;
+    protected $name = null;
     /**
-     * Generated from protobuf enum <code>PATCH_ALL = 1;</code>
+     * Generated from protobuf field <code>optional string endpoint = 4;</code>
      */
-    const PATCH_ALL = 1;
+    protected $endpoint = null;
     /**
-     * Generated from protobuf enum <code>PATCH_NAME = 2;</code>
+     * Generated from protobuf field <code>optional bool inactive = 5;</code>
      */
-    const PATCH_NAME = 2;
+    protected $inactive = null;
     /**
-     * Generated from protobuf enum <code>PATCH_ENDPOINT = 3;</code>
+     * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Event events = 10;</code>
      */
-    const PATCH_ENDPOINT = 3;
+    private $events;
     /**
-     * Generated from protobuf enum <code>PATCH_INACTIVE = 4;</code>
+     * clears the event list, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unsubscribe = 11;</code>
      */
-    const PATCH_INACTIVE = 4;
-    /**
-     * Generated from protobuf enum <code>PATCH_EVENTS = 5;</code>
-     */
-    const PATCH_EVENTS = 5;
+    protected $unsubscribe = null;
 
-    private static $valueToName = [
-        self::PATCH_UNKNOWN => 'PATCH_UNKNOWN',
-        self::PATCH_ALL => 'PATCH_ALL',
-        self::PATCH_NAME => 'PATCH_NAME',
-        self::PATCH_ENDPOINT => 'PATCH_ENDPOINT',
-        self::PATCH_INACTIVE => 'PATCH_INACTIVE',
-        self::PATCH_EVENTS => 'PATCH_EVENTS',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $name
+     *     @type string $endpoint
+     *     @type bool $inactive
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $events
+     *     @type bool $unsubscribe
+     *           clears the event list, which an empty list cannot express
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Webhook\Webhook::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @return string
+     */
+    public function getName()
     {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
+        return isset($this->name) ? $this->name : '';
     }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string endpoint = 4;</code>
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return isset($this->endpoint) ? $this->endpoint : '';
+    }
+
+    public function hasEndpoint()
+    {
+        return isset($this->endpoint);
+    }
+
+    public function clearEndpoint()
+    {
+        unset($this->endpoint);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string endpoint = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEndpoint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->endpoint = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 5;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return isset($this->inactive) ? $this->inactive : false;
+    }
+
+    public function hasInactive()
+    {
+        return isset($this->inactive);
+    }
+
+    public function clearInactive()
+    {
+        unset($this->inactive);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Event events = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.webhook.Webhook.Event events = 10;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setEvents($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Webhook\Webhook\Event::class);
+        $this->events = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the event list, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unsubscribe = 11;</code>
+     * @return bool
+     */
+    public function getUnsubscribe()
+    {
+        return isset($this->unsubscribe) ? $this->unsubscribe : false;
+    }
+
+    public function hasUnsubscribe()
+    {
+        return isset($this->unsubscribe);
+    }
+
+    public function clearUnsubscribe()
+    {
+        unset($this->unsubscribe);
+    }
+
+    /**
+     * clears the event list, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unsubscribe = 11;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsubscribe($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unsubscribe = $var;
+
+        return $this;
+    }
+
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

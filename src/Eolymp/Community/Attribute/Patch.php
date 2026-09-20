@@ -4,101 +4,580 @@
 
 namespace Eolymp\Community\Attribute;
 
-use UnexpectedValueException;
+use Google\Protobuf\Internal\GPBType;
+use Google\Protobuf\Internal\RepeatedField;
+use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>eolymp.community.Attribute.Patch</code>
+ * Patch describes the fields UpdateAttribute can change, a field is written only if it is set.
+ *
+ * Generated from protobuf message <code>eolymp.community.Attribute.Patch</code>
  */
-class Patch
+class Patch extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf enum <code>PATCH_ALL = 0;</code>
+     * Generated from protobuf field <code>optional string label = 2;</code>
      */
-    const PATCH_ALL = 0;
+    protected $label = null;
     /**
-     * Generated from protobuf enum <code>PATCH_LABEL = 1;</code>
+     * Generated from protobuf field <code>optional string help = 3;</code>
      */
-    const PATCH_LABEL = 1;
+    protected $help = null;
     /**
-     * Generated from protobuf enum <code>PATCH_HELP = 2;</code>
+     * Generated from protobuf field <code>optional .eolymp.community.Attribute.Type type = 20;</code>
      */
-    const PATCH_HELP = 2;
+    protected $type = null;
     /**
-     * Generated from protobuf enum <code>PATCH_TYPE = 3;</code>
+     * Generated from protobuf field <code>optional uint32 index = 21;</code>
      */
-    const PATCH_TYPE = 3;
+    protected $index = null;
     /**
-     * Generated from protobuf enum <code>PATCH_INDEX = 4;</code>
+     * Generated from protobuf field <code>optional bool required = 31;</code>
      */
-    const PATCH_INDEX = 4;
+    protected $required = null;
     /**
-     * Generated from protobuf enum <code>PATCH_REQUIRED = 5;</code>
+     * Generated from protobuf field <code>optional bool readonly = 33;</code>
      */
-    const PATCH_REQUIRED = 5;
+    protected $readonly = null;
     /**
-     * Generated from protobuf enum <code>PATCH_READONLY = 6;</code>
+     * Generated from protobuf field <code>optional .eolymp.community.Attribute.Visibility visibility = 34;</code>
      */
-    const PATCH_READONLY = 6;
+    protected $visibility = null;
     /**
-     * Generated from protobuf enum <code>PATCH_VISIBILITY = 7;</code>
+     * Generated from protobuf field <code>optional string regexp = 100;</code>
      */
-    const PATCH_VISIBILITY = 7;
+    protected $regexp = null;
     /**
-     * Generated from protobuf enum <code>PATCH_REGEXP = 8;</code>
+     * Generated from protobuf field <code>optional int32 min = 101;</code>
      */
-    const PATCH_REGEXP = 8;
+    protected $min = null;
     /**
-     * Generated from protobuf enum <code>PATCH_MIN = 9;</code>
+     * Generated from protobuf field <code>optional int32 max = 102;</code>
      */
-    const PATCH_MIN = 9;
+    protected $max = null;
     /**
-     * Generated from protobuf enum <code>PATCH_MAX = 10;</code>
+     * Generated from protobuf field <code>repeated string choices = 103;</code>
      */
-    const PATCH_MAX = 10;
+    private $choices;
     /**
-     * Generated from protobuf enum <code>PATCH_CHOICES = 11;</code>
+     * choices carries no presence of its own, so clearing it has to be asked for
+     *
+     * Generated from protobuf field <code>optional bool unset_choices = 106;</code>
      */
-    const PATCH_CHOICES = 11;
+    protected $unset_choices = null;
     /**
-     * Generated from protobuf enum <code>PATCH_CONSTRAINTS = 12;</code>
+     * Generated from protobuf field <code>optional string country = 104;</code>
      */
-    const PATCH_CONSTRAINTS = 12;
+    protected $country = null;
+    /**
+     * Generated from protobuf field <code>repeated string constraints = 105;</code>
+     */
+    private $constraints;
+    /**
+     * constraints carries no presence of its own, so clearing it has to be asked for
+     *
+     * Generated from protobuf field <code>optional bool unset_constraints = 107;</code>
+     */
+    protected $unset_constraints = null;
 
-    private static $valueToName = [
-        self::PATCH_ALL => 'PATCH_ALL',
-        self::PATCH_LABEL => 'PATCH_LABEL',
-        self::PATCH_HELP => 'PATCH_HELP',
-        self::PATCH_TYPE => 'PATCH_TYPE',
-        self::PATCH_INDEX => 'PATCH_INDEX',
-        self::PATCH_REQUIRED => 'PATCH_REQUIRED',
-        self::PATCH_READONLY => 'PATCH_READONLY',
-        self::PATCH_VISIBILITY => 'PATCH_VISIBILITY',
-        self::PATCH_REGEXP => 'PATCH_REGEXP',
-        self::PATCH_MIN => 'PATCH_MIN',
-        self::PATCH_MAX => 'PATCH_MAX',
-        self::PATCH_CHOICES => 'PATCH_CHOICES',
-        self::PATCH_CONSTRAINTS => 'PATCH_CONSTRAINTS',
-    ];
-
-    public static function name($value)
-    {
-        if (!isset(self::$valueToName[$value])) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no name defined for value %s', __CLASS__, $value));
-        }
-        return self::$valueToName[$value];
+    /**
+     * Constructor.
+     *
+     * @param array $data {
+     *     Optional. Data for populating the Message object.
+     *
+     *     @type string $label
+     *     @type string $help
+     *     @type int $type
+     *     @type int $index
+     *     @type bool $required
+     *     @type bool $readonly
+     *     @type int $visibility
+     *     @type string $regexp
+     *     @type int $min
+     *     @type int $max
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
+     *     @type bool $unset_choices
+     *           choices carries no presence of its own, so clearing it has to be asked for
+     *     @type string $country
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $constraints
+     *     @type bool $unset_constraints
+     *           constraints carries no presence of its own, so clearing it has to be asked for
+     * }
+     */
+    public function __construct($data = NULL) {
+        \GPBMetadata\Eolymp\Community\Attribute::initOnce();
+        parent::__construct($data);
     }
 
-
-    public static function value($name)
+    /**
+     * Generated from protobuf field <code>optional string label = 2;</code>
+     * @return string
+     */
+    public function getLabel()
     {
-        $const = __CLASS__ . '::' . strtoupper($name);
-        if (!defined($const)) {
-            throw new UnexpectedValueException(sprintf(
-                    'Enum %s has no value defined for name %s', __CLASS__, $name));
-        }
-        return constant($const);
+        return isset($this->label) ? $this->label : '';
     }
+
+    public function hasLabel()
+    {
+        return isset($this->label);
+    }
+
+    public function clearLabel()
+    {
+        unset($this->label);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string label = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string help = 3;</code>
+     * @return string
+     */
+    public function getHelp()
+    {
+        return isset($this->help) ? $this->help : '';
+    }
+
+    public function hasHelp()
+    {
+        return isset($this->help);
+    }
+
+    public function clearHelp()
+    {
+        unset($this->help);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string help = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setHelp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->help = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.community.Attribute.Type type = 20;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return isset($this->type) ? $this->type : 0;
+    }
+
+    public function hasType()
+    {
+        return isset($this->type);
+    }
+
+    public function clearType()
+    {
+        unset($this->type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.community.Attribute.Type type = 20;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute\Type::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 index = 21;</code>
+     * @return int
+     */
+    public function getIndex()
+    {
+        return isset($this->index) ? $this->index : 0;
+    }
+
+    public function hasIndex()
+    {
+        return isset($this->index);
+    }
+
+    public function clearIndex()
+    {
+        unset($this->index);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 index = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setIndex($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->index = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool required = 31;</code>
+     * @return bool
+     */
+    public function getRequired()
+    {
+        return isset($this->required) ? $this->required : false;
+    }
+
+    public function hasRequired()
+    {
+        return isset($this->required);
+    }
+
+    public function clearRequired()
+    {
+        unset($this->required);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool required = 31;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequired($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->required = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool readonly = 33;</code>
+     * @return bool
+     */
+    public function getReadonly()
+    {
+        return isset($this->readonly) ? $this->readonly : false;
+    }
+
+    public function hasReadonly()
+    {
+        return isset($this->readonly);
+    }
+
+    public function clearReadonly()
+    {
+        unset($this->readonly);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool readonly = 33;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReadonly($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->readonly = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.community.Attribute.Visibility visibility = 34;</code>
+     * @return int
+     */
+    public function getVisibility()
+    {
+        return isset($this->visibility) ? $this->visibility : 0;
+    }
+
+    public function hasVisibility()
+    {
+        return isset($this->visibility);
+    }
+
+    public function clearVisibility()
+    {
+        unset($this->visibility);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.community.Attribute.Visibility visibility = 34;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVisibility($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Community\Attribute\Visibility::class);
+        $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string regexp = 100;</code>
+     * @return string
+     */
+    public function getRegexp()
+    {
+        return isset($this->regexp) ? $this->regexp : '';
+    }
+
+    public function hasRegexp()
+    {
+        return isset($this->regexp);
+    }
+
+    public function clearRegexp()
+    {
+        unset($this->regexp);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string regexp = 100;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRegexp($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->regexp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 min = 101;</code>
+     * @return int
+     */
+    public function getMin()
+    {
+        return isset($this->min) ? $this->min : 0;
+    }
+
+    public function hasMin()
+    {
+        return isset($this->min);
+    }
+
+    public function clearMin()
+    {
+        unset($this->min);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 min = 101;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMin($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->min = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 max = 102;</code>
+     * @return int
+     */
+    public function getMax()
+    {
+        return isset($this->max) ? $this->max : 0;
+    }
+
+    public function hasMax()
+    {
+        return isset($this->max);
+    }
+
+    public function clearMax()
+    {
+        unset($this->max);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 max = 102;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMax($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->max = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string choices = 103;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChoices()
+    {
+        return $this->choices;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string choices = 103;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setChoices($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->choices = $arr;
+
+        return $this;
+    }
+
+    /**
+     * choices carries no presence of its own, so clearing it has to be asked for
+     *
+     * Generated from protobuf field <code>optional bool unset_choices = 106;</code>
+     * @return bool
+     */
+    public function getUnsetChoices()
+    {
+        return isset($this->unset_choices) ? $this->unset_choices : false;
+    }
+
+    public function hasUnsetChoices()
+    {
+        return isset($this->unset_choices);
+    }
+
+    public function clearUnsetChoices()
+    {
+        unset($this->unset_choices);
+    }
+
+    /**
+     * choices carries no presence of its own, so clearing it has to be asked for
+     *
+     * Generated from protobuf field <code>optional bool unset_choices = 106;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetChoices($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_choices = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string country = 104;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return isset($this->country) ? $this->country : '';
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string country = 104;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string constraints = 105;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getConstraints()
+    {
+        return $this->constraints;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string constraints = 105;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setConstraints($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->constraints = $arr;
+
+        return $this;
+    }
+
+    /**
+     * constraints carries no presence of its own, so clearing it has to be asked for
+     *
+     * Generated from protobuf field <code>optional bool unset_constraints = 107;</code>
+     * @return bool
+     */
+    public function getUnsetConstraints()
+    {
+        return isset($this->unset_constraints) ? $this->unset_constraints : false;
+    }
+
+    public function hasUnsetConstraints()
+    {
+        return isset($this->unset_constraints);
+    }
+
+    public function clearUnsetConstraints()
+    {
+        unset($this->unset_constraints);
+    }
+
+    /**
+     * constraints carries no presence of its own, so clearing it has to be asked for
+     *
+     * Generated from protobuf field <code>optional bool unset_constraints = 107;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetConstraints($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_constraints = $var;
+
+        return $this;
+    }
+
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
