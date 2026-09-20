@@ -13,6 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>repeated string redirect_uri = 4;</code>
+     */
+    private $redirect_uri;
 
     /**
      * Constructor.
@@ -20,11 +28,67 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $redirect_uri
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Auth\Client::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string redirect_uri = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRedirectUri()
+    {
+        return $this->redirect_uri;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string redirect_uri = 4;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRedirectUri($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->redirect_uri = $arr;
+
+        return $this;
     }
 
 }

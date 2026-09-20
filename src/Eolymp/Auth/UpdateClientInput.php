@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateClientInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.auth.Client.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string client_id = 2;</code>
      */
     protected $client_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.auth.Client client = 3;</code>
+     * Generated from protobuf field <code>.eolymp.auth.Client.Patch client = 4;</code>
      */
     protected $client = null;
 
@@ -32,36 +28,13 @@ class UpdateClientInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $client_id
-     *     @type \Eolymp\Auth\Client $client
+     *     @type \Eolymp\Auth\Client\Patch $client
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Auth\ClientService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.auth.Client.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.auth.Client.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Auth\Client\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateClientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.Client client = 3;</code>
-     * @return \Eolymp\Auth\Client|null
+     * Generated from protobuf field <code>.eolymp.auth.Client.Patch client = 4;</code>
+     * @return \Eolymp\Auth\Client\Patch|null
      */
     public function getClient()
     {
@@ -106,13 +79,13 @@ class UpdateClientInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.auth.Client client = 3;</code>
-     * @param \Eolymp\Auth\Client $var
+     * Generated from protobuf field <code>.eolymp.auth.Client.Patch client = 4;</code>
+     * @param \Eolymp\Auth\Client\Patch $var
      * @return $this
      */
     public function setClient($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Auth\Client::class);
+        GPBUtil::checkMessage($var, \Eolymp\Auth\Client\Patch::class);
         $this->client = $var;
 
         return $this;
