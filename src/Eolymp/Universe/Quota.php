@@ -62,6 +62,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      */
     protected $printers_per_space = 0;
     /**
+     * max number of notification channels (0 - notifications are disabled)
+     *
+     * Generated from protobuf field <code>uint32 notification_channels_per_space = 33;</code>
+     */
+    protected $notification_channels_per_space = 0;
+    /**
      * submission evaluation quota and features
      *
      * Generated from protobuf field <code>uint32 evaluations_by_seat_per_month = 13;</code>
@@ -258,6 +264,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           max number of achievements
      *     @type int $printers_per_space
      *           max number of printers (0 - printers are disabled)
+     *     @type int $notification_channels_per_space
+     *           max number of notification channels (0 - notifications are disabled)
      *     @type int $evaluations_by_seat_per_month
      *           submission evaluation quota and features
      *     @type bool $plagiarism_analysis
@@ -523,6 +531,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->printers_per_space = $var;
+
+        return $this;
+    }
+
+    /**
+     * max number of notification channels (0 - notifications are disabled)
+     *
+     * Generated from protobuf field <code>uint32 notification_channels_per_space = 33;</code>
+     * @return int
+     */
+    public function getNotificationChannelsPerSpace()
+    {
+        return $this->notification_channels_per_space;
+    }
+
+    /**
+     * max number of notification channels (0 - notifications are disabled)
+     *
+     * Generated from protobuf field <code>uint32 notification_channels_per_space = 33;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setNotificationChannelsPerSpace($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->notification_channels_per_space = $var;
 
         return $this;
     }

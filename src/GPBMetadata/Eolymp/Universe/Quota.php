@@ -16,9 +16,9 @@ class Quota
         }
         $pool->internalAddGeneratedFile(
             '
-Ú
+ƒ
+eolymp/universe/quota.protoeolymp.universe"•
 
-eolymp/universe/quota.protoeolymp.universe"ì	
 Quota
 permissions_per_space (
 single_sing_on (
@@ -27,7 +27,8 @@ class Quota
 allow_discussions (
 	audit_log  (
 achievements_per_space (
-printers_per_space (%
+printers_per_space (\'
+notification_channels_per_space! (%
 evaluations_by_seat_per_month (
 plagiarism_analysis (#
 submission_evaluation_limit (
