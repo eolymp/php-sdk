@@ -14,15 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateRuleInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.automation.Rule.Patch.Field patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string rule_id = 2;</code>
      */
     protected $rule_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.automation.Rule rule = 3;</code>
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Patch rule = 4;</code>
      */
     protected $rule = null;
 
@@ -32,36 +28,13 @@ class UpdateRuleInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $rule_id
-     *     @type \Eolymp\Automation\Rule $rule
+     *     @type \Eolymp\Automation\Rule\Patch $rule
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Automation\RuleService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.automation.Rule.Patch.Field patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.automation.Rule.Patch.Field patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Automation\Rule\Patch\Field::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -87,8 +60,8 @@ class UpdateRuleInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.automation.Rule rule = 3;</code>
-     * @return \Eolymp\Automation\Rule|null
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Patch rule = 4;</code>
+     * @return \Eolymp\Automation\Rule\Patch|null
      */
     public function getRule()
     {
@@ -106,13 +79,13 @@ class UpdateRuleInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.automation.Rule rule = 3;</code>
-     * @param \Eolymp\Automation\Rule $var
+     * Generated from protobuf field <code>.eolymp.automation.Rule.Patch rule = 4;</code>
+     * @param \Eolymp\Automation\Rule\Patch $var
      * @return $this
      */
     public function setRule($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Automation\Rule::class);
+        GPBUtil::checkMessage($var, \Eolymp\Automation\Rule\Patch::class);
         $this->rule = $var;
 
         return $this;

@@ -13,6 +13,44 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Patch extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     */
+    protected $name = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.automation.Rule.Trigger trigger = 3;</code>
+     */
+    protected $trigger = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.automation.Condition conditions = 4;</code>
+     */
+    private $conditions;
+    /**
+     * clears the conditions, so the rule runs on every trigger
+     *
+     * Generated from protobuf field <code>optional bool uncondition = 7;</code>
+     */
+    protected $uncondition = null;
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 5;</code>
+     */
+    protected $inactive = null;
+    /**
+     * Generated from protobuf field <code>optional bool dry_run = 6;</code>
+     */
+    protected $dry_run = null;
+    /**
+     * Generated from protobuf field <code>optional string label = 9;</code>
+     */
+    protected $label = null;
+    /**
+     * Generated from protobuf field <code>optional .eolymp.automation.Rule.Schedule schedule = 10;</code>
+     */
+    protected $schedule = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.automation.Action actions = 100;</code>
+     */
+    private $actions;
 
     /**
      * Constructor.
@@ -20,11 +58,293 @@ class Patch extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $name
+     *     @type int $trigger
+     *     @type array<\Eolymp\Automation\Condition>|\Google\Protobuf\Internal\RepeatedField $conditions
+     *     @type bool $uncondition
+     *           clears the conditions, so the rule runs on every trigger
+     *     @type bool $inactive
+     *     @type bool $dry_run
+     *     @type string $label
+     *     @type int $schedule
+     *     @type array<\Eolymp\Automation\Action>|\Google\Protobuf\Internal\RepeatedField $actions
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Automation\Rule::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return isset($this->name) ? $this->name : '';
+    }
+
+    public function hasName()
+    {
+        return isset($this->name);
+    }
+
+    public function clearName()
+    {
+        unset($this->name);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string name = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.automation.Rule.Trigger trigger = 3;</code>
+     * @return int
+     */
+    public function getTrigger()
+    {
+        return isset($this->trigger) ? $this->trigger : 0;
+    }
+
+    public function hasTrigger()
+    {
+        return isset($this->trigger);
+    }
+
+    public function clearTrigger()
+    {
+        unset($this->trigger);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.automation.Rule.Trigger trigger = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTrigger($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Automation\Rule\Trigger::class);
+        $this->trigger = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.automation.Condition conditions = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getConditions()
+    {
+        return $this->conditions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.automation.Condition conditions = 4;</code>
+     * @param array<\Eolymp\Automation\Condition>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setConditions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Automation\Condition::class);
+        $this->conditions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the conditions, so the rule runs on every trigger
+     *
+     * Generated from protobuf field <code>optional bool uncondition = 7;</code>
+     * @return bool
+     */
+    public function getUncondition()
+    {
+        return isset($this->uncondition) ? $this->uncondition : false;
+    }
+
+    public function hasUncondition()
+    {
+        return isset($this->uncondition);
+    }
+
+    public function clearUncondition()
+    {
+        unset($this->uncondition);
+    }
+
+    /**
+     * clears the conditions, so the rule runs on every trigger
+     *
+     * Generated from protobuf field <code>optional bool uncondition = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUncondition($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->uncondition = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 5;</code>
+     * @return bool
+     */
+    public function getInactive()
+    {
+        return isset($this->inactive) ? $this->inactive : false;
+    }
+
+    public function hasInactive()
+    {
+        return isset($this->inactive);
+    }
+
+    public function clearInactive()
+    {
+        unset($this->inactive);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool inactive = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInactive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->inactive = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool dry_run = 6;</code>
+     * @return bool
+     */
+    public function getDryRun()
+    {
+        return isset($this->dry_run) ? $this->dry_run : false;
+    }
+
+    public function hasDryRun()
+    {
+        return isset($this->dry_run);
+    }
+
+    public function clearDryRun()
+    {
+        unset($this->dry_run);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool dry_run = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDryRun($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->dry_run = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string label = 9;</code>
+     * @return string
+     */
+    public function getLabel()
+    {
+        return isset($this->label) ? $this->label : '';
+    }
+
+    public function hasLabel()
+    {
+        return isset($this->label);
+    }
+
+    public function clearLabel()
+    {
+        unset($this->label);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string label = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->label = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.automation.Rule.Schedule schedule = 10;</code>
+     * @return int
+     */
+    public function getSchedule()
+    {
+        return isset($this->schedule) ? $this->schedule : 0;
+    }
+
+    public function hasSchedule()
+    {
+        return isset($this->schedule);
+    }
+
+    public function clearSchedule()
+    {
+        unset($this->schedule);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.automation.Rule.Schedule schedule = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSchedule($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Automation\Rule\Schedule::class);
+        $this->schedule = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.automation.Action actions = 100;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getActions()
+    {
+        return $this->actions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.automation.Action actions = 100;</code>
+     * @param array<\Eolymp\Automation\Action>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setActions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Automation\Action::class);
+        $this->actions = $arr;
+
+        return $this;
     }
 
 }
