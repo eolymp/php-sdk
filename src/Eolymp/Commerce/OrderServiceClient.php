@@ -45,6 +45,25 @@ class OrderServiceClient {
     }
 
     /**
+     * @param PayOrderInput $input message
+     * @param array $context request parameters
+     *
+     * @return PayOrderOutput output message
+     */
+    public function PayOrder(PayOrderInput $input, array $context = [])
+    {
+        $path = "/store/orders/".rawurlencode($input->getOrderId())."/pay";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setOrderId("");
+
+        $context['name'] = "eolymp.commerce.OrderService/PayOrder";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, PayOrderOutput::class, $context);
+    }
+
+    /**
      * @param DescribeOrderInput $input message
      * @param array $context request parameters
      *

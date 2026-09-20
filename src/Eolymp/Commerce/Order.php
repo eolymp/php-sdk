@@ -103,10 +103,6 @@ class Order extends \Google\Protobuf\Internal\Message
      */
     protected $payment_status = 0;
     /**
-     * Generated from protobuf field <code>string checkout_url = 64;</code>
-     */
-    protected $checkout_url = '';
-    /**
      * Generated from protobuf field <code>string payment_id = 65;</code>
      */
     protected $payment_id = '';
@@ -155,7 +151,6 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type int $credit_discount
      *     @type int $payable_amount
      *     @type int $payment_status
-     *     @type string $checkout_url
      *     @type string $payment_id
      *     @type string $tracking_link
      *     @type string $tracking_number
@@ -660,28 +655,6 @@ class Order extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Commerce\Order\Payment\Status::class);
         $this->payment_status = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checkout_url = 64;</code>
-     * @return string
-     */
-    public function getCheckoutUrl()
-    {
-        return $this->checkout_url;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checkout_url = 64;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCheckoutUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->checkout_url = $var;
 
         return $this;
     }
