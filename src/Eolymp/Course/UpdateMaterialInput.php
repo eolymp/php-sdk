@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateMaterialInput.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string course_id = 4;</code>
      */
     protected $course_id = '';
@@ -28,7 +22,7 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
      */
     protected $material_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.course.Material material = 3;</code>
+     * Generated from protobuf field <code>.eolymp.course.Material.Patch material = 5;</code>
      */
     protected $material = null;
 
@@ -38,42 +32,14 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           specify list of fields to update, if empty all fields are updated
      *     @type string $course_id
      *     @type string $material_id
-     *     @type \Eolymp\Course\Material $material
+     *     @type \Eolymp\Course\Material\Patch $material
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\MaterialService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateMaterialInput.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateMaterialInput.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\UpdateMaterialInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -121,8 +87,8 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Material material = 3;</code>
-     * @return \Eolymp\Course\Material|null
+     * Generated from protobuf field <code>.eolymp.course.Material.Patch material = 5;</code>
+     * @return \Eolymp\Course\Material\Patch|null
      */
     public function getMaterial()
     {
@@ -140,13 +106,13 @@ class UpdateMaterialInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Material material = 3;</code>
-     * @param \Eolymp\Course\Material $var
+     * Generated from protobuf field <code>.eolymp.course.Material.Patch material = 5;</code>
+     * @param \Eolymp\Course\Material\Patch $var
      * @return $this
      */
     public function setMaterial($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Course\Material::class);
+        GPBUtil::checkMessage($var, \Eolymp\Course\Material\Patch::class);
         $this->material = $var;
 
         return $this;

@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateClassInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateClassInput.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string course_id = 4;</code>
      */
     protected $course_id = '';
@@ -25,10 +21,6 @@ class UpdateClassInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string group_id = 2;</code>
      */
     protected $group_id = '';
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Class class = 3;</code>
-     */
-    protected $class = null;
 
     /**
      * Constructor.
@@ -36,37 +28,13 @@ class UpdateClassInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
      *     @type string $course_id
      *     @type string $group_id
-     *     @type \Eolymp\Course\PBClass $class
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\ClassService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateClassInput.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateClassInput.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\UpdateClassInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -109,38 +77,6 @@ class UpdateClassInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->group_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Class class = 3;</code>
-     * @return \Eolymp\Course\PBClass|null
-     */
-    public function getClass()
-    {
-        return $this->class;
-    }
-
-    public function hasClass()
-    {
-        return isset($this->class);
-    }
-
-    public function clearClass()
-    {
-        unset($this->class);
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.course.Class class = 3;</code>
-     * @param \Eolymp\Course\PBClass $var
-     * @return $this
-     */
-    public function setClass($var)
-    {
-        GPBUtil::checkMessage($var, \Eolymp\Course\PBClass::class);
-        $this->class = $var;
 
         return $this;
     }

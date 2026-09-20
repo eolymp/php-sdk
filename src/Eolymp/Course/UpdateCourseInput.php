@@ -14,17 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateCourseInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateCourseInput.Patch patch = 1;</code>
-     */
-    private $patch;
-    /**
      * Generated from protobuf field <code>string course_id = 2;</code>
      */
     protected $course_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.course.Course course = 3;</code>
+     * Generated from protobuf field <code>.eolymp.course.Course.Patch course = 4;</code>
      */
     protected $course = null;
 
@@ -34,41 +28,13 @@ class UpdateCourseInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $patch
-     *           specify list of fields to update, if empty all fields are updated
      *     @type string $course_id
-     *     @type \Eolymp\Course\Course $course
+     *     @type \Eolymp\Course\Course\Patch $course
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Course\CourseService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateCourseInput.Patch patch = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getPatch()
-    {
-        return $this->patch;
-    }
-
-    /**
-     * specify list of fields to update, if empty all fields are updated
-     *
-     * Generated from protobuf field <code>repeated .eolymp.course.UpdateCourseInput.Patch patch = 1;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setPatch($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Course\UpdateCourseInput\Patch::class);
-        $this->patch = $arr;
-
-        return $this;
     }
 
     /**
@@ -94,8 +60,8 @@ class UpdateCourseInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Course course = 3;</code>
-     * @return \Eolymp\Course\Course|null
+     * Generated from protobuf field <code>.eolymp.course.Course.Patch course = 4;</code>
+     * @return \Eolymp\Course\Course\Patch|null
      */
     public function getCourse()
     {
@@ -113,13 +79,13 @@ class UpdateCourseInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.course.Course course = 3;</code>
-     * @param \Eolymp\Course\Course $var
+     * Generated from protobuf field <code>.eolymp.course.Course.Patch course = 4;</code>
+     * @param \Eolymp\Course\Course\Patch $var
      * @return $this
      */
     public function setCourse($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Course\Course::class);
+        GPBUtil::checkMessage($var, \Eolymp\Course\Course\Patch::class);
         $this->course = $var;
 
         return $this;
