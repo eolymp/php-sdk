@@ -36,9 +36,25 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $console_link = '';
     /**
+     * derived: the parent's path plus this fragment's slug; eolymp.judge still authors it
+     *
      * Generated from protobuf field <code>string path = 10;</code>
      */
     protected $path = '';
+    /**
+     * Generated from protobuf field <code>string parent_id = 17 [(.eolymp.api.mcp_field_desc) = "id of the fragment this one sits under, empty when it sits at the root"];</code>
+     */
+    protected $parent_id = '';
+    /**
+     * Generated from protobuf field <code>string slug = 18 [(.eolymp.api.mcp_field_desc) = "this fragment\'s own path segment, \"scoring\" in /rules/scoring; lowercase letters, digits, \"-\", \"_\" and \".\""];</code>
+     */
+    protected $slug = '';
+    /**
+     * order among the fragments sharing a parent
+     *
+     * Generated from protobuf field <code>int32 position = 19;</code>
+     */
+    protected $position = 0;
     /**
      * locale of the translation being read, empty when reading the fragment itself
      *
@@ -104,6 +120,11 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type string $console_link
      *           page in the console
      *     @type string $path
+     *           derived: the parent's path plus this fragment's slug; eolymp.judge still authors it
+     *     @type string $parent_id
+     *     @type string $slug
+     *     @type int $position
+     *           order among the fragments sharing a parent
      *     @type string $locale
      *           locale of the translation being read, empty when reading the fragment itself
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
@@ -227,6 +248,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * derived: the parent's path plus this fragment's slug; eolymp.judge still authors it
+     *
      * Generated from protobuf field <code>string path = 10;</code>
      * @return string
      */
@@ -236,6 +259,8 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * derived: the parent's path plus this fragment's slug; eolymp.judge still authors it
+     *
      * Generated from protobuf field <code>string path = 10;</code>
      * @param string $var
      * @return $this
@@ -244,6 +269,76 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->path = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string parent_id = 17 [(.eolymp.api.mcp_field_desc) = "id of the fragment this one sits under, empty when it sits at the root"];</code>
+     * @return string
+     */
+    public function getParentId()
+    {
+        return $this->parent_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string parent_id = 17 [(.eolymp.api.mcp_field_desc) = "id of the fragment this one sits under, empty when it sits at the root"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->parent_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string slug = 18 [(.eolymp.api.mcp_field_desc) = "this fragment\'s own path segment, \"scoring\" in /rules/scoring; lowercase letters, digits, \"-\", \"_\" and \".\""];</code>
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Generated from protobuf field <code>string slug = 18 [(.eolymp.api.mcp_field_desc) = "this fragment\'s own path segment, \"scoring\" in /rules/scoring; lowercase letters, digits, \"-\", \"_\" and \".\""];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSlug($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->slug = $var;
+
+        return $this;
+    }
+
+    /**
+     * order among the fragments sharing a parent
+     *
+     * Generated from protobuf field <code>int32 position = 19;</code>
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * order among the fragments sharing a parent
+     *
+     * Generated from protobuf field <code>int32 position = 19;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPosition($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->position = $var;
 
         return $this;
     }

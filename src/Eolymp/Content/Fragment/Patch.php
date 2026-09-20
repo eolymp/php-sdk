@@ -14,9 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class Patch extends \Google\Protobuf\Internal\Message
 {
     /**
+     * set parent_id and slug instead, the path is derived from them
+     *
      * Generated from protobuf field <code>optional string path = 10;</code>
      */
     protected $path = null;
+    /**
+     * Generated from protobuf field <code>optional string parent_id = 17;</code>
+     */
+    protected $parent_id = null;
+    /**
+     * Generated from protobuf field <code>optional string slug = 18;</code>
+     */
+    protected $slug = null;
+    /**
+     * Generated from protobuf field <code>optional int32 position = 19;</code>
+     */
+    protected $position = null;
     /**
      * Generated from protobuf field <code>optional bool draft = 13;</code>
      */
@@ -55,6 +69,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $path
+     *           set parent_id and slug instead, the path is derived from them
+     *     @type string $parent_id
+     *     @type string $slug
+     *     @type int $position
      *     @type bool $draft
      *     @type bool $automatic
      *     @type string $title
@@ -71,6 +89,8 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * set parent_id and slug instead, the path is derived from them
+     *
      * Generated from protobuf field <code>optional string path = 10;</code>
      * @return string
      */
@@ -90,6 +110,8 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * set parent_id and slug instead, the path is derived from them
+     *
      * Generated from protobuf field <code>optional string path = 10;</code>
      * @param string $var
      * @return $this
@@ -98,6 +120,102 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->path = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string parent_id = 17;</code>
+     * @return string
+     */
+    public function getParentId()
+    {
+        return isset($this->parent_id) ? $this->parent_id : '';
+    }
+
+    public function hasParentId()
+    {
+        return isset($this->parent_id);
+    }
+
+    public function clearParentId()
+    {
+        unset($this->parent_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string parent_id = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParentId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->parent_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string slug = 18;</code>
+     * @return string
+     */
+    public function getSlug()
+    {
+        return isset($this->slug) ? $this->slug : '';
+    }
+
+    public function hasSlug()
+    {
+        return isset($this->slug);
+    }
+
+    public function clearSlug()
+    {
+        unset($this->slug);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string slug = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSlug($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->slug = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 position = 19;</code>
+     * @return int
+     */
+    public function getPosition()
+    {
+        return isset($this->position) ? $this->position : 0;
+    }
+
+    public function hasPosition()
+    {
+        return isset($this->position);
+    }
+
+    public function clearPosition()
+    {
+        unset($this->position);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 position = 19;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPosition($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->position = $var;
 
         return $this;
     }

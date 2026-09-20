@@ -23,11 +23,16 @@ class Sort
      * Generated from protobuf enum <code>CREATED_AT = 2;</code>
      */
     const CREATED_AT = 2;
+    /**
+     * Generated from protobuf enum <code>POSITION = 3;</code>
+     */
+    const POSITION = 3;
 
     private static $valueToName = [
         self::PBDEFAULT => 'DEFAULT',
         self::PATH => 'PATH',
         self::CREATED_AT => 'CREATED_AT',
+        self::POSITION => 'POSITION',
     ];
 
     public static function name($value)

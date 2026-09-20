@@ -23,6 +23,12 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string locale = 2;</code>
      */
     protected $locale = '';
+    /**
+     * delete the fragments nested under this one, without which deleting one fails
+     *
+     * Generated from protobuf field <code>bool recursive = 3;</code>
+     */
+    protected $recursive = false;
 
     /**
      * Constructor.
@@ -33,6 +39,8 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
      *     @type string $fragment_id
      *     @type string $locale
      *           delete the fragment when empty, delete only its translation when set
+     *     @type bool $recursive
+     *           delete the fragments nested under this one, without which deleting one fails
      * }
      */
     public function __construct($data = NULL) {
@@ -84,6 +92,32 @@ class DeleteFragmentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * delete the fragments nested under this one, without which deleting one fails
+     *
+     * Generated from protobuf field <code>bool recursive = 3;</code>
+     * @return bool
+     */
+    public function getRecursive()
+    {
+        return $this->recursive;
+    }
+
+    /**
+     * delete the fragments nested under this one, without which deleting one fails
+     *
+     * Generated from protobuf field <code>bool recursive = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRecursive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->recursive = $var;
 
         return $this;
     }
