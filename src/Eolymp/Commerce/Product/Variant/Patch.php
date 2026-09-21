@@ -28,9 +28,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the images, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * Generated from protobuf field <code>optional bool unset_images = 11;</code>
      */
-    protected $unimage = null;
+    protected $unset_images = null;
     /**
      * Generated from protobuf field <code>optional int32 available_quantity = 33;</code>
      */
@@ -45,7 +45,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
-     *     @type bool $unimage
+     *     @type bool $unset_images
      *           clears the images, which an empty list cannot express
      *     @type int $available_quantity
      * }
@@ -134,35 +134,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the images, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * Generated from protobuf field <code>optional bool unset_images = 11;</code>
      * @return bool
      */
-    public function getUnimage()
+    public function getUnsetImages()
     {
-        return isset($this->unimage) ? $this->unimage : false;
+        return isset($this->unset_images) ? $this->unset_images : false;
     }
 
-    public function hasUnimage()
+    public function hasUnsetImages()
     {
-        return isset($this->unimage);
+        return isset($this->unset_images);
     }
 
-    public function clearUnimage()
+    public function clearUnsetImages()
     {
-        unset($this->unimage);
+        unset($this->unset_images);
     }
 
     /**
      * clears the images, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unimage = 11;</code>
+     * Generated from protobuf field <code>optional bool unset_images = 11;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnimage($var)
+    public function setUnsetImages($var)
     {
         GPBUtil::checkBool($var);
-        $this->unimage = $var;
+        $this->unset_images = $var;
 
         return $this;
     }

@@ -30,9 +30,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the subscriptions, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unsubscribe = 23;</code>
+     * Generated from protobuf field <code>optional bool unset_email_subscriptions = 23;</code>
      */
-    protected $unsubscribe = null;
+    protected $unset_email_subscriptions = null;
     /**
      * Generated from protobuf field <code>optional string password = 30;</code>
      */
@@ -71,7 +71,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $nickname
      *     @type string $email
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $email_subscriptions
-     *     @type bool $unsubscribe
+     *     @type bool $unset_email_subscriptions
      *           clears the subscriptions, which an empty list cannot express
      *     @type string $password
      *     @type string $name
@@ -176,35 +176,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the subscriptions, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unsubscribe = 23;</code>
+     * Generated from protobuf field <code>optional bool unset_email_subscriptions = 23;</code>
      * @return bool
      */
-    public function getUnsubscribe()
+    public function getUnsetEmailSubscriptions()
     {
-        return isset($this->unsubscribe) ? $this->unsubscribe : false;
+        return isset($this->unset_email_subscriptions) ? $this->unset_email_subscriptions : false;
     }
 
-    public function hasUnsubscribe()
+    public function hasUnsetEmailSubscriptions()
     {
-        return isset($this->unsubscribe);
+        return isset($this->unset_email_subscriptions);
     }
 
-    public function clearUnsubscribe()
+    public function clearUnsetEmailSubscriptions()
     {
-        unset($this->unsubscribe);
+        unset($this->unset_email_subscriptions);
     }
 
     /**
      * clears the subscriptions, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unsubscribe = 23;</code>
+     * Generated from protobuf field <code>optional bool unset_email_subscriptions = 23;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnsubscribe($var)
+    public function setUnsetEmailSubscriptions($var)
     {
         GPBUtil::checkBool($var);
-        $this->unsubscribe = $var;
+        $this->unset_email_subscriptions = $var;
 
         return $this;
     }

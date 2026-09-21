@@ -16,26 +16,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class Patch extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Exactly one of the three may be carried: subscriptions replaces the list, add_subscriptions and
-     * remove_subscriptions change it in place, and unsubscribe empties it. Carrying more than one is rejected.
+     * These combine, and are applied in the order they are written here: subscriptions replaces the list,
+     * unset_subscriptions empties it, then remove_subscriptions and add_subscriptions adjust whatever is left.
      *
      * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscriptions = 10;</code>
      */
     private $subscriptions;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription add_subscriptions = 11;</code>
+     * clears the subscriptions, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_subscriptions = 13;</code>
      */
-    private $add_subscriptions;
+    protected $unset_subscriptions = null;
     /**
      * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription remove_subscriptions = 12;</code>
      */
     private $remove_subscriptions;
     /**
-     * clears the subscriptions, which an empty list cannot express
-     *
-     * Generated from protobuf field <code>optional bool unsubscribe = 13;</code>
+     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription add_subscriptions = 11;</code>
      */
-    protected $unsubscribe = null;
+    private $add_subscriptions;
 
     /**
      * Constructor.
@@ -44,12 +44,12 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $subscriptions
-     *           Exactly one of the three may be carried: subscriptions replaces the list, add_subscriptions and
-     *           remove_subscriptions change it in place, and unsubscribe empties it. Carrying more than one is rejected.
-     *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $add_subscriptions
-     *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $remove_subscriptions
-     *     @type bool $unsubscribe
+     *           These combine, and are applied in the order they are written here: subscriptions replaces the list,
+     *           unset_subscriptions empties it, then remove_subscriptions and add_subscriptions adjust whatever is left.
+     *     @type bool $unset_subscriptions
      *           clears the subscriptions, which an empty list cannot express
+     *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $remove_subscriptions
+     *     @type array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $add_subscriptions
      * }
      */
     public function __construct($data = NULL) {
@@ -58,8 +58,8 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exactly one of the three may be carried: subscriptions replaces the list, add_subscriptions and
-     * remove_subscriptions change it in place, and unsubscribe empties it. Carrying more than one is rejected.
+     * These combine, and are applied in the order they are written here: subscriptions replaces the list,
+     * unset_subscriptions empties it, then remove_subscriptions and add_subscriptions adjust whatever is left.
      *
      * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscriptions = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -70,8 +70,8 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exactly one of the three may be carried: subscriptions replaces the list, add_subscriptions and
-     * remove_subscriptions change it in place, and unsubscribe empties it. Carrying more than one is rejected.
+     * These combine, and are applied in the order they are written here: subscriptions replaces the list,
+     * unset_subscriptions empties it, then remove_subscriptions and add_subscriptions adjust whatever is left.
      *
      * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription subscriptions = 10;</code>
      * @param array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $var
@@ -86,23 +86,37 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription add_subscriptions = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * clears the subscriptions, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_subscriptions = 13;</code>
+     * @return bool
      */
-    public function getAddSubscriptions()
+    public function getUnsetSubscriptions()
     {
-        return $this->add_subscriptions;
+        return isset($this->unset_subscriptions) ? $this->unset_subscriptions : false;
+    }
+
+    public function hasUnsetSubscriptions()
+    {
+        return isset($this->unset_subscriptions);
+    }
+
+    public function clearUnsetSubscriptions()
+    {
+        unset($this->unset_subscriptions);
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription add_subscriptions = 11;</code>
-     * @param array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $var
+     * clears the subscriptions, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_subscriptions = 13;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setAddSubscriptions($var)
+    public function setUnsetSubscriptions($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Notify\Preferences\Subscription::class);
-        $this->add_subscriptions = $arr;
+        GPBUtil::checkBool($var);
+        $this->unset_subscriptions = $var;
 
         return $this;
     }
@@ -130,37 +144,23 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * clears the subscriptions, which an empty list cannot express
-     *
-     * Generated from protobuf field <code>optional bool unsubscribe = 13;</code>
-     * @return bool
+     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription add_subscriptions = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getUnsubscribe()
+    public function getAddSubscriptions()
     {
-        return isset($this->unsubscribe) ? $this->unsubscribe : false;
-    }
-
-    public function hasUnsubscribe()
-    {
-        return isset($this->unsubscribe);
-    }
-
-    public function clearUnsubscribe()
-    {
-        unset($this->unsubscribe);
+        return $this->add_subscriptions;
     }
 
     /**
-     * clears the subscriptions, which an empty list cannot express
-     *
-     * Generated from protobuf field <code>optional bool unsubscribe = 13;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>repeated .eolymp.notify.Preferences.Subscription add_subscriptions = 11;</code>
+     * @param array<\Eolymp\Notify\Preferences\Subscription>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setUnsubscribe($var)
+    public function setAddSubscriptions($var)
     {
-        GPBUtil::checkBool($var);
-        $this->unsubscribe = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Notify\Preferences\Subscription::class);
+        $this->add_subscriptions = $arr;
 
         return $this;
     }

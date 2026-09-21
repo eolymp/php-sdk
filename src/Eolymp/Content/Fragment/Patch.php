@@ -58,9 +58,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the labels, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unlabel = 101;</code>
+     * Generated from protobuf field <code>optional bool unset_labels = 101;</code>
      */
-    protected $unlabel = null;
+    protected $unset_labels = null;
 
     /**
      * Constructor.
@@ -79,7 +79,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type int $visibility
      *     @type \Eolymp\Ecm\Content $content
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
-     *     @type bool $unlabel
+     *     @type bool $unset_labels
      *           clears the labels, which an empty list cannot express
      * }
      */
@@ -405,35 +405,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the labels, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unlabel = 101;</code>
+     * Generated from protobuf field <code>optional bool unset_labels = 101;</code>
      * @return bool
      */
-    public function getUnlabel()
+    public function getUnsetLabels()
     {
-        return isset($this->unlabel) ? $this->unlabel : false;
+        return isset($this->unset_labels) ? $this->unset_labels : false;
     }
 
-    public function hasUnlabel()
+    public function hasUnsetLabels()
     {
-        return isset($this->unlabel);
+        return isset($this->unset_labels);
     }
 
-    public function clearUnlabel()
+    public function clearUnsetLabels()
     {
-        unset($this->unlabel);
+        unset($this->unset_labels);
     }
 
     /**
      * clears the labels, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unlabel = 101;</code>
+     * Generated from protobuf field <code>optional bool unset_labels = 101;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnlabel($var)
+    public function setUnsetLabels($var)
     {
         GPBUtil::checkBool($var);
-        $this->unlabel = $var;
+        $this->unset_labels = $var;
 
         return $this;
     }

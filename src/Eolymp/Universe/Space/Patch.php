@@ -36,9 +36,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the locales, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unlocalise = 20;</code>
+     * Generated from protobuf field <code>optional bool unset_locales = 20;</code>
      */
-    protected $unlocalise = null;
+    protected $unset_locales = null;
 
     /**
      * Constructor.
@@ -51,7 +51,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $image
      *     @type int $visibility
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
-     *     @type bool $unlocalise
+     *     @type bool $unset_locales
      *           clears the locales, which an empty list cannot express
      * }
      */
@@ -213,35 +213,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the locales, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unlocalise = 20;</code>
+     * Generated from protobuf field <code>optional bool unset_locales = 20;</code>
      * @return bool
      */
-    public function getUnlocalise()
+    public function getUnsetLocales()
     {
-        return isset($this->unlocalise) ? $this->unlocalise : false;
+        return isset($this->unset_locales) ? $this->unset_locales : false;
     }
 
-    public function hasUnlocalise()
+    public function hasUnsetLocales()
     {
-        return isset($this->unlocalise);
+        return isset($this->unset_locales);
     }
 
-    public function clearUnlocalise()
+    public function clearUnsetLocales()
     {
-        unset($this->unlocalise);
+        unset($this->unset_locales);
     }
 
     /**
      * clears the locales, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unlocalise = 20;</code>
+     * Generated from protobuf field <code>optional bool unset_locales = 20;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnlocalise($var)
+    public function setUnsetLocales($var)
     {
         GPBUtil::checkBool($var);
-        $this->unlocalise = $var;
+        $this->unset_locales = $var;
 
         return $this;
     }

@@ -28,9 +28,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the conditions, so the rule runs on every trigger
      *
-     * Generated from protobuf field <code>optional bool uncondition = 7;</code>
+     * Generated from protobuf field <code>optional bool unset_conditions = 7;</code>
      */
-    protected $uncondition = null;
+    protected $unset_conditions = null;
     /**
      * Generated from protobuf field <code>optional bool inactive = 5;</code>
      */
@@ -61,7 +61,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type int $trigger
      *     @type array<\Eolymp\Automation\Condition>|\Google\Protobuf\Internal\RepeatedField $conditions
-     *     @type bool $uncondition
+     *     @type bool $unset_conditions
      *           clears the conditions, so the rule runs on every trigger
      *     @type bool $inactive
      *     @type bool $dry_run
@@ -164,35 +164,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the conditions, so the rule runs on every trigger
      *
-     * Generated from protobuf field <code>optional bool uncondition = 7;</code>
+     * Generated from protobuf field <code>optional bool unset_conditions = 7;</code>
      * @return bool
      */
-    public function getUncondition()
+    public function getUnsetConditions()
     {
-        return isset($this->uncondition) ? $this->uncondition : false;
+        return isset($this->unset_conditions) ? $this->unset_conditions : false;
     }
 
-    public function hasUncondition()
+    public function hasUnsetConditions()
     {
-        return isset($this->uncondition);
+        return isset($this->unset_conditions);
     }
 
-    public function clearUncondition()
+    public function clearUnsetConditions()
     {
-        unset($this->uncondition);
+        unset($this->unset_conditions);
     }
 
     /**
      * clears the conditions, so the rule runs on every trigger
      *
-     * Generated from protobuf field <code>optional bool uncondition = 7;</code>
+     * Generated from protobuf field <code>optional bool unset_conditions = 7;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUncondition($var)
+    public function setUnsetConditions($var)
     {
         GPBUtil::checkBool($var);
-        $this->uncondition = $var;
+        $this->unset_conditions = $var;
 
         return $this;
     }

@@ -30,9 +30,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * scope carries no presence of its own, so clearing it has to be asked for
      *
-     * Generated from protobuf field <code>optional bool unscope = 21;</code>
+     * Generated from protobuf field <code>optional bool unset_scope = 21;</code>
      */
-    protected $unscope = null;
+    protected $unset_scope = null;
     /**
      * Generated from protobuf field <code>optional .google.protobuf.Timestamp expires_at = 11;</code>
      */
@@ -47,7 +47,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $summary
      *     @type \Eolymp\Ecm\Content $description
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $scope
-     *     @type bool $unscope
+     *     @type bool $unset_scope
      *           scope carries no presence of its own, so clearing it has to be asked for
      *     @type \Google\Protobuf\Timestamp $expires_at
      * }
@@ -146,35 +146,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * scope carries no presence of its own, so clearing it has to be asked for
      *
-     * Generated from protobuf field <code>optional bool unscope = 21;</code>
+     * Generated from protobuf field <code>optional bool unset_scope = 21;</code>
      * @return bool
      */
-    public function getUnscope()
+    public function getUnsetScope()
     {
-        return isset($this->unscope) ? $this->unscope : false;
+        return isset($this->unset_scope) ? $this->unset_scope : false;
     }
 
-    public function hasUnscope()
+    public function hasUnsetScope()
     {
-        return isset($this->unscope);
+        return isset($this->unset_scope);
     }
 
-    public function clearUnscope()
+    public function clearUnsetScope()
     {
-        unset($this->unscope);
+        unset($this->unset_scope);
     }
 
     /**
      * scope carries no presence of its own, so clearing it has to be asked for
      *
-     * Generated from protobuf field <code>optional bool unscope = 21;</code>
+     * Generated from protobuf field <code>optional bool unset_scope = 21;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnscope($var)
+    public function setUnsetScope($var)
     {
         GPBUtil::checkBool($var);
-        $this->unscope = $var;
+        $this->unset_scope = $var;
 
         return $this;
     }

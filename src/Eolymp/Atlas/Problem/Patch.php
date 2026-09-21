@@ -36,9 +36,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the topics, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool untopic = 22;</code>
+     * Generated from protobuf field <code>optional bool unset_topics = 22;</code>
      */
-    protected $untopic = null;
+    protected $unset_topics = null;
     /**
      * Generated from protobuf field <code>optional .eolymp.atlas.Problem.Type type = 23;</code>
      */
@@ -55,7 +55,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $origin
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *     @type int $difficulty
-     *     @type bool $untopic
+     *     @type bool $unset_topics
      *           clears the topics, which an empty list cannot express
      *     @type int $type
      * }
@@ -218,35 +218,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the topics, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool untopic = 22;</code>
+     * Generated from protobuf field <code>optional bool unset_topics = 22;</code>
      * @return bool
      */
-    public function getUntopic()
+    public function getUnsetTopics()
     {
-        return isset($this->untopic) ? $this->untopic : false;
+        return isset($this->unset_topics) ? $this->unset_topics : false;
     }
 
-    public function hasUntopic()
+    public function hasUnsetTopics()
     {
-        return isset($this->untopic);
+        return isset($this->unset_topics);
     }
 
-    public function clearUntopic()
+    public function clearUnsetTopics()
     {
-        unset($this->untopic);
+        unset($this->unset_topics);
     }
 
     /**
      * clears the topics, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool untopic = 22;</code>
+     * Generated from protobuf field <code>optional bool unset_topics = 22;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUntopic($var)
+    public function setUnsetTopics($var)
     {
         GPBUtil::checkBool($var);
-        $this->untopic = $var;
+        $this->unset_topics = $var;
 
         return $this;
     }

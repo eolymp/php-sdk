@@ -34,9 +34,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the event list, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unsubscribe = 11;</code>
+     * Generated from protobuf field <code>optional bool unset_events = 11;</code>
      */
-    protected $unsubscribe = null;
+    protected $unset_events = null;
 
     /**
      * Constructor.
@@ -48,7 +48,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $endpoint
      *     @type bool $inactive
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $events
-     *     @type bool $unsubscribe
+     *     @type bool $unset_events
      *           clears the event list, which an empty list cannot express
      * }
      */
@@ -178,35 +178,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the event list, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unsubscribe = 11;</code>
+     * Generated from protobuf field <code>optional bool unset_events = 11;</code>
      * @return bool
      */
-    public function getUnsubscribe()
+    public function getUnsetEvents()
     {
-        return isset($this->unsubscribe) ? $this->unsubscribe : false;
+        return isset($this->unset_events) ? $this->unset_events : false;
     }
 
-    public function hasUnsubscribe()
+    public function hasUnsetEvents()
     {
-        return isset($this->unsubscribe);
+        return isset($this->unset_events);
     }
 
-    public function clearUnsubscribe()
+    public function clearUnsetEvents()
     {
-        unset($this->unsubscribe);
+        unset($this->unset_events);
     }
 
     /**
      * clears the event list, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool unsubscribe = 11;</code>
+     * Generated from protobuf field <code>optional bool unset_events = 11;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnsubscribe($var)
+    public function setUnsetEvents($var)
     {
         GPBUtil::checkBool($var);
-        $this->unsubscribe = $var;
+        $this->unset_events = $var;
 
         return $this;
     }

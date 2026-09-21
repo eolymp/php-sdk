@@ -30,26 +30,26 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $active_period_end = null;
     /**
-     * Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
-     * change it in place, and ungroup empties it. Carrying more than one is rejected.
+     * These combine, and are applied in the order they are written here: groups replaces the list,
+     * unset_groups empties it, then remove_groups and add_groups adjust whatever is left.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      */
     private $groups;
     /**
-     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
+     * clears the groups, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_groups = 203;</code>
      */
-    private $add_groups;
+    protected $unset_groups = null;
     /**
      * Generated from protobuf field <code>repeated string remove_groups = 202;</code>
      */
     private $remove_groups;
     /**
-     * clears the groups, which an empty list cannot express
-     *
-     * Generated from protobuf field <code>optional bool ungroup = 203;</code>
+     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
      */
-    protected $ungroup = null;
+    private $add_groups;
     /**
      * Generated from protobuf field <code>repeated .eolymp.community.Attribute.Value attributes = 900;</code>
      */
@@ -67,12 +67,12 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $active_period_start
      *     @type \Google\Protobuf\Timestamp $active_period_end
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $groups
-     *           Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
-     *           change it in place, and ungroup empties it. Carrying more than one is rejected.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $add_groups
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $remove_groups
-     *     @type bool $ungroup
+     *           These combine, and are applied in the order they are written here: groups replaces the list,
+     *           unset_groups empties it, then remove_groups and add_groups adjust whatever is left.
+     *     @type bool $unset_groups
      *           clears the groups, which an empty list cannot express
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $remove_groups
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $add_groups
      *     @type array<\Eolymp\Community\Attribute\Value>|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type \Eolymp\Community\User\Patch $user
      *     @type \Eolymp\Community\Team\Patch $team
@@ -213,8 +213,8 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
-     * change it in place, and ungroup empties it. Carrying more than one is rejected.
+     * These combine, and are applied in the order they are written here: groups replaces the list,
+     * unset_groups empties it, then remove_groups and add_groups adjust whatever is left.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -225,8 +225,8 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exactly one of the three may be carried: groups replaces the list, add_groups and remove_groups
-     * change it in place, and ungroup empties it. Carrying more than one is rejected.
+     * These combine, and are applied in the order they are written here: groups replaces the list,
+     * unset_groups empties it, then remove_groups and add_groups adjust whatever is left.
      *
      * Generated from protobuf field <code>repeated string groups = 200;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
@@ -241,23 +241,37 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * clears the groups, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_groups = 203;</code>
+     * @return bool
      */
-    public function getAddGroups()
+    public function getUnsetGroups()
     {
-        return $this->add_groups;
+        return isset($this->unset_groups) ? $this->unset_groups : false;
+    }
+
+    public function hasUnsetGroups()
+    {
+        return isset($this->unset_groups);
+    }
+
+    public function clearUnsetGroups()
+    {
+        unset($this->unset_groups);
     }
 
     /**
-     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * clears the groups, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool unset_groups = 203;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setAddGroups($var)
+    public function setUnsetGroups($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->add_groups = $arr;
+        GPBUtil::checkBool($var);
+        $this->unset_groups = $var;
 
         return $this;
     }
@@ -285,37 +299,23 @@ class Patch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * clears the groups, which an empty list cannot express
-     *
-     * Generated from protobuf field <code>optional bool ungroup = 203;</code>
-     * @return bool
+     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getUngroup()
+    public function getAddGroups()
     {
-        return isset($this->ungroup) ? $this->ungroup : false;
-    }
-
-    public function hasUngroup()
-    {
-        return isset($this->ungroup);
-    }
-
-    public function clearUngroup()
-    {
-        unset($this->ungroup);
+        return $this->add_groups;
     }
 
     /**
-     * clears the groups, which an empty list cannot express
-     *
-     * Generated from protobuf field <code>optional bool ungroup = 203;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>repeated string add_groups = 201;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setUngroup($var)
+    public function setAddGroups($var)
     {
-        GPBUtil::checkBool($var);
-        $this->ungroup = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->add_groups = $arr;
 
         return $this;
     }

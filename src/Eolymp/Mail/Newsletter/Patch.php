@@ -40,9 +40,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears scheduled_at, which a nil timestamp cannot express
      *
-     * Generated from protobuf field <code>optional bool unschedule = 22;</code>
+     * Generated from protobuf field <code>optional bool unset_scheduled_at = 22;</code>
      */
-    protected $unschedule = null;
+    protected $unset_scheduled_at = null;
 
     /**
      * Constructor.
@@ -56,7 +56,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $content
      *     @type bool $automatic
      *     @type \Google\Protobuf\Timestamp $scheduled_at
-     *     @type bool $unschedule
+     *     @type bool $unset_scheduled_at
      *           clears scheduled_at, which a nil timestamp cannot express
      * }
      */
@@ -260,35 +260,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears scheduled_at, which a nil timestamp cannot express
      *
-     * Generated from protobuf field <code>optional bool unschedule = 22;</code>
+     * Generated from protobuf field <code>optional bool unset_scheduled_at = 22;</code>
      * @return bool
      */
-    public function getUnschedule()
+    public function getUnsetScheduledAt()
     {
-        return isset($this->unschedule) ? $this->unschedule : false;
+        return isset($this->unset_scheduled_at) ? $this->unset_scheduled_at : false;
     }
 
-    public function hasUnschedule()
+    public function hasUnsetScheduledAt()
     {
-        return isset($this->unschedule);
+        return isset($this->unset_scheduled_at);
     }
 
-    public function clearUnschedule()
+    public function clearUnsetScheduledAt()
     {
-        unset($this->unschedule);
+        unset($this->unset_scheduled_at);
     }
 
     /**
      * clears scheduled_at, which a nil timestamp cannot express
      *
-     * Generated from protobuf field <code>optional bool unschedule = 22;</code>
+     * Generated from protobuf field <code>optional bool unset_scheduled_at = 22;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUnschedule($var)
+    public function setUnsetScheduledAt($var)
     {
         GPBUtil::checkBool($var);
-        $this->unschedule = $var;
+        $this->unset_scheduled_at = $var;
 
         return $this;
     }

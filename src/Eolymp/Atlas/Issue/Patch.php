@@ -36,9 +36,9 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the tags, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool untag = 14;</code>
+     * Generated from protobuf field <code>optional bool unset_tags = 14;</code>
      */
-    protected $untag = null;
+    protected $unset_tags = null;
 
     /**
      * Constructor.
@@ -51,7 +51,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $title
      *     @type string $assignee
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
-     *     @type bool $untag
+     *     @type bool $unset_tags
      *           clears the tags, which an empty list cannot express
      * }
      */
@@ -213,35 +213,35 @@ class Patch extends \Google\Protobuf\Internal\Message
     /**
      * clears the tags, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool untag = 14;</code>
+     * Generated from protobuf field <code>optional bool unset_tags = 14;</code>
      * @return bool
      */
-    public function getUntag()
+    public function getUnsetTags()
     {
-        return isset($this->untag) ? $this->untag : false;
+        return isset($this->unset_tags) ? $this->unset_tags : false;
     }
 
-    public function hasUntag()
+    public function hasUnsetTags()
     {
-        return isset($this->untag);
+        return isset($this->unset_tags);
     }
 
-    public function clearUntag()
+    public function clearUnsetTags()
     {
-        unset($this->untag);
+        unset($this->unset_tags);
     }
 
     /**
      * clears the tags, which an empty list cannot express
      *
-     * Generated from protobuf field <code>optional bool untag = 14;</code>
+     * Generated from protobuf field <code>optional bool unset_tags = 14;</code>
      * @param bool $var
      * @return $this
      */
-    public function setUntag($var)
+    public function setUnsetTags($var)
     {
         GPBUtil::checkBool($var);
-        $this->untag = $var;
+        $this->unset_tags = $var;
 
         return $this;
     }
