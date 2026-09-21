@@ -59,6 +59,12 @@ class Validation extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Validation.Group groups = 50;</code>
      */
     private $groups;
+    /**
+     * warnings collected across all runs, deduped and capped at 50
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Warning warnings = 60;</code>
+     */
+    private $warnings;
 
     /**
      * Constructor.
@@ -81,6 +87,8 @@ class Validation extends \Google\Protobuf\Internal\Message
      *           a URL with error output, eg. compiler log
      *     @type array<\Eolymp\Atlas\Validation\Group>|\Google\Protobuf\Internal\RepeatedField $groups
      *           status for each run by group
+     *     @type array<\Eolymp\Executor\Warning>|\Google\Protobuf\Internal\RepeatedField $warnings
+     *           warnings collected across all runs, deduped and capped at 50
      * }
      */
     public function __construct($data = NULL) {
@@ -288,6 +296,32 @@ class Validation extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Validation\Group::class);
         $this->groups = $arr;
+
+        return $this;
+    }
+
+    /**
+     * warnings collected across all runs, deduped and capped at 50
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Warning warnings = 60;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWarnings()
+    {
+        return $this->warnings;
+    }
+
+    /**
+     * warnings collected across all runs, deduped and capped at 50
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Warning warnings = 60;</code>
+     * @param array<\Eolymp\Executor\Warning>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWarnings($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Warning::class);
+        $this->warnings = $arr;
 
         return $this;
     }

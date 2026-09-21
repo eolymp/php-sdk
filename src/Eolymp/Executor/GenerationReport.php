@@ -45,6 +45,12 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error_message = 50;</code>
      */
     protected $error_message = '';
+    /**
+     * Warnings collected across all runs, deduped and capped at 50.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Warning warnings = 60;</code>
+     */
+    private $warnings;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
      *     @type int $status
      *     @type array<\Eolymp\Executor\GenerationReport\Run>|\Google\Protobuf\Internal\RepeatedField $runs
      *     @type string $error_message
+     *     @type array<\Eolymp\Executor\Warning>|\Google\Protobuf\Internal\RepeatedField $warnings
+     *           Warnings collected across all runs, deduped and capped at 50.
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +247,32 @@ class GenerationReport extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error_message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Warnings collected across all runs, deduped and capped at 50.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Warning warnings = 60;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getWarnings()
+    {
+        return $this->warnings;
+    }
+
+    /**
+     * Warnings collected across all runs, deduped and capped at 50.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.executor.Warning warnings = 60;</code>
+     * @param array<\Eolymp\Executor\Warning>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setWarnings($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Executor\Warning::class);
+        $this->warnings = $arr;
 
         return $this;
     }
