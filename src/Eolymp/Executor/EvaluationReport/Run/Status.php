@@ -101,6 +101,12 @@ class Status
      * Generated from protobuf enum <code>IDLENESS_LIMIT_EXCEEDED = 14;</code>
      */
     const IDLENESS_LIMIT_EXCEEDED = 14;
+    /**
+     * executed, checker reported a partial score (testlib quitp / _points), see score
+     *
+     * Generated from protobuf enum <code>PARTIALLY_CORRECT = 15;</code>
+     */
+    const PARTIALLY_CORRECT = 15;
 
     private static $valueToName = [
         self::NONE => 'NONE',
@@ -118,6 +124,7 @@ class Status
         self::INTERACTION_FAILURE => 'INTERACTION_FAILURE',
         self::BLOCKED => 'BLOCKED',
         self::IDLENESS_LIMIT_EXCEEDED => 'IDLENESS_LIMIT_EXCEEDED',
+        self::PARTIALLY_CORRECT => 'PARTIALLY_CORRECT',
     ];
 
     public static function name($value)

@@ -59,6 +59,12 @@ class Verdict
      * Generated from protobuf enum <code>IDLENESS_LIMIT_EXCEEDED = 7;</code>
      */
     const IDLENESS_LIMIT_EXCEEDED = 7;
+    /**
+     * checker awarded a partial score for the test (testlib quitp / _points)
+     *
+     * Generated from protobuf enum <code>PARTIALLY_CORRECT = 8;</code>
+     */
+    const PARTIALLY_CORRECT = 8;
 
     private static $valueToName = [
         self::NO_VERDICT => 'NO_VERDICT',
@@ -69,6 +75,7 @@ class Verdict
         self::MEMORY_OVERFLOW => 'MEMORY_OVERFLOW',
         self::RUNTIME_ERROR => 'RUNTIME_ERROR',
         self::IDLENESS_LIMIT_EXCEEDED => 'IDLENESS_LIMIT_EXCEEDED',
+        self::PARTIALLY_CORRECT => 'PARTIALLY_CORRECT',
     ];
 
     public static function name($value)
