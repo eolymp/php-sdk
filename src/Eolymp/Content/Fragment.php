@@ -90,10 +90,6 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>.eolymp.ecm.Content content = 51;</code>
-     */
-    protected $content = null;
-    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
@@ -105,6 +101,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
     private $labels;
+    protected $kind;
 
     /**
      * Constructor.
@@ -137,6 +134,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *           treated as PUBLIC unless set otherwise
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
+     *     @type \Eolymp\Content\Fragment\Link $link
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
@@ -501,17 +499,12 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     public function getContent()
     {
-        return $this->content;
+        return $this->readOneof(51);
     }
 
     public function hasContent()
     {
-        return isset($this->content);
-    }
-
-    public function clearContent()
-    {
-        unset($this->content);
+        return $this->hasOneof(51);
     }
 
     /**
@@ -522,7 +515,34 @@ class Fragment extends \Google\Protobuf\Internal\Message
     public function setContent($var)
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
-        $this->content = $var;
+        $this->writeOneof(51, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Link link = 52;</code>
+     * @return \Eolymp\Content\Fragment\Link|null
+     */
+    public function getLink()
+    {
+        return $this->readOneof(52);
+    }
+
+    public function hasLink()
+    {
+        return $this->hasOneof(52);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Fragment.Link link = 52;</code>
+     * @param \Eolymp\Content\Fragment\Link $var
+     * @return $this
+     */
+    public function setLink($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Content\Fragment\Link::class);
+        $this->writeOneof(52, $var);
 
         return $this;
     }
@@ -611,6 +631,14 @@ class Fragment extends \Google\Protobuf\Internal\Message
         $this->labels = $arr;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKind()
+    {
+        return $this->whichOneof("kind");
     }
 
 }

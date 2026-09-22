@@ -77,7 +77,8 @@ class ContentServiceClient {
      * meaning to a label and never acts on one. A reader who cannot see the whole space is shown public
      * pages only: an unlisted page is left out here, although it can still be read by its path. A client
      * building a menu asks for public pages through the visibility filter rather than relying on that, so
-     * that the menu it builds is the same one whoever is reading it.
+     * that the menu it builds is the same one whoever is reading it. A search reads pages: a fragment which
+     * is a link has nothing to search and never matches one, though it is listed like any other.
      *
      * @param ListFragmentsInput $input message
      * @param array $context request parameters
@@ -98,7 +99,9 @@ class ContentServiceClient {
      * CreateFragment adds a page to the space or contest being addressed and returns its id. The parent and
      * the slug are what make the page reachable: they place it in the tree and the path follows from them,
      * and the parent has to exist. A page marked as a draft is visible to admins only, which is how a page
-     * can be written before members are meant to see it.
+     * can be written before members are meant to see it. A fragment carrying a link instead of content is an
+     * entry pointing elsewhere: it takes a place in the tree and a title, nothing is rendered at its path,
+     * and a reader who opens it is sent to the url.
      *
      * @param CreateFragmentInput $input message
      * @param array $context request parameters
