@@ -23,11 +23,16 @@ class Visibility
      * Generated from protobuf enum <code>PRIVATE = 2 [(.eolymp.api.mcp_value_desc) = "readable only by an admin or a trusted service, never by an anonymous or member caller"];</code>
      */
     const PBPRIVATE = 2;
+    /**
+     * Generated from protobuf enum <code>UNLISTED = 3 [(.eolymp.api.mcp_value_desc) = "readable by anyone who has the path, but left out of listings and search"];</code>
+     */
+    const UNLISTED = 3;
 
     private static $valueToName = [
         self::VISIBILITY_UNKNOWN => 'VISIBILITY_UNKNOWN',
         self::PBPUBLIC => 'PUBLIC',
         self::PBPRIVATE => 'PRIVATE',
+        self::UNLISTED => 'UNLISTED',
     ];
 
     public static function name($value)

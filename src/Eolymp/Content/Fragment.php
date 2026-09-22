@@ -80,7 +80,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $automatic = false;
     /**
-     * treated as PUBLIC unless explicitly PRIVATE
+     * treated as PUBLIC unless set otherwise
      *
      * Generated from protobuf field <code>.eolymp.content.Fragment.Visibility visibility = 16;</code>
      */
@@ -134,7 +134,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *     @type bool $automatic
      *           content generated automatically
      *     @type int $visibility
-     *           treated as PUBLIC unless explicitly PRIVATE
+     *           treated as PUBLIC unless set otherwise
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -448,7 +448,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * treated as PUBLIC unless explicitly PRIVATE
+     * treated as PUBLIC unless set otherwise
      *
      * Generated from protobuf field <code>.eolymp.content.Fragment.Visibility visibility = 16;</code>
      * @return int
@@ -459,7 +459,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * treated as PUBLIC unless explicitly PRIVATE
+     * treated as PUBLIC unless set otherwise
      *
      * Generated from protobuf field <code>.eolymp.content.Fragment.Visibility visibility = 16;</code>
      * @param int $var
