@@ -60,4 +60,46 @@ class PlanServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListPlansOutput::class, $context);
     }
 
+    /**
+     * Offer a plan to the current space, requires god mode.
+     *
+     * @param AssignPlanInput $input message
+     * @param array $context request parameters
+     *
+     * @return AssignPlanOutput output message
+     */
+    public function AssignPlan(AssignPlanInput $input, array $context = [])
+    {
+        $path = "/plans/".rawurlencode($input->getPlanId())."/assignment";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPlanId("");
+
+        $context['name'] = "eolymp.universe.PlanService/AssignPlan";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, AssignPlanOutput::class, $context);
+    }
+
+    /**
+     * Withdraw a plan offered to the current space, requires god mode.
+     *
+     * @param UnassignPlanInput $input message
+     * @param array $context request parameters
+     *
+     * @return UnassignPlanOutput output message
+     */
+    public function UnassignPlan(UnassignPlanInput $input, array $context = [])
+    {
+        $path = "/plans/".rawurlencode($input->getPlanId())."/assignment";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setPlanId("");
+
+        $context['name'] = "eolymp.universe.PlanService/UnassignPlan";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnassignPlanOutput::class, $context);
+    }
+
 }
