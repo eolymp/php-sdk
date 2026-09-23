@@ -121,6 +121,12 @@ class Claims extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string restrictions = 100;</code>
      */
     protected $restrictions = '';
+    /**
+     * true if the token was escalated to god mode
+     *
+     * Generated from protobuf field <code>bool escalated = 110;</code>
+     */
+    protected $escalated = false;
 
     /**
      * Constructor.
@@ -164,6 +170,8 @@ class Claims extends \Google\Protobuf\Internal\Message
      *           user's preferred runtime (programming language, compiler) at Eolymp
      *     @type string $restrictions
      *           user's restrictions
+     *     @type bool $escalated
+     *           true if the token was escalated to god mode
      * }
      */
     public function __construct($data = NULL) {
@@ -635,6 +643,32 @@ class Claims extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->restrictions = $var;
+
+        return $this;
+    }
+
+    /**
+     * true if the token was escalated to god mode
+     *
+     * Generated from protobuf field <code>bool escalated = 110;</code>
+     * @return bool
+     */
+    public function getEscalated()
+    {
+        return $this->escalated;
+    }
+
+    /**
+     * true if the token was escalated to god mode
+     *
+     * Generated from protobuf field <code>bool escalated = 110;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEscalated($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->escalated = $var;
 
         return $this;
     }

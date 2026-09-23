@@ -24,7 +24,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      */
     protected $username = '';
     /**
-     * password for password grant type
+     * password for password and token_exchange grant types
      *
      * Generated from protobuf field <code>string password = 3;</code>
      */
@@ -63,6 +63,12 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string redirect_uri = 10;</code>
      */
     protected $redirect_uri = '';
+    /**
+     * subject_token for token_exchange grant type, the token being escalated
+     *
+     * Generated from protobuf field <code>string subject_token = 11;</code>
+     */
+    protected $subject_token = '';
 
     /**
      * Constructor.
@@ -74,7 +80,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      *     @type string $username
      *           username for password grant type
      *     @type string $password
-     *           password for password grant type
+     *           password for password and token_exchange grant types
      *     @type string $client_id
      *     @type string $client_secret
      *     @type string $code
@@ -85,6 +91,8 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
      *     @type string $refresh_token
      *           refresh_token for refresh_token grant type
      *     @type string $redirect_uri
+     *     @type string $subject_token
+     *           subject_token for token_exchange grant type, the token being escalated
      * }
      */
     public function __construct($data = NULL) {
@@ -141,7 +149,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * password for password grant type
+     * password for password and token_exchange grant types
      *
      * Generated from protobuf field <code>string password = 3;</code>
      * @return string
@@ -152,7 +160,7 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * password for password grant type
+     * password for password and token_exchange grant types
      *
      * Generated from protobuf field <code>string password = 3;</code>
      * @param string $var
@@ -328,6 +336,32 @@ class IssueTokenInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->redirect_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * subject_token for token_exchange grant type, the token being escalated
+     *
+     * Generated from protobuf field <code>string subject_token = 11;</code>
+     * @return string
+     */
+    public function getSubjectToken()
+    {
+        return $this->subject_token;
+    }
+
+    /**
+     * subject_token for token_exchange grant type, the token being escalated
+     *
+     * Generated from protobuf field <code>string subject_token = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSubjectToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->subject_token = $var;
 
         return $this;
     }
