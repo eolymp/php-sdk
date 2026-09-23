@@ -167,6 +167,30 @@ class ProblemServiceClient {
     }
 
     /**
+     * ImportProblem replaces the problem's content with a problem archive uploaded beforehand through
+     * AssetService. The archive format is recognized from its content; Polygon packages are supported. Like
+     * SyncProblem, the import runs asynchronously and overwrites modifications made to the problem in this space,
+     * but it leaves the problem's origin as it is.
+     *
+     * @param ImportProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return ImportProblemOutput output message
+     */
+    public function ImportProblem(ImportProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/import";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.ProblemService/ImportProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ImportProblemOutput::class, $context);
+    }
+
+    /**
      * VoteProblem records how the calling user rates the problem — the difficulty and quality signal shown next
      * to the problem in the archive — and returns the resulting number of votes. The aggregate is also readable
      * on the problem itself, where it is read-only.
