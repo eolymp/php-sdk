@@ -61,7 +61,7 @@ class PlanServiceClient {
     }
 
     /**
-     * Offer a plan to the current space, requires god mode.
+     * Offer a plan to a space, requires god mode.
      *
      * @param AssignPlanInput $input message
      * @param array $context request parameters
@@ -82,7 +82,7 @@ class PlanServiceClient {
     }
 
     /**
-     * Withdraw a plan offered to the current space, requires god mode.
+     * Withdraw a plan offered to a space, requires god mode.
      *
      * @param UnassignPlanInput $input message
      * @param array $context request parameters

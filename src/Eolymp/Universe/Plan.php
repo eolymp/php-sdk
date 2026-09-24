@@ -44,12 +44,6 @@ class Plan extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
-     * plan is explicitly offered to the current space
-     *
-     * Generated from protobuf field <code>bool assigned = 9;</code>
-     */
-    protected $assigned = false;
-    /**
      * Generated from protobuf field <code>uint32 min_seats = 10;</code>
      */
     protected $min_seats = 0;
@@ -76,8 +70,6 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type bool $requires_approval
      *           special plan which requires approval
      *     @type int $visibility
-     *     @type bool $assigned
-     *           plan is explicitly offered to the current space
      *     @type int $min_seats
      *     @type int $max_seats
      *     @type array<\Eolymp\Universe\Plan\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
@@ -262,32 +254,6 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Universe\Plan\Visibility::class);
         $this->visibility = $var;
-
-        return $this;
-    }
-
-    /**
-     * plan is explicitly offered to the current space
-     *
-     * Generated from protobuf field <code>bool assigned = 9;</code>
-     * @return bool
-     */
-    public function getAssigned()
-    {
-        return $this->assigned;
-    }
-
-    /**
-     * plan is explicitly offered to the current space
-     *
-     * Generated from protobuf field <code>bool assigned = 9;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setAssigned($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->assigned = $var;
 
         return $this;
     }

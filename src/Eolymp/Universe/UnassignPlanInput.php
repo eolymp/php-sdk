@@ -17,6 +17,10 @@ class UnassignPlanInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string plan_id = 1;</code>
      */
     protected $plan_id = '';
+    /**
+     * Generated from protobuf field <code>string space_id = 2;</code>
+     */
+    protected $space_id = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class UnassignPlanInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $plan_id
+     *     @type string $space_id
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class UnassignPlanInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->plan_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string space_id = 2;</code>
+     * @return string
+     */
+    public function getSpaceId()
+    {
+        return $this->space_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string space_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_id = $var;
 
         return $this;
     }
