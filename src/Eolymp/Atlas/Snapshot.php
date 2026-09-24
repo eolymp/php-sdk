@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Snapshot extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string schema = 15 [json_name = "$schema"];</code>
+     */
+    protected $schema = '';
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Problem problem = 1;</code>
      */
     protected $problem = null;
@@ -76,6 +80,7 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $schema
      *     @type \Eolymp\Atlas\Problem $problem
      *     @type \Eolymp\Atlas\TestingConfig $testing
      *     @type \Eolymp\Atlas\Checker $checker
@@ -95,6 +100,28 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Atlas\Snapshot::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>string schema = 15 [json_name = "$schema"];</code>
+     * @return string
+     */
+    public function getSchema()
+    {
+        return $this->schema;
+    }
+
+    /**
+     * Generated from protobuf field <code>string schema = 15 [json_name = "$schema"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSchema($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->schema = $var;
+
+        return $this;
     }
 
     /**

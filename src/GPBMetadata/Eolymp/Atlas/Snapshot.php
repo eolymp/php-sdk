@@ -30,9 +30,10 @@ class Snapshot
         \GPBMetadata\Eolymp\Atlas\TestingValidator::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ì
-eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/question.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto$eolymp/atlas/testing_validator.proto"ß
-Snapshot&
+…	
+eolymp/atlas/snapshot.protoeolymp.atlas eolymp/atlas/code_template.protoeolymp/atlas/editorial.protoeolymp/atlas/problem.protoeolymp/atlas/question.protoeolymp/atlas/script.protoeolymp/atlas/solution.protoeolymp/atlas/statement.proto"eolymp/atlas/testing_checker.proto!eolymp/atlas/testing_config.proto%eolymp/atlas/testing_interactor.protoeolymp/atlas/testing_test.proto"eolymp/atlas/testing_testset.proto$eolymp/atlas/testing_validator.proto"ø
+Snapshot
+schema (	R$schema&
 problem (2.eolymp.atlas.Problem,
 testing
  (2.eolymp.atlas.TestingConfig&
