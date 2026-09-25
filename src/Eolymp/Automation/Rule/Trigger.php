@@ -93,6 +93,12 @@ class Trigger
      * Generated from protobuf enum <code>STATEMENT_CHANGED = 17;</code>
      */
     const STATEMENT_CHANGED = 17;
+    /**
+     * user-invoked action on a problem, like CONTEST_ACTION
+     *
+     * Generated from protobuf enum <code>PROBLEM_ACTION = 18;</code>
+     */
+    const PROBLEM_ACTION = 18;
 
     private static $valueToName = [
         self::UNKNOWN_TRIGGER => 'UNKNOWN_TRIGGER',
@@ -113,6 +119,7 @@ class Trigger
         self::MEMBER_ACTION => 'MEMBER_ACTION',
         self::SCHEDULED => 'SCHEDULED',
         self::STATEMENT_CHANGED => 'STATEMENT_CHANGED',
+        self::PROBLEM_ACTION => 'PROBLEM_ACTION',
     ];
 
     public static function name($value)
