@@ -142,4 +142,67 @@ class SpaceServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSpacesOutput::class, $context);
     }
 
+    /**
+     * The space's own quota, merged over the plan's quota or used alone when the space has no plan. Requires god mode.
+     *
+     * @param DescribeQuotaInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeQuotaOutput output message
+     */
+    public function DescribeQuota(DescribeQuotaInput $input, array $context = [])
+    {
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/quota";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.SpaceService/DescribeQuota";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeQuotaOutput::class, $context);
+    }
+
+    /**
+     * Replace the space's own quota. Requires god mode.
+     *
+     * @param UpdateQuotaInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateQuotaOutput output message
+     */
+    public function UpdateQuota(UpdateQuotaInput $input, array $context = [])
+    {
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/quota";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.SpaceService/UpdateQuota";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateQuotaOutput::class, $context);
+    }
+
+    /**
+     * Set the space's plan, seats and billing period without Stripe. Requires god mode.
+     *
+     * @param UpdateBillingInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateBillingOutput output message
+     */
+    public function UpdateBilling(UpdateBillingInput $input, array $context = [])
+    {
+        $path = "/spaces/".rawurlencode($input->getSpaceId())."/billing";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSpaceId("");
+
+        $context['name'] = "eolymp.universe.SpaceService/UpdateBilling";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateBillingOutput::class, $context);
+    }
+
 }

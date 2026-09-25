@@ -29,6 +29,14 @@ class Test extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float score = 4;</code>
      */
     protected $score = 0.0;
+    /**
+     * Generated from protobuf field <code>string generated_input_url = 50;</code>
+     */
+    protected $generated_input_url = '';
+    /**
+     * Generated from protobuf field <code>string generated_answer_url = 51;</code>
+     */
+    protected $generated_answer_url = '';
     protected $input;
     protected $answer;
     protected $example_input;
@@ -54,6 +62,8 @@ class Test extends \Google\Protobuf\Internal\Message
      *     @type string $example_input_content
      *     @type string $example_answer_url
      *     @type string $example_answer_content
+     *     @type string $generated_input_url
+     *     @type string $generated_answer_url
      * }
      */
     public function __construct($data = NULL) {
@@ -415,6 +425,50 @@ class Test extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(41, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string generated_input_url = 50;</code>
+     * @return string
+     */
+    public function getGeneratedInputUrl()
+    {
+        return $this->generated_input_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string generated_input_url = 50;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGeneratedInputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->generated_input_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string generated_answer_url = 51;</code>
+     * @return string
+     */
+    public function getGeneratedAnswerUrl()
+    {
+        return $this->generated_answer_url;
+    }
+
+    /**
+     * Generated from protobuf field <code>string generated_answer_url = 51;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGeneratedAnswerUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->generated_answer_url = $var;
 
         return $this;
     }
