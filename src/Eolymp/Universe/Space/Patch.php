@@ -30,6 +30,12 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = null;
     /**
+     * requires god mode, empty clears it
+     *
+     * Generated from protobuf field <code>optional string affiliation = 15;</code>
+     */
+    protected $affiliation = null;
+    /**
      * Generated from protobuf field <code>repeated string locales = 19;</code>
      */
     private $locales;
@@ -50,6 +56,8 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $image
      *     @type int $visibility
+     *     @type string $affiliation
+     *           requires god mode, empty clears it
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
      *     @type bool $unset_locales
      *           clears the locales, which an empty list cannot express
@@ -184,6 +192,42 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Universe\Space\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * requires god mode, empty clears it
+     *
+     * Generated from protobuf field <code>optional string affiliation = 15;</code>
+     * @return string
+     */
+    public function getAffiliation()
+    {
+        return isset($this->affiliation) ? $this->affiliation : '';
+    }
+
+    public function hasAffiliation()
+    {
+        return isset($this->affiliation);
+    }
+
+    public function clearAffiliation()
+    {
+        unset($this->affiliation);
+    }
+
+    /**
+     * requires god mode, empty clears it
+     *
+     * Generated from protobuf field <code>optional string affiliation = 15;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAffiliation($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->affiliation = $var;
 
         return $this;
     }
