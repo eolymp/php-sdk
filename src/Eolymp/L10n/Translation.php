@@ -34,6 +34,10 @@ class Translation extends \Google\Protobuf\Internal\Message
      */
     protected $needs_review = false;
     /**
+     * Generated from protobuf field <code>bool machine_translated = 6 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $machine_translated = false;
+    /**
      * Generated from protobuf field <code>string created_by = 10 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_by = '';
@@ -57,6 +61,7 @@ class Translation extends \Google\Protobuf\Internal\Message
      *     @type string $message
      *     @type int $status
      *     @type bool $needs_review
+     *     @type bool $machine_translated
      *     @type string $created_by
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $approved_at
@@ -173,6 +178,28 @@ class Translation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->needs_review = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool machine_translated = 6 [(.eolymp.api.read_only) = true];</code>
+     * @return bool
+     */
+    public function getMachineTranslated()
+    {
+        return $this->machine_translated;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool machine_translated = 6 [(.eolymp.api.read_only) = true];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMachineTranslated($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->machine_translated = $var;
 
         return $this;
     }

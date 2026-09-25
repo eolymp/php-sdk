@@ -446,4 +446,102 @@ class LocalizationServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListTranslationPairsOutput::class, $context);
     }
 
+    /**
+     * @param CreateGlossaryEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateGlossaryEntryOutput output message
+     */
+    public function CreateGlossaryEntry(CreateGlossaryEntryInput $input, array $context = [])
+    {
+        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/CreateGlossaryEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateGlossaryEntryOutput::class, $context);
+    }
+
+    /**
+     * @param UpdateGlossaryEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateGlossaryEntryOutput output message
+     */
+    public function UpdateGlossaryEntry(UpdateGlossaryEntryInput $input, array $context = [])
+    {
+        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary/".rawurlencode($input->getEntryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/UpdateGlossaryEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateGlossaryEntryOutput::class, $context);
+    }
+
+    /**
+     * @param DeleteGlossaryEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return DeleteGlossaryEntryOutput output message
+     */
+    public function DeleteGlossaryEntry(DeleteGlossaryEntryInput $input, array $context = [])
+    {
+        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary/".rawurlencode($input->getEntryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/DeleteGlossaryEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, DeleteGlossaryEntryOutput::class, $context);
+    }
+
+    /**
+     * @param DescribeGlossaryEntryInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeGlossaryEntryOutput output message
+     */
+    public function DescribeGlossaryEntry(DescribeGlossaryEntryInput $input, array $context = [])
+    {
+        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary/".rawurlencode($input->getEntryId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+        $input->setEntryId("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/DescribeGlossaryEntry";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeGlossaryEntryOutput::class, $context);
+    }
+
+    /**
+     * @param ListGlossaryEntriesInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListGlossaryEntriesOutput output message
+     */
+    public function ListGlossaryEntries(ListGlossaryEntriesInput $input, array $context = [])
+    {
+        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProjectId("");
+
+        $context['name'] = "eolymp.l10n.LocalizationService/ListGlossaryEntries";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListGlossaryEntriesOutput::class, $context);
+    }
+
 }
