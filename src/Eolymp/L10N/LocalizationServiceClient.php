@@ -454,10 +454,7 @@ class LocalizationServiceClient {
      */
     public function CreateGlossaryEntry(CreateGlossaryEntryInput $input, array $context = [])
     {
-        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProjectId("");
+        $path = "/glossary";
 
         $context['name'] = "eolymp.l10n.LocalizationService/CreateGlossaryEntry";
         $context['path'] = $path;
@@ -473,10 +470,9 @@ class LocalizationServiceClient {
      */
     public function UpdateGlossaryEntry(UpdateGlossaryEntryInput $input, array $context = [])
     {
-        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary/".rawurlencode($input->getEntryId());
+        $path = "/glossary/".rawurlencode($input->getEntryId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setProjectId("");
         $input->setEntryId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/UpdateGlossaryEntry";
@@ -493,10 +489,9 @@ class LocalizationServiceClient {
      */
     public function DeleteGlossaryEntry(DeleteGlossaryEntryInput $input, array $context = [])
     {
-        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary/".rawurlencode($input->getEntryId());
+        $path = "/glossary/".rawurlencode($input->getEntryId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setProjectId("");
         $input->setEntryId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/DeleteGlossaryEntry";
@@ -513,10 +508,9 @@ class LocalizationServiceClient {
      */
     public function DescribeGlossaryEntry(DescribeGlossaryEntryInput $input, array $context = [])
     {
-        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary/".rawurlencode($input->getEntryId());
+        $path = "/glossary/".rawurlencode($input->getEntryId());
 
         // Cleanup URL parameters to avoid any ambiguity
-        $input->setProjectId("");
         $input->setEntryId("");
 
         $context['name'] = "eolymp.l10n.LocalizationService/DescribeGlossaryEntry";
@@ -533,10 +527,7 @@ class LocalizationServiceClient {
      */
     public function ListGlossaryEntries(ListGlossaryEntriesInput $input, array $context = [])
     {
-        $path = "/projects/".rawurlencode($input->getProjectId())."/glossary";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProjectId("");
+        $path = "/glossary";
 
         $context['name'] = "eolymp.l10n.LocalizationService/ListGlossaryEntries";
         $context['path'] = $path;

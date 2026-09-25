@@ -14,11 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeGlossaryEntryInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string project_id = 1;</code>
-     */
-    protected $project_id = '';
-    /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
+     * Generated from protobuf field <code>string entry_id = 1;</code>
      */
     protected $entry_id = '';
 
@@ -28,7 +24,6 @@ class DescribeGlossaryEntryInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $project_id
      *     @type string $entry_id
      * }
      */
@@ -38,29 +33,7 @@ class DescribeGlossaryEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 1;</code>
-     * @return string
-     */
-    public function getProjectId()
-    {
-        return $this->project_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string project_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->project_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
+     * Generated from protobuf field <code>string entry_id = 1;</code>
      * @return string
      */
     public function getEntryId()
@@ -69,7 +42,7 @@ class DescribeGlossaryEntryInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string entry_id = 2;</code>
+     * Generated from protobuf field <code>string entry_id = 1;</code>
      * @param string $var
      * @return $this
      */
