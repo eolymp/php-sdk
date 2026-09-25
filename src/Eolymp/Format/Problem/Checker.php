@@ -13,34 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Checker extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Type type = 1;</code>
-     */
-    protected $type = 0;
-    /**
-     * Generated from protobuf field <code>int32 precision = 2;</code>
-     */
-    protected $precision = 0;
-    /**
-     * Generated from protobuf field <code>bool case_sensitive = 3;</code>
-     */
-    protected $case_sensitive = false;
-    /**
-     * Generated from protobuf field <code>bool order_sensitive = 4;</code>
-     */
-    protected $order_sensitive = false;
-    /**
-     * Generated from protobuf field <code>string runtime = 5;</code>
-     */
-    protected $runtime = '';
-    /**
-     * Generated from protobuf field <code>string source = 6;</code>
-     */
-    protected $source = '';
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.format.Problem.File files = 7;</code>
-     */
-    private $files;
+    protected $kind;
 
     /**
      * Constructor.
@@ -48,13 +21,10 @@ class Checker extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $type
-     *     @type int $precision
-     *     @type bool $case_sensitive
-     *     @type bool $order_sensitive
-     *     @type string $runtime
-     *     @type string $source
-     *     @type array<\Eolymp\Format\Problem\File>|\Google\Protobuf\Internal\RepeatedField $files
+     *     @type \Eolymp\Format\Problem\Checker\Tokens $tokens
+     *     @type \Eolymp\Format\Problem\Checker\Lines $lines
+     *     @type \Eolymp\Format\Problem\Checker\Program $program
+     *     @type \Eolymp\Format\Problem\Checker\QueryResults $query_results
      * }
      */
     public function __construct($data = NULL) {
@@ -63,157 +33,119 @@ class Checker extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Type type = 1;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Tokens tokens = 1;</code>
+     * @return \Eolymp\Format\Problem\Checker\Tokens|null
      */
-    public function getType()
+    public function getTokens()
     {
-        return $this->type;
+        return $this->readOneof(1);
+    }
+
+    public function hasTokens()
+    {
+        return $this->hasOneof(1);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Type type = 1;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Tokens tokens = 1;</code>
+     * @param \Eolymp\Format\Problem\Checker\Tokens $var
      * @return $this
      */
-    public function setType($var)
+    public function setTokens($var)
     {
-        GPBUtil::checkEnum($var, \Eolymp\Format\Problem\Checker\Type::class);
-        $this->type = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Format\Problem\Checker\Tokens::class);
+        $this->writeOneof(1, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>int32 precision = 2;</code>
-     * @return int
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Lines lines = 2;</code>
+     * @return \Eolymp\Format\Problem\Checker\Lines|null
      */
-    public function getPrecision()
+    public function getLines()
     {
-        return $this->precision;
+        return $this->readOneof(2);
+    }
+
+    public function hasLines()
+    {
+        return $this->hasOneof(2);
     }
 
     /**
-     * Generated from protobuf field <code>int32 precision = 2;</code>
-     * @param int $var
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Lines lines = 2;</code>
+     * @param \Eolymp\Format\Problem\Checker\Lines $var
      * @return $this
      */
-    public function setPrecision($var)
+    public function setLines($var)
     {
-        GPBUtil::checkInt32($var);
-        $this->precision = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Format\Problem\Checker\Lines::class);
+        $this->writeOneof(2, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool case_sensitive = 3;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Program program = 3;</code>
+     * @return \Eolymp\Format\Problem\Checker\Program|null
      */
-    public function getCaseSensitive()
+    public function getProgram()
     {
-        return $this->case_sensitive;
+        return $this->readOneof(3);
+    }
+
+    public function hasProgram()
+    {
+        return $this->hasOneof(3);
     }
 
     /**
-     * Generated from protobuf field <code>bool case_sensitive = 3;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.Program program = 3;</code>
+     * @param \Eolymp\Format\Problem\Checker\Program $var
      * @return $this
      */
-    public function setCaseSensitive($var)
+    public function setProgram($var)
     {
-        GPBUtil::checkBool($var);
-        $this->case_sensitive = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Format\Problem\Checker\Program::class);
+        $this->writeOneof(3, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool order_sensitive = 4;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.QueryResults query_results = 4;</code>
+     * @return \Eolymp\Format\Problem\Checker\QueryResults|null
      */
-    public function getOrderSensitive()
+    public function getQueryResults()
     {
-        return $this->order_sensitive;
+        return $this->readOneof(4);
+    }
+
+    public function hasQueryResults()
+    {
+        return $this->hasOneof(4);
     }
 
     /**
-     * Generated from protobuf field <code>bool order_sensitive = 4;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.format.Problem.Checker.QueryResults query_results = 4;</code>
+     * @param \Eolymp\Format\Problem\Checker\QueryResults $var
      * @return $this
      */
-    public function setOrderSensitive($var)
+    public function setQueryResults($var)
     {
-        GPBUtil::checkBool($var);
-        $this->order_sensitive = $var;
+        GPBUtil::checkMessage($var, \Eolymp\Format\Problem\Checker\QueryResults::class);
+        $this->writeOneof(4, $var);
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string runtime = 5;</code>
      * @return string
      */
-    public function getRuntime()
+    public function getKind()
     {
-        return $this->runtime;
-    }
-
-    /**
-     * Generated from protobuf field <code>string runtime = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRuntime($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->runtime = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string source = 6;</code>
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-
-    /**
-     * Generated from protobuf field <code>string source = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSource($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->source = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.format.Problem.File files = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getFiles()
-    {
-        return $this->files;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.format.Problem.File files = 7;</code>
-     * @param array<\Eolymp\Format\Problem\File>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setFiles($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Format\Problem\File::class);
-        $this->files = $arr;
-
-        return $this;
+        return $this->whichOneof("kind");
     }
 
 }

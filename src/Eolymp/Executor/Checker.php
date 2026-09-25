@@ -58,6 +58,7 @@ class Checker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.executor.File files = 10;</code>
      */
     private $files;
+    protected $kind;
 
     /**
      * Constructor.
@@ -80,6 +81,10 @@ class Checker extends \Google\Protobuf\Internal\Message
      *           If set to false the rows of output and answer will be sorted before comparison.
      *     @type array<\Eolymp\Executor\File>|\Google\Protobuf\Internal\RepeatedField $files
      *           Additional files placed into workdir during compilation and execution
+     *     @type \Eolymp\Executor\Checker\Tokens $tokens
+     *     @type \Eolymp\Executor\Checker\Lines $lines
+     *     @type \Eolymp\Executor\Checker\Program $program
+     *     @type \Eolymp\Executor\Checker\QueryResults $query_results
      * }
      */
     public function __construct($data = NULL) {
@@ -269,6 +274,122 @@ class Checker extends \Google\Protobuf\Internal\Message
         $this->files = $arr;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.Tokens tokens = 20;</code>
+     * @return \Eolymp\Executor\Checker\Tokens|null
+     */
+    public function getTokens()
+    {
+        return $this->readOneof(20);
+    }
+
+    public function hasTokens()
+    {
+        return $this->hasOneof(20);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.Tokens tokens = 20;</code>
+     * @param \Eolymp\Executor\Checker\Tokens $var
+     * @return $this
+     */
+    public function setTokens($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker\Tokens::class);
+        $this->writeOneof(20, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.Lines lines = 21;</code>
+     * @return \Eolymp\Executor\Checker\Lines|null
+     */
+    public function getLines()
+    {
+        return $this->readOneof(21);
+    }
+
+    public function hasLines()
+    {
+        return $this->hasOneof(21);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.Lines lines = 21;</code>
+     * @param \Eolymp\Executor\Checker\Lines $var
+     * @return $this
+     */
+    public function setLines($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker\Lines::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.Program program = 22;</code>
+     * @return \Eolymp\Executor\Checker\Program|null
+     */
+    public function getProgram()
+    {
+        return $this->readOneof(22);
+    }
+
+    public function hasProgram()
+    {
+        return $this->hasOneof(22);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.Program program = 22;</code>
+     * @param \Eolymp\Executor\Checker\Program $var
+     * @return $this
+     */
+    public function setProgram($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker\Program::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.QueryResults query_results = 23;</code>
+     * @return \Eolymp\Executor\Checker\QueryResults|null
+     */
+    public function getQueryResults()
+    {
+        return $this->readOneof(23);
+    }
+
+    public function hasQueryResults()
+    {
+        return $this->hasOneof(23);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.Checker.QueryResults query_results = 23;</code>
+     * @param \Eolymp\Executor\Checker\QueryResults $var
+     * @return $this
+     */
+    public function setQueryResults($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\Checker\QueryResults::class);
+        $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKind()
+    {
+        return $this->whichOneof("kind");
     }
 
 }

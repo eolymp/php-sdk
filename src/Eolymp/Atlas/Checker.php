@@ -66,6 +66,7 @@ class Checker extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool order_sensitive = 6;</code>
      */
     protected $order_sensitive = false;
+    protected $kind;
 
     /**
      * Constructor.
@@ -90,6 +91,10 @@ class Checker extends \Google\Protobuf\Internal\Message
      *     @type bool $order_sensitive
      *           Order sensitivity option for QUERY_RESULTS checker.
      *           If set to false the rows of output and answer will be sorted before comparison.
+     *     @type \Eolymp\Atlas\Checker\Tokens $tokens
+     *     @type \Eolymp\Atlas\Checker\Lines $lines
+     *     @type \Eolymp\Atlas\Checker\Program $program
+     *     @type \Eolymp\Atlas\Checker\QueryResults $query_results
      * }
      */
     public function __construct($data = NULL) {
@@ -323,6 +328,122 @@ class Checker extends \Google\Protobuf\Internal\Message
         $this->order_sensitive = $var;
 
         return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.Tokens tokens = 20;</code>
+     * @return \Eolymp\Atlas\Checker\Tokens|null
+     */
+    public function getTokens()
+    {
+        return $this->readOneof(20);
+    }
+
+    public function hasTokens()
+    {
+        return $this->hasOneof(20);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.Tokens tokens = 20;</code>
+     * @param \Eolymp\Atlas\Checker\Tokens $var
+     * @return $this
+     */
+    public function setTokens($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Checker\Tokens::class);
+        $this->writeOneof(20, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.Lines lines = 21;</code>
+     * @return \Eolymp\Atlas\Checker\Lines|null
+     */
+    public function getLines()
+    {
+        return $this->readOneof(21);
+    }
+
+    public function hasLines()
+    {
+        return $this->hasOneof(21);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.Lines lines = 21;</code>
+     * @param \Eolymp\Atlas\Checker\Lines $var
+     * @return $this
+     */
+    public function setLines($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Checker\Lines::class);
+        $this->writeOneof(21, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.Program program = 22;</code>
+     * @return \Eolymp\Atlas\Checker\Program|null
+     */
+    public function getProgram()
+    {
+        return $this->readOneof(22);
+    }
+
+    public function hasProgram()
+    {
+        return $this->hasOneof(22);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.Program program = 22;</code>
+     * @param \Eolymp\Atlas\Checker\Program $var
+     * @return $this
+     */
+    public function setProgram($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Checker\Program::class);
+        $this->writeOneof(22, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.QueryResults query_results = 23;</code>
+     * @return \Eolymp\Atlas\Checker\QueryResults|null
+     */
+    public function getQueryResults()
+    {
+        return $this->readOneof(23);
+    }
+
+    public function hasQueryResults()
+    {
+        return $this->hasOneof(23);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.atlas.Checker.QueryResults query_results = 23;</code>
+     * @param \Eolymp\Atlas\Checker\QueryResults $var
+     * @return $this
+     */
+    public function setQueryResults($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Checker\QueryResults::class);
+        $this->writeOneof(23, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKind()
+    {
+        return $this->whichOneof("kind");
     }
 
 }
