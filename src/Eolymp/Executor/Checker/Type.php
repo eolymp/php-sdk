@@ -50,19 +50,6 @@ class Type
      */
     const PROGRAM = 3;
     /**
-     * Program verifies output and answer using program `source` written in `lang`
-     * Program is compatible with E-Olymp checkers (uses different argument order comparing to testlib).
-     * Program runs with following arguments: <input-file> <answer-file> <output-file>.
-     * Additionally, program receives following environment variables:
-     * - EOLYMP=1
-     * - INPUT_FILE=<input-file>
-     * - OUTPUT_FILE=<output-file>
-     * - ANSWER_FILE=<answer-file>
-     *
-     * Generated from protobuf enum <code>LEGACY_PROGRAM = 4;</code>
-     */
-    const LEGACY_PROGRAM = 4;
-    /**
      * Query results verifies JSON encoded results of a query.
      *
      * Generated from protobuf enum <code>QUERY_RESULTS = 5;</code>
@@ -74,7 +61,6 @@ class Type
         self::TOKENS => 'TOKENS',
         self::LINES => 'LINES',
         self::PROGRAM => 'PROGRAM',
-        self::LEGACY_PROGRAM => 'LEGACY_PROGRAM',
         self::QUERY_RESULTS => 'QUERY_RESULTS',
     ];
 
