@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ContestSeries extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      */
     protected $id = '';
     /**
@@ -48,7 +48,7 @@ class ContestSeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @return string
      */
     public function getId()
@@ -57,7 +57,7 @@ class ContestSeries extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      * @param string $var
      * @return $this
      */
