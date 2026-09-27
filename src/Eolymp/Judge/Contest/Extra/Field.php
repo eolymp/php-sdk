@@ -43,6 +43,10 @@ class Field
      * Generated from protobuf enum <code>RATING_CONFIG = 7;</code>
      */
     const RATING_CONFIG = 7;
+    /**
+     * Generated from protobuf enum <code>PROCTORING_CONFIG = 8 [(.eolymp.api.mcp_value_ignore) = true];</code>
+     */
+    const PROCTORING_CONFIG = 8;
 
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
@@ -52,6 +56,7 @@ class Field
         self::CERTIFICATION_CONFIG => 'CERTIFICATION_CONFIG',
         self::ENVIRONMENT_CONFIG => 'ENVIRONMENT_CONFIG',
         self::RATING_CONFIG => 'RATING_CONFIG',
+        self::PROCTORING_CONFIG => 'PROCTORING_CONFIG',
     ];
 
     public static function name($value)

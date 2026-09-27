@@ -43,6 +43,10 @@ class Feature
      * Generated from protobuf enum <code>ACHIEVEMENTS = 7;</code>
      */
     const ACHIEVEMENTS = 7;
+    /**
+     * Generated from protobuf enum <code>PROCTORING = 8 [(.eolymp.api.mcp_value_ignore) = true];</code>
+     */
+    const PROCTORING = 8;
 
     private static $valueToName = [
         self::UNKNOWN_FEATURE => 'UNKNOWN_FEATURE',
@@ -53,6 +57,7 @@ class Feature
         self::RATING => 'RATING',
         self::TEMPLATE_GENERATOR => 'TEMPLATE_GENERATOR',
         self::ACHIEVEMENTS => 'ACHIEVEMENTS',
+        self::PROCTORING => 'PROCTORING',
     ];
 
     public static function name($value)

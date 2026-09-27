@@ -348,4 +348,28 @@ class ParticipantServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, FinishContestOutput::class, $context);
     }
 
+    /**
+     * internal
+     *
+     * CreateRecording adds one piece of the calling participant's proctoring recording and returns a presigned
+     * URL to upload it to. It is only available in a proctored contest while the participation is active.
+     *
+     * @param CreateRecordingInput $input message
+     * @param array $context request parameters
+     *
+     * @return CreateRecordingOutput output message
+     */
+    public function CreateRecording(CreateRecordingInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/recordings";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/CreateRecording";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateRecordingOutput::class, $context);
+    }
+
 }

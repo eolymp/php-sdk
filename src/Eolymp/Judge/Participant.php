@@ -118,6 +118,12 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $certificate_id = '';
     /**
+     * whether the participation was recorded, only in a proctored contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Participant.ProctoringStatus proctoring_status = 33 [(.eolymp.api.read_only) = true, (.eolymp.api.mcp_field_ignore) = true];</code>
+     */
+    protected $proctoring_status = 0;
+    /**
      * Submit counter is used to count how many times user submitted the problem.
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
@@ -166,6 +172,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           Passcode is read-only and should be set using ResetPasscode method.
      *     @type string $certificate_id
      *           Participation certificate ID.
+     *     @type int $proctoring_status
+     *           whether the participation was recorded, only in a proctored contest
      *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
      *           Submit counter is used to count how many times user submitted the problem.
      * }
@@ -639,6 +647,32 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->certificate_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * whether the participation was recorded, only in a proctored contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Participant.ProctoringStatus proctoring_status = 33 [(.eolymp.api.read_only) = true, (.eolymp.api.mcp_field_ignore) = true];</code>
+     * @return int
+     */
+    public function getProctoringStatus()
+    {
+        return $this->proctoring_status;
+    }
+
+    /**
+     * whether the participation was recorded, only in a proctored contest
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Participant.ProctoringStatus proctoring_status = 33 [(.eolymp.api.read_only) = true, (.eolymp.api.mcp_field_ignore) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProctoringStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Participant\ProctoringStatus::class);
+        $this->proctoring_status = $var;
 
         return $this;
     }

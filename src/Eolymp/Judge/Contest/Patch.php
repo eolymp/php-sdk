@@ -113,6 +113,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.RatingConfig rating_config = 114;</code>
      */
     protected $rating_config = null;
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig proctoring_config = 115 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     */
+    protected $proctoring_config = null;
 
     /**
      * Constructor.
@@ -145,6 +149,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Judge\Contest\EnvironmentConfig $environment_config
      *     @type \Eolymp\Judge\Contest\CertificationConfig $certification_config
      *     @type \Eolymp\Judge\Contest\RatingConfig $rating_config
+     *     @type \Eolymp\Judge\Contest\ProctoringConfig $proctoring_config
      * }
      */
     public function __construct($data = NULL) {
@@ -948,6 +953,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\RatingConfig::class);
         $this->rating_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig proctoring_config = 115 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @return \Eolymp\Judge\Contest\ProctoringConfig|null
+     */
+    public function getProctoringConfig()
+    {
+        return $this->proctoring_config;
+    }
+
+    public function hasProctoringConfig()
+    {
+        return isset($this->proctoring_config);
+    }
+
+    public function clearProctoringConfig()
+    {
+        unset($this->proctoring_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig proctoring_config = 115 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @param \Eolymp\Judge\Contest\ProctoringConfig $var
+     * @return $this
+     */
+    public function setProctoringConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\ProctoringConfig::class);
+        $this->proctoring_config = $var;
 
         return $this;
     }

@@ -249,6 +249,13 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $rating_config = null;
     /**
+     * Proctoring configuration: participants' screens and cameras are recorded for review by contest staff.
+     * This feature requires space to support proctoring.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig proctoring_config = 115 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     */
+    protected $proctoring_config = null;
+    /**
      * Staff members of the contest (coordinator, tester, problem setter etc)
      *
      * Generated from protobuf field <code>repeated .eolymp.judge.Contest.Staff staff = 120 [(.eolymp.api.read_only) = true];</code>
@@ -341,6 +348,9 @@ class Contest extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Judge\Contest\RatingConfig $rating_config
      *           Rating configuration allows to provide parameters for EloMMR rating calculation.
      *           This feature requires space to support ratings.
+     *     @type \Eolymp\Judge\Contest\ProctoringConfig $proctoring_config
+     *           Proctoring configuration: participants' screens and cameras are recorded for review by contest staff.
+     *           This feature requires space to support proctoring.
      *     @type array<\Eolymp\Judge\Contest\Staff>|\Google\Protobuf\Internal\RepeatedField $staff
      *           Staff members of the contest (coordinator, tester, problem setter etc)
      * }
@@ -1466,6 +1476,44 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\RatingConfig::class);
         $this->rating_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Proctoring configuration: participants' screens and cameras are recorded for review by contest staff.
+     * This feature requires space to support proctoring.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig proctoring_config = 115 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @return \Eolymp\Judge\Contest\ProctoringConfig|null
+     */
+    public function getProctoringConfig()
+    {
+        return $this->proctoring_config;
+    }
+
+    public function hasProctoringConfig()
+    {
+        return isset($this->proctoring_config);
+    }
+
+    public function clearProctoringConfig()
+    {
+        unset($this->proctoring_config);
+    }
+
+    /**
+     * Proctoring configuration: participants' screens and cameras are recorded for review by contest staff.
+     * This feature requires space to support proctoring.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig proctoring_config = 115 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @param \Eolymp\Judge\Contest\ProctoringConfig $var
+     * @return $this
+     */
+    public function setProctoringConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Contest\ProctoringConfig::class);
+        $this->proctoring_config = $var;
 
         return $this;
     }

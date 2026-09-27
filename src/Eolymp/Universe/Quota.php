@@ -241,6 +241,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool unofficial_participants = 21;</code>
      */
     protected $unofficial_participants = false;
+    /**
+     * record participants' screen and camera in proctored contests
+     *
+     * Generated from protobuf field <code>bool proctoring = 34;</code>
+     */
+    protected $proctoring = false;
 
     /**
      * Constructor.
@@ -320,6 +326,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           analyse submission code to see similarities and generate a report
      *     @type bool $unofficial_participants
      *           analyse submission code to see similarities and generate a report
+     *     @type bool $proctoring
+     *           record participants' screen and camera in proctored contests
      * }
      */
     public function __construct($data = NULL) {
@@ -1367,6 +1375,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->unofficial_participants = $var;
+
+        return $this;
+    }
+
+    /**
+     * record participants' screen and camera in proctored contests
+     *
+     * Generated from protobuf field <code>bool proctoring = 34;</code>
+     * @return bool
+     */
+    public function getProctoring()
+    {
+        return $this->proctoring;
+    }
+
+    /**
+     * record participants' screen and camera in proctored contests
+     *
+     * Generated from protobuf field <code>bool proctoring = 34;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setProctoring($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->proctoring = $var;
 
         return $this;
     }
