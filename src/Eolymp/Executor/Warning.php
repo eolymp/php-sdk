@@ -24,13 +24,14 @@ class Warning extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
-     * Source file the warning refers to; empty means the program's main source.
+     * Source file the warning refers to; empty means the program's main source, and a path outside it means
+     * the warning was reported by a library the program includes.
      *
      * Generated from protobuf field <code>string file = 2;</code>
      */
     protected $file = '';
     /**
-     * Line number the warning refers to.
+     * Line number the warning refers to; 0 means the warning is about the run as a whole rather than a line.
      *
      * Generated from protobuf field <code>uint32 line = 3;</code>
      */
@@ -49,6 +50,20 @@ class Warning extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.executor.Warning.Severity severity = 6;</code>
      */
     protected $severity = 0;
+    /**
+     * Stable diagnostic identifier from the program's own catalogue, e.g. "EO101"; empty for a program that
+     * has none. Unlike the message, this does not change from run to run, so it is the field to key identity
+     * on rather than hashing the message.
+     *
+     * Generated from protobuf field <code>string code = 7;</code>
+     */
+    protected $code = '';
+    /**
+     * Number of times this warning was observed in the process that reported it.
+     *
+     * Generated from protobuf field <code>uint32 count = 8;</code>
+     */
+    protected $count = 0;
 
     /**
      * Constructor.
@@ -59,13 +74,20 @@ class Warning extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *           Program that produced the warning: checker, validator, interactor, or the generator script's name.
      *     @type string $file
-     *           Source file the warning refers to; empty means the program's main source.
+     *           Source file the warning refers to; empty means the program's main source, and a path outside it means
+     *           the warning was reported by a library the program includes.
      *     @type int $line
-     *           Line number the warning refers to.
+     *           Line number the warning refers to; 0 means the warning is about the run as a whole rather than a line.
      *     @type int $column
      *           Column number the warning refers to; 0 means unknown.
      *     @type string $message
      *     @type int $severity
+     *     @type string $code
+     *           Stable diagnostic identifier from the program's own catalogue, e.g. "EO101"; empty for a program that
+     *           has none. Unlike the message, this does not change from run to run, so it is the field to key identity
+     *           on rather than hashing the message.
+     *     @type int $count
+     *           Number of times this warning was observed in the process that reported it.
      * }
      */
     public function __construct($data = NULL) {
@@ -100,7 +122,8 @@ class Warning extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source file the warning refers to; empty means the program's main source.
+     * Source file the warning refers to; empty means the program's main source, and a path outside it means
+     * the warning was reported by a library the program includes.
      *
      * Generated from protobuf field <code>string file = 2;</code>
      * @return string
@@ -111,7 +134,8 @@ class Warning extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Source file the warning refers to; empty means the program's main source.
+     * Source file the warning refers to; empty means the program's main source, and a path outside it means
+     * the warning was reported by a library the program includes.
      *
      * Generated from protobuf field <code>string file = 2;</code>
      * @param string $var
@@ -126,7 +150,7 @@ class Warning extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Line number the warning refers to.
+     * Line number the warning refers to; 0 means the warning is about the run as a whole rather than a line.
      *
      * Generated from protobuf field <code>uint32 line = 3;</code>
      * @return int
@@ -137,7 +161,7 @@ class Warning extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Line number the warning refers to.
+     * Line number the warning refers to; 0 means the warning is about the run as a whole rather than a line.
      *
      * Generated from protobuf field <code>uint32 line = 3;</code>
      * @param int $var
@@ -217,6 +241,62 @@ class Warning extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Executor\Warning\Severity::class);
         $this->severity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Stable diagnostic identifier from the program's own catalogue, e.g. "EO101"; empty for a program that
+     * has none. Unlike the message, this does not change from run to run, so it is the field to key identity
+     * on rather than hashing the message.
+     *
+     * Generated from protobuf field <code>string code = 7;</code>
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Stable diagnostic identifier from the program's own catalogue, e.g. "EO101"; empty for a program that
+     * has none. Unlike the message, this does not change from run to run, so it is the field to key identity
+     * on rather than hashing the message.
+     *
+     * Generated from protobuf field <code>string code = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of times this warning was observed in the process that reported it.
+     *
+     * Generated from protobuf field <code>uint32 count = 8;</code>
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * Number of times this warning was observed in the process that reported it.
+     *
+     * Generated from protobuf field <code>uint32 count = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->count = $var;
 
         return $this;
     }
