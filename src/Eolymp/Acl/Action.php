@@ -261,6 +261,12 @@ class Action
      * Generated from protobuf enum <code>NOTIFICATION_WRITE = 201;</code>
      */
     const NOTIFICATION_WRITE = 201;
+    /**
+     * watch proctoring recordings
+     *
+     * Generated from protobuf enum <code>PROCTORING_READ = 210 [(.eolymp.api.mcp_value_ignore) = true];</code>
+     */
+    const PROCTORING_READ = 210;
 
     private static $valueToName = [
         self::UNKNOWN_ACTION => 'UNKNOWN_ACTION',
@@ -313,6 +319,7 @@ class Action
         self::INTEGRATION_WRITE => 'INTEGRATION_WRITE',
         self::NOTIFICATION_READ => 'NOTIFICATION_READ',
         self::NOTIFICATION_WRITE => 'NOTIFICATION_WRITE',
+        self::PROCTORING_READ => 'PROCTORING_READ',
     ];
 
     public static function name($value)

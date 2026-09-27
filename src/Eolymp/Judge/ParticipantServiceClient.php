@@ -372,4 +372,29 @@ class ParticipantServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, CreateRecordingOutput::class, $context);
     }
 
+    /**
+     * internal
+     *
+     * ListRecordings returns every piece of a participant's proctoring recording that is still kept, in the
+     * order it was recorded, each with a short-lived link to watch it.
+     *
+     * @param ListRecordingsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListRecordingsOutput output message
+     */
+    public function ListRecordings(ListRecordingsInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/participants/".rawurlencode($input->getParticipantId())."/recordings";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setParticipantId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/ListRecordings";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListRecordingsOutput::class, $context);
+    }
+
 }

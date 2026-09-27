@@ -20,7 +20,9 @@ class Recording extends \Google\Protobuf\Internal\Message
      */
     protected $stream = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 2;</code>
+     * assigned by the server: the piece ends when it is created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 2 [(.eolymp.api.read_only) = true];</code>
      */
     protected $started_at = null;
     /**
@@ -41,6 +43,12 @@ class Recording extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string content_type = 5;</code>
      */
     protected $content_type = '';
+    /**
+     * short-lived link to watch the piece
+     *
+     * Generated from protobuf field <code>string url = 6 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $url = '';
 
     /**
      * Constructor.
@@ -50,12 +58,15 @@ class Recording extends \Google\Protobuf\Internal\Message
      *
      *     @type int $stream
      *     @type \Google\Protobuf\Timestamp $started_at
+     *           assigned by the server: the piece ends when it is created
      *     @type int $duration
      *           in milliseconds
      *     @type int $size
      *           in bytes
      *     @type string $content_type
      *           video/webm or video/mp4
+     *     @type string $url
+     *           short-lived link to watch the piece
      * }
      */
     public function __construct($data = NULL) {
@@ -86,7 +97,9 @@ class Recording extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 2;</code>
+     * assigned by the server: the piece ends when it is created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 2 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedAt()
@@ -105,7 +118,9 @@ class Recording extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 2;</code>
+     * assigned by the server: the piece ends when it is created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 2 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -191,6 +206,32 @@ class Recording extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->content_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * short-lived link to watch the piece
+     *
+     * Generated from protobuf field <code>string url = 6 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * short-lived link to watch the piece
+     *
+     * Generated from protobuf field <code>string url = 6 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->url = $var;
 
         return $this;
     }
