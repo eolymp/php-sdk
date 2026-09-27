@@ -44,9 +44,19 @@ class Solution extends \Google\Protobuf\Internal\Message
      */
     protected $source = '';
     /**
+     * expected outcome; the fallback for any testset not named in assertions, and the only thing checked when assertions is empty
+     *
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      */
     protected $type = 0;
+    /**
+     * per-testset overrides. Changes only how CheckSolutions grades the result: the solution still runs as one
+     * submission either way. Empty means the solution is graded on the submission as a whole, exactly as
+     * before this field existed. Invalid on a solution whose own type is DONT_RUN or FAILURE.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution.Assertion assertions = 21;</code>
+     */
+    private $assertions;
     /**
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Status status = 30;</code>
      */
@@ -73,6 +83,11 @@ class Solution extends \Google\Protobuf\Internal\Message
      *     @type string $source
      *           source code
      *     @type int $type
+     *           expected outcome; the fallback for any testset not named in assertions, and the only thing checked when assertions is empty
+     *     @type array<\Eolymp\Atlas\Solution\Assertion>|\Google\Protobuf\Internal\RepeatedField $assertions
+     *           per-testset overrides. Changes only how CheckSolutions grades the result: the solution still runs as one
+     *           submission either way. Empty means the solution is graded on the submission as a whole, exactly as
+     *           before this field existed. Invalid on a solution whose own type is DONT_RUN or FAILURE.
      *     @type int $status
      *     @type string $submission_id
      * }
@@ -213,6 +228,8 @@ class Solution extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * expected outcome; the fallback for any testset not named in assertions, and the only thing checked when assertions is empty
+     *
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      * @return int
      */
@@ -222,6 +239,8 @@ class Solution extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * expected outcome; the fallback for any testset not named in assertions, and the only thing checked when assertions is empty
+     *
      * Generated from protobuf field <code>.eolymp.atlas.Solution.Type type = 20;</code>
      * @param int $var
      * @return $this
@@ -230,6 +249,36 @@ class Solution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution\Type::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * per-testset overrides. Changes only how CheckSolutions grades the result: the solution still runs as one
+     * submission either way. Empty means the solution is graded on the submission as a whole, exactly as
+     * before this field existed. Invalid on a solution whose own type is DONT_RUN or FAILURE.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution.Assertion assertions = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAssertions()
+    {
+        return $this->assertions;
+    }
+
+    /**
+     * per-testset overrides. Changes only how CheckSolutions grades the result: the solution still runs as one
+     * submission either way. Empty means the solution is graded on the submission as a whole, exactly as
+     * before this field existed. Invalid on a solution whose own type is DONT_RUN or FAILURE.
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution.Assertion assertions = 21;</code>
+     * @param array<\Eolymp\Atlas\Solution\Assertion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAssertions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Solution\Assertion::class);
+        $this->assertions = $arr;
 
         return $this;
     }

@@ -33,6 +33,16 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional .eolymp.atlas.Solution.Type type = 20;</code>
      */
     protected $type = null;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution.Assertion assertions = 21;</code>
+     */
+    private $assertions;
+    /**
+     * clears the overrides, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool clear_assertions = 22;</code>
+     */
+    protected $clear_assertions = null;
 
     /**
      * Constructor.
@@ -45,6 +55,9 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type string $runtime
      *     @type string $source
      *     @type int $type
+     *     @type array<\Eolymp\Atlas\Solution\Assertion>|\Google\Protobuf\Internal\RepeatedField $assertions
+     *     @type bool $clear_assertions
+     *           clears the overrides, which an empty list cannot express
      * }
      */
     public function __construct($data = NULL) {
@@ -208,6 +221,64 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Atlas\Solution\Type::class);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution.Assertion assertions = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAssertions()
+    {
+        return $this->assertions;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Solution.Assertion assertions = 21;</code>
+     * @param array<\Eolymp\Atlas\Solution\Assertion>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAssertions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Solution\Assertion::class);
+        $this->assertions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * clears the overrides, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool clear_assertions = 22;</code>
+     * @return bool
+     */
+    public function getClearAssertions()
+    {
+        return isset($this->clear_assertions) ? $this->clear_assertions : false;
+    }
+
+    public function hasClearAssertions()
+    {
+        return isset($this->clear_assertions);
+    }
+
+    public function clearClearAssertions()
+    {
+        unset($this->clear_assertions);
+    }
+
+    /**
+     * clears the overrides, which an empty list cannot express
+     *
+     * Generated from protobuf field <code>optional bool clear_assertions = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setClearAssertions($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->clear_assertions = $var;
 
         return $this;
     }

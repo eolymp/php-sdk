@@ -7,6 +7,14 @@ namespace Eolymp\Atlas\Solution;
 use UnexpectedValueException;
 
 /**
+ * Type is the expected outcome, read against either a whole submission or a single testset depending on
+ * where it is used (see Solution.type and Solution.assertions). Against a submission it is the
+ * submission's own status/verdict, unchanged from before per-testset overrides existed. Against a single
+ * testset it is that testset's group verdict: CORRECT matches ACCEPTED; WRONG_ANSWER, TIMEOUT and OVERFLOW
+ * match that failure (TIMEOUT also accepts the deprecated CPU_EXHAUSTED verdict); the *_OR_ACCEPTED
+ * variants match that failure or ACCEPTED; INCORRECT matches anything other than ACCEPTED. DONT_RUN and
+ * FAILURE only describe the solution as a whole.
+ *
  * Protobuf type <code>eolymp.atlas.Solution.Type</code>
  */
 class Type
