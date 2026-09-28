@@ -54,7 +54,7 @@ class Status
      */
     const COMPLETE = 4;
     /**
-     * testing produced an error (eg. compilation error or runtime error)
+     * testing failed before any run could complete, eg. a compilation error (no groups/runs, no verdict); a runtime error during a run is reported as COMPLETE with Verdict RUNTIME_ERROR
      *
      * Generated from protobuf enum <code>ERROR = 5;</code>
      */
