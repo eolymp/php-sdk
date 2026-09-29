@@ -24,6 +24,7 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Executor\EvaluationTask $evaluation
      *     @type \Eolymp\Executor\GenerationTask $generation
      *     @type \Eolymp\Executor\StressTask $stress
+     *     @type \Eolymp\Executor\ValidationTask $validation
      * }
      */
     public function __construct($data = NULL) {
@@ -108,6 +109,33 @@ class CreateTaskInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Executor\StressTask::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.ValidationTask validation = 4;</code>
+     * @return \Eolymp\Executor\ValidationTask|null
+     */
+    public function getValidation()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasValidation()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.executor.ValidationTask validation = 4;</code>
+     * @param \Eolymp\Executor\ValidationTask $var
+     * @return $this
+     */
+    public function setValidation($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Executor\ValidationTask::class);
+        $this->writeOneof(4, $var);
 
         return $this;
     }
