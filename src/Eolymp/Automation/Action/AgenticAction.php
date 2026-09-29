@@ -17,10 +17,6 @@ class AgenticAction extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string instructions = 1;</code>
      */
     protected $instructions = '';
-    /**
-     * Generated from protobuf field <code>repeated string tools = 2;</code>
-     */
-    private $tools;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class AgenticAction extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $instructions
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tools
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class AgenticAction extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->instructions = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string tools = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getTools()
-    {
-        return $this->tools;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string tools = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setTools($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->tools = $arr;
 
         return $this;
     }
