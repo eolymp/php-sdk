@@ -57,6 +57,30 @@ class ValidationServiceClient {
     }
 
     /**
+     * ValidateProblem checks the problem as it is saved: its validator is run on every test, its checker is given each
+     * test's answer as the output, and the problem's configuration is inspected. Findings are reported as warnings with
+     * eolymp.h codes. Tests are taken as they are, nothing is generated. Starting a validation supersedes any earlier one
+     * still in flight.
+     *
+     * @param ValidateProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return ValidateProblemOutput output message
+     */
+    public function ValidateProblem(ValidateProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/validate";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.ValidationService/ValidateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ValidateProblemOutput::class, $context);
+    }
+
+    /**
      * DescribeValidation returns the current state of a validation, broken down test by test, each run pointing
      * at the input it was fed and at the validator's own output with stderr merged in. Keep polling until the
      * status settles. A per-test verdict distinguishes an input the validator rejected from one which could not

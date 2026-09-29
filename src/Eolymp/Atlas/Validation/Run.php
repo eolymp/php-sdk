@@ -43,6 +43,12 @@ class Run extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string output_url = 6;</code>
      */
     protected $output_url = '';
+    /**
+     * checker accepts the test's answer as the output, set by ValidateProblem
+     *
+     * Generated from protobuf field <code>bool answer_accepted = 30;</code>
+     */
+    protected $answer_accepted = false;
 
     /**
      * Constructor.
@@ -59,6 +65,8 @@ class Run extends \Google\Protobuf\Internal\Message
      *           validator stdin
      *     @type string $output_url
      *           validator stdout, with stderr merged in
+     *     @type bool $answer_accepted
+     *           checker accepts the test's answer as the output, set by ValidateProblem
      * }
      */
     public function __construct($data = NULL) {
@@ -206,6 +214,32 @@ class Run extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->output_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * checker accepts the test's answer as the output, set by ValidateProblem
+     *
+     * Generated from protobuf field <code>bool answer_accepted = 30;</code>
+     * @return bool
+     */
+    public function getAnswerAccepted()
+    {
+        return $this->answer_accepted;
+    }
+
+    /**
+     * checker accepts the test's answer as the output, set by ValidateProblem
+     *
+     * Generated from protobuf field <code>bool answer_accepted = 30;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAnswerAccepted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->answer_accepted = $var;
 
         return $this;
     }
