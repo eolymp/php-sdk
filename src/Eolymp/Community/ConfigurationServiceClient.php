@@ -5,9 +5,10 @@
 namespace Eolymp\Community;
 
     /**
-     * ConfigurationService reads and writes the identity and membership configuration of a space.
+     * ConfigurationService reads and writes the identity and membership configuration of a space, and whether its
+     * members can keep notebooks.
      *
-     * Several namespaces define a ConfigurationService; this one covers identity and membership only — the
+     * Several namespaces define a ConfigurationService; this one covers identity and membership — the
      * space's identity provider, whether people may sign themselves up and join (with that off, only members an
      * administrator added can sign in), and the rule which turns a member into a display name. The provider
      * decides who owns the account: with the Eolymp provider members sign in with the Eolymp accounts they
@@ -75,6 +76,43 @@ class ConfigurationServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureIdentityConfigOutput::class, $context);
+    }
+
+    /**
+     * DescribeNotebookConfig returns whether members of the space can keep notebooks, see NotebookService. Like
+     * DescribeIdentityConfig, it requires no scope.
+     *
+     * @param DescribeNotebookConfigInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeNotebookConfigOutput output message
+     */
+    public function DescribeNotebookConfig(DescribeNotebookConfigInput $input, array $context = [])
+    {
+        $path = "/configs/notebook";
+
+        $context['name'] = "eolymp.community.ConfigurationService/DescribeNotebookConfig";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeNotebookConfigOutput::class, $context);
+    }
+
+    /**
+     * ConfigureNotebookConfig replaces the notebook configuration of the space.
+     *
+     * @param ConfigureNotebookConfigInput $input message
+     * @param array $context request parameters
+     *
+     * @return ConfigureNotebookConfigOutput output message
+     */
+    public function ConfigureNotebookConfig(ConfigureNotebookConfigInput $input, array $context = [])
+    {
+        $path = "/configs/notebook";
+
+        $context['name'] = "eolymp.community.ConfigurationService/ConfigureNotebookConfig";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, ConfigureNotebookConfigOutput::class, $context);
     }
 
 }
