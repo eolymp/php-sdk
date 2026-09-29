@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * RecordingChangedEvent is published when a recording is created, changed or deleted, including its status.
+ * RecordingChangedEvent is published when a recording is created, deleted, or its status or span changes.
  *
  * Generated from protobuf message <code>eolymp.proctoring.RecordingChangedEvent</code>
  */

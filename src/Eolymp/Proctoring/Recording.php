@@ -9,9 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Recording is a member's screen and camera recording over a time window.
- * The service which asks for proctoring (e.g. a contest) creates the recording for a member and keeps
- * its window up to date. The member's browser streams clips to the recording while the window is open.
+ * Recording is a member's screen and camera recording.
+ * The service which asks for proctoring (e.g. a contest) creates the recording for a member and hands the
+ * stream URL to the member's browser, which streams clips to it until the URL's token expires. The recording
+ * spans from its earliest clip to the end of its latest one; the owner decides whether that covers what it
+ * needed recorded.
  *
  * Generated from protobuf message <code>eolymp.proctoring.Recording</code>
  */
@@ -22,7 +24,7 @@ class Recording extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * member who is recorded, the only one allowed to stream clips
+     * member who is recorded
      *
      * Generated from protobuf field <code>string member_id = 2;</code>
      */
@@ -32,23 +34,23 @@ class Recording extends \Google\Protobuf\Internal\Message
      */
     protected $status = 0;
     /**
-     * clips are accepted from this time
+     * start of the earliest clip
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 4;</code>
      */
-    protected $starts_at = null;
+    protected $started_at = null;
     /**
-     * clips are accepted until this time
+     * end of the latest clip
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 5;</code>
      */
-    protected $ends_at = null;
+    protected $ended_at = null;
     /**
-     * WebSocket URL the member's browser streams clips to
+     * total time in seconds between started_at and ended_at not covered by clips
      *
-     * Generated from protobuf field <code>string stream_url = 6;</code>
+     * Generated from protobuf field <code>uint32 gap_duration = 6;</code>
      */
-    protected $stream_url = '';
+    protected $gap_duration = 0;
     /**
      * recorded streams
      *
@@ -68,14 +70,14 @@ class Recording extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $member_id
-     *           member who is recorded, the only one allowed to stream clips
+     *           member who is recorded
      *     @type int $status
-     *     @type \Google\Protobuf\Timestamp $starts_at
-     *           clips are accepted from this time
-     *     @type \Google\Protobuf\Timestamp $ends_at
-     *           clips are accepted until this time
-     *     @type string $stream_url
-     *           WebSocket URL the member's browser streams clips to
+     *     @type \Google\Protobuf\Timestamp $started_at
+     *           start of the earliest clip
+     *     @type \Google\Protobuf\Timestamp $ended_at
+     *           end of the latest clip
+     *     @type int $gap_duration
+     *           total time in seconds between started_at and ended_at not covered by clips
      *     @type array<\Eolymp\Proctoring\Recording\Stream>|\Google\Protobuf\Internal\RepeatedField $streams
      *           recorded streams
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -109,7 +111,7 @@ class Recording extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member who is recorded, the only one allowed to stream clips
+     * member who is recorded
      *
      * Generated from protobuf field <code>string member_id = 2;</code>
      * @return string
@@ -120,7 +122,7 @@ class Recording extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member who is recorded, the only one allowed to stream clips
+     * member who is recorded
      *
      * Generated from protobuf field <code>string member_id = 2;</code>
      * @param string $var
@@ -157,99 +159,99 @@ class Recording extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * clips are accepted from this time
+     * start of the earliest clip
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
-    public function getStartsAt()
+    public function getStartedAt()
     {
-        return $this->starts_at;
+        return $this->started_at;
     }
 
-    public function hasStartsAt()
+    public function hasStartedAt()
     {
-        return isset($this->starts_at);
+        return isset($this->started_at);
     }
 
-    public function clearStartsAt()
+    public function clearStartedAt()
     {
-        unset($this->starts_at);
+        unset($this->started_at);
     }
 
     /**
-     * clips are accepted from this time
+     * start of the earliest clip
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp starts_at = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartsAt($var)
+    public function setStartedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->starts_at = $var;
+        $this->started_at = $var;
 
         return $this;
     }
 
     /**
-     * clips are accepted until this time
+     * end of the latest clip
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
-    public function getEndsAt()
+    public function getEndedAt()
     {
-        return $this->ends_at;
+        return $this->ended_at;
     }
 
-    public function hasEndsAt()
+    public function hasEndedAt()
     {
-        return isset($this->ends_at);
+        return isset($this->ended_at);
     }
 
-    public function clearEndsAt()
+    public function clearEndedAt()
     {
-        unset($this->ends_at);
+        unset($this->ended_at);
     }
 
     /**
-     * clips are accepted until this time
+     * end of the latest clip
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp ends_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndsAt($var)
+    public function setEndedAt($var)
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->ends_at = $var;
+        $this->ended_at = $var;
 
         return $this;
     }
 
     /**
-     * WebSocket URL the member's browser streams clips to
+     * total time in seconds between started_at and ended_at not covered by clips
      *
-     * Generated from protobuf field <code>string stream_url = 6;</code>
-     * @return string
+     * Generated from protobuf field <code>uint32 gap_duration = 6;</code>
+     * @return int
      */
-    public function getStreamUrl()
+    public function getGapDuration()
     {
-        return $this->stream_url;
+        return $this->gap_duration;
     }
 
     /**
-     * WebSocket URL the member's browser streams clips to
+     * total time in seconds between started_at and ended_at not covered by clips
      *
-     * Generated from protobuf field <code>string stream_url = 6;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint32 gap_duration = 6;</code>
+     * @param int $var
      * @return $this
      */
-    public function setStreamUrl($var)
+    public function setGapDuration($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->stream_url = $var;
+        GPBUtil::checkUint32($var);
+        $this->gap_duration = $var;
 
         return $this;
     }

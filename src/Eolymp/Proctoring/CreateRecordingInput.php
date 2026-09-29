@@ -14,11 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRecordingInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * member_id, starts_at and ends_at are set on creation
+     * member_id is set on creation
      *
      * Generated from protobuf field <code>.eolymp.proctoring.Recording recording = 1;</code>
      */
     protected $recording = null;
+    /**
+     * when the stream URL's token expires, 5 hours from now at most
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     */
+    protected $expires_at = null;
 
     /**
      * Constructor.
@@ -27,7 +33,9 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Proctoring\Recording $recording
-     *           member_id, starts_at and ends_at are set on creation
+     *           member_id is set on creation
+     *     @type \Google\Protobuf\Timestamp $expires_at
+     *           when the stream URL's token expires, 5 hours from now at most
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +44,7 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member_id, starts_at and ends_at are set on creation
+     * member_id is set on creation
      *
      * Generated from protobuf field <code>.eolymp.proctoring.Recording recording = 1;</code>
      * @return \Eolymp\Proctoring\Recording|null
@@ -57,7 +65,7 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member_id, starts_at and ends_at are set on creation
+     * member_id is set on creation
      *
      * Generated from protobuf field <code>.eolymp.proctoring.Recording recording = 1;</code>
      * @param \Eolymp\Proctoring\Recording $var
@@ -67,6 +75,42 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Proctoring\Recording::class);
         $this->recording = $var;
+
+        return $this;
+    }
+
+    /**
+     * when the stream URL's token expires, 5 hours from now at most
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->expires_at;
+    }
+
+    public function hasExpiresAt()
+    {
+        return isset($this->expires_at);
+    }
+
+    public function clearExpiresAt()
+    {
+        unset($this->expires_at);
+    }
+
+    /**
+     * when the stream URL's token expires, 5 hours from now at most
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setExpiresAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->expires_at = $var;
 
         return $this;
     }

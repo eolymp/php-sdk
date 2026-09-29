@@ -16,49 +16,35 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
-     * window has not started yet
+     * nothing was recorded yet
      *
-     * Generated from protobuf enum <code>PENDING = 1;</code>
+     * Generated from protobuf enum <code>EMPTY = 1;</code>
      */
-    const PENDING = 1;
+    const PBEMPTY = 1;
     /**
-     * window is open
+     * clips follow each other without gaps
      *
-     * Generated from protobuf enum <code>RECORDING = 2;</code>
+     * Generated from protobuf enum <code>COMPLETE = 2;</code>
      */
-    const RECORDING = 2;
+    const COMPLETE = 2;
     /**
-     * window has ended and clips cover it
+     * clips have gaps between them
      *
-     * Generated from protobuf enum <code>COMPLETE = 3;</code>
+     * Generated from protobuf enum <code>INCOMPLETE = 3;</code>
      */
-    const COMPLETE = 3;
-    /**
-     * window has ended and clips cover it with gaps
-     *
-     * Generated from protobuf enum <code>INCOMPLETE = 4;</code>
-     */
-    const INCOMPLETE = 4;
-    /**
-     * window has ended and nothing was recorded
-     *
-     * Generated from protobuf enum <code>EMPTY = 5;</code>
-     */
-    const PBEMPTY = 5;
+    const INCOMPLETE = 3;
     /**
      * clips were removed after the retention period
      *
-     * Generated from protobuf enum <code>EXPIRED = 6;</code>
+     * Generated from protobuf enum <code>EXPIRED = 4;</code>
      */
-    const EXPIRED = 6;
+    const EXPIRED = 4;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::PENDING => 'PENDING',
-        self::RECORDING => 'RECORDING',
+        self::PBEMPTY => 'EMPTY',
         self::COMPLETE => 'COMPLETE',
         self::INCOMPLETE => 'INCOMPLETE',
-        self::PBEMPTY => 'EMPTY',
         self::EXPIRED => 'EXPIRED',
     ];
 

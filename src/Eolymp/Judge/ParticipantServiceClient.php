@@ -350,7 +350,8 @@ class ParticipantServiceClient {
 
     /**
      * RequestProctoring returns the URL the calling participant's browser streams its proctoring recording
-     * to, allocating the recording on the first call and returning the same one afterwards. Only official
+     * to, allocating the recording on the first call. Every call gives a new URL for the same recording, valid
+     * until shortly after the participant's end; once the stream closes, the browser calls again. Only official
      * participants of a proctored contest get one, from shortly before their start until they finish.
      *
      * @param RequestProctoringInput $input message

@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.proctoring.CreateRecordingOutput</code>
+ * Generated from protobuf message <code>eolymp.proctoring.ResumeRecordingOutput</code>
  */
-class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
+class ResumeRecordingOutput extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Generated from protobuf field <code>string recording_id = 1;</code>
-     */
-    protected $recording_id = '';
     /**
      * WebSocket URL with a token to stream clips to
      *
-     * Generated from protobuf field <code>string stream_url = 2;</code>
+     * Generated from protobuf field <code>string stream_url = 1;</code>
      */
     protected $stream_url = '';
 
@@ -30,7 +26,6 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $recording_id
      *     @type string $stream_url
      *           WebSocket URL with a token to stream clips to
      * }
@@ -41,31 +36,9 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string recording_id = 1;</code>
-     * @return string
-     */
-    public function getRecordingId()
-    {
-        return $this->recording_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string recording_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRecordingId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->recording_id = $var;
-
-        return $this;
-    }
-
-    /**
      * WebSocket URL with a token to stream clips to
      *
-     * Generated from protobuf field <code>string stream_url = 2;</code>
+     * Generated from protobuf field <code>string stream_url = 1;</code>
      * @return string
      */
     public function getStreamUrl()
@@ -76,7 +49,7 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
     /**
      * WebSocket URL with a token to stream clips to
      *
-     * Generated from protobuf field <code>string stream_url = 2;</code>
+     * Generated from protobuf field <code>string stream_url = 1;</code>
      * @param string $var
      * @return $this
      */

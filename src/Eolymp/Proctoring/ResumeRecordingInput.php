@@ -9,18 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.proctoring.UpdateRecordingInput</code>
+ * Generated from protobuf message <code>eolymp.proctoring.ResumeRecordingInput</code>
  */
-class UpdateRecordingInput extends \Google\Protobuf\Internal\Message
+class ResumeRecordingInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>string recording_id = 1;</code>
      */
     protected $recording_id = '';
     /**
-     * Generated from protobuf field <code>.eolymp.proctoring.Recording.Patch recording = 2;</code>
+     * when the stream URL's token expires, 5 hours from now at most
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
-    protected $recording = null;
+    protected $expires_at = null;
 
     /**
      * Constructor.
@@ -29,7 +31,8 @@ class UpdateRecordingInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $recording_id
-     *     @type \Eolymp\Proctoring\Recording\Patch $recording
+     *     @type \Google\Protobuf\Timestamp $expires_at
+     *           when the stream URL's token expires, 5 hours from now at most
      * }
      */
     public function __construct($data = NULL) {
@@ -60,33 +63,37 @@ class UpdateRecordingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.proctoring.Recording.Patch recording = 2;</code>
-     * @return \Eolymp\Proctoring\Recording\Patch|null
+     * when the stream URL's token expires, 5 hours from now at most
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * @return \Google\Protobuf\Timestamp|null
      */
-    public function getRecording()
+    public function getExpiresAt()
     {
-        return $this->recording;
+        return $this->expires_at;
     }
 
-    public function hasRecording()
+    public function hasExpiresAt()
     {
-        return isset($this->recording);
+        return isset($this->expires_at);
     }
 
-    public function clearRecording()
+    public function clearExpiresAt()
     {
-        unset($this->recording);
+        unset($this->expires_at);
     }
 
     /**
-     * Generated from protobuf field <code>.eolymp.proctoring.Recording.Patch recording = 2;</code>
-     * @param \Eolymp\Proctoring\Recording\Patch $var
+     * when the stream URL's token expires, 5 hours from now at most
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRecording($var)
+    public function setExpiresAt($var)
     {
-        GPBUtil::checkMessage($var, \Eolymp\Proctoring\Recording\Patch::class);
-        $this->recording = $var;
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->expires_at = $var;
 
         return $this;
     }
