@@ -38,7 +38,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
      */
     protected $expires_at = null;
     /**
@@ -220,7 +220,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpiresAt()
@@ -239,7 +239,7 @@ class Penalty extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11 [(.eolymp.api.read_only) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expires_at = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
