@@ -348,4 +348,27 @@ class ParticipantServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, FinishContestOutput::class, $context);
     }
 
+    /**
+     * RequestProctoring returns the URL the calling participant's browser streams its proctoring recording
+     * to, allocating the recording on the first call and returning the same one afterwards. Only official
+     * participants of a proctored contest get one, from shortly before their start until they finish.
+     *
+     * @param RequestProctoringInput $input message
+     * @param array $context request parameters
+     *
+     * @return RequestProctoringOutput output message
+     */
+    public function RequestProctoring(RequestProctoringInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/proctoring";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/RequestProctoring";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RequestProctoringOutput::class, $context);
+    }
+
 }
