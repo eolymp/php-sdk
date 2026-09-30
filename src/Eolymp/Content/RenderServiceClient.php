@@ -49,4 +49,25 @@ class RenderServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, RenderContentOutput::class, $context);
     }
 
+    /**
+     * RenderFigure compiles a figure written in a drawing language and returns it as an SVG image. The editor
+     * calls it to preview a figure while an author types, and statements call it when saved, to keep the image
+     * next to the source it was drawn from. A figure that does not compile is not an error: the call succeeds
+     * with no image and says what is wrong in diagnostics.
+     *
+     * @param RenderFigureInput $input message
+     * @param array $context request parameters
+     *
+     * @return RenderFigureOutput output message
+     */
+    public function RenderFigure(RenderFigureInput $input, array $context = [])
+    {
+        $path = "/figures:render";
+
+        $context['name'] = "eolymp.content.RenderService/RenderFigure";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RenderFigureOutput::class, $context);
+    }
+
 }
