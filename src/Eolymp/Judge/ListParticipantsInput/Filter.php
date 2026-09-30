@@ -65,6 +65,12 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool has_violations = 15 [(.eolymp.api.mcp_field_desc) = "filter participants who have PENDING or CONFIRMED violations"];</code>
      */
     private $has_violations;
+    /**
+     * Filter participants by proctoring recording status: UNAVAILABLE, COMPLETE, INCOMPLETE or EXPIRED
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum proctoring_status = 16 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     */
+    private $proctoring_status;
 
     /**
      * Constructor.
@@ -86,6 +92,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           Filter participants who are staff members of the contest
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $has_violations
      *           Filter participants who have non-cancelled violations
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $proctoring_status
+     *           Filter participants by proctoring recording status: UNAVAILABLE, COMPLETE, INCOMPLETE or EXPIRED
      * }
      */
     public function __construct($data = NULL) {
@@ -343,6 +351,32 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->has_violations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Filter participants by proctoring recording status: UNAVAILABLE, COMPLETE, INCOMPLETE or EXPIRED
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum proctoring_status = 16 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProctoringStatus()
+    {
+        return $this->proctoring_status;
+    }
+
+    /**
+     * Filter participants by proctoring recording status: UNAVAILABLE, COMPLETE, INCOMPLETE or EXPIRED
+     *
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum proctoring_status = 16 [(.eolymp.api.mcp_field_ignore) = true];</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProctoringStatus($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->proctoring_status = $arr;
 
         return $this;
     }
