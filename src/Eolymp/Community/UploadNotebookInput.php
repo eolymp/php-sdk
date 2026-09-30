@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class UploadNotebookInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * empty for a member uploading their own notebook, required for an administrator
+     *
      * Generated from protobuf field <code>string member_id = 1;</code>
      */
     protected $member_id = '';
@@ -39,6 +41,7 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
+     *           empty for a member uploading their own notebook, required for an administrator
      *     @type string $name
      *     @type string $type
      *           application/pdf, image/png or image/jpeg
@@ -51,6 +54,8 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * empty for a member uploading their own notebook, required for an administrator
+     *
      * Generated from protobuf field <code>string member_id = 1;</code>
      * @return string
      */
@@ -60,6 +65,8 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * empty for a member uploading their own notebook, required for an administrator
+     *
      * Generated from protobuf field <code>string member_id = 1;</code>
      * @param string $var
      * @return $this
