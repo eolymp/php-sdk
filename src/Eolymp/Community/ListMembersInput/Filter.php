@@ -92,6 +92,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $score;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp active_at = 111;</code>
+     */
+    private $active_at;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
      */
     private $attribute;
@@ -123,6 +127,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $birthday
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $country
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $score
+     *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $active_at
      *     @type array<\Eolymp\Community\ListMembersInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $attribute
      * }
      */
@@ -535,6 +540,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionInt::class);
         $this->score = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp active_at = 111;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getActiveAt()
+    {
+        return $this->active_at;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp active_at = 111;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setActiveAt($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
+        $this->active_at = $arr;
 
         return $this;
     }

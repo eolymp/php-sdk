@@ -126,7 +126,7 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $seated_at = null;
     /**
-     * Last time when user was active
+     * Last time when member signed in or refreshed their token
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62 [(.eolymp.api.read_only) = true];</code>
      */
@@ -212,7 +212,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $seated_at
      *           Time when user was seated in the space.
      *     @type \Google\Protobuf\Timestamp $active_at
-     *           Last time when user was active
+     *           Last time when member signed in or refreshed their token
      *     @type \Eolymp\Community\User $user
      *     @type \Eolymp\Community\Team $team
      *     @type \Eolymp\Community\Ghost $ghost
@@ -769,7 +769,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last time when user was active
+     * Last time when member signed in or refreshed their token
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -790,7 +790,7 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last time when user was active
+     * Last time when member signed in or refreshed their token
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp active_at = 62 [(.eolymp.api.read_only) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
