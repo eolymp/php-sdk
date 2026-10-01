@@ -24,13 +24,7 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * application/pdf, image/png or image/jpeg
-     *
-     * Generated from protobuf field <code>string type = 3;</code>
-     */
-    protected $type = '';
-    /**
-     * link to the file uploaded through AssetService
+     * link to a PDF, PNG or JPEG uploaded through AssetService
      *
      * Generated from protobuf field <code>string content_url = 4;</code>
      */
@@ -45,10 +39,8 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *           empty for a member uploading their own notebook, required for an administrator
      *     @type string $name
-     *     @type string $type
-     *           application/pdf, image/png or image/jpeg
      *     @type string $content_url
-     *           link to the file uploaded through AssetService
+     *           link to a PDF, PNG or JPEG uploaded through AssetService
      * }
      */
     public function __construct($data = NULL) {
@@ -105,33 +97,7 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * application/pdf, image/png or image/jpeg
-     *
-     * Generated from protobuf field <code>string type = 3;</code>
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * application/pdf, image/png or image/jpeg
-     *
-     * Generated from protobuf field <code>string type = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * link to the file uploaded through AssetService
+     * link to a PDF, PNG or JPEG uploaded through AssetService
      *
      * Generated from protobuf field <code>string content_url = 4;</code>
      * @return string
@@ -142,7 +108,7 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * link to the file uploaded through AssetService
+     * link to a PDF, PNG or JPEG uploaded through AssetService
      *
      * Generated from protobuf field <code>string content_url = 4;</code>
      * @param string $var
