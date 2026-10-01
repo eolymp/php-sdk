@@ -37,6 +37,8 @@ class NotebookServiceClient {
      * empty; their upload is pending and replaces their pending notebook, if there is one. An administrator names
      * the member, and their upload is approved.
      *
+     * The file is uploaded through AssetService beforehand and passed as content_url.
+     *
      * @param UploadNotebookInput $input message
      * @param array $context request parameters
      *

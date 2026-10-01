@@ -30,9 +30,11 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * Generated from protobuf field <code>bytes data = 100;</code>
+     * link to the file uploaded through AssetService
+     *
+     * Generated from protobuf field <code>string content_url = 4;</code>
      */
-    protected $data = '';
+    protected $content_url = '';
 
     /**
      * Constructor.
@@ -45,7 +47,8 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $type
      *           application/pdf, image/png or image/jpeg
-     *     @type string $data
+     *     @type string $content_url
+     *           link to the file uploaded through AssetService
      * }
      */
     public function __construct($data = NULL) {
@@ -128,23 +131,27 @@ class UploadNotebookInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 100;</code>
+     * link to the file uploaded through AssetService
+     *
+     * Generated from protobuf field <code>string content_url = 4;</code>
      * @return string
      */
-    public function getData()
+    public function getContentUrl()
     {
-        return $this->data;
+        return $this->content_url;
     }
 
     /**
-     * Generated from protobuf field <code>bytes data = 100;</code>
+     * link to the file uploaded through AssetService
+     *
+     * Generated from protobuf field <code>string content_url = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setContentUrl($var)
     {
-        GPBUtil::checkString($var, False);
-        $this->data = $var;
+        GPBUtil::checkString($var, True);
+        $this->content_url = $var;
 
         return $this;
     }
