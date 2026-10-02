@@ -45,6 +45,12 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool unset_locales = 20;</code>
      */
     protected $unset_locales = null;
+    /**
+     * #rrggbb, empty restores the default
+     *
+     * Generated from protobuf field <code>optional string primary_color = 21;</code>
+     */
+    protected $primary_color = null;
 
     /**
      * Constructor.
@@ -61,6 +67,8 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
      *     @type bool $unset_locales
      *           clears the locales, which an empty list cannot express
+     *     @type string $primary_color
+     *           #rrggbb, empty restores the default
      * }
      */
     public function __construct($data = NULL) {
@@ -286,6 +294,42 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->unset_locales = $var;
+
+        return $this;
+    }
+
+    /**
+     * #rrggbb, empty restores the default
+     *
+     * Generated from protobuf field <code>optional string primary_color = 21;</code>
+     * @return string
+     */
+    public function getPrimaryColor()
+    {
+        return isset($this->primary_color) ? $this->primary_color : '';
+    }
+
+    public function hasPrimaryColor()
+    {
+        return isset($this->primary_color);
+    }
+
+    public function clearPrimaryColor()
+    {
+        unset($this->primary_color);
+    }
+
+    /**
+     * #rrggbb, empty restores the default
+     *
+     * Generated from protobuf field <code>optional string primary_color = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrimaryColor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->primary_color = $var;
 
         return $this;
     }

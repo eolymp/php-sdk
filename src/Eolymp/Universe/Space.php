@@ -123,6 +123,12 @@ class Space extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string locales = 19;</code>
      */
     private $locales;
+    /**
+     * brand colour as #rrggbb, empty for the default theme
+     *
+     * Generated from protobuf field <code>string primary_color = 21;</code>
+     */
+    protected $primary_color = '';
 
     /**
      * Constructor.
@@ -166,6 +172,8 @@ class Space extends \Google\Protobuf\Internal\Message
      *           discord guild ID
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
      *           available locales
+     *     @type string $primary_color
+     *           brand colour as #rrggbb, empty for the default theme
      * }
      */
     public function __construct($data = NULL) {
@@ -665,6 +673,32 @@ class Space extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * brand colour as #rrggbb, empty for the default theme
+     *
+     * Generated from protobuf field <code>string primary_color = 21;</code>
+     * @return string
+     */
+    public function getPrimaryColor()
+    {
+        return $this->primary_color;
+    }
+
+    /**
+     * brand colour as #rrggbb, empty for the default theme
+     *
+     * Generated from protobuf field <code>string primary_color = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPrimaryColor($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->primary_color = $var;
 
         return $this;
     }
