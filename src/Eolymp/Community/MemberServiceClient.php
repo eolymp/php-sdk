@@ -276,4 +276,40 @@ class MemberServiceClient {
         return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeMemberUsageOutput::class, $context);
     }
 
+    /**
+     * ImportMembers adds or updates users from a CSV file. Runs as a background task.
+     *
+     * @param ImportMembersInput $input message
+     * @param array $context request parameters
+     *
+     * @return ImportMembersOutput output message
+     */
+    public function ImportMembers(ImportMembersInput $input, array $context = [])
+    {
+        $path = "/members:import";
+
+        $context['name'] = "eolymp.community.MemberService/ImportMembers";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ImportMembersOutput::class, $context);
+    }
+
+    /**
+     * ExportMembers saves users to a CSV file. Runs as a background task.
+     *
+     * @param ExportMembersInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportMembersOutput output message
+     */
+    public function ExportMembers(ExportMembersInput $input, array $context = [])
+    {
+        $path = "/members:export";
+
+        $context['name'] = "eolymp.community.MemberService/ExportMembers";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportMembersOutput::class, $context);
+    }
+
 }

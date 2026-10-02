@@ -96,6 +96,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $active_at;
     /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool invited = 112;</code>
+     */
+    private $invited;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.community.ListMembersInput.ExpressionAttribute attribute = 107;</code>
      */
     private $attribute;
@@ -128,6 +132,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $country
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $score
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $active_at
+     *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $invited
      *     @type array<\Eolymp\Community\ListMembersInput\ExpressionAttribute>|\Google\Protobuf\Internal\RepeatedField $attribute
      * }
      */
@@ -562,6 +567,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
         $this->active_at = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool invited = 112;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getInvited()
+    {
+        return $this->invited;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool invited = 112;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setInvited($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
+        $this->invited = $arr;
 
         return $this;
     }

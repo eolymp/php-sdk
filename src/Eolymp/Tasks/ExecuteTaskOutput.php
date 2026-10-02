@@ -24,6 +24,7 @@ class ExecuteTaskOutput extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Tasks\ExecuteTaskOutput\Progress $progress
      *     @type \Eolymp\Tasks\ExecuteTaskOutput\Checkpoint $checkpoint
      *     @type \Eolymp\Tasks\ExecuteTaskOutput\Record $record
+     *     @type \Eolymp\Tasks\ExecuteTaskOutput\Output $output
      * }
      */
     public function __construct($data = NULL) {
@@ -108,6 +109,33 @@ class ExecuteTaskOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Tasks\ExecuteTaskOutput\Record::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.tasks.ExecuteTaskOutput.Output output = 4;</code>
+     * @return \Eolymp\Tasks\ExecuteTaskOutput\Output|null
+     */
+    public function getOutput()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasOutput()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.tasks.ExecuteTaskOutput.Output output = 4;</code>
+     * @param \Eolymp\Tasks\ExecuteTaskOutput\Output $var
+     * @return $this
+     */
+    public function setOutput($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Tasks\ExecuteTaskOutput\Output::class);
+        $this->writeOneof(4, $var);
 
         return $this;
     }

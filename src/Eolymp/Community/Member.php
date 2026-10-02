@@ -90,6 +90,12 @@ class Member extends \Google\Protobuf\Internal\Message
      */
     protected $incomplete = false;
     /**
+     * added by an administrator, has not signed in yet
+     *
+     * Generated from protobuf field <code>bool invited = 21 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $invited = false;
+    /**
      * member participates in all competitions unofficially
      *
      * Generated from protobuf field <code>bool unofficial = 30;</code>
@@ -199,6 +205,8 @@ class Member extends \Google\Protobuf\Internal\Message
      *           member account is inactive
      *     @type bool $incomplete
      *           member profile (attributes) is missing some information
+     *     @type bool $invited
+     *           added by an administrator, has not signed in yet
      *     @type bool $unofficial
      *           member participates in all competitions unofficially
      *     @type bool $secret
@@ -568,6 +576,32 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->incomplete = $var;
+
+        return $this;
+    }
+
+    /**
+     * added by an administrator, has not signed in yet
+     *
+     * Generated from protobuf field <code>bool invited = 21 [(.eolymp.api.read_only) = true];</code>
+     * @return bool
+     */
+    public function getInvited()
+    {
+        return $this->invited;
+    }
+
+    /**
+     * added by an administrator, has not signed in yet
+     *
+     * Generated from protobuf field <code>bool invited = 21 [(.eolymp.api.read_only) = true];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setInvited($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->invited = $var;
 
         return $this;
     }

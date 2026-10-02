@@ -110,6 +110,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string resource_link = 16;</code>
      */
     protected $resource_link = '';
+    /**
+     * file produced by the task
+     *
+     * Generated from protobuf field <code>string output_url = 17;</code>
+     */
+    protected $output_url = '';
 
     /**
      * Constructor.
@@ -148,6 +154,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *           user ID of the task creator, if created by a user
      *     @type string $resource_link
      *           canonical URL of the resource, e.g. "https://api.eolymp.com/spaces/abc/problems/42"
+     *     @type string $output_url
+     *           file produced by the task
      * }
      */
     public function __construct($data = NULL) {
@@ -601,6 +609,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * file produced by the task
+     *
+     * Generated from protobuf field <code>string output_url = 17;</code>
+     * @return string
+     */
+    public function getOutputUrl()
+    {
+        return $this->output_url;
+    }
+
+    /**
+     * file produced by the task
+     *
+     * Generated from protobuf field <code>string output_url = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOutputUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->output_url = $var;
 
         return $this;
     }
