@@ -62,6 +62,9 @@ class Type
      * Date picker.
      * Validation:
      *  - required - field must be non-empty
+     * Constraints:
+     *  - future - date must be in the future
+     *  - past   - date must be in the past
      *
      * Generated from protobuf enum <code>DATE = 5;</code>
      */
@@ -86,32 +89,30 @@ class Type
      * Country value.
      * Validation:
      *  - required - field must be non-empty
+     *  - choices  - two-letter codes of the allowed countries
      *
      * Generated from protobuf enum <code>COUNTRY = 8;</code>
      */
     const COUNTRY = 8;
     /**
-     * Country and Region value.
+     * Region value.
      * Validation:
-     *  - required  - field must be non-empty
-     *  - countries - region must belong to a specific country
+     *  - required - field must be non-empty
+     * Constraints:
+     *  - country:[two-letter] - region must belong to this country, repeat to allow several
      *
      * Generated from protobuf enum <code>REGION = 9;</code>
      */
     const REGION = 9;
     /**
-     * Country and Region value.
+     * Educational institution value.
      * Validation:
-     *  - required  - field must be non-empty
-     * Constraints:
-     *  - governance:public
-     *  - governance:private
-     *  - governance:charter
-     *  - level:preschool
-     *  - level:primary
-     *  - level:secondary
-     *  - level:tertiary
+     *  - required - field must be non-empty
+     * Constraints, each repeatable to allow several values:
      *  - country:[two-letter]
+     *  - governance:public|private|charter
+     *  - level:preschool|primary|secondary|tertiary
+     *  - type:kindergarten|school|lyceum|gymnasium|college|institute|university|academy
      *
      * Generated from protobuf enum <code>INSTITUTION = 10;</code>
      */
