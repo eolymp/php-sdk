@@ -18,6 +18,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
+     * Generated from protobuf field <code>optional int32 position = 5;</code>
+     */
+    protected $position = null;
+    /**
      * Generated from protobuf field <code>map<string, string> values = 2;</code>
      */
     private $values;
@@ -43,6 +47,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
+     *     @type int $position
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $unset_images
@@ -83,6 +88,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 position = 5;</code>
+     * @return int
+     */
+    public function getPosition()
+    {
+        return isset($this->position) ? $this->position : 0;
+    }
+
+    public function hasPosition()
+    {
+        return isset($this->position);
+    }
+
+    public function clearPosition()
+    {
+        unset($this->position);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int32 position = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPosition($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->position = $var;
 
         return $this;
     }

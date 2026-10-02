@@ -28,6 +28,12 @@ class Variant extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * order among the variants of a product
+     *
+     * Generated from protobuf field <code>int32 position = 5;</code>
+     */
+    protected $position = 0;
+    /**
      * Generated from protobuf field <code>map<string, string> values = 2;</code>
      */
     private $values;
@@ -63,6 +69,8 @@ class Variant extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $product_id
      *     @type string $name
+     *     @type int $position
+     *           order among the variants of a product
      *     @type array|\Google\Protobuf\Internal\MapField $values
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $images
      *     @type bool $out_of_stock
@@ -140,6 +148,32 @@ class Variant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * order among the variants of a product
+     *
+     * Generated from protobuf field <code>int32 position = 5;</code>
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * order among the variants of a product
+     *
+     * Generated from protobuf field <code>int32 position = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPosition($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->position = $var;
 
         return $this;
     }
