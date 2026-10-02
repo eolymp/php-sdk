@@ -66,10 +66,6 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $unset_choices = null;
     /**
-     * Generated from protobuf field <code>optional string country = 104;</code>
-     */
-    protected $country = null;
-    /**
      * Generated from protobuf field <code>repeated string constraints = 105;</code>
      */
     private $constraints;
@@ -99,7 +95,6 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $choices
      *     @type bool $unset_choices
      *           choices carries no presence of its own, so clearing it has to be asked for
-     *     @type string $country
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $constraints
      *     @type bool $unset_constraints
      *           constraints carries no presence of its own, so clearing it has to be asked for
@@ -484,38 +479,6 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->unset_choices = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>optional string country = 104;</code>
-     * @return string
-     */
-    public function getCountry()
-    {
-        return isset($this->country) ? $this->country : '';
-    }
-
-    public function hasCountry()
-    {
-        return isset($this->country);
-    }
-
-    public function clearCountry()
-    {
-        unset($this->country);
-    }
-
-    /**
-     * Generated from protobuf field <code>optional string country = 104;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCountry($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->country = $var;
 
         return $this;
     }
