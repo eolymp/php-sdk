@@ -399,4 +399,31 @@ class ProblemServiceClient {
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportProblemsOutput::class, $context);
     }
 
+    /**
+     * ExportEditorials renders the contest's problem editorials into a single printable PDF booklet and
+     * returns a link to download it rather than the document itself. Editorials are taken in contest order
+     * and in one locale, the space's primary one unless another is requested, and a problem with no
+     * editorial in that locale is left out of the booklet. Access follows the same rule as
+     * DescribeEditorial: an organiser may export at any time, while a participant may only once their
+     * participation is over and the contest is configured to display editorials. Rendering is slow and
+     * tightly rate-limited, so keep the returned URL instead of exporting again.
+     *
+     * @param ExportEditorialsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ExportEditorialsOutput output message
+     */
+    public function ExportEditorials(ExportEditorialsInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/editorials:export";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ProblemService/ExportEditorials";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ExportEditorialsOutput::class, $context);
+    }
+
 }
