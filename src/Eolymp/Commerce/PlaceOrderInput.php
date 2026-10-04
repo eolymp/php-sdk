@@ -13,6 +13,16 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class PlaceOrderInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * where the order ships and how, applied to the cart before it is placed; the cart keeps what it has when these are unset
+     *
+     * Generated from protobuf field <code>.eolymp.commerce.Address shipping_address = 1;</code>
+     */
+    protected $shipping_address = null;
+    /**
+     * Generated from protobuf field <code>optional string shipping_method_id = 2;</code>
+     */
+    protected $shipping_method_id = null;
 
     /**
      * Constructor.
@@ -20,11 +30,82 @@ class PlaceOrderInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Eolymp\Commerce\Address $shipping_address
+     *           where the order ships and how, applied to the cart before it is placed; the cart keeps what it has when these are unset
+     *     @type string $shipping_method_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\ShoppingService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * where the order ships and how, applied to the cart before it is placed; the cart keeps what it has when these are unset
+     *
+     * Generated from protobuf field <code>.eolymp.commerce.Address shipping_address = 1;</code>
+     * @return \Eolymp\Commerce\Address|null
+     */
+    public function getShippingAddress()
+    {
+        return $this->shipping_address;
+    }
+
+    public function hasShippingAddress()
+    {
+        return isset($this->shipping_address);
+    }
+
+    public function clearShippingAddress()
+    {
+        unset($this->shipping_address);
+    }
+
+    /**
+     * where the order ships and how, applied to the cart before it is placed; the cart keeps what it has when these are unset
+     *
+     * Generated from protobuf field <code>.eolymp.commerce.Address shipping_address = 1;</code>
+     * @param \Eolymp\Commerce\Address $var
+     * @return $this
+     */
+    public function setShippingAddress($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Commerce\Address::class);
+        $this->shipping_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string shipping_method_id = 2;</code>
+     * @return string
+     */
+    public function getShippingMethodId()
+    {
+        return isset($this->shipping_method_id) ? $this->shipping_method_id : '';
+    }
+
+    public function hasShippingMethodId()
+    {
+        return isset($this->shipping_method_id);
+    }
+
+    public function clearShippingMethodId()
+    {
+        unset($this->shipping_method_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string shipping_method_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setShippingMethodId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->shipping_method_id = $var;
+
+        return $this;
     }
 
 }
