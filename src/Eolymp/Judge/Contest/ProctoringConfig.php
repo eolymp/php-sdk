@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class ProctoringConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * record every participant's screen and camera for the duration of their participation, enabling it is the organiser's consent
+     * what is recorded for every participant for the duration of their participation, enabling it is the organiser's consent
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig.Mode mode = 2;</code>
      */
-    protected $enabled = false;
+    protected $mode = 0;
 
     /**
      * Constructor.
@@ -26,8 +26,8 @@ class ProctoringConfig extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $enabled
-     *           record every participant's screen and camera for the duration of their participation, enabling it is the organiser's consent
+     *     @type int $mode
+     *           what is recorded for every participant for the duration of their participation, enabling it is the organiser's consent
      * }
      */
     public function __construct($data = NULL) {
@@ -36,27 +36,27 @@ class ProctoringConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * record every participant's screen and camera for the duration of their participation, enabling it is the organiser's consent
+     * what is recorded for every participant for the duration of their participation, enabling it is the organiser's consent
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
-     * @return bool
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig.Mode mode = 2;</code>
+     * @return int
      */
-    public function getEnabled()
+    public function getMode()
     {
-        return $this->enabled;
+        return $this->mode;
     }
 
     /**
-     * record every participant's screen and camera for the duration of their participation, enabling it is the organiser's consent
+     * what is recorded for every participant for the duration of their participation, enabling it is the organiser's consent
      *
-     * Generated from protobuf field <code>bool enabled = 1;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig.Mode mode = 2;</code>
+     * @param int $var
      * @return $this
      */
-    public function setEnabled($var)
+    public function setMode($var)
     {
-        GPBUtil::checkBool($var);
-        $this->enabled = $var;
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ProctoringConfig\Mode::class);
+        $this->mode = $var;
 
         return $this;
     }
