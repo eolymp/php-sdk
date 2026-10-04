@@ -17,8 +17,8 @@ class ShoppingCart
         \GPBMetadata\Eolymp\Commerce\Address::initOnce();
         $pool->internalAddGeneratedFile(
             '
-∏
-#eolymp/commerce/shopping_cart.protoeolymp.commerce"¬
+Ä
+#eolymp/commerce/shopping_cart.protoeolymp.commerce"ä
 ShoppingCart
 
 id (	1
@@ -37,7 +37,10 @@ tax_amount (
 tax_rate (
 tax_note (	
 grand_total (
-credit_value? (ê
+credit_value? (
+credit_amount< (
+credit_discount= (
+payable_amount> (ê
 Item
 
 id (	

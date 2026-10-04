@@ -73,11 +73,25 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
      */
     protected $grand_total = 0;
     /**
-     * what one credit is worth in the cart currency, credits are applied to the order at checkout
+     * what one credit is worth in the cart currency
      *
      * Generated from protobuf field <code>uint32 credit_value = 63;</code>
      */
     protected $credit_value = 0;
+    /**
+     * how the cart is paid for: credits the member has and will spend, what they take off, and what is left to pay
+     *
+     * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
+     */
+    protected $credit_amount = 0;
+    /**
+     * Generated from protobuf field <code>uint32 credit_discount = 61;</code>
+     */
+    protected $credit_discount = 0;
+    /**
+     * Generated from protobuf field <code>uint32 payable_amount = 62;</code>
+     */
+    protected $payable_amount = 0;
 
     /**
      * Constructor.
@@ -100,7 +114,11 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
      *     @type string $tax_note
      *     @type int $grand_total
      *     @type int $credit_value
-     *           what one credit is worth in the cart currency, credits are applied to the order at checkout
+     *           what one credit is worth in the cart currency
+     *     @type int $credit_amount
+     *           how the cart is paid for: credits the member has and will spend, what they take off, and what is left to pay
+     *     @type int $credit_discount
+     *     @type int $payable_amount
      * }
      */
     public function __construct($data = NULL) {
@@ -437,7 +455,7 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * what one credit is worth in the cart currency, credits are applied to the order at checkout
+     * what one credit is worth in the cart currency
      *
      * Generated from protobuf field <code>uint32 credit_value = 63;</code>
      * @return int
@@ -448,7 +466,7 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * what one credit is worth in the cart currency, credits are applied to the order at checkout
+     * what one credit is worth in the cart currency
      *
      * Generated from protobuf field <code>uint32 credit_value = 63;</code>
      * @param int $var
@@ -458,6 +476,76 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->credit_value = $var;
+
+        return $this;
+    }
+
+    /**
+     * how the cart is paid for: credits the member has and will spend, what they take off, and what is left to pay
+     *
+     * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
+     * @return int
+     */
+    public function getCreditAmount()
+    {
+        return $this->credit_amount;
+    }
+
+    /**
+     * how the cart is paid for: credits the member has and will spend, what they take off, and what is left to pay
+     *
+     * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditAmount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_discount = 61;</code>
+     * @return int
+     */
+    public function getCreditDiscount()
+    {
+        return $this->credit_discount;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_discount = 61;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditDiscount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_discount = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 payable_amount = 62;</code>
+     * @return int
+     */
+    public function getPayableAmount()
+    {
+        return $this->payable_amount;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 payable_amount = 62;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPayableAmount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->payable_amount = $var;
 
         return $this;
     }
