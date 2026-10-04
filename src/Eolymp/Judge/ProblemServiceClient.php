@@ -402,13 +402,12 @@ class ProblemServiceClient {
     /**
      * ExportEditorials renders the contest's problem editorials into a single printable PDF booklet and
      * returns a link to download it rather than the document itself. Editorials are taken in contest order
-     * and in one locale, the space's primary one unless another is requested; a problem with no editorial in
-     * that locale is left out of the booklet and reported in omitted_problems instead. When none of the
-     * contest's problems has an editorial, the call still succeeds, with download_url empty and every
-     * problem listed in omitted_problems. Access follows the same rule as DescribeEditorial: an organiser may
-     * export at any time, while a participant may only once their participation is over and the contest is
-     * configured to display editorials. Rendering is slow and tightly rate-limited, so keep the returned URL
-     * instead of exporting again.
+     * and in one locale, the space's primary one unless another is requested, and a problem with no
+     * editorial in that locale is silently left out of the booklet; the call returns NotFound when none of
+     * the contest's problems has an editorial. Access follows the same rule as DescribeEditorial: an
+     * organiser may export at any time, while a participant may only once their participation is over and
+     * the contest is configured to display editorials. Rendering is slow and tightly rate-limited, so keep
+     * the returned URL instead of exporting again.
      *
      * @param ExportEditorialsInput $input message
      * @param array $context request parameters
