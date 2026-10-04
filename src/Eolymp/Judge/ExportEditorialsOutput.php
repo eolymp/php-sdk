@@ -17,6 +17,10 @@ class ExportEditorialsOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string download_url = 1;</code>
      */
     protected $download_url = '';
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.ExportEditorialsOutput.OmittedProblem omitted_problems = 2;</code>
+     */
+    private $omitted_problems;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class ExportEditorialsOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $download_url
+     *     @type array<\Eolymp\Judge\ExportEditorialsOutput\OmittedProblem>|\Google\Protobuf\Internal\RepeatedField $omitted_problems
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class ExportEditorialsOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->download_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.ExportEditorialsOutput.OmittedProblem omitted_problems = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOmittedProblems()
+    {
+        return $this->omitted_problems;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.judge.ExportEditorialsOutput.OmittedProblem omitted_problems = 2;</code>
+     * @param array<\Eolymp\Judge\ExportEditorialsOutput\OmittedProblem>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setOmittedProblems($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\ExportEditorialsOutput\OmittedProblem::class);
+        $this->omitted_problems = $arr;
 
         return $this;
     }
