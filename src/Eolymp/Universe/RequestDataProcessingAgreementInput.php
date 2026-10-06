@@ -25,14 +25,6 @@ class RequestDataProcessingAgreementInput extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>string organization_tax_id = 3;</code>
      */
     protected $organization_tax_id = '';
-    /**
-     * Generated from protobuf field <code>string signer_name = 4;</code>
-     */
-    protected $signer_name = '';
-    /**
-     * Generated from protobuf field <code>string signer_email = 5;</code>
-     */
-    protected $signer_email = '';
 
     /**
      * Constructor.
@@ -43,8 +35,6 @@ class RequestDataProcessingAgreementInput extends \Google\Protobuf\Internal\Mess
      *     @type string $organization_name
      *     @type string $organization_address
      *     @type string $organization_tax_id
-     *     @type string $signer_name
-     *     @type string $signer_email
      * }
      */
     public function __construct($data = NULL) {
@@ -114,50 +104,6 @@ class RequestDataProcessingAgreementInput extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkString($var, True);
         $this->organization_tax_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string signer_name = 4;</code>
-     * @return string
-     */
-    public function getSignerName()
-    {
-        return $this->signer_name;
-    }
-
-    /**
-     * Generated from protobuf field <code>string signer_name = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSignerName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->signer_name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string signer_email = 5;</code>
-     * @return string
-     */
-    public function getSignerEmail()
-    {
-        return $this->signer_email;
-    }
-
-    /**
-     * Generated from protobuf field <code>string signer_email = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setSignerEmail($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->signer_email = $var;
 
         return $this;
     }
