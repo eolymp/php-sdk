@@ -72,6 +72,16 @@ class Product extends \Google\Protobuf\Internal\Message
      */
     protected $regular_price = 0;
     /**
+     * the same prices in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *
+     * Generated from protobuf field <code>uint32 credit_price = 23 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $credit_price = 0;
+    /**
+     * Generated from protobuf field <code>uint32 credit_regular_price = 24 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $credit_regular_price = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.commerce.Product.Attribute attributes = 40;</code>
      */
     private $attributes;
@@ -115,6 +125,9 @@ class Product extends \Google\Protobuf\Internal\Message
      *           current (sell) price
      *     @type int $regular_price
      *           optionally, regular product price (before discount)
+     *     @type int $credit_price
+     *           the same prices in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *     @type int $credit_regular_price
      *     @type array<\Eolymp\Commerce\Product\Attribute>|\Google\Protobuf\Internal\RepeatedField $attributes
      *     @type array<\Eolymp\Commerce\Product\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
      *     @type string $stripe_product_id
@@ -427,6 +440,54 @@ class Product extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->regular_price = $var;
+
+        return $this;
+    }
+
+    /**
+     * the same prices in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *
+     * Generated from protobuf field <code>uint32 credit_price = 23 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getCreditPrice()
+    {
+        return $this->credit_price;
+    }
+
+    /**
+     * the same prices in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *
+     * Generated from protobuf field <code>uint32 credit_price = 23 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditPrice($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_price = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_regular_price = 24 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getCreditRegularPrice()
+    {
+        return $this->credit_regular_price;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 credit_regular_price = 24 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditRegularPrice($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_regular_price = $var;
 
         return $this;
     }

@@ -41,6 +41,12 @@ class Item extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 discount_amount = 23;</code>
      */
     protected $discount_amount = 0;
+    /**
+     * the line total in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *
+     * Generated from protobuf field <code>uint32 credit_total_amount = 24;</code>
+     */
+    protected $credit_total_amount = 0;
 
     /**
      * Constructor.
@@ -55,6 +61,8 @@ class Item extends \Google\Protobuf\Internal\Message
      *     @type int $unit_amount
      *     @type int $total_amount
      *     @type int $discount_amount
+     *     @type int $credit_total_amount
+     *           the line total in credits, rounded up to a whole credit; 0 when the store sets no credit value
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +220,32 @@ class Item extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->discount_amount = $var;
+
+        return $this;
+    }
+
+    /**
+     * the line total in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *
+     * Generated from protobuf field <code>uint32 credit_total_amount = 24;</code>
+     * @return int
+     */
+    public function getCreditTotalAmount()
+    {
+        return $this->credit_total_amount;
+    }
+
+    /**
+     * the line total in credits, rounded up to a whole credit; 0 when the store sets no credit value
+     *
+     * Generated from protobuf field <code>uint32 credit_total_amount = 24;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCreditTotalAmount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->credit_total_amount = $var;
 
         return $this;
     }

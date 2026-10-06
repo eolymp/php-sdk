@@ -17,8 +17,8 @@ class ShoppingCart
         \GPBMetadata\Eolymp\Commerce\Address::initOnce();
         $pool->internalAddGeneratedFile(
             '
-€
-#eolymp/commerce/shopping_cart.protoeolymp.commerce"Š
+¹
+#eolymp/commerce/shopping_cart.protoeolymp.commerce"Ã
 ShoppingCart
 
 id (	1
@@ -37,10 +37,11 @@ tax_amount (
 tax_rate (
 tax_note (	
 grand_total (
-credit_value? (
+credit_value? (
+credit_grand_total@ (
 credit_amount< (
 credit_discount= (
-payable_amount> (
+payable_amount> (­
 Item
 
 id (	
@@ -52,7 +53,8 @@ variant_id (	
  (
 unit_amount (
 total_amount (
-discount_amount (B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commercebproto3'
+discount_amount (
+credit_total_amount (B3Z1github.com/eolymp/go-sdk/eolymp/commerce;commercebproto3'
         , true);
 
         static::$is_initialized = true;
