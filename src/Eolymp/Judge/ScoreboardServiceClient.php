@@ -79,6 +79,28 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * DescribeScoreboardStats returns per-problem figures for the board in the requested mode, taken over all of its
+     * participants rather than a page, so a client can show them under the table whatever rows it lists.
+     *
+     * @param DescribeScoreboardStatsInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardStatsOutput output message
+     */
+    public function DescribeScoreboardStats(DescribeScoreboardStatsInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/scoreboard/stats";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ScoreboardService/DescribeScoreboardStats";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreboardStatsOutput::class, $context);
+    }
+
+    /**
      * @param DescribeScoreboardRowInput $input message
      * @param array $context request parameters
      *
