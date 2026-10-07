@@ -13,6 +13,17 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class DescribeShoppingCartInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * price the cart as if it shipped this way, without writing either down: a checkout holds the address
+     * a member is still writing, and asks what it would cost. What the cart holds answers when unset.
+     *
+     * Generated from protobuf field <code>optional string country = 1;</code>
+     */
+    protected $country = null;
+    /**
+     * Generated from protobuf field <code>optional string shipping_method_id = 2;</code>
+     */
+    protected $shipping_method_id = null;
 
     /**
      * Constructor.
@@ -20,11 +31,85 @@ class DescribeShoppingCartInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $country
+     *           price the cart as if it shipped this way, without writing either down: a checkout holds the address
+     *           a member is still writing, and asks what it would cost. What the cart holds answers when unset.
+     *     @type string $shipping_method_id
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\ShoppingService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * price the cart as if it shipped this way, without writing either down: a checkout holds the address
+     * a member is still writing, and asks what it would cost. What the cart holds answers when unset.
+     *
+     * Generated from protobuf field <code>optional string country = 1;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return isset($this->country) ? $this->country : '';
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
+    }
+
+    /**
+     * price the cart as if it shipped this way, without writing either down: a checkout holds the address
+     * a member is still writing, and asks what it would cost. What the cart holds answers when unset.
+     *
+     * Generated from protobuf field <code>optional string country = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string shipping_method_id = 2;</code>
+     * @return string
+     */
+    public function getShippingMethodId()
+    {
+        return isset($this->shipping_method_id) ? $this->shipping_method_id : '';
+    }
+
+    public function hasShippingMethodId()
+    {
+        return isset($this->shipping_method_id);
+    }
+
+    public function clearShippingMethodId()
+    {
+        unset($this->shipping_method_id);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string shipping_method_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setShippingMethodId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->shipping_method_id = $var;
+
+        return $this;
     }
 
 }
