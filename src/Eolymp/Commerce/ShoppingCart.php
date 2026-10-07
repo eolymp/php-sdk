@@ -79,12 +79,6 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
      */
     protected $credit_value = 0;
     /**
-     * the grand total in credits, rounded up to a whole credit; 0 when the store sets no credit value
-     *
-     * Generated from protobuf field <code>uint32 credit_grand_total = 64;</code>
-     */
-    protected $credit_grand_total = 0;
-    /**
      * how the cart is paid for: credits the member has and will spend, what they take off, and what is left to pay
      *
      * Generated from protobuf field <code>uint32 credit_amount = 60;</code>
@@ -121,8 +115,6 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
      *     @type int $grand_total
      *     @type int $credit_value
      *           what one credit is worth in the cart currency; 0 when the store does not take credits
-     *     @type int $credit_grand_total
-     *           the grand total in credits, rounded up to a whole credit; 0 when the store sets no credit value
      *     @type int $credit_amount
      *           how the cart is paid for: credits the member has and will spend, what they take off, and what is left to pay
      *     @type int $credit_discount
@@ -484,32 +476,6 @@ class ShoppingCart extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->credit_value = $var;
-
-        return $this;
-    }
-
-    /**
-     * the grand total in credits, rounded up to a whole credit; 0 when the store sets no credit value
-     *
-     * Generated from protobuf field <code>uint32 credit_grand_total = 64;</code>
-     * @return int
-     */
-    public function getCreditGrandTotal()
-    {
-        return $this->credit_grand_total;
-    }
-
-    /**
-     * the grand total in credits, rounded up to a whole credit; 0 when the store sets no credit value
-     *
-     * Generated from protobuf field <code>uint32 credit_grand_total = 64;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setCreditGrandTotal($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->credit_grand_total = $var;
 
         return $this;
     }

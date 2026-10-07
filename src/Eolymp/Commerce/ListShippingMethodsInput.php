@@ -13,6 +13,13 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class ListShippingMethodsInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * where the order would ship, for a cart whose address is not written down yet; the cart's own
+     * address answers when this is unset
+     *
+     * Generated from protobuf field <code>optional string country = 1;</code>
+     */
+    protected $country = null;
 
     /**
      * Constructor.
@@ -20,11 +27,52 @@ class ListShippingMethodsInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $country
+     *           where the order would ship, for a cart whose address is not written down yet; the cart's own
+     *           address answers when this is unset
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Commerce\ShoppingService::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * where the order would ship, for a cart whose address is not written down yet; the cart's own
+     * address answers when this is unset
+     *
+     * Generated from protobuf field <code>optional string country = 1;</code>
+     * @return string
+     */
+    public function getCountry()
+    {
+        return isset($this->country) ? $this->country : '';
+    }
+
+    public function hasCountry()
+    {
+        return isset($this->country);
+    }
+
+    public function clearCountry()
+    {
+        unset($this->country);
+    }
+
+    /**
+     * where the order would ship, for a cart whose address is not written down yet; the cart's own
+     * address answers when this is unset
+     *
+     * Generated from protobuf field <code>optional string country = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->country = $var;
+
+        return $this;
     }
 
 }
