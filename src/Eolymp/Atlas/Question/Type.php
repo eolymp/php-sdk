@@ -27,11 +27,18 @@ class Type
      * Generated from protobuf enum <code>TEXT = 2;</code>
      */
     const TEXT = 2;
+    /**
+     * participant types a number, matched exactly to decimal_places digits after the decimal point
+     *
+     * Generated from protobuf enum <code>NUMBER = 3;</code>
+     */
+    const NUMBER = 3;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
         self::CHOICE => 'CHOICE',
         self::TEXT => 'TEXT',
+        self::NUMBER => 'NUMBER',
     ];
 
     public static function name($value)
