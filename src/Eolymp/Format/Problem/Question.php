@@ -34,10 +34,6 @@ class Question extends \Google\Protobuf\Internal\Message
      */
     protected $multiple = false;
     /**
-     * Generated from protobuf field <code>uint32 decimal_places = 8;</code>
-     */
-    protected $decimal_places = 0;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.format.Problem.Question.Option options = 6;</code>
      */
     private $options;
@@ -57,7 +53,6 @@ class Question extends \Google\Protobuf\Internal\Message
      *     @type \Eolymp\Ecm\Content $content
      *     @type float $score
      *     @type bool $multiple
-     *     @type int $decimal_places
      *     @type array<\Eolymp\Format\Problem\Question\Option>|\Google\Protobuf\Internal\RepeatedField $options
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $answers
      * }
@@ -183,28 +178,6 @@ class Question extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->multiple = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 decimal_places = 8;</code>
-     * @return int
-     */
-    public function getDecimalPlaces()
-    {
-        return $this->decimal_places;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 decimal_places = 8;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDecimalPlaces($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->decimal_places = $var;
 
         return $this;
     }

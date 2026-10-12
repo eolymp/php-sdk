@@ -46,19 +46,13 @@ class Question extends \Google\Protobuf\Internal\Message
      */
     protected $multiple = false;
     /**
-     * NUMBER only: digits required after the decimal point, 0-5
-     *
-     * Generated from protobuf field <code>uint32 decimal_places = 7;</code>
-     */
-    protected $decimal_places = 0;
-    /**
      * CHOICE only
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Option options = 10;</code>
      */
     private $options;
     /**
-     * TEXT and NUMBER: accepted answers, left out for callers who may not edit the problem
+     * TEXT only: accepted answers, left out for callers who may not edit the problem
      *
      * Generated from protobuf field <code>repeated string answers = 11;</code>
      */
@@ -80,12 +74,10 @@ class Question extends \Google\Protobuf\Internal\Message
      *           points a correct answer is worth, the problem score is the sum over its questions
      *     @type bool $multiple
      *           CHOICE: more than one option may be selected
-     *     @type int $decimal_places
-     *           NUMBER only: digits required after the decimal point, 0-5
      *     @type array<\Eolymp\Atlas\Question\Option>|\Google\Protobuf\Internal\RepeatedField $options
      *           CHOICE only
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $answers
-     *           TEXT and NUMBER: accepted answers, left out for callers who may not edit the problem
+     *           TEXT only: accepted answers, left out for callers who may not edit the problem
      * }
      */
     public function __construct($data = NULL) {
@@ -252,32 +244,6 @@ class Question extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * NUMBER only: digits required after the decimal point, 0-5
-     *
-     * Generated from protobuf field <code>uint32 decimal_places = 7;</code>
-     * @return int
-     */
-    public function getDecimalPlaces()
-    {
-        return $this->decimal_places;
-    }
-
-    /**
-     * NUMBER only: digits required after the decimal point, 0-5
-     *
-     * Generated from protobuf field <code>uint32 decimal_places = 7;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setDecimalPlaces($var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->decimal_places = $var;
-
-        return $this;
-    }
-
-    /**
      * CHOICE only
      *
      * Generated from protobuf field <code>repeated .eolymp.atlas.Question.Option options = 10;</code>
@@ -304,7 +270,7 @@ class Question extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TEXT and NUMBER: accepted answers, left out for callers who may not edit the problem
+     * TEXT only: accepted answers, left out for callers who may not edit the problem
      *
      * Generated from protobuf field <code>repeated string answers = 11;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -315,7 +281,7 @@ class Question extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TEXT and NUMBER: accepted answers, left out for callers who may not edit the problem
+     * TEXT only: accepted answers, left out for callers who may not edit the problem
      *
      * Generated from protobuf field <code>repeated string answers = 11;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
