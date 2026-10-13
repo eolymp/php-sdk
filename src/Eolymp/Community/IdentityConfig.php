@@ -33,6 +33,12 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool require_email_verified = 103;</code>
      */
     protected $require_email_verified = false;
+    /**
+     * one active session per member, a session being one active access token, i.e. one browser/UI: issuing a new access token on sign-in invalidates the member's other access and refresh tokens in this space; access keys are refused while this is on
+     *
+     * Generated from protobuf field <code>bool single_session = 104;</code>
+     */
+    protected $single_session = false;
     protected $provider;
 
     /**
@@ -51,6 +57,8 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
      *           users can join on their own
      *     @type bool $require_email_verified
      *           users must verify email to use the site, setting this flag to false will override "email_verified" to true for all members
+     *     @type bool $single_session
+     *           one active session per member, a session being one active access token, i.e. one browser/UI: issuing a new access token on sign-in invalidates the member's other access and refresh tokens in this space; access keys are refused while this is on
      * }
      */
     public function __construct($data = NULL) {
@@ -258,6 +266,32 @@ class IdentityConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->require_email_verified = $var;
+
+        return $this;
+    }
+
+    /**
+     * one active session per member, a session being one active access token, i.e. one browser/UI: issuing a new access token on sign-in invalidates the member's other access and refresh tokens in this space; access keys are refused while this is on
+     *
+     * Generated from protobuf field <code>bool single_session = 104;</code>
+     * @return bool
+     */
+    public function getSingleSession()
+    {
+        return $this->single_session;
+    }
+
+    /**
+     * one active session per member, a session being one active access token, i.e. one browser/UI: issuing a new access token on sign-in invalidates the member's other access and refresh tokens in this space; access keys are refused while this is on
+     *
+     * Generated from protobuf field <code>bool single_session = 104;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setSingleSession($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->single_session = $var;
 
         return $this;
     }
