@@ -17,6 +17,12 @@ class Task extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string problem_id = 1;</code>
      */
     protected $problem_id = '';
+    /**
+     * type of the problem, resolved by the server and ignored on create and update
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 2;</code>
+     */
+    protected $type = 0;
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class Task extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $problem_id
+     *     @type int $type
+     *           type of the problem, resolved by the server and ignored on create and update
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class Task extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->problem_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * type of the problem, resolved by the server and ignored on create and update
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 2;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * type of the problem, resolved by the server and ignored on create and update
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Type type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Atlas\Problem\Type::class);
+        $this->type = $var;
 
         return $this;
     }
