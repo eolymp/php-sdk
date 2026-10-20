@@ -191,6 +191,31 @@ class ProblemServiceClient {
     }
 
     /**
+     * RateProblem records how the calling member rates the problem, from 1 (bad) to 5 (good) stars, and returns
+     * the problem's updated rating, the same one DescribeProblem reports in Problem.rating. It sets an absolute state, not a toggle: the stars and comment sent replace
+     * the member's previous rating, and 0 stars withdraws it. The comment is optional with any number of stars;
+     * it is read only by the problem's editors, so the member cannot read it back, only replace it by rating
+     * again. Refused while the space has ratings off.
+     *
+     * @param RateProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return RateProblemOutput output message
+     */
+    public function RateProblem(RateProblemInput $input, array $context = [])
+    {
+        $path = "/problems/".rawurlencode($input->getProblemId())."/rating";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.atlas.ProblemService/RateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RateProblemOutput::class, $context);
+    }
+
+    /**
      * ListVersions returns the changelog of edits made to the problem. It can be paged either by offset or by
      * feeding the returned cursor back into the next request. The change history is editor-facing, so this read
      * requires the write scope, and its version numbers are what ExportProblem takes.

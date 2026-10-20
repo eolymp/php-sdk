@@ -140,6 +140,13 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $submissions_accepted = 0;
     /**
+     * How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
+     * clients tell "ratings off" from "nobody rated yet" by its presence.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $rating = null;
+    /**
      * Difficulty from 0 (very easy) to 5 (very hard)
      *
      * Generated from protobuf field <code>uint32 difficulty = 21;</code>
@@ -197,6 +204,9 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *     @type int $submissions_count
      *     @type int $submissions_accepted
+     *     @type \Eolymp\Atlas\Problem\Rating $rating
+     *           How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
+     *           clients tell "ratings off" from "nobody rated yet" by its presence.
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
@@ -783,6 +793,44 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->submissions_accepted = $var;
+
+        return $this;
+    }
+
+    /**
+     * How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
+     * clients tell "ratings off" from "nobody rated yet" by its presence.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52 [(.eolymp.api.read_only) = true];</code>
+     * @return \Eolymp\Atlas\Problem\Rating|null
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    public function hasRating()
+    {
+        return isset($this->rating);
+    }
+
+    public function clearRating()
+    {
+        unset($this->rating);
+    }
+
+    /**
+     * How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
+     * clients tell "ratings off" from "nobody rated yet" by its presence.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52 [(.eolymp.api.read_only) = true];</code>
+     * @param \Eolymp\Atlas\Problem\Rating $var
+     * @return $this
+     */
+    public function setRating($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem\Rating::class);
+        $this->rating = $var;
 
         return $this;
     }

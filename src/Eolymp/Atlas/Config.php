@@ -32,6 +32,13 @@ class Config extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool tracing_enabled = 3;</code>
      */
     protected $tracing_enabled = false;
+    /**
+     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
+     * hides the ratings and refuses new ones, but keeps those already given.
+     *
+     * Generated from protobuf field <code>bool rating_enabled = 4;</code>
+     */
+    protected $rating_enabled = false;
 
     /**
      * Constructor.
@@ -46,6 +53,9 @@ class Config extends \Google\Protobuf\Internal\Message
      *     @type bool $tracing_enabled
      *           Offer traced runs in the editor. A traced run is built and executed differently and
      *           costs orders of magnitude more CPU, so it is opt-in per space.
+     *     @type bool $rating_enabled
+     *           Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
+     *           hides the ratings and refuses new ones, but keeps those already given.
      * }
      */
     public function __construct($data = NULL) {
@@ -129,6 +139,34 @@ class Config extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->tracing_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
+     * hides the ratings and refuses new ones, but keeps those already given.
+     *
+     * Generated from protobuf field <code>bool rating_enabled = 4;</code>
+     * @return bool
+     */
+    public function getRatingEnabled()
+    {
+        return $this->rating_enabled;
+    }
+
+    /**
+     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
+     * hides the ratings and refuses new ones, but keeps those already given.
+     *
+     * Generated from protobuf field <code>bool rating_enabled = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRatingEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->rating_enabled = $var;
 
         return $this;
     }

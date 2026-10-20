@@ -25,6 +25,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool tracing_enabled = 3;</code>
      */
     protected $tracing_enabled = null;
+    /**
+     * Generated from protobuf field <code>optional bool rating_enabled = 4;</code>
+     */
+    protected $rating_enabled = null;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type int $hourly_ip_submission_limit
      *     @type int $daily_ip_submission_limit
      *     @type bool $tracing_enabled
+     *     @type bool $rating_enabled
      * }
      */
     public function __construct($data = NULL) {
@@ -134,6 +139,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->tracing_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool rating_enabled = 4;</code>
+     * @return bool
+     */
+    public function getRatingEnabled()
+    {
+        return isset($this->rating_enabled) ? $this->rating_enabled : false;
+    }
+
+    public function hasRatingEnabled()
+    {
+        return isset($this->rating_enabled);
+    }
+
+    public function clearRatingEnabled()
+    {
+        unset($this->rating_enabled);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool rating_enabled = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRatingEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->rating_enabled = $var;
 
         return $this;
     }
