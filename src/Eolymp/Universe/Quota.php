@@ -247,6 +247,12 @@ class Quota extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool proctoring = 34;</code>
      */
     protected $proctoring = false;
+    /**
+     * let contests ask participants to confirm a checklist before taking part
+     *
+     * Generated from protobuf field <code>bool contest_checklist = 35;</code>
+     */
+    protected $contest_checklist = false;
 
     /**
      * Constructor.
@@ -328,6 +334,8 @@ class Quota extends \Google\Protobuf\Internal\Message
      *           analyse submission code to see similarities and generate a report
      *     @type bool $proctoring
      *           record participants' screen and camera in proctored contests
+     *     @type bool $contest_checklist
+     *           let contests ask participants to confirm a checklist before taking part
      * }
      */
     public function __construct($data = NULL) {
@@ -1401,6 +1409,32 @@ class Quota extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->proctoring = $var;
+
+        return $this;
+    }
+
+    /**
+     * let contests ask participants to confirm a checklist before taking part
+     *
+     * Generated from protobuf field <code>bool contest_checklist = 35;</code>
+     * @return bool
+     */
+    public function getContestChecklist()
+    {
+        return $this->contest_checklist;
+    }
+
+    /**
+     * let contests ask participants to confirm a checklist before taking part
+     *
+     * Generated from protobuf field <code>bool contest_checklist = 35;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setContestChecklist($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->contest_checklist = $var;
 
         return $this;
     }

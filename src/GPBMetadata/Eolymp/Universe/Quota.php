@@ -16,8 +16,8 @@ class Quota
         }
         $pool->internalAddGeneratedFile(
             '
-—
-eolymp/universe/quota.protoeolymp.universe"©
+²
+eolymp/universe/quota.protoeolymp.universe"Ä
 
 Quota
 permissions_per_space (
@@ -64,7 +64,8 @@ class Quota
 ghost_participants (
 unofficial_participants (
 
-proctoring" (JJB3Z1github.com/eolymp/go-sdk/eolymp/universe;universebproto3'
+proctoring" (
+contest_checklist# (JJB3Z1github.com/eolymp/go-sdk/eolymp/universe;universebproto3'
         , true);
 
         static::$is_initialized = true;
