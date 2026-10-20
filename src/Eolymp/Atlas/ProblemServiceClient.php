@@ -191,29 +191,6 @@ class ProblemServiceClient {
     }
 
     /**
-     * VoteProblem records how the calling user rates the problem — the difficulty and quality signal shown next
-     * to the problem in the archive — and returns the resulting number of votes. The aggregate is also readable
-     * on the problem itself, where it is read-only.
-     *
-     * @param VoteProblemInput $input message
-     * @param array $context request parameters
-     *
-     * @return VoteProblemOutput output message
-     */
-    public function VoteProblem(VoteProblemInput $input, array $context = [])
-    {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/vote";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setProblemId("");
-
-        $context['name'] = "eolymp.atlas.ProblemService/VoteProblem";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, VoteProblemOutput::class, $context);
-    }
-
-    /**
      * ListVersions returns the changelog of edits made to the problem. It can be paged either by offset or by
      * feeding the returned cursor back into the next request. The change history is editor-facing, so this read
      * requires the write scope, and its version numbers are what ExportProblem takes.

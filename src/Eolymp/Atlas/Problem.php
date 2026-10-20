@@ -140,16 +140,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $submissions_accepted = 0;
     /**
-     * Number of votes for the problem
-     *
-     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.read_only) = true];</code>
-     */
-    protected $vote = 0;
-    /**
-     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.read_only) = true];</code>
-     */
-    protected $vote_count = 0;
-    /**
      * Difficulty from 0 (very easy) to 5 (very hard)
      *
      * Generated from protobuf field <code>uint32 difficulty = 21;</code>
@@ -207,9 +197,6 @@ class Problem extends \Google\Protobuf\Internal\Message
      *           Acceptance rate from 0 to 1, where 1 means that all submissions are accepted.
      *     @type int $submissions_count
      *     @type int $submissions_accepted
-     *     @type int $vote
-     *           Number of votes for the problem
-     *     @type int $vote_count
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
@@ -796,54 +783,6 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->submissions_accepted = $var;
-
-        return $this;
-    }
-
-    /**
-     * Number of votes for the problem
-     *
-     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.read_only) = true];</code>
-     * @return int
-     */
-    public function getVote()
-    {
-        return $this->vote;
-    }
-
-    /**
-     * Number of votes for the problem
-     *
-     * Generated from protobuf field <code>int32 vote = 50 [(.eolymp.api.read_only) = true];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setVote($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->vote = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.read_only) = true];</code>
-     * @return int
-     */
-    public function getVoteCount()
-    {
-        return $this->vote_count;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 vote_count = 51 [(.eolymp.api.read_only) = true];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setVoteCount($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->vote_count = $var;
 
         return $this;
     }
