@@ -35,7 +35,8 @@ class Rating extends \Google\Protobuf\Internal\Message
      */
     private $distribution;
     /**
-     * Number of stars the calling member rated the problem with, 0 when they have not rated it.
+     * Number of stars the calling member rated the problem with, 0 when they have not rated it. Only filled in
+     * when requested with the RATING_VALUE extra.
      *
      * Generated from protobuf field <code>uint32 value = 4;</code>
      */
@@ -55,7 +56,8 @@ class Rating extends \Google\Protobuf\Internal\Message
      *           Number of ratings by number of stars, eg. {5: 12, 4: 3, 3: 1}. A missing key means no ratings with that
      *           number of stars.
      *     @type int $value
-     *           Number of stars the calling member rated the problem with, 0 when they have not rated it.
+     *           Number of stars the calling member rated the problem with, 0 when they have not rated it. Only filled in
+     *           when requested with the RATING_VALUE extra.
      * }
      */
     public function __construct($data = NULL) {
@@ -144,7 +146,8 @@ class Rating extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of stars the calling member rated the problem with, 0 when they have not rated it.
+     * Number of stars the calling member rated the problem with, 0 when they have not rated it. Only filled in
+     * when requested with the RATING_VALUE extra.
      *
      * Generated from protobuf field <code>uint32 value = 4;</code>
      * @return int
@@ -155,7 +158,8 @@ class Rating extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of stars the calling member rated the problem with, 0 when they have not rated it.
+     * Number of stars the calling member rated the problem with, 0 when they have not rated it. Only filled in
+     * when requested with the RATING_VALUE extra.
      *
      * Generated from protobuf field <code>uint32 value = 4;</code>
      * @param int $var

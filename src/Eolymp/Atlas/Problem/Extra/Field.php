@@ -23,11 +23,16 @@ class Field
      * Generated from protobuf enum <code>CONTENT_RENDER = 4 [(.eolymp.api.mcp_value_ignore) = true];</code>
      */
     const CONTENT_RENDER = 4;
+    /**
+     * Generated from protobuf enum <code>RATING_VALUE = 5 [(.eolymp.api.mcp_value_desc) = "include the calling member\'s own rating in rating.value"];</code>
+     */
+    const RATING_VALUE = 5;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::CONTENT_VALUE => 'CONTENT_VALUE',
         self::CONTENT_RENDER => 'CONTENT_RENDER',
+        self::RATING_VALUE => 'RATING_VALUE',
     ];
 
     public static function name($value)

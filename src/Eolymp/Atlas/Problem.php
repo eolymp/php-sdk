@@ -140,8 +140,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $submissions_accepted = 0;
     /**
-     * How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
-     * clients tell "ratings off" from "nobody rated yet" by its presence.
+     * How members rated the problem.
      *
      * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52 [(.eolymp.api.read_only) = true];</code>
      */
@@ -205,8 +204,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int $submissions_count
      *     @type int $submissions_accepted
      *     @type \Eolymp\Atlas\Problem\Rating $rating
-     *           How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
-     *           clients tell "ratings off" from "nobody rated yet" by its presence.
+     *           How members rated the problem.
      *     @type int $difficulty
      *           Difficulty from 0 (very easy) to 5 (very hard)
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
@@ -798,8 +796,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
-     * clients tell "ratings off" from "nobody rated yet" by its presence.
+     * How members rated the problem.
      *
      * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52 [(.eolymp.api.read_only) = true];</code>
      * @return \Eolymp\Atlas\Problem\Rating|null
@@ -820,8 +817,7 @@ class Problem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * How members rated the problem. Absent while the space has ratings off (see Config.rating_enabled), so
-     * clients tell "ratings off" from "nobody rated yet" by its presence.
+     * How members rated the problem.
      *
      * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52 [(.eolymp.api.read_only) = true];</code>
      * @param \Eolymp\Atlas\Problem\Rating $var

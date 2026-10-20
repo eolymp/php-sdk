@@ -33,8 +33,8 @@ class Config extends \Google\Protobuf\Internal\Message
      */
     protected $tracing_enabled = false;
     /**
-     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
-     * hides the ratings and refuses new ones, but keeps those already given.
+     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. While off, RateProblem
+     * refuses new ratings; ratings already given are kept and still returned with the problem.
      *
      * Generated from protobuf field <code>bool rating_enabled = 4;</code>
      */
@@ -54,8 +54,8 @@ class Config extends \Google\Protobuf\Internal\Message
      *           Offer traced runs in the editor. A traced run is built and executed differently and
      *           costs orders of magnitude more CPU, so it is opt-in per space.
      *     @type bool $rating_enabled
-     *           Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
-     *           hides the ratings and refuses new ones, but keeps those already given.
+     *           Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. While off, RateProblem
+     *           refuses new ratings; ratings already given are kept and still returned with the problem.
      * }
      */
     public function __construct($data = NULL) {
@@ -144,8 +144,8 @@ class Config extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
-     * hides the ratings and refuses new ones, but keeps those already given.
+     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. While off, RateProblem
+     * refuses new ratings; ratings already given are kept and still returned with the problem.
      *
      * Generated from protobuf field <code>bool rating_enabled = 4;</code>
      * @return bool
@@ -156,8 +156,8 @@ class Config extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. Turning it off
-     * hides the ratings and refuses new ones, but keeps those already given.
+     * Let members rate the space's problems from 1 (bad) to 5 (good) stars. Off by default. While off, RateProblem
+     * refuses new ratings; ratings already given are kept and still returned with the problem.
      *
      * Generated from protobuf field <code>bool rating_enabled = 4;</code>
      * @param bool $var
