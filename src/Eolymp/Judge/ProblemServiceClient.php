@@ -302,6 +302,31 @@ class ProblemServiceClient {
     }
 
     /**
+     * RateProblem records how the participant rates the problem, from 1 (bad) to 5 (good) stars, with an optional
+     * comment for the problem's editors. It is eolymp.atlas.ProblemService.RateProblem for a problem the
+     * participant can see through the contest: the rating goes to the archive problem and replaces the member's
+     * previous one, and 0 stars withdraws it. Refused while the space has ratings off.
+     *
+     * @param RateProblemInput $input message
+     * @param array $context request parameters
+     *
+     * @return RateProblemOutput output message
+     */
+    public function RateProblem(RateProblemInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/ratings";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.ProblemService/RateProblem";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RateProblemOutput::class, $context);
+    }
+
+    /**
      * ListAttachments returns the files the archive publishes alongside the problem statement for
      * participants to download, each with a link to fetch it. They are the statement's attachments, not the
      * problem's test data.
