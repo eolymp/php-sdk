@@ -204,7 +204,7 @@ class ProblemServiceClient {
      */
     public function RateProblem(RateProblemInput $input, array $context = [])
     {
-        $path = "/problems/".rawurlencode($input->getProblemId())."/rating";
+        $path = "/problems/".rawurlencode($input->getProblemId())."/ratings";
 
         // Cleanup URL parameters to avoid any ambiguity
         $input->setProblemId("");
