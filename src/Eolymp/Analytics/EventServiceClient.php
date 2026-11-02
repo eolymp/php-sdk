@@ -9,9 +9,9 @@ namespace Eolymp\Analytics;
      * in aggregate.
      *
      * Events are stored as they come, so a report nobody thought of when the event was captured can still be built
-     * from them later. A visitor is never tracked with a cookie: a signed in visitor is the account the call is
-     * authenticated with, an anonymous one is a hash of their address and browser which changes every day, so an
-     * anonymous visitor can be told apart within a day, but not followed from one day to the next.
+     * from them later. A signed in visitor is the account the call is authenticated with, an anonymous one is the session
+     * the website keeps for them, or their address and browser when it keeps none. The address itself is never stored,
+     * only the country it is in.
      */
 class EventServiceClient {
 

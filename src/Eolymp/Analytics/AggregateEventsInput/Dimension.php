@@ -57,6 +57,12 @@ class Dimension
      * Generated from protobuf enum <code>AUTHENTICATED = 9;</code>
      */
     const AUTHENTICATED = 9;
+    /**
+     * the visitor's country, a lowercase code as in eolymp.taxonomy.GeographyService, empty when unknown
+     *
+     * Generated from protobuf enum <code>COUNTRY = 10;</code>
+     */
+    const COUNTRY = 10;
 
     private static $valueToName = [
         self::UNKNOWN_DIMENSION => 'UNKNOWN_DIMENSION',
@@ -69,6 +75,7 @@ class Dimension
         self::BROWSER => 'BROWSER',
         self::OS => 'OS',
         self::AUTHENTICATED => 'AUTHENTICATED',
+        self::COUNTRY => 'COUNTRY',
     ];
 
     public static function name($value)

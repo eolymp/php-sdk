@@ -53,6 +53,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionBool authenticated = 10;</code>
      */
     private $authenticated;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum country = 11;</code>
+     */
+    private $country;
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $browser
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $os
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $authenticated
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $country
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +298,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->authenticated = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum country = 11;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum country = 11;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCountry($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->country = $arr;
 
         return $this;
     }

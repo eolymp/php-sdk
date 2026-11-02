@@ -22,7 +22,7 @@ class Metric
      */
     const COUNT = 1;
     /**
-     * distinct visitors, signed in or not; an anonymous visitor counts once per day they visit
+     * distinct visitors, signed in or not
      *
      * Generated from protobuf enum <code>VISITORS = 2;</code>
      */
@@ -34,7 +34,7 @@ class Metric
      */
     const USERS = 3;
     /**
-     * distinct visits
+     * distinct session ids
      *
      * Generated from protobuf enum <code>SESSIONS = 4;</code>
      */
