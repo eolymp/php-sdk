@@ -27,6 +27,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>optional bool score_by_best_testset = 210;</code>
      */
     protected $score_by_best_testset = null;
+    /**
+     * Generated from protobuf field <code>optional bool deferred_results = 211;</code>
+     */
+    protected $deferred_results = null;
 
     /**
      * Constructor.
@@ -37,6 +41,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type int $submit_limit
      *     @type bool $score_by_best_testset
+     *     @type bool $deferred_results
      * }
      */
     public function __construct($data = NULL) {
@@ -136,6 +141,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->score_by_best_testset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool deferred_results = 211;</code>
+     * @return bool
+     */
+    public function getDeferredResults()
+    {
+        return isset($this->deferred_results) ? $this->deferred_results : false;
+    }
+
+    public function hasDeferredResults()
+    {
+        return isset($this->deferred_results);
+    }
+
+    public function clearDeferredResults()
+    {
+        unset($this->deferred_results);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool deferred_results = 211;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeferredResults($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->deferred_results = $var;
 
         return $this;
     }

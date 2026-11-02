@@ -38,6 +38,10 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool score_by_best_testset = 12;</code>
      */
     protected $score_by_best_testset = false;
+    /**
+     * Generated from protobuf field <code>bool deferred_results = 13;</code>
+     */
+    protected $deferred_results = false;
 
     /**
      * Constructor.
@@ -51,6 +55,7 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
      *     @type int $index
      *     @type int $submit_limit
      *     @type bool $score_by_best_testset
+     *     @type bool $deferred_results
      * }
      */
     public function __construct($data = NULL) {
@@ -190,6 +195,28 @@ class ImportProblemInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->score_by_best_testset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool deferred_results = 13;</code>
+     * @return bool
+     */
+    public function getDeferredResults()
+    {
+        return $this->deferred_results;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool deferred_results = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeferredResults($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->deferred_results = $var;
 
         return $this;
     }

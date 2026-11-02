@@ -57,6 +57,10 @@ class Problem extends \Google\Protobuf\Internal\Message
      */
     protected $score_by_best_testset = false;
     /**
+     * Generated from protobuf field <code>bool deferred_results = 211 [(.eolymp.api.mcp_field_desc) = "submission results and scoreboard scores for the problem are hidden from participants until the contest ends"];</code>
+     */
+    protected $deferred_results = false;
+    /**
      * in milliseconds
      *
      * Generated from protobuf field <code>uint32 time_limit = 200 [deprecated = true, (.eolymp.api.mcp_field_desc) = "wall-time limit in milliseconds"];</code>
@@ -155,6 +159,7 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type int $feedback_policy
      *           defines feedback policy for the problem
      *     @type bool $score_by_best_testset
+     *     @type bool $deferred_results
      *     @type int $time_limit
      *           in milliseconds
      *     @type int $cpu_limit
@@ -382,6 +387,28 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->score_by_best_testset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool deferred_results = 211 [(.eolymp.api.mcp_field_desc) = "submission results and scoreboard scores for the problem are hidden from participants until the contest ends"];</code>
+     * @return bool
+     */
+    public function getDeferredResults()
+    {
+        return $this->deferred_results;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool deferred_results = 211 [(.eolymp.api.mcp_field_desc) = "submission results and scoreboard scores for the problem are hidden from participants until the contest ends"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDeferredResults($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->deferred_results = $var;
 
         return $this;
     }
