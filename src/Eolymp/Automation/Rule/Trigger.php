@@ -99,6 +99,18 @@ class Trigger
      * Generated from protobuf enum <code>PROBLEM_ACTION = 18;</code>
      */
     const PROBLEM_ACTION = 18;
+    /**
+     * a post has been created or updated
+     *
+     * Generated from protobuf enum <code>POST_CHANGED = 19;</code>
+     */
+    const POST_CHANGED = 19;
+    /**
+     * a page (content fragment) has been created or updated
+     *
+     * Generated from protobuf enum <code>FRAGMENT_CHANGED = 20;</code>
+     */
+    const FRAGMENT_CHANGED = 20;
 
     private static $valueToName = [
         self::UNKNOWN_TRIGGER => 'UNKNOWN_TRIGGER',
@@ -120,6 +132,8 @@ class Trigger
         self::SCHEDULED => 'SCHEDULED',
         self::STATEMENT_CHANGED => 'STATEMENT_CHANGED',
         self::PROBLEM_ACTION => 'PROBLEM_ACTION',
+        self::POST_CHANGED => 'POST_CHANGED',
+        self::FRAGMENT_CHANGED => 'FRAGMENT_CHANGED',
     ];
 
     public static function name($value)
