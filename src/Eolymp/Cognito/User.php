@@ -38,6 +38,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $active = false;
     /**
+     * An automated account
+     *
+     * Generated from protobuf field <code>bool bot = 5;</code>
+     */
+    protected $bot = false;
+    /**
      * Rating
      *
      * Generated from protobuf field <code>uint32 rating = 60;</code>
@@ -156,6 +162,8 @@ class User extends \Google\Protobuf\Internal\Message
      *           Email address
      *     @type bool $active
      *           Account is active, user can login
+     *     @type bool $bot
+     *           An automated account
      *     @type int $rating
      *           Rating
      *     @type string $name
@@ -297,6 +305,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->active = $var;
+
+        return $this;
+    }
+
+    /**
+     * An automated account
+     *
+     * Generated from protobuf field <code>bool bot = 5;</code>
+     * @return bool
+     */
+    public function getBot()
+    {
+        return $this->bot;
+    }
+
+    /**
+     * An automated account
+     *
+     * Generated from protobuf field <code>bool bot = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBot($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bot = $var;
 
         return $this;
     }

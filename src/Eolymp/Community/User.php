@@ -22,6 +22,12 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $subject = '';
     /**
+     * an automated account
+     *
+     * Generated from protobuf field <code>bool bot = 3 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $bot = false;
+    /**
      * Generated from protobuf field <code>string nickname = 10;</code>
      */
     protected $nickname = '';
@@ -102,6 +108,8 @@ class User extends \Google\Protobuf\Internal\Message
      *
      *     @type string $issuer
      *     @type string $subject
+     *     @type bool $bot
+     *           an automated account
      *     @type string $nickname
      *     @type int $nickname_change_timeout
      *     @type array<\Eolymp\Community\User\Alias>|\Google\Protobuf\Internal\RepeatedField $aliases
@@ -168,6 +176,32 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->subject = $var;
+
+        return $this;
+    }
+
+    /**
+     * an automated account
+     *
+     * Generated from protobuf field <code>bool bot = 3 [(.eolymp.api.read_only) = true];</code>
+     * @return bool
+     */
+    public function getBot()
+    {
+        return $this->bot;
+    }
+
+    /**
+     * an automated account
+     *
+     * Generated from protobuf field <code>bool bot = 3 [(.eolymp.api.read_only) = true];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setBot($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->bot = $var;
 
         return $this;
     }

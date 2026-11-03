@@ -17,14 +17,15 @@ class User
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-È
-eolymp/cognito/user.protoeolymp.cognito"Ä
+ˆ
+eolymp/cognito/user.protoeolymp.cognito"ç
 User
 
 id (	
 username (	
 email (	
-active (
+active (
+bot (
 rating< (
 name
  (	
