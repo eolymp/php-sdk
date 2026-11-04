@@ -17,6 +17,18 @@ class JoinContestInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string contest_id = 1;</code>
      */
     protected $contest_id = '';
+    /**
+     * team to join with, required in a team contest
+     *
+     * Generated from protobuf field <code>string team_id = 2;</code>
+     */
+    protected $team_id = '';
+    /**
+     * members of the team who compete
+     *
+     * Generated from protobuf field <code>repeated string member_ids = 3;</code>
+     */
+    private $member_ids;
 
     /**
      * Constructor.
@@ -25,6 +37,10 @@ class JoinContestInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $contest_id
+     *     @type string $team_id
+     *           team to join with, required in a team contest
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $member_ids
+     *           members of the team who compete
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +66,58 @@ class JoinContestInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->contest_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * team to join with, required in a team contest
+     *
+     * Generated from protobuf field <code>string team_id = 2;</code>
+     * @return string
+     */
+    public function getTeamId()
+    {
+        return $this->team_id;
+    }
+
+    /**
+     * team to join with, required in a team contest
+     *
+     * Generated from protobuf field <code>string team_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTeamId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->team_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * members of the team who compete
+     *
+     * Generated from protobuf field <code>repeated string member_ids = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getMemberIds()
+    {
+        return $this->member_ids;
+    }
+
+    /**
+     * members of the team who compete
+     *
+     * Generated from protobuf field <code>repeated string member_ids = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setMemberIds($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->member_ids = $arr;
 
         return $this;
     }

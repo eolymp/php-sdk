@@ -231,12 +231,13 @@ class ParticipantServiceClient {
     }
 
     /**
-     * deprecated
-     *
      * JoinContest creates a participant record for the calling user without an organiser being involved,
      * and only in a contest whose visibility lets people in on their own. The contest decides whether
-     * such self-joined participants compete officially. Use RegistrationService instead, which also
-     * collects whatever details the contest asks of its registrants.
+     * such self-joined participants compete officially.
+     *
+     * In a team contest the captain joins on behalf of the team, naming the members who compete. The roster
+     * must fit the contest's team size, and a member can be on only one roster in a contest. Until the team
+     * starts the contest, the captain can call it again to change the roster.
      *
      * @param JoinContestInput $input message
      * @param array $context request parameters
@@ -254,6 +255,30 @@ class ParticipantServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "POST", $this->url.$path, $input, JoinContestOutput::class, $context);
+    }
+
+    /**
+     * LeaveContest undoes JoinContest for the caller before they start. A participant who joined on their own
+     * is removed from the contest; a team member is taken off their team's roster, which is refused when the
+     * roster would fall below the contest's team size. It is refused once the participant has started the
+     * contest, and for participants assigned by an organiser.
+     *
+     * @param LeaveContestInput $input message
+     * @param array $context request parameters
+     *
+     * @return LeaveContestOutput output message
+     */
+    public function LeaveContest(LeaveContestInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/leave";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+
+        $context['name'] = "eolymp.judge.ParticipantService/LeaveContest";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, LeaveContestOutput::class, $context);
     }
 
     /**

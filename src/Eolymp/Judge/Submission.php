@@ -62,6 +62,12 @@ class Submission extends \Google\Protobuf\Internal\Message
      */
     protected $participant_id = '';
     /**
+     * member who submitted, one of the roster when the participant is a team
+     *
+     * Generated from protobuf field <code>string member_id = 8 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $member_id = '';
+    /**
      * time when submission was created
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp submitted_at = 5;</code>
@@ -226,6 +232,8 @@ class Submission extends \Google\Protobuf\Internal\Message
      *           problem
      *     @type string $participant_id
      *           submitter
+     *     @type string $member_id
+     *           member who submitted, one of the roster when the participant is a team
      *     @type \Google\Protobuf\Timestamp $submitted_at
      *           time when submission was created
      *     @type bool $deleted
@@ -488,6 +496,32 @@ class Submission extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->participant_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * member who submitted, one of the roster when the participant is a team
+     *
+     * Generated from protobuf field <code>string member_id = 8 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getMemberId()
+    {
+        return $this->member_id;
+    }
+
+    /**
+     * member who submitted, one of the roster when the participant is a team
+     *
+     * Generated from protobuf field <code>string member_id = 8 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMemberId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->member_id = $var;
 
         return $this;
     }

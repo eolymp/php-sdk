@@ -86,6 +86,18 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $hide_jury_identity = null;
     /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.ParticipantType participant_type = 44;</code>
+     */
+    protected $participant_type = null;
+    /**
+     * Generated from protobuf field <code>optional uint32 min_team_size = 45;</code>
+     */
+    protected $min_team_size = null;
+    /**
+     * Generated from protobuf field <code>optional uint32 max_team_size = 46;</code>
+     */
+    protected $max_team_size = null;
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp featured_until = 50;</code>
      */
     protected $featured_until = null;
@@ -142,6 +154,9 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type bool $display_editorials
      *     @type string $slug
      *     @type bool $hide_jury_identity
+     *     @type int $participant_type
+     *     @type int $min_team_size
+     *     @type int $max_team_size
      *     @type \Google\Protobuf\Timestamp $featured_until
      *     @type string $printer_id
      *     @type \Eolymp\Judge\Contest\ScoreboardConfig $scoreboard_config
@@ -729,6 +744,102 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->hide_jury_identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.ParticipantType participant_type = 44;</code>
+     * @return int
+     */
+    public function getParticipantType()
+    {
+        return isset($this->participant_type) ? $this->participant_type : 0;
+    }
+
+    public function hasParticipantType()
+    {
+        return isset($this->participant_type);
+    }
+
+    public function clearParticipantType()
+    {
+        unset($this->participant_type);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .eolymp.judge.Contest.ParticipantType participant_type = 44;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setParticipantType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ParticipantType::class);
+        $this->participant_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 min_team_size = 45;</code>
+     * @return int
+     */
+    public function getMinTeamSize()
+    {
+        return isset($this->min_team_size) ? $this->min_team_size : 0;
+    }
+
+    public function hasMinTeamSize()
+    {
+        return isset($this->min_team_size);
+    }
+
+    public function clearMinTeamSize()
+    {
+        unset($this->min_team_size);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 min_team_size = 45;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinTeamSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_team_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 max_team_size = 46;</code>
+     * @return int
+     */
+    public function getMaxTeamSize()
+    {
+        return isset($this->max_team_size) ? $this->max_team_size : 0;
+    }
+
+    public function hasMaxTeamSize()
+    {
+        return isset($this->max_team_size);
+    }
+
+    public function clearMaxTeamSize()
+    {
+        unset($this->max_team_size);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 max_team_size = 46;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxTeamSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_team_size = $var;
 
         return $this;
     }

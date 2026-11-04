@@ -154,6 +154,25 @@ class Contest extends \Google\Protobuf\Internal\Message
      */
     protected $hide_jury_identity = false;
     /**
+     * Who enters the contest: individual members, or teams registered by their captain with a roster, see
+     * eolymp.team.TeamService. Team contests require the space to support teams.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipantType participant_type = 44;</code>
+     */
+    protected $participant_type = 0;
+    /**
+     * fewest members on a team's roster, team contests only
+     *
+     * Generated from protobuf field <code>uint32 min_team_size = 45;</code>
+     */
+    protected $min_team_size = 0;
+    /**
+     * most members on a team's roster, team contests only
+     *
+     * Generated from protobuf field <code>uint32 max_team_size = 46;</code>
+     */
+    protected $max_team_size = 0;
+    /**
      * Format defines competition style IOI or ICPC.
      *
      * Generated from protobuf field <code>.eolymp.judge.Contest.Format format = 32;</code>
@@ -317,6 +336,13 @@ class Contest extends \Google\Protobuf\Internal\Message
      *           URL-friendly slug for the contest. Must match [a-z][a-z0-9\-_]+. Unique within a space.
      *     @type bool $hide_jury_identity
      *           When true, jury member identity is hidden from participants in ticket replies
+     *     @type int $participant_type
+     *           Who enters the contest: individual members, or teams registered by their captain with a roster, see
+     *           eolymp.team.TeamService. Team contests require the space to support teams.
+     *     @type int $min_team_size
+     *           fewest members on a team's roster, team contests only
+     *     @type int $max_team_size
+     *           most members on a team's roster, team contests only
      *     @type int $format
      *           Format defines competition style IOI or ICPC.
      *     @type string $key
@@ -988,6 +1014,86 @@ class Contest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->hide_jury_identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Who enters the contest: individual members, or teams registered by their captain with a roster, see
+     * eolymp.team.TeamService. Team contests require the space to support teams.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipantType participant_type = 44;</code>
+     * @return int
+     */
+    public function getParticipantType()
+    {
+        return $this->participant_type;
+    }
+
+    /**
+     * Who enters the contest: individual members, or teams registered by their captain with a roster, see
+     * eolymp.team.TeamService. Team contests require the space to support teams.
+     *
+     * Generated from protobuf field <code>.eolymp.judge.Contest.ParticipantType participant_type = 44;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setParticipantType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ParticipantType::class);
+        $this->participant_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * fewest members on a team's roster, team contests only
+     *
+     * Generated from protobuf field <code>uint32 min_team_size = 45;</code>
+     * @return int
+     */
+    public function getMinTeamSize()
+    {
+        return $this->min_team_size;
+    }
+
+    /**
+     * fewest members on a team's roster, team contests only
+     *
+     * Generated from protobuf field <code>uint32 min_team_size = 45;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMinTeamSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->min_team_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * most members on a team's roster, team contests only
+     *
+     * Generated from protobuf field <code>uint32 max_team_size = 46;</code>
+     * @return int
+     */
+    public function getMaxTeamSize()
+    {
+        return $this->max_team_size;
+    }
+
+    /**
+     * most members on a team's roster, team contests only
+     *
+     * Generated from protobuf field <code>uint32 max_team_size = 46;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxTeamSize($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_team_size = $var;
 
         return $this;
     }

@@ -71,6 +71,10 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum proctoring_status = 16 [(.eolymp.api.mcp_field_ignore) = true];</code>
      */
     private $proctoring_status;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID team_id = 17;</code>
+     */
+    private $team_id;
 
     /**
      * Constructor.
@@ -94,6 +98,7 @@ class Filter extends \Google\Protobuf\Internal\Message
      *           Filter participants who have non-cancelled violations
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $proctoring_status
      *           Filter participants by proctoring recording status: UNAVAILABLE, COMPLETE, INCOMPLETE or EXPIRED
+     *     @type array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $team_id
      * }
      */
     public function __construct($data = NULL) {
@@ -377,6 +382,28 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
         $this->proctoring_status = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID team_id = 17;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTeamId()
+    {
+        return $this->team_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionID team_id = 17;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionID>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTeamId($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionID::class);
+        $this->team_id = $arr;
 
         return $this;
     }

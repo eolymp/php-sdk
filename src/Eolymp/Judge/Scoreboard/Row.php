@@ -22,6 +22,12 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * team the row belongs to, member_id is empty then
+     *
+     * Generated from protobuf field <code>string team_id = 3;</code>
+     */
+    protected $team_id = '';
+    /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      */
     protected $index = 0;
@@ -73,6 +79,12 @@ class Row extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
      */
     private $values;
+    /**
+     * members who competed for the team
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Member roster = 60;</code>
+     */
+    private $roster;
 
     /**
      * Constructor.
@@ -82,6 +94,8 @@ class Row extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *     @type string $member_id
+     *     @type string $team_id
+     *           team the row belongs to, member_id is empty then
      *     @type int $index
      *     @type int $rank
      *           Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
@@ -96,6 +110,8 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type bool $disqualified
      *     @type int $medal
      *     @type array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
+     *     @type array<\Eolymp\Judge\Participant\Member>|\Google\Protobuf\Internal\RepeatedField $roster
+     *           members who competed for the team
      * }
      */
     public function __construct($data = NULL) {
@@ -143,6 +159,32 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * team the row belongs to, member_id is empty then
+     *
+     * Generated from protobuf field <code>string team_id = 3;</code>
+     * @return string
+     */
+    public function getTeamId()
+    {
+        return $this->team_id;
+    }
+
+    /**
+     * team the row belongs to, member_id is empty then
+     *
+     * Generated from protobuf field <code>string team_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTeamId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->team_id = $var;
 
         return $this;
     }
@@ -415,6 +457,32 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Scoreboard\Row\Value::class);
         $this->values = $arr;
+
+        return $this;
+    }
+
+    /**
+     * members who competed for the team
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Member roster = 60;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRoster()
+    {
+        return $this->roster;
+    }
+
+    /**
+     * members who competed for the team
+     *
+     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Member roster = 60;</code>
+     * @param array<\Eolymp\Judge\Participant\Member>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRoster($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\Member::class);
+        $this->roster = $arr;
 
         return $this;
     }
