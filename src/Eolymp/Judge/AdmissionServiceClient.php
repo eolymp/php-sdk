@@ -13,7 +13,7 @@ namespace Eolymp\Judge;
      * which the organiser looks up to see who is behind it and then accepts; the console describes presenting
      * it as scanning a QR code. What is admitted is one session rather than the participant, and only for a
      * limited time, so the same person on a second device has to be admitted again. Joining the contest at
-     * all is a separate step and belongs to RegistrationService.
+     * all is a separate step, done through ParticipantService.JoinContest.
      */
 class AdmissionServiceClient {
 
