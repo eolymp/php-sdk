@@ -76,6 +76,17 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $medal = 0;
     /**
+     * Rating the participant got for the contest and its change from the previous rating, set on contest boards
+     * once a rated contest is finalized; zero for participants who were not rated.
+     *
+     * Generated from protobuf field <code>int32 rating = 40;</code>
+     */
+    protected $rating = 0;
+    /**
+     * Generated from protobuf field <code>int32 rating_diff = 41;</code>
+     */
+    protected $rating_diff = 0;
+    /**
      * Generated from protobuf field <code>repeated .eolymp.judge.Scoreboard.Row.Value values = 50;</code>
      */
     private $values;
@@ -109,6 +120,10 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type bool $unofficial
      *     @type bool $disqualified
      *     @type int $medal
+     *     @type int $rating
+     *           Rating the participant got for the contest and its change from the previous rating, set on contest boards
+     *           once a rated contest is finalized; zero for participants who were not rated.
+     *     @type int $rating_diff
      *     @type array<\Eolymp\Judge\Scoreboard\Row\Value>|\Google\Protobuf\Internal\RepeatedField $values
      *     @type array<\Eolymp\Judge\Participant\Member>|\Google\Protobuf\Internal\RepeatedField $roster
      *           members who competed for the team
@@ -435,6 +450,56 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Medal::class);
         $this->medal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Rating the participant got for the contest and its change from the previous rating, set on contest boards
+     * once a rated contest is finalized; zero for participants who were not rated.
+     *
+     * Generated from protobuf field <code>int32 rating = 40;</code>
+     * @return int
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * Rating the participant got for the contest and its change from the previous rating, set on contest boards
+     * once a rated contest is finalized; zero for participants who were not rated.
+     *
+     * Generated from protobuf field <code>int32 rating = 40;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRating($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->rating = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 rating_diff = 41;</code>
+     * @return int
+     */
+    public function getRatingDiff()
+    {
+        return $this->rating_diff;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 rating_diff = 41;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRatingDiff($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->rating_diff = $var;
 
         return $this;
     }
