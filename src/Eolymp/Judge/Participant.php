@@ -124,6 +124,18 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $certificate_id = '';
     /**
+     * rating the participant got for a rated contest, zero when not rated
+     *
+     * Generated from protobuf field <code>int32 rating = 35 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $rating = 0;
+    /**
+     * change from the participant's previous rating, zero when not rated
+     *
+     * Generated from protobuf field <code>int32 rating_diff = 36 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $rating_diff = 0;
+    /**
      * proctoring recording of the participation, only in a proctored contest
      *
      * Generated from protobuf field <code>.eolymp.judge.Participant.Proctoring proctoring = 34 [(.eolymp.api.read_only) = true, (.eolymp.api.mcp_field_ignore) = true];</code>
@@ -186,6 +198,10 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           Passcode is read-only and should be set using ResetPasscode method.
      *     @type string $certificate_id
      *           Participation certificate ID.
+     *     @type int $rating
+     *           rating the participant got for a rated contest, zero when not rated
+     *     @type int $rating_diff
+     *           change from the participant's previous rating, zero when not rated
      *     @type \Eolymp\Judge\Participant\Proctoring $proctoring
      *           proctoring recording of the participation, only in a proctored contest
      *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
@@ -689,6 +705,58 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->certificate_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * rating the participant got for a rated contest, zero when not rated
+     *
+     * Generated from protobuf field <code>int32 rating = 35 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * rating the participant got for a rated contest, zero when not rated
+     *
+     * Generated from protobuf field <code>int32 rating = 35 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRating($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->rating = $var;
+
+        return $this;
+    }
+
+    /**
+     * change from the participant's previous rating, zero when not rated
+     *
+     * Generated from protobuf field <code>int32 rating_diff = 36 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getRatingDiff()
+    {
+        return $this->rating_diff;
+    }
+
+    /**
+     * change from the participant's previous rating, zero when not rated
+     *
+     * Generated from protobuf field <code>int32 rating_diff = 36 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRatingDiff($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->rating_diff = $var;
 
         return $this;
     }
