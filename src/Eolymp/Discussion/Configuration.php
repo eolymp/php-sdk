@@ -14,10 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class Configuration extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>bool members_can_create_posts = 1;</code>
-     */
-    protected $members_can_create_posts = false;
-    /**
      * Generated from protobuf field <code>bool members_can_comment_on_posts = 2;</code>
      */
     protected $members_can_comment_on_posts = false;
@@ -40,7 +36,6 @@ class Configuration extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type bool $members_can_create_posts
      *     @type bool $members_can_comment_on_posts
      *     @type bool $members_can_comment_on_problems
      *     @type int $post_moderation
@@ -50,28 +45,6 @@ class Configuration extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Discussion\Configuration::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>bool members_can_create_posts = 1;</code>
-     * @return bool
-     */
-    public function getMembersCanCreatePosts()
-    {
-        return $this->members_can_create_posts;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool members_can_create_posts = 1;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setMembersCanCreatePosts($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->members_can_create_posts = $var;
-
-        return $this;
     }
 
     /**
