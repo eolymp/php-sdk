@@ -28,6 +28,12 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $team_id = '';
     /**
+     * team name the row is listed under, set on team rows
+     *
+     * Generated from protobuf field <code>string display_name = 4;</code>
+     */
+    protected $display_name = '';
+    /**
      * Generated from protobuf field <code>uint32 index = 10;</code>
      */
     protected $index = 0;
@@ -107,6 +113,8 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type string $team_id
      *           team the row belongs to, member_id is empty then
+     *     @type string $display_name
+     *           team name the row is listed under, set on team rows
      *     @type int $index
      *     @type int $rank
      *           Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
@@ -200,6 +208,32 @@ class Row extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->team_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * team name the row is listed under, set on team rows
+     *
+     * Generated from protobuf field <code>string display_name = 4;</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+    /**
+     * team name the row is listed under, set on team rows
+     *
+     * Generated from protobuf field <code>string display_name = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
 
         return $this;
     }
