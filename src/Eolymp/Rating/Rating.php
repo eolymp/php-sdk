@@ -33,6 +33,12 @@ class Rating extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint32 value = 10;</code>
      */
     protected $value = 0;
+    /**
+     * change from the member's previous rating, zero on their first rated contest
+     *
+     * Generated from protobuf field <code>int32 value_diff = 11;</code>
+     */
+    protected $value_diff = 0;
 
     /**
      * Constructor.
@@ -45,6 +51,8 @@ class Rating extends \Google\Protobuf\Internal\Message
      *     @type string $member_id
      *     @type string $contest_id
      *     @type int $value
+     *     @type int $value_diff
+     *           change from the member's previous rating, zero on their first rated contest
      * }
      */
     public function __construct($data = NULL) {
@@ -168,6 +176,32 @@ class Rating extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->value = $var;
+
+        return $this;
+    }
+
+    /**
+     * change from the member's previous rating, zero on their first rated contest
+     *
+     * Generated from protobuf field <code>int32 value_diff = 11;</code>
+     * @return int
+     */
+    public function getValueDiff()
+    {
+        return $this->value_diff;
+    }
+
+    /**
+     * change from the member's previous rating, zero on their first rated contest
+     *
+     * Generated from protobuf field <code>int32 value_diff = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setValueDiff($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->value_diff = $var;
 
         return $this;
     }
