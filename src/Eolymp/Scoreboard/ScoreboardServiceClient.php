@@ -324,6 +324,28 @@ class ScoreboardServiceClient {
     }
 
     /**
+     * DescribeScoreboardStats returns per-contest and per-problem figures for the board in the requested mode, taken
+     * over all of its members rather than a page, so a client can show them under the table whatever rows it lists.
+     *
+     * @param DescribeScoreboardStatsInput $input message
+     * @param array $context request parameters
+     *
+     * @return DescribeScoreboardStatsOutput output message
+     */
+    public function DescribeScoreboardStats(DescribeScoreboardStatsInput $input, array $context = [])
+    {
+        $path = "/scoreboards/".rawurlencode($input->getScoreboardId())."/stats";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setScoreboardId("");
+
+        $context['name'] = "eolymp.scoreboard.ScoreboardService/DescribeScoreboardStats";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeScoreboardStatsOutput::class, $context);
+    }
+
+    /**
      * Repair for a standing that has drifted, not a refresh: rows are maintained as contests are judged. Runs
      * in the background, a member at a time, and the scoreboard stays readable throughout.
      *
