@@ -200,8 +200,6 @@ class Post extends \Google\Protobuf\Internal\Message
      *           moderation status
      *     @type string $user_id
      *           author by user
-     *     @type string $member_id
-     *           author by member
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $published_at
      *     @type \Google\Protobuf\Timestamp $updated_at
@@ -570,37 +568,6 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(10, $var);
-
-        return $this;
-    }
-
-    /**
-     * author by member
-     *
-     * Generated from protobuf field <code>string member_id = 11;</code>
-     * @return string
-     */
-    public function getMemberId()
-    {
-        return $this->readOneof(11);
-    }
-
-    public function hasMemberId()
-    {
-        return $this->hasOneof(11);
-    }
-
-    /**
-     * author by member
-     *
-     * Generated from protobuf field <code>string member_id = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMemberId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->writeOneof(11, $var);
 
         return $this;
     }

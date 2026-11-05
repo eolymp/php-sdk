@@ -16,10 +16,6 @@ class Patch
      */
     const ALL = 0;
     /**
-     * Generated from protobuf enum <code>MEMBERS_CAN_CREATE_POSTS = 1;</code>
-     */
-    const MEMBERS_CAN_CREATE_POSTS = 1;
-    /**
      * Generated from protobuf enum <code>MEMBERS_CAN_COMMENT_ON_POSTS = 2;</code>
      */
     const MEMBERS_CAN_COMMENT_ON_POSTS = 2;
@@ -38,7 +34,6 @@ class Patch
 
     private static $valueToName = [
         self::ALL => 'ALL',
-        self::MEMBERS_CAN_CREATE_POSTS => 'MEMBERS_CAN_CREATE_POSTS',
         self::MEMBERS_CAN_COMMENT_ON_POSTS => 'MEMBERS_CAN_COMMENT_ON_POSTS',
         self::MEMBERS_CAN_COMMENT_ON_PROBLEMS => 'MEMBERS_CAN_COMMENT_ON_PROBLEMS',
         self::POST_MODERATION => 'POST_MODERATION',
