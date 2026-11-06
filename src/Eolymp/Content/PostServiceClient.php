@@ -12,11 +12,9 @@ namespace Eolymp\Content;
      * LaTeX with a parsed tree alongside, which reads return only when asked for: as the raw value, as the tree,
      * or as a short rendered excerpt meant for listings. It is not a page — a page (ContentService) is addressed
      * by a path and takes its place in the site structure, while a post stands on its own in the listing — and it
-     * is not a contest announcement, which is a separate feature (eolymp.judge.AnnouncementService). Whether
-     * readers see a post depends on three independent things: whether the author still keeps it as a draft,
-     * whether it has been published, and how moderation ruled on it; the post's public flag reports the
-     * combination and cannot be written directly. Comments on a post belong to eolymp.discussion, which is also
-     * where the space-wide policy deciding when posts are moderated is configured.
+     * is not a contest announcement, which is a separate feature (eolymp.judge.AnnouncementService). Readers see
+     * a post once it is published and not while it is a draft; the post's public flag reports this and cannot be
+     * written directly. Comments on a post belong to eolymp.discussion.
      *
      * A post has no locale of its own. It holds the source content and labels plus a complete translation of
      * them per locale, and the locale on a request picks between them: reading falls back to the post when the
@@ -130,8 +128,7 @@ class PostServiceClient {
 
     /**
      * PublishPost is the transition which sends a post out, recording when that happened, rather than a flag on
-     * the post that UpdatePost could write. Whether readers then see it still depends on the draft flag and on
-     * moderation.
+     * the post that UpdatePost could write.
      *
      * @param PublishPostInput $input message
      * @param array $context request parameters
@@ -171,29 +168,6 @@ class PostServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, UnpublishPostOutput::class, $context);
-    }
-
-    /**
-     * ModeratePost records a moderator's outcome for a post, together with a reason when the post is turned down.
-     * Whether a post has to pass moderation before it appears, only afterwards, or not at all, is a space-wide
-     * setting of eolymp.discussion.ConfigurationService rather than anything carried by the post.
-     *
-     * @param ModeratePostInput $input message
-     * @param array $context request parameters
-     *
-     * @return ModeratePostOutput output message
-     */
-    public function ModeratePost(ModeratePostInput $input, array $context = [])
-    {
-        $path = "/posts/".rawurlencode($input->getPostId())."/moderate";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setPostId("");
-
-        $context['name'] = "eolymp.content.PostService/ModeratePost";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ModeratePostOutput::class, $context);
     }
 
     /**

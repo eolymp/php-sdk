@@ -60,7 +60,7 @@ class Post extends \Google\Protobuf\Internal\Message
      */
     protected $draft = false;
     /**
-     * visible and available to everyone (ie. published and passed moderation)
+     * visible and available to everyone (ie. published)
      *
      * Generated from protobuf field <code>bool public = 4 [(.eolymp.api.read_only) = true];</code>
      */
@@ -77,12 +77,6 @@ class Post extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool pinned = 13;</code>
      */
     protected $pinned = false;
-    /**
-     * moderation status
-     *
-     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5 [(.eolymp.api.read_only) = true];</code>
-     */
-    protected $moderation = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 20 [(.eolymp.api.read_only) = true];</code>
      */
@@ -191,13 +185,11 @@ class Post extends \Google\Protobuf\Internal\Message
      *     @type bool $draft
      *           marked as draft and only shown to author
      *     @type bool $public
-     *           visible and available to everyone (ie. published and passed moderation)
+     *           visible and available to everyone (ie. published)
      *     @type bool $featured
      *           marked as featured (shown on home page)
      *     @type bool $pinned
      *           pinned on top of the page
-     *     @type int $moderation
-     *           moderation status
      *     @type string $user_id
      *           author by user
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -438,7 +430,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * visible and available to everyone (ie. published and passed moderation)
+     * visible and available to everyone (ie. published)
      *
      * Generated from protobuf field <code>bool public = 4 [(.eolymp.api.read_only) = true];</code>
      * @return bool
@@ -449,7 +441,7 @@ class Post extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * visible and available to everyone (ie. published and passed moderation)
+     * visible and available to everyone (ie. published)
      *
      * Generated from protobuf field <code>bool public = 4 [(.eolymp.api.read_only) = true];</code>
      * @param bool $var
@@ -511,32 +503,6 @@ class Post extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->pinned = $var;
-
-        return $this;
-    }
-
-    /**
-     * moderation status
-     *
-     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5 [(.eolymp.api.read_only) = true];</code>
-     * @return int
-     */
-    public function getModeration()
-    {
-        return $this->moderation;
-    }
-
-    /**
-     * moderation status
-     *
-     * Generated from protobuf field <code>.eolymp.content.Post.Moderation moderation = 5 [(.eolymp.api.read_only) = true];</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setModeration($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Content\Post\Moderation::class);
-        $this->moderation = $var;
 
         return $this;
     }

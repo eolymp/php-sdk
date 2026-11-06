@@ -22,10 +22,6 @@ class Configuration extends \Google\Protobuf\Internal\Message
      */
     protected $members_can_comment_on_problems = false;
     /**
-     * Generated from protobuf field <code>.eolymp.discussion.Configuration.Moderation post_moderation = 4;</code>
-     */
-    protected $post_moderation = 0;
-    /**
      * Generated from protobuf field <code>.eolymp.discussion.Configuration.Moderation comment_moderation = 5;</code>
      */
     protected $comment_moderation = 0;
@@ -38,7 +34,6 @@ class Configuration extends \Google\Protobuf\Internal\Message
      *
      *     @type bool $members_can_comment_on_posts
      *     @type bool $members_can_comment_on_problems
-     *     @type int $post_moderation
      *     @type int $comment_moderation
      * }
      */
@@ -87,28 +82,6 @@ class Configuration extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->members_can_comment_on_problems = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.discussion.Configuration.Moderation post_moderation = 4;</code>
-     * @return int
-     */
-    public function getPostModeration()
-    {
-        return $this->post_moderation;
-    }
-
-    /**
-     * Generated from protobuf field <code>.eolymp.discussion.Configuration.Moderation post_moderation = 4;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPostModeration($var)
-    {
-        GPBUtil::checkEnum($var, \Eolymp\Discussion\Configuration\Moderation::class);
-        $this->post_moderation = $var;
 
         return $this;
     }

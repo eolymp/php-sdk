@@ -24,10 +24,6 @@ class Patch
      */
     const MEMBERS_CAN_COMMENT_ON_PROBLEMS = 3;
     /**
-     * Generated from protobuf enum <code>POST_MODERATION = 4;</code>
-     */
-    const POST_MODERATION = 4;
-    /**
      * Generated from protobuf enum <code>COMMENT_MODERATION = 5;</code>
      */
     const COMMENT_MODERATION = 5;
@@ -36,7 +32,6 @@ class Patch
         self::ALL => 'ALL',
         self::MEMBERS_CAN_COMMENT_ON_POSTS => 'MEMBERS_CAN_COMMENT_ON_POSTS',
         self::MEMBERS_CAN_COMMENT_ON_PROBLEMS => 'MEMBERS_CAN_COMMENT_ON_PROBLEMS',
-        self::POST_MODERATION => 'POST_MODERATION',
         self::COMMENT_MODERATION => 'COMMENT_MODERATION',
     ];
 

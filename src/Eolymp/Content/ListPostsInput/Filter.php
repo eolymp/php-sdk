@@ -57,10 +57,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      */
     private $featured;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
-     */
-    private $moderation;
-    /**
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum label = 10;</code>
      */
     private $label;
@@ -82,7 +78,6 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $draft
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $public
      *     @type array<\Eolymp\Wellknown\ExpressionBool>|\Google\Protobuf\Internal\RepeatedField $featured
-     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $moderation
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $label
      * }
      */
@@ -315,28 +310,6 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionBool::class);
         $this->featured = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getModeration()
-    {
-        return $this->moderation;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum moderation = 11;</code>
-     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setModeration($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
-        $this->moderation = $arr;
 
         return $this;
     }
