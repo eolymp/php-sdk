@@ -28,7 +28,7 @@ class Row extends \Google\Protobuf\Internal\Message
      */
     protected $team_id = '';
     /**
-     * team name the row is listed under, set on team rows
+     * participant's display name: the team name on a team row, the member name otherwise
      *
      * Generated from protobuf field <code>string display_name = 4;</code>
      */
@@ -114,7 +114,7 @@ class Row extends \Google\Protobuf\Internal\Message
      *     @type string $team_id
      *           team the row belongs to, member_id is empty then
      *     @type string $display_name
-     *           team name the row is listed under, set on team rows
+     *           participant's display name: the team name on a team row, the member name otherwise
      *     @type int $index
      *     @type int $rank
      *           Rank among officially ranked participants only; zero when the row itself is unofficial or disqualified.
@@ -213,7 +213,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * team name the row is listed under, set on team rows
+     * participant's display name: the team name on a team row, the member name otherwise
      *
      * Generated from protobuf field <code>string display_name = 4;</code>
      * @return string
@@ -224,7 +224,7 @@ class Row extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * team name the row is listed under, set on team rows
+     * participant's display name: the team name on a team row, the member name otherwise
      *
      * Generated from protobuf field <code>string display_name = 4;</code>
      * @param string $var
