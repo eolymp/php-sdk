@@ -11,9 +11,9 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Recording is a member's screen and camera recording.
  * The service which asks for proctoring (e.g. a contest) creates the recording for a member and hands the
- * stream URL to the member's browser, which streams clips to it until the URL's token expires. The recording
- * spans from its earliest clip to the end of its latest one; the owner decides whether that covers what it
- * needed recorded.
+ * stream URL to the member's browser, which streams clips to it until the URL's token expires. A phone
+ * streams the additional camera from the additional camera URL. The recording spans from its earliest clip
+ * to the end of its latest one; the owner decides whether that covers what it needed recorded.
  *
  * Generated from protobuf message <code>eolymp.proctoring.Recording</code>
  */

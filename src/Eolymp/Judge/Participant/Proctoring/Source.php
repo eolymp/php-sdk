@@ -23,11 +23,16 @@ class Source
      * Generated from protobuf enum <code>CAMERA = 2;</code>
      */
     const CAMERA = 2;
+    /**
+     * Generated from protobuf enum <code>ADDITIONAL_CAMERA = 3;</code>
+     */
+    const ADDITIONAL_CAMERA = 3;
 
     private static $valueToName = [
         self::UNKNOWN_SOURCE => 'UNKNOWN_SOURCE',
         self::SCREEN => 'SCREEN',
         self::CAMERA => 'CAMERA',
+        self::ADDITIONAL_CAMERA => 'ADDITIONAL_CAMERA',
     ];
 
     public static function name($value)

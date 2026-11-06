@@ -33,12 +33,19 @@ class Mode
      * Generated from protobuf enum <code>SCREEN_AND_CAMERA = 3;</code>
      */
     const SCREEN_AND_CAMERA = 3;
+    /**
+     * record participant's screen, camera and microphone, and an additional camera
+     *
+     * Generated from protobuf enum <code>SCREEN_AND_TWO_CAMERAS = 4;</code>
+     */
+    const SCREEN_AND_TWO_CAMERAS = 4;
 
     private static $valueToName = [
         self::UNKNOWN_MODE => 'UNKNOWN_MODE',
         self::NONE => 'NONE',
         self::SCREEN => 'SCREEN',
         self::SCREEN_AND_CAMERA => 'SCREEN_AND_CAMERA',
+        self::SCREEN_AND_TWO_CAMERAS => 'SCREEN_AND_TWO_CAMERAS',
     ];
 
     public static function name($value)

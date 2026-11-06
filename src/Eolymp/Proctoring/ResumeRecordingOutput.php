@@ -19,6 +19,12 @@ class ResumeRecordingOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string stream_url = 1;</code>
      */
     protected $stream_url = '';
+    /**
+     * page a phone opens to stream the additional camera, usually shown as a QR code
+     *
+     * Generated from protobuf field <code>string additional_camera_url = 2;</code>
+     */
+    protected $additional_camera_url = '';
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class ResumeRecordingOutput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $stream_url
      *           WebSocket URL with a token to stream clips to
+     *     @type string $additional_camera_url
+     *           page a phone opens to stream the additional camera, usually shown as a QR code
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +65,32 @@ class ResumeRecordingOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->stream_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * page a phone opens to stream the additional camera, usually shown as a QR code
+     *
+     * Generated from protobuf field <code>string additional_camera_url = 2;</code>
+     * @return string
+     */
+    public function getAdditionalCameraUrl()
+    {
+        return $this->additional_camera_url;
+    }
+
+    /**
+     * page a phone opens to stream the additional camera, usually shown as a QR code
+     *
+     * Generated from protobuf field <code>string additional_camera_url = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAdditionalCameraUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->additional_camera_url = $var;
 
         return $this;
     }
