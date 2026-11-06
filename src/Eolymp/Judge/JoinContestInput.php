@@ -26,9 +26,9 @@ class JoinContestInput extends \Google\Protobuf\Internal\Message
     /**
      * members of the team who compete
      *
-     * Generated from protobuf field <code>repeated string member_ids = 3;</code>
+     * Generated from protobuf field <code>repeated string roster = 3;</code>
      */
-    private $member_ids;
+    private $roster;
 
     /**
      * Constructor.
@@ -39,7 +39,7 @@ class JoinContestInput extends \Google\Protobuf\Internal\Message
      *     @type string $contest_id
      *     @type string $team_id
      *           team to join with, required in a team contest
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $member_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $roster
      *           members of the team who compete
      * }
      */
@@ -99,25 +99,25 @@ class JoinContestInput extends \Google\Protobuf\Internal\Message
     /**
      * members of the team who compete
      *
-     * Generated from protobuf field <code>repeated string member_ids = 3;</code>
+     * Generated from protobuf field <code>repeated string roster = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getMemberIds()
+    public function getRoster()
     {
-        return $this->member_ids;
+        return $this->roster;
     }
 
     /**
      * members of the team who compete
      *
-     * Generated from protobuf field <code>repeated string member_ids = 3;</code>
+     * Generated from protobuf field <code>repeated string roster = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setMemberIds($var)
+    public function setRoster($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->member_ids = $arr;
+        $this->roster = $arr;
 
         return $this;
     }

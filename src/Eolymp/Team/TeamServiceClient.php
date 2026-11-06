@@ -174,9 +174,9 @@ class TeamServiceClient {
     }
 
     /**
-     * RemoveTeamMember takes a member out of a team. The captain and administrators can remove anyone but the
-     * captain, and a member can remove themselves, which is how they leave. The captain hands the role over
-     * before leaving. Removing a member takes them off the team's rosters for contests that have not locked yet.
+     * RemoveTeamMember takes another member out of a team. The captain and administrators can remove anyone
+     * but the captain; members leave through LeaveTeam. Removing a member takes them off the team's rosters for
+     * contests that have not locked yet.
      *
      * @param RemoveTeamMemberInput $input message
      * @param array $context request parameters
@@ -195,6 +195,28 @@ class TeamServiceClient {
         $context['path'] = $path;
 
         return call_user_func($this->invoker, "DELETE", $this->url.$path, $input, RemoveTeamMemberOutput::class, $context);
+    }
+
+    /**
+     * LeaveTeam takes the caller out of a team. The captain hands the role over before leaving. Leaving takes the
+     * caller off the team's rosters for contests that have not locked yet.
+     *
+     * @param LeaveTeamInput $input message
+     * @param array $context request parameters
+     *
+     * @return LeaveTeamOutput output message
+     */
+    public function LeaveTeam(LeaveTeamInput $input, array $context = [])
+    {
+        $path = "/teams/".rawurlencode($input->getTeamId())."/leave";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setTeamId("");
+
+        $context['name'] = "eolymp.team.TeamService/LeaveTeam";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, LeaveTeamOutput::class, $context);
     }
 
 }

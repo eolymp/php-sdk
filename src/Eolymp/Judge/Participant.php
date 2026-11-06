@@ -20,19 +20,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * community member, empty for a team
-     *
-     * Generated from protobuf field <code>string member_id = 4;</code>
-     */
-    protected $member_id = '';
-    /**
-     * team the participant competes as, see eolymp.team.Team
-     *
-     * Generated from protobuf field <code>string team_id = 7 [(.eolymp.api.read_only) = true];</code>
-     */
-    protected $team_id = '';
-    /**
-     * display name
+     * name of the member or the team, as of registration
      *
      * Generated from protobuf field <code>string display_name = 5 [(.eolymp.api.read_only) = true];</code>
      */
@@ -147,12 +135,7 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Submit submits = 40 [(.eolymp.api.read_only) = true];</code>
      */
     private $submits;
-    /**
-     * Members of the team who compete, as registered by the captain. Fixed once the team starts the contest.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Member roster = 41 [(.eolymp.api.read_only) = true];</code>
-     */
-    private $roster;
+    protected $competitor;
 
     /**
      * Constructor.
@@ -162,12 +145,10 @@ class Participant extends \Google\Protobuf\Internal\Message
      *
      *     @type string $id
      *           unique identifier of the participant (can not be set when creating participant)
-     *     @type string $member_id
-     *           community member, empty for a team
-     *     @type string $team_id
-     *           team the participant competes as, see eolymp.team.Team
      *     @type string $display_name
-     *           display name
+     *           name of the member or the team, as of registration
+     *     @type \Eolymp\Judge\Participant\Member $member
+     *     @type \Eolymp\Judge\Participant\Team $team
      *     @type int $role
      *           role of the participant in the contest
      *     @type bool $unofficial
@@ -206,8 +187,6 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           proctoring recording of the participation, only in a proctored contest
      *     @type array<\Eolymp\Judge\Participant\Submit>|\Google\Protobuf\Internal\RepeatedField $submits
      *           Submit counter is used to count how many times user submitted the problem.
-     *     @type array<\Eolymp\Judge\Participant\Member>|\Google\Protobuf\Internal\RepeatedField $roster
-     *           Members of the team who compete, as registered by the captain. Fixed once the team starts the contest.
      * }
      */
     public function __construct($data = NULL) {
@@ -242,59 +221,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * community member, empty for a team
-     *
-     * Generated from protobuf field <code>string member_id = 4;</code>
-     * @return string
-     */
-    public function getMemberId()
-    {
-        return $this->member_id;
-    }
-
-    /**
-     * community member, empty for a team
-     *
-     * Generated from protobuf field <code>string member_id = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMemberId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->member_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * team the participant competes as, see eolymp.team.Team
-     *
-     * Generated from protobuf field <code>string team_id = 7 [(.eolymp.api.read_only) = true];</code>
-     * @return string
-     */
-    public function getTeamId()
-    {
-        return $this->team_id;
-    }
-
-    /**
-     * team the participant competes as, see eolymp.team.Team
-     *
-     * Generated from protobuf field <code>string team_id = 7 [(.eolymp.api.read_only) = true];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setTeamId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->team_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * display name
+     * name of the member or the team, as of registration
      *
      * Generated from protobuf field <code>string display_name = 5 [(.eolymp.api.read_only) = true];</code>
      * @return string
@@ -305,7 +232,7 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * display name
+     * name of the member or the team, as of registration
      *
      * Generated from protobuf field <code>string display_name = 5 [(.eolymp.api.read_only) = true];</code>
      * @param string $var
@@ -315,6 +242,60 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Member member = 42;</code>
+     * @return \Eolymp\Judge\Participant\Member|null
+     */
+    public function getMember()
+    {
+        return $this->readOneof(42);
+    }
+
+    public function hasMember()
+    {
+        return $this->hasOneof(42);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Member member = 42;</code>
+     * @param \Eolymp\Judge\Participant\Member $var
+     * @return $this
+     */
+    public function setMember($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant\Member::class);
+        $this->writeOneof(42, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Team team = 43 [(.eolymp.api.read_only) = true];</code>
+     * @return \Eolymp\Judge\Participant\Team|null
+     */
+    public function getTeam()
+    {
+        return $this->readOneof(43);
+    }
+
+    public function hasTeam()
+    {
+        return $this->hasOneof(43);
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.judge.Participant.Team team = 43 [(.eolymp.api.read_only) = true];</code>
+     * @param \Eolymp\Judge\Participant\Team $var
+     * @return $this
+     */
+    public function setTeam($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Judge\Participant\Team::class);
+        $this->writeOneof(43, $var);
 
         return $this;
     }
@@ -824,29 +805,11 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Members of the team who compete, as registered by the captain. Fixed once the team starts the contest.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Member roster = 41 [(.eolymp.api.read_only) = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return string
      */
-    public function getRoster()
+    public function getCompetitor()
     {
-        return $this->roster;
-    }
-
-    /**
-     * Members of the team who compete, as registered by the captain. Fixed once the team starts the contest.
-     *
-     * Generated from protobuf field <code>repeated .eolymp.judge.Participant.Member roster = 41 [(.eolymp.api.read_only) = true];</code>
-     * @param array<\Eolymp\Judge\Participant\Member>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setRoster($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Judge\Participant\Member::class);
-        $this->roster = $arr;
-
-        return $this;
+        return $this->whichOneof("competitor");
     }
 
 }

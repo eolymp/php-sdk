@@ -258,30 +258,6 @@ class ParticipantServiceClient {
     }
 
     /**
-     * LeaveContest undoes JoinContest for the caller before they start. A participant who joined on their own
-     * is removed from the contest; a team member is taken off their team's roster, which is refused when the
-     * roster would fall below the contest's team size. It is refused once the participant has started the
-     * contest, and for participants assigned by an organiser.
-     *
-     * @param LeaveContestInput $input message
-     * @param array $context request parameters
-     *
-     * @return LeaveContestOutput output message
-     */
-    public function LeaveContest(LeaveContestInput $input, array $context = [])
-    {
-        $path = "/contests/".rawurlencode($input->getContestId())."/leave";
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setContestId("");
-
-        $context['name'] = "eolymp.judge.ParticipantService/LeaveContest";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, LeaveContestOutput::class, $context);
-    }
-
-    /**
      * DescribeViewer returns the calling user's own record in the contest, which is how a contest client
      * finds out whether the viewer may start, is competing, is paused or has already finished, without
      * knowing any participant identifier. Organiser tooling reads other records via DescribeParticipant.

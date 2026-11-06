@@ -9,20 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Member competing on their own.
+ *
  * Generated from protobuf message <code>eolymp.judge.Participant.Member</code>
  */
 class Member extends \Google\Protobuf\Internal\Message
 {
     /**
+     * community member
+     *
      * Generated from protobuf field <code>string member_id = 1;</code>
      */
     protected $member_id = '';
-    /**
-     * member's name at the time of registration
-     *
-     * Generated from protobuf field <code>string display_name = 2;</code>
-     */
-    protected $display_name = '';
 
     /**
      * Constructor.
@@ -31,8 +29,7 @@ class Member extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $member_id
-     *     @type string $display_name
-     *           member's name at the time of registration
+     *           community member
      * }
      */
     public function __construct($data = NULL) {
@@ -41,6 +38,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * community member
+     *
      * Generated from protobuf field <code>string member_id = 1;</code>
      * @return string
      */
@@ -50,6 +49,8 @@ class Member extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * community member
+     *
      * Generated from protobuf field <code>string member_id = 1;</code>
      * @param string $var
      * @return $this
@@ -58,32 +59,6 @@ class Member extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * member's name at the time of registration
-     *
-     * Generated from protobuf field <code>string display_name = 2;</code>
-     * @return string
-     */
-    public function getDisplayName()
-    {
-        return $this->display_name;
-    }
-
-    /**
-     * member's name at the time of registration
-     *
-     * Generated from protobuf field <code>string display_name = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setDisplayName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->display_name = $var;
 
         return $this;
     }
