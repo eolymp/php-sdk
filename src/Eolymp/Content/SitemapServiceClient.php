@@ -7,10 +7,11 @@ namespace Eolymp\Content;
     /**
      * SitemapService describes the public pages of a space so a site can publish a sitemap for search engines.
      *
-     * It holds what an anonymous visitor can read: public problems with their editorials, contests and posts. The
-     * sitemap follows changes to those as they happen, so an entry's time is when the page last changed. It is
-     * split into chunks: ListSitemapChunks is the index, and DescribeSitemapChunk returns one chunk's entries.
-     * Rendering them, for example as sitemaps.org XML with a language alternate per locale, is up to the site.
+     * It holds what an anonymous visitor can read: public problems with their editorials and discussions, contests,
+     * posts and pages. The sitemap follows changes to those as they happen, so an entry's time is when the page last
+     * changed. It is split into chunks: ListSitemapChunks is the index, and DescribeSitemapChunk returns one chunk's
+     * entries. Building each entry's URL and rendering the result, for example as sitemaps.org
+     * XML with a language alternate per locale, is up to the site.
      */
 class SitemapServiceClient {
 

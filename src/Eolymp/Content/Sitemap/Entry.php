@@ -14,17 +14,45 @@ use Google\Protobuf\Internal\GPBUtil;
 class Entry extends \Google\Protobuf\Internal\Message
 {
     /**
-     * the page on the space's own site
-     *
-     * Generated from protobuf field <code>string url = 1;</code>
+     * Generated from protobuf field <code>.eolymp.content.Sitemap.Entry.Type type = 4;</code>
      */
-    protected $url = '';
+    protected $type = 0;
+    /**
+     * canonical identifier of the entity: its URL in the API, e.g. `https://api.eolymp.com/spaces/abc/problems/42`
+     *
+     * Generated from protobuf field <code>string resource_link = 6;</code>
+     */
+    protected $resource_link = '';
+    /**
+     * the entity's title in English, or in its default language when there is no English version
+     *
+     * Generated from protobuf field <code>string title = 8;</code>
+     */
+    protected $title = '';
     /**
      * locales the page is available in, empty for a page without translations
      *
      * Generated from protobuf field <code>repeated string languages = 2;</code>
      */
     private $languages;
+    /**
+     * URL of the entity's preview image, empty when it has none
+     *
+     * Generated from protobuf field <code>string image_link = 9;</code>
+     */
+    protected $image_link = '';
+    /**
+     * entity attributes a site may need, e.g. `number` of a problem, `path` of a page or `username` of a member
+     *
+     * Generated from protobuf field <code>map<string, string> attributes = 7;</code>
+     */
+    private $attributes;
+    /**
+     * when the entity was created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     */
+    protected $created_at = null;
     /**
      * when the page's content last changed
      *
@@ -38,10 +66,19 @@ class Entry extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $url
-     *           the page on the space's own site
+     *     @type int $type
+     *     @type string $resource_link
+     *           canonical identifier of the entity: its URL in the API, e.g. `https://api.eolymp.com/spaces/abc/problems/42`
+     *     @type string $title
+     *           the entity's title in English, or in its default language when there is no English version
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           locales the page is available in, empty for a page without translations
+     *     @type string $image_link
+     *           URL of the entity's preview image, empty when it has none
+     *     @type array|\Google\Protobuf\Internal\MapField $attributes
+     *           entity attributes a site may need, e.g. `number` of a problem, `path` of a page or `username` of a member
+     *     @type \Google\Protobuf\Timestamp $created_at
+     *           when the entity was created
      *     @type \Google\Protobuf\Timestamp $updated_at
      *           when the page's content last changed
      * }
@@ -52,27 +89,75 @@ class Entry extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * the page on the space's own site
-     *
-     * Generated from protobuf field <code>string url = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>.eolymp.content.Sitemap.Entry.Type type = 4;</code>
+     * @return int
      */
-    public function getUrl()
+    public function getType()
     {
-        return $this->url;
+        return $this->type;
     }
 
     /**
-     * the page on the space's own site
+     * Generated from protobuf field <code>.eolymp.content.Sitemap.Entry.Type type = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Content\Sitemap\Entry\Type::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * canonical identifier of the entity: its URL in the API, e.g. `https://api.eolymp.com/spaces/abc/problems/42`
      *
-     * Generated from protobuf field <code>string url = 1;</code>
+     * Generated from protobuf field <code>string resource_link = 6;</code>
+     * @return string
+     */
+    public function getResourceLink()
+    {
+        return $this->resource_link;
+    }
+
+    /**
+     * canonical identifier of the entity: its URL in the API, e.g. `https://api.eolymp.com/spaces/abc/problems/42`
+     *
+     * Generated from protobuf field <code>string resource_link = 6;</code>
      * @param string $var
      * @return $this
      */
-    public function setUrl($var)
+    public function setResourceLink($var)
     {
         GPBUtil::checkString($var, True);
-        $this->url = $var;
+        $this->resource_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * the entity's title in English, or in its default language when there is no English version
+     *
+     * Generated from protobuf field <code>string title = 8;</code>
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * the entity's title in English, or in its default language when there is no English version
+     *
+     * Generated from protobuf field <code>string title = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTitle($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->title = $var;
 
         return $this;
     }
@@ -99,6 +184,94 @@ class Entry extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->languages = $arr;
+
+        return $this;
+    }
+
+    /**
+     * URL of the entity's preview image, empty when it has none
+     *
+     * Generated from protobuf field <code>string image_link = 9;</code>
+     * @return string
+     */
+    public function getImageLink()
+    {
+        return $this->image_link;
+    }
+
+    /**
+     * URL of the entity's preview image, empty when it has none
+     *
+     * Generated from protobuf field <code>string image_link = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImageLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * entity attributes a site may need, e.g. `number` of a problem, `path` of a page or `username` of a member
+     *
+     * Generated from protobuf field <code>map<string, string> attributes = 7;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * entity attributes a site may need, e.g. `number` of a problem, `path` of a page or `username` of a member
+     *
+     * Generated from protobuf field <code>map<string, string> attributes = 7;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * when the entity was created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function hasCreatedAt()
+    {
+        return isset($this->created_at);
+    }
+
+    public function clearCreatedAt()
+    {
+        unset($this->created_at);
+    }
+
+    /**
+     * when the entity was created
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCreatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->created_at = $var;
 
         return $this;
     }

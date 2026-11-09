@@ -9,8 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Sitemap lists the public pages of a space for search engines, split into chunks small enough to read in one
- * call. A chunk holds one kind of page and keeps its id for good: a page never moves to another chunk.
+ * Sitemap indexes the public objects of a space (problems, contests, posts, pages...), split into chunks small
+ * enough to read in one call. A chunk holds one type of object and keeps its id for good: an object never moves to
+ * another chunk. The site that renders the sitemap builds the pages of each object, e.g. a problem's statement
+ * and discussion, from its type and attributes.
  *
  * Generated from protobuf message <code>eolymp.content.Sitemap</code>
  */
