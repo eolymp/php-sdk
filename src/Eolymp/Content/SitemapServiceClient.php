@@ -5,13 +5,13 @@
 namespace Eolymp\Content;
 
     /**
-     * SitemapService describes the public pages of a space so a site can publish a sitemap for search engines.
+     * SitemapService indexes the public objects of a space so a site can publish a sitemap for search engines.
      *
-     * It holds what an anonymous visitor can read: public problems with their editorials and discussions, contests,
-     * posts and pages. The sitemap follows changes to those as they happen, so an entry's time is when the page last
-     * changed. It is split into chunks: ListSitemapChunks is the index, and DescribeSitemapChunk returns one chunk's
-     * entries. Building each entry's URL and rendering the result, for example as sitemaps.org
-     * XML with a language alternate per locale, is up to the site.
+     * It holds what an anonymous visitor can read: public problems with their editorials, contests with their pages
+     * and scoreboards, posts and pages. The index follows changes to those as they happen, so an entry's time is when
+     * the object last changed. Entries are listed oldest first, so new objects are appended at the end and a site
+     * can split the sitemap into files by offset. Building the pages of each entry and rendering them, for example
+     * as sitemaps.org XML with a language alternate per locale, is up to the site.
      */
 class SitemapServiceClient {
 
@@ -32,43 +32,22 @@ class SitemapServiceClient {
     }
 
     /**
-     * ListSitemapChunks returns every chunk of the space's sitemap with its size and the time of its latest
-     * change, which is what a sitemap index lists.
+     * ListSitemapEntries returns entries ordered by creation time, oldest first, with the total number matching the
+     * filters.
      *
-     * @param ListSitemapChunksInput $input message
+     * @param ListSitemapEntriesInput $input message
      * @param array $context request parameters
      *
-     * @return ListSitemapChunksOutput output message
+     * @return ListSitemapEntriesOutput output message
      */
-    public function ListSitemapChunks(ListSitemapChunksInput $input, array $context = [])
+    public function ListSitemapEntries(ListSitemapEntriesInput $input, array $context = [])
     {
-        $path = "/sitemap/chunks";
+        $path = "/sitemap/entries";
 
-        $context['name'] = "eolymp.content.SitemapService/ListSitemapChunks";
+        $context['name'] = "eolymp.content.SitemapService/ListSitemapEntries";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSitemapChunksOutput::class, $context);
-    }
-
-    /**
-     * DescribeSitemapChunk returns all entries of one chunk.
-     *
-     * @param DescribeSitemapChunkInput $input message
-     * @param array $context request parameters
-     *
-     * @return DescribeSitemapChunkOutput output message
-     */
-    public function DescribeSitemapChunk(DescribeSitemapChunkInput $input, array $context = [])
-    {
-        $path = "/sitemap/chunks/".rawurlencode($input->getChunkId());
-
-        // Cleanup URL parameters to avoid any ambiguity
-        $input->setChunkId("");
-
-        $context['name'] = "eolymp.content.SitemapService/DescribeSitemapChunk";
-        $context['path'] = $path;
-
-        return call_user_func($this->invoker, "GET", $this->url.$path, $input, DescribeSitemapChunkOutput::class, $context);
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSitemapEntriesOutput::class, $context);
     }
 
 }
