@@ -18,6 +18,18 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $resource_link = '';
+    /**
+     * page on the space's own site, empty when it has none
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $space_link = '';
+    /**
      * Must match [a-z][a-z0-9\-_]+. Unique within a space, and accepted anywhere the scoreboard id is.
      *
      * Generated from protobuf field <code>string slug = 2;</code>
@@ -67,6 +79,10 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $id
+     *     @type string $resource_link
+     *           canonical URL of this resource in the API
+     *     @type string $space_link
+     *           page on the space's own site, empty when it has none
      *     @type string $slug
      *           Must match [a-z][a-z0-9\-_]+. Unique within a space, and accepted anywhere the scoreboard id is.
      *     @type string $name
@@ -104,6 +120,58 @@ class Scoreboard extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getResourceLink()
+    {
+        return $this->resource_link;
+    }
+
+    /**
+     * canonical URL of this resource in the API
+     *
+     * Generated from protobuf field <code>string resource_link = 1001 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_link = $var;
+
+        return $this;
+    }
+
+    /**
+     * page on the space's own site, empty when it has none
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getSpaceLink()
+    {
+        return $this->space_link;
+    }
+
+    /**
+     * page on the space's own site, empty when it has none
+     *
+     * Generated from protobuf field <code>string space_link = 1002 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSpaceLink($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->space_link = $var;
 
         return $this;
     }

@@ -36,6 +36,12 @@ class Type
      */
     const CONTEST_SCOREBOARD = 5;
     /**
+     * a scoreboard combining several contests, see eolymp.scoreboard.Scoreboard
+     *
+     * Generated from protobuf enum <code>SCOREBOARD = 13;</code>
+     */
+    const SCOREBOARD = 13;
+    /**
      * Generated from protobuf enum <code>COURSE = 6;</code>
      */
     const COURSE = 6;
@@ -77,6 +83,7 @@ class Type
         self::CONTEST => 'CONTEST',
         self::CONTEST_PAGE => 'CONTEST_PAGE',
         self::CONTEST_SCOREBOARD => 'CONTEST_SCOREBOARD',
+        self::SCOREBOARD => 'SCOREBOARD',
         self::COURSE => 'COURSE',
         self::COURSE_MODULE => 'COURSE_MODULE',
         self::COURSE_MATERIAL => 'COURSE_MATERIAL',
