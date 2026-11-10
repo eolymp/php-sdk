@@ -18,6 +18,12 @@ class UpdateTopicInput extends \Google\Protobuf\Internal\Message
      */
     protected $topic_id = '';
     /**
+     * update the topic when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     */
+    protected $locale = '';
+    /**
      * Generated from protobuf field <code>.eolymp.atlas.Topic topic = 2;</code>
      */
     protected $topic = null;
@@ -29,6 +35,8 @@ class UpdateTopicInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $topic_id
+     *     @type string $locale
+     *           update the topic when empty, update its translation when set
      *     @type \Eolymp\Atlas\Topic $topic
      * }
      */
@@ -55,6 +63,32 @@ class UpdateTopicInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->topic_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * update the topic when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * update the topic when empty, update its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

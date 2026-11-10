@@ -22,6 +22,8 @@ class Topic extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
+     * short plain-text summary, used in listings and page descriptions
+     *
      * Generated from protobuf field <code>string summary = 3;</code>
      */
     protected $summary = '';
@@ -30,7 +32,28 @@ class Topic extends \Google\Protobuf\Internal\Message
      */
     private $keywords;
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100;</code>
+     * explanation of the topic, shown on the topic's page
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 5;</code>
+     */
+    protected $description = null;
+    /**
+     * locale of the translation being read, empty when reading the topic itself
+     *
+     * Generated from protobuf field <code>string locale = 6 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $locale = '';
+    /**
+     * locales this topic has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 7 [(.eolymp.api.read_only) = true];</code>
+     */
+    private $locales;
+    /**
+     * deprecated, read a translation with `locale` and list them with `locales`
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100 [deprecated = true];</code>
+     * @deprecated
      */
     private $variants;
 
@@ -43,8 +66,16 @@ class Topic extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $name
      *     @type string $summary
+     *           short plain-text summary, used in listings and page descriptions
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keywords
+     *     @type \Eolymp\Ecm\Content $description
+     *           explanation of the topic, shown on the topic's page
+     *     @type string $locale
+     *           locale of the translation being read, empty when reading the topic itself
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
+     *           locales this topic has translations for
      *     @type array<\Eolymp\Atlas\Topic\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
+     *           deprecated, read a translation with `locale` and list them with `locales`
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +128,8 @@ class Topic extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * short plain-text summary, used in listings and page descriptions
+     *
      * Generated from protobuf field <code>string summary = 3;</code>
      * @return string
      */
@@ -106,6 +139,8 @@ class Topic extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * short plain-text summary, used in listings and page descriptions
+     *
      * Generated from protobuf field <code>string summary = 3;</code>
      * @param string $var
      * @return $this
@@ -141,21 +176,117 @@ class Topic extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100;</code>
+     * explanation of the topic, shown on the topic's page
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 5;</code>
+     * @return \Eolymp\Ecm\Content|null
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function hasDescription()
+    {
+        return isset($this->description);
+    }
+
+    public function clearDescription()
+    {
+        unset($this->description);
+    }
+
+    /**
+     * explanation of the topic, shown on the topic's page
+     *
+     * Generated from protobuf field <code>.eolymp.ecm.Content description = 5;</code>
+     * @param \Eolymp\Ecm\Content $var
+     * @return $this
+     */
+    public function setDescription($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
+        $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * locale of the translation being read, empty when reading the topic itself
+     *
+     * Generated from protobuf field <code>string locale = 6 [(.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * locale of the translation being read, empty when reading the topic itself
+     *
+     * Generated from protobuf field <code>string locale = 6 [(.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
+
+        return $this;
+    }
+
+    /**
+     * locales this topic has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 7 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLocales()
+    {
+        return $this->locales;
+    }
+
+    /**
+     * locales this topic has translations for
+     *
+     * Generated from protobuf field <code>repeated string locales = 7 [(.eolymp.api.read_only) = true];</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLocales($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * deprecated, read a translation with `locale` and list them with `locales`
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100 [deprecated = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     * @deprecated
      */
     public function getVariants()
     {
+        @trigger_error('variants is deprecated.', E_USER_DEPRECATED);
         return $this->variants;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100;</code>
+     * deprecated, read a translation with `locale` and list them with `locales`
+     *
+     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100 [deprecated = true];</code>
      * @param array<\Eolymp\Atlas\Topic\Variant>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
+     * @deprecated
      */
     public function setVariants($var)
     {
+        @trigger_error('variants is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Topic\Variant::class);
         $this->variants = $arr;
 

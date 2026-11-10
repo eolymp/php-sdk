@@ -16,15 +16,29 @@ class Extra
      */
     const UNKNOWN_EXTRA = 0;
     /**
-     * include topic translations
+     * deprecated, read a translation with `locale` and list them with `locales`
      *
-     * Generated from protobuf enum <code>VARIANTS = 1;</code>
+     * Generated from protobuf enum <code>VARIANTS = 1 [deprecated = true];</code>
      */
     const VARIANTS = 1;
+    /**
+     * include description source (original Markdown, LaTeX etc)
+     *
+     * Generated from protobuf enum <code>DESCRIPTION_VALUE = 2;</code>
+     */
+    const DESCRIPTION_VALUE = 2;
+    /**
+     * include rendered description in ECM
+     *
+     * Generated from protobuf enum <code>DESCRIPTION_RENDER = 3;</code>
+     */
+    const DESCRIPTION_RENDER = 3;
 
     private static $valueToName = [
         self::UNKNOWN_EXTRA => 'UNKNOWN_EXTRA',
         self::VARIANTS => 'VARIANTS',
+        self::DESCRIPTION_VALUE => 'DESCRIPTION_VALUE',
+        self::DESCRIPTION_RENDER => 'DESCRIPTION_RENDER',
     ];
 
     public static function name($value)

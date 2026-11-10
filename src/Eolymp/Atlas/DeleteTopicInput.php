@@ -17,6 +17,12 @@ class DeleteTopicInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string topic_id = 1;</code>
      */
     protected $topic_id = '';
+    /**
+     * delete the topic when empty, delete only its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class DeleteTopicInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $topic_id
+     *     @type string $locale
+     *           delete the topic when empty, delete only its translation when set
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class DeleteTopicInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->topic_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * delete the topic when empty, delete only its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * delete the topic when empty, delete only its translation when set
+     *
+     * Generated from protobuf field <code>string locale = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->locale = $var;
 
         return $this;
     }

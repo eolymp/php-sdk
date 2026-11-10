@@ -10,8 +10,8 @@ namespace Eolymp\Atlas;
      *
      * Topics belong to the space: they are defined once here, and problems then point at them from their
      * classification, which is what lets the problem archive be browsed and filtered by subject. A topic's name,
-     * summary and keywords are translatable, so the same classification reads correctly in each language a space
-     * publishes in.
+     * summary, keywords and description are translatable, so the same classification reads correctly in each language
+     * a space publishes in.
      */
 class TopicServiceClient {
 
@@ -32,8 +32,9 @@ class TopicServiceClient {
     }
 
     /**
-     * DescribeTopic returns one topic, either resolved into a single language or carrying all of its
-     * translations — the first is what a page showing the topic needs, the second what a form editing it needs.
+     * DescribeTopic returns one topic, or its translation when a locale is given. A locale without a translation
+     * returns the topic itself. The description is only returned when asked for with DESCRIPTION_VALUE or
+     * DESCRIPTION_RENDER.
      *
      * @param DescribeTopicInput $input message
      * @param array $context request parameters
@@ -94,8 +95,8 @@ class TopicServiceClient {
 
     /**
      * UpdateTopic rewrites a topic in place, so the change surfaces on every problem already classified under it
-     * without any of them being touched. There is no field mask here, the topic is written whole, so send the
-     * complete record even when only one language changes.
+     * without any of them being touched. There is no field mask here, the topic is written whole. With a locale it
+     * writes that translation instead, creating it when missing.
      *
      * @param UpdateTopicInput $input message
      * @param array $context request parameters
@@ -117,7 +118,7 @@ class TopicServiceClient {
 
     /**
      * DeleteTopic removes the topic from the space and from every problem classified under it, leaving the
-     * problems themselves in place.
+     * problems themselves in place. With a locale it removes only that translation.
      *
      * @param DeleteTopicInput $input message
      * @param array $context request parameters
