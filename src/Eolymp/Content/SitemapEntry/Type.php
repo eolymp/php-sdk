@@ -75,6 +75,12 @@ class Type
      * Generated from protobuf enum <code>PRODUCT = 12;</code>
      */
     const PRODUCT = 12;
+    /**
+     * a problem topic, see eolymp.atlas.Topic
+     *
+     * Generated from protobuf enum <code>TOPIC = 14;</code>
+     */
+    const TOPIC = 14;
 
     private static $valueToName = [
         self::UNKNOWN_TYPE => 'UNKNOWN_TYPE',
@@ -91,6 +97,7 @@ class Type
         self::PAGE => 'PAGE',
         self::MEMBER => 'MEMBER',
         self::PRODUCT => 'PRODUCT',
+        self::TOPIC => 'TOPIC',
     ];
 
     public static function name($value)

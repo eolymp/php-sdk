@@ -49,6 +49,18 @@ class Topic extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string locales = 7 [(.eolymp.api.read_only) = true];</code>
      */
     private $locales;
+    /**
+     * illustration shown next to the topic in listings, the same in every locale
+     *
+     * Generated from protobuf field <code>string image_url = 8;</code>
+     */
+    protected $image_url = '';
+    /**
+     * number of visible problems classified under this topic
+     *
+     * Generated from protobuf field <code>uint32 problem_count = 9 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $problem_count = 0;
 
     /**
      * Constructor.
@@ -67,6 +79,10 @@ class Topic extends \Google\Protobuf\Internal\Message
      *           locale of the translation being read, empty when reading the topic itself
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
      *           locales this topic has translations for
+     *     @type string $image_url
+     *           illustration shown next to the topic in listings, the same in every locale
+     *     @type int $problem_count
+     *           number of visible problems classified under this topic
      * }
      */
     public function __construct($data = NULL) {
@@ -250,6 +266,58 @@ class Topic extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->locales = $arr;
+
+        return $this;
+    }
+
+    /**
+     * illustration shown next to the topic in listings, the same in every locale
+     *
+     * Generated from protobuf field <code>string image_url = 8;</code>
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->image_url;
+    }
+
+    /**
+     * illustration shown next to the topic in listings, the same in every locale
+     *
+     * Generated from protobuf field <code>string image_url = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setImageUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->image_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * number of visible problems classified under this topic
+     *
+     * Generated from protobuf field <code>uint32 problem_count = 9 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getProblemCount()
+    {
+        return $this->problem_count;
+    }
+
+    /**
+     * number of visible problems classified under this topic
+     *
+     * Generated from protobuf field <code>uint32 problem_count = 9 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setProblemCount($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->problem_count = $var;
 
         return $this;
     }
