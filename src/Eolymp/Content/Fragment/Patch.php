@@ -48,6 +48,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = null;
     /**
+     * Generated from protobuf field <code>optional bool allow_feedback = 20;</code>
+     */
+    protected $allow_feedback = null;
+    /**
      * Generated from protobuf field <code>repeated string labels = 100;</code>
      */
     private $labels;
@@ -74,6 +78,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     @type bool $automatic
      *     @type string $title
      *     @type int $visibility
+     *     @type bool $allow_feedback
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Eolymp\Content\Fragment\Link $link
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
@@ -342,6 +347,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Content\Fragment\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_feedback = 20;</code>
+     * @return bool
+     */
+    public function getAllowFeedback()
+    {
+        return isset($this->allow_feedback) ? $this->allow_feedback : false;
+    }
+
+    public function hasAllowFeedback()
+    {
+        return isset($this->allow_feedback);
+    }
+
+    public function clearAllowFeedback()
+    {
+        unset($this->allow_feedback);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool allow_feedback = 20;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowFeedback($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_feedback = $var;
 
         return $this;
     }

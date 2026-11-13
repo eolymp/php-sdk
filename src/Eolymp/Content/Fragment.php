@@ -86,6 +86,10 @@ class Fragment extends \Google\Protobuf\Internal\Message
      */
     protected $visibility = 0;
     /**
+     * Generated from protobuf field <code>bool allow_feedback = 20 [(.eolymp.api.mcp_field_desc) = "readers are asked whether the page helped them, see eolymp.content.FeedbackService"];</code>
+     */
+    protected $allow_feedback = false;
+    /**
      * Generated from protobuf field <code>string title = 12;</code>
      */
     protected $title = '';
@@ -132,6 +136,7 @@ class Fragment extends \Google\Protobuf\Internal\Message
      *           content generated automatically
      *     @type int $visibility
      *           treated as PUBLIC unless set otherwise
+     *     @type bool $allow_feedback
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $content
      *     @type \Eolymp\Content\Fragment\Link $link
@@ -467,6 +472,28 @@ class Fragment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Content\Fragment\Visibility::class);
         $this->visibility = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool allow_feedback = 20 [(.eolymp.api.mcp_field_desc) = "readers are asked whether the page helped them, see eolymp.content.FeedbackService"];</code>
+     * @return bool
+     */
+    public function getAllowFeedback()
+    {
+        return $this->allow_feedback;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool allow_feedback = 20 [(.eolymp.api.mcp_field_desc) = "readers are asked whether the page helped them, see eolymp.content.FeedbackService"];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowFeedback($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_feedback = $var;
 
         return $this;
     }
