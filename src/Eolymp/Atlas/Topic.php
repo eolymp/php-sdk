@@ -49,13 +49,6 @@ class Topic extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string locales = 7 [(.eolymp.api.read_only) = true];</code>
      */
     private $locales;
-    /**
-     * deprecated, read a translation with `locale` and list them with `locales`
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100 [deprecated = true];</code>
-     * @deprecated
-     */
-    private $variants;
 
     /**
      * Constructor.
@@ -74,8 +67,6 @@ class Topic extends \Google\Protobuf\Internal\Message
      *           locale of the translation being read, empty when reading the topic itself
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $locales
      *           locales this topic has translations for
-     *     @type array<\Eolymp\Atlas\Topic\Variant>|\Google\Protobuf\Internal\RepeatedField $variants
-     *           deprecated, read a translation with `locale` and list them with `locales`
      * }
      */
     public function __construct($data = NULL) {
@@ -259,36 +250,6 @@ class Topic extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->locales = $arr;
-
-        return $this;
-    }
-
-    /**
-     * deprecated, read a translation with `locale` and list them with `locales`
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100 [deprecated = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     * @deprecated
-     */
-    public function getVariants()
-    {
-        @trigger_error('variants is deprecated.', E_USER_DEPRECATED);
-        return $this->variants;
-    }
-
-    /**
-     * deprecated, read a translation with `locale` and list them with `locales`
-     *
-     * Generated from protobuf field <code>repeated .eolymp.atlas.Topic.Variant variants = 100 [deprecated = true];</code>
-     * @param array<\Eolymp\Atlas\Topic\Variant>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     * @deprecated
-     */
-    public function setVariants($var)
-    {
-        @trigger_error('variants is deprecated.', E_USER_DEPRECATED);
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Topic\Variant::class);
-        $this->variants = $arr;
 
         return $this;
     }
