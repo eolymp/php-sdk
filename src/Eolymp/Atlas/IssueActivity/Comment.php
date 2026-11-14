@@ -9,7 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Comment is a message posted by a user or member.
+ * Comment is a message posted by a user or member. A public comment is shown to the member who reported the
+ * issue, who is notified when it is posted; other comments stay internal. Comments written by members are
+ * always public.
  *
  * Generated from protobuf message <code>eolymp.atlas.IssueActivity.Comment</code>
  */
@@ -19,6 +21,10 @@ class Comment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 1;</code>
      */
     protected $message = null;
+    /**
+     * Generated from protobuf field <code>bool public = 2;</code>
+     */
+    protected $public = false;
 
     /**
      * Constructor.
@@ -27,6 +33,7 @@ class Comment extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Ecm\Content $message
+     *     @type bool $public
      * }
      */
     public function __construct($data = NULL) {
@@ -62,6 +69,28 @@ class Comment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool public = 2;</code>
+     * @return bool
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool public = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPublic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->public = $var;
 
         return $this;
     }

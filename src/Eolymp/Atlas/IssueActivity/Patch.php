@@ -17,6 +17,10 @@ class Patch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content message = 1;</code>
      */
     protected $message = null;
+    /**
+     * Generated from protobuf field <code>optional bool public = 2;</code>
+     */
+    protected $public = null;
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class Patch extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Ecm\Content $message
+     *     @type bool $public
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +65,38 @@ class Patch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool public = 2;</code>
+     * @return bool
+     */
+    public function getPublic()
+    {
+        return isset($this->public) ? $this->public : false;
+    }
+
+    public function hasPublic()
+    {
+        return isset($this->public);
+    }
+
+    public function clearPublic()
+    {
+        unset($this->public);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool public = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPublic($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->public = $var;
 
         return $this;
     }

@@ -75,7 +75,7 @@ class IssueServiceClient {
 
     /**
      * CreateIssue reports a new issue and returns its id. The reporter is taken from the caller rather than from
-     * the request.
+     * the request. An issue reported by a member starts in triage, any other starts as todo.
      *
      * @param CreateIssueInput $input message
      * @param array $context request parameters
@@ -117,7 +117,7 @@ class IssueServiceClient {
 
     /**
      * DeleteIssue removes the issue permanently, discarding its activity thread with it. When a report has simply
-     * been dealt with, close it instead: a closed issue keeps the discussion around.
+     * been dealt with, mark it done or cancelled instead: such an issue keeps the discussion around.
      *
      * @param DeleteIssueInput $input message
      * @param array $context request parameters
@@ -139,7 +139,8 @@ class IssueServiceClient {
 
     /**
      * ListIssueActivities returns the issue's thread in creation order, mixing the comments people wrote with the
-     * changes the platform recorded. Comment bodies arrive only when requested, in raw or rendered form.
+     * changes the platform recorded. Comment bodies arrive only when requested, in raw or rendered form. The member
+     * who reported the issue sees public comments only.
      *
      * @param ListIssueActivitiesInput $input message
      * @param array $context request parameters

@@ -16,18 +16,35 @@ class Status
      */
     const UNKNOWN_STATUS = 0;
     /**
-     * Generated from protobuf enum <code>OPEN = 1;</code>
+     * reported, not yet reviewed
+     *
+     * Generated from protobuf enum <code>TRIAGE = 3;</code>
      */
-    const OPEN = 1;
+    const TRIAGE = 3;
     /**
-     * Generated from protobuf enum <code>CLOSED = 2;</code>
+     * Generated from protobuf enum <code>TODO = 1;</code>
      */
-    const CLOSED = 2;
+    const TODO = 1;
+    /**
+     * Generated from protobuf enum <code>IN_PROGRESS = 5;</code>
+     */
+    const IN_PROGRESS = 5;
+    /**
+     * Generated from protobuf enum <code>DONE = 2;</code>
+     */
+    const DONE = 2;
+    /**
+     * Generated from protobuf enum <code>CANCELLED = 4;</code>
+     */
+    const CANCELLED = 4;
 
     private static $valueToName = [
         self::UNKNOWN_STATUS => 'UNKNOWN_STATUS',
-        self::OPEN => 'OPEN',
-        self::CLOSED => 'CLOSED',
+        self::TRIAGE => 'TRIAGE',
+        self::TODO => 'TODO',
+        self::IN_PROGRESS => 'IN_PROGRESS',
+        self::DONE => 'DONE',
+        self::CANCELLED => 'CANCELLED',
     ];
 
     public static function name($value)
