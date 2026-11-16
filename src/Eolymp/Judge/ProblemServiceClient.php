@@ -327,6 +327,31 @@ class ProblemServiceClient {
     }
 
     /**
+     * ReportIssue files an issue against the archive problem behind a contest problem, so the contest's testers,
+     * staff, authors and coordinators can flag a defect without access to the archive. Plain participants are
+     * refused: they raise questions through tickets. It is eolymp.atlas.IssueService.CreateIssue on behalf of the
+     * member, so the issue starts in triage with the member as its reporter.
+     *
+     * @param ReportIssueInput $input message
+     * @param array $context request parameters
+     *
+     * @return ReportIssueOutput output message
+     */
+    public function ReportIssue(ReportIssueInput $input, array $context = [])
+    {
+        $path = "/contests/".rawurlencode($input->getContestId())."/problems/".rawurlencode($input->getProblemId())."/issues";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setContestId("");
+        $input->setProblemId("");
+
+        $context['name'] = "eolymp.judge.ProblemService/ReportIssue";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, ReportIssueOutput::class, $context);
+    }
+
+    /**
      * ListAttachments returns the files the archive publishes alongside the problem statement for
      * participants to download, each with a link to fetch it. They are the statement's attachments, not the
      * problem's test data.
