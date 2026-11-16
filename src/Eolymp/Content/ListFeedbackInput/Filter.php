@@ -37,6 +37,14 @@ class Filter extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionTimestamp created_at = 6;</code>
      */
     private $created_at;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     */
+    private $status;
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum label = 8;</code>
+     */
+    private $label;
 
     /**
      * Constructor.
@@ -50,6 +58,8 @@ class Filter extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Wellknown\ExpressionInt>|\Google\Protobuf\Internal\RepeatedField $block_index
      *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $fragment_locale
      *     @type array<\Eolymp\Wellknown\ExpressionTimestamp>|\Google\Protobuf\Internal\RepeatedField $created_at
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $label
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +195,50 @@ class Filter extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionTimestamp::class);
         $this->created_at = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum status = 7;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->status = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum label = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .eolymp.wellknown.ExpressionEnum label = 8;</code>
+     * @param array<\Eolymp\Wellknown\ExpressionEnum>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabel($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Wellknown\ExpressionEnum::class);
+        $this->label = $arr;
 
         return $this;
     }

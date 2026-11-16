@@ -11,6 +11,9 @@ namespace Eolymp\Content;
      * Feedback is about the whole page, or about one top-level block of its content, a paragraph for example.
      * Every submission is kept as a record of its own, so a reader can leave feedback any number of times and
      * nothing they sent earlier is replaced. Feedback is read by the space's editors only.
+     *
+     * Feedback starts out open. An editor resolves or dismisses it and says what was done, and may label it, so
+     * the record stays and can be filtered later.
      */
 class FeedbackServiceClient {
 
@@ -76,7 +79,30 @@ class FeedbackServiceClient {
     }
 
     /**
-     * DeleteFeedback removes a piece of feedback, once it has been dealt with or when it is spam.
+     * UpdateFeedback changes the status, resolution and labels of a piece of feedback. What the reader sent stays
+     * as it was. resolved_at is set when the status leaves OPEN and cleared when it returns to OPEN.
+     *
+     * @param UpdateFeedbackInput $input message
+     * @param array $context request parameters
+     *
+     * @return UpdateFeedbackOutput output message
+     */
+    public function UpdateFeedback(UpdateFeedbackInput $input, array $context = [])
+    {
+        $path = "/content/feedback/".rawurlencode($input->getFeedbackId());
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setFeedbackId("");
+
+        $context['name'] = "eolymp.content.FeedbackService/UpdateFeedback";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "PUT", $this->url.$path, $input, UpdateFeedbackOutput::class, $context);
+    }
+
+    /**
+     * DeleteFeedback removes a piece of feedback, when it is spam. Feedback that has been dealt with is resolved
+     * or dismissed with UpdateFeedback instead, so it stays on record.
      *
      * @param DeleteFeedbackInput $input message
      * @param array $context request parameters

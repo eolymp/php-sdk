@@ -50,9 +50,25 @@ class Feedback extends \Google\Protobuf\Internal\Message
      */
     protected $member_id = '';
     /**
+     * Generated from protobuf field <code>.eolymp.content.Feedback.Status status = 40 [(.eolymp.api.read_only) = true];</code>
+     */
+    protected $status = 0;
+    /**
+     * Generated from protobuf field <code>string resolution = 41 [(.eolymp.api.mcp_field_desc) = "what the editor did about it, plain text", (.eolymp.api.read_only) = true];</code>
+     */
+    protected $resolution = '';
+    /**
+     * Generated from protobuf field <code>repeated string labels = 42 [(.eolymp.api.mcp_field_desc) = "labels the editor sorted it with, \"page\" or \"rule:S16\" for example", (.eolymp.api.read_only) = true];</code>
+     */
+    private $labels;
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      */
     protected $created_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp resolved_at = 61 [(.eolymp.api.mcp_field_desc) = "when the status last left OPEN, empty while it is open", (.eolymp.api.read_only) = true];</code>
+     */
+    protected $resolved_at = null;
 
     /**
      * Constructor.
@@ -69,7 +85,11 @@ class Feedback extends \Google\Protobuf\Internal\Message
      *     @type int $block_index
      *     @type string $block_text
      *     @type string $member_id
+     *     @type int $status
+     *     @type string $resolution
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $labels
      *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $resolved_at
      * }
      */
     public function __construct($data = NULL) {
@@ -258,6 +278,72 @@ class Feedback extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>.eolymp.content.Feedback.Status status = 40 [(.eolymp.api.read_only) = true];</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.content.Feedback.Status status = 40 [(.eolymp.api.read_only) = true];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Content\Feedback\Status::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string resolution = 41 [(.eolymp.api.mcp_field_desc) = "what the editor did about it, plain text", (.eolymp.api.read_only) = true];</code>
+     * @return string
+     */
+    public function getResolution()
+    {
+        return $this->resolution;
+    }
+
+    /**
+     * Generated from protobuf field <code>string resolution = 41 [(.eolymp.api.mcp_field_desc) = "what the editor did about it, plain text", (.eolymp.api.read_only) = true];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResolution($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resolution = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 42 [(.eolymp.api.mcp_field_desc) = "labels the editor sorted it with, \"page\" or \"rule:S16\" for example", (.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string labels = 42 [(.eolymp.api.mcp_field_desc) = "labels the editor sorted it with, \"page\" or \"rule:S16\" for example", (.eolymp.api.read_only) = true];</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLabels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 60 [(.eolymp.api.read_only) = true];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
@@ -285,6 +371,38 @@ class Feedback extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp resolved_at = 61 [(.eolymp.api.mcp_field_desc) = "when the status last left OPEN, empty while it is open", (.eolymp.api.read_only) = true];</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getResolvedAt()
+    {
+        return $this->resolved_at;
+    }
+
+    public function hasResolvedAt()
+    {
+        return isset($this->resolved_at);
+    }
+
+    public function clearResolvedAt()
+    {
+        unset($this->resolved_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp resolved_at = 61 [(.eolymp.api.mcp_field_desc) = "when the status last left OPEN, empty while it is open", (.eolymp.api.read_only) = true];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setResolvedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->resolved_at = $var;
 
         return $this;
     }
