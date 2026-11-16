@@ -139,6 +139,13 @@ class Problem extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.atlas.Problem.Example examples = 60;</code>
      */
     private $examples;
+    /**
+     * How members rated the archive problem, the same as atlas.Problem.rating. Only filled in when requested with
+     * the RATING_VALUE extra, which also fills in rating.value with the stars the calling participant gave.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52;</code>
+     */
+    protected $rating = null;
 
     /**
      * Constructor.
@@ -184,6 +191,9 @@ class Problem extends \Google\Protobuf\Internal\Message
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $languages
      *           list of languages the statement is available in
      *     @type array<\Eolymp\Atlas\Problem\Example>|\Google\Protobuf\Internal\RepeatedField $examples
+     *     @type \Eolymp\Atlas\Problem\Rating $rating
+     *           How members rated the archive problem, the same as atlas.Problem.rating. Only filled in when requested with
+     *           the RATING_VALUE extra, which also fills in rating.value with the stars the calling participant gave.
      * }
      */
     public function __construct($data = NULL) {
@@ -779,6 +789,44 @@ class Problem extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Atlas\Problem\Example::class);
         $this->examples = $arr;
+
+        return $this;
+    }
+
+    /**
+     * How members rated the archive problem, the same as atlas.Problem.rating. Only filled in when requested with
+     * the RATING_VALUE extra, which also fills in rating.value with the stars the calling participant gave.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52;</code>
+     * @return \Eolymp\Atlas\Problem\Rating|null
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    public function hasRating()
+    {
+        return isset($this->rating);
+    }
+
+    public function clearRating()
+    {
+        unset($this->rating);
+    }
+
+    /**
+     * How members rated the archive problem, the same as atlas.Problem.rating. Only filled in when requested with
+     * the RATING_VALUE extra, which also fills in rating.value with the stars the calling participant gave.
+     *
+     * Generated from protobuf field <code>.eolymp.atlas.Problem.Rating rating = 52;</code>
+     * @param \Eolymp\Atlas\Problem\Rating $var
+     * @return $this
+     */
+    public function setRating($var)
+    {
+        GPBUtil::checkMessage($var, \Eolymp\Atlas\Problem\Rating::class);
+        $this->rating = $var;
 
         return $this;
     }
