@@ -29,6 +29,12 @@ class ReportIssueInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.ecm.Content description = 4;</code>
      */
     protected $description = null;
+    /**
+     * same as eolymp.atlas.Issue.tags, e.g. statement, tests
+     *
+     * Generated from protobuf field <code>repeated string tags = 5;</code>
+     */
+    private $tags;
 
     /**
      * Constructor.
@@ -40,6 +46,8 @@ class ReportIssueInput extends \Google\Protobuf\Internal\Message
      *     @type string $problem_id
      *     @type string $title
      *     @type \Eolymp\Ecm\Content $description
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $tags
+     *           same as eolymp.atlas.Issue.tags, e.g. statement, tests
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +149,32 @@ class ReportIssueInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Content::class);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * same as eolymp.atlas.Issue.tags, e.g. statement, tests
+     *
+     * Generated from protobuf field <code>repeated string tags = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * same as eolymp.atlas.Issue.tags, e.g. statement, tests
+     *
+     * Generated from protobuf field <code>repeated string tags = 5;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
 
         return $this;
     }
