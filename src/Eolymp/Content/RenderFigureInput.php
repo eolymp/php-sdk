@@ -22,7 +22,7 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $typst
-     *           Typst source of the figure. The page is sized to fit the drawing, and the figure must fit on one page.
+     *           Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
      * }
      */
     public function __construct($data = NULL) {
@@ -31,9 +31,9 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Typst source of the figure. The page is sized to fit the drawing, and the figure must fit on one page.
+     * Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
      *
-     * Generated from protobuf field <code>string typst = 1 [(.eolymp.api.mcp_field_desc) = "Typst source of the figure; the page is sized to fit the drawing, and the figure must fit on one page. Packages cetz and fletcher are available."];</code>
+     * Generated from protobuf field <code>string typst = 1 [(.eolymp.api.mcp_field_desc) = "Typst source of the figure; each page is sized to fit its drawing, and a page break starts the next page, such as the next step of a step-through figure. Packages cetz and fletcher are available."];</code>
      * @return string
      */
     public function getTypst()
@@ -47,9 +47,9 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Typst source of the figure. The page is sized to fit the drawing, and the figure must fit on one page.
+     * Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
      *
-     * Generated from protobuf field <code>string typst = 1 [(.eolymp.api.mcp_field_desc) = "Typst source of the figure; the page is sized to fit the drawing, and the figure must fit on one page. Packages cetz and fletcher are available."];</code>
+     * Generated from protobuf field <code>string typst = 1 [(.eolymp.api.mcp_field_desc) = "Typst source of the figure; each page is sized to fit its drawing, and a page break starts the next page, such as the next step of a step-through figure. Packages cetz and fletcher are available."];</code>
      * @param string $var
      * @return $this
      */

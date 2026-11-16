@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class RenderFigureOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * SVG image of the figure, empty when the figure does not compile.
+     * SVG images of the figure's pages in order, empty when the figure does not compile.
      *
-     * Generated from protobuf field <code>string svg = 1;</code>
+     * Generated from protobuf field <code>repeated string pages = 1;</code>
      */
-    protected $svg = '';
+    private $pages;
     /**
      * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Diagnostic diagnostics = 2;</code>
      */
@@ -30,8 +30,8 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $svg
-     *           SVG image of the figure, empty when the figure does not compile.
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $pages
+     *           SVG images of the figure's pages in order, empty when the figure does not compile.
      *     @type array<\Eolymp\Content\RenderFigureOutput\Diagnostic>|\Google\Protobuf\Internal\RepeatedField $diagnostics
      * }
      */
@@ -41,27 +41,27 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * SVG image of the figure, empty when the figure does not compile.
+     * SVG images of the figure's pages in order, empty when the figure does not compile.
      *
-     * Generated from protobuf field <code>string svg = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>repeated string pages = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getSvg()
+    public function getPages()
     {
-        return $this->svg;
+        return $this->pages;
     }
 
     /**
-     * SVG image of the figure, empty when the figure does not compile.
+     * SVG images of the figure's pages in order, empty when the figure does not compile.
      *
-     * Generated from protobuf field <code>string svg = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>repeated string pages = 1;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setSvg($var)
+    public function setPages($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->svg = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->pages = $arr;
 
         return $this;
     }
