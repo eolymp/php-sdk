@@ -31,6 +31,13 @@ class RequestFiguresInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.content.Figure figures = 3;</code>
      */
     private $figures;
+    /**
+     * Thread to continue, as returned by an earlier call, so the agent remembers what was said, such as a
+     * question it asked. Empty starts a new thread.
+     *
+     * Generated from protobuf field <code>string thread_id = 4;</code>
+     */
+    protected $thread_id = '';
 
     /**
      * Constructor.
@@ -44,6 +51,9 @@ class RequestFiguresInput extends \Google\Protobuf\Internal\Message
      *           The text the figures illustrate, such as the paragraph or the problem statement. Optional.
      *     @type array<\Eolymp\Content\Figure>|\Google\Protobuf\Internal\RepeatedField $figures
      *           Figures to change, or to match in style and layout.
+     *     @type string $thread_id
+     *           Thread to continue, as returned by an earlier call, so the agent remembers what was said, such as a
+     *           question it asked. Empty starts a new thread.
      * }
      */
     public function __construct($data = NULL) {
@@ -125,6 +135,34 @@ class RequestFiguresInput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Content\Figure::class);
         $this->figures = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Thread to continue, as returned by an earlier call, so the agent remembers what was said, such as a
+     * question it asked. Empty starts a new thread.
+     *
+     * Generated from protobuf field <code>string thread_id = 4;</code>
+     * @return string
+     */
+    public function getThreadId()
+    {
+        return $this->thread_id;
+    }
+
+    /**
+     * Thread to continue, as returned by an earlier call, so the agent remembers what was said, such as a
+     * question it asked. Empty starts a new thread.
+     *
+     * Generated from protobuf field <code>string thread_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setThreadId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->thread_id = $var;
 
         return $this;
     }

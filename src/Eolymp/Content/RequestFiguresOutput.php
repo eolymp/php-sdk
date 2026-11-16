@@ -25,6 +25,12 @@ class RequestFiguresOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.content.Figure figures = 2;</code>
      */
     private $figures;
+    /**
+     * Thread this call belongs to; pass it with the next request to follow up.
+     *
+     * Generated from protobuf field <code>string thread_id = 3;</code>
+     */
+    protected $thread_id = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class RequestFiguresOutput extends \Google\Protobuf\Internal\Message
      *           What was done, or a question back when the request is unclear.
      *     @type array<\Eolymp\Content\Figure>|\Google\Protobuf\Internal\RepeatedField $figures
      *           Figures created or changed. Figures passed in and left as they were are not listed.
+     *     @type string $thread_id
+     *           Thread this call belongs to; pass it with the next request to follow up.
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class RequestFiguresOutput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Content\Figure::class);
         $this->figures = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Thread this call belongs to; pass it with the next request to follow up.
+     *
+     * Generated from protobuf field <code>string thread_id = 3;</code>
+     * @return string
+     */
+    public function getThreadId()
+    {
+        return $this->thread_id;
+    }
+
+    /**
+     * Thread this call belongs to; pass it with the next request to follow up.
+     *
+     * Generated from protobuf field <code>string thread_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setThreadId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->thread_id = $var;
 
         return $this;
     }
