@@ -13,6 +13,22 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class RenderFigureInput extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Image format of the pages; unset renders SVG.
+     *
+     * Generated from protobuf field <code>.eolymp.content.RenderFigureInput.Format format = 2;</code>
+     */
+    protected $format = 0;
+    /**
+     * Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     */
+    protected $offset = 0;
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     */
+    protected $size = 0;
     protected $source;
 
     /**
@@ -23,6 +39,11 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
      *
      *     @type string $typst
      *           Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
+     *     @type int $format
+     *           Image format of the pages; unset renders SVG.
+     *     @type int $offset
+     *           Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
+     *     @type int $size
      * }
      */
     public function __construct($data = NULL) {
@@ -33,7 +54,7 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     /**
      * Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
      *
-     * Generated from protobuf field <code>string typst = 1 [(.eolymp.api.mcp_field_desc) = "Typst source of the figure; each page is sized to fit its drawing, and a page break starts the next page, such as the next step of a step-through figure. Packages &#64;preview/cetz:0.5.2, &#64;preview/fletcher:0.5.8 and &#64;eolymp/figlib:0.1.0 (the eolymp figure style) are available."];</code>
+     * Generated from protobuf field <code>string typst = 1;</code>
      * @return string
      */
     public function getTypst()
@@ -49,7 +70,7 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     /**
      * Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
      *
-     * Generated from protobuf field <code>string typst = 1 [(.eolymp.api.mcp_field_desc) = "Typst source of the figure; each page is sized to fit its drawing, and a page break starts the next page, such as the next step of a step-through figure. Packages &#64;preview/cetz:0.5.2, &#64;preview/fletcher:0.5.8 and &#64;eolymp/figlib:0.1.0 (the eolymp figure style) are available."];</code>
+     * Generated from protobuf field <code>string typst = 1;</code>
      * @param string $var
      * @return $this
      */
@@ -57,6 +78,80 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Image format of the pages; unset renders SVG.
+     *
+     * Generated from protobuf field <code>.eolymp.content.RenderFigureInput.Format format = 2;</code>
+     * @return int
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    /**
+     * Image format of the pages; unset renders SVG.
+     *
+     * Generated from protobuf field <code>.eolymp.content.RenderFigureInput.Format format = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setFormat($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Content\RenderFigureInput\Format::class);
+        $this->format = $var;
+
+        return $this;
+    }
+
+    /**
+     * Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
+     *
+     * Generated from protobuf field <code>int32 offset = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOffset($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 size = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setSize($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->size = $var;
 
         return $this;
     }

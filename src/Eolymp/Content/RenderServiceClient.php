@@ -50,11 +50,8 @@ class RenderServiceClient {
     }
 
     /**
-     * RenderFigure compiles a figure written in a drawing language and returns it as SVG images, one per page. The editor
-     * calls it to preview a figure while an author types, and statements call it when saved, to keep the image
-     * next to the source it was drawn from. A figure with several pages, such as the steps of a step-through
-     * figure, comes back as one image per page. A figure that does not compile is not an error: the call
-     * succeeds with no images and says what is wrong in diagnostics.
+     * RenderFigure compiles a figure into one image per page, SVG or PNG. A call returns at most 2MB of pages; page
+     * through the rest with offset and size. A figure that does not compile returns diagnostics, not an error.
      *
      * @param RenderFigureInput $input message
      * @param array $context request parameters

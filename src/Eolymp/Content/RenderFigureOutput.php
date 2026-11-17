@@ -14,15 +14,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class RenderFigureOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * SVG images of the figure's pages in order, empty when the figure does not compile.
+     * Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
+     * does not compile.
      *
-     * Generated from protobuf field <code>repeated string pages = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Page pages = 1;</code>
      */
     private $pages;
     /**
      * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Diagnostic diagnostics = 2;</code>
      */
     private $diagnostics;
+    /**
+     * Number of pages in the whole figure.
+     *
+     * Generated from protobuf field <code>int32 total = 3;</code>
+     */
+    protected $total = 0;
 
     /**
      * Constructor.
@@ -30,9 +37,12 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $pages
-     *           SVG images of the figure's pages in order, empty when the figure does not compile.
+     *     @type array<\Eolymp\Content\RenderFigureOutput\Page>|\Google\Protobuf\Internal\RepeatedField $pages
+     *           Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
+     *           does not compile.
      *     @type array<\Eolymp\Content\RenderFigureOutput\Diagnostic>|\Google\Protobuf\Internal\RepeatedField $diagnostics
+     *     @type int $total
+     *           Number of pages in the whole figure.
      * }
      */
     public function __construct($data = NULL) {
@@ -41,9 +51,10 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * SVG images of the figure's pages in order, empty when the figure does not compile.
+     * Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
+     * does not compile.
      *
-     * Generated from protobuf field <code>repeated string pages = 1;</code>
+     * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Page pages = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPages()
@@ -52,15 +63,16 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * SVG images of the figure's pages in order, empty when the figure does not compile.
+     * Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
+     * does not compile.
      *
-     * Generated from protobuf field <code>repeated string pages = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Page pages = 1;</code>
+     * @param array<\Eolymp\Content\RenderFigureOutput\Page>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPages($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Content\RenderFigureOutput\Page::class);
         $this->pages = $arr;
 
         return $this;
@@ -84,6 +96,32 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Content\RenderFigureOutput\Diagnostic::class);
         $this->diagnostics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Number of pages in the whole figure.
+     *
+     * Generated from protobuf field <code>int32 total = 3;</code>
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Number of pages in the whole figure.
+     *
+     * Generated from protobuf field <code>int32 total = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTotal($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->total = $var;
 
         return $this;
     }
