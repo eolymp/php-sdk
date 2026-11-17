@@ -50,9 +50,8 @@ class RenderServiceClient {
     }
 
     /**
-     * RenderFigure compiles a figure into one image per page, SVG or PNG, or into one looping GIF with a frame per
-     * page. A call returns at most 2MB of pages; page through the rest with offset and size. A figure that does not
-     * compile returns diagnostics, not an error.
+     * RenderFigure compiles a figure into one image per page, SVG or PNG. A call returns at most 2MB of pages; page
+     * through the rest with offset and size. A figure that does not compile returns diagnostics, not an error.
      *
      * @param RenderFigureInput $input message
      * @param array $context request parameters

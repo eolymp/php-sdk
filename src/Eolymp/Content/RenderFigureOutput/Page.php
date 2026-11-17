@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Page extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The image: SVG markup, or PNG or GIF bytes, as asked.
+     * The image, SVG markup or PNG bytes as asked.
      *
      * Generated from protobuf field <code>bytes data = 1;</code>
      */
@@ -27,7 +27,7 @@ class Page extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $data
-     *           The image: SVG markup, or PNG or GIF bytes, as asked.
+     *           The image, SVG markup or PNG bytes as asked.
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class Page extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The image: SVG markup, or PNG or GIF bytes, as asked.
+     * The image, SVG markup or PNG bytes as asked.
      *
      * Generated from protobuf field <code>bytes data = 1;</code>
      * @return string
@@ -47,7 +47,7 @@ class Page extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The image: SVG markup, or PNG or GIF bytes, as asked.
+     * The image, SVG markup or PNG bytes as asked.
      *
      * Generated from protobuf field <code>bytes data = 1;</code>
      * @param string $var

@@ -23,16 +23,11 @@ class Format
      * Generated from protobuf enum <code>PNG = 2;</code>
      */
     const PNG = 2;
-    /**
-     * Generated from protobuf enum <code>GIF = 3;</code>
-     */
-    const GIF = 3;
 
     private static $valueToName = [
         self::UNKNOWN_FORMAT => 'UNKNOWN_FORMAT',
         self::SVG => 'SVG',
         self::PNG => 'PNG',
-        self::GIF => 'GIF',
     ];
 
     public static function name($value)
