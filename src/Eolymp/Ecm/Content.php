@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Content extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>string digest = 5 [(.eolymp.api.mcp_field_desc) = "hex SHA-256 of the text (its markdown, LaTeX or HTML) as stored; sent with a write, it is the digest of the text being sent, and the write fails without storing anything when the text does not match it"];</code>
+     */
+    protected $digest = '';
+    /**
      * Generated from protobuf field <code>.eolymp.ecm.Node render = 99 [(.eolymp.api.read_only) = true];</code>
      */
     protected $render = null;
@@ -29,6 +33,7 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type string $latex
      *     @type string $markdown
      *     @type \Eolymp\Ecm\Node $ecm
+     *     @type string $digest
      *     @type \Eolymp\Ecm\Node $render
      * }
      */
@@ -141,6 +146,28 @@ class Content extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Ecm\Node::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string digest = 5 [(.eolymp.api.mcp_field_desc) = "hex SHA-256 of the text (its markdown, LaTeX or HTML) as stored; sent with a write, it is the digest of the text being sent, and the write fails without storing anything when the text does not match it"];</code>
+     * @return string
+     */
+    public function getDigest()
+    {
+        return $this->digest;
+    }
+
+    /**
+     * Generated from protobuf field <code>string digest = 5 [(.eolymp.api.mcp_field_desc) = "hex SHA-256 of the text (its markdown, LaTeX or HTML) as stored; sent with a write, it is the digest of the text being sent, and the write fails without storing anything when the text does not match it"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDigest($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->digest = $var;
 
         return $this;
     }

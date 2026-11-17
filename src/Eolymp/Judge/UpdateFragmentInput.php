@@ -31,6 +31,10 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.content.Fragment.Patch fragment = 4;</code>
      */
     protected $fragment = null;
+    /**
+     * Generated from protobuf field <code>string if_match_digest = 20 [(.eolymp.api.mcp_field_desc) = "write only if the content stored now has this digest, the content.digest from an earlier read or write; when it differs, the content was changed in the meantime and the call fails without writing"];</code>
+     */
+    protected $if_match_digest = '';
 
     /**
      * Constructor.
@@ -43,6 +47,7 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
      *     @type string $locale
      *           update the fragment when empty, update its translation when set
      *     @type \Eolymp\Content\Fragment\Patch $fragment
+     *     @type string $if_match_digest
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +153,28 @@ class UpdateFragmentInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Eolymp\Content\Fragment\Patch::class);
         $this->fragment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string if_match_digest = 20 [(.eolymp.api.mcp_field_desc) = "write only if the content stored now has this digest, the content.digest from an earlier read or write; when it differs, the content was changed in the meantime and the call fails without writing"];</code>
+     * @return string
+     */
+    public function getIfMatchDigest()
+    {
+        return $this->if_match_digest;
+    }
+
+    /**
+     * Generated from protobuf field <code>string if_match_digest = 20 [(.eolymp.api.mcp_field_desc) = "write only if the content stored now has this digest, the content.digest from an earlier read or write; when it differs, the content was changed in the meantime and the call fails without writing"];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIfMatchDigest($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->if_match_digest = $var;
 
         return $this;
     }
