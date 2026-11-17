@@ -14,14 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class RenderFigureInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Image format of the pages; unset renders SVG.
-     *
      * Generated from protobuf field <code>.eolymp.content.RenderFigureInput.Format format = 2;</code>
      */
     protected $format = 0;
     /**
-     * Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
-     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      */
     protected $offset = 0;
@@ -38,11 +34,8 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $typst
-     *           Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
      *     @type int $format
-     *           Image format of the pages; unset renders SVG.
      *     @type int $offset
-     *           Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
      *     @type int $size
      * }
      */
@@ -52,8 +45,6 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
-     *
      * Generated from protobuf field <code>string typst = 1;</code>
      * @return string
      */
@@ -68,8 +59,6 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Typst source of the figure. Each page is sized to fit its drawing; a page break starts the next page.
-     *
      * Generated from protobuf field <code>string typst = 1;</code>
      * @param string $var
      * @return $this
@@ -83,8 +72,6 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image format of the pages; unset renders SVG.
-     *
      * Generated from protobuf field <code>.eolymp.content.RenderFigureInput.Format format = 2;</code>
      * @return int
      */
@@ -94,8 +81,6 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Image format of the pages; unset renders SVG.
-     *
      * Generated from protobuf field <code>.eolymp.content.RenderFigureInput.Format format = 2;</code>
      * @param int $var
      * @return $this
@@ -109,8 +94,6 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
-     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @return int
      */
@@ -120,8 +103,6 @@ class RenderFigureInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pages to return: the first one, and how many at most; as many as fit in 2MB when size is unset.
-     *
      * Generated from protobuf field <code>int32 offset = 10;</code>
      * @param int $var
      * @return $this

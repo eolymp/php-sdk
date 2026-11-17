@@ -14,11 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class Page extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The image, SVG markup or PNG bytes as asked.
-     *
      * Generated from protobuf field <code>bytes data = 1;</code>
      */
     protected $data = '';
+    /**
+     * Generated from protobuf field <code>uint32 width = 2;</code>
+     */
+    protected $width = 0;
+    /**
+     * Generated from protobuf field <code>uint32 height = 3;</code>
+     */
+    protected $height = 0;
 
     /**
      * Constructor.
@@ -27,7 +33,8 @@ class Page extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $data
-     *           The image, SVG markup or PNG bytes as asked.
+     *     @type int $width
+     *     @type int $height
      * }
      */
     public function __construct($data = NULL) {
@@ -36,8 +43,6 @@ class Page extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The image, SVG markup or PNG bytes as asked.
-     *
      * Generated from protobuf field <code>bytes data = 1;</code>
      * @return string
      */
@@ -47,8 +52,6 @@ class Page extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The image, SVG markup or PNG bytes as asked.
-     *
      * Generated from protobuf field <code>bytes data = 1;</code>
      * @param string $var
      * @return $this
@@ -57,6 +60,50 @@ class Page extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 width = 2;</code>
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 width = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWidth($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->width = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 height = 3;</code>
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 height = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setHeight($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->height = $var;
 
         return $this;
     }

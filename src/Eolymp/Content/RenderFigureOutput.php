@@ -14,9 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class RenderFigureOutput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
-     * does not compile.
-     *
      * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Page pages = 1;</code>
      */
     private $pages;
@@ -25,8 +22,6 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
      */
     private $diagnostics;
     /**
-     * Number of pages in the whole figure.
-     *
      * Generated from protobuf field <code>int32 total = 3;</code>
      */
     protected $total = 0;
@@ -38,11 +33,8 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Eolymp\Content\RenderFigureOutput\Page>|\Google\Protobuf\Internal\RepeatedField $pages
-     *           Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
-     *           does not compile.
      *     @type array<\Eolymp\Content\RenderFigureOutput\Diagnostic>|\Google\Protobuf\Internal\RepeatedField $diagnostics
      *     @type int $total
-     *           Number of pages in the whole figure.
      * }
      */
     public function __construct($data = NULL) {
@@ -51,9 +43,6 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
-     * does not compile.
-     *
      * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Page pages = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -63,9 +52,6 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pages of the figure in order, starting at offset, up to size and as many as fit in 2MB; empty when the figure
-     * does not compile.
-     *
      * Generated from protobuf field <code>repeated .eolymp.content.RenderFigureOutput.Page pages = 1;</code>
      * @param array<\Eolymp\Content\RenderFigureOutput\Page>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -101,8 +87,6 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of pages in the whole figure.
-     *
      * Generated from protobuf field <code>int32 total = 3;</code>
      * @return int
      */
@@ -112,8 +96,6 @@ class RenderFigureOutput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Number of pages in the whole figure.
-     *
      * Generated from protobuf field <code>int32 total = 3;</code>
      * @param int $var
      * @return $this
