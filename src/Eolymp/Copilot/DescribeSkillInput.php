@@ -17,6 +17,12 @@ class DescribeSkillInput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string skill_id = 1;</code>
      */
     protected $skill_id = '';
+    /**
+     * a specific version of the skill, 0 for the current one
+     *
+     * Generated from protobuf field <code>uint32 version = 2;</code>
+     */
+    protected $version = 0;
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class DescribeSkillInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $skill_id
+     *     @type int $version
+     *           a specific version of the skill, 0 for the current one
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class DescribeSkillInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->skill_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * a specific version of the skill, 0 for the current one
+     *
+     * Generated from protobuf field <code>uint32 version = 2;</code>
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * a specific version of the skill, 0 for the current one
+     *
+     * Generated from protobuf field <code>uint32 version = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->version = $var;
 
         return $this;
     }

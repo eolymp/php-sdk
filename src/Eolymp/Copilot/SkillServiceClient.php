@@ -100,6 +100,28 @@ class SkillServiceClient {
     }
 
     /**
+     * ListSkillVersions returns the history of one skill, newest version first. Each version comes back as a whole
+     * skill.
+     *
+     * @param ListSkillVersionsInput $input message
+     * @param array $context request parameters
+     *
+     * @return ListSkillVersionsOutput output message
+     */
+    public function ListSkillVersions(ListSkillVersionsInput $input, array $context = [])
+    {
+        $path = "/copilot/skills/".rawurlencode($input->getSkillId())."/versions";
+
+        // Cleanup URL parameters to avoid any ambiguity
+        $input->setSkillId("");
+
+        $context['name'] = "eolymp.copilot.SkillService/ListSkillVersions";
+        $context['path'] = $path;
+
+        return call_user_func($this->invoker, "GET", $this->url.$path, $input, ListSkillVersionsOutput::class, $context);
+    }
+
+    /**
      * ListSkills finds skills by what a task is about with `search`, or one skill by its path with a `path` filter.
      *
      * @param ListSkillsInput $input message

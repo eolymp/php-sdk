@@ -10,7 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Skill is a page of instructions for agents: how to do one kind of task on the platform. Skills link to each
- * other by path, so the path stays stable once a skill is published.
+ * other by path, so the path stays stable once a skill is published. Every change to a skill makes a new version,
+ * earlier versions stay readable.
  *
  * Generated from protobuf message <code>eolymp.copilot.Skill</code>
  */
@@ -36,6 +37,24 @@ class Skill extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string content = 4;</code>
      */
     protected $content = '';
+    /**
+     * revision number, starts at 1 and grows with every update
+     *
+     * Generated from protobuf field <code>uint32 version = 10;</code>
+     */
+    protected $version = 0;
+    /**
+     * when this version was made
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
+     */
+    protected $updated_at = null;
+    /**
+     * user who made this version
+     *
+     * Generated from protobuf field <code>string updated_by = 12;</code>
+     */
+    protected $updated_by = '';
 
     /**
      * Constructor.
@@ -49,6 +68,12 @@ class Skill extends \Google\Protobuf\Internal\Message
      *     @type string $title
      *     @type string $content
      *           markdown
+     *     @type int $version
+     *           revision number, starts at 1 and grows with every update
+     *     @type \Google\Protobuf\Timestamp $updated_at
+     *           when this version was made
+     *     @type string $updated_by
+     *           user who made this version
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +173,94 @@ class Skill extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->content = $var;
+
+        return $this;
+    }
+
+    /**
+     * revision number, starts at 1 and grows with every update
+     *
+     * Generated from protobuf field <code>uint32 version = 10;</code>
+     * @return int
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * revision number, starts at 1 and grows with every update
+     *
+     * Generated from protobuf field <code>uint32 version = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * when this version was made
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    public function hasUpdatedAt()
+    {
+        return isset($this->updated_at);
+    }
+
+    public function clearUpdatedAt()
+    {
+        unset($this->updated_at);
+    }
+
+    /**
+     * when this version was made
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUpdatedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * user who made this version
+     *
+     * Generated from protobuf field <code>string updated_by = 12;</code>
+     * @return string
+     */
+    public function getUpdatedBy()
+    {
+        return $this->updated_by;
+    }
+
+    /**
+     * user who made this version
+     *
+     * Generated from protobuf field <code>string updated_by = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUpdatedBy($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->updated_by = $var;
 
         return $this;
     }
