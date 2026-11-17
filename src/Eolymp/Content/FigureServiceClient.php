@@ -33,22 +33,22 @@ class FigureServiceClient {
     }
 
     /**
-     * RequestFigures creates or changes figures as the request asks. A changed figure is uploaded as a new asset
+     * DrawFigures creates or changes figures as the request asks. A changed figure is uploaded as a new asset
      * with a new URL, which the caller puts in place of the old one; the old figure stays as it was.
      *
-     * @param RequestFiguresInput $input message
+     * @param DrawFiguresInput $input message
      * @param array $context request parameters
      *
-     * @return RequestFiguresOutput output message
+     * @return DrawFiguresOutput output message
      */
-    public function RequestFigures(RequestFiguresInput $input, array $context = [])
+    public function DrawFigures(DrawFiguresInput $input, array $context = [])
     {
-        $path = "/figures:request";
+        $path = "/figures:draw";
 
-        $context['name'] = "eolymp.content.FigureService/RequestFigures";
+        $context['name'] = "eolymp.content.FigureService/DrawFigures";
         $context['path'] = $path;
 
-        return call_user_func($this->invoker, "POST", $this->url.$path, $input, RequestFiguresOutput::class, $context);
+        return call_user_func($this->invoker, "POST", $this->url.$path, $input, DrawFiguresOutput::class, $context);
     }
 
 }

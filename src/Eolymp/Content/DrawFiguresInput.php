@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>eolymp.content.RequestFiguresInput</code>
+ * Generated from protobuf message <code>eolymp.content.DrawFiguresInput</code>
  */
-class RequestFiguresInput extends \Google\Protobuf\Internal\Message
+class DrawFiguresInput extends \Google\Protobuf\Internal\Message
 {
     /**
      * What to draw or change, in plain words.
