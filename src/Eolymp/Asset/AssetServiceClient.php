@@ -81,7 +81,9 @@ class AssetServiceClient {
     }
 
     /**
-     * LookupAsset allows to lookup asset by the key
+     * LookupAsset finds a ready asset in the space by the SHA-256 of its content, so a file uploaded before can be reused
+     * instead of uploaded again. The hash is computed by the server from the bytes it received, for multipart uploads only
+     * when parts are uploaded in order, starting from 1.
      *
      * @param LookupAssetInput $input message
      * @param array $context request parameters

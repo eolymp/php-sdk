@@ -14,9 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class LookupAssetInput extends \Google\Protobuf\Internal\Message
 {
     /**
+     * deprecated, use sha256
+     *
      * Generated from protobuf field <code>string key = 1;</code>
      */
     protected $key = '';
+    /**
+     * hex encoded SHA-256 of the file content
+     *
+     * Generated from protobuf field <code>string sha256 = 2;</code>
+     */
+    protected $sha256 = '';
 
     /**
      * Constructor.
@@ -25,6 +33,9 @@ class LookupAssetInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $key
+     *           deprecated, use sha256
+     *     @type string $sha256
+     *           hex encoded SHA-256 of the file content
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +44,8 @@ class LookupAssetInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use sha256
+     *
      * Generated from protobuf field <code>string key = 1;</code>
      * @return string
      */
@@ -42,6 +55,8 @@ class LookupAssetInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * deprecated, use sha256
+     *
      * Generated from protobuf field <code>string key = 1;</code>
      * @param string $var
      * @return $this
@@ -50,6 +65,32 @@ class LookupAssetInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->key = $var;
+
+        return $this;
+    }
+
+    /**
+     * hex encoded SHA-256 of the file content
+     *
+     * Generated from protobuf field <code>string sha256 = 2;</code>
+     * @return string
+     */
+    public function getSha256()
+    {
+        return $this->sha256;
+    }
+
+    /**
+     * hex encoded SHA-256 of the file content
+     *
+     * Generated from protobuf field <code>string sha256 = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSha256($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sha256 = $var;
 
         return $this;
     }
