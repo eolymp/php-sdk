@@ -26,12 +26,6 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      */
     protected $type = '';
     /**
-     * deprecated and ignored, assets are found by content hash with LookupAsset
-     *
-     * Generated from protobuf field <code>repeated string keys = 3;</code>
-     */
-    private $keys;
-    /**
      * time to live in seconds, 0 - forever
      *
      * Generated from protobuf field <code>uint32 ttl = 20;</code>
@@ -54,8 +48,6 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
      *           name might be used to infer file type and to set Content-Disposition header
      *     @type string $type
      *           mime type, if empty inferred from extension in the filename
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $keys
-     *           deprecated and ignored, assets are found by content hash with LookupAsset
      *     @type int $ttl
      *           time to live in seconds, 0 - forever
      *     @type string $data
@@ -115,32 +107,6 @@ class UploadAssetInput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
-
-        return $this;
-    }
-
-    /**
-     * deprecated and ignored, assets are found by content hash with LookupAsset
-     *
-     * Generated from protobuf field <code>repeated string keys = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getKeys()
-    {
-        return $this->keys;
-    }
-
-    /**
-     * deprecated and ignored, assets are found by content hash with LookupAsset
-     *
-     * Generated from protobuf field <code>repeated string keys = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setKeys($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->keys = $arr;
 
         return $this;
     }

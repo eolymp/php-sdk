@@ -14,12 +14,6 @@ use Google\Protobuf\Internal\GPBUtil;
 class LookupAssetInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * deprecated, use sha256
-     *
-     * Generated from protobuf field <code>string key = 1;</code>
-     */
-    protected $key = '';
-    /**
      * hex encoded SHA-256 of the file content
      *
      * Generated from protobuf field <code>string sha256 = 2;</code>
@@ -32,8 +26,6 @@ class LookupAssetInput extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $key
-     *           deprecated, use sha256
      *     @type string $sha256
      *           hex encoded SHA-256 of the file content
      * }
@@ -41,32 +33,6 @@ class LookupAssetInput extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Eolymp\Asset\AssetService::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * deprecated, use sha256
-     *
-     * Generated from protobuf field <code>string key = 1;</code>
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-
-    /**
-     * deprecated, use sha256
-     *
-     * Generated from protobuf field <code>string key = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setKey($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->key = $var;
-
-        return $this;
     }
 
     /**

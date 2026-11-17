@@ -21,18 +21,6 @@ class Part extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string token = 2;</code>
      */
     protected $token = '';
-    /**
-     * Generated from protobuf field <code>string checksum_md5 = 10;</code>
-     */
-    protected $checksum_md5 = '';
-    /**
-     * Generated from protobuf field <code>string checksum_sha1 = 11;</code>
-     */
-    protected $checksum_sha1 = '';
-    /**
-     * Generated from protobuf field <code>string checksum_sha256 = 12;</code>
-     */
-    protected $checksum_sha256 = '';
 
     /**
      * Constructor.
@@ -42,9 +30,6 @@ class Part extends \Google\Protobuf\Internal\Message
      *
      *     @type int $number
      *     @type string $token
-     *     @type string $checksum_md5
-     *     @type string $checksum_sha1
-     *     @type string $checksum_sha256
      * }
      */
     public function __construct($data = NULL) {
@@ -92,72 +77,6 @@ class Part extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->token = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checksum_md5 = 10;</code>
-     * @return string
-     */
-    public function getChecksumMd5()
-    {
-        return $this->checksum_md5;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checksum_md5 = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setChecksumMd5($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->checksum_md5 = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checksum_sha1 = 11;</code>
-     * @return string
-     */
-    public function getChecksumSha1()
-    {
-        return $this->checksum_sha1;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checksum_sha1 = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setChecksumSha1($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->checksum_sha1 = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checksum_sha256 = 12;</code>
-     * @return string
-     */
-    public function getChecksumSha256()
-    {
-        return $this->checksum_sha256;
-    }
-
-    /**
-     * Generated from protobuf field <code>string checksum_sha256 = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setChecksumSha256($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->checksum_sha256 = $var;
 
         return $this;
     }

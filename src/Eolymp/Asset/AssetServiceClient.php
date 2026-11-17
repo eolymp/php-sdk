@@ -82,8 +82,7 @@ class AssetServiceClient {
 
     /**
      * LookupAsset finds a ready asset in the space by the SHA-256 of its content, so a file uploaded before can be reused
-     * instead of uploaded again. The hash is computed by the server from the bytes it received, for multipart uploads only
-     * when parts are uploaded in order, starting from 1.
+     * instead of uploaded again. The hash is computed by the server from the bytes it received.
      *
      * @param LookupAssetInput $input message
      * @param array $context request parameters
@@ -172,7 +171,8 @@ class AssetServiceClient {
     /**
      * UploadPart of a file, before calling this method you must start upload process using StartMultipartUpload API, once
      * all parts are uploaded you must call CompleteMultipartUpload to finalize upload process and get asset_url.
-     * Every part, except last one, must be 5MB. You can use from 1 to 1000 parts per upload.
+     * Every part, except last one, must be 5MB. You can use from 1 to 1000 parts per upload. Parts are uploaded one at a
+     * time in order, starting from 1; any other part number is rejected.
      *
      * @param UploadPartInput $input message
      * @param array $context request parameters

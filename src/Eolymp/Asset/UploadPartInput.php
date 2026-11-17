@@ -20,7 +20,7 @@ class UploadPartInput extends \Google\Protobuf\Internal\Message
      */
     protected $upload_id = '';
     /**
-     * must be number starting with 1
+     * next part number: 1 for the first part, then one more than the last part uploaded
      *
      * Generated from protobuf field <code>uint32 part_number = 2;</code>
      */
@@ -41,7 +41,7 @@ class UploadPartInput extends \Google\Protobuf\Internal\Message
      *     @type string $upload_id
      *           upload_id given by StartMultipartUpload API
      *     @type int $part_number
-     *           must be number starting with 1
+     *           next part number: 1 for the first part, then one more than the last part uploaded
      *     @type string $data
      *           must be 5MB, unless it's a last part
      * }
@@ -78,7 +78,7 @@ class UploadPartInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * must be number starting with 1
+     * next part number: 1 for the first part, then one more than the last part uploaded
      *
      * Generated from protobuf field <code>uint32 part_number = 2;</code>
      * @return int
@@ -89,7 +89,7 @@ class UploadPartInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * must be number starting with 1
+     * next part number: 1 for the first part, then one more than the last part uploaded
      *
      * Generated from protobuf field <code>uint32 part_number = 2;</code>
      * @param int $var
