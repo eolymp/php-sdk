@@ -10,10 +10,11 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Recording is a member's screen and camera recording.
- * The service which asks for proctoring (e.g. a contest) creates the recording for a member and hands the
- * stream URL to the member's browser, which streams clips to it until the URL's token expires. A phone
- * streams the additional camera from the additional camera URL. The recording spans from its earliest clip
- * to the end of its latest one; the owner decides whether that covers what it needed recorded.
+ * The service which asks for proctoring (e.g. a contest) creates the recording for a member, keeps its
+ * configuration up to date and hands the recording's token to the member. Producers (a browser tab, a desktop
+ * app, a phone) join the recording with the token on the proctoring host and record into it within the
+ * capture window. The recording spans from its earliest clip to the end of its latest one; the owner decides
+ * whether that covers what it needed recorded.
  *
  * Generated from protobuf message <code>eolymp.proctoring.Recording</code>
  */
@@ -61,6 +62,30 @@ class Recording extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 8;</code>
      */
     protected $created_at = null;
+    /**
+     * start of the capture window
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_from = 10;</code>
+     */
+    protected $capture_from = null;
+    /**
+     * end of the capture window
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_to = 11;</code>
+     */
+    protected $capture_to = null;
+    /**
+     * clips recorded within the capture window are accepted until this time, not earlier than capture_to
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp upload_until = 12;</code>
+     */
+    protected $upload_until = null;
+    /**
+     * sources the owner needs recorded
+     *
+     * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Stream.Source required_sources = 13;</code>
+     */
+    private $required_sources;
 
     /**
      * Constructor.
@@ -81,6 +106,14 @@ class Recording extends \Google\Protobuf\Internal\Message
      *     @type array<\Eolymp\Proctoring\Recording\Stream>|\Google\Protobuf\Internal\RepeatedField $streams
      *           recorded streams
      *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type \Google\Protobuf\Timestamp $capture_from
+     *           start of the capture window
+     *     @type \Google\Protobuf\Timestamp $capture_to
+     *           end of the capture window
+     *     @type \Google\Protobuf\Timestamp $upload_until
+     *           clips recorded within the capture window are accepted until this time, not earlier than capture_to
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $required_sources
+     *           sources the owner needs recorded
      * }
      */
     public function __construct($data = NULL) {
@@ -310,6 +343,140 @@ class Recording extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * start of the capture window
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_from = 10;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCaptureFrom()
+    {
+        return $this->capture_from;
+    }
+
+    public function hasCaptureFrom()
+    {
+        return isset($this->capture_from);
+    }
+
+    public function clearCaptureFrom()
+    {
+        unset($this->capture_from);
+    }
+
+    /**
+     * start of the capture window
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_from = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCaptureFrom($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->capture_from = $var;
+
+        return $this;
+    }
+
+    /**
+     * end of the capture window
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_to = 11;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCaptureTo()
+    {
+        return $this->capture_to;
+    }
+
+    public function hasCaptureTo()
+    {
+        return isset($this->capture_to);
+    }
+
+    public function clearCaptureTo()
+    {
+        unset($this->capture_to);
+    }
+
+    /**
+     * end of the capture window
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_to = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCaptureTo($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->capture_to = $var;
+
+        return $this;
+    }
+
+    /**
+     * clips recorded within the capture window are accepted until this time, not earlier than capture_to
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp upload_until = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getUploadUntil()
+    {
+        return $this->upload_until;
+    }
+
+    public function hasUploadUntil()
+    {
+        return isset($this->upload_until);
+    }
+
+    public function clearUploadUntil()
+    {
+        unset($this->upload_until);
+    }
+
+    /**
+     * clips recorded within the capture window are accepted until this time, not earlier than capture_to
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp upload_until = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUploadUntil($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->upload_until = $var;
+
+        return $this;
+    }
+
+    /**
+     * sources the owner needs recorded
+     *
+     * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Stream.Source required_sources = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getRequiredSources()
+    {
+        return $this->required_sources;
+    }
+
+    /**
+     * sources the owner needs recorded
+     *
+     * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Stream.Source required_sources = 13;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setRequiredSources($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Proctoring\Recording\Stream\Source::class);
+        $this->required_sources = $arr;
 
         return $this;
     }

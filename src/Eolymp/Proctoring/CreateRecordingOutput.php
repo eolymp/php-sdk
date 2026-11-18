@@ -29,6 +29,12 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string additional_camera_url = 3;</code>
      */
     protected $additional_camera_url = '';
+    /**
+     * token producers join the recording with
+     *
+     * Generated from protobuf field <code>string token = 4;</code>
+     */
+    protected $token = '';
 
     /**
      * Constructor.
@@ -41,6 +47,8 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
      *           WebSocket URL with a token to stream clips to
      *     @type string $additional_camera_url
      *           page a phone opens to stream the additional camera, usually shown as a QR code
+     *     @type string $token
+     *           token producers join the recording with
      * }
      */
     public function __construct($data = NULL) {
@@ -118,6 +126,32 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->additional_camera_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * token producers join the recording with
+     *
+     * Generated from protobuf field <code>string token = 4;</code>
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * token producers join the recording with
+     *
+     * Generated from protobuf field <code>string token = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token = $var;
 
         return $this;
     }

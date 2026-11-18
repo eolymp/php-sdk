@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRecordingInput extends \Google\Protobuf\Internal\Message
 {
     /**
-     * member_id is set on creation
+     * member_id is set on creation, along with the configuration
      *
      * Generated from protobuf field <code>.eolymp.proctoring.Recording recording = 1;</code>
      */
@@ -33,7 +33,7 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Eolymp\Proctoring\Recording $recording
-     *           member_id is set on creation
+     *           member_id is set on creation, along with the configuration
      *     @type \Google\Protobuf\Timestamp $expires_at
      *           when the stream URL's token expires, 5 hours from now at most
      * }
@@ -44,7 +44,7 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member_id is set on creation
+     * member_id is set on creation, along with the configuration
      *
      * Generated from protobuf field <code>.eolymp.proctoring.Recording recording = 1;</code>
      * @return \Eolymp\Proctoring\Recording|null
@@ -65,7 +65,7 @@ class CreateRecordingInput extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * member_id is set on creation
+     * member_id is set on creation, along with the configuration
      *
      * Generated from protobuf field <code>.eolymp.proctoring.Recording recording = 1;</code>
      * @param \Eolymp\Proctoring\Recording $var

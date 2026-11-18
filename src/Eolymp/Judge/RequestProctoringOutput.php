@@ -25,6 +25,12 @@ class RequestProctoringOutput extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string additional_camera_url = 2;</code>
      */
     protected $additional_camera_url = '';
+    /**
+     * token the participant's devices join the recording with on the proctoring host
+     *
+     * Generated from protobuf field <code>string token = 3;</code>
+     */
+    protected $token = '';
 
     /**
      * Constructor.
@@ -36,6 +42,8 @@ class RequestProctoringOutput extends \Google\Protobuf\Internal\Message
      *           WebSocket URL to stream the recording to
      *     @type string $additional_camera_url
      *           page a phone opens to stream the additional camera, usually shown as a QR code
+     *     @type string $token
+     *           token the participant's devices join the recording with on the proctoring host
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +99,32 @@ class RequestProctoringOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->additional_camera_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * token the participant's devices join the recording with on the proctoring host
+     *
+     * Generated from protobuf field <code>string token = 3;</code>
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * token the participant's devices join the recording with on the proctoring host
+     *
+     * Generated from protobuf field <code>string token = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setToken($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->token = $var;
 
         return $this;
     }
