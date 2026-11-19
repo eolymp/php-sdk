@@ -18,18 +18,6 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
      */
     protected $recording_id = '';
     /**
-     * WebSocket URL with a token to stream clips to
-     *
-     * Generated from protobuf field <code>string stream_url = 2;</code>
-     */
-    protected $stream_url = '';
-    /**
-     * page a phone opens to stream the additional camera, usually shown as a QR code
-     *
-     * Generated from protobuf field <code>string additional_camera_url = 3;</code>
-     */
-    protected $additional_camera_url = '';
-    /**
      * token producers join the recording with
      *
      * Generated from protobuf field <code>string token = 4;</code>
@@ -43,10 +31,6 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $recording_id
-     *     @type string $stream_url
-     *           WebSocket URL with a token to stream clips to
-     *     @type string $additional_camera_url
-     *           page a phone opens to stream the additional camera, usually shown as a QR code
      *     @type string $token
      *           token producers join the recording with
      * }
@@ -74,58 +58,6 @@ class CreateRecordingOutput extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->recording_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * WebSocket URL with a token to stream clips to
-     *
-     * Generated from protobuf field <code>string stream_url = 2;</code>
-     * @return string
-     */
-    public function getStreamUrl()
-    {
-        return $this->stream_url;
-    }
-
-    /**
-     * WebSocket URL with a token to stream clips to
-     *
-     * Generated from protobuf field <code>string stream_url = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setStreamUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->stream_url = $var;
-
-        return $this;
-    }
-
-    /**
-     * page a phone opens to stream the additional camera, usually shown as a QR code
-     *
-     * Generated from protobuf field <code>string additional_camera_url = 3;</code>
-     * @return string
-     */
-    public function getAdditionalCameraUrl()
-    {
-        return $this->additional_camera_url;
-    }
-
-    /**
-     * page a phone opens to stream the additional camera, usually shown as a QR code
-     *
-     * Generated from protobuf field <code>string additional_camera_url = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setAdditionalCameraUrl($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->additional_camera_url = $var;
 
         return $this;
     }
