@@ -86,6 +86,16 @@ class Recording extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Stream.Source required_sources = 13;</code>
      */
     private $required_sources;
+    /**
+     * Generated from protobuf field <code>.eolymp.proctoring.Recording.State state = 14;</code>
+     */
+    protected $state = 0;
+    /**
+     * every slot, requires extra SLOTS
+     *
+     * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Slot slots = 15;</code>
+     */
+    private $slots;
 
     /**
      * Constructor.
@@ -114,6 +124,9 @@ class Recording extends \Google\Protobuf\Internal\Message
      *           clips recorded within the capture window are accepted until this time, not earlier than capture_to
      *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $required_sources
      *           sources the owner needs recorded
+     *     @type int $state
+     *     @type array<\Eolymp\Proctoring\Recording\Slot>|\Google\Protobuf\Internal\RepeatedField $slots
+     *           every slot, requires extra SLOTS
      * }
      */
     public function __construct($data = NULL) {
@@ -477,6 +490,54 @@ class Recording extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Eolymp\Proctoring\Recording\Stream\Source::class);
         $this->required_sources = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.proctoring.Recording.State state = 14;</code>
+     * @return int
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>.eolymp.proctoring.Recording.State state = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkEnum($var, \Eolymp\Proctoring\Recording\State::class);
+        $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * every slot, requires extra SLOTS
+     *
+     * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Slot slots = 15;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getSlots()
+    {
+        return $this->slots;
+    }
+
+    /**
+     * every slot, requires extra SLOTS
+     *
+     * Generated from protobuf field <code>repeated .eolymp.proctoring.Recording.Slot slots = 15;</code>
+     * @param array<\Eolymp\Proctoring\Recording\Slot>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setSlots($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Eolymp\Proctoring\Recording\Slot::class);
+        $this->slots = $arr;
 
         return $this;
     }
