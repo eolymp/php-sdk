@@ -19,6 +19,12 @@ class ProctoringConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.eolymp.judge.Contest.ProctoringConfig.Mode mode = 2;</code>
      */
     protected $mode = 0;
+    /**
+     * seconds after a participation ends during which clips recorded offline are still accepted, 0 to 259200 (72 hours)
+     *
+     * Generated from protobuf field <code>uint32 upload_tolerance = 3;</code>
+     */
+    protected $upload_tolerance = 0;
 
     /**
      * Constructor.
@@ -28,6 +34,8 @@ class ProctoringConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type int $mode
      *           what is recorded for every participant for the duration of their participation, enabling it is the organiser's consent
+     *     @type int $upload_tolerance
+     *           seconds after a participation ends during which clips recorded offline are still accepted, 0 to 259200 (72 hours)
      * }
      */
     public function __construct($data = NULL) {
@@ -57,6 +65,32 @@ class ProctoringConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Eolymp\Judge\Contest\ProctoringConfig\Mode::class);
         $this->mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * seconds after a participation ends during which clips recorded offline are still accepted, 0 to 259200 (72 hours)
+     *
+     * Generated from protobuf field <code>uint32 upload_tolerance = 3;</code>
+     * @return int
+     */
+    public function getUploadTolerance()
+    {
+        return $this->upload_tolerance;
+    }
+
+    /**
+     * seconds after a participation ends during which clips recorded offline are still accepted, 0 to 259200 (72 hours)
+     *
+     * Generated from protobuf field <code>uint32 upload_tolerance = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setUploadTolerance($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->upload_tolerance = $var;
 
         return $this;
     }
