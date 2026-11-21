@@ -16,14 +16,15 @@ class Usage
         }
         $pool->internalAddGeneratedFile(
             '
-Ü
-eolymp/ai/usage.proto	eolymp.ai"†
+ø
+eolymp/ai/usage.proto	eolymp.ai"¢
 Usage
 prompt_tokens (
 completion_tokens (
 thinking_tokens (
 total_tokens (
-cached_prompt_tokens (B\'Z%github.com/eolymp/go-sdk/eolymp/ai;aibproto3'
+cached_prompt_tokens (
+cache_write_tokens (B\'Z%github.com/eolymp/go-sdk/eolymp/ai;aibproto3'
         , true);
 
         static::$is_initialized = true;

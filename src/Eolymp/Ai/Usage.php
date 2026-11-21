@@ -33,6 +33,10 @@ class Usage extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint64 cached_prompt_tokens = 5;</code>
      */
     protected $cached_prompt_tokens = 0;
+    /**
+     * Generated from protobuf field <code>uint64 cache_write_tokens = 6;</code>
+     */
+    protected $cache_write_tokens = 0;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class Usage extends \Google\Protobuf\Internal\Message
      *     @type int|string $thinking_tokens
      *     @type int|string $total_tokens
      *     @type int|string $cached_prompt_tokens
+     *     @type int|string $cache_write_tokens
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class Usage extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->cached_prompt_tokens = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 cache_write_tokens = 6;</code>
+     * @return int|string
+     */
+    public function getCacheWriteTokens()
+    {
+        return $this->cache_write_tokens;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 cache_write_tokens = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setCacheWriteTokens($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->cache_write_tokens = $var;
 
         return $this;
     }
